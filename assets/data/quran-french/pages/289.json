@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 289,
+    "ayahs": [
+      {
+        "number": 2096,
+        "text": "Et quand le mal vous touche en mer, ceux que vous invoquiez en dehors de Lui se perdent. Puis, quand Il vous sauve et vous ramène à terre, vous vous détournez. L'homme reste très ingrat!",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 67,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2097,
+        "text": "Etes-vous à l'abri de ce qu'Il vous fasse engloutir par un pan de terre, ou qu'Il envoie contre vous un ouragan (avec pluie en pierres) et que vous ne trouverez alors aucun protecteur.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 68,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2098,
+        "text": "Ou êtes-vous à l'abri de ce qu'Il vous y ramène (en mer) une autre fois, qu'Il déchaîne contre vous un de ces vents à tout casser, puis qu'Il vous fasse noyer à cause de votre mécréance? Et alors vous ne trouverez personne pour vous défendre contre Nous!",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 69,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2099,
+        "text": "Certes, Nous avons honoré les fils d'Adam. Nous les avons transportés sur terre et sur mer, leur avons attribué de bonnes choses comme nourriture, et Nous les avons nettement préférés à plusieurs de Nos créatures.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 70,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 246,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2100,
+        "text": "Le jour où Nous appellerons chaque groupement d'hommes par leur chef, ceux à qui on remettra leur livre dans la main droite liront leur livre (avec plaisir) et ne subiront pas la moindre injustice.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 71,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2101,
+        "text": "Et quiconque aura été aveugle ici-bas, sera aveugle dans l'au-delà, et sera plus égaré [encore] par rapport à la bonne voie.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 72,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2102,
+        "text": "Ils ont failli te détourner de ce que Nous t'avions révélé, [dans l'espoir] qu'à la place de ceci, tu inventes quelque chose d'autre et (l'imputes) à Nous. Et alors, ils t'auraient pris pour ami intime.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 73,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2103,
+        "text": "Et si Nous ne t'avions pas raffermi, tu aurais bien failli t'incliner quelque peu vers eux.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 74,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2104,
+        "text": "Alors, Nous t'aurions certes fait goûter le double [supplice] de la vie et le double [supplice] de la mort; et ensuite tu n'aurais pas trouvé de secoureur contre Nous.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 75,
+        "juz": 15,
+        "manzil": 4,
+        "page": 289,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 471,
+    "ayahs": [
+      {
+        "number": 4167,
+        "text": "Joseph had indeed come to you before with clear proofs, but you did not cease to doubt what he had brought until he died, when you said: 'God will not send a prophet after him.' That is how God leads the waster, the sceptic astray.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 34,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4168,
+        "text": "Those who dispute God's revelations, with no authority having come to them, (are) greatly odious in the sight of God, and the sight of those who believe. That is how God seals every proud and perverse heart.\"",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 35,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4169,
+        "text": "The Pharaoh said: \"O Haman, build me a lofty tower that I may perhaps find the means",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 36,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4170,
+        "text": "Of reaching the tracts of heaven and look at the god of Moses, though I think that he is a liar.\" Thus were the evil deeds of Pharaoh made to look attractive to him, and he was hindered from the path. So the stratagem of Pharaoh was bound to perish.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 37,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4171,
+        "text": "The man who believed said: \"O my people, follow me; I will guide you to the right path.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 38,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 408,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4172,
+        "text": "O people, the life of this world is ephemeral; but enduring is the abode of the Hereafter.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 39,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 408,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4173,
+        "text": "Whoever does evil will be requited in accordance with it; but whoever does right, whether man or woman, and is a believer, will enter Paradise, where they will have provision in abundance.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 40,
+        "juz": 24,
+        "manzil": 6,
+        "page": 471,
+        "ruku": 408,
+        "hizbQuarter": 188,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

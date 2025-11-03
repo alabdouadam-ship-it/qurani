@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 194,
+    "ayahs": [
+      {
+        "number": 1276,
+        "text": "Légers ou lourds, lancez-vous au combat, et luttez avec vos biens et vos personnes dans le sentier d'Allah. Cela est meilleur pour vous, si vous saviez.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 41,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 161,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1277,
+        "text": "S'il s'était agi d'un profit facile ou d'un court voyage, ils t'auraient suivi; mais la distance leur parut longue. Et ils jureront par Allah: «Si nous avions pu, nous serions sortis en votre compagnie.» Ils se perdent eux-mêmes. Et Allah sait bien qu'ils mentent.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 42,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 161,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1278,
+        "text": "Qu'Allah te pardonne! Pourquoi leur as-tu donné permission avant que tu ne puisses distinguer ceux qui disaient vrai et reconnaître les menteurs?",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 43,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1279,
+        "text": "Ceux qui croient en Allah et au Jour dernier ne te demandent pas permission quand il s'agit de mener combat avec leurs biens et leurs personnes. Et Allah connaît bien les pieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 44,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1280,
+        "text": "Ne te demandent permission que ceux qui ne croient pas en Allah et au Jour dernier, et dont les cœurs sont emplis de doute. Ils ne font qu'hésiter dans leur incertitude.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 45,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1281,
+        "text": "Et s'ils avaient voulu partir (au combat), ils lui auraient fait des préparatifs. Mais leur départ répugna à Allah; Il les a rendus paresseux. Et il leur fut dit: «Restez avec ceux qui restent».",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 46,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1282,
+        "text": "S'ils étaient sortis avec vous, ils n'auraient fait qu'accroître votre trouble et jeter la dissension dans vos rangs, cherchant à créer la discorde entre vous. Et il y en a parmi vous qui les écoutent. Et Allah connaît bien les injustes.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 47,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 101,
+    "ayahs": [
+      {
+        "number": 634,
+        "text": "Ils restent dans l'expectative à votre égard; si une victoire vous vient de la part d'Allah, ils disent: «N'étions-nous pas avec vous?» et s'il en revient un avantage aux mécréants, ils leur disent: «Est-ce que nous n'avons pas mis la main sur vous pour vous soustraire aux croyants?» Eh bien, Allah jugera entre vous au Jour de la Résurrection. Et jamais Allah ne donnera une voie aux mécréants contre les croyants.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 141,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 635,
+        "text": "Les hypocrites cherchent à tromper Allah, mais Allah retourne leur tromperie (contre eux-mêmes). Et lorsqu'ils se lèvent pour la Salât, ils se lèvent avec paresse et par ostentation envers les gens. A peine invoquent-ils Allah.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 142,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 636,
+        "text": "Ils sont indécis (entre les croyants et les mécréants,) n'appartenant ni aux uns ni aux autres. Or, quiconque Allah égare, jamais tu ne trouveras de chemin pour lui.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 143,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 637,
+        "text": "O les croyants! Ne prenez pas pour alliés les mécréants au lieu des croyants. Voudriez-vous donner à Allah une preuve évidente contre vous?",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 144,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 638,
+        "text": "Les hypocrites seront, certes, au plus bas fond du Feu, et tu ne leur trouveras jamais de secoureur,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 145,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 639,
+        "text": "sauf ceux qui se repentent, s'amendent, s'attachent fermement à Allah, et Lui vouent une foi exclusive. Ceux-là seront avec les croyants. Et Allah donnera aux croyants une énorme récompense.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 146,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 640,
+        "text": "Pourquoi Allah vous infligerait-Il un châtiment si vous êtes reconnaissants et croyants? Allah est Reconnaissant et Omniscient.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 147,
+        "juz": 5,
+        "manzil": 1,
+        "page": 101,
+        "ruku": 82,
+        "hizbQuarter": 40,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

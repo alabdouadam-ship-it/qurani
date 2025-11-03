@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 462,
+    "ayahs": [
+      {
+        "number": 4090,
+        "text": "Quel pire injuste donc, que celui qui ment contre Allah et qui traite de mensonge la vérité quand elle lui vient? N'est-ce pas dans l'Enfer qu'il y a un refuge pour les mécréants?",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 32,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4091,
+        "text": "Tandis que celui qui vient avec la vérité et celui qui la confirme, ceux-là sont les pieux.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 33,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4092,
+        "text": "Ils auront tout ce qu'ils désireront auprès de leur Seigneur; voilà la récompense des bienfaisants,",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 34,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4093,
+        "text": "afin qu'Allah leur efface les pires de leurs actions et les récompense selon ce qu'ils auront fait de meilleur.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 35,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4094,
+        "text": "Allah ne suffit-Il pas à Son esclave [comme soutien]? Et ils te font peur avec ce qui est en dehors de Lui. Et quiconque Allah égare n'a point de guide.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 36,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4095,
+        "text": "Quiconque Allah guide, nul ne peut l'égarer. Allah n'est-Il pas Puissant et Détenteur du pouvoir de châtier?",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 37,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4096,
+        "text": "Si tu leur demandais: «Qui a créé les cieux et la terre?», Ils diraient assurément: «Allah». Dis: «Voyez-vous ceux que vous invoquez en dehors d'Allah; si Allah me voulait du mal, est-ce que [ces divinités] pourraient dissiper Son mal? Ou s'Il me voulait une miséricorde, pourraient-elles retenir Sa miséricorde?» - Dis: «Allah me suffit: c'est en Lui que placent leur confiance ceux qui cherchent un appui».",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 38,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4097,
+        "text": "Dis: «O mon peuple, agissez selon votre méthode, moi j'agirai [selon la mienne]. Bientôt vous saurez",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 39,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4098,
+        "text": "sur qui s'abattra un châtiment qui l'avilira; et sur qui se justifiera un châtiment durable».",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 40,
+        "juz": 24,
+        "manzil": 6,
+        "page": 462,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

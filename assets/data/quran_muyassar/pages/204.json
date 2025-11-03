@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 204,
+    "ayahs": [
+      {
+        "number": 1342,
+        "text": "والمنافقون الذين بنوا مسجدًا؛ مضارة للمؤمنين وكفرًا بالله وتفريقًا بين المؤمنين، ليصلي فيه بعضهم ويترك مسجد (قباء) الذي يصلي فيه المسلمون، فيختلف المسلمون ويتفرقوا بسبب ذلك، وانتظارا لمن حارب الله ورسوله من قبل -وهو أبو عامر الراهب الفاسق- ليكون مكانًا للكيد للمسلمين، وليحلفنَّ هؤلاء المنافقون أنهم ما أرادوا ببنائه إلا الخير والرفق بالمسلمين والتوسعة على الضعفاء العاجزين عن السير إلى مسجد (قباء)، والله يشهد إنهم لكاذبون فيما يحلفون عليه. وقد هُدِم المسجد وأُحرِق.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 107,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1343,
+        "text": "لا تقم -أيها النبي- للصلاة في ذلك المسجد أبدًا؛ فإن المسجد الذي أُسِّسَ على التقوى من أول يوم -وهو مسجد (قباء)- أولى أن تقوم فيه للصلاة، ففي هذا المسجد رجال يحبون أن يتطهروا بالماء من النجاسات والأقذار، كما يتطهرون بالتورع والاستغفار من الذنوب والمعاصي. والله يحب المتطهرين. وإذا كان مسجد (قباء) قد أُسِّسَ على التقوى من أول يوم، فمسجد رسول الله، صلى الله عليه وسلم، كذلك بطريق الأولى والأحرى.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 108,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1344,
+        "text": "لا يستوي مَن أسَّس بنيانه على تقوى الله وطاعته ومرضاته، ومن أسَّس بنيانه على طرف حفرة متداعية للسقوط، فبنى مسجدًا ضرارًا وكفرًا وتفريقًا بين المسلمين، فأدَّى به ذلك إلى السقوط في نار جهنم. والله لا يهدي القوم الظالمين المتجاوزين حدوده.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 109,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1345,
+        "text": "لا يزال بنيان المنافقين الذي بنوه مضارَّة لمسجد (قباء) شكًا ونفاقًا ماكثًا في قلوبهم، إلى أن تتقطع قلوبهم بقتلهم أو موتهم، أو بندمهم غاية الندم، وتوبتهم إلى ربهم، وخوفهم منه غاية الخوف. والله عليم بما عليه هؤلاء المنافقون من الشك وما قصدوا في بنائهم، حكيم في تدبير أمور خلقه.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 110,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1346,
+        "text": "إن الله اشترى من المؤمنين أنفسهم بأن لهم في مقابل ذلك الجنة، وما أعد الله فيها من النعيم لبذلهم نفوسهم وأموالهم في جهاد أعدائه لإعلاء كلمته وإظهار دينه، فيَقْتلون ويُقتَلون، وعدًا عليه حقًا في التوراة المنزلة على موسى عليه السلام، والإنجيل المنزل على عيسى عليه السلام، والقرآن المنزل على محمد صلى الله عليه وسلم. ولا أحد أوفى بعهده من الله لمن وفَّى بما عاهد الله عليه، فأظهِروا السرور-أيها المؤمنون- ببيعكم الذي بايعتم الله به، وبما وعدكم به من الجنة والرضوان، وذلك البيع هو الفلاح العظيم.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 111,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

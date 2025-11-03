@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 444,
+    "ayahs": [
+      {
+        "number": 3760,
+        "text": "Surely the inmates of Paradise will be engaged in pastimes.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 55,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3761,
+        "text": "They and their companions will recline on couches in the shade.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 56,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3762,
+        "text": "For them will be fruits and whatever they ask.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 57,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3763,
+        "text": "\"Peace\" shall be the greeting from the merciful Lord.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 58,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3764,
+        "text": "(And the guilty will be told:) \"O sinners, separate yourselves this day.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 59,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3765,
+        "text": "Did I not commit you, O children of Adam, not to worship Satan who is your acknowledged foe,",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 60,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3766,
+        "text": "But to serve Me; (that) this is the straight path?",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 61,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3767,
+        "text": "But he beguiled a great many of you. Why did you not then understand?",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 62,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3768,
+        "text": "This is the Hell that you were promised.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 63,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3769,
+        "text": "Roast in it now for having disbelieved.\"",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 64,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3770,
+        "text": "We shall seal their lips that day; and their hands will speak, their feet testify to what they had done.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 65,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3771,
+        "text": "We could take away their sight if We pleased; then they would run around to find the way: But how then would they see?",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 66,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3772,
+        "text": "And if We pleased We could paralyse them in their tracks, and they would not be able to move forward or turn back.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 67,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3773,
+        "text": "Whoever reaches old age, We reverse in natural disposition. Do they not have sense (to see)?",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 68,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3774,
+        "text": "We have not taught (Muhammad) to versify, nor is it worthy of him. This is nothing but a reminder and illuminating discourse,",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 69,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3775,
+        "text": "So that he may warn him who is alive and feels, and justify the word against those who do not believe.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 70,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

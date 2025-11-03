@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 488,
+    "ayahs": [
+      {
+        "number": 4317,
+        "text": "You should see them brought before the Fire, abject in disgrace, looking stealthily. And those who believe will say: \"They who forfeit their souls and families on the Day of Resurrection will really be losers.\" Is it not that sinners will suffer a lasting torment?",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 45,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4318,
+        "text": "They will have no protector to help them other than God. He whom God allows to go astray has no way.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 46,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4319,
+        "text": "Hearken to your Lord before the Day arrives from God that will not be averted. You will have no place of refuge then nor time for denying.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 47,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4320,
+        "text": "If they turn away (you are not responsible); We have not appointed you a warden over them. Your duty is to deliver the message. When We let man taste of Our favours he begins to exult; but if misfortune befalls him, as a consequence of his own deeds, man is surely then ungrateful.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 48,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4321,
+        "text": "To God belongs the kingdom of the heavens and the earth. He creates whatsoever He wills, bestows daughters on whosoever He will, and gives sons to whom He choose.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 49,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4322,
+        "text": "On some He bestows both sons and daughters, and some He leaves issueless. He is all-knowing and all-powerful.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 50,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4323,
+        "text": "It is not given to man that God should speak to him except by suggestion or indirectly, or send a messenger to convey by His command whatsoever He please. He is all-high and all-wise.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 51,
+        "juz": 25,
+        "manzil": 6,
+        "page": 488,
+        "ruku": 423,
+        "hizbQuarter": 196,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

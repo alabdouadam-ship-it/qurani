@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 242,
+    "ayahs": [
+      {
+        "number": 1649,
+        "text": "قالت امرأة العزيز: وما أزكي نفسي ولا أبرئها، إن النفس لكثيرة الأمر لصاحبها بعمل المعاصي طلبا لملذاتها، إلا مَن عصمه الله. إن الله غفور لذنوب مَن تاب مِن عباده، رحيم بهم.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 53,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 199,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1650,
+        "text": "وقال الملك الحاكم لـ \"مصر\" حين بلغته براءة يوسف: جيئوني به أجعله من خلصائي وأهل مشورتي، فلما جاء يوسف وكلَّمه الملك، وعرف براءته، وعظيم أمانته، وحسن خلقه، قال له: إنك اليوم عندنا عظيم المكانة، ومؤتمن على كل شيء.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 54,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 199,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1651,
+        "text": "وأراد يوسف أن ينفع العباد، ويقيم العدل بينهم، فقال للملك: اجعلني واليًا على خزائن \"مصر\"، فإني خازن أمين، ذو علم وبصيرة بما أتولاه.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 55,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 199,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1652,
+        "text": "وكما أنعم الله على يوسف بالخلاص من السجن مكَّن له في أرض \"مصر\" ينزل منها أي منزل شاءه. يصيب الله برحمته من يشاء من عباده المتقين، ولا يضيع أجر مَن أحسن شيئًا مِن العمل الصالح.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 56,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 199,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1653,
+        "text": "ولَثواب الآخرة عند الله أعظم من ثواب الدنيا لأهل الإيمان والتقوى الذين يخافون عقاب الله، ويطيعونه في أمره ونهيه.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 57,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 199,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1654,
+        "text": "وقدِمَ إخوة يوسف إلى \"مصر\" -بعد أن حلَّ بهم الجدب في أرضهم-؛ ليجلبوا منها الطعام، فدخلوا عليه فعرفهم، ولم يعرفوه لطول المدة وتغيُّر هيئته.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 58,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1655,
+        "text": "وقد أمر يوسف بإكرامهم وحسن ضيافتهم، ثم أعطاهم من الطعام ما طلبوا، وكانوا قد أخبروه أن لهم أخًا من أبيهم لم يُحضروه معهم -يريدون شقيقه- فقال: ائتوني بأخيكم من أبيكم، ألم تروا أني أوفيتُ لكم الكيل وأكرمتكم في الضيافة، وأنا خير المضيفين لكم؟",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 59,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1656,
+        "text": "فإن لم تأتوني به فليس لكم عندي طعام أكيله لكم، ولا تأتوا إليَّ.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 60,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1657,
+        "text": "قالوا: سنبذل جهدنا لإقناع أبيه أن يرسله معنا، ولن نقصِّر في ذلك.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 61,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1658,
+        "text": "وقال يوسف لغلمانه: اجعلوا ثمن ما أخذوه في أمتعتهم سرًا؛ رجاء أن يعرفوه إذا رجعوا إلى أهلهم، ويقدِّروا إكرامنا لهم؛ ليرجعوا طمعًا في عطائنا.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 62,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      },
+      {
+        "number": 1659,
+        "text": "فلما رجعوا إلى أبيهم قصُّوا عليه ما كان من إكرام العزيز لهم، وقالوا: إنه لن يعطينا مستقبَلا إلا إذا كان معنا أخونا الذي أخبرناه به، فأرسلْه معنا نحضر الطعام وافيًا، ونتعهد لك بحفظه.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 63,
+        "juz": 13,
+        "manzil": 3,
+        "page": 242,
+        "ruku": 200,
+        "hizbQuarter": 97,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

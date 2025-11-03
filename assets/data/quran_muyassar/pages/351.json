@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 351,
+    "ayahs": [
+      {
+        "number": 2802,
+        "text": "إن الذين جاؤوا بأشنع الكذب، وهو اتهام أم المؤمنين عائشة رضي الله عنها بالفاحشة، جماعة منتسبون إليكم - معشر المسلمين- لا تحسبوا قولهم شرًّا لكم، بل هو خير لكم، لما تضمن ذلك مِن تبرئة أم المؤمنين ونزاهتها والتنويه بذكرها، ورفع الدرجات، وتكفير السيئات، وتمحيص المؤمنين. لكل فرد تكلم بالإفك جزاء فعله من الذنب، والذي تحمَّل معظمه، وهو عبد الله بن أُبيِّ ابن سلول كبير المنافقين- لعنه الله- له عذاب عظيم في الآخرة، وهو الخلود في الدرك الأسفل من النار.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 11,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2803,
+        "text": "هلا ظن المؤمنون والمؤمنات بعضهم ببعض خيرًا عند سماعهم ذلك الإفك، وهو السلامة مما رموا به، وقالوا: هذا كذب ظاهر على عائشة رضي الله عنها.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 12,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2804,
+        "text": "هلا أتى القاذفون بأربعة شهود عدول على قولهم، فحين لم يفعلوا ذلك فأولئك هم الكاذبون عند الله.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 13,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2805,
+        "text": "ولولا فَضْلُ الله عليكم ورحمته لكم بحيث شملكم إحسانه في دينكم ودنياكم فلم يعجِّل عقوبتكم، وتاب على مَن تاب منكم، لأصابكم بسبب ما خضتم فيه عذاب عظيم.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 14,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2806,
+        "text": "حين تتلقفون الإفك وتتناقلونه بأفواهكم، وهو قول باطل، وليس عندكم به علم، وهما محظوران: التكلم بالباطل، والقول بلا علم، وتظنون ذلك شيئًا هيِّنًا، وهو عند الله عظيم. وفي هذا زجر بليغ عن التهاون في إشاعة الباطل.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 15,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2807,
+        "text": "وهلا قلتم عند سماعكم إياه: ما يَحِلُّ لنا الكلام بهذا الكذب، تنزيهًا لك - يارب - مِن قول ذلك على زوجة رسولك محمد صلى الله عليه وسلم، فهو كذب عظيم في الوزر واستحقاق الذنب.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 16,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2808,
+        "text": "يذكِّركم الله وينهاكم أن تعودوا أبدًا لمثل هذا الفعل من الاتهام الكاذب، إن كنتم مؤمنين به.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 17,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2809,
+        "text": "ويبين الله لكم الآيات المشتملة على الأحكام الشرعية والمواعظ، والله عليم بأفعالكم، حكيم في شرعه وتدبيره.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 18,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2810,
+        "text": "إن الذين يحبون شيوع الفاحشة في المسلمين من قَذْف بالزنى أو أي قول سيِّئ لهم عذاب أليم في الدنيا بإقامة الحد عليهم، وغيره من البلايا الدنيوية، ولهم في الآخرة عذاب النار إن لم يتوبوا، والله- وحده- يعلم كذبهم، ويعلم مصالح عباده، وعواقب الأمور، وأنتم لا تعلمون ذلك.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 19,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2811,
+        "text": "ولولا فَضْلُ الله على مَن وقع في حديث الإفك ورحمته بهم، وأن الله يرحم عباده المؤمنين رحمة واسعة في عاجلهم وآجلهم، لما بيَّن هذه الأحكام والمواعظ، ولَعاجل مَن خالف أمره بالعقوبة.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 20,
+        "juz": 18,
+        "manzil": 4,
+        "page": 351,
+        "ruku": 302,
+        "hizbQuarter": 140,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

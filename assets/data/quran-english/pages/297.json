@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 297,
+    "ayahs": [
+      {
+        "number": 2168,
+        "text": "Persevere with those who call on their Lord morning and evening, seeking His magnificence. Do not turn your eyes away from them, seeking the splendours of this world, and do not follow him whose heart We have made oblivious to Our remembrance, who follows his own lust and exceeds the bound.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 28,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 255,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2169,
+        "text": "Say: \"The truth is from your Lord: So believe if you like, or do not believe if you will.\" We have prepared for the sinners a fire which will envelope them in its tent. If they ask for water they will be helped to liquid like molten brass that would scald their mouths. How evil the drink, and evil the resting-place!",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 29,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 255,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2170,
+        "text": "But surely We do not let the reward of those who believe and do the right to go waste.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 30,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 255,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2171,
+        "text": "There will be gardens of Eden for them, with rivers flowing by, where they will be decked in bracelets of gold, with silken robes of green and of brocades to wear, reclining on couches. How excellent the guerdon, and excellent the resting-place!",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 31,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 255,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2172,
+        "text": "Tell them the parable of two men. We gave one two gardens of grapes surrounded by date-palm trees, with corn fields in between.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 32,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 256,
+        "hizbQuarter": 119,
+        "sajda": false
+      },
+      {
+        "number": 2173,
+        "text": "Each of the gardens yielded its fruit and did not withhold the least; and We made a stream flow in between them.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 33,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 256,
+        "hizbQuarter": 119,
+        "sajda": false
+      },
+      {
+        "number": 2174,
+        "text": "So he became rich. Arguing one day with his friend he said: \"I have more wealth than you and more powerful kinsmen.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 34,
+        "juz": 15,
+        "manzil": 4,
+        "page": 297,
+        "ruku": 256,
+        "hizbQuarter": 119,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

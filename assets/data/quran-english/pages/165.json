@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 165,
+    "ayahs": [
+      {
+        "number": 1075,
+        "text": "And said: \"We have come to believe in the Lord of all the worlds,",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 121,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1076,
+        "text": "\"The Lord of Moses and Aaron.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 122,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1077,
+        "text": "But Pharaoh said: \"You have come to accept belief in Him without my permission! This surely is a plot you have hatched to expel the people from the land. You will soon come to know.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 123,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1078,
+        "text": "\"I will have your hands and feet on alternate sides cut off, and have you all crucified.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 124,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1079,
+        "text": "They answered: \"We have (in any case) to go back to our Lord.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 125,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1080,
+        "text": "\"The only reason you have to hate us is that we believed in the signs of our Lord as they came to us. O our Lord, give us sufficient endurance that we may die submitting (to You).\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 126,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1081,
+        "text": "And the leaders of Pharaoh's people said to him: \"Would you allow Moses and his people to create disorder in the land and discard you and your gods?\" He replied: \"We shall now slay their sons and spare their women, and subdue them.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 127,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 136,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1082,
+        "text": "Said Moses to his people: \"Invoke the help of God and be firm. The earth belongs to God: He can make whom He wills among His creatures inherit it. The future is theirs who take heed for themselves.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 128,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 136,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1083,
+        "text": "They said: \"We were oppressed before you came, and have been since you have come to us.\" He answered: \"It may well be that soon God may destroy your enemy and make you inherit the land, and then see how you behave.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 129,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 136,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1084,
+        "text": "We afflicted the people of Pharaoh with famine and dearth of everything that they might take heed.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 130,
+        "juz": 9,
+        "manzil": 2,
+        "page": 165,
+        "ruku": 137,
+        "hizbQuarter": 66,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

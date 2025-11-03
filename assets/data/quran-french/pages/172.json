@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 172,
+    "ayahs": [
+      {
+        "number": 1118,
+        "text": "Et quand parmi eux une communauté dit: «Pourquoi exhortez-vous un peuple qu'Allah va anéantir ou châtier d'un châtiment sévère?» Ils répondirent: «Pour dégager notre responsabilité vis-à-vis de votre Seigneur; et que peut-être ils deviendront pieux!»",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 164,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1119,
+        "text": "Puis, lorsqu'ils oublièrent ce qu'on leur avait rappelé, Nous sauvâmes ceux qui (leur) avaient interdit le mal et saisîmes par un châtiment rigoureux les injustes pour leurs actes pervers.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 165,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1120,
+        "text": "Puis, lorsqu'ils refusèrent (par orgueil) d'abandonner ce qui leur avait été interdit, Nous leur dîmes: «Soyez des singes abjects».",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 166,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1121,
+        "text": "Et lorsque ton Seigneur annonça qu'Il enverra certes contre eux quelqu'un qui leur imposera le pire châtiment jusqu'au Jour de la Résurrection. En vérité ton Seigneur est prompt à punir mais Il est aussi Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 167,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1122,
+        "text": "Et Nous les avons répartis en communautés sur la terre. Il y a parmi eux des gens de bien, mais il y en a qui le sont moins. Nous les avons éprouvés par des biens et par des maux, peut-être reviendraient-ils (au droit chemin).",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 168,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1123,
+        "text": "Puis les suivirent des successeurs qui héritèrent le Livre, mais qui préférèrent ce qu'offre la vie d'ici-bas en disant: «Nous aurons le pardon.» Et si des choses semblables s'offrent à eux, ils les acceptent. N'avait-on pas pris d'eux l'engagement du Livre, qu'ils ne diraient sur Allah que la vérité? Ils avaient pourtant étudié ce qui s'y trouve. Et l'ultime demeure est meilleure pour ceux qui pratiquent la piété, - Ne comprendrez-vous donc pas? -",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 169,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1124,
+        "text": "Et ceux qui se conforment au Livre et accomplissent laSalât, [en vérité], Nous ne laissons pas perdre la récompense de ceux qui s'amendent.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 170,
+        "juz": 9,
+        "manzil": 2,
+        "page": 172,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 262,
+    "ayahs": [
+      {
+        "number": 1803,
+        "text": "Alif, Lâm, Râ. Voici les versets du Livre et d'une Lecture explicite.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 1,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1804,
+        "text": "[Le Jour du Jugement Dernier] les mécréants voudraient avoir été Musulmans [soumis].",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 2,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1805,
+        "text": "Laisse-les manger, jouir (un temps), et être distraits par l'espoir; car bientôt ils sauront!",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 3,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1806,
+        "text": "Or Nous ne détruisons aucune cité sans qu'elle n'ait eu [un terme fixé en] une Ecriture connue.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 4,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1807,
+        "text": "Nulle communauté ne devance son terme, ni ne le retarde.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 5,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1808,
+        "text": "Et ils (les mecquois) disent: «O toi sur qui on a fait descendre le Coran, tu es certainement fou!",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 6,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1809,
+        "text": "Pourquoi ne nous es-tu pas venu avec les Anges, si tu es du nombre des véridiques?»",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 7,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1810,
+        "text": "Nous ne faisons descendre les Anges qu'avec la vérité; et alors, il ne leur sera pas accordé de répit [à ces impies].",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 8,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1811,
+        "text": "En vérité c'est Nous qui avons fait descendre le Coran, et c'est Nous qui en sommes gardien.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 9,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1812,
+        "text": "Et nous avons certes envoyé, avant toi, [des Messagers] parmi les peuples des Anciens.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 10,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1813,
+        "text": "Et pas un Messager ne leur est venu sans qu'ils s'en soient moqués.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 11,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1814,
+        "text": "C'est ainsi que Nous faisons pénétrer (la mécréance) dans les cœurs des coupables.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 12,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1815,
+        "text": "Ils ne croiront pas en lui [le Messager ou le Coran] bien que se soit accompli le sort traditionnel des anciens.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 13,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1816,
+        "text": "Et même si Nous ouvrions pour eux une porte du ciel, et qu'ils pussent y monter,",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 14,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1817,
+        "text": "ils diraient: «Vraiment nos yeux sont voilés. Mais plutôt, nous sommes des gens ensorcelés».",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 15,
+        "juz": 14,
+        "manzil": 3,
+        "page": 262,
+        "ruku": 218,
+        "hizbQuarter": 105,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "15": {
+        "number": 15,
+        "name": "سُورَةُ الحِجۡرِ",
+        "englishName": "Al-Hijr",
+        "englishNameTranslation": "The Rock",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 99
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 512,
+    "ayahs": [
+      {
+        "number": 4593,
+        "text": "Ceux qui te prêtent serment d'allégeance ne font que prêter serment à Allah: la main d'Allah est au-dessus de leurs mains. Quiconque viole le serment ne le viole qu'à son propre détriment; et quiconque remplit son engagement envers Allah, Il lui apportera bientôt une énorme récompense.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 10,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4594,
+        "text": "Ceux des Bédouins qui ont été laissés en arrière te diront: «Nos biens et nos familles nous ont retenus: implore donc pour nous le pardon». Ils disent avec leurs langues ce qui n'est pas dans leurs cœurs. Dis: «Qui donc peut quelque chose pour vous auprès d'Allah s'Il veut vous faire du mal ou s'Il veut vous faire du bien? Mais Allah est Parfaitement Connaisseur de ce que vous œuvrez.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 11,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4595,
+        "text": "Vous pensiez plutôt que le Messager et les croyants ne retourneraient jamais plus à leur famille. Et cela vous a été embelli dans vos cœurs; et vous avez eu de mauvaises pensées. Et vous fûtes des gens perdus».",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4596,
+        "text": "Et quiconque ne croit pas en Allah et en Son messager... alors, pour les mécréants, Nous avons préparé une fournaise ardente.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4597,
+        "text": "A Allah appartient la souveraineté des cieux et de la terre. Il pardonne à qui Il veut et châtie qui Il veut. Allah demeure cependant, Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4598,
+        "text": "Ceux qui restèrent en arrière diront, quand vous vous dirigez vers le butin pour vous en emparer; «Laissez-nous vous suivre». Ils voudraient changer la parole d'Allah. Dis: «Jamais vous ne nous suivrez: ainsi Allah a déjà annoncé». Mais ils diront: «Vous êtes plutôt envieux à notre égard». Mais ils ne comprenaient en réalité que peu.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "48": {
+        "number": 48,
+        "name": "سُورَةُ الفَتۡحِ",
+        "englishName": "Al-Fath",
+        "englishNameTranslation": "The Victory",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 199,
+    "ayahs": [
+      {
+        "number": 1308,
+        "text": "O Prophète, lutte contre les mécréants et les hypocrites, et sois rude avec eux; l'Enfer sera leur refuge, et quelle mauvaise destination!",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 73,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1309,
+        "text": "Ils jurent par Allah qu'ils n'ont pas dit (ce qu'ils ont proféré), alors qu'en vérité ils ont dit la parole de la mécréance et ils ont rejeté la foi après avoir été musulmans. Ils ont projeté ce qu'ils n'ont pu accomplir. Mais ils n'ont pas de reproche à faire si ce n'est qu'Allah - ainsi que Son messager - les a enrichis par Sa grâce. S'ils se repentaient, ce serait mieux pour eux. Et s'ils tournent le dos, Allah les châtiera d'un douloureux châtiment, ici-bas et dans l'au-delà; et ils n'auront sur terre ni allié ni secoureur.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 74,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1310,
+        "text": "Et parmi eux il en est qui avaient pris l'engagement envers Allah: «S'Il nous donne de Sa grâce, nous payerons, certes, la Zakât, et serons du nombre des gens de bien».",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 75,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 80,
+        "sajda": false
+      },
+      {
+        "number": 1311,
+        "text": "Mais, lorsqu'Il leur donna de Sa grâce, ils s'en montrèrent avares et tournèrent le dos en faisant volte-face.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 76,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 80,
+        "sajda": false
+      },
+      {
+        "number": 1312,
+        "text": "Il a donc suscité l'hypocrisie dans leurs cœurs, et cela jusqu'au jour où ils Le rencontreront, pour avoir violé ce qu'ils avaient promis à Allah et pour avoir menti.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 77,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 80,
+        "sajda": false
+      },
+      {
+        "number": 1313,
+        "text": "Ne savent-ils pas qu'Allah connaît leur secret et leurs conversations confidentielles et qu'Allah connaît parfaitement les (choses) inconnaissables.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 78,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 80,
+        "sajda": false
+      },
+      {
+        "number": 1314,
+        "text": "Ceux-là qui dirigent leurs calomnies contre les croyants qui font des aumônes volontaires et contre ceux qui ne trouvent que leurs faibles moyens (à offrir), et ils se moquent alors d'eux. Qu'Allah les raille. Et ils auront un châtiment douloureux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 79,
+        "juz": 10,
+        "manzil": 2,
+        "page": 199,
+        "ruku": 165,
+        "hizbQuarter": 80,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

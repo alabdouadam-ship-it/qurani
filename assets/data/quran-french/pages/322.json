@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 322,
+    "ayahs": [
+      {
+        "number": 2484,
+        "text": "[L'échéance] du règlement de leur compte approche pour les hommes, alors que dans leur insouciance ils s'en détournent.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 1,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2485,
+        "text": "Aucun rappel [de révélation] récente ne leur vient de leur Seigneur, sans qu'ils ne l'entendent en s'amusant,",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 2,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2486,
+        "text": "leurs cœurs distraits; et les injustes tiennent des conversations secrètes et disent: «Ce n'est là qu'un être humain semblable à vous? Allez-vous donc vous adonner à la magie alors que vous voyez clair?»",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 3,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2487,
+        "text": "Il a répondu: «Mon Seigneur sait tout ce qui se dit au ciel et sur la terre; et Il est l'Audient, l'Omniscient».",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 4,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2488,
+        "text": "Mais ils dirent: «Voilà plutôt un amas de rêves! Ou bien Il l'a inventé. Ou, c'est plutôt un poète. Qu'il nous apporte donc un signe [identique] à celui dont furent chargés les premiers envoyés».",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 5,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2489,
+        "text": "Pas une seule cité parmi celles que Nous avons fait périr avant eux n'avait cru [à la vue des miracles]. Ceux-ci croiront-ils donc?",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 6,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2490,
+        "text": "Nous n'avons envoyé avant toi que des hommes à qui Nous faisions des révélations. Demandez donc aux érudits du Livre, si vous ne savez pas.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 7,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2491,
+        "text": "Et Nous n'en n'avons pas fait des corps qui ne consommaient pas de nourriture. Et ils n'étaient pas éternels.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 8,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2492,
+        "text": "Puis Nous réalisâmes la promesse (qui leur avait été faite). Nous les sauvâmes avec ceux que Nous voulûmes [sauver]. Et Nous fîmes périr les outranciers.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 9,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2493,
+        "text": "Nous avons assurément fait descendre vers vous un livre où se trouve votre rappel [ou votre renom]. Ne comprenez-vous donc pas?",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 10,
+        "juz": 17,
+        "manzil": 4,
+        "page": 322,
+        "ruku": 278,
+        "hizbQuarter": 129,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "21": {
+        "number": 21,
+        "name": "سُورَةُ الأَنبِيَاءِ",
+        "englishName": "Al-Anbiyaa",
+        "englishNameTranslation": "The Prophets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 112
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

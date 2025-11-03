@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 406,
+    "ayahs": [
+      {
+        "number": 3425,
+        "text": "Those who did not believe and rejected Our signs and the meeting in the Hereafter, will be given over to punishment.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 16,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 350,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3426,
+        "text": "So extol God when the evening comes and the day dawns,",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 17,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 350,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3427,
+        "text": "For His is the praise in the heavens and the earth, -- and at nightfall and the time of noon.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 18,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 350,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3428,
+        "text": "He brings the living from the dead, the dead from the living, and quickens the earth after it had died. So will you be brought forth (from the dead).",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 19,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 350,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3429,
+        "text": "Among His signs is that He created you from the earth, and you are now human beings dispersed everywhere.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 20,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3430,
+        "text": "Another of His signs is that He created mates of your own kind of yourselves so that you may get peace of mind from them, and has put love and compassion between you. Verily there are signs in this for those who reflect.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 21,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3431,
+        "text": "Among other signs of His is the creation of the heavens and the earth, and the variety of your tongues and complexions. Surely there are signs in this for those who understand.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 22,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3432,
+        "text": "Another of His signs is the night, a time for you to sleep, and the day to seek His bounty. Verily there are signs in this for those who pay heed.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 23,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3433,
+        "text": "Another of His signs is the lightning He shows to fill you both with dread and hope, and the water He sends down from the sky which reawakens the earth that was dead. There are indeed signs in this for those who have sense.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 24,
+        "juz": 21,
+        "manzil": 5,
+        "page": 406,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "30": {
+        "number": 30,
+        "name": "سُورَةُ الرُّومِ",
+        "englishName": "Ar-Room",
+        "englishNameTranslation": "The Romans",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

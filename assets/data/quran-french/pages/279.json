@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 279,
+    "ayahs": [
+      {
+        "number": 2004,
+        "text": "Et Nous savons parfaitement qu'ils disent: «Ce n'est qu'un être humain qui lui enseigne (le Coran)». Or, la langue de celui auquel ils font allusion est étrangère [non arabe], et celle-ci est une langue arabe bien claire.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 103,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2005,
+        "text": "Ceux qui ne croient pas aux versets d'Allah, Allah ne les guide pas. Et ils ont un châtiment douloureux.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 104,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2006,
+        "text": "Seuls forgent le mensonge ceux qui ne croient pas aux versets d'Allah; et tels sont les menteurs.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 105,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2007,
+        "text": "Quiconque a renié Allah après avoir cru... - sauf celui qui y a été contraint alors que son cœur demeure plein de la sérénité de la foi - mais ceux qui ouvrent délibérément leur cœur à la mécréance, ceux-là ont sur eux une colère d'Allah et ils ont un châtiment terrible.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 106,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2008,
+        "text": "Il en est ainsi, parce qu'ils ont aimé la vie présente plus que l'au-delà. Et Allah, vraiment, ne guide pas les gens mécréants.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 107,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2009,
+        "text": "Voilà ceux dont Allah a scellé les cœurs, l'ouïe, et les yeux. Ce sont eux les insouciants.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 108,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2010,
+        "text": "Et nul doute que dans l'au-delà, ils seront les perdants.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 109,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2011,
+        "text": "Quant à ceux qui ont émigré après avoir subi des épreuves, puis ont lutté et ont enduré, ton Seigneur après cela, est certes Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 110,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 309,
+    "ayahs": [
+      {
+        "number": 2302,
+        "text": "ونادينا موسى من ناحية جبل طور \"سيناء\" اليمنى من موسى، وقرَّبناه فشرَّفناه بمناجاتنا له. وفي هذا إثبات صفة الكلام لله - تعالى - كما يليق بجلاله وكماله.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 52,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2303,
+        "text": "ووهبنا لموسى من رحمتنا أخاه هارون نبيًا يؤيده ويؤازره.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 53,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2304,
+        "text": "واذكر - أيها الرسول - في هذا القرآن خبر إسماعيل عليه السلام، إنه كان صادقًا في وعده فلم يَعِد شيئًا إلا وفَّى به، وكان رسولا نبيًا.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 54,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2305,
+        "text": "وكان يأمر أهله بإقام الصلاة وإيتاء الزكاة، وكان عند ربه عز وجل مرضيًا عنه.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 55,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2306,
+        "text": "واذكر - أيها الرسول - في هذا القرآن خبر إدريس عليه السلام، إنه كان عظيم الصدق في قوله وعمله، نبيًا يوحى إليه.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 56,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2307,
+        "text": "ورفَعْنا ذِكْره في العالمين، ومنزلته بين المقربين، فكان عالي الذكر، عالي المنزلة.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 57,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2308,
+        "text": "هؤلاء الذين قصصتُ عليك خبرهم أيها الرسول، هم الذين أنعم الله عليهم بفضله وتوفيقه، فجعلهم أنبياء من ذرية آدم، ومِن ذرية مَن حملنا مع نوح في السفينة، ومن ذرية إبراهيم، ومن ذرية يعقوب، وممَّن هدينا للإيمان واصطفينا للرسالة والنبُوَّة، إذا تتلى عليهم آيات الرحمن المتضمنة لتوحيده وحججه خرُّوا ساجدين لله خضوعًا، واستكانة، وبكَوْا من خشيته سبحانه وتعالى.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 58,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": {
+          "id": 5,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2309,
+        "text": "فأتى مِن بعد هؤلاء المنعَم عليهم أتباع سَوْء تركوا الصلاة كلها، أو فوتوا وقتها، أو تركوا أركانها وواجباتها، واتبعوا ما يوافق شهواتهم ويلائمها، فسوف يلقون شرًا وضلالا وخيبة في جهنم.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 59,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2310,
+        "text": "لكن مَن تاب منهم مِن ذنبه وآمن بربه وعمل صالحًا تصديقًا لتوبته، فأولئك يقبل الله توبتهم، ويدخلون الجنة مع المؤمنين ولا يُنقَصون شيئًا من أعمالهم الصالحة.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 60,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2311,
+        "text": "جنات خلد وإقامة دائمة، وهي التي وعد الرحمن بها عباده بالغيب فآمَنوا بها ولم يروها، إن وعد الله لعباده بهذه الجنة آتٍ لا محالة.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 61,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2312,
+        "text": "لا يسمع أهل الجنة فيها كلامًا باطلا لكن يسمعون سلاما تحية لهم، ولهم رزقهم فيها من الطعام والشراب دائمًا، كلما شاؤوا بكرة وعشيًا.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 62,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2313,
+        "text": "تلك الجنة الموصوفة بتلك الصفات، هي التي نورثها ونعطيها عبادنا المتقين لنا، بامتثال أوامرنا واجتناب نواهينا.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 63,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2314,
+        "text": "وقل - يا جبريل - لمحمد: وما نتنزل - نحن الملائكة - من السماء إلى الأرض إلا بأمر ربك لنا، له ما بين أيدينا مما يستقبل من أمر الآخرة، وما خلفنا مما مضى من الدنيا، وما بين الدنيا والآخرة، فله الأمر كله في الزمان والمكان، وما كان ربك ناسيًا لشيء من الأشياء.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 64,
+        "juz": 16,
+        "manzil": 4,
+        "page": 309,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

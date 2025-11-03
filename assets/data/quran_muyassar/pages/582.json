@@ -1,0 +1,598 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 582,
+    "ayahs": [
+      {
+        "number": 5673,
+        "text": "عن أيِّ شيء يسأل بعض كفار قريش بعضا؟ يتساءلون عن الخبر العظيم الشأن، وهو القرآن العظيم الذي ينبئ عن البعث الذي شك فيه كفار قريش وكذَّبوا به.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5674,
+        "text": "عن أيِّ شيء يسأل بعض كفار قريش بعضا؟ يتساءلون عن الخبر العظيم الشأن، وهو القرآن العظيم الذي ينبئ عن البعث الذي شك فيه كفار قريش وكذَّبوا به.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5675,
+        "text": "عن أيِّ شيء يسأل بعض كفار قريش بعضا؟ يتساءلون عن الخبر العظيم الشأن، وهو القرآن العظيم الذي ينبئ عن البعث الذي شك فيه كفار قريش وكذَّبوا به.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5676,
+        "text": "ما الأمر كما يزعم هؤلاء المشركون، سيعلم هؤلاء المشركون عاقبة تكذيبهم، ويظهر لهم ما الله فاعل بهم يوم القيامة، ثم سيتأكد لهم ذلك، ويتأكد لهم صدق ما جاء به محمد صلى الله عليه وسلم، من القرآن والبعث. وهذا تهديد ووعيد لهم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5677,
+        "text": "ما الأمر كما يزعم هؤلاء المشركون، سيعلم هؤلاء المشركون عاقبة تكذيبهم، ويظهر لهم ما الله فاعل بهم يوم القيامة، ثم سيتأكد لهم ذلك، ويتأكد لهم صدق ما جاء به محمد صلى الله عليه وسلم، من القرآن والبعث. وهذا تهديد ووعيد لهم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5678,
+        "text": "ألم نجعل الأرض ممهدة لكم كالفراش؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5679,
+        "text": "والجبال رواسي؛ كي لا تتحرك بكم الأرض؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5680,
+        "text": "وخلقناكم أصنافا ذكرا وأنثى؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5681,
+        "text": "وجعلنا نومكم راحة لأبدانكم، فيه تهدؤون وتسكنون؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5682,
+        "text": "وجعلنا الليل لباسًا تَلْبَسكم ظلمته وتغشاكم، كما يستر الثوب لابسه؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5683,
+        "text": "وجعلنا النهار معاشا تنتشرون فيه لمعاشكم، وتسعَون فيه لمصالحكم؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5684,
+        "text": "وبنينا فوقكم سبع سموات متينة البناء محكمة الخلق، لا صدوع لها ولا فطور؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5685,
+        "text": "وجعلنا الشمس سراجًا وقَّادًا مضيئًا؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5686,
+        "text": "وأنزلنا من السحب الممطرة ماء منصَبّا بكثرة، لنخرج به حبًا مما يقتات به الناس وحشائش مما تأكله الدَّواب، وبساتين ملتفة بعضها ببعض لتشعب أغصانها؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5687,
+        "text": "وأنزلنا من السحب الممطرة ماء منصَبّا بكثرة، لنخرج به حبًا مما يقتات به الناس وحشائش مما تأكله الدَّواب، وبساتين ملتفة بعضها ببعض لتشعب أغصانها؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5688,
+        "text": "وأنزلنا من السحب الممطرة ماء منصَبّا بكثرة، لنخرج به حبًا مما يقتات به الناس وحشائش مما تأكله الدَّواب، وبساتين ملتفة بعضها ببعض لتشعب أغصانها؟",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5689,
+        "text": "إن يوم الفصل بين الخلق، وهو يوم القيامة، كان وقتًا وميعادًا محددًا للأولين والآخرين، يوم ينفخ المَلَك في \"القرن\" إيذانًا بالبعث فتأتون أممًا، كل أمة مع إمامهم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5690,
+        "text": "إن يوم الفصل بين الخلق، وهو يوم القيامة، كان وقتًا وميعادًا محددًا للأولين والآخرين، يوم ينفخ المَلَك في \"القرن\" إيذانًا بالبعث فتأتون أممًا، كل أمة مع إمامهم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5691,
+        "text": "وفُتحت السماء، فكانت ذات أبواب كثيرة لنزول الملائكة.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5692,
+        "text": "ونسفت الجبال بعد ثبوتها، فكانت كالسراب.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5693,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5694,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5695,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5696,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5697,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5698,
+        "text": "إن جهنم كانت يومئذ ترصد أهل الكفر الذين أُعِدَّت لهم، للكافرين مرجعًا، ماكثين فيها دهورًا متعاقبة لا تنقطع، لا يَطْعَمون فيها ما يُبْرد حرَّ السعير عنهم، ولا شرابًا يرويهم، إلا ماءً حارًا، وصديد أهل النار، يجازَون بذلك جزاء عادلا موافقًا لأعمالهم التي كانوا يعملونها في الدنيا.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5699,
+        "text": "إنهم كانوا لا يخافون يوم الحساب فلم يعملوا له، وكذَّبوا بما جاءتهم به الرسل تكذيبا، وكلَّ شيء علمناه وكتبناه في اللوح المحفوظ، فذوقوا -أيها الكافرون- جزاء أعمالكم، فلن نزيدكم إلا عذابًا فوق عذابكم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5700,
+        "text": "إنهم كانوا لا يخافون يوم الحساب فلم يعملوا له، وكذَّبوا بما جاءتهم به الرسل تكذيبا، وكلَّ شيء علمناه وكتبناه في اللوح المحفوظ، فذوقوا -أيها الكافرون- جزاء أعمالكم، فلن نزيدكم إلا عذابًا فوق عذابكم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5701,
+        "text": "إنهم كانوا لا يخافون يوم الحساب فلم يعملوا له، وكذَّبوا بما جاءتهم به الرسل تكذيبا، وكلَّ شيء علمناه وكتبناه في اللوح المحفوظ، فذوقوا -أيها الكافرون- جزاء أعمالكم، فلن نزيدكم إلا عذابًا فوق عذابكم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5702,
+        "text": "إنهم كانوا لا يخافون يوم الحساب فلم يعملوا له، وكذَّبوا بما جاءتهم به الرسل تكذيبا، وكلَّ شيء علمناه وكتبناه في اللوح المحفوظ، فذوقوا -أيها الكافرون- جزاء أعمالكم، فلن نزيدكم إلا عذابًا فوق عذابكم.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "78": {
+        "number": 78,
+        "name": "سُورَةُ النَّبَإِ",
+        "englishName": "An-Naba",
+        "englishNameTranslation": "The Announcement",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 40
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

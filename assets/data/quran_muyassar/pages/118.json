@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 118,
+    "ayahs": [
+      {
+        "number": 727,
+        "text": "وإذا أذَّن مؤذنكم -أيها المؤمنون- بالصلاة سخر اليهود والنصارى والمشركون واستهزؤوا من دعوتكم إليها؛ وذلك بسبب جهلهم بربهم، وأنهم لا يعقلون حقيقة العبادة.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 58,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 728,
+        "text": "قل -أيها الرسول- لهؤلاء المستهزئين من أهل الكتاب: ما تَجِدُونه مطعنًا أو عيبًا هو محمدة لنا: من إيماننا بالله وكتبه المنزلة علينا، وعلى من كان قبلنا، وإيماننا بأن أكثركم خارجون عن الطريق المستقيم!",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 59,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 729,
+        "text": "قل -أيها النبي- للمؤمنين: هل أخبركم بمن يُجازَى يوم القيامة جزاءً أشدَّ مِن جزاء هؤلاء الفاسقين؟ إنهم أسلافهم الذين طردهم الله من رحمته وغَضِب عليهم، ومَسَخَ خَلْقهم، فجعل منهم القردة والخنازير، بعصيانهم وافترائهم وتكبرهم، كما كان منهم عُبَّاد الطاغوت (وهو كل ما عُبِد من دون الله وهو راضٍ)، لقد ساء مكانهم في الآخرة، وضلَّ سَعْيُهم في الدنيا عن الطريق الصحيح.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 60,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 730,
+        "text": "وإذا جاءكم -أيها المؤمنون- منافقو اليهود، قالوا: آمنَّا، وهم مقيمون على كفرهم، قد دخلوا عليكم بكفرهم الذي يعتقدونه بقلوبهم، ثم خرجوا وهم مصرُّون عليه، والله أعلم بسرائرهم، وإن أظهروا خلاف ذلك.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 61,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 731,
+        "text": "وترى -أيها الرسول- كثيرًا من اليهود يبادرون إلى المعاصي من قول الكذب والزور، والاعتداء على أحكام الله، وأكْل أموال الناس بالباطل، لقد ساء عملهم واعتداؤهم.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 62,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 732,
+        "text": "هلا ينهى هؤلاء الذين يسارعون في الإثم والعدوان أئمتُهم وعلماؤهم، عن قول الكذب والزور، وأكل أموال الناس بالباطل، لقد ساء صنيعهم حين تركوا النهي عن المنكر.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 63,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 733,
+        "text": "يُطلع الله نَبِيَّه على شيء من مآثم اليهود -وكان مما يُسرُّونه فيما بينهم- أنهم قالوا: يد الله محبوسة عن فعل الخيرات، بَخِلَ علينا بالرزق والتوسعة، وذلك حين لحقهم جَدْب وقحط. غُلَّتْ أيديهم، أي: حبست أيديهم هم عن فِعْلِ الخيرات، وطردهم الله من رحمته بسبب قولهم. وليس الأمر كما يفترونه على ربهم، بل يداه مبسوطتان لا حَجْرَ عليه، ولا مانع يمنعه من الإنفاق، فإنه الجواد الكريم، ينفق على مقتضى الحكمة وما فيه مصلحة العباد. وفي الآية إثبات لصفة اليدين لله سبحانه وتعالى كما يليق به من غير تشبيه ولا تكييف. لكنهم سوف يزدادون طغيانًا وكفرًا بسبب حقدهم وحسدهم؛ لأن الله قد اصطفاك بالرسالة. ويخبر تعالى أن طوائف اليهود سيظلون إلى يوم القيامة يعادي بعضهم بعضًا، وينفر بعضهم من بعض، كلما تآمروا على الكيد للمسلمين بإثارة الفتن وإشعال نار الحرب ردَّ الله كيدهم، وفرَّق شملهم، ولا يزال اليهود يعملون بمعاصي الله مما ينشأ عنها الفساد والاضطراب في الأرض. والله تعالى لا يحب المفسدين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 64,
+        "juz": 6,
+        "manzil": 2,
+        "page": 118,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

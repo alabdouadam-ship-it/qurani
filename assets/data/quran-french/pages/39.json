@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 39,
+    "ayahs": [
+      {
+        "number": 245,
+        "text": "Soyez assidus aux Salâts et surtout la Salât médiane; et tenez-vous debout devant Allah, avec humilité.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 238,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 246,
+        "text": "Mais si vous craignez (un grand danger), alors priez en marchant ou sur vos montures. Puis quand vous êtes en sécurité, invoquez Allah comme Il vous a enseigné ce que vous ne saviez pas.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 239,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 247,
+        "text": "Ceux d'entre vous que la mort frappe et qui laissent des épouses, doivent laisser un testament en faveur de leurs épouses pourvoyant à un an d'entretien sans les expulser de chez elles. Si ce sont elles qui partent, alors on ne vous reprochera pas ce qu'elles font de convenable pour elles-mêmes. Allah est Puissant et Sage.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 240,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 248,
+        "text": "Les divorcées ont droit à la jouissance d'une allocation convenable, [constituant] un devoir pour les pieux.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 241,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 249,
+        "text": "C'est ainsi qu'Allah vous explique Ses versets, afin que vous raisonniez!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 242,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 250,
+        "text": "N'as-tu pas vu ceux qui sortirent de leurs demeures, - il y en avait des milliers -, par crainte de la mort? Puis Allah leur dit: «Mourez». Après quoi Il les rendit à la vie. Certes, Allah est Détenteur de la Faveur, envers les gens; mais la plupart des gens ne sont pas reconnaissants.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 243,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 33,
+        "hizbQuarter": 16,
+        "sajda": false
+      },
+      {
+        "number": 251,
+        "text": "Et combattez dans le sentier d'Allah. Et sachez qu'Allah est Audient et Omniscient.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 244,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 33,
+        "hizbQuarter": 16,
+        "sajda": false
+      },
+      {
+        "number": 252,
+        "text": "Quiconque prête à Allah de bonne grâce, Il le lui rendra multiplié plusieurs fois. Allah restreint ou étend (Ses faveurs.) Et c'est à Lui que vous retournerez.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 245,
+        "juz": 2,
+        "manzil": 1,
+        "page": 39,
+        "ruku": 33,
+        "hizbQuarter": 16,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

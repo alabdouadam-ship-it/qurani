@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 197,
+    "ayahs": [
+      {
+        "number": 1297,
+        "text": "They swear by God to please you; but if they are believers it would have been worthier to have pleased God and His Apostle.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 62,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1298,
+        "text": "Have they not realised that anyone who opposes God and His Prophet, will abide in Hell for ever? And that is the worst disgrace.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 63,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1299,
+        "text": "The hypocrites fear lest a Surah is revealed concerning them, exposing what is in their hearts. Say to them: \"Mock as much as you like; God will surely expose what you dread.\"",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 64,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1300,
+        "text": "But if you ask them, they will say: \"We were only gossiping and jesting.\" You ask them: \"Were you jesting with God, His revelations and His messengers?\"",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 65,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1301,
+        "text": "Do not make excuses: You turned unbelievers after having come to faith. If We pardon a section of you (for being frivolous), We shall punish the other for being guilty (of deliberate sin).",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 66,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1302,
+        "text": "The hypocrites (are the same) whether men or women, the one of them being of the other. They encourage what is bad and dissuade from the good, and tighten their purses (when it comes to spending in the way of God). Of God they are oblivious; so He is oblivious of them. The hypocrites are indeed transgressors.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 67,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1303,
+        "text": "God has reserved for hypocrites, whether men or women, and for unbelievers, the fire of Hell, where they will abide for ever. This is sufficient for them: They have God's condemnation and lasting torment,",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 68,
+        "juz": 10,
+        "manzil": 2,
+        "page": 197,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

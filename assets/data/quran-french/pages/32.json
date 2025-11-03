@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 32,
+    "ayahs": [
+      {
+        "number": 210,
+        "text": "Et invoquez Allah pendant un nombre de jours déterminés. Ensuite, il n'y a pas de péché, pour qui se comporte en piété, à partir au bout de deux jours, à s'attarder non plus. Et craignez Allah. Et sachez que c'est vers Lui que vous serez rassemblés.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 203,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 211,
+        "text": "Il y a parmi les gens celui dont la parole sur la vie présente te plaît, et qui prend Allah à témoin de ce qu'il a dans le cœur, tandis que c'est le plus acharné disputeur.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 204,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 212,
+        "text": "Dès qu'il tourne le dos, il parcourt la terre pour y semer le désordre et saccager culture et bétail. Et Allah n'aime pas le désordre!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 205,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 213,
+        "text": "Et quand on lui dit: «Redoute Allah», l'orgueil criminel s'empare de lui. L'Enfer lui suffira, et quel mauvais lit, certes!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 206,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 214,
+        "text": "Et il y a parmi les gens celui qui se sacrifie pour la recherche de l'agrément d'Allah. Et Allah est Compatissant envers Ses serviteurs.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 207,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 215,
+        "text": "O les croyants! Entrez en plein dans l'Islam, et ne suivez point les pas du diable, car il est certes pour vous un ennemi déclaré.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 208,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 216,
+        "text": "Puis, si vous bronchez, après que les preuves vous soient venues, sachez alors qu'Allah est Puissant et Sage.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 209,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 217,
+        "text": "Qu'attendent-ils sinon qu'Allah leur vienne à l'ombre des nuées de même que les Anges et que leur sort soit réglé? Et c'est à Allah que toute chose est ramenée.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 210,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

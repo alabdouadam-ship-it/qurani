@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 453,
+    "ayahs": [
+      {
+        "number": 3971,
+        "text": "Sâd. Par le Coran, au renom glorieux (dikr)!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 1,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3972,
+        "text": "Ceux qui ont mécru sont plutôt dans l'orgueil et le schisme!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 2,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3973,
+        "text": "Que de générations avant eux avons-Nous fait périr, qui ont crié, hélas, quand il n'était plus temps d'échapper?",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 3,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3974,
+        "text": "Et ils (les Mecquois) s'étonnèrent qu'un avertisseur parmi eux leur soit venu, et les infidèles disent: «C'est un magicien et un grand menteur,",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 4,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3975,
+        "text": "Réduira-t-il les divinités à un Seul Dieu? Voilà une chose vraiment étonnante».",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 5,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3976,
+        "text": "Et leurs notables partirent en disant: «Allez-vous en, et restez constants à vos dieux: c'est là vraiment une chose souhaitable.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 6,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3977,
+        "text": "Nous n'avons pas entendu cela dans la dernière religion (le Christianisme); ce n'est en vérité que pure invention!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 7,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3978,
+        "text": "Quoi! C'est sur lui, parmi nous, qu'on aurait fait descendre le Rappel [le Coran]?» Plutôt ils sont dans le doute au sujet de Mon message. Ou plutôt ils n'ont pas encore goûté à Mon châtiment!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 8,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3979,
+        "text": "Ou bien détiennent-ils les trésors de la miséricorde de ton Seigneur, le Puissant, le Dispensateur par excellence.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 9,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3980,
+        "text": "Ou bien ont-ils le royaume des cieux et de la terre et de ce qui existe entre eux? Eh bien, qu'ils y montent par n'importe quel moyen!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 10,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3981,
+        "text": "Une armée de coalisés qui, ici-même, sera mise en déroute!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 11,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3982,
+        "text": "Avant eux, le peuple de Noé, les Aad et Pharaon l'homme aux pals (ou aux Pyramides),",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 12,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3983,
+        "text": "et les Tamûd, le peuple de Lot, et les gens d'Al-Aykah, (ont tous démenti leurs Messagers). Voilà les coalisés.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 13,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3984,
+        "text": "Il n'en est aucun qui n'ait traité les Messagers de menteurs. Et bien, Ma punition s'est avérée contre eux!",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 14,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3985,
+        "text": "Ceux-ci n'attendant qu'un seul Cri, sans répétition.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 15,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 392,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3986,
+        "text": "Et ils disent: «Seigneur, hâte-nous notre part avant le jour des Comptes».",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 16,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 392,
+        "hizbQuarter": 181,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "38": {
+        "number": 38,
+        "name": "سُورَةُ صٓ",
+        "englishName": "Saad",
+        "englishNameTranslation": "The letter Saad",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

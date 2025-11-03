@@ -1,0 +1,530 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 578,
+    "ayahs": [
+      {
+        "number": 5571,
+        "text": "Mais vous aimez plutôt [la vie] éphémère,",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5572,
+        "text": "et vous délaissez l'au-delà.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5573,
+        "text": "Ce jour-là, il y aura des visages resplendissants",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5574,
+        "text": "qui regarderont leur Seigneur;",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5575,
+        "text": "et il y aura ce jour-là, des visages assombris,",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5576,
+        "text": "qui s'attendent à subir une catastrophe.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5577,
+        "text": "Mais non! Quand [l'âme] en arrive aux clavicules",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5578,
+        "text": "et qu'on dit: «Qui est exorciseur?»",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5579,
+        "text": "et qu'il [l'agonisant] est convaincu que c'est la séparation (la mort),",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5580,
+        "text": "et que la jambe s'enlace à la jambe,",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5581,
+        "text": "c'est vers ton Seigneur, ce jour-là que tu seras conduit.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5582,
+        "text": "Mais il n'a ni cru, ni fait la Salât;",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5583,
+        "text": "par contre, il a démenti et tourné le dos,",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 32,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5584,
+        "text": "puis il s'en est allé vers sa famille, marchant avec orgueil.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 33,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5585,
+        "text": "«Malheur à toi, malheur!»",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 34,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5586,
+        "text": "Et encore malheur à toi, malheur!",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 35,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5587,
+        "text": "L'homme pense-t-il qu'on le laissera sans obligation à observer?",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 36,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5588,
+        "text": "N'était-il pas une goutte de sperme éjaculé?",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 37,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5589,
+        "text": "Et ensuite une adhérence Puis [Allah] l'a créée et formée harmonieusement;",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 38,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5590,
+        "text": "puis en a fait alors les deux éléments de couple: le mâle et la femelle?",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 39,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5591,
+        "text": "Celui-là [Allah] n'est-Il pas capable de faire revivre les morts?",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 40,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5592,
+        "text": "S'est-il écoulé pour l'homme un laps de temps durant lequel il n'était même pas une chose mentionnable?",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5593,
+        "text": "En effet, Nous avons créé l'homme d'une goutte de sperme mélangé [aux composantes diverses] pour le mettre à l'épreuve. [C'est pourquoi] Nous l'avons fait entendant et voyant.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5594,
+        "text": "Nous l'avons guidé dans le chemin, - qu'il soit reconnaissant ou ingrat -",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5595,
+        "text": "Nous avons préparé pour les infidèles des chaînes, des carcans et une fournaise ardente.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5596,
+        "text": "Les vertueux boiront d'une coupe dont le mélange sera de camphre,",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "75": {
+        "number": 75,
+        "name": "سُورَةُ القِيَامَةِ",
+        "englishName": "Al-Qiyaama",
+        "englishNameTranslation": "The Resurrection",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 40
+      },
+      "76": {
+        "number": 76,
+        "name": "سُورَةُ الإِنسَانِ",
+        "englishName": "Al-Insaan",
+        "englishNameTranslation": "Man",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 31
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

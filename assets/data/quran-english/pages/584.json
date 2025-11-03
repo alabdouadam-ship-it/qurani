@@ -1,0 +1,617 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 584,
+    "ayahs": [
+      {
+        "number": 5728,
+        "text": "When his Lord called to him in Tuwa's holy vale?",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5729,
+        "text": "\"Go to the Pharaoh who has become refractory,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5730,
+        "text": "And say: 'Would you like to grow (in virtue)?",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5731,
+        "text": "Then I will guide you to your Lord that you may come to fear Him.'\"",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5732,
+        "text": "So he showed him the greater sign;",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5733,
+        "text": "But (the Pharaoh) disavowed and disobeyed.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5734,
+        "text": "Then he turned away, deliberating,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5735,
+        "text": "And assembled (his council) and proclaimed,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5736,
+        "text": "Saying: \"I am alone your lord, the highest of them all.\"",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5737,
+        "text": "So God seized him for the punishment of the Hereafter and this world.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5738,
+        "text": "Truly there is a lesson in this for those who fear (the consequences).",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5739,
+        "text": "Are you more difficult to create or the heavens? He built it,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5740,
+        "text": "Raised it high, proportioned it,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5741,
+        "text": "Gave darkness to its night, and brightness to its day;",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5742,
+        "text": "And afterwards spread out the earth.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5743,
+        "text": "He brought out its water and its pastures from it,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 31,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5744,
+        "text": "And stabilized the mountains",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 32,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5745,
+        "text": "As convenience for you and your cattle.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 33,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5746,
+        "text": "When the great calamity comes,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 34,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5747,
+        "text": "The day when man remembers all that he had done,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 35,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5748,
+        "text": "And Hell made visible to him who can see,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 36,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5749,
+        "text": "Then he who had been rebellious",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 37,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5750,
+        "text": "And who preferred the life of the world,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 38,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5751,
+        "text": "Will surely have Hell for his abode.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 39,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5752,
+        "text": "But he who feared standing before his Lord, and restrained his self from vain desires,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 40,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5753,
+        "text": "Will surely have Paradise for abode.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 41,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5754,
+        "text": "They ask you: \"When will the Hour be? When is its time fixed?\"",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 42,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5755,
+        "text": "What do you have to do with explaining it?",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 43,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5756,
+        "text": "The extent of its knowledge goes to your Lord.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 44,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5757,
+        "text": "Your duty is only to warn him who fears it.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 45,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5758,
+        "text": "The day they see it, it will seem they had stayed in the world but only an evening or its turning into dawn.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 46,
+        "juz": 30,
+        "manzil": 7,
+        "page": 584,
+        "ruku": 521,
+        "hizbQuarter": 233,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "79": {
+        "number": 79,
+        "name": "سُورَةُ النَّازِعَاتِ",
+        "englishName": "An-Naazi'aat",
+        "englishNameTranslation": "Those who drag forth",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 46
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

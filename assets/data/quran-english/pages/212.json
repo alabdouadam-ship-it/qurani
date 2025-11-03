@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 212,
+    "ayahs": [
+      {
+        "number": 1390,
+        "text": "For those who do good there is goodness and more, and no blot or disgrace will cover their faces. They are people of Paradise, where they will abide for ever.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 26,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1391,
+        "text": "But those who earn evil shall be punished to an equal degree as their evil, and they will be covered with shame, and will have none to protect them against God: Their faces shall be blackened as though with patches of the night. They are the people of Hell, where they will abide for ever,",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 27,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1392,
+        "text": "The day We shall gather them all together We shall say to the idolaters: \"Take your stand with the compeers you worshipped as the equals of God.\" We shall then create a rift between them, and the compeers will say: \"You did not worship us;",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 28,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1393,
+        "text": "For God is sufficient as witness between us and you we were not aware of your worship.\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 29,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1394,
+        "text": "Then each will see what he had done in the past; and they will turn to God, their true Lord, and all the lies they had fabricated will be of no avail to them.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 30,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1395,
+        "text": "Ask them: \"Who gives you food and sustenance from the skies and the earth? Or, who is the lord of ear and eye? And who brings forth the living from the dead, the dead from the living? And who directs all affairs?\" They will say: \"God.\" So tell them: \"Why do you not fear Him?\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 31,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1396,
+        "text": "Such then is God, your true Lord; and when truth is gone what is left but error? So why do you turn away?",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 32,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1397,
+        "text": "Thus the word of your Lord about those who disobey comes true, that they do not believe.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 33,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

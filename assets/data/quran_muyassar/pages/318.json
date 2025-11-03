@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 318,
+    "ayahs": [
+      {
+        "number": 2436,
+        "text": "فصنع السامري لبني إسرائيل من الذهب عجلا جسدًا يخور خوار البقر، فقال المفتونون به منهم للآخرين: هذا هو إلهكم وإله موسى، نسيه وغَفَل عنه.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 88,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 273,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2437,
+        "text": "أفلا يرى الذين عبدوا العجل أنه لا يكلمهم ابتداء، ولا يردُّ عليهم جوابًا، ولا يقدر على دفع ضرٍّ عنهم، ولا جلب نفع لهم؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 89,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 273,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2438,
+        "text": "ولقد قال هارون لبني إسرائيل من قبل رجوع موسى إليهم: يا قوم إنما اختُبرتم بهذا العجل؛ ليظهر المؤمن منكم من الكافر، وإن ربكم الرحمن لا غيره فاتبعوني فيما أدعوكم إليه من عبادة الله، وأطيعوا أمري في اتباع شرعه.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 90,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2439,
+        "text": "قال عُبَّاد العجل منهم: لن نزال مقيمين على عبادة العجل حتى يرجع إلينا موسى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 91,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2440,
+        "text": "قال موسى لأخيه هارون: أيُّ شيء منعك حين رأيتهم ضلُّوا عن دينهم أن لا تتبعني، فتلحق بي وتتركهم؟ أفعصيت أمري فيما أمرتك به من خلافتي والإصلاح بعدي؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 92,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2441,
+        "text": "قال موسى لأخيه هارون: أيُّ شيء منعك حين رأيتهم ضلُّوا عن دينهم أن لا تتبعني، فتلحق بي وتتركهم؟ أفعصيت أمري فيما أمرتك به من خلافتي والإصلاح بعدي؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 93,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2442,
+        "text": "ثم أخذ موسى بلحية هارون ورأسه يجرُّه إليه، فقال له هارون: يا ابن أمي لا تمسك بلحيتي ولا بشعر رأسي، إني خفتُ - إن تركتهم ولحقت بك - أن تقول: فرَّقت بين بني إسرائيل، ولم تحفظ وصيتي بحسن رعايتهم.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 94,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2443,
+        "text": "قال موسى للسامري: فما شأنك يا سامري؟ وما الذي دعاك إلى ما فعلته؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 95,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2444,
+        "text": "قال السامري: رأيت ما لم يروه - وهو جبريل عليه السلام - على فرس، وقت خروجهم من البحر وغرق فرعون وجنوده، فأخذتُ بكفي ترابا من أثر حافر فرس جبريل، فألقيته على الحليِّ الذي صنعت منه العجل، فكان عجلا جسدًا له خوار؛ بلاء وفتنة، وكذلك زيَّنت لي نفسي الأمَّارة بالسوء هذا الصنيع.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 96,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2445,
+        "text": "قال موسى للسامري: فاذهب فإن لك في حياتك أن تعيش منبوذًا تقول لكل أحد: لا أَمَسُّ ولا أُمَسُّ، وإن لك موعدا لعذابك وعقابك، لن يُخْلفك الله إياه، وسوف تلقاه، وانظر إلى معبودك الذي أقمت على عبادته لنُحرقنَّه بالنار، ثم لنُذرينَّه في اليمِّ تذرية.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 97,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2446,
+        "text": "إنما إلهكم - أيها الناس - هو الله الذي لا معبود بحق إلا هو، وسع علمه كل شيء.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 98,
+        "juz": 16,
+        "manzil": 4,
+        "page": 318,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

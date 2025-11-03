@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 411,
+    "ayahs": [
+      {
+        "number": 3470,
+        "text": "Alif, Lâm, Mîm.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 1,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3471,
+        "text": "Voici les versets du Livre plein de sagesse,",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 2,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3472,
+        "text": "c'est un guide et une miséricorde aux bienfaisants,",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 3,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3473,
+        "text": "qui accomplissent la Salât, acquittent la Zakât et qui croient avec certitude en l'au-delà.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 4,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3474,
+        "text": "Ceux-là sont sur le chemin droit de leur Seigneur et ce sont eux les bienheureux.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 5,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3475,
+        "text": "Et, parmi les hommes, il est [quelqu'un] qui, dénué de science, achète de plaisants discours pour égarer hors du chemin d'Allah et pour le prendre en raillerie. Ceux-là subiront un châtiment avilissant.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 6,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3476,
+        "text": "Et quand on lui récite Nos versets, il tourne le dos avec orgueil, comme s'il ne les avait point entendus, comme s'il y avait un poids dans ses oreilles. Fais-lui donc l'annonce d'un châtiment douloureux.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 7,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3477,
+        "text": "Ceux qui croient et accomplissent les bonnes œuvres auront les Jardins des délices,",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 8,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3478,
+        "text": "pour y demeurer éternellement, - c'est en vérité une promesse d'Allah-. C'est Lui le Puissant, le Sage.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 9,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3479,
+        "text": "Il a créé les cieux sans piliers que vous puissiez voir; et Il a enfoncé des montagnes fermes dans la terre pour l'empêcher de basculer avec vous; et Il y a propagé des animaux de toute espèce. Et du ciel, Nous avons fait descendre une eau, avec laquelle Nous avons fait pousser des plantes productives par couples de toute espèce.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 10,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3480,
+        "text": "«Voilà la création d'Allah. Montrez-Moi donc ce qu'ont créé, ceux qui sont en dehors de Lui?» Mais les injustes sont dans un égarement évident.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 11,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "31": {
+        "number": 31,
+        "name": "سُورَةُ لُقۡمَانَ",
+        "englishName": "Luqman",
+        "englishNameTranslation": "Luqman",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 34
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

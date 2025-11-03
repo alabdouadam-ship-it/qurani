@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 516,
+    "ayahs": [
+      {
+        "number": 4617,
+        "text": "ولو أنهم صبروا حتى تخرج إليهم لكان خيرًا لهم عند الله؛ لأن الله قد أمرهم بتوقيرك، والله غفور لما صدر عنهم جهلا منهم من الذنوب والإخلال بالآداب، رحيم بهم حيث لم يعاجلهم بالعقوبة.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 5,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4618,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشرعه، إن جاءكم فاسق بخبر فتثبَّتوا من خبره قبل تصديقه ونقله حتى تعرفوا صحته؛ خشية أن تصيبوا قومًا برآء بجناية منكم، فتندموا على ذلك.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 6,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4619,
+        "text": "واعلموا أن بين أظهركم رسولَ الله فتأدبوا معه؛ فإنه أعلم منكم بما يصلح لكم، يريد بكم الخير، وقد تريدون لأنفسكم من الشر والمضرة ما لا يوافقكم الرسول عليه، لو يطيعكم في كثير من الأمر مما تختارونه لأدى ذلك إلى مشقتكم، ولكن الله حبب إليكم الإيمان وحسَّنه في قلوبكم، فآمنتم، وكرَّه إليكم الكفرَ بالله والخروجَ عن طاعته، ومعصيتَه، أولئك المتصفون بهذه الصفات هم الراشدون السالكون طريق الحق.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 7,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4620,
+        "text": "وهذا الخير الذي حصل لهم فضل من الله عليهم ونعمة. والله عليم بمن يشكر نعمه، حكيم في تدبير أمور خلقه.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 8,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4621,
+        "text": "وإن طائفتان من أهل الإيمان اقتتلوا فأصلحوا -أيها المؤمنون- بينهما بدعوتهما إلى الاحتكام إلى كتاب الله وسنة رسوله صلى الله عليه وسلم، والرضا بحكمهما، فإن اعتدت إحدى الطائفتين وأبت الإجابة إلى ذلك، فقاتلوها حتى ترجع إلى حكم الله ورسوله، فإن رجعت فأصلحوا بينهما بالإنصاف، واعدلوا في حكمكم بأن لا تتجاوزوا في أحكامكم حكم الله وحكم رسوله، إن الله يحب العادلين في أحكامهم القاضين بين خلقه بالقسط. وفي الآية إثبات صفة المحبة لله على الحقيقة، كما يليق بجلاله سبحانه.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 9,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4622,
+        "text": "إنما المؤمنون إخوة في الدين، فأصلحوا بين أخويكم إذا اقتتلا وخافوا الله في جميع أموركم؛ رجاء أن تُرحموا.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 10,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 450,
+        "hizbQuarter": 206,
+        "sajda": false
+      },
+      {
+        "number": 4623,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشريعته لا يهزأ قوم مؤمنون من قوم مؤمنين؛ عسى أن يكون المهزوء به منهم خيرًا من الهازئين، ولا يهزأ نساء مؤمنات من نساء مؤمنات؛ عسى أن يكون المهزوء به منهنَّ خيرًا من الهازئات، ولا يَعِبْ بعضكم بعضًا، ولا يَدْعُ بعضكم بعضًا بما يكره من الألقاب، بئس الصفة والاسم الفسوق، وهو السخرية واللمز والتنابز بالألقاب، بعد ما دخلتم في الإسلام وعقلتموه، ومن لم يتب من هذه السخرية واللمز والتنابز والفسوق فأولئك هم الذين ظلموا أنفسهم بارتكاب هذه المناهي.",
+        "surah": {
+          "number": 49,
+          "name": "سُورَةُ الحُجُرَاتِ",
+          "englishName": "Al-Hujuraat",
+          "englishNameTranslation": "The Inner Apartments",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 18
+        },
+        "numberInSurah": 11,
+        "juz": 26,
+        "manzil": 6,
+        "page": 516,
+        "ruku": 451,
+        "hizbQuarter": 206,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "49": {
+        "number": 49,
+        "name": "سُورَةُ الحُجُرَاتِ",
+        "englishName": "Al-Hujuraat",
+        "englishNameTranslation": "The Inner Apartments",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 18
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

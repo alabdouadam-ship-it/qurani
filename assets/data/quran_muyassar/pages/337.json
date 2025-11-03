@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 337,
+    "ayahs": [
+      {
+        "number": 2634,
+        "text": "(كان المسلمون في أول أمرهم ممنوعين من قتال الكفار، مأمورين بالصبر على أذاهم، فلما بلغ أذى المشركين مداه وخرج النبي صلى الله عليه وسلم من \"مكة\" مهاجرًا إلى \"المدينة\"، وأصبح للإسلام قوة) أَذِنَ الله للمسلمين في القتال؛ بسبب ما وقع عليهم من الظلم والعدوان، وإن الله تعالى قادر على نصرهم وإذلال عدوِّهم.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 39,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2635,
+        "text": "الذين أُلجئوا إلى الخروج من ديارهم، لا لشيء فعلوه إلا لأنهم أسلموا وقالوا: ربنا الله وحده. ولولا ما شرعه الله من دَفْع الظلم والباطل بالقتال لَهُزِم الحقُّ في كل أمة ولخربت الأرض، وهُدِّمت فيها أماكن العبادة من صوامع الرهبان، وكنائس النصارى، ومعابد اليهود، ومساجد المسلمين التي يصلُّون فيها، ويذكرون اسم الله فيها كثيرًا. ومن اجتهد في نصرة دين الله، فإن الله ناصره على عدوه. إن الله لَقوي لا يغالَب، عزيز لا يرام، قد قهر الخلائق وأخذ بنواصيهم.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 40,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2636,
+        "text": "الذين وعدناهم بنصرنا هم الذين إنْ مكَّنَّاهم في الأرض، واستخلفناهم فيها بإظهارهم على عدوهم، أقاموا الصلاة بأدائها في أوقاتها بحدودها، وأخرجوا زكاة أموالهم إلى أهلها، وأمروا بكل ما أمر الله به مِن حقوقه وحقوق عباده، ونَهَوْا عن كل ما نهى الله عنه ورسوله. ولله وحده مصير الأمور كلها، والعاقبة للتقوى.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 41,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2637,
+        "text": "وإن يكذبك قومك- أيها الرسول- فقد سبقهم في تكذيب رسلهم قوم نوح، وعاد، وثمود، وقوم إبراهيم، وقوم لوط، وأصحاب \"مدين\" الذين كذبوا شعيبًا، وكذَّب فرعون وقومه موسى، فلم أعاجل هذه الأمم بالعقوبة، بل أمهلتها، ثم أخذتُ كلا منهم بالعذاب، فكيف كان إنكاري عليهم كفرهم وتكذيبهم، وتبديل ما كان بهم مِن نعمة بالعذاب والهلاك؟",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 42,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2638,
+        "text": "وإن يكذبك قومك- أيها الرسول- فقد سبقهم في تكذيب رسلهم قوم نوح، وعاد، وثمود، وقوم إبراهيم، وقوم لوط، وأصحاب \"مدين\" الذين كذبوا شعيبًا، وكذَّب فرعون وقومه موسى، فلم أعاجل هذه الأمم بالعقوبة، بل أمهلتها، ثم أخذتُ كلا منهم بالعذاب، فكيف كان إنكاري عليهم كفرهم وتكذيبهم، وتبديل ما كان بهم مِن نعمة بالعذاب والهلاك؟",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 43,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2639,
+        "text": "وإن يكذبك قومك- أيها الرسول- فقد سبقهم في تكذيب رسلهم قوم نوح، وعاد، وثمود، وقوم إبراهيم، وقوم لوط، وأصحاب \"مدين\" الذين كذبوا شعيبًا، وكذَّب فرعون وقومه موسى، فلم أعاجل هذه الأمم بالعقوبة، بل أمهلتها، ثم أخذتُ كلا منهم بالعذاب، فكيف كان إنكاري عليهم كفرهم وتكذيبهم، وتبديل ما كان بهم مِن نعمة بالعذاب والهلاك؟",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 44,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2640,
+        "text": "فكثيرًا من القرى الظالمة بكفرها أهلكنا أهلها، فديارهم مهدَّمة خَلَتْ مِن سكانها، وآبارها لا يُستقى منها، وقصورها العالية المزخرفة لم تدفع عن أهلها سوء العذاب.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 45,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2641,
+        "text": "أفلم يَسِر المكذبون من قريش في الأرض ليشاهدوا آثار المهلكين، فيتفكروا بعقولهم، فيعتبروا، ويسمعوا أخبارهم سماع تدبُّر فيتعظوا؟ فإن العمى ليس عمى البصر، وإنما العمى المُهْلِك هو عمى البصيرة عن إدراك الحق والاعتبار.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 46,
+        "juz": 17,
+        "manzil": 4,
+        "page": 337,
+        "ruku": 290,
+        "hizbQuarter": 135,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

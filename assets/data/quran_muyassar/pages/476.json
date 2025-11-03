@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 476,
+    "ayahs": [
+      {
+        "number": 4211,
+        "text": "ولقد أرسلنا مِن قبلك -أيها الرسول- رسلا كثيرين إلى قومهم يدعونهم، ويصبرون على أذاهم: منهم مَن قصصنا عليك خبرهم، ومنهم مَن لم نقصص عليك، وكلهم مأمورون بتبليغ وحي الله إليهم. وما كان لأحد منهم أن يأتي بآية من الآيات الحسية أو العقلية إلا بإذن الله ومشيئته، فإذا جاء أمر الله بعذاب المكذبين قُضِي بالعدل بين الرسل ومكذبيهم، وخسر هنالك المبطلون؛ لافترائهم على الله الكذب، وعبادتهم غيره.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 78,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 411,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4212,
+        "text": "الله سبحانه هو الذي جعل لكم الأنعام؛ لتنتفعوا بها: من منافع الركوب والأكل وغيرها من أنواع المنافع، ولتبلغوا بالحمولة على بعضها حاجةً في صدوركم من الوصول إلى الأقطار البعيدة، وعلى هذه الأنعام تُحْمَلون في البرية، وعلى الفلك في البحر تُحْمَلون كذلك.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 79,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4213,
+        "text": "الله سبحانه هو الذي جعل لكم الأنعام؛ لتنتفعوا بها: من منافع الركوب والأكل وغيرها من أنواع المنافع، ولتبلغوا بالحمولة على بعضها حاجةً في صدوركم من الوصول إلى الأقطار البعيدة، وعلى هذه الأنعام تُحْمَلون في البرية، وعلى الفلك في البحر تُحْمَلون كذلك.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 80,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4214,
+        "text": "ويريكم الله تعالى دلائله الكثيرة الواضحة الدالة على قدرته وتدبيره في خلقه، فأي آية من آياته تنكرونها، ولا تعترفون بها؟",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 81,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4215,
+        "text": "أفلم يَسِرْ هؤلاء المكذبون في الأرض ويتفكروا في مصارع الأمم المكذبة من قبلهم، كيف كانت عاقبتهم؟ وكانت هذه الأمم السابقة أكثر منهم عددًا وعدة وآثارًا في الأرض من الأبنية والمصانع والغراس وغير ذلك، فما أغنى عنهم ما كانوا يكسبونه حين حلَّ بهم بأس الله.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 82,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4216,
+        "text": "فلما جاءت هؤلاء الأمم المكذبة رسلُها بالدلائل الواضحات، فرحوا جهلا منهم بما عندهم من العلم المناقض لما جاءت به الرسل، وحلَّ بهم من العذاب ما كانوا يستعجلون به رسلَهم على سبيل السخرية والاستهزاء. وفي الآية دليل على أن كل علم يناقض الإسلام، أو يقدح فيه، أو يشكك في صحته، فإنه مذموم ممقوت، ومعتقده ليس من أتباع محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 83,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4217,
+        "text": "فلما رأوا عذابنا أقرُّوا حين لا ينفع الإقرار، وقالوا: آمنا بالله وحده، وكفرنا بما كنا به مشركين في عبادة الله.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 84,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4218,
+        "text": "فلم يك ينفعهم إيمانهم هذا حين رأوا عذابنا؛ وذلك لأنه إيمان قد اضطروا إليه، لا إيمان اختيار ورغبة، سنة الله وطريقته التي سنَّها في الأمم كلها أن لا ينفعها الإيمان إذا رأوا العذاب، وهلك عند مجيء بأس الله الكافرون بربهم، الجاحدون توحيده وطاعته.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 85,
+        "juz": 24,
+        "manzil": 6,
+        "page": 476,
+        "ruku": 412,
+        "hizbQuarter": 190,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

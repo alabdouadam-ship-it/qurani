@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 329,
+    "ayahs": [
+      {
+        "number": 2565,
+        "text": "et parmi les diables il en était qui plongeaient pour lui et faisaient d'autres travaux encore, et Nous les surveillions Nous-mêmes.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 82,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2566,
+        "text": "Et Job, quand il implora son Seigneur: «Le mal m'a touché. Mais Toi, tu es le plus miséricordieux des miséricordieux»!",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 83,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2567,
+        "text": "Nous l'exauçâmes, enlevâmes le mal qu'il avait, lui rendîmes les siens et autant qu'eux avec eux, par miséricorde de Notre part et en tant que rappel aux adorateurs.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 84,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2568,
+        "text": "Et Ismaël, Idris, et Dûl-Kifl! qui étaient tous endurants;",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 85,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2569,
+        "text": "que Nous fîmes entrer en Notre miséricorde car ils étaient vraiment du nombre des gens de bien.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 86,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2570,
+        "text": "Et Dû'n-Nûn (Jonas) quand il partit, irrité. Il pensa que Nous N'allions pas l'éprouver. Puis il fit, dans les ténèbres, l'appel que voici: «Pas de divinité à part Toi! Pureté à Toi! J'ai été vraiment du nombre des injustes».",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 87,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2571,
+        "text": "Nous l'exauçâmes et le sauvâmes de son angoisse. Et c'est ainsi que Nous sauvons les croyants.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 88,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2572,
+        "text": "Et Zacharie, quand il implora son Seigneur: «Ne me laisse pas seul, Seigneur, alors que Tu es le meilleur des héritiers».",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 89,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2573,
+        "text": "Nous l'exauçâmes, lui donnâmes Yahya et guérîmes son épouse. Ils concouraient au bien et Nous invoquaient par amour et par crainte. Et ils étaient humbles devant Nous.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 90,
+        "juz": 17,
+        "manzil": 4,
+        "page": 329,
+        "ruku": 283,
+        "hizbQuarter": 132,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "21": {
+        "number": 21,
+        "name": "سُورَةُ الأَنبِيَاءِ",
+        "englishName": "Al-Anbiyaa",
+        "englishNameTranslation": "The Prophets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 112
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 96,
+    "ayahs": [
+      {
+        "number": 599,
+        "text": "Et implore d'Allah le pardon car Allah est certes Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 106,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 600,
+        "text": "Et ne dispute pas en faveur de ceux qui se trahissent eux-mêmes. Allah, vraiment, n'aime pas le traître et le pécheur.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 107,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 601,
+        "text": "Ils cherchent à se cacher des gens, mais ils ne cherchent pas à se cacher d'Allah. Or, Il est avec eux quand ils tiennent la nuit des paroles qu'Il (Allah) n'agrée pas. Et Allah ne cesse de cerner (par Sa science) ce qu'ils font.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 108,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 602,
+        "text": "Voilà les gens en faveur desquels vous disputez dans la vie présente. Mais qui va disputer pour eux devant Allah au Jour de la Résurrection? Ou bien qui sera leur protecteur?",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 109,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 603,
+        "text": "Quiconque agit mal ou fait du tort à lui-même, puis aussitôt implore d'Allah le pardon, trouvera Allah Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 110,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 604,
+        "text": "Quiconque acquiert un péché, ne l'acquiert que contre lui-même. Et Allah est Omniscient et Sage.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 111,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 605,
+        "text": "Et quiconque acquiert une faute ou un péché puis en accuse un innocent, se rend coupable alors d'une injustice et d'un péché manifeste.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 112,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 606,
+        "text": "Et n'eût été la grâce d'Allah sur toi (Muhammad) et Sa miséricorde, une partie d'entre eux t'aurait bien volontiers égaré. Mais ils n'égarent qu'eux-mêmes, et ne peuvent en rien te nuire. Allah a fait descendre sur toi le Livre et la Sagesse, et t'a enseigné ce que tu ne savais pas. Et la grâce d'Allah sur toi est immense.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 113,
+        "juz": 5,
+        "manzil": 1,
+        "page": 96,
+        "ruku": 78,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

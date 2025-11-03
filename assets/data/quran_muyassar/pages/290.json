@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 290,
+    "ayahs": [
+      {
+        "number": 2105,
+        "text": "ولقد قارب الكفار أن يخرجوك من \"مكة\" بإزعاجهم إيَّاك، ولو أخرجوك منها لم يمكثوا فيها بعدك إلا زمنًا قليلا حتى تحل بهم العقوبة العاجلة.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 76,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2106,
+        "text": "تلك سنة الله تعالى في إهلاك الأمة التي تُخرج رسولها من بينها، ولن تجد -أيها الرسول- لسنتنا تغييرًا، فلا خلف في وعدنا.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 77,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2107,
+        "text": "أقم الصلاة تامة من وقت زوال الشمس عند الظهيرة إلى وقت ظلمة الليل، ويدخل في هذا صلاة الظهر والعصر والمغرب والعشاء، وأقم صلاة الفجر، وأَطِلِ القراءة فيها؛ إن صلاة الفجر تحضرها ملائكة الليل وملائكة النهار.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 78,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2108,
+        "text": "وقم -أيها النبي- من نومك بعض الليل، فاقرأ القرآن في صلاة الليل؛ لتكون صلاة الليل زيادة لك في علو القدر ورفع الدرجات، عسى أن يبعثك الله شافعًا للناس يوم القيامة؛ ليرحمهم الله مما يكونون فيه، وتقوم مقامًا يحمدك فيه الأولون والآخرون.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 79,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2109,
+        "text": "وقل: ربِّ أدخلني فيما هو خير لي مدخل صدق، وأخرجني مما هو شر لي مخرج صدق، واجعل لي مِن لدنك حجة ثابتة، تنصرني بها على جميع مَن خالفني.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 80,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2110,
+        "text": "وقل -أيها الرسول- للمشركين: جاء الإسلام وذهب الشرك، إن الباطل لا بقاء له ولا ثبات، والحق هو الثابت الباقي الذي لا يزول.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 81,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2111,
+        "text": "وننزل من آيات القرآن العظيم ما يشفي القلوب مِنَ الأمراض، كالشك والنفاق والجهالة، وما يشفي الأبدان برُقْيتها به، وما يكون سببًا للفوز برحمة الله بما فيه من الإيمان، ولا يزيد هذا القرآن الكفار عند سماعه إلا كفرًا وضلالا؛ لتكذيبهم به وعدم إيمانهم.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 82,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2112,
+        "text": "وإذا أنعمنا على الإنسان من حيث هو بمال وعافية ونحوهما، تولَّى وتباعد عن طاعة ربه، وإذا أصابته شدة مِن فقر أو مرض كان قنوطًا؛ لأنه لا يثق بفضل الله تعالى، إلا من عصم الله في حالتي سرَّائه وضرَّائه.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 83,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2113,
+        "text": "قل -أيها الرسول- للناس: كل واحد منكم يعمل على ما يليق به من الأحوال، فربكم أعلم بمن هو أهدى طريقًا إلى الحق.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 84,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2114,
+        "text": "ويسألك الكفار عن حقيقة الروح تعنتًا، فأجبهم بأن حقيقة الروح وأحوالها من الأمور التي استأثر الله بعلمها، وما أُعطيتم أنتم وجميع الناس من العلم إلا شيئًا قليلا.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 85,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 249,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2115,
+        "text": "ولئن شئنا مَحْوَ القرآن من قلبك لَقدَرْنا على ذلك، ثم لا تجد لنفسك ناصرًا يمنعنا من فعل ذلك، أو يرد عليك القرآن.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 86,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 249,
+        "hizbQuarter": 116,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 350,
+    "ayahs": [
+      {
+        "number": 2792,
+        "text": "WE HAVE REVEALED this Surah and made it obligatory as We have sent down clear injunctions in it that you may be warned.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 1,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2793,
+        "text": "The adulteress and adulterer should be flogged a hundred lashes each, and no pity for them should deter you from the law of God, if you believe in God and the Last Day; and the punishment should be witnessed by a body of believers.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 2,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2794,
+        "text": "The adulterer can marry no one but an adulteress or his partner (in the act), and the adulteress cannot marry any but an adulterer or her partner (in the act). This is forbidden the believers,",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 3,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2795,
+        "text": "Those who defame chaste women and do not bring four witnesses should be punished with eighty lashes, and their testimony should not be accepted afterwards, for they are profligates,",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 4,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2796,
+        "text": "Except those who repent after this and reform; and God is surely forgiving and kind.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 5,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2797,
+        "text": "Those who accuse their wives and do not have any witnesses except themselves, should swear four times in the name of God, the testimony of each such person being that he is speaking the truth,",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 6,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2798,
+        "text": "And (swear) a fifth time that if he tell a lie the curse of God be on him.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 7,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2799,
+        "text": "The woman's punishment can be averted if she swears four times by God as testimony that her husband is a liar,",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 8,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2800,
+        "text": "Her fifth oath being that the curse of God be on her if her husband should be speaking the truth.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 9,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2801,
+        "text": "(This would not have been possible) if the grace and benevolence of God were not upon you; but God is compassionate and wise.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 10,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

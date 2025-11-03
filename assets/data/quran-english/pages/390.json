@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 390,
+    "ayahs": [
+      {
+        "number": 3288,
+        "text": "But when Moses came to them with Our clear signs they said: \"This is nothing but magic he has contrived, for we have not heard of this from our fathers of old.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 36,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3289,
+        "text": "But Moses said: \"My Lord knows well who has come with guidance from Him, and for whom is the guerdon of Paradise. But surely the wicked will not prosper.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 37,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3290,
+        "text": "The Pharaoh said: \"O nobles, I am not aware of any other lord of yours but myself. So, O Haman, fire some clay (bricks) to build a tower for me that I may mount up (and see) the God of Moses; for I think he is a liar.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 38,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3291,
+        "text": "He and his soldiers had become arrogant in the land for no reason, and did not think that they have to come back to Us in the end.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 39,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3292,
+        "text": "So We seized him and his hordes and threw them into the sea. Behold then how was the end of the wicked!",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 40,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3293,
+        "text": "We made them the leaders of those who call to Hell; and on the Day of Judgement they will not be helped.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 41,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3294,
+        "text": "A curse lies upon them in this world, and on the Day of Resurrection they will be despised.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 42,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3295,
+        "text": "After We had destroyed the earlier generations We gave Moses the Book as evidence for mankind, and a guidance and grace, so that they may remember.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 43,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

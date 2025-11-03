@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 424,
+    "ayahs": [
+      {
+        "number": 3577,
+        "text": "Leur salutation au jour où ils Le rencontreront sera: «Salâm» [paix], et Il leur a préparé une généreuse récompense.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 44,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3578,
+        "text": "O Prophète! Nous t'avons envoyé [pour être] témoin, annonciateur, avertisseur,",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 45,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3579,
+        "text": "appelant (les gens) à Allah, par Sa permission; et comme une lampe éclairante.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 46,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3580,
+        "text": "Et fais aux croyants la bonne annonce qu'ils recevront d'Allah une grande grâce.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 47,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3581,
+        "text": "Et n'obéis pas aux infidèles et aux hypocrites, ne prête pas attention à leur méchanceté et place ta confiance en Allah et Allah suffit comme protecteur.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 48,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3582,
+        "text": "O vous qui croyez! Quand vous vous mariez avec des croyantes et qu'ensuite vous divorcez d'avec elles avant de les avoir touchées, vous ne pouvez leur imposer un délai d'attente. Donnez-leur jouissance [d'un bien] et libérez-les [par un divorce] sans préjudice.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 49,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3583,
+        "text": "O Prophète! Nous t'avons rendu licites tes épouses à qui tu as donné leur mahr (dot), ce que tu as possédé légalement parmi les captives [ou esclaves] qu'Allah t'a destinées, les filles de ton oncle paternel, les filles de tes tantes paternelles, les filles de ton oncle maternel, et les filles de tes tantes maternelles, - celles qui avaient émigré en ta compagnie -, ainsi que toute femme croyante si elle fait don de sa personne au Prophète, pourvu que le Prophète consente à se marier avec elle: c'est là un privilège pour toi, à l'exclusion des autres croyants. Nous savons certes, ce que Nous leur avons imposé au sujet de leurs épouses et des esclaves qu'ils possèdent, afin qu'il n'y eût donc point de blâme contre toi. Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 50,
+        "juz": 22,
+        "manzil": 5,
+        "page": 424,
+        "ruku": 366,
+        "hizbQuarter": 169,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "33": {
+        "number": 33,
+        "name": "سُورَةُ الأَحۡزَابِ",
+        "englishName": "Al-Ahzaab",
+        "englishNameTranslation": "The Clans",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 73
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

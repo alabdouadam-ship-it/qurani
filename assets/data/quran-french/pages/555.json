@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 555,
+    "ayahs": [
+      {
+        "number": 5193,
+        "text": "Et quand on leur dit: «Venez que le Messager d'Allah implore le pardon pour vous», ils détournent leurs têtes, et tu les vois se détourner tandis qu'ils s'enflent d'orgueil.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 5,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5194,
+        "text": "C'est égal, pour eux, que tu implores le pardon pour eux ou que tu ne le fasses pas: Allah ne leur pardonnera jamais, car Allah ne guide pas les gens pervers.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5195,
+        "text": "Ce sont eux qui disent: «Ne dépensez point pour ceux qui sont auprès du Messager d'Allah, afin qu'ils se dispersent». Et c'est à Allah qu'appartiennent les trésors des cieux et de la terre, mais les hypocrites ne comprennent pas.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 7,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5196,
+        "text": "Ils disent: «Si nous retournons à Médine, le plus puissant en fera assurément sortir le plus humble». Or c'est à Allah qu'est la puissance ainsi qu'à Son messager et aux croyants. Mais les hypocrites ne le savent pas.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 8,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5197,
+        "text": "O vous qui avez cru! Que ni vos biens ni vos enfants ne vous distraient du rappel d'Allah. Et quiconque fait cela... alors ceux-là seront les perdants.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 9,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5198,
+        "text": "Et dépensez de ce que Nous vous avons octroyé avant que la mort ne vienne à l'un de vous et qu'il dise alors: «Seigneur! si seulement Tu m'accordais un court délai: je ferais l'aumône et serais parmi les gens de bien».",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 10,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5199,
+        "text": "Allah cependant n'accorde jamais de délai à une âme dont le terme est arrivé. Et Allah est Parfaitement Connaisseur de ce que vous faites.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 11,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "63": {
+        "number": 63,
+        "name": "سُورَةُ المُنَافِقُونَ",
+        "englishName": "Al-Munaafiqoon",
+        "englishNameTranslation": "The Hypocrites",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

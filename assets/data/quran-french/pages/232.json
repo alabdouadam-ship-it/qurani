@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 232,
+    "ayahs": [
+      {
+        "number": 1562,
+        "text": "O mon peuple, que votre répugnance et votre hostilité à mon égard ne vous entraînent pas à encourir les mêmes châtiments qui atteignirent le peuple de Noé, le peuple de Hûd, ou le peuple de Sâlih et (l'exemple du) peuple de Lot n'est pas éloigné de vous.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 89,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1563,
+        "text": "Et implorez le pardon de votre Seigneur et repentez-vous à Lui. Mon Seigneur est vraiment Miséricordieux et plein d'amour».",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 90,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1564,
+        "text": "Ils dirent: «O Chuayb, nous ne comprenons pas grand chose à ce que tu dis; et vraiment nous te considérons comme un faible parmi nous. Si ce n'est ton clan, nous t'aurions certainement lapidé. Et rien ne nous empêche de t'atteindre».",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 91,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1565,
+        "text": "Il dit: «O mon peuple, mon clan est-il à vos yeux plus puissant qu'Allah à qui vous tournez ouvertement le dos? Mon Seigneur embrasse (en Sa science) tout ce que vous œuvrez.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 92,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1566,
+        "text": "O mon peuple, agissez autant que vous voulez. Moi aussi j'agis. Bientôt, vous saurez sur qui tombera un châtiment qui le déshonorera, et qui de nous est l'imposteur. Et attendez (la conséquence de vos actes)! Moi aussi j'attends avec vous».",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 93,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1567,
+        "text": "Lorsque vint Notre ordre, Nous sauvâmes, par une miséricorde de Notre part, Chuayb et ceux qui avaient cru avec lui. Et le Cri terrible saisit les injustes, et ils gisèrent dans leurs demeures,",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 94,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1568,
+        "text": "comme s'ils n'y avaient jamais prospéré. Que les Madyan s'éloignent comme les Thamûd se sont éloignés.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 95,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1569,
+        "text": "Et Nous avions envoyé Moïse, avec Nos miracles et une autorité incontestable,",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 96,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1570,
+        "text": "à Pharaon et ses notables. Mais ils suivirent l'ordre de Pharaon, bien que l'ordre de Pharaon n'avait rien de sensé.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 97,
+        "juz": 12,
+        "manzil": 3,
+        "page": 232,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

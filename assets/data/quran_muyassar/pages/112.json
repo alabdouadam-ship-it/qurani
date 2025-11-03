@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 112,
+    "ayahs": [
+      {
+        "number": 693,
+        "text": "قال قوم موسى له: إنا لن ندخل المدينة أبدًا ما دام الجبارون فيها، فاذهب أنت وربك فقاتلاهم، أما نحن فقاعدون هاهنا ولن نقاتلهم. وهذا إصرارٌ منهم على مخالفة موسى عليه السلام.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 24,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 694,
+        "text": "توجَّه موسى إلى ربه داعيًا: إني لا أقدر إلا على نفسي وأخي، فاحكم بيننا وبين القوم الفاسقين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 25,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 695,
+        "text": "قال الله لنبيه موسى عليه السلام: إن الأرض المقدَّسة محرَّم على هؤلاء اليهود دخولها أربعين سنة، يتيهون في الأرض حائرين، فلا تأسف -يا موسى- على القوم الخارجين عن طاعتي.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 26,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 696,
+        "text": "واقصص -أيها الرسول- على بني إسرائيل خَبَر ابنَيْ آدم قابيل وهابيل، وهو خبرٌ حقٌ: حين قَدَّم كلٌّ منهما قربانًا -وهو ما يُتَقرَّب به إلى الله تعالى - فتقبَّل الله قُربان هابيل؛ لأنه كان تقيًّا، ولم يتقبَّل قُربان قابيل؛ لأنه لم يكن تقيًّا، فحسد قابيلُ أخاه، وقال: لأقتلنَّك، فَردَّ هابيل: إنما يتقبل الله ممن يخشونه.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 27,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 697,
+        "text": "وقال هابيلُ واعظًا أخاه: لَئنْ مَدَدْتَ إليَّ يدكَ لتقتُلني لا تَجِدُ مني مثل فعْلك، وإني أخشى الله ربَّ الخلائق أجمعين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 28,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 698,
+        "text": "إني أريد أن ترجع حاملا إثم قَتْلي، وإثمك الذي عليك قبل ذلك، فتكون من أهل النار وملازميها، وذلك جزاء المعتدين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 29,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 699,
+        "text": "فَزَيَّنت لقابيلَ نفسُه أن يقتل أخاه، فقتله، فأصبح من الخاسرين الذين باعوا آخرتهم بدنياهم.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 30,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 700,
+        "text": "لما قتل قابيلُ أخاه لم يعرف ما يصنع بجسده، فأرسل الله غرابًا يحفر حفرةً في الأرض ليدفن فيها غرابًا مَيِّتًا؛ ليدل قابيل كيف يدفن جُثمان أخيه؟ فتعجَّب قابيل، وقال: أعجزتُ أن أصنع مثل صنيع هذا الغراب فأستُرَ عورة أخي؟ فدَفَنَ قابيل أخاه، فعاقبه الله بالندامة بعد أن رجع بالخسران.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 31,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

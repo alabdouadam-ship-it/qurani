@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 485,
+    "ayahs": [
+      {
+        "number": 4288,
+        "text": "As for those who argue in the matter of God after He has been fully acknowledged, their disputing has no force with their Lord. Upon them is (God's) anger, and the punishment for them will be severe.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 16,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4289,
+        "text": "It is God who has sent down the Book with the truth, and the Balance. How do you know the Hour is not near?",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 17,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4290,
+        "text": "Only they who do not believe in it wish to hasten it; but those who believe are in fear of it, for they know it to be true. Surely those who are in doubt about the Hour are wandering far astray.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 18,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4291,
+        "text": "God is gracious to His creatures, and bestows favours on whosoever He will. He is all-powerful and all-mighty.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 19,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4292,
+        "text": "Whoever desires the fruits of the Hereafter, We shall add to his fruit. As for him who desires the fruits of this world, We shall give to him of these, but he will have no share in the Hereafter.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 20,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4293,
+        "text": "Have they other associates who have prescribed another law for them which has not been dispensed by God? But for the decisive Word (of God) a sentence would have been passed amongst them. Surely there is a grievous punishment for the ungodly.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 21,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4294,
+        "text": "You will see the evil-doers full of fear of what they deserve, yet it will come to pass. But those who believe and do the right will be in gardens of Paradise. They will receive what they wish from their Lord; and this will be the greatest favour.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 22,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

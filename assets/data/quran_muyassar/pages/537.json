@@ -1,0 +1,473 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 537,
+    "ayahs": [
+      {
+        "number": 5056,
+        "text": "إن هذا القرآن الذي نزل على محمد لقرآن عظيم المنافع، كثير الخير، غزير العلم، في كتاب مَصُون مستور عن أعين الخلق، وهو الكتاب الذي بأيدي الملائكة. لا يَمَسُّ القرآن إلا الملائكة الكرام الذين طهرهم الله من الآفات والذنوب، ولا يَمَسُّه أيضًا إلا المتطهرون من الشرك والجنابة والحدث.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 77,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5057,
+        "text": "إن هذا القرآن الذي نزل على محمد لقرآن عظيم المنافع، كثير الخير، غزير العلم، في كتاب مَصُون مستور عن أعين الخلق، وهو الكتاب الذي بأيدي الملائكة. لا يَمَسُّ القرآن إلا الملائكة الكرام الذين طهرهم الله من الآفات والذنوب، ولا يَمَسُّه أيضًا إلا المتطهرون من الشرك والجنابة والحدث.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 78,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5058,
+        "text": "إن هذا القرآن الذي نزل على محمد لقرآن عظيم المنافع، كثير الخير، غزير العلم، في كتاب مَصُون مستور عن أعين الخلق، وهو الكتاب الذي بأيدي الملائكة. لا يَمَسُّ القرآن إلا الملائكة الكرام الذين طهرهم الله من الآفات والذنوب، ولا يَمَسُّه أيضًا إلا المتطهرون من الشرك والجنابة والحدث.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 79,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5059,
+        "text": "وهذا القرآن الكريم منزل من رب العالمين، فهو الحق الذي لا مرية فيه.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 80,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5060,
+        "text": "أفبهذا القرآن أنتم -أيها المشركون- مكذِّبون؟",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 81,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5061,
+        "text": "وتجعلون شكركم لنعم الله عليكم أنكم تكذِّبون بها وتكفرون؟ وفي هذا إنكار على من يتهاون بأمر القرآن ولا يبالي بدعوته.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 82,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5062,
+        "text": "فهل تستطيعون إذا بلغت نفس أحدكم الحلقوم عند النزع، وأنتم حضور تنظرون إليه، أن تمسكوا روحه في جسده؟ لن تستطيعوا ذلك، ونحن أقرب إليه منكم بملائكتنا، ولكنكم لا ترونهم.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 83,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5063,
+        "text": "فهل تستطيعون إذا بلغت نفس أحدكم الحلقوم عند النزع، وأنتم حضور تنظرون إليه، أن تمسكوا روحه في جسده؟ لن تستطيعوا ذلك، ونحن أقرب إليه منكم بملائكتنا، ولكنكم لا ترونهم.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 84,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5064,
+        "text": "فهل تستطيعون إذا بلغت نفس أحدكم الحلقوم عند النزع، وأنتم حضور تنظرون إليه، أن تمسكوا روحه في جسده؟ لن تستطيعوا ذلك، ونحن أقرب إليه منكم بملائكتنا، ولكنكم لا ترونهم.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 85,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5065,
+        "text": "وهل تستطيعون إن كنتم غير محاسبين ولا مجزيين بأعمالكم أن تعيدوا الروح إلى الجسد، إن كنتم صادقين؟ لن ترجعوها.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 86,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5066,
+        "text": "وهل تستطيعون إن كنتم غير محاسبين ولا مجزيين بأعمالكم أن تعيدوا الروح إلى الجسد، إن كنتم صادقين؟ لن ترجعوها.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 87,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5067,
+        "text": "فأما إن كان الميت من السابقين المقربين، فله عند موته الرحمة الواسعة والفرح وما تطيب به نفسه، وله جنة النعيم في الآخرة.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 88,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5068,
+        "text": "فأما إن كان الميت من السابقين المقربين، فله عند موته الرحمة الواسعة والفرح وما تطيب به نفسه، وله جنة النعيم في الآخرة.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 89,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5069,
+        "text": "وأما إن كان الميت من أصحاب اليمين، فيقال له: سلامة لك وأمن؛ لكونك من أصحاب اليمين.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 90,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5070,
+        "text": "وأما إن كان الميت من أصحاب اليمين، فيقال له: سلامة لك وأمن؛ لكونك من أصحاب اليمين.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 91,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5071,
+        "text": "وأما إن كان الميت من المكذبين بالبعث، الضالين عن الهدى، فله ضيافة من شراب جهنم المغلي المتناهي الحرارة، والنار يحرق بها، ويقاسي عذابها الشديد.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 92,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5072,
+        "text": "وأما إن كان الميت من المكذبين بالبعث، الضالين عن الهدى، فله ضيافة من شراب جهنم المغلي المتناهي الحرارة، والنار يحرق بها، ويقاسي عذابها الشديد.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 93,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5073,
+        "text": "وأما إن كان الميت من المكذبين بالبعث، الضالين عن الهدى، فله ضيافة من شراب جهنم المغلي المتناهي الحرارة، والنار يحرق بها، ويقاسي عذابها الشديد.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 94,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5074,
+        "text": "إن هذا الذي قصصناه عليك -أيها الرسول- لهو حق اليقين الذي لا مرية فيه، فسبِّح باسم ربك العظيم، ونزِّهه عما يقول الظالمون والجاحدون، تعالى الله عما يقولون علوًا كبيرًا.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 95,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5075,
+        "text": "إن هذا الذي قصصناه عليك -أيها الرسول- لهو حق اليقين الذي لا مرية فيه، فسبِّح باسم ربك العظيم، ونزِّهه عما يقول الظالمون والجاحدون، تعالى الله عما يقولون علوًا كبيرًا.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 96,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 471,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5076,
+        "text": "نزَّه الله عن السوء كلُّ ما في السموات والأرض من جميع مخلوقاته، وهو العزيز على خلقه، الحكيم في تدبير أمورهم.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5077,
+        "text": "له ملك السموات والأرض وما فيهما، فهو المالك المتصرف في خلقه، يحيي ويميت، وهو على كل شيء قدير، لا يتعذَّر عليه شيء أراده، فما شاءه كان، وما لم يشأ لم يكن.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5078,
+        "text": "هو الأول الذي ليس قبله شيء، والآخر الذي ليس بعده شيء، والظاهر الذي ليس فوقه شيء، والباطن الذي ليس دونه شيء، ولا تخفى عليه خافية في الأرض ولا في السماء، وهو بكل شيء عليم.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 537,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "56": {
+        "number": 56,
+        "name": "سُورَةُ الوَاقِعَةِ",
+        "englishName": "Al-Waaqia",
+        "englishNameTranslation": "The Inevitable",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 96
+      },
+      "57": {
+        "number": 57,
+        "name": "سُورَةُ الحَدِيدِ",
+        "englishName": "Al-Hadid",
+        "englishNameTranslation": "The Iron",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

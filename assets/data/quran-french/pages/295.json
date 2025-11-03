@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 295,
+    "ayahs": [
+      {
+        "number": 2156,
+        "text": "Et quand vous vous serez séparés d'eux et de ce qu'ils adorent en dehors d'Allah, réfugiez-vous donc dans la caverne: votre Seigneur répandra de Sa miséricorde sur vous et disposera pour vous un adoucissement à votre sort.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 16,
+        "juz": 15,
+        "manzil": 4,
+        "page": 295,
+        "ruku": 253,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2157,
+        "text": "Tu aurais vu le soleil, quand il se lève, s'écarter de leur caverne vers la droite, et quand il se couche, passer à leur gauche, tandis qu'eux-mêmes sont là dans une partie spacieuse (de la caverne)... Cela est une des merveilles d'Allah. Celui qu'Allah guide, c'est lui le bien-guidé. Et quiconque Il égare, tu ne trouveras alors pour lui aucun allié pour le mettre sur la bonne voie.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 17,
+        "juz": 15,
+        "manzil": 4,
+        "page": 295,
+        "ruku": 253,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2158,
+        "text": "Et tu les aurais cru éveillés, alors qu'ils dorment. Et Nous les tournons sur le côté droit et sur le côté gauche, tandis que leur chien est à l'entrée, pattes étendues. Si tu les avais aperçus, certes tu leur aurais tourné le dos en fuyant; et tu aurais été assurément rempli d'effroi devant eux.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 18,
+        "juz": 15,
+        "manzil": 4,
+        "page": 295,
+        "ruku": 254,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2159,
+        "text": "Et c'est ainsi que Nous les ressuscitâmes, afin qu'ils s'interrogent entre eux. L'un parmi eux dit: «Combien de temps avez-vous demeuré là?» Ils dirent: «Nous avons demeuré un jour ou une partie d'un jour». D'autres dirent: «Votre Seigneur sait mieux combien [de temps] vous y avez demeuré. Envoyez donc l'un de vous à la ville avec votre argent que voici, pour qu'il voie quel aliment est le plus pur et qu'il vous en apporte de quoi vous nourrir. Qu'il agisse avec tact; et qu'il ne donne l'éveil à personne sur vous.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 19,
+        "juz": 15,
+        "manzil": 4,
+        "page": 295,
+        "ruku": 254,
+        "hizbQuarter": 118,
+        "sajda": false
+      },
+      {
+        "number": 2160,
+        "text": "Si jamais ils vous attrapent, ils vous lapideront ou vous feront retourner à leur religion, et vous ne réussirez alors plus jamais».",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 20,
+        "juz": 15,
+        "manzil": 4,
+        "page": 295,
+        "ruku": 254,
+        "hizbQuarter": 118,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

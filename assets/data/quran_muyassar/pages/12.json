@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 12,
+    "ayahs": [
+      {
+        "number": 84,
+        "text": "أيفعلون كلَّ هذه الجرائم، ولا يعلمون أن الله يعلم جميع ما يخفونه وما يظهرونه؟",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 77,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 85,
+        "text": "ومن اليهود جماعة يجهلون القراءة والكتابة، ولا يعلمون التوراة وما فيها من صفات نبي الله ورسوله محمد صلى الله عليه وسلم، وما عندهم من ذلك إلا أكاذيبُ وظنون فاسدة.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 78,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 86,
+        "text": "فهلاك ووعيد شديد لأحبار السوء من اليهود الذين يكتبون الكتاب بأيديهم، ثم يقولون: هذا من عند الله وهو مخالف لما أنزل الله على نبيِّه موسى عليه الصلاة والسلام؛ ليأخذوا في مقابل هذا عرض الدنيا. فلهم عقوبة مهلكة بسبب كتابتهم هذا الباطل بأيديهم، ولهم عقوبة مهلكة بسبب ما يأخذونه في المقابل من المال الحرام، كالرشوة وغيرها.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 79,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 87,
+        "text": "وقال بنو إسرائيل: لن تصيبنا النار في الآخرة إلا أيامًا قليلة العدد. قل لهم -أيها الرسول مبطلا دعواهم-: أعندكم عهد من الله بهذا، فإن الله لا يخلف عهده؟ بل إنكم تقولون على الله ما لا تعلمون بافترائكم الكذب.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 80,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 88,
+        "text": "فحُكْمُ الله ثابت: أن من ارتكب الآثام حتى جَرَّته إلى الكفر، واستولت عليه ذنوبه مِن جميع جوانبه وهذا لا يكون إلا فيمن أشرك بالله، فالمشركون والكفار هم الذين يلازمون نار جهنم ملازمة دائمةً لا تنقطع.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 81,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 89,
+        "text": "وحكم الله الثابتُ في مقابل هذا: أنَّ الذين صدَّقوا بالله ورسله تصديقًا خالصًا، وعملوا الأعمال المتفقة مع شريعة الله التي أوحاها إلى رسله، هؤلاء يلازمون الجنة في الآخرة ملازمةً دائمةً لا تنقطع.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 82,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 10,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 90,
+        "text": "واذكروا يا بني إسرائيل حين أخَذْنا عليكم عهدًا مؤكدًا: بأن تعبدوا الله وحده لا شريك له، وأن تحسنوا للوالدين، وللأقربين، وللأولاد الذين مات آباؤهم وهم دون بلوغ الحلم، وللمساكين، وأن تقولوا للناس أطيب الكلام، مع أداء الصلاة وإيتاء الزكاة، ثم أَعْرَضْتم ونقضتم العهد -إلا قليلا منكم ثبت عليه- وأنتم مستمرون في إعراضكم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 83,
+        "juz": 1,
+        "manzil": 1,
+        "page": 12,
+        "ruku": 11,
+        "hizbQuarter": 5,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

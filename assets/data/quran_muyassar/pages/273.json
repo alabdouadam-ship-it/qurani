@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 273,
+    "ayahs": [
+      {
+        "number": 1956,
+        "text": "ليجحدوا نعمنا عليهم، ومنها كَشْفُ البلاء عنهم، فاستمتعوا بدنياكم، ومصيرها إلى الزوال، فسوف تعلمون عاقبة كفركم وعصيانكم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 55,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1957,
+        "text": "ومِن قبيح أعمالهم أنهم يجعلون للأصنام التي اتخذوها آلهة، وهي لا تعلم شيئًا ولا تنفع ولا تضر، جزءًا من أموالهم التي رزقهم الله بها تقربًا إليها. تالله لتسألُنَّ يوم القيامة عما كنتم تختلقونه من الكذب على الله.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 56,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1958,
+        "text": "ويجعل الكفار لله البنات، فيقولون: الملائكة بنات الله، تنزَّه الله عن قولهم، ويجعلون لأنفسهم ما يحبون من البنين.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 57,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1959,
+        "text": "وإذا جاء مَن يخبر أحدهم بولادة أنثى اسودَّ وجهه؛ كراهية لما سمع، وامتلأ غمًّا وحزنًا.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 58,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1960,
+        "text": "يستخفي مِن قومه كراهة أن يلقاهم متلبسًا بما ساءه من الحزن والعار؛ بسبب البنت التي وُلِدت له، ومتحيرًا في أمر هذه المولودة: أيبقيها حية على ذلٍّ وهوان، أم يدفنها حية في التراب؟ ألا بئس الحكم الذي حكموه مِن جَعْل البنات لله والذكور لهم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 59,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1961,
+        "text": "للذين لا يؤمنون بالآخرة ولا يعملون لها، الصفة القبيحة من العجز والحاجة والجهل والكفر، ولله الصفات العليا من الكمال والاستغناء عن خلقه، وهو العزيز في ملكه، الحكيم في تدبيره.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 60,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1962,
+        "text": "ولو يؤاخذ الله الناس بكفرهم وافترائهم ما ترك على الأرض مَن يتحرَّك، ولكن يبقيهم إلى وقت محدد هو نهاية آجالهم، فإذا جاء أجلهم لا يتأخرون عنه وقتًا يسيرًا، ولا يتقدمون.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 61,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 231,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1963,
+        "text": "ومن قبائحهم: أنهم يجعلون لله ما يكرهونه لأنفسهم من البنات، وتقول ألسنتهم كذبًا: إن لهم حسن العاقبة، حقًا أن لهم النار، وأنهم فيها مَتْروكون مَنْسيون.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 62,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 231,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1964,
+        "text": "تالله لقد أرسلنا رسلا إلى أمم مِن قبلك -أيها الرسول- فحسَّن لهم الشيطان ما عملوه من الكفر والتكذيب وعبادة غير الله، فهو متولٍّ إغواءهم في الدنيا، ولهم في الآخرة عذاب أليم موجع.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 63,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 231,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1965,
+        "text": "وما أنزلنا عليك القرآن -أيها الرسول- إلا لتوضح للناس ما اختلفوا فيه من الدين والأحكام؛ لتقوم الحجة عليهم ببيانك ورشدًا ورحمة لقوم يؤمنون.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 64,
+        "juz": 14,
+        "manzil": 3,
+        "page": 273,
+        "ruku": 231,
+        "hizbQuarter": 109,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 240,
+    "ayahs": [
+      {
+        "number": 1634,
+        "text": "I follow the faith of my fathers, of Abraham and Isaac and Jacob. We cannot associate anyone with God. This is among God's favours to us and to all mankind; but most men are not grateful.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 38,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 197,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1635,
+        "text": "(Tell me) O fellow-prisoners, are a number of gods better, or one God omnipotent?",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 39,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 197,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1636,
+        "text": "(What) you worship besides Him are nothing but names that you and your fathers have assigned, for which no sanction has been sent down by God. Authority belongs to God alone. He commands that you worship none but Him. This is the right way; but most men are ignorant.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 40,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 197,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1637,
+        "text": "O fellow-prisoners, one of you will serve wine to your master, the other will be crucified and the birds will peck at his brain. Determined is the matter of your inquiry.\"",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 41,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 197,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1638,
+        "text": "And (Joseph) asked the man he knew would be released: \"Remember me to your lord;\" but Satan made him forget to mention this to his lord, and Joseph remained in prison for a number of years.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 42,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 197,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1639,
+        "text": "(One day) the king said (to his courtiers): \"I saw seven fat cows in a dream being devoured by seven lean ones, and seven ears of corn that were green and seven others that were seared. O courtiers, tell me the significance of my dream, if you know how to interpret them.\"",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 43,
+        "juz": 12,
+        "manzil": 3,
+        "page": 240,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

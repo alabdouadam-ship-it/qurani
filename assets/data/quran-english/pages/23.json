@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 23,
+    "ayahs": [
+      {
+        "number": 153,
+        "text": "Those to whom We have sent down the Book know this even as they know their sons. Yet a section among them conceals the truth knowingly.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 146,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 18,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 154,
+        "text": "The truth is from your Lord, so be not among those who are sceptics.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 147,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 18,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 155,
+        "text": "Each has a goal to which he turns. So strive towards piety and excel the others: God will bring you all together wheresoever you be. God has power over everything.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 148,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 156,
+        "text": "Wherever you come from turn towards the Holy Mosque: This in truth is from your Lord. God is not negligent of all you do.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 149,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 157,
+        "text": "Whichever place you come from turn towards the Holy Mosque, and wherever you are, turn your faces towards it so that people may have no cause for argument against you, except such among them as are wicked. But do not fear them, fear Me that I may accomplish My favours on you, and you may find the right way perchance.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 150,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 158,
+        "text": "Even as We sent a messenger from among you to convey Our messages to you and cleanse you, and teach you the Book and the wisdom, and what you did not know;",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 151,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 159,
+        "text": "So, therefore, remember Me, and I shall remember you; and give thanks and do not be ungrateful.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 152,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 160,
+        "text": "O you who believe, seek courage in fortitude and prayer, for God is with those who are patient and persevere.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 153,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 20,
+        "hizbQuarter": 9,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

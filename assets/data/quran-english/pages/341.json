@@ -1,0 +1,146 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 341,
+    "ayahs": [
+      {
+        "number": 2668,
+        "text": "O men, give ear to this parable: Those you worship other than God can never create as much as a fly, even if they get together to do so; and if the fly were to rob them of a thing they would not be able to snatch it away from it. How weak the seeker and how weak the sought!",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 73,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2669,
+        "text": "They do not esteem God with the right estimation. God is surely all-powerful and all-mighty.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 74,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2670,
+        "text": "God chooses messengers from the angels and human beings. Verily God is all-hearing and all-seeing.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 75,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2671,
+        "text": "He knows what is before them and what lies behind them, and all things go back to God.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 76,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2672,
+        "text": "O you who believe, bow in adoration, Worship your Lord and do what is good that you may find success.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 77,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": {
+          "id": 7,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2673,
+        "text": "Strive in the way of God with a service worthy of Him. He has chosen you and laid no hardship on you in the way of faith, the faith of your forbear Abraham. He named you Muslim earlier, and in this (Qur'an), in order that the Prophet be witness over you, and you be witness over mankind. So be firm in devotion, pay the zakat, and hold on firmly to God. He is your friend: How excellent a friend is He, how excellent a helper!",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 78,
+        "juz": 17,
+        "manzil": 4,
+        "page": 341,
+        "ruku": 294,
+        "hizbQuarter": 136,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 205,
+    "ayahs": [
+      {
+        "number": 1347,
+        "text": "To those who repent and pay homage, give praise and are devout, who kneel in prayer and bow in supplication, who enjoin good deeds and prohibit the bad, and keep to the limits set by God, announce the news of rejoicing to the faithful.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 112,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      },
+      {
+        "number": 1348,
+        "text": "It is not worthy of the Prophet and those who believe to seek forgiveness for those who are idolaters, even though they may be their relatives, after they have come to know that they are destined for Hell.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 113,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      },
+      {
+        "number": 1349,
+        "text": "As for Abraham's prayer for his father, he was fulfilling a promise he had made to him. Yet when it became evident to him that (his father) was an enemy of God, he broke away from him, though Abraham was soft hearted and kind.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 114,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      },
+      {
+        "number": 1350,
+        "text": "God never leads men astray after guiding them, until He makes quite clear to them what they should avoid, for God indeed knows each and everything.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 115,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      },
+      {
+        "number": 1351,
+        "text": "Verily God's is the kingdom of the heavens and the earth. He alone is the giver of life and death; and none do you have besides God as friend and helper.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 116,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      },
+      {
+        "number": 1352,
+        "text": "God was kind to the Prophet, the emigrants, and the helpers of the faithful who followed him in the hour of distress. When a section of them were about to lose courage He turned to them in His mercy, for He is compassionate and kind.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 117,
+        "juz": 11,
+        "manzil": 2,
+        "page": 205,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 460,
+    "ayahs": [
+      {
+        "number": 4069,
+        "text": "Say: \"I am commanded to worship God with obedience all-exclusive for Him;",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 11,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4070,
+        "text": "And I am commanded to be the first of those who submit.\"",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 12,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4071,
+        "text": "Say: \"If I disobey my Lord, I fear the punishment of an evil Day.\"",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 13,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4072,
+        "text": "Say: \"I worship God with devotion all-exclusive for Him.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 14,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4073,
+        "text": "You may worship what you will apart from Him.\" Say: \"Surely the greatest losers will be those who will lose their own selves and their people on the Day of Resurrection.\" Remember, this will be an all-too-evident loss.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 15,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4074,
+        "text": "Above them will be a covering of fire, below them a cloud (of flames). With this does God warn His creatures: \"O My creatures, fear Me.\"",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 16,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4075,
+        "text": "There are happy tidings for those who keep away from the worship of false gods and turn to God in repentance. Give glad tidings to My creatures.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 17,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4076,
+        "text": "Those who listen to the Word and then follow the best it contains, are the ones who have been guided by God, and are men of wisdom.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 18,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4077,
+        "text": "Can he against whom the sentence of punishment has been justified (be rescued)? Can you save him who is in the Fire?",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 19,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4078,
+        "text": "But for those who fear displeasing their Lord there are lofty mansions built above mansions, with rivers rippling past below them: A promise of God; (and) God does not go back on His promise.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 20,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4079,
+        "text": "Do you not see that God sends down water from the sky, then makes it flow in rills on the earth, and brings forth corn from it which, having passed through changes of shade and colour, comes to ripen, and you see it autumnal yellow; then He reduces it to chaff. There are indeed lessons in this for those who are wise.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 21,
+        "juz": 23,
+        "manzil": 6,
+        "page": 460,
+        "ruku": 397,
+        "hizbQuarter": 184,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

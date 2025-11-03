@@ -1,0 +1,370 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 527,
+    "ayahs": [
+      {
+        "number": 4811,
+        "text": "Ceux qui ne croient pas en l'au-delà donnent aux Anges des noms de femmes,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4812,
+        "text": "alors qu'ils n'en ont aucune science: ils ne suivent que la conjecture, alors que la conjecture ne sert à rien contre la vérité.",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 28,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4813,
+        "text": "Ecarte-toi donc, de celui qui tourne le dos à Notre rappel et qui ne désire que la vie présente.",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 29,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4814,
+        "text": "Voilà toute la portée de leur savoir. Certes ton Seigneur connaît parfaitement celui qui s'égare de Son chemin et Il connaît parfaitement qui est bien guidé.",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 30,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4815,
+        "text": "A Allah appartient ce qui est dans les cieux et sur la terre afin qu'Il rétribue ceux qui font le mal selon ce qu'ils œuvrent, et récompense ceux qui font le bien par la meilleure [récompense],",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4816,
+        "text": "ceux qui évitent les plus grands péchés ainsi que les turpitudes et [qui ne commettent] que des fautes légères. Certes, le pardon de Ton Seigneur est immense. C'est Lui qui vous connaît le mieux quand Il vous a produits de terre, et aussi quand vous étiez des embryons dans les ventres de vos mères. Ne vantez pas vous-mêmes votre pureté; c'est Lui qui connaît mieux ceux qui [Le] craignent.",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4817,
+        "text": "Vois-tu celui qui s'est détourné,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4818,
+        "text": "donné peu et a [finalement] cessé de donner?",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4819,
+        "text": "Détient-il la science de l'Inconnaissable en sorte qu'il voit?",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4820,
+        "text": "Ne lui a-t-on pas annoncé ce qu'il y avait dans les feuilles de Moïse",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4821,
+        "text": "et celles d'Abraham qui a tenu parfaitement [sa promesse de transmettre]",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4822,
+        "text": "qu'aucune [âme] ne portera le fardeau (le péché) d'autrui,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4823,
+        "text": "et qu'en vérité, l'homme n'obtient que [le fruit] de ses efforts;",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4824,
+        "text": "et que son effort, en vérité, lui sera présenté (le jour du Jugement).",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4825,
+        "text": "Ensuite il en sera récompensé pleinement,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 41,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4826,
+        "text": "et que tout aboutit, en vérité, vers ton Seigneur,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 42,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4827,
+        "text": "et que c'est Lui qui a fait rire et qui a fait pleurer,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 43,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4828,
+        "text": "et que c'est Lui qui a fait mourir et qui a ramené à la vie,",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 44,
+        "juz": 27,
+        "manzil": 7,
+        "page": 527,
+        "ruku": 462,
+        "hizbQuarter": 211,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "53": {
+        "number": 53,
+        "name": "سُورَةُ النَّجۡمِ",
+        "englishName": "An-Najm",
+        "englishNameTranslation": "The Star",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 62
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

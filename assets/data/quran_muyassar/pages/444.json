@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 444,
+    "ayahs": [
+      {
+        "number": 3760,
+        "text": "إن أهل الجنة في ذلك اليوم مشغولون عن غيرهم بأنواع النعيم التي يتفكهون بها.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 55,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3761,
+        "text": "هم وأزواجهم متنعمون بالجلوس على الأسرَّة المزيَّنة، تحت الظلال الوارفة.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 56,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3762,
+        "text": "لهم في الجنة أنواع الفواكه اللذيذة، ولهم كل ما يطلبون من أنواع النعيم.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 57,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3763,
+        "text": "ولهم نعيم آخر أكبر حين يكلمهم ربهم، الرحيم بهم بالسلام عليهم. وعند ذلك تحصل لهم السلامة التامة من جميع الوجوه.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 58,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3764,
+        "text": "ويقال للكفار في ذلك اليوم: تميَّزوا عن المؤمنين، وانفصلوا عنهم.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 59,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3765,
+        "text": "ويقول الله لهم توبيخًا وتذكيرًا: ألم أوصكم على ألسنة رسلي أن لا تعبدوا الشيطان ولا تطيعوه؟ إنه لكم عدو ظاهر العداوة.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 60,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3766,
+        "text": "وأمرتكم بعبادتي وحدي، فعبادتي وطاعتي ومعصية الشيطان هي الدين القويم الموصل لمرضاتي وجنَّاتي.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 61,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3767,
+        "text": "ولقد أضلَّ الشيطان عن الحق منكم خلقًا كثيرًا، أفما كان لكم عقل -أيها المشركون- ينهاكم عن اتباعه؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 62,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3768,
+        "text": "هذه جهنم التي كنتم توعدون بها في الدنيا على كفركم بالله وتكذيبكم رسله.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 63,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3769,
+        "text": "ادخلوها اليوم وقاسوا حرَّها؛ بسبب كفركم.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 64,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3770,
+        "text": "اليوم نطبع على أفواه المشركين فلا ينطقون، وتُكلِّمنا أيديهم بما بطشت به، وتشهد أرجلهم بما سعت إليه في الدنيا، وكسبت من الآثام.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 65,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3771,
+        "text": "ولو نشاء لطمسنا على أعينهم بأن نُذْهب أبصارهم، كما ختمنا على أفواههم، فبادَروا إلى الصراط ليجوزوه، فكيف يتحقق لهم ذلك وقد طُمِست أبصارهم؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 66,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3772,
+        "text": "ولو شئنا لَغَيَّرنا خلقهم وأقعدناهم في أماكنهم، فلا يستطيعون أن يَمْضوا أمامهم، ولا يرجعوا وراءهم.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 67,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 384,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3773,
+        "text": "ومن نُطِلْ عمره حتى يهرم نُعِدْه إلى الحالة التي ابتدأ منها حالة ضعف العقل وضعف الجسد، أفلا يعقلون أنَّ مَن فعل مثل هذا بهم قادر على بعثهم؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 68,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3774,
+        "text": "وما علَّمنا رسولنا محمدًا الشعر، وما ينبغي له أن يكون شاعرًا، ما هذا الذي جاء به إلا ذكر يتذكر به أولو الألباب، وقرآن بيِّن الدلالة على الحق والباطل، واضحة أحكامه وحِكَمه ومواعظه؛ لينذر مَن كان حيَّ القلب مستنير البصيرة، ويحق العذاب على الكافرين بالله؛ لأنهم قامت عليهم بالقرآن حجة الله البالغة.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 69,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3775,
+        "text": "وما علَّمنا رسولنا محمدًا الشعر، وما ينبغي له أن يكون شاعرًا، ما هذا الذي جاء به إلا ذكر يتذكر به أولو الألباب، وقرآن بيِّن الدلالة على الحق والباطل، واضحة أحكامه وحِكَمه ومواعظه؛ لينذر مَن كان حيَّ القلب مستنير البصيرة، ويحق العذاب على الكافرين بالله؛ لأنهم قامت عليهم بالقرآن حجة الله البالغة.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 70,
+        "juz": 23,
+        "manzil": 5,
+        "page": 444,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

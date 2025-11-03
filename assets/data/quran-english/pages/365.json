@@ -1,0 +1,260 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 365,
+    "ayahs": [
+      {
+        "number": 2911,
+        "text": "Yet We have not sent you but to give good tidings and to warn.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 56,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2912,
+        "text": "Tell them: \"I do not ask any recompense of you for this other than (urging) whoever likes may take the way to his Lord.\"",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 57,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2913,
+        "text": "Have trust in God the Living, who will never die, and sing His hallelujas; for He is well aware of the sins of His creatures.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 58,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2914,
+        "text": "He created the heavens and the earth and all that lies between them in six spans then assumed His authority. He is the benevolent: Ask those who are well-informed.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 59,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2915,
+        "text": "When you say to them: \"Bow before Ar-Rahman,\" they say: \"What is Ar-Rahman? Should we adore whoever you ask us to?\" And their aversion increases further.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 60,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": {
+          "id": 8,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2916,
+        "text": "Blessed is He who placed in the heavens constellations of stars, and placed a burning lamp in it and the luminous moon.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 61,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2917,
+        "text": "It is He who made the night and day an alternation for him who cares to reflect and be grateful.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 62,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2918,
+        "text": "Devotees of Ar-Rahman are those who walk with humility on the earth, and when they are addressed by the ignorant, say: 'Peace;\"",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 63,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2919,
+        "text": "And those who spend their nights bowed and standing before their Lord;",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 64,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2920,
+        "text": "Who say: \"O our Lord, avert from us the torment of Hell: Its punishment is surely continuous.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 65,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2921,
+        "text": "It is indeed an evil halt and an evil abode;\"",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 66,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2922,
+        "text": "Who are neither prodigal nor miserly in their spending but follow a middle path;",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 67,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

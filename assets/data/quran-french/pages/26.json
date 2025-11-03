@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 26,
+    "ayahs": [
+      {
+        "number": 177,
+        "text": "Et quand on leur dit: «Suivez ce qu'Allah a fait descendre», ils disent: «Non, mais nous suivrons les coutumes de nos ancêtres.» - Quoi! et si leurs ancêtres n'avaient rien raisonné et s'ils n'avaient pas été dans la bonne direction?",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 170,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 178,
+        "text": "Les mécréants ressemblent à [du bétail] auquel on crie et qui entend seulement appel et voix confus. Sourds, muets, aveugles, ils ne raisonnent point.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 171,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 179,
+        "text": "O les croyants! Mangez des (nourritures) licites que Nous vous avons attribuées. Et remerciez Allah, si c'est Lui que vous adorez.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 172,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 180,
+        "text": "Certes, Il vous interdit la chair d'une bête morte, le sang, la viande de porc et ce sur quoi on a invoqué un autre qu'Allah. Il n'y a pas de péché sur celui qui est contraint sans toutefois abuser ni transgresser, car Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 173,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 181,
+        "text": "Ceux qui cachent ce qu'Allah a fait descendre du Livre et le vendent à vil prix, ceux-là ne s'emplissent le ventre que de Feu. Allah ne leur adressera pas la parole, au Jour de la Résurrection, et ne les purifiera pas. Et il y aura pour eux un douloureux châtiment.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 174,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 182,
+        "text": "Ceux-là ont échangé la bonne direction contre l'égarement et le pardon contre le châtiment. Qu'est-ce qui leur fera supporter le Feu?!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 175,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 183,
+        "text": "C'est ainsi, car c'est avec la vérité qu'Allah a fait descendre le Livre; et ceux qui s'opposent au sujet du Livre sont dans une profonde divergence.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 176,
+        "juz": 2,
+        "manzil": 1,
+        "page": 26,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

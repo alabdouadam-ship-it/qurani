@@ -1,0 +1,53 @@
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+pubspec.lock
+
+# Build outputs
+build/
+
+# Android
+**/android/.gradle/
+**/android/.idea/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/key.properties
+**/android/app/key.jks
+**/android/captures/
+**/android/app/release/
+
+# iOS
+**/ios/Pods/
+**/ios/.generated/
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/App.framework/
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral/
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# Web
+**/web/.dart_tool/
+
+# VS Code / IDE
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Windows / Mac artifacts
+**/windows/**/GeneratedPluginRegistrant.*
+**/macos/**/GeneratedPluginRegistrant.*
+
+# Assets cache
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# Other
+.DS_Store
+Thumbs.db
+

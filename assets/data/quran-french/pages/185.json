@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 185,
+    "ayahs": [
+      {
+        "number": 1222,
+        "text": "Et s'ils veulent te tromper, alors Allah te suffira. C'est Lui qui t'a soutenu par Son secours, ainsi que par (l'assistance) des croyants.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 62,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 153,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1223,
+        "text": "Il a uni leurs cœurs (par la foi). Aurais-tu dépensé tout ce qui est sur terre, tu n'aurais pu unir leurs cœurs; mais c'est Allah qui les a unis, car Il est Puissant et Sage.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 63,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 153,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1224,
+        "text": "O Prophète, Allah et ceux des croyants qui te suivent te suffisent.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 64,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 153,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1225,
+        "text": "O Prophète, incite les croyants au combat. S'il se trouve parmi vous vingt endurants, ils vaincront deux cents; et s'il s'en trouve cent, ils vaincront mille mécréants, car ce sont vraiment des gens qui ne comprennent pas.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 65,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 154,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1226,
+        "text": "Maintenant, Allah a allégé votre tâche, sachant qu'il y a de la faiblesse en vous. S'il y a cent endurants parmi vous, ils vaincront deux cents; et s'il y en a mille, ils vaincront deux mille, par la grâce d'Allah. Et Allah est avec les endurants.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 66,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 154,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1227,
+        "text": "Un prophète ne devrait pas faire de prisonniers avant d'avoir prévalu [mis les mécréants hors de combat] sur la terre. Vous voulez les biens d'ici-bas, tandis qu'Allah veut l'au-delà. Allah est Puissant et Sage.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 67,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 154,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1228,
+        "text": "N'eût-été une prescription préalable d'Allah, un énorme châtiment vous aurait touché pour ce que vous avez pris. [de la rançon]",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 68,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 154,
+        "hizbQuarter": 74,
+        "sajda": false
+      },
+      {
+        "number": 1229,
+        "text": "Mangez donc de ce qui vous est échu en butin, tant qu'il est licite et pur. Et craignez Allah, car Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 69,
+        "juz": 10,
+        "manzil": 2,
+        "page": 185,
+        "ruku": 154,
+        "hizbQuarter": 74,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

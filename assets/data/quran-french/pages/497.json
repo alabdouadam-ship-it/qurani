@@ -1,0 +1,427 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 497,
+    "ayahs": [
+      {
+        "number": 4433,
+        "text": "Ne vous montrez pas hautains vis-à-vis d'Allah, car je vous apporte une preuve évidente.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 19,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4434,
+        "text": "Et je cherche protection auprès de mon Seigneur et votre Seigneur, pour que vous ne me lapidiez pas.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 20,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4435,
+        "text": "Si vous ne voulez pas croire en moi, éloignez-vous de moi».",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 21,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4436,
+        "text": "Il invoqua alors son Seigneur: «Ce sont des gens criminels».",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 22,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4437,
+        "text": "«Voyage de nuit avec Mes serviteurs; vous serez poursuivis.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 23,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4438,
+        "text": "Laisse la mer calme; [telle que tu l'as franchie] ce sont, des armées [vouées] à la noyade».",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 24,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4439,
+        "text": "Que de jardins et de sources ils laissèrent [derrière eux]",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 25,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4440,
+        "text": "que de champs et de superbes résidences,",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 26,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4441,
+        "text": "que de délices au sein desquels ils se réjouissaient.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 27,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4442,
+        "text": "Il en fut ainsi et Nous fîmes qu'un autre peuple en hérita.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 28,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4443,
+        "text": "Ni le ciel ni la terre ne les pleurèrent et ils n'eurent aucun délai.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 29,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4444,
+        "text": "Et certes, Nous sauvâmes les Enfants d'Israël du châtiment avilissant",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 30,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4445,
+        "text": "de Pharaon qui était hautain et outrancier.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 31,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4446,
+        "text": "A bon escient Nous les choisîmes parmi tous les peuples de l'univers,",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 32,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4447,
+        "text": "et leur apportâmes des miracles de quoi les mettre manifestement à l'épreuve.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 33,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4448,
+        "text": "Ceux-là (les Mecquois) disent:",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 34,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4449,
+        "text": "«Il n'y a pour nous qu'une mort, la première. Et nous ne serons pas ressuscités.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 35,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4450,
+        "text": "Faites donc revenir nos ancêtres, si vous êtes véridiques».",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 36,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4451,
+        "text": "Sont-ils les meilleurs ou le peuple de Tubba' et ceux qui les ont précédés? Nous les avons fait périr parce que vraiment ils étaient criminels.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 37,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4452,
+        "text": "Ce n'est pas par divertissement que Nous avons créé les cieux et la terre et ce qui est entre eux.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 38,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4453,
+        "text": "Nous ne les avons créés qu'en toute vérité. Mais la plupart d'entre eux ne savent pas.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 39,
+        "juz": 25,
+        "manzil": 6,
+        "page": 497,
+        "ruku": 432,
+        "hizbQuarter": 199,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "44": {
+        "number": 44,
+        "name": "سُورَةُ الدُّخَانِ",
+        "englishName": "Ad-Dukhaan",
+        "englishNameTranslation": "The Smoke",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 59
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

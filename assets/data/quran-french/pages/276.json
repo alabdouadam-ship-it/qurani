@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 276,
+    "ayahs": [
+      {
+        "number": 1981,
+        "text": "Et Allah vous a fait de vos maisons une habitation, tout comme Il vous a procuré des maisons faites de peaux de bêtes que vous trouvez légères, le jour où vous vous déplacez et le jour où vous vous campez. De leur laine, de leur poil et de leur crin (Il vous a procuré) des effets et des objets dont vous jouissez pour un certain délai.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 80,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1982,
+        "text": "Et de ce qu'Il a créé, Allah vous a procuré des ombres. Et Il vous a procuré des abris dans les montagnes. Et Il vous a procuré des vêtements qui vous protègent de la chaleur, ainsi que des vêtements [cuirasses, armures] qui vous protègent de votre propre violence. C'est ainsi qu'Allah parachève sur vous Son bienfait, peut-être que vous vous soumettez.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 81,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1983,
+        "text": "S'ils se détournent... il ne t'incombe que la communication claire.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 82,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1984,
+        "text": "Ils reconnaissent le bienfait d'Allah; puis, ils le renient. Et la plupart d'entre eux sont des ingrats.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 83,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1985,
+        "text": "(Et rappelle-toi) le jour où de chaque communauté Nous susciterons un témoin, on ne permettra pas aux infidèles (de s'excuser), et on ne leur demandera pas de revenir [sur ce qui a provoqué la colère d'Allah].",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 84,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1986,
+        "text": "Et quand les injustes verront le châtiment, on ne leur accordera ni allégement ni répit.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 85,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1987,
+        "text": "Quand les associateurs verront ceux qu'ils associaient à Allah, ils diront: «O notre Seigneur, voilà nos divinités que nous invoquions en dehors de Toi». Mais [leurs associés] leur adresseront la parole: «Vous êtes assurément des menteurs».",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 86,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1988,
+        "text": "Ils offriront ce jour-là à Allah la soumission, et ce qu'ils avaient inventé sera perdu pour eux.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 87,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

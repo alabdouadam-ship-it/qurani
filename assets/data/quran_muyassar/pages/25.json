@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 25,
+    "ayahs": [
+      {
+        "number": 171,
+        "text": "إن في خلق السماوات بارتفاعها واتساعها، والأرض بجبالها وسهولها وبحارها، وفي اختلاف الليل والنهار من الطول والقصر، والظلمة والنور، وتعاقبهما بأن يخلف كل منهما الآخر، وفي السفن الجارية في البحار، التي تحمل ما ينفع الناس، وما أنزل الله من السماء من ماء المطر، فأحيا به الأرض، فصارت مخضرَّة ذات بهجة بعد أن كانت يابسة لا نبات فيها، وما نشره الله فيها من كل ما دبَّ على وجه الأرض، وما أنعم به عليكم من تقليب الرياح وتوجيهها، والسحاب المسيَّر بين السماء والأرض -إن في كل الدلائل السابقة لآياتٍ على وحدانية الله، وجليل نعمه، لقوم يعقلون مواضع الحجج، ويفهمون أدلته سبحانه على وحدانيته، واستحقاقه وحده للعبادة.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 164,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 172,
+        "text": "ومع هذه البراهين القاطعة يتخذ فريق من الناس من دون الله أصنامًا وأوثانًا وأولياء يجعلونهم نظراء لله تعالى، ويعطونهم من المحبة والتعظيم والطاعة، ما لا يليق إلا بالله وحده. والمؤمنون أعظم حبا لله من حب هؤلاء الكفار لله ولآلهتهم؛ لأن المؤمنين أخلصوا المحبة كلها لله، وأولئك أشركوا في المحبة. ولو يعلم الذين ظلموا أنفسهم بالشرك في الحياة الدنيا، حين يشاهدون عذاب الآخرة، أن الله هو المتفرد بالقوة جميعًا، وأن الله شديد العذاب، لما اتخذوا من دون الله آلهة يعبدونهم من دونه، ويتقربون بهم إليه.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 165,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 173,
+        "text": "عند معاينتهم عذاب الآخرة يتبرأ الرؤساء المتبوعون ممن اتبعهم على الشرك، وتنقطع بينهم كل الصلات التي ارتبطوا بها في الدنيا: من القرابة، والاتِّباع، والدين، وغير ذلك.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 166,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 174,
+        "text": "وقال التابعون: يا ليت لنا عودة إلى الدنيا، فنعلن براءتنا من هؤلاء الرؤساء، كما أعلنوا براءتهم مِنَّا. وكما أراهم الله شدة عذابه يوم القيامة يريهم أعمالهم الباطلة ندامات عليهم، وليسوا بخارجين من النار أبدًا.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 167,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 175,
+        "text": "يا أيها الناس كلوا من رزق الله الذي أباحه لكم في الأرض، وهو الطاهر غير النجس، النافع غير الضار، ولا تتبعوا طرق الشيطان في التحليل والتحريم، والبدع والمعاصي. إنه عدو لكم ظاهر العداوة.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 168,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 176,
+        "text": "إنما يأمركم الشيطان بكل ذنب قبيح يسوءُكم، وبكل معصية بالغة القبح، وبأن تفتروا على الله الكذب من تحريم الحلال وغيره بدون علم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 169,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 310,
+    "ayahs": [
+      {
+        "number": 2315,
+        "text": "Il est le Seigneur des cieux et de la terre et de tout ce qui est entre eux. Adore-Le donc, et sois constant dans Son adoration. Lui connais-tu un homonyme?»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 65,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 267,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2316,
+        "text": "Et l'homme dit: «Une fois mort, me sortira-t-on vivant?»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 66,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2317,
+        "text": "L'homme ne se rappelle-t-il pas qu'avant cela, c'est Nous qui l'avons créé, alors qu'il n'était rien?",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 67,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2318,
+        "text": "Par ton Seigneur! Assurément, Nous les rassemblerons, eux et les diables. Puis, Nous les placerons autour de l'Enfer, agenouillés.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 68,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2319,
+        "text": "Ensuite, Nous arracherons de chaque groupe ceux d'entre eux qui étaient les plus obstinés contre le Tout Miséricordieux.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 69,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2320,
+        "text": "Puis nous sommes Le meilleur à savoir ceux qui méritent le plus d'y être brûlés.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 70,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2321,
+        "text": "Il n'y a personne parmi vous qui ne passera pas par [L'Enfer]: Car [il s'agit là] pour ton Seigneur d'une sentence irrévocable.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 71,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2322,
+        "text": "Ensuite, Nous délivrerons ceux qui étaient pieux et Nous y laisserons les injustes agenouillés.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 72,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2323,
+        "text": "Et lorsque Nos versets évidents leur sont récités les mécréants disent à ceux qui croient: «Lequel des deux groupes a la situation la plus confortable et la meilleure compagnie?»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 73,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2324,
+        "text": "Combien de générations, avant eux, avons-Nous fait périr, qui les surpassaient en biens et en apparence?",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 74,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2325,
+        "text": "Dis: «Celui qui est dans l'égarement, que le Tout Miséricordieux prolonge sa vie pour un certain temps, jusqu'à ce qu'ils voient soit le châtiment, soit l'Heure dont ils sont menacés. Alors, ils sauront qui a la pire situation et la troupe la plus faible».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 75,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2326,
+        "text": "Allah accroît la rectitude de ceux qui suivent le bon chemin, et les bonnes œuvres durables méritent auprès de ton Seigneur une meilleure récompense et une meilleure destination.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 76,
+        "juz": 16,
+        "manzil": 4,
+        "page": 310,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 484,
+    "ayahs": [
+      {
+        "number": 4283,
+        "text": "...Créateur des cieux et de la terre. Il vous a donné des épouses [issues] de vous-mêmes et des bestiaux par couples; par ce moyen Il vous multiplie. Il n'y a rien qui Lui ressemble; et c'est Lui l'Audient, le Clairvoyant.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 11,
+        "juz": 25,
+        "manzil": 6,
+        "page": 484,
+        "ruku": 420,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4284,
+        "text": "Il possède les clefs [des trésors] des cieux et de la terre. Il attribue Ses dons avec largesse, ou les restreint à qui Il veut. Certes, Il est Omniscient.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 12,
+        "juz": 25,
+        "manzil": 6,
+        "page": 484,
+        "ruku": 420,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4285,
+        "text": "Il vous a légiféré en matière de religion, ce qu'Il avait enjoint à Noé, ce que Nous t'avons révélé, ainsi que ce que Nous avons enjoint à Abraham, à Moïse et à Jésus: «Etablissez la religion; et n'en faites pas un sujet de divisions». Ce à quoi tu appelles les associateurs leur paraît énorme Allah élit et rapproche de Lui qui Il veut et guide vers Lui celui qui se repent.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 13,
+        "juz": 25,
+        "manzil": 6,
+        "page": 484,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4286,
+        "text": "Ils ne se sont divisés qu'après avoir reçu la science et ceci par rivalité entre eux. Et si ce n'était une parole préalable de ton Seigneur pour un terme fixé, on aurait certainement tranché entre eux. Ceux à qui le Livre a été donné en héritage après eux sont vraiment à son sujet, dans un doute troublant.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 14,
+        "juz": 25,
+        "manzil": 6,
+        "page": 484,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4287,
+        "text": "Appelle donc (les gens) à cela; reste droit comme il t'a été commandé; ne suis pas leurs passions; et dis: «Je crois en tout ce qu'Allah a fait descendre comme Livre, et il m'a été commandé d'être équitable entre vous. Allah est notre Seigneur et votre Seigneur. A nous nos œuvres et à vous vos œuvres. Aucun argument [ne peut trancher] entre nous et vous. Allah nous regroupera tous. Et vers Lui est la destination».",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 15,
+        "juz": 25,
+        "manzil": 6,
+        "page": 484,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

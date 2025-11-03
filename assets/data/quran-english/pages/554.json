@@ -1,0 +1,169 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 554,
+    "ayahs": [
+      {
+        "number": 5186,
+        "text": "O you who believe, when the call to prayer is made on the day of congregation, hasten to remember God, putting aside your business. This is better for you if you can understand.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 9,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5187,
+        "text": "And when the service of prayer is over spread out in the land, and look for the bounty of God. and remember God a great deal that you may prosper.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 10,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5188,
+        "text": "Yet when they see some buying and selling, or some sport, they go for it, leaving you standing. Tell them: \"What is with God is better than your sport and commerce. And God is the best of providers.\"",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 11,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5189,
+        "text": "WHEN THE HYPOCRITES come to you, they say: \"We affirm that you are the Apostle of God.\" God indeed knows you are His Apostle. God bears witness that the hypocrites are indeed liars.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 1,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5190,
+        "text": "They have made their oaths a shield in order to obstruct others from the way of God. It is certainly evil what they do.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 2,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5191,
+        "text": "That is because they came to believe, and then renounced (their faith). So their hearts were sealed; and now they do not understand.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 3,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5192,
+        "text": "Pleasing seem their persons when you look at them; and when they talk, you listen to their speech. Yet they are like the wooden panelling of a wall. They imagine every rebuke to be directed against them. They are the enemies, beware of them. May God damn them, how pervert are they!",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 4,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "62": {
+        "number": 62,
+        "name": "سُورَةُ الجُمُعَةِ",
+        "englishName": "Al-Jumu'a",
+        "englishNameTranslation": "Friday",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      },
+      "63": {
+        "number": 63,
+        "name": "سُورَةُ المُنَافِقُونَ",
+        "englishName": "Al-Munaafiqoon",
+        "englishNameTranslation": "The Hypocrites",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

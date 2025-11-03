@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 464,
+    "ayahs": [
+      {
+        "number": 4106,
+        "text": "And the evil of what they had earned would become visible to them; and what they used to mock would surround them from all sides.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 48,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4107,
+        "text": "When a man is in trouble, he prays to God; but when We bestow a favour on him he says: \"It has come to me through my acumen.\" In fact, this is an illusion, but most men do not know.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 49,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4108,
+        "text": "Those before them had also said so, and yet nothing of what they did availed them in the least.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 50,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4109,
+        "text": "Then the worst of what they had done overtook them. So will the evil deeds of those who are sinners among them recoil back on them. They cannot get the better (of Us).",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 51,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4110,
+        "text": "Do they not know that God enhances or restricts the provision of any one He will. Surely there are signs in this for people who believe.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 52,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4111,
+        "text": "Say: \"O creatures of God, those of you who have acted against your own interests should not be disheartened of the mercy of God. Surely God forgives all sins. He is all-forgiving and all-merciful.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 53,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 401,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4112,
+        "text": "Turn towards your Lord and obey Him before the punishment comes upon you when you will not be helped.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 54,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 401,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4113,
+        "text": "Follow the best of what has been revealed to you by your Lord before the punishment overtakes you suddenly and you are caught unawares,",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 55,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 401,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4114,
+        "text": "Lest a soul should say: \"Alas, I was heedless of God and only laughed;\"",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 56,
+        "juz": 24,
+        "manzil": 6,
+        "page": 464,
+        "ruku": 401,
+        "hizbQuarter": 186,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

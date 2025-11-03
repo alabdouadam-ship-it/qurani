@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 436,
+    "ayahs": [
+      {
+        "number": 3672,
+        "text": "وما يستوي البحران: هذا عذب شديد العذوبة، سَهْلٌ مروره في الحلق يزيل العطش، وهذا ملح شديد الملوحة، ومن كل من البحرين تأكلون سمكًا طريًّا شهيَّ الطَّعم، وتستخرجون زينة هي اللؤلؤ والمَرْجان تَلْبَسونها، وترى السفن فيه شاقات المياه؛ لتبتغوا من فضله من التجارة وغيرها. وفي هذا دلالة على قدرة الله ووحدانيته؛ ولعلكم تشكرون لله على هذه النعم التي أنعم بها عليكم.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 12,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 377,
+        "hizbQuarter": 174,
+        "sajda": false
+      },
+      {
+        "number": 3673,
+        "text": "واللهُ يدخل من ساعات الليل في النهار، فيزيد النهار بقَدْر ما نقص من الليل، ويُدخل من ساعات النهار في الليل، فيزيد الليل بقَدْر ما نقص من النهار، وذلل الشمس والقمر، يجريان لوقت معلوم، ذلكم الذي فعل هذا هو الله ربكم له الملك كله، والذين تعبدون من دون الله ما يملكون مِن قطمير، وهي القشرة الرقيقة البيضاء تكون على النَّواة.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 13,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 377,
+        "hizbQuarter": 174,
+        "sajda": false
+      },
+      {
+        "number": 3674,
+        "text": "إن تدعوا -أيها الناس- هذه المعبودات من دون الله لا يسمعوا دعاءكم، ولو سمعوا على سبيل الفرض ما أجابوكم، ويوم القيامة يتبرؤون منكم، ولا أحد يخبرك -أيها الرسول- أصدق من الله العليم الخبير.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 14,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 377,
+        "hizbQuarter": 174,
+        "sajda": false
+      },
+      {
+        "number": 3675,
+        "text": "يا أيها الناس أنتم المحتاجون إلى الله في كل شيء، لا تستغنون عنه طرفة عين، وهو سبحانه الغنيُّ عن الناس وعن كل شيء من مخلوقاته، الحميد في ذاته وأسمائه وصفاته، المحمود على نعمه؛ فإن كل نعمة بالناس فمنه، فله الحمد والشكر على كلِّ حال.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 15,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3676,
+        "text": "إن يشأ الله يهلكُّم أيها الناس، ويأت بقوم آخرين يطيعونه ويعبدونه وحده.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 16,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3677,
+        "text": "وما إهلاككم والإتيان بخلق سواكم على الله بممتنع، بل ذلك على الله سهل يسير.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 17,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3678,
+        "text": "ولا تحمل نفس مذنبة ذنب نفس أخرى، وإن تَسْأل نفسٌ مثقَلَة بالخطايا مَن يحمل عنها من ذنوبها لم تجد من يَحمل عنها شيئًا، ولو كان الذي سألتْه ذا قرابة منها من أب أو أخ ونحوهما. إنما تحذِّر -أيها الرسول- الذين يخافون عذاب ربهم بالغيب، وأدَّوا الصلاة حق أدائها. ومن تطهر من الشرك وغيره من المعاصي فإنما يتطهر لنفسه. وإلى الله سبحانه مآل الخلائق ومصيرهم، فيجازي كلا بما يستحق.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 18,
+        "juz": 22,
+        "manzil": 5,
+        "page": 436,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "35": {
+        "number": 35,
+        "name": "سُورَةُ فَاطِرٍ",
+        "englishName": "Faatir",
+        "englishNameTranslation": "The Originator",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

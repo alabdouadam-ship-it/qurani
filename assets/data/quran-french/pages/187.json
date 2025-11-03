@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 187,
+    "ayahs": [
+      {
+        "number": 1236,
+        "text": "Désaveu de la part d'Allah et de Son messager à l'égard des associateurs avec qui vous avez conclu un pacte:",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 1,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1237,
+        "text": "Parcourez la terre durant quatre mois; et sachez que vous ne réduirez pas Allah à l'impuissance et qu'Allah couvre d'ignominie les mécréants.»",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 2,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1238,
+        "text": "Et proclamation aux gens, de la part d'Allah et de Son messager, au jour du Grand Pèlerinage, qu'Allah et Son messager, désavouent les associateurs. Si vous vous repentez, ce sera mieux pour vous. Mais si vous vous détournez, sachez que vous ne réduirez pas Allah à l'impuissance. Et annonce un châtiment douloureux à ceux qui ne croient pas.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 3,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1239,
+        "text": "A l'exception des associateurs avec lesquels vous avez conclu un pacte, puis ils ne vous ont manqué en rien, et n'ont soutenu personne [à lutter] contre vous: respectez pleinement le pacte conclu avec eux jusqu'au terme convenu. Allah aime les pieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 4,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1240,
+        "text": "Après que les mois sacrés expirent, tuez les associateurs où que vous les trouviez. Capturez-les, assiégez-les et guettez-les dans toute embuscade. Si ensuite ils se repentent, accomplissent la Salât et acquittent la Zakât, alors laissez-leur la voie libre, car Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 5,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1241,
+        "text": "Et si l'un des associateurs te demande asile, accorde-le lui, afin qu'il entende la parole d'Allah, puis fais-le parvenir à son lieu de sécurité. Car ce sont des gens qui ne savent pas.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 6,
+        "juz": 10,
+        "manzil": 2,
+        "page": 187,
+        "ruku": 156,
+        "hizbQuarter": 75,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

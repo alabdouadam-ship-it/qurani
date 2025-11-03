@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 321,
+    "ayahs": [
+      {
+        "number": 2474,
+        "text": "قال الله تعالى له: حشرتك أعمى؛ لأنك أتتك آياتي البينات، فأعرضت عنها، ولم تؤمن بها، وكما تركتَها في الدنيا فكذلك اليوم تُترك في النار.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 126,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2475,
+        "text": "وهكذا نعاقب مَن أسرف على نفسه فعصى ربه، ولم يؤمن بآياته بعقوبات في الدنيا، ولَعذاب الآخرة المعدُّ لهم أشد ألمًا وأدوم وأثبت؛ لأنه لا ينقطع ولا ينقضي.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 127,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2476,
+        "text": "أفلم يدل قومك - أيها الرسول - على طريق الرشاد كثرة مَن أهلكنا من الأمم المكذبة قبلهم وهم يمشون في ديارهم، ويرون آثار هلاكهم؟ إن في كثرة تلك الأمم وآثار عذابهم لَعبرًا وعظاتٍ لأهل العقول الواعية.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 128,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2477,
+        "text": "ولولا كلمة سبقت من ربك وأجل مسمى عنده للازمهم الهلاك عاجلا، لأنهم يستحقونه؛ بسبب كفرهم.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 129,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2478,
+        "text": "فاصبر - أيها الرسول - على ما يقوله المكذبون بك من أوصاف وأباطيل، وسبِّح بحمد ربك في صلاة الفجر قبل طلوع الشمس، وصلاة العصر قبل غروبها، وصلاة العشاء في ساعات الليل، وصلاة الظهر والمغرب أطراف النهار؛ كي تثاب على هذه الأعمال بما تَرْضى به.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 130,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2479,
+        "text": "ولا تنظر إلى ما مَتَّعْنا به هؤلاء المشركين وأمثالهم من أنواع المتع، فإنها زينة زائلة في هذه الحياة الدنيا، متعناهم بها؛ لنبتليهم بها، ورزق ربك وثوابه خير لك مما متعناهم به وأدوم؛ حيث لا انقطاع له ولا نفاد.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 131,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2480,
+        "text": "وَأْمُرْ - أيها النبي - أهلك بالصلاة، واصطبر على أدائها، لا نسألك مالا، نحن نرزقك ونعطيك. والعاقبة الصالحة في الدنيا والآخرة لأهل التقوى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 132,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2481,
+        "text": "وقال مكذبوك - أيها الرسول -: هلا تأتينا بعلامة من ربك تدلُّ على صدقك، أولم يأتهم هذا القرآن المصدق لما في الكتب السابقة من الحق؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 133,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2482,
+        "text": "ولو أنَّا أهلكنا هؤلاء المكذبين بعذاب من قبل أن نرسل إليهم رسولا وننزل عليهم كتابًا لقالوا: ربنا هلا أرسلت إلينا رسولا من عندك، فنصدقه، ونتبع آياتك وشرعك، مِن قبل أن نَذلَّ ونَخزى بعذابك.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 134,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2483,
+        "text": "قل - أيها الرسول - لهؤلاء المشركين بالله: كل منا ومنكم منتظر دوائر الزمان، ولمن يكون النصر والفلاح، فانتظروا، فستعلمون: مَن أهل الطريق المستقيم، ومَن المهتدي للحق منا ومنكم؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 135,
+        "juz": 16,
+        "manzil": 4,
+        "page": 321,
+        "ruku": 277,
+        "hizbQuarter": 128,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

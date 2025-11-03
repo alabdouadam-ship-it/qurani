@@ -1,0 +1,321 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 267,
+    "ayahs": [
+      {
+        "number": 1893,
+        "text": "And severed their Scripture into fragments.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 91,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1894,
+        "text": "By your Lord We shall question them one and all",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 92,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1895,
+        "text": "About their deeds.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 93,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1896,
+        "text": "So declare to them what We have enjoined, and turn away from idolaters.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 94,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1897,
+        "text": "We are surely sufficient to deal with those who scoff at you,",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 95,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1898,
+        "text": "Who place other gods besides God. They will come to know soon.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 96,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1899,
+        "text": "We are well aware that you are disheartened by what they say.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 97,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1900,
+        "text": "But you should glorify your Lord with praises, and be among those who bow in submission;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 98,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1901,
+        "text": "And go on worshipping your Lord till the certainty (of death) comes upon you.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 99,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1902,
+        "text": "THE DECREE of GOD will surely come; so do not try to hasten it: Too glorious and high is He for what they associate with Him.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 1,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1903,
+        "text": "He sends the angels with revelation by His command, to any of His creatures as He please, (saying): \"Warn that there is no god but I, so fear Me.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 2,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1904,
+        "text": "He created the heavens and the earth with reason. Too glorious and high is He for what they associate with Him.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 3,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1905,
+        "text": "Man He created from a drop of semen; and still he becomes an open contender.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 4,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1906,
+        "text": "He created the cattle from whom you get warm clothing and (other) advantages, and some you eat.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 5,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1907,
+        "text": "There is life and cheer for you as you drive them home in the evening, and lead them out in the morning to graze.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 6,
+        "juz": 14,
+        "manzil": 3,
+        "page": 267,
+        "ruku": 224,
+        "hizbQuarter": 107,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "15": {
+        "number": 15,
+        "name": "سُورَةُ الحِجۡرِ",
+        "englishName": "Al-Hijr",
+        "englishNameTranslation": "The Rock",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 99
+      },
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

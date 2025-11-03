@@ -1,0 +1,674 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 535,
+    "ayahs": [
+      {
+        "number": 4996,
+        "text": "Parmi eux circuleront des garçons éternellement jeunes,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4997,
+        "text": "avec des coupes, des aiguières et un verre [rempli] d'une liqueur de source",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4998,
+        "text": "qui ne leur provoquera ni maux de tête ni étourdissement;",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4999,
+        "text": "et des fruits de leur choix,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5000,
+        "text": "et toute chair d'oiseau qu'ils désireront.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5001,
+        "text": "Et ils auront des houris aux yeux, grands et beaux,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5002,
+        "text": "pareilles à des perles en coquille",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5003,
+        "text": "en récompense pour ce qu'ils faisaient.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5004,
+        "text": "Ils n'y entendront ni futilité ni blasphème;",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5005,
+        "text": "mais seulement les propos: «Salâm! Salâm!»... [Paix! Paix!]",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5006,
+        "text": "Et les gens de la droite; que sont les gens de la droite?",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5007,
+        "text": "[Ils seront parmi] des jujubiers sans épines,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 28,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5008,
+        "text": "et parmi des bananiers aux régimes bien fournis,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 29,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5009,
+        "text": "dans une ombre étendue",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 30,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5010,
+        "text": "[près] d'une eau coulant continuellement,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5011,
+        "text": "et des fruits abondants",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5012,
+        "text": "ni interrompus ni défendus,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5013,
+        "text": "sur des lits surélevés,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5014,
+        "text": "C'est Nous qui les avons créées à la perfection,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5015,
+        "text": "et Nous les avons faites vierges,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5016,
+        "text": "gracieuses, toutes de même âge,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5017,
+        "text": "pour les gens de la droite,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5018,
+        "text": "une multitude d'élus parmi les premières [générations],",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5019,
+        "text": "et une multitude d'élus parmi les dernières [générations].",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5020,
+        "text": "Et les gens de la gauche; que sont les gens de la gauche?",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 41,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5021,
+        "text": "ils seront au milieu d'un souffle brûlant et d'une eau bouillante,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 42,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5022,
+        "text": "à l'ombre d'une fumée noire",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 43,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5023,
+        "text": "ni fraîche, ni douce.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 44,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5024,
+        "text": "Ils vivaient auparavant dans le luxe.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 45,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5025,
+        "text": "Ils persistaient dans le grand péché [le polythéisme]",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 46,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5026,
+        "text": "et disaient: «Quand nous mourrons et serons poussière et ossements, serons-nous ressuscités?",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 47,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5027,
+        "text": "ainsi que nos anciens ancêtres?..»",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 48,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5028,
+        "text": "Dis: «En vérité les premiers et les derniers",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 49,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 5029,
+        "text": "seront réunis pour le rendez-vous d'un jour connu».",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 50,
+        "juz": 27,
+        "manzil": 7,
+        "page": 535,
+        "ruku": 470,
+        "hizbQuarter": 214,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "56": {
+        "number": 56,
+        "name": "سُورَةُ الوَاقِعَةِ",
+        "englishName": "Al-Waaqia",
+        "englishNameTranslation": "The Inevitable",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 96
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

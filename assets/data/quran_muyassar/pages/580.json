@@ -1,0 +1,511 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 580,
+    "ayahs": [
+      {
+        "number": 5617,
+        "text": "ومن الليل فاخضع لربك، وصَلِّ له، وتهجَّد له زمنًا طويلا فيه.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5618,
+        "text": "إن هؤلاء المشركين يحبون الدنيا، وينشغلون بها، ويتركون خلف ظهورهم العمل للآخرة، ولما فيه نجاتهم في يوم عظيم الشدائد.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5619,
+        "text": "نحن خلقناهم، وأحكمنا خلقهم، وإذا شئنا أهلكناهم، وجئنا بقوم مطيعين ممتثلين لأوامر ربهم.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5620,
+        "text": "إن هذه السورة عظة للعالمين، فمن أراد الخير لنفسه في الدنيا والآخرة اتخذ بالإيمان والتقوى طريقًا يوصله إلى مغفرة الله ورضوانه. وما تريدون أمرًا من الأمور إلا بتقدير الله ومشيئته. إن الله كان عليمًا بأحوال خلقه، حكيمًا في تدبيره وصنعه. يُدْخل مَن يشاء مِن عباده في رحمته ورضوانه، وهم المؤمنون، وأعدَّ للظالمين المتجاوزين حدود الله عذابًا موجعًا.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5621,
+        "text": "إن هذه السورة عظة للعالمين، فمن أراد الخير لنفسه في الدنيا والآخرة اتخذ بالإيمان والتقوى طريقًا يوصله إلى مغفرة الله ورضوانه. وما تريدون أمرًا من الأمور إلا بتقدير الله ومشيئته. إن الله كان عليمًا بأحوال خلقه، حكيمًا في تدبيره وصنعه. يُدْخل مَن يشاء مِن عباده في رحمته ورضوانه، وهم المؤمنون، وأعدَّ للظالمين المتجاوزين حدود الله عذابًا موجعًا.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5622,
+        "text": "إن هذه السورة عظة للعالمين، فمن أراد الخير لنفسه في الدنيا والآخرة اتخذ بالإيمان والتقوى طريقًا يوصله إلى مغفرة الله ورضوانه. وما تريدون أمرًا من الأمور إلا بتقدير الله ومشيئته. إن الله كان عليمًا بأحوال خلقه، حكيمًا في تدبيره وصنعه. يُدْخل مَن يشاء مِن عباده في رحمته ورضوانه، وهم المؤمنون، وأعدَّ للظالمين المتجاوزين حدود الله عذابًا موجعًا.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5623,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5624,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5625,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5626,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5627,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5628,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5629,
+        "text": "أقسم الله تعالى بالرياح حين تهب متتابعة يقفو بعضها بعضًا، وبالرياح الشديدة الهبوب المهلكة، وبالملائكة الموكلين بالسحب يسوقونها حيث شاء الله، وبالملائكة التي تنزل من عند الله بما يفرق بين الحق والباطل والحلال والحرام، وبالملائكة التي تتلقى الوحي من عند الله وتنزل به على أنبيائه؛ إعذارًا من الله إلى خلقه وإنذارًا منه إليهم؛ لئلا يكون لهم حجة. إن الذي توعدون به مِن أمر يوم القيامة وما فيه من حساب وجزاء لنازلٌ بكم لا محالة.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5630,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5631,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5632,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5633,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5634,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5635,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5636,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5637,
+        "text": "فإذا النجوم طُمست وذهب ضياؤها، وإذا السماء تصدَّعت، وإذا الجبال تطايرت وتناثرت وصارت هباء تَذْروه الرياح، وإذا الرسل عُيِّن لهم وقت وأجل للفصل بينهم وبين الأمم، يقال: لأيِّ يوم عظيم أخِّرت الرسل؟ أخِّرت ليوم القضاء والفصل بين الخلائق. وما أعلمك -أيها الإنسان- أيُّ شيء هو يوم الفصل وشدته وهوله؟ هلاك عظيم في ذلك اليوم للمكذبين بهذا اليوم الموعود.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5638,
+        "text": "ألم نهلك السابقين من الأمم الماضية؛ بتكذيبهم للرسل كقوم نوح وعاد وثمود؟ ثم نلحق بهم المتأخرين ممن كانوا مثلهم في التكذيب والعصيان. مِثل ذلك الإهلاك الفظيع نفعل بهؤلاء المجرمين من كفار \"مكة\"؛ لتكذيبهم الرسول صلى الله عليه وسلم.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5639,
+        "text": "ألم نهلك السابقين من الأمم الماضية؛ بتكذيبهم للرسل كقوم نوح وعاد وثمود؟ ثم نلحق بهم المتأخرين ممن كانوا مثلهم في التكذيب والعصيان. مِثل ذلك الإهلاك الفظيع نفعل بهؤلاء المجرمين من كفار \"مكة\"؛ لتكذيبهم الرسول صلى الله عليه وسلم.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5640,
+        "text": "ألم نهلك السابقين من الأمم الماضية؛ بتكذيبهم للرسل كقوم نوح وعاد وثمود؟ ثم نلحق بهم المتأخرين ممن كانوا مثلهم في التكذيب والعصيان. مِثل ذلك الإهلاك الفظيع نفعل بهؤلاء المجرمين من كفار \"مكة\"؛ لتكذيبهم الرسول صلى الله عليه وسلم.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5641,
+        "text": "هلاك وعذاب شديد يوم القيامة لكل مكذِّب بأن الله هو الإله الحق وحده لا شريك له، والنبوةِ والبعث والحساب.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "76": {
+        "number": 76,
+        "name": "سُورَةُ الإِنسَانِ",
+        "englishName": "Al-Insaan",
+        "englishNameTranslation": "Man",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 31
+      },
+      "77": {
+        "number": 77,
+        "name": "سُورَةُ المُرۡسَلَاتِ",
+        "englishName": "Al-Mursalaat",
+        "englishNameTranslation": "The Emissaries",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 50
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

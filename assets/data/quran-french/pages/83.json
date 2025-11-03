@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 83,
+    "ayahs": [
+      {
+        "number": 520,
+        "text": "Et Allah veut accueillir votre repentir. Mais ceux qui suivent les passions veulent que vous vous incliniez grandement (vers l'erreur comme ils le font).",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 27,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 521,
+        "text": "Allah veut vous alléger (les obligations,) car l'homme a été créé faible.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 28,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 522,
+        "text": "O les croyants! Que les uns d'entre vous ne mangent pas les biens des autres illégalement. Mais qu'il y ait du négoce (légal), entre vous, par consentement mutuel. Et ne vous tuez pas vous-mêmes. Allah, en vérité, est Miséricordieux envers vous.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 29,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 523,
+        "text": "Et quiconque commet cela, par excès et par iniquité, Nous le jetterons au Feu, voilà qui est facile pour Allah.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 30,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 524,
+        "text": "Si vous évitez les grands péchés qui vous sont interdits, Nous effacerons vos méfaits de votre compte, et Nous vous ferons entrer dans un endroit honorable (le Paradis).",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 31,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 525,
+        "text": "Ne convoitez pas ce qu'Allah a attribué aux uns d'entre vous plus qu'aux autres; aux hommes la part qu'ils ont acquise, et aux femmes la part qu'elles ont acquise. Demandez à Allah de Sa grâce. Car Allah, certes, est Omniscient.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 32,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 526,
+        "text": "A tous Nous avons désigné des héritiers pour ce que leur laissent leurs père et mère, leurs proches parents, et ceux envers qui, de vos propres mains, vous vous êtes engagés, donnez leur donc leur part, car Allah, en vérité, est témoin de tout.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 33,
+        "juz": 5,
+        "manzil": 1,
+        "page": 83,
+        "ruku": 66,
+        "hizbQuarter": 33,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

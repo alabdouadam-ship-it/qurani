@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 7,
+    "ayahs": [
+      {
+        "number": 45,
+        "text": "- Nous dîmes: «Descendez d'ici, vous tous! Toutes les fois que Je vous enverrai un guide, ceux qui [le] suivront n'auront rien à craindre et ne seront point affligés».",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 38,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 5,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 46,
+        "text": "Et ceux qui ne croient pas (à nos messagers) et traitent de mensonge Nos révélations, ceux-là sont les gens du Feu où ils demeureront éternellement.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 39,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 5,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 47,
+        "text": "O enfants d'Israël, rappelez-vous Mon bienfait dont Je vous ai comblés. Si vous tenez vos engagements vis-à-vis de Moi, Je tiendrai les miens. Et c'est Moi que vous devez redouter.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 40,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 48,
+        "text": "Et croyez à ce que J'ai fait descendre, en confirmation de ce qui était déjà avec vous; et ne soyez pas les premiers à le rejeter. Et n'échangez pas Mes révélations contre un vil prix. Et c'est Moi que vous devez craindre.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 41,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 49,
+        "text": "Et ne mêlez pas le faux à la vérité. Ne cachez pas sciemment la vérité.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 42,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 50,
+        "text": "Et accomplissez la Salât, et acquittez la Zakât, et inclinez-vous avec ceux qui s'inclinent.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 43,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 51,
+        "text": "Commanderez-vous aux gens de faire le bien, et vous oubliez vous-mêmes de le faire, alors que vous récitez le Livre? Etes-vous donc dépourvus de raison?",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 44,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 52,
+        "text": "Et cherchez secours dans l'endurance et la salât: certes, la Salât est une lourde obligation, sauf pour les humbles,",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 45,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 53,
+        "text": "qui ont la certitude de rencontrer leur Seigneur (après leur résurrection) et retourner à Lui seul.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 46,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 54,
+        "text": "O Enfants d'Israël, rappelez-vous Mon bienfait dont Je vous ai comblés, (Rappelez-vous) que Je vous ai préférés à tous les peuples (de l'époque).",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 47,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 7,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 55,
+        "text": "Et redoutez le jour où nulle âme ne suffira en quoi que ce soit à une autre; où l'on n'acceptera d'elle aucune intercession; et où on ne recevra d'elle aucune compensation. Et ils ne seront point secourus.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 48,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 7,
+        "hizbQuarter": 3,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

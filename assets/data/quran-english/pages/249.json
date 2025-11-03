@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 249,
+    "ayahs": [
+      {
+        "number": 1708,
+        "text": "ALIF LAM MIM RA. These are the verses of the Scripture. Whatsoever is sent down to you from your Lord is the truth; but most men do not believe.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 1,
+        "juz": 13,
+        "manzil": 3,
+        "page": 249,
+        "ruku": 205,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1709,
+        "text": "It is God who raised the skies without support, as you can see, then assumed His throne, and enthralled the sun and the moon (so that) each runs to a predetermined course. He disposes all affairs, distinctly explaining every sign that you may be certain of the meeting with your Lord.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 2,
+        "juz": 13,
+        "manzil": 3,
+        "page": 249,
+        "ruku": 205,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1710,
+        "text": "It is He who stretched the earth and placed upon it stabilisers and rivers; and made two of a pair of every fruit; (and) He covers up the day with the night. In these are signs for those who reflect.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 3,
+        "juz": 13,
+        "manzil": 3,
+        "page": 249,
+        "ruku": 205,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1711,
+        "text": "On the earth are tracts adjoining one another, and vineyards, fields of corn and date-palm trees, some forked, some with single trunks, yet all irrigated by the self-same water, though We make some more excellent than the others in fruit. There are surely signs in them for those who understand.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 4,
+        "juz": 13,
+        "manzil": 3,
+        "page": 249,
+        "ruku": 205,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1712,
+        "text": "If you are surprised, then astonishing is the speech (of those who say:) \"Having turned to dust shall we be raised as a new creation?\" They are the ones who deny their Lord, and they will have collars around their necks. They are the inmates of Hell, where they will abide for ever.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 5,
+        "juz": 13,
+        "manzil": 3,
+        "page": 249,
+        "ruku": 205,
+        "hizbQuarter": 100,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "13": {
+        "number": 13,
+        "name": "سُورَةُ الرَّعۡدِ",
+        "englishName": "Ar-Ra'd",
+        "englishNameTranslation": "The Thunder",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 43
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

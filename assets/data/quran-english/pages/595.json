@@ -1,0 +1,587 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 595,
+    "ayahs": [
+      {
+        "number": 6044,
+        "text": "I CALL TO witness the sun and his early morning splendour,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6045,
+        "text": "And the moon as she follows in his wake,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6046,
+        "text": "The day when it reveals his radiance,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6047,
+        "text": "The night when it covers him over,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6048,
+        "text": "The heavens and its architecture,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6049,
+        "text": "The earth and its spreading out,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6050,
+        "text": "The soul and how it was integrated",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6051,
+        "text": "And given the faculty of knowing what is disruptive and what is intrinsic to it.",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6052,
+        "text": "He who nourishes it will surely be successful,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6053,
+        "text": "And he who confines it will surely come to grief.",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6054,
+        "text": "The Thamud denied (the truth) in their perverseness",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6055,
+        "text": "When among them the great wretch arose,",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6056,
+        "text": "And the apostle of God had to tell them: \"This is God's she-camel, let her drink.\"",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6057,
+        "text": "But they called him a liar and hamstrung her. So God obliterated them for their crime, and (destroyed) all of them alike.",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6058,
+        "text": "He does not fear the consequence.",
+        "surah": {
+          "number": 91,
+          "name": "سُورَةُ الشَّمۡسِ",
+          "englishName": "Ash-Shams",
+          "englishNameTranslation": "The Sun",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 15
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 533,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6059,
+        "text": "I CALL THE night to witness when it covers over,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6060,
+        "text": "And the day when it shines in all its glory,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6061,
+        "text": "And Him who created the male and female,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6062,
+        "text": "That your endeavour is for different ends.",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6063,
+        "text": "Yet he who gives to others and has fear,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6064,
+        "text": "And affirms goodness,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6065,
+        "text": "We shall ease the way of fortune for him.",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6066,
+        "text": "But he who does not give and is unconcerned,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6067,
+        "text": "And rejects goodness,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6068,
+        "text": "For him We shall ease the way of adversity,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6069,
+        "text": "And his riches will not avail him when he falls headlong (into the Abyss).",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6070,
+        "text": "It is indeed for Us to show the way,",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6071,
+        "text": "And to Us belong the End and the Beginning.",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6072,
+        "text": "So, I warn you of the blazing Fire.",
+        "surah": {
+          "number": 92,
+          "name": "سُورَةُ اللَّيۡلِ",
+          "englishName": "Al-Lail",
+          "englishNameTranslation": "The Night",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 21
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 595,
+        "ruku": 534,
+        "hizbQuarter": 238,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "91": {
+        "number": 91,
+        "name": "سُورَةُ الشَّمۡسِ",
+        "englishName": "Ash-Shams",
+        "englishNameTranslation": "The Sun",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 15
+      },
+      "92": {
+        "number": 92,
+        "name": "سُورَةُ اللَّيۡلِ",
+        "englishName": "Al-Lail",
+        "englishNameTranslation": "The Night",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 21
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

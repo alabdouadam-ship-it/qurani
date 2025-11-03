@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 280,
+    "ayahs": [
+      {
+        "number": 2012,
+        "text": "وذكرهم -أيها الرسول- بيوم القيامة حين تأتي كل نفس تخاصم عن ذاتها، وتعتذر بكل المعاذير، ويوفي الله كل نفس جزاء ما عَمِلَتْه من غير ظلم لها، فلا يزيدهم في العقاب، ولا ينقصهم من الثواب.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 111,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2013,
+        "text": "وضرب الله مثلا بلدة \"مكة\" كانت في أمان من الاعتداء، واطمئنان مِن ضيق العيش، يأتيها رزقها هنيئًا سهلا من كل جهة، فجحد أهلُها نِعَمَ الله عليهم، وأشركوا به، ولم يشكروا له، فعاقبهم الله بالجوع، والخوف من سرايا رسول الله صلى الله عليه وسلم وجيوشه، التي كانت تخيفهم؛ وذلك بسبب كفرهم وصنيعهم الباطل.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 112,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2014,
+        "text": "ولقد أرسل الله إلى أهل \"مكة\" رسولا منهم، هو النبي محمد صلى الله عليه وسلم، يعرفون نسبه وصدقه وأمانته، فلم يقبلوا ما جاءهم به، ولم يصدقوه، فأخذهم العذاب من الشدائد والجوع والخوف، وقَتْل عظمائهم في \"بدر\" وهم ظالمون لأنفسهم بالشرك بالله، والصدِّ عن سبيله.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 113,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2015,
+        "text": "فكلوا -أيها المؤمنون- مما رزقكم الله، وجعله لكم حلالا مستطابًا، واشكروا نعمة الله عليكم بالاعتراف بها وصَرْفها في طاعة الله، إن كنتم حقًّا منقادين لأمره سامعين مطيعين له، تعبدونه وحده لا شريك له.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 114,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2016,
+        "text": "إنما حرَّم الله عليكم الميتة من الحيوان، والدم المسفوح من الذبيح عند ذبحه، ولحم الخنزير، وما ذبح لغير الله، لكن مَن ألجأته ضرورة الخوف من الموت إلى أَكْلِ شيء مِن هذه المحرمات وهو غير ظالم، ولا متجاوزٍ حدَّ الضرورة، فإن الله غفور له، رحيم به، لا يعاقبه على ما فعل.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 115,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2017,
+        "text": "ولا تقولوا -أيها المشركون- للكذب الذي تصفه ألسنتكم: هذا حلال لِما حرَّمه الله، وهذا حرام لِما أحَلَّه الله؛ لتختلقوا على الله الكذب بنسبة التحليل والتحريم إليه، إن الذين يختلقون على الله الكذب لا يفوزون بخير في الدنيا ولا في الآخرة.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 116,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2018,
+        "text": "متاعهم في الدنيا متاع زائل ضئيل، ولهم في الآخرة عذاب موجع.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 117,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2019,
+        "text": "وعلى اليهود حَرَّمنا ما أخبرناك به -أيها الرسول- مِن قبل، وهو كل ذي ظُفُر، وشحوم البقر والغنم، إلا ما حَمَلَتْه ظهورها أو أمعاؤها أو كان مختلطًا بعظم، وما ظلمناهم بتحريم ذلك عليهم، ولكن كانوا ظالمين لأنفسهم بالكفر والبغي، فاستحقوا التحريم عقوبة لهم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 118,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

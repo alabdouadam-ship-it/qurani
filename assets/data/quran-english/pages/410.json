@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 410,
+    "ayahs": [
+      {
+        "number": 3460,
+        "text": "If We send a (blighting) wind and they see (the earth) seared autumnal, they would surely become ungrateful.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 51,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 353,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3461,
+        "text": "You cannot make the dead to listen nor the deaf hear the call when they have turned back and retreated,",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 52,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 353,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3462,
+        "text": "Nor can you make the blind see the way when they have gone astray. You can make none hear except those who believe Our signs and have come to submission.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 53,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 353,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3463,
+        "text": "It is God who created you of weakness, then after weakness gave you strength, then after strength will give you weakness and grey hair. Surely He makes whatever He wills. He is all-knowing and all-powerful.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 54,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3464,
+        "text": "The day Resurrection is set the sinners will swear: \"We did not tarry more than an hour (and cannot be guilty).\" That is how they have always been deceived.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 55,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3465,
+        "text": "But those who were given the knowledge and belief will say: \"You have tarried, according to the Book of God, as long as the Day of Resurrection, and this is the Day of Resurrection, but 'you do not know.\"",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 56,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3466,
+        "text": "Their excuses will be of no avail to the sinners on that day, and they will not be allowed to beg for favour.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 57,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3467,
+        "text": "We have offered every kind of example here in this Qur'an to men. Even then if you bring a verse to them, those who disbelieve say: \"You are nothing but a liar.\"",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 58,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3468,
+        "text": "That is how God seals the hearts of those who do not know.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 59,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3469,
+        "text": "So have patience. The promise of God is surely true; and let not those who do not believe make you relax (your endeavours).",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 60,
+        "juz": 21,
+        "manzil": 5,
+        "page": 410,
+        "ruku": 354,
+        "hizbQuarter": 164,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "30": {
+        "number": 30,
+        "name": "سُورَةُ الرُّومِ",
+        "englishName": "Ar-Room",
+        "englishNameTranslation": "The Romans",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

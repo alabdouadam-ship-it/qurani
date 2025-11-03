@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 209,
+    "ayahs": [
+      {
+        "number": 1371,
+        "text": "As for those who do not hope to meet Us (after death), and are content with the life of this world, who are oblivious of Our signs,",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 7,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1372,
+        "text": "Will have Hell as their abode for what they have earned.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 8,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1373,
+        "text": "But those who believe and act for a beneficial end will be guided by their Lord for their good faith. At their feet shall flow streams of running water in gardens of delight.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 9,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1374,
+        "text": "Their invocation will be: \"All glory to you, O God,\" and \"Peace\" will be their salutation, and the end of their prayer (will be): \"All praise be to God, the Lord of all the worlds.\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 10,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1375,
+        "text": "If God were to hasten the evil, as men try to hasten the good, their term would come to end. So We leave those who do not expect to meet Us to wander perplexed in transgression.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 11,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1376,
+        "text": "When man is afflicted with adversity he calls to Us, whether lying on his side, or sitting or standing. But when We take away his troubles, he moves away, as though he had never called to Us in affliction. In the same way, attractive have been made their deeds to the prodigals.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 12,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1377,
+        "text": "How many generations did We lay low before you when they became wilfully unjust. Their apostles had brought clear proofs to them, yet they never believed. So We punished the sinful people.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 13,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1378,
+        "text": "Then We appointed you leaders in the land after them to see how you behaved.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 14,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

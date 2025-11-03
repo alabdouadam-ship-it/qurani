@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 364,
+    "ayahs": [
+      {
+        "number": 2899,
+        "text": "Or do you think that most of them hear or understand? They are no better than cattle; in fact they are farther astray from the path.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 44,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2900,
+        "text": "Have you not seen how your Lord lengthens out the shadow? He could have kept it motionless if He liked. Yet We make the sun its pilot to show the way.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 45,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2901,
+        "text": "Then We draw it back to Us, withdrawing it little by little.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 46,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2902,
+        "text": "It is He who made the night a covering for you; and made sleep for rest, the day for rising.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 47,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2903,
+        "text": "It is He who sends the winds with auspicious news in advance of His benevolence; and We send pure water down from the sky",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 48,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2904,
+        "text": "To quicken a region that was dead, and to give it as drink to animals We have created and to men in plenty.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 49,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2905,
+        "text": "And We distribute it among them in various ways that they may ponder and reflect; yet most men disdain everything but denial and thanklessness.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 50,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2906,
+        "text": "Had We pleased We could have raised a warner in every town.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 51,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2907,
+        "text": "So do not listen to unbelievers, and strive against them with greater effort.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 52,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2908,
+        "text": "It is He who made two bodies of water flow side by side, one fresh (and) sweet, the other brine (and) bitter, and has placed an interstice, a barrier between them.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 53,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2909,
+        "text": "It is He who created man from water, then gave him consanguinity and affinity. Your Lord is omnipotent.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 54,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2910,
+        "text": "And yet they worship besides God what cannot bring them gain or do them harm. The unbeliever has always been an auxiliary against his Lord.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 55,
+        "juz": 19,
+        "manzil": 4,
+        "page": 364,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

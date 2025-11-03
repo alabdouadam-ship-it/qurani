@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 346,
+    "ayahs": [
+      {
+        "number": 2733,
+        "text": "والذين يجتهدون في أعمال الخير والبر، وقلوبهم خائفة ألا تُقبل أعمالهم، وألا تنجيهم من عذاب ربهم إذا رجعوا إليه للحساب.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 60,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2734,
+        "text": "أولئك المجتهدون في الطاعة، دأبهم المسارعة إلى كل عمل صالح، وهم إلى الخيرات سابقون.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 61,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2735,
+        "text": "ولا نكلف عبدًا من عبادنا إلا بما يسعه العمل به، وأعمالهم مسطورة عندنا في كتاب إحصاء الأعمال الذي ترفعه الملائكة ينطق بالحق عليهم، ولا يُظْلم أحد منهم.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 62,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2736,
+        "text": "لكن قلوب الكفار في ضلال غامر عن هذا القرآن وما فيه، ولهم مع شركهم أعمال سيئة، يُمْهلهم الله ليعملوها، فينالوا غضب الله وعقابه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 63,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2737,
+        "text": "حتى إذا أخذنا المترفين وأهل البطر منهم بعذابنا، إذا هم يرفعون أصواتهم يتضرعون مستغيثين.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 64,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2738,
+        "text": "فيقال لهم: لا تصرخوا، ولا تستغيثوا اليوم، إنكم لا تستطيعون نصر أنفسكم، ولا ينصركم أحد من عذاب الله.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 65,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2739,
+        "text": "قد كانت آيات القرآن تُقرأ عليكم؛ لتؤمنوا بها، فكنتم تنفرون من سماعها والتصديق بها، والعمل بها كما يفعل الناكص على عقبيه برجوعه إلى الوراء.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 66,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2740,
+        "text": "تفعلون ذلك مستكبرين على الناس بغير الحق بسبب بيت الله الحرام، تقولون: نحن أهله لا نُغْلَب فيه، وتتسامرون حوله بالسيِّئ من القول.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 67,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2741,
+        "text": "أفلم يتفكروا في القرآن فيعرفوا صدقه، أم منعهم من الإيمان أنه جاءهم رسول وكتاب لم يأت أباءهم الأولين مثله، فأنكروه وأعرضوا عنه؟",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 68,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2742,
+        "text": "أم منعهم من اتباع الحق أن رسولهم محمدًا صلى الله عليه وسلم غير معروف عندهم، فهم منكرون له؟",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 69,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2743,
+        "text": "بل أحسبوه مجنونًا؟ لقد كذَبوا؛ فإنما جاءهم بالقرآن والتوحيد والدين الحق، وأكثرهم كارهون للحق حسدًا وبغيًا.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 70,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2744,
+        "text": "ولو شرع الله لهم ما يوافق أهواءهم لفسدت السموات والأرض ومَن فيهن، بل أتيناهم بما فيه عزهم وشرفهم، وهو القرآن، فهم عنه معرضون.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 71,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2745,
+        "text": "بل أَمَنعهم من الإيمان أنك - أيها الرسول - تسألهم أجرًا على دعوتك لهم فبخلوا؟ لم تفعل ذلك، فإن ما عند الله من الثواب والعطاء خير، وهو خير الرازقين، فلا يَقدر أحد أن يَرزق مثل رزقه سبحانه وتعالى.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 72,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2746,
+        "text": "وإنك - أيها الرسول - لتدعو قومك وغيرهم إلى دينٍ قويم، وهو دين الإسلام.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 73,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      },
+      {
+        "number": 2747,
+        "text": "وإن الذين لا يُصَدِّقون بالبعث والحساب، ولا يعملون لهما، عن طريق الدين القويم لمائلون إلى غيره.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 74,
+        "juz": 18,
+        "manzil": 4,
+        "page": 346,
+        "ruku": 298,
+        "hizbQuarter": 138,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

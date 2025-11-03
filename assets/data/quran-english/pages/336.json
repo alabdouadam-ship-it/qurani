@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 336,
+    "ayahs": [
+      {
+        "number": 2626,
+        "text": "Turn uprightly to God without ascribing compeers to Him; for he who associates any one with God is like a thing that falls from the sky and is either snatched away by birds or carried far away by the wind.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 31,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2627,
+        "text": "All this, and honouring the offerings to God, comes from purity of heart.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 32,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2628,
+        "text": ", There are advantages for you in these (cattle) up to a time, then their place is the ancient House for sacrifice.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 33,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2629,
+        "text": "For every community We have ordained certain rites that they may commemorate the name of God by reading it over the cattle We have given them for sacrifice. Your God is one God, so be obedient to Him. Give good tidings to those who bow in obedience to God,",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 34,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 289,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2630,
+        "text": "Whose hearts are filled with awe when the name of God is mentioned before them, who endure with fortitude what befalls them, and fulfil their moral obligations, and expend of what We have given them.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 35,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 289,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2631,
+        "text": "We have made the camels signs of God for you. There is good for you in this. So pronounce the name of God over them as they stand with their forefeet in a line. When they have fallen (slaughtered) on their sides, eat of (their meat) and feed those who are content with little, and those who supplicate. That is why We have brought them under your subjugation so that you may be grateful.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 36,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 289,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2632,
+        "text": "It is not their meat or blood that reaches God: It is the fealty of your heart that reaches him. That is why He has subjugated them to you that you may glorify God for having shown you the way. So give glad tidings to those who are doers of good.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 37,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 289,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2633,
+        "text": "God will certainly defend the believers. Surely God does not like the traitors who deny the truth.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 38,
+        "juz": 17,
+        "manzil": 4,
+        "page": 336,
+        "ruku": 289,
+        "hizbQuarter": 135,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

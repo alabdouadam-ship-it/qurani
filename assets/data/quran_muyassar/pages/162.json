@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 162,
+    "ayahs": [
+      {
+        "number": 1042,
+        "text": "قال السادة والكبراء من قوم شعيب الذين تكبروا عن الإيمان بالله واتباع رسوله شعيب عليه السلام: لنخرجنك يا شعيب ومَن معك من المؤمنين من ديارنا، إلا إذا صرتم إلى ديننا، قال شُعيب منكرًا ومتعجبًا من قولهم: أنتابعكم على دينكم ومِلَّتكم الباطلة، ولو كنا كارهين لها لعِلْمِنا ببطلانها؟",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 88,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1043,
+        "text": "وقال شعيب لقومه مستدركًا: قد اختلقنا على الله الكذب إن عُدْنا إلى دينكم بعد أن أنقذنا الله منه، وليس لنا أن نتحول إلى غير دين ربنا إلا أن يشاء الله ربنا، وقد وسع ربنا كل شيء علمًا، فيعلم ما يصلح للعباد، على الله وحده اعتمادنا هداية ونصرة، ربنا احكم بيننا وبين قومنا بالحق، وأنت خير الحاكمين.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 89,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1044,
+        "text": "وقال السادة والكبراء المكذبون الرافضون لدعوة التوحيد إمعانًا في العتوِّ والتمرد، محذرين من اتباع شعيب: لئن اتبعتم شعيبًا إنكم إذًا لهالكون.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 90,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1045,
+        "text": "فأخذَتْ قومَ شعيب الزلزلةُ الشديدة، فأصبحوا في دارهم صرعى ميتين.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 91,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1046,
+        "text": "الذين كذَّبوا شعيبًا كأنهم لم يقيموا في ديارهم، ولم يتمتعوا فيها، حيث استؤصلوا، فلم يبق لهم أثر، وأصابهم الخسران والهلاك في الدنيا والآخرة.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 92,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1047,
+        "text": "فأعرض شعيب عنهم حينما أيقن بحلول العذاب بهم، وقال: يا قوم لقد أبلغتكم رسالات ربي، ونصحت لكم بالدخول في دين الله والإقلاع عما أنتم عليه، فلم تسمعوا ولم تطيعوا، فكيف أحزن على قوم جحدوا وحدانية الله وكذبوا رسله؟",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 93,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 132,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1048,
+        "text": "وما أرسلنا في قرية من نبي يدعوهم إلى عبادة الله، وينهاهم عمَّا هم فيه من الشرك، فكذَّبه قومه، إلا ابتليناهم بالبأساء والضراء، فأصبناهم في أبدانهم بالأمراض والأسقام، وفي أموالهم بالفقر والحاجة؛ رجاء أن يستكينوا، وينيبوا إلى الله، ويرجعوا إلى الحق.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 94,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 133,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1049,
+        "text": "ثم بدَّلنا الحالة الطيبة الأولى مكان الحالة السيئة، فأصبحوا في عافية في أبدانهم، وسَعَة ورخاء في أموالهم؛ إمهالا لهم، ولعلهم يشكرون، فلم يُفِد معهم كل ذلك، ولم يعتبروا ولم ينتهوا عمَّا هم فيه، وقالوا: هذه عادة الدهر في أهله، يوم خير ويوم شر، وهو ما جرى لآبائنا من قبل، فأخذناهم بالعذاب فجأة وهم آمنون، لا يخطر لهم الهلاك على بال.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 95,
+        "juz": 9,
+        "manzil": 2,
+        "page": 162,
+        "ruku": 133,
+        "hizbQuarter": 65,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

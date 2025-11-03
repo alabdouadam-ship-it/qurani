@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 117,
+    "ayahs": [
+      {
+        "number": 720,
+        "text": "O les croyants! Ne prenez pas pour alliés les Juifs et les Chrétiens; ils sont alliés les uns des autres. Et celui d'entre vous qui les prend pour alliés, devient un des leurs. Allah ne guide certes pas les gens injustes.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 51,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 721,
+        "text": "Tu verras, d'ailleurs, que ceux qui ont la maladie au cœur se précipitent vers eux et disent: «Nous craignons qu'un revers de fortune ne nous frappe.» Mais peut-être qu'Allah fera venir la victoire ou un ordre émanant de Lui. Alors ceux-là regretteront leurs pensées secrètes.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 52,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 722,
+        "text": "Et les croyants diront: «Est-ce là ceux qui juraient par Allah de toute leur force qu'ils étaient avec vous?» Mais leurs actions sont devenues vaines et ils sont devenus perdants.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 53,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 723,
+        "text": "O les croyants! Quiconque parmi vous apostasie de sa religion... Allah va faire venir un peuple qu'Il aime et qui L'aime, modeste envers les croyants et fier et puissant envers les mécréants, qui lutte dans le sentier d'Allah, ne craignant le blâme d'aucun blâmeur. Telle est la grâce d'Allah. Il la donne à qui Il veut. Allah est Immense et Omniscient.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 54,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 724,
+        "text": "Vous n'avez d'autres alliés qu'Allah, Son messager, et les croyants qui accomplissent la Salât, s'acquittent de la Zakât, et s'inclinent (devant Allah).",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 55,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 725,
+        "text": "Et quiconque prend pour alliés Allah, Son messager et les croyants, [réussira] car c'est le parti d'Allah qui sera victorieux.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 56,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 726,
+        "text": "O les croyants! N'adoptez pas pour alliés ceux qui prennent en raillerie et jeu votre religion, parmi ceux à qui le Livre fut donné avant vous et parmi les mécréants. Et craignez Allah si vous êtes croyants.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 57,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

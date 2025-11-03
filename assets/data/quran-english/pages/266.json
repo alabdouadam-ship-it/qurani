@@ -1,0 +1,408 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 266,
+    "ayahs": [
+      {
+        "number": 1873,
+        "text": "\"Here are my daughters,\" said Lot, \"if you are so active.\"",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 71,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1874,
+        "text": "Verily by your life they were utterly confused in their (lustful) drunkenness.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 72,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1875,
+        "text": "So they were seized by the mighty blast at break of day;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 73,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1876,
+        "text": "And We turned the city upside down, and rained on them stones of hardened lava.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 74,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1877,
+        "text": "Herein are really signs for those who discern.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 75,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1878,
+        "text": "This (city) lies on a road that still survives.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 76,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1879,
+        "text": "Indeed there is a portent in this for those who believe.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 77,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1880,
+        "text": "The dwellers of the Wood (near Midian) were also wicked.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 78,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1881,
+        "text": "So We punished them too. They are both situated by the highway, clearly visible.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 79,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 222,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1882,
+        "text": "The people of Al-Hijr denied Our apostles;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 80,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1883,
+        "text": "And though We had given them Our signs they turned away from them.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 81,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1884,
+        "text": "They used to hew dwellings in the mountains to live in security.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 82,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1885,
+        "text": "But they were seized by the mighty blast towards the morning;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 83,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1886,
+        "text": "And all that they had done (for security) availed them nothing.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 84,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1887,
+        "text": "We have not created but with reason the heavens and the earth and all that lies within them. The Hour (of the great change) is certain to come. So turn away (from them) with a grace.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 85,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1888,
+        "text": "Surely your Lord is the Creator and knows (everything).",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 86,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1889,
+        "text": "We have indeed given you the seven oft-repeated (examples), and the majestic Qur'an.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 87,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1890,
+        "text": "So covet not things We have bestowed on a portion of them to enjoy, and do not grieve for them, and protect those who believe;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 88,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1891,
+        "text": "And say: \"I am a distinct warner,\"",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 89,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1892,
+        "text": "Like (those) We had sent to those schismatics who slandered their Books",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 90,
+        "juz": 14,
+        "manzil": 3,
+        "page": 266,
+        "ruku": 223,
+        "hizbQuarter": 106,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "15": {
+        "number": 15,
+        "name": "سُورَةُ الحِجۡرِ",
+        "englishName": "Al-Hijr",
+        "englishNameTranslation": "The Rock",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 99
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

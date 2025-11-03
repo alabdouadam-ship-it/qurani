@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 159,
+    "ayahs": [
+      {
+        "number": 1022,
+        "text": "I bring to you the messages of my Lord. I am your sincere friend.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 68,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1023,
+        "text": "Do you wonder that a warning has come to you from your Lord through a man who is one of you and warns you? Remember, He made you leaders after the people of Noah, and gave you a greater increase in your stature. So think of the favours of God; you may haply be blessed.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 69,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1024,
+        "text": "They answered: \"Have you come to say to us that we should worship only one God, abandoning those our ancestors had worshipped? If so, bring on us what you threaten us with, if what you say is true.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 70,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1025,
+        "text": "He replied: \"You have already been beset with punishment and the wrath of God. Why dispute with me about names invented by you and your ancestors for which no sanction was sent down? So wait (for what is to come), I am waiting with you.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 71,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1026,
+        "text": "Then We saved him and those on his side by Our grace, and destroyed to the very last those who rejected Our signs and denied the truth.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 72,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1027,
+        "text": "We sent to Thamud their brother Saleh. \"O you people,\" said he, \"worship God, for you have no other god but He. Clear proof has come to you already from your Lord, and this she-camel of God is the token for you. Leave her free to graze upon God's earth, and do not molest her lest a grievous punishment should befall you.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 73,
+        "juz": 8,
+        "manzil": 2,
+        "page": 159,
+        "ruku": 131,
+        "hizbQuarter": 64,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

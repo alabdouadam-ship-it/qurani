@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 421,
+    "ayahs": [
+      {
+        "number": 3556,
+        "text": "Il est, parmi les croyants, des hommes qui ont été sincères dans leur engagement envers Allah. Certains d'entre eux ont atteint leur fin, et d'autres attendent encore; et ils n'ont varié aucunement (dans leur engagement);",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 23,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 363,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3557,
+        "text": "afin qu'Allah récompense les véridiques pour leur sincérité, et châtie, s'Il veut, les hypocrites, ou accepte leur repentir. Car Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 24,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 363,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3558,
+        "text": "Et Allah a renvoyé, avec leur rage, les infidèles sans qu'ils n'aient obtenu aucun bien, et Allah a épargné aux croyants le combat. Allah est Fort et Puissant.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 25,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 363,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3559,
+        "text": "Et Il a fait descendre de leurs forteresses ceux des gens du Livre qui les avaient soutenus [les coalisés], et Il a jeté l'effroi dans leurs cœurs; un groupe d'entre eux vous tuiez, et un groupe vous faisiez prisonniers.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 26,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 363,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3560,
+        "text": "Et Il vous a fait hériter leur terre, leurs demeures, leurs biens, et aussi une terre que vous n'aviez point foulée. Et Allah est Omnipotent.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 27,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 363,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3561,
+        "text": "O Prophète! Dis à tes épouses: «Si c'est la vie présente que vous désirez et sa parure, alors venez! Je vous donnerai [les moyens] d'en jouir et vous libérerai [par un divorce] sans préjudice.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 28,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 364,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3562,
+        "text": "Mais si c'est Allah que vous voulez et Son messager ainsi que la Demeure dernière, Allah a préparé pour les bienfaisantes parmi vous une énorme récompense.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 29,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 364,
+        "hizbQuarter": 168,
+        "sajda": false
+      },
+      {
+        "number": 3563,
+        "text": "O femmes du Prophète! Celle d'entre vous qui commettra une turpitude prouvée, le châtiment lui sera doublé par deux fois! Et ceci est facile pour Allah.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 30,
+        "juz": 21,
+        "manzil": 5,
+        "page": 421,
+        "ruku": 364,
+        "hizbQuarter": 168,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "33": {
+        "number": 33,
+        "name": "سُورَةُ الأَحۡزَابِ",
+        "englishName": "Al-Ahzaab",
+        "englishNameTranslation": "The Clans",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 73
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

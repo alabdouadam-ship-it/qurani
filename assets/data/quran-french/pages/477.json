@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 477,
+    "ayahs": [
+      {
+        "number": 4219,
+        "text": "H'â, Mîm.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 1,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4220,
+        "text": "[C'est] une Révélation descendue de la part du Tout Miséricordieux, du Très Miséricordieux.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 2,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4221,
+        "text": "Un Livre dont les versets sont détaillés (et clairement exposés), un Coran [lecture] arabe pour des gens qui savent,",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 3,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4222,
+        "text": "annonciateur [d'une bonne nouvelle] et avertisseur. Mais la plupart d'entre eux se détournent; c'est qu'ils n'entendent pas.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 4,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4223,
+        "text": "Et ils dirent: «Nos cœurs sont voilés contre ce à quoi tu nous appelles, nos oreilles sont sourdes. Et entre nous et toi, il y a une cloison. Agis donc de ton côté; nous agissons du nôtre.»",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 5,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4224,
+        "text": "Dis: «Je ne suis qu'un homme comme vous. Il m'a été révélé que votre Dieu est un Dieu unique. Cherchez le droit chemin vers Lui et implorez son pardon». Et malheur aux Associateurs",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 6,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4225,
+        "text": "qui n'acquittent pas la Zakât et ne croient pas en l'au-delà!",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 7,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4226,
+        "text": "Ceux qui croient et accomplissent de bonnes œuvres auront une énorme récompense jamais interrompue.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 8,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4227,
+        "text": "Dis: «Renierez-vous [l'existence] de celui qui a créé la terre en deux jours et Lui donnerez-vous des égaux? Tel est le Seigneur de l'univers,",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 9,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4228,
+        "text": "c'est Lui qui a fermement fixé des montagnes au-dessus d'elle, l'a bénie et lui assigna ses ressources alimentaires en quatre jours d'égale durée. [Telle est la réponse] à ceux qui t'interrogent.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 10,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4229,
+        "text": "Il S'est ensuite adressé au ciel qui était alors fumée et lui dit, ainsi qu'à la terre: «Venez tous deux, bon gré, mal gré». Tous deux dirent: «Nous venons obéissants».",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 11,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "41": {
+        "number": 41,
+        "name": "سُورَةُ فُصِّلَتۡ",
+        "englishName": "Fussilat",
+        "englishNameTranslation": "Explained in detail",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

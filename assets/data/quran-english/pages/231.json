@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 231,
+    "ayahs": [
+      {
+        "number": 1555,
+        "text": "So when the decreed moment arrived, We turned the habitations upside down, and rained upon them stones of hardened lava in quick succession,",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 82,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 189,
+        "hizbQuarter": 92,
+        "sajda": false
+      },
+      {
+        "number": 1556,
+        "text": "Impressed with (the signs) of your Lord. And such (punishment) is not far for the (other) transgressers.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 83,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 189,
+        "hizbQuarter": 92,
+        "sajda": false
+      },
+      {
+        "number": 1557,
+        "text": "We sent to Midian their brother Shu'aib. He said: \"O my people, worship God; you have no other god but He. So do not give in short measure nor underweigh. I see you are prosperous, but I fear the doom of an overwhelming Day for you.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 84,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1558,
+        "text": "So, O my people, weigh and measure with justness, and do not withhold things due to men, and do not spread corruption in the land, despoiling it.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 85,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1559,
+        "text": "That which is left to you by God is better, if you are true believers; yet I am not a warden over you.\"",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 86,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1560,
+        "text": "They said: \"O Shu'aib, does your piety teach that we should abandon what our fathers worshipped, or desist from doing what we like with our goods? How gracious a man of discernment you are indeed!\"",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 87,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1561,
+        "text": "He said: \"O my people, think. I have a clear sign from my Lord, who has also given me a goodly provision, and I do not wish for myself what I forbid you: I only wish to reform you as best I can. My success is from God alone. In Him I have placed my trust, and to Him I turn.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 88,
+        "juz": 12,
+        "manzil": 3,
+        "page": 231,
+        "ruku": 190,
+        "hizbQuarter": 93,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

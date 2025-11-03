@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 544,
+    "ayahs": [
+      {
+        "number": 5116,
+        "text": "O you who believe, if you confer with the Prophet in private, give alms in the name of God before you go to confer. This is better for you and becoming. If you do not have the means, then surely God is forgiving and kind.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 12,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5117,
+        "text": "Are you afraid of giving alms before confering? Then, if you cannot do this, and God forgives you, be constant in your devotional obligations and pay the due share of your wealth for the welfare of others, and obey God and His Prophet. God is aware of all you do.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 13,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5118,
+        "text": "Have you not seen those who have taken a people who have roused the wrath of God, as friends? They are neither of you nor of them, and swear to a lie, and knowingly.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 14,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5119,
+        "text": "God has reserved a severe punishment for them. Evil indeed are the things they do!",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 15,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5120,
+        "text": "They have made their oaths a shield, and obstruct people from the way of God. There is shameful punishment for them.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 16,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5121,
+        "text": "Neither their wealth nor children will avail them against God. They are the people of Hell, and there will abide for ever.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 17,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5122,
+        "text": "On the day that God will raise them together, they will swear before Him as they swear before you, and imagine they are on the right path. Is it not they who are liars?",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 18,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5123,
+        "text": "Satan has got the better of them. and made them forget to remember God. Indeed they belong to Satan's faction. Will not Satan's faction perish?",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 19,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5124,
+        "text": "Surely those who oppose God and His Prophet will be among the vilest.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 20,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5125,
+        "text": "God has decreed: \"I will prevail, I and My apostles.\" Verily God is powerful and all-mighty.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 21,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "58": {
+        "number": 58,
+        "name": "سُورَةُ المُجَادلَةِ",
+        "englishName": "Al-Mujaadila",
+        "englishNameTranslation": "The Pleading Woman",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

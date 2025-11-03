@@ -1,0 +1,522 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 567,
+    "ayahs": [
+      {
+        "number": 5332,
+        "text": "Then came the Pharaoh, and those before him whose habitations were overthrown while they were committing crimes.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5333,
+        "text": "When they disobeyed the apostle of their Lord He seized them with an overwhelming punishment.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5334,
+        "text": "When the water rose in flood, We bore you in the ark,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5335,
+        "text": "In order to make it a warning for you, and that the ear retentive may preserve it.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5336,
+        "text": "When the single blast is sounded on the trumpet,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5337,
+        "text": "And the earth and mountains heaved and crushed to powder with one levelling blow,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5338,
+        "text": "On that Day will come what is to come.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5339,
+        "text": "The sky will cleave asunder on that day and fall to pieces.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5340,
+        "text": "On its fringes will be angels, eight of them, bearing their Lord's throne aloft.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5341,
+        "text": "You will then be set before Him, and not one of you will remain unexposed.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5342,
+        "text": "He who is given his ledger in his right hand, will say: \"Here, read my ledger.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5343,
+        "text": "I was certain I'll be given my account.\"",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5344,
+        "text": "So he shall have an agreeable life",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5345,
+        "text": "In high empyrean",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5346,
+        "text": "With fruits hanging low within reach,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5347,
+        "text": "(And told:) \"Eat and drink to your fill as reward for (good) deeds you had done in days of yore.\"",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5348,
+        "text": "But whosoever gets his ledger in his left hand, will say: \"Would that I were never given my ledger,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5349,
+        "text": "And not known my account!",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5350,
+        "text": "I wish death had put an end to me.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5351,
+        "text": "Of no use was even my wealth.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5352,
+        "text": "Vanished has my power from me.\"",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5353,
+        "text": "\"Seize him and manacle him,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5354,
+        "text": "Then cast him to be burnt in Hell;",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5355,
+        "text": "And string him to a chain seventy cubits long.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 32,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5356,
+        "text": "He did not believe in God the supreme,",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 33,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5357,
+        "text": "Nor urged others to feed the poor.",
+        "surah": {
+          "number": 69,
+          "name": "سُورَةُ الحَاقَّةِ",
+          "englishName": "Al-Haaqqa",
+          "englishNameTranslation": "The Reality",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 34,
+        "juz": 29,
+        "manzil": 7,
+        "page": 567,
+        "ruku": 500,
+        "hizbQuarter": 227,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "69": {
+        "number": 69,
+        "name": "سُورَةُ الحَاقَّةِ",
+        "englishName": "Al-Haaqqa",
+        "englishNameTranslation": "The Reality",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 52
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

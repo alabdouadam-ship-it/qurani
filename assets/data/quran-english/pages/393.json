@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 393,
+    "ayahs": [
+      {
+        "number": 3312,
+        "text": "Whatsoever has been given you is the stuff this life is made of, and only its embellishment. What is with your Lord is better and abiding. Will you not understand?",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 60,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3313,
+        "text": "Can one who was given a better promise, which he will find come true, be like him who was given a little enjoyment of this life, but who will afterwards be brought (to judgement) on the Day of Resurrection?",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 61,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3314,
+        "text": "That day God will call them and ask: \"Where are they you imagined were My compeers?\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 62,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3315,
+        "text": "Those against whom the sentence is justified will say: \"O Lord, these are those we had led astray as we had ourselves gone astray. We clear ourselves before You: They never worshipped us.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 63,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3316,
+        "text": "(The sinners) will be told: \"Invoke your partners.\" They will call on them, but they will not answer; and they will see the torment (and wish) if only they had come to guidance.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 64,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3317,
+        "text": "(God) will ask them on that day: \"What answer did you give the apostles?\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 65,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3318,
+        "text": "Then all news will be blacked out for them, and they will not even ask one another.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 66,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3319,
+        "text": "But he who repents and believes and does good things may well be among the successful.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 67,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3320,
+        "text": "Your Lord creates what He wills and chooses. The good is not for them to choose. Too holy and high is God for what they associate with Him.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 68,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3321,
+        "text": "Your Lord well knows what they hide in their breasts and what they disclose.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 69,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3322,
+        "text": "He is God. There is no god but He. His alone is praise first and last, and His the judgement, and to Him will you be brought back in the end.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 70,
+        "juz": 20,
+        "manzil": 5,
+        "page": 393,
+        "ruku": 340,
+        "hizbQuarter": 157,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

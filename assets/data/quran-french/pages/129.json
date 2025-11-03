@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 129,
+    "ayahs": [
+      {
+        "number": 798,
+        "text": "Si Nous avions désigné un Ange [comme prophète], Nous aurions fait de lui un homme et Nous leur aurions causé la même confusion que celle dans laquelle ils sont.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 9,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 102,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 799,
+        "text": "Certes, on s'est moqué de messagers avant toi, mais ceux qui se sont raillés d'eux, leur propre raillerie les enveloppa.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 10,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 102,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 800,
+        "text": "Dis: «Parcourez la terre et regardez ce qu'il est advenu de ceux qui traitaient la vérité de mensonge».",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 11,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 801,
+        "text": "Dis: «A qui appartient ce qui est dans les cieux et la terre?» Dis: «A Allah!» Il S'est à Lui-même prescrit la miséricorde. Il vous rassemblera, certainement, au Jour de la Résurrection: il n'y a pas de doute là-dessus. Ceux qui font leur propre perte sont ceux qui ne croient pas.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 12,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 802,
+        "text": "Et à Lui tout ce qui réside dans la nuit et le jour. C'est Lui qui est l'Audient, l'Omniscient.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 13,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 803,
+        "text": "Dis: «Devais-je prendre pour allié autre qu'Allah, le Créateur des cieux et de la terre? C'est Lui qui nourrit et personne ne Le nourrit. Dis: «On m'a commandé d'être le premier à me soumettre». Et ne sois jamais du nombre des associateurs.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 14,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 804,
+        "text": "Dis: «Je crains, si je désobéis à mon Seigneur, le châtiment d'un jour redoutable».",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 15,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 805,
+        "text": "En ce jour, quiconque est épargné, c'est qu'[Allah] lui a fait miséricorde. Et voilà le succès éclatant.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 16,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 806,
+        "text": "Et si Allah fait qu'un malheur te touche, nul autre que Lui ne peut l'enlever. Et s'Il fait qu'un bonheur te touche... c'est qu'Il est Omnipotent.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 17,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 807,
+        "text": "C'est Lui le Dominateur Suprême sur Ses serviteurs; c'est Lui le Sage, le Parfaitement Connaisseur.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 18,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

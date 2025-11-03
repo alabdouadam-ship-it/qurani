@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 164,
+    "ayahs": [
+      {
+        "number": 1059,
+        "text": "je ne dois dire sur Allah que la vérité. Je suis venu à vous avec une preuve de la part de votre Seigneur. Laisse donc partir avec moi les Enfants d'Israël.»",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 105,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 134,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1060,
+        "text": "«Si tu es venu avec un miracle, dit (Pharaon,) apporte-le donc, si tu es du nombre des véridiques.»",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 106,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 134,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1061,
+        "text": "Il jeta son bâton et voilà que c'était un serpent évident.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 107,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 134,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1062,
+        "text": "Et il sortit sa main et voilà qu'elle était blanche (éclatante), pour ceux qui regardaient.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 108,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 134,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1063,
+        "text": "Les notables du peuple de Pharaon dirent: «Voilà, certes, un magicien chevronné.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 109,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1064,
+        "text": "Il veut vous expulser de votre pays.» - «Alors, que commandez-vous?»",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 110,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1065,
+        "text": "Ils dirent: «Fais-le attendre, lui et son frère, et envoie des rassembleurs dans les villes,",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 111,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1066,
+        "text": "qui t'amèneront tout magicien averti.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 112,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1067,
+        "text": "Et les magiciens vinrent à Pharaon en disant: «Y aura-t-il vraiment une récompense pour nous, si nous sommes les vainqueurs?»",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 113,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1068,
+        "text": "Il dit: «Oui, et vous serez certainement du nombre de mes rapprochés».",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 114,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1069,
+        "text": "Ils dirent: «O Moïse, ou bien tu jetteras (le premier), ou bien nous serons les premiers à jeter».",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 115,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1070,
+        "text": "«Jetez» dit-il. Puis lorsqu'ils eurent jeté, ils ensorcelèrent les yeux des gens et les épouvantèrent, et vinrent avec une puissante magie.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 116,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 65,
+        "sajda": false
+      },
+      {
+        "number": 1071,
+        "text": "Et Nous révélâmes à Moïse: «Jette ton bâton». Et voilà que celui-ci se mit à engloutir ce qu'ils avaient fabriqué.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 117,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1072,
+        "text": "Ainsi la vérité se manifesta et ce qu'ils firent fût vain.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 118,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1073,
+        "text": "Ainsi ils furent battus et se trouvèrent humiliés.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 119,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      },
+      {
+        "number": 1074,
+        "text": "Et les magiciens se jetèrent prosternés.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 120,
+        "juz": 9,
+        "manzil": 2,
+        "page": 164,
+        "ruku": 135,
+        "hizbQuarter": 66,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 532,
+    "ayahs": [
+      {
+        "number": 4918,
+        "text": "هو سبحانه وتعالى ربُّ مشرقَي الشمس في الشتاء والصيف، ورب مغربَيها فيهما، فالجميع تحت تدبيره وربوبيته.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4919,
+        "text": "فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4920,
+        "text": "خلط الله ماء البحرين - العذب والملح- يلتقيان. بينهما حاجز، فلا يطغى أحدهما على الآخر، ويذهب بخصائصه، بل يبقى العذب عذبًا، والملح ملحًا مع تلاقيهما.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4921,
+        "text": "خلط الله ماء البحرين - العذب والملح- يلتقيان. بينهما حاجز، فلا يطغى أحدهما على الآخر، ويذهب بخصائصه، بل يبقى العذب عذبًا، والملح ملحًا مع تلاقيهما.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4922,
+        "text": "فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4923,
+        "text": "يخرج من البحرين بقدرة الله اللؤلؤ والمَرْجان.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4924,
+        "text": "فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4925,
+        "text": "وله سبحانه وتعالى السفن الضخمة التي تجري في البحر بمنافع الناس، رافعة قلاعها وأشرعتها كالجبال.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4926,
+        "text": "فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4927,
+        "text": "كل مَن على وجه الأرض مِن الخلق هالك، ويبقى وجه ربك ذو العظمة والكبرياء والفضل والجود. وفي الآية إثبات صفة الوجه لله تعالى بما يليق به سبحانه، دون تشبيه ولا تكييف.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4928,
+        "text": "كل مَن على وجه الأرض مِن الخلق هالك، ويبقى وجه ربك ذو العظمة والكبرياء والفضل والجود. وفي الآية إثبات صفة الوجه لله تعالى بما يليق به سبحانه، دون تشبيه ولا تكييف.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4929,
+        "text": "فبأي نِعَم ربكما -أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 28,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4930,
+        "text": "يسأله مَن في السموات والأرض حاجاتهم، فلا غنى لأحد منهم عنه سبحانه. كل يوم هو في شأن: يُعِزُّ ويُذِلُّ، ويعطي ويَمْنع.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 29,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4931,
+        "text": "فبأي نِعَم ربكما -أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 30,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4932,
+        "text": "سنفرُغ لحسابكم ومجازاتكم بأعمالكما التي عملتموهما في الدنيا، أيها الثقلان- الإنس والجن-، فنعاقب أهل المعاصي، ونُثيب أهل الطاعة.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4933,
+        "text": "فبأيِّ نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4934,
+        "text": "يا معشر الجن والإنس، إن قَدَرْتم على النفاذ من أمر الله وحكمه هاربين من أطراف السموات والأرض فافعلوا، ولستم قادرين على ذلك إلا بقوة وحجة، وأمر من الله تعالى (وأنَّى لكم ذلك وأنتم لا تملكون لأنفسكم نفعًا ولا ضرًا؟). فبأي نِعَم ربكما - أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4935,
+        "text": "يا معشر الجن والإنس، إن قَدَرْتم على النفاذ من أمر الله وحكمه هاربين من أطراف السموات والأرض فافعلوا، ولستم قادرين على ذلك إلا بقوة وحجة، وأمر من الله تعالى (وأنَّى لكم ذلك وأنتم لا تملكون لأنفسكم نفعًا ولا ضرًا؟). فبأي نِعَم ربكما - أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4936,
+        "text": "يُرْسَل عليكم لهب من نار، ونحاس مذاب يُصَبُّ على رؤوسكم، فلا ينصر بعضكم بعضًا يا معشر الجن والإنس. فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4937,
+        "text": "يُرْسَل عليكم لهب من نار، ونحاس مذاب يُصَبُّ على رؤوسكم، فلا ينصر بعضكم بعضًا يا معشر الجن والإنس. فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4938,
+        "text": "فإذا انشقت السماء وتفطرت يوم القيامة، فكانت حمراء كلون الورد، وكالزيت المغلي والرصاص المذاب؛ من شدة الأمر وهول يوم القيامة.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4939,
+        "text": "فبأي نِعَم ربكما- أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4940,
+        "text": "ففي ذلك اليوم لا تسأل الملائكة المجرمين من الإنس والجن عن ذنوبهم.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4941,
+        "text": "فبأي نِعَم ربكما -أيها الثقلان- تكذِّبان؟",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 532,
+        "ruku": 467,
+        "hizbQuarter": 213,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "55": {
+        "number": 55,
+        "name": "سُورَةُ الرَّحۡمَٰن",
+        "englishName": "Ar-Rahmaan",
+        "englishNameTranslation": "The Beneficent",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

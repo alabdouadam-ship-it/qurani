@@ -1,0 +1,370 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 571,
+    "ayahs": [
+      {
+        "number": 5430,
+        "text": "pour qu'Il vous envoie du ciel, des pluies abondantes,",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5431,
+        "text": "et qu'Il vous accorde beaucoup de biens et d'enfants, et vous donne des jardins et vous donne des rivières.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5432,
+        "text": "Qu'avez-vous à ne pas vénérer Allah comme il se doit,",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5433,
+        "text": "alors qu'Il vous a créés par phases successives?",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5434,
+        "text": "N'avez-vous pas vu comment Allah a créé sept cieux superposés",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5435,
+        "text": "et y a fait de la lune une lumière et du soleil une lampe?",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5436,
+        "text": "Et c'est Allah qui, de la terre, vous a fait croître comme des plantes,",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5437,
+        "text": "puis Il vous y fera retourner et vous en fera sortir véritablement.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5438,
+        "text": "Et c'est Allah qui vous a fait de la terre un tapis,",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5439,
+        "text": "pour que vous vous acheminiez par ses voies spacieuses».",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 504,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5440,
+        "text": "Noé dit: «Seigneur, ils m'ont désobéi et ils ont suivi celui dont les biens et les enfants n'ont fait qu'accroître la perte.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5441,
+        "text": "Ils ont ourdi un immense stratagème,",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5442,
+        "text": "et ils ont dit: «N'abandonnez jamais vos divinités et n'abandonnez jamais Wadd, Suwâ, Yaghhû, Ya'ûq et Nasr'.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5443,
+        "text": "Elles [les idoles] ont déjà égaré plusieurs. Ne fais (Seigneur) croître les injustes qu'en égarement.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5444,
+        "text": "A cause de leurs fautes, ils ont été noyés, puis on les a fait entrer au Feu, et ils n'ont pas trouvé en dehors d'Allah, de secoureurs».",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5445,
+        "text": "Et Noé dit: «Seigneur, ne laisse sur la terre aucun infidèle.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5446,
+        "text": "Si Tu les laisses [en vie], ils égareront Tes serviteurs et n'engendreront que des pécheurs infidèles.",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5447,
+        "text": "Seigneur! Pardonne-moi, et à mes père et mère et à celui qui entre dans ma demeure croyant, ainsi qu'aux croyants et croyantes; et ne fais croître les injustes qu'en perdition».",
+        "surah": {
+          "number": 71,
+          "name": "سُورَةُ نُوحٍ",
+          "englishName": "Nooh",
+          "englishNameTranslation": "Noah",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 28
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 571,
+        "ruku": 505,
+        "hizbQuarter": 228,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "71": {
+        "number": 71,
+        "name": "سُورَةُ نُوحٍ",
+        "englishName": "Nooh",
+        "englishNameTranslation": "Noah",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 28
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

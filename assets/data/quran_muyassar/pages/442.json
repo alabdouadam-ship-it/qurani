@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 442,
+    "ayahs": [
+      {
+        "number": 3733,
+        "text": "وما احتاج الأمر إلى إنزال جند من السماء لعذابهم بعد قتلهم الرجل الناصح لهم وتكذيبهم رسلهم، فهم أضعف من ذلك وأهون، وما كنا منزلين الملائكة على الأمم إذا أهلكناهم، بل نبعث عليهم عذابًا يدمرهم.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 28,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3734,
+        "text": "ما كان هلاكهم إلا بصيحة واحدة، فإذا هم ميتون لم تَبْقَ منهم باقية.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 29,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3735,
+        "text": "يا حسرة العباد وندامتهم يوم القيامة إذا عاينوا العذاب، ما يأتيهم من رسول من الله تعالى إلا كانوا به يستهزئون ويسخرون.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 30,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3736,
+        "text": "ألم ير هؤلاء المستهزئون ويعتبروا بمن قبلهم من القرون التي أهلكناها أنهم لا يرجعون إلى هذه الدينا؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 31,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3737,
+        "text": "وما كل هذه القرون التي أهلكناها وغيرهم، إلا محضرون جميعًا عندنا يوم القيامة للحساب والجزاء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 32,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3738,
+        "text": "ودلالة لهؤلاء المشركين على قدرة الله على البعث والنشور: هذه الأرض الميتة التي لا نبات فيها، أحييناها بإنزال الماء، وأخرجنا منها أنواع النبات مما يأكل الناس والأنعام، ومن أحيا الأرض بالنبات أحيا الخلق بعد الممات.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 33,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3739,
+        "text": "وجعلنا في هذه الأرض بساتين من نخيل وأعناب، وفجَّرنا فيها من عيون المياه ما يسقيها.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 34,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3740,
+        "text": "كل ذلك؛ ليأكل العباد من ثمره، وما ذلك إلا من رحمة الله بهم لا بسعيهم ولا بكدِّهم، ولا بحولهم وبقوتهم، أفلا يشكرون الله على ما أنعم به عليهم من هذه النعم التي لا تعدُّ ولا تحصى؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 35,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3741,
+        "text": "تنزَّه الله العظيم الذي خلق الأصناف جميعها من أنواع نبات الأرض، ومن أنفسهم ذكورًا وإناثًا، ومما لا يعلمون من مخلوقات الله الأخرى. قد انفرد سبحانه بالخلق، فلا ينبغي أن يُشْرَك به غيره.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 36,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3742,
+        "text": "وعلامة لهم دالة على توحيد الله وكمال قدرته: هذا الليل ننزع منه النهار، فإذا الناس مظلمون.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 37,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3743,
+        "text": "وآية لهم الشمس تجري لمستقر لها، قدَّره الله لها لا تتعداه ولا تقصر عنه، ذلك تقدير العزيز الذي لا يغالَب، العليم الذي لا يغيب عن علمه شيء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 38,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3744,
+        "text": "والقمرَ آية في خلقه، قدَّرناه منازل كل ليلة، يبدأ هلالا ضئيلا حتى يكمل قمرًا مستديرًا، ثم يرجع ضئيلا مثل عِذْق النخلة المتقوس في الرقة والانحناء والصفرة؛ لقدمه ويُبْسه.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 39,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3745,
+        "text": "لكل من الشمس والقمر والليل والنهار وقت قدَّره الله له لا يتعدَّاه، فلا يمكن للشمس أن تلحق القمر فتمحو نوره، أو تغير مجراه، ولا يمكن للَّيل أن يسبق النهار، فيدخل عليه قبل انقضاء وقته، وكل من الشمس والقمر والكواكب في فلك يَجْرون.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 40,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 109,
+    "ayahs": [
+      {
+        "number": 679,
+        "text": "Quant à ceux qui ne croient pas et traitent de mensonge Nos preuves, ceux-là sont des gens de l'Enfer.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 10,
+        "juz": 6,
+        "manzil": 2,
+        "page": 109,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      },
+      {
+        "number": 680,
+        "text": "O les croyants! Rappelez-vous le bienfait d'Allah à votre égard, le jour où un groupe d'ennemis s'apprêtait à porter la main sur vous (en vue de vous attaquer) et qu'Il repoussa leur tentative. Et craignez Allah. C'est en Allah que les croyants doivent mettre leur confiance.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 11,
+        "juz": 6,
+        "manzil": 2,
+        "page": 109,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      },
+      {
+        "number": 681,
+        "text": "Et Allah certes prit l'engagement des enfants d'Israël. Nous nommâmes douze chefs d'entre eux. Et Allah dit: «Je suis avec vous, pourvu que vous accomplissiez la Salât, acquittiez la Zakât, croyiez en Mes messagers, les aidiez et fassiez à Allah un bon prêt. Alors, certes, j'effacerai vos méfaits, et vous ferai entrer aux Jardins sous lesquels coulent les ruisseaux. Et quiconque parmi vous, après cela, mécroit, s'égare certes du droit chemin»!",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 12,
+        "juz": 6,
+        "manzil": 2,
+        "page": 109,
+        "ruku": 88,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 682,
+        "text": "Et puis, à cause de leur violation de l'engagement, Nous les avons maudits et endurci leurs cœurs: ils détournent les paroles de leur sens et oublient une partie de ce qui leur a été rappelé. Tu ne cesseras de découvrir leur trahison, sauf d'un petit nombre d'entre eux. Pardonne-leur donc et oublie [leurs fautes]. Car Allah aime, certes, les bienfaisants.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 13,
+        "juz": 6,
+        "manzil": 2,
+        "page": 109,
+        "ruku": 88,
+        "hizbQuarter": 44,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

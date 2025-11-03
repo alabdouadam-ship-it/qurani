@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 54,
+    "ayahs": [
+      {
+        "number": 323,
+        "text": "On the day when every man will find whatever of good he has earned and of evil, and is confronted with it, he shall wish that a distance appeared between him and that day -- (that it were far away). God bids you beware of Him, though compassionate is God to His votaries.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 30,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 324,
+        "text": "Say: \"If you love God then follow me that God may love you and forgive your faults; for God is forgiving and kind.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 31,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 325,
+        "text": "Say: \"Obey God and His Messenger;\" and if they refuse (then remember) God does not love disbelievers.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 32,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 326,
+        "text": "God had chosen Adam and Noah and the families of Abraham and 'Imran in preference to others.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 33,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 327,
+        "text": "They were descendants of one another; and God hears all and knows everything.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 34,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 328,
+        "text": "Remember, when the wife of 'Imran prayed: \"O Lord, I offer what I carry in my womb in dedication to Your service, accept it, for You hear all and know everything.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 35,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 329,
+        "text": "And when she had given birth to the child, she said: \"O Lord, I have delivered but a girl.\" -- But God knew better what she had delivered: A boy could not be as that girl was. \"I have named her Mary,\" (she said), \"and I give her into Your keeping. Preserve her and her children from Satan the ostracized.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 36,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 330,
+        "text": "Her Lord accepted her graciously, and she grew up with excellence, and was given into the care of Zachariah. Whenever Zachariah came to see her in the chamber, he found her provided with food, and he asked: \"Where has this come from, O Mary?\" And she said: \"From God who gives food in abundance to whomsoever He will.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 37,
+        "juz": 3,
+        "manzil": 1,
+        "page": 54,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

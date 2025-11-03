@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 422,
+    "ayahs": [
+      {
+        "number": 3564,
+        "text": "Et celle d'entre vous qui est entièrement soumise à Allah et à Son messager et qui fait le bien, Nous lui accorderons deux fois sa récompense, et Nous avons préparé pour elle une généreuse attribution.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 31,
+        "juz": 22,
+        "manzil": 5,
+        "page": 422,
+        "ruku": 364,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3565,
+        "text": "O femmes du Prophète! Vous n'êtes comparables à aucune autre femme. Si vous êtes pieuses, ne soyez pas trop complaisantes dans votre langage, afin que celui dont le cœur est malade [l'hypocrite] ne vous convoite pas. Et tenez un langage décent.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 32,
+        "juz": 22,
+        "manzil": 5,
+        "page": 422,
+        "ruku": 364,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3566,
+        "text": "Restez dans vos foyers; et ne vous exhibez pas à la manière des femmes d'avant l'Islam (Jâhiliyah). Accomplissez la Salât, acquittez la Zakât et obéissez à Allah et à Son messager. Allah ne veut que vous débarrasser de toute souillure, ô gens de la maison [du prophète], et veut vous purifier pleinement.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 33,
+        "juz": 22,
+        "manzil": 5,
+        "page": 422,
+        "ruku": 364,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3567,
+        "text": "Et gardez dans vos mémoires ce qui, dans vos foyers, est récité des versets d'Allah et de la sagesse. Allah est Doux et Parfaitement Connaisseur.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 34,
+        "juz": 22,
+        "manzil": 5,
+        "page": 422,
+        "ruku": 364,
+        "hizbQuarter": 169,
+        "sajda": false
+      },
+      {
+        "number": 3568,
+        "text": "Les Musulmans et Musulmanes, croyants et croyantes, obéissants et obéissantes, loyaux et loyales, endurants et endurantes, craignants et craignantes, donneurs et donneuses d'aumône, jeûnants et jeûnantes, gardiens de leur chasteté et gardiennes, invocateurs souvent d'Allah et invocatrices: Allah a préparé pour eux un pardon et une énorme récompense.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 35,
+        "juz": 22,
+        "manzil": 5,
+        "page": 422,
+        "ruku": 365,
+        "hizbQuarter": 169,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "33": {
+        "number": 33,
+        "name": "سُورَةُ الأَحۡزَابِ",
+        "englishName": "Al-Ahzaab",
+        "englishNameTranslation": "The Clans",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 73
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

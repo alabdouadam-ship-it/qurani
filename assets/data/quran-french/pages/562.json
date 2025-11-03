@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 562,
+    "ayahs": [
+      {
+        "number": 5242,
+        "text": "Béni soit celui dans la main de qui est la royauté, et Il est Omnipotent.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5243,
+        "text": "Celui qui a créé la mort et la vie afin de vous éprouver (et de savoir) qui de vous est le meilleur en œuvre, et c'est Lui le Puissant, le Pardonneur.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5244,
+        "text": "Celui qui a créé sept cieux superposés sans que tu voies de disproportion en la création du Tout Miséricordieux. Ramène [sur elle] le regard. Y vois-tu une brèche quelconque?",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5245,
+        "text": "Puis, retourne ton regard à deux fois: le regard te reviendra humilié et frustré.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5246,
+        "text": "Nous avons effectivement embelli le ciel le plus proche avec des lampes [des étoiles] dont Nous avons fait des projectiles pour lapider les diables et Nous leur avons préparé le châtiment de la Fournaise.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5247,
+        "text": "Ceux qui ont mécru à leur Seigneur auront le châtiment de l'Enfer. Et quelle mauvaise destination!",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5248,
+        "text": "Quand ils y seront jetés, ils lui entendront un gémissement, tandis qu'il bouillonne.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5249,
+        "text": "Peu s'en faut que, de rage, il n'éclate. Toutes les fois qu'un groupe y est jeté, ses gardiens leur demandent: «Quoi! ne vous est-il pas venu d'avertisseur?»",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5250,
+        "text": "Ils dirent: «Mais si! un avertisseur nous était venu certes, mais nous avons crié au mensonge et avons dit: Allah n'a rien fait descendre: vous n'êtes que dans un grand égarement».",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5251,
+        "text": "Et ils dirent: «Si nous avions écouté ou raisonné, nous ne serions pas parmi les gens de la Fournaise».",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5252,
+        "text": "Ils ont reconnu leur péché. Que les gens de la Fournaise soient anéantis à jamais.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5253,
+        "text": "Ceux qui redoutent leur Seigneur bien qu'ils ne L'aient jamais vu auront un pardon et une grande récompense.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "67": {
+        "number": 67,
+        "name": "سُورَةُ المُلۡكِ",
+        "englishName": "Al-Mulk",
+        "englishNameTranslation": "The Sovereignty",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

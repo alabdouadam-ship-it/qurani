@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 99,
+    "ayahs": [
+      {
+        "number": 621,
+        "text": "Et si une femme craint de son mari abandon ou indifférence, alors ce n'est pas un péché pour les deux s'ils se réconcilient par un compromis quelconque, et la réconciliation est meilleure, puisque les âmes sont portées à la ladrerie. Mais si vous agissez en bien et vous êtes pieux... Allah est, certes, Parfaitement Connaisseur de ce que vous faites.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 128,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 622,
+        "text": "Vous ne pourrez jamais être équitables entre vos femmes, même si vous en êtes soucieux. Ne vous penchez pas tout à fait vers l'une d'elles, au point de laisser l'autre comme en suspens. Mais si vous vous réconciliez et vous êtes pieux... donc Allah est, certes, Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 129,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 623,
+        "text": "Si les deux se séparent, Allah de par Sa largesse, accordera à chacun d'eux un autre destin. Et Allah est plein de largesses et parfaitement Sage.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 130,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 624,
+        "text": "A Allah seul appartient tout ce qui est dans les cieux et sur la terre. «Craignez Allah!» Voilà ce que Nous avons enjoint à ceux auxquels avant vous le Livre fut donné, tout comme à vous-mêmes. Et si vous ne croyez pas (cela ne nuit pas à Allah, car) très certainement à Allah seul appartient tout ce qui est dans les cieux et sur la terre. Et Allah se suffit à Lui-même et Il est digne de louange.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 131,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 625,
+        "text": "A Allah seul appartient tout ce qui est dans les cieux et sur la terre. Et Allah suffit pour s'occuper de tout.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 132,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 626,
+        "text": "S'Il voulait, il vous ferait disparaître, ô gens, et en ferait venir d'autres. Car Allah en est très capable.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 133,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 627,
+        "text": "Quiconque désire la récompense d'ici-bas, c'est auprès d'Allah qu'est la récompense d'ici-bas tout comme celle de l'au-delà. Et Allah entend et observe tout.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 134,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

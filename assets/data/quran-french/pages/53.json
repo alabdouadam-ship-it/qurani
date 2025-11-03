@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 53,
+    "ayahs": [
+      {
+        "number": 316,
+        "text": "N'as-tu pas vu comment agissent ceux qui ont reçu une part du Livre, et qui sont maintenant invités au Livre d'Allah pour trancher leurs différends; comment un groupe des leurs tourne le dos et s'esquive?",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 23,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 317,
+        "text": "C'est parce qu'ils disent: «Le Feu ne nous touchera que pour un nombre de jours déterminés.» Et leurs mensonges les trompent en religion.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 24,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 318,
+        "text": "Eh bien comment seront-ils, quand Nous les aurons rassemblés, en un jour sur quoi il n'y a point de doute, et que chaque âme sera pleinement rétribuée selon ce qu'elle aura acquis? Et ils ne seront point lésés.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 25,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 319,
+        "text": "- Dis: «O Allah, Maître de l'autorité absolue. Tu donnes l'autorité à qui Tu veux, et Tu arraches l'autorité à qui Tu veux; et Tu donnes la puissance à qui Tu veux, et Tu humilies qui Tu veux. Le bien est en Ta main et Tu es Omnipotent.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 26,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 320,
+        "text": "Tu fais pénétrer la nuit dans le jour, et Tu fais pénétrer le jour dans la nuit, et Tu fais sortir le vivant du mort, et Tu fais sortir le mort du vivant. Et Tu accordes attribution à qui Tu veux, sans compter».",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 27,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 321,
+        "text": "Que les croyants ne prennent pas, pour alliés, des infidèles, au lieu de croyants. Quiconque le fait contredit la religion d'Allah, à moins que vous ne cherchiez à vous protéger d'eux. Allah vous met en garde à l'égard de Lui-même. Et c'est à Allah le retour.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 28,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      },
+      {
+        "number": 322,
+        "text": "Dis: «Que vous cachiez ce qui est dans vos poitrines ou bien vous le divulguiez, Allah le sait. Il connaît tout ce qui est dans les cieux et sur la terre. Et Allah est Omnipotent.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 29,
+        "juz": 3,
+        "manzil": 1,
+        "page": 53,
+        "ruku": 44,
+        "hizbQuarter": 21,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

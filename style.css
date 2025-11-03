@@ -1,0 +1,3175 @@
+/* --- Default Theme Variables --- */
+:root {
+    --primary-color: #5D3FD3;
+    --secondary-color: #1E90FF;
+    --correct-color: #28a745;
+    --wrong-color: #dc3545;
+    --light-color: #ffffff;
+    --dark-color: #343a40;
+    --grey-color: #f8f9fa;
+    --gold-color: #FFD700;
+    --silver-color: #C0C0C0;
+    --bronze-color: #CD7F32;
+    --back-button-color: #ff5722;
+    --scroll-to-top-button-color: #009688;
+    --hadith-frame-color: #c0a080; /* A brownish gold for the frame */
+    --login-card-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --login-card-text: #ffffff;
+    --login-card-button-bg: #ffffff;
+    --login-card-button-text: #667eea;
+    --login-card-shadow: rgba(102, 126, 234, 0.3);
+}
+
+/* --- Theme Definitions --- */
+/* 🌙 Night Theme */
+body[data-theme="night"] {
+    --primary-color: #483D8B;
+    --secondary-color: #1E90FF;
+    --correct-color: #2E8B57;
+    --wrong-color: #B22222;
+    --light-color: #2c2f33;
+    --dark-color: #ffffff;
+    --grey-color: #23272a;
+    --back-button-color: #6a1b9a;
+    --scroll-to-top-button-color: #ffc107;
+    --hadith-frame-color: #a98e71;
+    --login-card-bg: linear-gradient(135deg, #483D8B 0%, #6a1b9a 100%);
+    --login-card-text: #ffffff;
+    --login-card-button-bg: #ffffff;
+    --login-card-button-text: #483D8B;
+    --login-card-shadow: rgba(72, 61, 139, 0.3);
+    
+    /* Ensure all text is visible in night theme */
+    color: #ffffff !important;
+    background-color: #2c2f33 !important;
+}
+
+/* Night theme text visibility fixes */
+body[data-theme="night"] * {
+    color: inherit;
+}
+
+body[data-theme="night"] h1,
+body[data-theme="night"] h2,
+body[data-theme="night"] h3,
+body[data-theme="night"] h4,
+body[data-theme="night"] h5,
+body[data-theme="night"] h6,
+body[data-theme="night"] p,
+body[data-theme="night"] span,
+body[data-theme="night"] div,
+body[data-theme="night"] label,
+body[data-theme="night"] li,
+body[data-theme="night"] td,
+body[data-theme="night"] th {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .menu-button,
+body[data-theme="night"] button {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .page-header h2 {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .tab-button {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .tab-button.active {
+    color: #ffffff !important;
+    background-color: var(--primary-color) !important;
+}
+
+body[data-theme="night"] .info-item {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .question {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .options button {
+    color: #ffffff !important;
+    background-color: #3a3f44 !important;
+}
+
+body[data-theme="night"] .quiz-info {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .game-header {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .leaderboard-section h3 {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .leaderboard-list li {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .result h2,
+body[data-theme="night"] .result p {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .end-game-buttons button {
+    color: #ffffff !important;
+}
+
+/* Additional night theme fixes for better text visibility */
+body[data-theme="night"] .container {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .page {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .page-header {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .tab-menu {
+    background-color: #2c2f33 !important;
+}
+
+body[data-theme="night"] .tab-content {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .quiz {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .question-container {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .options {
+    background-color: #2c2f33 !important;
+}
+
+body[data-theme="night"] .progress-bar-container {
+    background-color: #2c2f33 !important;
+}
+
+body[data-theme="night"] .quiz-info {
+    background-color: #2c2f33 !important;
+}
+
+body[data-theme="night"] .leaderboard-section {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .result {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .confirm-buttons button {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .control-button {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .back-button {
+    color: #ffffff !important;
+}
+
+/* Fix for advanced test elements */
+body[data-theme="night"] #advanced-test-lobby-page,
+body[data-theme="night"] #advanced-test-container {
+    background-color: #2c2f33 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] #advanced-question-text {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] #advanced-options-container button {
+    color: #ffffff !important;
+    background-color: #3a3f44 !important;
+}
+
+body[data-theme="night"] #advanced-result h2,
+body[data-theme="night"] #advanced-result p {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] #advanced-leaderboard-section h3 {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] #advanced-leaderboard-list li {
+    color: #ffffff !important;
+}
+
+/* Fix for floating messages */
+body[data-theme="night"] .floating-message {
+    background-color: #3a3f44 !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+/* Fix for overlays */
+body[data-theme="night"] .overlay {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+body[data-theme="night"] #pause-overlay,
+body[data-theme="night"] #advanced-pause-overlay {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] #confirm-end-overlay,
+body[data-theme="night"] #advanced-confirm-end-overlay {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    color: #ffffff !important;
+}
+
+/* Fix for select elements */
+body[data-theme="night"] select {
+    background-color: #3a3f44 !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+body[data-theme="night"] select option {
+    background-color: #3a3f44 !important;
+    color: #ffffff !important;
+}
+
+/* Fix for input elements */
+body[data-theme="night"] input[type="text"],
+body[data-theme="night"] input[type="password"],
+body[data-theme="night"] input[type="email"],
+body[data-theme="night"] input[type="number"] {
+    background-color: #3a3f44 !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+/* Fix for checkboxes */
+body[data-theme="night"] input[type="checkbox"] {
+    accent-color: var(--primary-color) !important;
+}
+
+/* Fix for labels */
+body[data-theme="night"] label {
+    color: #ffffff !important;
+}
+
+/* Fix for links */
+body[data-theme="night"] a {
+    color: #1E90FF !important;
+}
+
+body[data-theme="night"] a:hover {
+    color: #87CEEB !important;
+}
+
+/* Additional comprehensive fixes for night theme text visibility */
+body[data-theme="night"] .welcome-message {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .total-score-display {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .current-balance {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .player-name {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .player-score {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .rank-badge {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .toggle-label {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .question-counter {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .question-timer {
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .progress-text {
+    color: #ffffff !important;
+}
+
+/* Fix for any remaining text elements */
+body[data-theme="night"] .text-content,
+body[data-theme="night"] .content,
+body[data-theme="night"] .main-content {
+    color: #ffffff !important;
+}
+
+/* Ensure all buttons have proper contrast */
+body[data-theme="night"] button:not(.menu-button) {
+    background-color: #3a3f44 !important;
+    color: #ffffff !important;
+    border-color: #555 !important;
+}
+
+body[data-theme="night"] button:hover:not(.menu-button) {
+    background-color: #4a4f54 !important;
+    color: #ffffff !important;
+}
+
+/* Fix for menu buttons specifically */
+body[data-theme="night"] .menu-button {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-color) !important;
+}
+
+body[data-theme="night"] .menu-button:hover {
+    background-color: #5a4d9b !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .menu-button.secondary {
+    background-color: #5a6268 !important;
+    color: #ffffff !important;
+    border-color: #5a6268 !important;
+}
+
+body[data-theme="night"] .menu-button.secondary:hover {
+    background-color: #6a7278 !important;
+    color: #ffffff !important;
+}
+
+/* Final comprehensive fix for all text elements in night theme */
+body[data-theme="night"] *:not(input):not(select):not(textarea):not(button) {
+    color: #ffffff !important;
+}
+
+/* Override for specific elements that should have different colors */
+body[data-theme="night"] .correct {
+    background-color: var(--correct-color) !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .wrong {
+    background-color: var(--wrong-color) !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="night"] .progress-bar {
+    background-color: var(--primary-color) !important;
+}
+
+/* Ensure emojis and icons are visible */
+body[data-theme="night"] .emoji,
+body[data-theme="night"] .icon {
+    filter: brightness(1.2) !important;
+}
+
+body[data-theme="night"] .tafsir-button,
+body[data-theme="night"] .audio-button,
+body[data-theme="night"] .surah-button,
+body[data-theme="night"] .verse-button,
+body[data-theme="night"] .verse-info-panel,
+body[data-theme="night"] .tafsir-text-panel {
+     background-color: #3a3f44;
+     color: #ffffff;
+     border-color: #555;
+}
+
+body[data-theme="night"] #category-select,
+body[data-theme="night"] #juz-select { /* Modified */
+     background-color: #3a3f44;
+     color: #ffffff;
+     border-color: #555;
+}
+
+body[data-theme="night"] .options button {
+    border-color: #555;
+}
+
+body[data-theme="night"] .options button:hover:not(:disabled) {
+    border-color: var(--primary-color);
+}
+
+body[data-theme="night"] .tasbeeh-item {
+    background-color: #3a3f44;
+    border-color: #555;
+}
+
+body[data-theme="night"] .tasbeeh-item .reset-session {
+    background-color: #5a6268;
+}
+
+/* ☁️ Sky Theme */
+body[data-theme="sky"] {
+    --primary-color: #00BFFF;
+    --secondary-color: #87CEEB;
+    --correct-color: #32CD32;
+    --wrong-color: #FF6347;
+    --light-color: #ffffff;
+    --dark-color: #343a40;
+    --grey-color: #f0f8ff;
+    --back-button-color: #00796b;
+    --scroll-to-top-button-color: #e91e63;
+    --hadith-frame-color: #87CEEB;
+    --login-card-bg: linear-gradient(135deg, #00BFFF 0%, #87CEEB 100%);
+    --login-card-text: #ffffff;
+    --login-card-button-bg: #ffffff;
+    --login-card-button-text: #00BFFF;
+    --login-card-shadow: rgba(0, 191, 255, 0.3);
+}
+
+/* 🌸 Pink Theme */
+body[data-theme="pink"] {
+    --primary-color: #FF85C1;      /* وردي أساسي أفتح */
+    --secondary-color: #FFC2CB;    /* وردي ثانوي أفتح */
+    --correct-color: #98FB98;
+    --wrong-color: #E18DA9;        /* لون الخطأ وردي أفتح وأقل حدة */
+    --light-color: #fff0f5;
+    --dark-color: #4b0082;
+    --grey-color: #faf0e6;
+    --back-button-color: #E54888;  /* لون زر العودة وردي أفتح */
+    --scroll-to-top-button-color: #5d3fd3;
+    --hadith-frame-color: #FFC2CB;
+    --login-card-bg: linear-gradient(135deg, #FF85C1 0%, #E54888 100%);
+    --login-card-text: #ffffff;
+    --login-card-button-bg: #ffffff;
+    --login-card-button-text: #FF85C1;
+    --login-card-shadow: rgba(255, 133, 193, 0.3);
+}
+
+/* --- Base Styles --- */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    width: 100%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--dark-color);
+    min-height: 100vh;
+    transition: background 0.5s ease;
+}
+
+.container {
+    max-width: 500px;
+    box-sizing: border-box; /* <-- هذا السطر هو الحل الجذري للمشكلة */
+    
+    background: var(--light-color);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
+    transition: background-color 0.5s ease, color 0.5s ease, max-width 0.4s ease-in-out;
+    margin: 1.5rem auto 55px auto;
+}
+
+/* Page Header Styles */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    gap: 1rem;
+    position: relative;
+}
+
+.page-header h2 {
+    text-align: right;
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin: 0;
+    width: 100%;
+    font-family: 'Cairo', sans-serif;
+    flex-grow: 1;
+}
+
+.page-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    font-size: 1.5rem;
+    background-color: var(--back-button-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Theme Selector Styles */
+.theme-button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    color: var(--primary-color);
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.theme-button.active {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Admin Page Styles */
+#admin-page h2 {
+    text-align: right;
+}
+
+#admin-actions {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#admin-actions button {
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#add-message-btn {
+    background-color: var(--correct-color);
+    color: white;
+}
+
+#add-message-btn:hover {
+    opacity: 0.8;
+}
+
+#message-form {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: var(--grey-color);
+}
+
+#message-form label {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+#message-form textarea,
+#message-form input[type="datetime-local"] {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Cairo', sans-serif;
+}
+
+#message-form textarea {
+    resize: vertical;
+}
+
+#message-form button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#save-message-btn {
+    background-color: var(--primary-color);
+}
+
+#save-message-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+#cancel-edit-btn {
+    background-color: #6c757d;
+}
+
+#cancel-edit-btn:hover {
+    background-color: #5a6268;
+}
+
+#message-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.message-item {
+    background-color: var(--grey-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    border-right: 5px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.message-item p {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+.message-item .message-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.message-item .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.message-item .action-buttons button {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.3s ease;
+}
+
+.message-item .action-buttons button.edit-btn {
+    background-color: #ffc107;
+}
+
+.message-item .action-buttons button.delete-btn {
+    background-color: var(--wrong-color);
+}
+
+.message-item .action-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Main Menu & General Button Styles */
+#main-menu-page h2 {
+    margin-bottom: 2rem;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Consolidated Button Styles */
+.menu-button,
+.tafsir-button,
+.surah-button,
+.audio-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 15px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.menu-button:hover:not([disabled]),
+.tafsir-button:hover,
+.surah-button:hover,
+.audio-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.menu-button:disabled {
+    background-color: #a9a9a9;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.menu-button.secondary {
+    background-color: #6c757d;
+}
+
+.menu-button.secondary:hover {
+    background-color: #5a6268;
+}
+
+/* --- Toggle Switch Styles --- */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.toggle-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--correct-color); /* Green for ON */
+}
+
+input:not(:checked) + .slider {
+    background-color: var(--wrong-color); /* Red for OFF */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* --- Leaderboard Styles --- */
+#leaderboard-section {
+    margin-top: 2rem;
+}
+
+#leaderboard-section h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 12px;
+}
+
+#leaderboard-list li {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1rem;
+}
+
+#leaderboard-list li:last-child {
+    border-bottom: none;
+}
+
+.rank {
+    font-weight: 700;
+    font-size: 1.1rem;
+    width: 40px;
+    text-align: center;
+}
+
+.player-name {
+    flex-grow: 1;
+    padding: 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.player-score {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.rank-1 .rank-badge { color: var(--gold-color); }
+.rank-2 .rank-badge { color: var(--silver-color); }
+.rank-3 .rank-badge { color: var(--bronze-color); }
+
+/* --- Game Page Styles --- */
+.game-header {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 1rem;
+    background-color: var(--grey-color);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.info-item, #question-counter {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.control-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    color: var(--dark-color);
+}
+
+#pause-overlay, #confirm-end-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 2rem;
+}
+
+#pause-overlay h2, #confirm-end-overlay h2 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+#confirm-end-overlay p {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.confirm-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+#resume-button, .confirm-buttons button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#resume-button:hover, .confirm-buttons button:hover {
+    background-color: var(--secondary-color);
+}
+
+.confirm-buttons button#confirm-end-no {
+    background-color: #6c757d;
+}
+
+.confirm-buttons button#confirm-end-no:hover {
+    background-color: #5a6268;
+}
+
+/* Tab menu styles */
+.tab-menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--grey-color);
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab-menu button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    background-color: transparent;
+    color: var(--dark-color);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.tab-menu button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+}
+
+.tab-menu button:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+.tab-content {
+    padding: 1rem 0;
+}
+
+#total-score-display {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-align: center;
+    background-color: var(--grey-color);
+    padding: 0.8rem;
+    border-radius: 12px;
+}
+
+#category-select, #juz-select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #f8f9fa;
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+    background-size: .8em;
+    cursor: pointer;
+}
+
+#start-game-button {
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 15px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 0.5rem;
+    background-color: var(--primary-color);
+}
+
+#start-game-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.quiz-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+#question-timer {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+#progress-bar-container {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    height: 10px;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+.question-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.question {
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    min-height: 80px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+    color: var(--dark-color);
+    margin: 0;
+    flex-grow: 1;
+}
+
+#play-question-audio-btn {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#play-question-audio-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+#play-question-audio-btn.playing {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    border-color: var(--secondary-color);
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    margin: 0.6rem 0;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.options button:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.options button.correct {
+    background-color: var(--correct-color);
+    color: white;
+    border-color: var(--correct-color);
+    animation: pulse 0.5s;
+}
+
+.options button.wrong {
+    background-color: var(--wrong-color);
+    color: white;
+    border-color: var(--wrong-color);
+    animation: shake 0.5s;
+}
+
+.options button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeIn 1s;
+    line-height: 2;
+    color: var(--dark-color);
+}
+
+.end-game-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+#result h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); } 20%, 40%, 60%, 80% { transform: translateX(10px); } }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+@media (max-width: 360px) {
+    .question { font-size: 1.1rem; }
+    .options button { font-size: 0.9rem; padding: 0.8rem; }
+}
+
+/* Surah search input */
+.search-surah-container {
+    margin-bottom: 1.5rem;
+}
+
+.surah-search-input-field {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.surah-search-input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(93, 63, 211, 0.3);
+}
+
+body[data-theme="night"] .surah-search-input-field {
+    background-color: #3a3f44;
+    color: #ffffff;
+    border-color: #555;
+}
+
+/* --- START: Tafsir Section Styles --- */
+.tafsir-options, .surah-list, .verse-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.verse-button {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: right;
+    font-size: 1.2rem;
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.verse-button.expanded {
+    background-color: #e0e0e0;
+    border-color: var(--primary-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.tafsir-text-panel, .verse-info-panel {
+    padding: 1rem;
+    margin: -0.5rem 0 0.5rem 0;
+    background-color: var(--grey-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: right;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.tafsir-text-panel {
+    border-radius: 0 0 12px 12px;
+}
+
+.verse-info-panel {
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #495057;
+    margin-top: -0.5rem;
+    border-radius: 0 0 12px 12px;
+}
+
+.sajda-symbol {
+    color: var(--correct-color);
+    font-weight: bold;
+}
+
+.verse-button.playing {
+    background-color: var(--gold-color) !important;
+    color: var(--dark-color) !important;
+    border-color: var(--primary-color);
+}
+
+.play-tafsir-audio-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-left: 10px; /* Space between play button and verse text */
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.play-tafsir-audio-btn:hover {
+    background: var(--primary-color);
+}
+
+.verse-button-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: right;
+}
+/* --- END: Tafsir Section Styles --- */
+
+/* --- START: Full Audio Player Styles --- */
+#full-audio-player-container {
+    padding: 1rem;
+    background-color: var(--grey-color);
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.player-controls button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.player-controls button:hover {
+    background: var(--secondary-color);
+}
+
+#play-pause-btn.playing .play-icon { display: none; }
+#play-pause-btn.playing .pause-icon { display: inline; }
+#play-pause-btn .pause-icon { display: none; }
+
+.extra-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.speed-controls, .volume-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.speed-controls button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.speed-controls button.active, #repeat-btn.active {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 5px var(--primary-color);
+}
+
+.time-info {
+    font-weight: bold;
+    color: var(--dark-color);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#timeline-container {
+    width: 100%;
+    height: 8px;
+    background-color: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+#timeline {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.volume-controls {
+    color: var(--dark-color);
+}
+
+#volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity .2s;
+    border-radius: 3px;
+}
+
+#volume-slider:hover {
+    opacity: 1;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+}
+/* --- END: Full Audio Player Styles --- */
+
+/* --- START: Tasbeeh Styles --- */
+#tasbeeh-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tasbeeh-item {
+    background-color: var(--grey-color);
+    border: 2px solid var(--grey-color);
+    border-radius: 15px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.tasbeeh-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.tasbeeh-item .tasbeeh-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.tasbeeh-counters {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.tasbeeh-counters div {
+    color: var(--dark-color);
+}
+
+.tasbeeh-counters .counter-value {
+    display: block;
+    font-size: 1.3rem;
+    margin-top: 0.25rem;
+    color: var(--primary-color);
+}
+
+.tasbeeh-item .reset-session {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e0e0e0;
+    color: var(--dark-color);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.tasbeeh-item .reset-session:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* أزرار الأيقونات في صفحة التسبيح */
+.tasbeeh-icon-btn {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 20px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, #28a745, #20c997) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.tasbeeh-icon-btn:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4) !important;
+}
+
+.tasbeeh-icon-btn:hover::after {
+    content: attr(data-translate);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.tasbeeh-icon-btn:hover::before {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+/* دعم الثيمات المختلفة لأزرار الأيقونات */
+body[data-theme="night"] .tasbeeh-icon-btn {
+    background: linear-gradient(135deg, #495057, #6c757d) !important;
+    box-shadow: 0 4px 12px rgba(73, 80, 87, 0.3) !important;
+}
+
+body[data-theme="night"] .tasbeeh-icon-btn:hover {
+    box-shadow: 0 6px 20px rgba(73, 80, 87, 0.4) !important;
+}
+
+body[data-theme="sky"] .tasbeeh-icon-btn {
+    background: linear-gradient(135deg, #17a2b8, #20c997) !important;
+    box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3) !important;
+}
+
+body[data-theme="sky"] .tasbeeh-icon-btn:hover {
+    box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4) !important;
+}
+
+body[data-theme="pink"] .tasbeeh-icon-btn {
+    background: linear-gradient(135deg, #e83e8c, #fd7e14) !important;
+    box-shadow: 0 4px 12px rgba(232, 62, 140, 0.3) !important;
+}
+
+body[data-theme="pink"] .tasbeeh-icon-btn:hover {
+    box-shadow: 0 6px 20px rgba(232, 62, 140, 0.4) !important;
+}
+
+#reset-all-tasbeeh-btn,
+#edit-tasbeeh-list-btn {
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#reset-all-tasbeeh-btn {
+    background-color: var(--wrong-color);
+}
+
+#edit-tasbeeh-list-btn {
+     background-color: lightgray;
+}
+
+#reset-all-tasbeeh-btn:hover,
+#edit-tasbeeh-list-btn:hover {
+    opacity: 0.85;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#edit-tasbeeh-panel {
+    text-align: right;
+}
+
+#edit-tasbeeh-panel h3 {
+    margin-bottom: 1rem;
+}
+
+#edit-tasbeeh-list {
+    list-style: none;
+    padding: 0;
+}
+
+#edit-tasbeeh-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    cursor: move;
+    transition: background-color 0.2s ease;
+}
+
+#edit-tasbeeh-list li:hover {
+    background-color: #e9ecef;
+}
+
+#edit-tasbeeh-list li.dragging {
+    opacity: 0.5;
+}
+
+#edit-tasbeeh-list li:last-child {
+    border-bottom: none;
+}
+
+#edit-tasbeeh-list li button {
+    background-color: var(--wrong-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+}
+
+#new-tasbeeh-input {
+    width: calc(100% - 70px);
+    padding: 0.5rem;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 1rem;
+    margin-left: 10px;
+}
+
+#add-tasbeeh-btn, #save-tasbeeh-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* --- END: Tasbeeh Styles --- */
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 999;
+    font-size: 1.5rem;
+    background-color: var(--scroll-to-top-button-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Floating Message (Toast) */
+#floating-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#floating-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#floating-message.success {
+    background-color: var(--correct-color);
+}
+
+#floating-message.error {
+    background-color: var(--wrong-color);
+}
+
+/* --- Search Page Styles --- */
+.search-input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#search-input {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+#search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: var(--secondary-color);
+}
+
+#search-results-count {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+#search-results-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+.search-result-item {
+    padding: 1rem;
+    background-color: var(--grey-color);
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    line-height: 1.8;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.search-result-item:hover {
+    background-color: #e0e0e0;
+}
+
+.search-result-item.expanded {
+    background-color: #e0e0e0;
+    border-color: var(--primary-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-result-item.expanded > .search-verse-text {
+    display: none;
+}
+
+.search-verse-text {
+    font-size: 1.2rem;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.search-result-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.highlight {
+    background-color: var(--gold-color);
+    color: var(--dark-color);
+    padding: 0 4px;
+    border-radius: 4px;
+}
+
+.search-info-panel {
+    padding: 1rem;
+    margin: -0.5rem 0 0.5rem 0;
+    background-color: #e9ecef;
+    font-weight: bold;
+    color: #495057;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    display: none;
+}
+
+.search-play-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-play-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.search-play-button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* --- Theme Dropdown Styles --- */
+.dropdowns-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* دعم الثيمات المختلفة للخلفية الشفافة */
+body[data-theme="night"] .dropdowns-container {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="sky"] .dropdowns-container {
+    background: rgba(135, 206, 235, 0.2);
+    border: 1px solid rgba(135, 206, 235, 0.3);
+}
+
+body[data-theme="pink"] .dropdowns-container {
+    background: rgba(255, 182, 193, 0.2);
+    border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.theme-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.language-dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.theme-dropdown-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    min-width: 200px;
+    justify-content: space-between;
+}
+
+.theme-dropdown-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.theme-dropdown-button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+.theme-icon {
+    font-size: 1.2rem;
+}
+
+.theme-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.theme-dropdown-button.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.theme-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.theme-dropdown-menu.show {
+    display: block;
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.theme-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.theme-option:last-child {
+    border-bottom: none;
+}
+
+.theme-option:hover {
+    background-color: #f8f9fa;
+}
+
+.theme-option.active {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.theme-emoji {
+    font-size: 1.2rem;
+}
+
+.theme-name {
+    font-weight: 500;
+}
+
+/* --- Language Dropdown Styles --- */
+.language-dropdown-button {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    min-width: 200px;
+    justify-content: space-between;
+}
+
+.language-dropdown-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.language-dropdown-button:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+.language-dropdown-button.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.language-icon {
+    font-size: 1.2rem;
+}
+
+.language-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.language-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: none;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.language-dropdown-menu.show {
+    display: block;
+    animation: dropdownFadeIn 0.3s ease;
+}
+
+.language-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.language-option:last-child {
+    border-bottom: none;
+}
+
+.language-option:hover {
+    background-color: #f8f9fa;
+}
+
+.language-option.active {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+}
+
+.language-flag {
+    font-size: 1.2rem;
+}
+
+.language-name {
+    font-weight: 500;
+}
+
+/* --- RTL/LTR Support --- */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="ltr"] {
+    text-align: left;
+}
+
+[dir="rtl"] .dropdowns-container {
+    flex-direction: row-reverse;
+}
+
+[dir="ltr"] .dropdowns-container {
+    flex-direction: row;
+}
+
+[dir="rtl"] .theme-dropdown-button,
+[dir="rtl"] .language-dropdown-button {
+    flex-direction: row-reverse;
+}
+
+[dir="ltr"] .theme-dropdown-button,
+[dir="ltr"] .language-dropdown-button {
+    flex-direction: row;
+}
+
+.page-header .search-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark-color);
+    padding: 0;
+    line-height: 1;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* --- Styles for Web Platform (Wider Screens) --- */
+.platform-web .container.container-wide {
+    max-width: 1100px; /* Consolidated width */
+    width: 95%;
+	margin: 1.5rem auto 55px auto;
+}
+
+.platform-web .container.container-wide .surah-list,
+.platform-web .container.container-wide .tafsir-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.platform-web .container.container-wide #tasbeeh-container {
+     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* --- Login Page Styles --- */
+#login-page {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+#login-title-icon {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+#login-page #login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+#login-page label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.login-input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    font-family: 'Cairo', sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(93, 63, 211, 0.3);
+}
+
+#login-page .menu-button {
+    padding: 0.9rem;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+#toggle-form-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#toggle-form-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* --- Quran Reader Styles --- */
+#quran-reader-page {
+    padding: 0;
+    touch-action: pan-y;
+}
+
+.quran-page-header, .quran-page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background: var(--grey-color);
+    font-size: 0.9rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+#quran-page-content {
+    padding: 1.5rem;
+    font-family: 'Amiri Quran', serif;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    text-align: justify;
+    min-height: 60vh;
+	cursor: default;
+}
+
+#quran-page-content.fading-out {
+    animation: readerFadeOut 0.2s ease-in-out forwards;
+}
+
+#quran-page-content.fading-in {
+    animation: readerFadeIn 0.3s ease-in-out forwards;
+}
+
+.surah-header {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    background: var(--grey-color);
+}
+
+.basmala {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.2em;
+    margin-bottom: 1.5rem;
+}
+
+.verse {
+    display: inline;
+}
+
+.verse-number {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    text-align: center;
+    display: inline-block;
+    margin: 0 0.2em;
+	vertical-align: middle;
+}
+
+#quran-page-content .verse-paragraph {
+    margin: 0;
+}
+
+.reader-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;  /* <-- هذا السطر هو مفتاح الحل */
+    padding-top: 1rem; /* لإضافة مساحة صغيرة فوق الأزرار */
+}
+
+.reader-nav button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reader-nav button:hover {
+    background-color: var(--secondary-color);
+}
+
+.reader-nav button:disabled {
+     background-color: #a9a9a9;
+     cursor: not-allowed;
+}
+
+.reader-nav button.reader-nav-arrow {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+}
+
+.reader-nav button#reader-next-btn {
+    background-color: var(--correct-color);
+}
+
+.reader-nav button#reader-next-btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+@keyframes readerFadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes readerFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.quran-page-audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quran-page-audio-button {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.quran-page-audio-button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+.quran-page-audio-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: transparent !important;
+    color: var(--primary-color) !important;
+}
+
+/* --- Quran Reader Web Layout --- */
+/* =================================================================== */
+/* قواعد CSS للشاشات الكبيرة (Responsive)                  */
+/* =================================================================== */
+
+
+/* --- Quran Reader Web Layout --- */
+/* --- Quran Reader Web Layout --- */
+
+
+/* --- End Quran Reader Web Layout --- */
+
+/* --- Go to Page/Surah/Juz Modal Styles --- */
+.quran-page-footer .clickable-page-number,
+#quran-page-surah-name,
+#quran-page-juz-number {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.quran-page-footer .clickable-page-number:hover,
+#quran-page-surah-name:hover,
+#quran-page-juz-number:hover {
+    background-color: #e9ecef;
+    color: var(--primary-color);
+}
+
+#goto-page-overlay, #goto-surah-overlay, #goto-juz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    padding: 1rem;
+}
+
+.goto-page-modal {
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 320px;
+}
+
+.goto-page-modal h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.goto-page-modal p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+#goto-page-input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+}
+
+.goto-page-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.goto-page-buttons button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#goto-page-confirm {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#goto-page-confirm:hover {
+    background-color: var(--secondary-color);
+}
+
+#goto-page-cancel, #goto-surah-cancel, #goto-juz-cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+#goto-page-cancel:hover, #goto-surah-cancel:hover, #goto-juz-cancel:hover {
+    background-color: #5a6268;
+}
+
+/* Consolidated Modal List Styles */
+#goto-surah-list,
+#goto-juz-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 50vh; /* تحديد أقصى ارتفاع للقائمة */
+    overflow-y: auto; /* إضافة شريط تمرير عند الحاجة */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#goto-surah-list li,
+#goto-juz-list li {
+    padding: 12px 15px;
+    text-align: right;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+#goto-surah-list li:last-child,
+#goto-juz-list li:last-child {
+    border-bottom: none;
+}
+
+#goto-surah-list li:hover,
+#goto-juz-list li:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Dark theme for modals */
+body[data-theme="night"] #goto-page-input,
+body[data-theme="night"] #goto-surah-input {
+    background-color: #3a3f44;
+    color: #ffffff;
+    border-color: #555;
+}
+
+body[data-theme="night"] .quran-page-footer .clickable-page-number:hover,
+body[data-theme="night"] #quran-page-surah-name:hover,
+body[data-theme="night"] #quran-page-juz-number:hover {
+    background-color: #3a3f44;
+}
+
+body[data-theme="night"] .goto-list {
+    border-color: #555;
+}
+
+body[data-theme="night"] .goto-list li {
+    border-bottom-color: #444;
+}
+
+body[data-theme="night"] .goto-list li:hover {
+    background-color: #3a3f44;
+}
+
+
+/* --- START: Hadith Page Styles --- */
+#hadith-page .page-header {
+    margin-bottom: 1rem;
+}
+
+.hadith-book-button {
+    background-color: var(--grey-color);
+    color: var(--dark-color);
+    border: 2px solid #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.hadith-book-button:hover {
+    border-color: var(--primary-color);
+    background-color: var(--grey-color);
+    transform: translateY(-2px);
+}
+
+.hadith-display-frame, .hadith-explanation-frame {
+    background-color: var(--grey-color);
+    border: 3px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.hadith-text {
+    font-family: 'Amiri Quran', serif;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    color: var(--dark-color);
+}
+.privacy-policy-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.privacy-policy-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+@media (min-width: 768px) and (min-height: 600px) {
+    .platform-web .hadith-text {
+        font-size: 4vh;
+        line-height: 1.9;
+        text-align: justify;
+    }
+}
+
+.hadith-explanation-frame h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.hadith-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.hadith-info-tag {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.hadith-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+/* Search Panel */
+#hadith-search-panel {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1002;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.hadith-search-modal {
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+.hadith-search-modal h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.hadith-filter-group {
+    margin-bottom: 1.2rem;
+}
+
+.hadith-filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.hadith-filter-group input,
+.hadith-filter-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-family: 'Cairo', sans-serif;
+    box-sizing: border-box; /* Fix for overflow */
+}
+
+/* Search Results */
+#hadith-search-results-container {
+    margin-top: 1.5rem;
+}
+
+#hadith-search-results-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hadith-search-result-item {
+    background-color: var(--grey-color);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    border-right: 4px solid var(--secondary-color);
+}
+
+.hadith-search-result-item p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* Theme adjustments for Hadith section */
+body[data-theme="night"] .hadith-display-frame,
+body[data-theme="night"] .hadith-explanation-frame,
+body[data-theme="night"] .hadith-search-result-item {
+    background-color: #3a3f44;
+}
+
+body[data-theme="night"] .hadith-text,
+body[data-theme="night"] .hadith-search-result-item p {
+    color: #f0f0f0;
+}
+
+body[data-theme="night"] .hadith-search-modal {
+     background-color: var(--light-color);
+     color: var(--dark-color);
+}
+
+body[data-theme="night"] .hadith-filter-group input,
+body[data-theme="night"] .hadith-filter-group select {
+    background-color: #2c2f33;
+    color: white;
+    border-color: #555;
+}
+
+/* Theme and Language dropdowns for night theme */
+body[data-theme="night"] .theme-dropdown-menu,
+body[data-theme="night"] .language-dropdown-menu {
+    background-color: #2c2f33;
+    border-color: #555;
+    color: #ffffff;
+}
+
+body[data-theme="night"] .theme-option,
+body[data-theme="night"] .language-option {
+    color: #ffffff;
+    border-bottom-color: #444;
+}
+
+body[data-theme="night"] .theme-option:hover,
+body[data-theme="night"] .language-option:hover {
+    background-color: #3a3f44;
+}
+
+body[data-theme="night"] .theme-option.active,
+body[data-theme="night"] .language-option.active {
+    background-color: #483D8B;
+    color: #ffffff;
+}
+/* --- END: Hadith Page Styles --- */
+
+/* --- START: Share Button & Modal Styles --- */
+.share-button {
+    background: none;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.share-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+}
+
+.page-header .share-button {
+    font-size: 1.5rem;
+}
+
+
+#share-modal-overlay {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1005;
+    padding: 0;
+    animation: fadeIn 0.3s ease;
+    overflow: hidden;
+}
+
+.share-modal {
+    background: var(--light-color);
+    color: var(--dark-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.share-modal h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.share-modal p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.share-link-container {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+#share-url-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    background-color: var(--grey-color);
+    direction: ltr;
+    border-right: none;
+    text-align: left;
+    color: var(--dark-color);
+}
+
+#copy-share-url-btn {
+    padding: 0 1rem;
+    border: 1px solid #ccc;
+    background: #e9ecef;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.social-share-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    color: white;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+    font-size: 1rem;
+}
+
+.social-btn:hover {
+    opacity: 0.85;
+}
+
+.social-btn.whatsapp { background-color: #25D366; }
+.social-btn.telegram { background-color: #0088cc; }
+.social-btn.twitter { background-color: #1DA1F2; }
+.social-btn.facebook { background-color: #1877F2; }
+
+#close-share-modal-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.9rem;
+}
+
+/* Dark Theme for Modal */
+body[data-theme="night"] .share-modal {
+    background: #2c2f33;
+    color: #f0f0f0;
+}
+
+body[data-theme="night"] .share-modal p {
+    color: #aaa;
+}
+
+body[data-theme="night"] #share-url-input {
+    background-color: #23272a;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body[data-theme="night"] #copy-share-url-btn {
+    background: #5a6268;
+    border-color: #555;
+    color: #f0f0f0;
+}
+/* --- END: Share Button & Modal Styles --- */
+
+/* --- Login Invitation Card Styles --- */
+.guest-login-invitation {
+    background: var(--login-card-bg) !important;
+    color: var(--login-card-text) !important;
+    box-shadow: 0 4px 15px var(--login-card-shadow) !important;
+}
+
+.guest-login-invitation h4 {
+    color: var(--login-card-text) !important;
+}
+
+.guest-login-invitation p {
+    color: var(--login-card-text) !important;
+    opacity: 0.9;
+}
+
+.guest-login-invitation button {
+    background: var(--login-card-button-bg) !important;
+    color: var(--login-card-button-text) !important;
+}
+
+.guest-login-invitation a {
+    color: var(--login-card-text) !important;
+}
+
+/* --- Recitation Page Styles --- */
+#recitation-page .surah-list {
+    margin-top: 1.5rem;
+}
+
+.verse-control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.verse-control-group label {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.verse-input-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--grey-color);
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 0.5rem;
+}
+
+.verse-nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.verse-nav-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.verse-input {
+    width: 60px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    -moz-appearance: textfield;
+}
+
+.verse-input::-webkit-outer-spin-button,
+.verse-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.verse-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.verse-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.verse-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#start-recitation-btn {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Recitation Test Styles */
+#recitation-test-panel {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.recitation-verses-container {
+    padding: 1rem;
+    background-color: var(--grey-color);
+    border-radius: 12px;
+    border: 2px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.recitation-text {
+    font-family: 'Amiri Quran', serif;
+    font-size: 1.5rem;
+    line-height: 2.5;
+    text-align: justify;
+    color: var(--dark-color);
+}
+
+.recitation-controls {
+    text-align: center;
+}
+
+#record-btn {
+    width: auto;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.recitation-test-results {
+    text-align: center;
+}
+
+.result-summary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--grey-color);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.result-summary p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.result-summary span {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+#recitation-comparison-results {
+    text-align: justify;
+    line-height: 2.2;
+    background-color: var(--grey-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.wrong-word {
+    color: var(--wrong-color);
+    font-weight: bold;
+    background-color: rgba(220, 53, 69, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.correct-word {
+    color: var(--correct-color);
+    font-weight: bold;
+    background-color: rgba(40, 167, 69, 0.1);
+    padding: 2px 4px;
+    border-radius: 4px;
+}

@@ -1,0 +1,826 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 585,
+    "ayahs": [
+      {
+        "number": 5759,
+        "text": "HE FROWNED AND turned away,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5760,
+        "text": "Because a blind man came to him.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5761,
+        "text": "What made you think that he will not grow in virtue,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5762,
+        "text": "Or be admonished, and the admonition profit him?",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5763,
+        "text": "As for him who is not in want of any thing,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5764,
+        "text": "You pay full attention,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5765,
+        "text": "Though it is not your concern if he should not grow (in fulness).",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5766,
+        "text": "As for him who comes to you striving (after goodness),",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5767,
+        "text": "And is also fearful (of God),",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5768,
+        "text": "You neglect.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5769,
+        "text": "Assuredly this is a reminder",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5770,
+        "text": "For any one who desires to bear it in mind,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5771,
+        "text": "(Contained) in honoured pages,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5772,
+        "text": "Exalted and holy,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5773,
+        "text": "In the hands of scribes",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5774,
+        "text": "Noble and pious.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5775,
+        "text": "Accursed is man. How ungrateful is he!",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5776,
+        "text": "Of what substance God created him?",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5777,
+        "text": "From a single sperm He created, then proportioned him,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5778,
+        "text": "Then made his passage easy (at birth);",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5779,
+        "text": "He will then send him to death and have him laid in the grave.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5780,
+        "text": "Then He will raise him up again when He please.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5781,
+        "text": "But no. He has not fulfilled what was enjoined on him.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5782,
+        "text": "Let man therefore consider (the sources of) his food.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5783,
+        "text": "We poured down rain abundantly,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5784,
+        "text": "Then We cracked the earth open under pressure (of germination)",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5785,
+        "text": "And We made corn grow,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5786,
+        "text": "And grapes and herbage,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5787,
+        "text": "Olives and dates,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5788,
+        "text": "Orchards thick with trees,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5789,
+        "text": "And fruits and fodder:",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 31,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5790,
+        "text": "A provision for you and your cattle.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 32,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5791,
+        "text": "But when the great calamity comes",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 33,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5792,
+        "text": "Man will fly from his brother,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 34,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5793,
+        "text": "Mother and father,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 35,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5794,
+        "text": "As well as his wife and children.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 36,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5795,
+        "text": "Each man will have enough cares that day.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 37,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5796,
+        "text": "Many faces will that day be bright,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 38,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5797,
+        "text": "Laughing and full of joy,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 39,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5798,
+        "text": "And many will be dust-begrimed,",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 40,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5799,
+        "text": "Covered with the blackness (of shame):",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 41,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5800,
+        "text": "They will be the unbelievers, transgressors.",
+        "surah": {
+          "number": 80,
+          "name": "سُورَةُ عَبَسَ",
+          "englishName": "Abasa",
+          "englishNameTranslation": "He frowned",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 42
+        },
+        "numberInSurah": 42,
+        "juz": 30,
+        "manzil": 7,
+        "page": 585,
+        "ruku": 522,
+        "hizbQuarter": 234,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "80": {
+        "number": 80,
+        "name": "سُورَةُ عَبَسَ",
+        "englishName": "Abasa",
+        "englishNameTranslation": "He frowned",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 42
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

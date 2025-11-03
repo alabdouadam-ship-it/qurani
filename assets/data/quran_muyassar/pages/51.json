@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 51,
+    "ayahs": [
+      {
+        "number": 303,
+        "text": "إن الذين جحدوا الدين الحق وأنكروه، لن تنفعهم أموالهم ولا أولادهم من عذاب الله شيئًا إن وقع بهم في الدنيا، ولن تدفعه عنهم في الآخرة، وهؤلاء هم حطب النار يوم القيامة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 10,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 304,
+        "text": "شأن الكافرين في تكذيبهم وما ينزل بهم، شأن آل فرعون والذين من قبلهم من الكافرين، أنكروا آيات الله الواضحة، فعاجلهم بالعقوبة بسبب تكذيبهم وعنادهم. والله شديد العقاب لمن كفر به وكذَّب رسله.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 11,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 305,
+        "text": "قل -أيها الرسول-، للذين كفروا من اليهود وغيرهم والذين استهانوا بنصرك في \"بَدْر\": إنكم ستُهْزَمون في الدنيا وستموتون على الكفر، وتحشرون إلى نار جهنم؛ لتكون فراشًا دائمًا لكم، وبئس الفراش.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 12,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 306,
+        "text": "قد كان لكم -أيها اليهود المتكبرون المعاندون- دلالة عظيمة في جماعتين تقابلتا في معركة \"بَدْر\": جماعة تقاتل من أجل دين الله، وهم محمد صلى الله عليه وسلم وأصحابه، وجماعة أخرى كافرة بالله، تقاتل من أجل الباطل، ترى المؤمنين في العدد مثليهم رأي العين، وقد جعل الله ذلك سببًا لنصر المسلمين عليهم. والله يؤيِّد بنصره من يشاء من عباده. إن في هذا الذي حدث لَعِظة عظيمة لأصحاب البصائر الذين يهتدون إلى حكم الله وأفعاله.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 13,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 307,
+        "text": "حُسِّن للناس حبُّ الشهوات من النساء والبنين، والأموال الكثيرة من الذهب والفضة، والخيل الحسان، والأنعام من الإبل والبقر والغنم، والأرض المتَّخَذة للغراس والزراعة. ذلك زهرة الحياة الدنيا وزينتها الفانية. والله عنده حسن المرجع والثواب، وهو الجنَّة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 14,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 308,
+        "text": "قل -أيها الرسول-: أأخبركم بخير مما زُيِّن للنَّاس في هذه الحياة الدنيا، لمن راقب الله وخاف عقابه جنات تجري من تحت قصورها وأشجارها الأنهار، خالدين فيها، ولهم فيها أزواج مطهرات من الحيض والنفاس وسوء الخلق، ولهم أعظم من ذلك: رضوان من الله. والله مطَّلِع على سرائر خلقه، عالم بأحوالهم، وسيجازيهم على ذلك.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 15,
+        "juz": 3,
+        "manzil": 1,
+        "page": 51,
+        "ruku": 43,
+        "hizbQuarter": 21,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

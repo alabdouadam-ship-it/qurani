@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 32,
+    "ayahs": [
+      {
+        "number": 210,
+        "text": "Remember God during the stated days; but if a person comes away after two days, it will not be a sin; and if one tarries, he will not transgress, if he keep away from evil. Follow the law of God, and remember that you will have to gather before Him in the end.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 203,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 211,
+        "text": "There is a man who talks well of the world to your pleasing, and makes God witness to what is in his heart, yet he is the most contentious;",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 204,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 212,
+        "text": "For when his back is turned he goes about spreading disorder in the land, destroying fields and flocks; but God does not love disorder.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 205,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 213,
+        "text": "Whenever he is told: \"Obey God,\" his arrogance leads him to more sin; and sufficient for him shall be Hell: How evil a place of wide expanse!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 206,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 214,
+        "text": "And there is a man who is willing to sell even his soul to win the favour of God; and God is compassionate to His creatures.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 207,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 215,
+        "text": "O believers, come to full submission to God. Do not follow in the footsteps of Satan your acknowledged foe.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 208,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 216,
+        "text": "If you falter even after Our signs have reached you, then do not forget that God is all-powerful and all-wise.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 209,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 217,
+        "text": "Are they waiting for God to appear in the balconies of clouds with a host of angels, and the matter to be settled? But all things rest with God in the end.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 210,
+        "juz": 2,
+        "manzil": 1,
+        "page": 32,
+        "ruku": 26,
+        "hizbQuarter": 13,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

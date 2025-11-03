@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 290,
+    "ayahs": [
+      {
+        "number": 2105,
+        "text": "They had nearly expelled you from the land and driven you away from it. But then, they too would have stayed but a little after you.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 76,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2106,
+        "text": "This has been Our way with the apostles whom We sent before you. You will not find any variation in Our line of action.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 77,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 247,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2107,
+        "text": "Observe the service of prayer from the sun's declining from the meridian to the darkening of the night, and the recitation at dawn. Indeed the Recitation at dawn is palpably evident.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 78,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2108,
+        "text": "Say a supererogatory prayer at the hour of the first watch: Your Lord may raise you to a most exalted station.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 79,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2109,
+        "text": "And pray: \"O my Lord, let my entry be with honour, and let my exit be with honour, and grant me power from You which would help (sustain) me.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 80,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2110,
+        "text": "And say: \"Truth has come and falsehood nullified.\" Verily falsehood is perishable.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 81,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2111,
+        "text": "What We have sent down of the Qur'an is a healing and a grace for the faithful, and adds only loss for the sinners.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 82,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2112,
+        "text": "When We are gracious to man he turns away and moves aside; yet when evil befalls him he begins to despair.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 83,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2113,
+        "text": "Say: \"Each one acts according to his disposition, but your Lord knows well who follow the right path.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 84,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 248,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2114,
+        "text": "They ask you about revelation. Say, revelation is by the command of your Lord, and that you have been given but little knowledge.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 85,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 249,
+        "hizbQuarter": 116,
+        "sajda": false
+      },
+      {
+        "number": 2115,
+        "text": "If We pleased We could take away what We have revealed to you. Then you will not find any one to plead for it with Us,",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 86,
+        "juz": 15,
+        "manzil": 4,
+        "page": 290,
+        "ruku": 249,
+        "hizbQuarter": 116,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

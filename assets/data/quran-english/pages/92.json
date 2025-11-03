@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 92,
+    "ayahs": [
+      {
+        "number": 580,
+        "text": "God: There is no god but He. He will gather you together on the Day of Resurrection which is certain to come; and whose word is truer than God's?",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 87,
+        "juz": 5,
+        "manzil": 1,
+        "page": 92,
+        "ruku": 72,
+        "hizbQuarter": 36,
+        "sajda": false
+      },
+      {
+        "number": 581,
+        "text": "How is it that you are divided in two factions about the hypocrites? God has routed them for what they were doing. Do you wish to guide him to the path whom God has allowed to go astray? As for him whom God allows to go astray you will not find a way.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 88,
+        "juz": 5,
+        "manzil": 1,
+        "page": 92,
+        "ruku": 73,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 582,
+        "text": "They wish you to become disbelievers as they are, so that you should become like them. Therefore hold them not as friends until they go out of their homes in the way of God. If they do not, seize them wherever they are and do away with them. Do not make them your friends or allies,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 89,
+        "juz": 5,
+        "manzil": 1,
+        "page": 92,
+        "ruku": 73,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 583,
+        "text": "Except those who take refuge with a people allied to you, or those who, weary of fighting you or their people, come over to you. If God had so willed He would surely have given them power over you, and they would have fought you. If they keep aloof and do not fight, and offer peace, God has left you no reason to fight them.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 90,
+        "juz": 5,
+        "manzil": 1,
+        "page": 92,
+        "ruku": 73,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 584,
+        "text": "You will also find persons who, while wishing to live in peace with you as well as with their own people, turn to civil war the moment they are called to it. If they do not keep away from you, nor offer you peace nor restrain their hands, seize them and kill them wherever they are. We have given you a clear sanction against them.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 91,
+        "juz": 5,
+        "manzil": 1,
+        "page": 92,
+        "ruku": 73,
+        "hizbQuarter": 37,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

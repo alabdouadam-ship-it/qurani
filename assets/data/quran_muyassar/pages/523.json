@@ -1,0 +1,473 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 523,
+    "ayahs": [
+      {
+        "number": 4727,
+        "text": "كما كذبت قريش نبيَّها محمدًا صلى الله عليه وسلم، وقالوا: هو شاعر أو ساحر أو مجنون، فعلت الأمم المكذبة رسلها من قبل قريش، فأحلَّ الله بهم نقمته.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 52,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4728,
+        "text": "أتواصى الأولون والآخرون بالتكذيب بالرسول حين قالوا ذلك جميعًا؟ بل هم قوم طغاة تشابهت قلوبهم وأعمالهم بالكفر والطغيان، فقال متأخروهم ذلك، كما قاله متقدموهم.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 53,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4729,
+        "text": "فأعرضْ -أيها الرسول- عن المشركين حتى يأتيك فيهم أمر الله، فما أنت بملوم من أحد، فقد بلَّغت ما أُرسلت به.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 54,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4730,
+        "text": "ومع إعراضك -أيها الرسول- عنهم، وعدم الالتفات إلى تخذيلهم، داوم على الدعوة إلى الله، وعلى وعظ من أُرسلتَ إليهم؛ فإن التذكير والموعظة ينتفع بهما أهل القلوب المؤمنة، وفيهما إقامة الحجة على المعرضين.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 55,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4731,
+        "text": "وما خلقت الجن والإنس وبعثت جميع الرسل إلا لغاية سامية، هي عبادتي وحدي دون مَن سواي.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 56,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4732,
+        "text": "ما أريد منهم من رزق وما أريد أن يطعمون، فأنا الرزاق المعطي. فهو سبحانه غير محتاج إلى الخلق، بل هم الفقراء إليه في جميع أحوالهم، فهو خالقهم ورازقهم والغني عنهم.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 57,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4733,
+        "text": "إن الله وحده هو الرزاق لخلقه، المتكفل بأقواتهم، ذو القوة المتين، لا يُقْهَر ولا يغالَب، فله القدرة والقوة كلها.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 58,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4734,
+        "text": "فإن للذين ظلموا بتكذيبهم الرسول محمدًا صلى الله عليه وسلم نصيبًا من عذاب الله نازلا بهم مثل نصيب أصحابهم الذين مضَوْا من قبلهم، فلا يستعجلون بالعذاب، فهو آتيهم لا محالة.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 59,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4735,
+        "text": "فهلاك وشقاء للذين كفروا بالله ورسوله من يومهم الذي يوعدون فيه بنزول العذاب بهم، وهو يوم القيامة.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 60,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4736,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4737,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4738,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4739,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4740,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4741,
+        "text": "أقسم الله بالطور، وهو الجبل الذي كلَّم الله سبحانه وتعالى موسى عليه، وبكتاب مكتوب، وهو القرآن في صحف منشورة، وبالبيت المعمور في السماء بالملائكة الكرام الذين يطوفون به دائمًا، وبالسقف المرفوع وهو السماء الدنيا، وبالبحر المسجور المملوء بالمياه.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4742,
+        "text": "إن عذاب ربك -أيها الرسول- بالكفار لَواقع، ليس له مِن مانع يمنعه حين وقوعه، يوم تتحرك السماء فيختلُّ نظامها وتضطرب أجزاؤها، وذلك عند نهاية الحياة الدنيا، وتزول الجبال عن أماكنها، وتسير كسير السحاب.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4743,
+        "text": "إن عذاب ربك -أيها الرسول- بالكفار لَواقع، ليس له مِن مانع يمنعه حين وقوعه، يوم تتحرك السماء فيختلُّ نظامها وتضطرب أجزاؤها، وذلك عند نهاية الحياة الدنيا، وتزول الجبال عن أماكنها، وتسير كسير السحاب.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4744,
+        "text": "إن عذاب ربك -أيها الرسول- بالكفار لَواقع، ليس له مِن مانع يمنعه حين وقوعه، يوم تتحرك السماء فيختلُّ نظامها وتضطرب أجزاؤها، وذلك عند نهاية الحياة الدنيا، وتزول الجبال عن أماكنها، وتسير كسير السحاب.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4745,
+        "text": "إن عذاب ربك -أيها الرسول- بالكفار لَواقع، ليس له مِن مانع يمنعه حين وقوعه، يوم تتحرك السماء فيختلُّ نظامها وتضطرب أجزاؤها، وذلك عند نهاية الحياة الدنيا، وتزول الجبال عن أماكنها، وتسير كسير السحاب.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4746,
+        "text": "فهلاك في هذا اليوم واقع بالمكذبين الذين هم في خوض بالباطل يلعبون به، ويتخذون دينهم هزوًا ولعبًا.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4747,
+        "text": "فهلاك في هذا اليوم واقع بالمكذبين الذين هم في خوض بالباطل يلعبون به، ويتخذون دينهم هزوًا ولعبًا.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4748,
+        "text": "يوم يُدْفَع هؤلاء المكذبون دفعًا بعنف ومَهانة إلى نار جهنم، ويقال توبيخًا لهم: هذه هي النار التي كنتم بها تكذِّبون.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4749,
+        "text": "يوم يُدْفَع هؤلاء المكذبون دفعًا بعنف ومَهانة إلى نار جهنم، ويقال توبيخًا لهم: هذه هي النار التي كنتم بها تكذِّبون.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "51": {
+        "number": 51,
+        "name": "سُورَةُ الذَّارِيَاتِ",
+        "englishName": "Adh-Dhaariyat",
+        "englishNameTranslation": "The Winnowing Winds",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      },
+      "52": {
+        "number": 52,
+        "name": "سُورَةُ الطُّورِ",
+        "englishName": "At-Tur",
+        "englishNameTranslation": "The Mount",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 49
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

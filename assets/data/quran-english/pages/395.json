@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 395,
+    "ayahs": [
+      {
+        "number": 3330,
+        "text": "He said: \"This has come to me through my own acumen.\" Did he not know that God had destroyed many generations before him who possessed far more acumen than he, and more wealth? The sinners will not be asked about their sins.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 78,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3331,
+        "text": "Then he came before his people in all pomp; and those enamoured of this world, said: \"Ah would that we had what Qarun has been given! He indeed possesses great good fortune.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 79,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3332,
+        "text": "But those who knew better, said: \"Alack-a-day! God's guerdon is better for those who believe and do the right. Only those who persevere will receive it.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 80,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3333,
+        "text": "So We opened up the earth and sunk him and his mansion. There was not a body that could help him against (the will) of God, nor was he able to save himself.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 81,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3334,
+        "text": "Those who were envious of his position only yesterday said on the morrow: \"Indeed God increases the fortunes of those of His creatures as He will, and decreases. Had God not been gracious to us He could have (opened up) the earth and made it swallow us. Surely the infidels will not succeed.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 82,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3335,
+        "text": "We shall give the mansion of the Hereafter to those who do not want to be haughty in the land and spread corruption. The future belongs to those who take heed for themselves and follow the straight path.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 83,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3336,
+        "text": "Whoever does good will receive better than what he has done; and whoever does ill shall be requited but to the extent of what he does.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 84,
+        "juz": 20,
+        "manzil": 5,
+        "page": 395,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

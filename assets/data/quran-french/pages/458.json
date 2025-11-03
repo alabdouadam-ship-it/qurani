@@ -1,0 +1,226 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 458,
+    "ayahs": [
+      {
+        "number": 4054,
+        "text": "(Allah) dit: «En vérité, et c'est la vérité que je dis,",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 84,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 395,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4055,
+        "text": "J'emplirai certainement l'Enfer de toi et de tous ceux d'entre eux qui te suivront».",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 85,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 395,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4056,
+        "text": "Dis: «Pour cela, je ne vous demande aucun salaire; et je ne suis pas un imposteur.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 86,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 395,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4057,
+        "text": "Ceci [le Coran] n'est qu'un rappel à l'univers.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 87,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 395,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4058,
+        "text": "Et certainement vous en aurez des nouvelles bientôt!»",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 88,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 395,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4059,
+        "text": "La révélation du Livre vient d'Allah, le Puissant, le Sage.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 1,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 396,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4060,
+        "text": "Nous t'avons fait descendre le Livre en toute vérité. Adore donc Allah en Lui vouant un culte exclusif.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 2,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 396,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4061,
+        "text": "C'est à Allah qu'appartient la religion pure. Tandis que ceux qui prennent des protecteurs en dehors de Lui (disent): «Nous ne les adorons que pour qu'ils nous rapprochent davantage d'Allah». En vérité, Allah jugera parmi eux sur ce en quoi ils divergent. Allah ne guide pas celui qui est menteur et grand ingrat.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 3,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 396,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4062,
+        "text": "Si Allah avait voulu S'attribuer un enfant, Il aurait certes choisi ce qu'Il eût voulu parmi ce qu'Il crée. Gloire à Lui! C'est Lui Allah, l'Unique, le Dominateur suprême.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 4,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 396,
+        "hizbQuarter": 183,
+        "sajda": false
+      },
+      {
+        "number": 4063,
+        "text": "Il a créé les cieux et la terre en toute vérité. Il enroule la nuit sur le jour et enroule le jour sur la nuit, et Il a assujetti le soleil et la lune à poursuivre chacun sa course pour un terme fixé. C'est bien Lui le Puissant, le Grand Pardonneur!",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 5,
+        "juz": 23,
+        "manzil": 6,
+        "page": 458,
+        "ruku": 396,
+        "hizbQuarter": 183,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "38": {
+        "number": 38,
+        "name": "سُورَةُ صٓ",
+        "englishName": "Saad",
+        "englishNameTranslation": "The letter Saad",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      },
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

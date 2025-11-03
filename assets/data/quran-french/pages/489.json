@@ -1,0 +1,264 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 489,
+    "ayahs": [
+      {
+        "number": 4324,
+        "text": "Et c'est ainsi que Nous t'avons révélé un esprit [le Coran] provenant de Notre ordre. Tu n'avais aucune connaissance du Livre ni de la foi; mais Nous en avons fait une lumière par laquelle Nous guidons qui Nous voulons parmi Nos serviteurs. Et en vérité tu guides vers un chemin droit,",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 52,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 423,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4325,
+        "text": "le chemin d'Allah à Qui appartient ce qui est dans les cieux et ce qui est sur la terre. Oui c'est à Allah que s'acheminent toutes les choses.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 53,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 423,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4326,
+        "text": "H'â, Mîm.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 1,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4327,
+        "text": "Par le Livre explicite!",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 2,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4328,
+        "text": "Nous en avons fait un Coran arabe afin que vous raisonniez.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 3,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4329,
+        "text": "Il est auprès de Nous, dans l'Ecriture-Mère (l'original au ciel), sublime et rempli de sagesse.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 4,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4330,
+        "text": "Quoi! Allons-Nous vous dispenser du Rappel [le Coran] pour la raison que vous êtes des gens outranciers?",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 5,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4331,
+        "text": "Que de prophètes avons-Nous envoyés aux Anciens!",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 6,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4332,
+        "text": "et pas un prophète ne leur venait qu'ils ne le tournaient en dérision.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 7,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4333,
+        "text": "Nous avons fait périr de plus redoutables qu'eux! Et on a déjà cité l'exemple des anciens.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 8,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4334,
+        "text": "Et si tu leur demandes: «Qui a créé les cieux et la terre?» Ils diront très certainement: «Le Puissant, l'Omniscient les a créés».",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 9,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4335,
+        "text": "Celui qui vous a donné la terre pour berceau et vous y a tracé des sentiers afin que vous vous guidiez;",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 10,
+        "juz": 25,
+        "manzil": 6,
+        "page": 489,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      },
+      "43": {
+        "number": 43,
+        "name": "سُورَةُ الزُّخۡرُفِ",
+        "englishName": "Az-Zukhruf",
+        "englishNameTranslation": "Ornaments of gold",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 89
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

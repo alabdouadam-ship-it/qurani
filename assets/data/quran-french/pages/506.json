@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 506,
+    "ayahs": [
+      {
+        "number": 4539,
+        "text": "(Rappelle-toi) lorsque Nous dirigeâmes vers toi une troupe de djinns pour qu'ils écoutent le Coran. Quand ils assistèrent [à sa lecture] ils dirent: «Ecoutez attentivement»... Puis, quand ce fut terminé, ils retournèrent à leur peuple en avertisseurs",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 29,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4540,
+        "text": "Ils dirent: «O notre peuple! Nous venons d'entendre un Livre qui a été descendu après Moïse, confirmant ce qui l'a précédé. Il guide vers la vérité et vers un chemin droit.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 30,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4541,
+        "text": "O notre peuple! Répondez au prédicateur d'Allah et croyez en lui. Il [Allah] vous pardonnera une partie de vos péchés et vous protègera contre un châtiment douloureux.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 31,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4542,
+        "text": "Et quiconque ne répond pas au prédicateur d'Allah ne saura échapper au pouvoir [d'Allah] sur terre. Et il n'aura pas de protecteurs en dehors de Lui. Ceux-là sont dans un égarement évident.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 32,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4543,
+        "text": "Ne voient-ils pas qu'Allah qui a créé les cieux et la terre, et qui n'a pas été fatigué par leur création, est capable en vérité de redonner la vie aux morts? Mais si. Il est certes Omnipotent.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 33,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4544,
+        "text": "Et le jour où seront présentés au Feu ceux qui ont mécru (on leur dira): «Ceci n'est-il pas la vérité?» Ils diront: «Mais si, par notre Seigneur». Il dira: «Eh bien, goûtez le châtiment pour votre mécréance».",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 34,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4545,
+        "text": "Endure (Muhammad) donc, comme ont enduré les messagers doués de fermeté; et ne te montre pas trop pressé de les voir subir [leur châtiment]. Le jour où ils verront ce qui leur est promis, il leur semblera qu'ils n'étaient restés [sur terre] qu'une heure d'un jour. Voilà une communication. Qui sera donc anéanti sinon les gens pervers?",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 35,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "46": {
+        "number": 46,
+        "name": "سُورَةُ الأَحۡقَافِ",
+        "englishName": "Al-Ahqaf",
+        "englishNameTranslation": "The Dunes",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 35
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

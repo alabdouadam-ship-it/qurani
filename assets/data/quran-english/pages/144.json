@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 144,
+    "ayahs": [
+      {
+        "number": 914,
+        "text": "Thus God guides whomsoever He please by opening wide his breast to surrender; and Straitens the breasts of those He allows to go astray, (who feel suffocated) as if they were ascending the skies. Thus will God punish those who do not believe.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 125,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 57,
+        "sajda": false
+      },
+      {
+        "number": 915,
+        "text": "This is the straight path of your Lord. Distinct have We made Our signs for those who reflect.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 126,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 57,
+        "sajda": false
+      },
+      {
+        "number": 916,
+        "text": "For them is an abode of peace with their Lord. He will be their defender as reward for what they did.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 127,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 917,
+        "text": "On the day He will gather them together, (He will say:) \"O you assembly of jinns, you made great use of men.\" But their proteges among men will say: \"O our Lord, we lived a life of mutual gain, but have now reached the term You ordained for us.\" \"Your abode is Hell,\" He will say, \"where you will dwell for ever, unless God please otherwise.\" Verily your Lord is wise and all-knowing.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 128,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 918,
+        "text": "Thus do We place some sinners over others as requital for their deeds.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 129,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 919,
+        "text": "O you assembly of jinns and men, did not apostles come to you from among you, communicating My signs to you, bringing warnings of this your day (of Doom)?\" They will answer: \"We bear witness to our sins.\" They were surely deluded by the life of the world, and bore witness against themselves because they were unbelievers.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 130,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 920,
+        "text": "And this (so that it may be clear) that your Lord does not destroy towns and cities arbitrarily while the citizens remain unaware.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 131,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

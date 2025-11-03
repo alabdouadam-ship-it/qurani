@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 214,
+    "ayahs": [
+      {
+        "number": 1407,
+        "text": "Some of them look toward you: But can you show the blind the way even when they cannot see?",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 43,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1408,
+        "text": "Surely God does not wrong anyone; they wrong themselves.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 44,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1409,
+        "text": "The day He will gather them together it will appear to them that they had lived (in the world) but an hour of a day to make each other's acquaintance. Verily those who deny the meeting with God will be lost, and not find the way.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 45,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1410,
+        "text": "Whether We show you some of the promise (of punishment in wait) for them, or take you to Ourself, their returning is to Us in the end; and God is a witness to all they do.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 46,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1411,
+        "text": "For every people there is an apostle; and when their apostle is come the matter is decided between them equitably, and no one is wronged.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 47,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1412,
+        "text": "They say: \"When is this promise going to come, if what you say is true?\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 48,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1413,
+        "text": "Say: \"I have no power over my own gain or loss other than what God may please.\" Every people have a certain term. When their time is come they can neither delay it an hour nor advance it a moment forward.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 49,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1414,
+        "text": "Say: \"Have you ever thought if His punishment befalls you at night or in the day, what would the sinners do to despatch it?",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 50,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1415,
+        "text": "Will you believe it when it comes to pass? Indeed, you will believe it then. How impatient you were to hasten it!",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 51,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1416,
+        "text": "Then will the sinners be told: \"Now taste everlasting torment. Should you be rewarded for anything else but what you did?\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 52,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1417,
+        "text": "Yet they want to be informed if it is true. Say: \"By my Lord, it is the truth. You cannot invalidate it.\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 53,
+        "juz": 11,
+        "manzil": 3,
+        "page": 214,
+        "ruku": 176,
+        "hizbQuarter": 86,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

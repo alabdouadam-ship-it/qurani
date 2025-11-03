@@ -1,0 +1,386 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 599,
+    "ayahs": [
+      {
+        "number": 6138,
+        "text": "Whose reward is with their Lord -- gardens of Eden with rivers flowing by, where they will abide for ever, God pleased with their service, they with obedience to Him. This (awaits) him who stands in awe of his Lord.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6139,
+        "text": "WHEN THE WORLD is shaken up by its cataclysm,",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6140,
+        "text": "And the earth throws out its burdens,",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6141,
+        "text": "And man enquires: \"What has come over it?\"",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6142,
+        "text": "That day it will narrate its annals,",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6143,
+        "text": "For your Lord will have commanded it.",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6144,
+        "text": "That day people will proceed separately to be shown their deeds.",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6145,
+        "text": "Whosoever has done even an atom's weight of good will behold it;",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6146,
+        "text": "And whosoever has done even an atom's weight of evil will behold that.",
+        "surah": {
+          "number": 99,
+          "name": "سُورَةُ الزَّلۡزَلَةِ",
+          "englishName": "Az-Zalzala",
+          "englishNameTranslation": "The Earthquake",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 541,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6147,
+        "text": "I CALL TO witness the chargers, snorting, rushing to battle before the others,",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6148,
+        "text": "Then those striking sparks of fire,",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6149,
+        "text": "Then those charging in the morning",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6150,
+        "text": "Raising clouds of dust,",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6151,
+        "text": "Penetrating deep into the armies,",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6152,
+        "text": "That man is ungrateful to his Lord",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6153,
+        "text": "And is himself witness to it,",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6154,
+        "text": "And is intractable in his love of worldly goods.",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6155,
+        "text": "Does he not know when the contents of the graves are laid bare",
+        "surah": {
+          "number": 100,
+          "name": "سُورَةُ العَادِيَاتِ",
+          "englishName": "Al-Aadiyaat",
+          "englishNameTranslation": "The Chargers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 599,
+        "ruku": 542,
+        "hizbQuarter": 240,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "98": {
+        "number": 98,
+        "name": "سُورَةُ البَيِّنَةِ",
+        "englishName": "Al-Bayyina",
+        "englishNameTranslation": "The Evidence",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 8
+      },
+      "99": {
+        "number": 99,
+        "name": "سُورَةُ الزَّلۡزَلَةِ",
+        "englishName": "Az-Zalzala",
+        "englishNameTranslation": "The Earthquake",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 8
+      },
+      "100": {
+        "number": 100,
+        "name": "سُورَةُ العَادِيَاتِ",
+        "englishName": "Al-Aadiyaat",
+        "englishNameTranslation": "The Chargers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

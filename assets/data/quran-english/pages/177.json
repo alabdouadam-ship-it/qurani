@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 177,
+    "ayahs": [
+      {
+        "number": 1161,
+        "text": "THEY ASK YOU of (benefits accruing as) spoils of war. Tell them: \"The benefits belong to God and His Messenger.\" So fulfil your duty to God and keep peace among yourselves. Obey God and the Prophet, If you really believe.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 1,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1162,
+        "text": "Only they are true believers whose hearts fill up with awe when the name of God is mentioned; and their faith is further strengthened when His messages are read out to them; and those who place their trust in their Lord,",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 2,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1163,
+        "text": "Who are firm in devotion, and spend of what We have given them,",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 3,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1164,
+        "text": "Are true believers. There are for them (high) ranks with their Lord, and pardon and noble provision.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 4,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1165,
+        "text": "As your Lord sent you from your home (to fight) for the true cause, a section of the faithful were averse,",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 5,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1166,
+        "text": "Who argued with you about the matter even after it had become quite clear, as if they were being pushed into (the arms of) death as they waited.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 6,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1167,
+        "text": "Though God promised that one of two columns (would fall to you), you desired the one that was not armed. But God wished to confirm the truth by His words, and wipe the unbelievers out to the last,",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 7,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1168,
+        "text": "So that Truth may be affirmed and falsehood negated, even though the sinners be averse.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 8,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 121,
+    "ayahs": [
+      {
+        "number": 746,
+        "text": "Tell them: \"O people of the Book, do not overstep the bounds of truth in your beliefs, and follow not the wishes of a people who had erred before, and led many others astray, and wandered away from the right path.\"",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 77,
+        "juz": 6,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 95,
+        "hizbQuarter": 48,
+        "sajda": false
+      },
+      {
+        "number": 747,
+        "text": "Cursed were disbelievers among the children of Israel by David and Jesus, son of Mary, because they rebelled and transgressed the bounds.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 78,
+        "juz": 6,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 96,
+        "hizbQuarter": 48,
+        "sajda": false
+      },
+      {
+        "number": 748,
+        "text": "They did not restrain one another from the wicked things they used to do; and vile were the things that they were doing!",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 79,
+        "juz": 6,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 96,
+        "hizbQuarter": 48,
+        "sajda": false
+      },
+      {
+        "number": 749,
+        "text": "You can see among them many allying themselves with the infidels. Vile it was what they sent ahead of them, so that God's indignation came upon them; and torment will they suffer an eternity.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 80,
+        "juz": 6,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 96,
+        "hizbQuarter": 48,
+        "sajda": false
+      },
+      {
+        "number": 750,
+        "text": "If they had believed in God and the Prophet and what had been revealed to him, they would never have held them as allies; and many among them are transgressors.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 81,
+        "juz": 6,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 96,
+        "hizbQuarter": 48,
+        "sajda": false
+      },
+      {
+        "number": 751,
+        "text": "You will find the Jews and idolaters most excessive in hatred of those who believe; and the closest in love to the faithful are the people who say: \"We are the followers of Christ,\" because there are priests and monks among them, and they are not arrogant.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 82,
+        "juz": 7,
+        "manzil": 2,
+        "page": 121,
+        "ruku": 96,
+        "hizbQuarter": 49,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

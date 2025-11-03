@@ -1,0 +1,579 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 569,
+    "ayahs": [
+      {
+        "number": 5386,
+        "text": "Though within sight of one another. The sinner would like to ransom himself from the torment of that Day by offering his sons,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5387,
+        "text": "His wife and his brother,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5388,
+        "text": "And his family who had stood by him,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5389,
+        "text": "And all those who are on the earth, to save himself.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5390,
+        "text": "But never. It is pure white flame",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5391,
+        "text": "That would skin the scalp.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5392,
+        "text": "It will summon whoever turns his back and flees,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5393,
+        "text": "Who amasses and then hoards.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 227,
+        "sajda": false
+      },
+      {
+        "number": 5394,
+        "text": "Surely man is greedy by nature.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5395,
+        "text": "If evil befalls him he is perturbed;",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5396,
+        "text": "If good comes to him he holds back his hand,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5397,
+        "text": "Except those who closely follow (the Book of God),",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5398,
+        "text": "Who persevere in devotion,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5399,
+        "text": "In whose wealth a due share is included",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5400,
+        "text": "For the needy and those dispossessed,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5401,
+        "text": "And those who believe in the Day of Judgement,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5402,
+        "text": "And those who fear the punishment of their Lord, --",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5403,
+        "text": "Surely no one can be secure from the punishment of his Lord, --",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5404,
+        "text": "And those who guard their sex except from their wives and women slaves of old",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5405,
+        "text": "Are free of blame,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5406,
+        "text": "But those who seek more than this will be transgressors;",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5407,
+        "text": "And those who fulfil their trusts and covenants,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 32,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5408,
+        "text": "Who uphold their testimonies,",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 33,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5409,
+        "text": "And those who are mindful of their moral obligations.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 34,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5410,
+        "text": "They will live in gardens with honour.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 35,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 502,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5411,
+        "text": "What is the matter with unbelievers that they stare at you with fixed gazes and hasten towards you",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 36,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 503,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5412,
+        "text": "In crowds, right and left?",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 37,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 503,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5413,
+        "text": "Does every one of them wish to enter the garden of tranquility?",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 38,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 503,
+        "hizbQuarter": 228,
+        "sajda": false
+      },
+      {
+        "number": 5414,
+        "text": "Never so. We have created them from what they know.",
+        "surah": {
+          "number": 70,
+          "name": "سُورَةُ المَعَارِجِ",
+          "englishName": "Al-Ma'aarij",
+          "englishNameTranslation": "The Ascending Stairways",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 44
+        },
+        "numberInSurah": 39,
+        "juz": 29,
+        "manzil": 7,
+        "page": 569,
+        "ruku": 503,
+        "hizbQuarter": 228,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "70": {
+        "number": 70,
+        "name": "سُورَةُ المَعَارِجِ",
+        "englishName": "Al-Ma'aarij",
+        "englishNameTranslation": "The Ascending Stairways",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 44
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

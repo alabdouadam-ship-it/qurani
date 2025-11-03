@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 188,
+    "ayahs": [
+      {
+        "number": 1242,
+        "text": "Comment y aurait-il pour les associateurs un pacte admis par Allah et par Son messager? A l'exception de ceux avec lesquels vous avez conclu un pacte près de la Mosquée sacrée. Tant qu'ils sont droits envers vous, soyez droits envers eux. Car Allah aime les pieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 7,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1243,
+        "text": "Comment donc! Quand ils triomphent de vous, ils ne respectent à votre égard, ni parenté ni pacte conclu. Ils vous satisfont de leurs bouches, tandis que leurs cœurs se refusent; et la plupart d'entre eux sont des pervers.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 8,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1244,
+        "text": "Ils troquent à vil prix les versets d'Allah (le Coran) et obstruent Son chemin. Ce qu'ils font est très mauvais!",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 9,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1245,
+        "text": "Ils ne respectent, à l'égard d'un croyant, ni parenté ni pacte conclu. Et ceux-là sont les transgresseurs.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 10,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1246,
+        "text": "Mais s'ils se repentent, accomplissent la Salât et acquittent la Zakat, ils deviendront vos frères en religion. Nous exposons intelligiblement les versets pour des gens qui savent.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 11,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1247,
+        "text": "Et si, après le pacte, ils violent leurs serments et attaquent votre religion, combattez alors les chefs de la mécréance - car, ils ne tiennent aucun serment - peut-être cesseront-ils?",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 12,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1248,
+        "text": "Ne combattrez-vous pas des gens qui ont violé leurs serments, qui ont voulu bannir le Messager et alors que ce sont eux qui vous ont attaqués les premiers? Les redoutiez-vous? C'est Allah qui est plus digne de votre crainte si vous êtes croyants!",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 13,
+        "juz": 10,
+        "manzil": 2,
+        "page": 188,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

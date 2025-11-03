@@ -1,0 +1,560 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 371,
+    "ayahs": [
+      {
+        "number": 3016,
+        "text": "واجعل لي ثناء حسنًا وذكرًا جميلا في الذين يأتون بعدي إلى يوم القيامة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 84,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3017,
+        "text": "واجعلني من عبادك الذين تورثهم نعيم الجنة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 85,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3018,
+        "text": "وهذا دعاء من إبراهيم عليه السلام أن ينقذ الله أباه من الضلال إلى الهدى، فيغفر له ويتجاوز عنه، كما وعد إبراهيم أباه بالدعاء له، فلما تبيَّن له أنه مستمر في الكفر والشرك إلى أن يموت تبرَّأ منه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 86,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3019,
+        "text": "ولا تُلْحق بي الذل، يوم يخرج الناس من القبور للحساب والجزاء، يوم لا ينفع المال والبنون أحدًا من العباد، إلا مَن أتى الله بقلب سليم من الكفر والنفاق والرذيلة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 87,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3020,
+        "text": "ولا تُلْحق بي الذل، يوم يخرج الناس من القبور للحساب والجزاء، يوم لا ينفع المال والبنون أحدًا من العباد، إلا مَن أتى الله بقلب سليم من الكفر والنفاق والرذيلة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 88,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3021,
+        "text": "ولا تُلْحق بي الذل، يوم يخرج الناس من القبور للحساب والجزاء، يوم لا ينفع المال والبنون أحدًا من العباد، إلا مَن أتى الله بقلب سليم من الكفر والنفاق والرذيلة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 89,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3022,
+        "text": "وقُرِّبت الجنة للذين اجتنبوا الكفر والمعاصي، وأقبلوا على الله بالطاعة.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 90,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3023,
+        "text": "وأُظهرت النار للكافرين الذين ضَلُّوا عن الهدى، وتجرَّؤوا على محارم الله وكذَّبوا رسله.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 91,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3024,
+        "text": "وقيل لهم توبيخًا: أين آلهتكم التي كنتم تعبدونها مِن دون الله، وتزعمون أنها تشفع لكم اليوم؟ هل ينصرونكم، فيدفعون العذاب عنكم، أو ينتصرون بدفع العذاب عن أنفسهم؟ لا شيء من ذلك.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 92,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3025,
+        "text": "وقيل لهم توبيخًا: أين آلهتكم التي كنتم تعبدونها مِن دون الله، وتزعمون أنها تشفع لكم اليوم؟ هل ينصرونكم، فيدفعون العذاب عنكم، أو ينتصرون بدفع العذاب عن أنفسهم؟ لا شيء من ذلك.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 93,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3026,
+        "text": "فجُمِعوا وألقُوا في جهنم، هم والذين أضلوهم وأعوان إبليس الذين زيَّنوا لهم الشر، لم يُفْلِت منهم أحد.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 94,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3027,
+        "text": "فجُمِعوا وألقُوا في جهنم، هم والذين أضلوهم وأعوان إبليس الذين زيَّنوا لهم الشر، لم يُفْلِت منهم أحد.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 95,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3028,
+        "text": "قالوا معترفين بخطئهم، وهم يتنازعون في جهنم مع مَن أضلوهم، تالله إننا كنا في الدنيا في ضلال واضح لا خفاء فيه؛ إذ نسويكم برب العالمين المستحق للعبادة وحده. وما أوقعنا في هذا المصير السيِّئ إلا المجرمون الذين دعونا إلى عبادة غير الله فاتبعناهم.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 96,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3029,
+        "text": "قالوا معترفين بخطئهم، وهم يتنازعون في جهنم مع مَن أضلوهم، تالله إننا كنا في الدنيا في ضلال واضح لا خفاء فيه؛ إذ نسويكم برب العالمين المستحق للعبادة وحده. وما أوقعنا في هذا المصير السيِّئ إلا المجرمون الذين دعونا إلى عبادة غير الله فاتبعناهم.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 97,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3030,
+        "text": "قالوا معترفين بخطئهم، وهم يتنازعون في جهنم مع مَن أضلوهم، تالله إننا كنا في الدنيا في ضلال واضح لا خفاء فيه؛ إذ نسويكم برب العالمين المستحق للعبادة وحده. وما أوقعنا في هذا المصير السيِّئ إلا المجرمون الذين دعونا إلى عبادة غير الله فاتبعناهم.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 98,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3031,
+        "text": "قالوا معترفين بخطئهم، وهم يتنازعون في جهنم مع مَن أضلوهم، تالله إننا كنا في الدنيا في ضلال واضح لا خفاء فيه؛ إذ نسويكم برب العالمين المستحق للعبادة وحده. وما أوقعنا في هذا المصير السيِّئ إلا المجرمون الذين دعونا إلى عبادة غير الله فاتبعناهم.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 99,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3032,
+        "text": "فلا أحدَ يشفع لنا، ويخلِّصنا من العذاب، ولا مَن يَصْدُق في مودتنا ويشفق علينا.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 100,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3033,
+        "text": "فلا أحدَ يشفع لنا، ويخلِّصنا من العذاب، ولا مَن يَصْدُق في مودتنا ويشفق علينا.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 101,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3034,
+        "text": "فليت لنا رجعة إلى الدنيا، فنصير من جملة المؤمنين الناجين.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 102,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3035,
+        "text": "إن في نبأ إبراهيم السابق لَعبرة لِمن يعتبر، وما صار أكثر الذين سمعوا هذا النبأ مؤمنين. وإن ربك لهو العزيز القادر على الانتقام من المكذبين، الرحيم بعباده المؤمنين.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 103,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3036,
+        "text": "إن في نبأ إبراهيم السابق لَعبرة لِمن يعتبر، وما صار أكثر الذين سمعوا هذا النبأ مؤمنين. وإن ربك لهو العزيز القادر على الانتقام من المكذبين، الرحيم بعباده المؤمنين.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 104,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3037,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 105,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3038,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 106,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3039,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 107,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3040,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 108,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3041,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 109,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3042,
+        "text": "كَذَّبت قوم نوح رسالة نبيهم، فكانوا بهذا مكذبين لجميع الرسل؛ لأن كل رسول يأمر بتصديق جميع الرسل. إذ قال لهم أخوهم نوح: ألا تخشون الله بترك عبادة غيره؟ إني لكم رسول أمين فيما أبلغكم، فاجعلوا الإيمان وقاية لكم من عذاب الله وأطيعوني فيما آمركم به من عبادته وحده. وما أطلب منكم أجرًا على تبليغ الرسالة، ما أجري إلا على رب العالمين، المتصرف في خلقه، فاحذروا عقابه، وأطيعوني بامتثال أوامره، واجتناب نواهيه.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 110,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3043,
+        "text": "قال له قومه: كيف نصدِّقك ونتبعك، والذين اتبعوك أراذل الناس وأسافلهم؟",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 111,
+        "juz": 19,
+        "manzil": 5,
+        "page": 371,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "26": {
+        "number": 26,
+        "name": "سُورَةُ الشُّعَرَاءِ",
+        "englishName": "Ash-Shu'araa",
+        "englishNameTranslation": "The Poets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 227
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

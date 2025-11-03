@@ -1,0 +1,260 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 365,
+    "ayahs": [
+      {
+        "number": 2911,
+        "text": "وما أرسلناك - أيها الرسول - إلا مبشرًا للمؤمنين بالجنة ومنذرًا للكافرين بالنار.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 56,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2912,
+        "text": "قل لهم: لا أطلب منكم على تبليغ الرسالة أيَّ أجر، لكنْ من أراد أن يهتدي ويسلك سبيل الحق إلى ربه وينفق في مرضاته، فلست أُجبركم عليه، وإنما هو خير لأنفسكم.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 57,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2913,
+        "text": "وتوكل على الله الذي له جميع معاني الحياة الكاملة كما يليق بجلاله الذي لا يموت، ونزِّهه عن صفات النقصان. وكفى بالله خبيرًا بذنوب خلقه، لا يخفى عليه شيء منها، وسيحاسبهم عليها ويجازيهم بها.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 58,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2914,
+        "text": "الذي خلق السموات والأرض وما بينهما في ستة أيام، ثم استوى على العرش- أي علا وارتفع- استواءً يليق بجلاله، هو الرحمن، فاسأل - أيها النبي - به خبيرًا، يعني بذلك سبحانه نفسه الكريمة، فهو الذي يعلم صفاته وعظمته وجلاله. ولا أحد من البشر أعلم بالله ولا أخبر به من عبده ورسوله محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 59,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2915,
+        "text": "وإذا قيل للكافرين: اسجدوا للرحمن واعبدوه قالوا: ما نعرف الرحمن، أنسجد لما تأمرنا بالسجود له طاعة لأمرك؟ وزادهم دعاؤهم إلى السجود للرحمن بُعْداً عن الإيمان ونفورًا منه.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 60,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": {
+          "id": 8,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2916,
+        "text": "عَظُمَتْ بركات الرحمن وكثر خيره، الذي جعل في السماء النجوم الكبار بمنازلها، وجعل فيها شمسًا تضيء وقمرًا ينير.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 61,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2917,
+        "text": "وهو الذي جعل الليل والنهار متعاقبَيْن يَخْلُف أحدهما الآخر لمن أراد أن يعتبر بما في ذلك إيمانًا بالمدبِّر الخالق، أو أراد أن يشكر لله تعالى على نعمه وآلائه.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 62,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2918,
+        "text": "وعباد الرحمن الصالحون يمشون على الأرض بسكينة متواضعين، وإذا خاطبهم الجهلة السفهاء بالأذى أجابوهم بالمعروف من القول، وخاطبوهم خطابًا يَسْلَمون فيه من الإثم، ومن مقابلة الجاهل بجهله.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 63,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2919,
+        "text": "والذين يكثرون من صلاة الليل مخلصين فيها لربهم، متذللين له بالسجود والقيام.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 64,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2920,
+        "text": "والذين هم مع اجتهادهم في العبادة يخافون الله فيدعونه أن ينجيهم من عذاب جهنم، إن عذابها يلازم صاحبه. إن جهنم شر قرار وإقامة.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 65,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2921,
+        "text": "والذين هم مع اجتهادهم في العبادة يخافون الله فيدعونه أن ينجيهم من عذاب جهنم، إن عذابها يلازم صاحبه. إن جهنم شر قرار وإقامة.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 66,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2922,
+        "text": "والذين إذا أنفقوا من أموالهم لم يتجاوزوا الحد في العطاء، ولم يضيِّقوا في النفقة، وكان إنفاقهم وسطًا بين التبذير والتضييق.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 67,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

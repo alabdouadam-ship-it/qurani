@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 418,
+    "ayahs": [
+      {
+        "number": 3534,
+        "text": "O PROPHET FEAR God and do not follow the unbelievers and the hypocrites.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 1,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      },
+      {
+        "number": 3535,
+        "text": "Follow what is revealed to you by your Lord. Verily God is all-knowing and all-wise.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 2,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      },
+      {
+        "number": 3536,
+        "text": "Trust in God. God is sufficient as guardian.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 3,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      },
+      {
+        "number": 3537,
+        "text": "God has not provided two hearts in the breast of a man, nor made your wives, whom you pronounce \"mothers\" (in order to divorce them), your real mothers, nor has He made your adopted sons your real sons. This is only what your lips pronounce. God says what is just, and shows the right way.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 4,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      },
+      {
+        "number": 3538,
+        "text": "Call them by the names of their fathers. This is the right course in the sight of God. If you do not know their fathers, they are then your brothers in religion and your friends. It will not be a sin if you make a mistake, unless you do so intentionally; for God is forgiving and kind.",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 5,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      },
+      {
+        "number": 3539,
+        "text": "The Prophet is closer to the faithful than they are themselves; and his wives are as their mothers. Yet blood relations are closer to one another according to God's decree, more than (other) believers and the emigrants (who left their homes in the cause of God), but you should be kind to your friends. This is inscribed in the Book (of decrees).",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 6,
+        "juz": 21,
+        "manzil": 5,
+        "page": 418,
+        "ruku": 361,
+        "hizbQuarter": 167,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "33": {
+        "number": 33,
+        "name": "سُورَةُ الأَحۡزَابِ",
+        "englishName": "Al-Ahzaab",
+        "englishNameTranslation": "The Clans",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 73
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

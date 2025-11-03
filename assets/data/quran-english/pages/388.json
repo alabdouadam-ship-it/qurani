@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 388,
+    "ayahs": [
+      {
+        "number": 3274,
+        "text": "Then as he turned his face to Midian, he said: \"Maybe my Lord will show me the right way.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 22,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3275,
+        "text": "And when he came to the waters of Midian he found a crowd of people watering (their flocks), and saw two maidens holding back (their cattle). He asked: \"What is the trouble with you?\" They said: \"We cannot water our flock till the shepherds have driven away theirs, and our father is a very old man.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 23,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3276,
+        "text": "So he watered (their flock), and moved into the shade and prayed: \"My Lord, I have need of whatever good you send me.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 24,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3277,
+        "text": "Then one of the (maidens) came to him walking bashfully, (and) said: \"My father invites you that he may repay you for having watered our flock.\" So, when (Moses) came to him and told him his story, he said: \"Have no fear. You have escaped from the wicked people.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 25,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3278,
+        "text": "Said one of the maidens: \"O father, employ him. Surely the best (man) to employ is one who is strong and honest.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 26,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3279,
+        "text": "He said: \"I would like to marry one of these two daughters of mine to you if you agree to work for me on hire for eight years. And if you stay on for ten, it is up to you. I do not wish to impose any hardship on you. God willing you will find me a man of honour.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 27,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      },
+      {
+        "number": 3280,
+        "text": "(Moses) said: \"This is (agreed) between you and me. Whichever term I fulfil, no injustice will be done to me. God is witness to our agreement.\"",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 28,
+        "juz": 20,
+        "manzil": 5,
+        "page": 388,
+        "ruku": 336,
+        "hizbQuarter": 155,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

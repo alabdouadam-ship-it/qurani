@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 283,
+    "ayahs": [
+      {
+        "number": 2037,
+        "text": "Your Lord may haply be merciful to you. But if you repeat it, We shall do the same. We have constituted Hell as prison for unbelievers.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 8,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2038,
+        "text": "Verily this Qur'an directs you to the path that is straight, and gives happy tidings to those who believe and do the right: For them is a great reward.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 9,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2039,
+        "text": "As for those who do not believe in the Hereafter, We have prepared a painful punishment.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 10,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2040,
+        "text": "Man prays for evil as he prays for good, for man is hasty.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 11,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2041,
+        "text": "We have created night and day as two signs, then We efface the sign of the night, and make the sign of the day resplendent that you may seek the bounty of your Lord, and know the computation of years and numbers. We have expounded most distinctly everything.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 12,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2042,
+        "text": "Round each man's neck We have hung his ledger of deeds, and on the Day of Resurrection will present it as a book spread out (and say):",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 13,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2043,
+        "text": "\"Read your ledger; this day you are sufficient to take your own account.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 14,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2044,
+        "text": "\"He who finds the right path does so for himself; and he who goes astray does so to his own loss; and no one who carries a burden bears another's load. We never punish till We have sent a messenger.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 15,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2045,
+        "text": "\"And when We destroy a human habitation We send Our command to (warn) its people living a life of ease; and when they disobey, the sentence against them is justified, and We destroy them utterly.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 16,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2046,
+        "text": "\"How many generations have We laid low after Noah, for your Lord knows and notices well enough the sins of His creatures.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 17,
+        "juz": 15,
+        "manzil": 4,
+        "page": 283,
+        "ruku": 241,
+        "hizbQuarter": 113,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

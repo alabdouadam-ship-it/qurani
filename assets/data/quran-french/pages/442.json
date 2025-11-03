@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 442,
+    "ayahs": [
+      {
+        "number": 3733,
+        "text": "Et après lui Nous ne fîmes descendre du ciel aucune armée. Nous ne voulions rien faire descendre sur son peuple.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 28,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3734,
+        "text": "Ce ne fut qu'un seul Cri et les voilà éteints.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 29,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3735,
+        "text": "Hélas pour les esclaves [les humains]! Jamais il ne leur vient de messager sans qu'ils ne s'en raillent.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 30,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3736,
+        "text": "Ne voient-ils pas combien de générations avant eux Nous avons fait périr? Lesquelles ne retourneront jamais parmi eux.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 31,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3737,
+        "text": "Et tous sans exception comparaîtront devant Nous.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 32,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 382,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3738,
+        "text": "Une preuve pour eux est la terre morte, à laquelle Nous redonnons la vie, et d'où Nous faisons sortir des grains dont ils mangent.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 33,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3739,
+        "text": "Nous y avons mis des jardins de palmiers et de vignes et y avons fait jaillir des sources,",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 34,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3740,
+        "text": "afin qu'ils mangent de Ses fruits et de ce que leurs mains ont produit. Ne seront-ils pas reconnaissants?",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 35,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3741,
+        "text": "Louange à Celui qui a créé tous les couples de ce que la terre fait pousser, d'eux-mêmes, et de ce qu'ils ne savent pas!",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 36,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3742,
+        "text": "Et une preuve pour eux est la nuit. Nous en écorchons le jour et ils sont alors dans les ténèbres.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 37,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3743,
+        "text": "et le soleil court vers un gîte qui lui est assigné; telle est la détermination du Tout Puissant, de l'Omniscient.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 38,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3744,
+        "text": "Et la lune, Nous lui avons déterminé des phases jusqu'à ce qu'elle devienne comme la palme vieillie.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 39,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3745,
+        "text": "Le soleil ne peut rattraper la lune, ni la nuit devancer le jour; et chacun vogue dans une orbite.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 40,
+        "juz": 23,
+        "manzil": 5,
+        "page": 442,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

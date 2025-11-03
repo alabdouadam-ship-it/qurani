@@ -1,0 +1,454 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 531,
+    "ayahs": [
+      {
+        "number": 4896,
+        "text": "et Notre ordre est une seule [parole]; [il est prompt] comme un clin d'œil.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 50,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4897,
+        "text": "En effet, nous avons fait périr des peuples semblables à vous. Y a-t-il quelqu'un pour s'en souvenir?",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 51,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4898,
+        "text": "Et tout ce qu'ils ont fait est mentionné dans les registres,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 52,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4899,
+        "text": "et tout fait, petit et grand, est consigné.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 53,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4900,
+        "text": "Les pieux seront dans des Jardins et parmi des ruisseaux,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 54,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4901,
+        "text": "dans un séjour de vérité, auprès d'un Souverain Omnipotent.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 55,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4902,
+        "text": "Le Tout Miséricordieux.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4903,
+        "text": "Il a enseigné le Coran.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4904,
+        "text": "Il a créé l'homme.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4905,
+        "text": "Il lui a appris à s'exprimer clairement.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4906,
+        "text": "Le soleil et la lune [évoluent] selon un calcul [minutieux].",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4907,
+        "text": "Et l'herbe et les arbres se prosternent.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4908,
+        "text": "Et quant au ciel, Il l'a élevé bien haut. Et Il a établi la balance,",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4909,
+        "text": "afin que vous ne transgressiez pas dans la pesée:",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4910,
+        "text": "Donnez [toujours] le poids exact et ne faussez pas la pesée.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4911,
+        "text": "Quant à la terre, Il l'a étendue pour les êtres vivants:",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4912,
+        "text": "il s'y trouve des fruits, et aussi les palmiers aux fruits recouverts d'enveloppes,",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4913,
+        "text": "tout comme les grains dans leurs balles, et les plantes aromatiques.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4914,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4915,
+        "text": "Il a crée l'homme d'argile sonnante comme la poterie;",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4916,
+        "text": "et Il a créé les djinns de la flamme d'un feu sans fumée.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4917,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "54": {
+        "number": 54,
+        "name": "سُورَةُ القَمَرِ",
+        "englishName": "Al-Qamar",
+        "englishNameTranslation": "The Moon",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 55
+      },
+      "55": {
+        "number": 55,
+        "name": "سُورَةُ الرَّحۡمَٰن",
+        "englishName": "Ar-Rahmaan",
+        "englishNameTranslation": "The Beneficent",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

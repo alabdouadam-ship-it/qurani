@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 487,
+    "ayahs": [
+      {
+        "number": 4304,
+        "text": "Ships sailing in the ocean like ensigns are a sign of His.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 32,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4305,
+        "text": "He could stop the wind if He pleased, then they would be stranded on its surface. Surely there are signs in this for every one who perseveres and is grateful.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 33,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4306,
+        "text": "Or He could wreck them for what they have done; yet there is much that He pardons.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 34,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4307,
+        "text": "Let those who dispute Our signs know that there is no way of escape for them.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 35,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4308,
+        "text": "Whatsoever you have been given is only this life's merchandise; but what is with God is better and more lasting for those who believe and place their trust in their Lord,",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 36,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4309,
+        "text": "Who avoid the deadly sins, immoral acts, and forgive when they are angered,",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 37,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4310,
+        "text": "Who obey the commands of their Lord and fulfil their devotional obligations, whose affairs are settled by mutual consultation, who spend of what We have given them,",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 38,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4311,
+        "text": "And those who defend themselves when they are wronged.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 39,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4312,
+        "text": "The retribution of evil is the equal of evil (done); yet those who forgive and rehabilitate will be rewarded by God. Verily He does not like those who do wrong.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 40,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4313,
+        "text": "If one avenges himself after he has been wronged, there is no way of blaming him.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 41,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4314,
+        "text": "Blame lies on those who oppress, and terrorise the land unjustly. For them there is painful punishment.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 42,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4315,
+        "text": "But he who bears with patience and forgives, surely complies with divine resolve.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 43,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4316,
+        "text": "He whom God leads astray has no one except God to protect him. You should see the sinners when they face the punishment. They will say: \"Isn't there a way of going back?\"",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 44,
+        "juz": 25,
+        "manzil": 6,
+        "page": 487,
+        "ruku": 423,
+        "hizbQuarter": 195,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

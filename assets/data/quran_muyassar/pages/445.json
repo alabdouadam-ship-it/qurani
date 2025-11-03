@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 445,
+    "ayahs": [
+      {
+        "number": 3776,
+        "text": "أولم ير الخلق أنا خلقنا لأجلهم أنعامًا ذللناها لهم، فهم مالكون أمرها؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 71,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3777,
+        "text": "وسخَّرناها لهم، فمنها ما يركبون في الأسفار، ويحملون عليها الأثقال، ومنها ما يأكلون.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 72,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3778,
+        "text": "ولهم فيها منافع أخرى ينتفعون بها، كالانتفاع بأصوافها وأوبارها وأشعارها أثاثًا ولباسًا، وغير ذلك، ويشربون ألبانها، أفلا يشكرون الله الذي أنعم عليهم بهذه النعم، ويخلصون له العبادة؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 73,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3779,
+        "text": "واتخذ المشركون من دون الله آلهة يعبدونها؛ طمعًا في نصرها لهم وإنقاذهم من عذاب الله.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 74,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3780,
+        "text": "لا تستطيع تلك الآلهة نصر عابديها ولا أنفسهم ينصرون، والمشركون وآلهتهم جميعًا محضرون في العذاب، متبرئ بعضهم من بعض.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 75,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3781,
+        "text": "فلا يَحْزُنك -أيها الرسول- كفرهم بالله وتكذيبهم لك واستهزاؤهم بك؛ إنا نعلم ما يخفون، وما يظهرون، وسنجازيهم على ذلك.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 76,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3782,
+        "text": "أولم ير الإنسان المنكر للبعث ابتداء خلقه فيستدل به على معاده، أنا خلقناه من نطفة مرَّت بأطوار حتى كَبِر، فإذا هو كثير الخصام واضح الجدال؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 77,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3783,
+        "text": "وضرب لنا المنكر للبعث مثلا لا ينبغي ضربه، وهو قياس قدرة الخالق بقدرة المخلوق، ونسي ابتداء خلقه، قال: مَن يحيي العظام البالية المتفتتة؟",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 78,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3784,
+        "text": "قل له: يحييها الذي خلقها أول مرة، وهو بجميع خلقه عليم، لا يخفى عليه شيء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 79,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3785,
+        "text": "الذي أخرج لكم من الشجر الأخضر الرطب نارًا محرقة، فإذا أنتم من الشجر توقدون النار، فهو القادر على إخراج الضد من الضد. وفي ذلك دليل على وحدانية الله وكمال قدرته، ومن ذلك إخراج الموتى من قبورهم أحياء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 80,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3786,
+        "text": "أوليس الذي خلق السموات والأرض وما فيهما بقادر على أن يخلق مثلهم، فيعيدهم كما بدأهم؟ بلى، إنه قادر على ذلك، وهو الخلاق لجميع المخلوقات، العليم بكل ما خلق ويَخْلُقُ، لا يخفى عليه شيء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 81,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3787,
+        "text": "إنما أمره سبحانه وتعالى إذا أراد شيئًا أن يقول له: \"كن\" فيكون، ومن ذلك الإماتة والإحياء، والبعث والنشور.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 82,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3788,
+        "text": "فتنزه الله تعالى وتقدس عن العجز والشرك، فهو المالك لكل شيء، المتصرف في شؤون خلقه بلا منازع أو ممانع، وقد ظهرت دلائل قدرته، وتمام نعمته، وإليه تُرجعون للحساب والجزاء.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 83,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

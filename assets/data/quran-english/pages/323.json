@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 323,
+    "ayahs": [
+      {
+        "number": 2494,
+        "text": "How many habitations that were sinful have We demolished utterly, and raised other people after them.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 11,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2495,
+        "text": "Whensoever they sensed Our punishment they fled from them.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 12,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2496,
+        "text": "\"Do not flee; go back to your halls of pleasure and your habitations, so that you may be interrogated.\"",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 13,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2497,
+        "text": "\"Woe, alas,\" they said, \"we were really sinful.\"",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 14,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2498,
+        "text": "And this remained their lament till We mowed them down and made them extinct.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 15,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2499,
+        "text": "We have not created the heavens and the earth, and all that lies between them, out of fun.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 16,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2500,
+        "text": "If We had pleased to make a plaything We could have made it Ourself, if We had cared to do so.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 17,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2501,
+        "text": "In fact We strike the truth against the false, which shatters it, and it disappears. Woe to you for what you attribute (to Him)!",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 18,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2502,
+        "text": "Whosoever is in the heavens and the earth belongs to Him; and those who are near Him do not disdain to worship Him or weary (of His service),",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 19,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2503,
+        "text": "Nor cease to endeavour praising Him night and day.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 20,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2504,
+        "text": "Or have they taken gods from the earth who can raise the dead?",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 21,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2505,
+        "text": "Had there been gods apart from God, both (the heavens and the earth) would have been despoiled. Much too glorious is God, the Lord of the mighty throne, for things they assert!",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 22,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2506,
+        "text": "He cannot be questioned about what He does, but they will be questioned.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 23,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      },
+      {
+        "number": 2507,
+        "text": "Have they taken gods besides God? Say: \"Then bring your proof. Here is the Book of those who are with me, and the Book of those who have gone before me.\" But most men do not know the truth and turn away.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 24,
+        "juz": 17,
+        "manzil": 4,
+        "page": 323,
+        "ruku": 279,
+        "hizbQuarter": 129,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "21": {
+        "number": 21,
+        "name": "سُورَةُ الأَنبِيَاءِ",
+        "englishName": "Al-Anbiyaa",
+        "englishNameTranslation": "The Prophets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 112
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

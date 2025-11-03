@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 241,
+    "ayahs": [
+      {
+        "number": 1640,
+        "text": "Ils dirent: «C'est un amas de rêves! Et nous ne savons pas interpréter les rêves!»",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 44,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1641,
+        "text": "Or, celui des deux qui avait été délivré et qui, après quelque temps se rappela, dit: «Je vous en donnerai l'interprétation. Envoyez-moi donc».",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 45,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1642,
+        "text": "«O toi, Joseph, le véridique! Eclaire-nous au sujet de sept vaches grasses que mangent sept très maigres, et sept épis verts et autant d'autres, secs, afin que je retourne aux gens et qu'ils sachent [l'interprétation exacte du rêve]».",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 46,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1643,
+        "text": "Alors [Joseph dit]: «Vous sèmerez pendant sept années consécutives. Tout ce que vous aurez moissonné, laissez-le en épi, sauf le peu que vous consommerez.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 47,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1644,
+        "text": "Viendront ensuite sept années de disette qui consommeront tout ce que vous aurez amassé pour elles sauf le peu que vous aurez réservé [comme semence].",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 48,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1645,
+        "text": "Puis, viendra après cela une année où les gens seront secourus [par la pluie] et iront au pressoir.»",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 49,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 198,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1646,
+        "text": "Et le roi dit: «Amenez-le moi». Puis, lorsque l'émissaire arriva auprès de lui, [Joseph] dit: «Retourne auprès de ton maître et demande-lui: «Quelle était la raison qui poussa les femmes à se couper les mains? Mon Seigneur connaît bien leur ruse».",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 50,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 199,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1647,
+        "text": "Alors, [le roi leur] dit: «Qu'est-ce donc qui vous a poussées à essayer de séduire Joseph?» Elles dirent: «A Allah ne plaise! Nous ne connaissons rien de mauvais contre lui». Et la femme d'Al-'Azize dit: «Maintenant la vérité s'est manifestée. C'est moi qui ai voulu le séduire. Et c'est lui, vraiment, qui est du nombre des véridiques!»",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 51,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 199,
+        "hizbQuarter": 96,
+        "sajda": false
+      },
+      {
+        "number": 1648,
+        "text": "«Cela afin qu'il sache que je ne l'ai pas trahi en son absence, et qu'en vérité Allah ne guide pas la ruse des traîtres.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 52,
+        "juz": 12,
+        "manzil": 3,
+        "page": 241,
+        "ruku": 199,
+        "hizbQuarter": 96,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

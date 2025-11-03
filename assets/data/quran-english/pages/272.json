@@ -1,0 +1,260 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 272,
+    "ayahs": [
+      {
+        "number": 1944,
+        "text": "We sent before you none (as apostles) but men, to whom We sent revelations. In case you are unaware, enquire of those who are keepers of the Oracles of God.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 43,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1945,
+        "text": "We had Sent them with miracles and Books; and We have sent to you this Reminder so that you may explain distinctly to men what was sent down to them: They may haply reflect.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 44,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1946,
+        "text": "Have the plotters of mischief become unafraid that God will not split the earth to swallow them, or that punishment will not fall upon them from somewhere they do not (even) suspect?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 45,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1947,
+        "text": "Or that He will not seize them as they move about, and they will not be able to elude (His grasp);",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 46,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1948,
+        "text": "Or He may seize them by diminishing their portion. Yet your Lord is compassionate and kind.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 47,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1949,
+        "text": "Do they not see the shadows of all things God has created incline to the right and the left, bowing in obeisance to God?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 48,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1950,
+        "text": "All things that move on the earth and in the heavens, and the angels, bow in homage to God, and do not behave with pride.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 49,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1951,
+        "text": "They have fear of God for His power over them, and act as commanded.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 50,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": {
+          "id": 3,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 1952,
+        "text": "God says: \"Do not take to two gods, for there is only one God. So fear Me.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 51,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1953,
+        "text": "Whatsoever is in the heavens and the earth belongs to Him, and His the judgement for ever. So will you fear any other than God?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 52,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1954,
+        "text": "Whatsoever the blessings you enjoy are surely from God, and when in trouble you turn to Him in supplication.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 53,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1955,
+        "text": "Yet when He has delivered you from affliction, some of you ascribe companions to your Lord",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 54,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

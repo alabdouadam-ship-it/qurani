@@ -1,0 +1,617 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 581,
+    "ayahs": [
+      {
+        "number": 5642,
+        "text": "Did We not create you from contemptible water?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5643,
+        "text": "Then We lodged you in a secure place (the womb)",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5644,
+        "text": "For a certain appointed time,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5645,
+        "text": "Then We facilitated (your birth). How well do We calculate!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5646,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5647,
+        "text": "Have We not made the earth a repository",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5648,
+        "text": "For the living and the dead,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5649,
+        "text": "And placed in it lofty and broad stablisers, and gave you sweet water to drink?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5650,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5651,
+        "text": "\"Go to what you used to deny;",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5652,
+        "text": "Go to the shadow with three ramifications,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5653,
+        "text": "Neither shady nor protecting against the blazing Fire.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5654,
+        "text": "It will throw out sparks as logs of wood",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 32,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5655,
+        "text": "So like golden camels.\"",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 33,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5656,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 34,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5657,
+        "text": "They will not be able to speak that day,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 35,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5658,
+        "text": "Nor given leave to make excuses.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 36,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5659,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 37,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5660,
+        "text": "That will be the Day of Reckoning. Gathered will be (you) and the earlier (generations).",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 38,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5661,
+        "text": "So if you have any plot to devise against Me, then devise it.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 39,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5662,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 40,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5663,
+        "text": "Those who take heed for themselves and fear God, will be amidst shade and springs of water,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 41,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5664,
+        "text": "And such fruits as they desire.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 42,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5665,
+        "text": "\"Eat and drink with relish as reward for what you had done.\"",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 43,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5666,
+        "text": "That is how We reward the good.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 44,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5667,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 45,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5668,
+        "text": "Eat and enjoy for a while: You are certainly sinners.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 46,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5669,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 47,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5670,
+        "text": "When it is said to them: \"Bow in homage,\" they do not bow.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 48,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5671,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 49,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5672,
+        "text": "In what other lore after this will they then believe?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 50,
+        "juz": 29,
+        "manzil": 7,
+        "page": 581,
+        "ruku": 517,
+        "hizbQuarter": 232,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "77": {
+        "number": 77,
+        "name": "سُورَةُ المُرۡسَلَاتِ",
+        "englishName": "Al-Mursalaat",
+        "englishNameTranslation": "The Emissaries",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 50
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

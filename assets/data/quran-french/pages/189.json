@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 189,
+    "ayahs": [
+      {
+        "number": 1249,
+        "text": "Combattez-les. Allah, par vos mains, les châtiera, les couvrira d'ignominie, vous donnera la victoire sur eux et guérira les poitrines d'un peuple croyant.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 14,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1250,
+        "text": "Et il fera partir la colère de leurs cœurs. Allah accueille le repentir de qui Il veut. Allah est Omniscient et Sage.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 15,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1251,
+        "text": "Pensez-vous que vous serez délaissés, cependant qu'Allah n'a pas encore distingué ceux d'entre vous qui ont lutté et qui n'ont pas cherché des alliés en dehors d'Allah, de Son messager et des croyants? Et Allah est Parfaitement Connaisseur de ce que vous faites.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 16,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 157,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1252,
+        "text": "Il n'appartient pas aux associateurs de peupler les mosquées d'Allah, vu qu'ils témoignent contre eux-mêmes de leur mécréance. Voilà ceux dont les œuvres sont vaines; et dans le Feu ils demeureront éternellement.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 17,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 158,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1253,
+        "text": "Ne peupleront les mosquées d'Allah que ceux qui croient en Allah et au Jour dernier, accomplissent la Salât, acquittent la Zakât et ne craignent qu'Allah. Il se peut que ceux-là soient du nombre des bien-guidés.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 18,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 158,
+        "hizbQuarter": 75,
+        "sajda": false
+      },
+      {
+        "number": 1254,
+        "text": "Ferez-vous de la charge de donner à boire aux pèlerins et d'entretenir la Mosquée sacrée (des devoirs) comparables [au mérite] de celui qui croit en Allah et au Jour dernier et lutte dans le sentier d'Allah? Ils ne sont pas égaux auprès d'Allah et Allah ne guide pas les gens injustes.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 19,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 158,
+        "hizbQuarter": 76,
+        "sajda": false
+      },
+      {
+        "number": 1255,
+        "text": "Ceux qui ont cru, qui ont émigré et qui ont lutté par leurs biens et leurs personnes dans le sentier d'Allah, ont les plus hauts rangs auprès d'Allah... et ce sont eux les victorieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 20,
+        "juz": 10,
+        "manzil": 2,
+        "page": 189,
+        "ruku": 158,
+        "hizbQuarter": 76,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

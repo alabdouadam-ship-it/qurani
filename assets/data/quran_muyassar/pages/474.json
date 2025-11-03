@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 474,
+    "ayahs": [
+      {
+        "number": 4192,
+        "text": "إن الساعة لآتية لا شك فيها، فأيقنوا بمجيئها، كما أخبرتْ بذلك الرسل، ولكن أكثر الناس لا يُصَدِّقون بمجيئها، ولا يعملون لها.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 59,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 409,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4193,
+        "text": "وقال ربكم- أيها العباد-: ادعوني وحدي وخصُّوني بالعبادة أستجب لكم، إن الذين يتكبرون عن إفرادي بالعبودية والألوهية، سيدخلون جهنم صاغرين حقيرين.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 60,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 409,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4194,
+        "text": "الله وحده هو الذي جعل لكم الليل؛ لتسكنوا فيه، وتحققوا راحتكم، والنهار مضيئًا؛ لتُصَرِّفوا فيه أمور معاشكم. إن الله لذو فضل عظيم على الناس، ولكن أكثرهم لا يشكرون له بالطاعة وإخلاص العبادة.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 61,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4195,
+        "text": "الذي أنعم عليكم بهذه النعم إنما هو ربكم خالق الأشياء كلها، لا إله يستحق العبادة غيره، فكيف تعدلون عن الإيمان به، وتعبدون غيره من الأوثان، بعد أن تبينت لكم دلائله؟",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 62,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4196,
+        "text": "كما كذَّبتم بالحق -يا كفار قريش- وأعرضتم عنه إلى الباطل، يُصرف عن الحق والإيمان به الذين كانوا بحجج الله وأدلته يجحدون.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 63,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4197,
+        "text": "الله الذي جعل لكم الأرض؛ لتستقروا فيها، ويسَّر لكم الإقامة عليها، وجعل السماء سقفًا للأرض، وبثَّ فيها من العلامات الهادية، وخلقكم في أكمل هيئة وأحسن تقويم، وأنعم عليكم بحلال الرزق ولذيذ المطاعم والمشارب، ذلكم الذي أنعم عليكم بهذه النعم هو ربكم، فتكاثر خيره وفضله وبركته، وتنزَّه عمَّا لا يليق به، وهو ربُّ الخلائق أجمعين.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 64,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4198,
+        "text": "هو الله سبحانه الحي الذي له الحياة الكاملة التامة لا إله غيره، فاسألوه واصرفوا عبادتكم له وحده، مخلصين له دينكم وطاعتكم. فالحمد لله والثناء الكامل له رب الخلائق أجمعين.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 65,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4199,
+        "text": "قل -أيها الرسول- لمشركي قومك: إني نُهيت أن أعبد الذين تدعون من دون الله، لـمَّا جاءني الآيات الواضحات من عند ربي، وأمرني أن أخضع وأنقاد بالطاعة التامة له، سبحانه رب العالمين.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 66,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 190,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

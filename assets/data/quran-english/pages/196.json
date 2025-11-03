@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 196,
+    "ayahs": [
+      {
+        "number": 1290,
+        "text": "Do not marvel at their wealth and children. God intends to punish them through these in the world; and their souls will depart in a state of disbelief.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 55,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1291,
+        "text": "They swear by God they are with you, though in fact they are not. They are only a frightened lot.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 56,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1292,
+        "text": "If they find a place of shelter or a cave or hole to hide, they will turn to it.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 57,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1293,
+        "text": "There are some among them who blame you (of partiality) in distributing the offerings made in the name of God. In case they receive some of these they are pleased, if not, they are incensed.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 58,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1294,
+        "text": "They should rather have been pleased with what God and His Prophet had given them, and said: \"God is sufficient for us; He will give us of His largesse as will His Apostle. We supplicate no one but God.\"",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 59,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1295,
+        "text": "Charities are meant for the indigent and needy, and those who collect and distribute them, and those whom you wish to win over, and for redeeming slaves (and captives) and those who are burdened with debt, and in the cause of God, and the wayfarers: So does God ordain. God is all-knowing and all-wise.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 60,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1296,
+        "text": "There are some among them who talk ill of the Prophet by saying: \"He listens to everyone.\" Tell them: \"He listens for your good, and trusts in God and trusts the faithful, and he is a blessing for those who believe. For those who offend the Apostle of God there is painful punishment.\"",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 61,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

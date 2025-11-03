@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 192,
+    "ayahs": [
+      {
+        "number": 1267,
+        "text": "Ils veulent éteindre avec leurs bouches la lumière d'Allah, alors qu'Allah ne veut que parachever Sa lumière, quelque répulsion qu'en aient les mécréants.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 32,
+        "juz": 10,
+        "manzil": 2,
+        "page": 192,
+        "ruku": 160,
+        "hizbQuarter": 76,
+        "sajda": false
+      },
+      {
+        "number": 1268,
+        "text": "C'est Lui qui a envoyé Son messager avec la bonne direction et la religion de la vérité, afin qu'elle triomphe sur toute autre religion, quelque répulsion qu'en aient les associateurs.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 33,
+        "juz": 10,
+        "manzil": 2,
+        "page": 192,
+        "ruku": 160,
+        "hizbQuarter": 76,
+        "sajda": false
+      },
+      {
+        "number": 1269,
+        "text": "O vous qui croyez! Beaucoup de rabbins et de moines dévorent, les biens des gens illégalement et [leur] obstruent le sentier d'Allah. A ceux qui thésaurisent l'or et l'argent et ne les dépensent pas dans le sentier d'Allah, annonce un châtiment douloureux,",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 34,
+        "juz": 10,
+        "manzil": 2,
+        "page": 192,
+        "ruku": 160,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1270,
+        "text": "le jour où (ces trésors) seront portés à l'incandescence dans le feu de l'Enfer et qu'ils en seront cautérisés, front, flancs et dos: voici ce que vous avez thésaurisé pour vous-mêmes. Goûtez de ce que vous thésaurisiez.»",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 35,
+        "juz": 10,
+        "manzil": 2,
+        "page": 192,
+        "ruku": 160,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1271,
+        "text": "Le nombre de mois, auprès d'Allah, est de douze [mois], dans la prescription d'Allah, le jour où Il créa les cieux et la terre. Quatre d'entre eux sont sacrés: telle est la religion droite. [Durant ces mois], ne faites pas de tort à vous-mêmes. Combattez les associateurs sans exception, comme ils vous combattent sans exception. Et sachez qu'Allah est avec les pieux.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 36,
+        "juz": 10,
+        "manzil": 2,
+        "page": 192,
+        "ruku": 160,
+        "hizbQuarter": 77,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

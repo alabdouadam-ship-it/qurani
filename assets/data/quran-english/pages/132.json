@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 132,
+    "ayahs": [
+      {
+        "number": 825,
+        "text": "Only they will respond who can hear. As for the dead, raised they will be by God, then to Him they will be returned.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 36,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 826,
+        "text": "They say: \"How is it no miracle was sent down to him from his Lord?\" Say: \"God certainly has power to send down a miracle; but most men cannot understand.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 37,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 827,
+        "text": "There is not a thing that moves on the earth, no bird that flies on its wings, but has a community of its own like yours. There is nothing that We have left out from recording. Then they will all be gathered before their Lord.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 38,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 828,
+        "text": "Those who deny Our revelations are deaf, dumb, and lost in the dark. God sends whosoever He wills astray, and leads whom He will to the straight path.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 39,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 829,
+        "text": "Say: \"Have you thought if the punishment of God or the Hour (of Doom) came upon you, would you call to any other than God? Answer, if you are men of truth.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 40,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 830,
+        "text": "No: You will call to Him alone; and He will, if He please, remove (the distress) for which you had called Him; and forget those you associate as compeers (with Him)",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 41,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 105,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 831,
+        "text": "We have indeed sent (apostles) to many a people before you, and inflicted upon them hardships and afflictions so that they might submit.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 42,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 106,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 832,
+        "text": "Then why did they not submit when Our punishment came upon them? But their hearts were hardened, and Satan made things they were doing look attractive to them.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 43,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 106,
+        "hizbQuarter": 53,
+        "sajda": false
+      },
+      {
+        "number": 833,
+        "text": "When they had become oblivious of what they were warned, We opened wide the gates of everything to them; yet as they rejoiced at what they were given, We caught them unawares, and they were filled with despair.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 44,
+        "juz": 7,
+        "manzil": 2,
+        "page": 132,
+        "ruku": 106,
+        "hizbQuarter": 53,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

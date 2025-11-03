@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 479,
+    "ayahs": [
+      {
+        "number": 4239,
+        "text": "Ils diront à leurs peaux: «Pourquoi avez-vous témoigné contre nous?» Elles diront: «C'est Allah qui nous a fait parler, Lui qui fait parler toute chose. C'est Lui qui vous a créés une première fois et c'est vers Lui que vous serez retournés».",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 21,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 415,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4240,
+        "text": "Vous ne pouviez vous cacher au point que ni votre ouïe, ni vos yeux et ni vos peaux ne puissent témoigner contre vous. Mais vous pensiez qu'Allah ne savait pas beaucoup de ce que vous faisiez.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 22,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 415,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4241,
+        "text": "Et c'est cette pensée que vous avez eue de votre Seigneur, qui vous a ruinés, de sorte que vous êtes devenus du nombre des perdants.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 23,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 415,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4242,
+        "text": "S'ils endurent, le Feu sera leur lieu de séjour; et s'ils cherchent à s'excuser, ils ne seront pas excusés.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 24,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 415,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4243,
+        "text": "Et Nous leur avons destiné des compagnons inséparables [des démons] qui leur ont enjolivé ce qui était devant et derrière eux. Et le décret s'est avéré juste contre eux, comme contre les autres communautés de djinns et d'hommes qui ont vécu avant eux. Ils sont certes perdants!",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 25,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 415,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4244,
+        "text": "Et ceux qui avaient mécru dirent: «Ne prêtez pas l'oreille à ce Coran, et faites du chahut (pendant sa récitation), afin d'avoir le dessus».",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 26,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 416,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4245,
+        "text": "Nous ferons certes, goûter à ceux qui ne croient pas un dur châtiment, et les rétribuerons certes [d'une punition] pire que ce [que méritent] leurs méfaits.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 27,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 416,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4246,
+        "text": "Ainsi, la rétribution des ennemis d'Allah sera le Feu où ils auront une demeure éternelle, comme punition pour avoir nié Nos versets [le Coran].",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 28,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 416,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4247,
+        "text": "Et les mécréants diront: «Seigneur, fais-nous voir ceux des djinns et des humains qui nous ont égarés, afin que nous les placions tous sous nos pieds, pour qu'ils soient parmi les plus bas».",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 29,
+        "juz": 24,
+        "manzil": 6,
+        "page": 479,
+        "ruku": 416,
+        "hizbQuarter": 192,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "41": {
+        "number": 41,
+        "name": "سُورَةُ فُصِّلَتۡ",
+        "englishName": "Fussilat",
+        "englishNameTranslation": "Explained in detail",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

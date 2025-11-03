@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 398,
+    "ayahs": [
+      {
+        "number": 3355,
+        "text": "Puis Nous le sauvâmes, lui et les gens de l'arche; et Nous en fîmes un avertissement pour l'univers.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 15,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3356,
+        "text": "Et Abraham, quand il dit à son peuple; «Adorez Allah et craignez-Le: cela vous est bien meilleur si vous saviez».",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 16,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3357,
+        "text": "Vous n'adorez que des idoles, en dehors d'Allah, et vous forgez un mensonge. Ceux que vous adorez en dehors d'Allah ne possèdent aucun moyen pour vous procurer nourriture; recherchez votre subsistance auprès d'Allah. Adorez-Le et soyez-Lui reconnaissants. C'est à Lui que vous serez ramenés.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 17,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3358,
+        "text": "Et si vous criez au mensonge, d'autres nations avant vous, ont aussi traité (leurs prophètes) de menteurs. Au Messager, cependant, n'incombe que la transmission claire.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 18,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3359,
+        "text": "Ne voient-ils pas comment Allah commence la création puis la refait? Cela est facile pour Allah.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 19,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3360,
+        "text": "Dis: «Parcourez la terre et voyez comment Il a commencé la création. Puis comment Allah crée la génération ultime. Car Allah est Omnipotent».",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 20,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3361,
+        "text": "Il châtie qui Il veut et fait miséricorde à qui Il veut; et c'est vers Lui que vous serez ramenés.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 21,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3362,
+        "text": "Et vous ne pourrez vous opposer à Sa puissance ni sur terre, ni au ciel; et il n'y a pas pour vous, en dehors d'Allah, ni allié ni secoureur.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 22,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3363,
+        "text": "Et ceux qui ne croient pas aux versets d'Allah et à Sa rencontre, désespèrent de Ma miséricorde. Et ceux-là auront un châtiment douloureux.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 23,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 344,
+        "hizbQuarter": 159,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "29": {
+        "number": 29,
+        "name": "سُورَةُ العَنكَبُوتِ",
+        "englishName": "Al-Ankaboot",
+        "englishNameTranslation": "The Spider",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 69
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

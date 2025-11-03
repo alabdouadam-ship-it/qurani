@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 209,
+    "ayahs": [
+      {
+        "number": 1371,
+        "text": "Ceux qui n'espèrent pas Notre rencontre, qui sont satisfaits de la vie présente et s'y sentent en sécurité, et ceux qui sont inattentifs à Nos signes [ou versets],",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 7,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1372,
+        "text": "leur refuge sera le Feu, pour ce qu'ils acquéraient.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 8,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1373,
+        "text": "Ceux qui croient et font de bonnes œuvres, leur Seigneur les guidera à cause de leur foi. A leurs pieds les ruisseaux couleront dans les Jardins des délices.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 9,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1374,
+        "text": "Là, leur invocation sera «Gloire à Toi, O Allah», et leur salutation: «Salâm», [Paix!] et la fin de leur invocation: «Louange à Allah, Seigneur de l'Univers».",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 10,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 172,
+        "hizbQuarter": 83,
+        "sajda": false
+      },
+      {
+        "number": 1375,
+        "text": "Et si Allah hâtait le malheur des gens avec autant de hâte qu'ils cherchent le bonheur, le terme de leur vie aurait été décrété. Mais Nous laissons ceux qui n'espèrent pas Notre rencontre confus et hésitants dans leur transgression.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 11,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1376,
+        "text": "Et quand le malheur touche l'homme, il fait appel à Nous, couché sur le côté, assis, ou debout. Puis quand Nous le délivrons de son malheur, il s'en va comme s'il ne Nous avait point imploré pour un mal qui l'a touché. C'est ainsi que furent embellies aux outranciers leurs actions.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 12,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1377,
+        "text": "Nous avons fait périr les générations d'avant vous lorsqu'elles eurent été injustes alors que leurs messagers leur avaient apporté des preuves. Cependant, elles n'étaient pas disposées à croire. C'est ainsi que Nous rétribuons les gens criminels.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 13,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1378,
+        "text": "Puis nous fîmes de vous des successeurs sur terre après eux, pour voir comment vous agiriez.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 14,
+        "juz": 11,
+        "manzil": 3,
+        "page": 209,
+        "ruku": 173,
+        "hizbQuarter": 84,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

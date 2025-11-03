@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 461,
+    "ayahs": [
+      {
+        "number": 4080,
+        "text": "Est-ce que celui dont Allah ouvre la poitrine à l'Islam et qui détient ainsi une lumière venant de Son Seigneur... Malheur donc à ceux dont les cœurs sont endurcis contre le rappel d'Allah. Ceux-là sont dans un égarement évident.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 22,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4081,
+        "text": "Allah a fait descendre le plus beau des récits, un Livre dont [certains versets] se ressemblent et se répètent. Les peaux de ceux qui redoutent leur Seigneur frissonnent (à l'entendre); puis leurs peaux et leurs cœurs s'apaisent au rappel d'Allah. Voilà le [Livre] guide d'Allah par lequel Il guide qui Il veut. Mais quiconque Allah égare n'a point de guide.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 23,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4082,
+        "text": "Est-ce que celui qui, au Jour de la Résurrection, se sera protégé le visage contre le pire châtiment... Et l'on dira aux injustes: «Goûtez à ce que vous avez acquis».",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 24,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4083,
+        "text": "Ceux qui ont vécu avant eux ont démenti (les Messagers), le châtiment leur est venu par où ils ne le pressentaient pas.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 25,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4084,
+        "text": "Allah leur a fait goûter l'ignominie dans la vie présente. Le châtiment de l'au-delà, cependant, est plus grand, si seulement ils savaient!",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 26,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4085,
+        "text": "Nous avons, dans ce Coran, cité pour les gens des exemples de toutes sortes afin qu'ils se souviennent.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 27,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4086,
+        "text": "Un Coran [en langue] arabe, dénué de tortuosité, afin qu'ils soient pieux!",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 28,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4087,
+        "text": "Allah a cité comme parabole un homme appartenant à des associés se querellant à son sujet et un [autre] homme appartenant à un seul homme: sont-ils égaux en exemple? Louanges à Allah! Mais la plupart d'entre eux ne savent pas.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 29,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4088,
+        "text": "En vérité tu mourras et ils mourront eux aussi;",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 30,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      },
+      {
+        "number": 4089,
+        "text": "ensuite, au Jour de la Résurrection, vous vous disputerez auprès de votre Seigneur.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 31,
+        "juz": 23,
+        "manzil": 6,
+        "page": 461,
+        "ruku": 398,
+        "hizbQuarter": 184,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

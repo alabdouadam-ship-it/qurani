@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 270,
+    "ayahs": [
+      {
+        "number": 1928,
+        "text": "On the Day of Resurrection He will disgrace them and ask: \"Where are My compeers for whom you contended?\" Those endowed with knowledge will say: \"Shame and evil surely are for unbelievers today.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 27,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1929,
+        "text": "They whose souls are drawn out by the angels while they are sinning, shall offer submission: \"We did no evil.\" But God knows well what you did.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 28,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1930,
+        "text": "So enter the gates of Hell, and dwell there for ever. How dreadful a dwelling for the haughty!",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 29,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1931,
+        "text": "When those who took heed for themselves would be asked: \"What did your Lord send down?\" They will answer: \"The best.\" For those who do good there is good in the world, but certainly the abode of the next is better. How excellent the home of the virtuous!",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 30,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1932,
+        "text": "They will enter perennial gardens with streams of water and all they wish. Thus will the pious and devout be rewarded.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 31,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1933,
+        "text": "When the angels receive the souls of those who are blameless they will say: \"Peace on you. Enter Paradise as recompense for what you did.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 32,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1934,
+        "text": "What! Do the (unbelievers) expect that the angels should descend, or the sentence of your Lord come to pass? So had the people done before them; yet God did not wrong them, they wronged themselves.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 33,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1935,
+        "text": "The evil they perpetrated overtook them, and what they mocked has turned upon them.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 34,
+        "juz": 14,
+        "manzil": 3,
+        "page": 270,
+        "ruku": 227,
+        "hizbQuarter": 108,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

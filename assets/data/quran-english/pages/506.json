@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 506,
+    "ayahs": [
+      {
+        "number": 4539,
+        "text": "And (remember), when We turned a company of jinns towards you to listen to the Qur'an, they arrived when it was being recited, and they said: \"Keep silent.\" When it was over they came back to their people, warning them:",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 29,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4540,
+        "text": "\"O our people:\" they said: \"we have listened to a Book which has come down after Moses, confirming what was (sent down) before it, showing the way to the truth and a path that is straight.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 30,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4541,
+        "text": "O our people, hearken to the summoner of God, and believe in him, so that He may forgive you your sins and save you from a painful doom.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 31,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4542,
+        "text": "He who does not listen to the summoner of God cannot weaken (the power of) God on earth, nor will he have protectors other than Him. They are clearly in the wrong.\"",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 32,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4543,
+        "text": "Do they not realise that God who created the heavens and the earth, and did not tire creating them, is able to bring the dead to life? And why not? He has the power over everything.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 33,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4544,
+        "text": "The day the unbelievers will be stood before the Fire, (they will be asked:) \"Is this not the reality?\" They will answer: \"In truth, by our Lord!\" It will be said: \"Then taste the torment of what you had denied.\"",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 34,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      },
+      {
+        "number": 4545,
+        "text": "So bear with patience, as the apostles who were constant, bore; and do not be hasty (in demanding punishment) for them. On the day they see what they had been foretold, (they will realise) that they did not stay in the world but only an hour of the day. This is the message to be conveyed: Shall any perish but the ungodly?",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 35,
+        "juz": 26,
+        "manzil": 6,
+        "page": 506,
+        "ruku": 441,
+        "hizbQuarter": 202,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "46": {
+        "number": 46,
+        "name": "سُورَةُ الأَحۡقَافِ",
+        "englishName": "Al-Ahqaf",
+        "englishNameTranslation": "The Dunes",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 35
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

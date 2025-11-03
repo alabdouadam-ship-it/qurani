@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 301,
+    "ayahs": [
+      {
+        "number": 2202,
+        "text": "فلما فارقا المكان الذي نسيا فيه الحوت وشعر موسى بالجوع، قال لخادمه: أحضر إلينا غداءنا، لقد لقينا من سفرنا هذا تعبًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 62,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2203,
+        "text": "قال له خادمه: أتذكر حين لجأنا إلى الصخرة التي استرحنا عندها؟ فإني نسيت أن أخبرك ما كان من الحوت، وما أنساني أن أذكر ذلك لك إلا الشيطان، فإن الحوت الميت دبَّتْ فيه الحياة، وقفز في البحر، واتخذ له فيه طريقًا، وكان أمره مما يُعْجَبُ منه.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 63,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2204,
+        "text": "قال موسى: ما حصل هو ما كنا نطلبه، فإنه علامة لي على مكان العبد الصالح، فرجعا يقصان آثار مشيهما حتى انتهيا إلى الصخرة.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 64,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2205,
+        "text": "فوجدا هناك عبدًا صالحًا من عبادنا هو الخَضِر عليه السلام -وهو نبي من أنبياء الله توفاه الله-، آتيناه رحمة من عندنا، وعَلَّمْناه مِن لدنَّا علمًا عظيمًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 65,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2206,
+        "text": "فسلَّم عليه موسى، وقال له: أتأذن لي أن أتبعك؛ لتعلمني من العلم الذي علمك الله إياه ما أسترشد به وأنتفع؟",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 66,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2207,
+        "text": "قال له الخَضِر: إنك -يا موسى- لن تطيق أن تصبر على اتباعي وملازمتي.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 67,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2208,
+        "text": "وكيف لك الصبر على ما سأفعله من أمور تخفى عليك مما علمنيه الله تعالى؟",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 68,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2209,
+        "text": "قال له موسى: ستجدني إن شاء الله صابرًا على ما أراه منك، ولا أخالف لك أمرًا تأمرني به.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 69,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2210,
+        "text": "فوافق الخَضِر وقال له: فإنْ صاحَبتني فلا تسألني عن شيء تنكره، حتى أبيِّن لك من أمره ما خفي عليك دون سؤال منك.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 70,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2211,
+        "text": "فانطلقا يمشيان على الساحل، فمرت بهما سفينة، فطلبا من أهلها أن يركبا معهم، فلما ركبا قَلَعَ الخَضِر لوحًا من السفينة فخرقها، فقال له موسى: أَخَرَقْتَ السفينة؛ لتُغرِق أهلَها، وقد حملونا بغير أجر؟ لقد فعلت أمرًا منكرًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 71,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 261,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2212,
+        "text": "قال له الخَضِر: لقد قلت لك من أول الأمر: إنك لن تستطيع الصبر على صحبتي.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 72,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 261,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2213,
+        "text": "قال موسى معتذرًا: لا تؤاخذني بنسياني شرطك عليَّ، ولا تكلفني مشقةً في تعلُّمي منك، وعاملني بيسر ورفق.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 73,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 261,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2214,
+        "text": "فقبل الخَضِر عذره، ثم خرجا من السفينة، فبينما هما يمشيان على الساحل إذ أبصرا غلامًا يلعب مع الغلمان، فقتله الخَضِر، فأنكر موسى عليه وقال: كيف قتلت نفسًا طاهرة لم تبلغ حدَّ التكليف، ولم تقتل نفسًا، حتى تستحق القتل بها؟ لقد فَعَلْتَ أمرًا منكرًا عظيمًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 74,
+        "juz": 15,
+        "manzil": 4,
+        "page": 301,
+        "ruku": 261,
+        "hizbQuarter": 120,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

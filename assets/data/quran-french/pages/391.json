@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 391,
+    "ayahs": [
+      {
+        "number": 3296,
+        "text": "Tu n'étais pas sur le versant ouest (du Sinaï), quand Nous avons décrété les commandements à Moïse; tu n'étais pas parmi les témoins.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 44,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3297,
+        "text": "Mais Nous avons fait naître des générations dont l'âge s'est prolongé. Et tu n'étais pas [non plus] résident parmi les gens de Madyan leur récitant Nos versets; mais c'est Nous qui envoyons les Messagers.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 45,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3298,
+        "text": "Et tu n'étais pas au flanc du Mont Tor quand Nous avons appelé. Mais (tu es venu comme) une miséricorde de ton Seigneur, pour avertir un peuple à qui nul avertisseur avant toi n'est venu, afin qu'ils se souviennent.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 46,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3299,
+        "text": "Si un malheur les atteignait en rétribution de ce que leurs propres mains avaient préparé, ils diraient: «Seigneur, pourquoi ne nous as-Tu pas envoyé un Messager? Nous aurions alors suivi Tes versets et nous aurions été croyants».",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 47,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3300,
+        "text": "Mais quand la vérité leur est venue de Notre part, ils ont dit: «Si seulement il avait reçu la même chose que Moïse! «Est-ce qu'ils n'ont pas nié ce qui auparavant fut apporté à Moïse? Ils dirent: «Deux magies se sont mutuellement soutenues!» Et ils dirent: «Nous n'avons foi en aucune».",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 48,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3301,
+        "text": "Dis-leur: «Apportez donc un Livre venant d'Allah qui soit meilleur guide que ces deux-là, et je le suivrai si vous êtes véridiques».",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 49,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3302,
+        "text": "Mais s'ils ne te répondent pas, sache alors que c'est seulement leurs passions qu'ils suivent. Et qui est plus égaré que celui qui suit sa passion sans une guidée d'Allah? Allah vraiment, ne guide pas les gens injustes.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 50,
+        "juz": 20,
+        "manzil": 5,
+        "page": 391,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 171,
+    "ayahs": [
+      {
+        "number": 1114,
+        "text": "We divided them into twelve (different) tribes. When his people asked for water, We said to Moses: \"Strike the rock with your staff;\" and behold, twelve springs of water gushed forth, so that each of the tribes had a place of its own to drink; and We made the clouds spread shade over them and sent for them manna and quails (and said): \"Eat of the good things We have provided for you.\" But (by disobeying) they did not harm Us, they harmed themselves.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 160,
+        "juz": 9,
+        "manzil": 2,
+        "page": 171,
+        "ruku": 141,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1115,
+        "text": "And when it was said to them: \"Live in this land and eat of its produce wheresoever you like, and ask for remission of your sins, but pass through the gates with submission (and not pride), We shall forgive your trespasses, and give to those who are righteous abundance,\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 161,
+        "juz": 9,
+        "manzil": 2,
+        "page": 171,
+        "ruku": 141,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1116,
+        "text": "The wicked among them changed and perverted the word We had spoken to a word unpronounced; so We sent from heaven retribution on them for all their wickedness.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 162,
+        "juz": 9,
+        "manzil": 2,
+        "page": 171,
+        "ruku": 141,
+        "hizbQuarter": 68,
+        "sajda": false
+      },
+      {
+        "number": 1117,
+        "text": "Enquire of them about the town situated by the sea where, when they did not keep the Sabbath, the fish came up to the surface of the water for them; but on days other than the Sabbath the fish did not come. We tried them in this way, for they were disobedient.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 163,
+        "juz": 9,
+        "manzil": 2,
+        "page": 171,
+        "ruku": 142,
+        "hizbQuarter": 68,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

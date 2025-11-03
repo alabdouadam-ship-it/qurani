@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 540,
+    "ayahs": [
+      {
+        "number": 5094,
+        "text": "Those who believe in God and His apostles are true of word and deed; and by their Lord are considered testifiers of the truth. They have their guerdon and their light. As for those who do not believe and reject Our revelations, are the people of Hell.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 473,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5095,
+        "text": "Know that the life of this world is only a frolic and mummery, an ornamentation, boasting and bragging among yourselves, and lust for multiplying wealth and children. It is like rain so pleasing to the cultivator for his vegetation which sprouts and swells, and then begins to wither, and you see it turn to yellow and reduced to chaff. There is severe punishment in the Hereafter, but also forgiveness from God, and acceptance. As for the life of this world, it is no more than merchandise of vanity.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5096,
+        "text": "Hasten for the forgiveness of your Lord and Paradise whose expanse is as wide as that of the heavens and the earth, which has been prepared for those who believe in God and His apostles. This is the bounty of God which He bestows on whosoever He please; and the bounty of God is infinite.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5097,
+        "text": "There is no calamity that befalls the earth or your own selves but in accordance with the law (of causation) before We make it evident. This is indeed how the law of God works inevitably.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5098,
+        "text": "Lest you grieve for what you missed, or rejoice at what you received. God does not love the egoist and the braggart,",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5099,
+        "text": "Who hold back what they possess and enjoin stinginess on others. Whoever turns away (from God, should remember) that God is self-sufficient, worthy of praise.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "57": {
+        "number": 57,
+        "name": "سُورَةُ الحَدِيدِ",
+        "englishName": "Al-Hadid",
+        "englishNameTranslation": "The Iron",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

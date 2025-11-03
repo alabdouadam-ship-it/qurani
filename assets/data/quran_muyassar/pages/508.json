@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 508,
+    "ayahs": [
+      {
+        "number": 4557,
+        "text": "إن الله يدخل الذين آمنوا بالله ورسوله وعملوا الصالحات جنات تجري من تحت أشجارها الأنهار تَكْرِمَةً لهم، ومثل الذين كفروا في أكلهم وتمتعهم بالدنيا، كمثل الأنعام من البهائم التي لا همَّ لها إلا في الاعتلاف دون غيره، ونار جهنم مسكن لهم ومأوى.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4558,
+        "text": "وكثير من أهل قرى كانوا أشد بأسًا من أهل قريتك -أيها الرسول، وهي \"مكة\"- التي أخرجتك، دمَّرناهم بأنواع من العذاب، فلم يكن لهم نصير ينصرهم من عذاب الله.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4559,
+        "text": "أفمن كان على برهان واضح من ربه والعلم بوحدانيته، كمن حسَّن له الشيطان قبيح عمله، واتبع ما دعته إليه نفسه من معصية الله وعبادة غيره مِن غير حجة ولا برهان؟ لا يستوون.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4560,
+        "text": "صفة الجنة التي وعدها الله المتقين: فيها أنهارٌ عظيمة من ماء غير متغيِّر، وأنهار من لبن لم يتغيَّر طعمه، وأنهار من خمر يتلذذ به الشاربون، وأنهار من عسل قد صُفِّي من القذى، ولهؤلاء المتقين في هذه الجنة جميع الثمرات من مختلف الفواكه وغيرها، وأعظم من ذلك السَّتر والتجاوزُ عن ذنوبهم، هل مَن هو في هذه الجنة كمَن هو ماكث في النار لا يخرج منها، وسُقوا ماء تناهى في شدة حره فقطَّع أمعاءهم؟",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4561,
+        "text": "ومن هؤلاء المنافقين مَن يستمع إليك -أيها النبي- بغير فهم؛ تهاونًا منهم واستخفافًا، حتى إذا انصرفوا من مجلسك قالوا لمن حضروا مجلسك من أهل العلم بكتاب الله على سبيل الاستهزاء: ماذا قال محمد الآن؟ أولئك الذين ختم الله على قلوبهم، فلا تفقه الحق ولا تهتدي إليه، واتبعوا أهواءهم في الكفر والضلال.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 16,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4562,
+        "text": "والذين اهتدوا لاتِّباع الحق زادهم الله هدى، فقوي بذلك هداهم، ووفقهم للتقوى، ويسَّرها لهم.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 17,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4563,
+        "text": "ما ينتظر هؤلاء المكذبون إلا الساعة التي وُعدوا بها أن تجيئهم فجأةً، فقد ظهرت علاماتها ولم ينتفعوا بذلك، فمن أين لهم التذكر إذا جاءتهم الساعة؟",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 18,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4564,
+        "text": "فاعلم -أيها النبي- أنه لا معبود بحق إلا الله، واستغفر لذنبك، واستغفر للمؤمنين والمؤمنات. والله يعلم تصرفكم في يقظتكم نهارًا، ومستقركم في نومكم ليلا.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 19,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "47": {
+        "number": 47,
+        "name": "سُورَةُ مُحَمَّدٍ",
+        "englishName": "Muhammad",
+        "englishNameTranslation": "Muhammad",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 38
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

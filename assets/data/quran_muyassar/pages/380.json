@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 380,
+    "ayahs": [
+      {
+        "number": 3195,
+        "text": "فلمَّا جاء رسول الملكة بالهديَّة إلى سليمان، قال مستنكرًا ذلك متحدثًا بأَنْعُمِ الله عليه: أتمدونني بمالٍ تَرْضيةً لي؟ فما أعطاني الله من النبوة والملك والأموال الكثيرة خير وأفضل مما أعطاكم، بل أنتم الذين تفرحون بالهدية التي تُهدى إليكم؛ لأنكم أهل مفاخرة بالدنيا ومكاثرة بها.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 36,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3196,
+        "text": "وقال سليمان عليه السلام لرسول أهل \"سبأ\": ارجع إليهم، فوالله لنأتينَّهم بجنود لا طاقة لهم بمقاومتها ومقابلتها، ولنخرجنَّهم مِن أرضهم أذلة وهم صاغرون مهانون، إن لم ينقادوا لدين الله وحده، ويتركوا عبادة من سواه.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 37,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3197,
+        "text": "قال سليمان مخاطبًا من سَخَّرهم الله له من الجن والإنس: أيُّكم يأتيني بسرير ملكها العظيم قبل أن يأتوني منقادين طائعين؟",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 38,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3198,
+        "text": "قال مارد قويٌّ شديد من الجن: أنا آتيك به قبل أن تقوم من مجلسك هذا، وإني لقويٌّ على حَمْله، أمين على ما فيه، آتي به كما هو لا أُنقِص منه شيئًا ولا أبدله.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 39,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3199,
+        "text": "قال الذي عنده علم من الكتاب: أنا آتيك بهذا العرش قبل ارتداد أجفانك إذا تحرَّكَتْ للنظر في شيء. فأذن له سليمان فدعا الله، فأتى بالعرش. فلما رآه سليمان حاضرًا لديه ثابتًا عنده قال: هذا مِن فضل ربي الذي خلقني وخلق الكون كله؛ ليختبرني: أأشكر بذلك اعترافًا بنعمته تعالى عليَّ أم أكفر بترك الشكر؟ ومن شكر لله على نعمه فإنَّ نَفْعَ ذلك يرجع إليه، ومن جحد النعمة وترك الشكر فإن ربي غني عن شكره، كريم يعم بخيره في الدنيا الشاكر والكافر، ثم يحاسبهم ويجازيهم في الآخرة.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 40,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3200,
+        "text": "قال سليمان لمن عنده: غيِّروا سرير ملكها الذي تجلس عليه إلى حال تنكره إذا رأته؛ لنرى أتهتدي إلى معرفته أم تكون من الذين لا يهتدون؟",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 41,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3201,
+        "text": "فلما جاءت ملكة \"سبأ\" إلى سليمان في مجلسه قيل لها: أهكذا عرشك؟ قالت: إنه يشبهه. فظهر لسليمان أنها أصابت في جوابها، وقد علمت قدرة الله وصحة نبوة سليمان عليه السلام، فقال: وأوتينا العلم بالله وبقدرته مِن قبلها، وكنا منقادين لأمر الله متبعين لدين الاسلام.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 42,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3202,
+        "text": "ومَنَعَها عن عبادة الله وحده ما كانت تعبده مِن دون الله تعالى، إنها كانت كافرة ونشأت بين قوم كافرين، واستمرت على دينهم، وإلا فلها من الذكاء والفطنة ما تعرف به الحق من الباطل، ولكن العقائد الباطلة تُذهب بصيرة القلب.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 43,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3203,
+        "text": "قيل لها: ادخلي القصر، وكان صحنه مِن زجاج تحته ماء، فلما رأته ظنته ماء تتردد أمواجه، وكشفت عن ساقيها لتخوض الماء، فقال لها سليمان: إنه صحن أملس من زجاج صاف والماء تحته. فأدركت عظمة ملك سليمان، وقالت: رب إني ظلمت نفسي بما كنت عليه من الشرك، وانقدتُ متابعة لسليمان داخلة في دين رب العالمين أجمعين.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 44,
+        "juz": 19,
+        "manzil": 5,
+        "page": 380,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

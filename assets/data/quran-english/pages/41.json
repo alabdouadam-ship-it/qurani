@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 41,
+    "ayahs": [
+      {
+        "number": 256,
+        "text": "When Saul led his armies, he said: \"God will test you by a stream. Whoever drinks its water will not be of me; but those who do not drink shall be on my side. The only exception will be those who scoop up a palmful of water with their hands.\" And but for a few they all drank of its water. When they had crossed it, and those who believed with him, they said: \"We have no strength to combat Goliath and his forces today. But those who believed they have to face their Lord, said: \"Many a time has a small band defeated a large horde by the will of God. God is with those who are patient (and persevere).\"",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 249,
+        "juz": 2,
+        "manzil": 1,
+        "page": 41,
+        "ruku": 34,
+        "hizbQuarter": 16,
+        "sajda": false
+      },
+      {
+        "number": 257,
+        "text": "And when they were facing Goliath and his hordes they prayed: \"O Lord, give us endurance and steady our steps, and help us against the deniers of truth.\"",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 250,
+        "juz": 2,
+        "manzil": 1,
+        "page": 41,
+        "ruku": 34,
+        "hizbQuarter": 16,
+        "sajda": false
+      },
+      {
+        "number": 258,
+        "text": "By the will of God they defeated them, and David killed Goliath, and God gave him kingship and wisdom, and taught him whatsoever He pleased. If God did not make men deter one another this earth would indeed be depraved. But gracious is God to the people of the world.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 251,
+        "juz": 2,
+        "manzil": 1,
+        "page": 41,
+        "ruku": 34,
+        "hizbQuarter": 16,
+        "sajda": false
+      },
+      {
+        "number": 259,
+        "text": "These are the messages of God. We recite them to you in all truth, as indeed you are one of the apostles.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 252,
+        "juz": 2,
+        "manzil": 1,
+        "page": 41,
+        "ruku": 34,
+        "hizbQuarter": 16,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

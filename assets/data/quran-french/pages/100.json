@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 100,
+    "ayahs": [
+      {
+        "number": 628,
+        "text": "O les croyants! Observez strictement la justice et soyez des témoins (véridiques) comme Allah l'ordonne, fût-ce contre vous-mêmes, contre vos père et mère ou proches parents. Qu'il s'agisse d'un riche ou d'un besogneux, Allah a priorité sur eux deux (et Il est plus connaisseur de leur intérêt que vous). Ne suivez donc pas les passions, afin de ne pas dévier de la justice. Si vous portez un faux témoignage ou si vous le refusez, [sachez qu'] Allah est Parfaitement Connaisseur de ce que vous faites.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 135,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 629,
+        "text": "O les croyants! Soyez fermes en votre foi en Allah, en Son messager, au Livre qu'Il a fait descendre sur Son messager, et au Livre qu'Il a fait descendre avant. Quiconque ne croit pas en Allah, en Ses anges, en Ses Livres, en Ses messagers et au Jour dernier, s'égare, loin dans l'égarement.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 136,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 630,
+        "text": "Ceux qui ont cru, puis sont devenus mécréants, puis ont cru de nouveau, ensuite sont redevenus mécréants, et n'ont fait que croître en mécréance, Allah ne leur pardonnera pas, ni les guidera vers un chemin (droit).",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 137,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 631,
+        "text": "Annonce aux hypocrites qu'il y a pour eux un châtiment douloureux,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 138,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 632,
+        "text": "ceux qui prennent pour alliés des mécréants au lieu des croyants, est-ce la puissance qu'ils recherchent auprès d'eux? (En vérité) la puissance appartient entièrement à Allah.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 139,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      },
+      {
+        "number": 633,
+        "text": "Dans le Livre, Il vous a déjà révélé ceci: lorsque vous entendez qu'on renie les versets (le Coran) d'Allah et qu'on s'en raille, ne vous asseyez point avec ceux-là jusqu'à ce qu'ils entreprennent une autre conversation. Sinon, vous serez comme eux. Allah rassemblera, certes, les hypocrites et les mécréants, tous, dans l'Enfer.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 140,
+        "juz": 5,
+        "manzil": 1,
+        "page": 100,
+        "ruku": 81,
+        "hizbQuarter": 40,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

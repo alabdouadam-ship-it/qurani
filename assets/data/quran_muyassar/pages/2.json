@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 2,
+    "ayahs": [
+      {
+        "number": 8,
+        "text": "هذه الحروف وغيرها من الحروف المقطَّعة في أوائل السور فيها إشارة إلى إعجاز القرآن؛ فقد وقع به تحدي المشركين، فعجزوا عن معارضته، وهو مركَّب من هذه الحروف التي تتكون منها لغة العرب. فدَلَّ عجز العرب عن الإتيان بمثله -مع أنهم أفصح الناس- على أن القرآن وحي من الله.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 1,
+        "juz": 1,
+        "manzil": 1,
+        "page": 2,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 9,
+        "text": "ذلك القرآن هو الكتاب العظيم الذي لا شَكَّ أنه من عند الله، فلا يصح أن يرتاب فيه أحد لوضوحه، ينتفع به المتقون بالعلم النافع والعمل الصالح وهم الذين يخافون الله، ويتبعون أحكامه.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 2,
+        "juz": 1,
+        "manzil": 1,
+        "page": 2,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 10,
+        "text": "وهم الذين يُصَدِّقون بالغيب الذي لا تدركه حواسُّهم ولا عقولهم وحدها؛ لأنه لا يُعْرف إلا بوحي الله إلى رسله، مثل الإيمان بالملائكة، والجنة، والنار، وغير ذلك مما أخبر الله به أو أخبر به رسوله، (والإيمان: كلمة جامعة للإقرار بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره، وتصديق الإقرار بالقول والعمل بالقلب واللسان والجوارح) وهم مع تصديقهم بالغيب يحافظون على أداء الصلاة في مواقيتها أداءً صحيحًا وَفْق ما شرع الله لنبيه محمد صلى الله عليه وسلم، ومما أعطيناهم من المال يخرجون صدقة أموالهم الواجبة والمستحبة.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 3,
+        "juz": 1,
+        "manzil": 1,
+        "page": 2,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 11,
+        "text": "والذين يُصَدِّقون بما أُنزل إليك أيها الرسول من القرآن، وبما أنزل إليك من الحكمة، وهي السنة، وبكل ما أُنزل مِن قبلك على الرسل من كتب، كالتوراة والإنجيل وغيرهما، ويُصَدِّقون بدار الحياة بعد الموت وما فيها من الحساب والجزاء، تصديقا بقلوبهم يظهر على ألسنتهم وجوارحهم وخص يوم الآخرة؛ لأن الإيمان به من أعظم البواعث على فعل الطاعات، واجتناب المحرمات، ومحاسبة النفس.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 4,
+        "juz": 1,
+        "manzil": 1,
+        "page": 2,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 12,
+        "text": "أصحاب هذه الصفات يسيرون على نور من ربهم وبتوفيق مِن خالقهم وهاديهم، وهم الفائزون الذين أدركوا ما طلبوا، ونَجَوا من شرِّ ما منه هربوا.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 5,
+        "juz": 1,
+        "manzil": 1,
+        "page": 2,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

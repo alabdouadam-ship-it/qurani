@@ -1,0 +1,351 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 524,
+    "ayahs": [
+      {
+        "number": 4750,
+        "text": "Est-ce que cela est de la magie? Ou bien ne voyez-vous pas clair?",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4751,
+        "text": "Brûlez dedans! Supportez ou ne supportez pas, ce sera égal pour vous: vous n'êtes rétribués que selon ce que vous faisiez.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4752,
+        "text": "Les pieux seront dans des Jardins et dans des délices,",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4753,
+        "text": "se réjouissant de ce que leur Seigneur leur aura donné, et leur Seigneur les aura protégés du châtiment de la Fournaise.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4754,
+        "text": "«En récompense de ce que vous faisiez, mangez et buvez en toute sérénité,",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4755,
+        "text": "accoudés sur des lits bien rangés», et Nous leur ferons épouser des houris aux grands yeux noirs,",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4756,
+        "text": "Ceux qui auront cru et que leurs descendants auront suivis dans la foi, Nous ferons que leurs descendants les rejoignent. Et Nous ne diminuerons en rien le mérite de leurs œuvres, chacun étant tenu responsable de ce qu'il aura acquis.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4757,
+        "text": "Nous les pourvoirons abondamment des fruits et des viandes qu'ils désireront.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4758,
+        "text": "Là, ils se passeront les uns les autres une coupe qui ne provoquera ni vanité ni incrimination.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4759,
+        "text": "Et parmi eux circuleront des garçons à leur service, pareils à des perles bien conservées.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4760,
+        "text": "Et ils se tourneront les uns vers les autres s'interrogeant;",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4761,
+        "text": "Ils diront: «Nous vivions au milieu des nôtres dans la crainte [d'Allah];",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4762,
+        "text": "Puis Allah nous a favorisés et protégés du châtiment du Samûm.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4763,
+        "text": "Antérieurement, nous L'invoquions. C'est Lui certes, le Charitable, le Très Miséricordieux».",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 28,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 458,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4764,
+        "text": "Rappelle donc et par la grâce de ton Seigneur tu n'es ni un devin ni un possédé.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 29,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4765,
+        "text": "Ou bien ils disent: «C'est un poète! Attendons pour lui le coup de la mort».",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 30,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4766,
+        "text": "Dis: «Attendez! Je suis avec vous parmi ceux qui attendent».",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 524,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "52": {
+        "number": 52,
+        "name": "سُورَةُ الطُّورِ",
+        "englishName": "At-Tur",
+        "englishNameTranslation": "The Mount",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 49
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

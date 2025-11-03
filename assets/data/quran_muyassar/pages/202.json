@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 202,
+    "ayahs": [
+      {
+        "number": 1329,
+        "text": "يعتذر إليكم -أيها المؤمنون- هؤلاء المتخلفون عن جهاد المشركين بالأكاذيب عندما تعودون مِن جهادكم من غزوة (تبوك)، قل لهم -أيها الرسول-: لا تعتذروا لن نصدقكم فيما تقولون، قد نبأنا الله من أمركم ما حقق لدينا كذبكم، وسيرى الله عملكم ورسوله، إن كنتم تتوبون من نفاقكم، أو تقيمون عليه، وسيُظهر للناس أعمالكم في الدنيا، ثم ترجعون بعد مماتكم إلى الذي لا تخفى عليه بواطن أموركم وظواهرها، فيخبركم بأعمالكم كلها، ويجازيكم عليها.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 94,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1330,
+        "text": "سيحلف لكم المنافقون بالله -كاذبين معتذرين- إذا رجعتم إليهم من الغزو؛ لتتركوهم دون مساءلة، فاجتنبوهم وأعرضوا عنهم احتقارًا لهم، إنهم خبثاء البواطن، ومكانهم الذي يأوون إليه في الآخرة نار جهنم؛ جزاء بما كانوا يكسبون من الآثام والخطايا.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 95,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1331,
+        "text": "يحلف لكم -أيها المؤمنون- هؤلاء المنافقون كذبًا؛ لتَرضَوا عنهم، فإن رضيتم عنهم -لأنكم لا تعلمون كذبهم- فإن الله لا يرضى عن هؤلاء وغيرهم ممن استمروا على الفسوق والخروج عن طاعة الله ورسوله.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 96,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1332,
+        "text": "الأعراب سكان البادية أشد كفرًا ونفاقًا من أهل الحاضرة، وذلك لجفائهم وقسوة قلوبهم وبُعدهم عن العلم والعلماء، ومجالس الوعظ والذكر، فهم لذلك أحق بأن لا يعلموا حدود الدين، وما أنزل الله من الشرائع والأحكام. والله عليم بحال هؤلاء جميعًا، حكيم في تدبيره لأمور عباده.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 97,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1333,
+        "text": "ومن الأعراب مَن يحتسب ما ينفق في سبيل الله غرامة وخسارة لا يرجو له ثوابًا، ولا يدفع عن نفسه عقابًا، وينتظر بكم الحوادث والآفات، ولكن السوء دائر عليهم لا بالمسلمين. والله سميع لما يقولون عليم بنياتهم الفاسدة.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 98,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1334,
+        "text": "ومن الأعراب مَن يؤمن بالله ويقرُّ بوحدانيته وبالبعث بعد الموت، والثواب والعقاب، ويحتسب ما ينفق من نفقة في جهاد المشركين قاصدًا بها رضا الله ومحبته، ويجعلها وسيلة إلى دعاء الرسول صلى الله عليه وسلم له، ألا إن هذه الأعمال تقربهم إلى الله تعالى، سيدخلهم الله في جنته. إن الله غفور لما فعلوا من السيئات، رحيم بهم.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 99,
+        "juz": 11,
+        "manzil": 2,
+        "page": 202,
+        "ruku": 167,
+        "hizbQuarter": 81,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

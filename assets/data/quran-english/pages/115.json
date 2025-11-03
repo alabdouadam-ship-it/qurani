@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 115,
+    "ayahs": [
+      {
+        "number": 711,
+        "text": "Eavesdropping for telling lies, earning through unlawful means! So, if they come to you, judge between them or decline. And if you decline, they can do you no harm; but if you judge, you should do so with justice, for God loves those who are just.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 42,
+        "juz": 6,
+        "manzil": 2,
+        "page": 115,
+        "ruku": 91,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 712,
+        "text": "But why should they make you a judge when the Torah is with them which contains the Law of God? Even then they turn away. They are those who will never believe.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 43,
+        "juz": 6,
+        "manzil": 2,
+        "page": 115,
+        "ruku": 91,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 713,
+        "text": "We sent down the Torah which contains guidance and light, in accordance with which the prophets who were obedient (to God) gave instructions to the Jews, as did the rabbis and priests, for they were the custodians and witnesses of God's writ. So, therefore, do not fear men, fear Me, and barter not My messages away for a paltry gain. Those who do not judge by God's revelations are infidels indeed.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 44,
+        "juz": 6,
+        "manzil": 2,
+        "page": 115,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 714,
+        "text": "And there (in the Torah) We had ordained for them a life for a life, and an eye for an eye, and a nose for a nose, and an ear for an ear, and a tooth for a tooth, and for wounds retribution, though he who forgoes it out of charity, atones for his sins. And those who do not judge by God's revelations are unjust.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 45,
+        "juz": 6,
+        "manzil": 2,
+        "page": 115,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

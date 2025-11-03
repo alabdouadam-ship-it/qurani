@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 512,
+    "ayahs": [
+      {
+        "number": 4593,
+        "text": "Those who swear allegiance to you indeed swear allegiance to God; and God's protection is over them. Then whosoever breaks the promise breaks it to his own loss; but whosoever fulfills the promise made to God will receive a great reward from Him.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 10,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4594,
+        "text": "The Arabs of the desert who had stayed behind will now say to you: \"We were occupied with our flocks and herds and families, so ask forgiveness for us. They say with their tongues what is not in their hearts. Tell them: \"Who can prevail with God for you if He wish you harm or benefit? Surely God is well aware of what you do.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 11,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4595,
+        "text": "In fact you imagined that the Prophet and the faithful would never come back home; and this seemed pleasing to your hearts, and you entertained evil thoughts. You are a people lost.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4596,
+        "text": "He who does not believe in God and His Apostle (should know) We have prepared for unbelievers a blazing fire.\"",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4597,
+        "text": "To God belongs the kingdom of the heavens and the earth; He may forgive whosoever He please, and afflict whosoever He will. Yet God is forgiving and kind.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4598,
+        "text": "Those who had stayed behind will say: \"When you depart for taking the spoils, allow us to follow you.\" They wish to change the word of God. Tell them: \"You will not follow us. That is what God has already said before.\" They will say: \"You are envious of our gain.\" The fact is they understand but little.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 6,
+        "page": 512,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "48": {
+        "number": 48,
+        "name": "سُورَةُ الفَتۡحِ",
+        "englishName": "Al-Fath",
+        "englishNameTranslation": "The Victory",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

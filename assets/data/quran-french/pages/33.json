@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 33,
+    "ayahs": [
+      {
+        "number": 218,
+        "text": "Demande aux enfants d'Israël combien de miracles évidents Nous leur avons apportés! Or, quiconque altère le bienfait d'Allah après qu'il lui soit parvenu... alors, Allah vraiment est dur en punition.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 211,
+        "juz": 2,
+        "manzil": 1,
+        "page": 33,
+        "ruku": 27,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 219,
+        "text": "On a enjolivé la vie présente à ceux qui ne croient pas, et ils se moquent de ceux qui croient. Mais les pieux seront au-dessus d'eux, au Jour de la Résurrection. Et Allah accorde Ses bienfaits à qui Il veut, sans compter.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 212,
+        "juz": 2,
+        "manzil": 1,
+        "page": 33,
+        "ruku": 27,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 220,
+        "text": "Les gens formaient (à l'origine) une seule communauté (croyante). Puis, (après leurs divergences,) Allah envoya des prophètes comme annonciateurs et avertisseurs; et Il fit descendre avec eux le Livre contenant la vérité, pour régler parmi les gens leurs divergences. Mais, ce sont ceux-là mêmes à qui il avait été apporté, qui se mirent à en disputer, après que les preuves leur furent venues, par esprit de rivalité! Puis Allah, de par Sa Grâce, guida ceux qui crurent vers cette Vérité sur laquelle les autres disputaient. Et Allah guide qui Il veut vers le chemin droit.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 213,
+        "juz": 2,
+        "manzil": 1,
+        "page": 33,
+        "ruku": 27,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 221,
+        "text": "Pensez-vous entrer au Paradis alors que vous n'avez pas encore subi des épreuves semblables à celles que subirent ceux qui vécurent avant vous? Misère et maladie les avaient touchés; et ils furent secoués jusqu'à ce que le Messager, et avec lui, ceux qui avaient cru, se fussent écriés: «Quand viendra le secours d'Allah?» - Quoi! le secours d'Allah est sûrement proche.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 214,
+        "juz": 2,
+        "manzil": 1,
+        "page": 33,
+        "ruku": 27,
+        "hizbQuarter": 13,
+        "sajda": false
+      },
+      {
+        "number": 222,
+        "text": "Ils t'interrogent: «Qu'est-ce qu'on doit dépenser?» Dis: «Ce que vous dépensez de bien devrait être pour les père et mère, les proches, les orphelins, les pauvres et les voyageurs indigents. Et tout ce que vous faites de bien, vraiment Allah le sait».",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 215,
+        "juz": 2,
+        "manzil": 1,
+        "page": 33,
+        "ruku": 27,
+        "hizbQuarter": 13,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 112,
+    "ayahs": [
+      {
+        "number": 693,
+        "text": "Ils dirent: «Moïse! Nous n'y entrerons jamais, aussi longtemps qu'ils y seront. Va donc, toi et ton Seigneur, et combattez tous deux. Nous restons là où nous sommes».",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 24,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 694,
+        "text": "Il dit: «Seigneur! Je n'ai de pouvoir, vraiment, que sur moi-même et sur mon frère: sépare-nous donc de ce peuple pervers».",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 25,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 695,
+        "text": "Il (Allah) dit: «Eh bien, ce pays leur sera interdit pendant quarante ans, durant lesquels ils erreront sur la terre. Ne te tourmente donc pas pour ce peuple pervers».",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 26,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 696,
+        "text": "Et raconte-leur en toute vérité l'histoire des deux fils d'Adam. Les deux offrirent des sacrifices; celui de l'un fut accepté et celui de l'autre ne le fut pas. Celui-ci dit: «Je te tuerai sûrement». «Allah n'accepte, dit l'autre, que de la part des pieux».",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 27,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 697,
+        "text": "Si tu étends vers moi ta main pour me tuer, moi, je n'étendrai pas vers toi ma main pour te tuer: car je crains Allah, le Seigneur de l'Univers.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 28,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 698,
+        "text": "Je veux que tu partes avec le péché de m'avoir tué et avec ton propre péché: alors tu seras du nombre des gens du Feu. Telle est la récompense des injustes.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 29,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 699,
+        "text": "Son âme l'incita à tuer son frère. Il le tua donc et devint ainsi du nombre des perdants.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 30,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 700,
+        "text": "Puis Allah envoya un corbeau qui se mit à gratter la terre pour lui montrer comment ensevelir le cadavre de son frère. Il dit: «Malheur à moi! Suis-je incapable d'être, comme ce corbeau, à même d'ensevelir le cadavre de mon frère?» Il devint alors du nombre de ceux que ronge le remords.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 31,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

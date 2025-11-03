@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 263,
+    "ayahs": [
+      {
+        "number": 1818,
+        "text": "We have placed the signs of the Zodiac in the sky, and decked it out for those who can see;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 16,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1819,
+        "text": "And We have preserved it from every accursed devil,",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 17,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1820,
+        "text": "Except the ones who listen on the sly, yet they are chased away by a shooting flame.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 18,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1821,
+        "text": "We stretched the earth and placed upon it firm stabilisers, and made all things grow upon it balanced evenly.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 19,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1822,
+        "text": "We have provided on it sustenance for you, and for those you cannot provide.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 20,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1823,
+        "text": "Of all things there are We have the stores, and send them down in determined measure.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 21,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1824,
+        "text": "We send rain-impregnated winds, and water from the sky which you drink, but you are not the keepers of its store.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 22,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1825,
+        "text": "It is We who give life and We who give death, and We are the One who will abide.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 23,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1826,
+        "text": "We surely know those of you who go forward and those of you who lag behind.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 24,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1827,
+        "text": "Your Lord will surely gather them together: Certainly He is all-wise and all-knowing.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 25,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 219,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1828,
+        "text": "Man We fashioned from fermented clay dried tingling hard,",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 26,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1829,
+        "text": "As We fashioned jinns before from intense radiated heat.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 27,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1830,
+        "text": "But when your Lord said to the angels: \"I am verily going to create a human being from fermented clay dried tingling hard;",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 28,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1831,
+        "text": "And when I have fashioned him and breathed into him of My spirit, bow before him in homage;\"",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 29,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1832,
+        "text": "The angels bowed in homage in a body",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 30,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1833,
+        "text": "Except Iblis. He refused to bow with the adorers.",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 31,
+        "juz": 14,
+        "manzil": 3,
+        "page": 263,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "15": {
+        "number": 15,
+        "name": "سُورَةُ الحِجۡرِ",
+        "englishName": "Al-Hijr",
+        "englishNameTranslation": "The Rock",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 99
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

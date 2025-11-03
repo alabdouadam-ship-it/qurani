@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 75,
+    "ayahs": [
+      {
+        "number": 480,
+        "text": "واذكر -أيها الرسول- إذ أخذ الله العهد الموثق على الذين آتاهم الله الكتاب من اليهود والنصارى، فلليهود التوراة وللنصارى الإنجيل؛ ليعملوا بهما، ويبينوا للناس ما فيهما، ولا يكتموا ذلك ولا يخفوه، فتركوا العهد ولم يلتزموا به، وأخذوا ثمنا بخسًا مقابل كتمانهم الحق وتحريفهم الكتاب، فبئس الشراء يشترون، في تضييعهم الميثاق، وتبديلهم الكتاب.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 187,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 60,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 481,
+        "text": "ولا تظنن الذين يفرحون بما أَتَوا من أفعال قبيحة كاليهود والمنافقين وغيرهم، ويحبون أن يثني عليهم الناس بما لم يفعلوا، فلا تظننهم ناجين من عذاب الله في الدنيا، ولهم في الآخرة عذاب موجع. وفي الآية وعيد شديد لكل آت لفعل السوء معجب به، ولكل مفتخر بما لم يعمل، ليُثنيَ عليه الناس ويحمدوه.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 188,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 60,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 482,
+        "text": "ولله وحده ملك السموات والأرض وما فيهما، والله على كل شيء قدير.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 189,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 60,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 483,
+        "text": "إن في خلق السموات والأرض على غير مثال سابق، وفي تعاقُب الليل والنهار، واختلافهما طولا وقِصَرًا لدلائل وبراهين عظيمة على وحدانية الله لأصحاب العقول السليمة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 190,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 61,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 484,
+        "text": "الذين يذكرون الله في جميع أحوالهم: قيامًا وقعودًا وعلى جنوبهم، وهم يتدبرون في خلق السموات والأرض، قائلين: يا ربنا ما أوجدت هذا الخلق عبثًا، فأنت منزَّه عن ذلك، فاصْرِف عنا عذاب النار.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 191,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 61,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 485,
+        "text": "يا ربنا نجِّنا من النار، فإنك -يا ألله- مَن تُدخِلْه النار بذنوبه فقد فضحته وأهنته، وما للمذنبين الظالمين لأنفسهم من أحد يدفع عنهم عقاب الله يوم القيامة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 192,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 61,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 486,
+        "text": "يا ربنا إننا سمعنا مناديا -هو نبيك محمد صلى الله عليه وسلم- ينادي الناس للتصديق بك، والإقرار بوحدانيتك، والعمل بشرعك، فأجبنا دعوته وصدَّقنا رسالته، فاغفر لنا ذنوبنا، واستر عيوبنا، وألحقنا بالصالحين.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 193,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 61,
+        "hizbQuarter": 30,
+        "sajda": false
+      },
+      {
+        "number": 487,
+        "text": "يا ربنا أعطنا ما وعدتنا على ألسنة رسلك من نصر وتمكين وتوفيق وهداية، ولا تفضحنا بذنوبنا يوم القيامة، فإنك كريم لا تُخْلف وعدًا وَعَدْتَ به عبادك.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 194,
+        "juz": 4,
+        "manzil": 1,
+        "page": 75,
+        "ruku": 61,
+        "hizbQuarter": 30,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

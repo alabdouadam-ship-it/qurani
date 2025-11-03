@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 66,
+    "ayahs": [
+      {
+        "number": 415,
+        "text": "اذكر -أيها الرسول- ما كان من أمر بني سَلِمة وبني حارثة حين حدثتهم أنفسهم بالرجوع مع زعيمهم المنافق عبد الله بن أُبيٍّ؛ خوفًا من لقاء العدو، ولكن الله عصمهم وحفظهم، فساروا معك متوكلين على الله. وعلى الله وحده فليتوكل المؤمنون.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 122,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 416,
+        "text": "ولقد نصركم الله -أيها المؤمنون- بـ \"بدر\" على أعدائكم المشركين مع قلة عَدَدكم وعُدَدكم، فخافوا الله بفعل أوامره واجتناب نواهيه؛ لعلكم تشكرون له نعمه.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 123,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 417,
+        "text": "اذكر -أيها الرسول- ما كان من أمر أصحابك في \"بدر\" حين شقَّ عليهم أن يأتي مَدَد للمشركين، فأوحينا إليك أن تقول لهم: ألن تكفيكم معونة ربكم بأن يمدكم بثلاثة آلاف من الملائكة مُنْزَلين من السماء إلى أرض المعركة، يثبتونكم، ويقاتلون معكم؟",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 124,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 418,
+        "text": "بلى يكفيكم هذا المَدَد. وبشارة أخرى لكم: إن تصبروا على لقاء العدو وتتقوا الله بفِعْل ما أمركم به واجتناب ما نهاكم عنه، ويأت كفار \"مكة\" على الفور مسرعين لقتالكم، يظنون أنهم يستأصلونكم، فإن الله يمدكم بخمسة آلاف من الملائكة مسوِّمين أي: قد أعلموا أنفسهم وخيولهم بعلامات واضحات.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 125,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 419,
+        "text": "وما جعل الله هذا الإمداد بالملائكة إلا بشرى لكم يبشركم بها ولتطمئن قلوبكم، وتطيب بوعد الله لكم. وما النصر إلا من عند الله العزيز الذي لا يغالَب، الحكيم في تدبيره وفعله.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 126,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 420,
+        "text": "وكان نصر الله لكم بـ \"بدْر\" ليهلك فريقًا من الكفار بالقتل، ومن نجا منهم من القتل رجع حزينًا قد ضاقت عليه نفسه، يَظْهر عليه الخزي والعار.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 127,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 421,
+        "text": "ليس لك -أيها الرسول- من أمر العباد شيء، بل الأمر كله لله تعالى وحده لا شريك له، ولعل بعض هؤلاء الذين قاتلوك تنشرح صدورهم للإسلام فيسلموا، فيتوب الله عليهم. ومن بقي على كفره يعذبه الله في الدنيا والآخرة بسبب ظلمه وبغيه.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 128,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 422,
+        "text": "ولله وحده ما في السموات وما في الأرض، يغفر لمن يشاء من عباده برحمته، ويعذب من يشاء بعدله. والله غفور لذنوب عباده، رحيم بهم.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 129,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 423,
+        "text": "يا أيها الذين صدّقوا الله ورسوله وعملوا بشرعه احذروا الربا بجميع أنواعه، ولا تأخذوا في القرض زيادة على رؤوس أموالكم وإن قلَّت، فكيف إذا كانت هذه الزيادة تتضاعف كلما حان موعد سداد الدين؟ واتقوا الله بالتزام شرعه؛ لتفوزوا في الدنيا والآخرة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 130,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 55,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 424,
+        "text": "اجعلوا لأنفسكم وقاية بينكم وبين النار التي هُيِّئت للكافرين.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 131,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 55,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 425,
+        "text": "وأطيعوا الله -أيها المؤمنون- فيما أمركم به من الطاعات وفيما نهاكم عنه من أكل الربا وغيره من الأشياء، وأطيعوا الرسول؛ لترحموا، فلا تعذبوا.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 132,
+        "juz": 4,
+        "manzil": 1,
+        "page": 66,
+        "ruku": 55,
+        "hizbQuarter": 26,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

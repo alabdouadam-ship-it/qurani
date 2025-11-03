@@ -1,0 +1,1343 @@
+import 'dart:async';
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
+
+import 'l10n/app_localizations.dart';
+import 'models/surah.dart';
+import 'services/audio_service.dart';
+import 'services/download_service.dart';
+import 'services/preferences_service.dart';
+import 'services/quran_repository.dart';
+import 'services/surah_service.dart';
+import 'widgets/sound_equalizer.dart';
+import 'services/queue_service.dart';
+
+/// Main audio player screen that handles full-surah playback, repeat, auto
+/// advance and verse-by-verse playback.
+class AudioPlayerScreen extends StatefulWidget {
+  const AudioPlayerScreen({super.key, required this.initialSurahOrder});
+
+  final int initialSurahOrder;
+
+  @override
+  State<AudioPlayerScreen> createState() => _AudioPlayerScreenState();
+}
+
+class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
+  final AudioPlayer _player = AudioPlayer();
+  final QueueService _queueService = QueueService();
+
+  List<Surah> _surahs = const [];
+  int _currentOrder = 1;
+  String? _reciterKey;
+  List<int> _queue = const [];
+  Set<int> _featuredListenSurahs = <int>{};
+  
+  bool _isRepeat = false;
+  bool _autoPlayNext = false;
+  bool _isPlaying = false;
+  bool _isBuffering = false;
+  bool _verseByVerseMode = false;
+  bool _isHandlingCompletion = false;
+  bool _isCurrentSurahDownloaded = false;
+  bool _isDownloadingCurrentSurah = false;
+
+  double _volume = 1.0;
+  double _playbackSpeed = 1.0;
+  double _equalizerHeight = 120;
+  
+  String? _errorMessage;
+
+  Duration _lastKnownPosition = Duration.zero;
+  Duration? _currentTrackDuration;
+  Duration? _bookmarkPosition;
+  Duration? _savedSurahPositionBeforeVerseMode;
+  
+  int _currentVerse = 1;
+  List<String>? _verseUrls;
+
+  Timer? _sleepTimer;
+  int? _sleepTimerMinutes;
+
+  StreamSubscription<Duration>? _positionSub;
+  StreamSubscription<Duration?>? _durationSub;
+  StreamSubscription<PlayerState>? _playerStateSub;
+  StreamSubscription<ProcessingState>? _processingStateSub;
+  VoidCallback? _queueListener;
+  bool _isPlayerDisposed = false;
+
+  bool get _hasBookmark => _bookmarkPosition != null;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentOrder = widget.initialSurahOrder;
+    _reciterKey = PreferencesService.getReciter();
+    _queue = _queueService.queue;
+    _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
+    _queueListener = () {
+      if (!mounted) return;
+      setState(() {
+        _queue = _queueService.queue;
+      });
+    };
+    _queueService.queueNotifier.addListener(_queueListener!);
+    _player.setSpeed(_playbackSpeed);
+    _player.setVolume(_volume);
+    _setupListeners();
+    unawaited(_loadInitialData());
+  }
+
+  @override
+  void dispose() {
+    _sleepTimer?.cancel();
+    _positionSub?.cancel();
+    _durationSub?.cancel();
+    _playerStateSub?.cancel();
+    _processingStateSub?.cancel();
+    if (_queueListener != null) {
+      _queueService.queueNotifier.removeListener(_queueListener!);
+    }
+    unawaited(_disposePlayer());
+    super.dispose();
+  }
+
+  Future<void> _disposePlayer() async {
+    if (_isPlayerDisposed) return;
+    _isPlayerDisposed = true;
+    try {
+      await _player.stop();
+    } catch (_) {
+      // ignore stop failures during disposal
+    }
+    await _player.dispose();
+  }
+
+  void _setupListeners() {
+    if (_isPlayerDisposed) return;
+    _positionSub = _player.positionStream.listen((pos) {
+      _lastKnownPosition = pos;
+    });
+
+    _durationSub = _player.durationStream.listen((duration) {
+      if (!mounted || duration == null) return;
+      final sequence = _player.sequenceState;
+      final tag = sequence?.currentSource?.tag;
+      final isPlaceholder = tag is MediaItem &&
+          (tag.extras?['placeholder'] as String?) != null;
+      if (!isPlaceholder) {
+        _currentTrackDuration = duration;
+      }
+    });
+
+    _playerStateSub = _player.playerStateStream.listen(_handlePlayerStateChange);
+    _processingStateSub = _player.processingStateStream.listen(_handleProcessingChange);
+  }
+
+  Future<void> _loadInitialData() async {
+    try {
+    final lang = PreferencesService.getLanguage();
+    final surahs = await SurahService.getLocalizedSurahs(lang);
+    if (!mounted) return;
+    setState(() {
+      _surahs = surahs;
+      _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
+    });
+      await _playSurah(_currentOrder, autoPlay: true);
+    } catch (e) {
+      debugPrint('Error loading surahs: $e');
+      if (mounted) {
+        setState(() => _errorMessage = e.toString());
+      }
+    }
+  }
+
+  Future<void> _playSurah(
+    int order, {
+    bool autoPlay = true,
+    Duration? resumePosition,
+  }) async {
+    if (_isPlayerDisposed) return;
+    final normalizedOrder = order.clamp(1, 114);
+    setState(() {
+      _currentOrder = normalizedOrder;
+    });
+
+    final bookmark = await _loadBookmarkFor(normalizedOrder);
+    await _loadVerseUrls(normalizedOrder);
+
+    final startPosition = resumePosition ?? bookmark ?? Duration.zero;
+    await _loadAndPlaySurah(normalizedOrder, startPosition, autoPlay: autoPlay);
+    await _updateDownloadStatus();
+  }
+
+  Future<void> _loadAndPlaySurah(
+    int order,
+    Duration startPosition, {
+    required bool autoPlay,
+  }) async {
+    if (_isPlayerDisposed) return;
+    if (_reciterKey == null || _reciterKey!.isEmpty) {
+      final l10n = AppLocalizations.of(context)!;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.selectReciterFirst)),
+        );
+      return;
+    }
+
+    final url = AudioService.buildFullRecitationUrl(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: order,
+    );
+    if (url == null) {
+      final l10n = AppLocalizations.of(context)!;
+      if (mounted) {
+        setState(() {
+          _errorMessage = l10n.surahUnavailable;
+          _isCurrentSurahDownloaded = false;
+        });
+      }
+      return;
+    }
+
+    try {
+      final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
+      final hasLocalFile = await File(localPath).exists();
+      final langCode = PreferencesService.getLanguage();
+      final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+      final currentSurah = _surahs.firstWhere(
+        (s) => s.order == order,
+        orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0),
+      );
+
+      final mainItem = MediaItem(
+        id: '${_reciterKey!}_$order',
+        title: currentSurah.name,
+        album: reciterName,
+        extras: {'surahOrder': order},
+      );
+
+      final source = hasLocalFile
+          ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
+          : AudioSource.uri(Uri.parse(url), tag: mainItem);
+
+      await _player.setAudioSource(
+        source,
+        initialPosition: startPosition,
+      );
+
+      if (autoPlay) {
+        await _player.play();
+      } else {
+        await _player.pause();
+      }
+
+      if (mounted) {
+        setState(() {
+          _isPlaying = autoPlay;
+          _isBuffering = false;
+          _errorMessage = null;
+        });
+      }
+
+      await PreferencesService.addToHistory(order, _reciterKey!);
+    } catch (e) {
+      debugPrint('Error loading surah audio: $e');
+      if (mounted) {
+        setState(() {
+          _errorMessage = e.toString();
+          _isBuffering = false;
+          _isCurrentSurahDownloaded = false;
+        });
+      }
+    }
+  }
+
+  void _handlePlayerStateChange(PlayerState state) {
+    if (!mounted) return;
+    if (_isPlayerDisposed) return;
+
+    final buffering = state.processingState == ProcessingState.buffering;
+    if (buffering != _isBuffering) {
+      setState(() => _isBuffering = buffering);
+    }
+
+    final playing = state.playing;
+    if (playing != _isPlaying) {
+      setState(() => _isPlaying = playing);
+    }
+
+    if (state.processingState == ProcessingState.completed) {
+      unawaited(_handlePlaybackCompleted());
+    }
+  }
+
+  void _handleProcessingChange(ProcessingState state) {
+    if (!mounted) return;
+    if (_isPlayerDisposed) return;
+    final buffering = state == ProcessingState.buffering;
+    if (buffering != _isBuffering) {
+      setState(() => _isBuffering = buffering);
+    }
+  }
+
+  Future<void> _handlePlaybackCompleted() async {
+    if (_isHandlingCompletion) return;
+    if (_isPlayerDisposed) return;
+    _isHandlingCompletion = true;
+    try {
+      if (_verseByVerseMode && _verseUrls != null && _currentSurah != null) {
+        final total = _currentSurah!.totalVerses;
+        if (_currentVerse < total) {
+          await _playVerse(_currentVerse + 1);
+        } else if (_isRepeat && total > 0) {
+          await _playVerse(1);
+        } else {
+          await _seekToCurrentStart(play: false);
+          setState(() => _isPlaying = false);
+        }
+        return;
+      }
+
+      final nextQueued = _queueService.getNext();
+      if (nextQueued != null) {
+        if (mounted) {
+          setState(() {
+            _queue = _queueService.queue;
+          });
+        }
+        await _playSurah(nextQueued, autoPlay: true, resumePosition: Duration.zero);
+      } else if (_isRepeat) {
+        await _playSurah(_currentOrder, autoPlay: true, resumePosition: Duration.zero);
+      } else if (_autoPlayNext && _currentOrder < 114) {
+        await _playSurah(_currentOrder + 1, autoPlay: true, resumePosition: Duration.zero);
+      } else {
+        await _seekToCurrentStart(play: false);
+        setState(() => _isPlaying = false);
+      }
+    } finally {
+      _isHandlingCompletion = false;
+    }
+  }
+
+  Future<void> _goToNextSurah() async {
+    if (_isPlayerDisposed) return;
+    final nextOrder = (_currentOrder >= 114) ? 114 : _currentOrder + 1;
+    await _playSurah(nextOrder, autoPlay: true, resumePosition: Duration.zero);
+  }
+
+  Future<void> _goToPreviousSurah() async {
+    if (_isPlayerDisposed) return;
+    final prevOrder = (_currentOrder <= 1) ? 1 : _currentOrder - 1;
+    await _playSurah(prevOrder, autoPlay: true, resumePosition: Duration.zero);
+  }
+
+  Future<void> _seekRelative(Duration delta) async {
+    if (_isPlayerDisposed) return;
+    final position = await _player.position;
+    final duration = await _player.duration ?? Duration.zero;
+    final target = position + delta;
+
+    if (target <= Duration.zero) {
+      await _player.seek(Duration.zero);
+    } else if (target >= duration) {
+      await _player.seek(duration);
+    } else {
+      await _player.seek(target);
+    }
+  }
+
+  Future<void> _togglePlayPause() async {
+    if (_isPlayerDisposed) return;
+    if (_player.playing) {
+      await _player.pause();
+    } else {
+      _player.setVolume(_volume);
+      await _player.play();
+    }
+  }
+
+  Future<void> _seekToCurrentStart({required bool play}) async {
+    if (_isPlayerDisposed) return;
+    await _player.seek(Duration.zero);
+    if (play) {
+      await _player.play();
+    } else {
+      await _player.pause();
+    }
+  }
+
+  Future<void> _updateDownloadStatus() async {
+    if (_reciterKey == null || _reciterKey!.isEmpty) return;
+    if (_isPlayerDisposed) return;
+    try {
+      final downloaded = await DownloadService.isSurahDownloaded(_reciterKey!, _currentOrder);
+    if (mounted) {
+        setState(() => _isCurrentSurahDownloaded = downloaded);
+      }
+    } catch (e) {
+      debugPrint('Error checking download status: $e');
+    }
+  }
+
+  Future<Duration?> _loadBookmarkFor(int order) async {
+    final saved = await PreferencesService.getBookmark(order);
+    final duration = saved != null ? Duration(seconds: saved) : null;
+    if (order == _currentOrder) {
+      setState(() => _bookmarkPosition = duration);
+    }
+    return duration;
+  }
+
+  Future<void> _toggleBookmark() async {
+    if (_isPlayerDisposed) return;
+    final position = await _player.position;
+    if (_hasBookmark) {
+      await PreferencesService.removeBookmark(_currentOrder);
+      if (mounted) {
+        setState(() => _bookmarkPosition = null);
+      }
+    } else {
+      await PreferencesService.saveBookmark(_currentOrder, position.inSeconds);
+      if (mounted) {
+        setState(() => _bookmarkPosition = position);
+      }
+    }
+  }
+
+  Future<void> _jumpToBookmark() async {
+    if (_isPlayerDisposed) return;
+    if (_bookmarkPosition != null) {
+      await _player.seek(_bookmarkPosition!);
+    }
+  }
+
+  Future<void> _promptDownloadCurrentSurah() async {
+    if (_reciterKey == null || _reciterKey!.isEmpty) return;
+    final l10n = AppLocalizations.of(context)!;
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(l10n.downloadCurrentSurahTitle),
+          content: Text(l10n.downloadCurrentSurahMessage),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, false),
+              child: Text(l10n.cancel),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pop(context, true),
+              child: Text(l10n.download),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (confirmed != true || !mounted) return;
+
+    setState(() => _isDownloadingCurrentSurah = true);
+    String? errorMessage;
+
+    final result = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (dialogContext) {
+        Future.microtask(() async {
+          try {
+            await DownloadService.downloadSurah(_reciterKey!, _currentOrder);
+            if (Navigator.of(dialogContext).canPop()) {
+              Navigator.of(dialogContext).pop(true);
+            }
+          } catch (e) {
+            errorMessage = e.toString();
+            if (Navigator.of(dialogContext).canPop()) {
+              Navigator.of(dialogContext).pop(false);
+            }
+          }
+        });
+
+        return AlertDialog(
+          title: Text(l10n.downloadingSurah),
+          content: const SizedBox(
+            height: 48,
+            child: Center(child: CircularProgressIndicator()),
+          ),
+        );
+      },
+    );
+
+    if (!mounted) return;
+
+    setState(() {
+      _isDownloadingCurrentSurah = false;
+      if (result == true) {
+        _isCurrentSurahDownloaded = true;
+      }
+    });
+
+    if (result == true) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.downloadComplete)),
+      );
+    } else if (result == false) {
+      final message = (errorMessage != null && errorMessage!.isNotEmpty)
+          ? '${l10n.downloadFailed}: $errorMessage'
+          : l10n.downloadFailed;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message)),
+      );
+    }
+  }
+
+  void _showSpeedDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return AlertDialog(
+          title: Text(l10n.playbackSpeed),
+          content: StatefulBuilder(
+            builder: (context, setDialogState) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Slider(
+                    value: _playbackSpeed,
+                    min: 0.5,
+                    max: 2.0,
+                    divisions: 6,
+                    label: '${_playbackSpeed.toStringAsFixed(1)}x',
+                    onChanged: (value) {
+                      setDialogState(() => _playbackSpeed = value);
+                        _player.setSpeed(value);
+                    },
+                  ),
+                  Text('${_playbackSpeed.toStringAsFixed(1)}x'),
+                ],
+              );
+            },
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showSleepTimerDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (dialogContext) {
+        final l10n = AppLocalizations.of(context)!;
+        int? tempSelected = _sleepTimerMinutes;
+
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            return AlertDialog(
+              title: Text(l10n.sleepTimer),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RadioListTile<int?>(
+                    title: Text(l10n.off),
+                    value: null,
+                    groupValue: tempSelected,
+                    onChanged: (value) => setDialogState(() => tempSelected = value),
+                  ),
+                  RadioListTile<int?>(
+                    title: Text('15 ${l10n.minutes}'),
+                    value: 15,
+                    groupValue: tempSelected,
+                    onChanged: (value) => setDialogState(() => tempSelected = value),
+                  ),
+                  RadioListTile<int?>(
+                    title: Text('30 ${l10n.minutes}'),
+                    value: 30,
+                    groupValue: tempSelected,
+                    onChanged: (value) => setDialogState(() => tempSelected = value),
+                  ),
+                  RadioListTile<int?>(
+                    title: Text('60 ${l10n.minutes}'),
+                    value: 60,
+                    groupValue: tempSelected,
+                    onChanged: (value) => setDialogState(() => tempSelected = value),
+                  ),
+                  RadioListTile<int?>(
+                    title: Text('90 ${l10n.minutes}'),
+                    value: 90,
+                    groupValue: tempSelected,
+                    onChanged: (value) => setDialogState(() => tempSelected = value),
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    _setSleepTimer(null);
+                    Navigator.pop(dialogContext);
+                  },
+                  child: Text(l10n.off),
+                ),
+                TextButton(
+                  onPressed: () {
+                    _setSleepTimer(tempSelected);
+                    Navigator.pop(dialogContext);
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+  }
+
+  void _setSleepTimer(int? minutes) {
+    _sleepTimer?.cancel();
+    if (minutes == null) {
+      setState(() {
+        _sleepTimer = null;
+        _sleepTimerMinutes = null;
+      });
+      return;
+    }
+
+    setState(() => _sleepTimerMinutes = minutes);
+    _sleepTimer = Timer(Duration(minutes: minutes), () async {
+      await _player.pause();
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.sleepTimerEnded)),
+        );
+      }
+    });
+  }
+
+  Future<void> _share(BuildContext context) async {
+    if (_reciterKey == null || _reciterKey!.isEmpty) return;
+
+    final langCode = PreferencesService.getLanguage();
+    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+    final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
+    final url = AudioService.buildFullRecitationUrl(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: _currentOrder,
+    );
+
+    if (url != null) {
+      await Clipboard.setData(ClipboardData(text: '$surahName - $reciterName\n$url'));
+    if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.copiedToClipboard)),
+        );
+      }
+    }
+  }
+
+  Future<void> _loadVerseUrls(int surahOrder) async {
+    if (_reciterKey == null || _reciterKey!.isEmpty) return;
+    final surah = _currentSurah;
+    if (surah == null) return;
+    
+    _verseUrls = AudioService.buildVerseUrls(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: surahOrder,
+      totalVerses: surah.totalVerses,
+    );
+  }
+
+  Future<void> _playVerse(int verseNumber) async {
+    if (_isPlayerDisposed) return;
+    if (_verseUrls == null ||
+        verseNumber < 1 ||
+        verseNumber > (_verseUrls?.length ?? 0) ||
+        _reciterKey == null ||
+        _reciterKey!.isEmpty) {
+      return;
+    }
+
+    final surah = _currentSurah;
+    if (surah == null) return;
+    if (_isPlayerDisposed) return;
+
+    final url = _verseUrls![verseNumber - 1];
+    final langCode = PreferencesService.getLanguage();
+    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+
+    final mediaItem = MediaItem(
+      id: '${_reciterKey!}_${surah.order}_verse_$verseNumber',
+      title: '${surah.name} • Ayah $verseNumber',
+      album: reciterName,
+      extras: {
+        'surahOrder': surah.order,
+        'verse': verseNumber,
+        'verseMode': true,
+      },
+    );
+
+    try {
+      await _player.setAudioSource(
+        AudioSource.uri(Uri.parse(url), tag: mediaItem),
+      );
+      await _player.setLoopMode(LoopMode.off);
+      await _player.play();
+      if (mounted) {
+        setState(() {
+          _currentVerse = verseNumber;
+          _isPlaying = true;
+        });
+      }
+    } catch (e) {
+      debugPrint('Error playing verse: $e');
+      if (mounted) {
+        setState(() => _errorMessage = e.toString());
+      }
+    }
+  }
+
+  Surah? get _currentSurah =>
+      _surahs.where((s) => s.order == _currentOrder).cast<Surah?>().firstOrNull;
+
+  Surah? _findSurah(int order) {
+    for (final surah in _surahs) {
+      if (surah.order == order) return surah;
+    }
+    return null;
+  }
+
+  Future<void> _toggleFeature(int order) async {
+    final featured = await PreferencesService.toggleListenFeaturedSurah(order);
+    if (!mounted) return;
+    setState(() {
+      if (featured) {
+        _featuredListenSurahs.add(order);
+      } else {
+        _featuredListenSurahs.remove(order);
+      }
+    });
+  }
+
+  void _toggleQueueEntry(int order) {
+    final inQueue = _queue.contains(order);
+    if (inQueue) {
+      _queueService.removeFromQueue(order);
+    } else {
+      _queueService.addToQueue(order);
+    }
+  }
+
+  Widget _buildTransportControls({required bool isRtl, required ColorScheme color}) {
+    final controls = <Widget>[
+    IconButton(
+      icon: Icon(isRtl ? Icons.skip_next_rounded : Icons.skip_previous_rounded),
+        iconSize: 32,
+        onPressed: _goToPreviousSurah,
+      ),
+      const SizedBox(width: 8),
+    IconButton(
+      icon: Icon(isRtl ? Icons.forward_10 : Icons.replay_10),
+        iconSize: 28,
+        onPressed: () => _seekRelative(const Duration(seconds: -10)),
+      ),
+      const SizedBox(width: 8),
+      StreamBuilder<PlayerState>(
+        stream: _player.playerStateStream,
+        builder: (context, snapshot) {
+          final playing = snapshot.data?.playing ?? false;
+          return TweenAnimationBuilder<double>(
+            tween: Tween(begin: 0.95, end: playing ? 1.05 : 1.0),
+            duration: const Duration(milliseconds: 200),
+            builder: (context, scale, child) {
+              return Transform.scale(
+                scale: scale,
+                child: IconButton(
+                  icon: Icon(playing ? Icons.pause_circle_filled : Icons.play_circle_fill),
+                  iconSize: 44,
+                  color: color.primary,
+                  onPressed: _togglePlayPause,
+                ),
+              );
+            },
+          );
+        },
+      ),
+      const SizedBox(width: 8),
+    IconButton(
+      icon: Icon(isRtl ? Icons.replay_10 : Icons.forward_10),
+        iconSize: 28,
+        onPressed: () => _seekRelative(const Duration(seconds: 10)),
+      ),
+      const SizedBox(width: 8),
+    IconButton(
+      icon: Icon(isRtl ? Icons.skip_previous_rounded : Icons.skip_next_rounded),
+        iconSize: 32,
+        onPressed: _goToNextSurah,
+      ),
+    ];
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: controls,
+  );
+  }
+
+  Widget _buildVerseControls(ColorScheme color, bool isRtl) {
+    if (!_verseByVerseMode || _verseUrls == null || _currentSurah == null) {
+      return const SizedBox.shrink();
+    }
+
+    final total = _currentSurah!.totalVerses;
+    return Padding(
+      padding: const EdgeInsets.only(top: 16),
+                  child: Container(
+        padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+          color: color.surfaceContainerHighest,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          children: [
+            Text(
+              '${AppLocalizations.of(context)!.currentVerse}: $_currentVerse / ${_currentSurah!.totalVerses}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: color.onSurface,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: isRtl
+                  ? [
+                      IconButton(
+                        icon: const Icon(Icons.skip_next),
+                        onPressed: _currentVerse > 1 ? () => _playVerse(_currentVerse - 1) : null,
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: Slider(
+                          value: _currentVerse.toDouble(),
+                          min: 1,
+                          max: total.toDouble(),
+                          divisions: total - 1,
+                          label: '$_currentVerse',
+                          onChanged: (value) => _playVerse(value.toInt()),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+          IconButton(
+                        icon: const Icon(Icons.skip_previous),
+                        onPressed: _currentVerse < total ? () => _playVerse(_currentVerse + 1) : null,
+                      ),
+                    ]
+                  : [
+                      IconButton(
+                        icon: const Icon(Icons.skip_previous),
+                        onPressed: _currentVerse > 1 ? () => _playVerse(_currentVerse - 1) : null,
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: Slider(
+                          value: _currentVerse.toDouble(),
+                          min: 1,
+                          max: total.toDouble(),
+                          divisions: total - 1,
+                          label: '$_currentVerse',
+                          onChanged: (value) => _playVerse(value.toInt()),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      IconButton(
+                        icon: const Icon(Icons.skip_next),
+                        onPressed: _currentVerse < total ? () => _playVerse(_currentVerse + 1) : null,
+          ),
+        ],
+      ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBody(ColorScheme color, bool isRtl, String title, String reciterName) {
+    final l10n = AppLocalizations.of(context)!;
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+            child: _buildTopSection(color, isRtl, title, reciterName),
+          ),
+        ),
+        if (_queue.isNotEmpty)
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+              child: _buildQueueSection(color),
+            ),
+          ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(
+                '${l10n.listenQuran} (${l10n.queue})',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  color: color.onSurface,
+                ),
+              ),
+            ),
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              final surah = _surahs[index];
+              return _buildPlaylistTile(surah, color, isRtl);
+            },
+            childCount: _surahs.length,
+          ),
+        ),
+        const SliverPadding(padding: EdgeInsets.only(bottom: 32)),
+      ],
+    );
+  }
+
+  Widget _buildTopSection(ColorScheme color, bool isRtl, String title, String reciterName) {
+    final l10n = AppLocalizations.of(context)!;
+    final durationStream = StreamBuilder<Duration?>(
+      stream: _player.durationStream,
+      builder: (context, snapshot) {
+        final duration = _currentTrackDuration ?? snapshot.data ?? Duration.zero;
+        return StreamBuilder<Duration>(
+          stream: _player.positionStream,
+          builder: (context, snap) {
+            final pos = snap.data ?? Duration.zero;
+            final double maxPosition = duration.inMilliseconds > 0
+                ? duration.inMilliseconds.toDouble()
+                : 1.0;
+            final double sliderValue = duration.inMilliseconds > 0
+                ? pos.inMilliseconds.clamp(0, duration.inMilliseconds).toDouble()
+                : 0.0;
+            return Column(
+              children: [
+                Slider(
+                  min: 0,
+                  max: maxPosition,
+                  value: sliderValue,
+                  onChanged: (value) =>
+                      _player.seek(Duration(milliseconds: value.toInt())),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      _fmt(pos),
+                      style: TextStyle(color: color.onSurface.withOpacity(0.7)),
+                    ),
+                    Text(
+                      _fmt(duration),
+                      style: TextStyle(color: color.onSurface.withOpacity(0.7)),
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (_errorMessage != null)
+          Container(
+            padding: const EdgeInsets.all(12),
+            margin: const EdgeInsets.only(bottom: 12),
+            decoration: BoxDecoration(
+              color: color.errorContainer,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    _errorMessage!,
+                    style: TextStyle(color: color.onErrorContainer),
+                  ),
+                ),
+                TextButton(
+                  onPressed: _retry,
+                  child: Text(l10n.retry),
+                ),
+              ],
+            ),
+          ),
+        if (_isBuffering)
+          LinearProgressIndicator(
+            backgroundColor: color.surfaceContainerHighest,
+            valueColor: AlwaysStoppedAnimation<Color>(color.primary),
+          ),
+        Padding(
+          padding: const EdgeInsets.only(top: 8, bottom: 4),
+          child: Center(
+            child: Text(
+              title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+        durationStream,
+        if (reciterName.isNotEmpty)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+            child: Center(
+              child: Text(
+                reciterName,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+              ),
+            ),
+          ),
+        const SizedBox(height: 8),
+        SoundEqualizer(
+          player: _player,
+          height: _equalizerHeight,
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            IconButton(
+              icon: Icon(
+                _volume == 0.0
+                    ? Icons.volume_off
+                    : _volume < 0.5
+                        ? Icons.volume_down
+                        : Icons.volume_up,
+              ),
+              iconSize: 24,
+              onPressed: () {
+                setState(() {
+                  _volume = _volume > 0.0 ? 0.0 : 1.0;
+                  _player.setVolume(_volume);
+                });
+              },
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Slider(
+                value: _volume,
+                min: 0.0,
+                max: 1.0,
+                onChanged: (value) {
+                  setState(() => _volume = value);
+                  _player.setVolume(value);
+                },
+              ),
+            ),
+            const SizedBox(width: 12),
+            SizedBox(
+              width: 50,
+              child: Text(
+                '${(_volume * 100).toInt()}%',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: color.onSurface.withOpacity(0.7),
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        _buildTransportControls(isRtl: isRtl, color: color),
+        const SizedBox(height: 16),
+        Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 12,
+          runSpacing: 8,
+          children: [
+            FilterChip(
+              label: Text(l10n.repeatSurah),
+              selected: _isRepeat,
+              onSelected: (value) {
+                setState(() {
+                  _isRepeat = value;
+                  if (value) {
+                    _verseByVerseMode = false;
+                    _autoPlayNext = false;
+                  }
+                });
+              },
+            ),
+            FilterChip(
+              label: Text(l10n.autoPlayNext),
+              selected: _autoPlayNext,
+              onSelected: (value) {
+                setState(() {
+                  _autoPlayNext = value;
+                  if (value) {
+                    _isRepeat = false;
+                    _verseByVerseMode = false;
+                  }
+                });
+              },
+            ),
+            FilterChip(
+              label: Text(l10n.verseByVerse),
+              selected: _verseByVerseMode,
+              onSelected: (value) async {
+                if (value) {
+                  final currentPos = await _player.position;
+                  setState(() {
+                    _savedSurahPositionBeforeVerseMode = currentPos;
+                    _verseByVerseMode = true;
+                    _isRepeat = false;
+                    _autoPlayNext = false;
+                    _currentVerse = 1;
+                  });
+                  await _loadVerseUrls(_currentOrder);
+                  if (_verseUrls != null && _verseUrls!.isNotEmpty) {
+                    await _playVerse(1);
+                  }
+                } else {
+                  final resume = _savedSurahPositionBeforeVerseMode;
+                  setState(() {
+                    _verseByVerseMode = false;
+                    _verseUrls = null;
+                    _currentVerse = 1;
+                  });
+                  await _playSurah(
+                    _currentOrder,
+                    autoPlay: _player.playing,
+                    resumePosition: resume,
+                  );
+                  setState(() => _savedSurahPositionBeforeVerseMode = null);
+                }
+              },
+            ),
+          ],
+        ),
+        _buildVerseControls(color, isRtl),
+        if (_hasBookmark && _bookmarkPosition != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 12),
+            child: OutlinedButton.icon(
+              onPressed: _jumpToBookmark,
+              icon: const Icon(Icons.bookmark),
+              label: Text('${l10n.bookmarked} - ${_fmt(_bookmarkPosition!)}'),
+            ),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildQueueSection(ColorScheme color) {
+    final l10n = AppLocalizations.of(context)!;
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: color.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  l10n.queue,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    color: color.onSurface,
+                  ),
+                ),
+              ),
+              TextButton.icon(
+                onPressed: _queue.isEmpty
+                    ? null
+                    : () {
+                        _queueService.clearQueue();
+                      },
+                icon: const Icon(Icons.clear_all, size: 18),
+                label: Text(l10n.clearQueue),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: _queue.map((order) {
+              final surah = _findSurah(order);
+              final isCurrent = order == _currentOrder;
+              final label = surah != null
+                  ? '${surah.order}. ${surah.name}'
+                  : '${AppLocalizations.of(context)!.surah} $order';
+              return InputChip(
+                label: Text(label),
+                selected: isCurrent,
+                onPressed: () => _playSurah(order,
+                    autoPlay: true, resumePosition: Duration.zero),
+                onDeleted: () => _queueService.removeFromQueue(order),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPlaylistTile(Surah surah, ColorScheme color, bool isRtl) {
+    final l10n = AppLocalizations.of(context)!;
+    final isCurrent = surah.order == _currentOrder;
+    final isFeatured = _featuredListenSurahs.contains(surah.order);
+    final inQueue = _queue.contains(surah.order);
+    final backgroundColor = isCurrent
+        ? color.primaryContainer.withOpacity(0.5)
+        : color.surface;
+    final textAlign = isRtl ? TextAlign.right : TextAlign.left;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      child: Material(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(12),
+        child: ListTile(
+          onTap: () =>
+              _playSurah(surah.order, autoPlay: true, resumePosition: Duration.zero),
+          title: Text(
+            '${surah.order}. ${surah.name}',
+            textAlign: textAlign,
+            style: TextStyle(
+              fontWeight: isCurrent ? FontWeight.w700 : FontWeight.w500,
+              color: color.onSurface,
+            ),
+          ),
+          subtitle: Text(
+            '${surah.totalVerses} ${l10n.verses}',
+            textAlign: textAlign,
+            style: TextStyle(color: color.onSurface.withOpacity(0.6)),
+          ),
+          trailing: Wrap(
+            spacing: 4,
+            children: [
+              IconButton(
+                icon: Icon(
+                  inQueue ? Icons.playlist_remove : Icons.playlist_add,
+                ),
+                tooltip: inQueue ? l10n.clearQueue : l10n.addToQueue,
+                onPressed: () => _toggleQueueEntry(surah.order),
+              ),
+              IconButton(
+                icon: Icon(
+                  isFeatured ? Icons.star : Icons.star_border,
+                  color: Colors.amber.shade600,
+                ),
+                tooltip:
+                    isFeatured ? l10n.removeFeatureSurah : l10n.featureSurah,
+                onPressed: () => _toggleFeature(surah.order),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _retry() {
+    unawaited(_playSurah(_currentOrder, autoPlay: _player.playing));
+  }
+
+  String _fmt(Duration duration) {
+    final minutes = duration.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final seconds = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
+    return '${duration.inHours > 0 ? '${duration.inHours.toString().padLeft(2, '0')}:' : ''}$minutes:$seconds';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final color = Theme.of(context).colorScheme;
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+    final surahTitle = _currentSurah?.name ?? 'Surah $_currentOrder';
+    final langCode = Localizations.localeOf(context).languageCode;
+    final reciterName = _reciterKey != null && _reciterKey!.isNotEmpty
+        ? AudioService.reciterDisplayName(_reciterKey!, langCode)
+        : '';
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('', style: Theme.of(context).textTheme.titleLarge),
+        backgroundColor: color.primary,
+        foregroundColor: color.onPrimary,
+        actions: [
+          if (!_isCurrentSurahDownloaded)
+            _isDownloadingCurrentSurah
+                ? const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                    child: SizedBox(
+                      width: 18,
+                      height: 18,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                  )
+                : IconButton(
+                    icon: const Icon(Icons.download),
+                    tooltip: l10n.download,
+                    onPressed: _promptDownloadCurrentSurah,
+                  ),
+          IconButton(
+            icon: const Icon(Icons.speed),
+            tooltip: l10n.playbackSpeed,
+            onPressed: () => _showSpeedDialog(context),
+          ),
+                                IconButton(
+            icon: Icon(_sleepTimerMinutes != null ? Icons.timer : Icons.timer_outlined),
+            tooltip: l10n.sleepTimer,
+            onPressed: () => _showSleepTimerDialog(context),
+          ),
+                                IconButton(
+            icon: Icon(_hasBookmark ? Icons.bookmark : Icons.bookmark_border),
+            tooltip: _hasBookmark ? l10n.bookmarked : l10n.bookmark,
+            onPressed: _toggleBookmark,
+          ),
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: l10n.share,
+            onPressed: () => _share(context),
+          ),
+        ],
+      ),
+      body: _surahs.isEmpty
+          ? const Center(child: CircularProgressIndicator())
+          : _buildBody(color, isRtl, surahTitle, reciterName),
+    );
+  }
+}
+
+/// Silent audio source used as placeholders for previous/next actions.
+extension<E> on Iterable<E> {
+  E? get firstOrNull => isEmpty ? null : first;
+}
+
+

@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 307,
+    "ayahs": [
+      {
+        "number": 2276,
+        "text": "Eat and drink, and be at peace. If you see any man, tell him: 'I have verily vowed a fast to Ar-Rahman and cannot speak to any one this day.'",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 26,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2277,
+        "text": "Then she brought the child to her people. They exclaimed: \"O Mary, you have done a most astonishing thing!",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 27,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2278,
+        "text": "O sister of Aaron, your father was not a wicked person, nor your mother sinful!\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 28,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2279,
+        "text": "But she pointed towards him. \"How can we talk to one,\" they said, \"who is only an infant in the cradle?\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 29,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2280,
+        "text": "\"I am a servant of God,\" he answered. \"He has given me a Book and made me a prophet,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 30,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2281,
+        "text": "And blessed me wherever I may be, and enjoined on me worship and zakat for as long as I live,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 31,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2282,
+        "text": "And be dutiful to my mother. He has not made me haughty or rebellious.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 32,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2283,
+        "text": "There was peace on me the day I was born, and will be the day I die, and on the day I will be raised from the dead.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 33,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2284,
+        "text": "This was Jesus, son of Mary: A true account they contend about.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 34,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2285,
+        "text": "It does not behove God to have a son. Too immaculate is He! When He decrees a thing He has only to say: \"Be\", and it is.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 35,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2286,
+        "text": "(Jesus only said:) \"Surely God is my Lord and your Lord, so worship Him. This is the straight path.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 36,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2287,
+        "text": "Yet the sectarians differed among themselves. Alas for the unbelievers when they see the Terrible Day!",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 37,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2288,
+        "text": "How keenly would they hear and see when they come before Us then, even though today the evil-doers are lost in palpable error.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 38,
+        "juz": 16,
+        "manzil": 4,
+        "page": 307,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

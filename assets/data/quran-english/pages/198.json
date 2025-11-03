@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 198,
+    "ayahs": [
+      {
+        "number": 1304,
+        "text": "Like those before you who were greater in strength, had more wealth and children than you, who enjoyed their lot in this world, as you have enjoyed your share like them. You indulge in idle talk, as they had indulged in vain discourse. Yet nothing of what they did remains in this world or will in the next, and they are the losers.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 69,
+        "juz": 10,
+        "manzil": 2,
+        "page": 198,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1305,
+        "text": "Has not the account of those before them come to them, -- of the people of Noah and 'Ad and Thamud, of Abraham and Midian, and all the habitations that were destroyed? Their apostles had come to them with clear proofs; and God did not surely wrong them, they wronged themselves.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 70,
+        "juz": 10,
+        "manzil": 2,
+        "page": 198,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1306,
+        "text": "Those who believe, men and women, befriend one another, and enjoin what is right and prohibit what is wrong. They observe their devotional obligations, pay the zakat, and obey God and His Apostle. God will be merciful to them, for God is all-mighty and all-wise.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 71,
+        "juz": 10,
+        "manzil": 2,
+        "page": 198,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1307,
+        "text": "God has promised men and women who believe gardens with streams of running water where they will abide for ever, and beautiful mansions in the Garden of Eden, and the blessings of God above all. That will be happiness supreme.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 72,
+        "juz": 10,
+        "manzil": 2,
+        "page": 198,
+        "ruku": 164,
+        "hizbQuarter": 79,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

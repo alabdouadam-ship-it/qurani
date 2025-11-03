@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 303,
+    "ayahs": [
+      {
+        "number": 2224,
+        "text": "إنا مكَّنَّا له في الأرض، وآتيناه من كل شيء أسبابًا وطرقًا، يتوصل بها إلى ما يريد مِن فَتْح المدائن وقهر الأعداء وغير ذلك.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 84,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2225,
+        "text": "فأخذ بتلك الأسباب والطرق بجد واجتهاد.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 85,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2226,
+        "text": "حتى إذا وصل ذو القرنين إلى مغرب الشمس وجدها في مرأى العين كأنها تغرب في عين حارة ذات طين أسود، ووجد عند مغربها قومًا. قلنا: يا ذا القرنين إما أن تعذبهم بالقتل أو غيره، إن لم يقروا بتوحيد الله، وإما أن تحسن إليهم، فتعلمهم الهدى وتبصرهم الرشاد.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 86,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2227,
+        "text": "قال ذو القرنين: أمَّا مَن ظلم نفسه منهم فكفر بربه، فسوف نعذبه في الدنيا، ثم يرجع إلى ربه، فيعذبه عذابًا عظيمًا في نار جهنم.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 87,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2228,
+        "text": "وأما مَن آمن منهم بربه فصدَّق به ووحَّده وعمل بطاعته فله الجنة ثوابًا من الله، وسنحسن إليه، ونلين له في القول ونيسِّر له المعاملة.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 88,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2229,
+        "text": "ثم رجع ذو القرنين إلى المشرق متبعًا الأسباب التي أعطاه الله إياها.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 89,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2230,
+        "text": "حتى إذا وصل إلى مطلع الشمس وجدها تطلع على قوم ليس لهم بناء يسترهم، ولا شجر يظلهم من الشمس.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 90,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2231,
+        "text": "كذلك وقد أحاط عِلْمُنا بما عنده من الخير والأسباب العظيمة، حيثما توجَّه وسار.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 91,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2232,
+        "text": "ثم سار ذو القرنين آخذًا بالطرق والأسباب التي منحناها إياه.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 92,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2233,
+        "text": "حتى إذا وصل إلى ما بين الجبلين الحاجزين لما وراءهما، وجد من دونهما قومًا، لا يكادون يعرفون كلام غيرهم.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 93,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2234,
+        "text": "قالوا يا ذا القرنين: إنَّ يأجوج ومأجوج -وهما أمَّتان عظيمتان من بني آدم- مفسدون في الأرض بإهلاك الحرث والنسل، فهل نجعل لك أجرًا، ونجمع لك مالا على أن تجعل بيننا وبينهم حاجزًا يحول بيننا وبينهم؟",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 94,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2235,
+        "text": "قال ذو القرنين: ما أعطانيه ربي من الملك والتمكين خير لي مِن مالكم، فأعينوني بقوة منكم أجعل بينكم وبينهم سدًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 95,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2236,
+        "text": "أعطوني قطع الحديد، حتى إذا جاؤوا به ووضعوه وحاذوا به جانبي الجبلين، قال للعمال: أجِّجوا النار، حتى إذا صار الحديد كله نارًا، قال: أعطوني نحاسًا أُفرغه عليه.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 96,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2237,
+        "text": "فما استطاعت يأجوج ومأجوج أن تصعد فوق السد؛ لارتفاعه وملاسته، وما استطاعوا أن ينقبوه من أسفله لبعد عرضه وقوته.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 97,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

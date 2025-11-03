@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 399,
+    "ayahs": [
+      {
+        "number": 3364,
+        "text": "فلم يكن جواب قوم إبراهيم له إلا أن قال بعضهم لبعض: اقتلوه أو حرِّقوه بالنار، فألقوه فيها، فأنجاه الله منها، وجعلها عليه بردًا وسلامًا، إن في إنجائنا لإبراهيم من النار لأدلة وحججًا لقوم يصدِّقون الله ويعملون بشرعه.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 24,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3365,
+        "text": "وقال إبراهيم لقومه: يا قوم إنما عبدتم من دون الله آلهة باطلة، اتخذتموها مودة بينكم في الحياة الدنيا، تتحابون على عبادتها، وتتوادون على خدمتها، ثم يوم القيامة، يتبرأ بعضكم من بعض، ويلعن بعضكم بعضًا، ومصيركم جميعًا النار، وليس لكم ناصر يمنعكم من دخولها.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 25,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3366,
+        "text": "فصدَّق لوطٌ إبراهيمَ وتبع ملته. وقال إبراهيم: إني تارك دار قومي إلى الأرض المباركة وهي \"الشام\"، إن الله هو العزيز الذي لا يُغَالَب، الحكيم في تدبيره.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 26,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 160,
+        "sajda": false
+      },
+      {
+        "number": 3367,
+        "text": "ووهبنا له إسحاق ولدًا، ويعقوب من بعده وَلَدَ وَلَدٍ، وجعلنا في ذريته الأنبياء والكتب، وأعطيناه ثواب بلائه فينا، في الدنيا الذكر الحسن والولد الصالح، وإنه في الآخرة لمن الصالحين.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 27,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 160,
+        "sajda": false
+      },
+      {
+        "number": 3368,
+        "text": "واذكر -أيها الرسول- لوطًا حين قال لقومه: إنكم لتأتون الفعلة القبيحة، ما تَقَدَّمكم بفعلها أحد من العالمين، أإنكم لتأتون الرجال في أدبارهم، وتقطعون على المسافرين طرقهم بفعلكم الخبيث، وتأتون في مجالسكم الأعمال المنكرة كالسخرية من الناس، وحذف المارة، وإيذائهم بما لا يليق من الأقوال والأفعال؟ وفي هذا إعلام بأنه لا يجوز أن يجتمع الناس على المنكر مما نهى الله ورسوله عنه. فلم يكن جواب قوم لوط له إلا أن قالوا: جئنا بعذاب الله إن كنت من الصادقين فيما تقول، والمنجزين لما تَعِد.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 28,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 160,
+        "sajda": false
+      },
+      {
+        "number": 3369,
+        "text": "واذكر -أيها الرسول- لوطًا حين قال لقومه: إنكم لتأتون الفعلة القبيحة، ما تَقَدَّمكم بفعلها أحد من العالمين، أإنكم لتأتون الرجال في أدبارهم، وتقطعون على المسافرين طرقهم بفعلكم الخبيث، وتأتون في مجالسكم الأعمال المنكرة كالسخرية من الناس، وحذف المارة، وإيذائهم بما لا يليق من الأقوال والأفعال؟ وفي هذا إعلام بأنه لا يجوز أن يجتمع الناس على المنكر مما نهى الله ورسوله عنه. فلم يكن جواب قوم لوط له إلا أن قالوا: جئنا بعذاب الله إن كنت من الصادقين فيما تقول، والمنجزين لما تَعِد.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 29,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 160,
+        "sajda": false
+      },
+      {
+        "number": 3370,
+        "text": "قال: رب انصرني على القوم المفسدين بإنزال العذاب عليهم؛ حيث ابتدعوا الفاحشة وأصرُّوا عليها، فاستجاب الله دعاءه.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 30,
+        "juz": 20,
+        "manzil": 5,
+        "page": 399,
+        "ruku": 344,
+        "hizbQuarter": 160,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "29": {
+        "number": 29,
+        "name": "سُورَةُ العَنكَبُوتِ",
+        "englishName": "Al-Ankaboot",
+        "englishNameTranslation": "The Spider",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 69
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

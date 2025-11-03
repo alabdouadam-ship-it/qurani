@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 500,
+    "ayahs": [
+      {
+        "number": 4487,
+        "text": "Dis à ceux qui ont cru de pardonner à ceux qui n'espèrent pas les jours d'Allah afin qu'Il rétribue [chaque] peuple pour les acquis qu'ils faisaient.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 14,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4488,
+        "text": "Quiconque fait le bien, le fait pour lui-même; et quiconque agit mal, agit contre lui-même. Puis vous serez ramenés vers votre Seigneur,",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 15,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4489,
+        "text": "Nous avons effectivement apporté aux Enfants d'Israël le Livre, la sagesse, la prophétie, et leur avons attribué de bonnes choses, et les préférâmes aux autres humains [leurs contemporains];",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 16,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4490,
+        "text": "Et Nous leur avons apporté des preuves évidentes de l'Ordre. Ils ne divergèrent qu'après que la science leur fut venue par agressivité entre eux. Ton Seigneur décidera parmi eux, au Jour de la Résurrection, sur ce en quoi ils divergeaient.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 17,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4491,
+        "text": "Puis Nous t'avons mis sur la voie de l'Ordre [une religion claire et parfaite]. Suis-la donc et ne suis pas les passions de ceux qui ne savent pas.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 18,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4492,
+        "text": "Ils ne te seront d'aucune utilité vis-à-vis d'Allah. Les injustes sont vraiment alliés les uns des autres; tandis qu'Allah est le Protecteur des pieux.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 19,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4493,
+        "text": "Ceci [le Coran] constitue pour les hommes une source de clarté, un guide et une miséricorde pour des gens qui croient avec certitude.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 20,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4494,
+        "text": "Ceux qui commettent des mauvaises actions comptent-ils que Nous allons les traiter comme ceux qui croient et accomplissent les bonnes œuvres, dans leur vie et dans leur mort? Comme ils jugent mal!",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 21,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4495,
+        "text": "Et Allah a créé les cieux et la terre en toute vérité et afin que chaque âme soit rétribuée selon ce qu'elle a acquis. Ils ne seront cependant pas lésés.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 22,
+        "juz": 25,
+        "manzil": 6,
+        "page": 500,
+        "ruku": 436,
+        "hizbQuarter": 200,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "45": {
+        "number": 45,
+        "name": "سُورَةُ الجَاثِيَةِ",
+        "englishName": "Al-Jaathiya",
+        "englishNameTranslation": "Crouching",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 37
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

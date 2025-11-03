@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 144,
+    "ayahs": [
+      {
+        "number": 914,
+        "text": "Et puis, quiconque Allah veut guider, Il lui ouvre la poitrine à l'Islam. Et quiconque Il veut égarer, Il rend sa poitrine étroite et gênée, comme s'il s'efforçait de monter au ciel. Ainsi Allah inflige Sa punition à ceux qui ne croient pas.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 125,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 57,
+        "sajda": false
+      },
+      {
+        "number": 915,
+        "text": "Telle est la voie de ton Seigneur dans toute sa rectitude. Nous avons [effectivement] bien détaillé les signes (ou versets) à des gens qui se rappellent.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 126,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 57,
+        "sajda": false
+      },
+      {
+        "number": 916,
+        "text": "Pour eux la maison du Salut auprès de leur Seigneur. Et c'est Lui qui est leur protecteur, pour ce qu'ils faisaient (sur terre).",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 127,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 917,
+        "text": "Et le jour où Il les rassemblera tous: «O communauté des djinns, vous avez trop abusé des humains». Et leurs alliés parmi les humains diront: «O notre Seigneur, nous avons profité les uns des autres, et nous avons atteint le terme que Tu avais fixé pour nous.» Il leur dira: «l'Enfer est votre demeure, pour y rester éternellement, sauf si Allah en décide autrement.» Vraiment ton Seigneur est Sage et Omniscient.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 128,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 918,
+        "text": "Et ainsi accordons-Nous, à certains injustes l'autorité sur d'autres, (injustes) à cause de ce qu'ils ont acquis.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 129,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 116,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 919,
+        "text": "O communauté des djinns et des humains, ne vous est-il pas venu des messagers, choisis parmi vous, qui vous ont raconté Mes signes et averti de la rencontre de ce jour? Ils diront: «Nous témoignons contre nous-mêmes.» La vie présente les a trompés; et ils ont témoigné contre eux-mêmes qu'en (vérité) ils étaient mécréants.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 130,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 920,
+        "text": "C'est que ton Seigneur n'anéantit point injustement des cités dont les gens ne sont pas encore avertis.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 131,
+        "juz": 8,
+        "manzil": 2,
+        "page": 144,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

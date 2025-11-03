@@ -1,0 +1,503 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 313,
+    "ayahs": [
+      {
+        "number": 2361,
+        "text": "وإني اخترتك يا موسى لرسالتي، فاستمع لما يوحى إليك مني.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 13,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2362,
+        "text": "إنني أنا الله لا معبود بحق إلا أنا، لا شريك لي، فاعبدني وحدي، وأقم الصلاة لتذكرني فيها.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 14,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2363,
+        "text": "إن الساعة التي يُبعث فيها الناس آتية لا بد من وقوعها، أكاد أخفيها من نفسي، فكيف يعلمها أحد من المخلوقين؛ لكي تُجزى كل نفس بما عملت في الدنيا من خير أو شر.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 15,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2364,
+        "text": "فلا يصرفنَّك - يا موسى - عن الإيمان بها والاستعداد لها مَن لا يصدق بوقوعها ولا يعمل لها، واتبع هوى نفسه، فكذَّب بها، فتهلك.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 16,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2365,
+        "text": "وما هذه التي في يمينك يا موسى؟",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 17,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2366,
+        "text": "قال موسى: هي عصاي أعتمد عليها في المشي، وأهزُّ بها الشجر؛ لترعى غنمي ما يتساقط من ورقه، ولي فيها منافع أخرى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 18,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2367,
+        "text": "قال الله لموسى: ألق عصاك.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 19,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2368,
+        "text": "فألقاها موسى على الأرض، فانقلبت بإذن الله حية تسعى، فرأى موسى أمرًا عظيمًا وولى هاربًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 20,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2369,
+        "text": "قال الله لموسى: خذ الحية، ولا تَخَفْ منها، سوف نعيدها عصًا كما كانت في حالتها الأولى. واضمم يدك إلى جنبك تحت العَضُد تخرج بيضاء كالثلج من غير برص؛ لتكون لك علامة أخرى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 21,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2370,
+        "text": "قال الله لموسى: خذ الحية، ولا تَخَفْ منها، سوف نعيدها عصًا كما كانت في حالتها الأولى. واضمم يدك إلى جنبك تحت العَضُد تخرج بيضاء كالثلج من غير برص؛ لتكون لك علامة أخرى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 22,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2371,
+        "text": "فعلنا ذلك؛ لكي نريك - يا موسى - من أدلتنا الكبرى ما يدلُّ على قدرتنا، وعظيم سلطاننا، وصحة رسالتك.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 23,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2372,
+        "text": "اذهب - يا موسى - إلى فرعون؛ إنه قد تجاوز قدره وتمرَّد على ربه، فادعه إلى توحيد الله وعبادته.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 24,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2373,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 25,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2374,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 26,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2375,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 27,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2376,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 28,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2377,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 29,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2378,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 30,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2379,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 31,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2380,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 32,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2381,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 33,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2382,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 34,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2383,
+        "text": "قال موسى: رب وسِّع لي صدري، وسَهِّل لي أمري، وأطلق لساني بفصيح المنطق؛ ليفهموا كلامي. واجعل لي معينا من أهلي، هارون أخي. قَوِّني به وشدَّ به ظهري، وأشركه معي في النبوة وتبليغ الرسالة؛ كي ننزهك بالتسبيح كثيرًا، ونذكرك كثيرا فنحمدك. إنك كنت بنا بصيرًا، لا يخفى عليك شيء من أفعالنا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 35,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2384,
+        "text": "قال الله: قد أعطيتك كل ما سألت يا موسى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 36,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2385,
+        "text": "ولقد أنعمنا عليك - يا موسى - قبل هذه النعمة نعمة أخرى، حين كنت رضيعًا، فأنجيناك مِن بطش فرعون.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 37,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

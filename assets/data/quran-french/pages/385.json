@@ -1,0 +1,226 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 385,
+    "ayahs": [
+      {
+        "number": 3248,
+        "text": "Quiconque viendra avec le bien aura bien mieux, et ce jour-là, ils seront à l'abri de tout effroi.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 89,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3249,
+        "text": "Et quiconque viendra avec le mal... alors ils seront culbutés le visage dans le Feu. N'êtes-vous pas uniquement rétribués selon ce que vous œuvriez?»",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 90,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3250,
+        "text": "«Il m'a été seulement commandé d'adorer le Seigneur de cette Ville (la Mecque) qu'Il a sanctifiée, - et à Lui toute chose - et il m'a été commandé d'être du nombre des Musulmans,",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 91,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3251,
+        "text": "et de réciter le Coran». Quiconque se guide, c'est pour lui-même en effet qu'il se guide. Et quiconque s'égare..., alors dis: «Je ne suis que l'un des avertisseurs».",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 92,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3252,
+        "text": "Dis: «Louange à Allah! Il vous fera voir Ses preuves, et vous les reconnaîtrez». Ton Seigneur n'est pas inattentif à ce que vous faites.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 93,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3253,
+        "text": "T'â, Sîn, Mîm.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 1,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 334,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3254,
+        "text": "Voici les versets du Livre explicite.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 2,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 334,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3255,
+        "text": "Nous te racontons en toute vérité, de l'histoire de Moïse et de Pharaon, à l'intention des gens qui croient.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 3,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 334,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3256,
+        "text": "Pharaon était hautain sur terre; il répartit en clans ses habitants, afin d'abuser de la faiblesse de l'un d'eux: Il égorgeait leurs fils et laissait vivantes leurs femmes. Il était vraiment parmi les fauteurs de désordre.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 4,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 334,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3257,
+        "text": "Mais Nous voulions favoriser ceux qui avaient été faibles sur terre et en faire des dirigeants et en faire les héritiers,",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 5,
+        "juz": 20,
+        "manzil": 5,
+        "page": 385,
+        "ruku": 334,
+        "hizbQuarter": 154,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      },
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

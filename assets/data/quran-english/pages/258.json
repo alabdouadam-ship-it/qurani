@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 258,
+    "ayahs": [
+      {
+        "number": 1769,
+        "text": "Do you not see that God has created the heavens and the earth with ultimate reason? If He so wills He could take you away from the earth and raise a new creation (in your place).",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 19,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1770,
+        "text": "This is well within the power of God.",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 20,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1771,
+        "text": "When they will all appear before God together, the weak will say to those who were arrogant: \"We were your followers, so can you now save us a little from God's punishment?\" They will say: \"If we had been guided by God we would surely have shown you the way. To lament or endure is all the same to us now. No getting away is there for us.\"",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 21,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1772,
+        "text": "When the reckoning is over Satan will say: \"The promise that was made to you by God was indeed a true promise; but I went back on the promise I had made, for I had no power over you except to call you; and you responded to my call. So blame me not, but blame yourselves. Neither can I help you nor can you give me help. I disavow your having associated me earlier (with God). The punishment for those who are wicked is painful indeed.\"",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 22,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 214,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1773,
+        "text": "Those who believed and did the right, will be admitted to gardens with rivers flowing by, where they will abide by the leave of their Lord, with 'Peace' as their salutation.",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 23,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 214,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1774,
+        "text": "Do you not see how God compares a noble act to a healthy tree whose roots are firm and branches in the sky, which yields",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 24,
+        "juz": 13,
+        "manzil": 3,
+        "page": 258,
+        "ruku": 214,
+        "hizbQuarter": 103,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "14": {
+        "number": 14,
+        "name": "سُورَةُ إِبۡرَاهِيمَ",
+        "englishName": "Ibrahim",
+        "englishNameTranslation": "Abraham",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 52
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 486,
+    "ayahs": [
+      {
+        "number": 4295,
+        "text": "ذلك الذي أخبرتكم به- أيها الناس- من النعيم والكرامة في الآخرة هو البشرى التي يبشر الله بها عباده الذين آمنوا به في الدنيا وأطاعوه. قل -أيها الرسول- للذين يشكون في الساعة من مشركي قومك: لا أسألكم على ما أدعوكم إليه من الحق الذي جئتكم به عوضًا من أموالكم، إلا أن تَوَدُّوني في قرابتي منكم، وتَصِلوا الرحم التي بيني وبينكم. ومن يكتسب حسنة نضاعفها له بعشر فصاعدًا. إن الله غفور لذنوب عباده، شكور لحسناتهم وطاعتهم إياه.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 23,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4296,
+        "text": "بل أيقول هؤلاء المشركون: اختلق محمد الكذب على الله، فجاء بالذي يتلوه علينا اختلاقًا من عند نفسه؟ فإن يشأ الله يطبع على قلبك -أيها الرسول- لو فعلت ذلك. ويُذْهِبُ الله الباطل فيمحقه، ويحق الحق بكلماته التي لا تتبدل ولا تتغيَّر، وبوعده الصادق الذي لا يتخلف. إن الله عليم بما في قلوب العباد، لا يخفى عليه شيء منه.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 24,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4297,
+        "text": "والله سبحانه وتعالى هو الذي يقبل التوبة عن عباده إذا رجعوا إلى توحيد الله وطاعته، ويعفو عن السيئات، ويعلم ما تصنعون من خير وشر، لا يخفى عليه شيء من ذلك، وهو مجازيكم به.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 25,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4298,
+        "text": "ويستجيب الذين آمنوا بالله ورسوله لربهم لِمَا دعاهم إليه وينقادون له، ويزيدهم من فضله توفيقًا ومضاعفة في الأجر والثواب. والكافرون بالله ورسوله لهم يوم القيامة عذاب شديد موجع مؤلم.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 26,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4299,
+        "text": "ولو بسط الله الرزق لعباده فوسَّعه عليهم، لبغوا في الأرض أشَرًا وبطرًا، ولطغى بعضهم على بعض، ولكن الله ينزل أرزاقهم بقدر ما يشاء لكفايتهم. إنه بعباده خبير بما يصلحهم، بصير بتدبيرهم وتصريف أحوالهم.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 27,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4300,
+        "text": "والله وحده هو الذي ينزل المطر من السماء، فيغيثهم به من بعد ما يئسوا من نزوله، وينشر رحمته في خلقه، فيعمهم بالغيث، وهو الوليُّ الذي يتولى عباده بإحسانه وفضله، الحميد في ولايته وتدبيره.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 28,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4301,
+        "text": "ومن آياته الدالة على عظمته وقدرته وسلطانه، خَلْقُ السموات والأرض على غير مثال سابق، وما نشر فيهما من أصناف الدواب، وهو على جَمْع الخلق بعد موتهم لموقف القيامة إذا يشاء قدير، لا يتعذر عليه شيء.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 29,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 421,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4302,
+        "text": "وما أصابكم- أيها الناس- من مصيبة في دينكم ودنياكم فبما كسبتم من الذنوب والآثام، ويعفو لكم ربكم عن كثير من السيئات، فلا يؤاخذكم بها.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 30,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      },
+      {
+        "number": 4303,
+        "text": "وما أنتم- أيها الناس- بمعجزين قدرة الله عليكم، ولا فائتيه، وما لكم من دون الله مِن وليٍّ يتولى أموركم، فيوصل لكم المنافع، ولا نصير يدفع عنكم المضارَّ.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 31,
+        "juz": 25,
+        "manzil": 6,
+        "page": 486,
+        "ruku": 422,
+        "hizbQuarter": 195,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

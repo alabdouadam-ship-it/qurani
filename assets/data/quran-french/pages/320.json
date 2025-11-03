@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 320,
+    "ayahs": [
+      {
+        "number": 2462,
+        "text": "Que soit éxalté Allah, le Vrai Souverain! Ne te hâte pas [de réciter] le Coran avant que ne te soit achevée sa révélation. Et dis: «O mon Seigneur, accroît mes connaissances!»",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 114,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 275,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2463,
+        "text": "En effet, Nous avons auparavant fait une recommandation à Adam; mais il oublia; et Nous n'avons pas trouvé chez lui de résolution ferme.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 115,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 275,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2464,
+        "text": "Et quand Nous dîmes aux Anges: «Prosternez-vous devant Adam», ils se prosternèrent, excepté Iblis qui refusa.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 116,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2465,
+        "text": "Alors Nous dîmes: «O Adam, celui-là est vraiment un ennemi pour toi et ton épouse. Prenez garde qu'il vous fasse sortir du Paradis, car alors tu seras malheureux.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 117,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2466,
+        "text": "Car tu n'y auras pas faim ni ne seras nu,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 118,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2467,
+        "text": "tu n'y auras pas soif ni ne seras frappé par l'ardeur du soleil».",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 119,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2468,
+        "text": "Puis le Diable le tenta en disant: «O Adam, t'indiquerai-je l'arbre de l'éternité et un royaume impérissable?»",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 120,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2469,
+        "text": "Tous deux (Adam et Eve) en mangèrent. Alors leur apparut leur nudité. Ils se mirent à se couvrir avec des feuilles du paradis. Adam désobéit ainsi à son Seigneur et il s'égara.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 121,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2470,
+        "text": "Son Seigneur l'a ensuite élu, agréé son repentir et l'a guidé.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 122,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2471,
+        "text": "Il dit: «Descendez d'ici, (Adam et Eve), [Vous serez] tous (avec vos descendants) ennemis les uns des autres. Puis, si jamais un guide vous vient de Ma part, quiconque suit Mon guide ne s'égarera ni ne sera malheureux.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 123,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2472,
+        "text": "Et quiconque se détourne de Mon Rappel, mènera certes, une vie pleine de gêne, et le Jour de la Résurrection Nous l'amènerons aveugle au rassemblement».",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 124,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2473,
+        "text": "Il dira: «O mon Seigneur, pourquoi m'as-Tu amené aveugle alors qu'auparavant je voyais?»",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 125,
+        "juz": 16,
+        "manzil": 4,
+        "page": 320,
+        "ruku": 276,
+        "hizbQuarter": 128,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

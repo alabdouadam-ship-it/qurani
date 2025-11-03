@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 57,
+    "ayahs": [
+      {
+        "number": 346,
+        "text": "Seigneur! Nous avons cru à ce que Tu as fait descendre et suivi le messager. Inscris-nous donc parmi ceux qui témoignent».",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 53,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 46,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 347,
+        "text": "Et ils [les autres] se mirent à comploter. Allah a fait échouer leur complot. Et c'est Allah qui sait le mieux leur machination!",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 54,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 46,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 348,
+        "text": "(Rappelle-toi) quand Allah dit: «O Jésus, certes, Je vais mettre fin à ta vie terrestre t'élever vers Moi, te débarrasser de ceux qui n'ont pas cru et mettre jusqu'au Jour de la Résurrection, ceux qui te suivent au-dessus de ceux qui ne croient pas. Puis, c'est vers Moi que sera votre retour, et Je jugerai, entre vous, ce sur quoi vous vous opposiez.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 55,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 349,
+        "text": "Quant à ceux qui n'ont pas cru, Je les châtierai d'un dur châtiment, ici-bas tout comme dans l'au-delà; et pour eux, pas de secoureurs.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 56,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 350,
+        "text": "Et quant à ceux qui ont la foi et font de bonnes œuvres, Il leur donnera leurs récompenses. Et Allah n'aime pas les injustes.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 57,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 351,
+        "text": "Voilà ce que Nous te récitons des versets et de la révélation précise.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 58,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 352,
+        "text": "Pour Allah, Jésus est comme Adam qu'Il créa de poussière, puis Il lui dit: «Sois»: et il fut.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 59,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 353,
+        "text": "La vérité vient de ton Seigneur. Ne sois donc pas du nombre des sceptiques.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 60,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 354,
+        "text": "A ceux qui te contredisent à son propos, maintenant que tu en es bien informé, tu n'as qu'à dire: «Venez, appelons nos fils et les vôtres, nos femmes et les vôtres, nos propres personnes et les vôtres, puis proférons exécration réciproque en appelant la malédiction d'Allah sur les menteurs.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 61,
+        "juz": 3,
+        "manzil": 1,
+        "page": 57,
+        "ruku": 47,
+        "hizbQuarter": 23,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

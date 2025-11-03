@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 466,
+    "ayahs": [
+      {
+        "number": 4126,
+        "text": "ونُفِخ في \"القرن\" فمات كلُّ مَن في السموات والأرض، إلا مَن شاء الله عدم موته، ثم نفخ المَلَك فيه نفخة ثانية مؤذنًا بإحياء جميع الخلائق للحساب أمام ربهم، فإذا هم قيام من قبورهم ينظرون ماذا يفعل الله بهم؟",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 68,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 402,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4127,
+        "text": "وأضاءت الأرض يوم القيامة إذا تجلى الحق جل وعلا للخلائق لفصل القضاء، ونشرت الملائكة صحيفة كل فرد، وجيء بالنبيين والشهود على الأمم؛ ليسأل الله النبيين عن التبليغ وعما أجابتهم به أممهم، كما تأتي أمة محمد صلى الله عليه وسلم؛ لتشهد بتبليغ الرسل السابقين لأممهم إذا أنكرت هذا التبليغ، فتقوم الحجة على الأمم، وقضى ربُّ العالمين بين العباد بالعدل التام، وهم لا يُظلمون شيئًا بنقص ثواب أو زيادة عقاب.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 69,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 402,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4128,
+        "text": "ووفَّى الله كلَّ نفس جزاء عملها من خير وشر، وهو سبحانه وتعالى أعلم بما يفعلون في الدنيا من طاعة أو معصية.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 70,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 402,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4129,
+        "text": "وسيق الذين كفروا بالله ورسله إلى جهنم جماعات، حتى إذا جاؤوها فتح الخزنة الموكَّلون بها أبوابها السبعة، وزجروهم قائلين: كيف تعصون الله وتجحدون أنه الإله الحق وحده؟ ألم يرسل إليكم رسلا منكم يتلون عليكم آيات ربكم، ويحذِّرونكم أهوال هذا اليوم؟ قالوا مقرين بذنبهم: بلى قد جاءت رسل ربنا بالحق، وحذَّرونا هذا اليوم، ولكن وجبت كلمة الله أن عذابه لأهل الكفر به.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 71,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 403,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4130,
+        "text": "قيل للجاحدين أن الله هو الإله الحق إهانة لهم وإذلالا: ادخلوا أبواب جهنم ماكثين فيها أبدًا، فقَبُح مصير المتعالين على الإيمان بالله والعمل بشرعه.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 72,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 403,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4131,
+        "text": "وسيق الذين اتقوا ربهم بتوحيده والعمل بطاعته إلى الجنة جماعات، حتى إذا جاؤوها وشُفع لهم بدخولها، فتحت أبوابها، فترحِّب بهم الملائكة الموكَّلون بالجنة، ويُحَيُّونهم بالبِشر والسرور؛ لطهارتهم من آثار المعاصي قائلين لهم: سلام عليكم من كل آفة، طابت أحوالكم، فادخلوا الجنة خالدين فيها.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 73,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 403,
+        "hizbQuarter": 186,
+        "sajda": false
+      },
+      {
+        "number": 4132,
+        "text": "وقال المؤمنون: الحمد لله الذي صدَقنا وعده الذي وعدَنا إياه على ألسنة رسله، وأورثَنا أرض الجنة نَنْزِل منها في أيِّ مكان شئنا، فنِعم ثواب المحسنين الذين اجتهدوا في طاعة ربهم.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 74,
+        "juz": 24,
+        "manzil": 6,
+        "page": 466,
+        "ruku": 403,
+        "hizbQuarter": 186,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

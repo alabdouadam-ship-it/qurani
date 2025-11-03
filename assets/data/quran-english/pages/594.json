@@ -1,0 +1,549 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 594,
+    "ayahs": [
+      {
+        "number": 6017,
+        "text": "He will say: \"Alas the woe! Would that I had sent ahead something in my life.\"",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6018,
+        "text": "None can punish as He will punish on that day,",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6019,
+        "text": "And none can bind as He will bind.",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6020,
+        "text": "O you tranquil soul,",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6021,
+        "text": "Return to your Lord, well-pleased and well-pleasing Him.",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6022,
+        "text": "\"Enter then among My votaries,",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6023,
+        "text": "Enter then My garden.\"",
+        "surah": {
+          "number": 89,
+          "name": "سُورَةُ الفَجۡرِ",
+          "englishName": "Al-Fajr",
+          "englishNameTranslation": "The Dawn",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 531,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 6024,
+        "text": "I CALL THIS earth to witness --",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6025,
+        "text": "And you are free to live upon it, --",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6026,
+        "text": "And the parent and the offspring,",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6027,
+        "text": "That We created man in toil and trouble.",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6028,
+        "text": "Does he think that no one has power over him?",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6029,
+        "text": "He says: \"I have wasted a great deal of wealth.\"",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6030,
+        "text": "Does he think that no one sees him?",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6031,
+        "text": "Did We not give him two eyes,",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6032,
+        "text": "One tongue, and two lips,",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6033,
+        "text": "And showed him two highways (of good and evil)?",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6034,
+        "text": "But he could not scale the steep ascent.",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6035,
+        "text": "How will you comprehend what the Steep ascent is? --",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6036,
+        "text": "To free a neck (from the burden of debt or slavery),",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6037,
+        "text": "Or to feed in times of famine",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6038,
+        "text": "The orphan near in relationship,",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6039,
+        "text": "Or the poor in distress;",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6040,
+        "text": "And to be of those who believe, and urge upon one another to persevere, and urge upon each other to be kind.",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6041,
+        "text": "They are the people of the right hand (and will succeed).",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6042,
+        "text": "But those who deny Our revelations are the people of the left hand:",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      },
+      {
+        "number": 6043,
+        "text": "The Fire will vault them over.",
+        "surah": {
+          "number": 90,
+          "name": "سُورَةُ البَلَدِ",
+          "englishName": "Al-Balad",
+          "englishNameTranslation": "The City",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 594,
+        "ruku": 532,
+        "hizbQuarter": 238,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "89": {
+        "number": 89,
+        "name": "سُورَةُ الفَجۡرِ",
+        "englishName": "Al-Fajr",
+        "englishNameTranslation": "The Dawn",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      },
+      "90": {
+        "number": 90,
+        "name": "سُورَةُ البَلَدِ",
+        "englishName": "Al-Balad",
+        "englishNameTranslation": "The City",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 20
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

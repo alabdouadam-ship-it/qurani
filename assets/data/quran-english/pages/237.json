@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 237,
+    "ayahs": [
+      {
+        "number": 1611,
+        "text": "So, when they took him out they planned to throw him into an unused well. We revealed to Joseph: \"You will tell them (one day) of this deed when they will not apprehend it.\"",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 15,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1612,
+        "text": "At nightfall they came to their father weeping,",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 16,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1613,
+        "text": "And said: \"We went racing with one another and left Joseph to guard our things when a wolf devoured him. But you will not believe us even though we tell the truth.\"",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 17,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1614,
+        "text": "They showed him the shirt with false blood on it. (Their father) said: \"It is not so; you have made up the story. Yet endurance is best. I seek the help of God alone for what you impute.\"",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 18,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1615,
+        "text": "A caravan happened to pass, and sent the water-carrier to bring water from the well. He let down his bucket (and pulled Joseph up with it). \"What luck,\" said the man; \"here is a boy;\" and they hid him as an item of merchandise; but what they did was known to God.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 19,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1616,
+        "text": "And they sold him as worthless for a few paltry dirham.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 20,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1617,
+        "text": "The Egyptian who bought him instructed his wife: \"House him honourably. He may be of use to us. We may even adopt him as a son.\" So, We firmly established Joseph in the land, and taught him the interpretation of dreams. God dominated in his affairs, though most men do not know.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 21,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 195,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1618,
+        "text": "When he reached the prime of life We gave him wisdom and knowledge. Thus We reward those who are good.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 22,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 195,
+        "hizbQuarter": 95,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

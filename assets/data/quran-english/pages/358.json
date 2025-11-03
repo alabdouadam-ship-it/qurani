@@ -1,0 +1,85 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 358,
+    "ayahs": [
+      {
+        "number": 2850,
+        "text": "When your children have reached the age of puberty, they should similarly ask your leave (for entering) as others did before them. God thus clearly explains His commands to you, for God is all-knowing and all-wise.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 59,
+        "juz": 18,
+        "manzil": 4,
+        "page": 358,
+        "ruku": 308,
+        "hizbQuarter": 143,
+        "sajda": false
+      },
+      {
+        "number": 2851,
+        "text": "As for your women past the age of bearing children, who have no hope of marriage, there is no harm if they take off their outer garments, but in such a way that they do not display their charms; yet if they avoid this it would be better for them. God is all-hearing and all-knowing.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 60,
+        "juz": 18,
+        "manzil": 4,
+        "page": 358,
+        "ruku": 308,
+        "hizbQuarter": 143,
+        "sajda": false
+      },
+      {
+        "number": 2852,
+        "text": "There is no harm if the blind, the lame, the sick, or you yourselves, eat in your own houses or the houses of your fathers, mothers, or your brothers' houses, or those of your sisters, or your fathers' brothers' or sisters', or your mothers' brothers' or sisters', or in the houses whose care is entrusted to you, or the houses of your friends.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 61,
+        "juz": 18,
+        "manzil": 4,
+        "page": 358,
+        "ruku": 308,
+        "hizbQuarter": 143,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

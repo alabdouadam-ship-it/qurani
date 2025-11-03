@@ -1,0 +1,511 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 580,
+    "ayahs": [
+      {
+        "number": 5617,
+        "text": "And bow in homage part of the night, and glorify Him far into the night.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5618,
+        "text": "Surely men love what hastes away and forget the grievous day (ahead).",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5619,
+        "text": "We created them and fixed their bones and joints; and We could replace them when We like with others like them.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5620,
+        "text": "This surely is a reminder: Therefore whosoever desires may take the way to his Lord.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5621,
+        "text": "But you will not desire except as God wills. Verily He is all-knowing and all-wise.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5622,
+        "text": "He admits whosoever He will to His benevolence. But for the evil-doers He has prepared a painful punishment.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 515,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5623,
+        "text": "I CALL TO WITNESS those who are sent consecutively,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5624,
+        "text": "And those that strike violently,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5625,
+        "text": "And those that revive by quickening,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5626,
+        "text": "And those that distinguish distinctly,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5627,
+        "text": "And those that bring down the Reminder",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5628,
+        "text": "To end all argument or to warn.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5629,
+        "text": "What is promised will surely come to pass.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5630,
+        "text": "When the stars are obliterated,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5631,
+        "text": "The heavens split asunder,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5632,
+        "text": "The mountains reduced to dust and blown away,",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5633,
+        "text": "And when the time comes for raising the little girls (buried alive) --",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5634,
+        "text": "For what day is that time fixed?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5635,
+        "text": "The Day of Judgement.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5636,
+        "text": "How will you comprehend what the Day of Judgement is?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5637,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5638,
+        "text": "Have We not destroyed the earlier generations?",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5639,
+        "text": "So shall We make the later ones to follow them.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5640,
+        "text": "That is what We shall do to those who are guilty of crime.",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      },
+      {
+        "number": 5641,
+        "text": "Alas the woe that day for those who deny!",
+        "surah": {
+          "number": 77,
+          "name": "سُورَةُ المُرۡسَلَاتِ",
+          "englishName": "Al-Mursalaat",
+          "englishNameTranslation": "The Emissaries",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 50
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 580,
+        "ruku": 516,
+        "hizbQuarter": 232,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "76": {
+        "number": 76,
+        "name": "سُورَةُ الإِنسَانِ",
+        "englishName": "Al-Insaan",
+        "englishNameTranslation": "Man",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 31
+      },
+      "77": {
+        "number": 77,
+        "name": "سُورَةُ المُرۡسَلَاتِ",
+        "englishName": "Al-Mursalaat",
+        "englishNameTranslation": "The Emissaries",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 50
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

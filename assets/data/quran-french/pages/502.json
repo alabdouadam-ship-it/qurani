@@ -1,0 +1,226 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 502,
+    "ayahs": [
+      {
+        "number": 4506,
+        "text": "Et leur apparaîtra [la laideur] de leurs mauvaises actions. Et ce dont ils se moquaient les cernera.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 33,
+        "juz": 25,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4507,
+        "text": "Et on leur dira: «Aujourd'hui Nous vous oublions comme vous avez oublié la rencontre de votre jour que voici. Votre refuge est le Feu; et vous n'aurez point de secoureurs.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 34,
+        "juz": 25,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4508,
+        "text": "Cela parce que vous preniez en raillerie les versets d'Allah et que la vie d'ici-bas vous trompait». Ce jour-là on ne les en fera pas sortir et on ne les excusera pas non plus.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 35,
+        "juz": 25,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4509,
+        "text": "Louange à Allah, Seigneur des cieux et Seigneur de la terre: Seigneur de l'univers.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 36,
+        "juz": 25,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4510,
+        "text": "Et à Lui la grandeur dans les cieux et la terre. Et c'est Lui le Puissant, le Sage.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 37,
+        "juz": 25,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4511,
+        "text": "H'â, Mîm.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 1,
+        "juz": 26,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 438,
+        "hizbQuarter": 201,
+        "sajda": false
+      },
+      {
+        "number": 4512,
+        "text": "La révélation du Livre émane d'Allah, le Puissant, le Sage.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 2,
+        "juz": 26,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 438,
+        "hizbQuarter": 201,
+        "sajda": false
+      },
+      {
+        "number": 4513,
+        "text": "Nous n'avons créé les cieux et la terre et ce qui est entre eux qu'en toute vérité et [pour] un terme fixé. Ceux qui ont mécru se détournent de ce dont ils ont été avertis.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 3,
+        "juz": 26,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 438,
+        "hizbQuarter": 201,
+        "sajda": false
+      },
+      {
+        "number": 4514,
+        "text": "Dis: «Que pensez-vous de ceux que vous invoquez en dehors d'Allah? Montrez-moi donc ce qu'ils ont créé de la terre! Ou ont-ils dans les cieux une participation avec Dieu? Apportez-moi un Livre antérieur à celui-ci (le Coran) ou même un vestige d'une science, si vous êtes véridiques».",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 4,
+        "juz": 26,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 438,
+        "hizbQuarter": 201,
+        "sajda": false
+      },
+      {
+        "number": 4515,
+        "text": "Et qui est plus égaré que celui qui invoque en dehors d'Allah, et que la vie ne saura lui répondre jusqu'au Jour de la Résurrection? Et elles [leurs divinités] sont indifférentes à leur invocation.",
+        "surah": {
+          "number": 46,
+          "name": "سُورَةُ الأَحۡقَافِ",
+          "englishName": "Al-Ahqaf",
+          "englishNameTranslation": "The Dunes",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 35
+        },
+        "numberInSurah": 5,
+        "juz": 26,
+        "manzil": 6,
+        "page": 502,
+        "ruku": 438,
+        "hizbQuarter": 201,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "45": {
+        "number": 45,
+        "name": "سُورَةُ الجَاثِيَةِ",
+        "englishName": "Al-Jaathiya",
+        "englishNameTranslation": "Crouching",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 37
+      },
+      "46": {
+        "number": 46,
+        "name": "سُورَةُ الأَحۡقَافِ",
+        "englishName": "Al-Ahqaf",
+        "englishNameTranslation": "The Dunes",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 35
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

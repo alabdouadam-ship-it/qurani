@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 468,
+    "ayahs": [
+      {
+        "number": 4141,
+        "text": "Seigneur! Fais-les entrer aux jardins d'Eden que Tu leur as promis, ainsi qu'aux vertueux parmi leurs ancêtres, leurs épouses et leurs descendants, car c'est Toi le Puissant, le Sage.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 8,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 404,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4142,
+        "text": "Et préserve-les [du châtiment] des mauvaises actions. Quiconque Tu préserves [du châtiment] des mauvaises actions ce jour-là, Tu lui feras miséricorde». Et c'est là l'énorme succès.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 9,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 404,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4143,
+        "text": "A ceux qui n'auront pas cru on proclamera: «l'aversion d'Allah [envers vous] est plus grande que votre aversion envers vous-mêmes, lorsque vous étiez appelés à la foi et que vous persistiez dans la mécréance».",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 10,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4144,
+        "text": "Ils diront: «Notre Seigneur, Tu nous as fais mourir deux fois et redonné la vie deux fois: nous reconnaissons donc nos péchés. Y a-t-il un moyen d'en sortir?»",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 11,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4145,
+        "text": "«... Il en est ainsi car lorsqu'Allah était invoqué seul (sans associé), vous ne croyiez pas; et si on Lui donnait des associés, alors vous croyiez. Le jugement appartient à Allah, le Très Haut, le Très Grand».",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 12,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4146,
+        "text": "C'est Lui qui vous fait voir Ses preuves, et fait descendre du ciel, pour vous, une subsistance. Seul se rappelle celui qui revient [à Allah].",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 13,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4147,
+        "text": "Invoquez Allah donc, en Lui vouant un culte exclusif quelque répulsion qu'en aient les mécréants.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 14,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4148,
+        "text": "Il est Celui qui est élevé aux degrés les plus hauts, Possesseur du Trône, Il envoie par son ordre l'Esprit sur celui qu'Il veut parmi Ses serviteurs, afin que celui-ci avertisse du jour de la Rencontre,",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 15,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      },
+      {
+        "number": 4149,
+        "text": "le jour où ils comparaîtront sans que rien en eux ne soit caché à Allah. A qui appartient la royauté, aujourd'hui? A Allah, l'Unique, le Dominateur.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 16,
+        "juz": 24,
+        "manzil": 6,
+        "page": 468,
+        "ruku": 405,
+        "hizbQuarter": 187,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

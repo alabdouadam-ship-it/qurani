@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 248,
+    "ayahs": [
+      {
+        "number": 1700,
+        "text": "Et tu ne leur demandes aucun salaire pour cela. Ce n'est là qu'un rappel adressé à l'univers.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 104,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 203,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1701,
+        "text": "Et dans les cieux et sur la terre, que de signes auprès desquels les gens passent, en s'en détournant!",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 105,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1702,
+        "text": "Et la plupart d'entre eux ne croient en Allah, qu'en lui donnant des associés.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 106,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1703,
+        "text": "Est-ce qu'ils sont sûrs que le châtiment d'Allah ne viendra pas les couvrir ou que l'Heure ne leur viendra pas soudainement, sans qu'ils s'en rendent compte?",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 107,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1704,
+        "text": "Dis: «Voici ma voie, j'appelle les gens à [la religion] d'Allah, moi et ceux qui me suivent, nous basant sur une preuve évidente. Gloire à Allah! Et je ne suis point du nombre des associateurs.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 108,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1705,
+        "text": "Nous n'avons envoyé avant toi que des hommes originaires des cités, à qui Nous avons fait des révélations. [Ces gens là] n'ont-ils pas parcouru la terre et considéré quelle fut la fin de ceux qui ont vécu avant eux? La demeure de l'au-delà est assurément meilleure pour ceux qui craignent [Allah]. Ne raisonnerez-vous donc pas?",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 109,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1706,
+        "text": "Quand les messagers faillirent perdre espoir (et que leurs adeptes) eurent pensé qu'ils étaient dupés voilà que vint à eux Notre secours. Et furent sauvés ceux que Nous voulûmes. Mais Notre rigueur ne saurait être détournée des gens criminels.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 110,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1707,
+        "text": "Dans leurs récits il y a certes une leçon pour les gens doués d'intelligence. Ce n'est point là un récit fabriqué. C'est au contraire la confirmation de ce qui existait déjà avant lui, un exposé détaillé de toute chose, un guide et une miséricorde pour des gens qui croient.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 111,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

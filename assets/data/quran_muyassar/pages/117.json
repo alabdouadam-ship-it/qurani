@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 117,
+    "ayahs": [
+      {
+        "number": 720,
+        "text": "يا أيها الذين آمنوا لا تتخذوا اليهود والنصارى حلفاءَ وأنصارًا على أهل الإيمان؛ ذلك أنهم لا يُوادُّون المؤمنين، فاليهود يوالي بعضهم بعضًا، وكذلك النصارى، وكلا الفريقين يجتمع على عداوتكم. وأنتم -أيها المؤمنون- أجدرُ بأن ينصر بعضُكم بعضًا. ومن يتولهم منكم فإنه يصير من جملتهم، وحكمه حكمهم. إن الله لا يوفق الظالمين الذين يتولون الكافرين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 51,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 721,
+        "text": "يخبر الله تعالى عن جماعة من المنافقين أنهم كانوا يبادرون في موادة اليهود لما في قلوبهم من الشكِّ والنفاق، ويقولون: إنما نوادُّهم خشية أن يظفروا بالمسلمين فيصيبونا معهم، قال الله تعالى ذكره: فعسى الله أن يأتي بالفتح -أي فتح \"مكة\"- وينصر نَبِيَّه، ويُظْهِر الإسلام والمسلمين على الكفار، أو يُهيِّئ من الأمور ما تذهب به قوةُ اليهود والنَّصارى، فيخضعوا للمسلمين، فحينئذٍ يندم المنافقون على ما أضمروا في أنفسهم من موالاتهم.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 52,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 722,
+        "text": "وحينئذ يقول بعض المؤمنين لبعض مُتعجِّبين من حال المنافقين -إذا كُشِف أمرهم-: أهؤلاء الذين أقسموا بأغلظ الأيمان إنهم لَمَعَنا؟! بطلت أعمال المنافقين التي عملوها في الدنيا، فلا ثواب لهم عليها؛ لأنهم عملوها على غير إيمان، فخسروا الدنيا والآخرة.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 53,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 723,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشرعه من يرجع منكم عن دينه، ويستبدل به اليهودية أو النصرانية أو غير ذلك، فلن يضرُّوا الله شيئًا، وسوف يأتي الله بقوم خير منهم يُحِبُّهم ويحبونه، رحماء بالمؤمنين أشدَّاء على الكافرين، يجاهدون أعداء الله، ولا يخافون في ذات الله أحدًا. ذلك الإنعام مِن فضل الله يؤتيه من أراد، والله واسع الفضل، عليم بمن يستحقه من عباده.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 54,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 724,
+        "text": "إنما ناصركم -أيُّها المؤمنون- الله ورسوله، والمؤمنون الذين يحافظون على الصلاة المفروضة، ويؤدون الزكاة عن رضا نفس، وهم خاضعون لله.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 55,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 725,
+        "text": "ومن وثق بالله وتولَّى الله ورسوله والمؤمنين، فهو من حزب الله، وحزب الله هم الغالبون المنتصرون.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 56,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 93,
+        "hizbQuarter": 47,
+        "sajda": false
+      },
+      {
+        "number": 726,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشرعه، لا تتخذوا الذين يستهزئون ويتلاعبون بدينكم من أهل الكتاب والكفارَ أولياءَ، وخافوا الله إن كنتم مؤمنين به وبشرعه.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 57,
+        "juz": 6,
+        "manzil": 2,
+        "page": 117,
+        "ruku": 94,
+        "hizbQuarter": 47,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

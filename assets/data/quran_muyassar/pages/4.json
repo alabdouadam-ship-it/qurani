@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 4,
+    "ayahs": [
+      {
+        "number": 24,
+        "text": "حال المنافقين الذين آمنوا -ظاهرًا لا باطنًا- برسالة محمد صلى الله عليه وسلم، ثم كفروا، فصاروا يتخبطون في ظلماتِ ضلالهم وهم لا يشعرون، ولا أمل لهم في الخروج منها، تُشْبه حالَ جماعة في ليلة مظلمة، وأوقد أحدهم نارًا عظيمة للدفء والإضاءة، فلما سطعت النار وأنارت ما حوله، انطفأت وأعتمت، فصار أصحابها في ظلمات لا يرون شيئًا، ولا يهتدون إلى طريق ولا مخرج.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 17,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 25,
+        "text": "هم صُمٌّ عن سماع الحق سماع تدبر، بُكْم عن النطق به، عُمْي عن إبصار نور الهداية؛ لذلك لا يستطيعون الرجوع إلى الإيمان الذي تركوه، واستعاضوا عنه بالضلال.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 18,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 26,
+        "text": "أو تُشْبه حالُ فريق آخر من المنافقين يظهر لهم الحق تارة، ويشكون فيه تارة أخرى، حالَ جماعة يمشون في العراء، فينصب عليهم مطر شديد، تصاحبه ظلمات بعضها فوق بعض، مع قصف الرعد، ولمعان البرق، والصواعق المحرقة، التي تجعلهم من شدة الهول يضعون أصابعهم في آذانهم؛ خوفًا من الهلاك. والله تعالى محيط بالكافرين لا يفوتونه ولا يعجزونه.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 19,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 27,
+        "text": "يقارب البرق -من شدة لمعانه- أن يسلب أبصارهم، ومع ذلك فكلَّما أضاء لهم مشَوْا في ضوئه، وإذا ذهب أظلم الطريق عليهم فيقفون في أماكنهم. ولولا إمهال الله لهم لسلب سمعهم وأبصارهم، وهو قادر على ذلك في كل وقتٍ، إنه على كل شيء قدير.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 20,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 28,
+        "text": "نداء من الله للبشر جميعًا: أن اعبدوا الله الذي ربَّاكم بنعمه، وخافوه ولا تخالفوا دينه؛ فقد أوجدكم من العدم، وأوجد الذين من قبلكم؛ لتكونوا من المتقين الذين رضي الله عنهم ورضوا عنه.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 21,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 4,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 29,
+        "text": "ربكم الذي جعل لكم الأرض بساطًا؛ لتسهل حياتكم عليها، والسماء محكمة البناء، وأنزل المطر من السحاب فأخرج لكم به من ألوان الثمرات وأنواع النبات رزقًا لكم، فلا تجعلوا لله نظراء في العبادة، وأنتم تعلمون تفرُّده بالخلق والرزق، واستحقاقِه العبودية.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 22,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 4,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 30,
+        "text": "وإن كنتم -أيها الكافرون المعاندون- في شَكٍّ من القرآن الذي نَزَّلناه على عبدنا محمد صلى الله عليه وسلم، وتزعمون أنه ليس من عند الله، فهاتوا سورة تماثل سورة من القرآن، واستعينوا بمن تقدرون عليه مِن أعوانكم، إن كنتم صادقين في دعواكم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 23,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 4,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 31,
+        "text": "فإن عجَزتم الآن -وستعجزون مستقبلا لا محالة- فاتقوا النار بالإيمان بالنبي صلى الله عليه وسلم وطاعة الله تعالى. هذه النار التي حَطَبُها الناس والحجارة، أُعِدَّتْ للكافرين بالله ورسله.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 24,
+        "juz": 1,
+        "manzil": 1,
+        "page": 4,
+        "ruku": 4,
+        "hizbQuarter": 1,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

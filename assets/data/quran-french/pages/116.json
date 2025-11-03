@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 116,
+    "ayahs": [
+      {
+        "number": 715,
+        "text": "Et Nous avons envoyé après eux Jésus, fils de Marie, pour confirmer ce qu'il y avait dans la Thora avant lui. Et Nous lui avons donné l'Evangile, où il y a guide et lumière, pour confirmer ce qu'il y avait dans la Thora avant lui, et un guide et une exhortation pour les pieux.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 46,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 716,
+        "text": "Que les gens de l'Evangile jugent d'après ce qu'Allah y a fait descendre. Ceux qui ne jugent pas d'après ce qu'Allah a fait descendre, ceux-là sont les pervers.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 47,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 717,
+        "text": "Et sur toi (Muhammad) Nous avons fait descendre le Livre avec la vérité, pour confirmer le Livre qui était là avant lui et pour prévaloir sur lui. Juge donc parmi eux d'après ce qu'Allah a fait descendre. Ne suis pas leurs passions, loin de la vérité qui t'est venue. A chacun de vous Nous avons assigné une législation et un plan à suivre. Si Allah avait voulu, certes Il aurait fait de vous tous une seule communauté. Mais Il veut vous éprouver en ce qu'Il vous donne. Concurrencez donc dans les bonnes cœvres. C'est vers Allah qu'est votre retour à tous; alors Il vous informera de ce en quoi vous divergiez.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 48,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 718,
+        "text": "Juge alors parmi eux d'après ce qu'Allah a fait descendre. Ne suis pas leurs passions, et prends garde qu'ils ne tentent de t'éloigner d'une partie de ce qu'Allah t'a révélé. Et puis, s'ils refusent (le jugement révélé) sache qu'Allah veut les affliger [ici-bas] pour une partie de leurs péchés. Beaucoup de gens, certes, sont des pervers.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 49,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 719,
+        "text": "Est-ce donc le jugement du temps de l'Ignorance qu'ils cherchent? Qu'y a-t-il de meilleur qu'Allah, en matière de jugement pour des gens qui ont une foi ferme?",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 50,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

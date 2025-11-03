@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 55,
+    "ayahs": [
+      {
+        "number": 331,
+        "text": "عندما رأى زكريا ما أكرم الله به مريم مِن رزقه وفضله توجه إلى ربه قائلا يا ربِّ أعطني من عندك ولدًا صالحًا مباركًا، إنك سميع الدعاء لمن دعاك.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 38,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 332,
+        "text": "فنادته الملائكة وهو واقف بين يدي الله في مكان صلاته يدعوه: أن الله يخبرك بخبر يسرُّك، وهو أنك سترزق بولد اسمه يحيى، يُصَدِّق بكلمة من الله -وهو عيسى ابن مريم عليه السلام-، ويكون يحيى سيدًا في قومه، له المكانة والمنزلة العالية، وحصورًا لا يأتي الذنوب والشهوات الضارة، ويكون نبيّاً من الصالحين الذين بلغوا في الصَّلاح ذروته.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 39,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 333,
+        "text": "قال زكريا فرحًا متعجبًا: ربِّ أنَّى يكون لي غلام مع أن الشيخوخة قد بلغت مني مبلغها، وامرأتي عقيم لا تلد؟ قال: كذلك يفعل الله ما يشاء من الأفعال العجيبة المخالفة للعادة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 40,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 334,
+        "text": "قال زكريَّا: رب اجعل لي علامةً أستدلُّ بها على وجود الولد مني؛ ليحصل لي السرور والاستبشار، قال: علامتك التي طلبتها: ألا تستطيع التحدث إلى الناس ثلاثة أيام إلا بإشارة إليهم، مع أنك سويٌّ صحيح، وفي هذه المدة أكثِرْ من ذكر ربك، وصلِّ له أواخر النهار وأوائله.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 41,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 45,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 335,
+        "text": "واذكر -أيها الرسول- حين قالت الملائكة: يا مريم إن الله اختاركِ لطاعته وطهَّركِ من الأخلاق الرذيلة، واختاركِ على نساء العالمين في زمانك.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 42,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 46,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 336,
+        "text": "يا مريم داومي على الطاعة لربك، وقومي في خشوع وتواضع، واسجدي واركعي مع الراكعين؛ شكرًا لله على ما أولاكِ من نعمه.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 43,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 46,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 337,
+        "text": "ذلك الذي قصصناه عليك -أيها الرسول- من أخبار الغيب التي أوحاها الله إليك، إذ لم تكن معهم حين اختلفوا في كفالة مريم أيُّهم أحق بها وأولى، ووقع بينهم الخصام، فأجْرَوْا القرعة لإلقاء أقلامهم، ففاز زكريا عليه السلام بكفالتها.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 44,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 46,
+        "hizbQuarter": 22,
+        "sajda": false
+      },
+      {
+        "number": 338,
+        "text": "وما كنت - يا نبي الله - هناك حين قالت الملائكة: يا مريم إن الله يُبَشِّرْكِ بولد يكون وجوده بكلمة من الله، أي يقول له: \"كن\"، فيكون، اسمه المسيح عيسى ابن مريم، له الجاه العظيم في الدنيا والآخرة، ومن المقربين عند الله يوم القيامة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 45,
+        "juz": 3,
+        "manzil": 1,
+        "page": 55,
+        "ruku": 46,
+        "hizbQuarter": 22,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

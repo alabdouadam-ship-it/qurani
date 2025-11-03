@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 204,
+    "ayahs": [
+      {
+        "number": 1342,
+        "text": "There are those who built a mosque on opposition and disbelief, and to cause rifts among the faithful, and to serve as an outpost for those who have warred against God and His Apostle before this. Yet they will surely swear: \"We had only meant well.\" But God is witness that they are liars.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 107,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1343,
+        "text": "Never set foot in that place. Only a mosque whose foundations have been laid from the very first on godliness is worthy of your visiting it. There you will find men who wish to be purified; and God loves those who are pure.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 108,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1344,
+        "text": "Is the man who lays the foundations of his sanctum on his allegiance to God and the wish to seek His favour, better, or he who lays the foundations of his building on the edge of a bank eroded by water, which will collapse with him into the fire of Hell? But God does not guide the people who are wilfully unjust.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 109,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1345,
+        "text": "The edifice they have built will always fill their minds with perturbation (which will not cease) till their hearts are rent to pieces, for God is all-knowing and all-wise.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 110,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 168,
+        "hizbQuarter": 81,
+        "sajda": false
+      },
+      {
+        "number": 1346,
+        "text": "God has verily bought the souls and possessions of the faithful in exchange for a promise of Paradise. They fight in the cause of God, and kill and are killed. This is a promise incumbent on Him, as in the Torah, so the Gospel and the Qur'an. And who is more true to his promise than God? So rejoice at the bargain you have made with Him; for this will be triumph supreme.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 111,
+        "juz": 11,
+        "manzil": 2,
+        "page": 204,
+        "ruku": 169,
+        "hizbQuarter": 82,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

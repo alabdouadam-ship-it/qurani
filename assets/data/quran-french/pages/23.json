@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 23,
+    "ayahs": [
+      {
+        "number": 153,
+        "text": "Ceux à qui Nous avons donné le Livre, le reconnaissent comme ils reconnaissent leurs enfants. Or une partie d'entre eux cache la vérité, alors qu'ils la savent!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 146,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 18,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 154,
+        "text": "La vérité vient de ton Seigneur. Ne sois donc pas de ceux qui doutent.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 147,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 18,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 155,
+        "text": "A chacun une orientation vers laquelle il se tourne. Rivalisez donc dans les bonnes œuvres. Où que vous soyez, Allah vous ramènera tous vers Lui, car Allah est, certes Omnipotent.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 148,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 156,
+        "text": "Et d'où que tu sortes, tourne ton visage vers la Mosquée sacrée. Oui voilà bien la vérité venant de ton Seigneur. Et Allah n'est pas inattentif à ce que vous faites.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 149,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 157,
+        "text": "Et d'où que tu sortes, tourne ton visage vers la Mosquée sacrée. Et où que vous soyez, tournez-y vos visages, afin que les gens n'aient pas d'argument contre vous, sauf ceux d'entre eux qui sont de vrais injustes. Ne les craignez donc pas; mais craignez-Moi pour que Je parachève Mon bienfait à votre égard, et que vous soyez bien guidés!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 150,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 158,
+        "text": "Ainsi, Nous avons envoyé parmi vous un messager de chez vous qui vous récite Nos versets, vous purifie, vous enseigne le Livre et la Sagesse et vous enseigne ce que vous ne saviez pas.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 151,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 159,
+        "text": "Souvenez-vous de Moi donc. Je vous récompenserai. Remerciez-Moi et ne soyez pas ingrats envers Moi!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 152,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 19,
+        "hizbQuarter": 9,
+        "sajda": false
+      },
+      {
+        "number": 160,
+        "text": "O les croyants! Cherchez secours dans l'endurance et la Salât. Car Allah est avec ceux qui sont endurants.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 153,
+        "juz": 2,
+        "manzil": 1,
+        "page": 23,
+        "ruku": 20,
+        "hizbQuarter": 9,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

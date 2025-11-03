@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 304,
+    "ayahs": [
+      {
+        "number": 2238,
+        "text": "\"This is the benevolence of my Lord,\" he said; \"but when the promise of my Lord comes to pass, He will reduce it to a mound of dust; and the promise of my Lord is true.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 98,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2239,
+        "text": "We shall leave them on that day surging like waves pressing one against the other, and the trumpet blast will be sounded, when We shall gather them all together.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 99,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 262,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2240,
+        "text": "Then We shall bring Hell right before the infidels",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 100,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 262,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2241,
+        "text": "Whose eyes were veiled against My warning, and they could not hear.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 101,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 262,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2242,
+        "text": "Do the unbelievers think they can make My own creatures their protectors against Me? We have prepared Hell for the hospitality of infidels.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 102,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2243,
+        "text": "Say: \"Shall I tell you whose labour will be wasted?",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 103,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2244,
+        "text": "Theirs whose effort is misspent in pursuit of the pleasures of the world, even though they think they are doing good things.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 104,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2245,
+        "text": "They are those who reject the signs of their Lord, and the meeting with Him. So their good deeds will be fruitless, and on the Day of Judgement We shall not appoint any weighing for them.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 105,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2246,
+        "text": "Their requital will be Hell, because they disbelieved and mocked My signs and messengers.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 106,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2247,
+        "text": "But surely those who believe and do the right will have gardens of Paradise as gift,",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 107,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2248,
+        "text": "Where they will abide for ever, never wanting a change.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 108,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2249,
+        "text": "Say: \"If the ocean turned to ink for writing down the colloquy of my Lord, the ocean itself would be exhausted ere the words (and wonders) of my Lord come to end, even if we brought another like it for replenishment.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 109,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2250,
+        "text": "Say: \"I am only a man like you, but it has been communicated to me that your Lord is one and single God, and that whosoever hopes to meet his Lord should do what is right, and not associate any one in the worship of his Lord.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 110,
+        "juz": 16,
+        "manzil": 4,
+        "page": 304,
+        "ruku": 263,
+        "hizbQuarter": 122,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

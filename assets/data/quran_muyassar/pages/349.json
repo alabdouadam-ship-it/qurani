@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 349,
+    "ayahs": [
+      {
+        "number": 2778,
+        "text": "يقال لهم: ألم تكن آيات القرآن تتلى عليكم في الدنيا، فكنتم بها تكذبون؟",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 105,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2779,
+        "text": "لما بلَّغتهم رسلهم وأنذرتهم قالوا يوم القيامة: ربنا غلبت علينا لذاتنا وأهواؤنا المقدَّرة علينا في سابق علمك، وكنا في فعلنا ضالين عن الهدى.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 106,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2780,
+        "text": "ربنا أخرجنا من النار، وأعدنا إلى الدنيا، فإن رجعنا إلى الضلال فإنا ظالمون نستحق العقوبة.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 107,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2781,
+        "text": "قال الله عز وجل لهم: امكثوا في النار أذلاء ولا تخاطبوني. فانقطع عند ذلك دعاؤهم ورجاؤهم.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 108,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2782,
+        "text": "إنه كان فريق من عبادي- وهم المؤمنون- يَدْعون: ربنا آمنا فاستر ذنوبنا، وارحمنا، وأنت خير الراحمين.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 109,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2783,
+        "text": "فاشتغلتم بالاستهزاء بهم حتى نسيتم ذكر الله، فبقيتم على تكذيبكم، وقد كنتم تضحكون منهم سخرية واستهزاء.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 110,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2784,
+        "text": "إني جزيت هذا الفريق من عبادي المؤمنين الفوز بالجنة؛ بسبب صبرهم على الأذى وطاعة الله.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 111,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2785,
+        "text": "ويُسْألُ الأشقياء في النار: كم بقيتم في الدنيا من السنين؟ وكم ضيَّعتم فيها من طاعة الله؟",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 112,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2786,
+        "text": "قالوا لِهول الموقف وشدة العذاب: بقينا فيها يومًا أو بعض يوم، فاسأل الحُسَّاب الذين يعدُّون الشهور والأيام.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 113,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2787,
+        "text": "قال لهم: ما لبثتم إلا وقتًا قليلا لو صبرتم فيه على طاعة الله لفزتم بالجنة، لو كان عندكم علم بذلك؛ وذلك لأن مدة مكثهم في الدنيا قليلة جدا بالنسبة إلى طول مدتهم خالدين في النار.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 114,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2788,
+        "text": "أفحسبتم- أيها الخلق- أنما خلقناكم مهملين، لا أمر ولا نهي ولا ثواب ولا عقاب، وأنكم إلينا لا ترجعون في الآخرة للحساب والجزاء؟",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 115,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2789,
+        "text": "فتعالى الله الملك المتصرف في كل شيء، الذي هو حق، ووعده حق، ووعيده حق، وكل شيء منه حق، وتَقَدَّس عن أن يخلق شيئًا عبثًا أو سفهًا، لا إله غيره ربُّ العرشِ الكريمِ، الذي هو أعظم المخلوقات.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 116,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2790,
+        "text": "ومن يعبد مع الله الواحد إلهًا آخر، لا حجة له على استحقاقه العبادة، فإنما جزاؤه على عمله السيِّئ عند ربه في الآخرة. إنه لا فلاح ولا نجاة للكافرين يوم القيامة.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 117,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2791,
+        "text": "وقل- أيها النبي-: ربِّ تجاوَزْ عن الذنوب وارحم؛ وأنت خير من رحم ذا ذنب، فقبل توبته ولم يعاقبه على ذنبه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 118,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

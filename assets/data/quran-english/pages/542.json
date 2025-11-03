@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 542,
+    "ayahs": [
+      {
+        "number": 5105,
+        "text": "GOD CERTAINLY HEARD what the woman who argued with you about her husband, said, and complained to God; and God heard your interrogation. Verily God hears all, and sees everything.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 1,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5106,
+        "text": "Those of you who divorce your wives by calling them 'mothers,' cannot (make them) their mothers. Their mothers are only those who gave birth to them. They surely utter what is unseemly and a lie. But God is forbearing and forgiving.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 2,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5107,
+        "text": "Those who call their wives their mothers then revoke what they had said, should free a slave before having physical contact (with them). This is to warn you, as God is aware of what you do.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 3,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5108,
+        "text": "If one does not have the means (of doing so) then he should fast for two months continuously before he has physical contact; but any one who is unable to do so, should feed sixty needy persons. This (is enjoined) so that you may be faithful to God and His Apostle. These are the limits set by God. As for the unbelievers, there is painful punishment for them.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 4,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5109,
+        "text": "Those who oppose God will be disgraced, as those before them were. We have sent down very clear signs. For unbelievers there is a shameful punishment.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 5,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5110,
+        "text": "On the day when God will raise them up together, He will tell them what they did. God takes account of it although they forget, for all things are evident to God.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "58": {
+        "number": 58,
+        "name": "سُورَةُ المُجَادلَةِ",
+        "englishName": "Al-Mujaadila",
+        "englishNameTranslation": "The Pleading Woman",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

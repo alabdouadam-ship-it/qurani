@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 355,
+    "ayahs": [
+      {
+        "number": 2828,
+        "text": "By men not distracted from the remembrance of God either by trade and commerce or buying and selling, who stand by their devotional obligations and pay the zakat, who fear the day when hearts and eyes would flutter with trepidation",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 37,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 305,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2829,
+        "text": "That God may reward them for the best of their deeds, and bestow more on them of His bounty, for God gives whom He please without measure.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 38,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 305,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2830,
+        "text": "As for those who disbelieve, their deeds are like a mirage in the desert which the thirsty takes for water till he reaches it to find that there was nothing, and finds God with him who settles his account, for God is swift at the reckoning.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 39,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 305,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2831,
+        "text": "Or like darkness in a wide, wide sea, waves surging upon waves, with clouds overhanging, darkness on darkness. If you stretch your hand, you could hardly see it. For him whom God does not give any light, there is no light.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 40,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 305,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2832,
+        "text": "Have you not seen that all those who are in the heavens and the earth, and the birds on the wing, sing the praises of God. Each one knows its obligations and its duties, and God knows whatever they do.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 41,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2833,
+        "text": "For God's is the kingdom of the heavens and the earth, and the returning is to God.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 42,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2834,
+        "text": "Have you not seen that God drives the clouds, then joins them together and puts them fold on fold. Then you see the rain fall through them; and He sends down hail from the sky where there are mountains of it, and strikes those with it whom He will, and wards it off from whomsoever He please. His lightning could snatch away their eyes.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 43,
+        "juz": 18,
+        "manzil": 4,
+        "page": 355,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

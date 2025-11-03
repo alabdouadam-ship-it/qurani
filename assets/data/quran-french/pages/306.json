@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 306,
+    "ayahs": [
+      {
+        "number": 2262,
+        "text": "... «O Yahya, tiens fermement au Livre (la Thora)!» Nous lui donnâmes la sagesse alors qu'il était enfant,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 12,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2263,
+        "text": "ainsi que la tendresse de Notre part et la pureté. Il était pieux,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 13,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2264,
+        "text": "et dévoué envers ses père et mère; et ne fut ni violent ni désobéissant.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 14,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2265,
+        "text": "Que la paix soit sur lui le jour où il naquit, le jour où il mourra, et le jour où il sera ressuscité vivant!",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 15,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2266,
+        "text": "Mentionne, dans le Livre (le Coran), Marie, quand elle se retira de sa famille en un lieu vers l'Orient.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 16,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2267,
+        "text": "Elle mit entre elle et eux un voile. Nous lui envoyâmes Notre Esprit (Gabriel), qui se présenta à elle sous la forme d'un homme parfait.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 17,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2268,
+        "text": "Elle dit: «Je me réfugie contre toi auprès du Tout Miséricordieux. Si tu es pieux, [ne m'approche point].»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 18,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2269,
+        "text": "Il dit: «Je suis en fait un Messager de ton Seigneur pour te faire don d'un fils pur».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 19,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2270,
+        "text": "Elle dit: «Comment aurais-je un fils, quand aucun homme ne m'a touchée, et que je ne suis pas prostituée?»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 20,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2271,
+        "text": "Il dit: «Ainsi sera-t-il! Cela M'est facile, a dit ton Seigneur! Et Nous ferons de lui un signe pour les gens, et une miséricorde de Notre part. C'est une affaire déjà décidée».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 21,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2272,
+        "text": "Elle devint donc enceinte [de l'enfant], et elle se retira avec lui en un lieu éloigné.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 22,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2273,
+        "text": "Puis les douleurs de l'enfantement l'amenèrent au tronc du palmier, et elle dit: «Malheur à moi! Que je fusse morte avant cet instant! Et que je fusse totalement oubliée!»",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 23,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2274,
+        "text": "Alors, il l'appela d'au-dessous d'elle, [lui disant:] «Ne t'afflige pas. Ton Seigneur a placé à tes pieds une source.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 24,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2275,
+        "text": "Secoue vers toi le tronc du palmier: il fera tomber sur toi des dattes fraîches et mûres.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 25,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

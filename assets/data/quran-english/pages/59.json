@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 59,
+    "ayahs": [
+      {
+        "number": 364,
+        "text": "O people of the Book, why do you mix the false with the true, and hide the truth knowingly?",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 71,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 48,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 365,
+        "text": "A section of the people of the Book say: \"Believe in the morning what has been revealed to the faithful, and deny in the evening; they might perhaps turn back;",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 72,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 366,
+        "text": "\"And do not believe those who do not belong to your faith.\" Say: \"True guidance is the guidance of God -- that any may be given the like of what has been given you.\" Will they argue with you before your Lord? Say: \"God's is the bounty. He gives whomsoever He please, for He is infinite and all-wise.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 73,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 367,
+        "text": "He may choose whom He likes for His favours, for great is His bounty.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 74,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 23,
+        "sajda": false
+      },
+      {
+        "number": 368,
+        "text": "There are some among the people of the Book who return a whole treasure entrusted to them; yet some there are who do not give back a dinar until you demand and insist, because they say: \"It is not a sin for us to (usurp) the rights of the Arabs.\" Yet they lie against God, and they know it.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 75,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 369,
+        "text": "But certainly whoever keeps his promise and follows the right path (will be blessed), for God loves those who shun evil and follow the right course.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 76,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 370,
+        "text": "Those who trade on the promises of God, and who purchase a little gain from their oaths, will have no share in the life to come. God will not address or even regard them on the Day of Resurrection, nor perfect them, and their suffering will be painful.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 77,
+        "juz": 3,
+        "manzil": 1,
+        "page": 59,
+        "ruku": 49,
+        "hizbQuarter": 24,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

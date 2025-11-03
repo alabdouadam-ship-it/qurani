@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 220,
+    "ayahs": [
+      {
+        "number": 1462,
+        "text": "Why has there been no habitation that believed and profited by their faith, except the people of Jonah? When they came to believe, We removed from them the affliction of shame in the world, and made them prosperous for a time.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 98,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1463,
+        "text": "If your Lord had willed, all the people on the earth would have come to believe, one and all.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 99,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1464,
+        "text": "Are you going to compel the people to believe except by God's dispensation? He puts doubt in (the minds of) those who do not think.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 100,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1465,
+        "text": "Say: \"Observe all there is in the heavens and the earth.\" But signs or warnings will be of no avail to those who do not believe.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 101,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1466,
+        "text": "Can they expect anything but what the people before them had known? Say: \"Then wait. I am waiting with you.\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 102,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1467,
+        "text": "Thus do We deliver our apostles and those who believe. As a matter of duty We save the believers.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 103,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 181,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1468,
+        "text": "Say: \"O men, if you have doubt about my faith, then (know) I do not worship those you worship apart from God, but I worship God who makes you die; and I am commanded to be a believer,",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 104,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1469,
+        "text": "And to set my face toward the way, as one upright, and not be one of those who associate others with God.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 105,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1470,
+        "text": "And not to invoke any other than God, who can neither help nor hurt me; for if I do, I would surely be unjust.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 106,
+        "juz": 11,
+        "manzil": 3,
+        "page": 220,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

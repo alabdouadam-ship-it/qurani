@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 137,
+    "ayahs": [
+      {
+        "number": 863,
+        "text": "Remember when Abraham said to Azar, his father: \"Why do you take idols for God? I certainly find you and your people in error.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 74,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 864,
+        "text": "Thus We showed to Abraham the visible and invisible world of the heavens and the earth, that he could be among those who believe.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 75,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 865,
+        "text": "When the night came with her covering of darkness he saw a star, and (Azar, his father) said: \"This is my Lord.\" But when the star set, (Abraham) said: \"I love not those that wane.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 76,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 866,
+        "text": "When (Azar) saw the moon rise all aglow, he said: \"This is my Lord.\" But even as the moon set, (Abraham) said: \"If my Lord had not shown me the way I would surely have gone astray.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 77,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 867,
+        "text": "When (Azar) saw the sun rise all resplendent, he said: \"My Lord is surely this, and the greatest of them all.\" But the sun also set, and (Abraham) said: \"O my people, I am through with those you associate (with God).",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 78,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 868,
+        "text": "I have truly turned my face towards Him who created the heavens and the earth: I have chosen one way and am not an idolater.\"",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 79,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 869,
+        "text": "His people argued, and he said: \"Do you argue with me about God? He has guided me already, and I fear not what you associate with Him, unless my Lord wills, for held within the knowledge of my Lord is everything. Will you not reflect?",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 80,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      },
+      {
+        "number": 870,
+        "text": "And why should I fear those you associate with Him when you fear not associating others with God for which He has sent down no sanction? Tell me, whose way is the way of peace, if you have the knowledge?",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 81,
+        "juz": 7,
+        "manzil": 2,
+        "page": 137,
+        "ruku": 110,
+        "hizbQuarter": 55,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

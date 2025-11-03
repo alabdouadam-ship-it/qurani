@@ -1,0 +1,249 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 293,
+    "ayahs": [
+      {
+        "number": 2134,
+        "text": "We have sent it down with truth, and with truth has (the Qur'an) come down. And We have sent you only to give good news and to warn.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 105,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2135,
+        "text": "We have divided the Qur'an into parts that you may recite it to men slowly, with deliberation. That is why We sent it down by degrees.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 106,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2136,
+        "text": "Say: \"Believe in it or do not believe: Those who were given knowledge before it bow in adoration when it is read out to them,",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 107,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2137,
+        "text": "And say: \"Glory be to our Lord. The promise of our Lord has indeed been fulfilled.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 108,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2138,
+        "text": "And weeping they kneel down, and this increases their humility.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 109,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": {
+          "id": 4,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2139,
+        "text": "Say: \"Call Him Allah or call Him Ar-Rahman; whatever the name you call Him by, all His names are beautiful.\" Do not say your prayers too loudly or in too low a voice, but follow a middle coarse.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 110,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2140,
+        "text": "And say: \"All praise be to God who has neither begotten a son nor has a partner in His kingdom; nor has He need of any one to protect Him from ignominy. So extol Him by extolling His majesty.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 111,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2141,
+        "text": "ALL PRAISE BE to God who has revealed to His votary the Book which is free of all obliquity,",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 1,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2142,
+        "text": "Immutable, so that it may warn of a severe punishment from Him; and give happy tidings to those who believe and do the right that there is a better reward (of Paradise) for them,",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 2,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2143,
+        "text": "Where they will abide for ever;",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 3,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2144,
+        "text": "And that it may warn those who say: \"God has begotten a son.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 4,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      },
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

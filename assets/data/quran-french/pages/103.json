@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 103,
+    "ayahs": [
+      {
+        "number": 648,
+        "text": "(Nous les avons maudits) à cause de leur rupture de l'engagement, leur mécréance aux révélations d'Allah, leur meurtre injustifié des prophètes, et leur parole: «Nos cœurs sont (enveloppés) et imperméables». En réalité, c'est Allah qui a scellé leurs cœurs à cause de leur mécréance, car ils ne croyaient que très peu.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 155,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 649,
+        "text": "Et à cause de leur mécréance et de l'énorme calomnie qu'ils prononcent contre Marie,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 156,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 650,
+        "text": "et à cause de leur parole: «Nous avons vraiment tué le Christ, Jésus, fils de Marie, le Messager d'Allah»... Or, ils ne l'ont ni tué ni crucifié; mais ce n'était qu'un faux semblant! Et ceux qui ont discuté sur son sujet sont vraiment dans l'incertitude: ils n'en ont aucune connaissance certaine, ils ne font que suivre des conjectures et ils ne l'ont certainement pas tué,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 157,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 651,
+        "text": "mais Allah l'a élevé vers Lui. Et Allah est Puissant et Sage.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 158,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 652,
+        "text": "Il n'y aura personne, parmi les gens du Livre, qui n'aura pas foi en lui avant sa mort. Et au Jour de la Résurrection, il sera témoin contre eux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 159,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 653,
+        "text": "C'est à cause des iniquités des Juifs que Nous leur avons rendu illicites les bonnes nourritures qui leur étaient licites, et aussi à cause de ce qu'ils obstruent le sentier d'Allah, (à eux-mêmes et) à beaucoup de monde,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 160,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 654,
+        "text": "et à cause de ce qu'ils prennent des intérêts usuraires- qui leur étaient pourtant interdits - et parce qu'ils mangent illégalement les biens des gens. A ceux d'entre eux qui sont mécréants Nous avons préparé un châtiment douloureux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 161,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      },
+      {
+        "number": 655,
+        "text": "Mais ceux d'entre eux qui sont enracinés dans la connaissance, ainsi que les croyants, (tous) ont foi à ce qu'on a fait descendre sur toi et à ce qu'on a fait descendre avant toi. Et quant à ceux qui accomplissent la Salât, paient la Zakât et croient en Allah et au Jour dernier, ceux-là Nous leur donnerons une énorme récompense.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 162,
+        "juz": 6,
+        "manzil": 1,
+        "page": 103,
+        "ruku": 83,
+        "hizbQuarter": 41,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 443,
+    "ayahs": [
+      {
+        "number": 3746,
+        "text": "Et un (autre) signe pour eux est que Nous avons transporté leur descendance sur le bateau chargé;",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 41,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3747,
+        "text": "et Nous leur créâmes des semblables sur lesquels ils montent.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 42,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3748,
+        "text": "Et si Nous le voulons, Nous les noyons; pour eux alors, pas de secoureur et ils ne seront pas sauvés,",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 43,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3749,
+        "text": "sauf par une miséricorde de Notre part, et à titre de jouissance pour un temps.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 44,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3750,
+        "text": "Et quand on leur dit: «Craignez ce qu'il y a devant vous et ce qu'il y a derrière vous afin que vous ayez la miséricorde»!...",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 45,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3751,
+        "text": "Or, pas une preuve ne leur vient, parmi les preuves de leur Seigneur sans qu'ils ne s'en détournent.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 46,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3752,
+        "text": "Et quand on leur dit: «Dépensez de ce qu'Allah vous a attribué», ceux qui ont mécru disent à ceux qui ont cru: «Nourrirons-nous quelqu'un qu'Allah aurait nourri s'Il l'avait voulu? Vous n'êtes que dans un égarement évident».",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 47,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3753,
+        "text": "Et ils disent: «A quand cette promesse si vous êtes véridiques?»",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 48,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3754,
+        "text": "Ils n'attendent qu'un seul Cri qui les saisira alors qu'ils seront en train de disputer.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 49,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3755,
+        "text": "Ils ne pourront donc ni faire de testament, ni retourner chez leurs familles.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 50,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 383,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3756,
+        "text": "Et on soufflera dans la Trompe, et voilà que, des tombes, ils se précipiteront vers leur Seigneur,",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 51,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3757,
+        "text": "en disant: «Malheur à nous! Qui nous a ressuscités de là où nous dormions?» C'est ce que le Tout Miséricordieux avait promis; et les Messagers avaient dit vrai.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 52,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3758,
+        "text": "Ce ne sera qu'un seul Cri, et voilà qu'ils seront tous amenés devant Nous.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 53,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      },
+      {
+        "number": 3759,
+        "text": "Ce jour-là, aucune âme ne sera lésée en rien. Et vous ne serez rétribués que selon ce que vous faisiez.",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 54,
+        "juz": 23,
+        "manzil": 5,
+        "page": 443,
+        "ruku": 384,
+        "hizbQuarter": 177,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

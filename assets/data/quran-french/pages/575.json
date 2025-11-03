@@ -1,0 +1,378 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 575,
+    "ayahs": [
+      {
+        "number": 5495,
+        "text": "Ton Seigneur sait, certes, que tu (Muhammad) te tiens debout moins de deux tiers de la nuit, ou sa moitié, ou son tiers. De même qu'une partie de ceux qui sont avec toi. Allah détermine la nuit et le jour. Il sait que vous ne saurez jamais passer toute la nuit en prière. Il a usé envers vous avec indulgence. Récitez donc ce qui [vous] est possible du Coran. Il sait qu'il y aura parmi vous des malades, et d'autres qui voyageront sur la terre, en quête de la grâce d'Allah, et d'autres encore qui combattront dans le chemin d'Allah. Récite-en donc ce qui [vous] sera possible. Accomplissez la Salât, acquittez la Zakât, et faites à Allah un prêt sincère. Tout bien que vous vous préparez, vous le retrouverez auprès d'Allah, meilleur et plus grand en fait de récompense. Et implorez le pardon d'Allah. Car Allah est Pardonneur et Très Miséricordieux.",
+        "surah": {
+          "number": 73,
+          "name": "سُورَةُ المُزَّمِّلِ",
+          "englishName": "Al-Muzzammil",
+          "englishNameTranslation": "The Enshrouded One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 20
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 509,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5496,
+        "text": "O, toi (Muhammad)! Le revêtu d'un manteau!",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5497,
+        "text": "Lève-toi et avertis.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5498,
+        "text": "Et de ton Seigneur, célèbre la grandeur.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5499,
+        "text": "Et tes vêtements, purifie-les.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5500,
+        "text": "Et de tout péché, écarte-toi.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5501,
+        "text": "Et ne donne pas dans le but de recevoir davantage.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5502,
+        "text": "Et pour ton Seigneur, endure.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5503,
+        "text": "Quand on sonnera du Clairon,",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5504,
+        "text": "alors, ce jour-là sera un jour difficile,",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5505,
+        "text": "pas facile pour les mécréants.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5506,
+        "text": "Laisse-Moi avec celui que J'ai créé seul,",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5507,
+        "text": "et à qui J'ai donné des biens étendus,",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5508,
+        "text": "et des enfants qui lui tiennent toujours compagnie,",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5509,
+        "text": "pour qui aussi J'ai aplani toutes difficultés",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5510,
+        "text": "Cependant, il convoite [de Moi] que Je lui donne davantage.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5511,
+        "text": "Pas du tout! Car il reniait nos versets (le Coran) avec entêtement.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      },
+      {
+        "number": 5512,
+        "text": "Je vais le contraindre à gravir une pente.",
+        "surah": {
+          "number": 74,
+          "name": "سُورَةُ المُدَّثِّرِ",
+          "englishName": "Al-Muddaththir",
+          "englishNameTranslation": "The Cloaked One",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 56
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 575,
+        "ruku": 510,
+        "hizbQuarter": 230,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "73": {
+        "number": 73,
+        "name": "سُورَةُ المُزَّمِّلِ",
+        "englishName": "Al-Muzzammil",
+        "englishNameTranslation": "The Enshrouded One",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 20
+      },
+      "74": {
+        "number": 74,
+        "name": "سُورَةُ المُدَّثِّرِ",
+        "englishName": "Al-Muddaththir",
+        "englishNameTranslation": "The Cloaked One",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 56
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

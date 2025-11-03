@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 280,
+    "ayahs": [
+      {
+        "number": 2012,
+        "text": "(Rappelle-toi) le jour où chaque âme viendra, plaidant pour elle-même, et chaque âme sera pleinement rétribuée pour ce qu'elle aura œuvré sans qu'ils subissent la moindre injustice.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 111,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2013,
+        "text": "Et Allah propose en parabole une ville: elle était en sécurité, tranquille; sa part de nourriture lui venait de partout en abondance. Puis elle se montra ingrate aux bienfaits d'Allah. Allah lui fit alors goûter la violence de la faim et de la peur [en punition] de ce qu'ils faisaient.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 112,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2014,
+        "text": "En effet, un Messager des leurs est venu à eux, mais ils l'ont traité de menteur. Le châtiment, donc, les saisit parce qu'ils étaient injustes.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 113,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2015,
+        "text": "Mangez donc de ce qu'Allah vous a attribué de licite et de bon. Et soyez reconnaissants pour les bienfaits d'Allah, si c'est Lui que vous adorez.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 114,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2016,
+        "text": "Il vous a, en effet, interdit (la chair) de la bête morte, le sang, la chair de porc, et la bête sur laquelle un autre nom que celui d'Allah a été invoqué. Mais quiconque en mange sous contrainte, et n'est ni rebelle ni transgresseur, alors Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 115,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2017,
+        "text": "Et ne dites pas, conformément aux mensonges proférés par vos langues: «Ceci est licite, et cela est illicite», pour forger le mensonge contre Allah. Certes, ceux qui forgent le mensonge contre Allah ne réussiront pas.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 116,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2018,
+        "text": "Ce sera pour eux une piètre jouissance, mais un douloureux châtiment les attend.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 117,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      },
+      {
+        "number": 2019,
+        "text": "Aux Juifs, Nous avions interdit ce que Nous t'avons déjà relaté. Nous ne leur avons fait aucun tort; mais ils se faisaient du tort à eux-mêmes.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 118,
+        "juz": 14,
+        "manzil": 3,
+        "page": 280,
+        "ruku": 238,
+        "hizbQuarter": 112,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

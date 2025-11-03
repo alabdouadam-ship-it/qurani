@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 87,
+    "ayahs": [
+      {
+        "number": 545,
+        "text": "They are the ones who were cursed by God; and those who are cursed by God will have none to protect them.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 52,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 546,
+        "text": "Have they a share in the kingdom? (If they had,) they would never have given an iota to the people.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 53,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 547,
+        "text": "Are they so envious of others for what God has given them of His bounty? So We had given the Book and the Law to Abraham's family, and given them great dominion.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 54,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 548,
+        "text": "Then some of them believed in it, and some turned away from it; yet sufficient is Hell, the flaming Fire!",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 55,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 549,
+        "text": "And those who disbelieve Our revelations shall be cast into Hell; and when their skin is burnt up and singed, We shall give them a new coat that they may go on tasting the agony of punishment, for God is all-mighty and all-wise.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 56,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 550,
+        "text": "But those who believe and do good deeds We shall admit into gardens with streams of running water, where they will abide for ever, with fairest of companions and coolest of shades.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 57,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 551,
+        "text": "God enjoins that you render to the owners what is held in trust with you, and that when you judge among the people do so equitably. Noble are the counsels of God, and God hears all and sees everything.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 58,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 35,
+        "sajda": false
+      },
+      {
+        "number": 552,
+        "text": "O you who believe, obey God and the Prophet and those in authority among you; and if you are at variance over something, refer it to God and the Messenger, if you believe in God and the Last Day. This is good for you and the best of settlement.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 59,
+        "juz": 5,
+        "manzil": 1,
+        "page": 87,
+        "ruku": 69,
+        "hizbQuarter": 35,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 509,
+    "ayahs": [
+      {
+        "number": 4565,
+        "text": "ويقول الذين آمنوا بالله ورسوله: هلا نُزِّلت سورة من الله تأمرنا بجهاد الكفار، فإذا أُنزِلت سورة محكمة بالبيان والفرائض وذُكر فيها الجهاد، رأيت الذين في قلوبهم شك في دين الله ونفاق ينظرون إليك -أيها النبي- نظر الذي قد غُشِيَ عليه خوفَ الموت، فأولى لهؤلاء الذين في قلوبهم مرض أن يطيعوا الله، وأن يقولوا قولا موافقًا للشرع. فإذا وجب القتال وجاء أمر الله بِفَرْضه كره هؤلاء المنافقون ذلك، فلو صدقوا الله في الإيمان والعمل لكان خيرًا لهم من المعصية والمخالفة.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 20,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4566,
+        "text": "ويقول الذين آمنوا بالله ورسوله: هلا نُزِّلت سورة من الله تأمرنا بجهاد الكفار، فإذا أُنزِلت سورة محكمة بالبيان والفرائض وذُكر فيها الجهاد، رأيت الذين في قلوبهم شك في دين الله ونفاق ينظرون إليك -أيها النبي- نظر الذي قد غُشِيَ عليه خوفَ الموت، فأولى لهؤلاء الذين في قلوبهم مرض أن يطيعوا الله، وأن يقولوا قولا موافقًا للشرع. فإذا وجب القتال وجاء أمر الله بِفَرْضه كره هؤلاء المنافقون ذلك، فلو صدقوا الله في الإيمان والعمل لكان خيرًا لهم من المعصية والمخالفة.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 21,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4567,
+        "text": "فلعلكم إن أعرضتم عن كتاب الله وسنة نبيه محمد صلى الله عليه وسلم أن تعصوا الله في الأرض، فتكفروا به وتسفكوا الدماء وتُقَطِّعوا أرحامكم.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 22,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4568,
+        "text": "أولئك الذين أبعدهم الله من رحمته، فجعلهم لا يسمعون ما ينفعهم ولا يبصرونه، فلم يتبينوا حجج الله مع كثرتها.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 23,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4569,
+        "text": "أفلا يتدبر هؤلاء المنافقون مواعظ القرآن ويتفكرون في حججه؟ بل هذه القلوب مغلَقة لا يصل إليها شيء من هذا القرآن، فلا تتدبر مواعظ الله وعبره.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 24,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4570,
+        "text": "إن الذين ارتدُّوا عن الهدى والإيمان، ورجعوا على أعقابهم كفارًا بالله من بعد ما وَضَح لهم الحق، الشيطان زيَّن لهم خطاياهم، ومدَّ لهم في الأمل.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 25,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4571,
+        "text": "ذلك الإمداد لهم حتى يتمادوا في الكفر؛ بسبب أنهم قالوا لليهود الذين كرهوا ما نزل الله: سنطيعكم في بعض الأمر الذي هو خلاف لأمر الله وأمر رسوله، والله تعالى يعلم ما يخفيه هؤلاء ويسرونه، فليحذر المسلم من طاعة غير الله فيما يخالف أمر الله سبحانه، وأمر رسوله محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 26,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4572,
+        "text": "فكيف حالهم إذا قبضت الملائكة أرواحهم وهم يضربون وجوههم وأدبارهم؟",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 27,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4573,
+        "text": "ذلك العذاب الذي استحقوه ونالوه؛ بسبب أنهم اتبعوا ما أسخط الله عليهم من طاعة الشيطان، وكرهوا ما يرضيه عنهم من العمل الصالح، ومنه قتال الكفار بعدما افترضه عليهم، فأبطل الله ثواب أعمالهم من صدقة وصلة رحم وغير ذلك.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 28,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 444,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4574,
+        "text": "بل أظنَّ المنافقون أن الله لن يُخْرِج ما في قلوبهم من الحسد والحقد للإسلام وأهله؟ بلى فإن الله يميز الصادق من الكاذب.",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 29,
+        "juz": 26,
+        "manzil": 6,
+        "page": 509,
+        "ruku": 445,
+        "hizbQuarter": 203,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "47": {
+        "number": 47,
+        "name": "سُورَةُ مُحَمَّدٍ",
+        "englishName": "Muhammad",
+        "englishNameTranslation": "Muhammad",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 38
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

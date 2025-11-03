@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 64,
+    "ayahs": [
+      {
+        "number": 402,
+        "text": "A Allah appartient tout ce qui est dans les cieux et sur la terre. Et c'est vers Allah que toute chose sera ramenée.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 109,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 403,
+        "text": "Vous êtes la meilleure communauté, qu'on ait fait surgir pour les hommes. Vous ordonnez le convenable, interdisez le blâmable et croyez à Allah. Si les gens du Livre croyaient, ce serait meilleur pour eux, il y en a qui ont la foi, mais la plupart d'entre eux sont des pervers.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 110,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 404,
+        "text": "Ils ne sauront jamais vous causer de grand mal, seulement une nuisance (par la langue); et s'ils vous combattent, ils vous tourneront le dos, et ils n'auront alors point de secours.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 111,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 405,
+        "text": "Où qu'ils se trouvent, ils sont frappés d'avilissement, à moins d'un secours providentiel d'Allah ou d'un pacte conclu avec les hommes. Ils ont encouru la colère d'Allah, et les voilà frappés de malheur, pour n'avoir pas cru aux signes d'Allah, et assassiné injustement les prophètes, et aussi pour avoir désobéi et transgressé.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 112,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 406,
+        "text": "Mais ils ne sont pas tous pareils. Il est, parmi les gens du Livre, une communauté droite qui, aux heures de la nuit, récite les versets d'Allah en se prosternant.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 113,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 407,
+        "text": "Ils croient en Allah et au Jour dernier, ordonnent le convenable, interdisent le blâmable et concourent aux bonnes œuvres. Ceux-là sont parmi les gens de bien.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 114,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 408,
+        "text": "Et quelque bien qu'ils fassent, il ne leur sera pas dénié. Car Allah connaît bien les pieux.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 115,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

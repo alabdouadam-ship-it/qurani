@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 131,
+    "ayahs": [
+      {
+        "number": 817,
+        "text": "ليس الأمر كذلك، بل ظهر لهم يوم القيامة ما كانوا يعلمونه من أنفسهم من صدق ما جاءت به الرسل في الدنيا، وإن كانوا يظهرون لأتباعه خلافه. ولو فرض أن أعيدوا إلى الدنيا فأمهلوا لرجعوا إلى العناد بالكفر والتكذيب. وإنهم لكاذبون في قولهم: لو رددنا إلى الدنيا لم نكذب بآيات ربنا، وكنا من المؤمنين.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 28,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 104,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 818,
+        "text": "وقال هؤلاء المشركون المنكرون للبعث: ما الحياة إلا هذه الحياة التي نحن فيها، وما نحن بمبعوثين بعد موتنا.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 29,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 104,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 819,
+        "text": "ولو ترى -أيها الرسول- منكري البعث إذ حُبسوا بين يدي الله تعالى لقضائه فيهم يوم القيامة، لرأيت أسوأ حال، إذ يقول الله جل وعلا أليس هذا بالحق، أي: أليس هذا البعث الذي كنتم تنكرونه في الدنيا حقًّا؟ قالوا: بلى وربنا إنه لحق، قال الله تعالى: فذوقوا العذاب بما كنتم تكفرون أي: العذاب الذي كنتم تكذبون به في الدنيا بسبب جحودكم بالله تعالى ورسوله محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 30,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 104,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 820,
+        "text": "قد خسر الكفار الذين أنكروا البعث بعد الموت، حتى إذا قامت القيامة، وفوجئوا بسوء المصير، نادَوا على أنفسهم بالحسرة على ما ضيَّعوه في حياتهم الدنيا، وهم يحملون آثامهم على ظهورهم، فما أسوأ الأحمال الثقيلة السيئة التي يحملونها!!",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 31,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 105,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 821,
+        "text": "وما الحياة الدنيا في غالب أحوالها إلا غرور وباطل، والعمل الصالح للدار الآخرة خير للذين يخشون الله، فيتقون عذابه بطاعته واجتناب معاصيه. أفلا تعقلون -أيها المشركون المغترون بزينة الحياة الدنيا- فتقدِّموا ما يبقى على ما يفنى؟",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 32,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 105,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 822,
+        "text": "إنا نعلم إنه ليُدْخل الحزنَ إلى قلبك تكذيبُ قومك لك في الظاهر، فاصبر واطمئن؛ فإنهم لا يكذبونك في قرارة أنفسهم، بل يعتقدون صدقك، ولكنهم لظلمهم وعدوانهم يجحدون البراهين الواضحة على صدقك، فيكذبونك فيما جئت به.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 33,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 105,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 823,
+        "text": "ولقد كذَّب الكفارُ رسلا من قبلك أرسلهم الله تعالى إلى أممهم وأوذوا في سبيله، فصبروا على ذلك ومضوا في دعوتهم وجهادهم حتى أتاهم نصر الله. ولا مبدل لكلمات الله، وهي ما أنزل على نبيه محمد صلى الله عليه وسلم مِن وعده إياه بالنصر على مَن عاداه. ولقد جاءك -أيها الرسول- مِن خبر مَن كان قبلك من الرسل، وما تحقق لهم من نصر الله، وما جرى على مكذبيهم من نقمة الله منهم وغضبه عليهم، فلك فيمن تقدم من الرسل أسوة وقدوة. وفي هذا تسلية للرسول صلى الله عليه وسلم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 34,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 105,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 824,
+        "text": "وإن كان عَظُمَ عليك -أيها الرسول- صدود هؤلاء المشركين وانصرافهم عن الاستجابة لدعوتك، فإن استطعت أن تتخذ نفقًا في الأرض، أو مصعدًا تصعد فيه إلى السماء، فتأتيهم بعلامة وبرهان على صحة قولك غير الذي جئناهم به فافعل. ولو شاء الله لَجَمعهم على الهدى الذي أنتم عليه ووفَّقهم للإيمان، ولكن لم يشأ ذلك لحكمة يعلمها سبحانه، فلا تكونن -أيها الرسول- من الجاهلين الذين اشتد حزنهم، وتحسَّروا حتى أوصلهم ذلك إلى الجزع الشديد.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 35,
+        "juz": 7,
+        "manzil": 2,
+        "page": 131,
+        "ruku": 105,
+        "hizbQuarter": 52,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

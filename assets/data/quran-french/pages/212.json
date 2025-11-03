@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 212,
+    "ayahs": [
+      {
+        "number": 1390,
+        "text": "A ceux qui agissent en bien est réservée la meilleure (récompense) et même davantage. Nulle fumée noircissante, nul avilissement ne couvriront leurs visages. Ceux-là sont les gens du Paradis, où ils demeureront éternellement.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 26,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1391,
+        "text": "Et ceux qui ont commis de mauvaises actions, la rétribution d'une mauvaise action sera l'équivalent. Un avilissement les couvrira, - pas de protecteur pour eux contre Allah -, comme si leurs visages se couvraient de lambeaux de ténèbres nocturnes. Ceux-là sont là les gens du Feu où ils demeureront éternellement.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 27,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1392,
+        "text": "(Et rappelle-toi) le jour où Nous les rassemblerons tous. Puis, Nous dirons à ceux qui ont donné [à Allah] des associés: «A votre place, vous et vos associés.» Nous les séparerons les uns des autres et leurs associés diront: «Ce n'est pas nous que vous adoriez».",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 28,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1393,
+        "text": "Allah suffit comme témoin entre nous et vous. En vérité, nous étions indifférents à votre adoration».",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 29,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1394,
+        "text": "Là, chaque âme éprouvera (les conséquences de) ce qu'elle a précédemment accompli. Et ils seront ramenés vers Allah leur vrai Maître; et leurs inventions (idoles) s'éloigneront d'eux.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 30,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 174,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1395,
+        "text": "Dis: «Qui vous attribue de la nourriture du ciel et de la terre? Qui détient l'ouïe et la vue, et qui fait sortir le vivant du mort et fait sortir le mort du vivant, et qui administre tout?» Ils diront: «Allah». Dis alors: «Ne Le craignez-vous donc pas?»",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 31,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1396,
+        "text": "Tel est Allah, votre vrai Seigneur. Au delà de la vérité qu'y a-t-il donc sinon l'égarement? Comment alors pouvez-vous, vous détourner?»",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 32,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      },
+      {
+        "number": 1397,
+        "text": "C'est ainsi que s'est réalisée la parole de ton Seigneur contre ceux qui sont pervers: «Ils ne croiront pas».",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 33,
+        "juz": 11,
+        "manzil": 3,
+        "page": 212,
+        "ruku": 175,
+        "hizbQuarter": 85,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

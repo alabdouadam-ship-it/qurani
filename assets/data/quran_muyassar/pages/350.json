@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 350,
+    "ayahs": [
+      {
+        "number": 2792,
+        "text": "هذه سورة عظيمة من القرآن أنزلناها، وأوجبنا العمل بأحكامها، وأنزلنا فيها دلالات واضحات؛ لتتذكروا- أيها المؤمنون- بهذه الآيات البينات، وتعملوا بها.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 1,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2793,
+        "text": "الزانية والزاني اللذان لم يسبق لهما الزواج، عقوبةُ كل منهما مائة جلدة بالسوط، وثبت في السنة مع هذا الجلد التغريب لمدة عام. ولا تحملكم الرأفة بهما على ترك العقوبة أو تخفيفها، إن كنتم مصدقين بالله واليوم الآخر عاملين بأحكام الإسلام، وليحضر العقوبةَ عدد من المؤمنين؛ تشنيعًا وزجرًا وعظة واعتبارًا.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 2,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2794,
+        "text": "الزاني لا يرضى إلا بنكاح زانية أو مشركة لا تُقِرُّ بحرمة الزنى، والزانية لا ترضى إلا بنكاح زان أو مشرك لا يُقِرُّ بحرمة الزنى، أما العفيفون والعفيفات فإنهم لا يرضون بذلك، وحُرِّم ذلك النكاح على المؤمنين. وهذا دليل صريح على تحريم نكاح الزانية حتى تتوب، وكذلك تحريم إنكاح الزاني حتى يتوب.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 3,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2795,
+        "text": "والذين يتهمون بالفاحشة أنفسًا عفيفة من النساء والرجال مِن دون أن يشهد معهم أربعة شهود عدول، فاجلدوهم بالسوط ثمانين جلدة، ولا تقبلوا لهم شهادة أبدًا، وأولئك هم الخارجون عن طاعة الله.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 4,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2796,
+        "text": "لكن مَن تاب ونَدم ورجع عن اتهامه وأصلح عمله، فإن الله يغفر ذنبه ويرحمه، ويقبل توبته.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 5,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2797,
+        "text": "والذين يرمون زوجاتهم بالزنى، ولم يكن لهم شهداء على اتهامهم لهنَّ إلا أنفسهم، فعلى الواحد منهم أن يشهد أمام القاضي أربع مرات بقوله: أشهد بالله أني صادق فيما رميتها به من الزنى، ويزيد في الشهادة الخامسة الدعوة على نفسه باستحقاقه لعنة الله إن كان كاذبًا في قوله.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 6,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2798,
+        "text": "والذين يرمون زوجاتهم بالزنى، ولم يكن لهم شهداء على اتهامهم لهنَّ إلا أنفسهم، فعلى الواحد منهم أن يشهد أمام القاضي أربع مرات بقوله: أشهد بالله أني صادق فيما رميتها به من الزنى، ويزيد في الشهادة الخامسة الدعوة على نفسه باستحقاقه لعنة الله إن كان كاذبًا في قوله.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 7,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2799,
+        "text": "وبشهادته تستوجب الزوجة عقوبة الزنى، وهي الرجم حتى الموت، ولا يدفع عنها هذه العقوبة إلا أن تشهد في مقابل شهادته أربع شهادات بالله إنه لكاذب في اتهامه لها بالزنى، وتزيد في الشهادة الخامسة الدعوة على نفسها باستحقاقها غضب الله، إن كان زوجها صادقًا فى اتهامه لها، وفي هذه الحال يفرق بينهما.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 8,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2800,
+        "text": "وبشهادته تستوجب الزوجة عقوبة الزنى، وهي الرجم حتى الموت، ولا يدفع عنها هذه العقوبة إلا أن تشهد في مقابل شهادته أربع شهادات بالله إنه لكاذب في اتهامه لها بالزنى، وتزيد في الشهادة الخامسة الدعوة على نفسها باستحقاقها غضب الله، إن كان زوجها صادقًا فى اتهامه لها، وفي هذه الحال يفرق بينهما.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 9,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      },
+      {
+        "number": 2801,
+        "text": "ولولا تفضُّل الله عليكم ورحمته- أيها المؤمنون- بهذا التشريع للأزواج والزوجات، لأحلَّ بالكاذب من المتلاعنين ما دعا به على نفسه، وأن الله تواب لمن تاب مِن عباده، حكيم في شرعه وتدبيره.",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 10,
+        "juz": 18,
+        "manzil": 4,
+        "page": 350,
+        "ruku": 301,
+        "hizbQuarter": 140,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

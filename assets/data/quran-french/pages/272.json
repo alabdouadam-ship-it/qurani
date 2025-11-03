@@ -1,0 +1,260 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 272,
+    "ayahs": [
+      {
+        "number": 1944,
+        "text": "Nous n'avons envoyé, avant toi, que des hommes auxquels Nous avons fait des révélations. Demandez donc aux gens du rappel si vous ne savez pas.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 43,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1945,
+        "text": "(Nous les avons envoyés) avec des preuves évidentes et des livres saints. Et vers toi, Nous avons fait descendre le Coran, pour que tu exposes clairement aux gens ce qu'on a fait descendre pour eux et afin qu'ils réfléchissent.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 44,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1946,
+        "text": "Ceux qui complotaient des méfaits sont-ils à l'abri de ce qu'Allah les engloutisse en terre ou que leur vienne le châtiment d'où ils ne s'attendaient point?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 45,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1947,
+        "text": "Ou bien qu'Il les saisisse en pleine activité sans qu'ils puissent échapper (au châtiment d'Allah).",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 46,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1948,
+        "text": "Ou bien qu'Il les saisisse en plein effroi? Mais vraiment, votre Seigneur est Compatissant et Miséricordieux.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 47,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1949,
+        "text": "N'ont-ils point vu que les ombres de toute chose qu'Allah a créée s'allongent à droite et à gauche, en se prosternant devant Allah, en toute humilité?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 48,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1950,
+        "text": "Et c'est devant Allah que se prosterne tout être vivant dans les cieux, et sur la terre; ainsi que les Anges qui ne s'enflent pas d'orgueil.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 49,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1951,
+        "text": "Ils craignent leur Seigneur, au-dessus d'eux, et font ce qui leur est commandé.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 50,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": {
+          "id": 3,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 1952,
+        "text": "Allah dit: «Ne prenez pas deux divinités. Il n'est qu'un Dieu unique. Donc, ne craignez que Moi».",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 51,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1953,
+        "text": "C'est à Lui qu'appartient ce qui est dans les cieux et sur la terre; c'est à Lui que l'obéissance perpétuelle est due. Craindriez-vous donc, d'autres qu'Allah?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 52,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1954,
+        "text": "Et tout ce que vous avez comme bienfait provient d'Allah. Puis quand le malheur vous touche, c'est Lui que vous implorez à haute voix.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 53,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1955,
+        "text": "Et une fois qu'Il a dissipé votre malheur, voilà qu'une partie d'entre vous se mettent à donner des associés à leur Seigneur,",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 54,
+        "juz": 14,
+        "manzil": 3,
+        "page": 272,
+        "ruku": 230,
+        "hizbQuarter": 109,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

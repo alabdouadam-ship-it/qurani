@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 127,
+    "ayahs": [
+      {
+        "number": 783,
+        "text": "أجاب عيسى ابن مريم طلب الحواريين فدعا ربه جل وعلا قائلا ربنا أنزل علينا مائدة طعام من السماء، نتخذ يوم نزولها عيدًا لنا، نعظمه نحن ومَن بعدنا، وتكون المائدة علامة وحجة منك يا ألله على وحدانيتك وعلى صدق نبوتي، وامنحنا من عطائك الجزيل، وأنت خير الرازقين.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 114,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 100,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 784,
+        "text": "قال الله تعالى: إني منزل مائدة الطعام عليكم، فمن يجحد منكم وحدانيتي ونبوة عيسى عليه السلام بعد نزول المائدة فإني أعذبه عذابًا شديدًا، لا أعذبه أحدًا من العالمين. وقد نزلت المائدة كما وعد الله.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 115,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 100,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 785,
+        "text": "واذكر إذ قال الله تعالى يوم القيامة: يا عيسى ابن مريم أأنت قلت للناس اجعلوني وأمي معبودين من دون الله؟ فأجاب عيسى -منزِّهًا الله تعالى-: ما ينبغي لي أن أقول للناس غير الحق. إن كنتُ قلتُ هذا فقد علمتَه؛ لأنه لا يخفى عليك شيء، تعلم ما تضمره نفسي، ولا أعلم أنا ما في نفسك. إنك أنت عالمٌ بكل شيء مما ظهر أو خفي.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 116,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 101,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 786,
+        "text": "قال عيسى عليه السلام: يا ربِّ ما قلتُ لهم إلا ما أوحيته إليَّ، وأمرتني بتبليغه من إفرادك بالتوحيد والعبادة، وكنتُ على ما يفعلونه -وأنا بين أظهرهم- شاهدًا عليهم وعلى أفعالهم وأقوالهم، فلما وفيتني أجلي على الأرض، ورفعتني إلى السماء حيًّا، كنت أنت المطَّلِع على سرائرهم، وأنت على كل شيء شهيد، لا تخفى عليك خافية في الأرض ولا في السماء.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 117,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 101,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 787,
+        "text": "إنك يا ألله إن تعذبهم فإنهم عبادك -وأنت أعلم بأحوالهم-، تفعل بهم ما تشاء بعدلك، وإن تغفر برحمتك لمن أتى منهم بأسباب المغفرة، فإنك أنت العزيز الذي لا يغالَبُ، الحكيم في تدبيره وأمره. وهذه الآية ثناء على الله -تعالى- بحكمته وعدله، وكمال علمه.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 118,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 101,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 788,
+        "text": "قال الله تعالى لعيسى عليه السلام يوم القيامة: هذا يوم الجزاء الذي ينفع الموحدين توحيدهم ربهم، وانقيادهم لشرعه، وصدقهم في نياتهم وأقوالهم وأعمالهم، لهم جنات تجري من تحت قصورها الأنهار، ماكثين فيها أبدًا، رضي الله عنهم فقبل حسناتهم، ورضوا عنه بما أعطاهم من جزيل ثوابه. ذلك الجزاء والرضا منه عليهم هو الفوز العظيم.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 119,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 101,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 789,
+        "text": "لله وحده لا شريك له ملك السموات والأرض وما فيهن، وهو -سبحانه- على كل شيء قدير لا يعجزه شيء.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 120,
+        "juz": 7,
+        "manzil": 2,
+        "page": 127,
+        "ruku": 101,
+        "hizbQuarter": 51,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 157,
+    "ayahs": [
+      {
+        "number": 1006,
+        "text": "Indeed We had brought to them a Book distinct, replete with knowledge, and guidance and grace for men who believe.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 52,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 127,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1007,
+        "text": "Are they waiting for the exposition of what it speaks of? The day that (Reality) is unravelled, the people who had lost sight of it will say: \"The apostles of our Lord had indeed brought the truth. Do we have any one to intercede for us? If only we could go back to the world, we would act otherwise.\" Indeed they have caused themselves harm, and the lies they concocted did not help.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 53,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 127,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1008,
+        "text": "Surely your Lord is God who created the heavens and the earth in six spans of time, then assumed all power. He covers up the day with night which comes chasing it fast; and the sun and moon and the stars are subject to His command. It is His to create and enjoin. Blessed be God, the Lord of all the worlds.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 54,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1009,
+        "text": "Pray to your Lord in humility and unseen. He does not love the iniquitous.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 55,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1010,
+        "text": "And do not corrupt the land after it has been reformed; and pray to Him in awe and expectation. The blessing of God is at hand for those who do good.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 56,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1011,
+        "text": "Indeed it is He who sends the winds as harbingers of auspicious news announcing His beneficence, bringing heavy clouds which We drive towards a region lying dead, and send down rain, and raise all kinds of fruits. So shall We raise the dead that you may think and reflect.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 57,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

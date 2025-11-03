@@ -1,0 +1,389 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 367,
+    "ayahs": [
+      {
+        "number": 2933,
+        "text": "TA SIN MIM.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 1,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2934,
+        "text": "These are the verses of the perspicuous Book.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 2,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2935,
+        "text": "You may perhaps wear out your heart because they do not come to belief.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 3,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2936,
+        "text": "We could send down from the heavens a sign to them if We pleased, before which their heads would remain bowed.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 4,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2937,
+        "text": "Never does a new reminder come to them from Ar-Rahman but they turn away from it.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 5,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2938,
+        "text": "Surely they have done with denying; soon will come to them the news of what they were laughing at.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 6,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2939,
+        "text": "Do they not see the earth, how We grow all kinds of noble things upon it?",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 7,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2940,
+        "text": "Verily there are signs in this; yet many of them do not believe.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 8,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2941,
+        "text": "Your Lord is surely mighty and merciful.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 9,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 316,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2942,
+        "text": "When your Lord called upon Moses: \"Go to the wicked people,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 10,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2943,
+        "text": "The people of Pharaoh. Will they not fear and take heed?\"",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 11,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2944,
+        "text": ": He said: \"O Lord, I fear that they will deny me.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 12,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2945,
+        "text": "My heart is constrained, my tongue falters, so delegate Aaron;",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 13,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2946,
+        "text": "And they have a charge (of murder) against me. So I fear that they will kill me.\"",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 14,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2947,
+        "text": "(It was) said: \"By no means. Go with My signs, both of you. I am verily with you and I hear.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 15,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2948,
+        "text": "Go to the Pharaoh and tell him: 'We bring a message from the Lord of all the worlds",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 16,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2949,
+        "text": "That you should send the children of Israel with us.'",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 17,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2950,
+        "text": "(The Pharaoh) said: \"Did we not bring you up as a child? And you lived a number of years of your life with us.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 18,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2951,
+        "text": "And you commited what you did, and you are ungrateful!\"",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 19,
+        "juz": 19,
+        "manzil": 5,
+        "page": 367,
+        "ruku": 317,
+        "hizbQuarter": 147,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "26": {
+        "number": 26,
+        "name": "سُورَةُ الشُّعَرَاءِ",
+        "englishName": "Ash-Shu'araa",
+        "englishNameTranslation": "The Poets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 227
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

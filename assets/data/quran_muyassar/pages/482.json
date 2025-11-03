@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 482,
+    "ayahs": [
+      {
+        "number": 4265,
+        "text": "إلى الله تعالى وحده لا شريك له يُرْجَع علم الساعة، فإنه لا يعلم أحد متى قيامها غيره، وما تخرج من ثمرات من أوعيتها، وما تحمل مِن أنثى ولا تضع حَمْلها إلا بعلم من الله، لا يخفى عليه شيء من ذلك. ويوم ينادي الله تعالى المشركين يوم القيامة توبيخًا لهم وإظهارًا لكذبهم: أين شركائي الذين كنتم تشركونهم في عبادتي؟ قالوا: أعلمناك الآن ما منا من أحد يشهد اليوم أن معك شريكًا.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 47,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4266,
+        "text": "وذهب عن هؤلاء المشركين شركاؤهم الذين كانوا يعبدونهم من دون الله، فلم ينفعوهم، وأيقنوا أن لا ملجأ لهم من عذاب الله، ولا محيد عنه.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 48,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4267,
+        "text": "لا يملُّ الإنسان من دعاء ربه طالبًا الخير الدنيوي، وإن أصابه فقر وشدة فهو يؤوس من رحمة الله، قنوط بسوء الظن بربه.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 49,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4268,
+        "text": "ولئن أذقنا الإنسان نعمة منا من بعد شدة وبلاء لم يشكر الله تعالى، بل يطغى ويقول: أتاني هذا؛ لأني مستحق له، وما أعتقد أن الساعة آتية، وذلك إنكار منه للبعث، وعلى تقدير إتيان الساعة وأني سأرجع إلى ربي، فإن لي عنده الجنة، فلنخبرن الذين كفروا يوم القيامة بما عملوا من سيئات، ولنذيقنهم من العذاب الشديد.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 50,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4269,
+        "text": "وإذا أنعمنا على الإنسان بصحة أو رزق أو غيرهما أعرض وترفَّع عن الانقياد إلى الحق، فإن أصابه ضر فهو ذو دعاء كثير بأن يكشف الله ضرَّه، فهو يعرف ربه في الشدة، ولا يعرفه في الرخاء.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 51,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4270,
+        "text": "قل -أيها الرسول- لهؤلاء المكذبين: أخبروني إن كان هذا القرآن من عند الله ثم جحدتم وكذَّبتم به، لا أحد أضل منكم؛ لأنكم في خلاف بعيد عن الحق بكفركم بالقرآن وتكذيبكم به.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 52,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4271,
+        "text": "سَنُري هؤلاء المكذبين آياتنا من الفتوحات وظهور الإسلام على الأقاليم وسائر الأديان، وفي أقطار السماوات والأرض، وما يحدثه الله فيهما من الحوادث العظيمة، وفي أنفسهم وما اشتملت عليه من بديع آيات الله وعجائب صنعه، حتى يتبين لهم من تلك الآيات بيان لا يقبل الشك أن القرآن الكريم هو الحق الموحَى به من رب العالمين. أولم يكفهم دليلا على أن القرآن حق، ومَن جاء به صادق، شهادة الله تعالى؟ فإنه قد شهد له بالتصديق، وهو على كل شيء شهيد، ولا شيء أكبر شهادة من شهادته سبحانه وتعالى.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 53,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      },
+      {
+        "number": 4272,
+        "text": "ألا إن هؤلاء الكافرين في شك عظيم من البعث بعد الممات. ألا إن الله- جلَّ وعلا- بكل شيء محيط علمًا وقدرة وعزةً، لا يخفى عليه شيء في الأرض ولا في السماء.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 54,
+        "juz": 25,
+        "manzil": 6,
+        "page": 482,
+        "ruku": 418,
+        "hizbQuarter": 193,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "41": {
+        "number": 41,
+        "name": "سُورَةُ فُصِّلَتۡ",
+        "englishName": "Fussilat",
+        "englishNameTranslation": "Explained in detail",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

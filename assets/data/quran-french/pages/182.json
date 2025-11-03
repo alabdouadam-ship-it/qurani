@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 182,
+    "ayahs": [
+      {
+        "number": 1201,
+        "text": "Et sachez que, de tout butin que vous avez ramassé, le cinquième appartient à Allah, au messager, à ses proches parents, aux orphelins, aux pauvres, et aux voyageurs (en détresse), si vous croyez en Allah et en ce que Nous avons fait descendre sur Notre serviteur, le jour du Discernement: le jour où les deux groupes s'étaient rencontrés, et Allah est Omnipotent.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 41,
+        "juz": 10,
+        "manzil": 2,
+        "page": 182,
+        "ruku": 150,
+        "hizbQuarter": 73,
+        "sajda": false
+      },
+      {
+        "number": 1202,
+        "text": "Vous étiez sur le versant le plus proche, et eux (les ennemis) sur le versant le plus éloigné, tandis que la caravane était plus bas que vous. Si vous vous étiez donné rendez-vous, vous l'auriez manqué (effrayés par le nombre de l'ennemi). Mais il fallait qu'Allah accomplît un ordre qui devait être exécuté, pour que, sur preuve, pérît celui qui (devait) périr, et vécût, sur preuve, celui qui (devait) vivre. Et certes Allah est Audient et Omniscient.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 42,
+        "juz": 10,
+        "manzil": 2,
+        "page": 182,
+        "ruku": 150,
+        "hizbQuarter": 73,
+        "sajda": false
+      },
+      {
+        "number": 1203,
+        "text": "En songe, Allah te les avait montrés peu nombreux! Car s'Il te les avait montrés nombreux, vous auriez certainement fléchi, et vous vous seriez certainement disputés à propos de l'affaire. Mais Allah vous en a préservés. Il connait le contenu des cœurs.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 43,
+        "juz": 10,
+        "manzil": 2,
+        "page": 182,
+        "ruku": 150,
+        "hizbQuarter": 73,
+        "sajda": false
+      },
+      {
+        "number": 1204,
+        "text": "Et aussi, au moment de la rencontre, Il vous les montrait peu nombreux à Vos yeux, de même qu'Il vous faisant paraître à leurs yeux peu nombreux afin qu'Allah parachève un ordre qui devait être exécuté. C'est à Allah que sont ramenées les choses.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 44,
+        "juz": 10,
+        "manzil": 2,
+        "page": 182,
+        "ruku": 150,
+        "hizbQuarter": 73,
+        "sajda": false
+      },
+      {
+        "number": 1205,
+        "text": "O vous qui croyez! Lorsque vous rencontrez une troupe (ennemie), soyez fermes, et invoquez beaucoup Allah afin de réussir.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 45,
+        "juz": 10,
+        "manzil": 2,
+        "page": 182,
+        "ruku": 151,
+        "hizbQuarter": 73,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

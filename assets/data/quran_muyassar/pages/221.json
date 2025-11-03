@@ -1,0 +1,188 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 221,
+    "ayahs": [
+      {
+        "number": 1471,
+        "text": "وإن يصبك الله -أيها الرسول- بشدة أو بلاء فلا كاشف لذلك إلا هو جلَّ وعلا وإن يُرِدْك برخاء أو نعمة لا يمنعه عنك أحد، يصيب الله عز وجل بالسراء والضراء من يشاء من عباده، وهو الغفور لذنوب مَن تاب، الرحيم بمن آمن به وأطاعه.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 107,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1472,
+        "text": "قل -أيها الرسول- لهؤلاء الناس: قد جاءكم رسول الله بالقرآن الذي فيه بيان هدايتكم، فمن اهتدى بهدي الله فإنما ثمرة عمله راجعة إليه، ومن انحرف عن الحق وأصرَّ على الضلال فإنما ضلاله وضرره على نفسه، وما أنا موكَّل بكم حتى تكونوا مؤمنين، إنما أنا رسول مبلِّغ أبلِّغكم ما أُرْسِلْت به.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 108,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1473,
+        "text": "واتبع -أيها الرسول- وحي الله الذي يوحيه إليك فاعمل به، واصبر على طاعة الله تعالى، وعن معصيته، وعلى أذى من آذاك في تبليغ رسالته، حتى يقضي الله فيهم وفيك أمره، وهو -عزَّ وجل- خير الحاكمين؛ فإن حكمه مشتمل على العدل التام.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 109,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 182,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1474,
+        "text": "(الر) سبق الكلام على الحروف المقطَّعة في أول سورة البقرة.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 1,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 183,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1475,
+        "text": "وإنزال القرآن وبيان أحكامه وتفصيلها وإحكامها؛ لأجل أن لا تعبدوا إلا الله وحده لا شريك له. إنني لكم -أيها الناس- من عند الله نذير ينذركم عقابه، وبشير يبشِّركم بثوابه.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 2,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 183,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1476,
+        "text": "واسألوه أن يغفر لكم ذنوبكم، ثم ارجعوا إليه نادمين يمتعْكم في دنياكم متاعًا حسنًا بالحياة الطيبة فيها، إلى أن يحين أجلكم، ويُعطِ كل ذي فضل من علم وعمل جزاء فضله كاملا لا نقص فيه، وإن تعرضوا عمَّا أدعوكم إليه فإني أخشى عليكم عذاب يوم شديد، وهو يوم القيامة. وهذا تهديد شديد لمن تولَّى عن أوامر الله تعالى وكذَّب رسله.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 3,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 183,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1477,
+        "text": "إلى الله رجوعكم بعد موتكم جميعًا فاحذروا عقابه، وهو سبحانه قادر على بعثكم وحشركم وجزائكم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 4,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 183,
+        "hizbQuarter": 88,
+        "sajda": false
+      },
+      {
+        "number": 1478,
+        "text": "إن هؤلاء المشركين يضمرون في صدورهم الكفر؛ ظنًا منهم أنه يخفى على الله ما تضمره نفوسهم، ألا يعلمون حين يغطُّون أجسادهم بثيابهم أن الله لا يخفى عليه سِرُّهم وعلانيتهم؟ إنه عليم بكل ما تُكِنُّه صدورهم من النيات والضمائر والسرائر.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 5,
+        "juz": 11,
+        "manzil": 3,
+        "page": 221,
+        "ruku": 183,
+        "hizbQuarter": 88,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      },
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 379,
+    "ayahs": [
+      {
+        "number": 3182,
+        "text": "J'ai trouvé qu'une femme est leur reine, que de toute chose elle a été comblée et qu'elle a un trône magnifique.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 23,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3183,
+        "text": "Je l'ai trouvée, elle et son peuple, se prosternant devant le soleil au lieu d'Allah. Le Diable leur a embelli leurs actions, et les a détournés du droit chemin, et ils ne sont pas bien guidés.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 24,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3184,
+        "text": "Que ne se prosternent-ils devant Allah qui fait sortir ce qui est caché dans les cieux et la terre, et qui sait ce que vous cachez et aussi ce que vous divulguez?",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 25,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3185,
+        "text": "Allah! Point de divinité à part Lui, le Seigneur du Trône Immense.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 26,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": {
+          "id": 9,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 3186,
+        "text": "Alors, Salomon dit: «Nous allons voir si tu as dis la vérité ou si tu as menti.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 27,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3187,
+        "text": "Pars avec ma lettre que voici; puis lance-la à eux; ensuite tiens-toi à l'écart d'eux pour voir ce que sera leur réponse.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 28,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3188,
+        "text": "La reine dit: «O notables! Une noble lettre m'a été lancée.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 29,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3189,
+        "text": "Elle vient de Salomon; et c'est: «Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux,",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 30,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3190,
+        "text": "Ne soyez pas hautains avec moi et venez à moi en toute soumission».",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 31,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3191,
+        "text": "Elle dit: «O notables! Conseillez-moi sur cette affaire: je ne déciderai rien sans que vous ne soyez présents (pour me conseiller)».",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 32,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3192,
+        "text": "Ils dirent: «Nous sommes détenteurs d'une force et d'une puissance redoutable. Le commandement cependant t'appartient. Regarde donc ce que tu veux ordonner».",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 33,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3193,
+        "text": "Elle dit: «En vérité, quand les rois entrent dans une cité ils la corrompent, et font de ses honorables citoyens des humiliés. Et c'est ainsi qu'ils agissent.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 34,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3194,
+        "text": "Moi, je vais leur envoyer un présent, puis je verrai ce que les envoyés ramèneront».",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 35,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 379,
+    "ayahs": [
+      {
+        "number": 3182,
+        "text": "I found a woman reigning over them, and she has been favoured with everything; and she has a throne that is magnificent.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 23,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3183,
+        "text": "I found that she and her people worship the sun in place of God, for Satan has made their deeds look attractive to them and has turned them away from the Path, so they do not find the way",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 24,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3184,
+        "text": "To worship God who brings to light what is hidden in the heavens and the earth, and is cognisant of what you hide and what you disclose.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 25,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": false
+      },
+      {
+        "number": 3185,
+        "text": "God: There is no god but He, the Lord of the glorious throne.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 26,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 151,
+        "sajda": {
+          "id": 9,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 3186,
+        "text": "(Solomon) said: 'We shall see if you speak the truth or you are a liar.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 27,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3187,
+        "text": "Take this letter from me, and deliver it to them and withdraw, then see what reply they give in return.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 28,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3188,
+        "text": "(The Queen said): \"O nobles, a venerable letter has been delivered to me.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 29,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3189,
+        "text": "It is from Solomon, and (says): 'In the name of Allah, Ar-Rahman, Ar-Rahim.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 30,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3190,
+        "text": "Do not rise against me, but come to me in submission.'",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 31,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 328,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3191,
+        "text": ".\" Advise me, O nobles,\" she said \"in this matter. I do not decide any thing until you concur.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 32,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3192,
+        "text": "They said: \"We are men of valour, and brave fighters. It is for you to decide. So consider what you should command.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 33,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3193,
+        "text": "She said: \"Surely when kings enter a city they destroy it and despoil the honour of its nobility. So will they do (to us).",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 34,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      },
+      {
+        "number": 3194,
+        "text": "But I will send them a gift and see what the envoys bring back (in return).\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 35,
+        "juz": 19,
+        "manzil": 5,
+        "page": 379,
+        "ruku": 329,
+        "hizbQuarter": 152,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

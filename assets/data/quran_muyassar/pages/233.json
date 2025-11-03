@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 233,
+    "ayahs": [
+      {
+        "number": 1571,
+        "text": "يَقْدُم فرعون قومه يوم القيامة حتى يدخلهم النار، وقبُح المدخل الذي يدخلونه.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 98,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1572,
+        "text": "وأتبعهم الله في هذه الدنيا مع العذاب الذي عجَّله لهم فيها من الغرق في البحر لعنةً، ويوم القيامة كذلك لعنة أخرى بإدخالهم النار، وبئس ما اجتمع لهم وترادَف عليهم من عذاب الله، ولعنة الدنيا والآخرة.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 99,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1573,
+        "text": "ذلك الذي ذكرناه لك -أيها الرسول- من أخبار القرى التي أهلكنا أهلها نخبرك به، ومن تلك القرى ما له آثار باقية، ومنها ما قد مُحِيَتْ آثاره، فلم يَبْق منه شيء.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 100,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1574,
+        "text": "وما كان إهلاكهم بغير سبب وذنب يستحقونه، ولكن ظلموا أنفسهم بشركهم وإفسادهم في الأرض، فما نفعتهم آلهتهم التي كانوا يدعُونها ويطلبون منها أن تدفع عنهم الضر لـمَّا جاء أمر ربك بعذابهم، وما زادتهم آلهتهم غير تدمير وإهلاك وخسران.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 101,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1575,
+        "text": "وكما أخذتُ أهل القرى الظالمة بالعذاب لمخالفتهم أمري وتكذيبهم برسلي، آخذ غيرهم مِن أهل القرى إذا ظلموا أنفسهم بكفرهم بالله ومعصيتهم له وتكذيبهم لرسله. إنَّ أَخْذه بالعقوبة لأليم موجع شديد.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 102,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1576,
+        "text": "إن في أخذنا لأهل القرى السابقة الظالمة لعبرةً وعظة لمن خاف عقاب الله وعذابه في الآخرة، ذلك اليوم الذي يُجمع له الناس جميعًا للمحاسبة والجزاء، ويشهده الخلائق كلهم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 103,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1577,
+        "text": "وما نؤخر يوم القيامة عنكم إلا لانتهاء مدة معدودة في علمنا، لا تزيد ولا تنقص عن تقديرنا لها بحكمتنا.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 104,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1578,
+        "text": "يوم يأتي يوم القيامة، لا تتكلم نفس إلا بإذن ربها، فمنهم شقي مستحق للعذاب، وسعيد متفضَّل عليه بالنعيم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 105,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1579,
+        "text": "فأما الذين شَقُوا في الدنيا لفساد عقيدتهم وسوء أعمالهم، فالنار مستقرهم، لهم فيها من شدة ما هم فيه من العذاب زفير وشهيق، وهما أشنع الأصوات وأقبحها، ماكثين في النار أبدًا ما دامت السموات والأرض، فلا ينقطع عذابهم ولا ينتهي، بل هو دائم مؤكَّد، إلا ما شاء ربك من إخراج عصاة الموحدين بعد مدَّة من مكثهم في النار. إن ربك -أيها الرسول- فعَّال لما يريد.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 106,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1580,
+        "text": "فأما الذين شَقُوا في الدنيا لفساد عقيدتهم وسوء أعمالهم، فالنار مستقرهم، لهم فيها من شدة ما هم فيه من العذاب زفير وشهيق، وهما أشنع الأصوات وأقبحها، ماكثين في النار أبدًا ما دامت السموات والأرض، فلا ينقطع عذابهم ولا ينتهي، بل هو دائم مؤكَّد، إلا ما شاء ربك من إخراج عصاة الموحدين بعد مدَّة من مكثهم في النار. إن ربك -أيها الرسول- فعَّال لما يريد.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 107,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 93,
+        "sajda": false
+      },
+      {
+        "number": 1581,
+        "text": "وأما الذين رزقهم الله السعادة فيدخلون الجنة خالدين فيها ما دامت السموات والأرض، إلا الفريق الذي شاء الله تأخيره، وهم عصاة الموحدين، فإنهم يبقون في النار فترة من الزمن، ثم يخرجون منها إلى الجنة بمشيئة الله ورحمته، ويعطي ربك هؤلاء السعداء في الجنة عطاء غير مقطوع عنهم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 108,
+        "juz": 12,
+        "manzil": 3,
+        "page": 233,
+        "ruku": 191,
+        "hizbQuarter": 94,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

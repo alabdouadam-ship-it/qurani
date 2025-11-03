@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 432,
+    "ayahs": [
+      {
+        "number": 3638,
+        "text": "The arrogant will say to the weak: \"Did we hold you back from guidance after it had come to you? Certainly not. In fact you were yourselves guilty.\"",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 32,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3639,
+        "text": "But the weak will say to the arrogant: \"Not in the least. It was your plotting night and day when you ordered us to disbelieve in God and associate compeers with Him.\" When they see the punishment they will express repentance. But We shall put iron collars round the necks of infidels. Will they be requited for anything but what they did?",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 33,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3640,
+        "text": "We never sent an admonisher to a habitation but its well-to-do people said: \"We do not believe in what you have brought.\"",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 34,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3641,
+        "text": "And (further): \"We have far more wealth and children (than you), and we are not the ones to be punished.\"",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 35,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3642,
+        "text": "Say: \"Verily my Lord increases or restricts the provision of whosoever He will;\" but most men do not understand.",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 36,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3643,
+        "text": "It is not your wealth and children that will bring you closer to Us, except those who believe and do the right. These will be given a two-fold reward for their deeds, and will dwell in peace in the high empyrean.",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 37,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 374,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3644,
+        "text": "But those who try to subvert Our signs will be given over to punishment",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 38,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 374,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3645,
+        "text": "Say: \"Verily my Lord increases or restricts the provision of any of His creatures as He will, and repays whatsoever you spend. He is the best of all providers.\"",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 39,
+        "juz": 22,
+        "manzil": 5,
+        "page": 432,
+        "ruku": 374,
+        "hizbQuarter": 173,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "34": {
+        "number": 34,
+        "name": "سُورَةُ سَبَإٍ",
+        "englishName": "Saba",
+        "englishNameTranslation": "Sheba",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

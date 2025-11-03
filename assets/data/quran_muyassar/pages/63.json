@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 63,
+    "ayahs": [
+      {
+        "number": 394,
+        "text": "وكيف تكفرون بالله -أيها المؤمنون -، وآيات القرآن تتلى عليكم، وفيكم رسول الله محمد صلى الله عليه وسلم يبلغها لكم؟ ومَن يتوكل على الله ويستمسك بالقرآن والسنة فقد وُفِّق لطريق واضح، ومنهاج مستقيم.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 101,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 395,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله، وعملوا بشرعه، خافوا الله حق خوفه: وذلك بأن يطاع فلا يُعصى، ويُشكَر فلا يكفر، ويُذكَر فلا ينسى، وداوموا على تمسككم بإسلامكم إلى آخر حياتكم؛ لتلقوا الله وأنتم عليه.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 102,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 396,
+        "text": "وتمسَّكوا جميعًا بكتاب ربكم وهدي نبيكم، ولا تفعلوا ما يؤدي إلى فرقتكم. واذكروا نعمة جليلة أنعم الله بها عليكم: إذ كنتم -أيها المؤمنون- قبل الإسلام أعداء، فجمع الله قلوبكم على محبته ومحبة رسوله، وألقى في قلوبكم محبة بعضكم لبعض، فأصبحتم -بفضله- إخوانا متحابين، وكنتم على حافة نار جهنم، فهداكم الله بالإسلام ونجَّاكم من النار. وكما بيَّن الله لكم معالم الإيمان الصحيح فكذلك يبيِّن لكم كل ما فيه صلاحكم؛ لتهتدوا إلى سبيل الرشاد، وتسلكوها، فلا تضلوا عنها.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 103,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 397,
+        "text": "ولتكن منكم -أيها المؤمنون- جماعة تدعو إلى الخير وتأمر بالمعروف، وهو ما عُرف حسنه شرعًا وعقلا وتنهى عن المنكر، وهو ما عُرف قبحه شرعًا وعقلا وأولئك هم الفائزون بجنات النعيم.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 104,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 398,
+        "text": "ولا تكونوا -أيها المؤمنون- كأهل الكتاب الذين وقعت بينهم العداوة والبغضاء فتفرَّقوا شيعًا وأحزابًا، واختلفوا في أصول دينهم من بعد أن اتضح لهم الحق، وأولئك مستحقون لعذابٍ عظيم موجع.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 105,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 399,
+        "text": "يوم القيامة تَبْيَضُّ وجوه أهل السعادة الذين آمنوا بالله ورسوله، وامتثلوا أمره، وتَسْوَدُّ وجوه أهل الشقاوة ممن كذبوا رسوله، وعصوا أمره. فأما الذين اسودَّت وجوههم، فيقال لهم توبيخًا: أكفرتم بعد إيمانكم، فاخترتم الكفر على الإيمان؟ فذوقوا العذاب بسبب كفركم.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 106,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 400,
+        "text": "وأما الذين ابيضَّتْ وجوهم بنضرة النعيم، وما بُشِّروا به من الخير، فهم في جنة الله ونعيمها، وهم باقون فيها، لا يخرجون منها أبدًا.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 107,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 401,
+        "text": "هذه آيات الله وبراهينه الساطعة، نتلوها ونقصُّها عليك -أيها الرسول- بالصدق واليقين. وما الله بظالم أحدًا من خلقه، ولا بمنقص شيئًا من أعمالهم؛ لأنه الحاكم العدل الذي لا يجور.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 108,
+        "juz": 4,
+        "manzil": 1,
+        "page": 63,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

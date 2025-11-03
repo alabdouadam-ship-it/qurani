@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 438,
+    "ayahs": [
+      {
+        "number": 3691,
+        "text": "Et ce que Nous t'avons révélé du Livre est la Vérité confirmant ce qui l'a précédé. Certes Allah est Parfaitement Connaisseur et Clairvoyant sur Ses serviteurs.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 31,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3692,
+        "text": "Ensuite, Nous fîmes héritiers du Livre ceux de Nos serviteurs que Nous avons choisis. Il en est parmi eux qui font du tort à eux-mêmes, d'autres qui se tiennent sur une voie moyenne, et d'autres avec la permission d'Allah devancent [tous les autres] par leurs bonnes actions; telle est la grâce infinie",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 32,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3693,
+        "text": "Les jardins d'Eden où ils entreront, parés de bracelets en or ainsi que de perles; et là, leurs vêtements sont de soie.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 33,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3694,
+        "text": "Et ils diront: «Louange à Allah qui a écarté de nous l'affliction. Notre Seigneur est certes Pardonneur et Reconnaissant.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 34,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3695,
+        "text": "C'est Lui qui nous a installés, par Sa grâce, dans la Demeure de la stabilité, où nulle fatigue, nulle lassitude ne nous touchent».",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 35,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3696,
+        "text": "Et ceux qui ont mécru auront le feu de l'Enfer: on ne les achève pas pour qu'ils meurent; on ne leur allège rien de ses tourments. C'est ainsi que Nous récompensons tout négateur obstiné.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 36,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3697,
+        "text": "Et là, ils hurleront: «Seigneur, fais-nous sortir; nous ferons le bien, contrairement à ce que nous faisions». «Ne vous avons-Nous pas donné une vie assez longue pour que celui qui réfléchit réfléchisse? L'avertisseur, cependant, vous était venu. Et bien, goûtez (votre punition). Car pour les injustes, il n'y a pas de secoureur».",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 37,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3698,
+        "text": "Allah connaît l'Inconnaissable dans les cieux et la terre. Il connaît le contenu des poitrines.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 38,
+        "juz": 22,
+        "manzil": 5,
+        "page": 438,
+        "ruku": 380,
+        "hizbQuarter": 175,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "35": {
+        "number": 35,
+        "name": "سُورَةُ فَاطِرٍ",
+        "englishName": "Faatir",
+        "englishNameTranslation": "The Originator",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

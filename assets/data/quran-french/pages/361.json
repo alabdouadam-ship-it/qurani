@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 361,
+    "ayahs": [
+      {
+        "number": 2867,
+        "text": "Lorsque de loin elle les voit, ils entendront sa fureur et ses pétillements.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 12,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2868,
+        "text": "Et quand on les y aura jetés, dans un étroit réduit, les mains liées derrière le cou, ils souhaiteront alors leur destruction complète.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 13,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2869,
+        "text": "«Aujourd'hui, ne souhaitez pas la destruction une seule fois, mais souhaitez-en plusieurs.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 14,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2870,
+        "text": "Dis: «Est-ce mieux ceci? ou bien le Paradis éternel qui a été promis aux pieux, comme récompense et destination dernière?",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 15,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2871,
+        "text": "Ils auront là tout ce qu'ils désireront et une demeure éternelle. C'est une promesse incombant à ton Seigneur.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 16,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2872,
+        "text": "Et le jour où Il les rassemblera, eux et ceux qu'ils adoraient en dehors d'Allah, Il dira: «Est-ce vous qui avez égaré Mes serviteurs que voici, ou ont-ils eux-mêmes perdu le sentier?»",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 17,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2873,
+        "text": "Ils diront: «Gloire à Toi! Il ne nous convenait nullement de prendre en dehors de Toi des patrons protecteurs mais Tu les as comblés de jouissance ainsi que leurs ancêtres au point qu'ils en ont oublié le livre du rappel [le Coran]. Et ils ont été des gens perdus».",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 18,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2874,
+        "text": "«Ils vous ont démentis en ce que vous dites. Il n'y aura pour vous ni échappatoire ni secours (possible). Et quiconque des vôtres est injuste, Nous lui ferons goûter un grand châtiment».",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 19,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      },
+      {
+        "number": 2875,
+        "text": "Et Nous n'avons envoyé avant toi que des messagers qui mangeaient de la nourriture et circulaient dans les marchés. Et Nous avons fait de certains d'entre vous une épreuve pour les autres -endurerez-vous avec constance? - Et ton Seigneur demeure Clairvoyant.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 20,
+        "juz": 18,
+        "manzil": 4,
+        "page": 361,
+        "ruku": 311,
+        "hizbQuarter": 144,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

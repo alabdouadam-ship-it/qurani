@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 158,
+    "ayahs": [
+      {
+        "number": 1012,
+        "text": "والأرض النقية إذا نزل عليها المطر تُخْرج نباتًا -بإذن الله ومشيئته- طيبًا ميسرًا، وكذلك المؤمن إذا نزلت عليه آيات الله انتفع بها، وأثمرت فيه حياة صالحة، أما الأرض السَّبِخة الرديئة فإنها لا تُخرج النبات إلا عسرًا رديئا لا نفع فيه، ولا تُخرج نباتًا طيبًا، وكذلك الكافر لا ينتفع بآيات الله. مثل ذلك التنويع البديع في البيان نُنوِّع الحجج والبراهين لإثبات الحق لأناس يشكرون نعم الله، ويطيعونه.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 58,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1013,
+        "text": "لقد بعثنا نوحًا إلى قومه؛ ليدعوهم إلى توحيد الله سبحانه وإخلاص العبادة له، فقال: يا قوم اعبدوا الله وحده، ليس لكم من إله يستحق العبادة غيره جل وعلا فأخلصوا له العبادة فإن لم تفعلوا وبقيتم على عبادة أوثانكم، فإنني أخاف أن يحلَّ عليكم عذاب يوم يعظم فيه بلاؤكم، وهو يوم القيامة.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 59,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1014,
+        "text": "قال له سادتهم وكبراؤهم: إنا لنعتقد -يا نوح- أنك في ضلال بيِّن عن طريق الصواب.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 60,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1015,
+        "text": "قال نوح: يا قوم لست ضالا في مسألة من المسائل بوجه من الوجوه، ولكني رسول من رب العالمين ربي وربكم ورب جميع الخلق.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 61,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1016,
+        "text": "أُبلِّغكم ما أُرسلت به من ربي، وأنصح لكم محذرًا لكم من عذاب الله ومبشرًا بثوابه، وأعلم من شريعته ما لا تعلمون.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 62,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1017,
+        "text": "وهل أثار عجبكم أن أنزل الله تعالى إليكم ما يذكركم بما فيه الخير لكم، على لسان رجل منكم، تعرفون نسبه وصدقه؛ ليخوِّفكم بأس الله تعالى وعقابه، ولتتقوا سخطه بالإيمان به، ورجاء أن تظفروا برحمته وجزيل ثوابه؟",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 63,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1018,
+        "text": "فكذبوا نوحًا فأنجيناه ومَن آمن معه في السفينة، وأغرقنا الكفار الذين كذبوا بحججنا الواضحة. إنهم كانوا عُمْيَ القلوب عن رؤية الحق.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 64,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 129,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1019,
+        "text": "ولقد أرسلنا إلى قبيلة عاد أخاهم هودا حين عبدوا الأوثان من دون الله، فقال لهم: اعبدوا الله وحده، ليس لكم من إله يستحق العبادة غيره جل وعلا فأخلصوا له العبادة أفلا تتقون عذاب الله وسخطه عليكم؟",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 65,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1020,
+        "text": "قال الكبراء الذين كفروا من قوم هود: إنا لنعلم أنك بدعوتك إيانا إلى ترك عبادة آلهتنا وعبادة الله وحده ناقص العقل، وإنا لنعتقد أنك من الكاذبين على الله فيما تقول.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 66,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      },
+      {
+        "number": 1021,
+        "text": "قال هود: يا قوم ليس بي نقص في عقلي، ولكني رسول إليكم من رب الخلق أجمعين.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 67,
+        "juz": 8,
+        "manzil": 2,
+        "page": 158,
+        "ruku": 130,
+        "hizbQuarter": 64,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

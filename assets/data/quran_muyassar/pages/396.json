@@ -1,0 +1,226 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 396,
+    "ayahs": [
+      {
+        "number": 3337,
+        "text": "إن الذي أنزل عليك -أيها الرسول- القرآن، وفرض عليك تبليغه والتمسُّك به، لمرجعك إلى الموضع الذي خرجت منه، وهو \"مكة\"، قل -أيها الرسول- لهؤلاء المشركين: ربي أعلم مَن جاء بالهدى، ومن هو في ذهابٍ واضحٍ عن الحق.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 85,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3338,
+        "text": "وما كنت -أيها الرسول- تؤمِّل نزول القرآن عليك، لكن الله سبحانه وتعالى رحمك فأنزله عليك، فاشكر لله تعالى على نِعَمه، ولا تكوننَّ عونًا لأهل الشرك والضلال.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 86,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3339,
+        "text": "ولا يصرفَنَّك هؤلاء المشركون عن تبليغ آيات ربك وحججه، بعد أن أنزلها إليك، وبلِّغ رسالة ربك، ولا تكونن من المشركين في شيء.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 87,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3340,
+        "text": "ولا تعبد مع الله معبودًا أخر؛ فلا معبود بحق إلا الله، كل شيء هالك وفانٍ إلا وجهه، له الحكم، وإليه ترجعون من بعد موتكم للحساب والجزاء. وفي هذه الآية إثبات صفة الوجه لله تعالى كما يليق بكماله وعظمة جلاله.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 88,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 341,
+        "hizbQuarter": 158,
+        "sajda": false
+      },
+      {
+        "number": 3341,
+        "text": "الم: سبق الكلام على الحروف المقطَّعة في أول سورة البقرة.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 1,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3342,
+        "text": "أظَنَّ الناس إذ قالوا: آمنا، أن الله يتركهم بلا ابتلاء ولا اختبار؟",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 2,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3343,
+        "text": "ولقد فتنَّا الذين من قبلهم من الأمم واختبرناهم، ممن أرسلنا إليهم رسلنا، فليعلمنَّ الله علمًا ظاهرًا للخلق صدق الصادقين في إيمانهم، وكذب الكاذبين؛ ليميز كلَّ فريق من الآخر.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 3,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3344,
+        "text": "بل أظنَّ الذين يعملون المعاصي مِن شرك وغيره أن يعجزونا، فيفوتونا بأنفسهم فلا نقدر عليهم؟ بئس حكمهم الذي يحكمون به.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 4,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3345,
+        "text": "من كان يرجو لقاء الله، ويطمع في ثوابه، فإن أجل الله الذي أجَّله لبعث خلقه للجزاء والعقاب لآتٍ قريبًا، وهو السميع للأقوال، العليم بالأفعال.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 5,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3346,
+        "text": "ومن جاهد في سبيل إعلاء كلمة الله تعالى، وجاهد نفسه بحملها على الطاعة، فإنما يجاهد لنفسه؛ لأنه يفعل ذلك ابتغاء الثواب على جهاده. إن الله لغني عن أعمال جميع خلقه، له الملك والخلق والأمر.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 6,
+        "juz": 20,
+        "manzil": 5,
+        "page": 396,
+        "ruku": 342,
+        "hizbQuarter": 159,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      },
+      "29": {
+        "number": 29,
+        "name": "سُورَةُ العَنكَبُوتِ",
+        "englishName": "Al-Ankaboot",
+        "englishNameTranslation": "The Spider",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 69
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

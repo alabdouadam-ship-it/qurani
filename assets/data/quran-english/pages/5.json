@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 5,
+    "ayahs": [
+      {
+        "number": 32,
+        "text": "Announce to those who believe and have done good deeds, glad tidings of gardens under which rivers flow, and where, when they eat the fruits that grow, they will say: \"Indeed they are the same as we were given before,\" so like in semblance the food would be. And they shall have fair spouses there, and live there abidingly.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 25,
+        "juz": 1,
+        "manzil": 1,
+        "page": 5,
+        "ruku": 4,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 33,
+        "text": "God is not loath to advance the similitude of a gnat or a being more contemptible; and those who believe know whatever is from the Lord is true. But those who disbelieve say: \"What does God mean by this parable?\" He causes some to err this way, and some He guides; yet He turns away none but those who transgress,",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 26,
+        "juz": 1,
+        "manzil": 1,
+        "page": 5,
+        "ruku": 4,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 34,
+        "text": "Who, having sealed it, break God's covenant, dividing what He ordained cohered; and those who spread discord in the land will suffer assuredly.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 27,
+        "juz": 1,
+        "manzil": 1,
+        "page": 5,
+        "ruku": 4,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 35,
+        "text": "Then how can you disbelieve in God? He gave you life when you were dead. He will make you die again then bring you back to life: To Him then you will return.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 28,
+        "juz": 1,
+        "manzil": 1,
+        "page": 5,
+        "ruku": 4,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 36,
+        "text": "He made for you all that lies within the earth, then turning to the firmament He proportioned several skies: He has knowledge of everything.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 29,
+        "juz": 1,
+        "manzil": 1,
+        "page": 5,
+        "ruku": 4,
+        "hizbQuarter": 2,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

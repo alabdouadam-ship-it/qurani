@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 275,
+    "ayahs": [
+      {
+        "number": 1974,
+        "text": "Yet they worship those apart from God who cannot provide for them any sustenance from the heavens or the earth, nor will they have power to do so.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 73,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1975,
+        "text": "So do not invent similitudes for God. Indeed God knows, and you do not know.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 74,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1976,
+        "text": "God presents the example of a man who is a hired servant with no power over anything, and another on whom We have bestowed a handsome fortune, who spends from it in private and in public: Can they be equal? Praised be God! But most men do not understand.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 75,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1977,
+        "text": "God presents another example of two men, one dumb and unable to do a thing and is a burden on his master. Wherever he is sent he returns without any good (result). Could he be equal to one who enjoins what is just, and follows the right path?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 76,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1978,
+        "text": "To God belong the secrets of the heavens and the earth, and the Hour of Doom is a matter of the winking of an eye, even less, for God has certainly power over all things.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 77,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1979,
+        "text": "God produced you from your mothers' wombs knowing nothing, but gave you ears and eyes and hearts so that you may be grateful.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 78,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1980,
+        "text": "Do you not see the birds held high between the heavens and the earth? Nothing holds them (aloft) but God. There are verily signs in this for those who believe.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 79,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,503 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 448,
+    "ayahs": [
+      {
+        "number": 3840,
+        "text": "Who used to say: 'Are you one of those who can testify to the truth?",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 52,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3841,
+        "text": "(Do you think) we would be paid back our due when we are dead and reduced to dust and bones?'",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 53,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3842,
+        "text": "He said: 'Will you look down?'",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 54,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3843,
+        "text": "He looked down and saw (his friend) in the midst of Hell.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 55,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3844,
+        "text": "'By God', he said, 'you had almost ruined me.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 56,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3845,
+        "text": "Had it not been for the grace of my Lord I too would have been there (in Hell).",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 57,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3846,
+        "text": "(Another will say:)\"Is it true, we are not going to die",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 58,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3847,
+        "text": "Other than our first death, and we shall not be punished?",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 59,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3848,
+        "text": "This will indeed be great happiness.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 60,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3849,
+        "text": "For this the toilers should strive.\"",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 61,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3850,
+        "text": "Is this better or the tree of Zaqqum",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 62,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3851,
+        "text": "Which We have reserved as punishment for evil-doers?",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 63,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3852,
+        "text": "It is a tree that grows at the bottom of Hell.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 64,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3853,
+        "text": "Its spathes are like the prickly pear.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 65,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3854,
+        "text": "They will eat and fill their bellies with it,",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 66,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3855,
+        "text": "Washing it down with boiling water.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 67,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3856,
+        "text": "Then to Hell they will surely be returned.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 68,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3857,
+        "text": "They had found their fathers astray,",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 69,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3858,
+        "text": "Yet they hasten to follow in their footsteps.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 70,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3859,
+        "text": "So had many an earlier people gone astray,",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 71,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3860,
+        "text": "And We had sent admonishers to them.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 72,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3861,
+        "text": "Look, then how was the end of those who had been warned,",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 73,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3862,
+        "text": "Other than the chosen creatures of God.",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 74,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 387,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3863,
+        "text": "Noah had verily called to Us. And how gracious was He who answered (him).",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 75,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 388,
+        "hizbQuarter": 179,
+        "sajda": false
+      },
+      {
+        "number": 3864,
+        "text": "We saved him and his family from the great affliction,",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 76,
+        "juz": 23,
+        "manzil": 6,
+        "page": 448,
+        "ruku": 388,
+        "hizbQuarter": 179,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "37": {
+        "number": 37,
+        "name": "سُورَةُ الصَّافَّاتِ",
+        "englishName": "As-Saaffaat",
+        "englishNameTranslation": "Those drawn up in Ranks",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 182
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

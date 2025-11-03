@@ -1,0 +1,264 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 598,
+    "ayahs": [
+      {
+        "number": 6126,
+        "text": "Nous l'avons certes, fait descendre (le Coran) pendant la nuit d'Al-Qadr.",
+        "surah": {
+          "number": 97,
+          "name": "سُورَةُ القَدۡرِ",
+          "englishName": "Al-Qadr",
+          "englishNameTranslation": "The Power, Fate",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 539,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6127,
+        "text": "Et qui te dira ce qu'est la nuit d'Al-Qadr?",
+        "surah": {
+          "number": 97,
+          "name": "سُورَةُ القَدۡرِ",
+          "englishName": "Al-Qadr",
+          "englishNameTranslation": "The Power, Fate",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 539,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6128,
+        "text": "La nuit d'Al-Qadr est meilleure que mille mois.",
+        "surah": {
+          "number": 97,
+          "name": "سُورَةُ القَدۡرِ",
+          "englishName": "Al-Qadr",
+          "englishNameTranslation": "The Power, Fate",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 539,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6129,
+        "text": "Durant celle-ci descendent les Anges ainsi que l'Esprit, par permission de leur Seigneur pour tout ordre.",
+        "surah": {
+          "number": 97,
+          "name": "سُورَةُ القَدۡرِ",
+          "englishName": "Al-Qadr",
+          "englishNameTranslation": "The Power, Fate",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 539,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6130,
+        "text": "Elle est paix et salut jusqu'à l'apparition de l'aube.",
+        "surah": {
+          "number": 97,
+          "name": "سُورَةُ القَدۡرِ",
+          "englishName": "Al-Qadr",
+          "englishNameTranslation": "The Power, Fate",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 539,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6131,
+        "text": "Les infidèles parmi les gens du Livre, ainsi que les Associateurs, ne cesseront pas de mécroire jusqu'à ce que leur vienne la Preuve évidente:",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6132,
+        "text": "un Messager, de la part d'Allah, qui leur récite des feuilles purifiées,",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6133,
+        "text": "dans lesquelles se trouvent des prescriptions d'une rectitude parfaite.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6134,
+        "text": "Et ceux à qui le Livre a été donné ne se sont divisés qu'après que la preuve leur fut venue.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6135,
+        "text": "Il ne leur a été commandé, cependant, que d'adorer Allah, Lui vouant un culte exclusif, d'accomplir la Salât et d'acquitter la Zakât. Et voilà la religion de droiture.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6136,
+        "text": "Les infidèles parmi les gens du Livre, ainsi que les Associateurs iront au feu de l'Enfer, pour y demeurer éternellement. De toute la création, ce sont eux les pires.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      },
+      {
+        "number": 6137,
+        "text": "Quant à ceux qui croient et accomplissent les bonnes œuvres, ce sont les meilleurs de toute la création.",
+        "surah": {
+          "number": 98,
+          "name": "سُورَةُ البَيِّنَةِ",
+          "englishName": "Al-Bayyina",
+          "englishNameTranslation": "The Evidence",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 8
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 598,
+        "ruku": 540,
+        "hizbQuarter": 239,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "97": {
+        "number": 97,
+        "name": "سُورَةُ القَدۡرِ",
+        "englishName": "Al-Qadr",
+        "englishNameTranslation": "The Power, Fate",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 5
+      },
+      "98": {
+        "number": 98,
+        "name": "سُورَةُ البَيِّنَةِ",
+        "englishName": "Al-Bayyina",
+        "englishNameTranslation": "The Evidence",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 8
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 248,
+    "ayahs": [
+      {
+        "number": 1700,
+        "text": "وما تطلب من قومك أجرة على إرشادهم للإيمان، إن الذي أُرسلتَ به من القرآن والهدى عظة للناس أجمعين يتذكرون به ويهتدون.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 104,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 203,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1701,
+        "text": "وكثير من الدلائل الدالة على وحدانية الله وقدرته منتشرة في السموات والأرض، كالشمس والقمر والجبال والأشجار، يشاهدونها وهم عنها معرضون، لا يفكرون فيها ولا يعتبرون.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 105,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1702,
+        "text": "وما يُقِرُّ هؤلاء المعرضون عن آيات الله بأن الله خالقهم ورازقهم وخالق كل شيء ومستحق للعبادة وحده إلا وهم مشركون في عبادتهم الأوثان والأصنام. تعالى الله عن ذلك علوًّا كبيرا.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 106,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1703,
+        "text": "فهل عندهم ما يجعلهم آمنين أن ينزل بهم عذاب من الله يعُمُّهم، أو أن تأتيهم القيامة فجأة، وهم لا يشعرون ولا يُحِسُّون بذلك.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 107,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1704,
+        "text": "قل لهم -أيها الرسول-: هذه طريقتي، أدعو إلى عبادة الله وحده، على حجة من الله ويقين، أنا ومن اقتدى بي، وأنزِّه الله سبحانه وتعالى عن الشركاء، ولستُ من المشركين مع الله غيره.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 108,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1705,
+        "text": "وما أرسلنا من قبلك -أيها الرسول- للناس إلا رجالا منهم ننزل عليهم وحينا، وهم من أهل الحاضرة، فهم أقدر على فهم الدعوة والرسالة، يصدقهم المهتدون للحق، ويكذبهم الضالون عنه، أفلم يمشوا في الأرض، فيعاينوا كيف كان مآل المكذبين السابقين وما حلَّ بهم من الهلاك؟ ولَثواب الدار الآخرة أفضل من الدنيا وما فيها للذين آمنوا وخافوا ربهم. أفلا تتفكرون فتعتبروا؟",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 109,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1706,
+        "text": "ولا تستعجل -أيها الرسول- النصر على مكذبيك، فإن الرسل قبلك ما كان يأتيهم النصر عاجلا لحكمة نعلمها، حتى إذا يئس الرسل من قومهم، وأيقنوا أن قومهم قد كذبوهم ولا أمل في إيمانهم، جاءهم نصرنا عند شدة الكرب، فننجي من نشاء من الرسل وأتباعهم، ولا يُرَدُّ عذابنا عمَّن أجرم وتجرَّأ على الله. وفي هذا تسلية للنبي صلى الله عليه وسلم.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 110,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      },
+      {
+        "number": 1707,
+        "text": "لقد كان في نبأ المرسلين الذي قصصناه عليك وما حلَّ بالمكذبين عظة لأهل العقول السليمة. ما كان هذا القرآن حديثًا مكذوبًا مختلَقًا، ولكن أنزلناه مصدقًا لما سبقه من الكتب السماوية، وبيانًا لكل ما يحتاج إليه العباد من تحليل وتحريم، ومحبوب ومكروه وغير ذلك، وإرشادًا من الضلال، ورحمة لأهل الإيمان تهتدي به قلوبهم، فيعملون بما فيه من الأوامر والنواهي.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 111,
+        "juz": 13,
+        "manzil": 3,
+        "page": 248,
+        "ruku": 204,
+        "hizbQuarter": 99,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

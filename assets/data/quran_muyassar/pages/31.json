@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 31,
+    "ayahs": [
+      {
+        "number": 204,
+        "text": "وقت الحج أشهر معلومات، وهي: شوال، وذو القعدة، وعشر من ذي الحجة. فمن أوجب الحج على نفسه فيهن بالإحرام، فيحرم عليه الجماع ومقدماته القولية والفعلية، ويحرم عليه الخروج عن طاعة الله تعالى بفعل المعاصي، والجدال في الحج الذي يؤدي إلى الغضب والكراهية. وما تفعلوا من خير يعلمه الله، فيجازي كلا على عمله. وخذوا لأنفسكم زادًا من الطعام والشراب لسفر الحج، وزادًا من صالح الأعمال للدار الآخرة، فإن خير الزاد تقوى الله، وخافوني يا أصحاب العقول السليمة.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 197,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      },
+      {
+        "number": 205,
+        "text": "ليس عليكم حرج في أن تطلبوا رزقًا من ربكم بالربح من التجارة في أيام الحج. فإذا دفعتم بعد غروب الشمس راجعين من \"عرفات\" -وهي المكان الذي يقف فيه الحجاج يوم التاسع من ذي الحجة- فاذكروا الله بالتسبيح والتلبية والدعاء عند المشعر الحرام -\"المزدلفة\"-، واذكروا الله على الوجه الصحيح الذي هداكم إليه، ولقد كنتم من قبل هذا الهدى في ضلال لا تعرفون معه الحق.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 198,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      },
+      {
+        "number": 206,
+        "text": "وليكن اندفاعكم من \"عرفات\" التي أفاض منها إبراهيم عليه السلام مخالفين بذلك من لا يقف بها من أهل الجاهلية، واسألوا الله أن يغفر لكم ذنوبكم. إن الله غفور لعباده المستغفرين التائبين، رحيم بهم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 199,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      },
+      {
+        "number": 207,
+        "text": "فإذا أتممتم عبادتكم، وفرغتم من أعمال الحج، فأكثروا من ذكر الله والثناء عليه، مثل ذكركم مفاخر آبائكم وأعظم من ذلك. فمن الناس فريق يجعل همه الدنيا فقط، فيدعو قائلا ربنا آتنا في الدنيا صحة، ومالا وأولادًا، وهؤلاء ليس لهم في الآخرة حظ ولا نصيب؛ لرغبتهم عنها وقَصْرِ هَمِّهم على الدنيا.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 200,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      },
+      {
+        "number": 208,
+        "text": "ومن الناس فريق مؤمن يقول في دعائه: ربنا آتنا في الدنيا عافية ورزقًا وعلمًا نافعًا، وعملا صالحًا، وغير ذلك من أمور الدين والدنيا، وفي الآخرة الجنة، واصرف عنَّا عذاب النار. وهذا الدعاء من أجمع الأدعية، ولهذا كان أكثر دعاء النبي صلى الله عليه وسلم، كما ثبت في الصحيحين.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 201,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      },
+      {
+        "number": 209,
+        "text": "أولئك الداعون بهذا الدعاء لهم ثواب عظيم بسبب ما كسبوه من الأعمال الصالحة. والله سريع الحساب، مُحْصٍ أعمال عباده، ومجازيهم بها.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 202,
+        "juz": 2,
+        "manzil": 1,
+        "page": 31,
+        "ruku": 26,
+        "hizbQuarter": 12,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 288,
+    "ayahs": [
+      {
+        "number": 2088,
+        "text": "Nothing could stop Us from sending signs except that the earlier people had rejected them as lies. We sent to Thamud the she-camel as a token to make it clear to them, but they treated her cruelly; and We send signs only to deter.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 59,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 245,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2089,
+        "text": "When We said to you: \"Verily your Lord circumscribes mankind,\" and showed you the vision and the accursed tree of the Qur'an, it was as a bone of contention for men. Thus do We (instil) fear in them; but they only transgress the more.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 60,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 245,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2090,
+        "text": "When We asked the angels to bow before Adam, they all bowed but Iblis, who said: \"Can I bow before him whom You created from clay?\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 61,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2091,
+        "text": "(And) said: \"Look! This is what you have honoured above me! If You defer (my term) till the Day of Resurrection, I will bring his progeny into complete subjugation, barring a few.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 62,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2092,
+        "text": "(And God) said: \"Away! Whosoever of them follows you will surely have Hell with you as requital -- an ample recompense.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 63,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2093,
+        "text": "Mislead any of them you may with your voice, attack them with your cavalry and soldiers on foot, share their wealth and children with them, and make promises to them.\" -- But the promises of Satan are nothing but deceit.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 64,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2094,
+        "text": "\"You will surely have no power over My devotees: Your Lord is sufficient as their protector.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 65,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2095,
+        "text": "It is your Lord who drives your ships across the seas that you may seek of His bounty. He is verily kind to you.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 66,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 414,
+    "ayahs": [
+      {
+        "number": 3498,
+        "text": "Do you not see that God makes the night succeed the day, the day succeed the night? And He has harnessed the sun and the moon so that each runs its appointed course. Surely God is aware of all you do.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 29,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3499,
+        "text": "That is so for God is the Reality, and what they invoke other than Him is illusion. Indeed God is all-high and supreme.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 30,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3500,
+        "text": "Do you not see that the ships sail in the ocean by the grace of God, that He may show you some of His glories. Verily there are signs in this for those who are constant and give thanks.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 31,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3501,
+        "text": "When the waves overshadow them like a canopy, they pray to God with all-exclusive faith in Him. But after He has safely brought them to the shore, there are some who vacillate between doubt and belief, but no one rejects Our signs except those who are perverse and disbelieve.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 32,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3502,
+        "text": "O people, fear your Lord and dread the day when no father will avail a son, nor son his father. Truly the promise of God is true. Do not be deluded by the life of this world, and do not let the deceiver draw you away from God.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 33,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3503,
+        "text": "Only God has the knowledge of the Hour. He sends rain from the heavens, and knows what is in the mothers' wombs. No one knows what he will do on the morrow; no one knows in what land he will die. Surely God knows and is cognisant.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 34,
+        "juz": 21,
+        "manzil": 5,
+        "page": 414,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "31": {
+        "number": 31,
+        "name": "سُورَةُ لُقۡمَانَ",
+        "englishName": "Luqman",
+        "englishNameTranslation": "Luqman",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 34
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

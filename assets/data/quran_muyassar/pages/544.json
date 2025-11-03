@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 544,
+    "ayahs": [
+      {
+        "number": 5116,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشرعه، إذا أردتم أن تُكلِّموا رسول الله صلى الله عليه وسلم سرًّا بينكم وبينه، فقدِّموا قبل ذلك صدقة لأهل الحاجة، ذلك خير لكم لما فيه من الثواب، وأزكى لقلوبكم من المآثم، فإن لم تجدوا ما تتصدقون به فلا حرج عليكم؛ فإن الله غفور لعباده المؤمنين، رحيم بهم.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 12,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5117,
+        "text": "أخشيتم الفقر إذا قدَّمتم صدقة قبل مناجاتكم رسول الله؟ فإذْ لم تفعلوا ما أُمرتم به، وتاب الله عليكم، ورخَّص لكم في ألا تفعلوه، فاثبتوا وداوموا على إقام الصلاة وإيتاء الزكاة وطاعة الله ورسوله في كل ما أُمرتم به، والله سبحانه خبير بأعمالكم، ومجازيكم عليها.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 13,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5118,
+        "text": "ألم تر إلى المنافقين الذين اتخذوا اليهود أصدقاء ووالوهم؟ والمنافقون في الحقيقة ليسوا من المسلمين ولا من اليهود، ويحلفون كذبًا أنهم مسلمون، وأنك رسول الله، وهم يعلمون أنهم كاذبون فيما حلفوا عليه.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 14,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5119,
+        "text": "أعدَّ الله لهؤلاء المنافقين عذابًا بالغ الشدة والألم، إنهم ساء ما كانوا يعملون من النفاق والحلف على الكذب.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 15,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5120,
+        "text": "اتخذ المنافقون أيمانهم الكاذبة وقاية لهم من القتل بسبب كفرهم، ولمنع المسلمين عن قتالهم وأخذ أموالهم، فبسبب ذلك صدُّوا أنفسهم وغيرهم عن سبيل الله وهو الإسلام، فلهم عذاب مُذلٌّ في النار؛ لاستكبارهم عن الإيمان بالله ورسوله وصدِّهم عن سبيله.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 16,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5121,
+        "text": "لن تدفع عن المنافقين أموالهم ولا أولادهم مِن عذاب الله شيئًا، أولئك أهل النار يدخلونها فيبقون فيها أبدا، لا يخرجون منها. وهذا الجزاء يعم كلَّ من صدَّ عن دين الله بقوله أو فعله.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 17,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5122,
+        "text": "يوم القيامة يبعث الله المنافقين جميعًا من قبورهم أحياء، فيحلفون له أنهم كانوا مؤمنين، كما كانوا يحلفون لكم- أيها المؤمنون- في الدنيا، ويعتقدون أن ذلك ينفعهم عند الله كما كان ينفعهم في الدنيا عند المسلمين، ألا إنهم هم البالغون في الكذب حدًا لم يبلغه غيرهم.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 18,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5123,
+        "text": "غلب عليهم الشيطان، واستولى عليهم، حتى تركوا أوامر الله والعمل بطاعته، أولئك حزب الشيطان وأتباعه. ألا إن حزب الشيطان هم الخاسرون في الدنيا والآخرة.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 19,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5124,
+        "text": "إن الذين يخالفون أمر الله ورسوله، أولئك من جملة الأذلاء المغلوبين المهانين في الدنيا والآخرة.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 20,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5125,
+        "text": "كتب الله في اللوح المحفوظ وحَكَم بأن النصرة له ولكتابه ورسله وعباده المؤمنين. إن الله سبحانه قوي لا يعجزه شيء، عزيز على خلقه.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 21,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "58": {
+        "number": 58,
+        "name": "سُورَةُ المُجَادلَةِ",
+        "englishName": "Al-Mujaadila",
+        "englishNameTranslation": "The Pleading Woman",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

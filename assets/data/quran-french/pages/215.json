@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 215,
+    "ayahs": [
+      {
+        "number": 1418,
+        "text": "Si chaque âme injuste possédait tout ce qu'il y a sur terre, elle le donnerait pour sa rançon. Ils dissimuleront leur regret quand ils verront le châtiment. Et il sera décidé entre eux en toute équité, et ils ne seront point lésés.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 54,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1419,
+        "text": "C'est à Allah qu'appartient, certes, tout ce qui est dans les cieux et sur la terre. Certes, la promesse d'Allah est vérité. Mais la plupart d'entre eux ne (le) savent pas.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 55,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1420,
+        "text": "C'est Lui qui donne la vie et qui donne la mort; et c'est vers Lui que vous serez ramenés.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 56,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1421,
+        "text": "O gens! Une exhortation vous est venue, de votre Seigneur, une guérison de ce qui est dans les poitrines, un guide et une miséricorde pour les croyants.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 57,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1422,
+        "text": "Dis: «[Ceci provient] de la grâce d'Allah et de Sa miséricorde; Voilà de quoi ils devraient se réjouir. C'est bien mieux que tout ce qu'ils amassent».",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 58,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1423,
+        "text": "Que dites-vous de ce qu'Allah a fait descendre pour vous comme subsistance et dont vous avez alors fait des choses licites et des choses interdites? - Dis: «Est-ce Allah qui vous l'a permis? Ou bien forgez vous (des mensonges) contre Allah?»",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 59,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1424,
+        "text": "Et que penseront, au Jour de la Résurrection, ceux qui forgent le mensonge contre Allah? - Certes, Allah est Détenteur de grâce pour les gens, mais la plupart d'entre eux ne sont pas reconnaissants.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 60,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1425,
+        "text": "Tu ne te trouveras dans aucune situation, tu ne réciteras aucun passage du Coran, vous n'accomplirez aucun acte sans que Nous soyons témoin au moment où vous l'entreprendrez. Il n'échappe à ton Seigneur ni le poids d'un atome sur terre ou dans le ciel, ni un poids plus petit ou plus grand qui ne soit déjà inscrit dans un livre évident.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 61,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 178,
+        "hizbQuarter": 86,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

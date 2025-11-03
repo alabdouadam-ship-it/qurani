@@ -1,0 +1,249 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 293,
+    "ayahs": [
+      {
+        "number": 2134,
+        "text": "وبالحق أنزلنا هذا القرآن على محمد صلى الله عليه وسلم لأمْرِ العباد ونهيهم وثوابهم وعقابهم، وبالصدق والعدل والحفظ من التغيير والتبديل نزل. وما أرسلناك -أيها الرسول- إلا مبشرًا بالجنة لمن أطاع، ومخوفًا بالنار لمن عصى وكفر.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 105,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2135,
+        "text": "وأنزلنا إليك -أيها الرسول- قرآنًا بيَّناه وأحكمناه وفَصَّلناه فارقًا بين الهدى والضلال والحق والباطل؛ لتقرأه على الناس في تؤدة وتمهُّل، ونَزَّلْناه مفرَّقًا، شيئًا بعد شيء، على حسب الحوادث ومقتضيات الأحوال.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 106,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2136,
+        "text": "قل -أيها الرسول- لهؤلاء المكذبين: آمِنوا بالقرآن أو لا تؤمنوا؛ فإن إيمانكم لا يزيده كمالا وتكذيبكم لا يُلْحِق به نقصًا. إن العلماء الذين أوتوا الكتب السابقة مِن قبل القرآن، وعرفوا حقيقة الوحي، إذا قرئ عليهم القرآن يخشعون، فيسجدون على وجوههم لله سبحانه وتعالى.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 107,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2137,
+        "text": "ويقول هؤلاء الذين أوتوا العلم عند سماع القرآن: تنزيهًا لربنا وتبرئة له مما يصفه المشركون به، ما كان وعد الله تعالى من ثواب وعقاب إلا واقعًا حقًا.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 108,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2138,
+        "text": "ويقع هؤلاء ساجدين على وجوههم، يبكون تأثرًا بمواعظ القرآن، ويزيدهم سماع القرآن ومواعظه خضوعًا لأمر الله وعظيم قدرته.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 109,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": {
+          "id": 4,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2139,
+        "text": "قل -أيها الرسول- لمشركي قومك الذين أنكروا عليك الدعاء بقولك: يا الله يا رحمن، ادعوا الله، أو ادعوا الرحمن، فبأي أسمائه دعوتموه فإنكم تدعون ربًا واحدًا؛ لأن أسماءه كلها حسنى. ولا تجهر بالقراءة في صلاتك، فيسمعك المشركون، ولا تُسِرَّ بها فلا يسمعك أصحابك، وكن وسطًا بين الجهر والهمس.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 110,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2140,
+        "text": "وقل -أيها الرسول-: الحمد لله الذي له الكمال والثناء، الذي تنزَّه عن الولد والشريك في ألوهيته، ولا يكون له سبحانه وليٌّ مِن خلقه فهو الغني القوي، وهم الفقراء المحتاجون إليه، وعظِّمه تعظيمًا تامًا بالثناء عليه وعبادته وحده لا شريك له، وإخلاص الدين كله له.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 111,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2141,
+        "text": "الثناء على الله بصفاته التي كلُّها أوصاف كمال، وبنعمه الظاهرة والباطنة، الدينية والدنيوية، الذي تفضَّل فأنزل على عبده ورسوله محمد صلى الله عليه وسلم القرآن، ولم يجعل فيه شيئًا من الميل عن الحق.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 1,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2142,
+        "text": "جعله الله كتابًا مستقيمًا، لا اختلاف فيه ولا تناقض؛ لينذر الكافرين من عذاب شديد من عنده، ويبشر المصدقين بالله ورسوله الذين يعملون الأعمال الصالحات، بأن لهم ثوابًا جزيلا هو الجنة، يقيمون في هذا النعيم لا يفارقونه أبدًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 2,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2143,
+        "text": "جعله الله كتابًا مستقيمًا، لا اختلاف فيه ولا تناقض؛ لينذر الكافرين من عذاب شديد من عنده، ويبشر المصدقين بالله ورسوله الذين يعملون الأعمال الصالحات، بأن لهم ثوابًا جزيلا هو الجنة، يقيمون في هذا النعيم لا يفارقونه أبدًا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 3,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2144,
+        "text": "وينذر به المشركين الذين قالوا: اتخذ الله ولدا.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 4,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      },
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

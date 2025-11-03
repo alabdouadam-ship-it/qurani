@@ -1,0 +1,260 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 365,
+    "ayahs": [
+      {
+        "number": 2911,
+        "text": "Or, Nous ne t'avons envoyé que comme annonciateur et avertisseur.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 56,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2912,
+        "text": "Dis: «Je ne vous en demande aucun salaire (pour moi même). Toutefois, celui qui veut suivre un chemin conduisant vers son Seigneur [est libre de dépenser dans la voie d'Allah]».",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 57,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2913,
+        "text": "Et place ta confiance en Le Vivant qui ne meurt jamais. Et par Sa louange, glorifie-Le. Il suffit comme Parfait Connaisseur des péchés de Ses serviteurs.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 58,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2914,
+        "text": "C'est Lui qui, en six jours, a créé les cieux, la terre et tout ce qui existe entre eux, et le Tout Miséricordieux S'est établi «Istawâ» ensuite sur le Trône. Interroge donc qui est bien informé de Lui.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 59,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2915,
+        "text": "Et quand on leur dit: «Prosternez-vous devant le Tout Miséricordieux», ils disent: «Qu'est-ce donc que le Tout Miséricordieux? Allons-nous nous prosterner devant ce que tu nous commandes?» - Et cela accroît leur répulsion.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 60,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 314,
+        "hizbQuarter": 146,
+        "sajda": {
+          "id": 8,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2916,
+        "text": "Que soit béni Celui qui a placé au ciel des constellations et y a placé un luminaire (le soleil) et aussi une lune éclairante!",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 61,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2917,
+        "text": "Et c'est Lui qui a assigné une alternance à la nuit et au jour pour quiconque veut y réfléchir ou montrer sa reconnaissance.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 62,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2918,
+        "text": "Les serviteurs du Tout Miséricordieux sont ceux qui marchent humblement sur terre, qui, lorsque les ignorants s'adressent à eux, disent: «Paix»,",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 63,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2919,
+        "text": "qui passent les nuits prosternés et debout devant leur Seigneur;",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 64,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2920,
+        "text": "qui disent: «Seigneur, écarte de nous le châtiment de l'Enfer». - car son châtiment est permanent.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 65,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2921,
+        "text": "Quels mauvais gîte et lieu de séjour!",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 66,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      },
+      {
+        "number": 2922,
+        "text": "Qui, lorsqu'ils dépensent, ne sont ni prodigues ni avares mais se tiennent au juste milieu.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 67,
+        "juz": 19,
+        "manzil": 4,
+        "page": 365,
+        "ruku": 315,
+        "hizbQuarter": 146,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

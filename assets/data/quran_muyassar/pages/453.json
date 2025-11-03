@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 453,
+    "ayahs": [
+      {
+        "number": 3971,
+        "text": "(ص) سبق الكلام على الحروف المقطَّعة في أول سورة البقرة.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 1,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3972,
+        "text": "(ص) سبق الكلام على الحروف المقطَّعة في أول سورة البقرة.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 2,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3973,
+        "text": "كثيرًا من الأمم أهلكناها قبل هؤلاء المشركين، فاستغاثوا حين جاءهم العذاب ونادوا بالتوبة، وليس الوقت وقت قَبول توبة، ولا وقت فرار وخلاص مما أصابهم.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 3,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3974,
+        "text": "وعجِب هؤلاء الكفار مِن بعث الله إليهم بشرا منهم؛ ليدعوهم إلى الله ويخوَّفهم عذابه، وقالوا: إنه ليس رسولا بل هو كاذب في قوله، ساحر لقومه، كيف يصيِّر الآلهة الكثيرة إلهًا واحدًا؟ إنَّ هذا الذي جاء به ودعا إليه لَشيء عجيب.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 4,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3975,
+        "text": "وعجِب هؤلاء الكفار مِن بعث الله إليهم بشرا منهم؛ ليدعوهم إلى الله ويخوَّفهم عذابه، وقالوا: إنه ليس رسولا بل هو كاذب في قوله، ساحر لقومه، كيف يصيِّر الآلهة الكثيرة إلهًا واحدًا؟ إنَّ هذا الذي جاء به ودعا إليه لَشيء عجيب.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 5,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3976,
+        "text": "وانطلق رؤساء القوم وكبراؤهم يحرِّضون قومهم على الاستمرار على الشرك والصبر على تعدد الآلهة، ويقولون إن ما جاء به هذا الرسول شيء مدبَّر يقصد منه الرئاسة والسيادة، ما سمعنا بما يدعو إليه في دين آبائنا من قريش، ولا في النصرانية، ما هذا إلا كذب وافتراء.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 6,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3977,
+        "text": "وانطلق رؤساء القوم وكبراؤهم يحرِّضون قومهم على الاستمرار على الشرك والصبر على تعدد الآلهة، ويقولون إن ما جاء به هذا الرسول شيء مدبَّر يقصد منه الرئاسة والسيادة، ما سمعنا بما يدعو إليه في دين آبائنا من قريش، ولا في النصرانية، ما هذا إلا كذب وافتراء.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 7,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3978,
+        "text": "أخُص محمد بنزول القرآن عليه من دوننا؟ بل هم في ريب من وحيي إليك -أيها الرسول- وإرسالي لك، بل قالوا ذلك؛ لأنهم لم يذوقوا عذاب الله، فلو ذاقوا عذابه لما تجرؤوا على ما قالوا.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 8,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3979,
+        "text": "أم هم يملكون خزائن فضل ربك العزيز في سلطانه، الوهاب ما يشاء من رزقه وفضله لمن يشاء من خلقه؟",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 9,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3980,
+        "text": "أم لهؤلاء المشركين مُلْك السموات والأرض وما بينهما، فيُعْطوا ويَمْنعوا؟ فليأخذوا بالأسباب الموصلة لهم إلى السماء، حتى يحكموا بما يريدون من عطاء ومنع.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 10,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3981,
+        "text": "هؤلاء الجند المكذِّبون جند مهزومون، كما هُزم غيرهم من الأحزاب قبلهم، كذَّبت قبلهم قوم نوح وعاد وفرعون صاحب القوة العظيمة، وثمود وقوم لوط وأصحاب الأشجار والبساتين وهم قوم شعيب. أولئك الأمم الذين تحزَّبوا على الكفر والتكذيب واجتمعوا عليه. إنْ كلٌّ مِن هؤلاء إلا كذَّب الرسل، فاستحقوا عذاب الله، وحلَّ بهم عقابه.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 11,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3982,
+        "text": "هؤلاء الجند المكذِّبون جند مهزومون، كما هُزم غيرهم من الأحزاب قبلهم، كذَّبت قبلهم قوم نوح وعاد وفرعون صاحب القوة العظيمة، وثمود وقوم لوط وأصحاب الأشجار والبساتين وهم قوم شعيب. أولئك الأمم الذين تحزَّبوا على الكفر والتكذيب واجتمعوا عليه. إنْ كلٌّ مِن هؤلاء إلا كذَّب الرسل، فاستحقوا عذاب الله، وحلَّ بهم عقابه.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 12,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3983,
+        "text": "هؤلاء الجند المكذِّبون جند مهزومون، كما هُزم غيرهم من الأحزاب قبلهم، كذَّبت قبلهم قوم نوح وعاد وفرعون صاحب القوة العظيمة، وثمود وقوم لوط وأصحاب الأشجار والبساتين وهم قوم شعيب. أولئك الأمم الذين تحزَّبوا على الكفر والتكذيب واجتمعوا عليه. إنْ كلٌّ مِن هؤلاء إلا كذَّب الرسل، فاستحقوا عذاب الله، وحلَّ بهم عقابه.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 13,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3984,
+        "text": "هؤلاء الجند المكذِّبون جند مهزومون، كما هُزم غيرهم من الأحزاب قبلهم، كذَّبت قبلهم قوم نوح وعاد وفرعون صاحب القوة العظيمة، وثمود وقوم لوط وأصحاب الأشجار والبساتين وهم قوم شعيب. أولئك الأمم الذين تحزَّبوا على الكفر والتكذيب واجتمعوا عليه. إنْ كلٌّ مِن هؤلاء إلا كذَّب الرسل، فاستحقوا عذاب الله، وحلَّ بهم عقابه.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 14,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 391,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3985,
+        "text": "وما ينتظر هؤلاء المشركون لحلول العذاب عليهم إن بقوا على شركهم، إلا نفخة واحدة ما لها من رجوع.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 15,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 392,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3986,
+        "text": "وقالوا: ربنا عجِّل لنا نصيبنا من العذاب في الدينا قبل يوم القيامة، وكان هذا استهزاءً منهم.",
+        "surah": {
+          "number": 38,
+          "name": "سُورَةُ صٓ",
+          "englishName": "Saad",
+          "englishNameTranslation": "The letter Saad",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 16,
+        "juz": 23,
+        "manzil": 6,
+        "page": 453,
+        "ruku": 392,
+        "hizbQuarter": 181,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "38": {
+        "number": 38,
+        "name": "سُورَةُ صٓ",
+        "englishName": "Saad",
+        "englishNameTranslation": "The letter Saad",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

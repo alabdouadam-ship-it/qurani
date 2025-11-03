@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 225,
+    "ayahs": [
+      {
+        "number": 1502,
+        "text": "قال نوح عليه السلام لقومه: يا قوم لا أسألكم على دعوتكم لتوحيد الله وإخلاص العبادة له مالاً تؤدونه إليَّ بعد إيمانكم، ولكن ثواب نصحي لكم على الله وحده، وليس من شأني أن أطرد المؤمنين، فإنهم ملاقو ربهم يوم القيامة، ولكني أراكم قومًا تجهلون؛ إذ تأمرونني بطرد أولياء الله وإبعادهم عني.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 29,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1503,
+        "text": "ويا قوم مَن يمنعني من الله إن عاقبني على طردي المؤمنين؟ أفلا تتدبرون الأمور فتعلموا ما هو الأنفع لكم والأصلح؟",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 30,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1504,
+        "text": "ولا أقول لكم: إني أملك التصرف في خزائن الله، ولا أعلم الغيب، ولست بمَلَك من الملائكة، ولا أقول لهؤلاء الذين تحتقرون من ضعفاء المؤمنين: لن يؤتيكم الله ثوابًا على أعمالكم، فالله وحده أعلم بما في صدورهم وقلوبهم، ولئن فعلتُ ذلك إني إذًا لمن الظالمين لأنفسهم ولغيرهم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 31,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1505,
+        "text": "قالوا: يا نوح قد حاججتنا فأكثرت جدالنا، فأتنا بما تعدنا من العذاب إن كنت من الصادقين في دعواك.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 32,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1506,
+        "text": "قال نوح لقومه: إن الله وحده هو الذي يأتيكم بالعذاب إذا شاء، ولستم بفائتيه إذا أراد أن يعذبكم؛ لأنه سبحانه لا يعجزه شيء في الأرض ولا في السماء.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 33,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1507,
+        "text": "ولا ينفعكم نصحي واجتهادي في دعوتكم للإيمان، إن كان الله يريد أن يضلَّكم ويهلككم، هو سبحانه مالككم، وإليه تُرجَعون في الآخرة للحساب والجزاء.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 34,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1508,
+        "text": "بل أيقول هؤلاء المشركون من قوم نوح: افترى نوح هذا القول؟ قل لهم: إن كنتُ قد افتريتُ ذلك على الله فعليَّ وحدي إثم ذلك، وإذا كنتُ صادقًا فأنتم المجرمون الآثمون، وأنا بريء مِن كفركم وتكذيبكم وإجرامكم.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 35,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 185,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1509,
+        "text": "وأوحى الله سبحانه وتعالى إلى نوح -عليه السلام- لـمَّا حق على قومه العذاب، أنه لن يؤمن بالله إلا مَن قد آمن مِن قبل، فلا تحزن يا نوح على ما كانوا يفعلون.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 36,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 186,
+        "hizbQuarter": 90,
+        "sajda": false
+      },
+      {
+        "number": 1510,
+        "text": "واصنع السفينة بمرأى منَّا وبأمرنا لك ومعونتنا، وأنت في حفظنا وكلاءتنا، ولا تطلب مني إمهال هؤلاء الذين ظلموا أنفسهم من قومك بكفرهم، فإنهم مغرقون بالطوفان. وفي الآية إثبات صفة العين لله تعالى على ما يليق به سبحانه.",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 37,
+        "juz": 12,
+        "manzil": 3,
+        "page": 225,
+        "ruku": 186,
+        "hizbQuarter": 90,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

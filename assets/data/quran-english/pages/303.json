@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 303,
+    "ayahs": [
+      {
+        "number": 2224,
+        "text": "Say: \"I will cite before you his commemoration.\" We gave him authority in the land and means of accomplishing every end.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 84,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2225,
+        "text": "So he followed a certain road",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 85,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2226,
+        "text": "Till he reached the point of the setting sun, and saw it set behind a muddy lake, and near it found a people. We said: \"O Dhu'l-Qarnain, you may either punish them or treat them with kindness.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 86,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2227,
+        "text": "He said: \"I shall punish whosoever is wicked. He will then be sent back to his Lord who will inflict on him a terrible punishment.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 87,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2228,
+        "text": "But he who believes and does the right will have an excellent reward, and we shall make things easy for him.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 88,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2229,
+        "text": "He then followed (another) road",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 89,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2230,
+        "text": "Till he reached the point of the rising sun, and saw it rise over a people for whom We had provided no shelter against it.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 90,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2231,
+        "text": "It was so, for We were fully informed about him.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 91,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2232,
+        "text": "He then followed (another) road",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 92,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2233,
+        "text": "Till he reached a place between two mountains, and found this side of it a people who understood but little of what was spoken.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 93,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2234,
+        "text": "They said: 'O Dhu'l-Qarnain, Gog and Magog are oppressing the land. May we pay you some tribute so that you could build a rampart between us and them?\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 94,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2235,
+        "text": "He said: \"The ability my Lord has given me is better. So help me with your manual labour; I will build a wall between you and them.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 95,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2236,
+        "text": "Bring me ingots of iron,\" (which they did) until the space between two mountain sides was filled up. \"Blow your bellows,\" he said; (and they blew) until it was red hot. \"Bring me molten brass,\" he said, \"that I may pour over it.\"",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 96,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2237,
+        "text": "Thus (Gog and Magog) could neither climb over it nor dig a hole through (the rampart).",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 97,
+        "juz": 16,
+        "manzil": 4,
+        "page": 303,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

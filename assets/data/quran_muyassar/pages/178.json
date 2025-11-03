@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 178,
+    "ayahs": [
+      {
+        "number": 1169,
+        "text": "اذكروا نعمة الله عليكم يوم \"بدر\" إذ تطلبون النصر على عدوكم، فاستجاب الله لدعائكم قائلا إني ممدُّكم بألف من الملائكة من السماء، يتبع بعضهم بعضًا.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 9,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1170,
+        "text": "وما جعل الله ذلك الإمداد إلا بشارة لكم بالنصر، ولتسكن به قلوبكم، وتوقنوا بنصر الله لكم، وما النصر إلا من عند الله، لا بشدة بأسكم وقواكم. إن الله عزيز في ملكه، حكيم في تدبيره وشرعه.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 10,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1171,
+        "text": "إذ يُلْقي الله عليكم النعاس أمانًا منه لكم من خوف عدوكم أن يغلبكم، وينزل عليكم من السحاب ماء طهورًا، ليطهركم به من الأحداث الظاهرة، ويزيل عنكم في الباطن وساوس الشيطان وخواطره، وليشدَّ على قلوبكم بالصبر عند القتال، ويثبت به أقدام المؤمنين بتلبيد الأرض الرملية بالمطر حتى لا تنزلق فيها الأقدام.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 11,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1172,
+        "text": "إذ يوحي ربك -أيها النبي- إلى الملائكة الذين أمدَّ الله بهم المسلمين في غزوة \"بدر\" أني معكم أُعينكم وأنصركم، فقوُّوا عزائم الذين آمنوا، سألقي في قلوب الذين كفروا الخوف الشديد والذلة والصَّغَار، فاضربوا -أيها المؤمنون- رؤوس الكفار، واضربوا منهم كل طرف ومِفْصل.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 12,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1173,
+        "text": "ذلك الذي حدث للكفار من ضَرْب رؤوسهم وأعناقهم وأطرافهم؛ بسبب مخالفتهم لأمر الله ورسوله، ومَن يخالف أمر الله ورسوله، فإن الله شديد العقاب له في الدنيا والآخرة.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 13,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1174,
+        "text": "ذلكم العذاب الذي عجَّلته لكم -أيها الكافرون المخالفون لأوامر الله ورسوله في الدنيا- فذوقوه في الحياة الدنيا، ولكم في الآخرة عذاب النار.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 14,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1175,
+        "text": "يا أيها الذين صَدَّقوا الله ورسوله وعملوا بشرعه، إذا قابلتم الذين كفروا في القتال متقاربين منكم فلا تُوَلُّوهم ظهوركم، فتنهزموا عنهم، ولكن اثبتوا لهم، فإن الله معكم وناصركم عليهم.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 15,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1176,
+        "text": "ومن يُوَلِّهم منكم ظهره وقت الزحف إلا منعطفًا لمكيدة الكفار أو منحازًا إلى جماعة المسلمين حاضري الحرب حيث كانوا، فقد استحق الغضب من الله، ومقامه جهنم، وبئس المصير والمنقلب.",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 16,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

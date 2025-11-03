@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 327,
+    "ayahs": [
+      {
+        "number": 2541,
+        "text": "فحطم إبراهيم الأصنام وجعلها قطعًا صغيرة، وترك كبيرها؛ كي يرجع القوم إليه ويسألوه، فيتبين عجزهم وضلالهم، وتقوم الحجة عليهم.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 58,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2542,
+        "text": "ورجع القوم، ورأوا أصنامهم محطمة مهانة، فسأل بعضهم بعضًا: مَن فعل هذا بآلهتنا؟ إنه لظالم في اجترائه على الآلهة المستحقة للتعظيم والتوقير.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 59,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2543,
+        "text": "قال مَن سمع إبراهيم يحلف بأنه سيكيد أصنامهم: سمعنا فتى يقال له إبراهيم، يذكر الأصنام بسوء.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 60,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2544,
+        "text": "قال رؤساؤهم: فَأْتوا بإبراهيم على مرأى من الناس؛ كي يشهدوا على اعترافه بما قال؛ ليكون ذلك حجة عليه.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 61,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2545,
+        "text": "وجيء بإبراهيم وسألوه منكرين: أأنت الذي كسَّرْتَ آلهتنا؟ يعنون أصنامهم.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 62,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2546,
+        "text": "وتمَّ لإبراهيم ما أراد من إظهار سفههم على مرأى منهم. فقال محتجًا عليهم معرِّضًا بغباوتهم: بل الذي كسَّرها هذا الصنم الكبير، فاسألوا آلهتكم المزعومة عن ذلك، إن كانت تتكلم أو تُحير جوابًا.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 63,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2547,
+        "text": "فأُسقِط في أيديهم، وبدا لهم ضلالهم؛ كيف يعبدونها، وهي عاجزة عن أن تدفع عن نفسها شيئًا أو أن تجيب سائلها؟ وأقرُّوا على أنفسهم بالظلم والشرك.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 64,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2548,
+        "text": "وسُرعان ما عاد إليهم عنادهم بعد إفحامهم، فانقلبوا إلى الباطل، واحتجُّوا على إبراهيم بما هو حجة له عليهم، فقالوا: كيف نسألها، وقد علمتَ أنها لا تنطق؟",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 65,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2549,
+        "text": "قال إبراهيم محقِّرًا لشأن الأصنام: كيف تعبدون أصنامًا لا تنفع إذا عُبدت، ولا تضرُّ إذا تُركت؟ قبحًا لكم ولآلهتكم التي تعبدونها من دون الله تعالى، أفلا تعقلون فتدركون سوء ما أنتم عليه؟",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 66,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2550,
+        "text": "قال إبراهيم محقِّرًا لشأن الأصنام: كيف تعبدون أصنامًا لا تنفع إذا عُبدت، ولا تضرُّ إذا تُركت؟ قبحًا لكم ولآلهتكم التي تعبدونها من دون الله تعالى، أفلا تعقلون فتدركون سوء ما أنتم عليه؟",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 67,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2551,
+        "text": "لما بطلت حجتهم وظهر الحق عدلوا إلى استعمال سلطانهم، وقالوا: حَرِّقوا إبراهيم بالنار؛ غضبًا لآلهتكم إن كنتم ناصرين لها. فأشْعَلوا نارًا عظيمة وألقوه فيها، فانتصر الله لرسوله وقال للنار: كوني بردًا وسلامًا على إبراهيم، فلم يَنَلْه فيها أذى، ولم يصبه مكروه.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 68,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2552,
+        "text": "لما بطلت حجتهم وظهر الحق عدلوا إلى استعمال سلطانهم، وقالوا: حَرِّقوا إبراهيم بالنار؛ غضبًا لآلهتكم إن كنتم ناصرين لها. فأشْعَلوا نارًا عظيمة وألقوه فيها، فانتصر الله لرسوله وقال للنار: كوني بردًا وسلامًا على إبراهيم، فلم يَنَلْه فيها أذى، ولم يصبه مكروه.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 69,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2553,
+        "text": "وأراد القوم بإبراهيم الهلاك فأبطل الله كيدهم، وجعلهم المغلوبين الأسفلين.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 70,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2554,
+        "text": "ونجينا إبراهيم ولوطًا الذي آمن به من \"العراق\"، وأخرجناهما إلى أرض \"الشام\" التي باركنا فيها بكثرة الخيرات، وفيها أكثر الأنبياء عليهم الصلاة والسلام.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 71,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      },
+      {
+        "number": 2555,
+        "text": "وأنعم الله على إبراهيم، فوهب له ابنه إسحاق حين دعاه، ووهب له من إسحاق يعقوب زيادة على ذلك، وكلٌّ من إبراهيم وإسحاق ويعقوب جعله الله صالحًا مطيعًا له.",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 72,
+        "juz": 17,
+        "manzil": 4,
+        "page": 327,
+        "ruku": 282,
+        "hizbQuarter": 131,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "21": {
+        "number": 21,
+        "name": "سُورَةُ الأَنبِيَاءِ",
+        "englishName": "Al-Anbiyaa",
+        "englishNameTranslation": "The Prophets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 112
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

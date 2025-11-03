@@ -1,0 +1,549 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 534,
+    "ayahs": [
+      {
+        "number": 4969,
+        "text": "Ils contiennent des fruits, des palmiers, et des grenadiers.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 68,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4970,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 69,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4971,
+        "text": "Là, il y aura des vertueuses et des belles.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 70,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4972,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 71,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4973,
+        "text": "Des houris cloîtrées dans les tentes,",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 72,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4974,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 73,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4975,
+        "text": "qu'avant eux aucun homme ou djinn n'a déflorées.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 74,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4976,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 75,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4977,
+        "text": "Ils seront accoudés sur des coussins verts et des tapis épais et jolis.",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 76,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4978,
+        "text": "Lequel donc des bienfaits de votre Seigneur nierez-vous?",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 77,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4979,
+        "text": "Béni soit le Nom de ton Seigneur, Plein de Majesté et de Munificence!",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 78,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4980,
+        "text": "Quand l'événement (le Jugement) arrivera,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4981,
+        "text": "nul ne traitera sa venue de mensonge.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4982,
+        "text": "Il abaissera (les uns), il élèvera (les autres).",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4983,
+        "text": "Quand la terre sera secouée violemment,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4984,
+        "text": "et les montagnes seront réduites en miettes,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4985,
+        "text": "et qu'elles deviendront poussière éparpillée",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4986,
+        "text": "alors vous serez trois catégories:",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4987,
+        "text": "les gens de la droite - que sont les gens de la droite?",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4988,
+        "text": "Et les gens de la gauche - que sont les gens de la gauche?",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4989,
+        "text": "Les premiers (à suivre les ordres d'Allah sur la terre) ce sont eux qui seront les premiers (dans l'au-delà)",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4990,
+        "text": "Ce sont ceux-là les plus rapprochés d'Allah",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4991,
+        "text": "dans les Jardins des délices,",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4992,
+        "text": "une multitude d'élus parmi les premières [générations],",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4993,
+        "text": "et un petit nombre parmi les dernières [générations],",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4994,
+        "text": "sur des lits ornés [d'or et de pierreries],",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4995,
+        "text": "s'y accoudant et se faisant face.",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "55": {
+        "number": 55,
+        "name": "سُورَةُ الرَّحۡمَٰن",
+        "englishName": "Ar-Rahmaan",
+        "englishNameTranslation": "The Beneficent",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      },
+      "56": {
+        "number": 56,
+        "name": "سُورَةُ الوَاقِعَةِ",
+        "englishName": "Al-Waaqia",
+        "englishNameTranslation": "The Inevitable",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 96
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

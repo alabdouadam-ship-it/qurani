@@ -1,0 +1,169 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 554,
+    "ayahs": [
+      {
+        "number": 5186,
+        "text": "يا أيها الذين صدَّقوا الله ورسوله وعملوا بشرعه، إذا نادى المؤذن للصلاة في يوم الجمعة، فامضوا إلى سماع الخطبة وأداء الصلاة، واتركوا البيع، وكذلك الشراء وجميع ما يَشْغَلُكم عنها، ذلك الذي أُمرتم به خير لكم؛ لما فيه من غفران ذنوبكم ومثوبة الله لكم، إن كنتم تعلمون مصالح أنفسكم فافعلوا ذلك. وفي الآية دليل على وجوب حضور الجمعة واستماع الخطبة.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 9,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5187,
+        "text": "فإذا سمعتم الخطبة، وأدَّيتم الصلاة، فانتشروا في الأرض، واطلبوا من رزق الله بسعيكم، واذكروا الله كثيرًا في جميع أحوالكم؛ لعلكم تفوزون بخيري الدنيا والآخرة.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 10,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5188,
+        "text": "إذا رأى بعض المسلمين تجارة أو شيئًا مِن لهو الدنيا وزينتها تفرَّقوا إليها، وتركوك -أيها النبي- قائمًا على المنبر تخطب، قل لهم-أيها النبي-: ما عند الله من الثواب والنعيم أنفع لكم من اللهو ومن التجارة، والله- وحده- خير مَن رزق وأعطى، فاطلبوا منه، واستعينوا بطاعته على نيل ما عنده من خيري الدنيا والآخرة.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 11,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 487,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5189,
+        "text": "إذا حضر مجلسك المنافقون -أيها الرسول- قالوا بألسنتهم، نشهد إنك لرسول الله، والله يعلم إنك لرسول الله، والله يشهد إن المنافقين لكاذبون فيما أظهروه من شهادتهم لك، وحلفوا عليه بألسنتهم، وأضمروا الكفر به.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 1,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5190,
+        "text": "إنما جعل المنافقون أيمانهم التي أقسموها سترة ووقاية لهم من المؤاخذة والعذاب، ومنعوا أنفسهم، ومنعوا الناس عن طريق الله المستقيم، إنهم بئس ما كانوا يعملون؛ ذلك لأنهم آمنوا في الظاهر، ثم كفروا في الباطن، فختم الله على قلوبهم بسبب كفرهم، فهم لا يفهمون ما فيه صلاحهم.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 2,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5191,
+        "text": "إنما جعل المنافقون أيمانهم التي أقسموها سترة ووقاية لهم من المؤاخذة والعذاب، ومنعوا أنفسهم، ومنعوا الناس عن طريق الله المستقيم، إنهم بئس ما كانوا يعملون؛ ذلك لأنهم آمنوا في الظاهر، ثم كفروا في الباطن، فختم الله على قلوبهم بسبب كفرهم، فهم لا يفهمون ما فيه صلاحهم.",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 3,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5192,
+        "text": "وإذا نظرت إلى هؤلاء المنافقين تعجبك هيئاتهم ومناظرهم، وإن يتحدثوا تسمع لحديثهم؛ لفصاحة ألسنتهم، وهم لفراغ قلوبهم من الإيمان، وعقولهم من الفهم والعلم النافع كالأخشاب الملقاة على الحائط، التي لا حياة فيها، يظنون كل صوت عال واقعًا عليهم وضارًا بهم؛ لعلمهم بحقيقة حالهم، ولفرط جبنهم، والرعب الذي تمكَّن من قلوبهم، هم الأعداء الحقيقيون شديدو العداوة لك وللمؤمنين، فخذ حذرك منهم، أخزاهم الله وطردهم من رحمته، كيف ينصرفون عن الحق إلى ما هم فيه من النفاق والضلال؟",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 4,
+        "juz": 28,
+        "manzil": 7,
+        "page": 554,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "62": {
+        "number": 62,
+        "name": "سُورَةُ الجُمُعَةِ",
+        "englishName": "Al-Jumu'a",
+        "englishNameTranslation": "Friday",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      },
+      "63": {
+        "number": 63,
+        "name": "سُورَةُ المُنَافِقُونَ",
+        "englishName": "Al-Munaafiqoon",
+        "englishNameTranslation": "The Hypocrites",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

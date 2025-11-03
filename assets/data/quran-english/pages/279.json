@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 279,
+    "ayahs": [
+      {
+        "number": 2004,
+        "text": "Yet We know what they say: \"It is only a man who instructs him.\" The speech of the man they imply is obscure while this is clear Arabic.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 103,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2005,
+        "text": "Those who do not believe in the words of God are verily not guided by God. For them is severe punishment.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 104,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2006,
+        "text": "They alone invent lies who do not believe in the words of God, and they are liars.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 105,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2007,
+        "text": "Whosoever denies having once believed -- unless he is forced to do so while his heart enjoys the peace of faith -- and opens his mind to disbelief will suffer the wrath of God. Their punishment will be great,",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 106,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2008,
+        "text": "For they loved the life of this world more than the life to come; and God does not guide those who do not believe.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 107,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2009,
+        "text": "They are the ones whose hearts and ears and eyes have been sealed by God; and these are the heedless.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 108,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2010,
+        "text": "They will surely be losers in the life to come,",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 109,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 2011,
+        "text": "But (to) those who were victimised and left their homes and then fought and endured patiently, your Lord will surely be forgiving and kind.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 110,
+        "juz": 14,
+        "manzil": 3,
+        "page": 279,
+        "ruku": 237,
+        "hizbQuarter": 111,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 74,
+    "ayahs": [
+      {
+        "number": 474,
+        "text": "لقد سمع الله قول اليهود الذين قالوا: إن الله فقير إلينا يطلب منا أن نقرضه أموالا ونحن أغنياء. سنكتب هذا القول الذي قالوه، وسنكتب أنهم راضون بما كان مِن قَتْل آبائهم لأنبياء الله ظلمًا وعدوانًا، وسوف نؤاخذهم بذلك في الآخرة، ونقول لهم وهم في النار يعذبون: ذوقوا عذاب النار المحرقة.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 181,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 29,
+        "sajda": false
+      },
+      {
+        "number": 475,
+        "text": "ذلك العذاب الشديد بسبب ما قدَّمتموه في حياتكم الدنيا من المعاصي القولية والفعلية والاعتقادية، وأن الله ليس بظلام للعببد.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 182,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 29,
+        "sajda": false
+      },
+      {
+        "number": 476,
+        "text": "هؤلاء اليهود حين دُعُوا إلى الإسلام قالوا: إن الله أوصانا في التوراة ألا نصدِّق مَن جاءنا يقول: إنه رسول من الله، حتى يأتينا بصدقة يتقرب بها إلى الله، فتنزل نار من السماء فتحرقها. قل لهم -أيها الرسول-: أنتم كاذبون في قولكم؛ لأنه قد جاء آباءكم رسلٌ من قِبلي بالمعجزات والدلائل على صدقهم، وبالذي قلتم من الإتيان بالقربان الذي تأكله النار، فَلِمَ قَتَل آباؤكم هؤلاء الأنبياء إن كنتم صادقين في دعواكم؟",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 183,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 29,
+        "sajda": false
+      },
+      {
+        "number": 477,
+        "text": "فإن كذَّبك -أيها الرسول- هؤلاء اليهود وغيرهم من أهل الكفر، فقد كذَّب المبطلون كثيرًا من المرسلين مِن قبلك، جاءوا أقوامهم بالمعجزات الباهرات والحجج الواضحات، والكتب السماوية التي هي نور يكشف الظلمات، والكتابِ البيِّن الواضح.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 184,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 29,
+        "sajda": false
+      },
+      {
+        "number": 478,
+        "text": "كل نفس لا بدَّ أن تذوق الموت، وبهذا يرجع جميع الخلق إلى ربهم؛ ليحاسبهم. وإنما تُوفَّون أجوركم على أعمالكم وافية غير منقوصة يوم القيامة، فمن أكرمه ربه ونجَّاه من النار وأدخله الجنة فقد نال غاية ما يطلب. وما الحياة الدنيا إلا متعة زائلة، فلا تغترُّوا بها.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 185,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 29,
+        "sajda": false
+      },
+      {
+        "number": 479,
+        "text": "لَتُخْتَبَرُنَّ -أيها المؤمنون- في أموالكم بإخراج النفقات الواجبة والمستحبَّة، وبالجوائح التي تصيبها، وفي أنفسكم بما يجب عليكم من الطاعات، وما يحلُّ بكم من جراح أو قتل وفَقْد للأحباب، وذلك حتى يتميَّز المؤمن الصادق من غيره. ولتَسمعُنَّ من اليهود والنصارى والمشركين ما يؤذي أسماعكم من ألفاظ الشرك والطعن في دينكم. وإن تصبروا -أيها المؤمنون- على ذلك كله، وتتقوا الله بلزوم طاعته واجتناب معصيته، فإن ذلك من الأمور التي يُعزم عليها، وينافس فيها.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 186,
+        "juz": 4,
+        "manzil": 1,
+        "page": 74,
+        "ruku": 60,
+        "hizbQuarter": 30,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

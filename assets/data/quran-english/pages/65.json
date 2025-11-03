@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 65,
+    "ayahs": [
+      {
+        "number": 409,
+        "text": "As for those who disbelieve, neither wealth nor children will avail them in the least against God. They are the residents of Hell where they will live for ever.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 116,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 410,
+        "text": "What they spend in the life of this world is like a frosty wind which smites and destroys the crops of a people who had wronged themselves. God did not wrong them, they wronged themselves.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 117,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 411,
+        "text": "O believers, do not make others except your own people your confidants. They will spare no effort to ruin you: They surely desire your annihilation. Hate is on their tongues, and what they hide in their hearts is worse. We have shown you the signs if you have sense.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 118,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 412,
+        "text": "Just think! You hold them as your friends but they do not, even though you believe in all the Scriptures. When they meet you they say: \"We believe;\" but when they are alone they bite their fingers in rage. Say: \"Die of your rage. God is aware of the secrets of the hearts.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 119,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 413,
+        "text": "If good comes your way, they are vexed; but if evil befalls you they are pleased and rejoice; yet if you are patient and guard yourselves against evil, their cunning will not harm you in the least, for whatsoever they do is well within the reach of God.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 120,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 414,
+        "text": "Remember when you set forth in the morning from your house assigning the faithful positions for the battle, God heard everything and knew all.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 121,
+        "juz": 4,
+        "manzil": 1,
+        "page": 65,
+        "ruku": 54,
+        "hizbQuarter": 26,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

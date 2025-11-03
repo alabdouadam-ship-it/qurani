@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 474,
+    "ayahs": [
+      {
+        "number": 4192,
+        "text": "En vérité; L'Heure va arriver: pas de doute là-dessus; mais la plupart des gens n'y croient pas.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 59,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 409,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4193,
+        "text": "Et votre Seigneur dit: «Appelez-Moi, Je vous répondrai. Ceux qui, par orgueil, se refusent à M'adorer entreront bientôt dans l'Enfer, humiliés».",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 60,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 409,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4194,
+        "text": "Allah est celui qui vous a assigné la nuit pour que vous vous y reposiez, et le jour pour y voir clair. Allah est le Pourvoyeur de grâce aux hommes, mais la plupart des gens ne sont pas reconnaissants.",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 61,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4195,
+        "text": "Tel est votre Seigneur, Créateur de toute chose. Point de divinité à part Lui. Comment se fait-il que vous vous détourniez (du chemin droit)?",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 62,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4196,
+        "text": "Ainsi ceux qui nient les prodiges d'Allah se détournent-ils [du chemin droit.]",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 63,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4197,
+        "text": "C'est Allah qui vous a assigné la terre comme demeure stable et le ciel comme toit et vous a donné votre forme, - et quelle belle forme Il vous a donnée! - et Il vous a nourris de bonnes choses. Tel est Allah, votre Seigneur; gloire à Allah, Seigneur de l'univers!",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 64,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4198,
+        "text": "C'est Lui le Vivant. Point de divinité à part Lui. Appelez-Le donc, en Lui vouant un culte exclusif. Louange à Allah, Seigneur de l'univers!",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 65,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 189,
+        "sajda": false
+      },
+      {
+        "number": 4199,
+        "text": "Dis: «Il m'a été interdit, une fois que les preuves me sont venues de mon Seigneur, d'adorer ceux que vous invoquez en dehors d'Allah, et il m'a été ordonné de me soumettre au Seigneur de l'univers».",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 66,
+        "juz": 24,
+        "manzil": 6,
+        "page": 474,
+        "ruku": 410,
+        "hizbQuarter": 190,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

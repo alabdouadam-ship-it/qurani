@@ -1,0 +1,332 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 495,
+    "ayahs": [
+      {
+        "number": 4399,
+        "text": "Quant aux criminels, ils demeureront éternellement dans le châtiment de l'Enfer,",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 74,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4400,
+        "text": "qui ne sera jamais interrompu pour eux et où ils seront en désespoir.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 75,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4401,
+        "text": "Nous ne leur avons fait aucun tort, mais c'étaient eux les injustes.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 76,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4402,
+        "text": "et ils crieront: «O Mâlik! Que ton Seigneur nous achève!» Il dira: «En vérité, vous êtes pour y demeurer [éternellement]»!",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 77,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4403,
+        "text": "«Certes, Nous vous avions apporté la Vérité; mais la plupart d'entre vous détestaient la Vérité».",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 78,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4404,
+        "text": "Ont-ils pris quelque décision [entre eux]? Car c'est Nous qui décidons!",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 79,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4405,
+        "text": "Ou bien escomptent-ils que Nous n'entendons pas leur secret ni leurs délibérations? Mais si! Nos Anges prennent note auprès d'eux.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 80,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4406,
+        "text": "Dis: «Si le Tout Miséricordieux avait un enfant, alors je serais le premier à l'adorer».",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 81,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4407,
+        "text": "Gloire au Seigneur des cieux et de la terre, Seigneur du Trône; Il transcende ce qu'ils décrivent.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 82,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4408,
+        "text": "Laisse-les donc s'enfoncer dans leur fausseté et s'amuser jusqu'à ce qu'ils rencontrent le jour qui leur est promis.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 83,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4409,
+        "text": "C'est Lui qui est Dieu dans le ciel et Dieu sur terre; et c'est Lui le Sage, l'Omniscient!",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 84,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4410,
+        "text": "Et béni soit Celui à qui appartient la souveraineté des cieux et de la terre et de ce qui est entre eux. Il détient la science de l'Heure. Et c'est vers Lui que vous serez ramenés.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 85,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4411,
+        "text": "Et ceux qu'ils invoquent en dehors de Lui n'ont aucun pouvoir d'intercession, à l'exception de ceux qui auront témoigné de la vérité en pleine connaissance de cause.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 86,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4412,
+        "text": "Et si tu leur demandes qui les a créés, ils diront très certainement: «Allah». Comment se fait-il donc qu'ils se détournent?",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 87,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4413,
+        "text": "Et sa parole (la parole du Prophète à Allah): «Seigneur, ce sont là des gens qui ne croient pas».",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 88,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4414,
+        "text": "Et bien, éloigne-toi d'eux (pardonne-leur); et dis: «Salut!» Car ils sauront bientôt.",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 89,
+        "juz": 25,
+        "manzil": 6,
+        "page": 495,
+        "ruku": 430,
+        "hizbQuarter": 198,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "43": {
+        "number": 43,
+        "name": "سُورَةُ الزُّخۡرُفِ",
+        "englishName": "Az-Zukhruf",
+        "englishNameTranslation": "Ornaments of gold",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 89
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 38,
+    "ayahs": [
+      {
+        "number": 241,
+        "text": "Wives of men who die among you should wait (after their husbands death) for four months and ten days; and when the term is over there is no sin if they do what they like with themselves honourably, for God is aware of all that you do.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 234,
+        "juz": 2,
+        "manzil": 1,
+        "page": 38,
+        "ruku": 31,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 242,
+        "text": "There is no harm in proposing in secret to (any of) these women, or keeping the intention to yourself: God is aware that you will keep them in mind. Yet do not make a promise in secret, unless you speak in a manner that is proper; and do not resolve upon marriage till the fixed term of waiting is over. Remember that God knows what is in your hearts; so be fearful of Him, and remember that God is forgiving and forbearing.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 235,
+        "juz": 2,
+        "manzil": 1,
+        "page": 38,
+        "ruku": 31,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 243,
+        "text": "There is no sin in divorcing your wives before the consummation of marriage or settling the dowry; but then provide adequately for them, the affluent according to their means, the poor in accordance with theirs as is befitting. This is surely the duty of those who do good.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 236,
+        "juz": 2,
+        "manzil": 1,
+        "page": 38,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      },
+      {
+        "number": 244,
+        "text": "And if you divorce them before the consummation of marriage, but after settling the dowry, then half the settled dowry must be paid, unless the woman forgoes it, or the person who holds the bond of marriage pays the full amount. And if the man pays the whole, it is nearer to piety. But do not forget to be good to each other, and remember that God sees all that you do.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 237,
+        "juz": 2,
+        "manzil": 1,
+        "page": 38,
+        "ruku": 32,
+        "hizbQuarter": 15,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

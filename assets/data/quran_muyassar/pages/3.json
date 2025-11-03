@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 3,
+    "ayahs": [
+      {
+        "number": 13,
+        "text": "إن الذين جحدوا ما أُنزل إليك من ربك استكبارًا وطغيانًا، لن يقع منهم الإيمان، سواء أخوَّفتهم وحذرتهم من عذاب الله، أم تركت ذلك؛ لإصرارهم على باطلهم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 6,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 14,
+        "text": "طبع الله على قلوب هؤلاء وعلى سمعهم، وجعل على أبصارهم غطاء؛ بسبب كفرهم وعنادهم مِن بعد ما تبيَّن لهم الحق، فلم يوفقهم للهدى، ولهم عذاب شديد في نار جهنم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 7,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 15,
+        "text": "ومن الناس فريق يتردد متحيِّرًا بين المؤمنين والكافرين، وهم المنافقون الذين يقولون بألسنتهم: صدَّقْنَا بالله وباليوم الآخر، وهم في باطنهم كاذبون لم يؤمنوا.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 8,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 16,
+        "text": "يعتقدون بجهلهم أنهم يخادعون الله والذين آمنوا بإظهارهم الإيمان وإضمارهم الكفر، وما يخدعون إلا أنفسهم؛ لأن عاقبة خداعهم تعود عليهم. ومِن فرط جهلهم لا يُحِسُّون بذلك؛ لفساد قلوبهم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 9,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 17,
+        "text": "في قلوبهم شكٌّ وفساد فابْتُلوا بالمعاصي الموجبة لعقوبتهم، فزادهم الله شكًا، ولهم عقوبة موجعة بسبب كذبهم ونفاقهم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 10,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 18,
+        "text": "وإذا نُصحوا ليكفُّوا عن الإفساد في الأرض بالكفر والمعاصي، وإفشاء أسرار المؤمنين، وموالاة الكافرين، قالوا كذبًا وجدالا إنما نحن أهل الإصلاح.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 11,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 19,
+        "text": "إنَّ هذا الذي يفعلونه ويزعمون أنه إصلاح هو عين الفساد، لكنهم بسبب جهلهم وعنادهم لا يُحِسُّون.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 12,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 20,
+        "text": "وإذا قيل للمنافقين: آمِنُوا -مثل إيمان الصحابة، وهو الإيمان بالقلب واللسان والجوارح-، جادَلوا وقالوا: أَنُصَدِّق مثل تصديق ضعاف العقل والرأي، فنكون نحن وهم في السَّفَهِ سواء؟ فردَّ الله عليهم بأن السَّفَهَ مقصور عليهم، وهم لا يعلمون أن ما هم فيه هو الضلال والخسران.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 13,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 21,
+        "text": "هؤلاء المنافقون إذا قابلوا المؤمنين قالوا: صدَّقنا بالإسلام مثلكم، وإذا انصرفوا وذهبوا إلى زعمائهم الكفرة المتمردين على الله أكَّدوا لهم أنهم على ملة الكفر لم يتركوها، وإنما كانوا يَسْتَخِفُّون بالمؤمنين، ويسخرون منهم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 14,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 22,
+        "text": "الله يستهزئ بهم ويُمهلهم؛ ليزدادوا ضلالا وحَيْرة وترددًا، ويجازيهم على استهزائهم بالمؤمنين.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 15,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 23,
+        "text": "أولئك المنافقون باعوا أنفسهم في صفقة خاسرة، فأخذوا الكفر، وتركوا الإيمان، فما كسبوا شيئًا، بل خَسِروا الهداية. وهذا هو الخسران المبين.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 16,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

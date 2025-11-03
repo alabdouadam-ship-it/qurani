@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 390,
+    "ayahs": [
+      {
+        "number": 3288,
+        "text": "فلما جاء موسى فرعون وملأه بأدلتنا وحججنا شاهدة بحقيقة ما جاء به موسى مِن عند ربه، قالوا لموسى: ما هذا الذي جئتنا به إلا سحر افتريته كذبًا وباطلا وما سمعنا بهذا الذي تدعونا إليه في أسلافنا الذين مضوا قبلنا.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 36,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3289,
+        "text": "وقال موسى لفرعون: ربي أعلم بالمحقِّ منَّا الذي جاء بالرشاد من عنده، ومَن الذي له العقبى المحمودة في الدار الآخرة، إنه لا يظفر الظالمون بمطلوبهم.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 37,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3290,
+        "text": "وقال فرعون لأشراف قومه: يا أيها الملأ ما علمت لكم من إله غيري يستحق العبادة، فأشْعِل لي -يا هامان- على الطين نارًا، حتى يشتد، وابْنِ لي بناء عاليًا؛ لعلي أنظر إلى معبود موسى الذي يعبده ويدعو إلى عبادته، وإني لأظنه فيما يقول من الكاذبين.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 38,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3291,
+        "text": "واستعلى فرعون وجنوده في أرض \"مصر\" بغير الحق عن تصديق موسى واتِّباعه على ما دعاهم إليه، وحسبوا أنهم بعد مماتهم لا يبعثون.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 39,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3292,
+        "text": "فأخذنا فرعون وجنوده، فألقيناهم جميعًا في البحر وأغرقناهم، فانظر -أيها الرسول- كيف كان نهاية هؤلاء الذين ظلموا أنفسهم، فكفروا بربهم؟",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 40,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3293,
+        "text": "وجعلنا فرعون وقومه قادة إلى النار، يَقتدي بهم أهل الكفر والفسق، ويوم القيامة لا ينصرون؛ وذلك بسبب كفرهم وتكذيبهم رسول ربهم وإصرارهم على ذلك.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 41,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3294,
+        "text": "وأتبعنا فرعون وقومه في هذه الدنيا خزيًا وغضبًا منا عليهم، ويوم القيامة هم من المستقذرة أفعالهم، المبعدين عن رحمة الله.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 42,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3295,
+        "text": "ولقد آتينا موسى التوراة من بعد ما أهلكنا الأمم التي كانت من قبله -كقوم نوح وعاد وثمود وقوم لوط وأصحاب \"مدين\"- فيها بصائر لبني إسرائيل، يبصرون بها ما ينفعهم وما يضرهم، وفيها رحمة لمن عمل بها منهم؛ لعلهم يتذكرون نِعَم الله عليهم، فيشكروه عليها، ولا يكفروه.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 43,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 553,
+    "ayahs": [
+      {
+        "number": 5178,
+        "text": "Ce qui est dans les cieux et ce qui est sur la terre glorifient Allah, le Souverain, le Pur, le Puissant, le Sage.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 1,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5179,
+        "text": "C'est Lui qui a envoyé à des gens sans Livre (les Arabes) un Messager des leurs qui leur récite Ses versets, les purifie et leur enseigne le Livre et la Sagesse, bien qu'ils étaient auparavant dans un égarement évident,",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 2,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5180,
+        "text": "ainsi qu'à d'autres parmi ceux qui ne les ont pas encore rejoints. C'est Lui le Puissant, le Sage.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 3,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5181,
+        "text": "Telle est la grâce d'Allah qu'Il donne à qui Il veut. Et Allah est le Détenteur de l'énorme grâce.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 4,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5182,
+        "text": "Ceux qui ont été chargés de la Thora mais qui ne l'ont pas appliquée sont pareils à l'âne qui porte des livres. Quel mauvais exemple que celui de ceux qui traitent de mensonges les versets d'Allah et Allah ne guide pas les gens injustes.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 5,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5183,
+        "text": "Dis: «O vous qui pratiquez le judaïsme! Si vous prétendez être les bien-aimés d'Allah à l'exclusion des autres, souhaitez, donc la mort, si vous êtes véridiques».",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5184,
+        "text": "Or, ils ne la souhaiteront jamais, à cause de ce que leurs mains ont préparé. Allah cependant connaît bien les injustes.",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 7,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      },
+      {
+        "number": 5185,
+        "text": "Dis: «La mort que vous fuyez va certes vous rencontrer. Ensuite vous serez ramenés à Celui qui connaît parfaitement le monde Invisible et le monde visible et qui vous informera alors de ce que vous faisiez».",
+        "surah": {
+          "number": 62,
+          "name": "سُورَةُ الجُمُعَةِ",
+          "englishName": "Al-Jumu'a",
+          "englishNameTranslation": "Friday",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 8,
+        "juz": 28,
+        "manzil": 7,
+        "page": 553,
+        "ruku": 486,
+        "hizbQuarter": 221,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "62": {
+        "number": 62,
+        "name": "سُورَةُ الجُمُعَةِ",
+        "englishName": "Al-Jumu'a",
+        "englishNameTranslation": "Friday",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

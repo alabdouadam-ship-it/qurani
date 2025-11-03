@@ -1,0 +1,351 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 342,
+    "ayahs": [
+      {
+        "number": 2674,
+        "text": "قد فاز المصدِّقون بالله وبرسوله العاملون بشرعه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 1,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2675,
+        "text": "الذين من صفاتهم أنهم في صلاتهم خاشعون، تَفْرُغُ لها قلوبهم، وتسكن جوارحهم.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 2,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2676,
+        "text": "والذين هم تاركون لكل ما لا خير فيه من الأقوال والأفعال.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 3,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2677,
+        "text": "والذين هم مُطَهِّرون لنفوسهم وأموالهم بأداء زكاة أموالهم على اختلاف أجناسها.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 4,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2678,
+        "text": "والذين هم لفروجهم حافظون مما حرَّم الله من الزنى واللواط وكل الفواحش.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 5,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2679,
+        "text": "إلا على زوجاتهم أو ما ملكت أيمانهم من الإماء، فلا لوم عليهم ولا حرج في جماعهن والاستمتاع بهن؛ لأن الله تعالى أحلَّهن.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 6,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2680,
+        "text": "فمن طلب التمتع بغير زوجته أو أمَتِه فهو من المجاوزين الحلال إلى الحرام، وقد عرَّض نفسه لعقاب الله وسخطه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 7,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2681,
+        "text": "والذين هم حافظون لكل ما اؤتمنوا عليه، موفُّون بكل عهودهم.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 8,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2682,
+        "text": "والذين هم يداومون على أداء صلاتهم في أوقاتها على هيئتها المشروعة، الواردة عن النبي صلى الله عليه وسلم.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 9,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2683,
+        "text": "هؤلاء المؤمنون هم الوارثون الجنة.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 10,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2684,
+        "text": "الذين يرثون أعلى منازل الجنة وأوسطها، هم فيها خالدون، لا ينقطع نعيمهم ولا يزول.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 11,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2685,
+        "text": "ولقد خلقنا آدم من طين مأخوذ من جميع الأرض.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 12,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2686,
+        "text": "ثم خلقنا بنيه متناسلين مِن نطفة: هي مني الرجال تخرج من أصلابهم، فتستقر متمكنة في أرحام النساء.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 13,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2687,
+        "text": "ثم خلقنا النطفة علقة أي: دمًا أحمر، فخلقنا العلقة بعد أربعين يومًا مضغة أي: قطعة لحم قَدْر ما يُمْضغ، فخلقنا المضغة اللينة عظامًا، فكسونا العظام لحمًا، ثم أنشأناه خلقًا آخر بنفخ الروح فيه، فتبارك الله، الذي أحسن كل شيء خلقه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 14,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2688,
+        "text": "ثم إنكم أيها البشر بعد أطوار الحياة وانقضاء الأعمار لَميتون.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 15,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2689,
+        "text": "ثم إنكم بعد الموت وانقضاء الدنيا تُبْعثون يوم القيامة أحياء من قبوركم للحساب والجزاء.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 16,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2690,
+        "text": "ولقد خلقنا فوقكم سبع سموات بعضها فوق بعض، وما كنا عن الخلق غافلين، فلا نُغْفِلُ مخلوقًا، ولا ننساه.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 17,
+        "juz": 18,
+        "manzil": 4,
+        "page": 342,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

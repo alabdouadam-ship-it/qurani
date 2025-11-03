@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 211,
+    "ayahs": [
+      {
+        "number": 1385,
+        "text": "وإذا أذقنا المشركين يسرًا وفرجًا ورخاءً بعد عسر وشدة وكرب أصابهم، إذا هم يكذِّبون، ويستهزئون بآيات الله، قل -أيها الرسول- لهؤلاء المشركين المستهزئين: الله أسرع مكرًا واستدراجًا وعقوبة لكم. إن حَفَظَتَنا الذين نرسلهم إليكم يكتبون عليكم ما تمكرون في آياتنا، ثم نحاسبكم على ذلك.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 21,
+        "juz": 11,
+        "manzil": 3,
+        "page": 211,
+        "ruku": 174,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1386,
+        "text": "هو الذي يسيِّركم -أيها الناس- في البر على الدواب وغيرها، وفي البحر في السُّفُن، حتى إذا كنتم فيها وجرت بريح طيبة، وفرح ركاب السفن بالريح الطيبة، جاءت هذه السفنَ ريحٌ شديدة، وجاء الركابَ الموجُ (وهو ما ارتفع من الماء) من كل مكان، وأيقنوا أن الهلاك قد أحاط بهم، أخلصوا الدعاء لله وحده، وتركوا ما كانوا يعبدون، وقالوا: لئن أنجيتنا من هذه الشدة التي نحن فيها لنكونن من الشاكرين لك على نِعَمك.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 22,
+        "juz": 11,
+        "manzil": 3,
+        "page": 211,
+        "ruku": 174,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1387,
+        "text": "فلما أنجاهم الله من الشدائد والأهوال إذا هم يعملون في الأرض بالفساد وبالمعاصي. يا أيها الناس إنما وَبالُ بغيكم راجع على أنفسكم، لكم متاع في الحياة الدنيا الزائلة، ثم إلينا مصيركم ومرجعكم، فنخبركم بجميع أعمالكم، ونحاسبكم عليها.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 23,
+        "juz": 11,
+        "manzil": 3,
+        "page": 211,
+        "ruku": 174,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1388,
+        "text": "إنما مثل الحياة الدنيا وما تتفاخرون به فيها من زينة وأموال، كمثل مطر أنزلناه من السماء إلى الأرض، فنبتت به أنواع من النبات مختلط بعضها ببعض مما يقتات به الناس من الثمار، وما تأكله الحيوانات من النبات، حتى إذا ظهر حُسْنُ هذه الأرض وبهاؤها، وظن أهل هذه الأرض أنهم قادرون على حصادها والانتفاع بها، جاءها أمرنا وقضاؤنا بهلاك ما عليها من النبات، والزينة إما ليلا وإما نهارًا، فجعلنا هذه النباتات والأشجار محصودة مقطوعة لا شيء فيها، كأن لم تكن تلك الزروع والنباتات قائمة قبل ذلك على وجه الأرض، فكذلك يأتي الفناء على ما تتباهَون به من دنياكم وزخارفها فيفنيها الله ويهلكها. وكما بيَّنا لكم -أيها الناس- مَثَلَ هذه الدنيا وعرَّفناكم بحقيقتها، نبيِّن حججنا وأدلتنا لقوم يتفكرون في آيات الله، ويتدبرون ما ينفعهم في الدنيا والآخرة.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 24,
+        "juz": 11,
+        "manzil": 3,
+        "page": 211,
+        "ruku": 174,
+        "hizbQuarter": 84,
+        "sajda": false
+      },
+      {
+        "number": 1389,
+        "text": "والله يدعوكم إلى جناته التي أعدها لأوليائه، ويهدي مَن يشاء مِن خَلْقه، فيوفقه لإصابة الطريق المستقيم، وهو الإسلام.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 25,
+        "juz": 11,
+        "manzil": 3,
+        "page": 211,
+        "ruku": 174,
+        "hizbQuarter": 84,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

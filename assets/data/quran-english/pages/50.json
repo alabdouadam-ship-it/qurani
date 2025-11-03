@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 50,
+    "ayahs": [
+      {
+        "number": 294,
+        "text": "ALIF LAM MIM.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 1,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 295,
+        "text": "God: there is no god but He, the living, eternal, self-subsisting, ever sustaining.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 2,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 296,
+        "text": "He has verily revealed to you this Book, in truth and confirmation of the Books revealed before, as indeed He had revealed the Torah and the Gospel",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 3,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 297,
+        "text": "Before this as guidance for men, and has sent the criterion (of falsehood and truth). As for those who deny the signs of God, the punishment is severe; for God is all powerful and great His requital.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 4,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 298,
+        "text": "There is nothing in the earth and the heavens that is hidden from God.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 5,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 299,
+        "text": "He shapes you in the womb of the mother as He wills. There is no god but He, the all-mighty and all-wise.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 6,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 300,
+        "text": "He has sent down this Book which contains some verses that are categorical and basic to the Book, and others allegorical. But those who are twisted of mind look for verses metaphorical, seeking deviation and giving to them interpretations of their own; but none knows their meaning except God; and those who are steeped in knowledge affirm: \"We believe in them as all of them are from the Lord.\" But only those who have wisdom understand.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 7,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 301,
+        "text": "\"Let us not go astray, O Lord, having guided us already. Bestow on us Your blessings for You are the benevolent.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 8,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      },
+      {
+        "number": 302,
+        "text": "You will gather mankind together, O Lord, on a day that is certain to come, and God does not fail in His promise.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 9,
+        "juz": 3,
+        "manzil": 1,
+        "page": 50,
+        "ruku": 42,
+        "hizbQuarter": 20,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 10,
+    "ayahs": [
+      {
+        "number": 69,
+        "text": "Certes, ceux qui ont cru, ceux qui se sont judaïsés, les Nazaréens, et les sabéens, quiconque d'entre eux a cru en Allah au Jour dernier et accompli de bonnes œuvres, sera récompensé par son Seigneur; il n'éprouvera aucune crainte et il ne sera jamais affligé.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 62,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 70,
+        "text": "(Et rappelez-vous) quand Nous avons contracté un engagement avec vous et brandi sur vous le Mont -: «Tenez ferme ce que Nous vous avons donné et souvenez-vous de ce qui s'y trouve afin que vous soyez pieux!»",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 63,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 71,
+        "text": "Puis vous vous en détournâtes après vos engagements, n'eût été donc la grâce d'Allah et Sa miséricorde, vous seriez certes parmi les perdants.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 64,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 72,
+        "text": "Vous avez certainement connu ceux des vôtres qui transgressèrent le Sabbat. Et bien Nous leur dîmes: «Soyez des singes abjects!»",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 65,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 73,
+        "text": "Nous fîmes donc de cela un exemple pour les villes qui l'entouraient alors et une exhortation pour les pieux.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 66,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 74,
+        "text": "(Et rappelez-vous) lorsque Moïse dit à son peuple: «Certes Allah vous ordonne d'immoler une vache». Ils dirent: «Nous prends-tu en moquerie?» «Qu'Allah me garde d'être du nombre des ignorants» dit-il.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 67,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 75,
+        "text": "- Ils dirent: «Demande pour nous à ton Seigneur qu'Il nous précise ce qu'elle doit être». - Il dit: «Certes Allah dit que c'est bien une vache, ni vieille ni vierge, d'un âge moyen, entre les deux. Faites donc ce qu'on vous commande».",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 68,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      },
+      {
+        "number": 76,
+        "text": "- Ils dirent: «Demande donc pour nous à ton Seigneur qu'Il nous précise sa couleur». - Il dit: «Allah dit que c'est une vache jaune, de couleur vive et plaisante à voir».",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 69,
+        "juz": 1,
+        "manzil": 1,
+        "page": 10,
+        "ruku": 9,
+        "hizbQuarter": 4,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

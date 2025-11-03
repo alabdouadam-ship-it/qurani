@@ -1,0 +1,389 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 311,
+    "ayahs": [
+      {
+        "number": 2327,
+        "text": "Have you seen him who denies Our revelations, and says: \"I will certainly be given wealth and children.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 77,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2328,
+        "text": "Has he peeped into the Unknown, or obtained a promise from Ar-Rahman?",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 78,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2329,
+        "text": "Never so. We shall certainly write down what he says, and prolong the extent of his punishment.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 79,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2330,
+        "text": "All that he claims will revert to Us, and he will come before Us all alone.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 80,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2331,
+        "text": "They have taken other gods apart from God that they might be a strength to them.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 81,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2332,
+        "text": "Never. They will deny their devotion and become their adversaries.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 82,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 268,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2333,
+        "text": "Do you not see that We have set the devils against the infidels to rouse and instigate them?",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 83,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2334,
+        "text": "So, do not be hasty with them. We are counting their number (of days).",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 84,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2335,
+        "text": "The day We shall usher the righteous before Ar-Rahman like envoys into the presence of a king,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 85,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2336,
+        "text": "And drive the wicked into Hell like cattle driven to water,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 86,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2337,
+        "text": "None will have power to intercede for them except one who obtains a promise from Ar-Rahman.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 87,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2338,
+        "text": "They say: \"God has begotten a son.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 88,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2339,
+        "text": "You have uttered a grievous thing",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 89,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2340,
+        "text": "Which would cleave the skies asunder, rend the earth, and split the mountains,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 90,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2341,
+        "text": "For they have attributed a son to Ar-Rahman,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 91,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2342,
+        "text": "When it does not behove the Merciful to have a son.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 92,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2343,
+        "text": "There is no one in the heavens and the earth but comes before Ar-Rahman in all obedience.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 93,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2344,
+        "text": "He has counted them and calculated their number.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 94,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      },
+      {
+        "number": 2345,
+        "text": "Every one of them will come before Him all alone on the Day of Resurrection.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 95,
+        "juz": 16,
+        "manzil": 4,
+        "page": 311,
+        "ruku": 269,
+        "hizbQuarter": 124,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

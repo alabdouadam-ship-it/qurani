@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 415,
+    "ayahs": [
+      {
+        "number": 3504,
+        "text": "(الم) سبق الكلام على الحروف المقطَّعة في أول سورة البقرة.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 1,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3505,
+        "text": "هذا القرآن الذي جاء به محمد صلى الله عليه وسلم لا شك أنه منزل من عند الله، رب الخلائق أجمعين.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 2,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3506,
+        "text": "بل أيقول المشركون: اختلق محمد صلى الله عليه وسلم القرآن؟ كذَبوا، بل هو الحق الثابت المنزل عليك -أيها الرسول- من ربك؛ لتنذر به أناسًا لم يأتهم نذير من قبلك، لعلهم يهتدون، فيعرفوا الحق ويؤمنوا به ويؤثروه، ويؤمنوا بك.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 3,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3507,
+        "text": "الله الذي خلق السموات والأرض وما بينهما في ستة أيام لحكمة يعلمها، وهو قادر أن يخلقها بكلمة \"كن\" فتكون، ثم استوى سبحانه وتعالى -أي علا وارتفع- على عرشه استواء يليق بجلاله، لا يكيَّف، ولا يشبَّه باستواء المخلوقين. ليس لكم -أيها الناس- من وليٍّ يلي أموركم، أو شفيع يشفع لكم عند الله؛ لتنجوا من عذابه، أفلا تتعظون وتتفكرون -أيها الناس-، فتُفردوا الله بالألوهية وتُخلصوا له العبادة؟",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 4,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3508,
+        "text": "يدبر الله تعالى أَمْر المخلوقات من السماء إلى الأرض، ثم يصعد ذلك الأمر والتدبير إلى الله في يوم مقداره ألف سنة من أيام الدنيا التي تعدُّونها.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 5,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3509,
+        "text": "ذلك الخالق المدبِّر لشؤون العالمين، عالم بكل ما يغيب عن الأبصار، مما تُكِنُّه الصدور وتخفيه النفوس، وعالم بما شاهدته الأبصار، وهو القويُّ الظاهر الذي لا يغالَب، الرحيم بعباده المؤمنين.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 6,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3510,
+        "text": "الله الذي أحكم خلق كل شيء، وبدأ خَلْقَ الإنسان، وهو آدم عليه السلام من طين.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 7,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3511,
+        "text": "ثم جعل ذرية آدم متناسلة من نطفة ضعيفة رقيقة مهينة.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 8,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3512,
+        "text": "ثم أتم خلق الإنسان وأبدعه، وأحسن خلقته، ونفخ فيه مِن روحه بإرسال الملك له؛ لينفخ فيه الروح، وجعل لكم -أيها الناس- نعمة السمع والأبصار يُميَّز بها بين الأصوات والألوان والذوات والأشخاص، ونعمة العقل يُميَّز بها بين الخير والشر والنافع والضار. قليلا ما تشكرون ربكم على ما أنعم به عليكم.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 9,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3513,
+        "text": "وقال المشركون بالله المكذبون بالبعث: أإذا صارت لحومنا وعظامنا ترابًا في الأرض أنُبعَث خلقًا جديدًا؟ يستبعدون ذلك غير طالبين الوصول إلى الحق، وإنما هو منهم ظلم وعناد؛ لأنهم بلقاء ربهم -يوم القيامة- كافرون.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 10,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3514,
+        "text": "قل -أيها الرسول- لهؤلاء المشركين: يتوفاكم ملك الموت الذي وُكِّل بكم، فيقبض أرواحكم إذا انتهت آجالكم، ولن تتأخروا لحظة واحدة، ثم تُردُّون إلى ربكم، فيجازيكم على جميع أعمالكم: إن خيرًا فخير وإن شرًا فشر.",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 11,
+        "juz": 21,
+        "manzil": 5,
+        "page": 415,
+        "ruku": 358,
+        "hizbQuarter": 166,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "32": {
+        "number": 32,
+        "name": "سُورَةُ السَّجۡدَةِ",
+        "englishName": "As-Sajda",
+        "englishNameTranslation": "The Prostration",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

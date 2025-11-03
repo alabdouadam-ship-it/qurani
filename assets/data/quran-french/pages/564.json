@@ -1,0 +1,397 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 564,
+    "ayahs": [
+      {
+        "number": 5268,
+        "text": "Puis, quand ils verront (le châtiment) de près, les visages de ceux qui ont mécru seront affligés. Et il leur sera dit: «Voilà ce que vous réclamiez».",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5269,
+        "text": "Dis: «Que vous en semble? Qu'Allah me fasse périr ainsi que ceux qui sont avec moi ou qu'Il nous fasse miséricorde, qui protégera alors les mécréants d'un châtiment douloureux?»",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5270,
+        "text": "Dis: «C'est Lui, le Tout Miséricordieux. Nous croyons en Lui et c'est en Lui que nous plaçons notre confiance. Vous saurez bientôt qui est dans un égarement évident».",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5271,
+        "text": "Dis: «Que vous en semble? Si votre eau était absorbée au plus profond de la terre, qui donc vous apporterait de l'eau de source?»",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5272,
+        "text": "Nûn. Par la plume et ce qu'ils écrivent!",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5273,
+        "text": "Tu (Muhammad) n'es pas, par la grâce de ton Seigneur, un possédé.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5274,
+        "text": "Et il y aura pour toi certes, une récompense jamais interrompue.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5275,
+        "text": "Et tu es certes, d'une moralité éminente.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5276,
+        "text": "Tu verras et ils verront",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5277,
+        "text": "qui d'entre vous a perdu la raison.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5278,
+        "text": "C'est ton Seigneur qui connaît mieux ceux qui s'égarent de Son chemin, et Il connaît mieux ceux qui suivent la bonne voie.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5279,
+        "text": "N'obéis pas à ceux qui crient au mensonge,",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5280,
+        "text": "Ils aimeraient bien que tu transiges avec eux afin qu'ils transigent avec toi.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5281,
+        "text": "Et n'obéis à aucun grand jureur, méprisable,",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5282,
+        "text": "grand diffamateur, grand colporteur de médisance,",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5283,
+        "text": "grand empêcheur du bien, transgresseur, grand pécheur,",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5284,
+        "text": "au cœur dur, et en plus de cela bâtard.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5285,
+        "text": "Même s'il est doté de richesses et (de nombreux) enfants.",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      },
+      {
+        "number": 5286,
+        "text": "Quand Nos versets lui sont récités, il dit: «Des contes d'anciens».",
+        "surah": {
+          "number": 68,
+          "name": "سُورَةُ القَلَمِ",
+          "englishName": "Al-Qalam",
+          "englishNameTranslation": "The Pen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 564,
+        "ruku": 498,
+        "hizbQuarter": 226,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "67": {
+        "number": 67,
+        "name": "سُورَةُ المُلۡكِ",
+        "englishName": "Al-Mulk",
+        "englishNameTranslation": "The Sovereignty",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      },
+      "68": {
+        "number": 68,
+        "name": "سُورَةُ القَلَمِ",
+        "englishName": "Al-Qalam",
+        "englishNameTranslation": "The Pen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 52
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

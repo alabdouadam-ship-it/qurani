@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 275,
+    "ayahs": [
+      {
+        "number": 1974,
+        "text": "ويعبد المشركون أصنامًا لا تملك أن تعطيهم شيئًا من الرزق من السماء كالمطر، ولا من الأرض كالزرع، فهم لا يملكون شيئًا، ولا يتأتى منهم أن يملكوه؛ لأنهم لا يقدرون.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 73,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1975,
+        "text": "وإذا عَلِمتم أن الأصنام والأوثان لا تنفع، فلا تجعلوا -أيها الناس- لله أشباهًا مماثلين له مِن خَلْقه تشركونهم معه في العبادة. إن الله يعلم ما تفعلون، وأنتم غافلون لا تعلمون خطأكم وسوء عاقبتكم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 74,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1976,
+        "text": "ضرب الله مثلا بيَّن فيه فساد عقيدة أهل الشرك: رجلا مملوكًا عاجزًا عن التصرف لا يملك شيئًا، ورجلا آخر حرًا، له مال حلال رزَقَه الله به، يملك التصرف فيه، ويعطي منه في الخفاء والعلن، فهل يقول عاقل بالتساوي بين الرجلين؟ فكذلك الله الخالق المالك المتصرف لا يستوي مع خلقه وعبيده، فكيف تُسَوُّون بينهما؟ الحمد لله وحده، فهو المستحق للحمد والثناء، بل أكثر المشركين لا يعلمون أن الحمد والنعمة لله، وأنه وحده المستحق للعبادة.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 75,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1977,
+        "text": "وضرب الله مثلا آخر لبطلان الشرك رجلين: أحدهما أخرس أصم لا يَفْهَم ولا يُفْهِم، لا يقدر على منفعة نفسه أو غيره، وهو عبء ثقيل على مَن يَلي أمره ويعوله، إذا أرسله لأمر يقضيه لا ينجح، ولا يعود عليه بخير، ورجل آخر سليم الحواس، ينفع نفسه وغيره، يأمر بالإنصاف، وهو على طريق واضح لا عوج فيه، فهل يستوي الرجلان في نظر العقلاء؟ فكيف تُسَوُّون بين الصنم الأبكم الأصمِّ وبين الله القادر المنعم بكل خير؟",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 76,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1978,
+        "text": "ولله سبحانه وتعالى عِلْمُ ما غاب في السموات والأرض، وما شأن القيامة في سرعة مجيئها إلا كنظرة سريعة بالبصر، بل هو أسرع من ذلك. إن الله على كل شيء قدير.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 77,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1979,
+        "text": "والله سبحانه وتعالى أخرجكم مِن بطون أمهاتكم بعد مدة الحمل، لا تدركون شيئًا مما حولكم، وجعل لكم وسائل الإدراك من السمع والبصر والقلوب؛ لعلكم تشكرون لله تعالى على تلك النعم، وتفردونه عز وجل بالعبادة.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 78,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1980,
+        "text": "ألم ينظر المشركون إلى الطير مذللات للطيران في الهواء بين السماء والأرض بأمر الله؟ ما يمسكهن عن الوقوع إلا هو سبحانه بما خَلَقه لها، وأقدرها عليه. إن في ذلك التذليل والإمساك لَدلالات لقوم يؤمنون بما يرونه من الأدلة على قدرة الله.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 79,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

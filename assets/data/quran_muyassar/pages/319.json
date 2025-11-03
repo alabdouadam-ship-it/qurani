@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 319,
+    "ayahs": [
+      {
+        "number": 2447,
+        "text": "كما قصصنا عليك - أيها الرسول - أنباء موسى وفرعون وقومهما، نخبرك بأنباء السابقين لك. وقد آتيناك مِن عندنا هذا القرآن ذكرى لمن يتذكر.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 99,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2448,
+        "text": "من أعرض عن هذا القرآن، ولم يصدق به، ولم يعمل بما فيه، فإنه يأتي ربه يوم القيامة يحمل إثمًا عظيمًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 100,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2449,
+        "text": "خالدين في العذاب، وساءهم ذلك الحمل الثقيل من الآثام حيث أوردهم النار.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 101,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2450,
+        "text": "يوم يَنفُخ الملَكُ في \"القرن\" لصيحة البعث، ونسوق الكافرين ذلكم اليوم وهم زرق، تغيَّرت ألوانهم وعيونهم؛ من شدة الأحداث والأهوال.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 102,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2451,
+        "text": "يتهامسون بينهم، يقول بعضهم لبعض: ما لبثتم في الحياة الدنيا إلا عشرة أيام.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 103,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2452,
+        "text": "نحن أعلم بما يقولون ويُسِرُّون حين يقول أعلمهم وأوفاهم عقلا ما لبثتم إلا يومًا واحدًا؛ لقِصَر مدة الدنيا في أنفسهم يوم القيامة.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 104,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 274,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2453,
+        "text": "ويسألك - أيها الرسول - قومك عن مصير الجبال يوم القيامة، فقل لهم: يزيلها ربِّي عن أماكنها فيجعلها هباء منبثًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 105,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2454,
+        "text": "فيترك الأرض حينئذ منبسطة مستوية ملساء لا نبات فيها، لا يرى الناظر إليها مِن استوائها مَيْلا ولا ارتفاعًا ولا انخفاضًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 106,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2455,
+        "text": "فيترك الأرض حينئذ منبسطة مستوية ملساء لا نبات فيها، لا يرى الناظر إليها مِن استوائها مَيْلا ولا ارتفاعًا ولا انخفاضًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 107,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2456,
+        "text": "في ذلك اليوم يتبع الناس صوت الداعي إلى موقف القيامة، لا محيد عن دعوة الداعي؛ لأنها حق وصدق لجميع الخلق، وسكنت الأصوات خضوعًا للرحمن، فلا تسمع منها إلا صوتًا خفيًا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 108,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2457,
+        "text": "في ذلك اليوم لا تنفع الشفاعة أحدًا من الخلق، إلا إذا أذن الرحمن للشافع، ورضي عن المشفوع له، ولا يكون ذلك إلا للمؤمن المخلص.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 109,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2458,
+        "text": "يعلم الله ما بين أيدي الناس مِن أمر القيامة وما خلفهم من أمر الدنيا، ولا يحيط خلقه به علمًا سبحانه وتعالى.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 110,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 127,
+        "sajda": false
+      },
+      {
+        "number": 2459,
+        "text": "وخضعت وجوه الخلائق، وذلَّت لخالقها، الذي له جميع معاني الحياة الكاملة كما يليق بجلاله الذي لا يموت، القائم على تدبير كلِّ شيء، المستغني عمَّن سواه. وقد خسر يوم القيامة مَن أشرك مع الله أحدًا من خلقه.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 111,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2460,
+        "text": "ومن يعمل صالحات الأعمال وهو مؤمن بربه، فلا يخاف ظلمًا بزيادة سيئاته، ولا هضمًا بنقص حسناته.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 112,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 128,
+        "sajda": false
+      },
+      {
+        "number": 2461,
+        "text": "وكما رغَّبنا أهل الإيمان في صالحات الأعمال، وحذَّرنا أهل الكفر من المقام على معاصيهم وكفرهم بآياتنا، أنزلنا هذا القرآن باللسان العربي؛ ليفهموه، وفصَّلنا فيه أنواعًا من الوعيد؛ رجاء أن يتقوا ربهم، أو يُحدِث لهم هذا القرآن تذكرة، فيتعظوا، ويعتبروا.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 113,
+        "juz": 16,
+        "manzil": 4,
+        "page": 319,
+        "ruku": 275,
+        "hizbQuarter": 128,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

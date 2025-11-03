@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 413,
+    "ayahs": [
+      {
+        "number": 3489,
+        "text": "Ne voyez-vous pas qu'Allah vous a assujetti ce qui est dans les cieux et sur la terre? Et Il vous a comblés de Ses bienfaits apparents et cachés. Et parmi les gens, il y en a qui disputent à propos d'Allah, sans science, ni guidée, ni Livre éclairant.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 20,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3490,
+        "text": "Et quand on leur dit: «Suivez ce qu'Allah a fait descendre», ils disent: «Nous suivons plutôt ce sur quoi nous avons trouvé nos ancêtres». Est-ce donc même si le Diable les appelait au châtiment de la fournaise!",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 21,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3491,
+        "text": "Et quiconque soumet son être à Allah, tout en étant bienfaisant, s'accroche réellement à l'anse la plus ferme. La fin de toute chose appartient à Allah.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 22,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3492,
+        "text": "Celui qui a mécru, que sa mécréance ne t'afflige pas: vers Nous sera leur retour et Nous les informerons de ce qu'ils faisaient. Allah connaît bien le contenu des poitrines.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 23,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3493,
+        "text": "Nous leur donnons de la jouissance pour peu de temps; ensuite Nous les forcerons vers un dur châtiment.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 24,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3494,
+        "text": "Si tu leur demandes: «Qui a créé les cieux et la terre?», ils diront, certes: «Allah!» Dis: «Louange à Allah!». Mais la plupart d'entre eux ne savent pas.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 25,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3495,
+        "text": "A Allah appartient tout ce qui est dans les cieux et en terre. Allah est Celui qui se suffit à Lui-même, Il est Le Digne de louange!",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 26,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3496,
+        "text": "Quand bien même tous les arbres de la terre se changeraient en calames [plumes pour écrire], quand bien même l'océan serait un océan d'encre où conflueraient sept autres océans, les paroles d'Allah ne s'épuiseraient pas. Car Allah est Puissant et Sage.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 27,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      },
+      {
+        "number": 3497,
+        "text": "Votre création et votre résurrection [à tous] sont [aussi faciles à Allah] que s'il s'agissait d'une seule âme. Certes Allah est Audient et Clairvoyant.",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 28,
+        "juz": 21,
+        "manzil": 5,
+        "page": 413,
+        "ruku": 357,
+        "hizbQuarter": 165,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "31": {
+        "number": 31,
+        "name": "سُورَةُ لُقۡمَانَ",
+        "englishName": "Luqman",
+        "englishNameTranslation": "Luqman",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 34
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 578,
+    "ayahs": [
+      {
+        "number": 5571,
+        "text": "ليس الأمر كما زعمتم- يا معشر المشركين- أن لا بعث ولا جزاء، بل أنتم قوم تحبون الدنيا وزينتها، وتتركون الآخرة ونعيمها.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5572,
+        "text": "ليس الأمر كما زعمتم- يا معشر المشركين- أن لا بعث ولا جزاء، بل أنتم قوم تحبون الدنيا وزينتها، وتتركون الآخرة ونعيمها.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5573,
+        "text": "وجوه أهل السعادة يوم القيامة مشرقة حسنة ناعمة، ترى خالقها ومالك أمرها، فتتمتع بذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5574,
+        "text": "وجوه أهل السعادة يوم القيامة مشرقة حسنة ناعمة، ترى خالقها ومالك أمرها، فتتمتع بذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5575,
+        "text": "ووجوه الأشقياء يوم القيامة عابسة كالحة، تتوقع أن تنزل بها مصيبة عظيمة، تقصم فَقَار الظَّهْر.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5576,
+        "text": "ووجوه الأشقياء يوم القيامة عابسة كالحة، تتوقع أن تنزل بها مصيبة عظيمة، تقصم فَقَار الظَّهْر.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5577,
+        "text": "حقًّا إذا وصلت الروح إلى أعالي الصدر، وقال بعض الحاضرين لبعض: هل مِن راق يَرْقيه ويَشْفيه مما هو فيه؟ وأيقن المحتضر أنَّ الذي نزل به هو فراق الدنيا؛ لمعاينته ملائكة الموت، واتصلت شدة آخر الدنيا بشدة أول الآخرة، إلى الله تعالى مساق العباد يوم القيامة: إما إلى الجنة وإما إلى النار.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5578,
+        "text": "حقًّا إذا وصلت الروح إلى أعالي الصدر، وقال بعض الحاضرين لبعض: هل مِن راق يَرْقيه ويَشْفيه مما هو فيه؟ وأيقن المحتضر أنَّ الذي نزل به هو فراق الدنيا؛ لمعاينته ملائكة الموت، واتصلت شدة آخر الدنيا بشدة أول الآخرة، إلى الله تعالى مساق العباد يوم القيامة: إما إلى الجنة وإما إلى النار.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 27,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5579,
+        "text": "حقًّا إذا وصلت الروح إلى أعالي الصدر، وقال بعض الحاضرين لبعض: هل مِن راق يَرْقيه ويَشْفيه مما هو فيه؟ وأيقن المحتضر أنَّ الذي نزل به هو فراق الدنيا؛ لمعاينته ملائكة الموت، واتصلت شدة آخر الدنيا بشدة أول الآخرة، إلى الله تعالى مساق العباد يوم القيامة: إما إلى الجنة وإما إلى النار.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 28,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5580,
+        "text": "حقًّا إذا وصلت الروح إلى أعالي الصدر، وقال بعض الحاضرين لبعض: هل مِن راق يَرْقيه ويَشْفيه مما هو فيه؟ وأيقن المحتضر أنَّ الذي نزل به هو فراق الدنيا؛ لمعاينته ملائكة الموت، واتصلت شدة آخر الدنيا بشدة أول الآخرة، إلى الله تعالى مساق العباد يوم القيامة: إما إلى الجنة وإما إلى النار.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 29,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5581,
+        "text": "حقًّا إذا وصلت الروح إلى أعالي الصدر، وقال بعض الحاضرين لبعض: هل مِن راق يَرْقيه ويَشْفيه مما هو فيه؟ وأيقن المحتضر أنَّ الذي نزل به هو فراق الدنيا؛ لمعاينته ملائكة الموت، واتصلت شدة آخر الدنيا بشدة أول الآخرة، إلى الله تعالى مساق العباد يوم القيامة: إما إلى الجنة وإما إلى النار.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 30,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 512,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5582,
+        "text": "فلا آمن الكافر بالرسول والقرآن، ولا أدَّى لله تعالى فرائض الصلاة، ولكن كذَّب بالقرآن، وأعرض عن الإيمان، ثم مضى إلى أهله يتبختر مختالا في مشيته. هلاك لك فهلاك، ثم هلاك لك فهلاك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 31,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5583,
+        "text": "فلا آمن الكافر بالرسول والقرآن، ولا أدَّى لله تعالى فرائض الصلاة، ولكن كذَّب بالقرآن، وأعرض عن الإيمان، ثم مضى إلى أهله يتبختر مختالا في مشيته. هلاك لك فهلاك، ثم هلاك لك فهلاك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 32,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5584,
+        "text": "فلا آمن الكافر بالرسول والقرآن، ولا أدَّى لله تعالى فرائض الصلاة، ولكن كذَّب بالقرآن، وأعرض عن الإيمان، ثم مضى إلى أهله يتبختر مختالا في مشيته. هلاك لك فهلاك، ثم هلاك لك فهلاك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 33,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5585,
+        "text": "فلا آمن الكافر بالرسول والقرآن، ولا أدَّى لله تعالى فرائض الصلاة، ولكن كذَّب بالقرآن، وأعرض عن الإيمان، ثم مضى إلى أهله يتبختر مختالا في مشيته. هلاك لك فهلاك، ثم هلاك لك فهلاك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 34,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5586,
+        "text": "فلا آمن الكافر بالرسول والقرآن، ولا أدَّى لله تعالى فرائض الصلاة، ولكن كذَّب بالقرآن، وأعرض عن الإيمان، ثم مضى إلى أهله يتبختر مختالا في مشيته. هلاك لك فهلاك، ثم هلاك لك فهلاك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 35,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5587,
+        "text": "أيظنُّ هذا الإنسان المنكر للبعث أن يُترك هَمَلا لا يُؤمر ولا يُنْهى، ولا يحاسب ولا يعاقب؟ ألم يك هذا الإنسان نطفة ضعيفة من ماء مهين يراق ويصب في الأرحام، ثم صار قطعة من دم جامد، فخلقه الله بقدرته وسوَّى صورته في أحسن تقويم؟ فجعل من هذا الإنسان الصنفين: الذكر والأنثى، أليس ذلك الإله الخالق لهذه الأشياء بقادر على إعادة الخلق بعد فنائهم؟ بلى إنه - سبحانه وتعالى- لقادر على ذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 36,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5588,
+        "text": "أيظنُّ هذا الإنسان المنكر للبعث أن يُترك هَمَلا لا يُؤمر ولا يُنْهى، ولا يحاسب ولا يعاقب؟ ألم يك هذا الإنسان نطفة ضعيفة من ماء مهين يراق ويصب في الأرحام، ثم صار قطعة من دم جامد، فخلقه الله بقدرته وسوَّى صورته في أحسن تقويم؟ فجعل من هذا الإنسان الصنفين: الذكر والأنثى، أليس ذلك الإله الخالق لهذه الأشياء بقادر على إعادة الخلق بعد فنائهم؟ بلى إنه - سبحانه وتعالى- لقادر على ذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 37,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5589,
+        "text": "أيظنُّ هذا الإنسان المنكر للبعث أن يُترك هَمَلا لا يُؤمر ولا يُنْهى، ولا يحاسب ولا يعاقب؟ ألم يك هذا الإنسان نطفة ضعيفة من ماء مهين يراق ويصب في الأرحام، ثم صار قطعة من دم جامد، فخلقه الله بقدرته وسوَّى صورته في أحسن تقويم؟ فجعل من هذا الإنسان الصنفين: الذكر والأنثى، أليس ذلك الإله الخالق لهذه الأشياء بقادر على إعادة الخلق بعد فنائهم؟ بلى إنه - سبحانه وتعالى- لقادر على ذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 38,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5590,
+        "text": "أيظنُّ هذا الإنسان المنكر للبعث أن يُترك هَمَلا لا يُؤمر ولا يُنْهى، ولا يحاسب ولا يعاقب؟ ألم يك هذا الإنسان نطفة ضعيفة من ماء مهين يراق ويصب في الأرحام، ثم صار قطعة من دم جامد، فخلقه الله بقدرته وسوَّى صورته في أحسن تقويم؟ فجعل من هذا الإنسان الصنفين: الذكر والأنثى، أليس ذلك الإله الخالق لهذه الأشياء بقادر على إعادة الخلق بعد فنائهم؟ بلى إنه - سبحانه وتعالى- لقادر على ذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 39,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5591,
+        "text": "أيظنُّ هذا الإنسان المنكر للبعث أن يُترك هَمَلا لا يُؤمر ولا يُنْهى، ولا يحاسب ولا يعاقب؟ ألم يك هذا الإنسان نطفة ضعيفة من ماء مهين يراق ويصب في الأرحام، ثم صار قطعة من دم جامد، فخلقه الله بقدرته وسوَّى صورته في أحسن تقويم؟ فجعل من هذا الإنسان الصنفين: الذكر والأنثى، أليس ذلك الإله الخالق لهذه الأشياء بقادر على إعادة الخلق بعد فنائهم؟ بلى إنه - سبحانه وتعالى- لقادر على ذلك.",
+        "surah": {
+          "number": 75,
+          "name": "سُورَةُ القِيَامَةِ",
+          "englishName": "Al-Qiyaama",
+          "englishNameTranslation": "The Resurrection",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 40,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 513,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5592,
+        "text": "قد مضى على الإنسان وقت طويل من الزمان قبل أن تُنفَخ فيه الروح، لم يكن شيئا يُذكر، ولا يُعرف له أثر.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5593,
+        "text": "إنا خلقنا الإنسان من نطفة مختلطة من ماء الرجل وماء المرأة، نختبره بالتكاليف الشرعية فيما بعد، فجعلناه من أجل ذلك ذا سمع وذا بصر؛ ليسمع الآيات، ويرى الدلائل، إنا بينَّا له وعرَّفناه طريق الهدى والضلال والخير والشر؛ ليكون إما مؤمنًا شاكرًا، وإما كفورًا جاحدًا.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5594,
+        "text": "إنا خلقنا الإنسان من نطفة مختلطة من ماء الرجل وماء المرأة، نختبره بالتكاليف الشرعية فيما بعد، فجعلناه من أجل ذلك ذا سمع وذا بصر؛ ليسمع الآيات، ويرى الدلائل، إنا بينَّا له وعرَّفناه طريق الهدى والضلال والخير والشر؛ ليكون إما مؤمنًا شاكرًا، وإما كفورًا جاحدًا.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5595,
+        "text": "إنا أعتدنا للكافرين قيودًا من حديد تُشَدُّ بها أرجلهم، وأغلالا تُغلُّ بها أيديهم إلى أعناقهم، ونارًا يُحرقون بها.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      },
+      {
+        "number": 5596,
+        "text": "إن أهل الطاعة والإخلاص الذين يؤدون حق الله، يشربون يوم القيامة مِن كأس فيها خمر ممزوجة بأحسن أنواع الطيب، وهو ماء الكافور.",
+        "surah": {
+          "number": 76,
+          "name": "سُورَةُ الإِنسَانِ",
+          "englishName": "Al-Insaan",
+          "englishNameTranslation": "Man",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 31
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 578,
+        "ruku": 514,
+        "hizbQuarter": 231,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "75": {
+        "number": 75,
+        "name": "سُورَةُ القِيَامَةِ",
+        "englishName": "Al-Qiyaama",
+        "englishNameTranslation": "The Resurrection",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 40
+      },
+      "76": {
+        "number": 76,
+        "name": "سُورَةُ الإِنسَانِ",
+        "englishName": "Al-Insaan",
+        "englishNameTranslation": "Man",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 31
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 521,
+    "ayahs": [
+      {
+        "number": 4682,
+        "text": "The heavens webbed-with-tracks is witness",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 7,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4683,
+        "text": "You are surely caught in contradictions.,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 8,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4684,
+        "text": "From which only he turns who is turned away.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 9,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4685,
+        "text": "Perish will those who just guess and speculate,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 10,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4686,
+        "text": "Who are lost in deception.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 11,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4687,
+        "text": "They ask: \"When is the Day of Judgement?\" --",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4688,
+        "text": "The day they will be burnt in the Fire,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4689,
+        "text": "(And told:) \"Taste your punishment. This is what you were trying to hasten.\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4690,
+        "text": "Surely those who fear God and follow the straight path will be amidst gardens and fresh springs of water,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4691,
+        "text": "Receiving what is given them by their Lord. They were surely the virtuous before this.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 16,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4692,
+        "text": "They slept little in the night,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 17,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4693,
+        "text": "And every morning asked forgiveness,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 18,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4694,
+        "text": "In whose wealth the suppliant and the deprived had a share.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 19,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4695,
+        "text": "There are signs in the earth for those who are firm in their faith,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 20,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4696,
+        "text": "And within yourselves. Can you not perceive?",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 21,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4697,
+        "text": "There is in the heavens your sustenance, and whatever has been promised you.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 22,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4698,
+        "text": "By the Lord of the heavens and the earth, this is certainly true even as you speak.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 23,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4699,
+        "text": "Has the story of Abraham's honoured guests come to you?",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 24,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4700,
+        "text": "When they came to him, they said: \"Peace.\" He answered: \"Peace.\" They were a people he did not recognise.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 25,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4701,
+        "text": "So he hurried to the house and brought a fatted calf,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 26,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4702,
+        "text": "And placing it before them said: \"Won't you eat?\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 27,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4703,
+        "text": "He felt afraid of them; but they said: \"Have no fear,\" and gave him the good news of a wise son.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 28,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4704,
+        "text": "His wife came out lamenting, striking her forehead, and said: \"I, am old and barren woman?\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 29,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4705,
+        "text": "They said: \"Thus said your Lord. He is indeed all-wise and all-knowing.\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 30,
+        "juz": 26,
+        "manzil": 7,
+        "page": 521,
+        "ruku": 456,
+        "hizbQuarter": 208,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "51": {
+        "number": 51,
+        "name": "سُورَةُ الذَّارِيَاتِ",
+        "englishName": "Adh-Dhaariyat",
+        "englishNameTranslation": "The Winnowing Winds",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 339,
+    "ayahs": [
+      {
+        "number": 2651,
+        "text": "The order will be God's on that Day; He will judge between them. Then those who had come to believe and done the right will be in gardens of delight.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 56,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 291,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2652,
+        "text": "But those who did not believe and called Our revelations lies, will be given disgraceful punishment.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 57,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 291,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2653,
+        "text": "Those who left their homes in the way of God, and then were killed or died, will surely be given a better provision by God, for God is surely the best of providers.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 58,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2654,
+        "text": "God will surely lead them to a place with which they will be gratified. Verily God is all-knowing and forbearing.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 59,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 135,
+        "sajda": false
+      },
+      {
+        "number": 2655,
+        "text": "Whosoever retaliates to the extent of injury suffered by him, and is wronged again, will certainly be helped by God. Verily God is forgiving and kind.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 60,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2656,
+        "text": "That is so for God turns night into day and day into night, for God is all-hearing and all-seeing;",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 61,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2657,
+        "text": "That is so for God is the undeniable truth, and what they invoke apart from Him is false; yet God is all-high and supreme.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 62,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2658,
+        "text": "Do you not see how God sends down water from the sky and in the morning the earth turns green? Truly God is benign and well-informed.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 63,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 136,
+        "sajda": false
+      },
+      {
+        "number": 2659,
+        "text": "Whatsoever is in the heavens and the earth belongs to Him. Surely God is all-sufficing, worthy of praise.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 64,
+        "juz": 17,
+        "manzil": 4,
+        "page": 339,
+        "ruku": 292,
+        "hizbQuarter": 136,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

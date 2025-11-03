@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 407,
+    "ayahs": [
+      {
+        "number": 3434,
+        "text": "Another of His signs is that the heavens and the earth stay in position by His command; and then when He will call you once you will come out of the earth.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 25,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3435,
+        "text": "All those who are in the heavens and the earth are His, and they are all obedient to Him.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 26,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3436,
+        "text": "It is He who first creates and then reverts it. This is how His law works inevitably. His semblance is of the most sublime in the heavens and the earth. He is all-mighty and all-wise.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 27,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 351,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3437,
+        "text": "He gives you an example from your own life: Do you possess among your dependants any partners in what We have bestowed on you, so that you and they have equal (share) in it, and that you fear them as you fear each other? That is how We explain Our signs clearly for those who comprehend.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 28,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 352,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3438,
+        "text": "And yet the wicked follow their own lusts without understanding. Who can show the way to those whom God allows to go astray? None will they have to help them.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 29,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 352,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3439,
+        "text": "So keep yourself exclusively on the true way, the creational law of God according to which He created man with the quality of choosing right or wrong. There is no altering of God's creation. This is the supreme law. But most men do not understand.",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 30,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 352,
+        "hizbQuarter": 162,
+        "sajda": false
+      },
+      {
+        "number": 3440,
+        "text": "Turn towards Him and be dutiful to Him; be firm in devotion, and do not become an idolater,",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 31,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3441,
+        "text": "(Or) one of those who created rifts in their order and are divided into sects, with each group exulting in what it has (carved out for itself) --",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 32,
+        "juz": 21,
+        "manzil": 5,
+        "page": 407,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "30": {
+        "number": 30,
+        "name": "سُورَةُ الرُّومِ",
+        "englishName": "Ar-Room",
+        "englishNameTranslation": "The Romans",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

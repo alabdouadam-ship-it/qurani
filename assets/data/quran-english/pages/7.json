@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 7,
+    "ayahs": [
+      {
+        "number": 45,
+        "text": "And We said to them: \"Go, all of you. When I send guidance, whoever follows it will neither have fear nor regret;",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 38,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 5,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 46,
+        "text": "But those who deny and reject Our signs will belong to Hell, and there abide unchanged.\"",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 39,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 5,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 47,
+        "text": "O children of Israel, remember the favours I bestowed on you. So keep your pledge to Me, and I will mine to you, and be fearful of Me,",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 40,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 48,
+        "text": "And believe in what I have sent down which verifies what is already with you; and do not be the first to deny it, nor part with it for little gain; and beware of Me.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 41,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 49,
+        "text": "Do not confuse truth with falsehood, nor conceal the truth knowingly.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 42,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 50,
+        "text": "Be firm in devotion; give zakat (the due share of your wealth for the welfare of others), and bow with those who bow (before God).",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 43,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 2,
+        "sajda": false
+      },
+      {
+        "number": 51,
+        "text": "Will you enjoin good deeds on the others and forget your own selves? You also read the Scriptures, why do you then not understand?",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 44,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 52,
+        "text": "Find strength in fortitude and prayer, which is heavy and exacting but for those who are humble and meek,",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 45,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 53,
+        "text": "Who are conscious that they have to meet their Lord, and to Him they have to return.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 46,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 6,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 54,
+        "text": "Remember, O children of Israel, the favours I bestowed on you, and made you exalted among the nations of the world.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 47,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 7,
+        "hizbQuarter": 3,
+        "sajda": false
+      },
+      {
+        "number": 55,
+        "text": "Take heed of the day when no man will be useful to man in the least, when no intercession matter nor ransom avail, nor help reach them.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 48,
+        "juz": 1,
+        "manzil": 1,
+        "page": 7,
+        "ruku": 7,
+        "hizbQuarter": 3,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

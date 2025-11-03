@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 392,
+    "ayahs": [
+      {
+        "number": 3303,
+        "text": "Nous leur avons déjà exposé la Parole (le Coran) afin qu'ils se souviennent.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 51,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3304,
+        "text": "Ceux à qui, avant lui [le Coran], Nous avons apporté le Livre, y croient.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 52,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3305,
+        "text": "Et quand on le leur récite, ils disent: «Nous y croyons. Ceci est bien la vérité émanant de notre Seigneur. Déjà avant son arrivée, nous étions Soumis».",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 53,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3306,
+        "text": "Voilà ceux qui recevront deux fois leur récompense pour leur endurance, pour avoir répondu au mal par le bien, et pour avoir dépensé de ce que Nous leur avons attribué;",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 54,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3307,
+        "text": "et quand ils entendent des futilités, ils s'en détournent et disent: «A nous nos actions, et à vous les vôtres. Paix sur vous. Nous ne recherchons pas les ignorants».",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 55,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3308,
+        "text": "Tu [Muhammad] ne diriges pas celui que tu aimes: mais c'est Allah qui guide qui Il veut. Il connaît mieux cependant les bien-guidés.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 56,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3309,
+        "text": "Et ils dirent: «Si nous suivons avec toi la bonne voie, on nous arrachera de notre terre». - Ne les avons-Nous pas établis dans une enceinte sacrée, sûre, vers laquelle des produits de toute sorte sont apportés comme attribution de Notre part? Mais la plupart d'entre eux ne savent pas.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 57,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3310,
+        "text": "Et combien avons-Nous fait périr de cités qui étaient ingrates (alors que leurs habitants vivaient dans l'abondance), et voilà qu'après eux leurs demeures ne sont que très peu habitées, et c'est Nous qui en fûmes l'héritier.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 58,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      },
+      {
+        "number": 3311,
+        "text": "Ton Seigneur ne fait pas périr des cités avant d'avoir envoyé dans leur métropole un Messager pour leur réciter Nos versets. Et Nous ne faisons périr les cités que lorsque leurs habitants sont injustes.",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 59,
+        "juz": 20,
+        "manzil": 5,
+        "page": 392,
+        "ruku": 339,
+        "hizbQuarter": 157,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

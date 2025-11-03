@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 252,
+    "ayahs": [
+      {
+        "number": 1726,
+        "text": "Celui qui sait que ce qui t'est révélé de la part de ton Seigneur est la vérité, est-il semblable à l'aveugle? Seuls les gens doués d'intelligence réfléchissent bien,",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 19,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1727,
+        "text": "ceux qui remplissent leur engagement envers Allah et ne violent pas le pacte,",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 20,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1728,
+        "text": "qui unissent ce qu'Allah a commandé d'unir, redoutent leur Seigneur et craignent une malheureuse reddition de compte,",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 21,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1729,
+        "text": "et qui endurent dans la recherche de l'agrément d'Allah, accomplissent la Salât et dépensent (dans le bien), en secret et en public, de ce que Nous leur avons attribué, et repoussent le mal par le bien. A ceux-là, la bonne demeure finale,",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 22,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1730,
+        "text": "les jardins d'Eden, où ils entreront, ainsi que tous ceux de leurs ascendants, conjoints et descendants, qui ont été de bons croyants. De chaque porte, les Anges entreront auprès d'eux:",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 23,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1731,
+        "text": "- «Paix sur vous, pour ce que vous avez enduré!» - Comme est bonne votre demeure finale!»",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 24,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1732,
+        "text": "[Mais] ceux qui violent leur pacte avec Allah après l'avoir engagé, et rompent ce qu'Allah a commandé d'unir et commettent le désordre sur terre, auront la malédiction et la mauvaise demeure.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 25,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1733,
+        "text": "Allah étend largement Ses dons ou [les] restreint à qui Il veut. Ils se réjouissent de la vie sur terre, mais la vie d'ici-bas ne paraîtra que comme une jouissance éphémère en comparaison de l'au-delà.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 26,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 207,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1734,
+        "text": "Ceux qui ont mécru disent: «Pourquoi n'a-t-on pas descendu sur lui (Muhammad) un miracle venant de son Seigneur?» Dis: «En vérité, Allah égare qui Il veut; et Il guide vers Lui celui qui se repent,",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 27,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 208,
+        "hizbQuarter": 101,
+        "sajda": false
+      },
+      {
+        "number": 1735,
+        "text": "ceux qui ont cru, et dont les cœurs se tranquillisent à l'évocation d'Allah». Certes, c'est par l'évocation d'Allah que les cœurs se tranquillisent.",
+        "surah": {
+          "number": 13,
+          "name": "سُورَةُ الرَّعۡدِ",
+          "englishName": "Ar-Ra'd",
+          "englishNameTranslation": "The Thunder",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 43
+        },
+        "numberInSurah": 28,
+        "juz": 13,
+        "manzil": 3,
+        "page": 252,
+        "ruku": 208,
+        "hizbQuarter": 101,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "13": {
+        "number": 13,
+        "name": "سُورَةُ الرَّعۡدِ",
+        "englishName": "Ar-Ra'd",
+        "englishNameTranslation": "The Thunder",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 43
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

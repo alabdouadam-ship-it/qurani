@@ -1,0 +1,370 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 496,
+    "ayahs": [
+      {
+        "number": 4415,
+        "text": "HA MIM.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 1,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4416,
+        "text": "The perspicuous Book is witness",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 2,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4417,
+        "text": "(That) We sent it down one night of blessing -- so that We could warn --",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 3,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4418,
+        "text": "On which all affairs are sorted out and decided",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 4,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4419,
+        "text": "As commands from Us. It is indeed We who send (messengers),",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 5,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4420,
+        "text": "A mercy from your Lord. Verily He is all-hearing and all-knowing,",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 6,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4421,
+        "text": "The Lord of the heavens and the earth and all that lies between them, if you really do believe.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 7,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4422,
+        "text": "There is no god other than He, who gives you life and death, your Lord and the Lord of your fathers of old.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 8,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4423,
+        "text": "Yet they are lost in doubt and play.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 9,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4424,
+        "text": "So watch for the day when the sky begins to emit clear smoke,",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 10,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4425,
+        "text": "Which would envelope mankind. That would be a grievous affliction.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 11,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4426,
+        "text": "\"O Lord, take away this torment from us,\" (they will pray); \"we have come to believe.\"",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 12,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4427,
+        "text": "How can a warning benefit them? The Apostle who explained all things clearly had come to them,",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 13,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4428,
+        "text": "But they turned away from him, and said: \"He is well-instructed, (but) possessed.\"",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 14,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4429,
+        "text": "If We remove the torment a little, you revert back (to misdeeds).",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 15,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4430,
+        "text": "The day that We shall seize them with a grievous hold, We will indeed castigate them.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 16,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 198,
+        "sajda": false
+      },
+      {
+        "number": 4431,
+        "text": "We had tried the people of Pharaoh before them. A respected prophet had come to them (saying):",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 17,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4432,
+        "text": "\"Deliver the creatures of God to me. I am the trusted messenger sent to you.",
+        "surah": {
+          "number": 44,
+          "name": "سُورَةُ الدُّخَانِ",
+          "englishName": "Ad-Dukhaan",
+          "englishNameTranslation": "The Smoke",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 59
+        },
+        "numberInSurah": 18,
+        "juz": 25,
+        "manzil": 6,
+        "page": 496,
+        "ruku": 431,
+        "hizbQuarter": 199,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "44": {
+        "number": 44,
+        "name": "سُورَةُ الدُّخَانِ",
+        "englishName": "Ad-Dukhaan",
+        "englishNameTranslation": "The Smoke",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 59
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 108,
+    "ayahs": [
+      {
+        "number": 675,
+        "text": "O believers, when you stand up for the service of prayer wash your faces and hands up to elbows, and also wipe your heads, and wash your feet up to the ankles. If you are in a state of seminal pollution, then bathe and purify yourself well. But in case you are ill or are travelling, or you have satisfied the call of nature, or have slept with a woman, and you cannot find water, then take wholesome dust and pass it over your face and your hands, for God does not wish to impose any hardship on you. He wishes to purify you, and grace you with His favours in full so that you may be grateful.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 6,
+        "juz": 6,
+        "manzil": 2,
+        "page": 108,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      },
+      {
+        "number": 676,
+        "text": "Remember the favours He bestowed on you, and the covenant He cemented with you, when you said: \"We have heard and obey.\" Have fear of God, for He knows the secrets of your heart.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 7,
+        "juz": 6,
+        "manzil": 2,
+        "page": 108,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      },
+      {
+        "number": 677,
+        "text": "O you who believe, stand up as witnesses for God in all fairness, and do not let the hatred of a people deviate you from justice. Be just: This is closest to piety; and beware of God. Surely God is aware of all you do.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 8,
+        "juz": 6,
+        "manzil": 2,
+        "page": 108,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      },
+      {
+        "number": 678,
+        "text": "God has made a promise of forgiveness and the highest reward to those who believe and perform good deeds.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 9,
+        "juz": 6,
+        "manzil": 2,
+        "page": 108,
+        "ruku": 87,
+        "hizbQuarter": 43,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

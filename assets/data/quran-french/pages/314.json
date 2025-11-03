@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 314,
+    "ayahs": [
+      {
+        "number": 2386,
+        "text": "lorsque Nous révélâmes à ta mère ce qui fut révélé:",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 38,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2387,
+        "text": "«Mets-le dans le coffret, puis jette celui-ci dans les flots pour qu'ensuite le fleuve le lance sur la rive; un ennemi à Moi et à lui le prendra». Et J'ai répandu sur toi une affection de Ma part, afin que tu sois élevé sous Mon œil.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 39,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2388,
+        "text": "Et vœilà que ta sœur (te suivait en) marchant et disait: «Puis-je vous indiquer quelqu'un qui se chargera de lui?» Ainsi, Nous te rapportâmes à ta mère afin que son oil se réjouisse et qu'elle ne s'afflige plus. Tu tuas ensuite un individu; Nous te sauvâmes des craintes qui t'oppressaient; et Nous t'imposâmes plusieurs épreuves. Puis tu demeuras des années durant chez les habitants de Madyan. Ensuite tu es venu, ô Moïse, conformément à un décret.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 40,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2389,
+        "text": "Et je t'ai assigné à Moi-Même.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 41,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2390,
+        "text": "Pars, toi et ton frère, avec Mes prodiges; et ne négligez pas de M'invoquer.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 42,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2391,
+        "text": "Allez vers Pharaon: il s'est vraiment rebellé.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 43,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2392,
+        "text": "Puis, parlez-lui gentiment. Peut-être se rappellera-t-il ou [Me] craindra-t-il?",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 44,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2393,
+        "text": "Ils dirent: «O notre Seigneur, nous craignons qu'il ne nous maltraite indûment, ou qu'il dépasse les limites».",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 45,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2394,
+        "text": "Il dit: «Ne craignez rien. Je suis avec vous: J'entends et Je vois.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 46,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2395,
+        "text": "Allez donc chez lui; puis, dites-lui: «Nous sommes tous deux, les messagers de ton Seigneur. Envoie donc les Enfants d'Israël en notre compagnie et ne les châtie plus. Nous sommes venus à toi avec une preuve de la part de ton Seigneur. Et que la paix soit sur quiconque suit le droit chemin!",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 47,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2396,
+        "text": "Il nous a été révélé que le châtiment est pour celui qui refuse d'avoir foi et qui tourne le dos».",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 48,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2397,
+        "text": "Alors [Pharaon] dit: «Qui donc est votre Seigneur, ô Moïse?»",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 49,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2398,
+        "text": "«Notre Seigneur, dit Moïse, est Celui qui a donné à chaque chose sa propre nature puis l'a dirigée».",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 50,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2399,
+        "text": "«Qu'en est-il donc des générations anciennes?» dit Pharaon.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 51,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

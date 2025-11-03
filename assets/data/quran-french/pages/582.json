@@ -1,0 +1,598 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 582,
+    "ayahs": [
+      {
+        "number": 5673,
+        "text": "Sur quoi s'interrogent-ils mutuellement?",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5674,
+        "text": "Sur la grande nouvelle,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5675,
+        "text": "à propos de laquelle ils divergent.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5676,
+        "text": "Eh bien non! Ils sauront bientôt.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5677,
+        "text": "Encore une fois, non! Ils sauront bientôt.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5678,
+        "text": "N'avons-Nous pas fait de la terre une couche?",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5679,
+        "text": "et (placé) les montagnes comme des piquets?",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5680,
+        "text": "Nous vous avons créés en couples,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5681,
+        "text": "et désigné votre sommeil pour votre repos,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5682,
+        "text": "et fait de la nuit un vêtement,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5683,
+        "text": "et assigné le jour pour les affaires de la vie,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5684,
+        "text": "et construit au-dessus de vous sept (cieux) renforcés,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5685,
+        "text": "et [y] avons placé une lampe (le soleil) très ardente,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5686,
+        "text": "et fait descendre des nuées une eau abondante",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5687,
+        "text": "pour faire pousser par elle grains et plantes",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5688,
+        "text": "et jardins luxuriants.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5689,
+        "text": "Le Jour de la Décision [du Jugement] a son terme fixé.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5690,
+        "text": "Le jour où l'on soufflera dans la Trompe, vous viendrez par troupes,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5691,
+        "text": "et le ciel sera ouvert et [présentera] des portes,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5692,
+        "text": "et les montagnes seront mises en marche et deviendront un mirage.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5693,
+        "text": "L'Enfer demeure aux aguets,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5694,
+        "text": "refuge pour les transgresseurs.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5695,
+        "text": "Ils y demeureront pendant des siècles successifs.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5696,
+        "text": "Ils n'y goûteront ni fraîcheur ni breuvage,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5697,
+        "text": "Hormis une eau bouillante et un pus",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5698,
+        "text": "comme rétribution équitable.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5699,
+        "text": "Car ils ne s'attendaient pas à rendre compte,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5700,
+        "text": "et traitaient de mensonges, continuellement, Nos versets,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5701,
+        "text": "alors que Nous avons dénombré toutes choses en écrit.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5702,
+        "text": "Goûtez-donc. Nous n'augmenterons pour vous que le châtiment!",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 582,
+        "ruku": 518,
+        "hizbQuarter": 233,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "78": {
+        "number": 78,
+        "name": "سُورَةُ النَّبَإِ",
+        "englishName": "An-Naba",
+        "englishNameTranslation": "The Announcement",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 40
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 95,
+    "ayahs": [
+      {
+        "number": 595,
+        "text": "When you are among them, and have to lead the service of prayer, let one group stand up with you, but let them keep their arms. After they have paid their homage they should go to the rear, and let the group which has not done so yet offer their service of prayer with you, remaining cautious and armed, The infidels wish to find you neglectful of your arms and provisions, to attack you unawares. It will not be a sin if you put aside your arms when you are troubled by rain, or you are ill; but take full precautions. God has reserved for infidels a despicable punishment",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 102,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 596,
+        "text": "If you are late in performing your service of prayer honour God by remembering Him, standing or sitting or lying on your sides. And when you have security perform your act of prayer befittingly; and praying at fixed hours is prescribed for the faithful.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 103,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 597,
+        "text": "And do not be chary of pursuing them. If you suffer, they shall also suffer like you. But while you have hope (of success) from God, they have none. Surely God is all-knowing and all-wise.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 104,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 598,
+        "text": "We have sent down to you the Book containing the truth, in whose light you should judge among the people as God has shown you, and do not be a contender for deceivers.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 105,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

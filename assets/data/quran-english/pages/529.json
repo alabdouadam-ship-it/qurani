@@ -1,0 +1,427 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 529,
+    "ayahs": [
+      {
+        "number": 4853,
+        "text": "They will come out of the graves with downcast eyes like an expanding swarm of locusts.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4854,
+        "text": "They will hasten forward to the caller, gazes fixed. And the unbelievers will say: \"This is the day of untold woe.\"",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4855,
+        "text": "The people of Noah had denied before them, and had called Our votary a liar, and said: \"He is possessed,\" and repulsed him.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4856,
+        "text": "So he prayed to his Lord: \"I am helpless, deliver me.\"",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4857,
+        "text": "And We opened up the flood gates of the sky with water pouring down in torrents,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4858,
+        "text": "And We opened up the springs of the earth; and the waters met for a decreed end.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4859,
+        "text": "But We bore him on a (vessel made) of planks and oakum,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4860,
+        "text": "Which sailed right under Our eyes: A recompense for him who had been denied.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4861,
+        "text": "And We left it as a sign. Is there anyone who will be warned?",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4862,
+        "text": "How was then My punishment and My commination!",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4863,
+        "text": "Easy have We made the Qur'an to understand: So is there any one who will be warned?",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4864,
+        "text": "The 'Ad had also disavowed. How was then My punishment and My commination!",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4865,
+        "text": "We let loose against them a violent roaring wind on a day of ill omen, continuous,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4866,
+        "text": "Which snatched away men as though they were palm trees pulled out by the roots.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4867,
+        "text": "How was then My punishment and My commination!",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4868,
+        "text": "Easy have We made the Qur'an to understand: So is there any one who will pay heed?",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4869,
+        "text": "The Thamud rejected the warnings,",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4870,
+        "text": "And said: \"Should we follow only one man among us? In that case we shall he in error and insane.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4871,
+        "text": "Was he the one of all of us to have been given the exposition? He is surely an impudent liar.\"",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4872,
+        "text": "\"Tomorrow they will know who is the impudent liar!",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4873,
+        "text": "We shall send the she-camel to try them. So watch them, and be constant.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "54": {
+        "number": 54,
+        "name": "سُورَةُ القَمَرِ",
+        "englishName": "Al-Qamar",
+        "englishNameTranslation": "The Moon",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 55
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

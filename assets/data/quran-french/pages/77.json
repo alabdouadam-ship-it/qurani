@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 77,
+    "ayahs": [
+      {
+        "number": 494,
+        "text": "O hommes! Craignez votre Seigneur qui vous a créés d'un seul être, et a créé de celui-ci son épouse, et qui de ces deux là a fait répandre (sur la terre) beaucoup d'hommes et de femmes. Craignez Allah au nom duquel vous vous implorez les uns les autres, et craignez de rompre les liens du sang. Certes Allah vous observe parfaitement.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 1,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      },
+      {
+        "number": 495,
+        "text": "Et donnez aux orphelins leurs biens; n'y substituez pas le mauvais au bon. Ne mangez pas leurs biens avec les vôtres: c'est vraiment un grand péché.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 2,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      },
+      {
+        "number": 496,
+        "text": "Et si vous craignez de n'être pas justes envers les orphelins,... Il est permis d'épouser deux, trois ou quatre, parmi les femmes qui vous plaisent, mais, si vous craignez de n'être pas justes avec celles-ci, alors une seule, ou des esclaves que vous possédez. Cela, afin de ne pas faire d'injustice (ou afin de ne pas aggraver votre charge de famille).",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 3,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      },
+      {
+        "number": 497,
+        "text": "Et donnez aux épouses leur mahr, de bonne grâce. Si de bon gré, elles vous en abandonnent quelque chose, disposez-en alors à votre aise et de bon cœur.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 4,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      },
+      {
+        "number": 498,
+        "text": "Et ne confiez pas aux incapables vos biens dont Allah a fait votre subsistance. Mais prélevez-en, pour eux, nourriture et vêtement; et parlez-leur convenablement.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 5,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      },
+      {
+        "number": 499,
+        "text": "Et éprouvez (la capacité) des orphelins jusqu'à ce qu'ils atteignent (l'aptitude) au mariage; et si vous ressentez en eux une bonne conduite, remettez-leur leurs biens. Ne les utilisez pas (dans votre intérêt) avec gaspillage et dissipation, avant qu'ils ne grandissent. Quiconque est aisé, qu'il s'abstienne d'en prendre lui-même. S'il est pauvre, alors qu'il en utilise raisonnablement: et lorsque vous leur remettez leurs biens, prenez des témoins à leur encontre. Mais Allah suffit pour observer et compter.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 6,
+        "juz": 4,
+        "manzil": 1,
+        "page": 77,
+        "ruku": 62,
+        "hizbQuarter": 31,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

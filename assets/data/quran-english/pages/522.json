@@ -1,0 +1,427 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 522,
+    "ayahs": [
+      {
+        "number": 4706,
+        "text": "He said: \"What is then your business, O messengers?\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4707,
+        "text": "They said: \"We have been sent to a wicked people",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4708,
+        "text": "So as to let loose clods of clay on them",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4709,
+        "text": "Marked by your Lord for those who waste their substance.\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4710,
+        "text": "So We evacuated everyone who was a believer there,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4711,
+        "text": "But did not find more than a single family of believers.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4712,
+        "text": "We left a sign in this for those who fear the grievous punishment,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4713,
+        "text": "As (there was) in Moses when We sent him to the Pharaoh with clear authority.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4714,
+        "text": "But he turned to his counsellors, and said: \"He is a magician or lunatic.\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4715,
+        "text": "So We seized him and his armies, and threw them into the sea, for he was worthy of blame.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4716,
+        "text": "In 'Ad (also is a sign), when We sent a blasting wind against them,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 41,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4717,
+        "text": "Which turned everything it touched to ashes.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 42,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4718,
+        "text": "And in Thamud, when We said to them: \"Enjoy yourselves for a while;\"",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 43,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4719,
+        "text": "But they disobeyed the command of their Lord; so they were destroyed by a thunderbolt, and they could only gape,",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 44,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4720,
+        "text": "And neither stand up nor defend themselves.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 45,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4721,
+        "text": "(So had We destroyed) the people of Noah before them: They were surely a sinful people.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 46,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 456,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4722,
+        "text": "We built the heavens by Our authority; and We are the Lord of power and expanse.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 47,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4723,
+        "text": "We spread the earth a carpet; what comfort We provide!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 48,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4724,
+        "text": "And We created pairs of everything that you may contemplate.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 49,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4725,
+        "text": "So turn to God. I give you a clear warning from Him.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 50,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4726,
+        "text": "Do not set up another god with God. I give you a clear warning from Him.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 51,
+        "juz": 27,
+        "manzil": 7,
+        "page": 522,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "51": {
+        "number": 51,
+        "name": "سُورَةُ الذَّارِيَاتِ",
+        "englishName": "Adh-Dhaariyat",
+        "englishNameTranslation": "The Winnowing Winds",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

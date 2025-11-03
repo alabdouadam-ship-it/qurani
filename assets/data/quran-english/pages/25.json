@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 25,
+    "ayahs": [
+      {
+        "number": 171,
+        "text": "Creation of the heavens and the earth, alternation of night and day, and sailing of ships across the ocean with what is useful to man, and the rain that God sends from the sky enlivening the earth that was dead, and the scattering of beasts of all kinds upon it, and the changing of the winds, and the clouds which remain obedient between earth and sky, are surely signs for the wise.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 164,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 172,
+        "text": "And yet there are men who take others as compeers of God, and bestow on them love due to God; but the love of the faithful for God is more intense. If only the wicked could see now the agony that they will behold (on the Day of Resurrection), they will know that to God belongs the power entirely'. And the punishment of God is severe.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 165,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 173,
+        "text": "When those who were followed will disclaim those who followed them, and see the torment all ties between them shall be severed,",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 166,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 174,
+        "text": "And the followers will say: \"Could we live but once again we would leave them as they have abandoned us now.\" God will show them thus their deeds, and fill them with remorse; but never shall they find release from the Fire.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 167,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 175,
+        "text": "O men, eat only the things of the earth that are lawful and good. Do not walk in the footsteps of Satan, your acknowledged enemy.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 168,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 176,
+        "text": "He will ask you to indulge in evil, indecency, and to speak lies of God you cannot even conceive.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 169,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

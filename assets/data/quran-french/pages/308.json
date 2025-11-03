@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 308,
+    "ayahs": [
+      {
+        "number": 2289,
+        "text": "Et avertis-les du jour du Regret, quand tout sera réglé; alors qu'ils sont [dans ce monde] inattentifs et qu'ils ne croient pas.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 39,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2290,
+        "text": "C'est Nous, en vérité, qui hériterons la terre et tout ce qui s'y trouve, et c'est à Nous qu'ils seront ramenés.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 40,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2291,
+        "text": "Et mentionne dans le Livre, Abraham. C'était un très véridique et un Prophète.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 41,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2292,
+        "text": "Lorsqu'il dit à son père: «O mon père, pourquoi adores-tu ce qui n'entend ni ne voit, et ne te profite en rien?",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 42,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2293,
+        "text": "O mon père, il m'est venu de la science ce que tu n'as pas reçu; suis-moi, donc, je te guiderai sur une voie droite.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 43,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2294,
+        "text": "O mon père, n'adore pas le Diable, car le Diable désobéit au Tout Miséricordieux.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 44,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2295,
+        "text": "O mon père, je crains qu'un châtiment venant du Tout Miséricordieux ne te touche et que tu ne deviennes un allié du Diable».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 45,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2296,
+        "text": "Il dit: «O Abraham, aurais-tu du dédain pour mes divinités? Si tu ne cesses pas, certes je te lapiderai, éloigne-toi de moi pour bien longtemps».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 46,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2297,
+        "text": "«Paix sur toi», dit Abraham. «J'implorerai mon Seigneur de te pardonner car Il m'a toujours comblé de Ses bienfaits.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 47,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2298,
+        "text": "Je me sépare de vous, ainsi que de ce que vous invoquez, en dehors d'Allah, et j'invoquerai mon Seigneur. J'espère ne pas être malheureux dans mon appel à mon Seigneur».",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 48,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2299,
+        "text": "Puis, lorsqu'il se fut séparé d'eux et de ce qu'ils adoraient en dehors d'Allah, Nous lui fîmes don d'Isaac et de Jacob; et de chacun Nous fîmes un prophète.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 49,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2300,
+        "text": "Et Nous leur donnâmes de par Notre miséricorde, et Nous leur accordâmes un langage sublime de vérité.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 50,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 266,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2301,
+        "text": "Et mentionne dans le Livre Moïse. C'était vraiment un élu, et c'était un Messager et un prophète.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 51,
+        "juz": 16,
+        "manzil": 4,
+        "page": 308,
+        "ruku": 267,
+        "hizbQuarter": 123,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 542,
+    "ayahs": [
+      {
+        "number": 5105,
+        "text": "Allah a bien entendu la parole de celle qui discutait avec toi à propos de son époux et se plaignait à Allah. Et Allah entendait votre conversation, car Allah est Audient et Clairvoyant.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 1,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5106,
+        "text": "Ceux d'entre vous qui répudient leurs femmes, en déclarant qu'elles sont pour eux comme le dos de leurs mères. alors qu'elles ne sont nullement leurs mères, car ils n'ont pour mères que celles qui les ont enfantés. Ils prononcent certes une parole blâmable et mensongère. Allah cependant est Indulgent et Pardonneur.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 2,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5107,
+        "text": "Ceux qui comparent leurs femmes au dos de leurs mères puis reviennent sur ce qu'ils ont dit, doivent affranchir un esclave avant d'avoir aucun contact [conjugal] avec leur femme. C'est ce dont on vous exhorte. Et Allah est Parfaitement Connaisseur de ce que vous faites",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 3,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5108,
+        "text": "Mais celui qui n'en trouve pas les moyens doit jeûner alors deux mois consécutifs avant d'avoir aucun contact [conjugal] avec sa femme. Mais s'il ne peut le faire non plus, alors qu'il nourrisse soixante pauvres. Cela, pour que vous croyiez en Allah et en Son messager. Voilà les limites imposées par Allah. Et les mécréants auront un châtiment douloureux.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 4,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5109,
+        "text": "Ceux qui s'opposent à Allah et à Son messager seront culbutés comme furent culbutés leurs devanciers. Nous avons déjà fait descendre des preuves explicites, et les mécréants auront un châtiment avilissant,",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 5,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5110,
+        "text": "le jour où Allah les ressuscitera tous, puis les informera de ce qu'ils ont fait Allah l'a dénombré et ils l'auront oublié. Allah est témoin de toute chose.",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 542,
+        "ruku": 476,
+        "hizbQuarter": 217,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "58": {
+        "number": 58,
+        "name": "سُورَةُ المُجَادلَةِ",
+        "englishName": "Al-Mujaadila",
+        "englishNameTranslation": "The Pleading Woman",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

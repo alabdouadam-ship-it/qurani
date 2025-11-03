@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 15,
+    "ayahs": [
+      {
+        "number": 101,
+        "text": "- Dis: «Si l'Ultime demeure auprès d'Allah est pour vous seuls, à l'exclusion des autres gens, souhaitez donc la mort [immédiate] si vous êtes véridiques!»",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 94,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 12,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 102,
+        "text": "Or, ils ne la souhaiteront jamais, sachant tout le mal qu'ils ont perpétré de leurs mains. Et Allah connait bien les injustes.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 95,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 12,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 103,
+        "text": "Et certes tu les trouveras les plus attachés à la vie [d'ici-bas], pire en cela que les Associateurs. Tel d'entre eux aimerait vivre mille ans. Mais une pareille longévité ne le sauvera pas du châtiment! Et Allah voit bien leurs actions.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 96,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 12,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 104,
+        "text": "Dis: «Quiconque est ennemi de Gabriel doit connaître que c'est lui qui, avec la permission d'Allah, a fait descendre sur ton cœur cette révélation qui déclare véridiques les messages antérieurs et qui sert aux croyants de guide et d'heureuse annonce»",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 97,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 13,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 105,
+        "text": "[Dis:] «Quiconque est ennemi d'Allah, de Ses anges, de Ses messagers, de Gabriel et de Michaël... [Allah sera son ennemi] car Allah est l'ennemi des infidèles».",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 98,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 13,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 106,
+        "text": "Et très certainement Nous avons fait descendre vers toi des signes évidents. Et seuls les pervers n'y croient pas.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 99,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 13,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 107,
+        "text": "Faudrait-il chaque fois qu'ils concluent un pacte, qu'une partie d'entre eux le dénonce? C'est que plutôt la plupart d'entre eux ne sont pas croyants.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 100,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 13,
+        "hizbQuarter": 6,
+        "sajda": false
+      },
+      {
+        "number": 108,
+        "text": "Et quand leur vint d'Allah un messager confirmant ce qu'il y avait déjà avec eux, certains à qui le Livre avait été donné, jetèrent derrière leur dos le Livre d'Allah comme s'ils ne savaient pas!",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 101,
+        "juz": 1,
+        "manzil": 1,
+        "page": 15,
+        "ruku": 13,
+        "hizbQuarter": 6,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

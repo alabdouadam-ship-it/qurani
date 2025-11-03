@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 61,
+    "ayahs": [
+      {
+        "number": 377,
+        "text": "Say: \"We believe in God, and in what has been revealed to us, and in what had been sent down to Abraham and Ishmael and Isaac and Jacob and their offspring, and what had been revealed to Moses and to Jesus and to all other prophets by their Lord. We make no distinction between them, and we submit to Him and obey.\"",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 84,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 378,
+        "text": "And whoever seeks a way other than submission to God, it will not be accepted from him, and he will be a loser in the world to come.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 85,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 379,
+        "text": "How can God show the way to those who, having come to faith, turned away, even though they had borne witness that the Messenger was true, and the clear signs had reached them? God does not show the unrighteous the way.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 86,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 380,
+        "text": "For such the requital is the curse of God and the angels and of men.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 87,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 381,
+        "text": "They shall live under it, and none of their agony decrease nor be respite for them.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 88,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 382,
+        "text": "But those who repent and reform, God is surely forgiving and merciful.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 89,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 383,
+        "text": "Those who deny, having once come to faith, and persist in denial, will not have their repentance accepted, for they have gone astray.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 90,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 384,
+        "text": "From those who deny and die disbelieving will never be accepted an earthful of gold if proferred by them as ransom. For them is grievous punishment, and none will help them.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 91,
+        "juz": 3,
+        "manzil": 1,
+        "page": 61,
+        "ruku": 50,
+        "hizbQuarter": 24,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 513,
+    "ayahs": [
+      {
+        "number": 4599,
+        "text": "Say to the desert Arabs who had stayed behind: \"You will be called against a formidable people. You will fight them till they surrender. If you obey, then He will give you a good reward; but if you turn back, as you had done before, He will punish you with a grievous affliction.\"",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 16,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4600,
+        "text": "It is not binding on the blind, the lame or the sick (to follow this command); but those who obey God and His Apostle will be admitted by God to gardens with running streams; but those who turn back will suffer a painful doom.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 17,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 447,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4601,
+        "text": "God was pleased with the believers when they swore allegiance to you under the tree, for He knew well what was in their hearts, and sent down tranquility on them, and rewarded them with an expeditious victory",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 18,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      },
+      {
+        "number": 4602,
+        "text": "And the many spoils that they were to take. God is all-mighty and all-wise.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 19,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      },
+      {
+        "number": 4603,
+        "text": "God had promised you many spoils that you would capture; so He gave this soon enough to you, and stayed the hands of men from you that it may serve as a sign for believers, and guide you on the straight path;",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 20,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      },
+      {
+        "number": 4604,
+        "text": "And other (benefits) which you have not yet obtained, are within the compass of God, for God has power over everything.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 21,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      },
+      {
+        "number": 4605,
+        "text": "Had the unbelievers fought you they would have turned their backs and not found a protector or helper.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 22,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      },
+      {
+        "number": 4606,
+        "text": "This is the law of God, effective as before: You will not find any change in the law of God.",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 23,
+        "juz": 26,
+        "manzil": 6,
+        "page": 513,
+        "ruku": 448,
+        "hizbQuarter": 205,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "48": {
+        "number": 48,
+        "name": "سُورَةُ الفَتۡحِ",
+        "englishName": "Al-Fath",
+        "englishNameTranslation": "The Victory",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 485,
+    "ayahs": [
+      {
+        "number": 4288,
+        "text": "Et ceux qui discutent au sujet d'Allah, après qu'il a été répondu à [Son appel], leur argumentation est auprès d'Allah sans valeur. Une colère tombera sur eux et ils auront un dur châtiment.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 16,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4289,
+        "text": "C'est Allah qui a fait descendre le Livre en toute vérité, ainsi que la balance. Et qu'en sais-tu? Peut-être que l'Heure est proche?",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 17,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4290,
+        "text": "Ceux qui n'y croient pas cherchent à la hâter; tandis que ceux qui croient en sont craintifs et savent qu'elle est la pure vérité. Et ceux qui discutent à propos de l'Heure sont dans un égarement lointain.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 18,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4291,
+        "text": "Allah est doux envers Ses serviteurs. Il attribue [Ses biens] à qui Il veut. Et c'est Lui le Fort, le Puissant.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 19,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 420,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4292,
+        "text": "Quiconque désire labourer [le champ] de la vie future, Nous augmenterons pour lui son labour. Quiconque désire labourer [le champ] de la présente vie, Nous lui en accorderons de [ses jouissances]; mais il n'aura pas de part dans l'au-delà.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 20,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4293,
+        "text": "Ou bien auraient-ils des associés [à Allah] qui auraient établi pour eux des lois religieuses qu'Allah n'a jamais permises? Or, si l'arrêt décisif n'avait pas été prononcé, il aurait été tranché entre eux. Les injustes auront certes un châtiment douloureux.",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 21,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      },
+      {
+        "number": 4294,
+        "text": "Tu verras les injustes épouvantés par ce qu'ils ont fait, et le châtiment s'abattra sur eux (inéluctablement). Et ceux qui croient et accomplissent les bonnes œuvres, seront dans les sites fleuris des jardins, ayant ce qu'ils voudront auprès de leur Seigneur. Telle est la grande grâce!",
+        "surah": {
+          "number": 42,
+          "name": "سُورَةُ الشُّورَىٰ",
+          "englishName": "Ash-Shura",
+          "englishNameTranslation": "Consultation",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 53
+        },
+        "numberInSurah": 22,
+        "juz": 25,
+        "manzil": 6,
+        "page": 485,
+        "ruku": 421,
+        "hizbQuarter": 194,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "42": {
+        "number": 42,
+        "name": "سُورَةُ الشُّورَىٰ",
+        "englishName": "Ash-Shura",
+        "englishNameTranslation": "Consultation",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 53
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

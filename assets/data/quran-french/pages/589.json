@@ -1,0 +1,553 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 589,
+    "ayahs": [
+      {
+        "number": 5883,
+        "text": "sur les divans, ils regardent.",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 35,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5884,
+        "text": "Est-ce que les infidèles ont eu la récompense de ce qu'ils faisaient?",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 36,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5885,
+        "text": "Quand le ciel se déchirera",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5886,
+        "text": "et obéira à son Seigneur - et fera ce qu'il doit faire -",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5887,
+        "text": "et que la terre sera nivelée,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5888,
+        "text": "et qu'elle rejettera ce qui est en son sein (les morts) et se videra,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5889,
+        "text": "et qu'elle obéira à son Seigneur - et fera ce qu'elle doit faire -",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5890,
+        "text": "O homme! Toi qui t'efforces vers ton Seigneur sans relâche, tu Le rencontreras alors.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5891,
+        "text": "Celui qui recevra son livre en sa main droite,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5892,
+        "text": "sera soumis à un jugement facile,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5893,
+        "text": "et retournera réjoui auprès de sa famille",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5894,
+        "text": "Quant à celui qui recevra son livre derrière son dos,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5895,
+        "text": "il invoquera la destruction sur lui-même,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5896,
+        "text": "et il brûlera dans un feu ardent.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5897,
+        "text": "Car il était tout joyeux parmi les siens,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5898,
+        "text": "et il pensait que jamais il ne ressusciterait",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5899,
+        "text": "Mais si! Certes, son Seigneur l'observait parfaitement.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5900,
+        "text": "Non!... Je jure par le crépuscule,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5901,
+        "text": "et par la nuit et ce qu'elle enveloppe,",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5902,
+        "text": "et par la lune quand elle devient pleine lune!",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5903,
+        "text": "Vous passerez, certes, par des états successifs!",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5904,
+        "text": "Qu'ont-ils à ne pas croire?",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5905,
+        "text": "et à ne pas se prosterner quand le Coran leur est lu?",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": {
+          "id": 14,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 5906,
+        "text": "Mais ceux qui ne croient pas, le traitent plutôt de mensonge.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5907,
+        "text": "Or, Allah sait bien ce qu'ils dissimulent.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5908,
+        "text": "Annonce-leur donc un châtiment douloureux.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5909,
+        "text": "Sauf ceux qui croient et accomplissent les bonnes œuvres: à eux une récompense jamais interrompue.",
+        "surah": {
+          "number": 84,
+          "name": "سُورَةُ الانشِقَاقِ",
+          "englishName": "Al-Inshiqaaq",
+          "englishNameTranslation": "The Splitting Open",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 25
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 589,
+        "ruku": 526,
+        "hizbQuarter": 236,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "83": {
+        "number": 83,
+        "name": "سُورَةُ المُطَفِّفِينَ",
+        "englishName": "Al-Mutaffifin",
+        "englishNameTranslation": "Defrauding",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 36
+      },
+      "84": {
+        "number": 84,
+        "name": "سُورَةُ الانشِقَاقِ",
+        "englishName": "Al-Inshiqaaq",
+        "englishNameTranslation": "The Splitting Open",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 25
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

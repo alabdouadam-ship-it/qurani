@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 269,
+    "ayahs": [
+      {
+        "number": 1916,
+        "text": "وأرسى في الأرض جبالا تثبتها حتى لا تميل بكم، وجعل فيها أنهارًا؛ لتشربوا منها، وجعل فيها طرقًا؛ لتهتدوا بها في الوصول إلى الأماكن التي تقصدونها.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 15,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1917,
+        "text": "وجعل في الأرض معالم تستدلُّون بها على الطرق نهارًا، كما جعل النجوم للاهتداء بها ليلا.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 16,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1918,
+        "text": "أتجعلون الله الذي يخلق كل هذه الأشياء وغيرها في استحقاق العبادة كالآلهة المزعومة التي لا تخلق شيئًا؟ أفلا تتذكرون عظمة الله، فتفردوه بالعبادة؟",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 17,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1919,
+        "text": "وإن تحاولوا حَصْرَ نِعَم الله عليكم لا تَفُوا بحَصْرها؛ لكثرتها وتنوعها. إن الله لَغفور لكم رحيم بكم؛ إذ يتجاوز عن تقصيركم في أداء شكر النعم، ولا يقطعها عنكم لتفريطكم، ولا يعاجلكم بالعقوبة.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 18,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1920,
+        "text": "والله سبحانه يعلم كل أعمالكم، سواء ما تخفونه منها في نفوسكم وما تظهرونه لغيركم، وسيجازيكم عليها.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 19,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1921,
+        "text": "والآلهة التي يعبدها المشركون لا تخلق شيئًا وإن صَغُر، فهي مخلوقات صنعها الكفار بأيديهم، فكيف يعبدونها؟",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 20,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1922,
+        "text": "هم جميعًا جمادات لا حياة فيها ولا تشعر بالوقت الذي يبعث الله فيه عابديها، وهي معهم ليُلقى بهم جميعًا في النار يوم القيامة.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 21,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1923,
+        "text": "إلهكم المستحق وحده للعبادة هو الله الإله الواحد، فالذين لا يؤمنون بالبعث قلوبهم جاحدة وحدانيته سبحانه؛ لعدم خوفهم من عقابه، فهم متكبرون عن قبول الحق، وعبادة الله وحده.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 22,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1924,
+        "text": "حقًا أنَّ الله يعلم ما يخفونه مِن عقائد وأقوال وأفعال، وما يظهرونه منها، وسيجازيهم على ذلك، إنه عز وجل لا يحب المستكبرين عن عبادته والانقياد له، وسيجازيهم على ذلك.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 23,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1925,
+        "text": "وإذا سُئِل هؤلاء المشركون عمَّا نزل على النبي محمد صلى الله عليه وسلم قالوا كذبًا وزورًا: ما أتى إلا بقصص السابقين وأباطيلهم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 24,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1926,
+        "text": "ستكون عاقبتهم أن يحملوا آثامهم كاملة يوم القيامة -لا يُغْفَر لهم منها شيء - ويَحْملوا من آثام الذين كذبوا عليهم؛ ليبعدوهم عن الإسلام من غير نقص من آثامهم. ألا قَبُحَ ما يحملونه من آثام.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 25,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1927,
+        "text": "قد دبَّر الكفار من قَبْل هؤلاء المشركين المكايد لرسلهم، وما جاءوا به من دعوة الحق، فأتى الله بنيانهم من أساسه وقاعدته، فسقط عليهم السقف مِن فوقهم، وأتاهم الهلاك مِن مأمنهم، من حيث لا يحتسبون ولا يتوقعون أنه يأتيهم منه.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 26,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 227,
+        "hizbQuarter": 107,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

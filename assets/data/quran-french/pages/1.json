@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 1,
+    "ayahs": [
+      {
+        "number": 1,
+        "text": "Au nom d'Allah, le Tout Miséricordieux, le Très Miséricordieux.",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 1,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 2,
+        "text": "Louange à Allah, Seigneur de l'univers.",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 2,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 3,
+        "text": "Le Tout Miséricordieux, le Très Miséricordieux,",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 3,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 4,
+        "text": "Maître du Jour de la rétribution.",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 4,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 5,
+        "text": "C'est Toi [Seul] que nous adorons, et c'est Toi [Seul] dont nous implorons secours.",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 5,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 6,
+        "text": "Guide-nous dans le droit chemin,",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 6,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 7,
+        "text": "le chemin de ceux que Tu as comblés de faveurs, non pas de ceux qui ont encouru Ta colère, ni des égarés.",
+        "surah": {
+          "number": 1,
+          "name": "سُورَةُ ٱلْفَاتِحَةِ",
+          "englishName": "Al-Faatiha",
+          "englishNameTranslation": "The Opening",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 7
+        },
+        "numberInSurah": 7,
+        "juz": 1,
+        "manzil": 1,
+        "page": 1,
+        "ruku": 1,
+        "hizbQuarter": 1,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "1": {
+        "number": 1,
+        "name": "سُورَةُ ٱلْفَاتِحَةِ",
+        "englishName": "Al-Faatiha",
+        "englishNameTranslation": "The Opening",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 7
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

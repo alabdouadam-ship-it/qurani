@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 349,
+    "ayahs": [
+      {
+        "number": 2778,
+        "text": "«Mes versets ne vous étaient-ils pas récités et vous les traitiez alors de mensonges?»",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 105,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2779,
+        "text": "Ils dirent: «Seigneur! Notre malheur nous a vaincus, et nous étions des gens égarés.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 106,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2780,
+        "text": "Seigneur, fais nous-en sortir! Et si nous récidivons, nous serons alors des injustes».",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 107,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2781,
+        "text": "Il dit: «Soyez-y refoulés (humiliés) et ne Me parlez plus».",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 108,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2782,
+        "text": "Il y eut un groupe de Mes serviteurs qui dirent: «Seigneur, nous croyons; pardonne-nous donc et fais-nous miséricorde, car Tu es le meilleur des Miséricordieux»",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 109,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2783,
+        "text": "mais vous les avez pris en raillerie jusqu'à oublier de M'invoquer, et vous vous riiez d'eux.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 110,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2784,
+        "text": "Vraiment, Je les ai récompensés aujourd'hui pour ce qu'ils ont enduré; et ce sont eux les triomphants.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 111,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2785,
+        "text": "Il dira: «Combien d'années êtes-vous restés sur terre?»",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 112,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2786,
+        "text": "Ils diront: «Nous y avons demeuré un jour, ou une partie d'un jour. Interroge donc ceux qui comptent.»",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 113,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2787,
+        "text": "Il dira: «Vous n'y avez demeuré que peu [de temps], si seulement vous saviez.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 114,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2788,
+        "text": "Pensiez-vous que Nous vous avions créés sans but, et que vous ne seriez pas ramenés vers Nous?»",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 115,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2789,
+        "text": "Que soit exalté Allah, le vrai Souverain! Pas de divinité en dehors de Lui, le Seigneur du Trône sublime!",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 116,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2790,
+        "text": "Et quiconque invoque avec Allah une autre divinité, sans avoir la preuve évidente [de son existence], aura à en rendre compte à son Seigneur. En vérité, les mécréants, ne réussiront pas.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 117,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2791,
+        "text": "Et dis: «Seigneur, pardonne et fais miséricorde. C'est Toi le Meilleur des miséricordieux».",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 118,
+        "juz": 18,
+        "manzil": 4,
+        "page": 349,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

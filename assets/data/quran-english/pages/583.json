@@ -1,0 +1,511 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 583,
+    "ayahs": [
+      {
+        "number": 5703,
+        "text": "As for those who preserve themselves from evil and follow the straight path, there is attainment for them:",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 31,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5704,
+        "text": "Orchards and vineyards,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 32,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5705,
+        "text": "And graceful maidens of the same age,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 33,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5706,
+        "text": "And flasks full and flowing.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 34,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5707,
+        "text": "They will hear no blasphemies there or disavowals:",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 35,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5708,
+        "text": "A recompense from your Lord, a sufficient gift,",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 36,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5709,
+        "text": "The Lord of the heavens and the earth, and all that lies between them, most benevolent, to whom none may dare address a word.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 37,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5710,
+        "text": "The day the Spirit takes its stand, with the angels ranged in rows. None will speak except who is permitted by Ar-Rahman and says what is right.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 38,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5711,
+        "text": "That day is certain. So whosoever likes may prepare a way to his Lord.",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 39,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5712,
+        "text": "We have indeed warned you of a calamity near at hand, a day when man will see what he had sent (of his deeds) ahead, and the unbeliever will say: \"Woe alas. Ah would that I were dust!\"",
+        "surah": {
+          "number": 78,
+          "name": "سُورَةُ النَّبَإِ",
+          "englishName": "An-Naba",
+          "englishNameTranslation": "The Announcement",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 40
+        },
+        "numberInSurah": 40,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 519,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5713,
+        "text": "I CALL TO WITNESS those who dive and drag,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5714,
+        "text": "And those who undo the bonds gently,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5715,
+        "text": "And those who glide swimmingly,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5716,
+        "text": "Then outpace the others swiftly",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5717,
+        "text": "And direct affairs by command,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5718,
+        "text": "The day the convulsive (first blast) shatters convulsively",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5719,
+        "text": "Followed by the second blast,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5720,
+        "text": "Hearts will pound loudly on that day,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5721,
+        "text": "Eyes be lowered in submission.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5722,
+        "text": "They say: \"Shall we go back to our original state",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5723,
+        "text": "After having turned to carious bones?\"",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5724,
+        "text": "They say: \"Then this returning will be a dead loss.\"",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5725,
+        "text": "It will only be a single blast,",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5726,
+        "text": "And they will wake up suddenly.",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      },
+      {
+        "number": 5727,
+        "text": "Has the story of Moses come to you",
+        "surah": {
+          "number": 79,
+          "name": "سُورَةُ النَّازِعَاتِ",
+          "englishName": "An-Naazi'aat",
+          "englishNameTranslation": "Those who drag forth",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 46
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 583,
+        "ruku": 520,
+        "hizbQuarter": 233,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "78": {
+        "number": 78,
+        "name": "سُورَةُ النَّبَإِ",
+        "englishName": "An-Naba",
+        "englishNameTranslation": "The Announcement",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 40
+      },
+      "79": {
+        "number": 79,
+        "name": "سُورَةُ النَّازِعَاتِ",
+        "englishName": "An-Naazi'aat",
+        "englishNameTranslation": "Those who drag forth",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 46
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

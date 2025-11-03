@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 285,
+    "ayahs": [
+      {
+        "number": 2057,
+        "text": "Si tu t'écartes d'eux à la recherche d'une miséricorde de Ton Seigneur, que tu espères, adresse-leur une parole bienveillante.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 28,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 242,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2058,
+        "text": "Ne porte pas ta main enchaînée à ton cou [par avarice], et ne l'étend pas non plus trop largement, sinon tu te trouveras blâmé et chagriné.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 29,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 242,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2059,
+        "text": "En vérité ton Seigneur étend Ses dons largement à qu'Il veut ou les accorde avec parcimonie. Il est, sur Ses serviteurs, Parfaitement Connaisseur et Clairvoyant.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 30,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 242,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2060,
+        "text": "Et ne tuez pas vos enfants par crainte de pauvreté; c'est Nous qui attribuons leur subsistance, tout comme à vous. Les tuer, c'est vraiment, un énorme péché.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 31,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2061,
+        "text": "Et n'approchez point la fornication. En vérité, c'est une turpitude et quel mauvais chemin!",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 32,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2062,
+        "text": "Et, sauf en droit, ne tuez point la vie qu'Allah a rendu sacrée. Quiconque est tué injustement, alors Nous avons donné pouvoir à son proche [parent]. Que celui-ci ne commette pas d'excès dans le meurtre, car il est déjà assisté (par la loi).",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 33,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2063,
+        "text": "Et n'approchez les biens de l'orphelin que de la façon la meilleure, jusqu'à ce qu'il atteigne sa majorité. Et remplissez l'engagement, car on sera interrogé au sujet des engagements.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 34,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2064,
+        "text": "Et donnez la pleine mesure quand vous mesurez, et pesez avec une balance exacte. C'est mieux [pour vous] et le résultat en sera meilleur.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 35,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2065,
+        "text": "Et ne poursuis pas ce dont tu n'as aucune connaissance. L'ouïe, la vue et le cœur: sur tout cela, en vérité, on sera interrogé.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 36,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2066,
+        "text": "Et ne foule pas la terre avec orgueil: tu ne sauras jamais fendre la terre et tu ne pourras jamais atteindre la hauteur des montagnes!",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 37,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      },
+      {
+        "number": 2067,
+        "text": "Ce qui est mauvais en tout cela est détesté de ton Seigneur.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 38,
+        "juz": 15,
+        "manzil": 4,
+        "page": 285,
+        "ruku": 243,
+        "hizbQuarter": 114,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

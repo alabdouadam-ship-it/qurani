@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 402,
+    "ayahs": [
+      {
+        "number": 3386,
+        "text": "Do not argue with the people of the Book unless in a fair way, apart from those who act wrongly, and say to them: \"We believe what has been sent down to us, and we believe what has been sent down to you. Our God and your God is one, and to Him we submit.\"",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 46,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3387,
+        "text": "That is how We have revealed this Book to you and those to whom We have sent down the Book will believe in it. Only those who are infidels will deny it.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 47,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3388,
+        "text": "You did not read any Scripture before this, nor wrote one with your right hand, or else these dissemblers would have found a cause to doubt it.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 48,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3389,
+        "text": "In fact, in the minds of those who have intelligence these are clear signs. No one denies Our revelations except those who are unjust.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 49,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3390,
+        "text": "For they say: \"How Is it no signs were sent down to him from his Lord?\" Say: \"The signs are with God. I am only a warner, plain and simple.\"",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 50,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3391,
+        "text": "Is it not sufficient for them that We have revealed the Book to you which is read out to them? It is indeed a grace and reminder for people who believe.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 51,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 346,
+        "hizbQuarter": 161,
+        "sajda": false
+      },
+      {
+        "number": 3392,
+        "text": "Say: \"God is sufficient as witness between me and you.\" He knows what is in the heavens and the earth. It is those who believe in falsehood and disbelieve in God who will perish.",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 52,
+        "juz": 21,
+        "manzil": 5,
+        "page": 402,
+        "ruku": 347,
+        "hizbQuarter": 161,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "29": {
+        "number": 29,
+        "name": "سُورَةُ العَنكَبُوتِ",
+        "englishName": "Al-Ankaboot",
+        "englishNameTranslation": "The Spider",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 69
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

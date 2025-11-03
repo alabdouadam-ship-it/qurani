@@ -1,0 +1,503 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 372,
+    "ayahs": [
+      {
+        "number": 3044,
+        "text": "Il dit: «Je ne sais pas ce que ceux-là faisaient.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 112,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3045,
+        "text": "Leur compte n'incombe qu'à mon Seigneur. Si seulement vous êtes conscients.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 113,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3046,
+        "text": "Je ne suis pas celui qui repousse les croyants.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 114,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3047,
+        "text": "Je ne suis qu'un avertisseur explicite».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 115,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3048,
+        "text": "Ils dirent: «Si tu ne cesses pas, Noé, tu seras certainement du nombre des lapidés!»",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 116,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3049,
+        "text": "Il dit: «O mon Seigneur, mon peuple me traite de menteur.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 117,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3050,
+        "text": "Tranche donc clairement entre eux et moi; et sauve-moi ainsi que ceux des croyants qui sont avec moi».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 118,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3051,
+        "text": "Nous le sauvâmes donc, de même que ceux qui étaient avec lui dans l'arche, pleinement chargée.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 119,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3052,
+        "text": "Et ensuite nous noyâmes le reste (les infidèles).",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 120,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3053,
+        "text": "Voilà bien là un signe. Cependant, la plupart d'entre eux ne croient pas.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 121,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3054,
+        "text": "Et Ton Seigneur, c'est lui vraiment le Puissant, le Très Miséricordieux.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 122,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 321,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3055,
+        "text": "Les 'Aad traitèrent de menteurs les Envoyés.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 123,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3056,
+        "text": "Et quand Hûd, leur frère (contribule), leur dit: «Ne craindrez-vous pas [Allah]?»",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 124,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3057,
+        "text": "Je suis pour vous un messager digne de confiance,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 125,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3058,
+        "text": "Craignez Allah donc et obéissez-moi.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 126,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3059,
+        "text": "Et je ne vous demande pas de salaire pour cela; mon salaire n'incombe qu'au Seigneur de l'univers.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 127,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3060,
+        "text": "Bâtissez-vous par frivolité sur chaque colline un monument?",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 128,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3061,
+        "text": "Et édifiez-vous des châteaux comme si vous deviez demeurer éternellement?",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 129,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3062,
+        "text": "Et quand vous sévissez contre quelqu'un, vous le faites impitoyablement.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 130,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3063,
+        "text": "Craignez Allah donc et obéissez-moi.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 131,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3064,
+        "text": "Craignez Celui qui vous a pourvus de [toutes les bonnes choses] que vous connaissez,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 132,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3065,
+        "text": "qui vous a pourvus de bestiaux et d'enfants,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 133,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3066,
+        "text": "de jardins et de sources.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 134,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3067,
+        "text": "Je crains pour vous le châtiment d'un Jour terrible».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 135,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      },
+      {
+        "number": 3068,
+        "text": "Ils dirent: «Que tu nous exhortes ou pas, cela nous est parfaitement égal!",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 136,
+        "juz": 19,
+        "manzil": 5,
+        "page": 372,
+        "ruku": 322,
+        "hizbQuarter": 149,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "26": {
+        "number": 26,
+        "name": "سُورَةُ الشُّعَرَاءِ",
+        "englishName": "Ash-Shu'araa",
+        "englishNameTranslation": "The Poets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 227
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

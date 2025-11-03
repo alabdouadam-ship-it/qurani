@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 306,
+    "ayahs": [
+      {
+        "number": 2262,
+        "text": "(We said:) \"O John, hold fast to the Book;\" and We gave him wisdom right from boyhood,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 12,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2263,
+        "text": "And compassion from Us, and goodness. So he was devout,",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 13,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2264,
+        "text": "And kind to his parents, neither arrogant nor disobedient.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 14,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2265,
+        "text": "So peace on him the day he was born, the day he will die, and the day that he will be raised from the dead.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 15,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 264,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2266,
+        "text": "Commemorate Mary in the Book. When she withdrew from her family to a place in the East",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 16,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2267,
+        "text": "And took cover from them, We sent a spirit of Ours to her who appeared before her in the concrete form of a man.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 17,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2268,
+        "text": "\"I seek refuge in the Merciful from you, if you fear Him,\" she said.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 18,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2269,
+        "text": "He replied: \"I am only a messenger from your Lord (sent) to bestow a good son on you.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 19,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2270,
+        "text": "\"How can I have a son,\" she said, \"when no man has touched me, nor am I sinful?\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 20,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2271,
+        "text": "He said: \"Thus will it be. Your Lord said: 'It is easy for Me,' and that: 'We shall make him a sign for men and a blessing from Us.' This is a thing already decreed.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 21,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 122,
+        "sajda": false
+      },
+      {
+        "number": 2272,
+        "text": "When she conceived him she went away to a distant place.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 22,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2273,
+        "text": "The birth pangs led her to the trunk of a date-palm tree. \"Would that I had died before this,\" she said, \"and become a thing forgotten, unremembered.\"",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 23,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2274,
+        "text": "Then (a voice) called to her from below: \"Grieve not; your Lord has made a rivulet gush forth right below you.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 24,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      },
+      {
+        "number": 2275,
+        "text": "Shake the trunk of the date-palm tree, and it will drop ripe dates for you.",
+        "surah": {
+          "number": 19,
+          "name": "سُورَةُ مَرۡيَمَ",
+          "englishName": "Maryam",
+          "englishNameTranslation": "Mary",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 98
+        },
+        "numberInSurah": 25,
+        "juz": 16,
+        "manzil": 4,
+        "page": 306,
+        "ruku": 265,
+        "hizbQuarter": 123,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "19": {
+        "number": 19,
+        "name": "سُورَةُ مَرۡيَمَ",
+        "englishName": "Maryam",
+        "englishNameTranslation": "Mary",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 98
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

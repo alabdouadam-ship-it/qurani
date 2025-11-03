@@ -1,0 +1,249 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 293,
+    "ayahs": [
+      {
+        "number": 2134,
+        "text": "Et c'est en toute vérité que Nous l'avons fait descendre (le Coran), et avec la vérité il est descendu, et Nous ne t'avons envoyé qu'en annonciateur et avertisseur.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 105,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2135,
+        "text": "(Nous avons fait descendre) un Coran que Nous avons fragmenté, pour que tu le lises lentement aux gens. Et Nous l'avons fait descendre graduellement.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 106,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2136,
+        "text": "Dis: «Croyez-y ou n'y croyez pas. Ceux à qui la connaissance a été donnée avant cela, lorsqu'on le leur récite, tombent, prosternés, le menton contre terre",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 107,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2137,
+        "text": "et disent: «Gloire à notre Seigneur! La promesse de notre Seigneur est assurément accomplie».",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 108,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2138,
+        "text": "Et ils tombent sur leur menton, pleurant, et cela augmente leur humilité.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 109,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": {
+          "id": 4,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2139,
+        "text": "Dis: «Invoquez Allah, ou invoquez le Tout Miséricordieux. Quel que soit le nom par lequel vous l'appelez, Il a les plus beaux noms. Et dans ta Salât, ne récite pas à voix haute; et ne l'y abaisse pas trop, mais cherche le juste milieu entre les deux».",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 110,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2140,
+        "text": "Et dis: «Louange à Allah qui ne S'est jamais attribué d'enfant, qui n'a point d'associé en la royauté et qui n'a jamais eu de protecteur de l'humiliation». Et proclame hautement Sa grandeur.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 111,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 251,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2141,
+        "text": "Louange à Allah qui a fait descendre sur Son serviteur (Muhammad), le Livre, et n'y a point introduit de tortuosité (ambiguité)!",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 1,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2142,
+        "text": "[Un Livre] d'une parfaite droiture pour avertir d'une sévère punition venant de Sa part et pour annoncer aux croyants qui font de bonnes œuvres qu'il y aura pour eux une belle récompense.",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 2,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2143,
+        "text": "où ils demeureront éternellement,",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 3,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      },
+      {
+        "number": 2144,
+        "text": "et pour avertir ceux qui disent: «Allah S'est attribué un enfant.»",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 4,
+        "juz": 15,
+        "manzil": 4,
+        "page": 293,
+        "ruku": 252,
+        "hizbQuarter": 117,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      },
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

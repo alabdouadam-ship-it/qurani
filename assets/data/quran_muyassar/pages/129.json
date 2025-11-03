@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 129,
+    "ayahs": [
+      {
+        "number": 798,
+        "text": "ولو جعلنا الرسول المرسل إليهم مَلَكًا إذ لم يقتنعوا بمحمد صلى الله عليه وسلم، لجعلنا ذلك الملك في صورة البشر، حتى يستطيعوا السماع منه ومخاطبته؛ إذ ليس بإمكانهم رؤية الملك على صورته الملائكية، ولو جاءهم الملك بصورة رجل لاشتبه الأمر عليهم، كما اشتبه عليهم أمر محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 9,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 102,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 799,
+        "text": "ولمَّا كان طلبهم إنزال الملك على سبيل الاستهزاء بمحمد صلى الله عليه وسلم بيَّن الله تعالى له أن الاستهزاء بالرسل عليهم السلام ليس أمرا حادثا، بل قد وقع من الكفار السابقين مع أنبيائهم، فأحاط بهم العذاب الذي كانوا يهزؤون به وينكرون وقوعه.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 10,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 102,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 800,
+        "text": "قل لهم -أيها الرسول-: سيروا في الأرض ثم انظروا كيف أعقب الله المكذبين الهلاك والخزي؟ فاحذروا مثل مصارعهم، وخافوا أن يحلَّ بكم مثل الذي حل بهم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 11,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 801,
+        "text": "قل -أيها الرسول- لهؤلاء المشركين: لمن مُلكُ السموات والأرض وما فيهن؟ قل: هو لله كما تقرون بذلك وتعلمونه، فاعبدوه وحده. كتب الله على نفسه الرحمة فلا يعجل على عباده بالعقوبة. ليجمعنكم إلى يوم القيامة الذي لا شك فيه للحساب والجزاء. الذين أشركوا بالله أهلكوا أنفسهم، فهم لا يوحدون الله، ولا يصدقون بوعده ووعيده، ولا يقرون بنبوة محمد صلى الله عليه وسلم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 12,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 51,
+        "sajda": false
+      },
+      {
+        "number": 802,
+        "text": "ولله ملك كل شيء في السموات والأرض، سكن أو تحرك، خفي أو ظهر، الجميع عبيده وخلقه، وتحت قهره وتصرفه وتدبيره، وهو السميع لأقوال عباده، الحليم بحركاتهم وسرائرهم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 13,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 803,
+        "text": "قل -أيها الرسول- لهؤلاء المشركين مع الله تعالى غيره: أغير الله تعالى أتخذ وليًّا ونصيرًا، وهو خالق السموات والأرض وما فيهن، وهو الذي يرزق خلقه ولا يرزقه أحد؟ قل -أيها الرسول-: إني أُمِرْتُ أن أكون أول مَن خضع وانقاد له بالعبودية من هذه الأمة، ونهيت أن أكون من المشركين معه غيره.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 14,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 804,
+        "text": "قل -أيها الرسول- لهؤلاء المشركين مع الله غيره: إني أخاف إن عصيت ربي، فخالفت أمره، وأشركت معه غيره في عبادته، أن ينزل بي عذاب عظيم يوم القيامة.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 15,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 805,
+        "text": "من يصرف الله عنه ذلك العذاب الشديد فقد رحمه، وذلك الصرف هو الظفر البين بالنجاة من العذاب العظيم.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 16,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 806,
+        "text": "وإن يصبك الله تعالى -أيها الإنسان- بشيء يضرك كالفقر والمرض فلا كاشف له إلا هو، وإن يصبك بخير كالغنى والصحة فلا راد لفضله ولا مانع لقضائه، فهو -جل وعلا- القادر على كل شيء.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 17,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      },
+      {
+        "number": 807,
+        "text": "والله سبحانه هو الغالب القاهر فوق عباده؛ خضعت له الرقاب وذَلَّتْ له الجبابرة، وهو الحكيم الذي يضع الأشياء مواضعها وَفْق حكمت، الخبير الذي لا يخفى عليه شيء. ومن اتصف بهذه الصفات يجب ألا يشرك به. وفي هذه الآية إثبات الفوقية لله -تعالى- على جميع خلقه، فوقية مطلقة تليق بجلاله سبحانه.",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 18,
+        "juz": 7,
+        "manzil": 2,
+        "page": 129,
+        "ruku": 103,
+        "hizbQuarter": 52,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

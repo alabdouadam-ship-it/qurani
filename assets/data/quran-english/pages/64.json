@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 64,
+    "ayahs": [
+      {
+        "number": 402,
+        "text": "For to God belongs all that is in the heavens and the earth, and to God do all things return.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 109,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 52,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 403,
+        "text": "Of all the communities raised among men you are the best, enjoining the good, forbidding the wrong, and believing in God. If the people of the Book had come to believe it was best for them; but only some believe, and transgressors are many.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 110,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 404,
+        "text": "They will do you no harm but annoyance; and if they fight you they will only turn their backs, then no help will reach them.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 111,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 405,
+        "text": "Degraded they shall live wheresoever they be unless they make an alliance with God and alliance with men, for they have incurred the anger of God, and misery overhangs them. That is because they denied the signs of God and killed the prophets unjustly, and rebelled, and went beyond the limit.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 112,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 406,
+        "text": "Yet all of them are not alike. Among the people of the Book is a section upright, who recite the scriptures in the hours of the night and bow in adoration and pray,",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 113,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 407,
+        "text": "And believe in God and the Last Day, and enjoin what is good and forbid what is wrong, and who hasten to give in charity: they are among the upright and the doers of good.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 114,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      },
+      {
+        "number": 408,
+        "text": "And the good they do will not go unaccepted; for God is aware of those who keep away from evil.",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 115,
+        "juz": 4,
+        "manzil": 1,
+        "page": 64,
+        "ruku": 53,
+        "hizbQuarter": 26,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

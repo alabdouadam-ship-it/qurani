@@ -1,0 +1,340 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 520,
+    "ayahs": [
+      {
+        "number": 4666,
+        "text": "combien avons-Nous fait périr, avant eux, de générations bien plus fortes qu'eux. Ils avaient parcouru les contrées, cherchant [vainement] où fuir.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 36,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4667,
+        "text": "Il y a bien là un rappel pour quiconque a un cœur, prête l'oreille tout en étant témoin.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 37,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4668,
+        "text": "En effet Nous avons créé les cieux et la terre et ce qui existe entre eux en six jours, sans éprouver la moindre lassitude.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 38,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4669,
+        "text": "Endure donc ce qu'ils disent; et célèbre la louange de ton Seigneur avant le lever du soleil et avant [son] coucher;",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 39,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4670,
+        "text": "et célèbre Sa gloire, une partie de la nuit et à la suite des prosternations [prières].",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 40,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4671,
+        "text": "Et sois à l'écoute, le jour où le Crieur criera d'un endroit proche,",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 41,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4672,
+        "text": "le jour où ils entendront en toute vérité le Cri. Voilà le Jour de la Résurrection.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 42,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4673,
+        "text": "C'est Nous qui donnons la vie et donnons la mort, et vers Nous sera la destination,",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 43,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4674,
+        "text": "le jour où la terre se fendra, les [rejetant] précipitamment. Ce sera un rassemblement facile pour Nous.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 44,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4675,
+        "text": "Nous savons mieux ce qu'ils disent. Tu n'as pas pour mission d'exercer sur eux une contrainte. Rappelle donc, par le Coran celui qui craint Ma menace.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 45,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 454,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4676,
+        "text": "Par les vents qui éparpillent!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 1,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4677,
+        "text": "Par les porteurs de fardeaux!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 2,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4678,
+        "text": "Par les glisseurs agiles!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 3,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4679,
+        "text": "Par les distributeurs selon un commandement!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 4,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4680,
+        "text": "Ce qui vous est promis est certainement vrai.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 5,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      },
+      {
+        "number": 4681,
+        "text": "Et la Rétribution arrivera inévitablement.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 6,
+        "juz": 26,
+        "manzil": 7,
+        "page": 520,
+        "ruku": 455,
+        "hizbQuarter": 208,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "50": {
+        "number": 50,
+        "name": "سُورَةُ قٓ",
+        "englishName": "Qaaf",
+        "englishNameTranslation": "The letter Qaaf",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      },
+      "51": {
+        "number": 51,
+        "name": "سُورَةُ الذَّارِيَاتِ",
+        "englishName": "Adh-Dhaariyat",
+        "englishNameTranslation": "The Winnowing Winds",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

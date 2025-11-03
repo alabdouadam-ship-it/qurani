@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 276,
+    "ayahs": [
+      {
+        "number": 1981,
+        "text": "God has given you homes to live in, and tents (made) from the hides of cattle convenient for days of travelling and halting; and from their wool and fur and hair you make domestic articles and goods that last a certain time.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 80,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1982,
+        "text": "God has given you of things created, shade, and places of shelter in the mountains, and clothes for protection against the heat, and coats (of mail) for defence during war. He thus bestows His favours on you so that you may be grateful to Him.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 81,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1983,
+        "text": "If they still turn away, your duty is to warn them in clear terms.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 82,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1984,
+        "text": "They do know the favours of God, and yet they deny them, for most of them are not grateful.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 83,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1985,
+        "text": "The day We shall call a witness from every people, the unbelievers will not be allowed to make excuses.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 84,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1986,
+        "text": "And when the wicked shall face the torment it will not be decreased, nor will they be reprieved.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 85,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1987,
+        "text": "When the idolaters see their partners they will call out: \"O our Lord, these are the partners we invoked instead of You;\" but they will retort: \"You are liars.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 86,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1988,
+        "text": "They will offer submission to God that Day, and the lies they fabricated will not be of the least avail.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 87,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

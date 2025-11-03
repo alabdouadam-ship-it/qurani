@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 348,
+    "ayahs": [
+      {
+        "number": 2763,
+        "text": "In fact We have sent the truth to them, but they are liars.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 90,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 299,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2764,
+        "text": "God has not begotten a son, nor is there any god besides Him. Had this been so, each god would have taken away what he had created with him, and some would have risen over the others. God is much too glorious for what they attribute (to Him)!",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 91,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 299,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2765,
+        "text": "The knower of the absent and the present, too exalted is He for what they associate (with Him)!",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 92,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 299,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2766,
+        "text": "Say: \"O Lord, if I am made to see what has been promised them,",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 93,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2767,
+        "text": "Then do not, O Lord, put me among the sinners.\"",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 94,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2768,
+        "text": "We have certainly the power to make you see what We have promised them.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 95,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2769,
+        "text": "Dispel evil with what is good. We know well what they attribute (to Us).",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 96,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2770,
+        "text": "Say: \"My Lord, I seek refuge in You from the evil promptings of the devils.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 97,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2771,
+        "text": "I seek refuge in You lest they come to me.\"",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 98,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2772,
+        "text": "(But the unbelievers will persist) until when death comes to one of them he will say: \"O Lord, send me back again",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 99,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2773,
+        "text": "That I may do some good I did not do (in the world).\" Not so. These are only words he utters. Behind them lies the intervening barrier (stretching) to the day of their resurrection.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 100,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2774,
+        "text": "When the trumpet blast is sounded no ties of lineage will hold among them, nor will they ask after one another.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 101,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2775,
+        "text": "Only those whose scales are heavier in the balance will find happiness.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 102,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2776,
+        "text": "But those whose scales are lighter will perish and abide in Hell for ever.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 103,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      },
+      {
+        "number": 2777,
+        "text": "Their faces will be scorched by flames, and they will grin and scowl within it.",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 104,
+        "juz": 18,
+        "manzil": 4,
+        "page": 348,
+        "ruku": 300,
+        "hizbQuarter": 139,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

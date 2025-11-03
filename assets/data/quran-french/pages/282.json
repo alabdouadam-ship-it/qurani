@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 282,
+    "ayahs": [
+      {
+        "number": 2030,
+        "text": "Gloire et Pureté à Celui qui de nuit, fit voyager Son serviteur [Muhammad], de la Mosquée Al-Harâm à la Mosquée Al-Aqsâ dont Nous avons béni l'alentour, afin de lui faire voir certaines de Nos merveilles. C'est Lui, vraiment, qui est l'Audient, le Clairvoyant.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 1,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2031,
+        "text": "Et Nous avions donné à Moïse le Livre dont Nous avions fait un guide pour les Enfants d'Israël: «Ne prenez pas de protecteur en dehors de Moi».",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 2,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2032,
+        "text": "[O vous], les descendants de ceux que Nous avons transportés dans l'arche avec Noé. Celui-ci était vraiment un serviteur fort reconnaissant.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 3,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2033,
+        "text": "Nous avions décrété pour les Enfants d'Israël, (et annoncé) dans le Livre: «Par deux fois vous sèmerez la corruption sur terre et vous allez transgresser d'une façon excessive».",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 4,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2034,
+        "text": "Lorsque vint l'accomplissement de la première de ces deux [prédictions,] Nous envoyâmes contre vous certains de Nos serviteurs doués d'une force terrible, qui pénétrèrent à l'intérieur des demeures. Et la prédiction fut accomplie.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 5,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2035,
+        "text": "Ensuite, Nous vous donnâmes la revanche sur eux; et Nous vous renforçâmes en biens et en enfants. Et Nous vous fîmes [un peuple] plus nombreux:",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 6,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2036,
+        "text": "«Si vous faites le bien; vous le faites à vous-mêmes; et si vous faites le mal, vous le faites à vous [aussi]». Puis, quand vint la dernière [prédiction,] ce fut pour qu'ils affligent vos visages et entrent dans la Mosquée comme ils y étaient entrés la première fois, et pour qu'ils détruisent complètement ce dont ils se sont emparés.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 7,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

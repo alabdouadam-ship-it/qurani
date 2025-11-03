@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 269,
+    "ayahs": [
+      {
+        "number": 1916,
+        "text": "He placed stablisers in the earth so that while it revolves you live undisturbed, and rivers and tracks so that you may find your way;",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 15,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1917,
+        "text": "As well as many other signs, as by the stars (you) find direction.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 16,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1918,
+        "text": "So, could one who creates be like one who cannot? Will you not then contemplate?",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 17,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1919,
+        "text": "If you count the favours of God you will not be able to calculate. Assuredly God is forgiving and kind.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 18,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1920,
+        "text": "God knows what you hide and disclose.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 19,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1921,
+        "text": ", As for those they call besides God, they cannot create a thing, and have themselves been created.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 20,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1922,
+        "text": "Dead, without life they are, and do not know when they will be raised.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 21,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 225,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1923,
+        "text": "Your God is one God. But the hearts of those who believe not in the life to come are filled with denial, and they are puffed up with pride.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 22,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1924,
+        "text": "Surely God knows what they hide and what they disclose. He certainly does not love the proud.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 23,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1925,
+        "text": "For when they are asked: \"What has your Lord sent down?\" they say: \"Tales of long ago.\"",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 24,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1926,
+        "text": "On the Day of Resurrection they will carry their own burden and some of the load of those they have led astray without any knowledge. Oh, how evil a burden they will carry!",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 25,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 226,
+        "hizbQuarter": 107,
+        "sajda": false
+      },
+      {
+        "number": 1927,
+        "text": "Those who have gone before them had also conspired; then God uprooted their structure from its foundation; the roof fell over them from above, and punishment came upon them from somewhere they did not suspect.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 26,
+        "juz": 14,
+        "manzil": 3,
+        "page": 269,
+        "ruku": 227,
+        "hizbQuarter": 107,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

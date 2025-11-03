@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 501,
+    "ayahs": [
+      {
+        "number": 4496,
+        "text": "أفرأيت -أيها الرسول- من اتخذ هواه إلهًا له، فلا يهوى شيئًا إلا فَعَله، وأضلَّه الله بعد بلوغ العلم إليه وقيام الحجة عليه، فلا يسمع مواعظ الله، ولا يعتبر بها، وطبع على قلبه، فلا يعقل به شيئًا، وجعل على بصره غطاء، فلا يبصر به حجج الله؟ فمن يوفقه لإصابة الحق والرشد بعد إضلال الله إياه؟ أفلا تذكرون -أيها الناس- فتعلموا أنَّ مَن فَعَل الله به ذلك فلن يهتدي أبدًا، ولن يجد لنفسه وليًا مرشدًا؟ والآية أصل في التحذير من أن يكون الهوى هو الباعث للمؤمنين على أعمالهم.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 23,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 436,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4497,
+        "text": "وقال هؤلاء المشركون: ما الحياة إلا حياتنا الدنيا التي نحن فيها، لا حياة سواها؛ تكذيبا منهم بالبعث بعد الممات، وما يهلكنا إلا مرُّ الليالي والأيام وطول العمر؛ إنكارًا منهم أن يكون لهم رب يفنيهم ويهلكهم، وما لهؤلاء المشركين من علم بذلك، ما هم إلا يتكلمون بالظن والوهم والخيال.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 24,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 436,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4498,
+        "text": "إذا تتلى على هؤلاء المشركين المكذبين بالبعث آياتنا واضحات، لم يكن لهم حجة إلا قولهم للرسول محمد: أحْي أنت والمؤمنون معك آباءنا الذين قد هلكوا، إن كنتم صادقين فيما تقولون.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 25,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 436,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4499,
+        "text": "قل -أيها الرسول- لهؤلاء المشركين المكذبين بالبعث: الله سبحانه وتعالى يحييكم في الدنيا ما شاء لكم الحياة، ثم يميتكم فيها، ثم يجمعكم جميعا أحياء إلى يوم القيامة لا شك فيه، ولكن أكثر الناس لا يعلمون قدرة الله على إماتتهم ثم بعثهم يوم القيامة.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 26,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 436,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4500,
+        "text": "ولله سبحانه سلطان السموات السبع والأرض خَلْقًا ومُلْكًا وعبودية. ويوم تجيء الساعة التي يبعث فيها الموتى من قبورهم ويحاسبون، يخسر الكافرون بالله الجاحدون بما أنزله على رسوله من الآيات البينات والدلائل الواضحات.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 27,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4501,
+        "text": "وترى -أيها الرسول- يوم تقوم الساعة أهل كل ملة ودين جاثمين على رُكَبهم، كل أمة تُدْعى إلى كتاب أعمالها، ويقال لهم: اليوم تُجزون ما كنتم تعملون من خير أو شر.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 28,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4502,
+        "text": "هذا كتابنا ينطق عليكم بجميع أعمالكم من غير زيادة ولا نقص، إنَّا كنا نأمر الحفظة أن تكتب أعمالكم عليكم.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 29,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4503,
+        "text": "فأما الذين آمنوا بالله ورسوله في الدنيا، وامتثلوا أوامره واجتنبوا نواهيه، فيدخلهم ربهم في جنته برحمته، ذلك الدخول هو الفوز المبين الذي لا فوز بعده.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 30,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4504,
+        "text": "وأما الذين جحدوا أن الله هو الإله الحق وكذَّبوا رسله ولم يعملوا بشرعه، فيقال لهم تقريعًا وتوبيخًا: أفلم تكن آياتي في الدنيا تتلى عليكم، فاستكبرتم عن استماعها والإيمان بها، وكنتم قومًا مشركين تكسِبون المعاصي ولا تؤمنون بثواب ولا عقاب؟",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 31,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4505,
+        "text": "وإذا قيل لكم: إن وعد الله ببعث الناس من قبورهم حق، والساعة لا شك فيها، قلتم: ما ندري ما الساعة؟ وما نتوقع وقوعها إلا توهمًا، وما نحن بمتحققين أن الساعة آتية.",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 32,
+        "juz": 25,
+        "manzil": 6,
+        "page": 501,
+        "ruku": 437,
+        "hizbQuarter": 200,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "45": {
+        "number": 45,
+        "name": "سُورَةُ الجَاثِيَةِ",
+        "englishName": "Al-Jaathiya",
+        "englishNameTranslation": "Crouching",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 37
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

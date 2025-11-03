@@ -1,0 +1,310 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 603,
+    "ayahs": [
+      {
+        "number": 6208,
+        "text": "SAY: \"O YOU unbelievers,",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6209,
+        "text": "I do not worship what you worship,",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6210,
+        "text": "Nor do you worship who I worship,",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6211,
+        "text": "Nor will I worship what you worship,",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6212,
+        "text": "Nor will you worship who I worship:",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6213,
+        "text": "To you your way, to me my way",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6214,
+        "text": "WHEN THE HELP of God arrives and victory,",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6215,
+        "text": "And you see men enter God's discipline horde on horde,",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6216,
+        "text": "Then glorify your Lord and seek His forgiveness. Verily He is relenting.",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6217,
+        "text": "DESTROYED WILL BE the hands of Abu Lahab, and he himself will perish.",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6218,
+        "text": "Of no avail shall be his wealth, nor what he has acquired.",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6219,
+        "text": "He will be roasted in the fire,",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6220,
+        "text": "And his wife, the portress of fire wood,",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6221,
+        "text": "Will have a strap of fibre rope around her neck.",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "109": {
+        "number": 109,
+        "name": "سُورَةُ الكَافِرُونَ",
+        "englishName": "Al-Kaafiroon",
+        "englishNameTranslation": "The Disbelievers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 6
+      },
+      "110": {
+        "number": 110,
+        "name": "سُورَةُ النَّصۡرِ",
+        "englishName": "An-Nasr",
+        "englishNameTranslation": "Divine Support",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 3
+      },
+      "111": {
+        "number": 111,
+        "name": "سُورَةُ المَسَدِ",
+        "englishName": "Al-Masad",
+        "englishNameTranslation": "The Palm Fibre",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 5
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

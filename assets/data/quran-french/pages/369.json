@@ -1,0 +1,427 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 369,
+    "ayahs": [
+      {
+        "number": 2972,
+        "text": "afin que nous suivions les magiciens, si ce sont eux les vainqueurs?»",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 40,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2973,
+        "text": "Puis, lorsque les magiciens arrivèrent, ils dirent à Pharaon: «Y aura-t-il vraiment une récompense pour nous, si nous sommes les vainqueurs?»",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 41,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2974,
+        "text": "Il dit: «Oui, bien sûr, vous serez alors parmi mes proches!»",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 42,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2975,
+        "text": "Moïse leur dit: «Jetez ce que vous avez à jeter».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 43,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2976,
+        "text": "Ils jetèrent donc leurs cordes et leurs bâtons et dirent: «Par la puissance de Pharaon!... C'est nous qui serons les vainqueurs».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 44,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2977,
+        "text": "Puis Moïse jeta son bâton, et voilà qu'il happait ce qu'ils avaient fabriqué.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 45,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2978,
+        "text": "Alors les magiciens tombèrent prosternés,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 46,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2979,
+        "text": "disant: «Nous croyons au Seigneur de l'univers,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 47,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2980,
+        "text": "Le Seigneur de Moïse et d'Aaron».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 48,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2981,
+        "text": "[Pharaon] dit: «Avez-vous cru en lui avant que je ne vous le permette? En vérité, c'est lui votre chef, qui vous a enseigné la magie! Eh bien, vous saurez bientôt! Je vous couperai, sûrement, mains et jambes opposées, et vous crucifierai tous».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 49,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2982,
+        "text": "Ils disent: «Il n'y a pas de mal! Car c'est vers notre Seigneur que nous retournerons.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 50,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2983,
+        "text": "Nous convoitons que notre Seigneur nous pardonne nos fautes pour avoir été les premiers à croire».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 51,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 147,
+        "sajda": false
+      },
+      {
+        "number": 2984,
+        "text": "Et Nous révélâmes à Moïse [ceci]: «Pars de nuit avec Mes serviteurs, car vous serez poursuivis».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 52,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 318,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2985,
+        "text": "Puis, Pharaon envoya des rassembleurs [dire] dans les villes:",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 53,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2986,
+        "text": "«Ce sont, en fait, une bande peu nombreuse,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 54,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2987,
+        "text": "mais ils nous irritent,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 55,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2988,
+        "text": "tandis que nous sommes tous vigilants».",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 56,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2989,
+        "text": "Ainsi, Nous les fîmes donc sortir des jardins, des sources,",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 57,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2990,
+        "text": "des trésors et d'un lieu de séjour agréable.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 58,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2991,
+        "text": "Il en fut ainsi! Et Nous les donnâmes en héritage aux enfants d'Israël.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 59,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2992,
+        "text": "Au lever du soleil, ils les poursuivirent.",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 60,
+        "juz": 19,
+        "manzil": 5,
+        "page": 369,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "26": {
+        "number": 26,
+        "name": "سُورَةُ الشُّعَرَاءِ",
+        "englishName": "Ash-Shu'araa",
+        "englishNameTranslation": "The Poets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 227
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

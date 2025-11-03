@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 13,
+    "ayahs": [
+      {
+        "number": 91,
+        "text": "Et rappelez-vous, lorsque Nous obtînmes de vous l'engagement de ne pas vous verser le sang, [par le meurtre] de ne pas vous expulser les uns les autres de vos maisons. Puis vous y avez souscrit avec votre propre témoignage.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 84,
+        "juz": 1,
+        "manzil": 1,
+        "page": 13,
+        "ruku": 11,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 92,
+        "text": "Quoique ainsi engagés, voilà que vous vous entretuez, que vous expulsez de leurs maisons une partie d'entre vous contre qui vous prêtez main forte par péché et agression. Mais quelle contradiction! Si vos coreligionnaires vous viennent captifs vous les rançonnez alors qu'il vous était interdit de les expulser (de chez eux). Croyez-vous donc en une partie du Livre et rejetez-vous le reste? Ceux d'entre vous qui agissent de la sorte ne méritent que l'ignominie dans cette vie, et au Jour de la Résurrection ils seront refoulés au plus dur châtiment, et Allah n'est pas inattentif à ce que vous faites.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 85,
+        "juz": 1,
+        "manzil": 1,
+        "page": 13,
+        "ruku": 11,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 93,
+        "text": "Voilà ceux qui échangent la vie présente contre la vie future. Eh bien, leur châtiment ne sera pas diminué. Et ils ne seront point secourus.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 86,
+        "juz": 1,
+        "manzil": 1,
+        "page": 13,
+        "ruku": 11,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 94,
+        "text": "Certes, Nous avons donné le Livre à Moïse; Nous avons envoyé après lui des prophètes successifs. Et Nous avons donné des preuves à Jésus fils de Marie, et Nous l'avons renforcé du Saint-Esprit. Est-ce qu'à chaque fois, qu'un Messager vous apportait des vérités contraires à vos souhaits vous vous enfliez d'orgueil? Vous traitiez les uns d'imposteurs et vous tuiez les autres.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 87,
+        "juz": 1,
+        "manzil": 1,
+        "page": 13,
+        "ruku": 12,
+        "hizbQuarter": 5,
+        "sajda": false
+      },
+      {
+        "number": 95,
+        "text": "Et ils dirent: «Nos cœurs sont enveloppés et impénétrables» - Non mais Allah les a maudits à cause de leur infidélité, leur foi est donc médiocre.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 88,
+        "juz": 1,
+        "manzil": 1,
+        "page": 13,
+        "ruku": 12,
+        "hizbQuarter": 5,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

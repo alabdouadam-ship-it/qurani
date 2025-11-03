@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 383,
+    "ayahs": [
+      {
+        "number": 3223,
+        "text": "Who creates first then reverts it? And who gives you provision from the heavens and the earth? Is there any other god along with God? Tell them: \"Bring your proof, if you are truthful.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 64,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 331,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3224,
+        "text": "Say: \"No one in the heavens and the earth has knowledge of the unknown except God, nor can they know when they will be raised again.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 65,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 331,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3225,
+        "text": "Still less do they comprehend the life to come. In fact they are in doubt about it. Still more, they are blind to it.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 66,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 331,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3226,
+        "text": "Those who do not believe, say: \"When we and our fathers have turned to dust, how shall we be raised again?",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 67,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3227,
+        "text": "Indeed we and our fathers had been promised this before. It is nothing but the earlier people's lore.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 68,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3228,
+        "text": "Say: \"Travel in the land and see how (bad) was the end of sinners.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 69,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3229,
+        "text": "Do not grieve over them, and do not be distressed by what they contrive.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 70,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3230,
+        "text": "Yet they say: \"When will this promise come to pass? (Tell Us) if you speak the truth.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 71,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3231,
+        "text": "Say: \"Perhaps some of what you wish to hasten is right behind you.\"",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 72,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3232,
+        "text": "Verily your Lord is gracious to men, though most men are ungrateful.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 73,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3233,
+        "text": "Verily your Lord knows what lies hidden in their breasts and what they disclose.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 74,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3234,
+        "text": "There is nothing of the hidden in the heavens and the earth that is not recorded in the luminous Book.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 75,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3235,
+        "text": "Indeed this Qur'an explains to the children of Israel much of what they are at variance.",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 76,
+        "juz": 20,
+        "manzil": 5,
+        "page": 383,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

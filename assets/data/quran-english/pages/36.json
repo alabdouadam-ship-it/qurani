@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 36,
+    "ayahs": [
+      {
+        "number": 232,
+        "text": "God will not call you to account for that which is senseless in your oaths, but only for what is in your hearts; for God is forgiving and forbearing.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 225,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 29,
+        "hizbQuarter": 14,
+        "sajda": false
+      },
+      {
+        "number": 233,
+        "text": "Those who swear to keep away from their wives (with intent of divorcing them) have four months of grace; then if they reconcile (during this period), surely God is forgiving and kind.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 226,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 29,
+        "hizbQuarter": 14,
+        "sajda": false
+      },
+      {
+        "number": 234,
+        "text": "And if they are bent on divorce, God hears all and knows everything.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 227,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 29,
+        "hizbQuarter": 14,
+        "sajda": false
+      },
+      {
+        "number": 235,
+        "text": "Women who are divorced have to wait for three monthly periods, and if they believe in God and the Last Day they must not hide unlawfully what God has formed within their wombs. Their husbands would do well to take them back in that case, if they wish to be reconciled. Women also have recognised rights as men have, though men have an edge over them. But God is all-mighty and all-wise.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 228,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 29,
+        "hizbQuarter": 14,
+        "sajda": false
+      },
+      {
+        "number": 236,
+        "text": "Divorce is (revokable) two times (after pronouncement), after which (there are two ways open for husbands), either (to) keep (the wives) honourably, or part with them in a decent way. You are not allowed to take away the least of what you have given your wives, unless both of you fear that you would not be able to keep within the limits set by God. If you fear you cannot maintain the bounds fixed by God, there will be no blame on either if the woman redeems herself. Do not exceed the limits of God, for those who exceed the bounds set by God are transgressors.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 229,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 30,
+        "hizbQuarter": 14,
+        "sajda": false
+      },
+      {
+        "number": 237,
+        "text": "If a man divorces her again (a third time), she becomes unlawful for him (and he cannot remarry her) until she has married another man. Then if he divorces her there is no harm if the two unite again if they think they will keep within the bounds set by God and made clear for those who understand.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 230,
+        "juz": 2,
+        "manzil": 1,
+        "page": 36,
+        "ruku": 30,
+        "hizbQuarter": 14,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

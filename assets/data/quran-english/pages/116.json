@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 116,
+    "ayahs": [
+      {
+        "number": 715,
+        "text": "Later, in the train (of the prophets), We sent Jesus, son of Mary, confirming the Torah which had been (Sent down) before him, and gave him the Gospel containing guidance and light, which corroborated the earlier Torah, a guidance and warning for those who preserve themselves from evil and follow the straight path.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 46,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 716,
+        "text": "Let the people of the Gospel judge by what has been revealed in it by God. And those who do not judge in accordance with what God has revealed are transgressors.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 47,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 717,
+        "text": "And to you We have revealed the Book containing the truth, confirming the earlier revelations, and preserving them (from change and corruption). So judge between them by what has been revealed by God, and do not follow their whims, side-stepping the truth that has reached you. To each of you We have given a law and a way and a pattern of life. If God had pleased He could surely have made you one people (professing one faith). But He wished to try and test you by that which He gave you. So try to excel in good deeds. To Him will you all return in the end, when He will tell you of what you were at variance.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 48,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 718,
+        "text": "Judge between them in the light of what has been revealed by God, and do not follow their whims, and beware of them lest they lead you away from the guidance sent down to you by God. If they turn away, then know that God is sure to punish them for some of their sins; and many of them are transgressors.",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 49,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      },
+      {
+        "number": 719,
+        "text": "Do they seek a judgement of the days of pagan ignorance? But who could be a better judge than God for those who are firm in their faith?",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 50,
+        "juz": 6,
+        "manzil": 2,
+        "page": 116,
+        "ruku": 92,
+        "hizbQuarter": 46,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

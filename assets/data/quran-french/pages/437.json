@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 437,
+    "ayahs": [
+      {
+        "number": 3679,
+        "text": "L'aveugle et celui qui voit ne sont pas semblables,",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 19,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3680,
+        "text": "ni les ténèbres et la lumière,",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 20,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3681,
+        "text": "ni l'ombre et la chaleur ardente.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 21,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3682,
+        "text": "De même, ne sont pas semblables les vivants et les morts. Allah fait entendre qui Il veut, alors que toi [Muhammad], tu ne peux faire entendre ceux qui sont dans les tombeaux.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 22,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3683,
+        "text": "Tu n'es qu'un avertisseur.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 23,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3684,
+        "text": "Nous t'avons envoyé avec la Vérité en tant qu'annonciateur et avertisseur. Il n'est pas une nation qui n'ait déjà eu un avertisseur.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 24,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3685,
+        "text": "Et s'ils te traitent de menteur, eh bien, ceux d'avant eux avaient traité (leurs Messagers) de menteurs, cependant que leurs Messagers leur avaient apporté les preuves, les Ecrits et le Livre illuminant.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 25,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3686,
+        "text": "Puis J'ai saisi ceux qui ont mécru. Et quelle réprobation fut la Mienne!",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 26,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 378,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3687,
+        "text": "N'as-tu pas vu que, du ciel, Allah fait descendre l'eau? Puis Nous en faisons sortir des fruits de couleurs différentes. Et dans les montagnes, il y a des sillons blancs et rouges, de couleurs différentes, et des roches excessivement noires.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 27,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3688,
+        "text": "Il y a pareillement des couleurs différentes, parmi les hommes, les animaux, et les bestiaux. Parmi Ses serviteurs, seuls les savants craignent Allah. Allah est, certes, Puissant et Pardonneur.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 28,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3689,
+        "text": "Ceux qui récitent le Livre d'Allah, accomplissent la Salât, et dépensent, en secret et en public de ce que Nous leur avons attribué, espèrent ainsi faire un commerce qui ne périra jamais,",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 29,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3690,
+        "text": "afin [qu'Allah] les récompense pleinement et leur ajoute de Sa grâce. Il est Pardonneur et Reconnaissant.",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 30,
+        "juz": 22,
+        "manzil": 5,
+        "page": 437,
+        "ruku": 379,
+        "hizbQuarter": 175,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "35": {
+        "number": 35,
+        "name": "سُورَةُ فَاطِرٍ",
+        "englishName": "Faatir",
+        "englishNameTranslation": "The Originator",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

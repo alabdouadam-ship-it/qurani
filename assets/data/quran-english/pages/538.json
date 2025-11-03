@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 538,
+    "ayahs": [
+      {
+        "number": 5079,
+        "text": "It is He who created the heavens and the earth in six stages, then assumed the throne. He knows whatsoever enters the earth, and whatsoever comes out of it, and what comes down from the sky and what goes up to it; and He is with you wheresoever you may be, and He perceives whatsoever you do.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5080,
+        "text": "His is the kingdom of the heavens and the earth, and all things will go back to Him.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5081,
+        "text": "He turns night into day, and turns day into night; and He knows whatsoever is in your hearts.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5082,
+        "text": "Believe in God and His Apostle, and spend of what He has given you as His trustee. And those of you who believe and spend in charity will have a great reward.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5083,
+        "text": "What has come upon you that you believe not in God, though the Prophet is calling you to believe in your Lord? And He has already taken your pledge, if you are believers.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5084,
+        "text": "It is He who sends down splendent revelations to His votary that he may take you out of darkness into light; for surely God is gracious and kind to you.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5085,
+        "text": "What has come upon you that you do not spend in the way of God, when the heritage of the heavens and the earth belongs to God? Those of you who spent before the victory and fought, are not equal (to those who did not). They are higher in position than those who spent after (the victory) and fought. To each one God has made the promise of excellence, for God is aware of all you do.",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 472,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5086,
+        "text": "Who will give a goodly loan to God which He will double for him, and be for him a splendid reward?",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 538,
+        "ruku": 473,
+        "hizbQuarter": 215,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "57": {
+        "number": 57,
+        "name": "سُورَةُ الحَدِيدِ",
+        "englishName": "Al-Hadid",
+        "englishNameTranslation": "The Iron",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

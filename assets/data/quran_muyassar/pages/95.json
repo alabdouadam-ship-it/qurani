@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 95,
+    "ayahs": [
+      {
+        "number": 595,
+        "text": "وإذا كنت -أيها النبي- في ساحة القتال، فأردت أن تصلي بهم، فلتقم جماعة منهم معك للصلاة، وليأخذوا سلاحهم، فإذا سجد هؤلاء فلتكن الجماعة الأخرى من خلفكم في مواجهة عدوكم، وتتم الجماعة الأولى ركعتهم الثانية ويُسلِّمون، ثم تأتي الجماعة الأخرى التي لم تبدأ الصلاة فليأتموا بك في ركعتهم الأولى، ثم يكملوا بأنفسهم ركعتهم الثانية، وليحذروا مِن عدوهم وليأخذوا أسلحتهم. ودَّ الجاحدون لدين الله أن تغفُلوا عن سلاحكم وزادكم؛ ليحملوا عليكم حملة واحلة فيقضوا عليكم، ولا إثم عليكم حيننذ إن كان بكم أذى من مطر، أو كنتم في حال مرض، أن تتركوا أسلحتكم، مع أخذ الحذر. إن الله تعالى أعدَّ للجاحدين لدينه عذابًا يهينهم، ويخزيهم.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 102,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 596,
+        "text": "فإذا أدَّيتم الصلاة، فأديموا ذكر الله في جميع أحوالكم، فإذا زال الخوف فأدُّوا الصلاة كاملة، ولا تفرِّطوا فيها فإنها واجبة في أوقات معلومة في الشرع.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 103,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 597,
+        "text": "ولا تضعفوا في طلب عدوكم وقتاله، إن تكونوا تتألمون من القتال وآثاره، فأعداؤكم كذلك يتألمون منه أشد الألم، ومع ذلك لا يكفون عن قتالكم، فأنتم أولى بذلك منهم، لما ترجونه من الثواب والنصر والتأييد، وهم لا يرجون ذلك. وكان الله عليمًا بكل أحوالكم، حكيمًا في أمره وتدبيره.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 104,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 598,
+        "text": "إنا أنزلنا إليك -أيها الرسول- القرآن مشتملا على الحق؛ لتفصل بين الناس جميعًا بما أوحى الله إليك، وبَصَّرك به، فلا تكن للذين يخونون أنفسهم -بكتمان الحق- مدافعًا عنهم بما أيدوه لك من القول المخالف للحقيقة.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 105,
+        "juz": 5,
+        "manzil": 1,
+        "page": 95,
+        "ruku": 77,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

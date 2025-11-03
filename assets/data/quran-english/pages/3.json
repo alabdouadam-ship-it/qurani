@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 3,
+    "ayahs": [
+      {
+        "number": 13,
+        "text": "As for those who deny, it is all the same if you warn them or not, they will not believe.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 6,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 14,
+        "text": "God has sealed their hearts and ears, and veiled their eyes. For them is great deprivation.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 7,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 2,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 15,
+        "text": "And there are some who, though they say: \"We believe in God and the Last Day,\" (in reality) do not believe.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 8,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 16,
+        "text": "They (try to) deceive God and those who believe, yet deceive none but themselves although they do not know.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 9,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 17,
+        "text": "Sick are their hearts, and God adds to their malady. For them is suffering for they lie.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 10,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 18,
+        "text": "When asked to desist from spreading corruption in the land they say: \"Why, we are reformers.\"",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 11,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 19,
+        "text": "Yet they are surely mischief-mongers, even though they do not know.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 12,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 20,
+        "text": "When asked to believe as others do, they say: \"Should we believe like fools?\" And yet they are the fools, even though they do not know.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 13,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 21,
+        "text": "When they meet the faithful they say: \"We believe;\" but when alone with the devils (their fellows), they say: \"We are really with you; we were joking.\"",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 14,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 22,
+        "text": "But God will turn the joke against them and allow them to sink deeper into evil and wander perplexed in their wickedness.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 15,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      },
+      {
+        "number": 23,
+        "text": "They are indeed those who bartered away good guidance for error and gained nothing from the deal, nor found the right way.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 16,
+        "juz": 1,
+        "manzil": 1,
+        "page": 3,
+        "ruku": 3,
+        "hizbQuarter": 1,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

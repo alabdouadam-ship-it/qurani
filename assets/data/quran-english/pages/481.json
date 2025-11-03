@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 481,
+    "ayahs": [
+      {
+        "number": 4257,
+        "text": "It is among His signs that the earth you see all barren and desolate begins to stir and sprout when We send down rain upon it. Surely He who gives it life will also give life to the dead. Indeed He has power over everything.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 39,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4258,
+        "text": "Surely those who slander Our signs are not hidden from Us. Then, is he better who will be cast into Hell, or he who will come out safe on the Day of Resurrection? Do whatever you will, He sees whatsoever you do.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 40,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4259,
+        "text": "Those who reject the Reminder when it has come to them (should know) that it is a Book inviolate.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 41,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4260,
+        "text": "Falsehood cannot enter it from any side: It's a revelation from the all-wise and praiseworthy (God).",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 42,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4261,
+        "text": "Nothing is said to you which had not been said to other apostles before you. Surely your Lord is the lord of forgiveness, but also the lord of severe retribution.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 43,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4262,
+        "text": "If We had made it a discourse in an obscure tongue, they would have said: \"Why were its revelations not expounded distinctly? A foreign tongue and an Arab (audience)?\" Say: \"For those who believe it is a guidance and a healing; but for those who do not believe it is a deafness in the ears, and a blindness. They are those one calls to from far away.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 44,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 417,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4263,
+        "text": "Verily We gave Moses the Book; but they began to differ about it. If the Word of your Lord had not preceded it the matter would have been settled between them. They are still in doubt about it and uneasy.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 45,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 418,
+        "hizbQuarter": 192,
+        "sajda": false
+      },
+      {
+        "number": 4264,
+        "text": "Whoever does good does so for himself, and whoever does wrong bears the guilt thereof. Your Lord does no wrong to His creatures.",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 46,
+        "juz": 24,
+        "manzil": 6,
+        "page": 481,
+        "ruku": 418,
+        "hizbQuarter": 192,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "41": {
+        "number": 41,
+        "name": "سُورَةُ فُصِّلَتۡ",
+        "englishName": "Fussilat",
+        "englishNameTranslation": "Explained in detail",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

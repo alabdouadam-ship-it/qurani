@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 282,
+    "ayahs": [
+      {
+        "number": 2030,
+        "text": "GLORY TO HIM who took His votary to a wide and open land from the Sacred Mosque (at Makkah) to the distant Mosque whose precincts We have blessed, that We may show him some of Our signs. Verily He is all-hearing and all-seeing.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 1,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2031,
+        "text": "We gave Moses the Book, and made it a guidance for the children of Israel that they should not take another protector apart from Me.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 2,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2032,
+        "text": "O you, the offspring of those We bore (in the ark) with Noah, he was indeed a grateful votary.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 3,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2033,
+        "text": "We announced to the children of Israel in the Book: \"You will surely create disorder twice in the land, and become exceedingly arrogant.\"",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 4,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2034,
+        "text": "So, when the time of the first prediction came, We sent against you Our creatures full of martial might, who ransacked your cities; and the prediction was fulfilled.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 5,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2035,
+        "text": "Then We gave you a chance against them, and strengthened you with wealth and children, and increased your numbers (and said):",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 6,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      },
+      {
+        "number": 2036,
+        "text": "\"If you do good, you will do so for your own good; if you do ill, you will do it for your own loss.\" So, when the time of the second prediction comes, (We shall rouse another people) to shame you, and enter the Temple as they had done the first time, and to destroy what they conquered utterly.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 7,
+        "juz": 15,
+        "manzil": 4,
+        "page": 282,
+        "ruku": 240,
+        "hizbQuarter": 113,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

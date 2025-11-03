@@ -1,0 +1,184 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 334,
+    "ayahs": [
+      {
+        "number": 2611,
+        "text": "وكما أقام الله الحجة من دلائل قدرته على الكافرين بالبعث أنزل القرآن، آياته واضحة في لفظها ومعناها، يهدي بها الله مَن أراد هدايته؛ لأنه لا هادي سواه.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 16,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2612,
+        "text": "إن الذين آمنوا بالله ورسوله محمدٍ صلى الله عليه وسلم واليهود والصابئين وهم: (قوم باقون على فطرتهم ولا دين مقرر لهم يتبعونه) والنصارى والمجوس (وهم عبدة النار) والذين أشركوا وهم: عبدة الأوثان، إنَّ الله يفصل بينهم جميعًا يوم القيامة فيدخل المؤمنين الجنة، ويدخل الكافرين النار، إن الله على كل شيء شهيد، شهد أعمال العباد كلَّها، وأحصاها وحفظها، وسيجازي كلا بما يستحق جزاء وفاقًا للأعمال التي عملوها.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 17,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2613,
+        "text": "ألم تعلم- أيها النبي- أن الله سبحانه يسجد له خاضعًا منقادًا مَن في السموات من الملائكة ومَن في الأرض من المخلوقات والشمس والقمر والنجوم والجبال والشجر والدواب؟ ولله يسجد طاعة واختيارًا كثير من الناس، وهم المؤمنون، وكثير من الناس حق عليه العذاب فهو مهين، وأيُّ إنسان يهنه الله فليس له أحد يكرمه. إن الله يفعل في خلقه ما يشاء وَفْقَ حكمته.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 18,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": {
+          "id": 6,
+          "recommended": true,
+          "obligatory": false
+        }
+      },
+      {
+        "number": 2614,
+        "text": "هذان فريقان اختلفوا في ربهم: أهل الإيمان وأهل الكفر، كل يدَّعي أنه محقٌّ، فالذين كفروا يحيط بهم العذاب في هيئة ثياب جُعلت لهم من نار يَلْبَسونها، فتشوي أجسادهم، ويُصبُّ على رؤوسهم الماء المتناهي في حره، ويَنزِل إلى أجوافهم فيذيب ما فيها، حتى ينفُذ إلى جلودهم فيشويها فتسقط، وتضربهم الملائكة على رؤوسهم بمطارق من حديد. كلما حاولوا الخروج من النار -لشدة غمِّهم وكربهم- أعيدوا للعذاب فيها، وقيل لهم: ذوقوا عذاب النار المحرق.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 19,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2615,
+        "text": "هذان فريقان اختلفوا في ربهم: أهل الإيمان وأهل الكفر، كل يدَّعي أنه محقٌّ، فالذين كفروا يحيط بهم العذاب في هيئة ثياب جُعلت لهم من نار يَلْبَسونها، فتشوي أجسادهم، ويُصبُّ على رؤوسهم الماء المتناهي في حره، ويَنزِل إلى أجوافهم فيذيب ما فيها، حتى ينفُذ إلى جلودهم فيشويها فتسقط، وتضربهم الملائكة على رؤوسهم بمطارق من حديد. كلما حاولوا الخروج من النار -لشدة غمِّهم وكربهم- أعيدوا للعذاب فيها، وقيل لهم: ذوقوا عذاب النار المحرق.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 20,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2616,
+        "text": "هذان فريقان اختلفوا في ربهم: أهل الإيمان وأهل الكفر، كل يدَّعي أنه محقٌّ، فالذين كفروا يحيط بهم العذاب في هيئة ثياب جُعلت لهم من نار يَلْبَسونها، فتشوي أجسادهم، ويُصبُّ على رؤوسهم الماء المتناهي في حره، ويَنزِل إلى أجوافهم فيذيب ما فيها، حتى ينفُذ إلى جلودهم فيشويها فتسقط، وتضربهم الملائكة على رؤوسهم بمطارق من حديد. كلما حاولوا الخروج من النار -لشدة غمِّهم وكربهم- أعيدوا للعذاب فيها، وقيل لهم: ذوقوا عذاب النار المحرق.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 21,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2617,
+        "text": "هذان فريقان اختلفوا في ربهم: أهل الإيمان وأهل الكفر، كل يدَّعي أنه محقٌّ، فالذين كفروا يحيط بهم العذاب في هيئة ثياب جُعلت لهم من نار يَلْبَسونها، فتشوي أجسادهم، ويُصبُّ على رؤوسهم الماء المتناهي في حره، ويَنزِل إلى أجوافهم فيذيب ما فيها، حتى ينفُذ إلى جلودهم فيشويها فتسقط، وتضربهم الملائكة على رؤوسهم بمطارق من حديد. كلما حاولوا الخروج من النار -لشدة غمِّهم وكربهم- أعيدوا للعذاب فيها، وقيل لهم: ذوقوا عذاب النار المحرق.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 22,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 286,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2618,
+        "text": "إن الله تعالى يدخل أهل الإيمان والعمل الصالح جنات نعيمها دائم، تجري مِن تحت أشجارها الأنهار، يُزَيَّنون فيها بأساور الذهب وباللؤلؤ، ولباسهم المعتاد في الجنة الحرير رجالا ونساءً.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 23,
+        "juz": 17,
+        "manzil": 4,
+        "page": 334,
+        "ruku": 287,
+        "hizbQuarter": 134,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

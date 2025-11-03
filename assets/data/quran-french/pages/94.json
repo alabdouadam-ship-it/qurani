@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 94,
+    "ayahs": [
+      {
+        "number": 588,
+        "text": "Ne sont pas égaux ceux des croyants qui restent chez eux - sauf ceux qui ont quelque infirmité - et ceux qui luttent corps et biens dans le sentier d'Allah. Allah donne à ceux qui luttent corps et biens un grade d'excellence sur ceux qui restent chez eux. Et à chacun Allah a promis la meilleure récompense; et Allah a mis les combattants au-dessus des non combattants en leur accordant une rétribution immense;",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 95,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 589,
+        "text": "des grades de supériorité de Sa part ainsi qu'un pardon et une miséricorde. Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 96,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 590,
+        "text": "Ceux qui ont fait du tort à eux-mêmes, les Anges enlèveront leurs âmes en disant: «Où en étiez-vous?» (à propos de votre religion) - «Nous étions impuissants sur terre», dirent-ils. Alors les Anges diront: «La terre d'Allah n'était-elle pas assez vaste pour vous permettre d'émigrer?» Voilà bien ceux dont le refuge est l'Enfer. Et quelle mauvaise destination!",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 97,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 591,
+        "text": "A l'exception des impuissants: hommes, femmes et enfants, incapables de se débrouiller, et qui ne trouvent aucune voie:",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 98,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 592,
+        "text": "A ceux-là, il se peut qu'Allah donne le pardon. Allah est Clément et Pardonneur.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 99,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 593,
+        "text": "Et quiconque émigre dans le sentier d'Allah trouvera sur terre maints refuges et abondance. Et quiconque sort de sa maison, émigrant vers Allah et Son messager, et que la mort atteint, sa récompense incombe à Allah. Et Allah est Pardonneur et Miséricordieux.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 100,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 594,
+        "text": "Et quand vous parcourez la terre, ce n'est pas un péché pour vous de raccourcir la Salât, si vous craignez que les mécréants ne vous mettent à l'épreuve, car les mécréants demeurent pour vous un ennemi déclaré.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 101,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

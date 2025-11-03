@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 17,
+    "ayahs": [
+      {
+        "number": 113,
+        "text": "ما نبدِّل من آية أو نُزِلها من القلوب والأذهان نأت بأنفع لكم منها، أو نأت بمثلها في التكليف والثواب، ولكلٍ حكمة. ألم تعلم -أيها النبي- أنت وأمتك أن الله قادر لا يعجزه شيء؟",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 106,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 114,
+        "text": "أما علمتَ -أيها النبي- أنت وأمتك أن الله تعالى هو المالك المتصرف في السموات والأرض؟ يفعل ما يشاء، ويحكم ما يريد، ويأمر عباده وينهاهم كيفما شاء، وعليهم الطاعة والقَبول. وليعلم من عصى أن ليس لأحد من دون الله من وليٍّ يتولاهم، ولا نصير يمنعهم من عذاب الله.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 107,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 115,
+        "text": "بل أتريدون- أيها الناس- أن تطلبوا من رسولكم محمد صلى الله عليه وسلم أشياء بقصد العناد والمكابرة، كما طُلِبَ مثل ذلك من موسى. علموا أن من يختر الكفر ويترك الإيمان فقد خرج عن صراط الله المستقيم إلى الجهل والضَّلال.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 108,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 116,
+        "text": "تمنى كثير من أهل الكتاب أن يرجعوكم بعد إيمانكم كفارًا كما كنتم من قبلُ تعبدون الأصنام؛ بسبب الحقد الذي امتلأت به نفوسهم من بعد ما تبيَّن لهم صدق نبي الله ورسوله محمد صلى الله عليه وسلم فيما جاء به، فتجاوزوا عمَّا كان منهم من إساءة وخطأ، واصفحوا عن جهلهم، حتى يأتي الله بحكمه فيهم بقتالهم (وقد جاء ووقع)، وسيعاقبهم لسوء أفعالهم. إن الله على كل شيء قدير لا يعجزه شيء.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 109,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 117,
+        "text": "واشتغلوا -أيها المؤمنون- بأداء الصلاة على وجهها الصحيح، وإعطاء الزكاة المفروضة. واعلموا أنَّ كل خير تقدمونه لأنفسكم تجدون ثوابه عند الله في الآخرة. إنه تعالى بصير بكل أعمالكم، وسيجازيكم عليها.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 110,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 118,
+        "text": "ادَّعى كلٌّ من اليهود والنصارى أن الجنة خاصة بطائفته لا يدخلها غيرهم، تلك أوهامهم الفاسدة. قل لهم -أيها الرسول-: أحضروا دليلكم على صحة ما تدَّعون إن كنتم صادقين في دعواكم.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 111,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 119,
+        "text": "ليس الأمر كما زعموا أنَّ الجنة تختص بطائفة دون غيرها، وإنما يدخل الجنَّة مَن أخلص لله وحده لا شريك له، وهو متبع للرسول محمد صلى الله عليه وسلم في كل أقواله وأعماله. فمن فعل ذلك فله ثواب عمله عند ربه في الآخرة، وهو دخول الجنة، وهم لا يخافون فيما يستقبلونه من أمر الآخرة، ولا هم يحزنون على ما فاتهم من حظوظ الدنيا.",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 112,
+        "juz": 1,
+        "manzil": 1,
+        "page": 17,
+        "ruku": 14,
+        "hizbQuarter": 7,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

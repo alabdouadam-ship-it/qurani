@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 277,
+    "ayahs": [
+      {
+        "number": 1989,
+        "text": "For those who deny the truth and obstruct (others) from the way of God, We shall add torment to torment as they were perpetrating corruption.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 88,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1990,
+        "text": "Remind them of the Day when We shall call from every people a witness against them, and make you a witness over them, for We have revealed to you the Book as an exposition of everything, and as guidance and grace and happy tidings for those who submit.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 89,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1991,
+        "text": "Verily God has enjoined justice, the doing of good, and the giving of gifts to your relatives; and forbidden indecency, impropriety and oppression. He warns you so that you may remember.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 90,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 236,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 1992,
+        "text": "Fulfil your covenant with God, having made the covenant, and do not break your oaths once you have sworn them, as you have made God a witness over you. Indeed God knows what you do.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 91,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 236,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 1993,
+        "text": "And do not be like her who untwists her yarn having spun it into durable thread. Do not use your oaths deceitfully because one party has ascendency over you. God surely tries you in this way: He will make it clear to you on the Day of Resurrection what you were differing about.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 92,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 236,
+        "hizbQuarter": 111,
+        "sajda": false
+      },
+      {
+        "number": 1994,
+        "text": "If God had pleased He would surely have made you a single community of belief; but He leads whosoever He wills astray, and guides whosoever He please. But you will surely be questioned about what you used to do.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 93,
+        "juz": 14,
+        "manzil": 3,
+        "page": 277,
+        "ruku": 236,
+        "hizbQuarter": 111,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

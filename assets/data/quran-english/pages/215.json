@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 215,
+    "ayahs": [
+      {
+        "number": 1418,
+        "text": "Even if every soul that has sinned possessed whatever is on the earth, it would surely offer it to ransom itself, and feel repentant on seeing the punishment. Yet the sentence would be passed with justice, and not one will be wronged.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 54,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1419,
+        "text": "For all that is in the heavens and the earth belongs to God. Remember, the promise of God is true. But most of them do not know.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 55,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1420,
+        "text": "He is the giver of life and death, and to Him you will return.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 56,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1421,
+        "text": "O men, a warning has come to you from your Lord, a remedy for the (doubts) of the heart, and a guidance and grace for those who believe.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 57,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1422,
+        "text": "Say: \"It is the blessing and mercy of God; so rejoice in it. It is better than all that you amass.\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 58,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1423,
+        "text": "Say: \"Have you thought of what God has sent you for food, of which you have labelled some as lawful and some forbidden?\" And ask: \"Has God commanded this, or you are imputing lies to God?\"",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 59,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1424,
+        "text": "What do those who invent lies of God think about the Day of Reckoning? (Will they escape the judgement?) In fact God is gracious to men; but most of them are not grateful.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 60,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 177,
+        "hizbQuarter": 86,
+        "sajda": false
+      },
+      {
+        "number": 1425,
+        "text": "There is no state you are in, whether reading from the Qur'an, or doing something else, but We are watching you as you are engaged in it. There is not the weight of an atom on the earth and in the heavens that is hidden from your Lord, nor is there anything smaller or greater than this but is recorded in the perspicuous Book.",
+        "surah": {
+          "number": 10,
+          "name": "سُورَةُ يُونُسَ",
+          "englishName": "Yunus",
+          "englishNameTranslation": "Jonas",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 109
+        },
+        "numberInSurah": 61,
+        "juz": 11,
+        "manzil": 3,
+        "page": 215,
+        "ruku": 178,
+        "hizbQuarter": 86,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "10": {
+        "number": 10,
+        "name": "سُورَةُ يُونُسَ",
+        "englishName": "Yunus",
+        "englishNameTranslation": "Jonas",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 109
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

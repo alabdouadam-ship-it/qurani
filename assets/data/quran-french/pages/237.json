@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 237,
+    "ayahs": [
+      {
+        "number": 1611,
+        "text": "Et lorsqu'ils l'eurent emmené, et se furent mis d'accord pour le jeter dans les profondeurs invisibles du puits, Nous lui révélâmes: «Tu les informeras sûrement de cette affaire sans qu'ils s'en rendent compte».",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 15,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1612,
+        "text": "Et ils vinrent à leur père, le soir, en pleurant.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 16,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1613,
+        "text": "Ils dirent: «O notre père, nous sommes allés faire une course, et nous avons laissé Joseph auprès de nos effets; et le loup l'a dévoré. Tu ne nous croiras pas, même si nous disons la vérité».",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 17,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1614,
+        "text": "Ils apportèrent sa tunique tachée d'un faux sang. Il dit: «Vos âmes, plutôt, vous ont suggéré quelque chose... [Il ne me reste plus donc] qu'une belle patience! C'est Allah qu'il faut appeler au secours contre ce que vous racontez!»",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 18,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1615,
+        "text": "Or, vint une caravane. Ils envoyèrent leur chercheur d'eau, qui fit descendre son seau. Il dit: «Bonne nouvelle! Voilà un garçon!» Et ils le dissimulèrent [pour le vendre] telle une marchandise. Allah cependant savait fort bien ce qu'ils faisaient.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 19,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1616,
+        "text": "Et ils le vendirent à vil prix: pour quelques dirhams comptés. Ils le considéraient comme indésirable.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 20,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 194,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1617,
+        "text": "Et celui qui l'acheta était de l'Egypte. Il dit à sa femme: «Accorde lui une généreuse hospitalité. Il se peut qu'il nous soit utile ou que nous l'adoptions comme notre enfant.» Ainsi avons-nous raffermi Joseph dans le pays et nous lui avons appris l'interprétation des rêves. Et Allah est souverain en Son Commandement: mais la plupart des gens ne savent pas.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 21,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 195,
+        "hizbQuarter": 95,
+        "sajda": false
+      },
+      {
+        "number": 1618,
+        "text": "Et quand il eut atteint sa maturité Nous lui accordâmes sagesse et savoir. C'est ainsi que nous récompensons les bienfaisants.",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 22,
+        "juz": 12,
+        "manzil": 3,
+        "page": 237,
+        "ruku": 195,
+        "hizbQuarter": 95,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

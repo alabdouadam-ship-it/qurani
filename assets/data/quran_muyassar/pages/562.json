@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 562,
+    "ayahs": [
+      {
+        "number": 5242,
+        "text": "تكاثر خير الله وبرُّه على جميع خلقه، الذي بيده مُلك الدنيا والآخرة وسلطانهما، نافذ فيهما أمره وقضاؤه، وهو على كل شيء قدير. ويستفاد من الآية ثبوت صفة اليد لله سبحانه وتعالى على ما يليق بجلاله.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 1,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5243,
+        "text": "الذي خلق الموت والحياة؛ ليختبركم - أيها الناس-: أيكم خيرٌ عملا وأخلصه؟ وهو العزيز الذي لا يعجزه شيء، الغفور لمن تاب من عباده. وفي الآية ترغيب في فعل الطاعات، وزجر عن اقتراف المعاصي.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 2,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5244,
+        "text": "الذي خلق سبع سموات متناسقة، بعضها فوق بعض، ما ترى في خلق الرحمن- أيها الناظر- من اختلاف ولا تباين، فأعد النظر إلى السماء: هل ترى فيها مِن شقوق أو صدوع؟",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 3,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5245,
+        "text": "ثم أعد النظر مرة بعد مرة، يرجع إليك البصر ذليلا صاغرًا عن أن يرى نقصًا، وهو متعب كليل.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 4,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5246,
+        "text": "ولقد زيَّنا السماء القريبة التي تراها العيون بنجوم عظيمة مضيئة، وجعلناها شهبًا محرقة لمسترقي السمع من الشياطين، وأعتدنا لهم في الآخرة عذاب النار الموقدة يقاسون حرها.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 5,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5247,
+        "text": "وللكافرين بخالقهم عذاب جهنم، وساء المرجع لهم جهنم.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 6,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5248,
+        "text": "إذا طُرح هؤلاء الكافرون في جهنم سمعوا لها صوتًا شديدًا منكرًا، وهي تغلي غليانًا شديدًا.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 7,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5249,
+        "text": "تكاد جهنم تتمزق مِن شدة غضبها على الكفار، كلما طُرح فيها جماعة من الناس سألهم الموكلون بأمرها على سبيل التوبيخ: ألم يأتكم في الدنيا رسول يحذركم هذا العذاب الذي أنتم فيه؟",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 8,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5250,
+        "text": "أجابوهم قائلين: بلى قد جاءنا رسول مِن عند الله وحذَّرنا، فكذَّبناه، وقلنا فيما جاء به من الآيات: ما نزَّل الله على أحد من البشر شيئًا، ما أنتم - أيها الرسل- إلا في ذهاب بعيد عن الحق.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 9,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5251,
+        "text": "وقالوا معترفين: لو كنا نسمع سماع مَن يطلب الحق، أو نفكر فيما نُدْعى إليه، ما كنا في عداد أهل النار.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 10,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5252,
+        "text": "فاعترفوا بتكذيبهم وكفرهم الذي استحقوا به عذاب النار، فبعدًا لأهل النار عن رحمة الله.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 11,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5253,
+        "text": "إن الذين يخافون ربهم، فيعبدونه، ولا يعصونه وهم غائبون عن أعين الناس، ويخشون العذاب في الآخرة قبل معاينته، لهم عفو من الله عن ذنوبهم، وثواب عظيم وهو الجنة.",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 12,
+        "juz": 29,
+        "manzil": 7,
+        "page": 562,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "67": {
+        "number": 67,
+        "name": "سُورَةُ المُلۡكِ",
+        "englishName": "Al-Mulk",
+        "englishNameTranslation": "The Sovereignty",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

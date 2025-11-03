@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 314,
+    "ayahs": [
+      {
+        "number": 2386,
+        "text": "When We told your mother what We relate:",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 38,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2387,
+        "text": "'Put him in a wooden box and cast it in the river. The river will cast it on the bank. An enemy of Ours, and his, will retrieve it.' We bestowed Our love on you that you may be reared under Our eyes.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 39,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2388,
+        "text": "Then your sister followed you, and said (to the people who had retrieved the child): 'Should I guide you to a person who can nurse him?' We thus brought you back to your mother that her heart may be cheered, and she may not grieve. (Remember) when you killed a man We saved you from anguish; and tested and steeled you (in other ways). Afterwards you sojourned for several years with the people of Midian; then you came up to the measure,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 40,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2389,
+        "text": "And I chose you for Myself.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 41,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2390,
+        "text": "Go with My signs, you and your brother, and do not be lax in remembering Me.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 42,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2391,
+        "text": "Then go to the Pharaoh as he has become exceedingly rebellious.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 43,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2392,
+        "text": "Speak to him gently. He may possibly take heed or may come to have fear.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 44,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2393,
+        "text": "They said: \"O our Lord, we are really frightened lest he behave insolently with us or become violent.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 45,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2394,
+        "text": "(The Lord) said: \"Be not afraid. I am verily with you, and I hear and see.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 46,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2395,
+        "text": "So go to him and say: 'The two of us have indeed been sent by your Lord. So let the children of Israel come with us, and do not oppress them. We have come to you with a token from your Lord. Peace on him who follows the way of guidance.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 47,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2396,
+        "text": "It has been revealed to us that punishment will befall him who denies and turns away.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 48,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2397,
+        "text": "He asked: \"Who then is that Lord of yours, O Moses?\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 49,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2398,
+        "text": "(Moses) said: \"Our Lord is He who gave everything its natural form and directed it.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 50,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2399,
+        "text": "(The Pharaoh) said: \"And what about the former generations?\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 51,
+        "juz": 16,
+        "manzil": 4,
+        "page": 314,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

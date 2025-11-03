@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 288,
+    "ayahs": [
+      {
+        "number": 2088,
+        "text": "وما منعَنا من إنزال المعجزات التي سألها المشركون إلا تكذيب مَن سبقهم من الأمم، فقد أجابهم الله إلى ما طلبوا فكذَّبوا وهلكوا. وأعطينا ثمود -وهم قوم صالح- معجزة واضحة وهي الناقة، فكفروا بها فأهلكناهم. وما إرسالنا الرسل بالآيات والعبر والمعجزات التي جعلناها على أيديهم إلا تخويف للعباد؛ ليعتبروا ويتذكروا.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 59,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 245,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2089,
+        "text": "واذكر -أيها الرسول- حين قلنا لك: إن ربك أحاط بالناس علمًا وقدرة. وما جعلنا الرؤيا التي أريناكها عِيانًا ليلة الإسراء والمعراج من عجائب المخلوقات إلا اختبارًا للناس؛ ليتميز كافرهم من مؤمنهم، وما جعلنا شجرة الزقوم الملعونة التي ذكرت في القرآن إلا ابتلاء للناس. ونخوِّف المشركين بأنواع العذاب والآيات، ولا يزيدهم التخويف إلا تماديًا في الكفر والضلال.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 60,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 245,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2090,
+        "text": "واذكر قولنا للملائكة: اسجدوا لآدم تحية وتكريمًا، فسجدوا جميعًا إلا إبليس، استكبر وامتنع عن السجود قائلا على سبيل الإنكار والاستكبار: أأسجد لهذا الضعيف، المخلوق من الطين؟",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 61,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2091,
+        "text": "وقال إبليس جراءة على الله وكفرًا به: أرأيت هذا المخلوق الذي ميزته عليَّ؟ لئن أبقيتني حيًا إلى يوم القيامة لأستولينَّ على ذريته بالإغواء والإفساد، إلا المخلصين منهم في الإيمان، وهم قليل.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 62,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2092,
+        "text": "قال الله تعالى مهددًا إبليس وأتباعه: اذهب فمَن تبعك مِن ذرية آدم، فأطاعك، فإن عقابك وعقابهم وافر في نار جهنم.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 63,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2093,
+        "text": "واستَخْفِف كل مَن تستطيع استخفافه منهم بدعوتك إياه إلى معصيتي، واجمع عليهم كل ما تقدر عليه مِن جنودك من كل راكب وراجل، واجعل لنفسك شِرْكة في أموالهم بأن يكسبوها من الحرام، وشِرْكة في الأولاد بتزيين الزنى والمعاصي، ومخالفة أوامر الله حتى يكثر الفجور والفساد، وعِدْ أتباعك مِن ذرية آدم الوعود الكاذبة، فكل وعود الشيطان باطلة وغرور.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 64,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2094,
+        "text": "إن عبادي المؤمنين المخلصين الذين أطاعوني ليس لك قدرة على إغوائهم، وكفى بربك -أيها النبي- عاصمًا وحافظًا للمؤمنين مِن كيد الشيطان وغروره.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 65,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      },
+      {
+        "number": 2095,
+        "text": "ربكم -أيها الناس- هو الذي يُسَيِّر لكم السفن في البحر؛ لتطلبوا رزق الله في أسفاركم وتجاراتكم. إن الله سبحانه كان رحيمًا بعباده.",
+        "surah": {
+          "number": 17,
+          "name": "سُورَةُ الإِسۡرَاءِ",
+          "englishName": "Al-Israa",
+          "englishNameTranslation": "The Night Journey",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 66,
+        "juz": 15,
+        "manzil": 4,
+        "page": 288,
+        "ruku": 246,
+        "hizbQuarter": 115,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "17": {
+        "number": 17,
+        "name": "سُورَةُ الإِسۡرَاءِ",
+        "englishName": "Al-Israa",
+        "englishNameTranslation": "The Night Journey",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

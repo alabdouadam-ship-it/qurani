@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 335,
+    "ayahs": [
+      {
+        "number": 2619,
+        "text": "Ils ont été guidés vers la bonne parole et ils ont été guidés vers le chemin Du Digne des louanges.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 24,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 287,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2620,
+        "text": "Mais ceux qui mécroient et qui obstruent le sentier d'Allah et celui de la Mosquée sacrée, que Nous avons établie pour les gens: aussi bien les résidents que ceux de passage... Quiconque cherche à y commettre un sacrilège injustement, Nous lui ferons goûter un châtiment douloureux,",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 25,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 287,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2621,
+        "text": "Et quand Nous indiquâmes pour Abraham le lieu de la Maison (La Kaaba) [en lui disant]: «Ne M'associe rien; et purifie Ma Maison pour ceux qui tournent autour, pour ceux qui s'y tiennent debout et pour ceux qui s'y inclinent et se prosternent».",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 26,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2622,
+        "text": "Et fais aux gens une annonce pour le Hajj. Ils viendront vers toi, à pied, et aussi sur toute monture, venant de tout chemin éloigné,",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 27,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2623,
+        "text": "pour participer aux avantages qui leur ont été accordés et pour invoquer le nom d'Allah aux jours fixés, sur la bête de cheptel qu'Il leur a attribuée, «Mangez-en vous-mêmes et faites-en manger le besogneux misérable.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 28,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2624,
+        "text": "Puis qu'ils mettent fin à leurs interdits (qu'ils nettoient leurs corps), qu'ils remplissent leurs vœux, et qu'ils fassent les circuits autour de l'Antique Maison».",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 29,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      },
+      {
+        "number": 2625,
+        "text": "Voilà [ce qui doit être observé] et quiconque prend en haute considération les limites sacrées d'Allah cela lui sera meilleur auprès de son Seigneur. Le bétail, sauf ce qu'on vous a cité, vous a été rendu licite. Abstenez-vous de la souillure des idoles et abstenez-vous des paroles mensongères.",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 30,
+        "juz": 17,
+        "manzil": 4,
+        "page": 335,
+        "ruku": 288,
+        "hizbQuarter": 134,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

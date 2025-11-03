@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 463,
+    "ayahs": [
+      {
+        "number": 4099,
+        "text": "Nous t'avons fait descendre le Livre, pour les hommes, en toute vérité. Quiconque se guide [le fait] pour son propre bien; et quiconque s'égare, s'égare à son détriment. Tu n'es nullement responsable [de leurs propres affaires].",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 41,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 399,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4100,
+        "text": "Allah reçoit les âmes au moment de leur mort ainsi que celles qui ne meurent pas au cours de leur sommeil. Il retient celles à qui Il a décrété la mort, tandis qu'Il renvoie les autres jusqu'à un terme fixé. Il y a certainement là des preuves pour des gens qui réfléchissent.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 42,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4101,
+        "text": "Ont-ils adopté, en dehors d'Allah, des intercesseurs? Dis: «Quoi! Même s'ils ne détiennent rien et sont dépourvus de raison?",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 43,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4102,
+        "text": "Dis: «L'intercession toute entière appartient à Allah. A Lui la royauté des cieux et de la terre. Puis c'est vers Lui que vous serez ramenés».",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 44,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4103,
+        "text": "Et quand Allah est mentionné seul (sans associés), les cœurs de ceux qui ne croient pas en l'au-delà se crispent et quand on mentionne ceux qui sont en dehors de Lui, voilà qu'ils se réjouissent.",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 45,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4104,
+        "text": "Dis: «O Allah, Créateur des cieux et de la terre, Connaisseur de tout ce que le monde ignore comme de ce qu'il perçoit, c'est Toi qui jugeras entre Tes serviteurs ce sur quoi ils divergeaient».",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 46,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      },
+      {
+        "number": 4105,
+        "text": "Si les injustes possédaient tout ce qui se trouve sur la terre, - et autant encore -, ils l'offriraient comme rançon pour échapper au pire châtiment le Jour de la Résurrection; et leur apparaîtra, de la part d'Allah, ce qu'ils n'avaient jamais imaginé;",
+        "surah": {
+          "number": 39,
+          "name": "سُورَةُ الزُّمَرِ",
+          "englishName": "Az-Zumar",
+          "englishNameTranslation": "The Groups",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 47,
+        "juz": 24,
+        "manzil": 6,
+        "page": 463,
+        "ruku": 400,
+        "hizbQuarter": 185,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "39": {
+        "number": 39,
+        "name": "سُورَةُ الزُّمَرِ",
+        "englishName": "Az-Zumar",
+        "englishNameTranslation": "The Groups",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

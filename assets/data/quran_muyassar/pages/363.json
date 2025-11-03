@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 363,
+    "ayahs": [
+      {
+        "number": 2888,
+        "text": "ولا يأتيك - أيها الرسول - المشركون بحجة أو شبهة إلا جئناك بالجواب الحق وبأحسن بيان له.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 33,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 312,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2889,
+        "text": "أولئك الكفار هم الذين يُسحبون على وجوههم إلى جهنم، وأولئك هم شر الناس منزلة، وأبعدهم طريقًا عن الحق.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 34,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 312,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2890,
+        "text": "ولقد آتينا موسى التوراة، وجعلنا معه أخاه هارون معينًا له، فقلنا لهما: اذهبا إلى فرعون وقومه الذين كذَّبوا بدلائل ربوبيتنا وألوهيتنا، فذهبا إليهم، فدَعَواهم إلى الإيمان بالله وطاعته وعدم الإشراك به، فكذَّبوهما، فأهلكناهم إهلاكًا عظيمًا.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 35,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2891,
+        "text": "ولقد آتينا موسى التوراة، وجعلنا معه أخاه هارون معينًا له، فقلنا لهما: اذهبا إلى فرعون وقومه الذين كذَّبوا بدلائل ربوبيتنا وألوهيتنا، فذهبا إليهم، فدَعَواهم إلى الإيمان بالله وطاعته وعدم الإشراك به، فكذَّبوهما، فأهلكناهم إهلاكًا عظيمًا.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 36,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2892,
+        "text": "وأغرقنا قوم نوح بالطوفان حين كذَّبوه. ومن كذب رسولا فقد كذب الرسل جميعًا. وجعلنا إغراقهم للناس عبرة، وجعلنا لهم ولمن سلك سبيلهم في التكذيب يوم القيامة عذابًا موجعًا.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 37,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2893,
+        "text": "وأهلكنا عادًا قوم هود، وثمود قوم صالح، وأصحاب البئر وأممًا كثيرة بين قوم نوح وعاد وثمود وأصحاب الرسِّ، لا يعلمهم إلا الله.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 38,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2894,
+        "text": "وكل الأمم بيَّنَّا لهم الحجج، ووضَّحنا لهم الأدلة، وأزحنا الأعذار عنهم، ومع ذلك لم يؤمنوا، فأهلكناهم بالعذاب إهلاكًا.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 39,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2895,
+        "text": "ولقد كان مشركو \"مكة\" يمرون في أسفارهم على قرية قوم لوط، وهي قرية \"سدوم\" التي أُهلِكت بالحجارة من السماء، فلم يعتبروا بها، بل كانوا لا يرجون معادًا يوم القيامة يجازون فيه.",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 40,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2896,
+        "text": "وإذا رآك هؤلاء المكذبون - أيها الرسول - استهزؤوا بك قائلين: أهذا الذي يزعم أن الله بعثه رسولا إلينا؟ إنه قارب أن يصرفنا عن عبادة أصنامنا بقوة حجته وبيانه، لولا أن ثَبَتْنا على عبادتها، وسوف يعلمون حين يرون ما يستحقون من العذاب: مَن أضل دينًا أهم أم محمد؟",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 41,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2897,
+        "text": "وإذا رآك هؤلاء المكذبون - أيها الرسول - استهزؤوا بك قائلين: أهذا الذي يزعم أن الله بعثه رسولا إلينا؟ إنه قارب أن يصرفنا عن عبادة أصنامنا بقوة حجته وبيانه، لولا أن ثَبَتْنا على عبادتها، وسوف يعلمون حين يرون ما يستحقون من العذاب: مَن أضل دينًا أهم أم محمد؟",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 42,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2898,
+        "text": "انظر - أيها الرسول - متعجبًا إلى مَن أطاع هواه كطاعة الله، أفأنت تكون عليه حفيظًا حتى تردَّه إلى الإيمان؟",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 43,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

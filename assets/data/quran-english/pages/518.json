@@ -1,0 +1,313 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 518,
+    "ayahs": [
+      {
+        "number": 4631,
+        "text": "QAF. I CALL to witness the glorious Qur'an.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 1,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4632,
+        "text": "They are rather surprised that a warner from among themselves has come to them. So the unbelievers say: \"This is astonishing:",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 2,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4633,
+        "text": "When we are dead and turned to dust, this returning (to life) is most far-fetched.\"",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 3,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4634,
+        "text": "We know what the earth consumes of them, for We have the Book that preserves everything.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 4,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4635,
+        "text": "But no! They called the truth a lie when it came to them; so they are in a confused state.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 5,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4636,
+        "text": "Have they not looked at the sky above them, how We have fashioned and adorned it, and it has no flaw?",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 6,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4637,
+        "text": "We stretched the earth and placed upon it firm stabilisers and We made every kind of splendid thing to grow upon it",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 7,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4638,
+        "text": "As instruction and reminder to every penitent creature.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 8,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4639,
+        "text": "And We send down water as a blessing from the sky, and grow gardens with it and the grain for harvest,",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 9,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4640,
+        "text": "And tall date-palms with their spathes pile on pile",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 10,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4641,
+        "text": "As a provision for men, and enlivened a region that was dead. Even thus will be the life after death.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 11,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4642,
+        "text": "The people of Noah, Ar-Rass and Thamud denied before you,",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4643,
+        "text": "As did the people of 'Ad and Pharaoh and the brethren of Lot,",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4644,
+        "text": "And the dwellers of the Wood and people of Tubba'. Each of them denied the apostles. So My threat became a reality.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      },
+      {
+        "number": 4645,
+        "text": "Were We exhausted by the act of the first creation? And yet they are confused about a new creation.",
+        "surah": {
+          "number": 50,
+          "name": "سُورَةُ قٓ",
+          "englishName": "Qaaf",
+          "englishNameTranslation": "The letter Qaaf",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 7,
+        "page": 518,
+        "ruku": 452,
+        "hizbQuarter": 207,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "50": {
+        "number": 50,
+        "name": "سُورَةُ قٓ",
+        "englishName": "Qaaf",
+        "englishNameTranslation": "The letter Qaaf",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

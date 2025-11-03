@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 276,
+    "ayahs": [
+      {
+        "number": 1981,
+        "text": "والله سبحانه جعل لكم من بيوتكم راحة واستقرارًا مع أهلكم، وأنتم مقيمون في الحضر، وجعل لكم في سفركم خيامًا وقبابًا من جلود الأنعام، يَخِفُّ عليكم حِمْلها وقت تَرْحالكم، ويخف عليكم نَصْبها وقت إقامتكم بعد التَّرْحال، وجعل لكم من أصواف الغنم، وأوبار الإبل، وأشعار المعز أثاثًا لكم من أكسية وألبسة وأغطية وفرش وزينة، تتمتعون بها إلى أجل مسمَّى ووقت معلوم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 80,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1982,
+        "text": "والله جعل لكم ما تستظلُّون به من الأشجار وغيرها، وجعل لكم في الجبال من المغارات والكهوف أماكن تلجؤون إليها عند الحاجة، وجعل لكم ثيابًا من القطن والصوف وغيرهما، تحفظكم من الحر والبرد، وجعل لكم من الحديد ما يردُّ عنكم الطعن والأذى في حروبكم، كما أنعم الله عليكم بهذه النعم يتمُّ نعمته عليكم ببيان الدين الحق؛ لتستسلموا لأمر الله وحده، ولا تشركوا به شيئًا في عبادته.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 81,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1983,
+        "text": "فإن أعرضوا عنك -أيها الرسول- بعدما رأوا من الآيات فلا تحزن، فما عليك إلا البلاغ الواضح لما أُرْسِلْتَ به، وأما الهداية فإلينا.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 82,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1984,
+        "text": "يعرف هؤلاء المشركون نعمة الله عليهم بإرسال محمد صلى الله عليه وسلم إليهم، ثم يجحدون نبوته، وأكثر قومه الجاحدون لنبوته، لا المقرون بها.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 83,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1985,
+        "text": "واذكر لهم -أيها الرسول- ما يكون يوم القيامة، حين نبعث من كل أمة رسولها شاهدًا على إيمان من آمن منها، وكُفْر مَن كَفَر، ثم لا يُؤذن للذين كفروا بالاعتذار عما وقع منهم، ولا يُطْلب منهم إرضاءُ ربهم بالتوبة والعمل الصالح، فقد مضى أوان ذلك.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 84,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1986,
+        "text": "وإذا شاهد الذين كفروا عذاب الله في الآخرة فلا يخفف عنهم منه شيء، ولا يُمْهلون، ولا يؤخر عذابهم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 85,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1987,
+        "text": "وإذا أبصر المشركون يوم القيامة آلهتهم التي عبدوها مع الله، قالوا: ربنا هؤلاء شركاؤنا الذين كنا نعبدهم مِن دونك، فنطقَتِ الآلهة بتكذيب مَن عبدوها، وقالت: إنكم -أيها المشركون- لَكاذبون، حين جعلتمونا شركاء لله وعبدتمونا معه، فلم نأمركم بذلك، ولا زعمنا أننا مستحقون للألوهية، فاللوم عليكم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 86,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1988,
+        "text": "وأظهر المشركون الاستسلام والخضوع لله يوم القيامة، وغاب عنهم ما كانوا يختلقونه من الأكاذيب، وأن آلهتهم تشفع لهم.",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 87,
+        "juz": 14,
+        "manzil": 3,
+        "page": 276,
+        "ruku": 235,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

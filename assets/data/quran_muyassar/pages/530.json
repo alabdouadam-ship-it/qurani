@@ -1,0 +1,446 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 530,
+    "ayahs": [
+      {
+        "number": 4874,
+        "text": "وأخبرهم أن الماء مقسوم بين قومك والناقة: للناقة يوم، ولهم يوم، كل شِرْب يحضره مَن كانت قسمته، ويُحظر على من ليس بقسمة له.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 28,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4875,
+        "text": "فنادوا صاحبهم بالحض على عقرها، فتناول الناقة بيده، فنحرها فعاقَبْتُهم، فكيف كان عقابي لهم على كفرهم، وإنذاري لمن عصى رسلي؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 29,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4876,
+        "text": "فنادوا صاحبهم بالحض على عقرها، فتناول الناقة بيده، فنحرها فعاقَبْتُهم، فكيف كان عقابي لهم على كفرهم، وإنذاري لمن عصى رسلي؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 30,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4877,
+        "text": "إنا أرسلنا عليهم جبريل، فصاح بهم صيحة واحدة، فبادوا عن آخرهم، فكانوا كالزرع اليابس الذي يُجْعل حِظارًا على الإبل والمواشي.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 31,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4878,
+        "text": "ولقد سَهَّلْنا لفظ القرآن للتلاوة والحفظ، ومعانيه للفهم والتدبر لمن أراد أن يتذكر ويعتبر، فهل مِن متعظ به؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4879,
+        "text": "كذَّبت قوم لوط بآيات الله التي أنذِروا بها.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4880,
+        "text": "إنا أرسلنا عليهم حجارةً إلا آل لوط، نجَّيناهم من العذاب في آخر الليل، نعمة من عندنا عليهم، كما أثبنا لوطًا وآله وأنعمنا عليهم، فأنجيناهم مِن عذابنا، نُثيب مَن آمن بنا وشكرنا.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4881,
+        "text": "إنا أرسلنا عليهم حجارةً إلا آل لوط، نجَّيناهم من العذاب في آخر الليل، نعمة من عندنا عليهم، كما أثبنا لوطًا وآله وأنعمنا عليهم، فأنجيناهم مِن عذابنا، نُثيب مَن آمن بنا وشكرنا.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4882,
+        "text": "ولقد خوَّف لوط قومه بأس الله وعذابه، فلم يسمعوا له، بل شكُّوا في ذلك، وكذَّبوه.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4883,
+        "text": "ولقد طلبوا منه أن يفعلوا الفاحشة بضيوفه من الملائكة، فطمسنا أعينهم فلم يُبصروا شيئًا، فقيل لهم: ذوقوا عذابي وإنذاري الذي أنذركم به لوط عليه السلام.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4884,
+        "text": "ولقد جاءهم وقت الصباح عذاب دائم استقر فيهم حتى يُفضي بهم إلى عذاب الآخرة، وذلك العذاب هو رجمهم بالحجارة وقلب قُراهم وجعل أعلاها أسفلها، فقيل لهم: ذوقوا عذابي الذي أنزلته بكم؛ لكفركم وتكذيبكم، وإنذاري الذي أنذركم به لوط عليه السلام.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4885,
+        "text": "ولقد جاءهم وقت الصباح عذاب دائم استقر فيهم حتى يُفضي بهم إلى عذاب الآخرة، وذلك العذاب هو رجمهم بالحجارة وقلب قُراهم وجعل أعلاها أسفلها، فقيل لهم: ذوقوا عذابي الذي أنزلته بكم؛ لكفركم وتكذيبكم، وإنذاري الذي أنذركم به لوط عليه السلام.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4886,
+        "text": "ولقد سَهَّلْنا لفظ القرآن للتلاوة والحفظ، ومعانيه للفهم والتدبر لمن أراد أن يتذكر، فهل مِن متعظ به؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4887,
+        "text": "ولقد جاء أتباعَ فرعون وقومَه إنذارُنا بالعقوبة لهم على كفرهم.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 41,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4888,
+        "text": "كذَّبوا بأدلتنا كلها الدالة على وحدانيتنا ونبوة أنبيائنا، فعاقبناهم بالعذاب عقوبة عزيز لا يغالَب، مقتدر على ما يشاء.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 42,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4889,
+        "text": "أكفاركم- يا معشر قريش- خير مِنَ الذين تقدَّم ذكرهم ممن هلكوا بسبب تكذيبهم، أم لكم براءة مِن عقاب الله في الكتب المنزلة على الأنبياء بالسلامة من العقوبة؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 43,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4890,
+        "text": "بل أيقول كفار \"مكة\": نحن أولو حزم ورأي وأمرنا مجتمع، فنحن جماعة منتصرة لا يغلبنا من أرادنا بسوء؟",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 44,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4891,
+        "text": "سيهزم جمع كفار \"مكة\" أمام المؤمنين، ويولُّون الأدبار، وقد حدث هذا يوم \"بدر\".",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 45,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4892,
+        "text": "والساعة موعدهم الذي يُجازون فيه بما يستحقون، والساعة أعظم وأقسى مما لحقهم من العذاب يوم \"بدر\".",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 46,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4893,
+        "text": "إن المجرمين في تيه عن الحق وعناء وعذاب. يوم يُجرُّون في النار على وجوههم، ويقال لهم: ذوقوا شدة عذاب جهنم.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 47,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4894,
+        "text": "إن المجرمين في تيه عن الحق وعناء وعذاب. يوم يُجرُّون في النار على وجوههم، ويقال لهم: ذوقوا شدة عذاب جهنم.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 48,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4895,
+        "text": "إنَّا كل شيء خلقناه بمقدار قدرناه وقضيناه، وسبق علمنا به، وكتابتنا له في اللوح المحفوظ.",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 49,
+        "juz": 27,
+        "manzil": 7,
+        "page": 530,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "54": {
+        "number": 54,
+        "name": "سُورَةُ القَمَرِ",
+        "englishName": "Al-Qamar",
+        "englishNameTranslation": "The Moon",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 55
+      }
+    },
+    "edition": {
+      "identifier": "ar.muyassar",
+      "language": "ar",
+      "name": "تفسير المیسر",
+      "englishName": "King Fahad Quran Complex",
+      "format": "text",
+      "type": "tafsir",
+      "direction": "rtl"
+    }
+  }
+}

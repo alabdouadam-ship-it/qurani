@@ -1,0 +1,446 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 590,
+    "ayahs": [
+      {
+        "number": 5910,
+        "text": "Par le ciel aux constellations!",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5911,
+        "text": "et par le jour promis!",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5912,
+        "text": "et par le témoin et ce dont on témoigne!",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5913,
+        "text": "Périssent les gens de l'Uhdûd,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5914,
+        "text": "par le feu plein de combustible,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5915,
+        "text": "cependant qu'ils étaient assis tout autour,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5916,
+        "text": "ils étaient ainsi témoins de ce qu'ils faisaient des croyants,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5917,
+        "text": "à qui ils ne leur reprochaient que d'avoir cru en Allah, le Puissant, le Digne de louange,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5918,
+        "text": "Auquel appartient la royauté des cieux et de la terre. Allah est témoin de toute chose.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5919,
+        "text": "Ceux qui font subir des épreuves aux croyants et aux croyantes, puis ne se repentent pas, auront le châtiment de l'Enfer et le supplice du feu.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5920,
+        "text": "Ceux qui croient et accomplissent les bonnes œuvres auront des Jardins sous lesquels coulent les ruisseaux. Cela est le grand succès.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5921,
+        "text": "La riposte de ton Seigneur est redoutable.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5922,
+        "text": "C'est Lui, certes, qui commence (la création) et la refait.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5923,
+        "text": "Et c'est Lui le Pardonneur, le Tout-Affectueux,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5924,
+        "text": "Le Maître du Trône, le Tout-Glorieux,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5925,
+        "text": "Il réalise parfaitement tout ce qu'Il veut.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5926,
+        "text": "T'est-il parvenu le récit des armées,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5927,
+        "text": "de Pharaon, et de Thamûd?",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5928,
+        "text": "Mais ceux qui ne croient pas persistent à démentir,",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5929,
+        "text": "alors qu'Allah, derrière eux, les cerne de toutes parts.",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5930,
+        "text": "Mais c'est plutôt un Coran glorifié",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5931,
+        "text": "préservé sur une Tablette (auprès d'Allah).",
+        "surah": {
+          "number": 85,
+          "name": "سُورَةُ البُرُوجِ",
+          "englishName": "Al-Burooj",
+          "englishNameTranslation": "The Constellations",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 590,
+        "ruku": 527,
+        "hizbQuarter": 236,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "85": {
+        "number": 85,
+        "name": "سُورَةُ البُرُوجِ",
+        "englishName": "Al-Burooj",
+        "englishNameTranslation": "The Constellations",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 523,
+    "ayahs": [
+      {
+        "number": 4727,
+        "text": "Ainsi, aucun Messager n'est venu à leurs prédécesseurs sans qu'ils n'aient dit: «C'est un magicien ou un possédé!»",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 52,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4728,
+        "text": "Est-ce qu'ils se sont transmis cette injonction? Ils sont plutôt des gens transgresseurs.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 53,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4729,
+        "text": "Détourne-toi d'eux, tu ne seras pas blâmé [à leur sujet].",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 54,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4730,
+        "text": "Et rappelle; car le rappel profite aux croyants.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 55,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4731,
+        "text": "Je n'ai créé les djinns et les hommes que pour qu'ils M'adorent.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 56,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4732,
+        "text": "Je ne cherche pas d'eux une subsistance; et Je ne veux pas qu'ils me nourrissent.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 57,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4733,
+        "text": "En vérité, c'est Allah qui est le Grand Pourvoyeur, Le Détenteur de la force, l'Inébranlable.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 58,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4734,
+        "text": "Ceux qui ont été injustes auront une part [de tourments] pareille à celle de leurs compagnons. Qu'ils ne soient pas trop pressés.",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 59,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4735,
+        "text": "Malheur donc à ceux qui ont mécru à cause du jour dont ils sont menacés!",
+        "surah": {
+          "number": 51,
+          "name": "سُورَةُ الذَّارِيَاتِ",
+          "englishName": "Adh-Dhaariyat",
+          "englishNameTranslation": "The Winnowing Winds",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 60,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 457,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4736,
+        "text": "Par At-Tûr!",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4737,
+        "text": "Et par un Livre écrit",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4738,
+        "text": "sur un parchemin déployé!",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4739,
+        "text": "Et par la Maison peuplée!",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4740,
+        "text": "Et par la Voûte élevée!",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4741,
+        "text": "Et par la Mer portée à ébullition! (au Jour dernier)",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4742,
+        "text": "Le châtiment de ton Seigneur aura lieu inévitablement.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4743,
+        "text": "Nul ne pourra le repousser.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4744,
+        "text": "Le jour où le ciel sera agité d'un tourbillonnement,",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4745,
+        "text": "et les montagnes se mettront en marche.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4746,
+        "text": "Ce jour-là, malheur à ceux qui traitent (les signes d'Allah) de mensonges,",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4747,
+        "text": "ceux qui s'ébattent dans des discours frivoles",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4748,
+        "text": "le jour où ils seront brutalement poussés au feu de l'Enfer:",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      },
+      {
+        "number": 4749,
+        "text": "Voilà le feu que vous traitiez de mensonge.",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 523,
+        "ruku": 458,
+        "hizbQuarter": 209,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "51": {
+        "number": 51,
+        "name": "سُورَةُ الذَّارِيَاتِ",
+        "englishName": "Adh-Dhaariyat",
+        "englishNameTranslation": "The Winnowing Winds",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      },
+      "52": {
+        "number": 52,
+        "name": "سُورَةُ الطُّورِ",
+        "englishName": "At-Tur",
+        "englishNameTranslation": "The Mount",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 49
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

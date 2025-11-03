@@ -1,0 +1,104 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 84,
+    "ayahs": [
+      {
+        "number": 527,
+        "text": "Les hommes ont autorité sur les femmes, en raison des faveurs qu'Allah accorde à ceux-là sur celles-ci, et aussi à cause des dépenses qu'ils font de leurs biens. Les femmes vertueuses sont obéissantes (à leurs maris), et protègent ce qui doit être protégé, pendant l'absence de leurs époux, avec la protection d'Allah. Et quant à celles dont vous craignez la désobéissance, exhortez-les, éloignez-vous d'elles dans leurs lits et frappez-les. Si elles arrivent à vous obéir, alors ne cherchez plus de voie contre elles, car Allah est certes, Haut et Grand!",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 34,
+        "juz": 5,
+        "manzil": 1,
+        "page": 84,
+        "ruku": 67,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 528,
+        "text": "Si vous craignez le désaccord entre les deux [époux], envoyez alors un arbitre de sa famille à lui, et un arbitre de sa famille à elle. Si les deux veulent la réconciliation, Allah rétablira l'entente entre eux. Allah est certes, Omniscient et Parfaitement Connaisseur.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 35,
+        "juz": 5,
+        "manzil": 1,
+        "page": 84,
+        "ruku": 67,
+        "hizbQuarter": 33,
+        "sajda": false
+      },
+      {
+        "number": 529,
+        "text": "Adorez Allah et ne Lui donnez aucun associé. Agissez avec bonté envers (vos) père et mère, les proches, les orphelins, les pauvres, le proche voisin, le voisin lointain, le collègue et le voyageur, et les esclaves en votre possession, car Allah n'aime pas, en vérité, le présomptueux, l'arrogant,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 36,
+        "juz": 5,
+        "manzil": 1,
+        "page": 84,
+        "ruku": 67,
+        "hizbQuarter": 34,
+        "sajda": false
+      },
+      {
+        "number": 530,
+        "text": "Ceux qui sont avares et ordonnent l'avarice aux autres, et cachent ce qu'Allah leur a donné de par Sa grâce. Nous avons préparé un châtiment avilissant pour les mécréants.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 37,
+        "juz": 5,
+        "manzil": 1,
+        "page": 84,
+        "ruku": 67,
+        "hizbQuarter": 34,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "fr.hamidullah",
+      "language": "fr",
+      "name": "Hamidullah",
+      "englishName": "Muhammad Hamidullah",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

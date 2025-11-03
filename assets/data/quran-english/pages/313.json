@@ -1,0 +1,503 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 313,
+    "ayahs": [
+      {
+        "number": 2361,
+        "text": "I have chosen you, so listen to what is revealed to you.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 13,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2362,
+        "text": "I am God, and there is no god but I, so serve Me, and observe acts of prayer to remember Me.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 14,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2363,
+        "text": "Verily the Hour (of the great change) is about to come. I keep it secret that every soul may be rewarded for its endeavour.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 15,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2364,
+        "text": "So do not let those who do not believe in it and follow their vain desires, turn you away from it.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 16,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2365,
+        "text": "What is that in your right band, O Moses?\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 17,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2366,
+        "text": "\"It's my staff,\" he answered; \"I lean on it, and fell leaves for my goats with it, and I have other uses for it.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 18,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2367,
+        "text": "\"Throw it down, O Moses,\" said (the Voice).",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 19,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2368,
+        "text": "So he threw it down, and lo, it became a running serpent.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 20,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2369,
+        "text": "\"Catch it,\" said He, \"and have no fear; We shall revert it to its former state.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 21,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2370,
+        "text": "And face what is to come with patience, your hand will not be tarnished with blame: Another sign",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 22,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2371,
+        "text": "That We may go on showing you Our greater signs.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 23,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2372,
+        "text": "Go to the Pharaoh as he has become exceedingly rebellious.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 24,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 270,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2373,
+        "text": "Moses said: \"O my Lord, enlarge my breast,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 25,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2374,
+        "text": "And make my mission easy.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 26,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2375,
+        "text": "Remove the defect of my tongue",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 27,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2376,
+        "text": "That they may understand my speech,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 28,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2377,
+        "text": "And give me as assistant from my family",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 29,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2378,
+        "text": "Aaron my brother",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 30,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2379,
+        "text": "To strengthen me",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 31,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2380,
+        "text": "And share my task,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 32,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2381,
+        "text": "That we may sing Your praises much,",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 33,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2382,
+        "text": "And remember you a great deal.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 34,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2383,
+        "text": "Surely You know us well.\"",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 35,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2384,
+        "text": "He answered: \"Granted is your prayer, O Moses.",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 36,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      },
+      {
+        "number": 2385,
+        "text": "We have bestowed Our favour on you before this",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 37,
+        "juz": 16,
+        "manzil": 4,
+        "page": 313,
+        "ruku": 271,
+        "hizbQuarter": 125,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

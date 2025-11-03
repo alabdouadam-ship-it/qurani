@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 194,
+    "ayahs": [
+      {
+        "number": 1276,
+        "text": "O believers, go out in the cause of God, (whether) light or heavy, and strive in the service of God, wealth and soul. This is better for you if you understand.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 41,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 161,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1277,
+        "text": "(O Prophet), had the gain been close at hand, and easy the journey, they would surely have followed you; but hard was the journey and long the going. Even then they swear by God (and say): \"If we had the strength we would surely have gone out with you.\" They are only ruining themselves, for God is aware they lie.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 42,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 161,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1278,
+        "text": "May God forgive you. Why did you allow them (to stay behind) without ascertaining who spoke the truth and who were liars?",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 43,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1279,
+        "text": "Those who believe in God and the Last Day, do not ask your leave to be excused from fighting wealth and soul (in the cause of God), for God knows the pious and devout.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 44,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1280,
+        "text": "Only they ask (for leave) who do not believe in God and the Last Day, whose hearts are full of doubt; and doubting they waver (between gain and loss).",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 45,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 77,
+        "sajda": false
+      },
+      {
+        "number": 1281,
+        "text": "If they had intended to go out (to fight) they would surely have made preparations. But God did not like their setting forth, and they were held back and told: \"Stay at home with those who stay behind.\"",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 46,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1282,
+        "text": "Had they gone out with you, they would only have been a hindrance and let loose confusion among you to create discord; for there are some in your midst who spy for them. But God knows who are the wicked.",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 47,
+        "juz": 10,
+        "manzil": 2,
+        "page": 194,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

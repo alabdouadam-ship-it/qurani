@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 94,
+    "ayahs": [
+      {
+        "number": 588,
+        "text": "The faithful who sit idle, other than those who are disabled, are not equal to those who fight in the way of God with their wealth and lives. God has exalted those in rank who fight for the faith with their wealth and souls over those who sit idle. Though God's promise of good is for all, He has granted His favour of the highest reward to those who struggle in preference to those who sit at home.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 95,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 589,
+        "text": "For them are higher ranks with God, and forgiveness and grace; and God is forgiving and kind.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 96,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 590,
+        "text": "As for those whose souls are taken by the angels (at death) while in a state of unbelief, they will be asked by the angels: \"What (state) were you in?\" They will answer: \"We were oppressed in the land.\" And the angels will say: \"Was not God's earth large enough for you to migrate?\" Their abode will be Hell, and what an evil destination!",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 97,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 591,
+        "text": "But those who are helpless, men, women and children, who can neither contrive a plan nor do they know the way,",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 98,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 592,
+        "text": "May well hope for the mercy of God; and God is full of mercy and grace.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 99,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 593,
+        "text": "Whosoever leaves his country in duty to God will find many places of refuge, and abundance on the earth. And he who leaves his home and becomes an emigre in the way of God and His Messenger, and death overtake him, is sure to receive his reward from God; for God is forgiving and kind.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 100,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 594,
+        "text": "When you travel in the land there is no sin if you curtail your service of prayer if you fear the unbelievers may harass you, for indeed your open enemies are the infidels.",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 101,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 151,
+    "ayahs": [
+      {
+        "number": 955,
+        "text": "Alif Lam Mim Sad.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 1,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 956,
+        "text": "This Book has been sent down to you; so do not hesitate to warn (the unbelievers) through it, and remind the faithful.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 2,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 957,
+        "text": "Follow what has been revealed to you by your Lord, and do not follow any other lord apart from Him. Yet little do you care to remember.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 3,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 958,
+        "text": "Many a habitation have We laid low before: Our retribution came upon them in the night or in the midst of siesta at noon.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 4,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 959,
+        "text": "And when Our punishment overtook them they had nothing to say except crying out: \"We have indeed been sinners.\"",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 5,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 960,
+        "text": "(On the Day of Reckoning) We shall question the people to whom We had sent Our apostles, (if they followed their teachings), and will question the apostles.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 6,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 961,
+        "text": "We shall recount (their deeds) to them with knowledge, for We were never absent (and saw all they did).",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 7,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 962,
+        "text": "And the weighing will be just on that Day. Then those whose (deeds) are heavier in the balance will find fulfilment,",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 8,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 963,
+        "text": "And those whose (deeds) are lighter in the scale shall perish for violating Our signs.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 9,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 964,
+        "text": "We settled you on the earth, and provided means of livelihood for you in it; but little are the thanks you give.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 10,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 122,
+        "hizbQuarter": 61,
+        "sajda": false
+      },
+      {
+        "number": 965,
+        "text": "Verily We created you and gave you form and shape, and ordered the angels to bow before Adam in homage; and they all bowed but Iblis who was not among those who bowed.",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 11,
+        "juz": 8,
+        "manzil": 2,
+        "page": 151,
+        "ruku": 123,
+        "hizbQuarter": 61,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "en.ahmedali",
+      "language": "en",
+      "name": "Ahmed Ali",
+      "englishName": "Ahmed Ali",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+    }
+  }
+}
