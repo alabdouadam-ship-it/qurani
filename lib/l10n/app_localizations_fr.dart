@@ -60,6 +60,30 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get termsConditions => 'Conditions générales';
+  @override
+  String get supportUs => 'Soutenez-nous';
+  @override
+  String get contactUs => 'Contactez-nous';
+  @override
+  String get supportIntro => 'Nous dépendons de l’hébergement et de services tiers pour assurer la disponibilité de Qurani. Votre soutien facultatif nous aide à maintenir et améliorer l’application.';
+  @override
+  String get donateViaPayPal => 'Don via PayPal';
+  @override
+  String get paypalEmail => 'Email PayPal';
+  @override
+  String get donateViaCrypto => 'Don via USDT';
+  @override
+  String get usdtAddress => 'Adresse USDT';
+  @override
+  String get watchAd => 'Soutenir en regardant une publicité (bientôt)';
+  @override
+  String get contactViaWhatsApp => 'WhatsApp';
+  @override
+  String get contactViaEmail => 'Email';
+  @override
+  String get copy => 'Copier';
+  @override
+  String get copied => 'Copié';
 
   @override
   String get prayerTimes => 'Heures de prière';

@@ -198,6 +198,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms & Conditions'**
   String get termsConditions;
+  String get supportUs;
+  String get contactUs;
+  String get supportIntro;
+  String get donateViaPayPal;
+  String get paypalEmail;
+  String get donateViaCrypto;
+  String get usdtAddress;
+  String get watchAd;
+  String get contactViaWhatsApp;
+  String get contactViaEmail;
+  String get copy;
+  String get copied;
 
   /// No description provided for @prayerTimes.
   ///

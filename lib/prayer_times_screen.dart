@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/prayer_times_service.dart';
 import 'advanced_options_screen.dart';
+import 'services/notification_service.dart';
 import 'package:geolocator/geolocator.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
@@ -80,6 +82,9 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   }
 
   Map<String, DateTime>? _todayTimes;
+  String? _nextPrayerId;
+  Duration? _countdown;
+  Timer? _tick;
 
   Future<void> _loadTimes() async {
     setState(() {
@@ -128,12 +133,84 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         _todayTimes = times;
         _loading = false;
       });
+      _computeNextAndSchedule();
     } catch (_) {
       if (!mounted) return;
       setState(() {
         _loading = false;
       });
     }
+  }
+
+  void _computeNextAndSchedule() {
+    _tick?.cancel();
+    if (_todayTimes == null) return;
+    final now = DateTime.now();
+    final order = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
+    String? nextId;
+    DateTime? nextTime;
+    for (final id in order) {
+      final base = _todayTimes![id];
+      if (base == null) continue;
+      final dt = base.add(Duration(minutes: _offsetMin[id] ?? 0));
+      if (dt.isAfter(now)) {
+        nextId = id;
+        nextTime = dt;
+        break;
+      }
+    }
+    if (nextId == null) {
+      // Next day not handled here; keep as null
+      setState(() {
+        _nextPrayerId = null;
+        _countdown = null;
+      });
+      return;
+    }
+    setState(() {
+      _nextPrayerId = nextId;
+      _countdown = nextTime!.difference(now);
+    });
+    _tick = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted || _nextPrayerId == null || nextTime == null) return;
+      final remain = nextTime!.difference(DateTime.now());
+      if (remain.isNegative) {
+        _tick?.cancel();
+        _loadTimes();
+      } else {
+        setState(() => _countdown = remain);
+      }
+    });
+    // Schedule silent alert 5 minutes before next prayer (no alert for sunrise)
+    if (nextId != 'sunrise') {
+      final alertTime = nextTime!.subtract(const Duration(minutes: 5));
+      if (alertTime.isAfter(DateTime.now())) {
+        NotificationService.scheduleSilentAlert(
+          id: _alertIdFor(nextId),
+          triggerTimeLocal: alertTime,
+          title: _localizedName(context, nextId),
+          body: '5 minutes remaining',
+        );
+      }
+    }
+  }
+
+  int _alertIdFor(String id) {
+    switch (id) {
+      case 'fajr':
+        return 101;
+      case 'sunrise':
+        return 102;
+      case 'dhuhr':
+        return 103;
+      case 'asr':
+        return 104;
+      case 'maghrib':
+        return 105;
+      case 'isha':
+        return 106;
+    }
+    return 100;
   }
 
   Future<void> _toggleAdhan(BuildContext context, String id, bool value) async {
@@ -288,7 +365,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           final offsetLabel = offset == 0 ? '' : ' (${offset > 0 ? '+' : ''}${offset}m)';
           final enabled = _adhanEnabled[id] ?? false;
           return Card(
-            elevation: 2,
+            elevation: id == _nextPrayerId ? 4 : 2,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             child: ListTile(
               leading: CircleAvatar(
@@ -296,7 +373,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                 foregroundColor: theme.colorScheme.primary,
                 child: const Icon(Icons.access_time),
               ),
-              title: Text(title),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(title, style: id == _nextPrayerId ? const TextStyle(fontWeight: FontWeight.bold) : null),
+                  if (id == _nextPrayerId && _countdown != null)
+                    Text(_formatDuration(_countdown!), style: TextStyle(color: theme.colorScheme.primary)),
+                ],
+              ),
               subtitle: Text('$timeStr$offsetLabel'),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -317,6 +401,17 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           );
         },
       );
+  }
+
+  String _formatDuration(Duration d) {
+    final total = d.inSeconds;
+    final h = total ~/ 3600;
+    final m = (total % 3600) ~/ 60;
+    final s = total % 60;
+    if (h > 0) {
+      return '${h.toString().padLeft(2,'0')}:${m.toString().padLeft(2,'0')}:${s.toString().padLeft(2,'0')}';
+    }
+    return '${m.toString().padLeft(2,'0')}:${s.toString().padLeft(2,'0')}';
   }
 }
 

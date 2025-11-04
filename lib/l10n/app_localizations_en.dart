@@ -60,6 +60,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get termsConditions => 'Terms & Conditions';
+  @override
+  String get supportUs => 'Support us';
+  @override
+  String get contactUs => 'Contact us';
+  @override
+  String get supportIntro => 'We rely on hosting and third‑party services to keep Qurani running. Your optional support helps sustain and improve the app.';
+  @override
+  String get donateViaPayPal => 'Donate via PayPal';
+  @override
+  String get paypalEmail => 'PayPal email';
+  @override
+  String get donateViaCrypto => 'Donate via USDT';
+  @override
+  String get usdtAddress => 'USDT address';
+  @override
+  String get watchAd => 'Support by watching an ad (coming soon)';
+  @override
+  String get contactViaWhatsApp => 'WhatsApp';
+  @override
+  String get contactViaEmail => 'Email';
+  @override
+  String get copy => 'Copy';
+  @override
+  String get copied => 'Copied';
 
   @override
   String get prayerTimes => 'Prayer Times';

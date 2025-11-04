@@ -7,6 +7,8 @@ import 'package:share_plus/share_plus.dart';
 import 'responsive_config.dart';
 import 'preferences_screen.dart';
 import 'advanced_options_screen.dart';
+import 'support_us_screen.dart';
+import 'contact_us_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -153,6 +155,20 @@ class SettingsScreen extends StatelessWidget {
         title: l10n.termsConditions,
         subtitle: '',
         color: Colors.brown,
+      ),
+      SettingItem(
+        id: 'support',
+        icon: Icons.favorite_outline,
+        title: l10n.supportUs,
+        subtitle: '',
+        color: Colors.redAccent,
+      ),
+      SettingItem(
+        id: 'contact',
+        icon: Icons.support_agent,
+        title: l10n.contactUs,
+        subtitle: '',
+        color: Colors.teal,
       ),
       
       // Row 3 (uncomment to add more settings)
@@ -302,6 +318,22 @@ class SettingsScreen extends StatelessWidget {
               title: AppLocalizations.of(context)!.termsConditions,
               assetPath: _localizedHtml('conditions-terms'),
             ),
+          ),
+        );
+        break;
+      case 'support':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SupportUsScreen(),
+          ),
+        );
+        break;
+      case 'contact':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ContactUsScreen(),
           ),
         );
         break;

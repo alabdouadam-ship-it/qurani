@@ -60,6 +60,30 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termsConditions => 'الشروط والأحكام';
+  @override
+  String get supportUs => 'ادعمنا';
+  @override
+  String get contactUs => 'تواصل معنا';
+  @override
+  String get supportIntro => 'نعتمد على الاستضافة وخدمات خارجية لضمان استمرار تطبيق قرآني. دعمكم الاختياري يساعدنا على الاستمرار وتطوير التطبيق.';
+  @override
+  String get donateViaPayPal => 'التبرع عبر باي بال';
+  @override
+  String get paypalEmail => 'بريد باي بال';
+  @override
+  String get donateViaCrypto => 'التبرع عبر USDT';
+  @override
+  String get usdtAddress => 'عنوان USDT';
+  @override
+  String get watchAd => 'ادعمنا بمشاهدة إعلان (قريبًا)';
+  @override
+  String get contactViaWhatsApp => 'واتساب';
+  @override
+  String get contactViaEmail => 'البريد الإلكتروني';
+  @override
+  String get copy => 'نسخ';
+  @override
+  String get copied => 'تم النسخ';
 
   @override
   String get prayerTimes => 'أوقات الصلاة';

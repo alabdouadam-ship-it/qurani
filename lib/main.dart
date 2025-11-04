@@ -11,6 +11,7 @@ import 'responsive_config.dart';
 import 'services/preferences_service.dart';
 import 'options_screen.dart';
 import 'settings_screen.dart';
+import 'services/notification_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +27,7 @@ Future<void> main() async {
   await audioSession.configure(const AudioSessionConfiguration.music());
   await _ensureNotificationPermission();
   await PreferencesService.init();
+  await NotificationService.init();
   runApp(const QuraniApp());
 }
 
