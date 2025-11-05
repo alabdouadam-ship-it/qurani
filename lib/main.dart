@@ -7,11 +7,11 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:audio_session/audio_session.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'responsive_config.dart';
 import 'services/preferences_service.dart';
 import 'options_screen.dart';
 import 'settings_screen.dart';
 import 'services/notification_service.dart';
+import 'services/prayer_times_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,6 +28,8 @@ Future<void> main() async {
   await _ensureNotificationPermission();
   await PreferencesService.init();
   await NotificationService.init();
+  // Silent background refresh of prayer times cache every 10 days using last known position
+  await PrayerTimesService.maybeRefreshCacheOnLaunch();
   runApp(const QuraniApp());
 }
 

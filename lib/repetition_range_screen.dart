@@ -249,18 +249,14 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
 
     for (int i = start; i <= end; i++) {
       final brief = ayahs[i - 1];
-      final url = AudioService.buildVerseUrl(
-        reciterKeyAr: reciterKey,
-        surahOrder: widget.surah.order,
-        verseNumber: brief.numberInSurah,
-      );
-      if (url == null) {
-        continue;
-      }
       for (int repeatIndex = 0; repeatIndex < repeatCount; repeatIndex++) {
         entries.add(
           _VersePlaybackEntry(
-            url: url,
+            verseUri: await AudioService.getVerseUriPreferLocal(
+              reciterKeyAr: reciterKey,
+              surahOrder: widget.surah.order,
+              verseNumber: brief.numberInSurah,
+            ),
             globalAyahNumber: brief.number,
             verseInSurah: brief.numberInSurah,
             reciterName: reciterName,
@@ -324,12 +320,9 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       },
     );
 
-    await _player.setAudioSource(
-      AudioSource.uri(
-        Uri.parse(entry.url),
-        tag: mediaItem,
-      ),
-    );
+    final uri = entry.verseUri;
+    if (uri == null) return;
+    await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
     await _player.play();
 
     if (mounted) {
@@ -695,7 +688,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
 }
 
 class _VersePlaybackEntry {
-  final String url;
+  final Uri? verseUri;
   final int globalAyahNumber;
   final int verseInSurah;
   final String reciterName;
@@ -704,7 +697,7 @@ class _VersePlaybackEntry {
   final int repeatCount;
 
   const _VersePlaybackEntry({
-    required this.url,
+    required this.verseUri,
     required this.globalAyahNumber,
     required this.verseInSurah,
     required this.reciterName,

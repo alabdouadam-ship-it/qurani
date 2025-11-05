@@ -638,9 +638,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       final prepared = await _preparePageAudio(page, reciterCode);
       if (!prepared) {
         if (showErrors && mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.surahUnavailable)),
-          );
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.surahUnavailable)),
+        );
         }
         return false;
       }
@@ -1432,25 +1432,25 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             itemBuilder: (context) {
               final colorScheme = Theme.of(context).colorScheme;
               return QuranEdition.values
-                  .map(
-                    (edition) => PopupMenuItem<QuranEdition>(
-                      value: edition,
-                      child: Row(
-                        children: [
-                          if (edition == _edition)
+                .map(
+                  (edition) => PopupMenuItem<QuranEdition>(
+                    value: edition,
+                    child: Row(
+                      children: [
+                        if (edition == _edition)
                             Icon(
                               Icons.check,
                               size: 18,
                               color: colorScheme.primary,
                             )
-                          else
-                            const SizedBox(width: 18),
-                          const SizedBox(width: 8),
-                          Text(_editionLabel(edition, l10n)),
-                        ],
-                      ),
+                        else
+                          const SizedBox(width: 18),
+                        const SizedBox(width: 8),
+                        Text(_editionLabel(edition, l10n)),
+                      ],
                     ),
-                  )
+                  ),
+                )
                   .toList();
             },
           ),
@@ -1540,21 +1540,15 @@ String _editionLabel(QuranEdition edition, AppLocalizations l10n) {
 }
 
 Future<List<AudioSource>> _buildPageAudioSources(
-  PageData page,
-  String reciterCode,
-) async {
+    PageData page,
+    String reciterCode,
+    ) async {
   final sources = <AudioSource>[];
   final langCode = PreferencesService.getLanguage();
   final reciterName = AudioService.reciterDisplayName(reciterCode, langCode);
 
   for (final ayah in page.ayahs) {
-    final url = AudioService.buildVerseUrl(
-      reciterKeyAr: reciterCode,
-      surahOrder: ayah.surah.number,
-      verseNumber: ayah.numberInSurah,
-    );
-    if (url != null) {
-      final mediaItem = MediaItem(
+    final mediaItem = MediaItem(
         id: '${reciterCode}_${ayah.surah.number}_${ayah.numberInSurah}',
         title: '${ayah.surah.name} • ${ayah.numberInSurah}',
         album: reciterName,
@@ -1565,13 +1559,13 @@ Future<List<AudioSource>> _buildPageAudioSources(
           'page': page.number,
         },
       );
-      sources.add(
-        AudioSource.uri(
-          Uri.parse(url),
-          tag: mediaItem,
-        ),
-      );
-    }
+    final src = await AudioService.buildVerseAudioSource(
+      reciterKeyAr: reciterCode,
+      surahOrder: ayah.surah.number,
+      verseNumber: ayah.numberInSurah,
+      mediaItem: mediaItem,
+    );
+    if (src != null) sources.add(src);
   }
   return sources;
 }

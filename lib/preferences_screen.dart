@@ -5,7 +5,6 @@ import 'responsive_config.dart';
 import 'services/preferences_service.dart';
 import 'util/arabic_font_utils.dart';
 import 'main.dart';
-import 'settings_screen.dart';
 
 class PreferencesScreen extends StatefulWidget {
   const PreferencesScreen({super.key});
@@ -764,7 +763,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     await PreferencesService.saveFontSize(_selectedFontSize);
     await PreferencesService.saveVerseRepeatCount(_verseRepeatCount);
     await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
-    // Theme change will be handled by the notifier in main.dart
+      // Theme change will be handled by the notifier in main.dart
     if (_selectedLanguage != null) {
       await PreferencesService.saveLanguage(_selectedLanguage!);
       // Update app locale after saving

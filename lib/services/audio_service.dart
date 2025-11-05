@@ -1,3 +1,8 @@
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
+
 class AudioService {
   // Map Arabic reciter key to base folder (from script.js FULL_AUDIO_OPTIONS)
   static const Map<String, String> _fullAudioBases = {
@@ -176,6 +181,11 @@ class AudioService {
     return _ayahReciterFolders[reciterKeyAr] ?? _ayahReciterFolders['afs']!;
   }
 
+  // Public wrapper for other files
+  static String ayahsReciterFolder(String reciterKeyAr) {
+    return _getAyahsReciterFolder(reciterKeyAr);
+  }
+
   // Get list of verse URLs for a surah
   static List<String> buildVerseUrls({
     required String reciterKeyAr,
@@ -190,6 +200,71 @@ class AudioService {
         verseNumber: index + 1,
       ) ?? '',
     ).where((url) => url.isNotEmpty).toList();
+  }
+
+  // Local ayah file path under app documents: ayahs/<reciterFolder>/<SSSVVV>.mp3
+  static Future<String> _localAyahFilePath({
+    required String reciterKeyAr,
+    required int surahOrder,
+    required int verseNumber,
+  }) async {
+    final dir = await getApplicationDocumentsDirectory();
+    final reciterFolder = _getAyahsReciterFolder(reciterKeyAr);
+    final s = _pad3(surahOrder) ?? '001';
+    final v = _pad3(verseNumber) ?? '001';
+    final base = Directory('${dir.path}/ayahs/$reciterFolder');
+    return '${base.path}/$s$v.mp3';
+  }
+
+  // Public wrapper for other files
+  static Future<String> localAyahFilePath({
+    required String reciterKeyAr,
+    required int surahOrder,
+    required int verseNumber,
+  }) {
+    return _localAyahFilePath(
+      reciterKeyAr: reciterKeyAr,
+      surahOrder: surahOrder,
+      verseNumber: verseNumber,
+    );
+  }
+
+  static Future<Uri?> getVerseUriPreferLocal({
+    required String reciterKeyAr,
+    required int surahOrder,
+    required int verseNumber,
+  }) async {
+    try {
+      final localPath = await _localAyahFilePath(
+        reciterKeyAr: reciterKeyAr,
+        surahOrder: surahOrder,
+        verseNumber: verseNumber,
+      );
+      if (await File(localPath).exists()) {
+        return Uri.file(localPath);
+      }
+    } catch (_) {}
+    final url = buildVerseUrl(
+      reciterKeyAr: reciterKeyAr,
+      surahOrder: surahOrder,
+      verseNumber: verseNumber,
+    );
+    return url != null ? Uri.parse(url) : null;
+  }
+
+  static Future<AudioSource?> buildVerseAudioSource({
+    required String reciterKeyAr,
+    required int surahOrder,
+    required int verseNumber,
+    required MediaItem mediaItem,
+  }) async {
+    final uri = await getVerseUriPreferLocal(
+      reciterKeyAr: reciterKeyAr,
+      surahOrder: surahOrder,
+      verseNumber: verseNumber,
+    );
+    if (uri == null) return null;
+    return AudioSource.uri(uri, tag: mediaItem);
   }
 }
 

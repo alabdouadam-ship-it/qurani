@@ -151,7 +151,27 @@ class PreferencesService {
   }
 
   static String getAdhanSound() {
-    return _prefs?.getString(keyAdhanSound) ?? 'adhan_1';
+    return _prefs?.getString(keyAdhanSound) ?? 'afs';
+  }
+
+  // Time format: true => 12h, false => 24h
+  static const String keyTimeFormat12h = 'time_format_12h';
+  static Future<void> saveTimeFormat12h(bool value) async {
+    await _prefs?.setBool(keyTimeFormat12h, value);
+  }
+
+  static bool getTimeFormat12h() {
+    return _prefs?.getBool(keyTimeFormat12h) ?? false; // default 24h
+  }
+
+  // Digit style: true => Western (0-9), false => Eastern (Arabic)
+  static const String keyWesternDigits = 'western_digits';
+  static Future<void> saveWesternDigits(bool value) async {
+    await _prefs?.setBool(keyWesternDigits, value);
+  }
+
+  static bool getWesternDigits() {
+    return _prefs?.getBool(keyWesternDigits) ?? true; // default Western
   }
 
   static Future<void> saveTafsir(String value) async {

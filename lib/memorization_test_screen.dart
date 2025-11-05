@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qurani/l10n/app_localizations.dart';
-import 'package:qurani/services/quran_repository.dart';
-import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/memorization_test_service.dart';
-import 'package:qurani/services/memorization_stats_service.dart';
 import 'package:qurani/services/surah_service.dart';
 import 'responsive_config.dart';
 import 'models/surah.dart';

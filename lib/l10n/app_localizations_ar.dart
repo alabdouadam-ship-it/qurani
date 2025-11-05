@@ -39,7 +39,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get shareApp => 'مشاركة التطبيق';
 
   @override
-  String shareAppMessage(String appUrl) {
+  String shareAppMessage(Object appUrl) {
     return 'اكتشف تطبيق قرآني الذي يساعدك على التفاعل مع القرآن الكريم: استماع وقراءة وحفظ بالتكرار، مسبحة إلكترونية، تحديد اتجاه القبلة، اختبار الحفظ والمزيد. يدعم التطبيق العربية والإنجليزية والفرنسية ويتيح واجهات بألوان متعددة حسب الرغبة. حمّله الآن من جوجل بلاي: $appUrl';
   }
 
@@ -60,80 +60,115 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termsConditions => 'الشروط والأحكام';
+
   @override
   String get supportUs => 'ادعمنا';
+
   @override
   String get contactUs => 'تواصل معنا';
+
   @override
   String get supportIntro => 'نعتمد على الاستضافة وخدمات خارجية لضمان استمرار تطبيق قرآني. دعمكم الاختياري يساعدنا على الاستمرار وتطوير التطبيق.';
+
   @override
   String get donateViaPayPal => 'التبرع عبر باي بال';
+
   @override
   String get paypalEmail => 'بريد باي بال';
+
   @override
   String get donateViaCrypto => 'التبرع عبر USDT';
+
   @override
   String get usdtAddress => 'عنوان USDT';
+
   @override
   String get watchAd => 'ادعمنا بمشاهدة إعلان (قريبًا)';
+
   @override
   String get contactViaWhatsApp => 'واتساب';
+
   @override
   String get contactViaEmail => 'البريد الإلكتروني';
+
   @override
   String get copy => 'نسخ';
+
   @override
   String get copied => 'تم النسخ';
 
   @override
   String get prayerTimes => 'أوقات الصلاة';
+
   @override
   String get fajr => 'الفجر';
+
   @override
   String get sunrise => 'الشروق';
+
   @override
   String get dhuhr => 'الظهر';
+
   @override
   String get asr => 'العصر';
+
   @override
   String get maghrib => 'المغرب';
+
   @override
   String get isha => 'العشاء';
+
   @override
   String get adhanEnabledMsg => 'سيتم تشغيل الأذان في وقت هذه الصلاة.';
+
   @override
   String get adhanDisabledMsg => 'لن يتم تشغيل الأذان في وقت هذه الصلاة.';
+
   @override
   String get adjustTime => 'تصحيح الوقت';
+
   @override
   String get plus10Min => '+10 دقائق';
+
   @override
   String get minus10Min => '-10 دقائق';
+
   @override
   String get plus1Min => '+1 دقيقة';
+
   @override
   String get minus1Min => '-1 دقيقة';
 
   @override
   String get advancedOptions => 'خيارات متقدمة';
+
   @override
   String get calculationMethod => 'طريقة الحساب';
+
   @override
   String get methodMWL => 'رابطة العالم الإسلامي';
+
   @override
   String get methodUmmAlQura => 'أم القرى (مكة)';
+
   @override
   String get methodEgyptian => 'الهيئة العامة المصرية';
+
   @override
   String get apiUnavailableUsingLocal => 'الخدمة عبر الإنترنت غير متاحة. سيتم استخدام الحساب المحلي.';
+
   @override
   String get prayerTimesSettings => 'إعدادات أوقات الصلاة';
+
   @override
   String get adhanSound => 'صوت الأذان';
+
   @override
   String get adhanSoundOption1 => 'أذان 1';
+
   @override
   String get adhanSoundOption2 => 'أذان 2';
+
   @override
   String get adhanSoundOption3 => 'أذان 3';
 
@@ -147,7 +182,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get aboutDescription => 'يساعدك تطبيق قرآني على التفاعل مع القرآن الكريم: الاستماع والقراءة والحفظ بالتكرار، مسبحة إلكترونية، تحديد اتجاه القبلة، اختبارات الحفظ، العلامات، الآيات المميزة والمزيد. يدعم التطبيق العربية والإنجليزية والفرنسية مع إمكانية تخصيص الألوان والخطوط.';
 
   @override
-  String appVersionLabel(String version) {
+  String appVersionLabel(Object version) {
     return 'الإصدار: $version';
   }
 
@@ -311,9 +346,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get errorLoadingAudio => 'خطأ في تحميل الصوت';
 
   @override
-  String get verseOutsideRange => 'هذه الآية خارج النطاق المحدد.';
-
-  @override
   String get retry => 'إعادة المحاولة';
 
   @override
@@ -472,6 +504,24 @@ class AppLocalizationsAr extends AppLocalizations {
   String get close => 'إغلاق';
 
   @override
+  String get selectLabel => 'اختر';
+
+  @override
+  String get selectedLabel => 'تم الاختيار';
+
+  @override
+  String get refresh => 'تحديث';
+
+  @override
+  String get prayerInternetGpsRequired => 'يلزم الاتصال بالإنترنت وتفعيل GPS لعرض أوقات الصلاة.';
+
+  @override
+  String get dayColumn => 'اليوم';
+
+  @override
+  String get imsak => 'الإمساك';
+
+  @override
   String get currentVerse => 'الآية الحالية';
 
   @override
@@ -515,6 +565,9 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get qiblaSensorNotSupported => 'هذا الجهاز لا يدعم الحساسات المطلوبة لوضع البوصلة.';
+
+  @override
+  String get verseOutsideRange => 'هذه الآية خارج النطاق المحدد.';
 
   @override
   String qiblaAngleLabel(String angle) {

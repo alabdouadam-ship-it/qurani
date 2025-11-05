@@ -151,19 +151,45 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
     }
     
     if (!mounted) return;
+    String emoji;
+    String headline;
+    String sub;
+    if (percentage >= 90) {
+      emoji = '🌟';
+      headline = 'ما شاء الله!';
+      sub = 'إتقان رائع! استمر على هذا المستوى';
+    } else if (percentage >= 75) {
+      emoji = '👍';
+      headline = 'أحسنت!';
+      sub = 'نتيجة ممتازة، بضع مراجعات وستصل للكمال';
+    } else if (percentage >= 50) {
+      emoji = '🙂';
+      headline = 'جيد!';
+      sub = 'تابع المراجعة، التقدم واضح';
+    } else {
+      emoji = '💪';
+      headline = 'لا بأس!';
+      sub = 'المحاولة تصنع الفرق، أعد الاختبار بعد مراجعة الأخطاء';
+    }
+
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: Text(
-          percentage >= 60 ? l10n.testCongratsTitle : l10n.testResultTitle,
-          style: const TextStyle(fontWeight: FontWeight.bold),
+        title: Row(
+          children: [
+            Text(emoji, style: const TextStyle(fontSize: 22)),
+            const SizedBox(width: 8),
+            Text(headline, style: const TextStyle(fontWeight: FontWeight.bold)),
+          ],
         ),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(sub),
+              const SizedBox(height: 12),
               // Current test results
               Container(
                 padding: const EdgeInsets.all(12),

@@ -148,6 +148,34 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                         ),
                       ),
                       const SizedBox(height: 16),
+                      // Last & Best Results Cards
+                      Card(
+                        elevation: 2,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('آخر النتائج (سور)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 8),
+                              _buildLastMapList(_stats!['lastSurah'] as Map?, isSurah: true, theme: theme, colorScheme: colorScheme),
+                              const SizedBox(height: 16),
+                              Text('أفضل النتائج (سور)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 8),
+                              _buildLastMapList(_stats!['bestSurah'] as Map?, isSurah: true, theme: theme, colorScheme: colorScheme),
+                              const SizedBox(height: 16),
+                              Text('آخر النتائج (أجزاء)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 8),
+                              _buildLastMapList(_stats!['lastJuz'] as Map?, isSurah: false, theme: theme, colorScheme: colorScheme),
+                              const SizedBox(height: 16),
+                              Text('أفضل النتائج (أجزاء)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                              const SizedBox(height: 8),
+                              _buildLastMapList(_stats!['bestJuz'] as Map?, isSurah: false, theme: theme, colorScheme: colorScheme),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
                       // Surah Mastery Card
                       if ((_stats!['surahMastery'] as Map<int, int>).isNotEmpty) ...[
                         Card(
@@ -313,6 +341,50 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     if (percentage >= 80) return Colors.green;
     if (percentage >= 60) return Colors.orange;
     return Colors.red;
+  }
+
+  Widget _buildLastMapList(Map? map, {required bool isSurah, required ThemeData theme, required ColorScheme colorScheme}) {
+    if (map == null || map.isEmpty) return const Text('لا توجد بيانات');
+    final entries = (map as Map).entries.toList()
+      ..sort((a, b) => (b.value['timestamp'] as int).compareTo(a.value['timestamp'] as int));
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: entries.length.clamp(0, 10),
+      itemBuilder: (context, index) {
+        final e = entries[index];
+        final keyNum = int.tryParse(e.key.toString()) ?? 0;
+        final perc = (e.value['percentage'] as int?) ?? 0;
+        final ts = (e.value['timestamp'] as int?) ?? 0;
+        final when = DateTime.fromMillisecondsSinceEpoch(ts);
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 6),
+          child: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  isSurah ? 'سورة $keyNum' : 'جزء $keyNum',
+                  textDirection: TextDirection.rtl,
+                  style: theme.textTheme.bodyMedium,
+                ),
+              ),
+              Text(
+                '$perc%',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: _getPercentageColor(perc, colorScheme),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Text(
+                _formatDate(when),
+                style: theme.textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   String _formatDate(DateTime date) {

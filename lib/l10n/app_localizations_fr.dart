@@ -39,8 +39,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shareApp => 'Partager l\'application';
 
   @override
-  String shareAppMessage(String appUrl) {
-    return 'Découvrez Qurani, l\'application qui vous aide à interagir avec le Coran : écoute, lecture, mémorisation par répétition, tasbih numérique, direction de la qibla, tests de mémorisation et plus encore. L\'application prend en charge l\'arabe, l\'anglais et le français, avec plusieurs thèmes de couleurs. Téléchargez-la sur Google Play : $appUrl';
+  String shareAppMessage(Object appUrl) {
+    return 'Découvrez Qurani, l’application qui vous aide à interagir avec le Coran : écoute, lecture, mémorisation par répétition, tasbih numérique, direction de la qibla, tests de mémorisation et plus encore. L’application prend en charge l’arabe, l’anglais et le français, avec plusieurs thèmes de couleurs. Téléchargez-la sur Google Play : $appUrl';
   }
 
   @override
@@ -60,80 +60,115 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get termsConditions => 'Conditions générales';
+
   @override
   String get supportUs => 'Soutenez-nous';
+
   @override
   String get contactUs => 'Contactez-nous';
+
   @override
   String get supportIntro => 'Nous dépendons de l’hébergement et de services tiers pour assurer la disponibilité de Qurani. Votre soutien facultatif nous aide à maintenir et améliorer l’application.';
+
   @override
   String get donateViaPayPal => 'Don via PayPal';
+
   @override
   String get paypalEmail => 'Email PayPal';
+
   @override
   String get donateViaCrypto => 'Don via USDT';
+
   @override
   String get usdtAddress => 'Adresse USDT';
+
   @override
   String get watchAd => 'Soutenir en regardant une publicité (bientôt)';
+
   @override
   String get contactViaWhatsApp => 'WhatsApp';
+
   @override
   String get contactViaEmail => 'Email';
+
   @override
   String get copy => 'Copier';
+
   @override
   String get copied => 'Copié';
 
   @override
   String get prayerTimes => 'Heures de prière';
+
   @override
   String get fajr => 'Fajr';
+
   @override
   String get sunrise => 'Lever du soleil';
+
   @override
   String get dhuhr => 'Dhuhr';
+
   @override
   String get asr => 'Asr';
+
   @override
   String get maghrib => 'Maghrib';
+
   @override
   String get isha => 'Isha';
+
   @override
   String get adhanEnabledMsg => 'L\'adhan sera diffusé à cette heure de prière.';
+
   @override
   String get adhanDisabledMsg => 'L\'adhan ne sera pas diffusé à cette heure de prière.';
+
   @override
   String get adjustTime => 'Ajuster l\'heure';
+
   @override
   String get plus10Min => '+10 min';
+
   @override
   String get minus10Min => '-10 min';
+
   @override
   String get plus1Min => '+1 min';
+
   @override
   String get minus1Min => '-1 min';
 
   @override
   String get advancedOptions => 'Options avancées';
+
   @override
   String get calculationMethod => 'Méthode de calcul';
+
   @override
   String get methodMWL => 'Ligue du Monde Musulman';
+
   @override
   String get methodUmmAlQura => 'Oumm al-Qura (La Mecque)';
+
   @override
   String get methodEgyptian => 'Autorité générale égyptienne';
+
   @override
   String get apiUnavailableUsingLocal => 'Service en ligne indisponible. Utilisation du calcul local.';
+
   @override
   String get prayerTimesSettings => 'Paramètres des heures de prière';
+
   @override
   String get adhanSound => 'Son de l\'adhan';
+
   @override
   String get adhanSoundOption1 => 'Adhan 1';
+
   @override
   String get adhanSoundOption2 => 'Adhan 2';
+
   @override
   String get adhanSoundOption3 => 'Adhan 3';
 
@@ -144,10 +179,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutTitle => 'À propos de Qurani';
 
   @override
-  String get aboutDescription => 'Qurani vous aide à interagir avec le Coran : écoute, lecture, mémorisation par répétition, tasbih numérique, direction de la qibla, tests de mémorisation, favoris, versets mis en avant et plus encore. L\'application prend en charge l\'arabe, l\'anglais et le français, avec des thèmes et polices personnalisables.';
+  String get aboutDescription => 'Qurani vous aide à interagir avec le Coran : écoute, lecture, mémorisation par répétition, tasbih numérique, direction de la qibla, tests de mémorisation, favoris, versets mis en avant et plus encore. L’application prend en charge l’arabe, l’anglais et le français, avec des thèmes et polices personnalisables.';
 
   @override
-  String appVersionLabel(String version) {
+  String appVersionLabel(Object version) {
     return 'Version : $version';
   }
 
@@ -311,9 +346,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get errorLoadingAudio => 'Erreur lors du chargement de l\'audio';
 
   @override
-  String get verseOutsideRange => 'Ce verset est en dehors de la plage sélectionnée.';
-
-  @override
   String get retry => 'Réessayer';
 
   @override
@@ -472,6 +504,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get close => 'Fermer';
 
   @override
+  String get selectLabel => 'Choisir';
+
+  @override
+  String get selectedLabel => 'Sélectionné';
+
+  @override
+  String get refresh => 'Actualiser';
+
+  @override
+  String get prayerInternetGpsRequired => 'Internet et GPS sont requis pour afficher les heures de prière.';
+
+  @override
+  String get dayColumn => 'Jour';
+
+  @override
+  String get imsak => 'Imsak';
+
+  @override
   String get currentVerse => 'Verset actuel';
 
   @override
@@ -515,6 +565,9 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get qiblaSensorNotSupported => 'Cet appareil ne prend pas en charge les capteurs nécessaires au mode boussole.';
+
+  @override
+  String get verseOutsideRange => 'Ce verset est en dehors de la plage sélectionnée.';
 
   @override
   String qiblaAngleLabel(String angle) {

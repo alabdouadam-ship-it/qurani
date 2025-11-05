@@ -32,10 +32,11 @@ dependencies:
   share_plus: ^7.2.1
   in_app_update: ^4.2.2
   webview_flutter: ^4.7.0
-  adhan_dart: ^1.2.0
   flutter_local_notifications: ^17.2.2
   timezone: ^0.9.2
   url_launcher: ^6.3.1
+  pdf: ^3.10.7
+  geocoding: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -59,6 +60,7 @@ flutter:
     - assets/data/quran-french/quran.json
     - assets/data/quran_muyassar/pages/
     - assets/data/quran_muyassar/quran.json
+    - assets/audio/
     - public/
   fonts:
       - family: Amiri Quran

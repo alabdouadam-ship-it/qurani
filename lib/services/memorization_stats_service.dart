@@ -112,12 +112,50 @@ class MemorizationStatsService {
         ? (totalCorrect / totalQuestions * 100).round()
         : 0;
 
+    // Build last result per surah / juz and best percentage
+    final Map<int, Map<String, dynamic>> lastSurah = {};
+    final Map<int, Map<String, dynamic>> bestSurah = {};
+    final Map<int, Map<String, dynamic>> lastJuz = {};
+    final Map<int, Map<String, dynamic>> bestJuz = {};
+
+    for (final test in history) {
+      final int? surah = test['surahNumber'] as int?;
+      final int? juz = test['juzNumber'] as int?;
+      final int percentage = (test['percentage'] as int?) ?? 0;
+      final int score = (test['score'] as int?) ?? 0;
+      final int ts = (test['timestamp'] as int?) ?? 0;
+      if (surah != null) {
+        final last = lastSurah[surah];
+        if (last == null || ts > (last['timestamp'] as int)) {
+          lastSurah[surah] = {'percentage': percentage, 'score': score, 'timestamp': ts};
+        }
+        final best = bestSurah[surah];
+        if (best == null || percentage > (best['percentage'] as int)) {
+          bestSurah[surah] = {'percentage': percentage, 'score': score, 'timestamp': ts};
+        }
+      }
+      if (juz != null) {
+        final last = lastJuz[juz];
+        if (last == null || ts > (last['timestamp'] as int)) {
+          lastJuz[juz] = {'percentage': percentage, 'score': score, 'timestamp': ts};
+        }
+        final best = bestJuz[juz];
+        if (best == null || percentage > (best['percentage'] as int)) {
+          bestJuz[juz] = {'percentage': percentage, 'score': score, 'timestamp': ts};
+        }
+      }
+    }
+
     return {
       'totalScore': totalScore,
       'totalTests': totalTests,
       'averagePercentage': averagePercentage,
       'surahMastery': mastery,
       'recentTests': history.take(10).toList(),
+      'lastSurah': lastSurah,
+      'bestSurah': bestSurah,
+      'lastJuz': lastJuz,
+      'bestJuz': bestJuz,
     };
   }
 

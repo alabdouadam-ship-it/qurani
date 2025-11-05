@@ -157,12 +157,12 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     try {
       final reciter = PreferencesService.getReciter();
-      final url = AudioService.buildVerseUrl(
+      final uri = await AudioService.getVerseUriPreferLocal(
         reciterKeyAr: reciter,
         surahOrder: ayah.surahOrder,
         verseNumber: ayah.numberInSurah,
       );
-      if (url == null) {
+      if (uri == null) {
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.errorLoadingAudio)),
@@ -170,7 +170,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
         return;
       }
 
-      debugPrint('Playing audio from URL: $url');
+      debugPrint('Playing audio from: $uri');
 
       // Stop any current playback
       try {
@@ -198,7 +198,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
       // Create a single-item playlist with MediaItem tag
       final sources = <AudioSource>[];
-      sources.add(AudioSource.uri(Uri.parse(url), tag: mediaItem));
+      sources.add(AudioSource.uri(uri, tag: mediaItem));
 
       if (sources.isEmpty) {
         if (!mounted) return;

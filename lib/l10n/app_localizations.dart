@@ -160,8 +160,8 @@ abstract class AppLocalizations {
   /// No description provided for @shareAppMessage.
   ///
   /// In en, this message translates to:
-  /// **'Discover Qurani on Google Play: {appUrl}'**
-  String shareAppMessage(String appUrl);
+  /// **'Discover Qurani, the app that helps you engage with the Holy Quran: listening, reading, repetition-based memorization, digital tasbeeh, Qibla direction, memorization tests, and more. The app supports Arabic, English and French, with multiple color themes. Get it on Google Play: {appUrl}'**
+  String shareAppMessage(Object appUrl);
 
   /// No description provided for @tellOthers.
   ///
@@ -198,17 +198,77 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms & Conditions'**
   String get termsConditions;
+
+  /// No description provided for @supportUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Support us'**
   String get supportUs;
+
+  /// No description provided for @contactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact us'**
   String get contactUs;
+
+  /// No description provided for @supportIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'We rely on hosting and third‑party services to keep Qurani running. Your optional support helps sustain and improve the app.'**
   String get supportIntro;
+
+  /// No description provided for @donateViaPayPal.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate via PayPal'**
   String get donateViaPayPal;
+
+  /// No description provided for @paypalEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'PayPal email'**
   String get paypalEmail;
+
+  /// No description provided for @donateViaCrypto.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate via USDT'**
   String get donateViaCrypto;
+
+  /// No description provided for @usdtAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'USDT address'**
   String get usdtAddress;
+
+  /// No description provided for @watchAd.
+  ///
+  /// In en, this message translates to:
+  /// **'Support by watching an ad (coming soon)'**
   String get watchAd;
+
+  /// No description provided for @contactViaWhatsApp.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
   String get contactViaWhatsApp;
+
+  /// No description provided for @contactViaEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
   String get contactViaEmail;
+
+  /// No description provided for @copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
   String get copy;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
   String get copied;
 
   /// No description provided for @prayerTimes.
@@ -217,32 +277,148 @@ abstract class AppLocalizations {
   /// **'Prayer Times'**
   String get prayerTimes;
 
+  /// No description provided for @fajr.
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr'**
   String get fajr;
+
+  /// No description provided for @sunrise.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise'**
   String get sunrise;
+
+  /// No description provided for @dhuhr.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr'**
   String get dhuhr;
+
+  /// No description provided for @asr.
+  ///
+  /// In en, this message translates to:
+  /// **'Asr'**
   String get asr;
+
+  /// No description provided for @maghrib.
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib'**
   String get maghrib;
+
+  /// No description provided for @isha.
+  ///
+  /// In en, this message translates to:
+  /// **'Isha'**
   String get isha;
 
+  /// No description provided for @adhanEnabledMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan will play at this prayer time.'**
   String get adhanEnabledMsg;
+
+  /// No description provided for @adhanDisabledMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan will not play at this prayer time.'**
   String get adhanDisabledMsg;
 
+  /// No description provided for @adjustTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust time'**
   String get adjustTime;
+
+  /// No description provided for @plus10Min.
+  ///
+  /// In en, this message translates to:
+  /// **'+10 min'**
   String get plus10Min;
+
+  /// No description provided for @minus10Min.
+  ///
+  /// In en, this message translates to:
+  /// **'-10 min'**
   String get minus10Min;
+
+  /// No description provided for @plus1Min.
+  ///
+  /// In en, this message translates to:
+  /// **'+1 min'**
   String get plus1Min;
+
+  /// No description provided for @minus1Min.
+  ///
+  /// In en, this message translates to:
+  /// **'-1 min'**
   String get minus1Min;
 
+  /// No description provided for @advancedOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced options'**
   String get advancedOptions;
+
+  /// No description provided for @calculationMethod.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculation method'**
   String get calculationMethod;
+
+  /// No description provided for @methodMWL.
+  ///
+  /// In en, this message translates to:
+  /// **'Muslim World League'**
   String get methodMWL;
+
+  /// No description provided for @methodUmmAlQura.
+  ///
+  /// In en, this message translates to:
+  /// **'Umm Al-Qura (Makkah)'**
   String get methodUmmAlQura;
+
+  /// No description provided for @methodEgyptian.
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian General Authority'**
   String get methodEgyptian;
+
+  /// No description provided for @apiUnavailableUsingLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Online service unavailable. Using local calculation.'**
   String get apiUnavailableUsingLocal;
+
+  /// No description provided for @prayerTimesSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer times settings'**
   String get prayerTimesSettings;
+
+  /// No description provided for @adhanSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan sound'**
   String get adhanSound;
+
+  /// No description provided for @adhanSoundOption1.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 1'**
   String get adhanSoundOption1;
+
+  /// No description provided for @adhanSoundOption2.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 2'**
   String get adhanSoundOption2;
+
+  /// No description provided for @adhanSoundOption3.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan 3'**
   String get adhanSoundOption3;
 
   /// No description provided for @dataProtection.
@@ -260,14 +436,14 @@ abstract class AppLocalizations {
   /// No description provided for @aboutDescription.
   ///
   /// In en, this message translates to:
-  /// **'Qurani helps you engage ...'**
+  /// **'Qurani helps you engage with the Holy Quran: listening, reading, repetition-based memorization, digital tasbeeh, Qibla direction, memorization tests, bookmarks, featured verses, and more. Supports Arabic, English, and French, with customizable themes and fonts.'**
   String get aboutDescription;
 
   /// No description provided for @appVersionLabel.
   ///
   /// In en, this message translates to:
   /// **'Version: {version}'**
-  String appVersionLabel(String version);
+  String appVersionLabel(Object version);
 
   /// No description provided for @optionsTitle.
   ///
@@ -587,12 +763,6 @@ abstract class AppLocalizations {
   /// **'Error loading audio'**
   String get errorLoadingAudio;
 
-  /// No description provided for @verseOutsideRange.
-  ///
-  /// In en, this message translates to:
-  /// **'This verse is outside the selected range.'**
-  String get verseOutsideRange;
-
   /// No description provided for @retry.
   ///
   /// In en, this message translates to:
@@ -905,6 +1075,42 @@ abstract class AppLocalizations {
   /// **'Close'**
   String get close;
 
+  /// No description provided for @selectLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose'**
+  String get selectLabel;
+
+  /// No description provided for @selectedLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected'**
+  String get selectedLabel;
+
+  /// No description provided for @refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get refresh;
+
+  /// No description provided for @prayerInternetGpsRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Internet and GPS are required to show prayer times.'**
+  String get prayerInternetGpsRequired;
+
+  /// No description provided for @dayColumn.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get dayColumn;
+
+  /// No description provided for @imsak.
+  ///
+  /// In en, this message translates to:
+  /// **'Imsak'**
+  String get imsak;
+
   /// No description provided for @currentVerse.
   ///
   /// In en, this message translates to:
@@ -994,6 +1200,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This device does not support the required sensors for compass mode.'**
   String get qiblaSensorNotSupported;
+
+  /// No description provided for @verseOutsideRange.
+  ///
+  /// In en, this message translates to:
+  /// **'This verse is outside the selected range.'**
+  String get verseOutsideRange;
 
   /// No description provided for @qiblaAngleLabel.
   ///

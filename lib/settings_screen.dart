@@ -6,9 +6,9 @@ import 'local_webview_screen.dart';
 import 'package:share_plus/share_plus.dart';
 import 'responsive_config.dart';
 import 'preferences_screen.dart';
-import 'advanced_options_screen.dart';
 import 'support_us_screen.dart';
 import 'contact_us_screen.dart';
+import 'offline_audio_screen.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -125,6 +125,13 @@ class SettingsScreen extends StatelessWidget {
         title: l10n.shareApp,
         subtitle: "",
         color: Colors.teal,
+      ),
+      SettingItem(
+        id: 'offline_audio',
+        icon: Icons.cloud_download_outlined,
+        title: 'Offline audio',
+        subtitle: '',
+        color: Colors.orange,
       ),
       // Row 2
       SettingItem(
@@ -293,6 +300,14 @@ class SettingsScreen extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => const PreferencesScreen(),
+          ),
+        );
+        break;
+      case 'offline_audio':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const OfflineAudioScreen(),
           ),
         );
         break;

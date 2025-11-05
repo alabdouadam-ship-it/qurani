@@ -11,7 +11,6 @@ import 'models/surah.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
 import 'services/preferences_service.dart';
-import 'services/quran_repository.dart';
 import 'services/surah_service.dart';
 import 'widgets/sound_equalizer.dart';
 import 'services/queue_service.dart';
