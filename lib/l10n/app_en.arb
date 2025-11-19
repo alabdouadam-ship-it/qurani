@@ -82,6 +82,32 @@
   "@adhanDisabledMsg": {},
   "adjustTime": "Adjust time",
   "@adjustTime": {},
+  "prayerAdjustmentTooltip": "Adjust prayer time",
+  "@prayerAdjustmentTooltip": {},
+  "prayerAdjustmentTitle": "Adjust {prayerName} time",
+  "@prayerAdjustmentTitle": {
+    "placeholders": {
+      "prayerName": {}
+    }
+  },
+  "prayerAdjustmentOriginal": "Original time",
+  "@prayerAdjustmentOriginal": {},
+  "prayerAdjustmentChange": "Adjustment: {value}",
+  "@prayerAdjustmentChange": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "prayerAdjustmentAfter": "After adjustment: {time}",
+  "@prayerAdjustmentAfter": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "prayerAdjustmentNoChange": "No adjustment",
+  "@prayerAdjustmentNoChange": {},
+  "prayerAdjustmentReset": "Reset adjustment",
+  "@prayerAdjustmentReset": {},
   "plus10Min": "+10 min",
   "@plus10Min": {},
   "minus10Min": "-10 min",
@@ -224,6 +250,14 @@
   "@sleepTimer": {},
   "minutes": "minutes",
   "@minutes": {},
+  "minutesShort": "{minutes} min",
+  "@minutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "off": "Off",
   "@off": {},
   "buffering": "Buffering...",

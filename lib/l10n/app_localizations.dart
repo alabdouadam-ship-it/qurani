@@ -331,6 +331,48 @@ abstract class AppLocalizations {
   /// **'Adjust time'**
   String get adjustTime;
 
+  /// No description provided for @prayerAdjustmentTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust prayer time'**
+  String get prayerAdjustmentTooltip;
+
+  /// No description provided for @prayerAdjustmentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust {prayerName} time'**
+  String prayerAdjustmentTitle(Object prayerName);
+
+  /// No description provided for @prayerAdjustmentOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Original time'**
+  String get prayerAdjustmentOriginal;
+
+  /// No description provided for @prayerAdjustmentChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Adjustment: {value}'**
+  String prayerAdjustmentChange(Object value);
+
+  /// No description provided for @prayerAdjustmentAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'After adjustment: {time}'**
+  String prayerAdjustmentAfter(Object time);
+
+  /// No description provided for @prayerAdjustmentNoChange.
+  ///
+  /// In en, this message translates to:
+  /// **'No adjustment'**
+  String get prayerAdjustmentNoChange;
+
+  /// No description provided for @prayerAdjustmentReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset adjustment'**
+  String get prayerAdjustmentReset;
+
   /// No description provided for @plus10Min.
   ///
   /// In en, this message translates to:
@@ -744,6 +786,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'minutes'**
   String get minutes;
+
+  /// No description provided for @minutesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String minutesShort(int minutes);
 
   /// No description provided for @off.
   ///

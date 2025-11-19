@@ -128,6 +128,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get adjustTime => 'Adjust time';
 
   @override
+  String get prayerAdjustmentTooltip => 'Adjust prayer time';
+
+  @override
+  String prayerAdjustmentTitle(Object prayerName) {
+    return 'Adjust $prayerName time';
+  }
+
+  @override
+  String get prayerAdjustmentOriginal => 'Original time';
+
+  @override
+  String prayerAdjustmentChange(Object value) {
+    return 'Adjustment: $value';
+  }
+
+  @override
+  String prayerAdjustmentAfter(Object time) {
+    return 'After adjustment: $time';
+  }
+
+  @override
+  String get prayerAdjustmentNoChange => 'No adjustment';
+
+  @override
+  String get prayerAdjustmentReset => 'Reset adjustment';
+
+  @override
   String get plus10Min => '+10 min';
 
   @override
@@ -335,6 +362,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get minutes => 'minutes';
+
+  @override
+  String minutesShort(int minutes) {
+    return '$minutes min';
+  }
 
   @override
   String get off => 'Off';

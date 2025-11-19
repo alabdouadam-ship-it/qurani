@@ -851,11 +851,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                   child: const Icon(Icons.access_time),
                 ),
                 title: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(title, style: isNext ? const TextStyle(fontWeight: FontWeight.bold) : null),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: isNext ? const TextStyle(fontWeight: FontWeight.bold) : null,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
                     if (isNext && _countdown != null)
-                      Text(_formatDuration(_countdown!), style: TextStyle(color: theme.colorScheme.primary)),
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(start: 8),
+                        child: Text(
+                          _formatDuration(_countdown!),
+                          style: TextStyle(color: theme.colorScheme.primary),
+                        ),
+                      ),
                   ],
                 ),
                 subtitle: Text(_formatClock(dtAdj)),
@@ -865,11 +876,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // Debug mode: Prayer time adjustment button
-                      if (kDebugMode && id != 'sunrise' && id != 'imsak')
+                      if (id != 'sunrise' && id != 'imsak')
                         IconButton(
                           icon: const Icon(Icons.tune, size: 20),
-                          tooltip: 'معايرة الوقت',
+                          tooltip: AppLocalizations.of(context)!.prayerAdjustmentTooltip,
                           onPressed: () => _openPrayerTimeAdjustment(context, id, dtAdj),
                         ),
                       if (id != 'sunrise' && id != 'imsak')
@@ -897,6 +907,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       return _toWesternDigits('${h.toString().padLeft(2,'0')}:${m.toString().padLeft(2,'0')}:${s.toString().padLeft(2,'0')}');
     }
     return _toWesternDigits('${m.toString().padLeft(2,'0')}:${s.toString().padLeft(2,'0')}');
+  }
+
+  String _formatSignedMinutes(AppLocalizations l10n, int minutes) {
+    final absLabel = l10n.minutesShort(minutes.abs());
+    if (minutes > 0) return '+$absLabel';
+    if (minutes < 0) return '-$absLabel';
+    return absLabel;
   }
 
   String _formatClock(DateTime? dt) {
@@ -1263,6 +1280,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       builder: (ctx) {
         return StatefulBuilder(
           builder: (ctx, setModalState) {
+            final l10n = AppLocalizations.of(ctx)!;
             // Always read the latest time from _todayTimes (which includes adjustments)
             final displayedTime = _todayTimes?[prayerId] ?? currentTime;
             
@@ -1302,7 +1320,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              'معايرة وقت $prayerName',
+                              l10n.prayerAdjustmentTitle(prayerName),
                               style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -1323,7 +1341,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       child: Column(
                         children: [
                           Text(
-                            'الوقت الأصلي',
+                            l10n.prayerAdjustmentOriginal,
                             style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                               color: Theme.of(ctx).colorScheme.onSurfaceVariant,
                             ),
@@ -1339,7 +1357,9 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           if (currentAdjustment != 0) ...[
                             const SizedBox(height: 8),
                             Text(
-                              'التعديل: ${currentAdjustment > 0 ? '+' : ''}$currentAdjustment دقيقة',
+                              l10n.prayerAdjustmentChange(
+                                _formatSignedMinutes(l10n, currentAdjustment),
+                              ),
                               style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                                 color: currentAdjustment > 0 
                                     ? Colors.green 
@@ -1350,7 +1370,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             if (adjustedTime != null) ...[
                               const SizedBox(height: 4),
                               Text(
-                                'الوقت بعد التعديل: ${_formatClock(adjustedTime)}',
+                                l10n.prayerAdjustmentAfter(_formatClock(adjustedTime)),
                                 style: Theme.of(ctx).textTheme.bodyLarge?.copyWith(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -1359,7 +1379,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           ] else if (originalTime != null) ...[
                             const SizedBox(height: 8),
                             Text(
-                              'لا يوجد تعديل',
+                              l10n.prayerAdjustmentNoChange,
                               style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
                                 color: Theme.of(ctx).colorScheme.onSurfaceVariant,
                               ),
@@ -1380,7 +1400,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             child: ElevatedButton.icon(
                               onPressed: () => applyAdjustment(-5),
                               icon: const Icon(Icons.remove_circle_outline),
-                              label: const Text('-5 د'),
+                              label: Text(l10n.minutesShort(5)),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 16),
                               ),
@@ -1392,7 +1412,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             child: ElevatedButton.icon(
                               onPressed: () => applyAdjustment(-1),
                               icon: const Icon(Icons.remove),
-                              label: const Text('-1 د'),
+                              label: Text(l10n.minutesShort(1)),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 16),
                               ),
@@ -1404,7 +1424,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             child: ElevatedButton.icon(
                               onPressed: () => applyAdjustment(1),
                               icon: const Icon(Icons.add),
-                              label: const Text('+1 د'),
+                              label: Text(l10n.minutesShort(1)),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 16),
                               ),
@@ -1416,7 +1436,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             child: ElevatedButton.icon(
                               onPressed: () => applyAdjustment(5),
                               icon: const Icon(Icons.add_circle_outline),
-                              label: const Text('+5 د'),
+                              label: Text(l10n.minutesShort(5)),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(vertical: 16),
                               ),
@@ -1441,7 +1461,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             }
                           },
                           icon: const Icon(Icons.refresh),
-                          label: const Text('إعادة تعيين'),
+                          label: Text(l10n.prayerAdjustmentReset),
                           style: OutlinedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
                           ),

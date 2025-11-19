@@ -82,6 +82,32 @@
   "@adhanDisabledMsg": {},
   "adjustTime": "تصحيح الوقت",
   "@adjustTime": {},
+  "prayerAdjustmentTooltip": "معايرة وقت الصلاة",
+  "@prayerAdjustmentTooltip": {},
+  "prayerAdjustmentTitle": "معايرة وقت {prayerName}",
+  "@prayerAdjustmentTitle": {
+    "placeholders": {
+      "prayerName": {}
+    }
+  },
+  "prayerAdjustmentOriginal": "الوقت الأصلي",
+  "@prayerAdjustmentOriginal": {},
+  "prayerAdjustmentChange": "التعديل: {value}",
+  "@prayerAdjustmentChange": {
+    "placeholders": {
+      "value": {}
+    }
+  },
+  "prayerAdjustmentAfter": "بعد التعديل: {time}",
+  "@prayerAdjustmentAfter": {
+    "placeholders": {
+      "time": {}
+    }
+  },
+  "prayerAdjustmentNoChange": "لا يوجد تعديل",
+  "@prayerAdjustmentNoChange": {},
+  "prayerAdjustmentReset": "إعادة تعيين التعديل",
+  "@prayerAdjustmentReset": {},
   "plus10Min": "+10 دقائق",
   "@plus10Min": {},
   "minus10Min": "-10 دقائق",
@@ -224,6 +250,14 @@
   "@sleepTimer": {},
   "minutes": "دقائق",
   "@minutes": {},
+  "minutesShort": "{minutes} د",
+  "@minutesShort": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
   "off": "إيقاف",
   "@off": {},
   "buffering": "جاري التحميل...",

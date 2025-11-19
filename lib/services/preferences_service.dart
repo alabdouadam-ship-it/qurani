@@ -355,7 +355,7 @@ class PreferencesService {
         .toSet();
   }
 
-  // Debug mode: Prayer time adjustments (offset in minutes per prayer)
+  // Prayer time adjustments (offset in minutes per prayer)
   static const String keyPrayerTimeAdjustments = 'prayer_time_adjustments_debug';
   
   /// Get prayer time adjustment (offset in minutes) for a specific prayer
@@ -372,9 +372,7 @@ class PreferencesService {
   }
 
   /// Set prayer time adjustment (offset in minutes) for a specific prayer
-  /// Only available in debug mode
   static Future<void> setPrayerTimeAdjustment(String prayerId, int offsetMinutes) async {
-    if (!kDebugMode) return; // Only allow in debug mode
     final jsonStr = _prefs?.getString(keyPrayerTimeAdjustments);
     Map<String, dynamic> adjustments = {};
     if (jsonStr != null && jsonStr.isNotEmpty) {
@@ -389,9 +387,7 @@ class PreferencesService {
   }
 
   /// Adjust prayer time adjustment by adding offset (can be negative)
-  /// Only available in debug mode
   static Future<void> adjustPrayerTime(String prayerId, int offsetMinutes) async {
-    if (!kDebugMode) return; // Only allow in debug mode
     final current = getPrayerTimeAdjustment(prayerId);
     await setPrayerTimeAdjustment(prayerId, current + offsetMinutes);
   }
