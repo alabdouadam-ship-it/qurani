@@ -444,4 +444,58 @@
   "@fontScheherazade": {},
   "fontLateef": "Lateef",
   "@fontLateef": {}
+  ,"offlineAudioTitle": "Offline audio",
+  "@offlineAudioTitle": {},
+  "reciterLabel": "Reciter: {name}",
+  "@reciterLabel": {"placeholders": {"name": {"type": "String"}}},
+  "verseAudiosDownloaded": "Verse audios downloaded: {count} (total ~6236)",
+  "@verseAudiosDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "fullSurahsDownloaded": "Full surahs downloaded: {count} / 114",
+  "@fullSurahsDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "downloadWhy": "Why download? You can listen without internet.",
+  "@downloadWhy": {},
+  "downloadingProgress": "Downloading {current} / {total}",
+  "@downloadingProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "downloadVerseAudios": "Download verse audios",
+  "@downloadVerseAudios": {},
+  "deleteVerseAudios": "Delete verse audios",
+  "@deleteVerseAudios": {},
+  "downloadFullSurahs": "Download full surahs",
+  "@downloadFullSurahs": {},
+  "deleteFullSurahs": "Delete full surahs",
+  "@deleteFullSurahs": {},
+  "fullSurahLabel": "Full surahs",
+  "@fullSurahLabel": {},
+  "downloadFullSurahNote": "Note: Full surah audio can be downloaded from Listen to Quran screen.",
+  "@downloadFullSurahNote": {},
+  "name": "Name",
+  "@name": {},
+  "enterYourName": "Enter your name",
+  "@enterYourName": {}
+  ,"timeFormatTitle": "Time format",
+  "@timeFormatTitle": {},
+  "twelveHour": "12h",
+  "@twelveHour": {},
+  "twentyFourHour": "24h",
+  "@twentyFourHour": {}
+  ,"homeGreetingGeneric": "Hello, what would you like to do?",
+  "@homeGreetingGeneric": {},
+  "homeGreetingNamed": "Hello {name}, what would you like to do?",
+  "@homeGreetingNamed": {"placeholders": {"name": {"type": "String"}}}
+  ,"hijriHeader": "Hijri",
+  "@hijriHeader": {},
+  "gregorianHeader": "Gregorian",
+  "@gregorianHeader": {}
+  ,"audioInternetRequired": "No internet connection. Please connect to play audio or download offline files."
+  ,"@audioInternetRequired": {}
+  ,"editionArabicSimple":"Arabic (Simple)"
+  ,"@editionArabicSimple":{}
+  ,"editionArabicUthmani":"Arabic (Uthmani)"
+  ,"@editionArabicUthmani":{}
+  ,"editionEnglish":"English"
+  ,"@editionEnglish":{}
+  ,"editionFrench":"French"
+  ,"@editionFrench":{}
+  ,"editionTafsir":"Tafsir (Muyassar)"
+  ,"@editionTafsir":{}
 }

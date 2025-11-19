@@ -205,7 +205,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                       Icon(
                         Icons.list_alt,
                         size: 64,
-                        color: colorScheme.onSurface.withOpacity(0.5),
+                        color: colorScheme.onSurface.withAlpha((255 * 0.5).round()),
                       ),
                       const SizedBox(height: 16),
                       Text(

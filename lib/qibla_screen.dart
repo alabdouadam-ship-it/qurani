@@ -282,7 +282,7 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
                   l10n.qiblaTurnUntilArrowUp,
                   style: TextStyle(
                     fontSize: 16,
-                    color: colorScheme.onSurface.withOpacity(0.8),
+                    color: colorScheme.onSurface.withAlpha((255 * 0.8).round()),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -369,11 +369,11 @@ class _CompassCard extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         gradient: RadialGradient(
-          colors: [color.primaryContainer.withOpacity(0.4), color.surface],
+          colors: [color.primaryContainer.withAlpha((255 * 0.4).round()), color.surface],
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withAlpha((255 * 0.06).round()),
             blurRadius: 12,
           )
         ],
@@ -422,7 +422,7 @@ class _CompassFace extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(
-                  color: color.outline.withOpacity(0.2),
+                  color: color.outline.withAlpha((255 * 0.2).round()),
                   width: 2,
                 ),
               ),
@@ -436,7 +436,7 @@ class _CompassFace extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(24),
               child: CustomPaint(
-                painter: _CompassGuidePainter(color: color.outline.withOpacity(0.15)),
+                painter: _CompassGuidePainter(color: color.outline.withAlpha((255 * 0.15).round())),
               ),
             ),
           ),
@@ -534,7 +534,7 @@ class _TipChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: color.surfaceVariant,
+        color: color.surfaceContainerHighest,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(

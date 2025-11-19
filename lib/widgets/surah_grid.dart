@@ -3,6 +3,7 @@ import '../models/surah.dart';
 import '../services/preferences_service.dart';
 import '../services/queue_service.dart';
 import '../services/surah_service.dart';
+import '../util/text_normalizer.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 
 class SurahGrid extends StatefulWidget {
@@ -30,14 +31,6 @@ class _SurahGridState extends State<SurahGrid> {
   final QueueService _queueService = QueueService();
   bool get _hasLongPressActions => widget.showQueueActions || widget.allowHighlight;
 
-  // Remove Arabic diacritics (tashkeel) and tatweel to make search accent-insensitive
-  String _normalize(String input) {
-    const arabicDiacritics = r"[\u064B-\u0652\u0670\u0640]"; // tanween, fatha/damma/kasra, sukun, maddah, tatweel
-    return input
-        .replaceAll(RegExp(arabicDiacritics), '')
-        .toLowerCase()
-        .trim();
-  }
 
   void _showSurahOptions(BuildContext context, Surah surah) {
     if (!_hasLongPressActions) {
@@ -151,10 +144,10 @@ class _SurahGridState extends State<SurahGrid> {
         }
         final surahs = snapshot.data!;
         final l10n = AppLocalizations.of(context)!;
-        final q = _normalize(_query);
+        final q = TextNormalizer.normalize(_query);
         final filtered = q.isEmpty
             ? surahs
-            : surahs.where((s) => _normalize(s.name).contains(q)).toList();
+            : surahs.where((s) => TextNormalizer.normalize(s.name).contains(q)).toList();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -206,17 +199,17 @@ class _SurahGridState extends State<SurahGrid> {
                   final isInQueue = widget.showQueueActions ? _queueService.contains(surah.order) : false;
                   final backgroundColor = isFeatured
                       ? Color.alphaBlend(
-                          Colors.amber.withOpacity(theme.brightness == Brightness.dark ? 0.18 : 0.28),
+                          Colors.amber.withAlpha((255 * (theme.brightness == Brightness.dark ? 0.18 : 0.28)).round()),
                           color.surface,
                         )
                       : color.surface;
                   final borderColor =
-                      isFeatured ? Colors.amber.shade600 : color.outline.withOpacity(0.3);
+                      isFeatured ? Colors.amber.shade600 : color.outline.withAlpha((255 * 0.3).round());
                   final boxShadow = isFeatured
                       ? [
                           BoxShadow(
                             color: Colors.amber.shade200
-                                .withOpacity(theme.brightness == Brightness.dark ? 0.25 : 0.4),
+                                .withAlpha((255 * (theme.brightness == Brightness.dark ? 0.25 : 0.4)).round()),
                             blurRadius: 10,
                             offset: const Offset(0, 4),
                           ),
@@ -238,7 +231,7 @@ class _SurahGridState extends State<SurahGrid> {
                       child: Row(
                         children: [
                           CircleAvatar(
-                            backgroundColor: color.primary.withOpacity(0.1),
+                            backgroundColor: color.primary.withAlpha((255 * 0.1).round()),
                             foregroundColor: color.primary,
                             child: Text('${surah.order}'),
                           ),
@@ -261,7 +254,7 @@ class _SurahGridState extends State<SurahGrid> {
                                 Text(
                                   '${surah.totalVerses} ${l10n.verses}',
                                   style: theme.textTheme.bodySmall?.copyWith(
-                                    color: color.onSurface.withOpacity(0.6),
+                                    color: color.onSurface.withAlpha((255 * 0.6).round()),
                                   ),
                                 ),
                               ],

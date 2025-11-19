@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
+import 'services/net_utils.dart';
 import 'models/surah.dart';
 
 class RepetitionRangeScreen extends StatefulWidget {
@@ -371,6 +372,29 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     }
 
     final reciterKey = _resolveReciterKey();
+
+    // If target verse not downloaded and no internet, show a clear message
+    try {
+      final targetAyah = _selectedAyah ?? ayahs[start - 1].number;
+      final targetInSurah = (_selectedAyah != null)
+          ? (ayahs.firstWhere((a) => a.number == targetAyah, orElse: () => ayahs[start - 1]).numberInSurah)
+          : ayahs[start - 1].numberInSurah;
+      final hasLocal = await AudioService.isLocalAyahAvailable(
+        reciterKeyAr: reciterKey,
+        surahOrder: widget.surah.order,
+        verseNumber: targetInSurah,
+      );
+      final hasNet = await _hasInternet();
+      if (!hasLocal && !hasNet) {
+        if (mounted) {
+          final l10n = AppLocalizations.of(context)!;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(l10n.audioInternetRequired)),
+          );
+        }
+        return false;
+      }
+    } catch (_) {}
     final needsReload =
         _playlistEntries.isEmpty ||
         _activeReciterKey != reciterKey ||
@@ -409,6 +433,8 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     await _playEntryAt(entryIndex);
     return true;
   }
+
+  Future<bool> _hasInternet() => NetUtils.hasInternet();
 
   void _selectAyah(AyahBrief ayah) {
     final wasPlaying = _player.playing;
@@ -477,7 +503,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                             else
                               const SizedBox(width: 18),
                             const SizedBox(width: 8),
-                            Text(edition.displayName),
+                            Text(_localizedEditionName(l10n, edition)),
                           ],
                         ),
                       ),
@@ -638,7 +664,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                         : const Color(0xFFFFE19C);
                     double baseFontSize = PreferencesService.getFontSize();
                     if (_edition.isTranslation) {
-                      baseFontSize = (baseFontSize - 4).clamp(12.0, 48.0) as double;
+                      baseFontSize = (baseFontSize - 4).clamp(12.0, 48.0).toDouble();
                     }
                     final TextStyle baseStyle = _arabicTextStyle(
                       fontSize: baseFontSize,
@@ -651,9 +677,9 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                       tileColor: isCurrentlyPlaying
                           ? playingColor
                           : isSelected
-                              ? theme.colorScheme.primaryContainer.withOpacity(0.35)
+                              ? theme.colorScheme.primaryContainer.withAlpha((255 * 0.35).round())
                               : isInActiveRange
-                                  ? theme.colorScheme.surfaceVariant.withOpacity(0.3)
+                                  ? theme.colorScheme.surfaceContainerHighest.withAlpha((255 * 0.3).round())
                                   : null,
                       title: Directionality(
                         textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
@@ -705,6 +731,21 @@ class _VersePlaybackEntry {
     required this.repeatIndex,
     required this.repeatCount,
   });
+}
+
+String _localizedEditionName(AppLocalizations l10n, QuranEdition edition) {
+  switch (edition) {
+    case QuranEdition.simple:
+      return l10n.editionArabicSimple;
+    case QuranEdition.uthmani:
+      return l10n.editionArabicUthmani;
+    case QuranEdition.english:
+      return l10n.editionEnglish;
+    case QuranEdition.french:
+      return l10n.editionFrench;
+    case QuranEdition.tafsir:
+      return l10n.editionTafsir;
+  }
 }
 
 

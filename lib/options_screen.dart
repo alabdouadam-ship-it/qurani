@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
@@ -13,6 +14,7 @@ import 'tasbeeh_screen.dart';
 import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
+import 'services/preferences_service.dart';
 
 class OptionsScreen extends StatefulWidget {
   const OptionsScreen({super.key});
@@ -119,40 +121,65 @@ class _OptionsScreenState extends State<OptionsScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withOpacity(0.5)
-                          : Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                          ? Colors.black.withAlpha((255 * 0.5).round())
+                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
                   ],
                 ),
-                child: Column(
-                  children: [
-                    Text(
-                      l10n.quraniFeatures,
-                      style: TextStyle(
-                        fontSize: ResponsiveConfig.getFontSize(context, 24),
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
+                child: Builder(builder: (context) {
+                  final name = PreferencesService.getUserName().trim();
+                  final text = name.isEmpty ? l10n.homeGreetingGeneric : l10n.homeGreetingNamed(name);
+                  return Text(
+                    text,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: ResponsiveConfig.getFontSize(context, 22),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
-                  ],
-                ),
+                  );
+                }),
               ),
               
               // Options Grid
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: isSmallScreen ? 10 : 15,
-                    mainAxisSpacing: isSmallScreen ? 10 : 15,
-                    childAspectRatio: isTablet ? 1.2 : 1.0,
-                  ),
-                  itemCount: _getOptions(context).length,
-                  itemBuilder: (context, index) {
-                    final option = _getOptions(context)[index];
-                    return _buildOptionCard(context, option);
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final options = _getOptions(context);
+                    if (kIsWeb) {
+                      // On web, use responsive grid with smaller cards (more columns)
+                      final width = constraints.maxWidth;
+                      final targetTileWidth = 260.0;
+                      final cols = width ~/ targetTileWidth;
+                      final crossAxisCount = cols.clamp(2, 6);
+                      return GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: crossAxisCount,
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 16,
+                          childAspectRatio: 1.15,
+                        ),
+                        itemCount: options.length,
+                        itemBuilder: (context, index) {
+                          return _buildOptionCard(context, options[index]);
+                        },
+                      );
+                    }
+                    // Mobile/tablet default 2 columns
+                    return GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: isSmallScreen ? 10 : 15,
+                        mainAxisSpacing: isSmallScreen ? 10 : 15,
+                        childAspectRatio: isTablet ? 1.2 : 1.05, // Increased from 1.0 to 1.05 to prevent overflow
+                      ),
+                      itemCount: options.length,
+                      itemBuilder: (context, index) {
+                        return _buildOptionCard(context, options[index]);
+                      },
+                    );
                   },
                 ),
               ),
@@ -165,7 +192,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
 
   List<OptionItem> _getOptions(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return [
+    final items = <OptionItem>[
       // Row 1
       OptionItem(
         id: 'listen_quran',
@@ -206,13 +233,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
          subtitle: '',
          color: Colors.cyan,
        ),
-      OptionItem(
-        id: 'tasbeeh',
-        icon: Icons.countertops,
-        title: l10n.tasbeeh,
-        subtitle: '',
-        color: Colors.green,
-      ),
+      if (!kIsWeb)
+        OptionItem(
+          id: 'tasbeeh',
+          icon: Icons.countertops,
+          title: l10n.tasbeeh,
+          subtitle: '',
+          color: Colors.green,
+        ),
 
       // Row 4
       OptionItem(
@@ -222,13 +250,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
         subtitle: '',
         color: Colors.orange,
       ),
-      OptionItem(
-        id: 'qibla',
-        icon: Icons.explore,
-        title: l10n.qiblaTitle,
-        subtitle: '',
-        color: Colors.teal,
-      ),
+      if (!kIsWeb)
+        OptionItem(
+          id: 'qibla',
+          icon: Icons.explore,
+          title: l10n.qiblaTitle,
+          subtitle: '',
+          color: Colors.teal,
+        ),
 
       // Row 5
       
@@ -241,6 +270,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
       //   color: Colors.deepOrange,
       // ),
     ];
+    return items;
   }
 
   Widget _buildOptionCard(BuildContext context, OptionItem option) {
@@ -255,13 +285,13 @@ class _OptionsScreenState extends State<OptionsScreen> {
         onTap: () => _handleOptionTap(context, option),
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
+          padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
               colors: [
-                option.color.withOpacity(0.1),
-                option.color.withOpacity(0.05),
+                option.color.withAlpha((255 * 0.1).round()),
+                option.color.withAlpha((255 * 0.05).round()),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -269,38 +299,51 @@ class _OptionsScreenState extends State<OptionsScreen> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
-                decoration: BoxDecoration(
-                  color: option.color.withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  option.icon,
-                  size: isSmallScreen ? 28 : 32,
-                  color: option.color,
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+                  decoration: BoxDecoration(
+                    color: option.color.withAlpha((255 * 0.1).round()),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    option.icon,
+                    size: isSmallScreen ? 26 : 30,
+                    color: option.color,
+                  ),
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                option.title,
-                style: TextStyle(
-                  fontSize: ResponsiveConfig.getFontSize(context, 16),
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: isSmallScreen ? 8 : 10),
+              Flexible(
+                child: Text(
+                  option.title,
+                  style: TextStyle(
+                    fontSize: ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 4),
-              Text(
-                option.subtitle,
-                style: TextStyle(
-                  fontSize: ResponsiveConfig.getFontSize(context, 12),
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              if (option.subtitle.isNotEmpty) ...[
+                SizedBox(height: isSmallScreen ? 2 : 4),
+                Flexible(
+                  child: Text(
+                    option.subtitle,
+                    style: TextStyle(
+                      fontSize: ResponsiveConfig.getFontSize(context, 11),
+                      color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                textAlign: TextAlign.center,
-              ),
+              ],
             ],
           ),
         ),

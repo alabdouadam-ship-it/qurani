@@ -1,17 +1,20 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/gestures.dart';
 import 'month_prayer_times_screen.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/prayer_times_service.dart';
+import 'package:qurani/services/adhan_scheduler.dart';
 import 'services/notification_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+import 'services/media_item_compat.dart';
+import 'services/net_utils.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
   const PrayerTimesScreen({super.key});
@@ -36,6 +39,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   bool _needsService = false;
   bool _needsInternet = false;
   bool _isRamadan = false;
+  String? _cityName;
 
   @override
   void initState() {
@@ -106,6 +110,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       _needsInternet = false;
     });
     try {
+      // Try to update city name from last known position (best effort)
+      try {
+        final last = await Geolocator.getLastKnownPosition();
+        if (last != null) {
+          final city = await PrayerTimesService.getCityFromCoordinates(last);
+          if (mounted) setState(() { _cityName = city; });
+        }
+      } catch (_) {}
       // Ensure cache for prev, current, next months
       final currMonth = DateTime(_currentDate.year, _currentDate.month, 1);
       final prevMonth = DateTime(_currentDate.year, _currentDate.month - 1, 1);
@@ -156,6 +168,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           return;
         }
         final pos = await PrayerTimesService.getCurrentPosition();
+        // Update city when we have a fresh position
+        try { _cityName = await PrayerTimesService.getCityFromCoordinates(pos); } catch (_) {}
         await fetchAll(pos);
       }
 
@@ -202,6 +216,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           return;
         }
         final pos = await PrayerTimesService.getCurrentPosition();
+        try { _cityName = await PrayerTimesService.getCityFromCoordinates(pos); } catch (_) {}
         await fetchAll(pos);
         // Reload from cache after fetching
         await _loadTimes(fetchIfMissing: false);
@@ -217,20 +232,20 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           _isRamadan = false;
           final hasImsak = times != null && times.containsKey('imsak');
           _prayers = hasImsak
-              ? ['fajr','imsak','sunrise','dhuhr','asr','maghrib','isha']
+              ? ['imsak','fajr','sunrise','dhuhr','asr','maghrib','isha']
               : ['fajr','sunrise','dhuhr','asr','maghrib','isha'];
         } else {
           final lang = PreferencesService.getLanguage();
-          _hijriDay = hijri['day'] as String?;
-          _hijriMonth = (lang == 'ar' ? hijri['monthAr'] : hijri['monthEn']) as String?;
-          _hijriYear = hijri['year'] as String?;
-          final monthAr = hijri['monthAr'] as String?;
-          final monthEn = hijri['monthEn'] as String?;
+          _hijriDay = hijri['day'];
+          _hijriMonth = (lang == 'ar' ? hijri['monthAr'] : hijri['monthEn']);
+          _hijriYear = hijri['year'];
+          final monthAr = hijri['monthAr'];
+          final monthEn = hijri['monthEn'];
           _isRamadan = (monthEn?.toLowerCase().contains('ramadan') ?? false) || (monthAr?.contains('رمضان') ?? false);
           final hasImsak = times != null && times.containsKey('imsak');
           final showImsak = _isRamadan || hasImsak;
           _prayers = showImsak
-              ? ['fajr','imsak','sunrise','dhuhr','asr','maghrib','isha']
+              ? ['imsak','fajr','sunrise','dhuhr','asr','maghrib','isha']
               : ['fajr','sunrise','dhuhr','asr','maghrib','isha'];
         }
         _loading = false;
@@ -238,11 +253,42 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       // Schedule remaining adhans for today (even if app closes later)
       if (times != null) {
         final soundKey = PreferencesService.getAdhanSound();
+        print('[PrayerTimesScreen] Re-scheduling Adhans for today');
         await NotificationService.scheduleRemainingAdhans(
           times: times,
           soundKey: soundKey,
           toggles: _adhanEnabled,
         );
+        // Also schedule background full Adhan playback (Android)
+        await AdhanScheduler.scheduleForTimes(
+          times: times,
+          toggles: _adhanEnabled,
+          soundKey: soundKey,
+        );
+        // Also schedule for next 7 days to ensure coverage
+        final now = DateTime.now();
+        DateTime cursor = now.add(const Duration(days: 1));
+        for (int i = 0; i < 7; i++) {
+          final futureTimes = await PrayerTimesService.getTimesForDate(
+            year: cursor.year,
+            month: cursor.month,
+            day: cursor.day,
+          );
+          if (futureTimes != null) {
+            await NotificationService.scheduleRemainingAdhans(
+              times: futureTimes,
+              soundKey: soundKey,
+              toggles: _adhanEnabled,
+            );
+            await AdhanScheduler.scheduleForTimes(
+              times: futureTimes,
+              toggles: _adhanEnabled,
+              soundKey: soundKey,
+            );
+          }
+          cursor = cursor.add(const Duration(days: 1));
+        }
+        print('[PrayerTimesScreen] Adhans re-scheduled');
       }
       _computeNextAndSchedule();
     } catch (_) {
@@ -253,14 +299,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     }
   }
 
-  Future<bool> _hasInternet() async {
-    try {
-      final result = await InternetAddress.lookup('example.com');
-      return result.isNotEmpty && result.first.rawAddress.isNotEmpty;
-    } catch (_) {
-      return false;
-    }
-  }
+  Future<bool> _hasInternet() => NetUtils.hasInternet();
 
   void _computeNextAndSchedule() {
     _tick?.cancel();
@@ -287,20 +326,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       });
       return;
     }
+    final nextDt = nextTime!; // safe: nextTime is set when nextId is found
     setState(() {
       _nextPrayerId = nextId;
-      _countdown = nextTime!.difference(now);
+      _countdown = nextDt.difference(now);
     });
     _tick = Timer.periodic(const Duration(seconds: 1), (_) {
-      if (!mounted || _nextPrayerId == null || nextTime == null) return;
-      final remain = nextTime!.difference(DateTime.now());
+      if (!mounted || _nextPrayerId == null) return;
+      final remain = nextDt.difference(DateTime.now());
       if (remain.isNegative) {
         _tick?.cancel();
         if (_nextPrayerId != null && _nextPrayerId != 'sunrise') {
-          final enabled = _adhanEnabled[_nextPrayerId!] ?? false;
+          final id = _nextPrayerId ?? '';
+          final enabled = _adhanEnabled[id] ?? false;
           if (enabled) {
             // ignore: discarded_futures
-            _playAdhanForPrayer(_nextPrayerId!);
+            _playAdhanForPrayer(id);
           }
         }
         _loadTimes();
@@ -310,13 +351,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     });
     // Schedule silent alert 5 minutes before next prayer (no alert for sunrise)
     if (nextId != 'sunrise') {
-      final alertTime = nextTime!.subtract(const Duration(minutes: 5));
+      final alertTime = nextDt.subtract(const Duration(minutes: 5));
       if (alertTime.isAfter(DateTime.now())) {
+        final alertBody = _buildSilentAlertBody(_localizedName(context, nextId));
         NotificationService.scheduleSilentAlert(
           id: _alertIdFor(nextId),
           triggerTimeLocal: alertTime,
           title: _localizedName(context, nextId),
-          body: '5 minutes remaining',
+          body: alertBody,
         );
       }
     }
@@ -325,7 +367,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       final isFajr = nextId == 'fajr';
       NotificationService.scheduleAdhanNotification(
         id: _alertIdFor(nextId) + 1000,
-        triggerTimeLocal: nextTime!,
+        triggerTimeLocal: nextDt,
         title: _localizedName(context, nextId),
         body: '',
         soundKey: soundKey,
@@ -352,6 +394,40 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     return 100;
   }
 
+  String _buildSilentAlertBody(String prayerName) {
+    final lang = PreferencesService.getLanguage();
+    switch (lang) {
+      case 'en':
+        return 'Adhan for $prayerName in 5 minutes';
+      case 'fr':
+        return 'Adhan de $prayerName dans 5 minutes';
+      default:
+        return 'سيحين أذان $prayerName بعد خمس دقائق';
+    }
+  }
+
+  String _adhanVolumeLabel() {
+    switch (PreferencesService.getLanguage()) {
+      case 'en':
+        return 'Adhan volume';
+      case 'fr':
+        return 'Volume de l\'adhan';
+      default:
+        return 'مستوى صوت الأذان';
+    }
+  }
+
+  String _adhanVolumeHint() {
+    switch (PreferencesService.getLanguage()) {
+      case 'en':
+        return 'Choose how loud the Adhan plays';
+      case 'fr':
+        return 'Choisissez l\'intensité sonore de l\'adhan';
+      default:
+        return 'اختر شدة صوت الأذان المناسبة لك';
+    }
+  }
+
   Future<void> _toggleAdhan(BuildContext context, String id, bool value) async {
     setState(() {
       _adhanEnabled[id] = value;
@@ -362,6 +438,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(value ? l10n.adhanEnabledMsg : l10n.adhanDisabledMsg)),
     );
+    // Re-schedule for today with updated toggles
+    try {
+      if (_todayTimes != null) {
+        final soundKey = PreferencesService.getAdhanSound();
+        await NotificationService.scheduleRemainingAdhans(
+          times: _todayTimes!,
+          soundKey: soundKey,
+          toggles: _adhanEnabled,
+        );
+        await AdhanScheduler.scheduleForTimes(
+          times: _todayTimes!,
+          toggles: _adhanEnabled,
+          soundKey: soundKey,
+        );
+      }
+    } catch (_) {}
   }
 
   @override
@@ -373,6 +465,11 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         title: Text(l10n.prayerTimes),
         actions: [
           IconButton(
+            tooltip: 'Help',
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => _openPrayerTimesHelp(context),
+          ),
+          IconButton(
             tooltip: l10n.settings,
             icon: const Icon(Icons.settings),
             onPressed: _openAdhanSettings,
@@ -383,6 +480,183 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     );
   }
 
+  void _openPrayerTimesHelp(BuildContext context) {
+    final lang = Localizations.localeOf(context).languageCode;
+    final bool isAr = lang == 'ar';
+    final bool isFr = lang == 'fr';
+    final List<Map<String, String>> faqsAr = [
+      {
+        'q': 'كيف أجعل الأذان يعمل في الخلفية حتى لو كان التطبيق مغلقًا؟',
+        'a': '1) فعّل زر التبديل بجانب كل صلاة تريد تشغيل الأذان لها.\n2) امنح إذن الإشعارات للتطبيق.\n3) عطّل قيود توفير البطارية للتطبيق من إعدادات النظام.\n4) على بعض الأجهزة: فعّل خيار السماح بالتنبيهات الدقيقة (Exact alarms).\n5) اختر صوت الأذان من إعدادات الأذان.\nيتم جدولة الأذان لليوم و7 أيام قادمة من البيانات المخزّنة.'
+      },
+      {
+        'q': 'لماذا لا يعمل الأذان في الخلفية على الويب؟',
+        'a': 'متصفحات الويب لا تسمح بالتشغيل التلقائي للصوت في الخلفية. الأذان في الخلفية متاح على أندرويد فقط.'
+      },
+      {
+        'q': 'ما وظيفة أزرار التبديل بجانب كل صلاة؟',
+        'a': 'تتحكم في تشغيل الأذان لتلك الصلاة. إن كان الزر غير مفعّل فلن يعمل الأذان لتلك الصلاة حتى لو حان وقتها.'
+      },
+      {
+        'q': 'هل يوجد تنبيه قبل الصلاة؟',
+        'a': 'قد يظهر تنبيه صامت قبل 5 دقائق من الصلاة (باستثناء الشروق) للتذكير، حسب إعدادات النظام.'
+      },
+      {
+        'q': 'ماذا يحدث إذا لم يتوفر إنترنت أو GPS؟',
+        'a': 'يعتمد التطبيق على التقويم المخزّن. إن تعذّر التحديث، تُستخدم آخر بيانات متاحة. يُفضّل فتح الصفحة دوريًا لتحديث أوقات الشهر الجاري والقادم.'
+      },
+      {
+        'q': 'كيف أغيّر صوت الأذان؟',
+        'a': 'اضغط على أيقونة الإعدادات في الشريط العلوي واختر صوت الأذان المفضّل (وصوت الفجر إن رغبت).'
+      },
+      {
+        'q': 'غيّرت موقعي أو سافرت إلى مدينة أخرى، ماذا أفعل؟',
+        'a': 'افتح صفحة أوقات الصلاة مع تفعيل الإنترنت والموقع كي يتم تحديث التقويم تلقائيًا حسب موقعك الجديد.'
+      },
+    ];
+    final List<Map<String, String>> faqsEn = [
+      {
+        'q': 'How to play full Adhan in background when the app is closed?',
+        'a': '1) Enable the toggle next to each prayer you want.\n2) Grant notification permission.\n3) Disable battery optimization for the app.\n4) On some devices: allow exact alarms.\n5) Choose the Adhan sound from settings.\nWe schedule Adhan for today and the next 7 days using cached data.'
+      },
+      {
+        'q': 'Why Adhan background is not available on Web?',
+        'a': 'Browsers disallow auto audio playback in background. Background Adhan is Android-only.'
+      },
+      {
+        'q': 'What do the toggles next to prayers do?',
+        'a': 'They enable/disable Adhan for that prayer. If off, no Adhan will play even at prayer time.'
+      },
+      {
+        'q': 'Is there a pre-prayer reminder?',
+        'a': 'A silent reminder may appear 5 minutes before prayer (except Sunrise), subject to system settings.'
+      },
+      {
+        'q': 'What if Internet or GPS is unavailable?',
+        'a': 'The app uses cached calendar if updates fail. Open this page periodically to refresh current/next month.'
+      },
+      {
+        'q': 'How to change Adhan sound?',
+        'a': 'Tap the settings icon in the AppBar and pick your preferred Adhan (and Fajr sound if desired).'
+      },
+      {
+        'q': 'I moved to a new city, what now?',
+        'a': 'Open the Prayer Times page with Internet and Location enabled to refresh the calendar for your new region.'
+      },
+    ];
+    final List<Map<String, String>> faqsFr = [
+      {
+        'q': 'Comment faire fonctionner l’Adhan en arrière-plan quand l’app est fermée ?',
+        'a': '1) Activez le bouton à côté de chaque prière voulue.\n2) Autorisez les notifications.\n3) Désactivez l’optimisation de batterie pour l’app.\n4) Sur certains appareils : autorisez les alarmes exactes.\n5) Choisissez le son de l’Adhan dans les paramètres.\nL’Adhan est planifié pour aujourd’hui et 7 jours à venir.'
+      },
+      {
+        'q': 'Pourquoi l’Adhan en arrière-plan n’est pas disponible sur le Web ?',
+        'a': 'Les navigateurs refusent la lecture audio automatique en arrière-plan. Fonction réservé à Android.'
+      },
+      {
+        'q': 'À quoi servent les interrupteurs à côté des prières ?',
+        'a': 'Ils activent/désactivent l’Adhan pour la prière concernée. S’il est désactivé, aucun Adhan ne sera joué.'
+      },
+      {
+        'q': 'Y a-t-il un rappel avant la prière ?',
+        'a': 'Un rappel silencieux peut apparaître 5 minutes avant (sauf lever du soleil), selon les réglages du système.'
+      },
+      {
+        'q': 'Sans Internet ou GPS ?',
+        'a': 'L’app utilise le calendrier en cache si la mise à jour échoue. Ouvrez cette page périodiquement pour rafraîchir.'
+      },
+      {
+        'q': 'Changer le son de l’Adhan ?',
+        'a': 'Touchez l’icône paramètres dans la barre supérieure et choisissez le son souhaité.'
+      },
+      {
+        'q': 'J’ai changé de ville, que faire ?',
+        'a': 'Ouvrez la page des horaires avec Internet et la localisation activés pour rafraîchir le calendrier.'
+      },
+    ];
+    final faqs = isAr ? faqsAr : (isFr ? faqsFr : faqsEn);
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: SizedBox(
+            height: MediaQuery.of(ctx).size.height * 0.85,
+            child: Column(
+              children: [
+                // Permission buttons section
+                if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android)
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          isAr ? 'إعدادات الصلاحيات' : isFr ? 'Paramètres des permissions' : 'Permission Settings',
+                          style: Theme.of(ctx).textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        ElevatedButton.icon(
+                          onPressed: () async {
+                            await Geolocator.openAppSettings();
+                          },
+                          icon: const Icon(Icons.settings),
+                          label: Text(isAr ? 'فتح إعدادات التطبيق' : isFr ? 'Ouvrir les paramètres de l\'app' : 'Open App Settings'),
+                        ),
+                        const SizedBox(height: 8),
+                        ElevatedButton.icon(
+                          onPressed: () async {
+                            try {
+                              await Permission.ignoreBatteryOptimizations.request();
+                            } catch (_) {
+                              await Geolocator.openAppSettings();
+                            }
+                          },
+                          icon: const Icon(Icons.battery_saver),
+                          label: Text(isAr ? 'تعطيل توفير البطارية' : isFr ? 'Désactiver l\'optimisation batterie' : 'Disable Battery Optimization'),
+                        ),
+                      ],
+                    ),
+                  ),
+                // FAQs list
+                Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+                    itemCount: faqs.length,
+                    itemBuilder: (c, i) {
+                      final item = faqs[i];
+                      return Card(
+                        margin: const EdgeInsets.symmetric(vertical: 6),
+                        child: ExpansionTile(
+                          title: Text(item['q'] ?? ''),
+                          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+                          children: [
+                            Align(
+                              alignment: AlignmentDirectional.centerStart,
+                              child: Text(
+                                item['a'] ?? '',
+                                textAlign: TextAlign.start,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
   Widget _buildBody(BuildContext context, ThemeData theme, AppLocalizations l10n) {
     if (_loading) {
       return const Center(child: CircularProgressIndicator());
@@ -455,7 +729,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
             final gDay = DateFormat('dd', localeName).format(_currentDate);
             final gMonth = DateFormat.MMMM(localeName).format(_currentDate);
             final gYear = DateFormat('yyyy', localeName).format(_currentDate);
-            final primary = theme.colorScheme.primary.withOpacity(0.85);
+            final primary = theme.colorScheme.primary.withAlpha((255 * 0.85).round());
             final onSurface = theme.colorScheme.onSurface;
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -474,10 +748,34 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                     ),
                     Expanded(
                       child: Center(
-                        child: ElevatedButton.icon(
-                          onPressed: _onRefreshPressed,
-                          icon: const Icon(Icons.refresh),
-                          label: Text(l10n.refresh),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            GestureDetector(
+                              onLongPress: () async {
+                                await NotificationService.scheduleTestAdhanInSeconds(10, title: 'Test Adhan', body: 'Plays in 10 seconds');
+                                if (!mounted) return;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(content: Text(l10n.selectedLabel.replaceFirst('{value}', _toWesternDigits('10')))),
+                                );
+                              },
+                              child: ElevatedButton.icon(
+                                onPressed: _onRefreshPressed,
+                                icon: const Icon(Icons.refresh),
+                                label: Text(l10n.refresh),
+                              ),
+                            ),
+                            if (_cityName != null && _cityName!.isNotEmpty) ...[
+                              const SizedBox(height: 4),
+                              Text(
+                                _cityName!,
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Theme.of(context).colorScheme.onSurfaceVariant,
+                                    ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ],
                         ),
                       ),
                     ),
@@ -539,16 +837,16 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           final enabled = _adhanEnabled[id] ?? false;
           final bool isNext = id == _nextPrayerId;
           final bool isPast = dtAdj != null && dtAdj.isBefore(DateTime.now());
-          final borderSide = isNext ? BorderSide(color: theme.colorScheme.primary.withOpacity(0.6), width: 1.2) : BorderSide.none;
+          final borderSide = isNext ? BorderSide(color: theme.colorScheme.primary.withAlpha((255 * 0.6).round()), width: 1.2) : BorderSide.none;
           return Opacity(
             opacity: isPast && !isNext ? 0.55 : 1.0,
             child: Card(
               elevation: isNext ? 4 : 2,
-              color: isNext ? Colors.amber.withOpacity(0.15) : null,
+              color: isNext ? Colors.amber.withAlpha((255 * 0.15).round()) : null,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12), side: borderSide),
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: isNext ? Colors.amber.withOpacity(0.3) : theme.colorScheme.primary.withOpacity(0.12),
+                  backgroundColor: isNext ? Colors.amber.withAlpha((255 * 0.3).round()) : theme.colorScheme.primary.withAlpha((255 * 0.12).round()),
                   foregroundColor: theme.colorScheme.primary,
                   child: const Icon(Icons.access_time),
                 ),
@@ -567,6 +865,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      // Debug mode: Prayer time adjustment button
+                      if (kDebugMode && id != 'sunrise' && id != 'imsak')
+                        IconButton(
+                          icon: const Icon(Icons.tune, size: 20),
+                          tooltip: 'معايرة الوقت',
+                          onPressed: () => _openPrayerTimeAdjustment(context, id, dtAdj),
+                        ),
                       if (id != 'sunrise' && id != 'imsak')
                         Switch.adaptive(
                           materialTapTargetSize: MaterialTapTargetSize.padded,
@@ -599,18 +904,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     final pattern = PreferencesService.getTimeFormat12h() ? 'h:mm a' : 'HH:mm';
     String s = DateFormat(pattern, Localizations.localeOf(context).toString()).format(dt);
     return _toWesternDigits(s);
-  }
-
-  String _toEasternDigits(String input) {
-    final sb = StringBuffer();
-    for (final ch in input.runes) {
-      if (ch >= 0x30 && ch <= 0x39) {
-        sb.writeCharCode(0x0660 + (ch - 0x30));
-      } else {
-        sb.writeCharCode(ch);
-      }
-    }
-    return sb.toString();
   }
 
   String _toWesternDigits(String input) {
@@ -706,6 +999,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   Future<void> _openAdhanSettings() async {
     final l10n = AppLocalizations.of(context)!;
     final initial = PreferencesService.getAdhanSound();
+    double modalVolume = PreferencesService.getAdhanVolume();
     final entries = [
       ('basit', 'عبد الباسط عبد الصمد'),
       ('afs', 'مشاري العفاسي'),
@@ -716,35 +1010,32 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
 
     await showModalBottomSheet<void>(
       context: context,
-      isScrollControlled: false,
+      isScrollControlled: true,
       builder: (ctx) {
         String selectedKey = initial;
         return StatefulBuilder(
           builder: (ctx, setModalState) {
             return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 24),
+              child: SingleChildScrollView(
+                padding: EdgeInsets.only(
+                  left: 0,
+                  right: 0,
+                  top: 8,
+                  bottom: MediaQuery.of(ctx).viewPadding.bottom + 80,
+                ),
                 child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ListTile(
-                    title: Text(l10n.adhanSound),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => Navigator.of(ctx).pop(),
-                    ),
-                  ),
-                  const Divider(height: 1),
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Row(
                       children: [
                         const Icon(Icons.schedule, size: 18),
                         const SizedBox(width: 8),
-                        const Text('Time format'),
+                        Text(l10n.timeFormatTitle),
                         const Spacer(),
                         ChoiceChip(
-                          label: const Text('12h'),
+                          label: Text(l10n.twelveHour),
                           selected: PreferencesService.getTimeFormat12h(),
                           onSelected: (v) async {
                             await PreferencesService.saveTimeFormat12h(true);
@@ -754,7 +1045,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                         ),
                         const SizedBox(width: 6),
                         ChoiceChip(
-                          label: const Text('24h'),
+                          label: Text(l10n.twentyFourHour),
                           selected: !PreferencesService.getTimeFormat12h(),
                           onSelected: (v) async {
                             await PreferencesService.saveTimeFormat12h(false);
@@ -765,12 +1056,54 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       ],
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const Icon(Icons.volume_up, size: 18),
+                            const SizedBox(width: 8),
+                            Text(_adhanVolumeLabel()),
+                            const Spacer(),
+                            Text('${(modalVolume * 100).round()}%'),
+                          ],
+                        ),
+                        Slider(
+                          value: modalVolume.clamp(0.2, 1.0),
+                          min: 0.2,
+                          max: 1.0,
+                          divisions: 8,
+                          label: '${(modalVolume * 100).round()}%',
+                          onChanged: (value) async {
+                            modalVolume = value;
+                            await PreferencesService.saveAdhanVolume(value);
+                            setModalState(() {});
+                          },
+                        ),
+                        Text(
+                          _adhanVolumeHint(),
+                          style: Theme.of(ctx).textTheme.bodySmall,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(height: 1),
+                  ListTile(
+                    title: Text(l10n.adhanSound),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.close),
+                      onPressed: () => Navigator.of(ctx).pop(),
+                    ),
+                  ),
                   const Divider(height: 1),
                   ...entries.map((e) {
                     final key = e.$1;
                     final label = e.$2;
                     final selected = key == selectedKey;
-                    final isPreviewing = _previewKey == key && _previewPlayer.playing;
+                    // Consider previewing when this key is the active preview target
+                    final isPreviewing = _previewKey == key;
                     return ListTile(
                       title: Text(label),
                       leading: selected ? const Icon(Icons.check, color: Colors.green) : const SizedBox(width: 24),
@@ -799,7 +1132,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       ),
                     );
                   }).toList(),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 24),
                 ],
               ),
             ),
@@ -829,11 +1162,12 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         await session.setActive(true);
       } catch (_) {}
       await _adhanPlayer.stop();
+      // Stop any current preview before switching keys to ensure responsiveness
+      await _previewPlayer.stop();
       _previewKey = key;
       if (mounted) setState(() {});
       onUiUpdate?.call();
-      await _previewPlayer.stop();
-      await _previewPlayer.setVolume(1.0);
+      await _previewPlayer.setVolume(PreferencesService.getAdhanVolume().clamp(0.0, 1.0));
       try {
         final primary = 'assets/audio/$key.mp3';
         debugPrint('[AdhanPreview] Trying asset: ' + primary);
@@ -896,6 +1230,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       final asset = isFajr ? 'assets/audio/' + base + '-fajr.mp3' : 'assets/audio/' + base + '.mp3';
       debugPrint('[AdhanPlay] Prayer=' + prayerId + ', sound=' + base + ', asset=' + asset);
       await _adhanPlayer.stop();
+      await _adhanPlayer.setVolume(PreferencesService.getAdhanVolume().clamp(0.0, 1.0));
       await _adhanPlayer.setAudioSource(
         AudioSource.asset(
           asset,
@@ -912,6 +1247,216 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       debugPrint('[AdhanPlay] Error: ' + e.toString());
       // ignore
     }
+  }
+
+  // Debug mode: Open prayer time adjustment dialog
+  Future<void> _openPrayerTimeAdjustment(BuildContext context, String prayerId, DateTime? currentTime) async {
+    final prayerName = _localizedName(context, prayerId);
+    
+    await showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      showDragHandle: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (ctx) {
+        return StatefulBuilder(
+          builder: (ctx, setModalState) {
+            // Always read the latest time from _todayTimes (which includes adjustments)
+            final displayedTime = _todayTimes?[prayerId] ?? currentTime;
+            
+            int currentAdjustment = PreferencesService.getPrayerTimeAdjustment(prayerId);
+            
+            // Calculate original time (displayedTime is already adjusted, so subtract adjustment to get original)
+            DateTime? originalTime;
+            DateTime? adjustedTime;
+            if (displayedTime != null) {
+              originalTime = displayedTime.subtract(Duration(minutes: currentAdjustment));
+              adjustedTime = originalTime.add(Duration(minutes: currentAdjustment));
+            }
+            
+            Future<void> applyAdjustment(int offsetMinutes) async {
+              await PreferencesService.adjustPrayerTime(prayerId, offsetMinutes);
+              if (mounted) {
+                setState(() {});
+                await _loadTimes(fetchIfMissing: false);
+              }
+              setModalState(() {});
+            }
+            
+            return SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(ctx).viewPadding.bottom,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Header
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Row(
+                        children: [
+                          Icon(Icons.access_time, color: Theme.of(ctx).colorScheme.primary),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'معايرة وقت $prayerName',
+                              style: Theme.of(ctx).textTheme.titleLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.close),
+                            onPressed: () => Navigator.of(ctx).pop(),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Divider(height: 1),
+                    
+                    // Current time display
+                    Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          Text(
+                            'الوقت الأصلي',
+                            style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
+                              color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            originalTime != null ? _formatClock(originalTime) : '—',
+                            style: Theme.of(ctx).textTheme.headlineMedium?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(ctx).colorScheme.primary,
+                            ),
+                          ),
+                          if (currentAdjustment != 0) ...[
+                            const SizedBox(height: 8),
+                            Text(
+                              'التعديل: ${currentAdjustment > 0 ? '+' : ''}$currentAdjustment دقيقة',
+                              style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
+                                color: currentAdjustment > 0 
+                                    ? Colors.green 
+                                    : Colors.red,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            if (adjustedTime != null) ...[
+                              const SizedBox(height: 4),
+                              Text(
+                                'الوقت بعد التعديل: ${_formatClock(adjustedTime)}',
+                                style: Theme.of(ctx).textTheme.bodyLarge?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ] else if (originalTime != null) ...[
+                            const SizedBox(height: 8),
+                            Text(
+                              'لا يوجد تعديل',
+                              style: Theme.of(ctx).textTheme.bodyMedium?.copyWith(
+                                color: Theme.of(ctx).colorScheme.onSurfaceVariant,
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                    
+                    // Adjustment buttons
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          // -5 minutes
+                          Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () => applyAdjustment(-5),
+                              icon: const Icon(Icons.remove_circle_outline),
+                              label: const Text('-5 د'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          // -1 minute
+                          Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () => applyAdjustment(-1),
+                              icon: const Icon(Icons.remove),
+                              label: const Text('-1 د'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          // +1 minute
+                          Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () => applyAdjustment(1),
+                              icon: const Icon(Icons.add),
+                              label: const Text('+1 د'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          // +5 minutes
+                          Expanded(
+                            child: ElevatedButton.icon(
+                              onPressed: () => applyAdjustment(5),
+                              icon: const Icon(Icons.add_circle_outline),
+                              label: const Text('+5 د'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 16),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    
+                    // Reset button
+                    if (currentAdjustment != 0)
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: OutlinedButton.icon(
+                          onPressed: () async {
+                            await PreferencesService.setPrayerTimeAdjustment(prayerId, 0);
+                            currentAdjustment = 0;
+                            setModalState(() {});
+                            if (mounted) {
+                              setState(() {});
+                              await _loadTimes(fetchIfMissing: false);
+                            }
+                          },
+                          icon: const Icon(Icons.refresh),
+                          label: const Text('إعادة تعيين'),
+                          style: OutlinedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                          ),
+                        ),
+                      ),
+                    
+                    const SizedBox(height: 8),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
   }
 }
 

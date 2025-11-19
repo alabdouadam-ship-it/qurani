@@ -3,13 +3,15 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
+import 'util/text_normalizer.dart';
+import 'services/net_utils.dart';
 
 import 'responsive_config.dart';
 
@@ -128,11 +130,16 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _scheduleScrollToAyah(highlightAyah, immediate: true);
       }
     });
-    _pageController.animateToPage(
-      target - 1,
-      duration: const Duration(milliseconds: 250),
-      curve: Curves.easeInOut,
-    );
+    try {
+      _pageController.jumpToPage(target - 1);
+    } catch (_) {
+      // Fallback to animated navigation if jump fails due to controller state
+      _pageController.animateToPage(
+        target - 1,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   void _onArabicFontChanged() {
@@ -168,7 +175,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         return 'muyassar';
       case QuranEdition.simple:
       case QuranEdition.uthmani:
-      default:
         return PreferencesService.getReciter();
     }
   }
@@ -297,7 +303,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         final controller = TextEditingController();
         final ValueNotifier<String> query = ValueNotifier<String>('');
         controller.addListener(() {
-          query.value = controller.text.toLowerCase();
+          query.value = TextNormalizer.normalize(controller.text);
         });
         return SafeArea(
           child: Padding(
@@ -327,19 +333,19 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   child: ValueListenableBuilder<String>(
                     valueListenable: query,
                     builder: (context, value, _) {
-                      final queryText = value.trim().toLowerCase();
+                      final queryText = value.trim();
                       final filtered = queryText.isEmpty
                           ? surahs
                           : surahs.where((s) {
-                              final englishName =
-                                  s.englishName.toLowerCase();
-                              final englishTranslation =
-                                  s.englishNameTranslation.toLowerCase();
-                              final arabicName = s.name.toLowerCase();
+                              final normalizedEnglishName =
+                                  TextNormalizer.normalize(s.englishName);
+                              final normalizedEnglishTranslation =
+                                  TextNormalizer.normalize(s.englishNameTranslation);
+                              final normalizedArabicName = TextNormalizer.normalize(s.name);
                               final numberText = s.number.toString();
-                              return englishName.contains(queryText) ||
-                                  englishTranslation.contains(queryText) ||
-                                  arabicName.contains(queryText) ||
+                              return normalizedEnglishName.contains(queryText) ||
+                                  normalizedEnglishTranslation.contains(queryText) ||
+                                  normalizedArabicName.contains(queryText) ||
                                   numberText.contains(queryText);
                             }).toList();
                       return ListView.separated(
@@ -467,7 +473,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final ayahNumbers = storedHighlights.toList()..sort();
     final ayahDataList = await Future.wait(
       ayahNumbers
-          .map((number) => _repository.lookupAyahByNumber(number))
+          .map((number) => _repository.lookupAyahByNumber(
+                number,
+                edition: _edition,
+              ))
           .toList(),
     );
 
@@ -507,7 +516,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       builder: (context) {
         final theme = Theme.of(context);
         final height = ((MediaQuery.of(context).size.height * 0.6)
-            .clamp(320.0, 520.0)) as double;
+            .clamp(320.0, 520.0)).toDouble();
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -544,7 +553,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                         return ListTile(
                           leading: CircleAvatar(
                             backgroundColor: theme.colorScheme.primary
-                                .withOpacity(0.1),
+                                .withAlpha((255 * 0.1).round()),
                             foregroundColor: theme.colorScheme.primary,
                             child: Text(
                               entry.ayah.numberInSurah.toString(),
@@ -591,7 +600,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           duration: const Duration(seconds: 2),
-          backgroundColor: theme.colorScheme.surface.withOpacity(0.95),
+          backgroundColor: theme.colorScheme.surface.withAlpha((255 * 0.95).round()),
           content: Text(
             '${selected.ayah.surah.name} • $verseInSurah',
             textDirection: textDirection,
@@ -707,6 +716,22 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     _pageAudioPreparation = completer.future;
 
     try {
+      // Offline handling: if first ayah is not downloaded and no internet, abort early
+      try {
+        if (page.ayahs.isNotEmpty) {
+          final first = page.ayahs.first;
+          final hasLocal = await AudioService.isLocalAyahAvailable(
+            reciterKeyAr: reciterCode,
+            surahOrder: first.surah.number,
+            verseNumber: first.numberInSurah,
+          );
+          final hasNet = await _hasInternet();
+          if (!hasLocal && !hasNet) {
+            return false;
+          }
+        }
+      } catch (_) {}
+
       final sources = await _buildPageAudioSources(page, reciterCode);
       if (sources.isEmpty) {
         completer.complete(false);
@@ -741,6 +766,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       _pageAudioPreparation = null;
     }
   }
+
+  Future<bool> _hasInternet() => NetUtils.hasInternet();
 
   Future<void> _seekToPreviousAyah() async {
     final page = _currentPageData;
@@ -1074,7 +1101,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            colorScheme.surfaceVariant.withOpacity(0.35),
+            colorScheme.surfaceContainerHighest.withAlpha((255 * 0.35).round()),
             colorScheme.surface,
           ],
         ),
@@ -1102,13 +1129,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         borderRadius: BorderRadius.circular(18),
         gradient: LinearGradient(
           colors: [
-            colorScheme.primary.withOpacity(0.85),
-            colorScheme.primary.withOpacity(0.65),
+            colorScheme.primary.withAlpha((255 * 0.85).round()),
+            colorScheme.primary.withAlpha((255 * 0.65).round()),
           ],
         ),
         boxShadow: [
           BoxShadow(
-            color: colorScheme.primary.withOpacity(0.3),
+            color: colorScheme.primary.withAlpha((255 * 0.3).round()),
             blurRadius: 12,
             offset: const Offset(0, 6),
           ),
@@ -1153,7 +1180,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final bool isSelected = _selectedAyah == ayah.number;
 
     final double baseFontSize = _edition.isTranslation
-        ? ((PreferencesService.getFontSize() - 4).clamp(12.0, 48.0) as double)
+        ? ((PreferencesService.getFontSize() - 4).clamp(12.0, 48.0)).toDouble()
         : PreferencesService.getFontSize();
     final TextStyle baseStyle = _arabicTextStyle(
       fontSize: baseFontSize,
@@ -1168,17 +1195,17 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final Color backgroundColor = isPlaying
         ? playingColor
         : isSelected
-            ? colorScheme.secondaryContainer.withOpacity(0.6)
+            ? colorScheme.secondaryContainer.withAlpha((255 * 0.6).round())
             : isHighlighted
                 ? highlightColor
-                : colorScheme.surface.withOpacity(0.4);
+                : colorScheme.surface.withAlpha((255 * 0.4).round());
     final Color borderColor = isPlaying || isHighlighted
         ? colorScheme.primary
-        : colorScheme.outlineVariant.withOpacity(0.5);
+        : colorScheme.outlineVariant.withAlpha((255 * 0.5).round());
     final List<BoxShadow>? boxShadow = isPlaying
         ? [
             BoxShadow(
-              color: colorScheme.primary.withOpacity(0.25),
+              color: colorScheme.primary.withAlpha((255 * 0.25).round()),
               blurRadius: 14,
               offset: const Offset(0, 6),
             ),
@@ -1244,7 +1271,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   child: Text(
                     '${ayah.surah.englishName} ${ayah.numberInSurah}',
                     style: textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurface.withOpacity(0.6),
+                      color: colorScheme.onSurface.withAlpha((255 * 0.6).round()),
                     ),
                     textAlign: textDirection == TextDirection.rtl
                         ? TextAlign.right
@@ -1276,7 +1303,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           color: colorScheme.surface,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.06),
+              color: Colors.black.withAlpha((255 * 0.06).round()),
               blurRadius: 12,
               offset: const Offset(0, -4),
             ),
@@ -1491,7 +1518,7 @@ class _AyahNumberBadge extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: colorScheme.primary),
-        color: colorScheme.primary.withOpacity(0.1),
+        color: colorScheme.primary.withAlpha((255 * 0.1).round()),
       ),
       child: Text(
         content,

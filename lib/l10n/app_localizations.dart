@@ -1380,6 +1380,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lateef'**
   String get fontLateef;
+
+  /// No description provided for @offlineAudioTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline audio'**
+  String get offlineAudioTitle;
+
+  /// No description provided for @reciterLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reciter: {name}'**
+  String reciterLabel(String name);
+
+  /// No description provided for @verseAudiosDownloaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Verse audios downloaded: {count} (total ~6236)'**
+  String verseAudiosDownloaded(int count);
+
+  /// No description provided for @fullSurahsDownloaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Full surahs downloaded: {count} / 114'**
+  String fullSurahsDownloaded(int count);
+
+  /// No description provided for @downloadWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Why download? You can listen without internet.'**
+  String get downloadWhy;
+
+  /// No description provided for @downloadingProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading {current} / {total}'**
+  String downloadingProgress(int current, int total);
+
+  /// No description provided for @downloadVerseAudios.
+  ///
+  /// In en, this message translates to:
+  /// **'Download verse audios'**
+  String get downloadVerseAudios;
+
+  /// No description provided for @deleteVerseAudios.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete verse audios'**
+  String get deleteVerseAudios;
+
+  /// No description provided for @downloadFullSurahs.
+  ///
+  /// In en, this message translates to:
+  /// **'Download full surahs'**
+  String get downloadFullSurahs;
+
+  /// No description provided for @deleteFullSurahs.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete full surahs'**
+  String get deleteFullSurahs;
+
+  /// No description provided for @fullSurahLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Full surahs'**
+  String get fullSurahLabel;
+
+  /// No description provided for @downloadFullSurahNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Note: Full surah audio can be downloaded from Listen to Quran screen.'**
+  String get downloadFullSurahNote;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @enterYourName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your name'**
+  String get enterYourName;
+
+  /// No description provided for @timeFormatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time format'**
+  String get timeFormatTitle;
+
+  /// No description provided for @twelveHour.
+  ///
+  /// In en, this message translates to:
+  /// **'12h'**
+  String get twelveHour;
+
+  /// No description provided for @twentyFourHour.
+  ///
+  /// In en, this message translates to:
+  /// **'24h'**
+  String get twentyFourHour;
+
+  /// No description provided for @homeGreetingGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello, what would you like to do?'**
+  String get homeGreetingGeneric;
+
+  /// No description provided for @homeGreetingNamed.
+  ///
+  /// In en, this message translates to:
+  /// **'Hello {name}, what would you like to do?'**
+  String homeGreetingNamed(String name);
+
+  /// No description provided for @hijriHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Hijri'**
+  String get hijriHeader;
+
+  /// No description provided for @gregorianHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Gregorian'**
+  String get gregorianHeader;
+
+  /// No description provided for @audioInternetRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'No internet connection. Please connect to play audio or download offline files.'**
+  String get audioInternetRequired;
+
+  /// No description provided for @editionArabicSimple.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic (Simple)'**
+  String get editionArabicSimple;
+
+  /// No description provided for @editionArabicUthmani.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic (Uthmani)'**
+  String get editionArabicUthmani;
+
+  /// No description provided for @editionEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get editionEnglish;
+
+  /// No description provided for @editionFrench.
+  ///
+  /// In en, this message translates to:
+  /// **'French'**
+  String get editionFrench;
+
+  /// No description provided for @editionTafsir.
+  ///
+  /// In en, this message translates to:
+  /// **'Tafsir (Muyassar)'**
+  String get editionTafsir;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

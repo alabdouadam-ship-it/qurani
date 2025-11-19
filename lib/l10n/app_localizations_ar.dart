@@ -663,4 +663,95 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fontLateef => 'لطيف';
+
+  @override
+  String get offlineAudioTitle => 'الصوت دون اتصال';
+
+  @override
+  String reciterLabel(String name) {
+    return 'القارئ: $name';
+  }
+
+  @override
+  String verseAudiosDownloaded(int count) {
+    return 'تلاوات الآيات المحمّلة: $count (الإجمالي ~6236)';
+  }
+
+  @override
+  String fullSurahsDownloaded(int count) {
+    return 'السور الكاملة المحمّلة: $count / 114';
+  }
+
+  @override
+  String get downloadWhy => 'لماذا التحميل؟ لتستمع بدون إنترنت.';
+
+  @override
+  String downloadingProgress(int current, int total) {
+    return 'جاري التنزيل $current / $total';
+  }
+
+  @override
+  String get downloadVerseAudios => 'تنزيل تلاوات الآيات';
+
+  @override
+  String get deleteVerseAudios => 'حذف تلاوات الآيات';
+
+  @override
+  String get downloadFullSurahs => 'تنزيل السور الكاملة';
+
+  @override
+  String get deleteFullSurahs => 'حذف السور الكاملة';
+
+  @override
+  String get fullSurahLabel => 'السور الكاملة';
+
+  @override
+  String get downloadFullSurahNote => 'ملاحظة: يمكن تنزيل تلاوة السورة كاملة من شاشة الاستماع للقرآن.';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get enterYourName => 'أدخل اسمك';
+
+  @override
+  String get timeFormatTitle => 'تنسيق الوقت';
+
+  @override
+  String get twelveHour => '‏12 ساعة';
+
+  @override
+  String get twentyFourHour => '‏24 ساعة';
+
+  @override
+  String get homeGreetingGeneric => 'أهلا، ماذا تريد أن تفعل؟';
+
+  @override
+  String homeGreetingNamed(String name) {
+    return 'أهلا $name، ماذا تريد أن تفعل؟';
+  }
+
+  @override
+  String get hijriHeader => 'هجري';
+
+  @override
+  String get gregorianHeader => 'ميلادي';
+
+  @override
+  String get audioInternetRequired => 'لا يوجد اتصال بالإنترنت. يرجى الاتصال لتشغيل الصوت أو تنزيل الملفات.';
+
+  @override
+  String get editionArabicSimple => 'العربية (بسيط)';
+
+  @override
+  String get editionArabicUthmani => 'العربية (عثماني)';
+
+  @override
+  String get editionEnglish => 'الإنجليزية';
+
+  @override
+  String get editionFrench => 'الفرنسية';
+
+  @override
+  String get editionTafsir => 'التفسير (الميسّر)';
 }

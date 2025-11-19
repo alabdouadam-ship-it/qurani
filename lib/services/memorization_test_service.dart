@@ -171,18 +171,19 @@ class MemorizationTestService {
     List<int>? surahNumbers,
     int? juzNumber,
   }) async {
-    if (surahNumbers == null || surahNumbers.isEmpty && juzNumber == null) {
+    final bool hasSurahs = surahNumbers != null && surahNumbers.isNotEmpty;
+    final bool hasJuz = juzNumber != null;
+    if (!hasSurahs && !hasJuz) {
       throw ArgumentError('Either surahNumbers or juzNumber must be provided');
     }
-    if (surahNumbers != null && surahNumbers.isNotEmpty && juzNumber != null) {
+    if (hasSurahs && hasJuz) {
       throw ArgumentError('Cannot specify both surahNumbers and juzNumber');
     }
 
     final allQuestions = <MemorizationQuestion>[];
 
-    if (surahNumbers != null && surahNumbers.isNotEmpty) {
+    if (hasSurahs) {
       // Generate questions from multiple surahs with equal distribution
-      final questionsPerSurah = (100 / surahNumbers.length).ceil();
       final List<List<MemorizationQuestion>> surahQuestions = [];
       
       for (final surahNumber in surahNumbers) {
@@ -218,7 +219,6 @@ class MemorizationTestService {
       
       // Distribute questions evenly from each surah
       int remaining = 100;
-      int surahIndex = 0;
       
       while (remaining > 0 && surahQuestions.isNotEmpty) {
         for (int i = 0; i < surahQuestions.length && remaining > 0; i++) {

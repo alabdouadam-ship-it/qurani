@@ -442,4 +442,58 @@
   "@fontScheherazade": {},
   "fontLateef": "لطيف",
   "@fontLateef": {}
+  ,"offlineAudioTitle": "الصوت دون اتصال",
+  "@offlineAudioTitle": {},
+  "reciterLabel": "القارئ: {name}",
+  "@reciterLabel": {"placeholders": {"name": {"type": "String"}}},
+  "verseAudiosDownloaded": "تلاوات الآيات المحمّلة: {count} (الإجمالي ~6236)",
+  "@verseAudiosDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "fullSurahsDownloaded": "السور الكاملة المحمّلة: {count} / 114",
+  "@fullSurahsDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "downloadWhy": "لماذا التحميل؟ لتستمع بدون إنترنت.",
+  "@downloadWhy": {},
+  "downloadingProgress": "جاري التنزيل {current} / {total}",
+  "@downloadingProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "downloadVerseAudios": "تنزيل تلاوات الآيات",
+  "@downloadVerseAudios": {},
+  "deleteVerseAudios": "حذف تلاوات الآيات",
+  "@deleteVerseAudios": {},
+  "downloadFullSurahs": "تنزيل السور الكاملة",
+  "@downloadFullSurahs": {},
+  "deleteFullSurahs": "حذف السور الكاملة",
+  "@deleteFullSurahs": {},
+  "fullSurahLabel": "السور الكاملة",
+  "@fullSurahLabel": {},
+  "downloadFullSurahNote": "ملاحظة: يمكن تنزيل تلاوة السورة كاملة من شاشة الاستماع للقرآن.",
+  "@downloadFullSurahNote": {},
+  "name": "الاسم",
+  "@name": {},
+  "enterYourName": "أدخل اسمك",
+  "@enterYourName": {}
+  ,"timeFormatTitle": "تنسيق الوقت",
+  "@timeFormatTitle": {},
+  "twelveHour": "‏12 ساعة",
+  "@twelveHour": {},
+  "twentyFourHour": "‏24 ساعة",
+  "@twentyFourHour": {}
+  ,"homeGreetingGeneric": "أهلا، ماذا تريد أن تفعل؟",
+  "@homeGreetingGeneric": {},
+  "homeGreetingNamed": "أهلا {name}، ماذا تريد أن تفعل؟",
+  "@homeGreetingNamed": {"placeholders": {"name": {"type": "String"}}}
+  ,"hijriHeader": "هجري",
+  "@hijriHeader": {},
+  "gregorianHeader": "ميلادي",
+  "@gregorianHeader": {}
+  ,"audioInternetRequired": "لا يوجد اتصال بالإنترنت. يرجى الاتصال لتشغيل الصوت أو تنزيل الملفات.",
+  "@audioInternetRequired": {}
+  ,"editionArabicSimple":"العربية (بسيط)"
+  ,"@editionArabicSimple":{}
+  ,"editionArabicUthmani":"العربية (عثماني)"
+  ,"@editionArabicUthmani":{}
+  ,"editionEnglish":"الإنجليزية"
+  ,"@editionEnglish":{}
+  ,"editionFrench":"الفرنسية"
+  ,"@editionFrench":{}
+  ,"editionTafsir":"التفسير (الميسّر)"
+  ,"@editionTafsir":{}
 }

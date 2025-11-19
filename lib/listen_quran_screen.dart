@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
 import 'widgets/surah_grid.dart';
@@ -84,7 +85,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
         elevation: 2,
         actions: [
-          _buildDownloadAction(l10n),
+          if (!kIsWeb) _buildDownloadAction(l10n),
         ],
       ),
       body: SurahGrid(

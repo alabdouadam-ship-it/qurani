@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+import 'package:qurani/services/media_item_compat.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_search_service.dart';
+import 'package:qurani/services/net_utils.dart';
 
 class SearchQuranScreen extends StatefulWidget {
   const SearchQuranScreen({super.key});
@@ -126,7 +127,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       spans.add(TextSpan(
         text: text.substring(matchStartOriginal, matchEndOriginal),
         style: TextStyle(
-          backgroundColor: colorScheme.primary.withOpacity(0.4),
+          backgroundColor: colorScheme.primary.withAlpha((255 * 0.4).round()),
           color: colorScheme.primary,
           fontWeight: FontWeight.bold,
         ),
@@ -168,6 +169,18 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
           SnackBar(content: Text(l10n.errorLoadingAudio)),
         );
         return;
+      }
+
+      // If this is a network URL and there is no internet, show a clear message
+      if (uri.scheme != 'file') {
+        final hasNet = await _hasInternet();
+        if (!hasNet) {
+          if (!mounted) return;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(l10n.audioInternetRequired)),
+          );
+          return;
+        }
       }
 
       debugPrint('Playing audio from: $uri');
@@ -215,11 +228,14 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       debugPrint('Audio playback error: $e');
       debugPrint('Stack trace: $stackTrace');
       if (!mounted) return;
+      final hasNet = await _hasInternet();
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('${l10n.errorLoadingAudio}: ${e.toString()}')),
+        SnackBar(content: Text(hasNet ? l10n.errorLoadingAudio : l10n.audioInternetRequired)),
       );
     }
   }
+
+  Future<bool> _hasInternet() => NetUtils.hasInternet();
 
   Future<void> _copyAyah(SearchAyah ayah) async {
     final l10n = AppLocalizations.of(context)!;
@@ -342,10 +358,10 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: colorScheme.primaryContainer.withOpacity(0.85),
+                      color: colorScheme.primaryContainer.withAlpha((255 * 0.85).round()),
                       border: Border(
                         bottom: BorderSide(
-                          color: colorScheme.outlineVariant.withOpacity(0.4),
+                          color: colorScheme.outlineVariant.withAlpha((255 * 0.4).round()),
                         ),
                       ),
                     ),
@@ -354,7 +370,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                       children: [
                         CircleAvatar(
                           radius: 18,
-                          backgroundColor: colorScheme.onPrimaryContainer.withOpacity(0.15),
+                          backgroundColor: colorScheme.onPrimaryContainer.withAlpha((255 * 0.15).round()),
                           child: Icon(
                             Icons.manage_search,
                             color: colorScheme.onPrimaryContainer,
@@ -381,7 +397,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: theme.textTheme.bodySmall?.copyWith(
-                                    color: colorScheme.onPrimaryContainer.withOpacity(0.8),
+                                    color: colorScheme.onPrimaryContainer.withAlpha((255 * 0.8).round()),
                                   ),
                                 ),
                             ],

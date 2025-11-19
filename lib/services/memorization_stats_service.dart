@@ -8,6 +8,15 @@ class MemorizationStatsService {
   static const String _keySurahMastery = 'memorization_surah_mastery';
   static const String _keyTotalScore = 'memorization_total_score';
   static const String _keyTestHistory = 'memorization_test_history';
+  static const String _keyTotalTests = 'memorization_total_tests';
+  static const String _keyTotalCorrectSum = 'memorization_total_correct_sum';
+  static const String _keyTotalQuestionsSum = 'memorization_total_questions_sum';
+  static const String _keyLastSurah = 'memorization_last_surah_map';
+  static const String _keyBestSurah = 'memorization_best_surah_map';
+  static const String _keyLastJuz = 'memorization_last_juz_map';
+  static const String _keyBestJuz = 'memorization_best_juz_map';
+  static const String _keySurahAgg = 'memorization_surah_agg'; // { "1": {count, correct, total}, ... }
+  static const String _keyJuzAgg = 'memorization_juz_agg';     // { "1": {count, correct, total}, ... }
 
   Future<void> saveTestResult({
     required int? surahNumber,
@@ -22,37 +31,41 @@ class MemorizationStatsService {
     final currentTotal = prefs.getInt(_keyTotalScore) ?? 0;
     await prefs.setInt(_keyTotalScore, currentTotal + score);
 
+    // Update running totals for stats
+    final totalTests = prefs.getInt(_keyTotalTests) ?? 0;
+    await prefs.setInt(_keyTotalTests, totalTests + 1);
+    final totalCorrectSum = prefs.getInt(_keyTotalCorrectSum) ?? 0;
+    await prefs.setInt(_keyTotalCorrectSum, totalCorrectSum + correctAnswers);
+    final totalQuestionsSum = prefs.getInt(_keyTotalQuestionsSum) ?? 0;
+    await prefs.setInt(_keyTotalQuestionsSum, totalQuestionsSum + totalQuestions);
+
     // Add to test history first
     final history = await getTestHistory();
 
     // Update surah mastery if surah mode - calculate average from all tests
     if (surahNumber != null) {
       final masteryMap = await getSurahMastery();
-      
-      // Get all tests for this surah (including the new one we're about to add)
-      final surahTests = history.where((test) => 
-        test['surahNumber'] == surahNumber
-      ).toList();
-      
-      // Add current test to the list for calculation
-      surahTests.add({
-        'surahNumber': surahNumber,
-        'correctAnswers': correctAnswers,
-        'totalQuestions': totalQuestions,
-      });
-      
-      // Calculate average percentage
-      final totalCorrect = surahTests.fold<int>(0, (sum, test) => 
-        sum + (test['correctAnswers'] as int? ?? 0)
-      );
-      final totalQuestionsSum = surahTests.fold<int>(0, (sum, test) => 
-        sum + (test['totalQuestions'] as int? ?? 0)
-      );
-      final averagePercentage = totalQuestionsSum > 0
-          ? (totalCorrect / totalQuestionsSum * 100).round()
-          : 0;
+
+      // Update persistent aggregation for surah
+      final surahAggStr = prefs.getString(_keySurahAgg);
+      final Map<String, dynamic> surahAgg = surahAggStr == null || surahAggStr.isEmpty
+          ? {}
+          : (json.decode(surahAggStr) as Map<String, dynamic>);
+      final String key = '$surahNumber';
+      final Map<String, dynamic> current = (surahAgg[key] as Map?)?.cast<String, dynamic>() ?? {};
+      final int prevCount = (current['count'] as int?) ?? 0;
+      final int prevCorrect = (current['correct'] as int?) ?? 0;
+      final int prevTotal = (current['total'] as int?) ?? 0;
+      final int newCount = prevCount + 1;
+      final int newCorrect = prevCorrect + correctAnswers;
+      final int newTotal = prevTotal + totalQuestions;
+      surahAgg[key] = {'count': newCount, 'correct': newCorrect, 'total': newTotal};
+      await prefs.setString(_keySurahAgg, json.encode(surahAgg));
+
+      // Update mastery percentage from aggregated sums
+      final int averagePercentage = newTotal > 0 ? (newCorrect / newTotal * 100).round() : 0;
       masteryMap[surahNumber] = averagePercentage;
-      
+
       await prefs.setString(_keySurahMastery, json.encode(masteryMap));
     }
     history.add({
@@ -69,6 +82,71 @@ class MemorizationStatsService {
       history.removeRange(0, history.length - 100);
     }
     await prefs.setString(_keyTestHistory, json.encode(history));
+
+    // Persist last/best summaries for fast, reliable access (kept for backwards-compatibility, but not used in UI)
+    final int percentage = (correctAnswers / totalQuestions * 100).round();
+    if (surahNumber != null) {
+      final lastSurahStr = prefs.getString(_keyLastSurah);
+      final Map<String, dynamic> lastSurah = lastSurahStr == null || lastSurahStr.isEmpty ? {} : (json.decode(lastSurahStr) as Map<String, dynamic>);
+      lastSurah['$surahNumber'] = {
+        'percentage': percentage,
+        'score': score,
+        'timestamp': DateTime.now().millisecondsSinceEpoch,
+      };
+      await prefs.setString(_keyLastSurah, json.encode(lastSurah));
+
+      final bestSurahStr = prefs.getString(_keyBestSurah);
+      final Map<String, dynamic> bestSurah = bestSurahStr == null || bestSurahStr.isEmpty ? {} : (json.decode(bestSurahStr) as Map<String, dynamic>);
+      final prev = bestSurah['$surahNumber'] as Map<String, dynamic>?;
+      if (prev == null || (prev['percentage'] as int? ?? 0) < percentage) {
+        bestSurah['$surahNumber'] = {
+          'percentage': percentage,
+          'score': score,
+          'timestamp': DateTime.now().millisecondsSinceEpoch,
+        };
+        await prefs.setString(_keyBestSurah, json.encode(bestSurah));
+      }
+    }
+    if (juzNumber != null) {
+      // Update persistent aggregation for juz
+      final juzAggStr = prefs.getString(_keyJuzAgg);
+      final Map<String, dynamic> juzAgg = juzAggStr == null || juzAggStr.isEmpty
+          ? {}
+          : (json.decode(juzAggStr) as Map<String, dynamic>);
+      final String key = '$juzNumber';
+      final Map<String, dynamic> current = (juzAgg[key] as Map?)?.cast<String, dynamic>() ?? {};
+      final int prevCount = (current['count'] as int?) ?? 0;
+      final int prevCorrect = (current['correct'] as int?) ?? 0;
+      final int prevTotal = (current['total'] as int?) ?? 0;
+      juzAgg[key] = {
+        'count': prevCount + 1,
+        'correct': prevCorrect + correctAnswers,
+        'total': prevTotal + totalQuestions,
+      };
+      await prefs.setString(_keyJuzAgg, json.encode(juzAgg));
+
+      // Optionally maintain last/best for backward compatibility
+      final lastJuzStr = prefs.getString(_keyLastJuz);
+      final Map<String, dynamic> lastJuz = lastJuzStr == null || lastJuzStr.isEmpty ? {} : (json.decode(lastJuzStr) as Map<String, dynamic>);
+      lastJuz['$juzNumber'] = {
+        'percentage': percentage,
+        'score': score,
+        'timestamp': DateTime.now().millisecondsSinceEpoch,
+      };
+      await prefs.setString(_keyLastJuz, json.encode(lastJuz));
+
+      final bestJuzStr = prefs.getString(_keyBestJuz);
+      final Map<String, dynamic> bestJuz = bestJuzStr == null || bestJuzStr.isEmpty ? {} : (json.decode(bestJuzStr) as Map<String, dynamic>);
+      final prev = bestJuz['$juzNumber'] as Map<String, dynamic>?;
+      if (prev == null || (prev['percentage'] as int? ?? 0) < percentage) {
+        bestJuz['$juzNumber'] = {
+          'percentage': percentage,
+          'score': score,
+          'timestamp': DateTime.now().millisecondsSinceEpoch,
+        };
+        await prefs.setString(_keyBestJuz, json.encode(bestJuz));
+      }
+    }
   }
 
   Future<Map<int, int>> getSurahMastery() async {
@@ -93,8 +171,27 @@ class MemorizationStatsService {
     final historyJson = prefs.getString(_keyTestHistory);
     if (historyJson == null || historyJson.isEmpty) return [];
     try {
-      final List<dynamic> decoded = json.decode(historyJson);
-      return decoded.map((e) => e as Map<String, dynamic>).toList();
+      final dynamic decodedRoot = json.decode(historyJson);
+      List<dynamic> asList;
+      if (decodedRoot is List) {
+        asList = decodedRoot;
+      } else if (decodedRoot is Map<String, dynamic>) {
+        // Some legacy or corrupted formats; try common wrappers
+        if (decodedRoot['history'] is List) {
+          asList = decodedRoot['history'] as List;
+        } else if (decodedRoot['items'] is List) {
+          asList = decodedRoot['items'] as List;
+        } else {
+          // Single entry map, wrap as list
+          asList = [decodedRoot];
+        }
+      } else {
+        return [];
+      }
+      return asList
+          .where((e) => e is Map)
+          .map((e) => Map<String, dynamic>.from(e as Map))
+          .toList();
     } catch (_) {
       return [];
     }
@@ -104,47 +201,39 @@ class MemorizationStatsService {
     final mastery = await getSurahMastery();
     final totalScore = await getTotalScore();
     final history = await getTestHistory();
-    
-    final totalTests = history.length;
-    final totalCorrect = history.fold<int>(0, (sum, test) => sum + (test['correctAnswers'] as int? ?? 0));
-    final totalQuestions = history.fold<int>(0, (sum, test) => sum + (test['totalQuestions'] as int? ?? 0));
-    final averagePercentage = totalQuestions > 0
-        ? (totalCorrect / totalQuestions * 100).round()
-        : 0;
 
-    // Build last result per surah / juz and best percentage
-    final Map<int, Map<String, dynamic>> lastSurah = {};
-    final Map<int, Map<String, dynamic>> bestSurah = {};
-    final Map<int, Map<String, dynamic>> lastJuz = {};
-    final Map<int, Map<String, dynamic>> bestJuz = {};
+    final prefs = await SharedPreferences.getInstance();
 
-    for (final test in history) {
-      final int? surah = test['surahNumber'] as int?;
-      final int? juz = test['juzNumber'] as int?;
-      final int percentage = (test['percentage'] as int?) ?? 0;
-      final int score = (test['score'] as int?) ?? 0;
-      final int ts = (test['timestamp'] as int?) ?? 0;
-      if (surah != null) {
-        final last = lastSurah[surah];
-        if (last == null || ts > (last['timestamp'] as int)) {
-          lastSurah[surah] = {'percentage': percentage, 'score': score, 'timestamp': ts};
-        }
-        final best = bestSurah[surah];
-        if (best == null || percentage > (best['percentage'] as int)) {
-          bestSurah[surah] = {'percentage': percentage, 'score': score, 'timestamp': ts};
-        }
-      }
-      if (juz != null) {
-        final last = lastJuz[juz];
-        if (last == null || ts > (last['timestamp'] as int)) {
-          lastJuz[juz] = {'percentage': percentage, 'score': score, 'timestamp': ts};
-        }
-        final best = bestJuz[juz];
-        if (best == null || percentage > (best['percentage'] as int)) {
-          bestJuz[juz] = {'percentage': percentage, 'score': score, 'timestamp': ts};
-        }
+    // Read persistent aggregated maps
+    Map<String, dynamic> surahAgg = {};
+    Map<String, dynamic> juzAgg = {};
+    try {
+      final sa = prefs.getString(_keySurahAgg);
+      final ja = prefs.getString(_keyJuzAgg);
+      if (sa != null && sa.isNotEmpty) surahAgg = (json.decode(sa) as Map).cast<String, dynamic>();
+      if (ja != null && ja.isNotEmpty) juzAgg = (json.decode(ja) as Map).cast<String, dynamic>();
+    } catch (_) {}
+
+    // Totals (tests, correct, questions) from counters if available, otherwise compute from aggregates
+    final int counterTests = prefs.getInt(_keyTotalTests) ?? 0;
+    final int counterCorrect = prefs.getInt(_keyTotalCorrectSum) ?? 0;
+    final int counterQuestions = prefs.getInt(_keyTotalQuestionsSum) ?? 0;
+
+    int aggTests = 0;
+    int aggCorrect = 0;
+    int aggQuestions = 0;
+    for (final m in [...surahAgg.values, ...juzAgg.values]) {
+      if (m is Map) {
+        aggTests += (m['count'] as int?) ?? 0;
+        aggCorrect += (m['correct'] as int?) ?? 0;
+        aggQuestions += (m['total'] as int?) ?? 0;
       }
     }
+
+    final totalTests = counterTests != 0 ? counterTests : (history.length > 0 ? history.length : aggTests);
+    final totalCorrect = counterCorrect != 0 ? counterCorrect : (aggCorrect);
+    final totalQuestions = counterQuestions != 0 ? counterQuestions : (aggQuestions);
+    final averagePercentage = totalQuestions > 0 ? (totalCorrect / totalQuestions * 100).round() : 0;
 
     return {
       'totalScore': totalScore,
@@ -152,10 +241,8 @@ class MemorizationStatsService {
       'averagePercentage': averagePercentage,
       'surahMastery': mastery,
       'recentTests': history.take(10).toList(),
-      'lastSurah': lastSurah,
-      'bestSurah': bestSurah,
-      'lastJuz': lastJuz,
-      'bestJuz': bestJuz,
+      'surahAgg': surahAgg,
+      'juzAgg': juzAgg,
     };
   }
 
@@ -164,5 +251,12 @@ class MemorizationStatsService {
     await prefs.remove(_keySurahMastery);
     await prefs.remove(_keyTotalScore);
     await prefs.remove(_keyTestHistory);
+    await prefs.remove(_keyTotalTests);
+    await prefs.remove(_keyTotalCorrectSum);
+    await prefs.remove(_keyTotalQuestionsSum);
+    await prefs.remove(_keyLastSurah);
+    await prefs.remove(_keyBestSurah);
+    await prefs.remove(_keyLastJuz);
+    await prefs.remove(_keyBestJuz);
   }
 }

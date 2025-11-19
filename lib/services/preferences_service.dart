@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uuid/uuid.dart';
 
 import 'package:qurani/util/arabic_font_utils.dart';
 
@@ -18,6 +20,9 @@ class PreferencesService {
   static const String keyListenFeaturedSurahs = 'listen_featured_surahs';
   static const String keyArabicFontFamily = 'arabic_font_family';
   static const String keyVerseRepeatCount = 'verse_repeat_count';
+  static const String keyDeviceInfoCollected = 'device_info_collected_v1';
+  static const String keyDeviceInfoJson = 'device_info_json';
+  static const String keyInstallationId = 'installation_id_v1';
 
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
   static final ValueNotifier<String> themeNotifier = ValueNotifier<String>('green'); // Default to green
@@ -117,6 +122,39 @@ class PreferencesService {
     return languageNotifier.value; // default 'ar'
   }
 
+  // Device info collection flags / storage
+  static Future<void> setDeviceInfoCollected(bool value) async {
+    await _prefs?.setBool(keyDeviceInfoCollected, value);
+  }
+
+  static bool isDeviceInfoCollected() {
+    return _prefs?.getBool(keyDeviceInfoCollected) ?? false;
+  }
+
+  static Future<void> saveDeviceInfoJson(String json) async {
+    await _prefs?.setString(keyDeviceInfoJson, json);
+  }
+
+  static String? getDeviceInfoJson() {
+    return _prefs?.getString(keyDeviceInfoJson);
+  }
+
+  // Installation ID (stable per install, not a hardware/device ID)
+  static Future<String> ensureInstallationId() async {
+    final existing = _prefs?.getString(keyInstallationId);
+    if (existing != null && existing.isNotEmpty) {
+      return existing;
+    }
+    final id = const Uuid().v4();
+    await _prefs?.setString(keyInstallationId, id);
+    return id;
+  }
+
+  static String getInstallationId() {
+    final existing = _prefs?.getString(keyInstallationId);
+    return existing ?? '';
+  }
+
   // Generic helpers for simple int flags/epochs used by services (e.g., update checks)
   static Future<void> setInt(String key, int value) async {
     await _prefs?.setInt(key, value);
@@ -146,12 +184,21 @@ class PreferencesService {
 
   // Adhan sound selection
   static const String keyAdhanSound = 'adhan_sound';
+  static const String keyAdhanVolume = 'adhan_volume';
   static Future<void> saveAdhanSound(String soundKey) async {
     await _prefs?.setString(keyAdhanSound, soundKey);
   }
 
   static String getAdhanSound() {
     return _prefs?.getString(keyAdhanSound) ?? 'afs';
+  }
+
+  static double getAdhanVolume() {
+    return _prefs?.getDouble(keyAdhanVolume) ?? 1.0;
+  }
+
+  static Future<void> saveAdhanVolume(double value) async {
+    await _prefs?.setDouble(keyAdhanVolume, value.clamp(0.0, 1.0));
   }
 
   // Time format: true => 12h, false => 24h
@@ -172,6 +219,16 @@ class PreferencesService {
 
   static bool getWesternDigits() {
     return _prefs?.getBool(keyWesternDigits) ?? true; // default Western
+  }
+
+  // User name
+  static const String keyUserName = 'user_name';
+  static Future<void> saveUserName(String name) async {
+    await _prefs?.setString(keyUserName, name);
+  }
+
+  static String getUserName() {
+    return _prefs?.getString(keyUserName) ?? '';
   }
 
   static Future<void> saveTafsir(String value) async {
@@ -298,6 +355,64 @@ class PreferencesService {
         .toSet();
   }
 
+  // Debug mode: Prayer time adjustments (offset in minutes per prayer)
+  static const String keyPrayerTimeAdjustments = 'prayer_time_adjustments_debug';
+  
+  /// Get prayer time adjustment (offset in minutes) for a specific prayer
+  /// Returns 0 if no adjustment is set
+  static int getPrayerTimeAdjustment(String prayerId) {
+    final jsonStr = _prefs?.getString(keyPrayerTimeAdjustments);
+    if (jsonStr == null || jsonStr.isEmpty) return 0;
+    try {
+      final Map<String, dynamic> adjustments = json.decode(jsonStr);
+      return (adjustments[prayerId] as int?) ?? 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  /// Set prayer time adjustment (offset in minutes) for a specific prayer
+  /// Only available in debug mode
+  static Future<void> setPrayerTimeAdjustment(String prayerId, int offsetMinutes) async {
+    if (!kDebugMode) return; // Only allow in debug mode
+    final jsonStr = _prefs?.getString(keyPrayerTimeAdjustments);
+    Map<String, dynamic> adjustments = {};
+    if (jsonStr != null && jsonStr.isNotEmpty) {
+      try {
+        adjustments = json.decode(jsonStr);
+      } catch (_) {
+        adjustments = {};
+      }
+    }
+    adjustments[prayerId] = offsetMinutes;
+    await _prefs?.setString(keyPrayerTimeAdjustments, json.encode(adjustments));
+  }
+
+  /// Adjust prayer time adjustment by adding offset (can be negative)
+  /// Only available in debug mode
+  static Future<void> adjustPrayerTime(String prayerId, int offsetMinutes) async {
+    if (!kDebugMode) return; // Only allow in debug mode
+    final current = getPrayerTimeAdjustment(prayerId);
+    await setPrayerTimeAdjustment(prayerId, current + offsetMinutes);
+  }
+
+  /// Get all prayer time adjustments as a map
+  static Map<String, int> getAllPrayerTimeAdjustments() {
+    final jsonStr = _prefs?.getString(keyPrayerTimeAdjustments);
+    if (jsonStr == null || jsonStr.isEmpty) return {};
+    try {
+      final Map<String, dynamic> adjustments = json.decode(jsonStr);
+      return adjustments.map((key, value) => MapEntry(key, (value as int? ?? 0)));
+    } catch (_) {
+      return {};
+    }
+  }
+
+  /// Clear all prayer time adjustments
+  static Future<void> clearPrayerTimeAdjustments() async {
+    await _prefs?.remove(keyPrayerTimeAdjustments);
+  }
+
   // Font size for Quran reading
   static Future<void> saveFontSize(double fontSize) async {
     await _prefs?.setDouble(keyFontSize, fontSize);
@@ -305,8 +420,20 @@ class PreferencesService {
 
   static double getFontSize() {
     final saved = _prefs?.getDouble(keyFontSize);
-    // Default sizes: 18 (small), 20 (medium), 22 (large), 24 (xlarge)
-    return saved ?? 22.0; // Default to large (22)
+    // New steps: 16 (small), 20 (medium), 24 (large), 28 (xlarge)
+    final value = saved ?? 24.0; // Default to large (24)
+    // If old values exist (18/22), snap to nearest new step
+    final steps = <double>[16, 20, 24, 28];
+    double nearest = steps.first;
+    double bestDiff = (value - nearest).abs();
+    for (final s in steps) {
+      final d = (value - s).abs();
+      if (d < bestDiff) {
+        bestDiff = d;
+        nearest = s;
+      }
+    }
+    return nearest;
   }
 
   static Future<void> saveVerseRepeatCount(int count) async {

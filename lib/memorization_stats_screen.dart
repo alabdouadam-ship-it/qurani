@@ -14,6 +14,8 @@ class MemorizationStatsScreen extends StatefulWidget {
 class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
   Map<String, dynamic>? _stats;
   bool _isLoading = true;
+  List<_AggRow> _surahRows = const [];
+  List<_AggRow> _juzRows = const [];
 
   @override
   void initState() {
@@ -24,9 +26,43 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
   Future<void> _loadStats() async {
     setState(() => _isLoading = true);
     final stats = await MemorizationStatsService.instance.getStatistics();
+
+    // Use persisted per-surah and per-juz aggregations
+    final Map<String, dynamic> surahAggRaw = (stats['surahAgg'] as Map?)?.map((k,v)=>MapEntry(k.toString(), v)) ?? {};
+    final Map<String, dynamic> juzAggRaw = (stats['juzAgg'] as Map?)?.map((k,v)=>MapEntry(k.toString(), v)) ?? {};
+
+    final Map<int, int> surahCount = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['count'] as int? ?? 0) : 0) };
+    final Map<int, int> surahCorrect = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['correct'] as int? ?? 0) : 0) };
+    final Map<int, int> surahTotal = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['total'] as int? ?? 0) : 0) };
+
+    final Map<int, int> juzCount = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['count'] as int? ?? 0) : 0) };
+    final Map<int, int> juzCorrect = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['correct'] as int? ?? 0) : 0) };
+    final Map<int, int> juzTotal = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['total'] as int? ?? 0) : 0) };
+    List<_AggRow> buildRows(int maxId, Map<int,int> countMap, Map<int,int> correctMap, Map<int,int> totalMap) {
+      final rows = <_AggRow>[];
+      for (int id=1; id<=maxId; id++) {
+        final c = countMap[id] ?? 0;
+        final corr = correctMap[id] ?? 0;
+        final tot = totalMap[id] ?? 0;
+        final pct = tot > 0 ? ((corr / tot) * 100).round() : 0;
+        rows.add(_AggRow(id: id, count: c, percent: pct));
+      }
+      rows.sort((a,b){
+        final byPct = b.percent.compareTo(a.percent);
+        if (byPct != 0) return byPct;
+        return a.id.compareTo(b.id);
+      });
+      return rows;
+    }
+    List<_AggRow> surahRows = buildRows(114, surahCount, surahCorrect, surahTotal);
+    List<_AggRow> juzRows = buildRows(30, juzCount, juzCorrect, juzTotal);
+
+    // Already sorted above
     if (mounted) {
       setState(() {
         _stats = stats;
+        _surahRows = surahRows;
+        _juzRows = juzRows;
         _isLoading = false;
       });
     }
@@ -61,7 +97,6 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
@@ -115,63 +150,47 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      // General Stats Card
+                      // Tests count only (no header, no average)
                       Card(
                         elevation: 2,
                         child: Padding(
                           padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'إحصائيات عامة',
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(height: 12),
-                              _buildStatRow(
-                                'عدد الاختبارات',
-                                '${_stats!['totalTests']}',
-                                theme,
-                                colorScheme,
-                              ),
-                              const SizedBox(height: 8),
-                              _buildStatRow(
-                                'متوسط نسبة الإتقان',
-                                '${_stats!['averagePercentage']}%',
-                                theme,
-                                colorScheme,
-                              ),
-                            ],
+                          child: _buildStatRow(
+                            'عدد الاختبارات',
+                            '${_stats!['totalTests']}',
+                            theme,
+                            colorScheme,
                           ),
                         ),
                       ),
                       const SizedBox(height: 16),
-                      // Last & Best Results Cards
-                      Card(
-                        elevation: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('آخر النتائج (سور)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 8),
-                              _buildLastMapList(_stats!['lastSurah'] as Map?, isSurah: true, theme: theme, colorScheme: colorScheme),
-                              const SizedBox(height: 16),
-                              Text('أفضل النتائج (سور)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 8),
-                              _buildLastMapList(_stats!['bestSurah'] as Map?, isSurah: true, theme: theme, colorScheme: colorScheme),
-                              const SizedBox(height: 16),
-                              Text('آخر النتائج (أجزاء)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 8),
-                              _buildLastMapList(_stats!['lastJuz'] as Map?, isSurah: false, theme: theme, colorScheme: colorScheme),
-                              const SizedBox(height: 16),
-                              Text('أفضل النتائج (أجزاء)', style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 8),
-                              _buildLastMapList(_stats!['bestJuz'] as Map?, isSurah: false, theme: theme, colorScheme: colorScheme),
-                            ],
+                      // Aggregated tabs: Surahs vs Juz
+                      DefaultTabController(
+                        length: 2,
+                        child: Card(
+                          elevation: 2,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Column(
+                              children: [
+                                const TabBar(
+                                  tabs: [
+                                    Tab(text: 'سور'),
+                                    Tab(text: 'أجزاء'),
+                                  ],
+                                ),
+                                const SizedBox(height: 8),
+                                SizedBox(
+                                  height: 360,
+                                  child: TabBarView(
+                                    children: [
+                                      _buildSurahAggList(theme, colorScheme),
+                                      _buildJuzAggList(theme, colorScheme),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -343,45 +362,44 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     return Colors.red;
   }
 
-  Widget _buildLastMapList(Map? map, {required bool isSurah, required ThemeData theme, required ColorScheme colorScheme}) {
-    if (map == null || map.isEmpty) return const Text('لا توجد بيانات');
-    final entries = (map as Map).entries.toList()
-      ..sort((a, b) => (b.value['timestamp'] as int).compareTo(a.value['timestamp'] as int));
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: entries.length.clamp(0, 10),
+  Widget _buildSurahAggList(ThemeData theme, ColorScheme colorScheme) {
+    return FutureBuilder<List<SurahMeta>>(
+      future: QuranRepository.instance.loadAllSurahs(),
+      builder: (context, snapshot) {
+        final rows = _surahRows;
+        if (!snapshot.hasData) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final surahs = snapshot.data!;
+        return ListView.separated(
+          itemCount: rows.length,
+          separatorBuilder: (_, __) => const Divider(height: 1),
+          itemBuilder: (context, index) {
+            final r = rows[index];
+            final meta = surahs.firstWhere(
+              (s) => s.number == r.id,
+              orElse: () => SurahMeta(number: r.id, name: 'سورة ${r.id}', englishName: '', englishNameTranslation: ''),
+            );
+            return ListTile(
+              title: Text(meta.name, textDirection: TextDirection.rtl),
+              trailing: Text('${r.count} ×  |  ${r.percent}%', style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.primary)),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Widget _buildJuzAggList(ThemeData theme, ColorScheme colorScheme) {
+    final rows = _juzRows;
+    return ListView.separated(
+      itemCount: rows.length,
+      separatorBuilder: (_, __) => const Divider(height: 1),
       itemBuilder: (context, index) {
-        final e = entries[index];
-        final keyNum = int.tryParse(e.key.toString()) ?? 0;
-        final perc = (e.value['percentage'] as int?) ?? 0;
-        final ts = (e.value['timestamp'] as int?) ?? 0;
-        final when = DateTime.fromMillisecondsSinceEpoch(ts);
-        return Padding(
-          padding: const EdgeInsets.only(bottom: 6),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  isSurah ? 'سورة $keyNum' : 'جزء $keyNum',
-                  textDirection: TextDirection.rtl,
-                  style: theme.textTheme.bodyMedium,
-                ),
-              ),
-              Text(
-                '$perc%',
-                style: theme.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: _getPercentageColor(perc, colorScheme),
-                ),
-              ),
-              const SizedBox(width: 12),
-              Text(
-                _formatDate(when),
-                style: theme.textTheme.bodySmall?.copyWith(color: colorScheme.onSurfaceVariant),
-              ),
-            ],
-          ),
+        final r = rows[index];
+        return ListTile(
+          title: Text('جزء ${r.id}', textDirection: TextDirection.rtl),
+          trailing: Text('${r.count} ×  |  ${r.percent}%', style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.primary)),
         );
       },
     );
@@ -401,4 +419,11 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
       return '${date.day}/${date.month}/${date.year}';
     }
   }
+}
+
+class _AggRow {
+  final int id;
+  final int count;
+  final int percent;
+  const _AggRow({required this.id, required this.count, required this.percent});
 }

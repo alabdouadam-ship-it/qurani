@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -70,8 +69,8 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
           if (!ok) return;
           baseHijri = await PrayerTimesService.getHijriForDate(year: y, month: m, day: widget.baseDate.day);
         }
-        final targetMonthNameEn = (baseHijri?['monthEn'] as String?) ?? '';
-        final targetYear = (baseHijri?['year'] as String?) ?? '';
+        final targetMonthNameEn = baseHijri?['monthEn']?.toString() ?? '';
+        final targetYear = baseHijri?['year']?.toString() ?? '';
         final prev = DateTime(y, m - 1, 1);
         final curr = DateTime(y, m, 1);
         final next = DateTime(y, m + 1, 1);
@@ -179,17 +178,17 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       appBar: AppBar(
         title: Text('${l10n.prayerTimes} • $monthLabel'),
         actions: [
-          if (_generatingPdf)
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-              child: SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2)),
-            )
-          else
-            IconButton(
-              tooltip: l10n.share,
-              icon: const Icon(Icons.picture_as_pdf_outlined),
-              onPressed: _sharePdf,
-            ),
+          if (!kIsWeb)
+            _generatingPdf
+                ? const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                    child: SizedBox(height: 20, width: 20, child: CircularProgressIndicator(strokeWidth: 2)),
+                  )
+                : IconButton(
+                    tooltip: l10n.share,
+                    icon: const Icon(Icons.picture_as_pdf_outlined),
+                    onPressed: _sharePdf,
+                  ),
         ],
       ),
       body: _buildBody(context, l10n),
@@ -230,37 +229,13 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
     if (_rows.isEmpty) {
       return Center(child: Text(l10n.unknownError));
     }
-    // Decide if Ramadan is present in this month
-    bool includeImsak = _rows.any((e) {
-      final hijri = ((e['date'] as Map)['hijri'] as Map);
-      final month = (hijri['month'] as Map);
-      final en = (month['en'] as String?) ?? '';
-      final ar = (month['ar'] as String?) ?? '';
-      return en.toLowerCase().contains('ramadan') || ar.contains('رمضان');
-    });
+    // Always include Imsak column for clarity
+    // Imsak is always included as a separate column for clarity
 
-    // Build dynamic header for second column (month name)
-    String secondHeader = '';
-    try {
-      final first = _rows.first;
-      final dateMap = (first['date'] as Map);
-      if (widget.mode == MonthViewMode.gregorian) {
-        final hijri = (dateMap['hijri'] as Map).cast<String, dynamic>();
-        final month = (hijri['month'] as Map).cast<String, dynamic>();
-        secondHeader = (Localizations.localeOf(context).languageCode == 'ar')
-            ? (month['ar'] as String? ?? '')
-            : (month['en'] as String? ?? '');
-      } else {
-        final greg = (dateMap['gregorian'] as Map).cast<String, dynamic>();
-        final raw = greg['date'] as String?;
-        DateTime? gDate;
-        if (raw != null && raw.isNotEmpty) {
-          try { gDate = DateFormat('dd-MM-yyyy').parse(raw); } catch (_) { try { gDate = DateFormat('yyyy-MM-dd').parse(raw); } catch (_) {} }
-        }
-        final localeName = Localizations.localeOf(context).toString();
-        secondHeader = gDate != null ? DateFormat.MMMM(localeName).format(gDate) : '';
-      }
-    } catch (_) {}
+    // Second column header: 'Hijri' when viewing Gregorian, 'Gregorian' when viewing Hijri
+    String secondHeader = widget.mode == MonthViewMode.gregorian
+        ? l10n.hijriHeader
+        : l10n.gregorianHeader;
 
     List<DataColumn> columns = [
       DataColumn(label: Text(l10n.dayColumn)),
@@ -272,9 +247,8 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       DataColumn(label: Text(l10n.maghrib)),
       DataColumn(label: Text(l10n.isha)),
     ];
-    if (includeImsak) {
-      columns.insert(1, DataColumn(label: Text(l10n.imsak)));
-    }
+    // Insert Imsak as third column (after Day and Date)
+    columns.insert(2, DataColumn(label: Text(l10n.imsak)));
 
     String fmt(String? s) {
       if (s == null || s.isEmpty) return '—';
@@ -291,31 +265,26 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       final hijri = (dateMap['hijri'] as Map).cast<String, dynamic>();
       final cells = <DataCell>[];
       if (widget.mode == MonthViewMode.gregorian) {
-        cells.add(DataCell(Text(greg['day'] as String? ?? '')));
-        // Show Hijri day only under the Hijri month header
-        cells.add(DataCell(Text(hijri['day'] as String? ?? '')));
+        // First column: Gregorian day number
+        cells.add(DataCell(Text(_toWesternDigits(greg['day'] as String? ?? ''))));
+        // Second column: full Hijri date (day month year)
+        final hMonth = (hijri['month'] as Map).cast<String, dynamic>();
+        final hMonthLabel = ((Localizations.localeOf(context).languageCode == 'ar') ? (hMonth['ar'] as String?) : (hMonth['en'] as String?)) ?? '';
+        cells.add(DataCell(Text('${hijri['day'] ?? ''} $hMonthLabel ${hijri['year'] ?? ''}')));
       } else {
-        final month = (hijri['month'] as Map).cast<String, dynamic>();
-        final hijriMonthLabel = ((Localizations.localeOf(context).languageCode == 'ar') ? (month['ar'] as String?) : (month['en'] as String?)) ?? '';
-        cells.add(DataCell(Text('${hijri['day'] ?? ''} $hijriMonthLabel ${hijri['year'] ?? ''}')));
-        DateTime? gDate;
+        // First column: Hijri day number only
+        cells.add(DataCell(Text('${hijri['day'] ?? ''}')));
+        // Second column: full Gregorian date (day month year)
         final raw = greg['date'] as String?;
+        DateTime? gDate;
         if (raw != null && raw.isNotEmpty) {
-          try {
-            gDate = DateFormat('dd-MM-yyyy').parse(raw);
-          } catch (_) {
-            try {
-              gDate = DateFormat('yyyy-MM-dd').parse(raw);
-            } catch (_) {}
-          }
+          try { gDate = DateFormat('dd-MM-yyyy').parse(raw); } catch (_) { try { gDate = DateFormat('yyyy-MM-dd').parse(raw); } catch (_) {} }
         }
-        // Show Gregorian day only (western digits) under the Gregorian month header
-        final gDay = gDate != null ? DateFormat('dd','en').format(gDate) : '';
-        cells.add(DataCell(Text(_toWesternDigits(gDay))));
+        final localeName = Localizations.localeOf(context).toString();
+        final gFull = gDate != null ? DateFormat('dd MMMM yyyy', localeName).format(gDate) : '';
+        cells.add(DataCell(Text(_toWesternDigits(gFull))));
       }
-      if (includeImsak) {
-        cells.add(DataCell(Text(fmt(timings['Imsak'] as String?))));
-      }
+      cells.add(DataCell(Text(fmt(timings['Imsak'] as String?))));
       cells.add(DataCell(Text(fmt(timings['Fajr'] as String?))));
       cells.add(DataCell(Text(fmt(timings['Sunrise'] as String?))));
       cells.add(DataCell(Text(fmt(timings['Dhuhr'] as String?))));
@@ -343,7 +312,6 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
   }
 
   String _toWesternDigits(String input) {
-    const eastern = [' ','']; // placeholder, we will replace below
     final buffer = StringBuffer();
     for (final ch in input.runes) {
       // Arabic-Indic 0-9: U+0660..U+0669
@@ -372,27 +340,8 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
     final title = '${l10n.prayerTimes} • $titleMonth';
 
     final isArabic = Localizations.localeOf(context).languageCode == 'ar';
-    // Second column header: month name for counterpart calendar
-    String secondHeaderPdf = '';
-    try {
-      final first = _rows.first;
-      final dateMap = (first['date'] as Map);
-      if (isGregorian) {
-        final hijri = (dateMap['hijri'] as Map).cast<String, dynamic>();
-        final month = (hijri['month'] as Map).cast<String, dynamic>();
-        secondHeaderPdf = (Localizations.localeOf(context).languageCode == 'ar')
-            ? (month['ar'] as String? ?? '')
-            : (month['en'] as String? ?? '');
-      } else {
-        final greg = (dateMap['gregorian'] as Map).cast<String, dynamic>();
-        final raw = greg['date'] as String?;
-        DateTime? gDate;
-        if (raw != null && raw.isNotEmpty) {
-          try { gDate = DateFormat('dd-MM-yyyy').parse(raw); } catch (_) { try { gDate = DateFormat('yyyy-MM-dd').parse(raw); } catch (_) {} }
-        }
-        secondHeaderPdf = gDate != null ? DateFormat.MMMM(localeName).format(gDate) : '';
-      }
-    } catch (_) {}
+    // Second column header in PDF: 'Hijri' when Gregorian view, 'Gregorian' when Hijri view
+    String secondHeaderPdf = isGregorian ? l10n.hijriHeader : l10n.gregorianHeader;
 
     List<String> tableHeaders = <String>[
       l10n.dayColumn,
@@ -405,16 +354,8 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       l10n.isha,
     ];
 
-    final includeImsak = _rows.any((e) {
-      final hijri = ((e['date'] as Map)['hijri'] as Map);
-      final month = (hijri['month'] as Map);
-      final en = (month['en'] as String?) ?? '';
-      final ar = (month['ar'] as String?) ?? '';
-      return en.toLowerCase().contains('ramadan') || ar.contains('رمضان');
-    });
-    if (includeImsak) {
-      tableHeaders.insert(1, l10n.imsak);
-    }
+    // Always include Imsak in the exported PDF header
+    tableHeaders.insert(2, l10n.imsak);
 
     List<List<String>> dataRows = [];
     String fmt(String? s) {
@@ -428,23 +369,26 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       final hijri = (dateMap['hijri'] as Map).cast<String, dynamic>();
       final cells = <String>[];
       if (isGregorian) {
+        // First column: Gregorian day number
         cells.add(_toWesternDigits(greg['day'] as String? ?? ''));
-        if (includeImsak) cells.add(fmt(timings['Imsak'] as String?));
-        cells.add(hijri['day'] as String? ?? '');
+        // Second column: full Hijri date (day month year)
+        final hMonth = (hijri['month'] as Map).cast<String, dynamic>();
+        final hLabel = (Localizations.localeOf(context).languageCode == 'ar') ? (hMonth['ar'] as String?) : (hMonth['en'] as String?);
+        final hijriFull = '${hijri['day'] ?? ''} ${hLabel ?? ''} ${hijri['year'] ?? ''}';
+        cells.add(hijriFull);
+        cells.add(fmt(timings['Imsak'] as String?));
       } else {
+        // First column: Hijri day number
         cells.add(hijri['day'] as String? ?? '');
-        if (includeImsak) cells.add(fmt(timings['Imsak'] as String?));
+        // Second column: full Gregorian date (day month year)
         final raw = greg['date'] as String?;
-        DateTime? gStr;
+        DateTime? gDate;
         if (raw != null && raw.isNotEmpty) {
-          try {
-            gStr = DateFormat('dd-MM-yyyy').parse(raw);
-          } catch (_) {
-            try { gStr = DateFormat('yyyy-MM-dd').parse(raw); } catch (_) {}
-          }
+          try { gDate = DateFormat('dd-MM-yyyy').parse(raw); } catch (_) { try { gDate = DateFormat('yyyy-MM-dd').parse(raw); } catch (_) {} }
         }
-        final gDay = gStr != null ? DateFormat('dd','en').format(gStr) : '';
-        cells.add(_toWesternDigits(gDay));
+        final gFull = gDate != null ? DateFormat('dd MMMM yyyy', localeName).format(gDate) : '';
+        cells.add(_toWesternDigits(gFull));
+        cells.add(fmt(timings['Imsak'] as String?));
       }
       cells.add(fmt(timings['Fajr'] as String?));
       cells.add(fmt(timings['Sunrise'] as String?));
@@ -538,7 +482,6 @@ Future<Uint8List> _generatePdfBytes(Map<String, dynamic> args) async {
   final isArabic = args['isArabic'] as bool;
   final playLink = args['playLink'] as String;
   final fontBytes = args['font'] as Uint8List;
-  final localeName = (args['locale'] as String?) ?? 'en';
   final headerImages = (args['headerImages'] as List).cast<Uint8List?>();
   final rowFirstImages = ((args['rowFirstImages'] as List?) ?? const <Uint8List?>[]).cast<Uint8List?>();
   final titleImage = args['titleImage'] as Uint8List?;
@@ -623,7 +566,7 @@ Future<Uint8List> _generatePdfBytes(Map<String, dynamic> args) async {
             if (isArabic && img != null) {
               return pw.Padding(padding: const pw.EdgeInsets.all(2), child: pw.Image(pw.MemoryImage(img), height: 12));
             }
-            return pw.Padding(padding: const pw.EdgeInsets.all(2), child: pw.Text(shapeIfArabic(headers[h]), style: const pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold)));
+            return pw.Padding(padding: const pw.EdgeInsets.all(2), child: pw.Text(shapeIfArabic(headers[h]), style: pw.TextStyle(fontSize: 9, fontWeight: pw.FontWeight.bold)));
           }),
         ),
         ...List.generate(rows.length, (rIdx) {

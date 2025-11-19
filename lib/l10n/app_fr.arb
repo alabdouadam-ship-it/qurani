@@ -443,4 +443,58 @@
   "@fontScheherazade": {},
   "fontLateef": "Lateef",
   "@fontLateef": {}
+  ,"offlineAudioTitle": "Audio hors ligne",
+  "@offlineAudioTitle": {},
+  "reciterLabel": "Récitateur : {name}",
+  "@reciterLabel": {"placeholders": {"name": {"type": "String"}}},
+  "verseAudiosDownloaded": "Audios des versets téléchargés : {count} (total ~6236)",
+  "@verseAudiosDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "fullSurahsDownloaded": "Sourates complètes téléchargées : {count} / 114",
+  "@fullSurahsDownloaded": {"placeholders": {"count": {"type": "int"}}},
+  "downloadWhy": "Pourquoi télécharger ? Pour écouter sans internet.",
+  "@downloadWhy": {},
+  "downloadingProgress": "Téléchargement {current} / {total}",
+  "@downloadingProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
+  "downloadVerseAudios": "Télécharger les audios des versets",
+  "@downloadVerseAudios": {},
+  "deleteVerseAudios": "Supprimer les audios des versets",
+  "@deleteVerseAudios": {},
+  "downloadFullSurahs": "Télécharger les sourates complètes",
+  "@downloadFullSurahs": {},
+  "deleteFullSurahs": "Supprimer les sourates complètes",
+  "@deleteFullSurahs": {},
+  "fullSurahLabel": "Sourates complètes",
+  "@fullSurahLabel": {},
+  "downloadFullSurahNote": "Note : L'audio des sourates complètes peut être téléchargé depuis l'écran Écouter le Coran.",
+  "@downloadFullSurahNote": {},
+  "name": "Nom",
+  "@name": {},
+  "enterYourName": "Entrez votre nom",
+  "@enterYourName": {}
+  ,"timeFormatTitle": "Format de l'heure",
+  "@timeFormatTitle": {},
+  "twelveHour": "12h",
+  "@twelveHour": {},
+  "twentyFourHour": "24h",
+  "@twentyFourHour": {}
+  ,"homeGreetingGeneric": "Bonjour, que voulez-vous faire ?",
+  "@homeGreetingGeneric": {},
+  "homeGreetingNamed": "Bonjour {name}, que voulez-vous faire ?",
+  "@homeGreetingNamed": {"placeholders": {"name": {"type": "String"}}}
+  ,"hijriHeader": "Hégirien",
+  "@hijriHeader": {},
+  "gregorianHeader": "Grégorien",
+  "@gregorianHeader": {}
+  ,"audioInternetRequired": "Pas de connexion Internet. Veuillez vous connecter pour lire l’audio ou télécharger les fichiers.",
+  "@audioInternetRequired": {}
+  ,"editionArabicSimple":"Arabe (Simple)"
+  ,"@editionArabicSimple":{}
+  ,"editionArabicUthmani":"Arabe (Othmani)"
+  ,"@editionArabicUthmani":{}
+  ,"editionEnglish":"Anglais"
+  ,"@editionEnglish":{}
+  ,"editionFrench":"Français"
+  ,"@editionFrench":{}
+  ,"editionTafsir":"Tafsir (Muyassar)"
+  ,"@editionTafsir":{}
 }

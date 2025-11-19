@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:qurani/l10n/app_localizations.dart';
@@ -67,8 +68,8 @@ class SettingsScreen extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withOpacity(0.5)
-                          : Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                          ? Colors.black.withAlpha((255 * 0.5).round())
+                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
@@ -87,17 +88,39 @@ class SettingsScreen extends StatelessWidget {
               
               // Settings Grid
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: isSmallScreen ? 10 : 15,
-                    mainAxisSpacing: isSmallScreen ? 10 : 15,
-                    childAspectRatio: isTablet ? 1.2 : 1.0,
-                  ),
-                  itemCount: _getSettings(context).length,
-                  itemBuilder: (context, index) {
-                    final setting = _getSettings(context)[index];
-                    return _buildSettingCard(context, setting);
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final settings = _getSettings(context);
+                    if (kIsWeb) {
+                      final width = constraints.maxWidth;
+                      final targetTileWidth = 240.0;
+                      final cols = width ~/ targetTileWidth;
+                      final crossAxisCount = cols.clamp(2, 6);
+                      return GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: crossAxisCount,
+                          crossAxisSpacing: 16,
+                          mainAxisSpacing: 16,
+                          childAspectRatio: 1.15,
+                        ),
+                        itemCount: settings.length,
+                        itemBuilder: (context, index) {
+                          return _buildSettingCard(context, settings[index]);
+                        },
+                      );
+                    }
+                    return GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: isSmallScreen ? 10 : 15,
+                        mainAxisSpacing: isSmallScreen ? 10 : 15,
+                        childAspectRatio: isTablet ? 1.2 : 1.05, // Increased from 1.0 to 1.05 to prevent overflow
+                      ),
+                      itemCount: settings.length,
+                      itemBuilder: (context, index) {
+                        return _buildSettingCard(context, settings[index]);
+                      },
+                    );
                   },
                 ),
               ),
@@ -126,13 +149,14 @@ class SettingsScreen extends StatelessWidget {
         subtitle: "",
         color: Colors.teal,
       ),
-      SettingItem(
-        id: 'offline_audio',
-        icon: Icons.cloud_download_outlined,
-        title: 'Offline audio',
-        subtitle: '',
-        color: Colors.orange,
-      ),
+      if (!kIsWeb)
+        SettingItem(
+          id: 'offline_audio',
+          icon: Icons.cloud_download_outlined,
+          title: l10n.offlineAudioTitle,
+          subtitle: '',
+          color: Colors.orange,
+        ),
       // Row 2
       SettingItem(
         id: 'about',
@@ -163,13 +187,13 @@ class SettingsScreen extends StatelessWidget {
         subtitle: '',
         color: Colors.brown,
       ),
-      SettingItem(
+      /*SettingItem(
         id: 'support',
         icon: Icons.favorite_outline,
         title: l10n.supportUs,
         subtitle: '',
         color: Colors.redAccent,
-      ),
+      ),*/
       SettingItem(
         id: 'contact',
         icon: Icons.support_agent,
@@ -220,13 +244,13 @@ class SettingsScreen extends StatelessWidget {
         onTap: () => _handleSettingTap(context, setting),
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
+          padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
               colors: [
-                setting.color.withOpacity(0.1),
-                setting.color.withOpacity(0.05),
+                setting.color.withAlpha((255 * 0.1).round()),
+                setting.color.withAlpha((255 * 0.05).round()),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
@@ -234,38 +258,51 @@ class SettingsScreen extends StatelessWidget {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
-                decoration: BoxDecoration(
-                  color: setting.color.withOpacity(0.1),
-                  shape: BoxShape.circle,
-                ),
-                child: Icon(
-                  setting.icon,
-                  size: isSmallScreen ? 28 : 32,
-                  color: setting.color,
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+                  decoration: BoxDecoration(
+                    color: setting.color.withAlpha((255 * 0.1).round()),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    setting.icon,
+                    size: isSmallScreen ? 26 : 30,
+                    color: setting.color,
+                  ),
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                setting.title,
-                style: TextStyle(
-                  fontSize: ResponsiveConfig.getFontSize(context, 16),
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: isSmallScreen ? 8 : 10),
+              Flexible(
+                child: Text(
+                  setting.title,
+                  style: TextStyle(
+                    fontSize: ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
-                textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 4),
-              Text(
-                setting.subtitle,
-                style: TextStyle(
-                  fontSize: ResponsiveConfig.getFontSize(context, 12),
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+              if (setting.subtitle.isNotEmpty) ...[
+                SizedBox(height: isSmallScreen ? 2 : 4),
+                Flexible(
+                  child: Text(
+                    setting.subtitle,
+                    style: TextStyle(
+                      fontSize: ResponsiveConfig.getFontSize(context, 11),
+                      color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                textAlign: TextAlign.center,
-              ),
+              ],
             ],
           ),
         ),
@@ -398,36 +435,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  void _showHelpDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Help & Support'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('How to use Qurani:'),
-              SizedBox(height: 8),
-              Text('• Use the refresh button to clear cache'),
-              Text('• Use settings for app preferences'),
-              Text('• Use more options for additional features'),
-              SizedBox(height: 8),
-              Text('Need more help? Contact us at:'),
-              Text('support@qurani.app'),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // Removed unused _showHelpDialog
 
   Future<void> _shareApp(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
@@ -444,39 +452,7 @@ class SettingsScreen extends StatelessWidget {
     }
   }
 
-  void _showPrivacyDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Privacy Policy'),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Data Collection:'),
-                Text('• We do not collect personal data'),
-                Text('• Cache is stored locally on your device'),
-                SizedBox(height: 8),
-                Text('Data Usage:'),
-                Text('• Data is used only for app functionality'),
-                Text('• No data is shared with third parties'),
-                SizedBox(height: 8),
-                Text('Contact: privacy@qurani.app'),
-              ],
-            ),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-  }
+  // Removed unused _showPrivacyDialog
 
   void _showComingSoon(BuildContext context, String feature) {
     showDialog(

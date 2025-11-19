@@ -134,7 +134,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
     final total = widget.questions.length;
     final percentage = (correct / total * 100).round();
     final score = correct * 10; // 10 points per correct answer
-    int newTotalScore = _totalScore;
+    int newTotalScore = _totalScore + score; // compute eagerly for UI
     try {
       // Save test result
       await MemorizationStatsService.instance.saveTestResult(
@@ -194,7 +194,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primaryContainer.withOpacity(0.3),
+                  color: Theme.of(context).colorScheme.primaryContainer.withAlpha((255 * 0.3).round()),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
@@ -220,7 +220,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondaryContainer.withOpacity(0.3),
+                  color: Theme.of(context).colorScheme.secondaryContainer.withAlpha((255 * 0.3).round()),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
@@ -292,7 +292,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
 
     return PopScope(
       canPop: false,
-      onPopInvoked: (didPop) async {
+      onPopInvokedWithResult: (didPop, result) async {
         if (!didPop) {
           await _exitTest();
         }
@@ -345,7 +345,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
               children: [
                 LinearProgressIndicator(
                   value: (_currentIndex + 1) / widget.questions.length,
-                  backgroundColor: colorScheme.surfaceVariant,
+                  backgroundColor: colorScheme.surfaceContainerHighest,
                   valueColor: AlwaysStoppedAnimation<Color>(colorScheme.primary),
                 ),
                 const SizedBox(height: 16),
@@ -384,14 +384,14 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
 
                           if (hasAnswered) {
                             if (isCorrectOption) {
-                              backgroundColor = Colors.green.withOpacity(0.2);
+                              backgroundColor = Colors.green.withAlpha((255 * 0.2).round());
                               textColor = Colors.green.shade700;
                             } else if (selectedIndex == index && !isCorrect) {
-                              backgroundColor = Colors.red.withOpacity(0.2);
+                              backgroundColor = Colors.red.withAlpha((255 * 0.2).round());
                               textColor = Colors.red.shade700;
                             }
                           } else if (isSelected) {
-                            backgroundColor = colorScheme.primaryContainer.withOpacity(0.3);
+                            backgroundColor = colorScheme.primaryContainer.withAlpha((255 * 0.3).round());
                             textColor = colorScheme.onPrimaryContainer;
                           }
 
@@ -414,7 +414,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
                                           shape: BoxShape.circle,
                                           color: isSelected
                                               ? colorScheme.primary
-                                              : colorScheme.surfaceVariant,
+                                              : colorScheme.surfaceContainerHighest,
                                         ),
                                         child: Center(
                                           child: Text(

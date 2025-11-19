@@ -5,6 +5,15 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" tools:targetApi="33" />
+    <!-- Permissions for exact alarms (required for Adhan scheduling) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" tools:targetApi="31" />
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM" tools:targetApi="33" />
+    <!-- Permission to ignore battery optimization for reliable Adhan playback -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <!-- Permission for full screen intent (required for Adhan notifications when app is closed) -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" tools:targetApi="29" />
+    <!-- Permission for reboot receiver (required for android_alarm_manager_plus) -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     
     <!-- Support for all screen sizes -->
     <supports-screens
@@ -27,7 +36,9 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
-            android:windowLayoutInDisplayCutoutMode="shortEdges">
+            android:windowLayoutInDisplayCutoutMode="shortEdges"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true">
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
@@ -57,6 +68,28 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
+        
+        <!-- Required for android_alarm_manager_plus -->
+        <receiver
+            android:name="dev.fluttercommunity.plus.androidalarmmanager.RebootBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        
+        <receiver
+            android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmBroadcastReceiver"
+            android:exported="false" />
+        
+        <service
+            android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false" />
+        
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />

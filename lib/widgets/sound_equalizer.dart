@@ -102,8 +102,8 @@ class _SoundEqualizerState extends State<SoundEqualizer>
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
                     colors: [
-                      barColor.withOpacity(opacity),
-                      barColor.withOpacity(opacity * 0.75),
+                      barColor.withAlpha((255 * opacity).round()),
+                      barColor.withAlpha((255 * (opacity * 0.75)).round()),
                     ],
                   ),
                 ),

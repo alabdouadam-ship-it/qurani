@@ -663,4 +663,95 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fontLateef => 'Lateef';
+
+  @override
+  String get offlineAudioTitle => 'Offline audio';
+
+  @override
+  String reciterLabel(String name) {
+    return 'Reciter: $name';
+  }
+
+  @override
+  String verseAudiosDownloaded(int count) {
+    return 'Verse audios downloaded: $count (total ~6236)';
+  }
+
+  @override
+  String fullSurahsDownloaded(int count) {
+    return 'Full surahs downloaded: $count / 114';
+  }
+
+  @override
+  String get downloadWhy => 'Why download? You can listen without internet.';
+
+  @override
+  String downloadingProgress(int current, int total) {
+    return 'Downloading $current / $total';
+  }
+
+  @override
+  String get downloadVerseAudios => 'Download verse audios';
+
+  @override
+  String get deleteVerseAudios => 'Delete verse audios';
+
+  @override
+  String get downloadFullSurahs => 'Download full surahs';
+
+  @override
+  String get deleteFullSurahs => 'Delete full surahs';
+
+  @override
+  String get fullSurahLabel => 'Full surahs';
+
+  @override
+  String get downloadFullSurahNote => 'Note: Full surah audio can be downloaded from Listen to Quran screen.';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get enterYourName => 'Enter your name';
+
+  @override
+  String get timeFormatTitle => 'Time format';
+
+  @override
+  String get twelveHour => '12h';
+
+  @override
+  String get twentyFourHour => '24h';
+
+  @override
+  String get homeGreetingGeneric => 'Hello, what would you like to do?';
+
+  @override
+  String homeGreetingNamed(String name) {
+    return 'Hello $name, what would you like to do?';
+  }
+
+  @override
+  String get hijriHeader => 'Hijri';
+
+  @override
+  String get gregorianHeader => 'Gregorian';
+
+  @override
+  String get audioInternetRequired => 'No internet connection. Please connect to play audio or download offline files.';
+
+  @override
+  String get editionArabicSimple => 'Arabic (Simple)';
+
+  @override
+  String get editionArabicUthmani => 'Arabic (Uthmani)';
+
+  @override
+  String get editionEnglish => 'English';
+
+  @override
+  String get editionFrench => 'French';
+
+  @override
+  String get editionTafsir => 'Tafsir (Muyassar)';
 }

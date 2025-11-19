@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/memorization_test_service.dart';
 import 'package:qurani/services/surah_service.dart';
+import 'package:qurani/util/text_normalizer.dart';
 import 'responsive_config.dart';
 import 'models/surah.dart';
 import 'test_questions_screen.dart';
@@ -63,13 +64,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    String _normalize(String input) {
-      const arabicDiacritics = r"[\u064B-\u0652\u0670\u0640]";
-      return input
-          .replaceAll(RegExp(arabicDiacritics), '')
-          .toLowerCase()
-          .trim();
-    }
     
     // Initialize/cached future to avoid rebuilding and losing focus
     final currentLocale = Localizations.localeOf(context);
@@ -89,10 +83,10 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         }
         
         final allSurahs = snapshot.data!;
-        final q = _normalize(_surahQuery);
+        final q = TextNormalizer.normalize(_surahQuery);
         final surahs = q.isEmpty
             ? allSurahs
-            : allSurahs.where((s) => _normalize(s.name).contains(q)).toList();
+            : allSurahs.where((s) => TextNormalizer.normalize(s.name).contains(q)).toList();
         final crossAxisCount = isSmallScreen ? 2 : 3;
         
         return Column(
@@ -141,7 +135,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                         border: Border.all(
                           color: isSelected
                               ? colorScheme.primary
-                              : colorScheme.outline.withOpacity(0.3),
+                              : colorScheme.outline.withAlpha((255 * 0.3).round()),
                           width: isSelected ? 2 : 1,
                         ),
                       ),
@@ -171,8 +165,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
 
   Future<void> _startTest() async {
     if (_selectedSurahs.isEmpty && _selectedJuz == null) return;
-    
-    final l10n = AppLocalizations.of(context)!;
     setState(() => _isGenerating = true);
 
     try {
@@ -216,7 +208,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
@@ -251,7 +242,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
-            color: colorScheme.primaryContainer.withOpacity(0.3),
+            color: colorScheme.primaryContainer.withAlpha((255 * 0.3).round()),
             child: Row(
               children: [
                 Expanded(
@@ -263,7 +254,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                     style: FilledButton.styleFrom(
                       backgroundColor: _isSurahMode
                           ? colorScheme.primary
-                          : colorScheme.surfaceVariant,
+                          : colorScheme.surfaceContainerHighest,
                       foregroundColor: _isSurahMode
                           ? colorScheme.onPrimary
                           : colorScheme.onSurfaceVariant,
@@ -281,7 +272,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                     style: FilledButton.styleFrom(
                       backgroundColor: !_isSurahMode
                           ? colorScheme.primary
-                          : colorScheme.surfaceVariant,
+                          : colorScheme.surfaceContainerHighest,
                       foregroundColor: !_isSurahMode
                           ? colorScheme.onPrimary
                           : colorScheme.onSurfaceVariant,
@@ -306,7 +297,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                   color: colorScheme.surface,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withAlpha((255 * 0.05).round()),
                       blurRadius: 8,
                       offset: const Offset(0, -2),
                     ),
@@ -337,10 +328,10 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   }
 
   Widget _buildJuzSelector() {
-    final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
+    final l10n = AppLocalizations.of(context)!;
     final crossAxisCount = isSmallScreen ? 2 : 4;
 
     return GridView.builder(
@@ -374,7 +365,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
               border: Border.all(
                 color: isSelected
                     ? colorScheme.primary
-                    : colorScheme.outline.withOpacity(0.3),
+                    : colorScheme.outline.withAlpha((255 * 0.3).round()),
                 width: isSelected ? 2 : 1,
               ),
             ),

@@ -14,6 +14,7 @@ class PreferencesScreen extends StatefulWidget {
 }
 
 class _PreferencesScreenState extends State<PreferencesScreen> {
+  final TextEditingController _nameController = TextEditingController();
   String? _selectedReciter;
   String? _selectedTheme;
   String? _selectedLanguage;
@@ -42,57 +43,9 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     },
   };
   int _verseRepeatCount = 10;
-  // Quran Version options with codes and localized display names
-  static const String _qvSimple = 'simple';
-  static const String _qvOthmani = 'othmani';
-  static const String _qvEnglish = 'en';
-  static const String _qvFrench = 'fr';
+  // Removed unused Quran version labels
 
-  // Display labels per language code
-  final Map<String, Map<String, String>> _quranVersionLabels = {
-    _qvSimple: {
-      'ar': 'الرسم البسيط',
-      'en': 'Simple',
-      'fr': 'Simple',
-    },
-    _qvOthmani: {
-      'ar': 'الرسم العثماني',
-      'en': 'Othmani',
-      'fr': 'Othmani',
-    },
-    _qvEnglish: {
-      'ar': 'الانكليزية',
-      'en': 'English',
-      'fr': 'Anglais',
-    },
-    _qvFrench: {
-      'ar': 'الفرنسية',
-      'en': 'French',
-      'fr': 'Français',
-    },
-  };
-
-  List<String> _getQuranVersionDisplayNames(BuildContext context) {
-    final langCode = _getCurrentLangCode(context);
-    return [_qvSimple, _qvOthmani, _qvEnglish, _qvFrench]
-        .map((code) => _quranVersionLabels[code]![langCode]!)
-        .toList();
-  }
-
-  String? _getQuranVersionLabelFromCode(String? code, BuildContext context) {
-    if (code == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    return _quranVersionLabels[code]?[langCode];
-  }
-
-  String? _getQuranVersionCodeFromLabel(String? label, BuildContext context) {
-    if (label == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    for (final entry in _quranVersionLabels.entries) {
-      if (entry.value[langCode] == label) return entry.key;
-    }
-    return null;
-  }
+  // Removed unused Quran version mapping helpers
   
   // Reciter options (key: reciter code matching folder name; values: localized display names)
   final Map<String, Map<String, String>> _reciterMap = {
@@ -135,48 +88,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   
   // Theme options (placeholder only, no actual options yet)
   
-  // Tafsir options from TAFSIR_OPTIONS
-  Map<String, Map<String, String>> _tafsirMap = {
-    'الميسر': {
-      'ar': 'الميسر',
-      'en': 'Al Muyassar',
-      'fr': 'Al Muyassar',
-    },
-    'الميسر الصوتي': {
-      'ar': 'الميسر الصوتي',
-      'en': 'Al Muyassar Audio',
-      'fr': 'Al Muyassar Audio',
-    },
-    'البغوي': {
-      'ar': 'البغوي',
-      'en': 'Al Baghawi',
-      'fr': 'Al Baghawi',
-    },
-    'الجلالين': {
-      'ar': 'الجلالين',
-      'en': 'Al Jalalayn',
-      'fr': 'Al Jalalayn',
-    },
-    'ابن عباس': {
-      'ar': 'ابن عباس',
-      'en': 'Ibn Abbas',
-      'fr': 'Ibn Abbas',
-    },
-    'القرطبي': {
-      'ar': 'القرطبي',
-      'en': 'Al Qurtubi',
-      'fr': 'Al Qurtubi',
-    },
-    'الوسيط': {
-      'ar': 'الوسيط',
-      'en': 'Al Wasit',
-      'fr': 'Al Wasit',
-    },
-  };
+  // Removed unused Tafsir labels
 
   // Get keys only (Arabic names for saving)
   List<String> get _reciterKeys => _reciterMap.keys.toList();
-  List<String> get _tafsirKeys => _tafsirMap.keys.toList();
+  // Removed unused _tafsirKeys
   
   // Theme options with codes and localized display names
   static const String _themeGreen = 'green';
@@ -233,10 +149,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   @override
   void initState() {
     super.initState();
+    _nameController.text = PreferencesService.getUserName();
     // Load saved reciter key and convert to display name
     final savedReciterKey = PreferencesService.getReciter();
     
-    _selectedTheme = PreferencesService.getTheme() ?? 'green';
+    _selectedTheme = PreferencesService.getTheme();
     final savedLang = PreferencesService.getLanguage();
     _selectedLanguage = savedLang == 'en' ? 'en' : savedLang == 'fr' ? 'fr' : 'ar';
     _selectedFontSize = PreferencesService.getFontSize();
@@ -294,28 +211,39 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   List<String> _getFontSizeDisplayNames(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return [
-      '${l10n.small} (18)',
+      '${l10n.small} (16)',
       '${l10n.medium} (20)',
-      '${l10n.large} (22)',
-      '${l10n.extraLarge} (24)',
+      '${l10n.large} (24)',
+      '${l10n.extraLarge} (28)',
     ];
   }
 
   String _getFontSizeDisplayName(double fontSize, BuildContext context) {
+    // Snap any incoming value to the nearest step of 4: [16, 20, 24, 28]
+    final steps = <double>[16, 20, 24, 28];
+    double nearest = steps.first;
+    double bestDiff = (fontSize - nearest).abs();
+    for (final s in steps) {
+      final d = (fontSize - s).abs();
+      if (d < bestDiff) {
+        bestDiff = d;
+        nearest = s;
+      }
+    }
     final l10n = AppLocalizations.of(context)!;
-    if (fontSize == 18.0) return '${l10n.small} (18)';
-    if (fontSize == 20.0) return '${l10n.medium} (20)';
-    if (fontSize == 22.0) return '${l10n.large} (22)';
-    if (fontSize == 24.0) return '${l10n.extraLarge} (24)';
-    return '${l10n.large} (22)';
+    if (nearest == 16.0) return '${l10n.small} (16)';
+    if (nearest == 20.0) return '${l10n.medium} (20)';
+    if (nearest == 24.0) return '${l10n.large} (24)';
+    if (nearest == 28.0) return '${l10n.extraLarge} (28)';
+    return '${l10n.large} (24)';
   }
 
   double _getFontSizeFromDisplayName(String displayName, BuildContext context) {
-    if (displayName.contains('18')) return 18.0;
+    if (displayName.contains('16')) return 16.0;
     if (displayName.contains('20')) return 20.0;
-    if (displayName.contains('22')) return 22.0;
     if (displayName.contains('24')) return 24.0;
-    return 22.0;
+    if (displayName.contains('28')) return 28.0;
+    return 24.0;
   }
 
   Widget _buildVerseRepeatSection(BuildContext context) {
@@ -337,7 +265,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.secondary.withOpacity(0.1),
+                    color: theme.colorScheme.secondary.withAlpha((255 * 0.1).round()),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(
@@ -364,7 +292,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                         l10n.verseRepeatCountHint,
                         style: TextStyle(
                           fontSize: ResponsiveConfig.getFontSize(context, 13),
-                          color: theme.colorScheme.onSurface.withOpacity(0.6),
+                          color: theme.colorScheme.onSurface.withAlpha((255 * 0.6).round()),
                         ),
                       ),
                     ],
@@ -426,10 +354,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   }
 
   // Get display names for tafsir based on current language
-  List<String> _getTafsirDisplayNames(BuildContext context) {
-    final langCode = _getCurrentLangCode(context);
-    return _tafsirKeys.map((key) => _tafsirMap[key]![langCode]!).toList();
-  }
+  // Removed unused Tafsir mapping helpers
 
   // Get Arabic key from display name
   String? _getReciterKeyFromDisplayName(String? displayName, BuildContext context) {
@@ -441,14 +366,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     return null;
   }
 
-  String? _getTafsirKeyFromDisplayName(String? displayName, BuildContext context) {
-    if (displayName == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    for (var entry in _tafsirMap.entries) {
-      if (entry.value[langCode] == displayName) return entry.key;
-    }
-    return null;
-  }
+
 
   // Get display name from saved Arabic key
   String? _getReciterDisplayNameFromKey(String? key, BuildContext context) {
@@ -457,11 +375,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     return _reciterMap[lookupKey]?[langCode];
   }
 
-  String? _getTafsirDisplayNameFromKey(String? key, BuildContext context) {
-    if (key == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    return _tafsirMap[key]?[langCode];
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -493,6 +407,55 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Name
+              Card(
+                elevation: 3,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(isSmallScreen ? 14 : 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.teal.withAlpha((255 * 0.1).round()),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: const Icon(Icons.person, color: Colors.teal, size: 22),
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            l10n.name,
+                            style: TextStyle(
+                              fontSize: ResponsiveConfig.getFontSize(context, 16),
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 12),
+                      TextField(
+                        controller: _nameController,
+                        textAlign: TextAlign.right,
+                        decoration: InputDecoration(
+                          hintText: l10n.enterYourName,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
@@ -515,8 +478,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   boxShadow: [
                     BoxShadow(
                       color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withOpacity(0.5)
-                          : Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                          ? Colors.black.withAlpha((255 * 0.5).round())
+                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
                       blurRadius: 10,
                       offset: const Offset(0, 5),
                     ),
@@ -537,7 +500,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 title: l10n.reciter,
                 icon: Icons.mic,
                 iconColor: Colors.purple,
-                value: _getReciterDisplayNameFromKey(
+                initialValue: _getReciterDisplayNameFromKey(
                       (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
                       context,
                     ) ??
@@ -556,7 +519,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 title: l10n.theme,
                 icon: Icons.palette,
                 iconColor: Colors.orange,
-                value: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
+                initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
                 items: _getThemeDisplayNames(context),
                 onChanged: (String? value) {
                   if (value == null) return;
@@ -571,7 +534,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 title: l10n.arabicFont,
                 icon: Icons.font_download,
                 iconColor: Colors.brown,
-                value: _getArabicFontLabel(_selectedArabicFont, context),
+                initialValue: _getArabicFontLabel(_selectedArabicFont, context),
                 items: _getArabicFontDisplayNames(context),
                 onChanged: (String? value) {
                   if (value == null) return;
@@ -586,7 +549,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 title: l10n.fontSize,
                 icon: Icons.text_fields,
                 iconColor: Colors.indigo,
-                value: _getFontSizeDisplayName(_selectedFontSize, context),
+                initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
                 items: _getFontSizeDisplayNames(context),
                 onChanged: (String? value) {
                   if (value == null) return;
@@ -603,7 +566,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 title: l10n.language,
                 icon: Icons.language,
                 iconColor: Colors.teal,
-                value: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
+                initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
                 items: _getLanguageOptions(context),
                 onChanged: (String? value) async {
                   final newLangCode = _getLanguageCode(value!, context);
@@ -659,7 +622,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     required String title,
     required IconData icon,
     required Color iconColor,
-    required String? value,
+    required String? initialValue,
     required List<String> items,
     required ValueChanged<String?> onChanged,
   }) {
@@ -679,7 +642,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: iconColor.withOpacity(0.1),
+                    color: iconColor.withAlpha((255 * 0.1).round()),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Icon(
@@ -701,15 +664,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<String>(
-              value: value,
+              initialValue: initialValue,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withOpacity(0.5)),
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withAlpha((255 * 0.5).round())),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withOpacity(0.5)),
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withAlpha((255 * 0.5).round())),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
@@ -729,7 +692,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               ),
               icon: Icon(
                 Icons.arrow_drop_down,
-                color: Theme.of(context).colorScheme.onSurface.withOpacity(0.7),
+                color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
               ),
               items: items.map((String item) {
                 final l10n = AppLocalizations.of(context)!;
@@ -741,7 +704,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     style: TextStyle(
                       fontSize: ResponsiveConfig.getFontSize(context, 14),
                       color: isPlaceholder
-                          ? Theme.of(context).colorScheme.onSurface.withOpacity(0.5)
+                          ? Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.5).round())
                           : Theme.of(context).colorScheme.onSurface,
                     ),
                   ),
@@ -758,6 +721,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   Future<void> _savePreferences() async {
     final l10n = AppLocalizations.of(context)!;
     // Persist
+    await PreferencesService.saveUserName(_nameController.text.trim());
     await PreferencesService.saveReciter(_selectedReciter ?? 'afs');
     await PreferencesService.saveTheme(_selectedTheme ?? 'green');
     await PreferencesService.saveFontSize(_selectedFontSize);

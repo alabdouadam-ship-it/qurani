@@ -1,12 +1,14 @@
 import 'dart:async';
-import 'dart:io';
 
+import 'package:audio_session/audio_session.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
+import 'package:qurani/services/media_item_compat.dart';
 
 import 'l10n/app_localizations.dart';
+import 'package:flutter/foundation.dart';
 import 'models/surah.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
@@ -14,6 +16,7 @@ import 'services/preferences_service.dart';
 import 'services/surah_service.dart';
 import 'widgets/sound_equalizer.dart';
 import 'services/queue_service.dart';
+import 'services/net_utils.dart';
 
 /// Main audio player screen that handles full-surah playback, repeat, auto
 /// advance and verse-by-verse playback.
@@ -28,6 +31,7 @@ class AudioPlayerScreen extends StatefulWidget {
 
 class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   final AudioPlayer _player = AudioPlayer();
+  final FlutterLocalNotificationsPlugin _notificationsPlugin = FlutterLocalNotificationsPlugin();
   final QueueService _queueService = QueueService();
 
   List<Surah> _surahs = const [];
@@ -51,7 +55,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   
   String? _errorMessage;
 
-  Duration _lastKnownPosition = Duration.zero;
   Duration? _currentTrackDuration;
   Duration? _bookmarkPosition;
   Duration? _savedSurahPositionBeforeVerseMode;
@@ -88,7 +91,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _player.setSpeed(_playbackSpeed);
     _player.setVolume(_volume);
     _setupListeners();
+    unawaited(_configureAudioSession());
     unawaited(_loadInitialData());
+    // Ensure download button state reflects existing offline file immediately
+    unawaited(_updateDownloadStatus());
   }
 
   @override
@@ -118,9 +124,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   void _setupListeners() {
     if (_isPlayerDisposed) return;
-    _positionSub = _player.positionStream.listen((pos) {
-      _lastKnownPosition = pos;
-    });
+    _positionSub = _player.positionStream.listen((_) {});
 
     _durationSub = _player.durationStream.listen((duration) {
       if (!mounted || duration == null) return;
@@ -135,6 +139,111 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     _playerStateSub = _player.playerStateStream.listen(_handlePlayerStateChange);
     _processingStateSub = _player.processingStateStream.listen(_handleProcessingChange);
+  }
+
+  Future<void> _configureAudioSession() async {
+    try {
+      final session = await AudioSession.instance;
+      await session.configure(const AudioSessionConfiguration(
+        androidAudioAttributes: AndroidAudioAttributes(
+          contentType: AndroidAudioContentType.music,
+          flags: AndroidAudioFlags.none,
+          usage: AndroidAudioUsage.media,
+        ),
+        androidAudioFocusGainType: AndroidAudioFocusGainType.gain,
+        androidWillPauseWhenDucked: false,
+      ));
+      await session.setActive(true);
+      
+      session.interruptionEventStream.listen((event) {
+        debugPrint('[AudioPlayer] Audio interruption: ${event.begin} - ${event.type}');
+        if (event.begin) {
+          // Only pause if it's a permanent interruption (like a phone call)
+          if (event.type == AudioInterruptionType.duck) {
+            // Don't pause for ducking, just lower volume
+            debugPrint('[AudioPlayer] Ducking audio');
+          } else if (event.type == AudioInterruptionType.pause) {
+            if (_player.playing) {
+              debugPrint('[AudioPlayer] Pausing due to interruption');
+              _player.pause();
+            }
+          }
+        } else {
+          debugPrint('[AudioPlayer] Resuming after interruption');
+          if (!_isPlayerDisposed && mounted && _isPlaying) {
+            _player.play();
+          }
+        }
+      });
+      
+      debugPrint('[AudioPlayer] Audio session configured for background playback');
+    } catch (e) {
+      debugPrint('[AudioPlayer] Error configuring audio session: $e');
+    }
+  }
+
+  Future<void> _showPlaybackNotification() async {
+    try {
+      final currentSurah = _currentSurah;
+      if (currentSurah == null || !_isPlaying) return;
+      
+      final reciterName = AudioService.reciterDisplayName(
+        _reciterKey!,
+        PreferencesService.getLanguage(),
+      );
+      
+      final androidDetails = AndroidNotificationDetails(
+        'quran_audio_playback',
+        'Quran Audio Playback',
+        channelDescription: 'Background Quran audio playback',
+        importance: Importance.low,
+        priority: Priority.low,
+        playSound: false,
+        enableVibration: false,
+        ongoing: true,
+        autoCancel: false,
+        // Enable media controls on lock screen
+        showWhen: false,
+        when: null,
+        // Add actions for media controls
+        actions: [
+          const AndroidNotificationAction(
+            'prev',
+            'Previous',
+            showsUserInterface: false,
+          ),
+          const AndroidNotificationAction(
+            'play_pause',
+            'Play/Pause',
+            showsUserInterface: false,
+          ),
+          const AndroidNotificationAction(
+            'next',
+            'Next',
+            showsUserInterface: false,
+          ),
+        ],
+      );
+      
+      final notificationDetails = NotificationDetails(android: androidDetails);
+      
+      await _notificationsPlugin.show(
+        9999,
+        'Playing: ${currentSurah.name}',
+        'Reciter: $reciterName',
+        notificationDetails,
+      );
+    } catch (e) {
+      debugPrint('[AudioPlayer] Error showing notification: $e');
+    }
+  }
+
+  Future<void> _hidePlaybackNotification() async {
+    try {
+      await _notificationsPlugin.cancel(9999);
+    } catch (e) {
+      debugPrint('[AudioPlayer] Error hiding notification: $e');
+    }
   }
 
   Future<void> _loadInitialData() async {
@@ -205,7 +314,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     try {
       final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
-      final hasLocalFile = await File(localPath).exists();
+      final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
       final langCode = PreferencesService.getLanguage();
       final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
       final currentSurah = _surahs.firstWhere(
@@ -240,6 +349,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           _isPlaying = autoPlay;
           _isBuffering = false;
           _errorMessage = null;
+          _isCurrentSurahDownloaded = hasLocalFile;
         });
       }
 
@@ -268,6 +378,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final playing = state.playing;
     if (playing != _isPlaying) {
       setState(() => _isPlaying = playing);
+      if (playing) {
+        unawaited(_showPlaybackNotification());
+      } else {
+        unawaited(_hidePlaybackNotification());
+      }
     }
 
     if (state.processingState == ProcessingState.completed) {
@@ -545,40 +660,34 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           builder: (context, setDialogState) {
             return AlertDialog(
               title: Text(l10n.sleepTimer),
-              content: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  RadioListTile<int?>(
-                    title: Text(l10n.off),
-                    value: null,
-                    groupValue: tempSelected,
-                    onChanged: (value) => setDialogState(() => tempSelected = value),
-                  ),
-                  RadioListTile<int?>(
-                    title: Text('15 ${l10n.minutes}'),
-                    value: 15,
-                    groupValue: tempSelected,
-                    onChanged: (value) => setDialogState(() => tempSelected = value),
-                  ),
-                  RadioListTile<int?>(
-                    title: Text('30 ${l10n.minutes}'),
-                    value: 30,
-                    groupValue: tempSelected,
-                    onChanged: (value) => setDialogState(() => tempSelected = value),
-                  ),
-                  RadioListTile<int?>(
-                    title: Text('60 ${l10n.minutes}'),
-                    value: 60,
-                    groupValue: tempSelected,
-                    onChanged: (value) => setDialogState(() => tempSelected = value),
-                  ),
-                  RadioListTile<int?>(
-                    title: Text('90 ${l10n.minutes}'),
-                    value: 90,
-                    groupValue: tempSelected,
-                    onChanged: (value) => setDialogState(() => tempSelected = value),
-                  ),
-                ],
+              content: RadioGroup<int?>(
+                groupValue: tempSelected,
+                onChanged: (value) => setDialogState(() => tempSelected = value),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    RadioListTile<int?>(
+                      title: Text(l10n.off),
+                      value: null,
+                    ),
+                    RadioListTile<int?>(
+                      title: Text('15 ${l10n.minutes}'),
+                      value: 15,
+                    ),
+                    RadioListTile<int?>(
+                      title: Text('30 ${l10n.minutes}'),
+                      value: 30,
+                    ),
+                    RadioListTile<int?>(
+                      title: Text('60 ${l10n.minutes}'),
+                      value: 60,
+                    ),
+                    RadioListTile<int?>(
+                      title: Text('90 ${l10n.minutes}'),
+                      value: 90,
+                    ),
+                  ],
+                ),
               ),
               actions: [
                 TextButton(
@@ -673,7 +782,30 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (surah == null) return;
     if (_isPlayerDisposed) return;
 
-    final url = _verseUrls![verseNumber - 1];
+    final uri = await AudioService.getVerseUriPreferLocal(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: surah.order,
+      verseNumber: verseNumber,
+    );
+    if (uri == null) {
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.errorLoadingAudio)));
+      }
+      return;
+    }
+
+    // If not local file and no internet, show a clear message
+    if (uri.scheme != 'file') {
+      final hasNet = await _checkInternet();
+      if (!hasNet) {
+        if (mounted) {
+          final l10n = AppLocalizations.of(context)!;
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.audioInternetRequired)));
+        }
+        return;
+      }
+    }
     final langCode = PreferencesService.getLanguage();
     final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
 
@@ -689,9 +821,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
 
     try {
-      await _player.setAudioSource(
-        AudioSource.uri(Uri.parse(url), tag: mediaItem),
-      );
+      await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
       await _player.setLoopMode(LoopMode.off);
       await _player.play();
       if (mounted) {
@@ -716,6 +846,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       if (surah.order == order) return surah;
     }
     return null;
+  }
+
+  Future<bool> _checkInternet() async {
+    return NetUtils.hasInternet();
   }
 
   Future<void> _toggleFeature(int order) async {
@@ -948,11 +1082,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   children: [
                     Text(
                       _fmt(pos),
-                      style: TextStyle(color: color.onSurface.withOpacity(0.7)),
+                      style: TextStyle(color: color.onSurface.withAlpha((255 * 0.7).round())),
                     ),
                     Text(
                       _fmt(duration),
-                      style: TextStyle(color: color.onSurface.withOpacity(0.7)),
+                      style: TextStyle(color: color.onSurface.withAlpha((255 * 0.7).round())),
                     ),
                   ],
                 ),
@@ -1059,7 +1193,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                 '${(_volume * 100).toInt()}%',
                 style: TextStyle(
                   fontSize: 14,
-                  color: color.onSurface.withOpacity(0.7),
+                  color: color.onSurface.withAlpha((255 * 0.7).round()),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -1212,7 +1346,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final isFeatured = _featuredListenSurahs.contains(surah.order);
     final inQueue = _queue.contains(surah.order);
     final backgroundColor = isCurrent
-        ? color.primaryContainer.withOpacity(0.5)
+        ? color.primaryContainer.withAlpha((255 * 0.5).round())
         : color.surface;
     final textAlign = isRtl ? TextAlign.right : TextAlign.left;
 
@@ -1235,7 +1369,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           subtitle: Text(
             '${surah.totalVerses} ${l10n.verses}',
             textAlign: textAlign,
-            style: TextStyle(color: color.onSurface.withOpacity(0.6)),
+            style: TextStyle(color: color.onSurface.withAlpha((255 * 0.6).round())),
           ),
           trailing: Wrap(
             spacing: 4,
@@ -1290,7 +1424,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         backgroundColor: color.primary,
         foregroundColor: color.onPrimary,
         actions: [
-          if (!_isCurrentSurahDownloaded)
+          if (!kIsWeb && !_isCurrentSurahDownloaded)
             _isDownloadingCurrentSurah
                 ? const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),

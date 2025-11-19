@@ -663,4 +663,95 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get fontLateef => 'Lateef';
+
+  @override
+  String get offlineAudioTitle => 'Audio hors ligne';
+
+  @override
+  String reciterLabel(String name) {
+    return 'Récitateur : $name';
+  }
+
+  @override
+  String verseAudiosDownloaded(int count) {
+    return 'Audios des versets téléchargés : $count (total ~6236)';
+  }
+
+  @override
+  String fullSurahsDownloaded(int count) {
+    return 'Sourates complètes téléchargées : $count / 114';
+  }
+
+  @override
+  String get downloadWhy => 'Pourquoi télécharger ? Pour écouter sans internet.';
+
+  @override
+  String downloadingProgress(int current, int total) {
+    return 'Téléchargement $current / $total';
+  }
+
+  @override
+  String get downloadVerseAudios => 'Télécharger les audios des versets';
+
+  @override
+  String get deleteVerseAudios => 'Supprimer les audios des versets';
+
+  @override
+  String get downloadFullSurahs => 'Télécharger les sourates complètes';
+
+  @override
+  String get deleteFullSurahs => 'Supprimer les sourates complètes';
+
+  @override
+  String get fullSurahLabel => 'Sourates complètes';
+
+  @override
+  String get downloadFullSurahNote => 'Note : L\'audio des sourates complètes peut être téléchargé depuis l\'écran Écouter le Coran.';
+
+  @override
+  String get name => 'Nom';
+
+  @override
+  String get enterYourName => 'Entrez votre nom';
+
+  @override
+  String get timeFormatTitle => 'Format de l\'heure';
+
+  @override
+  String get twelveHour => '12h';
+
+  @override
+  String get twentyFourHour => '24h';
+
+  @override
+  String get homeGreetingGeneric => 'Bonjour, que voulez-vous faire ?';
+
+  @override
+  String homeGreetingNamed(String name) {
+    return 'Bonjour $name, que voulez-vous faire ?';
+  }
+
+  @override
+  String get hijriHeader => 'Hégirien';
+
+  @override
+  String get gregorianHeader => 'Grégorien';
+
+  @override
+  String get audioInternetRequired => 'Pas de connexion Internet. Veuillez vous connecter pour lire l’audio ou télécharger les fichiers.';
+
+  @override
+  String get editionArabicSimple => 'Arabe (Simple)';
+
+  @override
+  String get editionArabicUthmani => 'Arabe (Othmani)';
+
+  @override
+  String get editionEnglish => 'Anglais';
+
+  @override
+  String get editionFrench => 'Français';
+
+  @override
+  String get editionTafsir => 'Tafsir (Muyassar)';
 }
