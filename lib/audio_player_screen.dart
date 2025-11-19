@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:audio_session/audio_session.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
@@ -31,7 +30,6 @@ class AudioPlayerScreen extends StatefulWidget {
 
 class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   final AudioPlayer _player = AudioPlayer();
-  final FlutterLocalNotificationsPlugin _notificationsPlugin = FlutterLocalNotificationsPlugin();
   final QueueService _queueService = QueueService();
 
   List<Surah> _surahs = const [];
@@ -182,70 +180,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  Future<void> _showPlaybackNotification() async {
-    try {
-      final currentSurah = _currentSurah;
-      if (currentSurah == null || !_isPlaying) return;
-      
-      final reciterName = AudioService.reciterDisplayName(
-        _reciterKey!,
-        PreferencesService.getLanguage(),
-      );
-      
-      final androidDetails = AndroidNotificationDetails(
-        'quran_audio_playback',
-        'Quran Audio Playback',
-        channelDescription: 'Background Quran audio playback',
-        importance: Importance.low,
-        priority: Priority.low,
-        playSound: false,
-        enableVibration: false,
-        ongoing: true,
-        autoCancel: false,
-        // Enable media controls on lock screen
-        showWhen: false,
-        when: null,
-        // Add actions for media controls
-        actions: [
-          const AndroidNotificationAction(
-            'prev',
-            'Previous',
-            showsUserInterface: false,
-          ),
-          const AndroidNotificationAction(
-            'play_pause',
-            'Play/Pause',
-            showsUserInterface: false,
-          ),
-          const AndroidNotificationAction(
-            'next',
-            'Next',
-            showsUserInterface: false,
-          ),
-        ],
-      );
-      
-      final notificationDetails = NotificationDetails(android: androidDetails);
-      
-      await _notificationsPlugin.show(
-        9999,
-        'Playing: ${currentSurah.name}',
-        'Reciter: $reciterName',
-        notificationDetails,
-      );
-    } catch (e) {
-      debugPrint('[AudioPlayer] Error showing notification: $e');
-    }
-  }
-
-  Future<void> _hidePlaybackNotification() async {
-    try {
-      await _notificationsPlugin.cancel(9999);
-    } catch (e) {
-      debugPrint('[AudioPlayer] Error hiding notification: $e');
-    }
-  }
-
   Future<void> _loadInitialData() async {
     try {
     final lang = PreferencesService.getLanguage();
@@ -378,11 +312,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final playing = state.playing;
     if (playing != _isPlaying) {
       setState(() => _isPlaying = playing);
-      if (playing) {
-        unawaited(_showPlaybackNotification());
-      } else {
-        unawaited(_hidePlaybackNotification());
-      }
     }
 
     if (state.processingState == ProcessingState.completed) {
