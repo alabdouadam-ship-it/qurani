@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 175,
+    "ayahs": [
+      {
+        "number": 1142,
+        "text": "قُل لّ[o[َآ] أَمْلِكُ لِنَفْسِى نَفْ[a:5175[عًا و]َلَا ضَرًّا إِلَّا مَا ش[o[َا]ٓءَ [h:78[ٱ]للَّهُ‌ۚ وَلَوْ كُ[f:2917[نت]ُ أَعْلَمُ [h:4067[ٱ]لْغَيْبَ لَ[h:5176[ٱ]سْتَكْثَرْتُ مِنَ [h:5177[ٱ]لْخَيْرِ وَمَا مَسَّنِىَ [h:5178[ٱ][l[ل]سّ[o[ُو]ٓءُ‌ۚ إِنْ أَنَا۟ إِلَّا نَذِي[a:5179[رٌ و]َبَشِي[u:5180[رٌ ل]ِّقَوْ[a:4294[مٍ ي]ُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 188,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 144,
+        "hizbQuarter": 69,
+        "sajda": false
+      },
+      {
+        "number": 1143,
+        "text": "۞ هُوَ [h:153[ٱ]لَّذِى خَلَقَك[w:2530[ُم م]ّ[a:2531[ِن ن]َّفْ[a:2532[سٍ و][n[َٲ]حِدَ[a:5181[ةٍ و]َجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا‌ۖ فَلَ[g[مّ]َا تَغَشَّ[n[ـٰ]هَا حَمَلَتْ حَمْلاً خَفِي[f:5182[فًا ف]َمَرَّتْ بِه[n[ِۦ]‌ۖ فَلَ[g[مّ][o[َآ] أَثْقَلَ[d:5183[ت] دَّعَوَا [h:5184[ٱ]للَّهَ رَبَّهُمَا لَئِنْ ءَاتَيْتَنَا صَ[n[ـٰ]لِ[u:5185[حًا ل]َّنَكُونَ[g[نّ]َ مِنَ [h:4134[ٱ][l[ل]شَّ[n[ـٰ]كِر[p[ِي]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 189,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1144,
+        "text": "فَلَ[g[مّ][o[َآ] ءَاتَ[n[ـٰ]هُمَا صَ[n[ـٰ]لِ[f:5186[حًا ج]َعَلَا لَهُ[n[ۥ] شُرَك[o[َا]ٓءَ فِيم[o[َآ] ءَاتَ[n[ـٰ]هُمَا‌ۚ فَتَعَ[n[ـٰ]لَى [h:5187[ٱ]للَّهُ عَ[g[مّ]َا يُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 190,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1145,
+        "text": "أَيُشْرِكُونَ مَا لَا يَخْلُقُ شَيْـ[a:5188[ـًٔا و]َهُمْ يُخْلَق[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 191,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1146,
+        "text": "وَلَا يَسْتَطِيعُونَ لَهُمْ نَصْ[a:5189[رًا و]َل[o[َآ] أَ[f:38[نف]ُسَهُمْ يَ[f:5190[نص]ُر[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 192,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1147,
+        "text": "وَإِ[f:5191[ن ت]َ[q:5192[دْ]عُوهُمْ إِلَى [h:4178[ٱ]لْهُدَىٰ لَا يَتَّبِعُوكُمْ‌ۚ سَو[o[َا]ٓءٌ عَلَيْكُمْ أَدَعَوْتُمُوهُمْ أَمْ أَ[f:428[نت]ُمْ صَ[n[ـٰ]مِت[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 193,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1148,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ تَ[q:4040[دْ]عُونَ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ عِبَادٌ أَمْثَالُكُمْ‌ۖ فَ[h:5193[ٱ][q:5193[دْ]عُوهُمْ فَلْيَسْتَجِيبُو[s[اْ] لَكُمْ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 194,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      },
+      {
+        "number": 1149,
+        "text": "أَلَهُمْ أَرْجُ[a:5194[لٌ ي]َمْشُونَ بِه[o[َآ‌ۖ] أَمْ لَهُمْ أَيْ[a:5195[دٍ ي]َ[q:5196[بْ]طِشُونَ بِه[o[َآ‌ۖ] أَمْ لَهُمْ أَعْيُ[a:5197[نٌ ي]ُ[q:60[بْ]صِرُونَ بِه[o[َآ‌ۖ] أَمْ لَهُمْ ءَاذَا[a:5198[نٌ ي]َسْمَعُونَ بِهَا‌ۗ قُلِ [h:5199[ٱ][q:4751[دْ]عُو[s[اْ] شُرَك[o[َا]ٓءَكُمْ ثُ[g[مّ]َ كِيدُونِ فَلَا تُ[f:5200[نظ]ِر[p[ُو]نِ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 195,
+        "juz": 9,
+        "manzil": 2,
+        "page": 175,
+        "ruku": 145,
+        "hizbQuarter": 70,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

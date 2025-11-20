@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 508,
+    "ayahs": [
+      {
+        "number": 4557,
+        "text": "إِ[g[نّ]َ [h:80[ٱ]للَّهَ يُ[q:8947[دْ]خِلُ [h:8948[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ جَ[g[نّ]َ[n[ـٰ][f:119[تٍ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ‌ۖ وَ[h:37[ٱ]لَّذِينَ كَفَرُو[s[اْ] يَتَمَتَّعُونَ وَيَأْكُلُونَ كَمَا تَأْكُلُ [h:12555[ٱ]لْأَنْعَ[n[ـٰ]مُ وَ[h:12556[ٱ][l[ل][g[نّ]َارُ مَثْ[u:12007[وًى ل]َّهُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 12,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4558,
+        "text": "وَكَأَيّ[a:2298[ِن م]ِّ[f:4585[ن ق]َرْيَةٍ هِىَ أَشَدُّ قُوَّ[a:12557[ةً م]ِّ[f:12558[ن ق]َرْيَتِكَ [h:12559[ٱ]لَّت[o[ِىٓ] أَخْرَجَتْكَ أَهْلَكْنَ[n[ـٰ]هُمْ فَلَا نَاصِرَ لَهُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 13,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4559,
+        "text": "أَفَمَ[f:6273[ن ك]َانَ عَلَىٰ بَيِّنَ[a:4097[ةٍ م]ّ[u:192[ِن ر]َّبِّه[n[ِۦ] كَمَ[f:12560[ن ز]ُيِّنَ لَهُ[n[ۥ] س[o[ُو]ٓءُ عَمَلِه[n[ِۦ] وَ[h:2433[ٱ]تَّبَع[o[ُوٓ][s[اْ] أَهْو[o[َا]ٓءَهُم",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 14,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4560,
+        "text": "مَّثَلُ [h:7002[ٱ]لْجَ[g[نّ]َةِ [h:7003[ٱ]لَّتِى وُعِدَ [h:7004[ٱ]لْمُتَّقُونَ‌ۖ فِيه[o[َآ] أَنْهَ[n[ـٰ][a:12561[رٌ م]ّ[a:840[ِن م]ّ[o[َا]ٓءٍ غَيْرِ ءَاسِ[a:12562[نٍ و]َأَنْهَ[n[ـٰ][a:12563[رٌ م]ّ[u:12564[ِن ل]َّبَ[u:12565[نٍ ل]َّمْ يَتَغَيَّرْ طَعْمُهُ[n[ۥ] وَأَنْهَ[n[ـٰ][a:12563[رٌ م]ِّنْ خَمْ[u:12566[رٍ ل]َّذَّ[u:11361[ةٍ ل]ِّلشَّ[n[ـٰ]رِبِينَ وَأَنْهَ[n[ـٰ][a:12563[رٌ م]ِّنْ عَسَ[a:12567[لٍ م]ُّصَف[a:12568[ًّى‌ۖ و]َلَهُمْ فِيهَا مِ[f:843[ن ك]ُلِّ [h:1571[ٱ][l[ل]ثَّمَر[n[َٲ]تِ وَمَغْفِرَ[a:12569[ةٌ م]ّ[u:22[ِن ر]َّبِّهِمْ‌ۖ كَمَنْ هُوَ خَ[n[ـٰ]لِ[f:12570[دٌ ف]ِى [h:4674[ٱ][l[ل][g[نّ]َارِ وَسُقُو[s[اْ] م[o[َا]ٓءً حَمِي[f:12571[مًا ف]َقَطَّعَ أَمْع[o[َا]ٓءَهُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 15,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4561,
+        "text": "وَمِنْه[w:1106[ُم م]ّ[a:3986[َن ي]َسْتَمِعُ إِلَيْكَ حَتَّ[o[ىٰٓ] إِذَا خَرَجُو[s[اْ] مِنْ عِ[f:2954[ند]ِكَ قَالُو[s[اْ] لِلَّذِينَ أُوتُو[s[اْ] [h:7379[ٱ]لْعِلْمَ مَاذَا قَالَ ءَانِفًا‌ۚ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ [h:51[ٱ]لَّذِينَ طَبَعَ [h:3271[ٱ]للَّهُ عَلَىٰ قُلُوبِهِمْ وَ[h:2433[ٱ]تَّبَع[o[ُوٓ][s[اْ] أَهْو[o[َا]ٓءَهُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 16,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4562,
+        "text": "وَ[h:9999[ٱ]لَّذِينَ [h:12572[ٱ]هْتَدَوْ[s[اْ] زَادَهُمْ هُ[a:12573[دًى و]َءَاتَ[n[ـٰ]هُمْ تَ[q:12574[قْ]وَ[n[ٮٰ]هُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 17,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4563,
+        "text": "فَهَلْ يَ[f:1141[نظ]ُرُونَ إِلَّا [h:12296[ٱ][l[ل]سَّاعَةَ أَ[f:6843[ن ت]َأْتِيَه[c:12297[ُم ب]َغْتَ[f:12575[ةً‌ۖ ف]َقَ[q:563[دْ] ج[o[َا]ٓءَ أَشْرَاطُهَا‌ۚ فَأَ[g[نّ]َىٰ لَهُمْ إِذَا ج[o[َا]ٓءَتْهُمْ ذِكْرَ[n[ٮٰ]هُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 18,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      },
+      {
+        "number": 4564,
+        "text": "فَ[h:9999[ٱ]عْلَمْ أَ[g[نّ]َهُ[n[ۥ] ل[o[َآ] إِلَ[n[ـٰ]هَ إِلَّا [h:1742[ٱ]للَّهُ وَ[h:2374[ٱ]سْتَغْفِرْ لِذَ[i:11909[نۢب]ِكَ وَلِلْمُؤْمِنِينَ وَ[h:5718[ٱ]لْمُؤْمِنَ[n[ـٰ]تِ‌ۗ وَ[h:72[ٱ]للَّهُ يَعْلَمُ مُتَقَلَّبَكُمْ وَمَثْوَ[n[ٮٰ]كُمْ",
+        "surah": {
+          "number": 47,
+          "name": "سُورَةُ مُحَمَّدٍ",
+          "englishName": "Muhammad",
+          "englishNameTranslation": "Muhammad",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 38
+        },
+        "numberInSurah": 19,
+        "juz": 26,
+        "manzil": 6,
+        "page": 508,
+        "ruku": 443,
+        "hizbQuarter": 203,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "47": {
+        "number": 47,
+        "name": "سُورَةُ مُحَمَّدٍ",
+        "englishName": "Muhammad",
+        "englishNameTranslation": "Muhammad",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 38
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

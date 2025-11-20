@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 246,
+    "ayahs": [
+      {
+        "number": 1683,
+        "text": "يَ[n[ـٰ]بَنِىَّ [h:6796[ٱ]ذْهَبُو[s[اْ] فَتَحَسَّسُو[s[اْ] م[a:6797[ِن ي]ُوسُفَ وَأَخِيهِ وَلَا تَ[s[اْ]يْــَٔسُو[s[اْ] م[u:6798[ِن ر]َّوْحِ [h:6799[ٱ]للَّهِ‌ۖ إِ[g[نّ]َهُ[n[ۥ] لَا يَ[s[اْ]يْــَٔسُ م[u:6798[ِن ر]َّوْحِ [h:6799[ٱ]للَّهِ إِلَّا [h:4061[ٱ]لْقَوْمُ [h:6800[ٱ]لْكَ[n[ـٰ]فِر[p[ُو]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 87,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1684,
+        "text": "فَلَ[g[مّ]َا دَخَلُو[s[اْ] عَلَيْهِ قَالُو[s[اْ] يَ[o[ـٰٓ]أَيُّهَا [h:6772[ٱ]لْعَزِيزُ مَسَّنَا وَأَهْلَنَا [h:6801[ٱ][l[ل]ضُّرُّ وَجِئْنَا بِبِضَ[n[ـٰ]عَ[a:6802[ةٍ م]ُّزْجَ[n[ـٰ][f:6803[ةٍ ف]َأَوْفِ لَنَا [h:6804[ٱ]لْكَيْلَ وَتَصَدَّ[q:6805[قْ] عَلَيْن[o[َآ‌ۖ] إِ[g[نّ]َ [h:80[ٱ]للَّهَ يَ[q:6806[جْ]زِى [h:6807[ٱ]لْمُتَصَدِّق[p[ِي]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 88,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1685,
+        "text": "قَالَ هَلْ عَلِمْت[w:6761[ُم م]َّا فَعَلْت[c:6808[ُم ب]ِيُوسُفَ وَأَخِيهِ إِذْ أَ[f:428[نت]ُمْ جَ[n[ـٰ]هِل[p[ُو]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 89,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1686,
+        "text": "قَال[o[ُوٓ][s[اْ] أَءِ[g[نّ]َكَ لَأَ[f:6457[نت]َ يُوسُفُ‌ۖ قَالَ أَنَا۟ يُوسُفُ وَهَ[n[ـٰ]ذ[o[َآ] أَخِى‌ۖ قَ[q:298[دْ] مَ[g[نّ]َ [h:2390[ٱ]للَّهُ عَلَيْن[o[َآ‌ۖ] إِ[g[نّ]َهُ[n[ۥ] م[a:6809[َن ي]َتَّقِ وَيَصْبِرْ فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ لَا يُضِيعُ أَ[q:2418[جْ]رَ [h:5898[ٱ]لْمُحْسِن[p[ِي]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 90,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1687,
+        "text": "قَالُو[s[اْ] تَ[h:6760[ٱ]للَّهِ لَقَ[q:2389[دْ] ءَاثَرَكَ [h:6810[ٱ]للَّهُ عَلَيْنَا وَإِ[f:4542[ن ك]ُ[g[نّ]َا لَخَ[n[ـٰ]طِــٔ[p[ِي]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 91,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1688,
+        "text": "قَالَ لَا تَثْرِيبَ عَلَيْكُمُ [h:6811[ٱ]لْيَوْمَ‌ۖ يَغْفِرُ [h:6812[ٱ]للَّهُ لَكُمْ‌ۖ وَهُوَ أَرْحَمُ [h:5034[ٱ][l[ل]رّ[n[َٲ]حِم[p[ِي]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 92,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1689,
+        "text": "ٱذْهَبُو[s[اْ] بِقَمِيصِى هَ[n[ـٰ]ذَا فَأَلْقُوهُ عَلَىٰ وَ[q:1611[جْ]هِ أَبِى يَأْتِ بَصِي[a:6813[رًا و]َأْتُونِى بِأَهْلِكُمْ أَ[q:825[جْ]مَع[p[ِي]نَ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 93,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 202,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1690,
+        "text": "وَلَ[g[مّ]َا فَصَلَتِ [h:6814[ٱ]لْعِيرُ قَالَ أَبُوهُمْ إِ[g[نّ]ِى لَأَجِدُ رِيحَ يُوسُفَ‌ۖ لَوْل[o[َآ] أَ[f:6815[ن ت]ُفَ[g[نّ]ِد[p[ُو]نِ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 94,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 203,
+        "hizbQuarter": 98,
+        "sajda": false
+      },
+      {
+        "number": 1691,
+        "text": "قَالُو[s[اْ] تَ[h:6760[ٱ]للَّهِ إِ[g[نّ]َكَ لَفِى ضَلَ[n[ـٰ]لِكَ [h:6816[ٱ]لْقَد[p[ِي]مِ",
+        "surah": {
+          "number": 12,
+          "name": "سُورَةُ يُوسُفَ",
+          "englishName": "Yusuf",
+          "englishNameTranslation": "Joseph",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 111
+        },
+        "numberInSurah": 95,
+        "juz": 13,
+        "manzil": 3,
+        "page": 246,
+        "ruku": 203,
+        "hizbQuarter": 98,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "12": {
+        "number": 12,
+        "name": "سُورَةُ يُوسُفَ",
+        "englishName": "Yusuf",
+        "englishNameTranslation": "Joseph",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 111
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

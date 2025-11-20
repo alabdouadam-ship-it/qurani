@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 477,
+    "ayahs": [
+      {
+        "number": 4219,
+        "text": "ح[m[مٓ]",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 1,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4220,
+        "text": "تَ[f:11949[نز]ِي[a:11950[لٌ م]ِّنَ [h:8351[ٱ][l[ل]رَّحْمَ[n[ـٰ]نِ [h:3[ٱ][l[ل]رَّح[p[ِي]مِ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 2,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4221,
+        "text": "كِتَ[n[ـٰ][f:11951[بٌ ف]ُصِّلَتْ ءَايَ[n[ـٰ]تُهُ[n[ۥ] قُرْءَانًا عَرَبِي[u:11952[ًّا ل]ِّقَوْ[a:1292[مٍ ي]َعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 3,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4222,
+        "text": "بَشِي[a:622[رًا و]َنَذِي[f:11953[رًا ف]َأَعْرَضَ أَكْثَرُهُمْ فَهُمْ لَا يَسْمَع[p[ُو]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 4,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4223,
+        "text": "وَقَالُو[s[اْ] قُلُوبُنَا ف[o[ِىٓ] أَكِ[g[نّ]َ[a:11954[ةٍ م]ِّ[g[مّ]َا تَ[q:6404[دْ]عُون[o[َآ] إِلَيْهِ وَف[o[ِىٓ] ءَاذَانِنَا وَ[q:11955[قْ][a:11956[رٌ و]َم[i:11957[ِنۢ ب]َيْنِنَا وَبَيْنِكَ حِجَا[f:11958[بٌ ف]َ[h:11959[ٱ]عْمَلْ إِ[g[نّ]َنَا عَ[n[ـٰ]مِل[p[ُو]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 5,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4224,
+        "text": "قُلْ إِ[g[نّ]َم[o[َآ] أَنَا۟ بَشَ[a:7069[رٌ م]ِّثْلُكُمْ يُوحَ[o[ىٰٓ] إِلَىَّ أَ[g[نّ]َم[o[َآ] إِلَ[n[ـٰ]هُكُمْ إِلَ[n[ـٰ][a:827[هٌ و][n[َٲ]حِ[f:11960[دٌ ف]َ[h:5478[ٱ]سْتَقِيم[o[ُوٓ][s[اْ] إِلَيْهِ وَ[h:11961[ٱ]سْتَغْفِرُوهُ‌ۗ وَوَيْ[u:11962[لٌ ل]ِّلْمُشْرِك[p[ِي]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 6,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4225,
+        "text": "ٱلَّذِينَ لَا يُؤْتُونَ [h:11963[ٱ][l[ل]زَّكَ[s[و][n[ٲ]ةَ وَه[c:4710[ُم ب]ِ[h:447[ٱ]لْأَخِرَةِ هُمْ كَ[n[ـٰ]فِر[p[ُو]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 7,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4226,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ لَهُمْ أَ[q:2423[جْ]رٌ غَيْرُ مَمْن[p[ُو]نٍ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 8,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 413,
+        "hizbQuarter": 190,
+        "sajda": false
+      },
+      {
+        "number": 4227,
+        "text": "۞ قُلْ أَئِ[g[نّ]َكُمْ لَتَكْفُرُونَ بِ[h:315[ٱ]لَّذِى خَلَقَ [h:8438[ٱ]لْأَرْضَ فِى يَوْمَيْنِ وَتَ[q:11964[جْ]عَلُونَ لَهُ[o[ۥٓ] أَ[f:96[ند]َا[f:11965[دًا‌ۚ ذ][n[َٲ]لِكَ رَبُّ [h:4750[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 9,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4228,
+        "text": "وَجَعَلَ فِيهَا رَو[n[َٲ]سِىَ مِ[f:11665[ن ف]َوْقِهَا وَبَ[n[ـٰ]رَكَ فِيهَا وَقَدَّرَ فِيه[o[َآ] أَ[q:11966[قْ]و[n[َٲ]تَهَا ف[o[ِىٓ] أَرْبَعَةِ أَيَّا[f:11967[مٍ س]َو[o[َا]ٓ[u:11968[ءً ل]ِّلسّ[o[َا]ٓئِل[p[ِي]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 10,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      },
+      {
+        "number": 4229,
+        "text": "ثُ[g[مّ]َ [h:156[ٱ]سْتَوَ[o[ىٰٓ] إِلَى [h:157[ٱ][l[ل]سَّم[o[َا]ٓءِ وَهِىَ دُخَا[f:11969[نٌ ف]َقَالَ لَهَا وَلِلْأَرْضِ [h:11970[ٱ]ئْتِيَا طَوْعًا أَوْ كَرْ[f:11971[هًا ق]َالَت[o[َآ] أَتَيْنَا ط[o[َا]ٓئِع[p[ِي]نَ",
+        "surah": {
+          "number": 41,
+          "name": "سُورَةُ فُصِّلَتۡ",
+          "englishName": "Fussilat",
+          "englishNameTranslation": "Explained in detail",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 11,
+        "juz": 24,
+        "manzil": 6,
+        "page": 477,
+        "ruku": 414,
+        "hizbQuarter": 191,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "41": {
+        "number": 41,
+        "name": "سُورَةُ فُصِّلَتۡ",
+        "englishName": "Fussilat",
+        "englishNameTranslation": "Explained in detail",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

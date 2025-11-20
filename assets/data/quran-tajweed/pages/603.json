@@ -1,0 +1,310 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 603,
+    "ayahs": [
+      {
+        "number": 6208,
+        "text": "قُلْ يَ[o[ـٰٓ]أَيُّهَا [h:14663[ٱ]لْكَ[n[ـٰ]فِر[p[ُو]نَ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6209,
+        "text": "ل[o[َآ] أَعْبُدُ مَا تَعْبُد[p[ُو]نَ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6210,
+        "text": "وَل[o[َآ] أَ[f:428[نت]ُمْ عَ[n[ـٰ]بِدُونَ م[o[َآ] أَعْبُ[q[د]ُ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6211,
+        "text": "وَل[o[َآ] أَنَا۟ عَابِ[a:14664[دٌ م]َّا عَبَ[d:14665[د]تُّمْ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6212,
+        "text": "وَل[o[َآ] أَ[f:428[نت]ُمْ عَ[n[ـٰ]بِدُونَ م[o[َآ] أَعْبُ[q[د]ُ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6213,
+        "text": "لَكُمْ دِينُكُمْ وَلِىَ د[p[ِي]نِ",
+        "surah": {
+          "number": 109,
+          "name": "سُورَةُ الكَافِرُونَ",
+          "englishName": "Al-Kaafiroon",
+          "englishNameTranslation": "The Disbelievers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 6
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 551,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6214,
+        "text": "إِذَا ج[o[َا]ٓءَ نَصْرُ [h:1184[ٱ]للَّهِ وَ[h:14666[ٱ]لْفَتْحُ",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6215,
+        "text": "وَرَأَيْتَ [h:14667[ٱ][l[ل][g[نّ]َاسَ يَ[q:3156[دْ]خُلُونَ فِى دِينِ [h:2072[ٱ]للَّهِ أَفْوَاجًا",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6216,
+        "text": "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَ[h:14668[ٱ]سْتَغْفِرْهُ‌ۚ إِ[g[نّ]َهُ[n[ۥ] كَانَ تَوَّابَۢا",
+        "surah": {
+          "number": 110,
+          "name": "سُورَةُ النَّصۡرِ",
+          "englishName": "An-Nasr",
+          "englishNameTranslation": "Divine Support",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 552,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6217,
+        "text": "تَبَّتْ يَد[o[َآ] أَبِى لَهَ[a:14669[بٍ و]َتَ[q[ب]َّ",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6218,
+        "text": "م[o[َآ] أَغْنَىٰ عَنْهُ مَالُهُ[n[ۥ] وَمَا كَسَ[q[ب]َ",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6219,
+        "text": "سَيَصْلَىٰ نَا[f:14670[رًا ذ]َاتَ لَهَ[q[ب]ٍ",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6220,
+        "text": "وَ[h:9999[ٱ]مْرَأَتُهُ[n[ۥ] حَ[g[مّ]َالَةَ [h:14671[ٱ]لْحَطَ[q[ب]ِ",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6221,
+        "text": "فِى جِيدِهَا حَ[q:14672[بْ][a:14673[لٌ م]ّ[a:14674[ِن م]َّسَ[q[د]ِۭ",
+        "surah": {
+          "number": 111,
+          "name": "سُورَةُ المَسَدِ",
+          "englishName": "Al-Masad",
+          "englishNameTranslation": "The Palm Fibre",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 603,
+        "ruku": 553,
+        "hizbQuarter": 240,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "109": {
+        "number": 109,
+        "name": "سُورَةُ الكَافِرُونَ",
+        "englishName": "Al-Kaafiroon",
+        "englishNameTranslation": "The Disbelievers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 6
+      },
+      "110": {
+        "number": 110,
+        "name": "سُورَةُ النَّصۡرِ",
+        "englishName": "An-Nasr",
+        "englishNameTranslation": "Divine Support",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 3
+      },
+      "111": {
+        "number": 111,
+        "name": "سُورَةُ المَسَدِ",
+        "englishName": "Al-Masad",
+        "englishNameTranslation": "The Palm Fibre",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 5
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

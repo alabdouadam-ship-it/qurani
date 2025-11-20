@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 439,
+    "ayahs": [
+      {
+        "number": 3699,
+        "text": "هُوَ [h:153[ٱ]لَّذِى جَعَلَكُمْ خَلَ[o[ـٰٓ]ئِفَ فِى [h:44[ٱ]لْأَرْضِۚ فَمَ[f:3429[ن ك]َفَرَ فَعَلَيْهِ كُفْرُهُۖ[n[ۥ] وَلَا يَزِيدُ [h:11150[ٱ]لْكَ[n[ـٰ]فِرِينَ كُفْرُهُمْ عِ[f:264[ند]َ رَبِّهِمْ إِلَّا مَ[q:11151[قْ][a:11152[تًاۖ و]َلَا يَزِيدُ [h:11150[ٱ]لْكَ[n[ـٰ]فِرِينَ كُفْرُهُمْ إِلَّا خَسَارًا",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 39,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3700,
+        "text": "قُلْ أَرَءَيْتُمْ شُرَك[o[َا]ٓءَكُمُ [h:11153[ٱ]لَّذِينَ تَ[q:4040[دْ]عُونَ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ أَرُونِى مَاذَا خَلَقُو[s[اْ] مِنَ [h:1579[ٱ]لْأَرْضِ أَمْ لَهُمْ شِرْ[f:11154[كٌ ف]ِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ أَمْ ءَاتَيْنَ[n[ـٰ]هُمْ كِتَ[n[ـٰ][f:11155[بًا ف]َهُمْ عَلَىٰ بَيِّنَ[a:11156[تٍ م]ِّنْهُۚ بَلْ إ[a:11157[ِن ي]َعِدُ [h:11158[ٱ][l[ل]ظَّ[n[ـٰ]لِمُونَ بَعْضُه[c:11159[ُم ب]َعْضًا إِلَّا غُرُورًا",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 40,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 175,
+        "sajda": false
+      },
+      {
+        "number": 3701,
+        "text": "۞ إِ[g[نّ]َ [h:80[ٱ]للَّهَ يُمْسِكُ [h:11160[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:1474[ٱ]لْأَرْضَ أَ[f:11161[ن ت]َزُولَاۚ وَلَئِ[f:11162[ن ز]َالَت[o[َآ] إِنْ أَمْسَكَهُمَا مِنْ أَحَ[a:1710[دٍ م]ّ[i:254[ِنۢ ب]َعْدِهِ[o[ۚۦٓ] إِ[g[نّ]َهُ[n[ۥ] كَانَ حَلِيمًا غَفُورًا",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 41,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 176,
+        "sajda": false
+      },
+      {
+        "number": 3702,
+        "text": "وَأَ[q:4324[قْ]سَمُو[s[اْ] بِ[h:32[ٱ]للَّهِ جَهْدَ أَيْمَ[n[ـٰ]نِهِمْ لَئِ[f:11163[ن ج][o[َا]ٓءَهُمْ نَذِي[u:11164[رٌ ل]َّيَكُونُ[g[نّ]َ أَهْدَىٰ مِنْ إِحْدَى [h:11165[ٱ]لْأُمَمِۖ فَلَ[g[مّ]َا ج[o[َا]ٓءَهُمْ نَذِي[a:11166[رٌ م]َّا زَادَهُمْ إِلَّا نُفُورًا",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 42,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 176,
+        "sajda": false
+      },
+      {
+        "number": 3703,
+        "text": "ٱسْتِكْبَا[f:11167[رًا ف]ِى [h:44[ٱ]لْأَرْضِ وَمَكْرَ [h:11168[ٱ][l[ل]سَّيِّىِٕۚ وَلَا يَحِيقُ [h:11169[ٱ]لْمَكْرُ [h:11170[ٱ][l[ل]سَّيِّئُ إِلَّا بِأَهْلِهِ[n[ۚۦ] فَهَلْ يَ[f:1141[نظ]ُرُونَ إِلَّا سُ[g[نّ]َتَ [h:11171[ٱ]لْأَوَّلِينَۚ فَلَ[f:2843[ن ت]َجِدَ لِسُ[g[نّ]َتِ [h:11172[ٱ]للَّهِ تَ[q:10752[بْ]دِيل[a:11173[اًۖ و]َلَ[f:3232[ن ت]َجِدَ لِسُ[g[نّ]َتِ [h:11172[ٱ]للَّهِ تَحْوِيلاً",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 43,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 176,
+        "sajda": false
+      },
+      {
+        "number": 3704,
+        "text": "أَوَلَمْ يَسِيرُو[s[اْ] فِى [h:44[ٱ]لْأَرْضِ فَيَ[f:6853[نظ]ُرُو[s[اْ] كَيْفَ كَانَ عَ[n[ـٰ]قِبَةُ [h:6854[ٱ]لَّذِينَ مِ[f:617[ن ق]َ[q:618[بْ]لِهِمْ وَكَان[o[ُوٓ][s[اْ] أَشَدَّ مِنْهُمْ قُوَّۚ[a:11174[ةً و]َمَا كَانَ [h:742[ٱ]للَّهُ لِيُعْجِزَهُ[n[ۥ] مِ[f:2103[ن ش][f:5402[َىْءٍ ف]ِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَلَا فِى [h:44[ٱ]لْأَرْضِۚ إِ[g[نّ]َهُ[n[ۥ] كَانَ عَلِي[f:11175[مًا ق]َدِيرًا",
+        "surah": {
+          "number": 35,
+          "name": "سُورَةُ فَاطِرٍ",
+          "englishName": "Faatir",
+          "englishNameTranslation": "The Originator",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 45
+        },
+        "numberInSurah": 44,
+        "juz": 22,
+        "manzil": 5,
+        "page": 439,
+        "ruku": 380,
+        "hizbQuarter": 176,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "35": {
+        "number": 35,
+        "name": "سُورَةُ فَاطِرٍ",
+        "englishName": "Faatir",
+        "englishNameTranslation": "The Originator",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 45
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

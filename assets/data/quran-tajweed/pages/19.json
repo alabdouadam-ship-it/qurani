@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 19,
+    "ayahs": [
+      {
+        "number": 127,
+        "text": "وَلَ[f:625[ن ت]َرْضَىٰ عَ[f:626[نك]َ [h:627[ٱ]لْيَهُودُ وَلَا [h:628[ٱ][l[ل][g[نّ]َصَ[n[ـٰ]رَىٰ حَتَّىٰ تَتَّبِعَ مِلَّتَهُمْ‌ۗ قُلْ إِ[g[نّ]َ هُدَى [h:629[ٱ]للَّهِ هُوَ [h:630[ٱ]لْهُدَىٰ‌ۗ وَلَئِنِ [h:631[ٱ]تَّبَعْتَ أَهْو[o[َا]ٓءَه[c:632[ُم ب]َعْدَ [h:633[ٱ]لَّذِى ج[o[َا]ٓءَكَ مِنَ [h:634[ٱ]لْعِلْمِ‌ۙ مَا لَكَ مِنَ [h:321[ٱ]للَّهِ م[a:557[ِن و]َلِ[a:558[ىٍّ و]َلَا نَص[p[ِي]رٍ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 120,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 15,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 128,
+        "text": "ٱلَّذِينَ ءَاتَيْنَ[n[ـٰ]هُمُ [h:635[ٱ]لْكِتَ[n[ـٰ]بَ يَتْلُونَهُ[n[ۥ] حَقَّ تِلَاوَتِه[o[ِۦٓ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ يُؤْمِنُونَ بِه[n[ِۦ]‌ۗ وَم[a:636[َن ي]َكْفُرْ بِه[n[ِۦ] فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:150[ٱ]لْخَ[n[ـٰ]سِر[p[ُو]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 121,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 15,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 129,
+        "text": "يَ[n[ـٰ]بَن[o[ِىٓ] إِسْر[o[َٲ]ٓءِيلَ [h:202[ٱ]ذْكُرُو[s[اْ] نِعْمَتِىَ [h:203[ٱ]لَّت[o[ِىٓ] أَنْعَمْتُ عَلَيْكُمْ وَأَ[g[نّ]ِى فَضَّلْتُكُمْ عَلَى [h:227[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 122,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 16,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 130,
+        "text": "وَ[h:9999[ٱ]تَّقُو[s[اْ] يَوْ[u:228[مًا ل]َّا تَ[q:229[جْ]زِى نَفْسٌ ع[a:230[َن ن]َّفْ[f:231[سٍ ش]َيْـ[a:232[ـًٔا و]َلَا يُ[q:233[قْ]بَلُ مِنْهَا عَ[q:235[دْ][a:236[لٌ و]َلَا تَ[f:637[نف]َعُهَا شَفَ[n[ـٰ]عَ[a:234[ةٌ و]َلَا هُمْ يُ[f:237[نص]َر[p[ُو]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 123,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 16,
+        "hizbQuarter": 7,
+        "sajda": false
+      },
+      {
+        "number": 131,
+        "text": "۞ وَإِذِ [h:638[ٱ][q:639[بْ]تَلَ[o[ىٰٓ] إِ[q:640[بْ]ر[n[َٲ]هِـ[n[ـۧ]مَ رَبُّهُ[n[ۥ] بِكَلِمَ[n[ـٰ][f:641[تٍ ف]َأَتَ[g[مّ]َهُ[g[نّ]َ‌ۖ قَالَ إِ[g[نّ]ِى جَاعِلُكَ لِل[g[نّ]َاسِ إِمَا[f:642[مًا‌ۖ ق]َالَ وَمِ[f:643[ن ذ]ُرِّيَّتِى‌ۖ قَالَ لَا يَنَالُ عَهْدِى [h:644[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ِي]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 124,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 16,
+        "hizbQuarter": 8,
+        "sajda": false
+      },
+      {
+        "number": 132,
+        "text": "وَإِذْ جَعَلْنَا [h:645[ٱ]لْبَيْتَ مَثَابَ[u:646[ةً ل]ِّل[g[نّ]َاسِ وَأَمْ[a:647[نًا و]َ[h:648[ٱ]تَّخِذُو[s[اْ] م[a:649[ِن م]َّقَامِ إِ[q:640[بْ]ر[n[َٲ]هِـ[n[ـۧ]مَ مُصَل[a:650[ًّى‌ۖ و]َعَهِ[q:651[دْ]ن[o[َآ] إِلَ[o[ىٰٓ] إِ[q:640[بْ]ر[n[َٲ]هِـ[n[ـۧ]مَ وَإِسْمَ[n[ـٰ]عِيلَ أَ[f:652[ن ط]َهِّرَا بَيْتِىَ لِلطّ[o[َا]ٓئِفِينَ وَ[h:653[ٱ]لْعَ[n[ـٰ]كِفِينَ وَ[h:654[ٱ][l[ل]رُّكَّعِ [h:655[ٱ][l[ل]سُّج[p[ُو][q[د]ِ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 125,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 16,
+        "hizbQuarter": 8,
+        "sajda": false
+      },
+      {
+        "number": 133,
+        "text": "وَإِذْ قَالَ إِ[q:656[بْ]ر[n[َٲ]هِـ[n[ـۧ]مُ رَبِّ [h:657[ٱ][q:658[جْ]عَلْ هَ[n[ـٰ]ذَا بَلَدًا ءَامِ[a:659[نًا و]َ[h:660[ٱ]رْزُ[q:660[قْ] أَهْلَهُ[n[ۥ] مِنَ [h:93[ٱ][l[ل]ثَّمَر[n[َٲ]تِ مَنْ ءَامَنَ مِنْه[c:661[ُم ب]ِ[h:32[ٱ]للَّهِ وَ[h:328[ٱ]لْيَوْمِ [h:329[ٱ]لْأَخِرِ‌ۖ قَالَ وَمَ[f:662[ن ك]َفَرَ فَأُمَتِّعُهُ[n[ۥ] قَلِيل[f:663[اً ث]ُ[g[مّ]َ أَضْطَرُّهُ[o[ۥٓ] إِلَىٰ عَذَابِ [h:664[ٱ][l[ل][g[نّ]َارِ‌ۖ وَبِئْسَ [h:665[ٱ]لْمَص[p[ِي]رُ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 126,
+        "juz": 1,
+        "manzil": 1,
+        "page": 19,
+        "ruku": 16,
+        "hizbQuarter": 8,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

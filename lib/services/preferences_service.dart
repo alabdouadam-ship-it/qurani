@@ -478,9 +478,22 @@ class PreferencesService {
       case 'scheherazade':
       case 'scheherazade new':
       case 'scheherazade_new':
-        return ArabicFontUtils.fontScheherazade;
       case 'lateef':
-        return ArabicFontUtils.fontLateef;
+        return ArabicFontUtils.fontAmiri;
+      case 'kfgqpc_hafs_small':
+      case 'kfgqpchafssmall':
+      case 'kfgqpc hafs (small)':
+      case 'kfgqpc hafs small':
+      case 'kfgqpchafsunthmanicscriptregular-narz1':
+      case 'kfgqpc hafs uthmanic script regular narz1':
+        return ArabicFontUtils.fontKfgqpcSmall;
+      case 'kfgqpc_hafs_large':
+      case 'kfgqpchafslarge':
+      case 'kfgqpc hafs (large)':
+      case 'kfgqpc hafs large':
+      case 'kfgqpchafsunthmanicscriptregular-1jgee':
+      case 'kfgqpc hafs uthmanic script regular 1jgee':
+        return ArabicFontUtils.fontKfgqpcLarge;
       default:
         return value;
     }

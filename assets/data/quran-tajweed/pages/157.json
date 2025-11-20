@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 157,
+    "ayahs": [
+      {
+        "number": 1006,
+        "text": "وَلَقَ[q:341[دْ] جِئْنَ[n[ـٰ]ه[c:4732[ُم ب]ِكِتَ[n[ـٰ][f:4733[بٍ ف]َصَّلْنَ[n[ـٰ]هُ عَلَىٰ عِلْمٍ هُ[a:4734[دًى و]َرَحْمَ[u:4735[ةً ل]ِّقَوْ[a:4294[مٍ ي]ُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 52,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 127,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1007,
+        "text": "هَلْ يَ[f:1141[نظ]ُرُونَ إِلَّا تَأْوِيلَهُ[n[ۥ]‌ۚ يَوْمَ يَأْتِى تَأْوِيلُهُ[n[ۥ] يَقُولُ [h:3992[ٱ]لَّذِينَ نَسُوهُ مِ[f:128[ن ق]َ[q:129[بْ]لُ قَ[q:298[دْ] ج[o[َا]ٓءَتْ رُسُلُ رَبِّنَا بِ[h:370[ٱ]لْحَقِّ فَهَل لَّنَا مِ[f:4736[ن ش]ُفَع[o[َا]ٓءَ فَيَشْفَعُو[s[اْ] لَن[o[َآ] أَوْ نُرَدُّ فَنَعْمَلَ غَيْرَ [h:287[ٱ]لَّذِى كُ[g[نّ]َا نَعْمَلُ‌ۚ قَ[q:298[دْ] خَسِر[o[ُوٓ][s[اْ] أَ[f:38[نف]ُسَهُمْ وَضَلَّ عَنْه[w:3985[ُم م]َّا كَانُو[s[اْ] يَفْتَر[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 53,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 127,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1008,
+        "text": "إِ[g[نّ]َ رَبَّكُمُ [h:4737[ٱ]للَّهُ [h:4738[ٱ]لَّذِى خَلَقَ [h:3913[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:1474[ٱ]لْأَرْضَ فِى سِتَّةِ أَيَّا[f:4739[مٍ ث]ُ[g[مّ]َ [h:156[ٱ]سْتَوَىٰ عَلَى [h:4740[ٱ]لْعَرْشِ يُغْشِى [h:4741[ٱ]لَّيْلَ [h:4742[ٱ][l[ل][g[نّ]َهَارَ يَ[q:4743[طْ]لُبُهُ[n[ۥ] حَثِي[a:4744[ثًا و]َ[h:4264[ٱ][l[ل]شَّمْسَ وَ[h:4265[ٱ]لْقَمَرَ وَ[h:4745[ٱ][l[ل][g[نّ]ُجُومَ مُسَخَّر[n[َٲ][i:4746[تِۭ ب]ِأَمْرِه[o[ِۦٓ‌ۗ] أَلَا لَهُ [h:4747[ٱ]لْخَلْقُ وَ[h:4748[ٱ]لْأَمْرُ‌ۗ تَبَارَكَ [h:4749[ٱ]للَّهُ رَبُّ [h:4750[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 54,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1009,
+        "text": "ٱ[q:4751[دْ]عُو[s[اْ] رَبَّكُمْ تَضَرُّ[a:4131[عًا و]َخُفْيَةً‌ۚ إِ[g[نّ]َهُ[n[ۥ] لَا يُحِبُّ [h:1021[ٱ]لْمُعْتَد[p[ِي]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 55,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1010,
+        "text": "وَلَا تُفْسِدُو[s[اْ] فِى [h:44[ٱ]لْأَرْضِ بَعْدَ إِصْلَ[n[ـٰ]حِهَا وَ[h:4648[ٱ][q:4648[دْ]عُوهُ خَوْ[a:4752[فًا و]َطَمَعًا‌ۚ إِ[g[نّ]َ رَحْمَتَ [h:1214[ٱ]للَّهِ قَرِي[a:4753[بٌ م]ِّنَ [h:4754[ٱ]لْمُحْسِن[p[ِي]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 56,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      },
+      {
+        "number": 1011,
+        "text": "وَهُوَ [h:4114[ٱ]لَّذِى يُرْسِلُ [h:4755[ٱ][l[ل]رِّيَ[n[ـٰ]حَ بُشْر[i:4756[َۢا ب]َيْنَ يَدَىْ رَحْمَتِه[n[ِۦ]‌ۖ حَتَّ[o[ىٰٓ] إِذ[o[َآ] أَقَلَّتْ سَحَا[f:4757[بًا ث]ِقَال[f:4758[اً س]ُ[q:4759[قْ]نَ[n[ـٰ]هُ لِبَلَ[a:4760[دٍ م]َّيِّ[f:4761[تٍ ف]َأَ[f:288[نز]َلْنَا بِهِ [h:4762[ٱ]لْم[o[َا]ٓءَ فَأَخْرَ[q:4279[جْ]نَا بِه[n[ِۦ] مِ[f:843[ن ك]ُلِّ [h:1571[ٱ][l[ل]ثَّمَر[n[َٲ]تِ‌ۚ كَذ[n[َٲ]لِكَ نُخْرِجُ [h:4763[ٱ]لْمَوْتَىٰ لَعَلَّكُمْ تَذَكَّر[p[ُو]نَ",
+        "surah": {
+          "number": 7,
+          "name": "سُورَةُ الأَعۡرَافِ",
+          "englishName": "Al-A'raaf",
+          "englishNameTranslation": "The Heights",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 206
+        },
+        "numberInSurah": 57,
+        "juz": 8,
+        "manzil": 2,
+        "page": 157,
+        "ruku": 128,
+        "hizbQuarter": 63,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "7": {
+        "number": 7,
+        "name": "سُورَةُ الأَعۡرَافِ",
+        "englishName": "Al-A'raaf",
+        "englishNameTranslation": "The Heights",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 206
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

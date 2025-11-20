@@ -779,6 +779,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get editionArabicUthmani => 'Arabe (Othmani)';
 
   @override
+  String get editionArabicTajweed => 'Quran Tajweed';
+
+  @override
   String get editionEnglish => 'Anglais';
 
   @override

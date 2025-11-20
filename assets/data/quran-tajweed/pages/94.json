@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 94,
+    "ayahs": [
+      {
+        "number": 588,
+        "text": "لَّا يَسْتَوِى [h:3046[ٱ]لْقَ[n[ـٰ]عِدُونَ مِنَ [h:3047[ٱ]لْمُؤْمِنِينَ غَيْرُ أُ[s[وْ]لِى [h:3048[ٱ][l[ل]ضَّرَرِ وَ[h:3049[ٱ]لْمُجَ[n[ـٰ]هِدُونَ فِى سَبِيلِ [h:788[ٱ]للَّهِ بِأَمْو[n[َٲ]لِهِمْ وَأَ[f:3050[نف]ُسِهِمْ‌ۚ فَضَّلَ [h:2745[ٱ]للَّهُ [h:3051[ٱ]لْمُجَ[n[ـٰ]هِدِينَ بِأَمْو[n[َٲ]لِهِمْ وَأَ[f:3050[نف]ُسِهِمْ عَلَى [h:3052[ٱ]لْقَ[n[ـٰ]عِدِينَ دَرَجَ[a:3053[ةً‌ۚ و]َكُل[a:3054[اًّ و]َعَدَ [h:3055[ٱ]للَّهُ [h:3056[ٱ]لْحُسْنَىٰ‌ۚ وَفَضَّلَ [h:3057[ٱ]للَّهُ [h:3051[ٱ]لْمُجَ[n[ـٰ]هِدِينَ عَلَى [h:3052[ٱ]لْقَ[n[ـٰ]عِدِينَ أَ[q:2795[جْ]رًا عَظِيمًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 95,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 589,
+        "text": "دَرَجَ[n[ـٰ][a:3058[تٍ م]ِّنْهُ وَمَغْفِرَ[a:3059[ةً و]َرَحْمَ[a:3060[ةً‌ۚ و]َكَانَ [h:2653[ٱ]للَّهُ غَفُو[u:2701[رًا ر]َّحِيمًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 96,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 74,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 590,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ تَوَفَّ[n[ـٰ]هُمُ [h:3061[ٱ]لْمَلَ[o[ـٰٓ]ئِكَةُ ظَالِم[o[ِىٓ] أَ[f:568[نف]ُسِهِمْ قَالُو[s[اْ] فِيمَ كُ[f:100[نت]ُمْ‌ۖ قَالُو[s[اْ] كُ[g[نّ]َا مُسْتَضْعَفِينَ فِى [h:44[ٱ]لْأَرْضِ‌ۚ قَال[o[ُوٓ][s[اْ] أَلَمْ تَكُنْ أَرْضُ [h:3062[ٱ]للَّهِ و[n[َٲ]سِعَ[f:3063[ةً ف]َتُهَاجِرُو[s[اْ] فِيهَا‌ۚ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ مَأْوَ[n[ٮٰ]هُمْ جَهَ[g[نّ]َمُ‌ۖ وَس[o[َا]ٓءَتْ مَصِيرًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 97,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 591,
+        "text": "إِلَّا [h:3064[ٱ]لْمُسْتَضْعَفِينَ مِنَ [h:2923[ٱ][l[ل]رِّجَالِ وَ[h:2924[ٱ][l[ل][g[نّ]ِس[o[َا]ٓءِ وَ[h:2925[ٱ]لْوِلْد[n[َٲ]نِ لَا يَسْتَطِيعُونَ حِيلَ[a:3065[ةً و]َلَا يَهْتَدُونَ سَبِيلاً",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 98,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 592,
+        "text": "فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ عَسَى [h:2982[ٱ]للَّهُ أ[a:3066[َن ي]َعْفُوَ عَنْهُمْ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ عَفُوًّا غَفُورًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 99,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 37,
+        "sajda": false
+      },
+      {
+        "number": 593,
+        "text": "۞ وَم[a:3067[َن ي]ُهَاجِرْ فِى سَبِيلِ [h:788[ٱ]للَّهِ يَجِ[q:1067[دْ] فِى [h:44[ٱ]لْأَرْضِ مُر[n[َٲ]غَ[f:3068[مًا ك]َثِي[a:3069[رًا و]َسَعَ[a:3070[ةً‌ۚ و]َم[a:3071[َن ي]َخْرُ[q:3072[جْ] م[i:3073[ِنۢ ب]َيْتِه[n[ِۦ] مُهَاجِرًا إِلَى [h:1637[ٱ]للَّهِ وَرَسُولِه[n[ِۦ] ثُ[g[مّ]َ يُ[q:3074[دْ]رِكْهُ [h:3075[ٱ]لْمَوْتُ فَقَ[q:563[دْ] وَقَعَ أَ[q:582[جْ]رُهُ[n[ۥ] عَلَى [h:412[ٱ]للَّهِ‌ۗ وَكَانَ [h:2653[ٱ]للَّهُ غَفُو[u:2701[رًا ر]َّحِيمًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 100,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 75,
+        "hizbQuarter": 38,
+        "sajda": false
+      },
+      {
+        "number": 594,
+        "text": "وَإِذَا ضَرَ[q:3037[بْ]تُمْ فِى [h:44[ٱ]لْأَرْضِ فَلَيْسَ عَلَيْكُمْ جُنَاحٌ أَ[f:3076[ن ت]َ[q:3077[قْ]صُرُو[s[اْ] مِنَ [h:3078[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةِ إِنْ خِفْتُمْ أ[a:3079[َن ي]َفْتِنَكُمُ [h:3080[ٱ]لَّذِينَ كَفَر[o[ُوٓ[s[اْ]‌ۚ] إِ[g[نّ]َ [h:3081[ٱ]لْكَ[n[ـٰ]فِرِينَ كَانُو[s[اْ] لَكُمْ عَدُو[a:3082[ًّا م]ُّبِينًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 101,
+        "juz": 5,
+        "manzil": 1,
+        "page": 94,
+        "ruku": 76,
+        "hizbQuarter": 38,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 112,
+    "ayahs": [
+      {
+        "number": 693,
+        "text": "قَالُو[s[اْ] يَ[n[ـٰ]مُوسَ[o[ىٰٓ] إِ[g[نّ]َا ل[a:3482[َن ن]َّ[q:3483[دْ]خُلَه[o[َآ] أَبَ[a:3487[دًا م]َّا دَامُو[s[اْ] فِيهَا‌ۖ فَ[h:3488[ٱ]ذْهَ[q:3488[بْ] أَ[f:169[نت]َ وَرَبُّكَ فَقَ[n[ـٰ]تِل[o[َآ] إِ[g[نّ]َا هَ[n[ـٰ]هُنَا قَ[n[ـٰ]عِد[p[ُو]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 24,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 694,
+        "text": "قَالَ رَبِّ إِ[g[نّ]ِى ل[o[َآ] أَمْلِكُ إِلَّا نَفْسِى وَأَخِى‌ۖ فَ[h:3489[ٱ]فْرُ[q:3489[قْ] بَيْنَنَا وَبَيْنَ [h:3490[ٱ]لْقَوْمِ [h:3491[ٱ]لْفَ[n[ـٰ]سِق[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 25,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 695,
+        "text": "قَالَ فَإِ[g[نّ]َهَا مُحَرَّمَةٌ عَلَيْهِمْ‌ۛ أَرْبَعِينَ سَنَ[a:3492[ةً‌ۛ ي]َتِيهُونَ فِى [h:44[ٱ]لْأَرْضِ‌ۚ فَلَا تَأْسَ عَلَى [h:1431[ٱ]لْقَوْمِ [h:3491[ٱ]لْفَ[n[ـٰ]سِق[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 26,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 89,
+        "hizbQuarter": 44,
+        "sajda": false
+      },
+      {
+        "number": 696,
+        "text": "۞ وَ[h:9999[ٱ]تْلُ عَلَيْهِمْ نَبَأَ [h:3493[ٱ][q:3494[بْ]ن[o[َىْ] ءَادَمَ بِ[h:370[ٱ]لْحَقِّ إِذْ قَرَّبَا قُرْبَا[f:3495[نًا ف]َتُقُبِّلَ مِنْ أَحَدِهِمَا وَلَمْ يُتَقَبَّلْ مِنَ [h:3496[ٱ]لْأَخَرِ قَالَ لَأَ[q:3497[قْ]تُلَ[g[نّ]َكَ‌ۖ قَالَ إِ[g[نّ]َمَا يَتَقَبَّلُ [h:3498[ٱ]للَّهُ مِنَ [h:3499[ٱ]لْمُتَّق[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 27,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 697,
+        "text": "لَئ[i:3500[ِنۢ ب]َسَطتَ إِلَىَّ يَدَكَ لِتَ[q:3501[قْ]تُلَنِى م[o[َآ] أَنَا۟ بِبَاسِ[a:3502[طٍ ي]َدِىَ إِلَيْكَ لِأَ[q:3503[قْ]تُلَكَ‌ۖ إِ[g[نّ][o[ِىٓ] أَخَافُ [h:3504[ٱ]للَّهَ رَبَّ [h:3505[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 28,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 698,
+        "text": "إِ[g[نّ][o[ِىٓ] أُرِيدُ أَ[f:3506[ن ت]َب[o[ُو]ٓأَ بِإِثْمِى وَإِثْمِكَ فَتَكُونَ مِنْ أَصْحَ[n[ـٰ]بِ [h:3507[ٱ][l[ل][g[نّ]َارِ‌ۚ وَذ[n[َٲ]لِكَ جَز[o[َٲ]ٓؤُ[s[اْ] [h:3508[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 29,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 699,
+        "text": "فَطَوَّعَتْ لَهُ[n[ۥ] نَفْسُهُ[n[ۥ] قَتْلَ أَخِيهِ فَقَتَلَهُ[n[ۥ] فَأَصْبَحَ مِنَ [h:340[ٱ]لْخَ[n[ـٰ]سِر[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 30,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      },
+      {
+        "number": 700,
+        "text": "فَبَعَثَ [h:1161[ٱ]للَّهُ غُرَا[a:3509[بًا ي]َ[q:3510[بْ]حَثُ فِى [h:44[ٱ]لْأَرْضِ لِيُرِيَهُ[n[ۥ] كَيْفَ يُو[n[َٲ]رِى سَوْءَةَ أَخِيهِ‌ۚ قَالَ يَ[n[ـٰ]وَيْلَتَ[o[ىٰٓ] أَعَجَزْتُ أَنْ أَكُونَ مِثْلَ هَ[n[ـٰ]ذَا [h:3511[ٱ]لْغُرَابِ فَأُو[n[َٲ]رِىَ سَوْءَةَ أَخِى‌ۖ فَأَصْبَحَ مِنَ [h:3512[ٱ][l[ل][g[نّ]َ[n[ـٰ]دِم[p[ِي]نَ",
+        "surah": {
+          "number": 5,
+          "name": "سُورَةُ المَائـِدَةِ",
+          "englishName": "Al-Maaida",
+          "englishNameTranslation": "The Table",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 120
+        },
+        "numberInSurah": 31,
+        "juz": 6,
+        "manzil": 2,
+        "page": 112,
+        "ruku": 90,
+        "hizbQuarter": 45,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "5": {
+        "number": 5,
+        "name": "سُورَةُ المَائـِدَةِ",
+        "englishName": "Al-Maaida",
+        "englishNameTranslation": "The Table",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 120
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

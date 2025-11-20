@@ -22,8 +22,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   String _selectedArabicFont = ArabicFontUtils.fontAmiri;
   final List<String> _fontKeys = const [
     ArabicFontUtils.fontAmiri,
-    ArabicFontUtils.fontScheherazade,
-    ArabicFontUtils.fontLateef,
+    ArabicFontUtils.fontKfgqpcSmall,
+    ArabicFontUtils.fontKfgqpcLarge,
   ];
   final Map<String, Map<String, String>> _arabicFontLabels = {
     ArabicFontUtils.fontAmiri: {
@@ -31,15 +31,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       'en': 'Amiri Quran',
       'fr': 'Amiri Quran',
     },
-    ArabicFontUtils.fontScheherazade: {
-      'ar': 'شهرزاد الجديدة',
-      'en': 'Scheherazade New',
-      'fr': 'Scheherazade New',
+    ArabicFontUtils.fontKfgqpcSmall: {
+      'ar': 'حفص مجود (حروف صغيرة)',
+      'en': 'KFGQPC Tajweed (Small)',
+      'fr': 'KFGQPC Tajweed (petites lettres)',
     },
-    ArabicFontUtils.fontLateef: {
-      'ar': 'لطيف',
-      'en': 'Lateef',
-      'fr': 'Lateef',
+    ArabicFontUtils.fontKfgqpcLarge: {
+      'ar': 'حفص مجود (حروف كبيرة)',
+      'en': 'KFGQPC Tajweed (Large)',
+      'fr': 'KFGQPC Tajweed (grandes lettres)',
     },
   };
   int _verseRepeatCount = 10;

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 271,
+    "ayahs": [
+      {
+        "number": 1936,
+        "text": "وَقَالَ [h:614[ٱ]لَّذِينَ أَشْرَكُو[s[اْ] لَوْ ش[o[َا]ٓءَ [h:78[ٱ]للَّهُ مَا عَبَ[q:7396[دْ]نَا مِ[f:3136[ن د]ُونِه[n[ِۦ] مِ[f:2103[ن ش][a:7397[َىْءٍ ن]َّحْنُ وَل[o[َآ] ءَاب[o[َا]ٓؤُنَا وَلَا حَرَّمْنَا مِ[f:3136[ن د]ُونِه[n[ِۦ] مِ[f:2103[ن ش][f:4506[َىْءٍ‌ۚ ك]َذ[n[َٲ]لِكَ فَعَلَ [h:7395[ٱ]لَّذِينَ مِ[f:617[ن ق]َ[q:618[بْ]لِهِمْ‌ۚ فَهَلْ عَلَى [h:7398[ٱ][l[ل]رُّسُلِ إِلَّا [h:3819[ٱ]لْبَلَ[n[ـٰ]غُ [h:3781[ٱ]لْمُب[p[ِي]نُ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 35,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1937,
+        "text": "وَلَقَ[q:341[دْ] بَعَثْنَا فِى كُلِّ أُ[g[مّ]َ[u:7399[ةٍ ر]َّسُولاً أَنِ [h:3899[ٱ]عْبُدُو[s[اْ] [h:3704[ٱ]للَّهَ وَ[h:7400[ٱ][q:7400[جْ]تَنِبُو[s[اْ] [h:7401[ٱ][l[ل]طَّ[n[ـٰ]غُوتَ‌ۖ فَمِنْه[w:1456[ُم م]َّنْ هَدَى [h:741[ٱ]للَّهُ وَمِنْه[w:1106[ُم م]َّنْ حَقَّتْ عَلَيْهِ [h:7402[ٱ][l[ل]ضَّلَ[n[ـٰ]لَةُ‌ۚ فَسِيرُو[s[اْ] فِى [h:44[ٱ]لْأَرْضِ فَ[h:2257[ٱ][f:2257[نظ]ُرُو[s[اْ] كَيْفَ كَانَ عَ[n[ـٰ]قِبَةُ [h:2258[ٱ]لْمُكَذِّب[p[ِي]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 36,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1938,
+        "text": "إِ[f:7403[ن ت]َحْرِصْ عَلَىٰ هُدَ[n[ٮٰ]هُمْ فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ لَا يَهْدِى م[a:7404[َن ي]ُضِلُّ‌ۖ وَمَا لَه[w:1812[ُم م]ّ[a:1813[ِن ن]َّ[n[ـٰ]صِر[p[ِي]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 37,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1939,
+        "text": "وَأَ[q:4324[قْ]سَمُو[s[اْ] بِ[h:32[ٱ]للَّهِ جَهْدَ أَيْمَ[n[ـٰ]نِهِمْ‌ۙ لَا يَ[q:7405[بْ]عَثُ [h:7406[ٱ]للَّهُ م[a:7407[َن ي]َمُوتُ‌ۚ بَلَىٰ وَعْدًا عَلَيْهِ حَق[a:7408[ًّا و]َلَ[n[ـٰ]كِ[g[نّ]َ أَكْثَرَ [h:1374[ٱ][l[ل][g[نّ]َاسِ لَا يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 38,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1940,
+        "text": "لِيُبَيِّنَ لَهُمُ [h:7409[ٱ]لَّذِى يَخْتَلِفُونَ فِيهِ وَلِيَعْلَمَ [h:2400[ٱ]لَّذِينَ كَفَر[o[ُوٓ][s[اْ] أَ[g[نّ]َهُمْ كَانُو[s[اْ] كَ[n[ـٰ]ذِب[p[ِي]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 39,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1941,
+        "text": "إِ[g[نّ]َمَا قَوْلُنَا لِشَىْءٍ إِذ[o[َآ] أَرَ[q:7410[دْ]نَ[n[ـٰ]هُ أ[a:7411[َن ن]َّقُولَ لَهُ[n[ۥ] كُ[f:613[ن ف]َيَك[p[ُو]نُ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 40,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 228,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1942,
+        "text": "وَ[h:9999[ٱ]لَّذِينَ هَاجَرُو[s[اْ] فِى [h:714[ٱ]للَّهِ م[i:146[ِنۢ ب]َعْدِ مَا ظُلِمُو[s[اْ] لَنُبَوِّئَ[g[نّ]َهُمْ فِى [h:599[ٱ][l[ل]دُّنْيَا حَسَنَ[a:7412[ةً‌ۖ و]َلَأَ[q:6719[جْ]رُ [h:6720[ٱ]لْأَخِرَةِ أَكْبَرُ‌ۚ لَوْ كَانُو[s[اْ] يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 41,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      },
+      {
+        "number": 1943,
+        "text": "ٱلَّذِينَ صَبَرُو[s[اْ] وَعَلَىٰ رَبِّهِمْ يَتَوَكَّل[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 42,
+        "juz": 14,
+        "manzil": 3,
+        "page": 271,
+        "ruku": 229,
+        "hizbQuarter": 108,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

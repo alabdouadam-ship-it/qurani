@@ -1,0 +1,427 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 529,
+    "ayahs": [
+      {
+        "number": 4853,
+        "text": "خُشَّعًا أَ[q:4718[بْ]صَ[n[ـٰ]رُهُمْ يَخْرُجُونَ مِنَ [h:11261[ٱ]لْأَ[q:11262[جْ]دَاثِ كَأَ[g[نّ]َهُمْ جَرَا[a:13047[دٌ م]ُّ[f:13048[نت]َشِرٌ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4854,
+        "text": "مُّهْطِعِينَ إِلَى [h:13049[ٱ][l[ل]دَّاعِ‌ۖ يَقُولُ [h:13050[ٱ]لْكَ[n[ـٰ]فِرُونَ هَ[n[ـٰ]ذَا يَوْمٌ عَسِرٌ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 211,
+        "sajda": false
+      },
+      {
+        "number": 4855,
+        "text": "۞ كَذَّبَتْ قَ[q:8394[بْ]لَهُمْ قَوْمُ نُو[f:13051[حٍ ف]َكَذَّبُو[s[اْ] عَ[q:11499[بْ]دَنَا وَقَالُو[s[اْ] مَ[q:12342[جْ]نُو[a:13052[نٌ و]َ[h:13053[ٱ]زْدُجِرَ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4856,
+        "text": "فَدَعَا رَبَّهُ[o[ۥٓ] أَ[g[نّ]ِى مَغْلُو[f:13054[بٌ ف]َ[h:13055[ٱ][f:13055[نت]َصِرْ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4857,
+        "text": "فَفَتَحْن[o[َآ] أَ[q:4047[بْ]و[n[َٲ]بَ [h:13056[ٱ][l[ل]سَّم[o[َا]ٓءِ بِم[o[َا]ٓ[a:13057[ءٍ م]ُّنْهَمِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4858,
+        "text": "وَفَجَّرْنَا [h:13058[ٱ]لْأَرْضَ عُيُو[f:13059[نًا ف]َ[h:13060[ٱ]لْتَقَى [h:13061[ٱ]لْم[o[َا]ٓءُ عَلَ[o[ىٰٓ] أَمْ[f:13062[رٍ ق]َ[q:298[دْ] قُدِرَ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4859,
+        "text": "وَحَمَلْنَ[n[ـٰ]هُ عَلَىٰ ذَاتِ أَلْو[n[َٲ][a:13063[حٍ و]َدُسُرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4860,
+        "text": "تَ[q:120[جْ]رِى بِأَعْيُنِنَا جَز[o[َا]ٓ[u:13064[ءً ل]ِّمَ[f:10739[ن ك]َانَ كُفِرَ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4861,
+        "text": "وَلَقَ[d:13065[د] تَّرَكْنَ[n[ـٰ]ه[o[َآ] ءَايَ[f:13066[ةً ف]َهَلْ م[a:13067[ِن م]ُّدَّكِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4862,
+        "text": "فَكَيْفَ كَانَ عَذَابِى وَنُذُرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4863,
+        "text": "وَلَقَ[q:341[دْ] يَسَّرْنَا [h:13068[ٱ]لْقُرْءَانَ لِلذِّكْرِ فَهَلْ م[a:13067[ِن م]ُّدَّكِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4864,
+        "text": "كَذَّبَتْ عَا[f:13069[دٌ ف]َكَيْفَ كَانَ عَذَابِى وَنُذُرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4865,
+        "text": "إِ[g[نّ][o[َآ] أَرْسَلْنَا عَلَيْهِمْ رِي[f:11982[حًا ص]َرْصَ[f:11983[رًا ف]ِى يَوْمِ نَحْ[a:13070[سٍ م]ُّسْتَمِرٍّ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4866,
+        "text": "تَ[f:13071[نز]ِعُ [h:13072[ٱ][l[ل][g[نّ]َاسَ كَأَ[g[نّ]َهُمْ أَعْجَازُ نَخْ[a:13073[لٍ م]ُّ[f:13074[نق]َعِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4867,
+        "text": "فَكَيْفَ كَانَ عَذَابِى وَنُذُرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4868,
+        "text": "وَلَقَ[q:341[دْ] يَسَّرْنَا [h:13068[ٱ]لْقُرْءَانَ لِلذِّكْرِ فَهَلْ م[a:13067[ِن م]ُّدَّكِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 463,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4869,
+        "text": "كَذَّبَتْ ثَمُودُ بِ[h:13075[ٱ][l[ل][g[نّ]ُذُرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4870,
+        "text": "فَقَال[o[ُوٓ][s[اْ] أَبَشَ[a:13076[رًا م]ِّ[g[نّ]َا و[n[َٲ]حِ[a:13077[دًا ن]َّتَّبِعُهُ[o[ۥٓ] إِ[g[نّ][o[َآ] إِ[u:11213[ذًا ل]َّفِى ضَلَ[n[ـٰ][a:13078[لٍ و]َسُعُرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4871,
+        "text": "أَءُلْقِىَ [h:13079[ٱ][l[ل]ذِّكْرُ عَلَيْهِ م[i:4086[ِنۢ ب]َيْنِنَا بَلْ هُوَ كَذَّابٌ أَشِرٌ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4872,
+        "text": "سَيَعْلَمُونَ غَ[a:13080[دًا م]َّنِ [h:13081[ٱ]لْكَذَّابُ [h:13082[ٱ]لْأَشِرُ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4873,
+        "text": "إِ[g[نّ]َا مُرْسِلُو[s[اْ] [h:13083[ٱ][l[ل][g[نّ]َاقَةِ فِتْنَ[u:13084[ةً ل]َّهُمْ فَ[h:13085[ٱ]رْتَقِ[q:13085[بْ]هُمْ وَ[h:8381[ٱ]صْطَبِرْ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 27,
+        "juz": 27,
+        "manzil": 7,
+        "page": 529,
+        "ruku": 464,
+        "hizbQuarter": 212,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "54": {
+        "number": 54,
+        "name": "سُورَةُ القَمَرِ",
+        "englishName": "Al-Qamar",
+        "englishNameTranslation": "The Moon",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 55
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 228,
+    "ayahs": [
+      {
+        "number": 1527,
+        "text": "إ[a:6383[ِن ن]َّقُولُ إِلَّا [h:6384[ٱ]عْتَرَ[n[ٮٰ]كَ بَعْضُ ءَالِهَتِنَا بِس[o[ُو]ٓ[f:6385[ءٍ‌ۗ ق]َالَ إِ[g[نّ][o[ِىٓ] أُشْهِدُ [h:6386[ٱ]للَّهَ وَ[h:6387[ٱ]شْهَد[o[ُوٓ][s[اْ] أَ[g[نّ]ِى بَر[o[ِى]ٓ[a:3977[ءٌ م]ِّ[g[مّ]َا تُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 54,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1528,
+        "text": "مِ[f:3136[ن د]ُونِه[n[ِۦ]‌ۖ فَكِيدُونِى جَمِي[f:155[عًا ث]ُ[g[مّ]َ لَا تُ[f:5200[نظ]ِر[p[ُو]نِ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 55,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1529,
+        "text": "إِ[g[نّ]ِى تَوَكَّلْتُ عَلَى [h:412[ٱ]للَّهِ رَبِّى وَرَبِّك[w:6388[ُم‌ۚ م]َّا مِ[f:4026[ن د][m[َا]ٓبَّةٍ إِلَّا هُوَ ءَاخِ[i:6389[ذُۢ ب]ِنَاصِيَتِه[o[َآ‌ۚ] إِ[g[نّ]َ رَبِّى عَلَىٰ صِر[n[َٲ][a:726[طٍ م]ُّسْتَق[p[ِي]مٍ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 56,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1530,
+        "text": "فَإِ[f:1857[ن ت]َوَلَّوْ[s[اْ] فَقَ[q:563[دْ] أَ[q:4825[بْ]لَغْتُك[w:6390[ُم م]ّ[o[َآ] أُرْسِلْتُ بِه[o[ِۦٓ] إِلَيْكُمْ‌ۚ وَيَسْتَخْلِفُ رَبِّى قَوْمًا غَيْرَكُمْ وَلَا تَضُرُّونَهُ[n[ۥ] شَيْــًٔا‌ۚ إِ[g[نّ]َ رَبِّى عَلَىٰ كُلِّ شَىْءٍ حَف[p[ِي]ظٌ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 57,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1531,
+        "text": "وَلَ[g[مّ]َا ج[o[َا]ٓءَ أَمْرُنَا نَجَّيْنَا هُو[a:6391[دًا و]َ[h:37[ٱ]لَّذِينَ ءَامَنُو[s[اْ] مَعَهُ[n[ۥ] بِرَحْمَ[a:4803[ةٍ م]ِّ[g[نّ]َا وَنَجَّيْنَ[n[ـٰ]ه[w:6392[ُم م]ِّنْ عَذَابٍ غَل[p[ِي]ظٍ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 58,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1532,
+        "text": "وَتِلْكَ عَا[f:6393[دٌ‌ۖ ج]َحَدُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِ رَبِّهِمْ وَعَصَوْ[s[اْ] رُسُلَهُ[n[ۥ] وَ[h:2433[ٱ]تَّبَع[o[ُوٓ][s[اْ] أَمْرَ كُلِّ جَبَّارٍ عَن[p[ِي][q[د]ٍ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 59,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1533,
+        "text": "وَأُتْبِعُو[s[اْ] فِى هَ[n[ـٰ]ذِهِ [h:5052[ٱ][l[ل]دُّنْيَا لَعْنَ[a:6394[ةً و]َيَوْمَ [h:443[ٱ]لْقِيَ[n[ـٰ]مَةِ‌ۗ أَل[o[َآ] إِ[g[نّ]َ عَا[f:6395[دًا ك]َفَرُو[s[اْ] رَبَّهُمْ‌ۗ أَلَا بُعْ[u:6396[دًا ل]ِّعَا[f:6397[دٍ ق]َوْمِ ه[p[ُو][q[د]ٍ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 60,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 187,
+        "hizbQuarter": 91,
+        "sajda": false
+      },
+      {
+        "number": 1534,
+        "text": "۞ وَإِلَىٰ ثَمُودَ أَخَاهُمْ صَ[n[ـٰ]لِ[f:4805[حًا‌ۚ ق]َالَ يَ[n[ـٰ]قَوْمِ [h:4768[ٱ]عْبُدُو[s[اْ] [h:3704[ٱ]للَّهَ مَا لَك[w:556[ُم م]ِّنْ إِلَ[n[ـٰ]هٍ غَيْرُهُ[n[ۥ]‌ۖ هُوَ أَ[f:4272[نش]َأَك[w:6398[ُم م]ِّنَ [h:1579[ٱ]لْأَرْضِ وَ[h:6399[ٱ]سْتَعْمَرَكُمْ فِيهَا فَ[h:6400[ٱ]سْتَغْفِرُوهُ ثُ[g[مّ]َ تُوب[o[ُوٓ][s[اْ] إِلَيْهِ‌ۚ إِ[g[نّ]َ رَبِّى قَرِي[a:6401[بٌ م]ُّج[p[ِي][q[ب]ٌ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 61,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 188,
+        "hizbQuarter": 92,
+        "sajda": false
+      },
+      {
+        "number": 1535,
+        "text": "قَالُو[s[اْ] يَ[n[ـٰ]صَ[n[ـٰ]لِحُ قَ[q:298[دْ] كُ[f:735[نت]َ فِينَا مَرْجُو[f:6402[ًّا ق]َ[q:3282[بْ]لَ هَ[n[ـٰ]ذ[o[َآ‌ۖ] أَتَنْهَ[n[ـٰ]ن[o[َآ] أ[a:6403[َن ن]َّعْبُدَ مَا يَعْبُدُ ءَاب[o[َا]ٓؤُنَا وَإِ[g[نّ]َنَا لَفِى شَ[a:6196[كٍّ م]ِّ[g[مّ]َا تَ[q:6404[دْ]عُون[o[َآ] إِلَيْهِ مُر[p[ِي][q[ب]ٍ",
+        "surah": {
+          "number": 11,
+          "name": "سُورَةُ هُودٍ",
+          "englishName": "Hud",
+          "englishNameTranslation": "Hud",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 123
+        },
+        "numberInSurah": 62,
+        "juz": 12,
+        "manzil": 3,
+        "page": 228,
+        "ruku": 188,
+        "hizbQuarter": 92,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "11": {
+        "number": 11,
+        "name": "سُورَةُ هُودٍ",
+        "englishName": "Hud",
+        "englishNameTranslation": "Hud",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 123
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

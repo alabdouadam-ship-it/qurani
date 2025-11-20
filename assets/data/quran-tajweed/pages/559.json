@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 559,
+    "ayahs": [
+      {
+        "number": 5223,
+        "text": "أَسْكِنُوهُ[g[نّ]َ مِنْ حَيْثُ سَكَ[f:13673[نت][w:13674[ُم م]ّ[a:13675[ِن و]ُ[q:13676[جْ]دِكُمْ وَلَا تُض[m[َا]ٓرُّوهُ[g[نّ]َ لِتُضَيِّقُو[s[اْ] عَلَيْهِ[g[نّ]َ‌ۚ وَإِ[f:13677[ن ك]ُ[g[نّ]َ أُ[s[وْ]لَ[n[ـٰ]تِ حَمْ[f:13678[لٍ ف]َأَ[f:13679[نف]ِقُو[s[اْ] عَلَيْهِ[g[نّ]َ حَتَّىٰ يَضَعْنَ حَمْلَهُ[g[نّ]َ‌ۚ فَإِنْ أَرْضَعْنَ لَكُمْ فَـَٔـاتُوهُ[g[نّ]َ أُجُورَهُ[g[نّ]َ‌ۖ وَأْتَمِرُو[s[اْ] بَيْنَك[c:13680[ُم ب]ِمَعْرُو[a:13681[فٍ‌ۖ و]َإِ[f:13682[ن ت]َعَاسَرْتُمْ فَسَتُرْضِعُ لَهُ[o[ۥٓ] أُخْرَىٰ",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 492,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5224,
+        "text": "لِيُ[f:13683[نف]ِ[q:13683[قْ] ذُو سَعَ[a:13684[ةٍ م]ِّ[f:3193[ن س]َعَتِه[n[ِۦ]‌ۖ وَمَ[f:13685[ن ق]ُدِرَ عَلَيْهِ رِزْقُهُ[n[ۥ] فَلْيُ[f:13686[نف]ِ[q:13686[قْ] مِ[g[مّ][o[َآ] ءَاتَ[n[ـٰ]هُ [h:1498[ٱ]للَّهُ‌ۚ لَا يُكَلِّفُ [h:1713[ٱ]للَّهُ نَفْسًا إِلَّا م[o[َآ] ءَاتَ[n[ـٰ]هَا‌ۚ سَيَ[q:8428[جْ]عَلُ [h:13687[ٱ]للَّهُ بَعْدَ عُسْ[a:13688[رٍ ي]ُسْرًا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 7,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 492,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5225,
+        "text": "وَكَأَيّ[a:2298[ِن م]ِّ[f:4585[ن ق]َرْيَةٍ عَتَتْ عَنْ أَمْرِ رَبِّهَا وَرُسُلِه[n[ِۦ] فَحَاسَ[q:13689[بْ]نَ[n[ـٰ]هَا حِسَا[f:13690[بًا ش]َدِي[a:13691[دًا و]َعَذَّ[q:13692[بْ]نَ[n[ـٰ]هَا عَذَا[a:8212[بًا ن]ُّكْرًا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 8,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 493,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5226,
+        "text": "فَذَاقَتْ وَبَالَ أَمْرِهَا وَكَانَ عَ[n[ـٰ]قِبَةُ أَمْرِهَا خُسْرًا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 9,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 493,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5227,
+        "text": "أَعَدَّ [h:5775[ٱ]للَّهُ لَهُمْ عَذَا[f:1966[بًا ش]َدِي[f:13693[دًا‌ۖ ف]َ[h:112[ٱ]تَّقُو[s[اْ] [h:1945[ٱ]للَّهَ يَ[o[ـٰٓ]أُ[s[وْ]لِى [h:941[ٱ]لْأَلْبَ[n[ـٰ]بِ [h:13694[ٱ]لَّذِينَ ءَامَنُو[s[اْ‌ۚ] قَ[q:298[دْ] أَ[f:471[نز]َلَ [h:472[ٱ]للَّهُ إِلَيْكُمْ ذِكْرًا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 10,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 493,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5228,
+        "text": "رَّسُول[a:10208[اً ي]َتْلُو[s[اْ] عَلَيْكُمْ ءَايَ[n[ـٰ]تِ [h:1298[ٱ]للَّهِ مُبَيِّنَ[n[ـٰ][u:13695[تٍ ل]ِّيُخْرِجَ [h:13696[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ مِنَ [h:1491[ٱ][l[ل]ظُّلُمَ[n[ـٰ]تِ إِلَى [h:1492[ٱ][l[ل][g[نّ]ُورِ‌ۚ وَم[a:13644[َن ي]ُؤْم[i:12652[ِنۢ ب]ِ[h:32[ٱ]للَّهِ وَيَعْمَلْ صَ[n[ـٰ]لِ[a:13697[حًا ي]ُ[q:2631[دْ]خِلْهُ جَ[g[نّ]َ[n[ـٰ][f:119[تٍ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ خَ[n[ـٰ]لِدِينَ فِيه[o[َآ] أَبَ[f:13698[دًا‌ۖ ق]َ[q:298[دْ] أَحْسَنَ [h:10249[ٱ]للَّهُ لَهُ[n[ۥ] رِزْقًا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 11,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 493,
+        "hizbQuarter": 223,
+        "sajda": false
+      },
+      {
+        "number": 5229,
+        "text": "ٱللَّهُ [h:4738[ٱ]لَّذِى خَلَقَ سَ[q:158[بْ]عَ سَمَ[n[ـٰ]و[n[َٲ][a:13699[تٍ و]َمِنَ [h:13700[ٱ]لْأَرْضِ مِثْلَهُ[g[نّ]َ يَتَنَزَّلُ [h:13701[ٱ]لْأَمْرُ بَيْنَهُ[g[نّ]َ لِتَعْلَم[o[ُوٓ][s[اْ] أَ[g[نّ]َ [h:394[ٱ]للَّهَ عَلَىٰ كُلِّ ش[f:81[َىْءٍ ق]َدِي[a:13702[رٌ و]َأَ[g[نّ]َ [h:859[ٱ]للَّهَ قَ[q:298[دْ] أَحَاطَ بِكُلِّ شَىْءٍ عِلْمَۢا",
+        "surah": {
+          "number": 65,
+          "name": "سُورَةُ الطَّلَاقِ",
+          "englishName": "At-Talaaq",
+          "englishNameTranslation": "Divorce",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 12
+        },
+        "numberInSurah": 12,
+        "juz": 28,
+        "manzil": 7,
+        "page": 559,
+        "ruku": 493,
+        "hizbQuarter": 223,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "65": {
+        "number": 65,
+        "name": "سُورَةُ الطَّلَاقِ",
+        "englishName": "At-Talaaq",
+        "englishNameTranslation": "Divorce",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 12
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

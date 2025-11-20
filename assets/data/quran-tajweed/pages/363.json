@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 363,
+    "ayahs": [
+      {
+        "number": 2888,
+        "text": "وَلَا يَأْتُونَكَ بِمَثَلٍ إِلَّا جِئْنَ[n[ـٰ]كَ بِ[h:370[ٱ]لْحَقِّ وَأَحْسَنَ تَفْسِيرًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 33,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 312,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2889,
+        "text": "ٱلَّذِينَ يُحْشَرُونَ عَلَىٰ وُجُوهِهِمْ إِلَىٰ جَهَ[g[نّ]َمَ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ شَ[a:3659[رٌّ م]َّكَا[a:3660[نًا و]َأَضَلُّ سَبِيلاً",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 34,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 312,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2890,
+        "text": "وَلَقَ[q:341[دْ] ءَاتَيْنَا مُوسَى [h:257[ٱ]لْكِتَ[n[ـٰ]بَ وَجَعَلْنَا مَعَهُ[o[ۥٓ] أَخَاهُ هَ[n[ـٰ]رُونَ وَزِيرًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 35,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2891,
+        "text": "فَقُلْنَا [h:9632[ٱ]ذْهَب[o[َآ] إِلَى [h:9633[ٱ]لْقَوْمِ [h:4053[ٱ]لَّذِينَ كَذَّبُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِنَا فَدَ[g[مّ]َرْنَ[n[ـٰ]هُمْ تَ[q:7705[دْ]مِيرًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 36,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2892,
+        "text": "وَقَوْمَ نُو[u:9634[حٍ ل]َّ[g[مّ]َا كَذَّبُو[s[اْ] [h:9635[ٱ][l[ل]رُّسُلَ أَغْرَ[q:9636[قْ]نَ[n[ـٰ]هُمْ وَجَعَلْنَ[n[ـٰ]هُمْ لِل[g[نّ]َاسِ ءَايَ[a:9637[ةً‌ۖ و]َأَعْتَ[q:2782[دْ]نَا لِلظَّ[n[ـٰ]لِمِينَ عَذَابًا أَلِيمًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 37,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2893,
+        "text": "وَعَا[a:9638[دًا و]َثَمُودَ[s[اْ] وَأَصْحَ[n[ـٰ]بَ [h:9639[ٱ][l[ل]رَّسِّ وَقُرُون[i:9640[َۢا ب]َيْنَ ذ[n[َٲ]لِكَ كَثِيرًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 38,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2894,
+        "text": "وَكُل[f:9641[اًّ ض]َرَ[q:9642[بْ]نَا لَهُ [h:9643[ٱ]لْأَمْثَ[n[ـٰ]لَ‌ۖ وَكُل[f:9644[اًّ ت]َبَّرْنَا تَتْبِيرًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 39,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2895,
+        "text": "وَلَقَ[q:341[دْ] أَتَوْ[s[اْ] عَلَى [h:9645[ٱ]لْقَرْيَةِ [h:5089[ٱ]لَّت[o[ِىٓ] أُمْطِرَتْ مَطَرَ [h:9646[ٱ][l[ل]سَّوْءِ‌ۚ أَفَلَمْ يَكُونُو[s[اْ] يَرَوْنَهَا‌ۚ بَلْ كَانُو[s[اْ] لَا يَرْجُونَ نُشُورًا",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 40,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2896,
+        "text": "وَإِذَا رَأَوْكَ إ[a:8741[ِن ي]َتَّخِذُونَكَ إِلَّا هُزُوًا أَهَ[n[ـٰ]ذَا [h:8742[ٱ]لَّذِى بَعَثَ [h:9647[ٱ]للَّهُ رَسُولاً",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 41,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2897,
+        "text": "إِ[f:9648[ن ك]َادَ لَيُضِلُّنَا عَنْ ءَالِهَتِنَا لَوْل[o[َآ] أَ[f:9649[ن ص]َبَرْنَا عَلَيْهَا‌ۚ وَسَوْفَ يَعْلَمُونَ حِينَ يَرَوْنَ [h:856[ٱ]لْعَذَابَ مَنْ أَضَلُّ سَبِيلاً",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 42,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      },
+      {
+        "number": 2898,
+        "text": "أَرَءَيْتَ مَنِ [h:8418[ٱ]تَّخَذَ إِلَ[n[ـٰ]هَهُ[n[ۥ] هَوَ[n[ٮٰ]هُ أَفَأَ[f:6069[نت]َ تَكُونُ عَلَيْهِ وَكِيلاً",
+        "surah": {
+          "number": 25,
+          "name": "سُورَةُ الفُرۡقَانِ",
+          "englishName": "Al-Furqaan",
+          "englishNameTranslation": "The Criterion",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 77
+        },
+        "numberInSurah": 43,
+        "juz": 19,
+        "manzil": 4,
+        "page": 363,
+        "ruku": 313,
+        "hizbQuarter": 145,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "25": {
+        "number": 25,
+        "name": "سُورَةُ الفُرۡقَانِ",
+        "englishName": "Al-Furqaan",
+        "englishNameTranslation": "The Criterion",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 77
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

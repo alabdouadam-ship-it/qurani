@@ -526,6 +526,8 @@
   ,"@editionArabicSimple":{}
   ,"editionArabicUthmani":"Arabic (Uthmani)"
   ,"@editionArabicUthmani":{}
+  ,"editionArabicTajweed":"Quran Tajweed"
+  ,"@editionArabicTajweed":{}
   ,"editionEnglish":"English"
   ,"@editionEnglish":{}
   ,"editionFrench":"French"

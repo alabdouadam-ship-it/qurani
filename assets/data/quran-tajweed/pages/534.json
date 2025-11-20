@@ -1,0 +1,549 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 534,
+    "ayahs": [
+      {
+        "number": 4969,
+        "text": "فِيهِمَا فَ[n[ـٰ]كِهَ[a:13190[ةٌ و]َنَخْ[a:13191[لٌ و]َرُ[g[مّ][p[َا]نٌ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 68,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4970,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 69,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4971,
+        "text": "فِيهِ[g[نّ]َ خَيْر[n[َٲ]تٌ حِس[p[َا]نٌ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 70,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4972,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 71,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4973,
+        "text": "حُو[a:13192[رٌ م]َّ[q:13193[قْ]صُور[n[َٲ][f:13194[تٌ ف]ِى [h:13195[ٱ]لْخِي[p[َا]مِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 72,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4974,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 73,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4975,
+        "text": "لَمْ يَ[q:13182[طْ]مِثْهُ[g[نّ]َ إِ[f:13183[نس][f:13184[ٌ ق]َ[q:8394[بْ]لَهُمْ وَلَا ج[m[َا]ٓ[g[نّ]ٌ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 74,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4976,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 75,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4977,
+        "text": "مُتَّكِــِٔينَ عَلَىٰ رَفْرَفٍ خُضْ[a:13196[رٍ و]َعَ[q:13197[بْ]قَرِىٍّ حِس[p[َا]نٍ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 76,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4978,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 77,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4979,
+        "text": "تَبَ[n[ـٰ]رَكَ [h:13198[ٱ]سْمُ رَبِّكَ ذِى [h:13199[ٱ]لْجَلَ[n[ـٰ]لِ وَ[h:13151[ٱ]لْإِكْر[p[َا]مِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 78,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 468,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4980,
+        "text": "إِذَا وَقَعَتِ [h:13200[ٱ]لْوَاقِعَةُ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4981,
+        "text": "لَيْسَ لِوَ[q:13201[قْ]عَتِهَا كَاذِبَةٌ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4982,
+        "text": "خَافِضَ[u:13202[ةٌ ر]َّافِعَةٌ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4983,
+        "text": "إِذَا رُجَّتِ [h:13203[ٱ]لْأَرْضُ رَجًّا",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4984,
+        "text": "وَبُسَّتِ [h:13204[ٱ]لْجِبَالُ بَسًّا",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4985,
+        "text": "فَكَانَتْ هَب[o[َا]ٓ[a:13205[ءً م]ُّ[i:13206[نۢب]َثًّا",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4986,
+        "text": "وَكُ[f:151[نت]ُمْ أَزْو[n[َٲ][f:13207[جًا ث]َلَ[n[ـٰ]ثَةً",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4987,
+        "text": "فَأَصْحَ[n[ـٰ]بُ [h:13208[ٱ]لْمَيْمَنَةِ م[o[َآ] أَصْحَ[n[ـٰ]بُ [h:13209[ٱ]لْمَيْمَنَةِ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4988,
+        "text": "وَأَصْحَ[n[ـٰ]بُ [h:13210[ٱ]لْمَشْــَٔمَةِ م[o[َآ] أَصْحَ[n[ـٰ]بُ [h:13211[ٱ]لْمَشْــَٔمَةِ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4989,
+        "text": "وَ[h:9999[ٱ][l[ل]سَّ[n[ـٰ]بِقُونَ [h:13212[ٱ][l[ل]سَّ[n[ـٰ]بِق[p[ُو]نَ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4990,
+        "text": "أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ [h:13213[ٱ]لْمُقَرَّب[p[ُو]نَ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4991,
+        "text": "فِى جَ[g[نّ]َ[n[ـٰ]تِ [h:3680[ٱ][l[ل][g[نّ]َع[p[ِي]مِ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4992,
+        "text": "ثُلَّ[a:13214[ةٌ م]ِّنَ [h:11455[ٱ]لْأَوَّل[p[ِي]نَ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4993,
+        "text": "وَقَلِي[a:13215[لٌ م]ِّنَ [h:13216[ٱ]لْأَخِر[p[ِي]نَ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4994,
+        "text": "عَلَىٰ سُرُ[a:13217[رٍ م]َّوْضُونَةٍ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      },
+      {
+        "number": 4995,
+        "text": "مُّتَّكِــِٔينَ عَلَيْهَا مُتَقَ[n[ـٰ]بِل[p[ِي]نَ",
+        "surah": {
+          "number": 56,
+          "name": "سُورَةُ الوَاقِعَةِ",
+          "englishName": "Al-Waaqia",
+          "englishNameTranslation": "The Inevitable",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 96
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 534,
+        "ruku": 469,
+        "hizbQuarter": 214,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "55": {
+        "number": 55,
+        "name": "سُورَةُ الرَّحۡمَٰن",
+        "englishName": "Ar-Rahmaan",
+        "englishNameTranslation": "The Beneficent",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      },
+      "56": {
+        "number": 56,
+        "name": "سُورَةُ الوَاقِعَةِ",
+        "englishName": "Al-Waaqia",
+        "englishNameTranslation": "The Inevitable",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 96
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

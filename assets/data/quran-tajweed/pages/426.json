@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 426,
+    "ayahs": [
+      {
+        "number": 3588,
+        "text": "لَّا جُنَاحَ عَلَيْهِ[g[نّ]َ ف[o[ِىٓ] ءَاب[o[َا]ٓئِهِ[g[نّ]َ وَل[o[َآ] أَ[q:9392[بْ]ن[o[َا]ٓئِهِ[g[نّ]َ وَل[o[َآ] إِخْو[n[َٲ]نِهِ[g[نّ]َ وَل[o[َآ] أَ[q:9393[بْ]ن[o[َا]ٓءِ إِخْو[n[َٲ]نِهِ[g[نّ]َ وَل[o[َآ] أَ[q:9393[بْ]ن[o[َا]ٓءِ أَخَو[n[َٲ]تِهِ[g[نّ]َ وَلَا نِس[o[َا]ٓئِهِ[g[نّ]َ وَلَا مَا مَلَكَتْ أَيْمَ[n[ـٰ]نُهُ[g[نّ]َۗ وَ[h:10881[ٱ]تَّقِينَ [h:10882[ٱ]للَّهَۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ كَانَ عَلَىٰ كُلِّ ش[f:2752[َىْءٍ ش]َهِيدًا",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 55,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 367,
+        "hizbQuarter": 170,
+        "sajda": false
+      },
+      {
+        "number": 3589,
+        "text": "إِ[g[نّ]َ [h:80[ٱ]للَّهَ وَمَلَ[o[ـٰٓ]ئِكَتَهُ[n[ۥ] يُصَلُّونَ عَلَى [h:5875[ٱ][l[ل][g[نّ]َبِىِّۚ يَ[o[ـٰٓ]أَيُّهَا [h:541[ٱ]لَّذِينَ ءَامَنُو[s[اْ] صَلُّو[s[اْ] عَلَيْهِ وَسَلِّمُو[s[اْ] تَسْلِيمًا",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 56,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 367,
+        "hizbQuarter": 170,
+        "sajda": false
+      },
+      {
+        "number": 3590,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ يُؤْذُونَ [h:10883[ٱ]للَّهَ وَرَسُولَهُ[n[ۥ] لَعَنَهُمُ [h:462[ٱ]للَّهُ فِى [h:599[ٱ][l[ل]دُّنْيَا وَ[h:1213[ٱ]لْأَخِرَةِ وَأَعَدَّ لَهُمْ عَذَا[a:2783[بًا م]ُّهِينًا",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 57,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 367,
+        "hizbQuarter": 170,
+        "sajda": false
+      },
+      {
+        "number": 3591,
+        "text": "وَ[h:9999[ٱ]لَّذِينَ يُؤْذُونَ [h:10884[ٱ]لْمُؤْمِنِينَ وَ[h:5718[ٱ]لْمُؤْمِنَ[n[ـٰ]تِ بِغَيْرِ مَا [h:10885[ٱ]كْتَسَبُو[s[اْ] فَقَدِ [h:10886[ٱ]حْتَمَلُو[s[اْ] بُهْتَ[n[ـٰ][a:2678[نًا و]َإِثْ[a:2679[مًا م]ُّبِينًا",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 58,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 367,
+        "hizbQuarter": 170,
+        "sajda": false
+      },
+      {
+        "number": 3592,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:5411[ٱ][l[ل][g[نّ]َبِىُّ قُل لِّأَزْو[n[َٲ]جِكَ وَبَنَاتِكَ وَنِس[o[َا]ٓءِ [h:10887[ٱ]لْمُؤْمِنِينَ يُ[q:10888[دْ]نِينَ عَلَيْهِ[g[نّ]َ مِ[f:10889[ن ج]َلَ[n[ـٰ]بِيبِهِ[g[نّ]َۚ ذ[n[َٲ]لِكَ أَ[q:314[دْ]نَ[o[ىٰٓ] أ[a:10890[َن ي]ُعْرَفْنَ فَلَا يُؤْذَيْنَۗ وَكَانَ [h:2653[ٱ]للَّهُ غَفُو[u:2701[رًا ر]َّحِيمًا",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 59,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 368,
+        "hizbQuarter": 170,
+        "sajda": false
+      },
+      {
+        "number": 3593,
+        "text": "۞ لَّئ[u:4195[ِن ل]َّمْ يَ[f:10891[نت]َهِ [h:10892[ٱ]لْمُنَ[n[ـٰ]فِقُونَ وَ[h:37[ٱ]لَّذِينَ فِى قُلُوبِه[w:39[ِم م]َّرَ[a:10893[ضٌ و]َ[h:10894[ٱ]لْمُرْجِفُونَ فِى [h:4932[ٱ]لْمَدِينَةِ لَنُغْرِيَ[g[نّ]َكَ بِهِمْ ثُ[g[مّ]َ لَا يُجَاوِرُونَكَ فِيه[o[َآ] إِلَّا قَلِيلاً",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 60,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 368,
+        "hizbQuarter": 171,
+        "sajda": false
+      },
+      {
+        "number": 3594,
+        "text": "مَّلْعُونِينَۖ أَيْنَمَا ثُقِف[o[ُوٓ][s[اْ] أُخِذُو[s[اْ] وَقُتِّلُو[s[اْ] تَ[q:10895[قْ]تِيلاً",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 61,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 368,
+        "hizbQuarter": 171,
+        "sajda": false
+      },
+      {
+        "number": 3595,
+        "text": "سُ[g[نّ]َةَ [h:10837[ٱ]للَّهِ فِى [h:6320[ٱ]لَّذِينَ خَلَوْ[s[اْ] مِ[f:128[ن ق]َ[q:129[بْ]لُۖ وَلَ[f:3232[ن ت]َجِدَ لِسُ[g[نّ]َةِ [h:10896[ٱ]للَّهِ تَ[q:10752[بْ]دِيلاً",
+        "surah": {
+          "number": 33,
+          "name": "سُورَةُ الأَحۡزَابِ",
+          "englishName": "Al-Ahzaab",
+          "englishNameTranslation": "The Clans",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 73
+        },
+        "numberInSurah": 62,
+        "juz": 22,
+        "manzil": 5,
+        "page": 426,
+        "ruku": 368,
+        "hizbQuarter": 171,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "33": {
+        "number": 33,
+        "name": "سُورَةُ الأَحۡزَابِ",
+        "englishName": "Al-Ahzaab",
+        "englishNameTranslation": "The Clans",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 73
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

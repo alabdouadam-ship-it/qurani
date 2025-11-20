@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 196,
+    "ayahs": [
+      {
+        "number": 1290,
+        "text": "فَلَا تُعْجِ[q:5655[بْ]كَ أَمْو[n[َٲ]لُهُمْ وَل[o[َآ] أَوْلَ[n[ـٰ]دُهُمْ‌ۚ إِ[g[نّ]َمَا يُرِيدُ [h:976[ٱ]للَّهُ لِيُعَذِّبَه[c:5656[ُم ب]ِهَا فِى [h:441[ٱ]لْحَيَ[s[و][n[ٲ]ةِ [h:442[ٱ][l[ل]دُّنْيَا وَتَزْهَقَ أَ[f:2341[نف]ُسُهُمْ وَهُمْ كَ[n[ـٰ]فِر[p[ُو]نَ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 55,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1291,
+        "text": "وَيَحْلِفُونَ بِ[h:32[ٱ]للَّهِ إِ[g[نّ]َهُمْ لَمِ[f:5657[نك]ُمْ وَمَا ه[w:5658[ُم م]ِّ[f:344[نك]ُمْ وَلَ[n[ـٰ]كِ[g[نّ]َهُمْ قَوْ[a:5659[مٌ ي]َفْرَق[p[ُو]نَ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 56,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1292,
+        "text": "لَوْ يَجِدُونَ مَلْجَــًٔا أَوْ مَغَ[n[ـٰ]ر[n[َٲ]تٍ أَوْ مُدَّخَل[u:5660[اً ل]َّوَلَّوْ[s[اْ] إِلَيْهِ وَهُمْ يَ[q:5661[جْ]مَح[p[ُو]نَ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 57,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1293,
+        "text": "وَمِنْه[w:1106[ُم م]ّ[a:5662[َن ي]َلْمِزُكَ فِى [h:5663[ٱ][l[ل]صَّدَقَ[n[ـٰ]تِ فَإِنْ أُعْطُو[s[اْ] مِنْهَا رَضُو[s[اْ] وَإ[u:3542[ِن ل]َّمْ يُعْطَوْ[s[اْ] مِنْه[o[َآ] إِذَا هُمْ يَسْخَط[p[ُو]نَ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 58,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1294,
+        "text": "وَلَوْ أَ[g[نّ]َهُمْ رَضُو[s[اْ] م[o[َآ] ءَاتَ[n[ـٰ]هُمُ [h:2411[ٱ]للَّهُ وَرَسُولُهُ[n[ۥ] وَقَالُو[s[اْ] حَسْبُنَا [h:2428[ٱ]للَّهُ سَيُؤْتِينَا [h:5664[ٱ]للَّهُ مِ[f:475[ن ف]َضْلِه[n[ِۦ] وَرَسُولُهُ[o[ۥٓ] إِ[g[نّ][o[َآ] إِلَى [h:1637[ٱ]للَّهِ ر[n[َٲ]غِب[p[ُو]نَ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 59,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 162,
+        "hizbQuarter": 78,
+        "sajda": false
+      },
+      {
+        "number": 1295,
+        "text": "۞ إِ[g[نّ]َمَا [h:5665[ٱ][l[ل]صَّدَقَ[n[ـٰ]تُ لِلْفُقَر[o[َا]ٓءِ وَ[h:421[ٱ]لْمَسَ[n[ـٰ]كِينِ وَ[h:5666[ٱ]لْعَ[n[ـٰ]مِلِينَ عَلَيْهَا وَ[h:5667[ٱ]لْمُؤَلَّفَةِ قُلُوبُهُمْ وَفِى [h:914[ٱ][l[ل]رِّقَابِ وَ[h:5668[ٱ]لْغَ[n[ـٰ]رِمِينَ وَفِى سَبِيلِ [h:788[ٱ]للَّهِ وَ[h:1189[ٱ][q:1189[بْ]نِ [h:1190[ٱ][l[ل]سَّبِيلِ‌ۖ فَرِيضَ[a:2605[ةً م]ِّنَ [h:321[ٱ]للَّهِ‌ۗ وَ[h:72[ٱ]للَّهُ عَلِيمٌ حَك[p[ِي]مٌ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 60,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      },
+      {
+        "number": 1296,
+        "text": "وَمِنْهُمُ [h:5669[ٱ]لَّذِينَ يُؤْذُونَ [h:5670[ٱ][l[ل][g[نّ]َبِىَّ وَيَقُولُونَ هُوَ أُذُ[f:5671[نٌ‌ۚ ق]ُلْ أُذُنُ خَيْ[u:5672[رٍ ل]َّكُمْ يُؤْمِنُ بِ[h:32[ٱ]للَّهِ وَيُؤْمِنُ لِلْمُؤْمِنِينَ وَرَحْمَ[u:5044[ةٌ ل]ِّلَّذِينَ ءَامَنُو[s[اْ] مِ[f:344[نك]ُمْ‌ۚ وَ[h:37[ٱ]لَّذِينَ يُؤْذُونَ رَسُولَ [h:3273[ٱ]للَّهِ لَهُمْ عَذَابٌ أَل[p[ِي]مٌ",
+        "surah": {
+          "number": 9,
+          "name": "سُورَةُ التَّوۡبَةِ",
+          "englishName": "At-Tawba",
+          "englishNameTranslation": "The Repentance",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 129
+        },
+        "numberInSurah": 61,
+        "juz": 10,
+        "manzil": 2,
+        "page": 196,
+        "ruku": 163,
+        "hizbQuarter": 79,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "9": {
+        "number": 9,
+        "name": "سُورَةُ التَّوۡبَةِ",
+        "englishName": "At-Tawba",
+        "englishNameTranslation": "The Repentance",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 129
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

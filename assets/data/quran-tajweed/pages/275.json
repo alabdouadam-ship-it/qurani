@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 275,
+    "ayahs": [
+      {
+        "number": 1974,
+        "text": "وَيَعْبُدُونَ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ مَا لَا يَمْلِكُ لَهُمْ رِزْ[a:7497[قًا م]ِّنَ [h:7498[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ شَيْـ[a:232[ـًٔا و]َلَا يَسْتَطِيع[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 73,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1975,
+        "text": "فَلَا تَضْرِبُو[s[اْ] لِلَّهِ [h:7499[ٱ]لْأَمْثَالَ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ يَعْلَمُ وَأَ[f:98[نت]ُمْ لَا تَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 74,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 109,
+        "sajda": false
+      },
+      {
+        "number": 1976,
+        "text": "۞ ضَرَبَ [h:7103[ٱ]للَّهُ مَثَلاً عَ[q:3317[بْ][a:7500[دًا م]َّمْلُو[u:7501[كًا ل]َّا يَ[q:7502[قْ]دِرُ عَلَىٰ ش[a:7503[َىْءٍ و]َم[u:7504[َن ر]َّزَ[q:7505[قْ]نَ[n[ـٰ]هُ مِ[g[نّ]َا رِزْقًا حَسَ[f:7506[نًا ف]َهُوَ يُ[f:1550[نف]ِقُ مِنْهُ سِر[a:7507[ًّا و]َجَهْرًا‌ۖ هَلْ يَسْتَوُ[n[ۥ]نَ‌ۚ [h:7508[ٱ]لْحَمْدُ لِلَّهِ‌ۚ بَلْ أَكْثَرُهُمْ لَا يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 75,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1977,
+        "text": "وَضَرَبَ [h:7509[ٱ]للَّهُ مَثَل[u:7510[اً ر]َّجُلَيْنِ أَحَدُهُم[o[َآ] أَ[q:7511[بْ]كَمُ لَا يَ[q:7502[قْ]دِرُ عَلَىٰ ش[a:4300[َىْءٍ و]َهُوَ كَلٌّ عَلَىٰ مَوْلَ[n[ـٰ]هُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ‌ۖ هَلْ يَسْتَوِى هُوَ وَم[a:7512[َن ي]َأْمُرُ بِ[h:1661[ٱ]لْعَ[q:1661[دْ]لِ‌ۙ وَهُوَ عَلَىٰ صِر[n[َٲ][a:726[طٍ م]ُّسْتَق[p[ِي]مٍ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 76,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 233,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1978,
+        "text": "وَلِلَّهِ غَيْبُ [h:6538[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ‌ۚ وَم[o[َآ] أَمْرُ [h:7513[ٱ][l[ل]سَّاعَةِ إِلَّا كَلَمْحِ [h:7514[ٱ]لْبَصَرِ أَوْ هُوَ أَ[q:1355[قْ]رَبُ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ عَلَىٰ كُلِّ ش[f:81[َىْءٍ ق]َد[p[ِي]رٌ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 77,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1979,
+        "text": "وَ[h:9999[ٱ]للَّهُ أَخْرَجَك[w:7515[ُم م]ّ[i:7516[ِنۢ ب]ُطُونِ أُ[g[مّ]َهَ[n[ـٰ]تِكُمْ لَا تَعْلَمُونَ شَيْـ[a:7517[ـًٔا و]َجَعَلَ لَكُمُ [h:7518[ٱ][l[ل]سَّمْعَ وَ[h:6037[ٱ]لْأَ[q:6037[بْ]صَ[n[ـٰ]رَ وَ[h:7519[ٱ]لْأَفْــِٔدَةَ‌ۙ لَعَلَّكُمْ تَشْكُر[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 78,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      },
+      {
+        "number": 1980,
+        "text": "أَلَمْ يَرَوْ[s[اْ] إِلَى [h:7520[ٱ][l[ل]طَّيْرِ مُسَخَّر[n[َٲ][f:7521[تٍ ف]ِى جَوِّ [h:7522[ٱ][l[ل]سَّم[o[َا]ٓءِ مَا يُمْسِكُهُ[g[نّ]َ إِلَّا [h:1742[ٱ]للَّهُ‌ۗ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[n[ـٰ][u:849[تٍ ل]ِّقَوْ[a:4294[مٍ ي]ُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 16,
+          "name": "سُورَةُ النَّحۡلِ",
+          "englishName": "An-Nahl",
+          "englishNameTranslation": "The Bee",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 128
+        },
+        "numberInSurah": 79,
+        "juz": 14,
+        "manzil": 3,
+        "page": 275,
+        "ruku": 234,
+        "hizbQuarter": 110,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "16": {
+        "number": 16,
+        "name": "سُورَةُ النَّحۡلِ",
+        "englishName": "An-Nahl",
+        "englishNameTranslation": "The Bee",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 128
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

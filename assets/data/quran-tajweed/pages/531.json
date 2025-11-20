@@ -1,0 +1,454 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 531,
+    "ayahs": [
+      {
+        "number": 4896,
+        "text": "وَم[o[َآ] أَمْرُن[o[َآ] إِلَّا و[n[َٲ]حِدَ[f:13114[ةٌ ك]َلَمْ[i:13115[حِۭ ب]ِ[h:13116[ٱ]لْبَصَرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 50,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4897,
+        "text": "وَلَقَ[q:341[دْ] أَهْلَكْن[o[َآ] أَشْيَاعَكُمْ فَهَلْ م[a:13067[ِن م]ُّدَّكِرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 51,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4898,
+        "text": "وَكُلُّ ش[f:13117[َىْءٍ ف]َعَلُوهُ فِى [h:13107[ٱ][l[ل]زُّبُرِ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 52,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4899,
+        "text": "وَكُلُّ صَغِي[a:13118[رٍ و]َكَبِي[a:13119[رٍ م]ُّسْتَطَرٌ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 53,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4900,
+        "text": "إِ[g[نّ]َ [h:7256[ٱ]لْمُتَّقِينَ فِى جَ[g[نّ]َ[n[ـٰ][a:13120[تٍ و]َنَهَرٍ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 54,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4901,
+        "text": "فِى مَ[q:13121[قْ]عَدِ صِ[q:5937[دْ]قٍ عِ[f:264[ند]َ مَلِي[a:13122[كٍ م]ُّ[q:13104[قْ]تَدِرِۭ",
+        "surah": {
+          "number": 54,
+          "name": "سُورَةُ القَمَرِ",
+          "englishName": "Al-Qamar",
+          "englishNameTranslation": "The Moon",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 55
+        },
+        "numberInSurah": 55,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 465,
+        "hizbQuarter": 212,
+        "sajda": false
+      },
+      {
+        "number": 4902,
+        "text": "ٱ[l[ل]رَّحْمَ[p[ـٰ]نُ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4903,
+        "text": "عَلَّمَ [h:13123[ٱ]لْقُرْء[p[َا]نَ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4904,
+        "text": "خَلَقَ [h:7324[ٱ]لْإِ[f:5969[نس]َ[p[ـٰ]نَ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4905,
+        "text": "عَلَّمَهُ [h:13124[ٱ]لْبَي[p[َا]نَ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4906,
+        "text": "ٱ[l[ل]شَّمْسُ وَ[h:8956[ٱ]لْقَمَرُ بِحُسْب[p[َا]نٍ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4907,
+        "text": "وَ[h:9999[ٱ][l[ل][g[نّ]َ[q:13125[جْ]مُ وَ[h:8958[ٱ][l[ل]شَّجَرُ يَسْجُد[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4908,
+        "text": "وَ[h:9999[ٱ][l[ل]سَّم[o[َا]ٓءَ رَفَعَهَا وَوَضَعَ [h:13126[ٱ]لْمِيز[p[َا]نَ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4909,
+        "text": "أَلَّا تَ[q:6515[طْ]غَوْ[s[اْ] فِى [h:13127[ٱ]لْمِيز[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4910,
+        "text": "وَأَقِيمُو[s[اْ] [h:13128[ٱ]لْوَزْنَ بِ[h:1800[ٱ]لْقِسْطِ وَلَا تُخْسِرُو[s[اْ] [h:13129[ٱ]لْمِيز[p[َا]نَ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4911,
+        "text": "وَ[h:9999[ٱ]لْأَرْضَ وَضَعَهَا لِلْأَن[p[َا]مِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4912,
+        "text": "فِيهَا فَ[n[ـٰ]كِهَ[a:13130[ةٌ و]َ[h:13131[ٱ][l[ل][g[نّ]َخْلُ ذَاتُ [h:13132[ٱ]لْأَكْم[p[َا]مِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4913,
+        "text": "وَ[h:9999[ٱ]لْحَبُّ ذُو [h:13133[ٱ]لْعَصْفِ وَ[h:13134[ٱ][l[ل]رَّيْح[p[َا]نُ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4914,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4915,
+        "text": "خَلَقَ [h:7324[ٱ]لْإِ[f:5969[نس]َ[n[ـٰ]نَ مِ[f:7229[ن ص]َلْصَ[n[ـٰ][f:13135[لٍ ك]َ[h:13136[ٱ]لْفَخّ[p[َا]رِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4916,
+        "text": "وَخَلَقَ [h:13137[ٱ]لْج[m[َا]ٓ[g[نّ]َ م[a:13138[ِن م]َّارِ[a:13139[جٍ م]ّ[a:4598[ِن ن]ّ[p[َا]رٍ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      },
+      {
+        "number": 4917,
+        "text": "فَبِأَىِّ ءَال[o[َا]ٓءِ رَبِّكُمَا تُكَذِّب[p[َا]نِ",
+        "surah": {
+          "number": 55,
+          "name": "سُورَةُ الرَّحۡمَٰن",
+          "englishName": "Ar-Rahmaan",
+          "englishNameTranslation": "The Beneficent",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 531,
+        "ruku": 466,
+        "hizbQuarter": 213,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "54": {
+        "number": 54,
+        "name": "سُورَةُ القَمَرِ",
+        "englishName": "Al-Qamar",
+        "englishNameTranslation": "The Moon",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 55
+      },
+      "55": {
+        "number": 55,
+        "name": "سُورَةُ الرَّحۡمَٰن",
+        "englishName": "Ar-Rahmaan",
+        "englishNameTranslation": "The Beneficent",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 431,
+    "ayahs": [
+      {
+        "number": 3629,
+        "text": "وَلَا تَ[f:8613[نف]َعُ [h:8614[ٱ][l[ل]شَّفَ[n[ـٰ]عَةُ عِ[f:719[ند]َهُ[o[ۥٓ] إِلَّا لِمَنْ أَذِنَ لَهُۚ[n[ۥ] حَتَّ[o[ىٰٓ] إِذَا فُزِّعَ عَ[f:10996[ن ق]ُلُوبِهِمْ قَالُو[s[اْ] مَاذَا قَالَ رَبُّكُمْۖ قَالُو[s[اْ] [h:10997[ٱ]لْحَقَّۖ وَهُوَ [h:1475[ٱ]لْعَلِىُّ [h:9089[ٱ]لْكَب[p[ِي]رُ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 23,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 172,
+        "sajda": false
+      },
+      {
+        "number": 3630,
+        "text": "۞ قُلْ م[a:6033[َن ي]َرْزُقُك[w:6034[ُم م]ِّنَ [h:7498[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِۖ قُلِ [h:3166[ٱ]للَّهُۖ وَإِ[g[نّ][o[َآ] أَوْ إِيَّاكُمْ لَعَلَىٰ هُدًى أَوْ فِى ضَلَ[n[ـٰ][a:2393[لٍ م]ُّب[p[ِي]نٍ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 24,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3631,
+        "text": "قُل لَّا تُسْــَٔلُونَ عَ[g[مّ][o[َآ] أَ[q:10998[جْ]رَمْنَا وَلَا نُسْــَٔلُ عَ[g[مّ]َا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 25,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3632,
+        "text": "قُلْ يَ[q:3861[جْ]مَعُ بَيْنَنَا رَبُّنَا ثُ[g[مّ]َ يَفْتَحُ بَيْنَنَا بِ[h:370[ٱ]لْحَقِّ وَهُوَ [h:10999[ٱ]لْفَتَّاحُ [h:11000[ٱ]لْعَل[p[ِي]مُ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 26,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3633,
+        "text": "قُلْ أَرُونِىَ [h:11001[ٱ]لَّذِينَ أَلْحَ[q:11002[قْ]ت[c:11003[ُم ب]ِه[n[ِۦ] شُرَك[o[َا]ٓءَۖ كَلَّاۚ بَلْ هُوَ [h:8078[ٱ]للَّهُ [h:9894[ٱ]لْعَزِيزُ [h:681[ٱ]لْحَك[p[ِي]مُ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 27,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3634,
+        "text": "وَم[o[َآ] أَرْسَلْنَ[n[ـٰ]كَ إِلَّا ك[m[َا]ٓفَّ[u:11004[ةً ل]ِّل[g[نّ]َاسِ بَشِي[a:622[رًا و]َنَذِي[a:11005[رًا و]َلَ[n[ـٰ]كِ[g[نّ]َ أَكْثَرَ [h:1374[ٱ][l[ل][g[نّ]َاسِ لَا يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 28,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3635,
+        "text": "وَيَقُولُونَ مَتَىٰ هَ[n[ـٰ]ذَا [h:6081[ٱ]لْوَعْدُ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 29,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3636,
+        "text": "قُل لَّك[w:11006[ُم م]ِّيعَادُ يَوْ[u:11007[مٍ ل]َّا تَسْتَــْٔخِرُونَ عَنْهُ سَاعَ[a:4666[ةً و]َلَا تَسْتَ[q:11008[قْ]دِم[p[ُو]نَ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 30,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 372,
+        "hizbQuarter": 173,
+        "sajda": false
+      },
+      {
+        "number": 3637,
+        "text": "وَقَالَ [h:614[ٱ]لَّذِينَ كَفَرُو[s[اْ] ل[a:265[َن ن]ُّؤْمِنَ بِهَ[n[ـٰ]ذَا [h:11009[ٱ]لْقُرْءَانِ وَلَا بِ[h:315[ٱ]لَّذِى بَيْنَ يَدَيْهِۗ وَلَوْ تَرَ[o[ىٰٓ] إِذِ [h:4244[ٱ][l[ل]ظَّ[n[ـٰ]لِمُونَ مَوْقُوفُونَ عِ[f:264[ند]َ رَبِّهِمْ يَرْجِعُ بَعْضُهُمْ إِلَىٰ بَعْضٍ [h:11010[ٱ]لْقَوْلَ يَقُولُ [h:3992[ٱ]لَّذِينَ [h:10065[ٱ]سْتُضْعِفُو[s[اْ] لِلَّذِينَ [h:7089[ٱ]سْتَكْبَرُو[s[اْ] لَوْل[o[َآ] أَ[f:428[نت]ُمْ لَكُ[g[نّ]َا مُؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 34,
+          "name": "سُورَةُ سَبَإٍ",
+          "englishName": "Saba",
+          "englishNameTranslation": "Sheba",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 54
+        },
+        "numberInSurah": 31,
+        "juz": 22,
+        "manzil": 5,
+        "page": 431,
+        "ruku": 373,
+        "hizbQuarter": 173,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "34": {
+        "number": 34,
+        "name": "سُورَةُ سَبَإٍ",
+        "englishName": "Saba",
+        "englishNameTranslation": "Sheba",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 54
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

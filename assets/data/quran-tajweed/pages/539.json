@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 539,
+    "ayahs": [
+      {
+        "number": 5087,
+        "text": "يَوْمَ تَرَى [h:13317[ٱ]لْمُؤْمِنِينَ وَ[h:5718[ٱ]لْمُؤْمِنَ[n[ـٰ]تِ يَسْعَىٰ نُورُه[c:13318[ُم ب]َيْنَ أَيْدِيهِمْ وَبِأَيْمَ[n[ـٰ]نِه[c:13319[ِم ب]ُشْرَ[n[ٮٰ]كُمُ [h:13320[ٱ]لْيَوْمَ جَ[g[نّ]َ[n[ـٰ][f:1786[تٌ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ خَ[n[ـٰ]لِدِينَ فِيهَا‌ۚ ذ[n[َٲ]لِكَ هُوَ [h:5722[ٱ]لْفَوْزُ [h:2633[ٱ]لْعَظ[p[ِي]مُ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5088,
+        "text": "يَوْمَ يَقُولُ [h:5376[ٱ]لْمُنَ[n[ـٰ]فِقُونَ وَ[h:5691[ٱ]لْمُنَ[n[ـٰ]فِقَ[n[ـٰ]تُ لِلَّذِينَ ءَامَنُو[s[اْ] [h:13321[ٱ][f:13322[نظ]ُرُونَا نَ[q:13323[قْ]تَبِسْ م[a:13324[ِن ن]ُّورِكُمْ قِيلَ [h:13325[ٱ]رْجِعُو[s[اْ] وَر[o[َا]ٓءَكُمْ فَ[h:13326[ٱ]لْتَمِسُو[s[اْ] نُو[f:13327[رًا ف]َضُرِبَ بَيْنَه[c:13328[ُم ب]ِسُو[u:13329[رٍ ل]َّهُ[n[ۥ] بَا[i:13330[بُۢ ب]َاطِنُهُ[n[ۥ] فِيهِ [h:13331[ٱ][l[ل]رَّحْمَةُ وَظَ[n[ـٰ]هِرُهُ[n[ۥ] مِ[f:13332[ن ق]ِبَلِهِ [h:13333[ٱ]لْعَذ[p[َا][q[ب]ُ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5089,
+        "text": "يُنَادُونَهُمْ أَلَمْ نَك[a:3220[ُن م]َّعَكُمْ‌ۖ قَالُو[s[اْ] بَلَىٰ وَلَ[n[ـٰ]كِ[g[نّ]َكُمْ فَتَ[f:13334[نت]ُمْ أَ[f:221[نف]ُسَكُمْ وَتَرَبَّصْتُمْ وَ[h:13335[ٱ]رْتَ[q:13335[بْ]تُمْ وَغَرَّتْكُمُ [h:13336[ٱ]لْأَمَانِىُّ حَتَّىٰ ج[o[َا]ٓءَ أَمْرُ [h:2832[ٱ]للَّهِ وَغَرَّك[c:13337[ُم ب]ِ[h:32[ٱ]للَّهِ [h:10615[ٱ]لْغَر[p[ُو]رُ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5090,
+        "text": "فَ[h:9999[ٱ]لْيَوْمَ لَا يُؤْخَذُ مِ[f:344[نك]ُمْ فِ[q:959[دْ]يَ[a:13338[ةٌ و]َلَا مِنَ [h:523[ٱ]لَّذِينَ كَفَرُو[s[اْ‌ۚ] مَأْوَ[n[ٮٰ]كُمُ [h:13339[ٱ][l[ل][g[نّ]َارُ‌ۖ هِىَ مَوْلَ[n[ـٰ]كُمْ‌ۖ وَبِئْسَ [h:665[ٱ]لْمَص[p[ِي]رُ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 215,
+        "sajda": false
+      },
+      {
+        "number": 5091,
+        "text": "۞ أَلَمْ يَأْنِ لِلَّذِينَ ءَامَن[o[ُوٓ][s[اْ] أَ[f:13340[ن ت]َخْشَعَ قُلُوبُهُمْ لِذِكْرِ [h:13341[ٱ]للَّهِ وَمَا نَزَلَ مِنَ [h:1173[ٱ]لْحَقِّ وَلَا يَكُونُو[s[اْ] كَ[h:2146[ٱ]لَّذِينَ أُوتُو[s[اْ] [h:524[ٱ]لْكِتَ[n[ـٰ]بَ مِ[f:128[ن ق]َ[q:129[بْ]لُ فَطَالَ عَلَيْهِمُ [h:13342[ٱ]لْأَمَدُ فَقَسَتْ قُلُوبُهُمْ‌ۖ وَكَثِي[a:3689[رٌ م]ِّنْهُمْ فَ[n[ـٰ]سِق[p[ُو]نَ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5092,
+        "text": "ٱعْلَم[o[ُوٓ][s[اْ] أَ[g[نّ]َ [h:394[ٱ]للَّهَ يُحْىِ [h:10518[ٱ]لْأَرْضَ بَعْدَ مَوْتِهَا‌ۚ قَ[q:298[دْ] بَيَّ[g[نّ]َا لَكُمُ [h:1221[ٱ]لْأَيَ[n[ـٰ]تِ لَعَلَّكُمْ تَعْقِل[p[ُو]نَ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5093,
+        "text": "إِ[g[نّ]َ [h:13343[ٱ]لْمُصَّدِّقِينَ وَ[h:13344[ٱ]لْمُصَّدِّقَ[n[ـٰ]تِ وَأَ[q:13345[قْ]رَضُو[s[اْ] [h:13346[ٱ]للَّهَ قَرْضًا حَسَ[a:13347[نًا ي]ُضَ[n[ـٰ]عَفُ لَهُمْ وَلَهُمْ أَ[q:2423[جْ][f:13316[رٌ ك]َر[p[ِي]مٌ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 539,
+        "ruku": 473,
+        "hizbQuarter": 216,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "57": {
+        "number": 57,
+        "name": "سُورَةُ الحَدِيدِ",
+        "englishName": "Al-Hadid",
+        "englishNameTranslation": "The Iron",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

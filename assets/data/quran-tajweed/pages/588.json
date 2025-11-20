@@ -1,0 +1,560 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 588,
+    "ayahs": [
+      {
+        "number": 5855,
+        "text": "كَلّ[o[َآ] إِ[g[نّ]َ كِتَ[n[ـٰ]بَ [h:14371[ٱ]لْفُجَّارِ لَفِى سِجّ[p[ِي]نٍ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5856,
+        "text": "وَم[o[َآ] أَ[q:13858[دْ]رَ[n[ٮٰ]كَ مَا سِجّ[p[ِي]نٌ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5857,
+        "text": "كِتَ[n[ـٰ][a:14372[بٌ م]َّرْق[p[ُو]مٌ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5858,
+        "text": "وَيْ[a:14214[لٌ ي]َوْمَئِ[u:12902[ذٍ ل]ِّلْمُكَذِّب[p[ِي]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5859,
+        "text": "ٱلَّذِينَ يُكَذِّبُونَ بِيَوْمِ [h:13931[ٱ][l[ل]دّ[p[ِي]نِ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5860,
+        "text": "وَمَا يُكَذِّبُ بِه[o[ِۦٓ] إِلَّا كُلُّ مُعْتَدٍ أَث[p[ِي]مٍ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5861,
+        "text": "إِذَا تُتْلَىٰ عَلَيْهِ ءَايَ[n[ـٰ]تُنَا قَالَ أَسَ[n[ـٰ]طِيرُ [h:3993[ٱ]لْأَوَّل[p[ِي]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5862,
+        "text": "كَلَّا‌ۖ بَلْۜ رَانَ عَلَىٰ قُلُوبِه[w:14373[ِم م]َّا كَانُو[s[اْ] يَكْسِب[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5863,
+        "text": "كَلّ[o[َآ] إِ[g[نّ]َهُمْ ع[u:14374[َن ر]َّبِّهِمْ يَوْمَئِ[u:14375[ذٍ ل]َّمَحْجُوب[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5864,
+        "text": "ثُ[g[مّ]َ إِ[g[نّ]َهُمْ لَصَالُو[s[اْ] [h:14376[ٱ]لْجَح[p[ِي]مِ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5865,
+        "text": "ثُ[g[مّ]َ يُقَالُ هَ[n[ـٰ]ذَا [h:126[ٱ]لَّذِى كُ[f:100[نت][c:6084[ُم ب]ِه[n[ِۦ] تُكَذِّب[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5866,
+        "text": "كَلّ[o[َآ] إِ[g[نّ]َ كِتَ[n[ـٰ]بَ [h:14377[ٱ]لْأَ[q:2507[بْ]رَارِ لَفِى عِلِّيّ[p[ِي]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5867,
+        "text": "وَم[o[َآ] أَ[q:13858[دْ]رَ[n[ٮٰ]كَ مَا عِلِّيّ[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5868,
+        "text": "كِتَ[n[ـٰ][a:14372[بٌ م]َّرْق[p[ُو]مٌ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5869,
+        "text": "يَشْهَدُهُ [h:14378[ٱ]لْمُقَرَّب[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5870,
+        "text": "إِ[g[نّ]َ [h:14162[ٱ]لْأَ[q:14163[بْ]رَارَ لَفِى نَع[p[ِي]مٍ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5871,
+        "text": "عَلَى [h:8058[ٱ]لْأَر[o[َا]ٓئِكِ يَ[f:1141[نظ]ُر[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5872,
+        "text": "تَعْرِفُ فِى وُجُوهِهِمْ نَضْرَةَ [h:14379[ٱ][l[ل][g[نّ]َع[p[ِي]مِ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5873,
+        "text": "يُسْقَوْنَ م[u:14380[ِن ر]َّحِي[a:14381[قٍ م]َّخْت[p[ُو]مٍ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5874,
+        "text": "خِتَ[n[ـٰ]مُهُ[n[ۥ] مِسْ[a:14382[كٌ‌ۚ و]َفِى ذ[n[َٲ]لِكَ فَلْيَتَنَافَسِ [h:14383[ٱ]لْمُتَنَ[n[ـٰ]فِس[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5875,
+        "text": "وَمِزَاجُهُ[n[ۥ] مِ[f:14384[ن ت]َسْن[p[ِي]مٍ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5876,
+        "text": "عَيْ[a:14166[نًا ي]َشْرَبُ بِهَا [h:14385[ٱ]لْمُقَرَّب[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5877,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ أَ[q:4390[جْ]رَمُو[s[اْ] كَانُو[s[اْ] مِنَ [h:523[ٱ]لَّذِينَ ءَامَنُو[s[اْ] يَضْحَك[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5878,
+        "text": "وَإِذَا مَرُّو[s[اْ] بِهِمْ يَتَغَامَز[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 30,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5879,
+        "text": "وَإِذَا [h:14386[ٱ][f:6732[نق]َلَب[o[ُوٓ][s[اْ] إِلَ[o[ىٰٓ] أَهْلِهِمُ [h:14387[ٱ][f:6732[نق]َلَبُو[s[اْ] فَكِه[p[ِي]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 31,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5880,
+        "text": "وَإِذَا رَأَوْهُمْ قَال[o[ُوٓ][s[اْ] إِ[g[نّ]َ هَ[o[ـٰٓ]ؤُل[o[َا]ٓءِ لَض[m[َا]ٓلّ[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 32,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5881,
+        "text": "وَم[o[َآ] أُرْسِلُو[s[اْ] عَلَيْهِمْ حَ[n[ـٰ]فِظ[p[ِي]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 33,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      },
+      {
+        "number": 5882,
+        "text": "فَ[h:9999[ٱ]لْيَوْمَ [h:14388[ٱ]لَّذِينَ ءَامَنُو[s[اْ] مِنَ [h:5912[ٱ]لْكُفَّارِ يَضْحَك[p[ُو]نَ",
+        "surah": {
+          "number": 83,
+          "name": "سُورَةُ المُطَفِّفِينَ",
+          "englishName": "Al-Mutaffifin",
+          "englishNameTranslation": "Defrauding",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 36
+        },
+        "numberInSurah": 34,
+        "juz": 30,
+        "manzil": 7,
+        "page": 588,
+        "ruku": 525,
+        "hizbQuarter": 235,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "83": {
+        "number": 83,
+        "name": "سُورَةُ المُطَفِّفِينَ",
+        "englishName": "Al-Mutaffifin",
+        "englishNameTranslation": "Defrauding",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 36
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

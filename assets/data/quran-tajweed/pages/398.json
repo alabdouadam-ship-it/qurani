@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 398,
+    "ayahs": [
+      {
+        "number": 3355,
+        "text": "فَأَ[f:4779[نج]َيْنَ[n[ـٰ]هُ وَأَصْحَ[n[ـٰ]بَ [h:10310[ٱ][l[ل]سَّفِينَةِ وَجَعَلْنَ[n[ـٰ]ه[o[َآ] ءَايَ[u:8853[ةً ل]ِّلْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 15,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3356,
+        "text": "وَإِ[q:10311[بْ]ر[n[َٲ]هِيمَ إِذْ قَالَ لِقَوْمِهِ [h:10312[ٱ]عْبُدُو[s[اْ] [h:3704[ٱ]للَّهَ وَ[h:4181[ٱ]تَّقُوهُ‌ۖ ذ[n[َٲ]لِكُمْ خَيْ[u:263[رٌ ل]َّكُمْ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ تَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 16,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3357,
+        "text": "إِ[g[نّ]َمَا تَعْبُدُونَ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ أَوْثَ[n[ـٰ][a:10313[نًا و]َتَخْلُقُونَ إِفْكًا‌ۚ إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ تَعْبُدُونَ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ لَا يَمْلِكُونَ لَكُمْ رِزْ[f:10314[قًا ف]َ[h:10315[ٱ][q:10315[بْ]تَغُو[s[اْ] عِ[f:264[ند]َ [h:408[ٱ]للَّهِ [h:10316[ٱ][l[ل]رِّزْقَ وَ[h:10317[ٱ]عْبُدُوهُ وَ[h:783[ٱ]شْكُرُو[s[اْ] لَهُ[o[ۥٓ‌ۖ] إِلَيْهِ تُرْجَع[p[ُو]نَ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 17,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3358,
+        "text": "وَإِ[f:10318[ن ت]ُكَذِّبُو[s[اْ] فَقَ[q:563[دْ] كَذَّبَ أُمَ[a:10319[مٌ م]ِّ[f:85[ن ق]َ[q:86[بْ]لِكُمْ‌ۖ وَمَا عَلَى [h:3818[ٱ][l[ل]رَّسُولِ إِلَّا [h:3819[ٱ]لْبَلَ[n[ـٰ]غُ [h:3781[ٱ]لْمُب[p[ِي]نُ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 18,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3359,
+        "text": "أَوَلَمْ يَرَوْ[s[اْ] كَيْفَ يُ[q:10320[بْ]دِئُ [h:10321[ٱ]للَّهُ [h:10322[ٱ]لْخَلْقَ ثُ[g[مّ]َ يُعِيدُهُ[o[ۥٓ‌ۚ] إِ[g[نّ]َ ذ[n[َٲ]لِكَ عَلَى [h:412[ٱ]للَّهِ يَس[p[ِي]رٌ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 19,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3360,
+        "text": "قُلْ سِيرُو[s[اْ] فِى [h:44[ٱ]لْأَرْضِ فَ[h:2257[ٱ][f:2257[نظ]ُرُو[s[اْ] كَيْفَ بَدَأَ [h:10323[ٱ]لْخَلْقَ‌ۚ ثُ[g[مّ]َ [h:6078[ٱ]للَّهُ يُ[f:10324[نش]ِئُ [h:10325[ٱ][l[ل][g[نّ]َشْأَةَ [h:10326[ٱ]لْأَخِرَةَ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ عَلَىٰ كُلِّ ش[f:81[َىْءٍ ق]َد[p[ِي]رٌ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 20,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3361,
+        "text": "يُعَذِّبُ م[a:476[َن ي]َش[o[َا]ٓءُ وَيَرْحَمُ م[a:476[َن ي]َش[o[َا]ٓءُ‌ۖ وَإِلَيْهِ تُ[q:10327[قْ]لَب[p[ُو]نَ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 21,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3362,
+        "text": "وَم[o[َآ] أَ[f:428[نت][c:4435[ُم ب]ِمُعْجِزِينَ فِى [h:44[ٱ]لْأَرْضِ وَلَا فِى [h:746[ٱ][l[ل]سَّم[o[َا]ٓءِ‌ۖ وَمَا لَك[w:556[ُم م]ِّ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ م[a:557[ِن و]َلِ[a:558[ىٍّ و]َلَا نَص[p[ِي]رٍ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 22,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 343,
+        "hizbQuarter": 159,
+        "sajda": false
+      },
+      {
+        "number": 3363,
+        "text": "وَ[h:9999[ٱ]لَّذِينَ كَفَرُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِ [h:322[ٱ]للَّهِ وَلِق[o[َا]ٓئِه[o[ِۦٓ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ يَئِسُو[s[اْ] م[u:10328[ِن ر]َّحْمَتِى وَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ لَهُمْ عَذَابٌ أَل[p[ِي]مٌ",
+        "surah": {
+          "number": 29,
+          "name": "سُورَةُ العَنكَبُوتِ",
+          "englishName": "Al-Ankaboot",
+          "englishNameTranslation": "The Spider",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 69
+        },
+        "numberInSurah": 23,
+        "juz": 20,
+        "manzil": 5,
+        "page": 398,
+        "ruku": 344,
+        "hizbQuarter": 159,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "29": {
+        "number": 29,
+        "name": "سُورَةُ العَنكَبُوتِ",
+        "englishName": "Al-Ankaboot",
+        "englishNameTranslation": "The Spider",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 69
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

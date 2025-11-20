@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 260,
+    "ayahs": [
+      {
+        "number": 1784,
+        "text": "وَءَاتَ[n[ـٰ]ك[w:7135[ُم م]ِّ[f:843[ن ك]ُلِّ مَا سَأَلْتُمُوهُ‌ۚ وَإِ[f:7136[ن ت]َعُدُّو[s[اْ] نِعْمَتَ [h:1300[ٱ]للَّهِ لَا تُحْصُوه[o[َآ‌ۗ] إِ[g[نّ]َ [h:7137[ٱ]لْإِ[f:5969[نس]َ[n[ـٰ]نَ لَظَلُو[f:7138[مٌ ك]َفّ[p[َا]رٌ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 34,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 215,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1785,
+        "text": "وَإِذْ قَالَ إِ[q:2003[بْ]ر[n[َٲ]هِيمُ رَبِّ [h:657[ٱ][q:658[جْ]عَلْ هَ[n[ـٰ]ذَا [h:7139[ٱ]لْبَلَدَ ءَامِ[a:7140[نًا و]َ[h:7141[ٱ][q:7141[جْ]نُ[q:7141[بْ]نِى وَبَنِىَّ أ[a:6403[َن ن]َّعْبُدَ [h:7142[ٱ]لْأَصْن[p[َا]مَ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 35,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1786,
+        "text": "رَبِّ إِ[g[نّ]َهُ[g[نّ]َ أَضْلَلْنَ كَثِي[a:3614[رًا م]ِّنَ [h:721[ٱ][l[ل][g[نّ]َاسِ‌ۖ فَمَ[f:7143[ن ت]َبِعَنِى فَإِ[g[نّ]َهُ[n[ۥ] مِ[g[نّ]ِى‌ۖ وَمَنْ عَصَانِى فَإِ[g[نّ]َكَ غَفُو[u:890[رٌ ر]َّح[p[ِي]مٌ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 36,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1787,
+        "text": "رَّبَّن[o[َآ] إِ[g[نّ][o[ِىٓ] أَسْكَ[f:7144[نت]ُ مِ[f:7145[ن ذ]ُرِّيَّتِى بِوَادٍ غَيْرِ ذِى زَرْعٍ عِ[f:264[ند]َ بَيْتِكَ [h:7146[ٱ]لْمُحَرَّمِ رَبَّنَا لِيُقِيمُو[s[اْ] [h:7147[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةَ فَ[h:7148[ٱ][q:7148[جْ]عَلْ أَفْــِٔدَ[a:7149[ةً م]ِّنَ [h:721[ٱ][l[ل][g[نّ]َاسِ تَهْو[o[ِىٓ] إِلَيْهِمْ وَ[h:7150[ٱ]رْزُ[q:7150[قْ]ه[w:7151[ُم م]ِّنَ [h:93[ٱ][l[ل]ثَّمَر[n[َٲ]تِ لَعَلَّهُمْ يَشْكُر[p[ُو]نَ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 37,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1788,
+        "text": "رَبَّن[o[َآ] إِ[g[نّ]َكَ تَعْلَمُ مَا نُخْفِى وَمَا نُعْلِنُ‌ۗ وَمَا يَخْفَىٰ عَلَى [h:412[ٱ]للَّهِ مِ[f:2103[ن ش][f:5402[َىْءٍ ف]ِى [h:44[ٱ]لْأَرْضِ وَلَا فِى [h:746[ٱ][l[ل]سَّم[o[َا]ٓءِ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 38,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1789,
+        "text": "ٱلْحَمْدُ لِلَّهِ [h:3912[ٱ]لَّذِى وَهَبَ لِى عَلَى [h:7152[ٱ]لْكِبَرِ إِسْمَ[n[ـٰ]عِيلَ وَإِسْحَ[n[ـٰ]قَ‌ۚ إِ[g[نّ]َ رَبِّى لَسَمِيعُ [h:7153[ٱ][l[ل]دُّع[o[َا]ٓءِ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 39,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1790,
+        "text": "رَبِّ [h:7154[ٱ][q:6717[جْ]عَلْنِى مُقِيمَ [h:7155[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةِ وَمِ[f:643[ن ذ]ُرِّيَّتِى‌ۚ رَبَّنَا وَتَقَبَّلْ دُع[o[َا]ٓءِ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 40,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1791,
+        "text": "رَبَّنَا [h:2305[ٱ]غْفِرْ لِى وَلِو[n[َٲ]لِدَىَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ [h:7156[ٱ]لْحِس[p[َا][q[ب]ُ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 41,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 216,
+        "hizbQuarter": 104,
+        "sajda": false
+      },
+      {
+        "number": 1792,
+        "text": "وَلَا تَحْسَبَ[g[نّ]َ [h:7157[ٱ]للَّهَ غَ[n[ـٰ]فِلاً عَ[g[مّ]َا يَعْمَلُ [h:7158[ٱ][l[ل]ظَّ[n[ـٰ]لِمُونَ‌ۚ إِ[g[نّ]َمَا يُؤَخِّرُهُمْ لِيَوْ[f:7159[مٍ ت]َشْخَصُ فِيهِ [h:7160[ٱ]لْأَ[q:4305[بْ]صَ[p[ـٰ]رُ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 42,
+        "juz": 13,
+        "manzil": 3,
+        "page": 260,
+        "ruku": 217,
+        "hizbQuarter": 104,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "14": {
+        "number": 14,
+        "name": "سُورَةُ إِبۡرَاهِيمَ",
+        "englishName": "Ibrahim",
+        "englishNameTranslation": "Abraham",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 52
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

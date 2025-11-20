@@ -28,7 +28,6 @@ dependencies:
   flutter_launcher_icons: ^0.14.4
   flutter_native_splash: ^2.4.7
   shared_preferences: ^2.3.2
-  google_fonts: ^6.2.1
   share_plus: ^7.2.1
   in_app_update: ^4.2.2
   webview_flutter: ^4.7.0
@@ -57,6 +56,8 @@ flutter:
     - assets/data/quran-simple/quran.json
     - assets/data/quran-uthmani/pages/
     - assets/data/quran-uthmani/quran.json
+    - assets/data/quran-tajweed/pages/
+    - assets/data/quran-tajweed/quran.json
     - assets/data/quran-english/pages/
     - assets/data/quran-english/quran.json
     - assets/data/quran-french/pages/
@@ -69,3 +70,9 @@ flutter:
       - family: Amiri Quran
         fonts:
           - asset: assets/fonts/AmiriQuran-Regular.ttf
+      - family: KFGQPCHafsSmall
+        fonts:
+          - asset: assets/fonts/KfgqpcHafsUthmanicScriptRegular-nARZ1.ttf
+      - family: KFGQPCHafsLarge
+        fonts:
+          - asset: assets/fonts/KfgqpcHafsUthmanicScriptRegular-1jGEe.ttf

@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 356,
+    "ayahs": [
+      {
+        "number": 2835,
+        "text": "يُقَلِّبُ [h:9477[ٱ]للَّهُ [h:9478[ٱ]لَّيْلَ وَ[h:6117[ٱ][l[ل][g[نّ]َهَارَ‌ۚ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَعِ[q:1764[بْ]رَ[u:1765[ةً ل]ِّأُ[s[وْ]لِى [h:1766[ٱ]لْأَ[q:1767[بْ]صَ[p[ـٰ]رِ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 44,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2836,
+        "text": "وَ[h:9999[ٱ]للَّهُ خَلَقَ كُلَّ د[m[َا]ٓبَّ[a:9479[ةٍ م]ّ[a:840[ِن م]ّ[o[َا]ٓ[f:9480[ءٍ‌ۖ ف]َمِنْه[w:1456[ُم م]ّ[a:9481[َن ي]َمْشِى عَلَىٰ بَ[q:9482[طْ]نِه[n[ِۦ] وَمِنْه[w:1106[ُم م]ّ[a:9481[َن ي]َمْشِى عَلَىٰ رِ[q:9483[جْ]لَيْنِ وَمِنْه[w:1106[ُم م]ّ[a:9481[َن ي]َمْشِى عَلَ[o[ىٰٓ] أَرْبَ[a:9484[عٍ‌ۚ ي]َخْلُقُ [h:9485[ٱ]للَّهُ مَا يَش[o[َا]ٓءُ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ عَلَىٰ كُلِّ ش[f:81[َىْءٍ ق]َد[p[ِي]رٌ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 45,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2837,
+        "text": "لَّقَ[q:2389[دْ] أَ[f:515[نز]َلْن[o[َآ] ءَايَ[n[ـٰ][a:9418[تٍ م]ُّبَيِّنَ[n[ـٰ][a:9486[تٍ‌ۚ و]َ[h:72[ٱ]للَّهُ يَهْدِى م[a:476[َن ي]َش[o[َا]ٓءُ إِلَىٰ صِر[n[َٲ][a:726[طٍ م]ُّسْتَق[p[ِي]مٍ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 46,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2838,
+        "text": "وَيَقُولُونَ ءَامَ[g[نّ]َا بِ[h:32[ٱ]للَّهِ وَبِ[h:9487[ٱ][l[ل]رَّسُولِ وَأَطَعْنَا ثُ[g[مّ]َ يَتَوَلَّىٰ فَرِي[a:388[قٌ م]ِّنْه[w:8433[ُم م]ّ[i:146[ِنۢ ب]َعْدِ ذ[n[َٲ]لِكَ‌ۚ وَم[o[َآ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ بِ[h:3560[ٱ]لْمُؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 47,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2839,
+        "text": "وَإِذَا دُع[o[ُوٓ][s[اْ] إِلَى [h:1637[ٱ]للَّهِ وَرَسُولِه[n[ِۦ] لِيَحْكُمَ بَيْنَهُمْ إِذَا فَرِي[a:388[قٌ م]ِّنْه[w:9488[ُم م]ُّعْرِض[p[ُو]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 48,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2840,
+        "text": "وَإ[a:4454[ِن ي]َك[u:9489[ُن ل]َّهُمُ [h:570[ٱ]لْحَقُّ يَأْت[o[ُوٓ][s[اْ] إِلَيْهِ مُذْعِن[p[ِي]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 49,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2841,
+        "text": "أَفِى قُلُوبِه[w:39[ِم م]َّرَضٌ أَمِ [h:9490[ٱ]رْتَاب[o[ُوٓ][s[اْ] أَمْ يَخَافُونَ أ[a:9491[َن ي]َحِيفَ [h:9492[ٱ]للَّهُ عَلَيْهِمْ وَرَسُولُهُ[n[ۥ]‌ۚ بَلْ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:1285[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ُو]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 50,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 306,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2842,
+        "text": "إِ[g[نّ]َمَا كَانَ قَوْلَ [h:9493[ٱ]لْمُؤْمِنِينَ إِذَا دُع[o[ُوٓ][s[اْ] إِلَى [h:1637[ٱ]للَّهِ وَرَسُولِه[n[ِۦ] لِيَحْكُمَ بَيْنَهُمْ أ[a:6263[َن ي]َقُولُو[s[اْ] سَمِعْنَا وَأَطَعْنَا‌ۚ وَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:23[ٱ]لْمُفْلِح[p[ُو]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 51,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 307,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2843,
+        "text": "وَم[a:2629[َن ي]ُطِعِ [h:2630[ٱ]للَّهَ وَرَسُولَهُ[n[ۥ] وَيَخْشَ [h:9494[ٱ]للَّهَ وَيَتَّ[q:9495[قْ]هِ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:5510[ٱ]لْف[o[َا]ٓئِز[p[ُو]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 52,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 307,
+        "hizbQuarter": 142,
+        "sajda": false
+      },
+      {
+        "number": 2844,
+        "text": "۞ وَأَ[q:4324[قْ]سَمُو[s[اْ] بِ[h:32[ٱ]للَّهِ جَهْدَ أَيْمَ[n[ـٰ]نِهِمْ لَئِنْ أَمَرْتَهُمْ لَيَخْرُجُ[g[نّ]َ‌ۖ قُل لَّا تُ[q:9496[قْ]سِمُو[s[اْ‌ۖ] طَاعَ[a:9497[ةٌ م]َّعْرُوفَةٌ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ خَبِي[i:2335[رُۢ ب]ِمَا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 24,
+          "name": "سُورَةُ النُّورِ",
+          "englishName": "An-Noor",
+          "englishNameTranslation": "The Light",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 64
+        },
+        "numberInSurah": 53,
+        "juz": 18,
+        "manzil": 4,
+        "page": 356,
+        "ruku": 307,
+        "hizbQuarter": 143,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "24": {
+        "number": 24,
+        "name": "سُورَةُ النُّورِ",
+        "englishName": "An-Noor",
+        "englishNameTranslation": "The Light",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 64
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

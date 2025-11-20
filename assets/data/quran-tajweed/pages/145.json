@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 145,
+    "ayahs": [
+      {
+        "number": 921,
+        "text": "وَلِكُ[f:4427[لٍّ د]َرَجَ[n[ـٰ][a:4428[تٌ م]ِّ[g[مّ]َا عَمِلُو[s[اْ‌ۚ] وَمَا رَبُّكَ بِغَ[n[ـٰ]فِلٍ عَ[g[مّ]َا يَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 132,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 922,
+        "text": "وَرَبُّكَ [h:4429[ٱ]لْغَنِىُّ ذُو [h:4430[ٱ][l[ل]رَّحْمَةِ‌ۚ إ[a:3197[ِن ي]َشَأْ يُذْهِ[q:3198[بْ]كُمْ وَيَسْتَخْلِفْ م[i:4431[ِنۢ ب]َعْدِك[w:4432[ُم م]َّا يَش[o[َا]ٓءُ كَم[o[َآ] أَ[f:4272[نش]َأَك[w:4273[ُم م]ِّ[f:4433[ن ذ]ُرِّيَّةِ قَوْمٍ ءَاخَر[p[ِي]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 133,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 923,
+        "text": "إِ[g[نّ]َ مَا تُوعَدُونَ لَأَ[a:4434[تٍ‌ۖ و]َم[o[َآ] أَ[f:428[نت][c:4435[ُم ب]ِمُعْجِز[p[ِي]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 134,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 924,
+        "text": "قُلْ يَ[n[ـٰ]قَوْمِ [h:4436[ٱ]عْمَلُو[s[اْ] عَلَىٰ مَكَانَتِكُمْ إِ[g[نّ]ِى عَامِ[f:4437[لٌ‌ۖ ف]َسَوْفَ تَعْلَمُونَ مَ[f:4438[ن ت]َكُونُ لَهُ[n[ۥ] عَ[n[ـٰ]قِبَةُ [h:4439[ٱ][l[ل]دَّارِ‌ۗ إِ[g[نّ]َهُ[n[ۥ] لَا يُفْلِحُ [h:3981[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ُو]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 135,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 925,
+        "text": "وَجَعَلُو[s[اْ] لِلَّهِ مِ[g[مّ]َا ذَرَأَ مِنَ [h:4440[ٱ]لْحَرْثِ وَ[h:1778[ٱ]لْأَنْعَ[n[ـٰ]مِ نَصِي[f:4441[بًا ف]َقَالُو[s[اْ] هَ[n[ـٰ]ذَا لِلَّهِ بِزَعْمِهِمْ وَهَ[n[ـٰ]ذَا لِشُرَك[o[َا]ٓئِنَا‌ۖ فَمَا كَانَ لِشُرَك[o[َا]ٓئِهِمْ فَلَا يَصِلُ إِلَى [h:1637[ٱ]للَّهِ‌ۖ وَمَا كَانَ لِلَّهِ فَهُوَ يَصِلُ إِلَىٰ شُرَك[o[َا]ٓئِهِمْ‌ۗ س[o[َا]ٓءَ مَا يَحْكُم[p[ُو]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 136,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      },
+      {
+        "number": 926,
+        "text": "وَكَذ[n[َٲ]لِكَ زَيَّنَ لِكَثِي[a:4442[رٍ م]ِّنَ [h:699[ٱ]لْمُشْرِكِينَ قَتْلَ أَوْلَ[n[ـٰ]دِهِمْ شُرَك[o[َا]ٓؤُهُمْ لِيُرْدُوهُمْ وَلِيَلْبِسُو[s[اْ] عَلَيْهِمْ دِينَهُمْ‌ۖ وَلَوْ ش[o[َا]ٓءَ [h:78[ٱ]للَّهُ مَا فَعَلُوهُ‌ۖ فَذَرْهُمْ وَمَا يَفْتَر[p[ُو]نَ",
+        "surah": {
+          "number": 6,
+          "name": "سُورَةُ الأَنۡعَامِ",
+          "englishName": "Al-An'aam",
+          "englishNameTranslation": "The Cattle",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 165
+        },
+        "numberInSurah": 137,
+        "juz": 8,
+        "manzil": 2,
+        "page": 145,
+        "ruku": 117,
+        "hizbQuarter": 58,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "6": {
+        "number": 6,
+        "name": "سُورَةُ الأَنۡعَامِ",
+        "englishName": "Al-An'aam",
+        "englishNameTranslation": "The Cattle",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 165
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

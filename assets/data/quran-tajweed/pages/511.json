@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 511,
+    "ayahs": [
+      {
+        "number": 4584,
+        "text": "إِ[g[نّ]َا فَتَحْنَا لَكَ فَتْ[a:12625[حًا م]ُّبِينًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 1,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4585,
+        "text": "لِّيَغْفِرَ لَكَ [h:12626[ٱ]للَّهُ مَا تَقَدَّمَ مِ[f:12627[ن ذ]َ[i:12628[نۢب]ِكَ وَمَا تَأَخَّرَ وَيُتِ[g[مّ]َ نِعْمَتَهُ[n[ۥ] عَلَيْكَ وَيَهْدِيَكَ صِر[n[َٲ][a:2898[طًا م]ُّسْتَقِيمًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 2,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4586,
+        "text": "وَيَ[f:12629[نص]ُرَكَ [h:12630[ٱ]للَّهُ نَصْرًا عَزِيزًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 3,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4587,
+        "text": "هُوَ [h:153[ٱ]لَّذ[o[ِىٓ] أَ[f:471[نز]َلَ [h:12631[ٱ][l[ل]سَّكِينَةَ فِى قُلُوبِ [h:12632[ٱ]لْمُؤْمِنِينَ لِيَزْدَاد[o[ُوٓ][s[اْ] إِيمَ[n[ـٰ][a:12633[نًا م]َّعَ إِيمَ[n[ـٰ]نِهِمْ‌ۗ وَلِلَّهِ جُنُودُ [h:12634[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ عَلِيمًا حَكِيمًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 4,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4588,
+        "text": "لِّيُ[q:12635[دْ]خِلَ [h:12636[ٱ]لْمُؤْمِنِينَ وَ[h:5718[ٱ]لْمُؤْمِنَ[n[ـٰ]تِ جَ[g[نّ]َ[n[ـٰ][f:119[تٍ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ خَ[n[ـٰ]لِدِينَ فِيهَا وَيُكَفِّرَ عَنْهُمْ سَيِّـَٔـاتِهِمْ‌ۚ وَكَانَ ذ[n[َٲ]لِكَ عِ[f:264[ند]َ [h:408[ٱ]للَّهِ فَوْزًا عَظِيمًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 5,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4589,
+        "text": "وَيُعَذِّبَ [h:10755[ٱ]لْمُنَ[n[ـٰ]فِقِينَ وَ[h:5699[ٱ]لْمُنَ[n[ـٰ]فِقَ[n[ـٰ]تِ وَ[h:10916[ٱ]لْمُشْرِكِينَ وَ[h:10917[ٱ]لْمُشْرِكَ[n[ـٰ]تِ [h:12637[ٱ][l[ل]ظّ[m[َا]ٓ[g[نّ]ِينَ بِ[h:32[ٱ]للَّهِ ظَ[g[نّ]َ [h:12638[ٱ][l[ل]سَّوْءِ‌ۚ عَلَيْهِمْ د[o[َا]ٓئِرَةُ [h:5798[ٱ][l[ل]سَّوْءِ‌ۖ وَغَضِبَ [h:3036[ٱ]للَّهُ عَلَيْهِمْ وَلَعَنَهُمْ وَأَعَدَّ لَهُمْ جَهَ[g[نّ]َمَ‌ۖ وَس[o[َا]ٓءَتْ مَصِيرًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 6,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4590,
+        "text": "وَلِلَّهِ جُنُودُ [h:12634[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ عَزِيزًا حَكِيمًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 7,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4591,
+        "text": "إِ[g[نّ][o[َآ] أَرْسَلْنَ[n[ـٰ]كَ شَ[n[ـٰ]هِ[a:10848[دًا و]َمُبَشِّ[a:10849[رًا و]َنَذِيرًا",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 8,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      },
+      {
+        "number": 4592,
+        "text": "لِّتُؤْمِنُو[s[اْ] بِ[h:32[ٱ]للَّهِ وَرَسُولِه[n[ِۦ] وَتُعَزِّرُوهُ وَتُوَقِّرُوهُ وَتُسَبِّحُوهُ بُكْرَ[a:9566[ةً و]َأَصِيلاً",
+        "surah": {
+          "number": 48,
+          "name": "سُورَةُ الفَتۡحِ",
+          "englishName": "Al-Fath",
+          "englishNameTranslation": "The Victory",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 9,
+        "juz": 26,
+        "manzil": 6,
+        "page": 511,
+        "ruku": 446,
+        "hizbQuarter": 204,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "48": {
+        "number": 48,
+        "name": "سُورَةُ الفَتۡحِ",
+        "englishName": "Al-Fath",
+        "englishNameTranslation": "The Victory",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

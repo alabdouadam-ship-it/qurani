@@ -1,0 +1,294 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 563,
+    "ayahs": [
+      {
+        "number": 5254,
+        "text": "وَأَسِرُّو[s[اْ] قَوْلَكُمْ أَوِ [h:13782[ٱ][q:13783[جْ]هَرُو[s[اْ] بِه[o[ِۦٓ‌ۖ] إِ[g[نّ]َهُ[n[ۥ] عَلِي[i:2196[مُۢ ب]ِذَاتِ [h:2197[ٱ][l[ل]صُّد[p[ُو]رِ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 13,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5255,
+        "text": "أَلَا يَعْلَمُ مَنْ خَلَقَ وَهُوَ [h:4309[ٱ][l[ل]لَّطِيفُ [h:4310[ٱ]لْخَب[p[ِي]رُ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 14,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 496,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5256,
+        "text": "هُوَ [h:153[ٱ]لَّذِى جَعَلَ لَكُمُ [h:87[ٱ]لْأَرْضَ ذَلُول[f:13784[اً ف]َ[h:13785[ٱ]مْشُو[s[اْ] فِى مَنَاكِبِهَا وَكُلُو[s[اْ] م[u:13786[ِن ر]ِّزْقِه[n[ِۦ]‌ۖ وَإِلَيْهِ [h:13787[ٱ][l[ل][g[نّ]ُش[p[ُو]رُ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 15,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5257,
+        "text": "ءَأَمِ[f:13788[نت][w:13789[ُم م]َّ[f:2074[ن ف]ِى [h:746[ٱ][l[ل]سَّم[o[َا]ٓءِ أ[a:7417[َن ي]َخْسِفَ بِكُمُ [h:13790[ٱ]لْأَرْضَ فَإِذَا هِىَ تَم[p[ُو]رُ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 16,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5258,
+        "text": "أَمْ أَمِ[f:1062[نت][w:13791[ُم م]َّ[f:2074[ن ف]ِى [h:746[ٱ][l[ل]سَّم[o[َا]ٓءِ أ[a:10505[َن ي]ُرْسِلَ عَلَيْكُمْ حَاصِ[f:13792[بًا‌ۖ ف]َسَتَعْلَمُونَ كَيْفَ نَذ[p[ِي]رِ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 17,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5259,
+        "text": "وَلَقَ[q:341[دْ] كَذَّبَ [h:4507[ٱ]لَّذِينَ مِ[f:617[ن ق]َ[q:618[بْ]لِهِمْ فَكَيْفَ كَانَ نَك[p[ِي]رِ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 18,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5260,
+        "text": "أَوَلَمْ يَرَوْ[s[اْ] إِلَى [h:7520[ٱ][l[ل]طَّيْرِ فَوْقَهُمْ صَ[m[ـٰٓ]فَّ[n[ـٰ][a:13793[تٍ و]َيَ[q:13794[قْ]بِضْنَ‌ۚ مَا يُمْسِكُهُ[g[نّ]َ إِلَّا [h:13795[ٱ][l[ل]رَّحْمَ[n[ـٰ]نُ‌ۚ إِ[g[نّ]َهُ[n[ۥ] بِكُلِّ شَىْ[i:13796[ءِۭ ب]َص[p[ِي]رٌ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 19,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5261,
+        "text": "أَ[g[مّ]َنْ هَ[n[ـٰ]ذَا [h:126[ٱ]لَّذِى هُوَ جُن[u:13797[دٌ ل]َّكُمْ يَ[f:2381[نص]ُرُك[w:2382[ُم م]ِّ[f:107[ن د]ُونِ [h:12269[ٱ][l[ل]رَّحْمَ[n[ـٰ]نِ‌ۚ إِنِ [h:13798[ٱ]لْكَ[n[ـٰ]فِرُونَ إِلَّا فِى غُر[p[ُو]رٍ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 20,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5262,
+        "text": "أَ[g[مّ]َنْ هَ[n[ـٰ]ذَا [h:126[ٱ]لَّذِى يَرْزُقُكُمْ إِنْ أَمْسَكَ رِزْقَهُ[n[ۥ]‌ۚ بَل لَّجُّو[s[اْ] فِى عُتُ[a:13799[وٍّ و]َنُف[p[ُو]رٍ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 21,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5263,
+        "text": "أَفَم[a:13800[َن ي]َمْشِى مُكِبًّا عَلَىٰ وَ[q:6818[جْ]هِه[o[ِۦٓ] أَهْدَ[o[ىٰٓ] أَ[g[مّ][a:13801[َن ي]َمْشِى سَوِيًّا عَلَىٰ صِر[n[َٲ][a:726[طٍ م]ُّسْتَق[p[ِي]مٍ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 22,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5264,
+        "text": "قُلْ هُوَ [h:153[ٱ]لَّذ[o[ِىٓ] أَ[f:4272[نش]َأَكُمْ وَجَعَلَ لَكُمُ [h:7518[ٱ][l[ل]سَّمْعَ وَ[h:6037[ٱ]لْأَ[q:6037[بْ]صَ[n[ـٰ]رَ وَ[h:7519[ٱ]لْأَفْــِٔدَةَ‌ۖ قَلِيل[a:4583[اً م]َّا تَشْكُر[p[ُو]نَ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 23,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5265,
+        "text": "قُلْ هُوَ [h:153[ٱ]لَّذِى ذَرَأَكُمْ فِى [h:44[ٱ]لْأَرْضِ وَإِلَيْهِ تُحْشَر[p[ُو]نَ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 24,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5266,
+        "text": "وَيَقُولُونَ مَتَىٰ هَ[n[ـٰ]ذَا [h:6081[ٱ]لْوَعْدُ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 25,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      },
+      {
+        "number": 5267,
+        "text": "قُلْ إِ[g[نّ]َمَا [h:12490[ٱ]لْعِلْمُ عِ[f:264[ند]َ [h:408[ٱ]للَّهِ وَإِ[g[نّ]َم[o[َآ] أَنَا۟ نَذِي[a:5164[رٌ م]ُّب[p[ِي]نٌ",
+        "surah": {
+          "number": 67,
+          "name": "سُورَةُ المُلۡكِ",
+          "englishName": "Al-Mulk",
+          "englishNameTranslation": "The Sovereignty",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 26,
+        "juz": 29,
+        "manzil": 7,
+        "page": 563,
+        "ruku": 497,
+        "hizbQuarter": 225,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "67": {
+        "number": 67,
+        "name": "سُورَةُ المُلۡكِ",
+        "englishName": "Al-Mulk",
+        "englishNameTranslation": "The Sovereignty",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

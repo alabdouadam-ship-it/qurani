@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 499,
+    "ayahs": [
+      {
+        "number": 4474,
+        "text": "ح[m[مٓ]",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 1,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4475,
+        "text": "تَ[f:10623[نز]ِيلُ [h:10624[ٱ]لْكِتَ[n[ـٰ]بِ مِنَ [h:321[ٱ]للَّهِ [h:11613[ٱ]لْعَزِيزِ [h:2229[ٱ]لْحَك[p[ِي]مِ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 2,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4476,
+        "text": "إِ[g[نّ]َ فِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ لَأَيَ[n[ـٰ][u:12387[تٍ ل]ِّلْمُؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 3,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4477,
+        "text": "وَفِى خَلْقِكُمْ وَمَا يَبُثُّ مِ[f:4026[ن د][m[َا]ٓبَّةٍ ءَايَ[n[ـٰ][u:12388[تٌ ل]ِّقَوْ[a:621[مٍ ي]ُوقِن[p[ُو]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 4,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4478,
+        "text": "وَ[h:9999[ٱ]خْتِلَ[n[ـٰ]فِ [h:833[ٱ]لَّيْلِ وَ[h:834[ٱ][l[ل][g[نّ]َهَارِ وَم[o[َآ] أَ[f:471[نز]َلَ [h:472[ٱ]للَّهُ مِنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[u:6099[ِن ر]ِّزْ[f:12389[قٍ ف]َأَحْيَا بِهِ [h:842[ٱ]لْأَرْضَ بَعْدَ مَوْتِهَا وَتَصْرِيفِ [h:845[ٱ][l[ل]رِّيَ[n[ـٰ]حِ ءَايَ[n[ـٰ][u:12388[تٌ ل]ِّقَوْ[a:850[مٍ ي]َعْقِل[p[ُو]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 5,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4479,
+        "text": "تِلْكَ ءَايَ[n[ـٰ]تُ [h:1442[ٱ]للَّهِ نَتْلُوهَا عَلَيْكَ بِ[h:370[ٱ]لْحَقِّ‌ۖ فَبِأَىِّ حَدِي[i:12390[ثِۭ ب]َعْدَ [h:12391[ٱ]للَّهِ وَءَايَ[n[ـٰ]تِه[n[ِۦ] يُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 6,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4480,
+        "text": "وَيْ[u:12392[لٌ ل]ِّكُلِّ أَفَّاكٍ أَث[p[ِي]مٍ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 7,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4481,
+        "text": "يَسْمَعُ ءَايَ[n[ـٰ]تِ [h:1298[ٱ]للَّهِ تُتْلَىٰ عَلَيْهِ ثُ[g[مّ]َ يُصِرُّ مُسْتَكْبِ[f:10551[رًا ك]َأ[u:2914[َن ل]َّمْ يَسْمَعْهَا‌ۖ فَبَشِّرْهُ بِعَذَابٍ أَل[p[ِي]مٍ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 8,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4482,
+        "text": "وَإِذَا عَلِمَ مِنْ ءَايَ[n[ـٰ]تِنَا شَيْــًٔا [h:12393[ٱ]تَّخَذَهَا هُزُوًا‌ۚ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ لَهُمْ عَذَا[a:478[بٌ م]ُّه[p[ِي]نٌ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 9,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4483,
+        "text": "مّ[a:12394[ِن و]َر[o[َا]ٓئِهِمْ جَهَ[g[نّ]َمُ‌ۖ وَلَا يُغْنِى عَنْه[w:3985[ُم م]َّا كَسَبُو[s[اْ] شَيْـ[a:232[ـًٔا و]َلَا مَا [h:12395[ٱ]تَّخَذُو[s[اْ] مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ أَوْلِي[o[َا]ٓءَ‌ۖ وَلَهُمْ عَذَابٌ عَظ[p[ِي]مٌ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 10,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4484,
+        "text": "هَ[n[ـٰ]ذَا هُ[a:12396[دًى‌ۖ و]َ[h:37[ٱ]لَّذِينَ كَفَرُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِ رَبِّهِمْ لَهُمْ عَذَا[a:10923[بٌ م]ّ[u:10924[ِن ر]ِّ[q:10925[جْ]زٍ أَل[p[ِي]مٌ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 11,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 434,
+        "hizbQuarter": 199,
+        "sajda": false
+      },
+      {
+        "number": 4485,
+        "text": "۞ ٱللَّهُ [h:4738[ٱ]لَّذِى سَخَّرَ لَكُمُ [h:12397[ٱ]لْبَحْرَ لِتَ[q:7132[جْ]رِىَ [h:12398[ٱ]لْفُلْكُ فِيهِ بِأَمْرِه[n[ِۦ] وَلِتَ[q:7353[بْ]تَغُو[s[اْ] مِ[f:475[ن ف]َضْلِه[n[ِۦ] وَلَعَلَّكُمْ تَشْكُر[p[ُو]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 12,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      },
+      {
+        "number": 4486,
+        "text": "وَسَخَّرَ لَك[w:154[ُم م]َّا فِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَمَا فِى [h:44[ٱ]لْأَرْضِ جَمِي[a:12399[عًا م]ِّنْهُ‌ۚ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[n[ـٰ][u:849[تٍ ل]ِّقَوْ[a:6018[مٍ ي]َتَفَكَّر[p[ُو]نَ",
+        "surah": {
+          "number": 45,
+          "name": "سُورَةُ الجَاثِيَةِ",
+          "englishName": "Al-Jaathiya",
+          "englishNameTranslation": "Crouching",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 37
+        },
+        "numberInSurah": 13,
+        "juz": 25,
+        "manzil": 6,
+        "page": 499,
+        "ruku": 435,
+        "hizbQuarter": 200,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "45": {
+        "number": 45,
+        "name": "سُورَةُ الجَاثِيَةِ",
+        "englishName": "Al-Jaathiya",
+        "englishNameTranslation": "Crouching",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 37
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

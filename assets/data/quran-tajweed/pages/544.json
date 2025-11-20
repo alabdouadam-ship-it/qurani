@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 544,
+    "ayahs": [
+      {
+        "number": 5116,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:541[ٱ]لَّذِينَ ءَامَن[o[ُوٓ][s[اْ] إِذَا نَ[n[ـٰ]جَيْتُمُ [h:13415[ٱ][l[ل]رَّسُولَ فَقَدِّمُو[s[اْ] بَيْنَ يَدَىْ نَ[q:13416[جْ]وَ[n[ٮٰ]كُمْ صَدَقَ[f:13417[ةً‌ۚ ذ][n[َٲ]لِكَ خَيْ[u:263[رٌ ل]َّكُمْ وَأَ[q:1307[طْ]هَرُ‌ۚ فَإ[u:110[ِن ل]َّمْ تَجِدُو[s[اْ] فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ غَفُو[u:890[رٌ ر]َّح[p[ِي]مٌ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 12,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5117,
+        "text": "ءَأَشْفَ[q:13418[قْ]تُمْ أَ[f:13419[ن ت]ُقَدِّمُو[s[اْ] بَيْنَ يَدَىْ نَ[q:13416[جْ]وَ[n[ٮٰ]كُمْ صَدَقَ[n[ـٰ][f:13420[تٍ‌ۚ ف]َإِذْ لَمْ تَفْعَلُو[s[اْ] وَتَابَ [h:13421[ٱ]للَّهُ عَلَيْكُمْ فَأَقِيمُو[s[اْ] [h:3095[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةَ وَءَاتُو[s[اْ] [h:215[ٱ][l[ل]زَّكَ[s[و][n[ٲ]ةَ وَأَطِيعُو[s[اْ] [h:2238[ٱ]للَّهَ وَرَسُولَهُ[n[ۥ]‌ۚ وَ[h:72[ٱ]للَّهُ خَبِي[i:2335[رُۢ ب]ِمَا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 13,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 477,
+        "hizbQuarter": 217,
+        "sajda": false
+      },
+      {
+        "number": 5118,
+        "text": "۞ أَلَمْ تَرَ إِلَى [h:1372[ٱ]لَّذِينَ تَوَلَّوْ[s[اْ] قَوْمًا غَضِبَ [h:13422[ٱ]للَّهُ عَلَيْه[w:3946[ِم م]َّا ه[w:5658[ُم م]ِّ[f:344[نك]ُمْ وَلَا مِنْهُمْ وَيَحْلِفُونَ عَلَى [h:13423[ٱ]لْكَذِبِ وَهُمْ يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 14,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5119,
+        "text": "أَعَدَّ [h:5775[ٱ]للَّهُ لَهُمْ عَذَا[f:1966[بًا ش]َدِيدًا‌ۖ إِ[g[نّ]َهُمْ س[o[َا]ٓءَ مَا كَانُو[s[اْ] يَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 15,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5120,
+        "text": "ٱتَّخَذ[o[ُوٓ][s[اْ] أَيْمَ[n[ـٰ]نَهُمْ جُ[g[نّ]َ[f:13424[ةً ف]َصَدُّو[s[اْ] عَ[f:1203[ن س]َبِيلِ [h:788[ٱ]للَّهِ فَلَهُمْ عَذَا[a:478[بٌ م]ُّه[p[ِي]نٌ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 16,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5121,
+        "text": "لَّ[f:1752[ن ت]ُغْنِىَ عَنْهُمْ أَمْو[n[َٲ]لُهُمْ وَل[o[َآ] أَوْلَ[n[ـٰ]دُه[w:1753[ُم م]ِّنَ [h:321[ٱ]للَّهِ شَيْــًٔا‌ۚ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ أَصْحَ[n[ـٰ]بُ [h:201[ٱ][l[ل][g[نّ]َارِ‌ۖ هُمْ فِيهَا خَ[n[ـٰ]لِد[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 17,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5122,
+        "text": "يَوْمَ يَ[q:4022[بْ]عَثُهُمُ [h:4023[ٱ]للَّهُ جَمِي[f:13425[عًا ف]َيَحْلِفُونَ لَهُ[n[ۥ] كَمَا يَحْلِفُونَ لَكُمْ‌ۖ وَيَحْسَبُونَ أَ[g[نّ]َهُمْ عَلَىٰ شَىْءٍ‌ۚ أَل[o[َآ] إِ[g[نّ]َهُمْ هُمُ [h:7594[ٱ]لْكَ[n[ـٰ]ذِب[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 18,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5123,
+        "text": "ٱسْتَحْوَذَ عَلَيْهِمُ [h:13426[ٱ][l[ل]شَّيْطَ[n[ـٰ]نُ فَأَ[f:13427[نس]َ[n[ـٰ]هُمْ ذِكْرَ [h:13428[ٱ]للَّهِ‌ۚ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ حِزْبُ [h:13429[ٱ][l[ل]شَّيْطَ[n[ـٰ]نِ‌ۚ أَل[o[َآ] إِ[g[نّ]َ حِزْبَ [h:13430[ٱ][l[ل]شَّيْطَ[n[ـٰ]نِ هُمُ [h:150[ٱ]لْخَ[n[ـٰ]سِر[p[ُو]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 19,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5124,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ يُح[m[َا]ٓدُّونَ [h:13395[ٱ]للَّهَ وَرَسُولَهُ[o[ۥٓ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ فِى [h:13431[ٱ]لْأَذَلّ[p[ِي]نَ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 20,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      },
+      {
+        "number": 5125,
+        "text": "كَتَبَ [h:989[ٱ]للَّهُ لَأَغْلِبَ[g[نّ]َ أَنَا۟ وَرُسُل[o[ِىٓ‌ۚ] إِ[g[نّ]َ [h:80[ٱ]للَّهَ قَوِىٌّ عَز[p[ِي]زٌ",
+        "surah": {
+          "number": 58,
+          "name": "سُورَةُ المُجَادلَةِ",
+          "englishName": "Al-Mujaadila",
+          "englishNameTranslation": "The Pleading Woman",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 22
+        },
+        "numberInSurah": 21,
+        "juz": 28,
+        "manzil": 7,
+        "page": 544,
+        "ruku": 478,
+        "hizbQuarter": 218,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "58": {
+        "number": 58,
+        "name": "سُورَةُ المُجَادلَةِ",
+        "englishName": "Al-Mujaadila",
+        "englishNameTranslation": "The Pleading Woman",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 22
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

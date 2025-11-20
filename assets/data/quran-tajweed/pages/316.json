@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 316,
+    "ayahs": [
+      {
+        "number": 2413,
+        "text": "قَالُو[s[اْ] يَ[n[ـٰ]مُوسَ[o[ىٰٓ] إِ[g[مّ][o[َآ] أَ[f:4922[ن ت]ُلْقِىَ وَإِ[g[مّ][o[َآ] أ[a:4923[َن ن]َّكُونَ أَوَّلَ مَنْ أَلْقَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 65,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2414,
+        "text": "قَالَ بَلْ أَلْقُو[s[اْ‌ۖ] فَإِذَا حِبَالُهُمْ وَعِصِيُّهُمْ يُخَيَّلُ إِلَيْهِ مِ[f:8528[ن س]ِحْرِهِمْ أَ[g[نّ]َهَا تَسْعَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 66,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2415,
+        "text": "فَأَوْجَسَ فِى نَفْسِه[n[ِۦ] خِيفَ[a:8529[ةً م]ُّوسَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 67,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2416,
+        "text": "قُلْنَا لَا تَخَفْ إِ[g[نّ]َكَ أَ[f:169[نت]َ [h:8530[ٱ]لْأَعْلَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 68,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2417,
+        "text": "وَأَلْقِ مَا فِى يَمِينِكَ تَلْقَفْ مَا صَنَع[o[ُوٓ[s[اْ]‌ۖ] إِ[g[نّ]َمَا صَنَعُو[s[اْ] كَيْدُ سَ[n[ـٰ]حِ[a:8531[رٍ‌ۖ و]َلَا يُفْلِحُ [h:8532[ٱ][l[ل]سَّاحِرُ حَيْثُ أَتَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 69,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2418,
+        "text": "فَأُلْقِىَ [h:8533[ٱ][l[ل]سَّحَرَةُ سُجَّ[f:8534[دًا ق]َال[o[ُوٓ][s[اْ] ءَامَ[g[نّ]َا بِرَبِّ هَ[n[ـٰ]رُونَ وَمُوسَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 70,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2419,
+        "text": "قَالَ ءَامَ[f:703[نت]ُمْ لَهُ[n[ۥ] قَ[q:3282[بْ]لَ أَنْ ءَاذَنَ لَكُمْ‌ۖ إِ[g[نّ]َهُ[n[ۥ] لَكَبِيرُكُمُ [h:8535[ٱ]لَّذِى عَلَّمَكُمُ [h:8536[ٱ][l[ل]سِّحْرَ‌ۖ فَلَأُقَطِّعَ[g[نّ]َ أَيْدِيَكُمْ وَأَرْجُلَك[w:4933[ُم م]ِّنْ خِلَ[n[ـٰ][a:8537[فٍ و]َلَأُصَلِّبَ[g[نّ]َكُمْ فِى جُذُوعِ [h:8538[ٱ][l[ل][g[نّ]َخْلِ وَلَتَعْلَمُ[g[نّ]َ أَيُّن[o[َآ] أَشَدُّ عَذَا[a:8539[بًا و]َأَ[q:8540[بْ]قَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 71,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2420,
+        "text": "قَالُو[s[اْ] ل[a:8541[َن ن]ُّؤْثِرَكَ عَلَىٰ مَا ج[o[َا]ٓءَنَا مِنَ [h:816[ٱ]لْبَيِّنَ[n[ـٰ]تِ وَ[h:4765[ٱ]لَّذِى فَطَرَنَا‌ۖ فَ[h:8542[ٱ][q:8542[قْ]ضِ م[o[َآ] أَ[f:169[نت]َ قَاضٍ‌ۖ إِ[g[نّ]َمَا تَ[q:8543[قْ]ضِى هَ[n[ـٰ]ذِهِ [h:8544[ٱ]لْحَيَ[s[و][n[ٲ]ةَ [h:446[ٱ][l[ل]دُّنْيَآ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 72,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2421,
+        "text": "إِ[g[نّ][o[َآ] ءَامَ[g[نّ]َا بِرَبِّنَا لِيَغْفِرَ لَنَا خَطَ[n[ـٰ]يَ[n[ـٰ]نَا وَم[o[َآ] أَكْرَهْتَنَا عَلَيْهِ مِنَ [h:8545[ٱ][l[ل]سِّحْرِ‌ۗ وَ[h:72[ٱ]للَّهُ خَيْ[a:8546[رٌ و]َأَ[q:8540[بْ]قَىٰٓ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 73,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2422,
+        "text": "إِ[g[نّ]َهُ[n[ۥ] م[a:8547[َن ي]َأْتِ رَبَّهُ[n[ۥ] مُ[q:8548[جْ]رِ[f:8549[مًا ف]َإِ[g[نّ]َ لَهُ[n[ۥ] جَهَ[g[نّ]َمَ لَا يَمُوتُ فِيهَا وَلَا يَحْيَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 74,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2423,
+        "text": "وَم[a:8550[َن ي]َأْتِه[n[ِۦ] مُؤْمِ[f:8551[نًا ق]َ[q:298[دْ] عَمِلَ [h:8552[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ لَهُمُ [h:8553[ٱ][l[ل]دَّرَجَ[n[ـٰ]تُ [h:8554[ٱ]لْعُلَىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 75,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      },
+      {
+        "number": 2424,
+        "text": "جَ[g[نّ]َ[n[ـٰ]تُ عَ[q:5720[دْ][f:8049[نٍ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ خَ[n[ـٰ]لِدِينَ فِيهَا‌ۚ وَذ[n[َٲ]لِكَ جَز[o[َا]ٓءُ مَ[f:8555[ن ت]َزَكَّىٰ",
+        "surah": {
+          "number": 20,
+          "name": "سُورَةُ طه",
+          "englishName": "Taa-Haa",
+          "englishNameTranslation": "Taa-Haa",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 135
+        },
+        "numberInSurah": 76,
+        "juz": 16,
+        "manzil": 4,
+        "page": 316,
+        "ruku": 272,
+        "hizbQuarter": 126,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "20": {
+        "number": 20,
+        "name": "سُورَةُ طه",
+        "englishName": "Taa-Haa",
+        "englishNameTranslation": "Taa-Haa",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 135
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

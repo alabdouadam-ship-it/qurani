@@ -233,6 +233,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                             name: 'سورة $entry.key',
                                             englishName: 'Surah $entry.key',
                                             englishNameTranslation: '',
+                                            revelationType: '',
                                           ),
                                         );
                                         return Padding(
@@ -376,10 +377,16 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
           separatorBuilder: (_, __) => const Divider(height: 1),
           itemBuilder: (context, index) {
             final r = rows[index];
-            final meta = surahs.firstWhere(
-              (s) => s.number == r.id,
-              orElse: () => SurahMeta(number: r.id, name: 'سورة ${r.id}', englishName: '', englishNameTranslation: ''),
-            );
+              final meta = surahs.firstWhere(
+                (s) => s.number == r.id,
+                orElse: () => SurahMeta(
+                  number: r.id,
+                  name: 'سورة ${r.id}',
+                  englishName: '',
+                  englishNameTranslation: '',
+                  revelationType: '',
+                ),
+              );
             return ListTile(
               title: Text(meta.name, textDirection: TextDirection.rtl),
               trailing: Text('${r.count} ×  |  ${r.percent}%', style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.primary)),

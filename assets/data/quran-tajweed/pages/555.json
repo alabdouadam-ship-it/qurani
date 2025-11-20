@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 555,
+    "ayahs": [
+      {
+        "number": 5193,
+        "text": "وَإِذَا قِيلَ لَهُمْ تَعَالَوْ[s[اْ] يَسْتَغْفِرْ لَكُمْ رَسُولُ [h:3306[ٱ]للَّهِ لَوَّوْ[s[اْ] رُءُوسَهُمْ وَرَأَيْتَهُمْ يَصُدُّونَ وَه[w:7366[ُم م]ُّسْتَكْبِر[p[ُو]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 5,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5194,
+        "text": "سَو[o[َا]ٓءٌ عَلَيْهِمْ أَسْتَغْفَرْتَ لَهُمْ أَمْ لَمْ تَسْتَغْفِرْ لَهُمْ ل[a:13619[َن ي]َغْفِرَ [h:5741[ٱ]للَّهُ لَهُمْ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ لَا يَهْدِى [h:1504[ٱ]لْقَوْمَ [h:3860[ٱ]لْفَ[n[ـٰ]سِق[p[ِي]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 6,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5195,
+        "text": "هُمُ [h:12679[ٱ]لَّذِينَ يَقُولُونَ لَا تُ[f:1607[نف]ِقُو[s[اْ] عَلَىٰ مَنْ عِ[f:264[ند]َ رَسُولِ [h:5744[ٱ]للَّهِ حَتَّىٰ يَ[f:13620[نف]َضُّو[s[اْ‌ۗ] وَلِلَّهِ خَز[o[َا]ٓئِنُ [h:13621[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ وَلَ[n[ـٰ]كِ[g[نّ]َ [h:13622[ٱ]لْمُنَ[n[ـٰ]فِقِينَ لَا يَفْقَه[p[ُو]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 7,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5196,
+        "text": "يَقُولُونَ لَئ[u:13623[ِن ر]َّجَعْن[o[َآ] إِلَى [h:8006[ٱ]لْمَدِينَةِ لَيُخْرِجَ[g[نّ]َ [h:13624[ٱ]لْأَعَزُّ مِنْهَا [h:13625[ٱ]لْأَذَلَّ‌ۚ وَلِلَّهِ [h:13626[ٱ]لْعِزَّةُ وَلِرَسُولِه[n[ِۦ] وَلِلْمُؤْمِنِينَ وَلَ[n[ـٰ]كِ[g[نّ]َ [h:13622[ٱ]لْمُنَ[n[ـٰ]فِقِينَ لَا يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 8,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 488,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5197,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:541[ٱ]لَّذِينَ ءَامَنُو[s[اْ] لَا تُلْهِكُمْ أَمْو[n[َٲ]لُكُمْ وَل[o[َآ] أَوْلَ[n[ـٰ]دُكُمْ عَ[f:3773[ن ذ]ِكْرِ [h:3774[ٱ]للَّهِ‌ۚ وَم[a:1297[َن ي]َفْعَلْ ذ[n[َٲ]لِكَ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:150[ٱ]لْخَ[n[ـٰ]سِر[p[ُو]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 9,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5198,
+        "text": "وَأَ[f:1045[نف]ِقُو[s[اْ] م[a:10464[ِن م]َّا رَزَ[q:275[قْ]نَ[n[ـٰ]ك[w:1461[ُم م]ِّ[f:1346[ن ق]َ[q:1347[بْ]لِ أ[a:1462[َن ي]َأْتِىَ أَحَدَكُمُ [h:942[ٱ]لْمَوْتُ فَيَقُولَ رَبِّ لَوْل[o[َآ] أَخَّرْتَن[o[ِىٓ] إِلَ[o[ىٰٓ] أَجَ[f:2940[لٍ ق]َرِي[f:13627[بٍ ف]َأَصَّدَّقَ وَأَك[a:6642[ُن م]ِّنَ [h:1889[ٱ][l[ل]صَّ[n[ـٰ]لِح[p[ِي]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 10,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      },
+      {
+        "number": 5199,
+        "text": "وَل[a:13628[َن ي]ُؤَخِّرَ [h:13629[ٱ]للَّهُ نَفْسًا إِذَا ج[o[َا]ٓءَ أَجَلُهَا‌ۚ وَ[h:72[ٱ]للَّهُ خَبِي[i:2335[رُۢ ب]ِمَا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 63,
+          "name": "سُورَةُ المُنَافِقُونَ",
+          "englishName": "Al-Munaafiqoon",
+          "englishNameTranslation": "The Hypocrites",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 11
+        },
+        "numberInSurah": 11,
+        "juz": 28,
+        "manzil": 7,
+        "page": 555,
+        "ruku": 489,
+        "hizbQuarter": 222,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "63": {
+        "number": 63,
+        "name": "سُورَةُ المُنَافِقُونَ",
+        "englishName": "Al-Munaafiqoon",
+        "englishNameTranslation": "The Hypocrites",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 11
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

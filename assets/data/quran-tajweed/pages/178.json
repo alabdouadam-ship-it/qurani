@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 178,
+    "ayahs": [
+      {
+        "number": 1169,
+        "text": "إِذْ تَسْتَغِيثُونَ رَبَّكُمْ فَ[h:5256[ٱ]سْتَجَابَ لَكُمْ أَ[g[نّ]ِى مُمِدُّك[c:5257[ُم ب]ِأَلْ[a:5258[فٍ م]ِّنَ [h:2217[ٱ]لْمَلَ[o[ـٰٓ]ئِكَةِ مُرْدِف[p[ِي]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 9,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1170,
+        "text": "وَمَا جَعَلَهُ [h:2224[ٱ]للَّهُ إِلَّا بُشْرَىٰ وَلِتَ[q:2225[طْ]مَئِ[g[نّ]َ بِه[n[ِۦ] قُلُوبُكُمْ‌ۚ وَمَا [h:2227[ٱ][l[ل][g[نّ]َصْرُ إِلَّا مِنْ عِ[f:398[ند]ِ [h:399[ٱ]للَّهِ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ عَزِيزٌ حَك[p[ِي]مٌ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 10,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1171,
+        "text": "إِذْ يُغَشِّيكُمُ [h:5259[ٱ][l[ل][g[نّ]ُعَاسَ أَمَنَ[a:5260[ةً م]ِّنْهُ وَيُنَزِّلُ عَلَيْك[w:1301[ُم م]ِّنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[o[َا]ٓ[u:5261[ءً ل]ِّيُطَهِّرَك[c:5262[ُم ب]ِه[n[ِۦ] وَيُذْهِبَ عَ[f:255[نك]ُمْ رِ[q:5263[جْ]زَ [h:5264[ٱ][l[ل]شَّيْطَ[n[ـٰ]نِ وَلِيَرْبِطَ عَلَىٰ قُلُوبِكُمْ وَيُثَبِّتَ بِهِ [h:5265[ٱ]لْأَ[q:5266[قْ]د[p[َا]مَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 11,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1172,
+        "text": "إِذْ يُوحِى رَبُّكَ إِلَى [h:5267[ٱ]لْمَلَ[o[ـٰٓ]ئِكَةِ أَ[g[نّ]ِى مَعَكُمْ فَثَبِّتُو[s[اْ] [h:5268[ٱ]لَّذِينَ ءَامَنُو[s[اْ‌ۚ] سَأُلْقِى فِى قُلُوبِ [h:2312[ٱ]لَّذِينَ كَفَرُو[s[اْ] [h:2313[ٱ][l[ل]رُّعْبَ فَ[h:5269[ٱ]ضْرِبُو[s[اْ] فَوْقَ [h:5270[ٱ]لْأَعْنَاقِ وَ[h:5271[ٱ]ضْرِبُو[s[اْ] مِنْهُمْ كُلَّ بَن[p[َا]نٍ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 12,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1173,
+        "text": "ذ[n[َٲ]لِكَ بِأَ[g[نّ]َهُمْ ش[m[َا]ٓقُّو[s[اْ] [h:5272[ٱ]للَّهَ وَرَسُولَهُ[n[ۥ]‌ۚ وَم[a:3131[َن ي]ُشَاقِقِ [h:5273[ٱ]للَّهَ وَرَسُولَهُ[n[ۥ] فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ شَدِيدُ [h:1075[ٱ]لْعِق[p[َا][q[ب]ِ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 13,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1174,
+        "text": "ذ[n[َٲ]لِكُمْ فَذُوقُوهُ وَأَ[g[نّ]َ لِلْكَ[n[ـٰ]فِرِينَ عَذَابَ [h:1110[ٱ][l[ل][g[نّ][p[َا]رِ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 14,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1175,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:541[ٱ]لَّذِينَ ءَامَن[o[ُوٓ][s[اْ] إِذَا لَقِيتُمُ [h:5274[ٱ]لَّذِينَ كَفَرُو[s[اْ] زَحْ[f:5275[فًا ف]َلَا تُوَلُّوهُمُ [h:5276[ٱ]لْأَ[q:2168[دْ]ب[p[َا]رَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 15,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1176,
+        "text": "وَم[a:5277[َن ي]ُوَلِّهِمْ يَوْمَئِ[f:5278[ذٍ د]ُبُرَهُ[o[ۥٓ] إِلَّا مُتَحَرِّ[u:5279[فًا ل]ِّقِتَالٍ أَوْ مُتَحَيِّزًا إِلَىٰ فِئَ[f:5280[ةٍ ف]َقَ[q:563[دْ] ب[o[َا]ٓءَ بِغَضَ[a:320[بٍ م]ِّنَ [h:321[ٱ]للَّهِ وَمَأْوَ[n[ٮٰ]هُ جَهَ[g[نّ]َمُ‌ۖ وَبِئْسَ [h:665[ٱ]لْمَص[p[ِي]رُ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 16,
+        "juz": 9,
+        "manzil": 2,
+        "page": 178,
+        "ruku": 147,
+        "hizbQuarter": 71,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

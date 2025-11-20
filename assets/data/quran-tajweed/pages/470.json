@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 470,
+    "ayahs": [
+      {
+        "number": 4159,
+        "text": "وَقَالَ فِرْعَوْنُ ذَرُون[o[ِىٓ] أَ[q:11831[قْ]تُلْ مُوسَىٰ وَلْيَ[q:11832[دْ]عُ رَبَّهُ[o[ۥٓ‌ۖ] إِ[g[نّ][o[ِىٓ] أَخَافُ أ[a:11833[َن ي]ُبَدِّلَ دِينَكُمْ أَوْ أ[a:11834[َن ي]ُظْهِرَ فِى [h:44[ٱ]لْأَرْضِ [h:11835[ٱ]لْفَس[p[َا][q[د]َ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 26,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 406,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4160,
+        "text": "وَقَالَ مُوسَ[o[ىٰٓ] إِ[g[نّ]ِى عُذْتُ بِرَبِّى وَرَبِّك[w:11836[ُم م]ِّ[f:843[ن ك]ُلِّ مُتَكَبِّ[u:11837[رٍ ل]َّا يُؤْمِنُ بِيَوْمِ [h:11838[ٱ]لْحِس[p[َا][q[ب]ِ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 27,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 406,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4161,
+        "text": "وَقَالَ رَجُ[a:11839[لٌ م]ُّؤْمِ[a:11840[نٌ م]ِّنْ ءَالِ فِرْعَوْنَ يَكْتُمُ إِيمَ[n[ـٰ]نَهُ[o[ۥٓ] أَتَ[q:11841[قْ]تُلُونَ رَجُلاً أ[a:11309[َن ي]َقُولَ رَبِّىَ [h:11842[ٱ]للَّهُ وَقَ[q:387[دْ] ج[o[َا]ٓءَك[c:11843[ُم ب]ِ[h:484[ٱ]لْبَيِّنَ[n[ـٰ]تِ م[u:243[ِن ر]َّبِّكُمْۖ وَإ[a:11844[ِن ي]َكُ كَ[n[ـٰ]ذِ[f:11845[بًا ف]َعَلَيْهِ كَذِبُهُ[n[ۥ]ۖ وَإ[a:11844[ِن ي]َكُ صَادِ[a:11846[قًا ي]ُصِ[q:11847[بْ]ك[c:11848[ُم ب]َعْضُ [h:10025[ٱ]لَّذِى يَعِدُكُمْۖ إِ[g[نّ]َ [h:80[ٱ]للَّهَ لَا يَهْدِى مَنْ هُوَ مُسْرِ[f:11849[فٌ ك]َذّ[p[َا][q[ب]ٌ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 28,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4162,
+        "text": "يَ[n[ـٰ]قَوْمِ لَكُمُ [h:11850[ٱ]لْمُلْكُ [h:11813[ٱ]لْيَوْمَ ظَ[n[ـٰ]هِرِينَ فِى [h:44[ٱ]لْأَرْضِ فَم[a:11851[َن ي]َ[f:11852[نص]ُرُنَا م[i:11853[ِنۢ ب]َأْسِ [h:11854[ٱ]للَّهِ إِ[f:11855[ن ج][o[َا]ٓءَنَاۚ قَالَ فِرْعَوْنُ م[o[َآ] أُرِيكُمْ إِلَّا م[o[َآ] أَرَىٰ وَم[o[َآ] أَهْدِيكُمْ إِلَّا سَبِيلَ [h:11856[ٱ][l[ل]رَّش[p[َا][q[د]ِ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 29,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4163,
+        "text": "وَقَالَ [h:6593[ٱ]لَّذ[o[ِىٓ] ءَامَنَ يَ[n[ـٰ]قَوْمِ إِ[g[نّ][o[ِىٓ] أَخَافُ عَلَيْك[w:11857[ُم م]ِّثْلَ يَوْمِ [h:11858[ٱ]لْأَحْز[p[َا][q[ب]ِ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 30,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4164,
+        "text": "مِثْلَ دَأْبِ قَوْمِ نُو[a:5711[حٍ و]َعَا[a:5712[دٍ و]َثَمُودَ وَ[h:37[ٱ]لَّذِينَ م[i:1453[ِنۢ ب]َعْدِهِمْۚ وَمَا [h:384[ٱ]للَّهُ يُرِيدُ ظُلْ[u:11859[مًا ل]ِّلْعِب[p[َا][q[د]ِ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 31,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4165,
+        "text": "وَيَ[n[ـٰ]قَوْمِ إِ[g[نّ][o[ِىٓ] أَخَافُ عَلَيْكُمْ يَوْمَ [h:11860[ٱ][l[ل]تَّن[p[َا][q[د]ِ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 32,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      },
+      {
+        "number": 4166,
+        "text": "يَوْمَ تُوَلُّونَ مُ[q:5528[دْ]بِرِينَ مَا لَك[w:1578[ُم م]ِّنَ [h:321[ٱ]للَّهِ مِنْ عَاصِ[a:11861[مٍۗ و]َم[a:3002[َن ي]ُضْلِلِ [h:3003[ٱ]للَّهُ فَمَا لَهُ[n[ۥ] مِنْ ه[p[َا][q[د]ٍ",
+        "surah": {
+          "number": 40,
+          "name": "سُورَةُ غَافِرٍ",
+          "englishName": "Ghafir",
+          "englishNameTranslation": "The Forgiver",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 85
+        },
+        "numberInSurah": 33,
+        "juz": 24,
+        "manzil": 6,
+        "page": 470,
+        "ruku": 407,
+        "hizbQuarter": 188,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "40": {
+        "number": 40,
+        "name": "سُورَةُ غَافِرٍ",
+        "englishName": "Ghafir",
+        "englishNameTranslation": "The Forgiver",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 85
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

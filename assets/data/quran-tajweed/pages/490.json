@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 490,
+    "ayahs": [
+      {
+        "number": 4336,
+        "text": "وَ[h:9999[ٱ]لَّذِى نَزَّلَ مِنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[o[َا]ٓ[i:9165[ءَۢ ب]ِقَدَ[f:12204[رٍ ف]َأَ[f:12205[نش]َرْنَا بِه[n[ِۦ] بَلْدَ[a:9661[ةً م]َّيْ[f:12206[تًا‌ۚ ك]َذ[n[َٲ]لِكَ تُخْرَج[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 11,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4337,
+        "text": "وَ[h:9999[ٱ]لَّذِى خَلَقَ [h:11235[ٱ]لْأَزْو[n[َٲ]جَ كُلَّهَا وَجَعَلَ لَك[w:1578[ُم م]ِّنَ [h:12207[ٱ]لْفُلْكِ وَ[h:1778[ٱ]لْأَنْعَ[n[ـٰ]مِ مَا تَرْكَب[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 12,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4338,
+        "text": "لِتَسْتَوُ[n[ۥ]اْ عَلَىٰ ظُهُورِه[n[ِۦ] ثُ[g[مّ]َ تَذْكُرُو[s[اْ] نِعْمَةَ رَبِّكُمْ إِذَا [h:12208[ٱ]سْتَوَيْتُمْ عَلَيْهِ وَتَقُولُو[s[اْ] سُ[q:7648[بْ]حَ[n[ـٰ]نَ [h:7649[ٱ]لَّذِى سَخَّرَ لَنَا هَ[n[ـٰ]ذَا وَمَا كُ[g[نّ]َا لَهُ[n[ۥ] مُ[q:12209[قْ]رِن[p[ِي]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 13,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4339,
+        "text": "وَإِ[g[نّ][o[َآ] إِلَىٰ رَبِّنَا لَمُ[f:12210[نق]َلِب[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 14,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4340,
+        "text": "وَجَعَلُو[s[اْ] لَهُ[n[ۥ] مِنْ عِبَادِه[n[ِۦ] جُزْءًا‌ۚ إِ[g[نّ]َ [h:7137[ٱ]لْإِ[f:5969[نس]َ[n[ـٰ]نَ لَكَفُو[a:12211[رٌ م]ُّب[p[ِي]نٌ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 15,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 424,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4341,
+        "text": "أَمِ [h:8410[ٱ]تَّخَذَ مِ[g[مّ]َا يَخْلُقُ بَنَا[a:12212[تٍ و]َأَصْفَ[n[ـٰ]ك[c:12213[ُم ب]ِ[h:7764[ٱ]لْبَن[p[ِي]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 16,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4342,
+        "text": "وَإِذَا بُشِّرَ أَحَدُه[c:12214[ُم ب]ِمَا ضَرَبَ لِلرَّحْمَ[n[ـٰ]نِ مَثَل[f:12215[اً ظ]َلَّ وَ[q:7445[جْ]هُهُ[n[ۥ] مُسْوَد[a:7446[ًّا و]َهُوَ كَظ[p[ِي]مٌ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 17,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4343,
+        "text": "أَوَم[a:12216[َن ي]ُنَشَّؤُ[s[اْ] فِى [h:12217[ٱ]لْحِلْيَةِ وَهُوَ فِى [h:12218[ٱ]لْخِصَامِ غَيْرُ مُب[p[ِي]نٍ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 18,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4344,
+        "text": "وَجَعَلُو[s[اْ] [h:12219[ٱ]لْمَلَ[o[ـٰٓ]ئِكَةَ [h:12220[ٱ]لَّذِينَ هُمْ عِبَ[n[ـٰ]دُ [h:12221[ٱ][l[ل]رَّحْمَ[n[ـٰ]نِ إِنَ[n[ـٰ]ثًا‌ۚ أَشَهِدُو[s[اْ] خَلْقَهُمْ‌ۚ سَتُكْتَبُ شَهَ[n[ـٰ]دَتُهُمْ وَيُسْــَٔل[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 19,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4345,
+        "text": "وَقَالُو[s[اْ] لَوْ ش[o[َا]ٓءَ [h:12222[ٱ][l[ل]رَّحْمَ[n[ـٰ]نُ مَا عَبَ[q:12223[دْ]نَ[n[ـٰ]ه[w:12224[ُم‌ۗ م]َّا لَه[c:12225[ُم ب]ِذ[n[َٲ]لِكَ مِنْ عِلْمٍ‌ۖ إِنْ هُمْ إِلَّا يَخْرُص[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 20,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4346,
+        "text": "أَمْ ءَاتَيْنَ[n[ـٰ]هُمْ كِتَ[n[ـٰ][a:12226[بًا م]ِّ[f:1097[ن ق]َ[q:1098[بْ]لِه[n[ِۦ] فَه[c:12227[ُم ب]ِه[n[ِۦ] مُسْتَمْسِك[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 21,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      },
+      {
+        "number": 4347,
+        "text": "بَلْ قَال[o[ُوٓ][s[اْ] إِ[g[نّ]َا وَجَ[q:3834[دْ]ن[o[َآ] ءَاب[o[َا]ٓءَنَا عَلَ[o[ىٰٓ] أُ[g[مّ]َ[a:12228[ةٍ و]َإِ[g[نّ]َا عَلَ[o[ىٰٓ] ءَاثَ[n[ـٰ]رِه[w:12229[ِم م]ُّهْتَد[p[ُو]نَ",
+        "surah": {
+          "number": 43,
+          "name": "سُورَةُ الزُّخۡرُفِ",
+          "englishName": "Az-Zukhruf",
+          "englishNameTranslation": "Ornaments of gold",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 89
+        },
+        "numberInSurah": 22,
+        "juz": 25,
+        "manzil": 6,
+        "page": 490,
+        "ruku": 425,
+        "hizbQuarter": 196,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "43": {
+        "number": 43,
+        "name": "سُورَةُ الزُّخۡرُفِ",
+        "englishName": "Az-Zukhruf",
+        "englishNameTranslation": "Ornaments of gold",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 89
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

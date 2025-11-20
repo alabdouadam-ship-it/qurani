@@ -1,0 +1,465 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 370,
+    "ayahs": [
+      {
+        "number": 2993,
+        "text": "فَلَ[g[مّ]َا تَر[o[َٲ]ٓءَا [h:9763[ٱ]لْجَمْعَانِ قَالَ أَصْحَ[n[ـٰ]بُ مُوسَ[o[ىٰٓ] إِ[g[نّ]َا لَمُ[q:9764[دْ]رَك[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 61,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2994,
+        "text": "قَالَ كَلّ[o[َآ‌ۖ] إِ[g[نّ]َ مَعِىَ رَبِّى سَيَهْد[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 62,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2995,
+        "text": "فَأَوْحَيْن[o[َآ] إِلَىٰ مُوسَ[o[ىٰٓ] أَنِ [h:5080[ٱ]ضْرِب بِّعَصَاكَ [h:9765[ٱ]لْبَحْرَ‌ۖ فَ[h:9766[ٱ][f:9766[نف]َلَقَ فَكَانَ كُلُّ فِرْ[f:9767[قٍ ك]َ[h:9768[ٱ][l[ل]طَّوْدِ [h:9769[ٱ]لْعَظ[p[ِي]مِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 63,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2996,
+        "text": "وَأَزْلَفْنَا ثَ[g[مّ]َ [h:9770[ٱ]لْأَخَر[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 64,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2997,
+        "text": "وَأَ[f:9771[نج]َيْنَا مُوسَىٰ وَم[a:4948[َن م]َّعَهُ[o[ۥٓ] أَ[q:825[جْ]مَع[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 65,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2998,
+        "text": "ثُ[g[مّ]َ أَغْرَ[q:9772[قْ]نَا [h:9773[ٱ]لْأَخَر[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 66,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 2999,
+        "text": "إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[a:9716[ةً‌ۖ و]َمَا كَانَ أَكْثَرُه[w:9717[ُم م]ُّؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 67,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3000,
+        "text": "وَإِ[g[نّ]َ رَبَّكَ لَهُوَ [h:1987[ٱ]لْعَزِيزُ [h:9718[ٱ][l[ل]رَّح[p[ِي]مُ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 68,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3001,
+        "text": "وَ[h:9999[ٱ]تْلُ عَلَيْهِمْ نَبَأَ إِ[q:1860[بْ]ر[n[َٲ]ه[p[ِي]مَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 69,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 319,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3002,
+        "text": "إِذْ قَالَ لِأَبِيهِ وَقَوْمِه[n[ِۦ] مَا تَعْبُد[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 70,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3003,
+        "text": "قَالُو[s[اْ] نَعْبُدُ أَصْنَا[f:9774[مًا ف]َنَظَلُّ لَهَا عَ[n[ـٰ]كِف[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 71,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3004,
+        "text": "قَالَ هَلْ يَسْمَعُونَكُمْ إِذْ تَ[q:4040[دْ]ع[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 72,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3005,
+        "text": "أَوْ يَ[f:9775[نف]َعُونَكُمْ أَوْ يَضُرّ[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 73,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3006,
+        "text": "قَالُو[s[اْ] بَلْ وَجَ[q:3834[دْ]ن[o[َآ] ءَاب[o[َا]ٓءَنَا كَذ[n[َٲ]لِكَ يَفْعَل[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 74,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3007,
+        "text": "قَالَ أَفَرَءَيْت[w:9776[ُم م]َّا كُ[f:100[نت]ُمْ تَعْبُد[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 75,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3008,
+        "text": "أَ[f:428[نت]ُمْ وَءَاب[o[َا]ٓؤُكُمُ [h:9777[ٱ]لْأَ[q:9778[قْ]دَم[p[ُو]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 76,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3009,
+        "text": "فَإِ[g[نّ]َهُمْ عَدُ[u:8477[وٌّ ل]ّ[o[ِىٓ] إِلَّا رَبَّ [h:3505[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 77,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3010,
+        "text": "ٱلَّذِى خَلَقَنِى فَهُوَ يَهْد[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 78,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3011,
+        "text": "وَ[h:9999[ٱ]لَّذِى هُوَ يُ[q:9779[طْ]عِمُنِى وَيَسْق[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 79,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3012,
+        "text": "وَإِذَا مَرِضْتُ فَهُوَ يَشْف[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 80,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3013,
+        "text": "وَ[h:9999[ٱ]لَّذِى يُمِيتُنِى ثُ[g[مّ]َ يُحْي[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 81,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3014,
+        "text": "وَ[h:9999[ٱ]لَّذ[o[ِىٓ] أَ[q:9780[طْ]مَعُ أ[a:9371[َن ي]َغْفِرَ لِى خَطِ[o[يٓ]ــَٔتِى يَوْمَ [h:9781[ٱ][l[ل]دّ[p[ِي]نِ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 82,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      },
+      {
+        "number": 3015,
+        "text": "رَبِّ هَ[q:1878[بْ] لِى حُكْ[a:9782[مًا و]َأَلْحِ[q:6835[قْ]نِى بِ[h:6836[ٱ][l[ل]صَّ[n[ـٰ]لِح[p[ِي]نَ",
+        "surah": {
+          "number": 26,
+          "name": "سُورَةُ الشُّعَرَاءِ",
+          "englishName": "Ash-Shu'araa",
+          "englishNameTranslation": "The Poets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 227
+        },
+        "numberInSurah": 83,
+        "juz": 19,
+        "manzil": 5,
+        "page": 370,
+        "ruku": 320,
+        "hizbQuarter": 148,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "26": {
+        "number": 26,
+        "name": "سُورَةُ الشُّعَرَاءِ",
+        "englishName": "Ash-Shu'araa",
+        "englishNameTranslation": "The Poets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 227
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -10,6 +10,7 @@ import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
+import 'util/tajweed_parser.dart';
 import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
 
@@ -175,6 +176,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         return 'muyassar';
       case QuranEdition.simple:
       case QuranEdition.uthmani:
+      case QuranEdition.tajweed:
         return PreferencesService.getReciter();
     }
   }
@@ -1122,6 +1124,19 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   Widget _buildSurahHeader(SurahMeta surah, ColorScheme colorScheme) {
+    String? revelationLabelAr;
+    String? revelationLabelEn;
+    switch (surah.revelationType) {
+      case 'Meccan':
+        revelationLabelAr = 'مكية';
+        revelationLabelEn = 'Meccan';
+        break;
+      case 'Medinan':
+        revelationLabelAr = 'مدنية';
+        revelationLabelEn = 'Medinan';
+        break;
+    }
+
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 12),
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
@@ -1141,11 +1156,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ),
         ],
       ),
-    child: Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            surah.name,
+            revelationLabelAr == null
+                ? surah.name
+                : '${surah.name} ($revelationLabelAr)',
             textDirection: TextDirection.rtl,
             style: const TextStyle(
               fontSize: 22,
@@ -1155,7 +1172,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ),
           const SizedBox(height: 4),
           Text(
-            '${surah.englishName} • ${surah.englishNameTranslation}',
+            revelationLabelEn == null
+                ? '${surah.englishName} • ${surah.englishNameTranslation}'
+                : '${surah.englishName} • ${surah.englishNameTranslation} ($revelationLabelEn)',
             style: const TextStyle(
               color: Colors.white70,
             ),
@@ -1187,6 +1206,22 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       height: 1.6,
       color: colorScheme.onSurface,
     );
+    final TextStyle diacriticStyle =
+        baseStyle.copyWith(color: colorScheme.primary);
+
+    final bool isTajweedEdition = _edition == QuranEdition.tajweed;
+    final String rawText = ayah.text.trim();
+    final List<InlineSpan> ayahContentSpans = isTajweedEdition
+        ? TajweedParser.parseSpans(
+            rawText,
+            baseStyle,
+            diacriticStyle: diacriticStyle,
+          )
+        : TajweedParser.buildPlainSpans(
+            rawText,
+            baseStyle,
+            diacriticStyle: diacriticStyle,
+          );
 
     final Color highlightColor = const Color(0xFFFFF7C2);
     final Color playingColor = theme.brightness == Brightness.dark
@@ -1246,10 +1281,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   text: TextSpan(
                     style: baseStyle,
                     children: [
-                      TextSpan(
-                        text: ayah.text.trim(),
-                        style: baseStyle,
-                      ),
+                      ...ayahContentSpans,
                       const TextSpan(text: '  '),
                       WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
@@ -1557,6 +1589,8 @@ String _editionLabel(QuranEdition edition, AppLocalizations l10n) {
       return '${l10n.arabic} (${l10n.simple})';
     case QuranEdition.uthmani:
       return '${l10n.arabic} (${l10n.uthmani})';
+    case QuranEdition.tajweed:
+      return l10n.editionArabicTajweed;
     case QuranEdition.english:
       return l10n.english;
     case QuranEdition.french:

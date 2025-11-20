@@ -1,0 +1,644 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 591,
+    "ayahs": [
+      {
+        "number": 5932,
+        "text": "وَ[h:9999[ٱ][l[ل]سَّم[o[َا]ٓءِ وَ[h:14418[ٱ][l[ل]طَّارِ[q[ق]ِ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5933,
+        "text": "وَم[o[َآ] أَ[q:13858[دْ]رَ[n[ٮٰ]كَ مَا [h:14419[ٱ][l[ل]طَّارِ[q[ق]ُ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5934,
+        "text": "ٱ[l[ل][g[نّ]َ[q:14420[جْ]مُ [h:14421[ٱ][l[ل]ثَّاقِ[q[ب]ُ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5935,
+        "text": "إِ[f:8426[ن ك]ُلُّ نَفْ[u:14422[سٍ ل]َّ[g[مّ]َا عَلَيْهَا حَافِظٌ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5936,
+        "text": "فَلْيَ[f:14313[نظ]ُرِ [h:14314[ٱ]لْإِ[f:2732[نس]َ[n[ـٰ]نُ مِ[g[مّ]َ خُلِ[q[ق]َ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5937,
+        "text": "خُلِقَ م[a:840[ِن م]ّ[o[َا]ٓ[f:14423[ءٍ د]َافِ[q[ق]ٍ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5938,
+        "text": "يَخْرُجُ م[i:4612[ِنۢ ب]َيْنِ [h:14424[ٱ][l[ل]صُّلْبِ وَ[h:14425[ٱ][l[ل]تَّر[o[َا]ٓئِ[q[ب]ِ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5939,
+        "text": "إِ[g[نّ]َهُ[n[ۥ] عَلَىٰ رَ[q:14426[جْ]عِه[n[ِۦ] لَقَادِرٌ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5940,
+        "text": "يَوْمَ تُ[q:14427[بْ]لَى [h:14428[ٱ][l[ل]سَّر[o[َا]ٓئِرُ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5941,
+        "text": "فَمَا لَهُ[n[ۥ] مِ[f:5395[ن ق]ُوَّ[a:14429[ةٍ و]َلَا نَاصِرٍ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5942,
+        "text": "وَ[h:9999[ٱ][l[ل]سَّم[o[َا]ٓءِ ذَاتِ [h:14430[ٱ][l[ل]رَّ[q:14431[جْ]عِ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5943,
+        "text": "وَ[h:9999[ٱ]لْأَرْضِ ذَاتِ [h:14432[ٱ][l[ل]صَّ[q:14433[دْ]عِ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5944,
+        "text": "إِ[g[نّ]َهُ[n[ۥ] لَقَوْ[f:14434[لٌ ف]َصْلٌ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5945,
+        "text": "وَمَا هُوَ بِ[h:14435[ٱ]لْهَزْلِ",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5946,
+        "text": "إِ[g[نّ]َهُمْ يَكِيدُونَ كَيْدًا",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5947,
+        "text": "وَأَكِيدُ كَيْدًا",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5948,
+        "text": "فَمَهِّلِ [h:14436[ٱ]لْكَ[n[ـٰ]فِرِينَ أَمْهِلْهُمْ رُوَيْدَۢا",
+        "surah": {
+          "number": 86,
+          "name": "سُورَةُ الطَّارِقِ",
+          "englishName": "At-Taariq",
+          "englishNameTranslation": "The Morning Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 17
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 528,
+        "hizbQuarter": 236,
+        "sajda": false
+      },
+      {
+        "number": 5949,
+        "text": "سَبِّحِ [h:14437[ٱ]سْمَ رَبِّكَ [h:14438[ٱ]لْأَعْلَى",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5950,
+        "text": "ٱلَّذِى خَلَقَ فَسَوَّىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5951,
+        "text": "وَ[h:9999[ٱ]لَّذِى قَدَّرَ فَهَدَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5952,
+        "text": "وَ[h:9999[ٱ]لَّذ[o[ِىٓ] أَخْرَجَ [h:14439[ٱ]لْمَرْعَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5953,
+        "text": "فَجَعَلَهُ[n[ۥ] غُث[o[َا]ٓءً أَحْوَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5954,
+        "text": "سَنُ[q:14440[قْ]رِئُكَ فَلَا تَ[f:14441[نس]َىٰٓ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5955,
+        "text": "إِلَّا مَا ش[o[َا]ٓءَ [h:78[ٱ]للَّهُ‌ۚ إِ[g[نّ]َهُ[n[ۥ] يَعْلَمُ [h:8891[ٱ]لْجَهْرَ وَمَا يَخْفَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5956,
+        "text": "وَنُيَسِّرُكَ لِلْيُسْرَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5957,
+        "text": "فَذَكِّرْ إ[a:14442[ِن ن]َّفَعَتِ [h:14443[ٱ][l[ل]ذِّكْرَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5958,
+        "text": "سَيَذَّكَّرُ م[a:14444[َن ي]َخْشَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5959,
+        "text": "وَيَتَجَ[g[نّ]َبُهَا [h:14445[ٱ]لْأَشْقَى",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5960,
+        "text": "ٱلَّذِى يَصْلَى [h:14446[ٱ][l[ل][g[نّ]َارَ [h:14447[ٱ]لْكُ[q:8463[بْ]رَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5961,
+        "text": "ثُ[g[مّ]َ لَا يَمُوتُ فِيهَا وَلَا يَحْيَىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5962,
+        "text": "قَ[q:298[دْ] أَفْلَحَ مَ[f:8555[ن ت]َزَكَّىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      },
+      {
+        "number": 5963,
+        "text": "وَذَكَرَ [h:14448[ٱ]سْمَ رَبِّه[n[ِۦ] فَصَلَّىٰ",
+        "surah": {
+          "number": 87,
+          "name": "سُورَةُ الأَعۡلَىٰ",
+          "englishName": "Al-A'laa",
+          "englishNameTranslation": "The Most High",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 19
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 591,
+        "ruku": 529,
+        "hizbQuarter": 237,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "86": {
+        "number": 86,
+        "name": "سُورَةُ الطَّارِقِ",
+        "englishName": "At-Taariq",
+        "englishNameTranslation": "The Morning Star",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 17
+      },
+      "87": {
+        "number": 87,
+        "name": "سُورَةُ الأَعۡلَىٰ",
+        "englishName": "Al-A'laa",
+        "englishNameTranslation": "The Most High",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 19
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 264,
+    "ayahs": [
+      {
+        "number": 1834,
+        "text": "قَالَ يَ[o[ـٰٓ]إِ[q:7241[بْ]لِيسُ مَا لَكَ أَلَّا تَكُونَ مَعَ [h:7240[ٱ][l[ل]سَّ[n[ـٰ]جِد[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 32,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1835,
+        "text": "قَالَ لَمْ أَك[u:7242[ُن ل]ِّأَسْجُدَ لِبَشَرٍ خَلَ[q:7243[قْ]تَهُ[n[ۥ] مِ[f:7229[ن ص]َلْصَ[n[ـٰ][a:7230[لٍ م]ِّنْ حَمَ[a:7231[إٍ م]َّسْن[p[ُو]نٍ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 33,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1836,
+        "text": "قَالَ فَ[h:4603[ٱ]خْرُ[q:4603[جْ] مِنْهَا فَإِ[g[نّ]َكَ رَج[p[ِي]مٌ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 34,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1837,
+        "text": "وَإِ[g[نّ]َ عَلَيْكَ [h:7244[ٱ][l[ل]لَّعْنَةَ إِلَىٰ يَوْمِ [h:5[ٱ][l[ل]دّ[p[ِي]نِ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 35,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1838,
+        "text": "قَالَ رَبِّ فَأَ[f:7245[نظ]ِرْن[o[ِىٓ] إِلَىٰ يَوْمِ يُ[q:4606[بْ]عَث[p[ُو]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 36,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1839,
+        "text": "قَالَ فَإِ[g[نّ]َكَ مِنَ [h:4607[ٱ]لْمُ[f:4608[نظ]َر[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 37,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1840,
+        "text": "إِلَىٰ يَوْمِ [h:7246[ٱ]لْوَ[q:7247[قْ]تِ [h:7248[ٱ]لْمَعْل[p[ُو]مِ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 38,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1841,
+        "text": "قَالَ رَبِّ بِم[o[َآ] أَغْوَيْتَنِى لَأُزَيِّنَ[g[نّ]َ لَهُمْ فِى [h:44[ٱ]لْأَرْضِ وَلَأُغْوِيَ[g[نّ]َهُمْ أَ[q:825[جْ]مَع[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 39,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1842,
+        "text": "إِلَّا عِبَادَكَ مِنْهُمُ [h:7249[ٱ]لْمُخْلَص[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 40,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1843,
+        "text": "قَالَ هَ[n[ـٰ]ذَا صِر[n[َٲ]طٌ عَلَىَّ مُسْتَق[p[ِي]مٌ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 41,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1844,
+        "text": "إِ[g[نّ]َ عِبَادِى لَيْسَ لَكَ عَلَيْهِمْ سُلْطَ[n[ـٰ]نٌ إِلَّا مَنِ [h:7250[ٱ]تَّبَعَكَ مِنَ [h:5135[ٱ]لْغَاو[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 42,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1845,
+        "text": "وَإِ[g[نّ]َ جَهَ[g[نّ]َمَ لَمَوْعِدُهُمْ أَ[q:825[جْ]مَع[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 43,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1846,
+        "text": "لَهَا سَ[q:7251[بْ]عَةُ أَ[q:6744[بْ]و[n[َٲ][u:7252[بٍ ل]ِّكُلِّ بَا[a:7253[بٍ م]ِّنْهُمْ جُزْ[a:7254[ءٌ م]َّ[q:7255[قْ]س[p[ُو]مٌ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 44,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 220,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1847,
+        "text": "إِ[g[نّ]َ [h:7256[ٱ]لْمُتَّقِينَ فِى جَ[g[نّ]َ[n[ـٰ][a:7257[تٍ و]َعُي[p[ُو]نٍ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 45,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1848,
+        "text": "ٱ[q:7258[دْ]خُلُوهَا بِسَلَ[n[ـٰ]مٍ ءَامِن[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 46,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1849,
+        "text": "وَنَزَعْنَا مَا فِى صُدُورِه[w:4694[ِم م]ِّنْ غِلٍّ إِخْو[n[َٲ]نًا عَلَىٰ سُرُ[a:7259[رٍ م]ُّتَقَ[n[ـٰ]بِل[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 47,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1850,
+        "text": "لَا يَمَسُّهُمْ فِيهَا نَصَ[a:7260[بٌ و]َمَا ه[w:7261[ُم م]ِّنْهَا بِمُخْرَج[p[ِي]نَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 48,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1851,
+        "text": "۞ نَبِّئْ عِبَاد[o[ِىٓ] أَ[g[نّ][o[ِىٓ] أَنَا [h:7262[ٱ]لْغَفُورُ [h:6228[ٱ][l[ل]رَّح[p[ِي]مُ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 49,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 105,
+        "sajda": false
+      },
+      {
+        "number": 1852,
+        "text": "وَأَ[g[نّ]َ عَذَابِى هُوَ [h:7263[ٱ]لْعَذَابُ [h:7264[ٱ]لْأَل[p[ِي]مُ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 50,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 106,
+        "sajda": false
+      },
+      {
+        "number": 1853,
+        "text": "وَنَبِّئْهُمْ عَ[f:7265[ن ض]َيْفِ إِ[q:1860[بْ]ر[n[َٲ]ه[p[ِي]مَ",
+        "surah": {
+          "number": 15,
+          "name": "سُورَةُ الحِجۡرِ",
+          "englishName": "Al-Hijr",
+          "englishNameTranslation": "The Rock",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 99
+        },
+        "numberInSurah": 51,
+        "juz": 14,
+        "manzil": 3,
+        "page": 264,
+        "ruku": 221,
+        "hizbQuarter": 106,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "15": {
+        "number": 15,
+        "name": "سُورَةُ الحِجۡرِ",
+        "englishName": "Al-Hijr",
+        "englishNameTranslation": "The Rock",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 99
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 257,
+    "ayahs": [
+      {
+        "number": 1761,
+        "text": "قَالَتْ لَهُمْ رُسُلُهُمْ إ[a:7068[ِن ن]َّحْنُ إِلَّا بَشَ[a:7069[رٌ م]ِّثْلُكُمْ وَلَ[n[ـٰ]كِ[g[نّ]َ [h:1441[ٱ]للَّهَ يَمُ[g[نّ]ُ عَلَىٰ م[a:476[َن ي]َش[o[َا]ٓءُ مِنْ عِبَادِه[n[ِۦ]‌ۖ وَمَا كَانَ لَن[o[َآ] أ[a:7070[َن ن]َّأْتِيَك[c:7071[ُم ب]ِسُلْطَ[n[ـٰ]نٍ إِلَّا بِإِذْنِ [h:509[ٱ]للَّهِ‌ۚ وَعَلَى [h:2207[ٱ]للَّهِ فَلْيَتَوَكَّلِ [h:2208[ٱ]لْمُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 11,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 212,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1762,
+        "text": "وَمَا لَن[o[َآ] أَلَّا نَتَوَكَّلَ عَلَى [h:412[ٱ]للَّهِ وَقَ[q:387[دْ] هَدَ[n[ٮٰ]نَا سُبُلَنَا‌ۚ وَلَنَصْبِرَ[g[نّ]َ عَلَىٰ م[o[َآ] ءَاذَيْتُمُونَا‌ۚ وَعَلَى [h:2207[ٱ]للَّهِ فَلْيَتَوَكَّلِ [h:6748[ٱ]لْمُتَوَكِّل[p[ُو]نَ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 12,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 212,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1763,
+        "text": "وَقَالَ [h:614[ٱ]لَّذِينَ كَفَرُو[s[اْ] لِرُسُلِهِمْ لَنُخْرِجَ[g[نّ]َك[w:7072[ُم م]ِّنْ أَرْضِن[o[َآ] أَوْ لَتَعُودُ[g[نّ]َ فِى مِلَّتِنَا‌ۖ فَأَوْحَ[o[ىٰٓ] إِلَيْهِمْ رَبُّهُمْ لَنُهْلِكَ[g[نّ]َ [h:7073[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ِي]نَ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 13,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1764,
+        "text": "وَلَنُسْكِنَ[g[نّ]َكُمُ [h:7074[ٱ]لْأَرْضَ م[i:1453[ِنۢ ب]َعْدِهِمْ‌ۚ ذ[n[َٲ]لِكَ لِمَنْ خَافَ مَقَامِى وَخَافَ وَع[p[ِي][q[د]ِ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 14,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1765,
+        "text": "وَ[h:9999[ٱ]سْتَفْتَحُو[s[اْ] وَخَابَ كُلُّ جَبَّارٍ عَن[p[ِي][q[د]ٍ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 15,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1766,
+        "text": "مّ[a:7075[ِن و]َر[o[َا]ٓئِه[n[ِۦ] جَهَ[g[نّ]َمُ وَيُسْقَىٰ م[a:840[ِن م]ّ[o[َا]ٓ[f:7076[ءٍ ص]َد[p[ِي][q[د]ٍ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 16,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1767,
+        "text": "يَتَجَرَّعُهُ[n[ۥ] وَلَا يَكَادُ يُسِيغُهُ[n[ۥ] وَيَأْتِيهِ [h:7077[ٱ]لْمَوْتُ مِ[f:843[ن ك]ُلِّ مَكَا[a:7078[نٍ و]َمَا هُوَ بِمَيِّ[a:7079[تٍ‌ۖ و]َم[a:7080[ِن و]َر[o[َا]ٓئِه[n[ِۦ] عَذَابٌ غَل[p[ِي]ظٌ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 17,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      },
+      {
+        "number": 1768,
+        "text": "مَّثَلُ [h:1179[ٱ]لَّذِينَ كَفَرُو[s[اْ] بِرَبِّهِمْ‌ۖ أَعْمَ[n[ـٰ]لُهُمْ كَرَمَادٍ [h:7081[ٱ]شْتَدَّتْ بِهِ [h:7082[ٱ][l[ل]رِّيحُ فِى يَوْمٍ عَاصِ[u:7083[فٍ‌ۖ ل]َّا يَ[q:1555[قْ]دِرُونَ مِ[g[مّ]َا كَسَبُو[s[اْ] عَلَىٰ ش[f:6654[َىْءٍ‌ۚ ذ][n[َٲ]لِكَ هُوَ [h:7084[ٱ][l[ل]ضَّلَ[n[ـٰ]لُ [h:7085[ٱ]لْبَع[p[ِي][q[د]ُ",
+        "surah": {
+          "number": 14,
+          "name": "سُورَةُ إِبۡرَاهِيمَ",
+          "englishName": "Ibrahim",
+          "englishNameTranslation": "Abraham",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 52
+        },
+        "numberInSurah": 18,
+        "juz": 13,
+        "manzil": 3,
+        "page": 257,
+        "ruku": 213,
+        "hizbQuarter": 103,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "14": {
+        "number": 14,
+        "name": "سُورَةُ إِبۡرَاهِيمَ",
+        "englishName": "Ibrahim",
+        "englishNameTranslation": "Abraham",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 52
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

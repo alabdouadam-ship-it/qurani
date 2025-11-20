@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 177,
+    "ayahs": [
+      {
+        "number": 1161,
+        "text": "يَسْــَٔلُونَكَ عَنِ [h:5228[ٱ]لْأَ[f:5229[نف]َالِ‌ۖ قُلِ [h:5230[ٱ]لْأَ[f:5231[نف]َالُ لِلَّهِ وَ[h:2421[ٱ][l[ل]رَّسُولِ‌ۖ فَ[h:112[ٱ]تَّقُو[s[اْ] [h:1945[ٱ]للَّهَ وَأَصْلِحُو[s[اْ] ذَاتَ بَيْنِكُمْ‌ۖ وَأَطِيعُو[s[اْ] [h:2238[ٱ]للَّهَ وَرَسُولَهُ[o[ۥٓ] إِ[f:109[ن ك]ُ[f:100[نت][w:482[ُم م]ُّؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 1,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1162,
+        "text": "إِ[g[نّ]َمَا [h:5232[ٱ]لْمُؤْمِنُونَ [h:5233[ٱ]لَّذِينَ إِذَا ذُكِرَ [h:5234[ٱ]للَّهُ وَجِلَتْ قُلُوبُهُمْ وَإِذَا تُلِيَتْ عَلَيْهِمْ ءَايَ[n[ـٰ]تُهُ[n[ۥ] زَادَتْهُمْ إِيمَ[n[ـٰ][a:5235[نًا و]َعَلَىٰ رَبِّهِمْ يَتَوَكَّل[p[ُو]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 2,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1163,
+        "text": "ٱلَّذِينَ يُقِيمُونَ [h:3638[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةَ وَمِ[g[مّ]َا رَزَ[q:15[قْ]نَ[n[ـٰ]هُمْ يُ[f:16[نف]ِق[p[ُو]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 3,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1164,
+        "text": "أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:5236[ٱ]لْمُؤْمِنُونَ حَق[u:5237[ًّا‌ۚ ل]َّهُمْ دَرَجَ[n[ـٰ]تٌ عِ[f:264[ند]َ رَبِّهِمْ وَمَغْفِرَ[a:5238[ةٌ و]َرِزْ[f:5239[قٌ ك]َر[p[ِي]مٌ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 4,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1165,
+        "text": "كَم[o[َآ] أَخْرَجَكَ رَبُّكَ م[i:5240[ِنۢ ب]َيْتِكَ بِ[h:370[ٱ]لْحَقِّ وَإِ[g[نّ]َ فَرِي[a:2128[قًا م]ِّنَ [h:3047[ٱ]لْمُؤْمِنِينَ لَكَ[n[ـٰ]رِه[p[ُو]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 5,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1166,
+        "text": "يُجَ[n[ـٰ]دِلُونَكَ فِى [h:5241[ٱ]لْحَقِّ بَعْدَ مَا تَبَيَّنَ كَأَ[g[نّ]َمَا يُسَاقُونَ إِلَى [h:5242[ٱ]لْمَوْتِ وَهُمْ يَ[f:1141[نظ]ُر[p[ُو]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 6,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1167,
+        "text": "وَإِذْ يَعِدُكُمُ [h:5243[ٱ]للَّهُ إِحْدَى [h:5244[ٱ][l[ل]طّ[o[َا]ٓئِفَتَيْنِ أَ[g[نّ]َهَا لَكُمْ وَتَوَدُّونَ أَ[g[نّ]َ غَيْرَ ذَاتِ [h:5245[ٱ][l[ل]شَّوْكَةِ تَكُونُ لَكُمْ وَيُرِيدُ [h:5246[ٱ]للَّهُ أ[a:5247[َن ي]ُحِقَّ [h:5248[ٱ]لْحَقَّ بِكَلِمَ[n[ـٰ]تِه[n[ِۦ] وَيَ[q:5249[قْ]طَعَ دَابِرَ [h:5250[ٱ]لْكَ[n[ـٰ]فِر[p[ِي]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 7,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      },
+      {
+        "number": 1168,
+        "text": "لِيُحِقَّ [h:5251[ٱ]لْحَقَّ وَيُ[q:5252[بْ]طِلَ [h:5253[ٱ]لْبَ[n[ـٰ]طِلَ وَلَوْ كَرِهَ [h:5254[ٱ]لْمُ[q:5255[جْ]رِم[p[ُو]نَ",
+        "surah": {
+          "number": 8,
+          "name": "سُورَةُ الأَنفَالِ",
+          "englishName": "Al-Anfaal",
+          "englishNameTranslation": "The Spoils of War",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 75
+        },
+        "numberInSurah": 8,
+        "juz": 9,
+        "manzil": 2,
+        "page": 177,
+        "ruku": 146,
+        "hizbQuarter": 71,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "8": {
+        "number": 8,
+        "name": "سُورَةُ الأَنفَالِ",
+        "englishName": "Al-Anfaal",
+        "englishNameTranslation": "The Spoils of War",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 75
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

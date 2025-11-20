@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 302,
+    "ayahs": [
+      {
+        "number": 2215,
+        "text": "۞ قَالَ أَلَمْ أَقُل لَّكَ إِ[g[نّ]َكَ لَ[f:8159[ن ت]َسْتَطِيعَ مَعِىَ صَ[q:1427[بْ]رًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 75,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2216,
+        "text": "قَالَ إِ[f:8173[ن س]َأَلْتُكَ عَ[f:2550[ن ش]َىْ[i:8174[ءِۭ ب]َعْدَهَا فَلَا تُصَ[n[ـٰ]حِ[q:8175[بْ]نِى‌ۖ قَ[q:298[دْ] بَلَغْتَ م[u:8176[ِن ل]َّدُ[g[نّ]ِى عُذْرًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 76,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2217,
+        "text": "فَ[h:9999[ٱ][f:8164[نط]َلَقَا حَتَّ[o[ىٰٓ] إِذ[o[َآ] أَتَي[o[َآ] أَهْلَ قَرْيَةٍ [h:8177[ٱ]سْتَ[q:8178[طْ]عَم[o[َآ] أَهْلَهَا فَأَبَوْ[s[اْ] أ[a:8179[َن ي]ُضَيِّفُوهُمَا فَوَجَدَا فِيهَا جِدَا[a:8180[رًا ي]ُرِيدُ أ[a:8181[َن ي]َ[f:8182[نق]َضَّ فَأَقَامَهُ[n[ۥ]‌ۖ قَالَ لَوْ شِئْتَ لَتَّخَذْتَ عَلَيْهِ أَ[q:2795[جْ]رًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 77,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2218,
+        "text": "قَالَ هَ[n[ـٰ]ذَا فِرَاقُ بَيْنِى وَبَيْنِكَ‌ۚ سَأُنَبِّئُكَ بِتَأْوِيلِ مَا لَمْ تَسْتَطِع عَّلَيْهِ صَ[q:1427[بْ]رًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 78,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2219,
+        "text": "أَ[g[مّ]َا [h:8183[ٱ][l[ل]سَّفِينَةُ فَكَانَتْ لِمَسَ[n[ـٰ]كِينَ يَعْمَلُونَ فِى [h:837[ٱ]لْبَحْرِ فَأَرَ[d:8184[د]تُّ أَنْ أَعِيبَهَا وَكَانَ وَر[o[َا]ٓءَه[w:8185[ُم م]َّلِ[a:8186[كٌ ي]َأْخُذُ كُلَّ سَفِينَةٍ غَصْبًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 79,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2220,
+        "text": "وَأَ[g[مّ]َا [h:8187[ٱ]لْغُلَ[n[ـٰ]مُ فَكَانَ أَبَوَاهُ مُؤْمِنَيْنِ فَخَشِين[o[َآ] أ[a:8188[َن ي]ُرْهِقَهُمَا طُغْيَ[n[ـٰ][a:3671[نًا و]َكُفْرًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 80,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2221,
+        "text": "فَأَرَ[q:8189[دْ]ن[o[َآ] أ[a:8190[َن ي]ُ[q:8191[بْ]دِلَهُمَا رَبُّهُمَا خَيْ[a:8192[رًا م]ِّنْهُ زَكَ[s[و][n[ٲ][a:8193[ةً و]َأَ[q:8194[قْ]رَبَ رُحْمًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 81,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2222,
+        "text": "وَأَ[g[مّ]َا [h:8195[ٱ]لْجِدَارُ فَكَانَ لِغُلَ[n[ـٰ]مَيْنِ يَتِيمَيْنِ فِى [h:4932[ٱ]لْمَدِينَةِ وَكَانَ تَحْتَهُ[n[ۥ] كَن[u:8196[زٌ ل]َّهُمَا وَكَانَ أَبُوهُمَا صَ[n[ـٰ]لِ[f:8197[حًا ف]َأَرَادَ رَبُّكَ أ[a:8198[َن ي]َ[q:8199[بْ]لُغ[o[َآ] أَشُدَّهُمَا وَيَسْتَخْرِجَا كَ[f:8200[نز]َهُمَا رَحْمَ[a:5993[ةً م]ّ[u:770[ِن ر]َّبِّكَ‌ۚ وَمَا فَعَلْتُهُ[n[ۥ] عَنْ أَمْرِى‌ۚ ذ[n[َٲ]لِكَ تَأْوِيلُ مَا لَمْ تَسْطِع عَّلَيْهِ صَ[q:1427[بْ]رًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 82,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 261,
+        "hizbQuarter": 121,
+        "sajda": false
+      },
+      {
+        "number": 2223,
+        "text": "وَيَسْــَٔلُونَكَ عَ[f:8201[ن ذ]ِى [h:8202[ٱ]لْقَرْنَيْنِ‌ۖ قُلْ سَأَتْلُو[s[اْ] عَلَيْك[w:8203[ُم م]ِّنْهُ ذِكْرًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 83,
+        "juz": 16,
+        "manzil": 4,
+        "page": 302,
+        "ruku": 262,
+        "hizbQuarter": 121,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

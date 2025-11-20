@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 333,
+    "ayahs": [
+      {
+        "number": 2601,
+        "text": "ذ[n[َٲ]لِكَ بِأَ[g[نّ]َ [h:897[ٱ]للَّهَ هُوَ [h:8923[ٱ]لْحَقُّ وَأَ[g[نّ]َهُ[n[ۥ] يُحْىِ [h:8924[ٱ]لْمَوْتَىٰ وَأَ[g[نّ]َهُ[n[ۥ] عَلَىٰ كُلِّ ش[f:81[َىْءٍ ق]َد[p[ِي]رٌ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 6,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 285,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2602,
+        "text": "وَأَ[g[نّ]َ [h:8014[ٱ][l[ل]سَّاعَةَ ءَاتِيَ[u:8925[ةٌ ل]َّا رَيْبَ فِيهَا وَأَ[g[نّ]َ [h:859[ٱ]للَّهَ يَ[q:7405[بْ]عَثُ مَ[f:2074[ن ف]ِى [h:8926[ٱ]لْقُب[p[ُو]رِ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 7,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 285,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2603,
+        "text": "وَمِنَ [h:30[ٱ][l[ل][g[نّ]َاسِ م[a:8901[َن ي]ُجَ[n[ـٰ]دِلُ فِى [h:714[ٱ]للَّهِ بِغَيْرِ عِلْ[a:7953[مٍ و]َلَا هُ[a:8927[دًى و]َلَا كِتَ[n[ـٰ][a:8928[بٍ م]ُّن[p[ِي]رٍ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 8,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 285,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2604,
+        "text": "ثَانِىَ عِ[q:8929[طْ]فِه[n[ِۦ] لِيُضِلَّ عَ[f:1203[ن س]َبِيلِ [h:788[ٱ]للَّهِ‌ۖ لَهُ[n[ۥ] فِى [h:599[ٱ][l[ل]دُّنْيَا خِزْ[a:8930[ىٌ‌ۖ و]َنُذِيقُهُ[n[ۥ] يَوْمَ [h:592[ٱ]لْقِيَ[n[ـٰ]مَةِ عَذَابَ [h:2465[ٱ]لْحَر[p[ِي][q[ق]ِ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 9,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 285,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2605,
+        "text": "ذ[n[َٲ]لِكَ بِمَا قَدَّمَتْ يَدَاكَ وَأَ[g[نّ]َ [h:859[ٱ]للَّهَ لَيْسَ بِظَلَّ[n[ـٰ][u:2466[مٍ ل]ِّلْعَب[p[ِي][q[د]ِ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 10,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 285,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2606,
+        "text": "وَمِنَ [h:30[ٱ][l[ل][g[نّ]َاسِ م[a:8931[َن ي]َعْبُدُ [h:8932[ٱ]للَّهَ عَلَىٰ حَرْ[f:8933[فٍ‌ۖ ف]َإِنْ أَصَابَهُ[n[ۥ] خَيْرٌ [h:8934[ٱ][q:8935[طْ]مَأَ[g[نّ]َ بِه[n[ِۦ]‌ۖ وَإِنْ أَصَابَتْهُ فِتْنَةٌ [h:8936[ٱ][f:8937[نق]َلَبَ عَلَىٰ وَ[q:6818[جْ]هِه[n[ِۦ] خَسِرَ [h:8938[ٱ][l[ل]دُّنْيَا وَ[h:8939[ٱ]لْأَخِرَةَ‌ۚ ذ[n[َٲ]لِكَ هُوَ [h:8940[ٱ]لْخُسْرَانُ [h:8941[ٱ]لْمُب[p[ِي]نُ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 11,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2607,
+        "text": "يَ[q:1242[دْ]عُو[s[اْ] مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ مَا لَا يَضُرُّهُ[n[ۥ] وَمَا لَا يَ[f:8942[نف]َعُهُ[n[ۥ]‌ۚ ذ[n[َٲ]لِكَ هُوَ [h:7084[ٱ][l[ل]ضَّلَ[n[ـٰ]لُ [h:7085[ٱ]لْبَع[p[ِي][q[د]ُ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 12,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2608,
+        "text": "يَ[q:1242[دْ]عُو[s[اْ] لَمَ[f:8943[ن ض]َرُّهُ[o[ۥٓ] أَ[q:1355[قْ]رَبُ م[a:8944[ِن ن]َّفْعِه[n[ِۦ]‌ۚ لَبِئْسَ [h:8945[ٱ]لْمَوْلَىٰ وَلَبِئْسَ [h:8946[ٱ]لْعَش[p[ِي]رُ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 13,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2609,
+        "text": "إِ[g[نّ]َ [h:80[ٱ]للَّهَ يُ[q:8947[دْ]خِلُ [h:8948[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ جَ[g[نّ]َ[n[ـٰ][f:119[تٍ ت]َ[q:120[جْ]رِى مِ[f:121[ن ت]َحْتِهَا [h:122[ٱ]لْأَنْهَ[n[ـٰ]رُ‌ۚ إِ[g[نّ]َ [h:80[ٱ]للَّهَ يَفْعَلُ مَا يُر[p[ِي][q[د]ُ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 14,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      },
+      {
+        "number": 2610,
+        "text": "مَ[f:506[ن ك]َانَ يَظُ[g[نّ]ُ أ[u:8842[َن ل]ّ[a:8949[َن ي]َ[f:8950[نص]ُرَهُ [h:8951[ٱ]للَّهُ فِى [h:599[ٱ][l[ل]دُّنْيَا وَ[h:1213[ٱ]لْأَخِرَةِ فَلْيَمْدُ[q:8398[دْ] بِسَبَبٍ إِلَى [h:157[ٱ][l[ل]سَّم[o[َا]ٓءِ ثُ[g[مّ]َ لْيَ[q:8952[قْ]طَعْ فَلْيَ[f:8007[نظ]ُرْ هَلْ يُذْهِبَ[g[نّ]َ كَيْدُهُ[n[ۥ] مَا يَغ[p[ِي]ظُ",
+        "surah": {
+          "number": 22,
+          "name": "سُورَةُ الحَجِّ",
+          "englishName": "Al-Hajj",
+          "englishNameTranslation": "The Pilgrimage",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 78
+        },
+        "numberInSurah": 15,
+        "juz": 17,
+        "manzil": 4,
+        "page": 333,
+        "ruku": 286,
+        "hizbQuarter": 133,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "22": {
+        "number": 22,
+        "name": "سُورَةُ الحَجِّ",
+        "englishName": "Al-Hajj",
+        "englishNameTranslation": "The Pilgrimage",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 78
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

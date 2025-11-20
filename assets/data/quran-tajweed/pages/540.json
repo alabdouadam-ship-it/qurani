@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 540,
+    "ayahs": [
+      {
+        "number": 5094,
+        "text": "وَ[h:9999[ٱ]لَّذِينَ ءَامَنُو[s[اْ] بِ[h:32[ٱ]للَّهِ وَرُسُلِه[o[ِۦٓ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:13348[ٱ][l[ل]صِّدِّيقُونَ‌ۖ وَ[h:13349[ٱ][l[ل]شُّهَد[o[َا]ٓءُ عِ[f:264[ند]َ رَبِّهِمْ لَهُمْ أَ[q:331[جْ]رُهُمْ وَنُورُهُمْ‌ۖ وَ[h:37[ٱ]لَّذِينَ كَفَرُو[s[اْ] وَكَذَّبُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِن[o[َآ] أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ أَصْحَ[n[ـٰ]بُ [h:3415[ٱ]لْجَح[p[ِي]مِ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 473,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5095,
+        "text": "ٱعْلَم[o[ُوٓ][s[اْ] أَ[g[نّ]َمَا [h:13350[ٱ]لْحَيَ[s[و][n[ٲ]ةُ [h:1156[ٱ][l[ل]دُّنْيَا لَعِ[a:4002[بٌ و]َلَهْ[a:13351[وٌ و]َزِينَ[a:13352[ةٌ و]َتَفَاخُ[i:13353[رُۢ ب]َيْنَكُمْ وَتَكَاثُ[f:13354[رٌ ف]ِى [h:7821[ٱ]لْأَمْو[n[َٲ]لِ وَ[h:7822[ٱ]لْأَوْلَ[n[ـٰ]دِ‌ۖ كَمَثَلِ غَيْثٍ أَعْجَبَ [h:13355[ٱ]لْكُفَّارَ نَبَاتُهُ[n[ۥ] ثُ[g[مّ]َ يَهِيجُ فَتَرَ[n[ٮٰ]هُ مُصْفَر[f:11672[ًّا ث]ُ[g[مّ]َ يَكُونُ حُطَ[n[ـٰ][a:13356[مًا‌ۖ و]َفِى [h:1108[ٱ]لْأَخِرَةِ عَذَا[f:1727[بٌ ش]َدِي[a:13357[دٌ و]َمَغْفِرَ[a:13358[ةٌ م]ِّنَ [h:321[ٱ]للَّهِ وَرِضْو[n[َٲ][a:13359[نٌ‌ۚ و]َمَا [h:2482[ٱ]لْحَيَ[s[و][n[ٲ]ةُ [h:1156[ٱ][l[ل]دُّنْي[o[َآ] إِلَّا مَتَ[n[ـٰ]عُ [h:2483[ٱ]لْغُر[p[ُو]رِ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5096,
+        "text": "سَابِق[o[ُوٓ][s[اْ] إِلَىٰ مَغْفِرَ[a:2239[ةٍ م]ّ[u:243[ِن ر]َّبِّكُمْ وَجَ[g[نّ]َةٍ عَرْضُهَا كَعَرْضِ [h:13360[ٱ][l[ل]سَّم[o[َا]ٓءِ وَ[h:177[ٱ]لْأَرْضِ أُعِدَّتْ لِلَّذِينَ ءَامَنُو[s[اْ] بِ[h:32[ٱ]للَّهِ وَرُسُلِه[n[ِۦ]‌ۚ ذ[n[َٲ]لِكَ فَضْلُ [h:337[ٱ]للَّهِ يُؤْتِيهِ م[a:476[َن ي]َش[o[َا]ٓءُ‌ۚ وَ[h:72[ٱ]للَّهُ ذُو [h:550[ٱ]لْفَضْلِ [h:551[ٱ]لْعَظ[p[ِي]مِ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5097,
+        "text": "م[o[َآ] أَصَابَ م[a:12140[ِن م]ُّصِيبَ[f:13361[ةٍ ف]ِى [h:44[ٱ]لْأَرْضِ وَلَا ف[o[ِىٓ] أَ[f:1329[نف]ُسِكُمْ إِلَّا فِى كِتَ[n[ـٰ][a:13362[بٍ م]ِّ[f:1346[ن ق]َ[q:1347[بْ]لِ أ[a:13363[َن ن]َّ[q:13364[بْ]رَأَه[o[َآ‌ۚ] إِ[g[نّ]َ ذ[n[َٲ]لِكَ عَلَى [h:412[ٱ]للَّهِ يَس[p[ِي]رٌ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5098,
+        "text": "لِّكَيْلَا تَأْسَوْ[s[اْ] عَلَىٰ مَا فَاتَكُمْ وَلَا تَفْرَحُو[s[اْ] بِم[o[َآ] ءَاتَ[n[ـٰ]كُمْ‌ۗ وَ[h:72[ٱ]للَّهُ لَا يُحِبُّ كُلَّ مُخْتَا[f:10576[لٍ ف]َخ[p[ُو]رٍ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      },
+      {
+        "number": 5099,
+        "text": "ٱلَّذِينَ يَ[q:2456[بْ]خَلُونَ وَيَأْمُرُونَ [h:2780[ٱ][l[ل][g[نّ]َاسَ بِ[h:2781[ٱ]لْبُخْلِ‌ۗ وَم[a:3640[َن ي]َتَوَلَّ فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ هُوَ [h:6121[ٱ]لْغَنِىُّ [h:9093[ٱ]لْحَم[p[ِي][q[د]ُ",
+        "surah": {
+          "number": 57,
+          "name": "سُورَةُ الحَدِيدِ",
+          "englishName": "Al-Hadid",
+          "englishNameTranslation": "The Iron",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 540,
+        "ruku": 474,
+        "hizbQuarter": 216,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "57": {
+        "number": 57,
+        "name": "سُورَةُ الحَدِيدِ",
+        "englishName": "Al-Hadid",
+        "englishNameTranslation": "The Iron",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

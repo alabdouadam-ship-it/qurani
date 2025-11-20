@@ -1,0 +1,275 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 445,
+    "ayahs": [
+      {
+        "number": 3776,
+        "text": "أَوَلَمْ يَرَوْ[s[اْ] أَ[g[نّ]َا خَلَ[q:5159[قْ]نَا لَه[w:402[ُم م]ِّ[g[مّ]َا عَمِلَتْ أَيْدِين[o[َآ] أَنْعَ[n[ـٰ][f:11292[مًا ف]َهُمْ لَهَا مَ[n[ـٰ]لِك[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 71,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3777,
+        "text": "وَذَلَّلْنَ[n[ـٰ]هَا لَهُمْ فَمِنْهَا رَكُوبُهُمْ وَمِنْهَا يَأْكُل[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 72,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3778,
+        "text": "وَلَهُمْ فِيهَا مَنَ[n[ـٰ]فِعُ وَمَشَارِبُ‌ۖ أَفَلَا يَشْكُر[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 73,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3779,
+        "text": "وَ[h:9999[ٱ]تَّخَذُو[s[اْ] مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ ءَالِهَ[u:11293[ةً ل]َّعَلَّهُمْ يُ[f:237[نص]َر[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 74,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3780,
+        "text": "لَا يَسْتَطِيعُونَ نَصْرَهُمْ وَهُمْ لَهُمْ جُن[a:11294[دٌ م]ُّحْضَر[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 75,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3781,
+        "text": "فَلَا يَحْزُ[f:2435[نك]َ قَوْلُهُمْ‌ۘ إِ[g[نّ]َا نَعْلَمُ مَا يُسِرُّونَ وَمَا يُعْلِن[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 76,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3782,
+        "text": "أَوَلَمْ يَرَ [h:11295[ٱ]لْإِ[f:2732[نس]َ[n[ـٰ]نُ أَ[g[نّ]َا خَلَ[q:7232[قْ]نَ[n[ـٰ]هُ م[a:7325[ِن ن]ُّ[q:7326[طْ]فَ[f:7327[ةٍ ف]َإِذَا هُوَ خَصِي[a:7328[مٌ م]ُّب[p[ِي]نٌ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 77,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3783,
+        "text": "وَضَرَبَ لَنَا مَثَل[a:11296[اً و]َنَسِىَ خَلْقَهُ[n[ۥ]‌ۖ قَالَ م[a:11297[َن ي]ُحْىِ [h:11298[ٱ]لْعِظَ[n[ـٰ]مَ وَهِىَ رَم[p[ِي]مٌ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 78,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3784,
+        "text": "قُلْ يُحْيِيهَا [h:11299[ٱ]لَّذ[o[ِىٓ] أَ[f:11300[نش]َأَه[o[َآ] أَوَّلَ مَرَّ[a:11301[ةٍ‌ۖ و]َهُوَ بِكُلِّ خَلْقٍ عَل[p[ِي]مٌ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 79,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3785,
+        "text": "ٱلَّذِى جَعَلَ لَك[w:1578[ُم م]ِّنَ [h:11302[ٱ][l[ل]شَّجَرِ [h:11303[ٱ]لْأَخْضَرِ نَا[f:11304[رًا ف]َإِذ[o[َآ] أَ[f:428[نت][w:11305[ُم م]ِّنْهُ تُوقِد[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 80,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3786,
+        "text": "أَوَلَيْسَ [h:11306[ٱ]لَّذِى خَلَقَ [h:3913[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:1474[ٱ]لْأَرْضَ بِقَ[n[ـٰ]دِرٍ عَلَ[o[ىٰٓ] أ[a:7911[َن ي]َخْلُقَ مِثْلَه[c:11307[ُم‌ۚ ب]َلَىٰ وَهُوَ [h:11308[ٱ]لْخَلَّ[n[ـٰ]قُ [h:7305[ٱ]لْعَل[p[ِي]مُ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 81,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3787,
+        "text": "إِ[g[نّ]َم[o[َآ] أَمْرُهُ[o[ۥٓ] إِذ[o[َآ] أَرَادَ شَيْــًٔا أ[a:11309[َن ي]َقُولَ لَهُ[n[ۥ] كُ[f:613[ن ف]َيَك[p[ُو]نُ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 82,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      },
+      {
+        "number": 3788,
+        "text": "فَسُ[q:8705[بْ]حَ[n[ـٰ]نَ [h:11310[ٱ]لَّذِى بِيَدِه[n[ِۦ] مَلَكُوتُ كُلِّ ش[a:11311[َىْءٍ و]َإِلَيْهِ تُرْجَع[p[ُو]نَ",
+        "surah": {
+          "number": 36,
+          "name": "سُورَةُ يسٓ",
+          "englishName": "Yaseen",
+          "englishNameTranslation": "Yaseen",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 83
+        },
+        "numberInSurah": 83,
+        "juz": 23,
+        "manzil": 5,
+        "page": 445,
+        "ruku": 385,
+        "hizbQuarter": 178,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "36": {
+        "number": 36,
+        "name": "سُورَةُ يسٓ",
+        "englishName": "Yaseen",
+        "englishNameTranslation": "Yaseen",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 83
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

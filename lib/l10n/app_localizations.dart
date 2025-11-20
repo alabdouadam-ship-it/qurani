@@ -1573,6 +1573,12 @@ abstract class AppLocalizations {
   /// **'Arabic (Uthmani)'**
   String get editionArabicUthmani;
 
+  /// No description provided for @editionArabicTajweed.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran Tajweed'**
+  String get editionArabicTajweed;
+
   /// No description provided for @editionEnglish.
   ///
   /// In en, this message translates to:

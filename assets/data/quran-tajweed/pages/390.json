@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 390,
+    "ayahs": [
+      {
+        "number": 3288,
+        "text": "فَلَ[g[مّ]َا ج[o[َا]ٓءَه[w:10161[ُم م]ُّوسَىٰ بِـَٔـايَ[n[ـٰ]تِنَا بَيِّنَ[n[ـٰ][f:10162[تٍ ق]َالُو[s[اْ] مَا هَ[n[ـٰ]ذ[o[َآ] إِلَّا سِحْ[a:10163[رٌ م]ُّفْتَ[a:10164[رًى و]َمَا سَمِعْنَا بِهَ[n[ـٰ]ذَا ف[o[ِىٓ] ءَاب[o[َا]ٓئِنَا [h:9184[ٱ]لْأَوَّل[p[ِي]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 36,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3289,
+        "text": "وَقَالَ مُوسَىٰ رَبّ[o[ِىٓ] أَعْلَمُ بِمَ[f:10165[ن ج][o[َا]ٓءَ بِ[h:54[ٱ]لْهُدَىٰ مِنْ عِ[f:3628[ند]ِه[n[ِۦ] وَمَ[f:10166[ن ت]َكُونُ لَهُ[n[ۥ] عَ[n[ـٰ]قِبَةُ [h:4439[ٱ][l[ل]دَّارِ‌ۖ إِ[g[نّ]َهُ[n[ۥ] لَا يُفْلِحُ [h:3981[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ُو]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 37,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3290,
+        "text": "وَقَالَ فِرْعَوْنُ يَ[o[ـٰٓ]أَيُّهَا [h:6683[ٱ]لْمَلَأُ مَا عَلِمْتُ لَك[w:556[ُم م]ِّنْ إِلَ[n[ـٰ]هٍ غَيْرِى فَأَوْقِ[q:10167[دْ] لِى يَ[n[ـٰ]هَ[n[ـٰ]مَ[n[ـٰ]نُ عَلَى [h:10168[ٱ][l[ل]طِّينِ فَ[h:7148[ٱ][q:7148[جْ]عَل لِّى صَرْ[u:10169[حًا ل]َّعَلّ[o[ِىٓ] أَطَّلِعُ إِلَ[o[ىٰٓ] إِلَ[n[ـٰ]هِ مُوسَىٰ وَإِ[g[نّ]ِى لَأَظُ[g[نّ]ُهُ[n[ۥ] مِنَ [h:4785[ٱ]لْكَ[n[ـٰ]ذِب[p[ِي]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 38,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3291,
+        "text": "وَ[h:9999[ٱ]سْتَكْبَرَ هُوَ وَجُنُودُهُ[n[ۥ] فِى [h:44[ٱ]لْأَرْضِ بِغَيْرِ [h:325[ٱ]لْحَقِّ وَظَ[g[نّ][o[ُوٓ][s[اْ] أَ[g[نّ]َهُمْ إِلَيْنَا لَا يُرْجَع[p[ُو]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 39,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3292,
+        "text": "فَأَخَذْنَ[n[ـٰ]هُ وَجُنُودَهُ[n[ۥ] فَنَبَذْنَ[n[ـٰ]هُمْ فِى [h:4971[ٱ]لْيَ[g[مّ]ِ‌ۖ فَ[h:1513[ٱ][f:1513[نظ]ُرْ كَيْفَ كَانَ عَ[n[ـٰ]قِبَةُ [h:6064[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ِي]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 40,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3293,
+        "text": "وَجَعَلْنَ[n[ـٰ]هُمْ أَئِ[g[مّ]َ[a:10170[ةً ي]َ[q:1240[دْ]عُونَ إِلَى [h:1241[ٱ][l[ل][g[نّ]َارِ‌ۖ وَيَوْمَ [h:443[ٱ]لْقِيَ[n[ـٰ]مَةِ لَا يُ[f:237[نص]َر[p[ُو]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 41,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3294,
+        "text": "وَأَتْبَعْنَ[n[ـٰ]هُمْ فِى هَ[n[ـٰ]ذِهِ [h:5052[ٱ][l[ل]دُّنْيَا لَعْنَ[a:6394[ةً‌ۖ و]َيَوْمَ [h:443[ٱ]لْقِيَ[n[ـٰ]مَةِ ه[w:10171[ُم م]ِّنَ [h:10172[ٱ]لْمَ[q:10173[قْ]بُوح[p[ِي]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 42,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 337,
+        "hizbQuarter": 156,
+        "sajda": false
+      },
+      {
+        "number": 3295,
+        "text": "وَلَقَ[q:341[دْ] ءَاتَيْنَا مُوسَى [h:257[ٱ]لْكِتَ[n[ـٰ]بَ م[i:146[ِنۢ ب]َعْدِ م[o[َآ] أَهْلَكْنَا [h:5975[ٱ]لْقُرُونَ [h:10174[ٱ]لْأُولَىٰ بَص[o[َا]ٓئِرَ لِل[g[نّ]َاسِ وَهُ[a:4537[دًى و]َرَحْمَ[u:4538[ةً ل]َّعَلَّهُمْ يَتَذَكَّر[p[ُو]نَ",
+        "surah": {
+          "number": 28,
+          "name": "سُورَةُ القَصَصِ",
+          "englishName": "Al-Qasas",
+          "englishNameTranslation": "The Stories",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 88
+        },
+        "numberInSurah": 43,
+        "juz": 20,
+        "manzil": 5,
+        "page": 390,
+        "ruku": 338,
+        "hizbQuarter": 156,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "28": {
+        "number": 28,
+        "name": "سُورَةُ القَصَصِ",
+        "englishName": "Al-Qasas",
+        "englishNameTranslation": "The Stories",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 88
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

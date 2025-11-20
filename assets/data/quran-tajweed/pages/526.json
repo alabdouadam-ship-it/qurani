@@ -1,0 +1,522 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 526,
+    "ayahs": [
+      {
+        "number": 4785,
+        "text": "وَ[h:9999[ٱ][l[ل][g[نّ]َ[q:12956[جْ]مِ إِذَا هَوَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 1,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4786,
+        "text": "مَا ضَلَّ صَاحِبُكُمْ وَمَا غَوَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 2,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4787,
+        "text": "وَمَا يَ[f:9237[نط]ِقُ عَنِ [h:12957[ٱ]لْهَوَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 3,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4788,
+        "text": "إِنْ هُوَ إِلَّا وَحْ[a:12958[ىٌ ي]ُوحَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 4,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4789,
+        "text": "عَلَّمَهُ[n[ۥ] شَدِيدُ [h:12959[ٱ]لْقُوَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 5,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4790,
+        "text": "ذُو مِرَّ[f:12960[ةٍ ف]َ[h:12710[ٱ]سْتَوَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 6,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4791,
+        "text": "وَهُوَ بِ[h:12961[ٱ]لْأُفُقِ [h:12962[ٱ]لْأَعْلَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 7,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4792,
+        "text": "ثُ[g[مّ]َ دَنَا فَتَدَلَّىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 8,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4793,
+        "text": "فَكَانَ قَابَ قَوْسَيْنِ أَوْ أَ[q:314[دْ]نَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 9,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4794,
+        "text": "فَأَوْحَ[o[ىٰٓ] إِلَىٰ عَ[q:7944[بْ]دِه[n[ِۦ] م[o[َآ] أَوْحَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 10,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4795,
+        "text": "مَا كَذَبَ [h:12963[ٱ]لْفُؤَادُ مَا رَأَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 11,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4796,
+        "text": "أَفَتُمَ[n[ـٰ]رُونَهُ[n[ۥ] عَلَىٰ مَا يَرَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 12,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4797,
+        "text": "وَلَقَ[q:341[دْ] رَءَاهُ نَزْلَةً أُخْرَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 13,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4798,
+        "text": "عِ[f:264[ند]َ سِ[q:12964[دْ]رَةِ [h:12965[ٱ]لْمُ[f:12966[نت]َهَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 14,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4799,
+        "text": "عِ[f:1876[ند]َهَا جَ[g[نّ]َةُ [h:12967[ٱ]لْمَأْوَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 15,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4800,
+        "text": "إِذْ يَغْشَى [h:12968[ٱ][l[ل]سِّ[q:12969[دْ]رَةَ مَا يَغْشَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 16,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4801,
+        "text": "مَا زَاغَ [h:12970[ٱ]لْبَصَرُ وَمَا طَغَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 17,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4802,
+        "text": "لَقَ[q:2389[دْ] رَأَىٰ مِنْ ءَايَ[n[ـٰ]تِ رَبِّهِ [h:12971[ٱ]لْكُ[q:8463[بْ]رَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 18,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4803,
+        "text": "أَفَرَءَيْتُمُ [h:12972[ٱ][l[ل]لَّ[n[ـٰ]تَ وَ[h:12973[ٱ]لْعُزَّىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 19,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4804,
+        "text": "وَمَنَ[s[و][n[ٲ]ةَ [h:12974[ٱ][l[ل]ثَّالِثَةَ [h:12975[ٱ]لْأُخْرَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 20,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4805,
+        "text": "أَلَكُمُ [h:12976[ٱ][l[ل]ذَّكَرُ وَلَهُ [h:12977[ٱ]لْأُ[f:12978[نث]َىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 21,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4806,
+        "text": "تِلْكَ إِ[f:12979[ذًا ق]ِسْمَ[f:12980[ةٌ ض]ِيزَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 22,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4807,
+        "text": "إِنْ هِىَ إِلّ[o[َآ] أَسْم[o[َا]ٓ[f:12981[ءٌ س]َ[g[مّ]َيْتُمُوه[o[َآ] أَ[f:428[نت]ُمْ وَءَاب[o[َا]ٓؤُك[w:4796[ُم م]ّ[o[َآ] أَ[f:471[نز]َلَ [h:472[ٱ]للَّهُ بِهَا مِ[f:4798[ن س]ُلْطَ[n[ـٰ]نٍ‌ۚ إ[a:4358[ِن ي]َتَّبِعُونَ إِلَّا [h:4359[ٱ][l[ل]ظَّ[g[نّ]َ وَمَا تَهْوَى [h:12982[ٱ]لْأَ[f:3181[نف]ُسُ‌ۖ وَلَقَ[q:341[دْ] ج[o[َا]ٓءَه[w:12983[ُم م]ّ[u:12984[ِن ر]َّبِّهِمُ [h:12985[ٱ]لْهُدَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 23,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4808,
+        "text": "أَمْ لِلْإِ[f:6549[نس]َ[n[ـٰ]نِ مَا تَمَ[g[نّ]َىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 24,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4809,
+        "text": "فَلِلَّهِ [h:12986[ٱ]لْأَخِرَةُ وَ[h:12987[ٱ]لْأُولَىٰ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 25,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 460,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4810,
+        "text": "۞ وَك[w:4584[َم م]ّ[a:12988[ِن م]َّلَ[f:12989[كٍ ف]ِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ لَا تُغْنِى شَفَ[n[ـٰ]عَتُهُمْ شَيْــًٔا إِلَّا م[i:146[ِنۢ ب]َعْدِ أ[a:12990[َن ي]َأْذَنَ [h:12991[ٱ]للَّهُ لِم[a:1537[َن ي]َش[o[َا]ٓءُ وَيَرْضَىٰٓ",
+        "surah": {
+          "number": 53,
+          "name": "سُورَةُ النَّجۡمِ",
+          "englishName": "An-Najm",
+          "englishNameTranslation": "The Star",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 62
+        },
+        "numberInSurah": 26,
+        "juz": 27,
+        "manzil": 7,
+        "page": 526,
+        "ruku": 461,
+        "hizbQuarter": 211,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "53": {
+        "number": 53,
+        "name": "سُورَةُ النَّجۡمِ",
+        "englishName": "An-Najm",
+        "englishNameTranslation": "The Star",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 62
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

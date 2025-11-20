@@ -1,0 +1,161 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 99,
+    "ayahs": [
+      {
+        "number": 621,
+        "text": "وَإِنِ [h:3173[ٱ]مْرَأَةٌ خَافَتْ م[i:3174[ِنۢ ب]َعْلِهَا نُشُوزًا أَوْ إِعْرَا[f:3175[ضًا ف]َلَا جُنَاحَ عَلَيْهِم[o[َآ] أ[a:3176[َن ي]ُصْلِحَا بَيْنَهُمَا صُلْ[a:3177[حًا‌ۚ و]َ[h:3178[ٱ][l[ل]صُّلْحُ خَيْ[a:3179[رٌ‌ۗ و]َأُحْضِرَتِ [h:3180[ٱ]لْأَ[f:3181[نف]ُسُ [h:3182[ٱ][l[ل]شُّحَّ‌ۚ وَإِ[f:3183[ن ت]ُحْسِنُو[s[اْ] وَتَتَّقُو[s[اْ] فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ كَانَ بِمَا تَعْمَلُونَ خَبِيرًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 128,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 622,
+        "text": "وَلَ[f:3184[ن ت]َسْتَطِيع[o[ُوٓ][s[اْ] أَ[f:3185[ن ت]َعْدِلُو[s[اْ] بَيْنَ [h:3186[ٱ][l[ل][g[نّ]ِس[o[َا]ٓءِ وَلَوْ حَرَصْتُمْ‌ۖ فَلَا تَمِيلُو[s[اْ] كُلَّ [h:3187[ٱ]لْمَيْلِ فَتَذَرُوهَا كَ[h:3188[ٱ]لْمُعَلَّقَةِ‌ۚ وَإِ[f:3189[ن ت]ُصْلِحُو[s[اْ] وَتَتَّقُو[s[اْ] فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ كَانَ غَفُو[u:2701[رًا ر]َّحِيمًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 129,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 623,
+        "text": "وَإ[a:3190[ِن ي]َتَفَرَّقَا يُغْنِ [h:3191[ٱ]للَّهُ كُل[a:3192[اًّ م]ِّ[f:3193[ن س]َعَتِه[n[ِۦ]‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ و[n[َٲ]سِعًا حَكِيمًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 130,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 624,
+        "text": "وَلِلَّهِ مَا فِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَمَا فِى [h:44[ٱ]لْأَرْضِ‌ۗ وَلَقَ[q:341[دْ] وَصَّيْنَا [h:3194[ٱ]لَّذِينَ أُوتُو[s[اْ] [h:524[ٱ]لْكِتَ[n[ـٰ]بَ مِ[f:85[ن ق]َ[q:86[بْ]لِكُمْ وَإِيَّاكُمْ أَنِ [h:3195[ٱ]تَّقُو[s[اْ] [h:1644[ٱ]للَّهَ‌ۚ وَإِ[f:3196[ن ت]َكْفُرُو[s[اْ] فَإِ[g[نّ]َ لِلَّهِ مَا فِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَمَا فِى [h:44[ٱ]لْأَرْضِ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ غَنِيًّا حَمِيدًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 131,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 625,
+        "text": "وَلِلَّهِ مَا فِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَمَا فِى [h:44[ٱ]لْأَرْضِ‌ۚ وَكَفَىٰ بِ[h:32[ٱ]للَّهِ وَكِيلاً",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 132,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 626,
+        "text": "إ[a:3197[ِن ي]َشَأْ يُذْهِ[q:3198[بْ]كُمْ أَيُّهَا [h:3199[ٱ][l[ل][g[نّ]َاسُ وَيَأْتِ بِـَٔـاخَرِينَ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ عَلَىٰ ذ[n[َٲ]لِكَ قَدِيرًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 133,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      },
+      {
+        "number": 627,
+        "text": "مَّ[f:506[ن ك]َانَ يُرِيدُ ثَوَابَ [h:2294[ٱ][l[ل]دُّنْيَا فَعِ[f:3042[ند]َ [h:3043[ٱ]للَّهِ ثَوَابُ [h:3200[ٱ][l[ل]دُّنْيَا وَ[h:1213[ٱ]لْأَخِرَةِ‌ۚ وَكَانَ [h:2653[ٱ]للَّهُ سَمِيع[i:2864[َۢا ب]َصِيرًا",
+        "surah": {
+          "number": 4,
+          "name": "سُورَةُ النِّسَاءِ",
+          "englishName": "An-Nisaa",
+          "englishNameTranslation": "The Women",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 176
+        },
+        "numberInSurah": 134,
+        "juz": 5,
+        "manzil": 1,
+        "page": 99,
+        "ruku": 80,
+        "hizbQuarter": 39,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "4": {
+        "number": 4,
+        "name": "سُورَةُ النِّسَاءِ",
+        "englishName": "An-Nisaa",
+        "englishNameTranslation": "The Women",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 176
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

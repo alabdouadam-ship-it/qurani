@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 331,
+    "ayahs": [
+      {
+        "number": 2585,
+        "text": "لَا يَسْمَعُونَ حَسِيسَهَا‌ۖ وَهُمْ فِى مَا [h:8870[ٱ]شْتَهَتْ أَ[f:2341[نف]ُسُهُمْ خَ[n[ـٰ]لِد[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 102,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2586,
+        "text": "لَا يَحْزُنُهُمُ [h:8871[ٱ]لْفَزَعُ [h:8872[ٱ]لْأَكْبَرُ وَتَتَلَقَّ[n[ـٰ]هُمُ [h:8873[ٱ]لْمَلَ[o[ـٰٓ]ئِكَةُ هَ[n[ـٰ]ذَا يَوْمُكُمُ [h:8874[ٱ]لَّذِى كُ[f:100[نت]ُمْ تُوعَد[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 103,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2587,
+        "text": "يَوْمَ نَ[q:8875[طْ]وِى [h:8876[ٱ][l[ل]سَّم[o[َا]ٓءَ كَطَىِّ [h:8877[ٱ][l[ل]سِّجِلِّ لِلْكُتُبِ‌ۚ كَمَا بَدَأْن[o[َآ] أَوَّلَ خَلْ[a:8878[قٍ ن]ُّعِيدُهُ[n[ۥ]‌ۚ وَعْدًا عَلَيْن[o[َآ‌ۚ] إِ[g[نّ]َا كُ[g[نّ]َا فَ[n[ـٰ]عِل[p[ِي]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 104,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2588,
+        "text": "وَلَقَ[q:341[دْ] كَتَ[q:2889[بْ]نَا فِى [h:8879[ٱ][l[ل]زَّبُورِ م[i:146[ِنۢ ب]َعْدِ [h:8880[ٱ][l[ل]ذِّكْرِ أَ[g[نّ]َ [h:8881[ٱ]لْأَرْضَ يَرِثُهَا عِبَادِىَ [h:8882[ٱ][l[ل]صَّ[n[ـٰ]لِح[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 105,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2589,
+        "text": "إِ[g[نّ]َ فِى هَ[n[ـٰ]ذَا لَبَلَ[n[ـٰ][u:8883[غًا ل]ِّقَوْمٍ عَ[n[ـٰ]بِد[p[ِي]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 106,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2590,
+        "text": "وَم[o[َآ] أَرْسَلْنَ[n[ـٰ]كَ إِلَّا رَحْمَ[u:8884[ةً ل]ِّلْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 107,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2591,
+        "text": "قُلْ إِ[g[نّ]َمَا يُوحَ[o[ىٰٓ] إِلَىَّ أَ[g[نّ]َم[o[َآ] إِلَ[n[ـٰ]هُكُمْ إِلَ[n[ـٰ][a:827[هٌ و][n[َٲ]حِ[f:8885[دٌ‌ۖ ف]َهَلْ أَ[f:428[نت][w:2056[ُم م]ُّسْلِم[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 108,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2592,
+        "text": "فَإِ[f:1857[ن ت]َوَلَّوْ[s[اْ] فَقُلْ ءَاذَ[f:8886[نت]ُكُمْ عَلَىٰ سَو[o[َا]ٓ[a:8887[ءٍ‌ۖ و]َإِنْ أَ[q:8888[دْ]ر[o[ِىٓ] أَقَرِيبٌ أ[c:8889[َم ب]َعِي[a:8890[دٌ م]َّا تُوعَد[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 109,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2593,
+        "text": "إِ[g[نّ]َهُ[n[ۥ] يَعْلَمُ [h:8891[ٱ]لْجَهْرَ مِنَ [h:3107[ٱ]لْقَوْلِ وَيَعْلَمُ مَا تَكْتُم[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 110,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2594,
+        "text": "وَإِنْ أَ[q:8888[دْ]رِى لَعَلَّهُ[n[ۥ] فِتْنَ[u:8892[ةٌ ل]َّكُمْ وَمَتَ[n[ـٰ]عٌ إِلَىٰ ح[p[ِي]نٍ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 111,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      },
+      {
+        "number": 2595,
+        "text": "قَ[n[ـٰ]لَ رَبِّ [h:8893[ٱ]حْك[c:8894[ُم ب]ِ[h:370[ٱ]لْحَقِّ‌ۗ وَرَبُّنَا [h:8895[ٱ][l[ل]رَّحْمَ[n[ـٰ]نُ [h:8896[ٱ]لْمُسْتَعَانُ عَلَىٰ مَا تَصِف[p[ُو]نَ",
+        "surah": {
+          "number": 21,
+          "name": "سُورَةُ الأَنبِيَاءِ",
+          "englishName": "Al-Anbiyaa",
+          "englishNameTranslation": "The Prophets",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 112
+        },
+        "numberInSurah": 112,
+        "juz": 17,
+        "manzil": 4,
+        "page": 331,
+        "ruku": 284,
+        "hizbQuarter": 132,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "21": {
+        "number": 21,
+        "name": "سُورَةُ الأَنبِيَاءِ",
+        "englishName": "Al-Anbiyaa",
+        "englishNameTranslation": "The Prophets",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 112
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

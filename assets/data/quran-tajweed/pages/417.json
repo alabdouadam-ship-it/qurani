@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 417,
+    "ayahs": [
+      {
+        "number": 3524,
+        "text": "وَلَنُذِيقَ[g[نّ]َه[w:10655[ُم م]ِّنَ [h:503[ٱ]لْعَذَابِ [h:10656[ٱ]لْأَ[q:5116[دْ]نَىٰ دُونَ [h:10657[ٱ]لْعَذَابِ [h:10658[ٱ]لْأَكْبَرِ لَعَلَّهُمْ يَرْجِع[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 21,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 359,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3525,
+        "text": "وَمَنْ أَظْلَمُ مِ[g[مّ]َ[f:8134[ن ذ]ُكِّرَ بِـَٔـايَ[n[ـٰ]تِ رَبِّه[n[ِۦ] ثُ[g[مّ]َ أَعْرَضَ عَنْه[o[َآ‌ۚ] إِ[g[نّ]َا مِنَ [h:9627[ٱ]لْمُ[q:4093[جْ]رِمِينَ مُ[f:10659[نت]َقِم[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 22,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 359,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3526,
+        "text": "وَلَقَ[q:341[دْ] ءَاتَيْنَا مُوسَى [h:257[ٱ]لْكِتَ[n[ـٰ]بَ فَلَا تَكُ[f:10023[ن ف]ِى مِرْيَ[a:10660[ةٍ م]ّ[u:10661[ِن ل]ِّق[o[َا]ٓئِه[n[ِۦ‌ۖ] وَجَعَلْنَ[n[ـٰ]هُ هُ[u:7658[دًى ل]ِّبَن[o[ِىٓ] إِسْر[o[َٲ]ٓء[p[ِي]لَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 23,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3527,
+        "text": "وَجَعَلْنَا مِنْهُمْ أَئِ[g[مّ]َ[a:8805[ةً ي]َهْدُونَ بِأَمْرِنَا لَ[g[مّ]َا صَبَرُو[s[اْ‌ۖ] وَكَانُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِنَا يُوقِن[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 24,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3528,
+        "text": "إِ[g[نّ]َ رَبَّكَ هُوَ يَفْصِلُ بَيْنَهُمْ يَوْمَ [h:592[ٱ]لْقِيَ[n[ـٰ]مَةِ فِيمَا كَانُو[s[اْ] فِيهِ يَخْتَلِف[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 25,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3529,
+        "text": "أَوَلَمْ يَهْدِ لَهُمْ كَمْ أَهْلَكْنَا مِ[f:617[ن ق]َ[q:618[بْ]لِه[w:10662[ِم م]ِّنَ [h:6524[ٱ]لْقُرُونِ يَمْشُونَ فِى مَسَ[n[ـٰ]كِنِهِمْ‌ۚ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[n[ـٰ]تٍ‌ۖ أَفَلَا يَسْمَع[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 26,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3530,
+        "text": "أَوَلَمْ يَرَوْ[s[اْ] أَ[g[نّ]َا نَسُوقُ [h:10663[ٱ]لْم[o[َا]ٓءَ إِلَى [h:5136[ٱ]لْأَرْضِ [h:10664[ٱ]لْجُرُزِ فَنُخْرِجُ بِه[n[ِۦ] زَرْ[f:10665[عًا ت]َأْكُلُ مِنْهُ أَنْعَ[n[ـٰ]مُهُمْ وَأَ[f:10666[نف]ُسُهُمْ‌ۖ أَفَلَا يُ[q:60[بْ]صِر[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 27,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3531,
+        "text": "وَيَقُولُونَ مَتَىٰ هَ[n[ـٰ]ذَا [h:10667[ٱ]لْفَتْحُ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 28,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3532,
+        "text": "قُلْ يَوْمَ [h:10668[ٱ]لْفَتْحِ لَا يَ[f:838[نف]َعُ [h:10539[ٱ]لَّذِينَ كَفَر[o[ُوٓ][s[اْ] إِيمَ[n[ـٰ]نُهُمْ وَلَا هُمْ يُ[f:826[نظ]َر[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 29,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      },
+      {
+        "number": 3533,
+        "text": "فَأَعْرِضْ عَنْهُمْ وَ[h:10669[ٱ][f:10669[نت]َظِرْ إِ[g[نّ]َه[w:10670[ُم م]ُّ[f:4557[نت]َظِر[p[ُو]نَ",
+        "surah": {
+          "number": 32,
+          "name": "سُورَةُ السَّجۡدَةِ",
+          "englishName": "As-Sajda",
+          "englishNameTranslation": "The Prostration",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 30
+        },
+        "numberInSurah": 30,
+        "juz": 21,
+        "manzil": 5,
+        "page": 417,
+        "ruku": 360,
+        "hizbQuarter": 166,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "32": {
+        "number": 32,
+        "name": "سُورَةُ السَّجۡدَةِ",
+        "englishName": "As-Sajda",
+        "englishNameTranslation": "The Prostration",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 30
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

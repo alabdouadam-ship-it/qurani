@@ -1,0 +1,370 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 525,
+    "ayahs": [
+      {
+        "number": 4767,
+        "text": "أَمْ تَأْمُرُهُمْ أَحْلَ[n[ـٰ]مُه[c:12934[ُم ب]ِهَ[n[ـٰ]ذ[o[َآ‌ۚ] أَمْ هُمْ قَوْ[f:12877[مٌ ط]َاغ[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 32,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4768,
+        "text": "أَمْ يَقُولُونَ تَقَوَّلَهُ[n[ۥ]‌ۚ بَل لَّا يُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 33,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4769,
+        "text": "فَلْيَأْتُو[s[اْ] بِحَدِي[a:12935[ثٍ م]ِّثْلِه[o[ِۦٓ] إِ[f:5674[ن ك]َانُو[s[اْ] صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 34,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4770,
+        "text": "أَمْ خُلِقُو[s[اْ] مِنْ غَيْرِ شَىْءٍ أَمْ هُمُ [h:12936[ٱ]لْخَ[n[ـٰ]لِق[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 35,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4771,
+        "text": "أَمْ خَلَقُو[s[اْ] [h:12937[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:1474[ٱ]لْأَرْضَ‌ۚ بَل لَّا يُوقِن[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 36,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4772,
+        "text": "أَمْ عِ[f:5060[ند]َهُمْ خَز[o[َا]ٓئِنُ رَبِّكَ أَمْ هُمُ [h:12938[ٱ]لْمُصَۣيْطِر[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 37,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4773,
+        "text": "أَمْ لَهُمْ سُلَّ[a:12939[مٌ ي]َسْتَمِعُونَ فِيهِ‌ۖ فَلْيَأْتِ مُسْتَمِعُه[c:12940[ُم ب]ِسُلْطَ[n[ـٰ][a:7067[نٍ م]ُّب[p[ِي]نٍ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 38,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4774,
+        "text": "أَمْ لَهُ [h:12941[ٱ]لْبَنَ[n[ـٰ]تُ وَلَكُمُ [h:12942[ٱ]لْبَن[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 39,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4775,
+        "text": "أَمْ تَسْــَٔلُهُمْ أَ[q:2795[جْ][f:12943[رًا ف]َه[w:12944[ُم م]ّ[a:12945[ِن م]َّغْرَ[a:12946[مٍ م]ُّثْقَل[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 40,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4776,
+        "text": "أَمْ عِ[f:3212[ند]َهُمُ [h:12947[ٱ]لْغَيْبُ فَهُمْ يَكْتُب[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 41,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4777,
+        "text": "أَمْ يُرِيدُونَ كَيْ[f:12948[دًا‌ۖ ف]َ[h:2514[ٱ]لَّذِينَ كَفَرُو[s[اْ] هُمُ [h:12949[ٱ]لْمَكِيد[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 42,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4778,
+        "text": "أَمْ لَهُمْ إِلَ[n[ـٰ]هٌ غَيْرُ [h:4057[ٱ]للَّهِ‌ۚ سُ[q:7648[بْ]حَ[n[ـٰ]نَ [h:9282[ٱ]للَّهِ عَ[g[مّ]َا يُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 43,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4779,
+        "text": "وَإ[a:3990[ِن ي]َرَوْ[s[اْ] كِسْ[a:12950[فًا م]ِّنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ سَاقِ[a:12951[طًا ي]َقُولُو[s[اْ] سَحَا[a:12952[بٌ م]َّرْك[p[ُو]مٌ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 44,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4780,
+        "text": "فَذَرْهُمْ حَتَّىٰ يُلَ[n[ـٰ]قُو[s[اْ] يَوْمَهُمُ [h:12321[ٱ]لَّذِى فِيهِ يُصْعَق[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 45,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4781,
+        "text": "يَوْمَ لَا يُغْنِى عَنْهُمْ كَيْدُهُمْ شَيْـ[a:232[ـًٔا و]َلَا هُمْ يُ[f:237[نص]َر[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 46,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4782,
+        "text": "وَإِ[g[نّ]َ لِلَّذِينَ ظَلَمُو[s[اْ] عَذَا[f:12953[بًا د]ُونَ ذ[n[َٲ]لِكَ وَلَ[n[ـٰ]كِ[g[نّ]َ أَكْثَرَهُمْ لَا يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 47,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4783,
+        "text": "وَ[h:9999[ٱ]صْبِرْ لِحُكْمِ رَبِّكَ فَإِ[g[نّ]َكَ بِأَعْيُنِنَا‌ۖ وَسَبِّحْ بِحَمْدِ رَبِّكَ حِينَ تَق[p[ُو]مُ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 48,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      },
+      {
+        "number": 4784,
+        "text": "وَمِنَ [h:7856[ٱ]لَّيْلِ فَسَبِّحْهُ وَإِ[q:12954[دْ]بَ[n[ـٰ]رَ [h:12955[ٱ][l[ل][g[نّ]ُج[p[ُو]مِ",
+        "surah": {
+          "number": 52,
+          "name": "سُورَةُ الطُّورِ",
+          "englishName": "At-Tur",
+          "englishNameTranslation": "The Mount",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 49
+        },
+        "numberInSurah": 49,
+        "juz": 27,
+        "manzil": 7,
+        "page": 525,
+        "ruku": 459,
+        "hizbQuarter": 210,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "52": {
+        "number": 52,
+        "name": "سُورَةُ الطُّورِ",
+        "englishName": "At-Tur",
+        "englishNameTranslation": "The Mount",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 49
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

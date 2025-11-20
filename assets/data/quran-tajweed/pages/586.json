@@ -1,0 +1,579 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 586,
+    "ayahs": [
+      {
+        "number": 5801,
+        "text": "إِذَا [h:14331[ٱ][l[ل]شَّمْسُ كُوِّرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5802,
+        "text": "وَإِذَا [h:14332[ٱ][l[ل][g[نّ]ُجُومُ [h:14333[ٱ][f:14334[نك]َدَرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5803,
+        "text": "وَإِذَا [h:14211[ٱ]لْجِبَالُ سُيِّرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5804,
+        "text": "وَإِذَا [h:14335[ٱ]لْعِشَارُ عُطِّلَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5805,
+        "text": "وَإِذَا [h:14336[ٱ]لْوُحُوشُ حُشِرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5806,
+        "text": "وَإِذَا [h:14337[ٱ]لْبِحَارُ سُجِّرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5807,
+        "text": "وَإِذَا [h:14338[ٱ][l[ل][g[نّ]ُفُوسُ زُوِّجَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5808,
+        "text": "وَإِذَا [h:14339[ٱ]لْمَوْءُ[n[ۥ]دَةُ سُئِلَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5809,
+        "text": "بِأَىِّ ذَ[i:14340[نۢب][f:14341[ٍ ق]ُتِلَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5810,
+        "text": "وَإِذَا [h:14342[ٱ][l[ل]صُّحُفُ نُشِرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 10,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5811,
+        "text": "وَإِذَا [h:14210[ٱ][l[ل]سَّم[o[َا]ٓءُ كُشِطَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 11,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5812,
+        "text": "وَإِذَا [h:14343[ٱ]لْجَحِيمُ سُعِّرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 12,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5813,
+        "text": "وَإِذَا [h:14344[ٱ]لْجَ[g[نّ]َةُ أُزْلِفَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 13,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5814,
+        "text": "عَلِمَتْ نَفْ[a:10644[سٌ م]ّ[o[َآ] أَحْضَرَتْ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 14,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5815,
+        "text": "فَل[o[َآ] أُ[q:13287[قْ]سِمُ بِ[h:14345[ٱ]لْخُ[g[نّ]َسِ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 15,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5816,
+        "text": "ٱلْجَوَارِ [h:14346[ٱ]لْكُ[g[نّ]َسِ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 16,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5817,
+        "text": "وَ[h:9999[ٱ]لَّيْلِ إِذَا عَسْعَسَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 17,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5818,
+        "text": "وَ[h:9999[ٱ][l[ل]صُّ[q:14092[بْ]حِ إِذَا تَنَفَّسَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 18,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5819,
+        "text": "إِ[g[نّ]َهُ[n[ۥ] لَقَوْلُ رَسُو[f:13904[لٍ ك]َر[p[ِي]مٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 19,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5820,
+        "text": "ذِى قُوَّةٍ عِ[f:264[ند]َ ذِى [h:7769[ٱ]لْعَرْشِ مَك[p[ِي]نٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 20,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5821,
+        "text": "مُّطَا[f:14347[عٍ ث]َ[g[مّ]َ أَم[p[ِي]نٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 21,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5822,
+        "text": "وَمَا صَاحِبُك[c:14348[ُم ب]ِمَ[q:13812[جْ]ن[p[ُو]نٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 22,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5823,
+        "text": "وَلَقَ[q:341[دْ] رَءَاهُ بِ[h:12961[ٱ]لْأُفُقِ [h:14349[ٱ]لْمُب[p[ِي]نِ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 23,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5824,
+        "text": "وَمَا هُوَ عَلَى [h:2453[ٱ]لْغَيْبِ بِضَن[p[ِي]نٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 24,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5825,
+        "text": "وَمَا هُوَ بِقَوْلِ شَيْطَ[n[ـٰ][u:7213[نٍ ر]َّج[p[ِي]مٍ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 25,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5826,
+        "text": "فَأَيْنَ تَذْهَب[p[ُو]نَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 26,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5827,
+        "text": "إِنْ هُوَ إِلَّا ذِكْ[u:6839[رٌ ل]ِّلْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 27,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5828,
+        "text": "لِمَ[f:14095[ن ش][o[َا]ٓءَ مِ[f:344[نك]ُمْ أ[a:14350[َن ي]َسْتَق[p[ِي]مَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 28,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      },
+      {
+        "number": 5829,
+        "text": "وَمَا تَش[o[َا]ٓءُونَ إِلّ[o[َآ] أ[a:4201[َن ي]َش[o[َا]ٓءَ [h:4334[ٱ]للَّهُ رَبُّ [h:4750[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 81,
+          "name": "سُورَةُ التَّكۡوِيرِ",
+          "englishName": "At-Takwir",
+          "englishNameTranslation": "The Overthrowing",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 29
+        },
+        "numberInSurah": 29,
+        "juz": 30,
+        "manzil": 7,
+        "page": 586,
+        "ruku": 523,
+        "hizbQuarter": 234,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "81": {
+        "number": 81,
+        "name": "سُورَةُ التَّكۡوِيرِ",
+        "englishName": "At-Takwir",
+        "englishNameTranslation": "The Overthrowing",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 29
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

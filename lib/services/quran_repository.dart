@@ -7,6 +7,7 @@ import 'package:flutter/services.dart' show rootBundle;
 enum QuranEdition {
   simple,
   uthmani,
+  tajweed,
   english,
   french,
   tafsir,
@@ -19,6 +20,8 @@ extension QuranEditionExt on QuranEdition {
         return 'assets/data/quran-simple';
       case QuranEdition.uthmani:
         return 'assets/data/quran-uthmani';
+      case QuranEdition.tajweed:
+        return 'assets/data/quran-tajweed';
       case QuranEdition.english:
         return 'assets/data/quran-english';
       case QuranEdition.french:
@@ -34,6 +37,8 @@ extension QuranEditionExt on QuranEdition {
         return 'quran-simple';
       case QuranEdition.uthmani:
         return 'quran-uthmani';
+      case QuranEdition.tajweed:
+        return 'quran-tajweed';
       case QuranEdition.english:
         return 'quran-english';
       case QuranEdition.french:
@@ -49,6 +54,8 @@ extension QuranEditionExt on QuranEdition {
         return 'Arabic (Simple)';
       case QuranEdition.uthmani:
         return 'Arabic (Uthmani)';
+      case QuranEdition.tajweed:
+        return 'Quran Tajweed';
       case QuranEdition.english:
         return 'English';
       case QuranEdition.french:
@@ -61,6 +68,7 @@ extension QuranEditionExt on QuranEdition {
   bool get isRtl =>
       this == QuranEdition.simple ||
       this == QuranEdition.uthmani ||
+      this == QuranEdition.tajweed ||
       this == QuranEdition.tafsir;
 
   bool get isTranslation =>
@@ -155,11 +163,13 @@ class QuranRepository {
     final name = surahEntry['name'] as String? ?? '';
     final englishName = surahEntry['englishName'] as String? ?? '';
     final englishNameTranslation = surahEntry['englishNameTranslation'] as String? ?? '';
+    final revelationType = surahEntry['revelationType'] as String? ?? '';
     final surahMeta = SurahMeta(
       number: surahNumber,
       name: name,
       englishName: englishName,
       englishNameTranslation: englishNameTranslation,
+      revelationType: revelationType,
     );
     final ayahs = (surahEntry['ayahs'] as List<dynamic>? ?? const [])
         .map((a) {
@@ -241,6 +251,7 @@ class QuranRepository {
         englishName: surahMap['englishName'] as String? ?? '',
         englishNameTranslation:
             surahMap['englishNameTranslation'] as String? ?? '',
+        revelationType: surahMap['revelationType'] as String? ?? '',
       );
       final ayahs = surahMap['ayahs'] as List<dynamic>? ?? const [];
       for (final ayahEntry in ayahs) {
@@ -380,12 +391,14 @@ class SurahMeta {
     required this.name,
     required this.englishName,
     required this.englishNameTranslation,
+    required this.revelationType,
   });
 
   final int number;
   final String name;
   final String englishName;
   final String englishNameTranslation;
+  final String revelationType; // 'Meccan' | 'Medinan' | ''
 
   factory SurahMeta.fromJson(Map<String, dynamic> json) {
     return SurahMeta(
@@ -393,6 +406,7 @@ class SurahMeta {
       name: json['name'] as String? ?? '',
       englishName: json['englishName'] as String? ?? '',
       englishNameTranslation: json['englishNameTranslation'] as String? ?? '',
+      revelationType: json['revelationType'] as String? ?? '',
     );
   }
 }

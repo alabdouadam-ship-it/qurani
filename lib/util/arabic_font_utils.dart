@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ArabicFontUtils {
   static const String fontAmiri = 'amiri_quran';
-  static const String fontScheherazade = 'scheherazade_new';
-  static const String fontLateef = 'lateef';
+  static const String fontKfgqpcSmall = 'kfgqpc_hafs_small';
+  static const String fontKfgqpcLarge = 'kfgqpc_hafs_large';
 
   static TextStyle buildTextStyle(
     String fontKey, {
@@ -14,18 +13,20 @@ class ArabicFontUtils {
     Color? color,
   }) {
     switch (fontKey) {
-      case fontScheherazade:
-        return GoogleFonts.scheherazadeNew(
+      case fontKfgqpcSmall:
+        return TextStyle(
+          fontFamily: 'KFGQPCHafsSmall',
           fontSize: fontSize,
           height: height,
-          fontWeight: fontWeight,
+          fontWeight: fontWeight ?? FontWeight.w400,
           color: color,
         );
-      case fontLateef:
-        return GoogleFonts.lateef(
+      case fontKfgqpcLarge:
+        return TextStyle(
+          fontFamily: 'KFGQPCHafsLarge',
           fontSize: fontSize,
           height: height,
-          fontWeight: fontWeight,
+          fontWeight: fontWeight ?? FontWeight.w400,
           color: color,
         );
       case fontAmiri:

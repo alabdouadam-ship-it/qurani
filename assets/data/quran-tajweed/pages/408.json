@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 408,
+    "ayahs": [
+      {
+        "number": 3442,
+        "text": "وَإِذَا مَسَّ [h:10479[ٱ][l[ل][g[نّ]َاسَ ضُ[f:10480[رٌّ د]َعَوْ[s[اْ] رَبَّه[w:10481[ُم م]ُّنِيبِينَ إِلَيْهِ ثُ[g[مّ]َ إِذ[o[َآ] أَذَاقَه[w:10482[ُم م]ِّنْهُ رَحْمَةً إِذَا فَرِي[a:388[قٌ م]ِّنْه[c:10483[ُم ب]ِرَبِّهِمْ يُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 33,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3443,
+        "text": "لِيَكْفُرُو[s[اْ] بِم[o[َآ] ءَاتَيْنَ[n[ـٰ]هُمْ‌ۚ فَتَمَتَّعُو[s[اْ] فَسَوْفَ تَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 34,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3444,
+        "text": "أَمْ أَ[f:515[نز]َلْنَا عَلَيْهِمْ سُلْطَ[n[ـٰ][f:10484[نًا ف]َهُوَ يَتَكَلَّمُ بِمَا كَانُو[s[اْ] بِه[n[ِۦ] يُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 35,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3445,
+        "text": "وَإِذ[o[َآ] أَذَ[q:5991[قْ]نَا [h:5992[ٱ][l[ل][g[نّ]َاسَ رَحْمَ[f:10485[ةً ف]َرِحُو[s[اْ] بِهَا‌ۖ وَإِ[f:2950[ن ت]ُصِ[q:2951[بْ]هُمْ سَيِّئَ[i:10486[ةُۢ ب]ِمَا قَدَّمَتْ أَيْدِيهِمْ إِذَا هُمْ يَ[q:10487[قْ]نَط[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 36,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3446,
+        "text": "أَوَلَمْ يَرَوْ[s[اْ] أَ[g[نّ]َ [h:394[ٱ]للَّهَ يَ[q:6968[بْ]سُطُ [h:6969[ٱ][l[ل]رِّزْقَ لِم[a:1537[َن ي]َش[o[َا]ٓءُ وَيَ[q:6970[قْ]دِرُ‌ۚ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[n[ـٰ][u:849[تٍ ل]ِّقَوْ[a:4294[مٍ ي]ُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 37,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3447,
+        "text": "فَـَٔـاتِ ذَا [h:7727[ٱ]لْقُرْبَىٰ حَقَّهُ[n[ۥ] وَ[h:7728[ٱ]لْمِسْكِينَ وَ[h:911[ٱ][q:911[بْ]نَ [h:912[ٱ][l[ل]سَّبِيلِ‌ۚ ذ[n[َٲ]لِكَ خَيْ[u:4005[رٌ ل]ِّلَّذِينَ يُرِيدُونَ وَ[q:2019[جْ]هَ [h:10488[ٱ]للَّهِ‌ۖ وَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:23[ٱ]لْمُفْلِح[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 38,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3448,
+        "text": "وَم[o[َآ] ءَاتَيْت[w:10489[ُم م]ّ[u:10490[ِن ر]ِّ[u:10491[بًا ل]ِّيَرْبُوَ[s[اْ] ف[o[ِىٓ] أَمْو[n[َٲ]لِ [h:1008[ٱ][l[ل][g[نّ]َاسِ فَلَا يَرْبُو[s[اْ] عِ[f:264[ند]َ [h:408[ٱ]للَّهِ‌ۖ وَم[o[َآ] ءَاتَيْت[w:10489[ُم م]ِّ[f:10492[ن ز]َكَ[s[و][n[ٲ][f:10493[ةٍ ت]ُرِيدُونَ وَ[q:2019[جْ]هَ [h:10488[ٱ]للَّهِ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:10494[ٱ]لْمُضْعِف[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 39,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3449,
+        "text": "ٱللَّهُ [h:4738[ٱ]لَّذِى خَلَقَكُمْ ثُ[g[مّ]َ رَزَقَكُمْ ثُ[g[مّ]َ يُمِيتُكُمْ ثُ[g[مّ]َ يُحْيِيكُمْ‌ۖ هَلْ مِ[f:6046[ن ش]ُرَك[o[َا]ٓئِك[w:6047[ُم م]ّ[a:439[َن ي]َفْعَلُ مِ[f:1784[ن ذ][n[َٲ]لِك[w:10495[ُم م]ِّ[f:2103[ن ش][f:10496[َىْءٍ‌ۚ س]ُ[q:608[بْ]حَ[n[ـٰ]نَهُ[n[ۥ] وَتَعَ[n[ـٰ]لَىٰ عَ[g[مّ]َا يُشْرِك[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 40,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 352,
+        "hizbQuarter": 163,
+        "sajda": false
+      },
+      {
+        "number": 3450,
+        "text": "ظَهَرَ [h:10497[ٱ]لْفَسَادُ فِى [h:4106[ٱ]لْبَرِّ وَ[h:4107[ٱ]لْبَحْرِ بِمَا كَسَبَتْ أَيْدِى [h:10498[ٱ][l[ل][g[نّ]َاسِ لِيُذِيقَه[c:10499[ُم ب]َعْضَ [h:1943[ٱ]لَّذِى عَمِلُو[s[اْ] لَعَلَّهُمْ يَرْجِع[p[ُو]نَ",
+        "surah": {
+          "number": 30,
+          "name": "سُورَةُ الرُّومِ",
+          "englishName": "Ar-Room",
+          "englishNameTranslation": "The Romans",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 60
+        },
+        "numberInSurah": 41,
+        "juz": 21,
+        "manzil": 5,
+        "page": 408,
+        "ruku": 353,
+        "hizbQuarter": 163,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "30": {
+        "number": 30,
+        "name": "سُورَةُ الرُّومِ",
+        "englishName": "Ar-Room",
+        "englishNameTranslation": "The Romans",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 60
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

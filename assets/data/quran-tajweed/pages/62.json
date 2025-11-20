@@ -1,0 +1,199 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 62,
+    "ayahs": [
+      {
+        "number": 385,
+        "text": "لَ[f:2101[ن ت]َنَالُو[s[اْ] [h:2102[ٱ]لْبِرَّ حَتَّىٰ تُ[f:1607[نف]ِقُو[s[اْ] مِ[g[مّ]َا تُحِبُّونَ‌ۚ وَمَا تُ[f:1607[نف]ِقُو[s[اْ] مِ[f:2103[ن ش][f:2104[َىْءٍ ف]َإِ[g[نّ]َ [h:513[ٱ]للَّهَ بِه[n[ِۦ] عَل[p[ِي]مٌ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 92,
+        "juz": 3,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 24,
+        "sajda": false
+      },
+      {
+        "number": 386,
+        "text": "۞ كُلُّ [h:2105[ٱ][l[ل]طَّعَامِ كَانَ حِل[u:2106[اًّ ل]ِّبَن[o[ِىٓ] إِسْر[o[َٲ]ٓءِيلَ إِلَّا مَا حَرَّمَ إِسْر[o[َٲ]ٓءِيلُ عَلَىٰ نَفْسِه[n[ِۦ] مِ[f:1346[ن ق]َ[q:1347[بْ]لِ أَ[f:2107[ن ت]ُنَزَّلَ [h:2108[ٱ][l[ل]تَّوْرَ[n[ٮٰ]ةُ‌ۗ قُلْ فَأْتُو[s[اْ] بِ[h:2109[ٱ][l[ل]تَّوْرَ[n[ٮٰ]ةِ فَ[h:2110[ٱ]تْلُوه[o[َآ] إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 93,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 387,
+        "text": "فَمَنِ [h:2111[ٱ]فْتَرَىٰ عَلَى [h:412[ٱ]للَّهِ [h:2035[ٱ]لْكَذِبَ م[i:146[ِنۢ ب]َعْدِ ذ[n[َٲ]لِكَ فَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:1285[ٱ][l[ل]ظَّ[n[ـٰ]لِم[p[ُو]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 94,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 388,
+        "text": "قُلْ صَدَقَ [h:2112[ٱ]للَّهُ‌ۗ فَ[h:2113[ٱ]تَّبِعُو[s[اْ] مِلَّةَ إِ[q:1860[بْ]ر[n[َٲ]هِيمَ حَنِي[a:698[فًا و]َمَا كَانَ مِنَ [h:699[ٱ]لْمُشْرِك[p[ِي]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 95,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 389,
+        "text": "إِ[g[نّ]َ أَوَّلَ بَيْ[a:2114[تٍ و]ُضِعَ لِل[g[نّ]َاسِ لَلَّذِى بِبَكَّةَ مُبَارَ[a:2115[كًا و]َهُ[u:2116[دًى ل]ِّلْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 96,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 390,
+        "text": "فِيهِ ءَايَ[n[ـٰ][i:2117[تُۢ ب]َيِّنَ[n[ـٰ][a:2118[تٌ م]َّقَامُ إِ[q:1860[بْ]ر[n[َٲ]هِيمَ‌ۖ وَمَ[f:2119[ن د]َخَلَهُ[n[ۥ] كَانَ ءَامِ[a:2120[نًا‌ۗ و]َلِلَّهِ عَلَى [h:729[ٱ][l[ل][g[نّ]َاسِ حِجُّ [h:2121[ٱ]لْبَيْتِ مَنِ [h:2122[ٱ]سْتَطَاعَ إِلَيْهِ سَبِيل[a:2123[اً‌ۚ و]َمَ[f:662[ن ك]َفَرَ فَإِ[g[نّ]َ [h:513[ٱ]للَّهَ غَنِىٌّ عَنِ [h:2124[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 97,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 391,
+        "text": "قُلْ يَ[o[ـٰٓ]أَهْلَ [h:1990[ٱ]لْكِتَ[n[ـٰ]بِ لِمَ تَكْفُرُونَ بِـَٔـايَ[n[ـٰ]تِ [h:322[ٱ]للَّهِ وَ[h:72[ٱ]للَّهُ شَهِيدٌ عَلَىٰ مَا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 98,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 392,
+        "text": "قُلْ يَ[o[ـٰٓ]أَهْلَ [h:1990[ٱ]لْكِتَ[n[ـٰ]بِ لِمَ تَصُدُّونَ عَ[f:1203[ن س]َبِيلِ [h:788[ٱ]للَّهِ مَنْ ءَامَنَ تَ[q:2125[بْ]غُونَهَا عِوَ[a:2126[جًا و]َأَ[f:98[نت]ُمْ شُهَد[o[َا]ٓءُ‌ۗ وَمَا [h:384[ٱ]للَّهُ بِغَ[n[ـٰ]فِلٍ عَ[g[مّ]َا تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 99,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      },
+      {
+        "number": 393,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:541[ٱ]لَّذِينَ ءَامَن[o[ُوٓ][s[اْ] إِ[f:2127[ن ت]ُطِيعُو[s[اْ] فَرِي[a:2128[قًا م]ِّنَ [h:523[ٱ]لَّذِينَ أُوتُو[s[اْ] [h:524[ٱ]لْكِتَ[n[ـٰ]بَ يَرُدُّوك[c:2129[ُم ب]َعْدَ إِيمَ[n[ـٰ]نِكُمْ كَ[n[ـٰ]فِر[p[ِي]نَ",
+        "surah": {
+          "number": 3,
+          "name": "سُورَةُ آلِ عِمۡرَانَ",
+          "englishName": "Aal-i-Imraan",
+          "englishNameTranslation": "The Family of Imraan",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 200
+        },
+        "numberInSurah": 100,
+        "juz": 4,
+        "manzil": 1,
+        "page": 62,
+        "ruku": 51,
+        "hizbQuarter": 25,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "3": {
+        "number": 3,
+        "name": "سُورَةُ آلِ عِمۡرَانَ",
+        "englishName": "Aal-i-Imraan",
+        "englishNameTranslation": "The Family of Imraan",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 200
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

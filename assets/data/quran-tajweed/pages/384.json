@@ -1,0 +1,256 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 384,
+    "ayahs": [
+      {
+        "number": 3236,
+        "text": "وَإِ[g[نّ]َهُ[n[ۥ] لَهُ[a:10028[دًى و]َرَحْمَ[u:6096[ةٌ ل]ِّلْمُؤْمِن[p[ِي]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 77,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3237,
+        "text": "إِ[g[نّ]َ رَبَّكَ يَ[q:6194[قْ]ضِى بَيْنَه[c:10029[ُم ب]ِحُكْمِه[n[ِۦ]‌ۚ وَهُوَ [h:7045[ٱ]لْعَزِيزُ [h:10030[ٱ]لْعَل[p[ِي]مُ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 78,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3238,
+        "text": "فَتَوَكَّلْ عَلَى [h:412[ٱ]للَّهِ‌ۖ إِ[g[نّ]َكَ عَلَى [h:10031[ٱ]لْحَقِّ [h:10032[ٱ]لْمُب[p[ِي]نِ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 79,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3239,
+        "text": "إِ[g[نّ]َكَ لَا تُسْمِعُ [h:10033[ٱ]لْمَوْتَىٰ وَلَا تُسْمِعُ [h:6070[ٱ][l[ل]صُّ[g[مّ]َ [h:10034[ٱ][l[ل]دُّع[o[َا]ٓءَ إِذَا وَلَّوْ[s[اْ] مُ[q:5528[دْ]بِر[p[ِي]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 80,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3240,
+        "text": "وَم[o[َآ] أَ[f:169[نت]َ بِهَ[n[ـٰ]دِى [h:10035[ٱ]لْعُمْىِ عَ[f:10036[ن ض]َلَ[n[ـٰ]لَتِهِمْ‌ۖ إِ[f:10037[ن ت]ُسْمِعُ إِلَّا م[a:5799[َن ي]ُؤْمِنُ بِـَٔـايَ[n[ـٰ]تِنَا فَه[w:10038[ُم م]ُّسْلِم[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 81,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 153,
+        "sajda": false
+      },
+      {
+        "number": 3241,
+        "text": "۞ وَإِذَا وَقَعَ [h:10039[ٱ]لْقَوْلُ عَلَيْهِمْ أَخْرَ[q:1577[جْ]نَا لَهُمْ د[m[َا]ٓبَّ[a:10040[ةً م]ِّنَ [h:1579[ٱ]لْأَرْضِ تُكَلِّمُهُمْ أَ[g[نّ]َ [h:10041[ٱ][l[ل][g[نّ]َاسَ كَانُو[s[اْ] بِـَٔـايَ[n[ـٰ]تِنَا لَا يُوقِن[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 82,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 332,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3242,
+        "text": "وَيَوْمَ نَحْشُرُ مِ[f:843[ن ك]ُلِّ أُ[g[مّ]َ[f:10042[ةٍ ف]َوْ[a:10043[جًا م]ِّ[g[مّ][a:10044[َن ي]ُكَذِّبُ بِـَٔـايَ[n[ـٰ]تِنَا فَهُمْ يُوزَع[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 83,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3243,
+        "text": "حَتَّ[o[ىٰٓ] إِذَا ج[o[َا]ٓءُو قَالَ أَكَذَّ[q:10045[بْ]ت[c:10046[ُم ب]ِـَٔـايَ[n[ـٰ]تِى وَلَمْ تُحِيطُو[s[اْ] بِهَا عِلْمًا أَ[g[مّ]َاذَا كُ[f:100[نت]ُمْ تَعْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 84,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3244,
+        "text": "وَوَقَعَ [h:10047[ٱ]لْقَوْلُ عَلَيْه[c:10048[ِم ب]ِمَا ظَلَمُو[s[اْ] فَهُمْ لَا يَ[f:8795[نط]ِق[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 85,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3245,
+        "text": "أَلَمْ يَرَوْ[s[اْ] أَ[g[نّ]َا جَعَلْنَا [h:10049[ٱ]لَّيْلَ لِيَسْكُنُو[s[اْ] فِيهِ وَ[h:6117[ٱ][l[ل][g[نّ]َهَارَ مُ[q:6118[بْ]صِرًا‌ۚ إِ[g[نّ]َ فِى ذ[n[َٲ]لِكَ لَأَيَ[n[ـٰ][u:849[تٍ ل]ِّقَوْ[a:4294[مٍ ي]ُؤْمِن[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 86,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3246,
+        "text": "وَيَوْمَ يُ[f:4184[نف]َخُ فِى [h:4185[ٱ][l[ل]صُّورِ فَفَزِعَ مَ[f:2074[ن ف]ِى [h:609[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَمَ[f:3453[ن ف]ِى [h:44[ٱ]لْأَرْضِ إِلَّا مَ[f:9680[ن ش][o[َا]ٓءَ [h:78[ٱ]للَّهُ‌ۚ وَكُلٌّ أَتَوْهُ د[n[َٲ]خِر[p[ِي]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 87,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      },
+      {
+        "number": 3247,
+        "text": "وَتَرَى [h:10050[ٱ]لْجِبَالَ تَحْسَبُهَا جَامِدَ[a:10051[ةً و]َهِىَ تَمُرُّ مَرَّ [h:10052[ٱ][l[ل]سَّحَابِ‌ۚ صُنْعَ [h:10053[ٱ]للَّهِ [h:7038[ٱ]لَّذ[o[ِىٓ] أَتْقَنَ كُلَّ شَىْءٍ‌ۚ إِ[g[نّ]َهُ[n[ۥ] خَبِي[i:2335[رُۢ ب]ِمَا تَفْعَل[p[ُو]نَ",
+        "surah": {
+          "number": 27,
+          "name": "سُورَةُ النَّمۡلِ",
+          "englishName": "An-Naml",
+          "englishNameTranslation": "The Ant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 93
+        },
+        "numberInSurah": 88,
+        "juz": 20,
+        "manzil": 5,
+        "page": 384,
+        "ruku": 333,
+        "hizbQuarter": 154,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "27": {
+        "number": 27,
+        "name": "سُورَةُ النَّمۡلِ",
+        "englishName": "An-Naml",
+        "englishNameTranslation": "The Ant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 93
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

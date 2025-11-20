@@ -1,0 +1,142 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 25,
+    "ayahs": [
+      {
+        "number": 171,
+        "text": "إِ[g[نّ]َ فِى خَلْقِ [h:831[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ وَ[h:177[ٱ]لْأَرْضِ وَ[h:832[ٱ]خْتِلَ[n[ـٰ]فِ [h:833[ٱ]لَّيْلِ وَ[h:834[ٱ][l[ل][g[نّ]َهَارِ وَ[h:835[ٱ]لْفُلْكِ [h:836[ٱ]لَّتِى تَ[q:120[جْ]رِى فِى [h:837[ٱ]لْبَحْرِ بِمَا يَ[f:838[نف]َعُ [h:839[ٱ][l[ل][g[نّ]َاسَ وَم[o[َآ] أَ[f:471[نز]َلَ [h:472[ٱ]للَّهُ مِنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[a:840[ِن م]ّ[o[َا]ٓ[f:841[ءٍ ف]َأَحْيَا بِهِ [h:842[ٱ]لْأَرْضَ بَعْدَ مَوْتِهَا وَبَثَّ فِيهَا مِ[f:843[ن ك]ُلِّ د[m[َا]ٓبَّ[a:844[ةٍ و]َتَصْرِيفِ [h:845[ٱ][l[ل]رِّيَ[n[ـٰ]حِ وَ[h:846[ٱ][l[ل]سَّحَابِ [h:847[ٱ]لْمُسَخَّرِ بَيْنَ [h:848[ٱ][l[ل]سَّم[o[َا]ٓءِ وَ[h:177[ٱ]لْأَرْضِ لَأَيَ[n[ـٰ][u:849[تٍ ل]ِّقَوْ[a:850[مٍ ي]َعْقِل[p[ُو]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 164,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 172,
+        "text": "وَمِنَ [h:30[ٱ][l[ل][g[نّ]َاسِ م[a:851[َن ي]َتَّخِذُ مِ[f:107[ن د]ُونِ [h:108[ٱ]للَّهِ أَ[f:96[ند]َا[a:852[دًا ي]ُحِبُّونَهُمْ كَحُبِّ [h:853[ٱ]للَّهِ‌ۖ وَ[h:37[ٱ]لَّذِينَ ءَامَن[o[ُوٓ][s[اْ] أَشَدُّ حُب[u:854[ًّا ل]ِّلَّهِ‌ۗ وَلَوْ يَرَى [h:855[ٱ]لَّذِينَ ظَلَم[o[ُوٓ][s[اْ] إِذْ يَرَوْنَ [h:856[ٱ]لْعَذَابَ أَ[g[نّ]َ [h:857[ٱ]لْقُوَّةَ لِلَّهِ جَمِي[a:858[عًا و]َأَ[g[نّ]َ [h:859[ٱ]للَّهَ شَدِيدُ [h:860[ٱ]لْعَذ[p[َا][q[ب]ِ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 165,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 173,
+        "text": "إِذْ تَبَرَّأَ [h:861[ٱ]لَّذِينَ [h:862[ٱ]تُّبِعُو[s[اْ] مِنَ [h:523[ٱ]لَّذِينَ [h:863[ٱ]تَّبَعُو[s[اْ] وَرَأَوُ[s[اْ] [h:864[ٱ]لْعَذَابَ وَتَقَطَّعَتْ بِهِمُ [h:865[ٱ]لْأَسْب[p[َا][q[ب]ُ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 166,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 174,
+        "text": "وَقَالَ [h:614[ٱ]لَّذِينَ [h:863[ٱ]تَّبَعُو[s[اْ] لَوْ أَ[g[نّ]َ لَنَا كَرَّ[f:866[ةً ف]َنَتَبَرَّأَ مِنْهُمْ كَمَا تَبَرَّءُو[s[اْ] مِ[g[نّ]َا‌ۗ كَذ[n[َٲ]لِكَ يُرِيهِمُ [h:867[ٱ]للَّهُ أَعْمَ[n[ـٰ]لَهُمْ حَسَر[n[َٲ]تٍ عَلَيْهِمْ‌ۖ وَمَا ه[c:868[ُم ب]ِخَ[n[ـٰ]رِجِينَ مِنَ [h:869[ٱ][l[ل][g[نّ][p[َا]رِ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 167,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 21,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 175,
+        "text": "يَ[o[ـٰٓ]أَيُّهَا [h:82[ٱ][l[ل][g[نّ]َاسُ كُلُو[s[اْ] مِ[g[مّ]َا فِى [h:44[ٱ]لْأَرْضِ حَلَ[n[ـٰ]ل[f:870[اً ط]َيِّ[a:871[بًا و]َلَا تَتَّبِعُو[s[اْ] خُطُو[n[َٲ]تِ [h:872[ٱ][l[ل]شَّيْطَ[n[ـٰ]نِ‌ۚ إِ[g[نّ]َهُ[n[ۥ] لَكُمْ عَدُ[a:873[وٌّ م]ُّب[p[ِي]نٌ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 168,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      },
+      {
+        "number": 176,
+        "text": "إِ[g[نّ]َمَا يَأْمُرُك[c:874[ُم ب]ِ[h:875[ٱ][l[ل]سّ[o[ُو]ٓءِ وَ[h:876[ٱ]لْفَحْش[o[َا]ٓءِ وَأَ[f:877[ن ت]َقُولُو[s[اْ] عَلَى [h:412[ٱ]للَّهِ مَا لَا تَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 2,
+          "name": "سُورَةُ البَقَرَةِ",
+          "englishName": "Al-Baqara",
+          "englishNameTranslation": "The Cow",
+          "revelationType": "Medinan",
+          "numberOfAyahs": 286
+        },
+        "numberInSurah": 169,
+        "juz": 2,
+        "manzil": 1,
+        "page": 25,
+        "ruku": 22,
+        "hizbQuarter": 10,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "2": {
+        "number": 2,
+        "name": "سُورَةُ البَقَرَةِ",
+        "englishName": "Al-Baqara",
+        "englishNameTranslation": "The Cow",
+        "revelationType": "Medinan",
+        "numberOfAyahs": 286
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 300,
+    "ayahs": [
+      {
+        "number": 2194,
+        "text": "وَلَقَ[q:341[دْ] صَرَّفْنَا فِى هَ[n[ـٰ]ذَا [h:7765[ٱ]لْقُرْءَانِ لِل[g[نّ]َاسِ مِ[f:843[ن ك]ُلِّ مَثَ[a:8127[لٍ‌ۚ و]َكَانَ [h:7688[ٱ]لْإِ[f:2732[نس]َ[n[ـٰ]نُ أَكْثَرَ ش[f:8128[َىْءٍ ج]َدَلاً",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 54,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2195,
+        "text": "وَمَا مَنَعَ [h:7899[ٱ][l[ل][g[نّ]َاسَ أ[a:386[َن ي]ُؤْمِن[o[ُوٓ][s[اْ] إِذْ ج[o[َا]ٓءَهُمُ [h:7900[ٱ]لْهُدَىٰ وَيَسْتَغْفِرُو[s[اْ] رَبَّهُمْ إِلّ[o[َآ] أَ[f:6843[ن ت]َأْتِيَهُمْ سُ[g[نّ]َةُ [h:7207[ٱ]لْأَوَّلِينَ أَوْ يَأْتِيَهُمُ [h:7420[ٱ]لْعَذَابُ قُبُلاً",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 55,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2196,
+        "text": "وَمَا نُرْسِلُ [h:4063[ٱ]لْمُرْسَلِينَ إِلَّا مُبَشِّرِينَ وَمُ[f:1163[نذ]ِرِينَ‌ۚ وَيُجَ[n[ـٰ]دِلُ [h:8129[ٱ]لَّذِينَ كَفَرُو[s[اْ] بِ[h:212[ٱ]لْبَ[n[ـٰ]طِلِ لِيُ[q:8130[دْ]حِضُو[s[اْ] بِهِ [h:8131[ٱ]لْحَقَّ‌ۖ وَ[h:8132[ٱ]تَّخَذ[o[ُوٓ][s[اْ] ءَايَ[n[ـٰ]تِى وَم[o[َآ] أُ[f:8133[نذ]ِرُو[s[اْ] هُزُوًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 56,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2197,
+        "text": "وَمَنْ أَظْلَمُ مِ[g[مّ]َ[f:8134[ن ذ]ُكِّرَ بِـَٔـايَ[n[ـٰ]تِ رَبِّه[n[ِۦ] فَأَعْرَضَ عَنْهَا وَنَسِىَ مَا قَدَّمَتْ يَدَاهُ‌ۚ إِ[g[نّ]َا جَعَلْنَا عَلَىٰ قُلُوبِهِمْ أَكِ[g[نّ]َةً أ[a:3987[َن ي]َفْقَهُوهُ وَف[o[ِىٓ] ءَاذَانِهِمْ وَ[q:3988[قْ][a:3989[رًا‌ۖ و]َإِ[f:8135[ن ت]َ[q:8136[دْ]عُهُمْ إِلَى [h:4178[ٱ]لْهُدَىٰ فَل[a:8137[َن ي]َهْتَد[o[ُوٓ][s[اْ] إِذًا أَبَدًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 57,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2198,
+        "text": "وَرَبُّكَ [h:8138[ٱ]لْغَفُورُ ذُو [h:4430[ٱ][l[ل]رَّحْمَةِ‌ۖ لَوْ يُؤَاخِذُه[c:8139[ُم ب]ِمَا كَسَبُو[s[اْ] لَعَجَّلَ لَهُمُ [h:8140[ٱ]لْعَذَابَ‌ۚ بَل لَّه[w:8141[ُم م]َّوْعِ[u:8142[دٌ ل]ّ[a:8143[َن ي]َجِدُو[s[اْ] مِ[f:3136[ن د]ُونِه[n[ِۦ] مَوْئِلاً",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 58,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2199,
+        "text": "وَتِلْكَ [h:8144[ٱ]لْقُرَ[o[ىٰٓ] أَهْلَكْنَ[n[ـٰ]هُمْ لَ[g[مّ]َا ظَلَمُو[s[اْ] وَجَعَلْنَا لِمَهْلِكِه[w:8145[ِم م]َّوْعِدًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 59,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 259,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2200,
+        "text": "وَإِذْ قَالَ مُوسَىٰ لِفَتَ[n[ـٰ]هُ ل[o[َآ] أَ[q:8146[بْ]رَحُ حَتَّ[o[ىٰٓ] أَ[q:8147[بْ]لُغَ مَ[q:8148[جْ]مَعَ [h:8149[ٱ]لْبَحْرَيْنِ أَوْ أَمْضِىَ حُقُبًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 60,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      },
+      {
+        "number": 2201,
+        "text": "فَلَ[g[مّ]َا بَلَغَا مَ[q:8148[جْ]مَعَ بَيْنِهِمَا نَسِيَا حُوتَهُمَا فَ[h:8150[ٱ]تَّخَذَ سَبِيلَهُ[n[ۥ] فِى [h:837[ٱ]لْبَحْرِ سَرَبًا",
+        "surah": {
+          "number": 18,
+          "name": "سُورَةُ الكَهۡفِ",
+          "englishName": "Al-Kahf",
+          "englishNameTranslation": "The Cave",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 110
+        },
+        "numberInSurah": 61,
+        "juz": 15,
+        "manzil": 4,
+        "page": 300,
+        "ruku": 260,
+        "hizbQuarter": 120,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "18": {
+        "number": 18,
+        "name": "سُورَةُ الكَهۡفِ",
+        "englishName": "Al-Kahf",
+        "englishNameTranslation": "The Cave",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 110
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

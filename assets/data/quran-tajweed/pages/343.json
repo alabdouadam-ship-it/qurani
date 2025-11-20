@@ -1,0 +1,218 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 343,
+    "ayahs": [
+      {
+        "number": 2691,
+        "text": "وَأَ[f:271[نز]َلْنَا مِنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[o[َا]ٓ[i:9165[ءَۢ ب]ِقَدَ[f:9166[رٍ ف]َأَسْكَ[g[نّ]َ[n[ـٰ]هُ فِى [h:44[ٱ]لْأَرْضِ‌ۖ وَإِ[g[نّ]َا عَلَىٰ ذَهَا[i:9167[بِۭ ب]ِه[n[ِۦ] لَقَ[n[ـٰ]دِر[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 18,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2692,
+        "text": "فَأَ[f:9168[نش]َأْنَا لَك[c:2000[ُم ب]ِه[n[ِۦ] جَ[g[نّ]َ[n[ـٰ][a:9169[تٍ م]ّ[a:1568[ِن ن]َّخِي[a:1569[لٍ و]َأَعْنَ[n[ـٰ][u:9170[بٍ ل]َّكُمْ فِيهَا فَو[n[َٲ]كِهُ كَثِيرَ[a:9171[ةٌ و]َمِنْهَا تَأْكُل[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 19,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2693,
+        "text": "وَشَجَرَ[f:9172[ةً ت]َخْرُجُ مِ[f:9173[ن ط]ُورِ سَيْن[o[َا]ٓءَ تَ[i:9174[نۢب]ُتُ بِ[h:9175[ٱ][l[ل]دُّهْنِ وَصِ[q:9176[بْ][u:9177[غٍ ل]ِّلْأَكِل[p[ِي]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 20,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2694,
+        "text": "وَإِ[g[نّ]َ لَكُمْ فِى [h:7465[ٱ]لْأَنْعَ[n[ـٰ]مِ لَعِ[q:1764[بْ]رَ[a:7466[ةً‌ۖ ن]ُّسْقِيك[w:7467[ُم م]ِّ[g[مّ]َا فِى بُطُونِهَا وَلَكُمْ فِيهَا مَنَ[n[ـٰ]فِعُ كَثِيرَ[a:9171[ةٌ و]َمِنْهَا تَأْكُل[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 21,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2695,
+        "text": "وَعَلَيْهَا وَعَلَى [h:9178[ٱ]لْفُلْكِ تُحْمَل[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 22,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 295,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2696,
+        "text": "وَلَقَ[q:341[دْ] أَرْسَلْنَا نُوحًا إِلَىٰ قَوْمِه[n[ِۦ] فَقَالَ يَ[n[ـٰ]قَوْمِ [h:4768[ٱ]عْبُدُو[s[اْ] [h:3704[ٱ]للَّهَ مَا لَك[w:556[ُم م]ِّنْ إِلَ[n[ـٰ]هٍ غَيْرُهُ[o[ۥٓ‌ۖ] أَفَلَا تَتَّق[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 23,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 296,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2697,
+        "text": "فَقَالَ [h:9179[ٱ]لْمَلَؤُ[s[اْ] [h:9180[ٱ]لَّذِينَ كَفَرُو[s[اْ] مِ[f:4770[ن ق]َوْمِه[n[ِۦ] مَا هَ[n[ـٰ]ذ[o[َآ] إِلَّا بَشَ[a:7069[رٌ م]ِّثْلُكُمْ يُرِيدُ أ[a:9181[َن ي]َتَفَضَّلَ عَلَيْكُمْ وَلَوْ ش[o[َا]ٓءَ [h:78[ٱ]للَّهُ لَأَ[f:9182[نز]َلَ مَلَ[o[ـٰٓ]ئِكَ[a:9183[ةً م]َّا سَمِعْنَا بِهَ[n[ـٰ]ذَا ف[o[ِىٓ] ءَاب[o[َا]ٓئِنَا [h:9184[ٱ]لْأَوَّل[p[ِي]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 24,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 296,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2698,
+        "text": "إِنْ هُوَ إِلَّا رَجُ[i:9185[لُۢ ب]ِه[n[ِۦ] جِ[g[نّ]َ[f:9186[ةٌ ف]َتَرَبَّصُو[s[اْ] بِه[n[ِۦ] حَتَّىٰ ح[p[ِي]نٍ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 25,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 296,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2699,
+        "text": "قَالَ رَبِّ [h:9187[ٱ][f:9188[نص]ُرْنِى بِمَا كَذَّب[p[ُو]نِ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 26,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 296,
+        "hizbQuarter": 137,
+        "sajda": false
+      },
+      {
+        "number": 2700,
+        "text": "فَأَوْحَيْن[o[َآ] إِلَيْهِ أَنِ [h:9189[ٱ]صْنَعِ [h:9190[ٱ]لْفُلْكَ بِأَعْيُنِنَا وَوَحْيِنَا فَإِذَا ج[o[َا]ٓءَ أَمْرُنَا وَفَارَ [h:6327[ٱ][l[ل]تَّ[g[نّ]ُورُ‌ۙ فَ[h:9191[ٱ]سْلُكْ فِيهَا مِ[f:6329[ن ك]ُ[f:6330[لٍّ ز]َوْجَيْنِ [h:6331[ٱ]ثْنَيْنِ وَأَهْلَكَ إِلَّا مَ[f:6332[ن س]َبَقَ عَلَيْهِ [h:6333[ٱ]لْقَوْلُ مِنْهُمْ‌ۖ وَلَا تُخَ[n[ـٰ]طِ[q:6319[بْ]نِى فِى [h:6320[ٱ]لَّذِينَ ظَلَم[o[ُوٓ[s[اْ]‌ۖ] إِ[g[نّ]َه[w:6321[ُم م]ُّغْرَق[p[ُو]نَ",
+        "surah": {
+          "number": 23,
+          "name": "سُورَةُ المُؤۡمِنُونَ",
+          "englishName": "Al-Muminoon",
+          "englishNameTranslation": "The Believers",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 118
+        },
+        "numberInSurah": 27,
+        "juz": 18,
+        "manzil": 4,
+        "page": 343,
+        "ruku": 296,
+        "hizbQuarter": 137,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "23": {
+        "number": 23,
+        "name": "سُورَةُ المُؤۡمِنُونَ",
+        "englishName": "Al-Muminoon",
+        "englishNameTranslation": "The Believers",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 118
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

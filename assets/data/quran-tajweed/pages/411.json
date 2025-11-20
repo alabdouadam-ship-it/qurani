@@ -1,0 +1,237 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 411,
+    "ayahs": [
+      {
+        "number": 3470,
+        "text": "ا[m[لٓ][m[مٓ]",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 1,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3471,
+        "text": "تِلْكَ ءَايَ[n[ـٰ]تُ [h:5932[ٱ]لْكِتَ[n[ـٰ]بِ [h:5933[ٱ]لْحَك[p[ِي]مِ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 2,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3472,
+        "text": "هُ[a:4734[دًى و]َرَحْمَ[u:10547[ةً ل]ِّلْمُحْسِن[p[ِي]نَ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 3,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3473,
+        "text": "ٱلَّذِينَ يُقِيمُونَ [h:3638[ٱ][l[ل]صَّلَ[s[و][n[ٲ]ةَ وَيُؤْتُونَ [h:3639[ٱ][l[ل]زَّكَ[s[و][n[ٲ]ةَ وَه[c:4710[ُم ب]ِ[h:447[ٱ]لْأَخِرَةِ هُمْ يُوقِن[p[ُو]نَ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 4,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3474,
+        "text": "أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ عَلَىٰ هُ[a:21[دًى م]ّ[u:22[ِن ر]َّبِّهِمْ‌ۖ وَأُ[s[وْ]لَ[o[ـٰٓ]ئِكَ هُمُ [h:23[ٱ]لْمُفْلِح[p[ُو]نَ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 5,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3475,
+        "text": "وَمِنَ [h:30[ٱ][l[ل][g[نّ]َاسِ م[a:10548[َن ي]َشْتَرِى لَهْوَ [h:10549[ٱ]لْحَدِيثِ لِيُضِلَّ عَ[f:1203[ن س]َبِيلِ [h:788[ٱ]للَّهِ بِغَيْرِ عِلْ[a:10550[مٍ و]َيَتَّخِذَهَا هُزُوًا‌ۚ أُ[s[وْ]لَ[o[ـٰٓ]ئِكَ لَهُمْ عَذَا[a:478[بٌ م]ُّه[p[ِي]نٌ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 6,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3476,
+        "text": "وَإِذَا تُتْلَىٰ عَلَيْهِ ءَايَ[n[ـٰ]تُنَا وَلَّىٰ مُسْتَكْبِ[f:10551[رًا ك]َأ[u:2914[َن ل]َّمْ يَسْمَعْهَا كَأَ[g[نّ]َ ف[o[ِىٓ] أُذُنَيْهِ وَ[q:3988[قْ][f:10552[رًا‌ۖ ف]َبَشِّرْهُ بِعَذَابٍ أَل[p[ِي]مٍ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 7,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3477,
+        "text": "إِ[g[نّ]َ [h:24[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ لَهُمْ جَ[g[نّ]َ[n[ـٰ]تُ [h:10553[ٱ][l[ل][g[نّ]َع[p[ِي]مِ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 8,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3478,
+        "text": "خَ[n[ـٰ]لِدِينَ فِيهَا‌ۖ وَعْدَ [h:3149[ٱ]للَّهِ حَق[a:10554[ًّا‌ۚ و]َهُوَ [h:7045[ٱ]لْعَزِيزُ [h:681[ٱ]لْحَك[p[ِي]مُ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 9,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3479,
+        "text": "خَلَقَ [h:3913[ٱ][l[ل]سَّمَ[n[ـٰ]و[n[َٲ]تِ بِغَيْرِ عَمَ[f:6863[دٍ ت]َرَوْنَهَا‌ۖ وَأَلْقَىٰ فِى [h:44[ٱ]لْأَرْضِ رَو[n[َٲ]سِىَ أَ[f:7354[ن ت]َمِيدَ بِكُمْ وَبَثَّ فِيهَا مِ[f:843[ن ك]ُلِّ د[m[َا]ٓبَّ[a:10555[ةٍ‌ۚ و]َأَ[f:271[نز]َلْنَا مِنَ [h:64[ٱ][l[ل]سَّم[o[َا]ٓءِ م[o[َا]ٓ[f:9997[ءً ف]َأَ[i:9998[نۢب]َتْنَا فِيهَا مِ[f:843[ن ك]ُلِّ زَوْ[f:9715[جٍ ك]َر[p[ِي]مٍ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 10,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      },
+      {
+        "number": 3480,
+        "text": "هَ[n[ـٰ]ذَا خَلْقُ [h:10556[ٱ]للَّهِ فَأَرُونِى مَاذَا خَلَقَ [h:10557[ٱ]لَّذِينَ مِ[f:3136[ن د]ُونِه[n[ِۦ]‌ۚ بَلِ [h:10558[ٱ][l[ل]ظَّ[n[ـٰ]لِمُونَ فِى ضَلَ[n[ـٰ][a:2393[لٍ م]ُّب[p[ِي]نٍ",
+        "surah": {
+          "number": 31,
+          "name": "سُورَةُ لُقۡمَانَ",
+          "englishName": "Luqman",
+          "englishNameTranslation": "Luqman",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 34
+        },
+        "numberInSurah": 11,
+        "juz": 21,
+        "manzil": 5,
+        "page": 411,
+        "ruku": 355,
+        "hizbQuarter": 164,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "31": {
+        "number": 31,
+        "name": "سُورَةُ لُقۡمَانَ",
+        "englishName": "Luqman",
+        "englishNameTranslation": "Luqman",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 34
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

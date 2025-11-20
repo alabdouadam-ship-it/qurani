@@ -8,6 +8,7 @@ import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
+import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
 import 'models/surah.dart';
 
@@ -226,6 +227,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     switch (_edition) {
       case QuranEdition.simple:
       case QuranEdition.uthmani:
+      case QuranEdition.tajweed:
         final reciter = PreferencesService.getReciter();
         return reciter.isNotEmpty ? reciter : 'afs';
       case QuranEdition.english:
@@ -671,6 +673,20 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                       height: 1.6,
                       color: theme.colorScheme.onSurface,
                     );
+                    final TextStyle diacriticStyle =
+                        baseStyle.copyWith(color: theme.colorScheme.primary);
+                    final bool isTajweed = _edition == QuranEdition.tajweed;
+                    final List<InlineSpan> spans = isTajweed
+                        ? TajweedParser.parseSpans(
+                            a.text,
+                            baseStyle,
+                            diacriticStyle: diacriticStyle,
+                          )
+                        : TajweedParser.buildPlainSpans(
+                            a.text,
+                            baseStyle,
+                            diacriticStyle: diacriticStyle,
+                          );
                     return ListTile(
                       key: tileKey,
                       dense: true,
@@ -685,15 +701,10 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                         textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
                         child: RichText(
                           textAlign: rtl ? TextAlign.right : TextAlign.left,
-                      text: TextSpan(
-                        style: baseStyle,
-                        children: [
-                          TextSpan(
-                            text: a.text,
+                          text: TextSpan(
                             style: baseStyle,
+                            children: spans,
                           ),
-                        ],
-                      ),
                         ),
                       ),
                       onTap: () => _selectAyah(a),
@@ -739,6 +750,8 @@ String _localizedEditionName(AppLocalizations l10n, QuranEdition edition) {
       return l10n.editionArabicSimple;
     case QuranEdition.uthmani:
       return l10n.editionArabicUthmani;
+    case QuranEdition.tajweed:
+      return l10n.editionArabicTajweed;
     case QuranEdition.english:
       return l10n.editionEnglish;
     case QuranEdition.french:

@@ -1,0 +1,579 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 452,
+    "ayahs": [
+      {
+        "number": 3942,
+        "text": "مَا لَكُمْ كَيْفَ تَحْكُم[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 154,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3943,
+        "text": "أَفَلَا تَذَكَّر[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 155,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3944,
+        "text": "أَمْ لَكُمْ سُلْطَ[n[ـٰ][a:11446[نٌ م]ُّب[p[ِي]نٌ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 156,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3945,
+        "text": "فَأْتُو[s[اْ] بِكِتَ[n[ـٰ]بِكُمْ إِ[f:109[ن ك]ُ[f:100[نت]ُمْ صَ[n[ـٰ]دِق[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 157,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3946,
+        "text": "وَجَعَلُو[s[اْ] بَيْنَهُ[n[ۥ] وَبَيْنَ [h:11447[ٱ]لْجِ[g[نّ]َةِ نَسَ[a:11448[بًا‌ۚ و]َلَقَ[q:341[دْ] عَلِمَتِ [h:11449[ٱ]لْجِ[g[نّ]َةُ إِ[g[نّ]َهُمْ لَمُحْضَر[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 158,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3947,
+        "text": "سُ[q:7648[بْ]حَ[n[ـٰ]نَ [h:9282[ٱ]للَّهِ عَ[g[مّ]َا يَصِف[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 159,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3948,
+        "text": "إِلَّا عِبَادَ [h:11354[ٱ]للَّهِ [h:11355[ٱ]لْمُخْلَص[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 160,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3949,
+        "text": "فَإِ[g[نّ]َكُمْ وَمَا تَعْبُد[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 161,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3950,
+        "text": "م[o[َآ] أَ[f:428[نت]ُمْ عَلَيْهِ بِفَ[n[ـٰ]تِن[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 162,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3951,
+        "text": "إِلَّا مَنْ هُوَ صَالِ [h:11450[ٱ]لْجَح[p[ِي]مِ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 163,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3952,
+        "text": "وَمَا مِ[g[نّ][o[َآ] إِلَّا لَهُ[n[ۥ] مَقَا[a:11451[مٌ م]َّعْل[p[ُو]مٌ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 164,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3953,
+        "text": "وَإِ[g[نّ]َا لَنَحْنُ [h:11452[ٱ][l[ل]صّ[m[َا]ٓفّ[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 165,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3954,
+        "text": "وَإِ[g[نّ]َا لَنَحْنُ [h:11453[ٱ]لْمُسَبِّح[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 166,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3955,
+        "text": "وَإِ[f:2392[ن ك]َانُو[s[اْ] لَيَقُول[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 167,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3956,
+        "text": "لَوْ أَ[g[نّ]َ عِ[f:2359[ند]َنَا ذِكْ[a:11454[رًا م]ِّنَ [h:11455[ٱ]لْأَوَّل[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 168,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3957,
+        "text": "لَكُ[g[نّ]َا عِبَادَ [h:11354[ٱ]للَّهِ [h:11355[ٱ]لْمُخْلَص[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 169,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3958,
+        "text": "فَكَفَرُو[s[اْ] بِه[n[ِۦ]‌ۖ فَسَوْفَ يَعْلَم[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 170,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3959,
+        "text": "وَلَقَ[q:341[دْ] سَبَقَتْ كَلِمَتُنَا لِعِبَادِنَا [h:11456[ٱ]لْمُرْسَل[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 171,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3960,
+        "text": "إِ[g[نّ]َهُمْ لَهُمُ [h:11457[ٱ]لْمَ[f:11458[نص]ُور[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 172,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3961,
+        "text": "وَإِ[g[نّ]َ جُ[f:11459[ند]َنَا لَهُمُ [h:11460[ٱ]لْغَ[n[ـٰ]لِب[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 173,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3962,
+        "text": "فَتَوَلَّ عَنْهُمْ حَتَّىٰ ح[p[ِي]نٍ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 174,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3963,
+        "text": "وَأَ[q:11461[بْ]صِرْهُمْ فَسَوْفَ يُ[q:60[بْ]صِر[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 175,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3964,
+        "text": "أَفَبِعَذَابِنَا يَسْتَعْجِل[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 176,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3965,
+        "text": "فَإِذَا نَزَلَ بِسَاحَتِهِمْ فَس[o[َا]ٓءَ صَبَاحُ [h:11462[ٱ]لْمُ[f:6137[نذ]َر[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 177,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3966,
+        "text": "وَتَوَلَّ عَنْهُمْ حَتَّىٰ ح[p[ِي]نٍ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 178,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3967,
+        "text": "وَأَ[q:8337[بْ]صِرْ فَسَوْفَ يُ[q:60[بْ]صِر[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 179,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3968,
+        "text": "سُ[q:7648[بْ]حَ[n[ـٰ]نَ رَبِّكَ رَبِّ [h:11463[ٱ]لْعِزَّةِ عَ[g[مّ]َا يَصِف[p[ُو]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 180,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3969,
+        "text": "وَسَلَ[n[ـٰ]مٌ عَلَى [h:11464[ٱ]لْمُرْسَل[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 181,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      },
+      {
+        "number": 3970,
+        "text": "وَ[h:9999[ٱ]لْحَمْدُ لِلَّهِ رَبِّ [h:4[ٱ]لْعَ[n[ـٰ]لَم[p[ِي]نَ",
+        "surah": {
+          "number": 37,
+          "name": "سُورَةُ الصَّافَّاتِ",
+          "englishName": "As-Saaffaat",
+          "englishNameTranslation": "Those drawn up in Ranks",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 182
+        },
+        "numberInSurah": 182,
+        "juz": 23,
+        "manzil": 6,
+        "page": 452,
+        "ruku": 390,
+        "hizbQuarter": 181,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "37": {
+        "number": 37,
+        "name": "سُورَةُ الصَّافَّاتِ",
+        "englishName": "As-Saaffaat",
+        "englishNameTranslation": "Those drawn up in Ranks",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 182
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}

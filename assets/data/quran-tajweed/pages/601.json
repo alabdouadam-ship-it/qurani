@@ -1,0 +1,367 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "number": 601,
+    "ayahs": [
+      {
+        "number": 6177,
+        "text": "وَ[h:9999[ٱ]لْعَصْرِ",
+        "surah": {
+          "number": 103,
+          "name": "سُورَةُ العَصۡرِ",
+          "englishName": "Al-Asr",
+          "englishNameTranslation": "The Declining Day, Epoch",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 545,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6178,
+        "text": "إِ[g[نّ]َ [h:7137[ٱ]لْإِ[f:5969[نس]َ[n[ـٰ]نَ لَفِى خُسْرٍ",
+        "surah": {
+          "number": 103,
+          "name": "سُورَةُ العَصۡرِ",
+          "englishName": "Al-Asr",
+          "englishNameTranslation": "The Declining Day, Epoch",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 545,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6179,
+        "text": "إِلَّا [h:778[ٱ]لَّذِينَ ءَامَنُو[s[اْ] وَعَمِلُو[s[اْ] [h:118[ٱ][l[ل]صَّ[n[ـٰ]لِحَ[n[ـٰ]تِ وَتَوَاصَوْ[s[اْ] بِ[h:370[ٱ]لْحَقِّ وَتَوَاصَوْ[s[اْ] بِ[h:223[ٱ][l[ل]صَّ[q:223[بْ]رِ",
+        "surah": {
+          "number": 103,
+          "name": "سُورَةُ العَصۡرِ",
+          "englishName": "Al-Asr",
+          "englishNameTranslation": "The Declining Day, Epoch",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 3
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 545,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6180,
+        "text": "وَيْ[u:12392[لٌ ل]ِّكُلِّ هُمَزَ[u:14633[ةٍ ل]ُّمَزَةٍ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6181,
+        "text": "ٱلَّذِى جَمَعَ مَال[a:14634[اً و]َعَدَّدَهُۥ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6182,
+        "text": "يَحْسَبُ أَ[g[نّ]َ مَالَهُ[o[ۥٓ] أَخْلَدَهُۥ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6183,
+        "text": "كَلَّا‌ۖ لَيُ[i:14635[نۢب]َذَ[g[نّ]َ فِى [h:14636[ٱ]لْحُطَمَةِ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6184,
+        "text": "وَم[o[َآ] أَ[q:13858[دْ]رَ[n[ٮٰ]كَ مَا [h:14637[ٱ]لْحُطَمَةُ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6185,
+        "text": "نَارُ [h:14638[ٱ]للَّهِ [h:14639[ٱ]لْمُوقَدَةُ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 6,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6186,
+        "text": "ٱلَّتِى تَطَّلِعُ عَلَى [h:14640[ٱ]لْأَفْــِٔدَةِ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 7,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6187,
+        "text": "إِ[g[نّ]َهَا عَلَيْه[w:14641[ِم م]ُّؤْصَدَةٌ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 8,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6188,
+        "text": "فِى عَمَ[a:14642[دٍ م]ُّمَدَّدَةِۭ",
+        "surah": {
+          "number": 104,
+          "name": "سُورَةُ الهُمَزَةِ",
+          "englishName": "Al-Humaza",
+          "englishNameTranslation": "The Traducer",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 9
+        },
+        "numberInSurah": 9,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 546,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6189,
+        "text": "أَلَمْ تَرَ كَيْفَ فَعَلَ رَبُّكَ بِأَصْحَ[n[ـٰ]بِ [h:14643[ٱ]لْف[p[ِي]لِ",
+        "surah": {
+          "number": 105,
+          "name": "سُورَةُ الفِيلِ",
+          "englishName": "Al-Fil",
+          "englishNameTranslation": "The Elephant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 1,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 547,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6190,
+        "text": "أَلَمْ يَ[q:4397[جْ]عَلْ كَيْدَهُمْ فِى تَضْل[p[ِي]لٍ",
+        "surah": {
+          "number": 105,
+          "name": "سُورَةُ الفِيلِ",
+          "englishName": "Al-Fil",
+          "englishNameTranslation": "The Elephant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 2,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 547,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6191,
+        "text": "وَأَرْسَلَ عَلَيْهِمْ طَيْرًا أَبَاب[p[ِي]لَ",
+        "surah": {
+          "number": 105,
+          "name": "سُورَةُ الفِيلِ",
+          "englishName": "Al-Fil",
+          "englishNameTranslation": "The Elephant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 3,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 547,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6192,
+        "text": "تَرْمِيه[c:14644[ِم ب]ِحِجَارَ[a:14645[ةٍ م]ِّ[f:6445[ن س]ِجّ[p[ِي]لٍ",
+        "surah": {
+          "number": 105,
+          "name": "سُورَةُ الفِيلِ",
+          "englishName": "Al-Fil",
+          "englishNameTranslation": "The Elephant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 4,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 547,
+        "hizbQuarter": 240,
+        "sajda": false
+      },
+      {
+        "number": 6193,
+        "text": "فَجَعَلَهُمْ كَعَصْ[a:14646[فٍ م]َّأْك[p[ُو]لِۭ",
+        "surah": {
+          "number": 105,
+          "name": "سُورَةُ الفِيلِ",
+          "englishName": "Al-Fil",
+          "englishNameTranslation": "The Elephant",
+          "revelationType": "Meccan",
+          "numberOfAyahs": 5
+        },
+        "numberInSurah": 5,
+        "juz": 30,
+        "manzil": 7,
+        "page": 601,
+        "ruku": 547,
+        "hizbQuarter": 240,
+        "sajda": false
+      }
+    ],
+    "surahs": {
+      "103": {
+        "number": 103,
+        "name": "سُورَةُ العَصۡرِ",
+        "englishName": "Al-Asr",
+        "englishNameTranslation": "The Declining Day, Epoch",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 3
+      },
+      "104": {
+        "number": 104,
+        "name": "سُورَةُ الهُمَزَةِ",
+        "englishName": "Al-Humaza",
+        "englishNameTranslation": "The Traducer",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 9
+      },
+      "105": {
+        "number": 105,
+        "name": "سُورَةُ الفِيلِ",
+        "englishName": "Al-Fil",
+        "englishNameTranslation": "The Elephant",
+        "revelationType": "Meccan",
+        "numberOfAyahs": 5
+      }
+    },
+    "edition": {
+      "identifier": "quran-tajweed",
+      "language": "ar",
+      "name": "القرآن الكريم المجود (ملون) (tajweed)",
+      "englishName": "Tajweed",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+    }
+  }
+}
