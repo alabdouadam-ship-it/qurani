@@ -13,7 +13,7 @@ import 'services/prayer_times_service.dart';
 import 'services/device_info_service.dart';
 import 'services/adhan_scheduler.dart';
 import 'prayer_times_screen.dart';
-import 'services/adhan_audio_manager.dart';
+import 'services/global_adhan_service.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,12 @@ Future<void> main() async {
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
   await NotificationService.init();
+  
+  // Initialize AdhanScheduler with proper background callback registration
   await AdhanScheduler.init();
+  
+  // Initialize global Adhan service for cross-screen playback
+  await GlobalAdhanService.init();
   
   // Handle when app is opened from notification (mobile only)
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
@@ -44,21 +49,20 @@ Future<void> main() async {
       final plugin = NotificationService.plugin;
       final initialNotificationResponse = await plugin.getNotificationAppLaunchDetails();
       if (initialNotificationResponse?.didNotificationLaunchApp ?? false) {
-        // In version 17.2.2, NotificationAppLaunchDetails doesn't have payload directly
-        // We'll determine which prayer time it is based on current time
-        print('[Main] App launched from notification, checking current prayer time');
-        _playAdhanForCurrentPrayerTime();
+        // Previously this could auto-play Adhan based on current time.
+        // Adhan playback has been disabled by user request, so we only log.
+        print('[Main] App launched from notification – Adhan playback disabled, doing nothing.');
       }
     } catch (e) {
       print('[Main] Error checking notification launch details: $e');
     }
     
-    // Set up notification tap handler to play Adhan automatically
-    // This will be called when notification arrives (even if app is closed)
+    // Set up notification tap handler.
+    // Adhan playback has been disabled, so we just log and avoid playing anything.
     NotificationService.onNotificationTap = (String? payload) async {
       if (payload != null && payload != 'unknown') {
-        print('[Main] Notification received/tapped, playing Adhan for: $payload');
-        await _playAdhanFromNotification(payload);
+        print(
+            '[Main] Notification received/tapped (payload: $payload) – Adhan playback disabled, ignoring.');
       }
     };
   }
@@ -189,38 +193,6 @@ Future<int?> _androidSdkInt() async {
   }
 }
 
-Future<void> _playAdhanFromNotification(String prayerId) async {
-  print('[Main] Trigger foreground Adhan for $prayerId');
-  await AdhanAudioManager.playForegroundAdhan(prayerId);
-}
-
-Future<void> _playAdhanForCurrentPrayerTime() async {
-  try {
-    // Get today's prayer times and determine which prayer time it is
-    final now = DateTime.now();
-    final times = await PrayerTimesService.getTimesForDate(
-      year: now.year,
-      month: now.month,
-      day: now.day,
-    );
-    if (times == null) return;
-    
-    // Find which prayer time we're closest to (within 5 minutes)
-    final prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
-    for (final prayerId in prayers) {
-      final prayerTime = times[prayerId];
-      if (prayerTime == null) continue;
-      final diff = now.difference(prayerTime).abs();
-      if (diff.inMinutes <= 5) {
-        print('[Main] Current prayer time detected: $prayerId');
-        await _playAdhanFromNotification(prayerId);
-        return;
-      }
-    }
-  } catch (e) {
-    print('[Main] Error determining current prayer time: $e');
-  }
-}
 
 class QuraniApp extends StatefulWidget {
   const QuraniApp({super.key});

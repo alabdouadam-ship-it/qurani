@@ -125,6 +125,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get adhanDisabledMsg => 'L\'adhan ne sera pas diffusé à cette heure de prière.';
 
   @override
+  String get stopAdhan => 'Arrêter l\'adhan';
+
+  @override
+  String get adhanStoppedMsg => 'Adhan arrêté';
+
+  @override
   String get adjustTime => 'Ajuster l\'heure';
 
   @override

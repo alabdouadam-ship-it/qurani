@@ -125,6 +125,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get adhanDisabledMsg => 'لن يتم تشغيل الأذان في وقت هذه الصلاة.';
 
   @override
+  String get stopAdhan => 'إيقاف الأذان';
+
+  @override
+  String get adhanStoppedMsg => 'تم إيقاف الأذان';
+
+  @override
   String get adjustTime => 'تصحيح الوقت';
 
   @override

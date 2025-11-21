@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 import 'package:audio_session/audio_session.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter/services.dart';
 
 import 'adhan_audio_manager.dart';
 import 'notification_service.dart';
@@ -90,13 +89,7 @@ Future<void> _playAdhanCallback(int id) async {
     print('[AdhanScheduler.Callback] ✗ WidgetsFlutterBinding error: $e');
   }
   
-  print('[AdhanScheduler.Callback] Step 0b: Initializing DartPluginRegistrant...');
-  try {
-    DartPluginRegistrant.ensureInitialized();
-    print('[AdhanScheduler.Callback] ✓ DartPluginRegistrant initialized');
-  } catch (e) {
-    print('[AdhanScheduler.Callback] ✗ DartPluginRegistrant error: $e');
-  }
+  // DartPluginRegistrant is handled automatically by the platform
   
   try {
     print('[AdhanScheduler.Callback] Step 1: Getting preferences...');
@@ -114,6 +107,12 @@ Future<void> _playAdhanCallback(int id) async {
       case 6: prayerId = 'isha'; break;
       default: prayerId = null;
     }
+    
+    // For test IDs, always enable and use fajr
+    if (id == 999991) {
+      prayerId = 'fajr';
+      debugPrint('[AdhanScheduler.Callback] TEST MODE: Forcing fajr prayer');
+    }
 
     if (prayerId == null) {
       debugPrint('[AdhanScheduler.Callback] ✗ Invalid prayer code: $code');
@@ -124,7 +123,12 @@ Future<void> _playAdhanCallback(int id) async {
     
     final enabled = prefs.getBool('adhan_$prayerId') ?? false;
     debugPrint('[AdhanScheduler.Callback] Enabled for $prayerId: $enabled');
-    if (!enabled) return;
+    
+    // For test mode, bypass the enable check
+    if (id != 999991 && !enabled) {
+      debugPrint('[AdhanScheduler.Callback] Adhan is disabled for $prayerId, skipping');
+      return;
+    }
 
     final soundKey = prefs.getString(PreferencesService.keyAdhanSound) ?? 'afs';
     final volume = (prefs.getDouble(PreferencesService.keyAdhanVolume) ?? 1.0)
@@ -282,91 +286,56 @@ class AdhanScheduler {
     required Map<String, bool> toggles,
     required String soundKey,
   }) async {
+    debugPrint('[AdhanScheduler] Scheduling Adhan alarms...');
     final now = DateTime.now();
-    debugPrint('[AdhanScheduler] ===== SCHEDULING ADHANS START =====');
-    debugPrint('[AdhanScheduler] Current time: $now');
-    debugPrint('[AdhanScheduler] Sound key: $soundKey');
     
-    // Verify caches files exist
-    await _verifyAdhanCacheFiles();
+    // Pre-cache the sound files we'll need
+    for (final prayerId in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha']) {
+      if (toggles[prayerId] ?? false) {
+        await _ensureAdhanFileExists(soundKey, prayerId == 'fajr');
+      }
+    }
     
-    for (final id in const ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha']) {
-      if (!(toggles[id] ?? false)) {
-        debugPrint('[AdhanScheduler] ⊘ $id disabled');
-        continue;
-      }
-      final t = times[id];
-      if (t == null) {
-        debugPrint('[AdhanScheduler] ⊘ $id no time data');
-        continue;
-      }
-      if (!t.isAfter(now)) {
-        debugPrint('[AdhanScheduler] ⊘ $id time already passed ($t)');
-        continue;
-      }
-      final alarmId = _dailyId(prayerId: id, date: t);
+    // Schedule alarms for enabled prayers
+    for (final entry in times.entries) {
+      final prayerId = entry.key;
+      final time = entry.value;
+      
+      if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
+      if (!(toggles[prayerId] ?? false)) continue;
+      if (time.isBefore(now)) continue;
+      
+      final id = _dailyId(prayerId: prayerId, date: time);
+      
       try {
-        debugPrint('[AdhanScheduler] ✓ Scheduling $id for $t (ID: $alarmId)');
-        debugPrint('[AdhanScheduler]   Time until trigger: ${t.difference(now).inMinutes} minutes');
-        
-        // Cancel any existing alarm with the same ID first
-        try {
-          await AndroidAlarmManager.cancel(alarmId);
-          debugPrint('[AdhanScheduler]   Cancelled any existing alarm with ID $alarmId');
-        } catch (_) {
-          // Ignore if alarm doesn't exist
-        }
-        
-        final scheduled = await AndroidAlarmManager.oneShotAt(
-          t,
-          alarmId,
+        await AndroidAlarmManager.oneShotAt(
+          time,
+          id,
           _playAdhanCallback,
           exact: true,
           wakeup: true,
-          rescheduleOnReboot: true,
           allowWhileIdle: true,
         );
-        if (scheduled) {
-          debugPrint('[AdhanScheduler]   ✓✓✓ $id SCHEDULED SUCCESSFULLY (ID: $alarmId, Time: $t)');
-        } else {
-          debugPrint('[AdhanScheduler]   ✗✗✗ $id scheduling returned FALSE - ALARM NOT SCHEDULED!');
-        }
-      } catch (e, stackTrace) {
-        debugPrint('[AdhanScheduler]   ✗✗✗ Error scheduling $id: $e');
-        debugPrint('[AdhanScheduler]   Stack trace: $stackTrace');
+        debugPrint('[AdhanScheduler] ✓ Scheduled $prayerId at $time (id: $id)');
+      } catch (e) {
+        debugPrint('[AdhanScheduler] ✗ Failed to schedule $prayerId: $e');
       }
     }
-    debugPrint('[AdhanScheduler] ===== SCHEDULING ADHANS END =====');
   }
 
-  static Future<void> _verifyAdhanCacheFiles() async {
-    try {
-      final docDir = await getApplicationDocumentsDirectory();
-      final cacheDir = Directory('${docDir.path}/adhan_cache');
-      debugPrint('[AdhanScheduler] Checking adhan cache at: ${cacheDir.path}');
-      
-      if (!await cacheDir.exists()) {
-        debugPrint('[AdhanScheduler] ✗ Cache directory DOES NOT EXIST');
-        return;
-      }
-      
-      final files = cacheDir.listSync().whereType<File>().toList();
-      debugPrint('[AdhanScheduler] ✓ Cache directory exists with ${files.length} files');
-      for (final file in files) {
-        debugPrint('[AdhanScheduler]   - ${file.path.split('/').last} (${file.lengthSync()} bytes)');
-      }
-    } catch (e) {
-      debugPrint('[AdhanScheduler] Error verifying cache: $e');
-    }
-  }
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {
     debugPrint('[AdhanScheduler] TEST: Scheduling test Adhan playback after $seconds seconds with sound: $soundKey');
     final triggerTime = DateTime.now().add(Duration(seconds: seconds));
     
+    // Pre-cache the test adhan file
+    await _ensureAdhanFileExists(soundKey, false);
+    await _ensureAdhanFileExists(soundKey, true);
+    
+    // Schedule test with a unique ID that will trigger fajr
     await AndroidAlarmManager.oneShotAt(
       triggerTime,
-      999999,
+      999991, // ID ending with 1 = fajr
       _playAdhanCallback,
       exact: true,
       wakeup: true,

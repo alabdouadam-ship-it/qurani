@@ -125,6 +125,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get adhanDisabledMsg => 'Adhan will not play at this prayer time.';
 
   @override
+  String get stopAdhan => 'Stop Adhan';
+
+  @override
+  String get adhanStoppedMsg => 'Adhan stopped';
+
+  @override
   String get adjustTime => 'Adjust time';
 
   @override

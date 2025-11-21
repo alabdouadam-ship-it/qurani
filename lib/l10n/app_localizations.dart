@@ -325,6 +325,18 @@ abstract class AppLocalizations {
   /// **'Adhan will not play at this prayer time.'**
   String get adhanDisabledMsg;
 
+  /// No description provided for @stopAdhan.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop Adhan'**
+  String get stopAdhan;
+
+  /// No description provided for @adhanStoppedMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan stopped'**
+  String get adhanStoppedMsg;
+
   /// No description provided for @adjustTime.
   ///
   /// In en, this message translates to:

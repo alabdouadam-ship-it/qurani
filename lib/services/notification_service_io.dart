@@ -91,33 +91,36 @@ class NotificationService {
     String? payload,
   }) async {
     await _ensureInitialized();
-    final tz.TZDateTime tzTime = tz.TZDateTime.from(triggerTimeLocal, tz.local);
-    const androidDetails = AndroidNotificationDetails(
-      'prayer_alerts',
-      'Prayer Alerts',
-      channelDescription: 'Silent alerts 5 minutes before prayer times',
-      importance: Importance.low,
-      priority: Priority.low,
-      playSound: false,
-      enableVibration: false,
-      ongoing: false,
+    final tz_time = tz.TZDateTime.from(triggerTimeLocal, tz.local);
+    if (tz_time.isBefore(tz.TZDateTime.now(tz.local))) {
+      print('[NotificationService] Alert time is in the past, skipping');
+      return;
+    }
+    
+    final androidDetails = AndroidNotificationDetails(
+      'prayer_adhans_default_v2',
+      'Prayer Adhan',
+      channelDescription: 'Adhan at prayer time',
+      importance: Importance.high,
+      priority: Priority.high,
+      playSound: true,
+      enableVibration: true,
       category: AndroidNotificationCategory.reminder,
     );
-    try {
-      await _plugin.zonedSchedule(
-        id,
-        title,
-        body,
-        tzTime,
-        const NotificationDetails(android: androidDetails),
-        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-        payload: payload,
-      );
-      print('[NotificationService] Silent alert scheduled with payload: $payload');
-    } catch (e) {
-      print('[NotificationService] Error scheduling silent alert: $e');
-    }
+    
+    await _plugin.zonedSchedule(
+      id,
+      title,
+      body,
+      tz_time,
+      NotificationDetails(android: androidDetails),
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+      matchDateTimeComponents: null,
+      payload: payload,
+    );
+    print('[NotificationService] Scheduled silent alert for $tz_time');
   }
 
   static Future<void> scheduleAdhanNotification({
@@ -128,19 +131,13 @@ class NotificationService {
     required String soundKey,
     bool isFajr = false,
   }) async {
+    // Note: This is just a notification, actual Adhan playback is handled by AdhanScheduler
     await _ensureInitialized();
-    final tzTime = tz.TZDateTime.from(triggerTimeLocal, tz.local);
-    // Decode prayer ID from notification ID
-    final code = id % 10;
-    String? prayerId;
-    switch (code) {
-      case 1: prayerId = 'fajr'; break;
-      case 3: prayerId = 'dhuhr'; break;
-      case 4: prayerId = 'asr'; break;
-      case 5: prayerId = 'maghrib'; break;
-      case 6: prayerId = 'isha'; break;
+    final tz_time = tz.TZDateTime.from(triggerTimeLocal, tz.local);
+    if (tz_time.isBefore(tz.TZDateTime.now(tz.local))) {
+      print('[NotificationService] Adhan time is in the past, skipping');
+      return;
     }
-    final payload = prayerId ?? 'unknown';
     
     final androidDetails = AndroidNotificationDetails(
       'prayer_adhans_default_v2',
@@ -148,33 +145,25 @@ class NotificationService {
       channelDescription: 'Adhan at prayer time',
       importance: Importance.high,
       priority: Priority.high,
-      playSound: true,
-      audioAttributesUsage: AudioAttributesUsage.alarm,
-      visibility: NotificationVisibility.public,
+      playSound: false, // Sound handled by AdhanScheduler
+      enableVibration: true,
       category: AndroidNotificationCategory.alarm,
       fullScreenIntent: true,
-      enableVibration: true,
-      autoCancel: false,
-      ongoing: false,
     );
     
-    print('[NotificationService] Scheduling Adhan notification: id=$id, time=$tzTime, payload=$payload');
-    try {
-      await _plugin.zonedSchedule(
-        id,
-        title,
-        body,
-        tzTime,
-        NotificationDetails(android: androidDetails),
-        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-        payload: payload, // Pass prayer ID as payload
-      );
-      print('[NotificationService] Adhan notification scheduled successfully: id=$id, time=$tzTime, payload=$payload');
-    } catch (e, stackTrace) {
-      print('[NotificationService] Error scheduling Adhan notification: $e');
-      print('[NotificationService] Stack trace: $stackTrace');
-    }
+    await _plugin.zonedSchedule(
+      id,
+      title,
+      body,
+      tz_time,
+      NotificationDetails(android: androidDetails),
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+      matchDateTimeComponents: null,
+      payload: soundKey,
+    );
+    print('[NotificationService] Scheduled Adhan notification for $tz_time');
   }
 
   static int _codeForPrayer(String id) {
@@ -208,69 +197,55 @@ class NotificationService {
     await _ensureInitialized();
     final now = DateTime.now();
     final lang = PreferencesService.getLanguage();
-    print('[NotificationService] Scheduling notifications, current time: $now');
-    for (final id in const ['fajr','dhuhr','asr','maghrib','isha']) {
-      final enabled = toggles[id] ?? false;
-      final t = times[id];
-      if (!enabled || t == null) {
-        print('[NotificationService] Skipping $id (enabled: $enabled, time: $t)');
-        continue;
+    
+    for (final entry in times.entries) {
+      final prayerId = entry.key;
+      final time = entry.value;
+      
+      if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
+      if (!(toggles[prayerId] ?? false)) continue;
+      if (time.isBefore(now)) continue;
+      
+      final baseId = _dailyId(prayerId: prayerId, date: time);
+      final name = _localizedPrayerName(lang, prayerId);
+      
+      // Schedule 5-minute reminder
+      final alertTime = time.subtract(const Duration(minutes: 5));
+      if (alertTime.isAfter(now)) {
+        await scheduleSilentAlert(
+          id: baseId + 1000,
+          triggerTimeLocal: alertTime,
+          title: lang == 'ar' ? 'تذكير بالصلاة' : (lang == 'fr' ? 'Rappel de prière' : 'Prayer Reminder'),
+          body: _silentAlertBody(lang, name),
+          payload: prayerId,
+        );
       }
-      if (t.isAfter(now)) {
-        // Schedule silent alert 5 minutes before prayer time
-        final alertTime = t.subtract(const Duration(minutes: 5));
-        if (alertTime.isAfter(now)) {
-          // Use a different ID for the alert (add 1000000 to avoid conflicts)
-          final alertId = _dailyId(prayerId: id, date: t) + 1000000;
-          final prayerName = _localizedPrayerName(lang, id);
-          final body = _silentAlertBody(lang, prayerName);
-          print('[NotificationService] Scheduling silent alert for $id at $alertTime (alertId: $alertId)');
-          try {
-            await scheduleSilentAlert(
-              id: alertId,
-              triggerTimeLocal: alertTime,
-              title: prayerName,
-              body: body,
-            );
-            print('[NotificationService] Silent alert scheduled successfully');
-          } catch (e) {
-            print('[NotificationService] Error scheduling silent alert: $e');
-          }
-        } else {
-          print('[NotificationService] Alert time passed for $id (alertTime: $alertTime)');
-        }
-        
-        // Schedule Adhan notification at prayer time
-        final adhanId = _dailyId(prayerId: id, date: t);
-        print('[NotificationService] Scheduling Adhan notification for $id at $t (id: $adhanId)');
-        try {
-          await scheduleAdhanNotification(
-            id: adhanId,
-            triggerTimeLocal: t,
-            title: id,
-            body: '',
-            soundKey: soundKey,
-            isFajr: id == 'fajr',
-          );
-          print('[NotificationService] Adhan notification scheduled successfully');
-        } catch (e) {
-          print('[NotificationService] Error scheduling Adhan notification: $e');
-        }
-      } else {
-        print('[NotificationService] Time passed for $id (time: $t)');
-      }
+      
+      // Schedule Adhan notification
+      final title = lang == 'ar' ? 'أذان $name' : 'Adhan - $name';
+      final body = lang == 'ar' ? 'حان وقت صلاة $name' : (lang == 'fr' ? 'Il est temps de prier $name' : 'Time for $name prayer');
+      
+      await scheduleAdhanNotification(
+        id: baseId,
+        triggerTimeLocal: time,
+        title: title,
+        body: body,
+        soundKey: soundKey,
+        isFajr: prayerId == 'fajr',
+      );
     }
   }
 
   static Future<void> scheduleTestAdhanInSeconds(int secondsFromNow, {String title = 'Test Adhan', String body = ''}) async {
     await _ensureInitialized();
-    final trigger = DateTime.now().add(Duration(seconds: secondsFromNow));
+    final triggerTime = DateTime.now().add(Duration(seconds: secondsFromNow));
+    
     await scheduleAdhanNotification(
-      id: _dailyId(prayerId: 'test', date: trigger),
-      triggerTimeLocal: trigger,
+      id: 999999,
+      triggerTimeLocal: triggerTime,
       title: title,
       body: body,
-      soundKey: 'test',
+      soundKey: PreferencesService.getAdhanSound(),
       isFajr: false,
     );
   }

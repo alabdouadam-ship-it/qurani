@@ -15,6 +15,7 @@ import 'package:audio_session/audio_session.dart';
 import 'services/media_item_compat.dart';
 import 'services/net_utils.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'services/global_adhan_service.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
   const PrayerTimesScreen({super.key});
@@ -41,6 +42,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   bool _isRamadan = false;
   String? _cityName;
 
+  Timer? _uiRefreshTimer;
+  
   @override
   void initState() {
     super.initState();
@@ -55,6 +58,11 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     // ignore: discarded_futures
     _currentDate = DateTime.now();
     _initialLoad();
+    
+    // Refresh UI periodically to update stop button visibility
+    _uiRefreshTimer = Timer.periodic(const Duration(seconds: 2), (_) {
+      if (mounted) setState(() {});
+    });
   }
 
   @override
@@ -62,7 +70,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     _hijriMonthTap.dispose();
     _gregorianMonthTap.dispose();
     _previewPlayer.dispose();
-    _adhanPlayer.dispose();
+    _uiRefreshTimer?.cancel();
+    _tick?.cancel();
     super.dispose();
   }
 
@@ -94,7 +103,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   Duration? _countdown;
   Timer? _tick;
   final AudioPlayer _previewPlayer = AudioPlayer();
-  final AudioPlayer _adhanPlayer = AudioPlayer();
   String? _previewKey;
 
   Future<void> _initialLoad() async {
@@ -336,75 +344,19 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       final remain = nextDt.difference(DateTime.now());
       if (remain.isNegative) {
         _tick?.cancel();
-        if (_nextPrayerId != null && _nextPrayerId != 'sunrise') {
-          final id = _nextPrayerId ?? '';
-          final enabled = _adhanEnabled[id] ?? false;
-          if (enabled) {
-            // ignore: discarded_futures
-            _playAdhanForPrayer(id);
-          }
-        }
+        // GlobalAdhanService will handle playing the Adhan
+        // We just reload times to update the UI
         _loadTimes();
       } else {
         setState(() => _countdown = remain);
       }
     });
-    // Schedule silent alert 5 minutes before next prayer (no alert for sunrise)
-    if (nextId != 'sunrise') {
-      final alertTime = nextDt.subtract(const Duration(minutes: 5));
-      if (alertTime.isAfter(DateTime.now())) {
-        final alertBody = _buildSilentAlertBody(_localizedName(context, nextId));
-        NotificationService.scheduleSilentAlert(
-          id: _alertIdFor(nextId),
-          triggerTimeLocal: alertTime,
-          title: _localizedName(context, nextId),
-          body: alertBody,
-        );
-      }
-    }
-    if (nextId != 'sunrise' && (_adhanEnabled[nextId] ?? false)) {
-      final soundKey = PreferencesService.getAdhanSound();
-      final isFajr = nextId == 'fajr';
-      NotificationService.scheduleAdhanNotification(
-        id: _alertIdFor(nextId) + 1000,
-        triggerTimeLocal: nextDt,
-        title: _localizedName(context, nextId),
-        body: '',
-        soundKey: soundKey,
-        isFajr: isFajr,
-      );
-    }
+    // Previously we also scheduled a silent alert 5 minutes before the prayer
+    // and an Adhan notification at the exact time from this screen.
+    // These are now disabled globally via NotificationService and we avoid
+    // scheduling them here to respect the user's preference.
   }
 
-  int _alertIdFor(String id) {
-    switch (id) {
-      case 'fajr':
-        return 101;
-      case 'sunrise':
-        return 102;
-      case 'dhuhr':
-        return 103;
-      case 'asr':
-        return 104;
-      case 'maghrib':
-        return 105;
-      case 'isha':
-        return 106;
-    }
-    return 100;
-  }
-
-  String _buildSilentAlertBody(String prayerName) {
-    final lang = PreferencesService.getLanguage();
-    switch (lang) {
-      case 'en':
-        return 'Adhan for $prayerName in 5 minutes';
-      case 'fr':
-        return 'Adhan de $prayerName dans 5 minutes';
-      default:
-        return 'سيحين أذان $prayerName بعد خمس دقائق';
-    }
-  }
 
   String _adhanVolumeLabel() {
     switch (PreferencesService.getLanguage()) {
@@ -477,6 +429,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         ],
       ),
       body: _buildBody(context, theme, l10n),
+      floatingActionButton: GlobalAdhanService.isAdhanPlaying
+          ? FloatingActionButton.extended(
+              onPressed: () async {
+                await GlobalAdhanService.stopAdhan();
+                if (mounted) {
+                  setState(() {});
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.adhanStoppedMsg)),
+                  );
+                }
+              },
+              icon: const Icon(Icons.stop),
+              label: Text(l10n.stopAdhan),
+              backgroundColor: Colors.red,
+            )
+          : null,
     );
   }
 
@@ -621,6 +589,33 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           icon: const Icon(Icons.battery_saver),
                           label: Text(isAr ? 'تعطيل توفير البطارية' : isFr ? 'Désactiver l\'optimisation batterie' : 'Disable Battery Optimization'),
                         ),
+                        const SizedBox(height: 16),
+                        Card(
+                          color: Colors.orange.withAlpha(30),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12),
+                            child: Column(
+                              children: [
+                                Icon(Icons.info, color: Colors.orange),
+                                const SizedBox(height: 8),
+                                Text(
+                                  isAr ? 'لتشغيل الأذان عند إغلاق التطبيق:' : 
+                                  isFr ? 'Pour l\'Adhan quand l\'app est fermée :' : 
+                                  'For Adhan when app is closed:',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  isAr ? '1. عطّل توفير البطارية\n2. امنح إذن التنبيهات الدقيقة\n3. أعد تشغيل التطبيق' : 
+                                  isFr ? '1. Désactivez l\'optimisation batterie\n2. Autorisez les alarmes exactes\n3. Redémarrez l\'application' : 
+                                  '1. Disable battery optimization\n2. Allow exact alarms\n3. Restart the app',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -753,10 +748,15 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           children: [
                             GestureDetector(
                               onLongPress: () async {
+                                // Test background Adhan after 10 seconds
+                                await AdhanScheduler.testAdhanPlaybackAfterSeconds(10, PreferencesService.getAdhanSound());
                                 await NotificationService.scheduleTestAdhanInSeconds(10, title: 'Test Adhan', body: 'Plays in 10 seconds');
                                 if (!mounted) return;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text(l10n.selectedLabel.replaceFirst('{value}', _toWesternDigits('10')))),
+                                  SnackBar(
+                                    content: Text('أذان تجريبي بعد 10 ثواني - أغلق التطبيق للاختبار'),
+                                    duration: const Duration(seconds: 8),
+                                  ),
                                 );
                               },
                               child: ElevatedButton.icon(
@@ -1178,7 +1178,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         await session.configure(const AudioSessionConfiguration.music());
         await session.setActive(true);
       } catch (_) {}
-      await _adhanPlayer.stop();
       // Stop any current preview before switching keys to ensure responsiveness
       await _previewPlayer.stop();
       _previewKey = key;
@@ -1234,37 +1233,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     }
   }
 
-  Future<void> _playAdhanForPrayer(String prayerId) async {
-    try {
-      // Ensure audio session is configured and active for adhan playback
-      try {
-        final session = await AudioSession.instance;
-        await session.configure(const AudioSessionConfiguration.music());
-        await session.setActive(true);
-      } catch (_) {}
-      final base = PreferencesService.getAdhanSound();
-      final isFajr = prayerId == 'fajr';
-      final asset = isFajr ? 'assets/audio/' + base + '-fajr.mp3' : 'assets/audio/' + base + '.mp3';
-      debugPrint('[AdhanPlay] Prayer=' + prayerId + ', sound=' + base + ', asset=' + asset);
-      await _adhanPlayer.stop();
-      await _adhanPlayer.setVolume(PreferencesService.getAdhanVolume().clamp(0.0, 1.0));
-      await _adhanPlayer.setAudioSource(
-        AudioSource.asset(
-          asset,
-          tag: MediaItem(
-            id: asset,
-            album: 'Adhan',
-            title: (isFajr ? 'Fajr' : 'Adhan') + ' - ' + base,
-          ),
-        ),
-      );
-      await _adhanPlayer.play();
-      debugPrint('[AdhanPlay] Playback started');
-    } catch (e) {
-      debugPrint('[AdhanPlay] Error: ' + e.toString());
-      // ignore
-    }
-  }
 
   // Debug mode: Open prayer time adjustment dialog
   Future<void> _openPrayerTimeAdjustment(BuildContext context, String prayerId, DateTime? currentTime) async {
