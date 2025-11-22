@@ -795,4 +795,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get editionTafsir => 'التفسير (الميسّر)';
+
+  @override
+  String get whyContactUs => 'لماذا تتصل بنا؟';
+
+  @override
+  String get reportBugTitle => 'الإبلاغ عن الأخطاء و طلب الميزات';
+
+  @override
+  String get reportBugDesc => 'أخبرنا عن الأخطاء والمشاكل أو الميزات التي تريد إضافتها في الإصدارات القادمة';
+
+  @override
+  String get supportUsTitle => 'ادعم مشروعنا';
+
+  @override
+  String get supportUsDesc => 'دعمك يساعد التطبيق على الاستمرار في العمل والعمل لصالح المسلمين حول العالم';
+
+  @override
+  String get shareIdeaTitle => 'شارك أفكارك';
+
+  @override
+  String get shareIdeaDesc => 'هل لديك فكرة لموقع إلكتروني أو تطبيق جوال أو أي مشروع تقني؟ شاركنا فكرتك، وسنساعدك في تحويلها إلى مشروع حقيقي';
+
+  @override
+  String get getInTouch => 'تواصل معنا';
 }

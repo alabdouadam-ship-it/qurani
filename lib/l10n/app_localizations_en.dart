@@ -795,4 +795,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editionTafsir => 'Tafsir (Muyassar)';
+
+  @override
+  String get whyContactUs => 'Why contact us?';
+
+  @override
+  String get reportBugTitle => 'Report bugs & request features';
+
+  @override
+  String get reportBugDesc => 'Tell us about bugs, problems, or features you\'d like us to add in future versions';
+
+  @override
+  String get supportUsTitle => 'Support our project';
+
+  @override
+  String get supportUsDesc => 'Your support helps the application continue to work and benefit the Muslim community worldwide';
+
+  @override
+  String get shareIdeaTitle => 'Share your ideas';
+
+  @override
+  String get shareIdeaDesc => 'Do you have an idea for a website, mobile app, or any tech project? Share your idea with us, and we will help you turn it into a real project.';
+
+  @override
+  String get getInTouch => 'Get in touch';
 }

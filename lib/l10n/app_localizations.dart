@@ -1608,6 +1608,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tafsir (Muyassar)'**
   String get editionTafsir;
+
+  /// No description provided for @whyContactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Why contact us?'**
+  String get whyContactUs;
+
+  /// No description provided for @reportBugTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report bugs & request features'**
+  String get reportBugTitle;
+
+  /// No description provided for @reportBugDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us about bugs, problems, or features you\'d like us to add in future versions'**
+  String get reportBugDesc;
+
+  /// No description provided for @supportUsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Support our project'**
+  String get supportUsTitle;
+
+  /// No description provided for @supportUsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Your support helps the application continue to work and benefit the Muslim community worldwide'**
+  String get supportUsDesc;
+
+  /// No description provided for @shareIdeaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your ideas'**
+  String get shareIdeaTitle;
+
+  /// No description provided for @shareIdeaDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you have an idea for a website, mobile app, or any tech project? Share your idea with us, and we will help you turn it into a real project.'**
+  String get shareIdeaDesc;
+
+  /// No description provided for @getInTouch.
+  ///
+  /// In en, this message translates to:
+  /// **'Get in touch'**
+  String get getInTouch;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

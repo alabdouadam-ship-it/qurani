@@ -55,6 +55,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.contactUs)),
       body: _loading
@@ -62,11 +63,119 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
           : ListView(
               padding: const EdgeInsets.all(16),
               children: [
+                Text(
+                  l10n.whyContactUs,
+                  style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.bug_report, color: theme.colorScheme.primary),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.reportBugTitle,
+                                style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                l10n.reportBugDesc,
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.favorite, color: theme.colorScheme.primary),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.supportUsTitle,
+                                style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                l10n.supportUsDesc,
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Icon(Icons.lightbulb, color: theme.colorScheme.primary),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                l10n.shareIdeaTitle,
+                                style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                l10n.shareIdeaDesc,
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  l10n.getInTouch,
+                  style: theme.textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 16),
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.chat),
                     title: Text(l10n.contactViaWhatsApp),
-                    subtitle: Text(_whatsApp ?? '-'),
+                    subtitle: _whatsApp == null 
+                        ? Text('-')
+                        : GestureDetector(
+                            onTap: () => _openWhatsApp(_whatsApp!),
+                            child: Text(
+                              _whatsApp!,
+                              style: TextStyle(
+                                color: theme.colorScheme.primary,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
                     onTap: _whatsApp == null ? null : () => _openWhatsApp(_whatsApp!),
                     trailing: IconButton(
                       icon: const Icon(Icons.copy),
@@ -84,11 +193,23 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 12),
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.alternate_email),
                     title: Text(l10n.contactViaEmail),
-                    subtitle: Text(_email ?? '-'),
+                    subtitle: _email == null
+                        ? Text('-')
+                        : GestureDetector(
+                            onTap: () => _openEmail(_email!),
+                            child: Text(
+                              _email!,
+                              style: TextStyle(
+                                color: theme.colorScheme.primary,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
                     onTap: _email == null ? null : () => _openEmail(_email!),
                     trailing: IconButton(
                       icon: const Icon(Icons.copy),

@@ -850,14 +850,15 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                   foregroundColor: theme.colorScheme.primary,
                   child: const Icon(Icons.access_time),
                 ),
-                title: Row(
+                title: Text(
+                  title,
+                  style: isNext ? const TextStyle(fontWeight: FontWeight.bold) : null,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                subtitle: Row(
                   children: [
                     Expanded(
-                      child: Text(
-                        title,
-                        style: isNext ? const TextStyle(fontWeight: FontWeight.bold) : null,
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                      child: Text(_formatClock(dtAdj)),
                     ),
                     if (isNext && _countdown != null)
                       Padding(
@@ -869,7 +870,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       ),
                   ],
                 ),
-                subtitle: Text(_formatClock(dtAdj)),
                 trailing: Semantics(
                   label: '${AppLocalizations.of(context)!.adhanSound}: $title',
                   button: true,

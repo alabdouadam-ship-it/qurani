@@ -795,4 +795,28 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get editionTafsir => 'Tafsir (Muyassar)';
+
+  @override
+  String get whyContactUs => 'Pourquoi nous contacter ?';
+
+  @override
+  String get reportBugTitle => 'Signaler des bugs et demander des fonctionnalités';
+
+  @override
+  String get reportBugDesc => 'Dites-nous les bugs, les problèmes ou les fonctionnalités que vous aimeriez dans les versions futures';
+
+  @override
+  String get supportUsTitle => 'Soutenir notre projet';
+
+  @override
+  String get supportUsDesc => 'Votre soutien aide l\'application à continuer de fonctionner et de bénéficier à la communauté musulmane mondiale';
+
+  @override
+  String get shareIdeaTitle => 'Partagez vos idées';
+
+  @override
+  String get shareIdeaDesc => 'Avez-vous une idée pour un site web, une application mobile ou tout autre projet technologique ? Partagez-la avec nous, et nous vous aiderons à la transformer en un projet réel.';
+
+  @override
+  String get getInTouch => 'Nous contacter';
 }
