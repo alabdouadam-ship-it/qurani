@@ -20,6 +20,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   final FocusNode _focusNode = FocusNode();
   final AudioPlayer _player = AudioPlayer();
   List<SearchAyah> _results = const <SearchAyah>[];
+  int _totalOccurrences = 0;
   bool _isSearching = false;
   String _lastQuery = '';
 
@@ -51,7 +52,10 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     try {
       final res = await QuranSearchService.instance.search(q);
       if (!mounted) return;
-      setState(() => _results = res);
+      setState(() {
+        _results = res.ayahs;
+        _totalOccurrences = res.totalOccurrences;
+      });
     } catch (e) {
       if (!mounted) return;
       debugPrint('Search error: $e');
@@ -383,7 +387,8 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                l10n.searchResultsCount(
+                                l10n.searchResultsDetailed(
+                                  showNoResults ? 0 : _totalOccurrences,
                                   showNoResults ? 0 : _results.length,
                                 ),
                                 style: theme.textTheme.titleMedium?.copyWith(

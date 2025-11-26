@@ -59,28 +59,53 @@ class QuranSearchService {
     _surahNames = names;
   }
 
-  Future<List<SearchAyah>> search(String query) async {
+  Future<SearchResult> search(String query) async {
     await _ensureIndex();
     final q = normalize(query);
-    if (q.isEmpty) return const <SearchAyah>[];
+    if (q.isEmpty) return SearchResult(ayahs: const <SearchAyah>[], totalOccurrences: 0);
     final src = _index!;
     final results = <SearchAyah>[];
+    int totalOccurrences = 0;
     for (final ayah in src) {
       if (ayah.normalized.contains(q)) {
+        final occurrences = _countOccurrences(ayah.normalized, q);
+        totalOccurrences += occurrences;
         results.add(SearchAyah(
           globalNumber: ayah.globalNumber,
           surahOrder: ayah.surahOrder,
           numberInSurah: ayah.numberInSurah,
           juz: ayah.juz,
           text: ayah.text,
+          occurrenceCount: occurrences,
         ));
         if (results.length >= 500) break;
       }
     }
-    return results;
+    return SearchResult(ayahs: results, totalOccurrences: totalOccurrences);
+  }
+
+  int _countOccurrences(String text, String query) {
+    if (query.isEmpty || text.isEmpty) return 0;
+    int count = 0;
+    int index = 0;
+    while ((index = text.indexOf(query, index)) != -1) {
+      count++;
+      index += query.length;
+    }
+    return count;
   }
 
   String surahName(int surahOrder) => _surahNames?[surahOrder] ?? '';
+}
+
+class SearchResult {
+  SearchResult({
+    required this.ayahs,
+    required this.totalOccurrences,
+  });
+
+  final List<SearchAyah> ayahs;
+  final int totalOccurrences;
 }
 
 class _IndexedAyah {
@@ -108,6 +133,7 @@ class SearchAyah {
     required this.numberInSurah,
     required this.juz,
     required this.text,
+    required this.occurrenceCount,
   });
 
   final int globalNumber;
@@ -115,6 +141,7 @@ class SearchAyah {
   final int numberInSurah;
   final int juz;
   final String text;
+  final int occurrenceCount;
 }
 
 

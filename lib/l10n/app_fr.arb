@@ -361,6 +361,17 @@
       }
     }
   },
+  "searchResultsDetailed": "{occurrences} résultats dans {ayahs} versets",
+  "@searchResultsDetailed": {
+    "placeholders": {
+      "occurrences": {
+        "type": "int"
+      },
+      "ayahs": {
+        "type": "int"
+      }
+    }
+  },
   "noResultsFound": "Aucun résultat pour votre recherche.",
   "@noResultsFound": {},
   "addHighlight": "Mettre en surbrillance le verset",

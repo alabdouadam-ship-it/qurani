@@ -360,6 +360,17 @@
       }
     }
   },
+  "searchResultsDetailed": "{occurrences} نتيجة في {ayahs} آية",
+  "@searchResultsDetailed": {
+    "placeholders": {
+      "occurrences": {
+        "type": "int"
+      },
+      "ayahs": {
+        "type": "int"
+      }
+    }
+  },
   "noResultsFound": "لم يتم العثور على نتائج للبحث.",
   "@noResultsFound": {},
   "addHighlight": "تمييز الآية",

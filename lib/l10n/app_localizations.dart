@@ -1081,6 +1081,12 @@ abstract class AppLocalizations {
   /// **'Search results: {count}'**
   String searchResultsCount(int count);
 
+  /// No description provided for @searchResultsDetailed.
+  ///
+  /// In en, this message translates to:
+  /// **'{occurrences} results in {ayahs} ayahs'**
+  String searchResultsDetailed(int occurrences, int ayahs);
+
   /// No description provided for @noResultsFound.
   ///
   /// In en, this message translates to:

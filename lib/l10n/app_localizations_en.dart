@@ -515,6 +515,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String searchResultsDetailed(int occurrences, int ayahs) {
+    return '$occurrences results in $ayahs ayahs';
+  }
+
+  @override
   String get noResultsFound => 'No results found for your query.';
 
   @override

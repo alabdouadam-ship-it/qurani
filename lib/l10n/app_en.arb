@@ -362,6 +362,17 @@
       }
     }
   },
+  "searchResultsDetailed": "{occurrences} results in {ayahs} ayahs",
+  "@searchResultsDetailed": {
+    "placeholders": {
+      "occurrences": {
+        "type": "int"
+      },
+      "ayahs": {
+        "type": "int"
+      }
+    }
+  },
   "noResultsFound": "No results found for your query.",
   "@noResultsFound": {},
   "addHighlight": "Highlight verse",

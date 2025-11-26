@@ -515,6 +515,11 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String searchResultsDetailed(int occurrences, int ayahs) {
+    return '$occurrences نتيجة في $ayahs آية';
+  }
+
+  @override
   String get noResultsFound => 'لم يتم العثور على نتائج للبحث.';
 
   @override
