@@ -50,7 +50,7 @@ class QuranSearchService {
         throw Exception('Database not initialized');
       }
       final rows = await _db!.rawQuery(
-        'SELECT id, surah_order, number_in_surah, juz, text_ar FROM ayah WHERE instr(normalized, ?) > 0 LIMIT 500',
+        'SELECT id, surah_order, number_in_surah, juz, text_simple FROM ayah WHERE instr(normalized, ?) > 0 LIMIT 5000',
         [q],
       );
       return rows.map((r) {
@@ -60,7 +60,7 @@ class QuranSearchService {
             surahOrder: (r['surah_order'] as int? ?? 0),
             numberInSurah: (r['number_in_surah'] as int? ?? 0),
             juz: (r['juz'] as int? ?? 1),
-            text: (r['text_ar'] as String? ?? ''),
+            text: (r['ayah_text'] as String? ?? ''),
           );
         } catch (e) {
           throw Exception('Failed to parse search result: $e');
