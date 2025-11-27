@@ -322,12 +322,14 @@ class SettingsScreen extends StatelessWidget {
         _showAboutDialog(context);
         break;
       case 'help':
+        final fileName = _localizedHtml('help').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.help,
               assetPath: _localizedHtml('help'),
+              onlineUrl: 'https://qurani.info/data/about-qurani/$fileName',
             ),
           ),
         );
@@ -352,23 +354,27 @@ class SettingsScreen extends StatelessWidget {
         _shareApp(context);
         break;
       case 'privacy':
+        final privacyFileName = _localizedHtml('privacy-policy').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.privacyPolicy,
               assetPath: _localizedHtml('privacy-policy'),
+              onlineUrl: 'https://qurani.info/data/about-qurani/$privacyFileName',
             ),
           ),
         );
         break;
       case 'terms':
+        final termsFileName = _localizedHtml('conditions-terms').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.termsConditions,
               assetPath: _localizedHtml('conditions-terms'),
+              onlineUrl: 'https://qurani.info/data/about-qurani/$termsFileName',
             ),
           ),
         );
