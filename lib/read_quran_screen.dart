@@ -49,6 +49,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   final Map<int, GlobalKey> _ayahKeys = <int, GlobalKey>{};
   int? _pendingScrollAyah;
   late String _arabicFontKey;
+  final Map<String, PageData> _pageCache = <String, PageData>{}; // Cache for loaded pages
 
   @override
   void initState() {
@@ -366,6 +367,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       _edition = edition;
       _selectedAyah = null;
       _currentPageData = null;
+      _pageCache.clear(); // Clear cache when edition changes
     });
   }
 
@@ -936,6 +938,32 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       },
       itemBuilder: (context, index) {
         final pageNumber = index + 1;
+        final cacheKey = '${pageNumber}_${_edition.name}';
+        
+        // Check cache first
+        if (_pageCache.containsKey(cacheKey)) {
+          final cachedData = _pageCache[cacheKey]!;
+          if (pageNumber == _currentPage) {
+            _currentPageData = cachedData;
+            if (_selectedAyah == null && cachedData.ayahs.isNotEmpty) {
+              final firstAyahNumber = cachedData.ayahs.first.number;
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (!mounted) return;
+                if (_selectedAyah != firstAyahNumber) {
+                  setState(() {
+                    _selectedAyah = firstAyahNumber;
+                  });
+                }
+              });
+            }
+          }
+          // Wrap in RepaintBoundary to isolate repaints
+          return RepaintBoundary(
+            child: _buildPageContent(cachedData),
+          );
+        }
+        
+        // Load from repository if not cached
         return FutureBuilder<PageData>(
           future: _repository.loadPage(pageNumber, _edition),
           builder: (context, snapshot) {
@@ -960,6 +988,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               }
               return const SizedBox.shrink();
             }
+            
+            // Cache the loaded page
+            _pageCache[cacheKey] = data;
+            
             if (pageNumber == _currentPage) {
               _currentPageData = data;
               if (_selectedAyah == null && data.ayahs.isNotEmpty) {
@@ -984,7 +1016,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                 }
               }
             }
-            return _buildPageContent(data);
+            // Wrap in RepaintBoundary to isolate repaints
+            return RepaintBoundary(
+              child: _buildPageContent(data),
+            );
           },
         );
       },
