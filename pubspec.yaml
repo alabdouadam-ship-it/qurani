@@ -1,5 +1,9 @@
 name: qurani
-description: A Flutter app that wraps the Qurani.info website in a WebView.
+description: >
+  Qurani is a comprehensive Islamic companion app featuring the complete Holy Quran with multiple translations,
+  accurate prayer times with customizable Adhan notifications, Qibla direction finder, Tasbeeh counter,
+  memorization tools, and audio recitations. Designed for Muslims worldwide with support for Arabic, English,
+  and French languages. All Quran text and core features work offline.
 
 publish_to: 'none'
 
