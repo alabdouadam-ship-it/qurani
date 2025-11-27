@@ -242,7 +242,7 @@ class _SurahGridState extends State<SurahGrid> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  surah.name,
+                                  surah.name.replaceAll(RegExp(r'^سُورَةُ\s+'), ''),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: theme.textTheme.titleMedium?.copyWith(

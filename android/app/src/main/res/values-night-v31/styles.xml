@@ -3,14 +3,14 @@
     <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is on -->
     <!-- Using Light theme to ensure green background (always green regardless of system dark mode) -->
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Force green background (default theme color) regardless of system dark mode -->
         <item name="android:forceDarkAllowed">false</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        <!-- Force green background (default theme color) regardless of system dark mode -->
-        <item name="android:windowSplashScreenBackground">#4CAF50</item>
+        <item name="android:windowSplashScreenBackground">#2E7D32</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/android12splash</item>
-        <item name="android:windowSplashScreenIconBackgroundColor">#4CAF50</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">#2E7D32</item>
     </style>
     <!-- Theme applied to the Android Window as soon as the process has started.
          This theme determines the color of the Android Window while your

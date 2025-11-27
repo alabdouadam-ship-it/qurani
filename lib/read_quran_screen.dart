@@ -294,92 +294,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   Future<void> _openSurahPicker(List<SurahMeta> surahs) async {
-    final l10n = AppLocalizations.of(context)!;
     final selected = await showModalBottomSheet<SurahMeta>(
       context: context,
+      isScrollControlled: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (context) {
-        final theme = Theme.of(context);
-        final controller = TextEditingController();
-        final ValueNotifier<String> query = ValueNotifier<String>('');
-        controller.addListener(() {
-          query.value = TextNormalizer.normalize(controller.text);
-        });
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SizedBox(height: 12),
-                Text(
-                  l10n.chooseSurah,
-                  style: theme.textTheme.titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: controller,
-                  decoration: InputDecoration(
-                    hintText: l10n.search,
-                    prefixIcon: const Icon(Icons.search),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                Flexible(
-                  child: ValueListenableBuilder<String>(
-                    valueListenable: query,
-                    builder: (context, value, _) {
-                      final queryText = value.trim();
-                      final filtered = queryText.isEmpty
-                          ? surahs
-                          : surahs.where((s) {
-                              final normalizedEnglishName =
-                                  TextNormalizer.normalize(s.englishName);
-                              final normalizedEnglishTranslation =
-                                  TextNormalizer.normalize(s.englishNameTranslation);
-                              final normalizedArabicName = TextNormalizer.normalize(s.name);
-                              final numberText = s.number.toString();
-                              return normalizedEnglishName.contains(queryText) ||
-                                  normalizedEnglishTranslation.contains(queryText) ||
-                                  normalizedArabicName.contains(queryText) ||
-                                  numberText.contains(queryText);
-                            }).toList();
-                      return ListView.separated(
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          final surah = filtered[index];
-                          final startPage =
-                              surahStartPages[surah.number] ?? 1;
-                          return ListTile(
-                            title: Text(
-                              surah.name,
-                              textDirection: TextDirection.rtl,
-                              style: const TextStyle(fontSize: 18),
-                            ),
-                            subtitle: Text(
-                              '${surah.number}. ${surah.englishName} • ${l10n.page} $startPage',
-                            ),
-                            onTap: () => Navigator.pop(context, surah),
-                          );
-                        },
-                        separatorBuilder: (_, __) => const Divider(height: 1),
-                        itemCount: filtered.length,
-                      );
-                    },
-                  ),
-                ),
-                const SizedBox(height: 12),
-              ],
-            ),
-          ),
-        );
-      },
+      builder: (context) => _SurahPickerSheet(surahs: surahs),
     );
 
     if (selected != null) {
@@ -1425,6 +1346,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     );
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -1526,6 +1449,119 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class _SurahPickerSheet extends StatefulWidget {
+  final List<SurahMeta> surahs;
+
+  const _SurahPickerSheet({required this.surahs});
+
+  @override
+  State<_SurahPickerSheet> createState() => _SurahPickerSheetState();
+}
+
+class _SurahPickerSheetState extends State<_SurahPickerSheet> {
+  late final TextEditingController _controller;
+  String _query = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+    _controller.addListener(() {
+      setState(() {
+        _query = TextNormalizer.normalize(_controller.text);
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    
+    final filtered = _query.isEmpty
+        ? widget.surahs
+        : widget.surahs.where((s) {
+            final normalizedEnglishName =
+                TextNormalizer.normalize(s.englishName);
+            final normalizedEnglishTranslation =
+                TextNormalizer.normalize(s.englishNameTranslation);
+            final normalizedArabicName = TextNormalizer.normalize(s.name);
+            final numberText = s.number.toString();
+            return normalizedEnglishName.contains(_query) ||
+                normalizedEnglishTranslation.contains(_query) ||
+                normalizedArabicName.contains(_query) ||
+                numberText.contains(_query);
+          }).toList();
+
+    return Container(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.85,
+      ),
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 12),
+              Text(
+                l10n.chooseSurah,
+                style: theme.textTheme.titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 12),
+              TextField(
+                controller: _controller,
+                autofocus: true,
+                decoration: InputDecoration(
+                  hintText: l10n.search,
+                  prefixIcon: const Icon(Icons.search),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Flexible(
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    final surah = filtered[index];
+                    final startPage = surahStartPages[surah.number] ?? 1;
+                    return ListTile(
+                      title: Text(
+                        surah.name,
+                        textDirection: TextDirection.rtl,
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      subtitle: Text(
+                        '${surah.number}. ${surah.englishName} • ${l10n.page} $startPage',
+                      ),
+                      onTap: () => Navigator.pop(context, surah),
+                    );
+                  },
+                  separatorBuilder: (_, __) => const Divider(height: 1),
+                  itemCount: filtered.length,
+                ),
+              ),
+              const SizedBox(height: 12),
+            ],
+          ),
+        ),
       ),
     );
   }

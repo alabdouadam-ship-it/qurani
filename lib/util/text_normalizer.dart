@@ -40,7 +40,7 @@ class TextNormalizer {
     // Note: We don't use toLowerCase() for Arabic text as it doesn't work correctly
     // Arabic characters don't have case distinctions like Latin characters
     
-    return s.trim();
+    return s.trim().toLowerCase();
   }
 }
 
