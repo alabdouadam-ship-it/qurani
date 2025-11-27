@@ -6,6 +6,7 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:audio_session/audio_session.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:just_audio_background/just_audio_background.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'services/preferences_service.dart';
 import 'options_screen.dart';
 import 'services/notification_service.dart';
@@ -14,7 +15,6 @@ import 'services/device_info_service.dart';
 import 'services/adhan_scheduler.dart';
 import 'prayer_times_screen.dart';
 import 'services/global_adhan_service.dart';
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Background audio init is mobile-only; web is no-op via not calling.
@@ -204,7 +204,7 @@ class QuraniApp extends StatefulWidget {
       context.findAncestorStateOfType<_QuraniAppState>()!;
 }
 
-class _QuraniAppState extends State<QuraniApp> {
+class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
   Locale _locale = const Locale('ar');
   String _theme = 'green';
 
@@ -278,6 +278,8 @@ class _QuraniAppState extends State<QuraniApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _updateAppState(true);
     _loadLocale();
     _loadTheme();
     PreferencesService.languageNotifier.addListener(_onLanguageChanged);
@@ -285,7 +287,23 @@ class _QuraniAppState extends State<QuraniApp> {
   }
 
   @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    _updateAppState(state == AppLifecycleState.resumed);
+  }
+
+  Future<void> _updateAppState(bool isForeground) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setBool('is_app_in_foreground', isForeground);
+    } catch (e) {
+      debugPrint('Error updating app state: $e');
+    }
+  }
+
+  @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _updateAppState(false);
     PreferencesService.languageNotifier.removeListener(_onLanguageChanged);
     PreferencesService.themeNotifier.removeListener(_onThemeChanged);
     super.dispose();

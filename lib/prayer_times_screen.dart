@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/gestures.dart';
@@ -15,7 +16,6 @@ import 'package:audio_session/audio_session.dart';
 import 'services/media_item_compat.dart';
 import 'services/net_utils.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'services/global_adhan_service.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
   const PrayerTimesScreen({super.key});
@@ -429,22 +429,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         ],
       ),
       body: _buildBody(context, theme, l10n),
-      floatingActionButton: GlobalAdhanService.isAdhanPlaying
-          ? FloatingActionButton.extended(
-              onPressed: () async {
-                await GlobalAdhanService.stopAdhan();
-                if (mounted) {
-                  setState(() {});
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(l10n.adhanStoppedMsg)),
-                  );
-                }
-              },
-              icon: const Icon(Icons.stop),
-              label: Text(l10n.stopAdhan),
-              backgroundColor: Colors.red,
-            )
-          : null,
     );
   }
 
@@ -750,7 +734,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                               onLongPress: () async {
                                 // Test background Adhan after 10 seconds
                                 await AdhanScheduler.testAdhanPlaybackAfterSeconds(10, PreferencesService.getAdhanSound());
-                                await NotificationService.scheduleTestAdhanInSeconds(10, title: 'Test Adhan', body: 'Plays in 10 seconds');
+
                                 if (!mounted) return;
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(

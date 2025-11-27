@@ -8,9 +8,9 @@ import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'adhan_audio_manager.dart';
-import 'notification_service.dart';
 import 'preferences_service.dart';
 
 const List<String> _defaultSoundKeys = [
@@ -75,6 +75,102 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
   } catch (e) {
     debugPrint('[AdhanScheduler] ✗ Failed to cache $soundKey (fajr: $isFajr): $e');
     return false;
+  }
+}
+
+Future<void> _showStopNotification(String prayerId) async {
+  try {
+    debugPrint('[AdhanScheduler] ========== SHOWING STOP NOTIFICATION ==========');
+    
+    final prefs = await SharedPreferences.getInstance();
+    
+    // Check if app is in foreground using shared preferences
+    // WidgetsBinding.instance.lifecycleState is not reliable in background isolate
+    final isForeground = prefs.getBool('is_app_in_foreground') ?? false;
+    if (isForeground) {
+      debugPrint('[AdhanScheduler] App is in foreground (pref=true), skipping notification');
+      return;
+    }
+
+    final lang = prefs.getString(PreferencesService.keyLanguage) ?? 'ar';
+    debugPrint('[AdhanScheduler] Language: $lang');
+    
+    // Get localized prayer name
+    String prayerName;
+    if (prayerId == 'test' || prayerId == 'fajr' && prefs.getBool('test_mode') == true) {
+      prayerName = lang == 'ar' ? 'اختبار' : (lang == 'fr' ? 'Test' : 'Test');
+    } else {
+      switch (prayerId) {
+        case 'fajr':
+          prayerName = lang == 'ar' ? 'الفجر' : (lang == 'fr' ? 'Fajr' : 'Fajr');
+          break;
+        case 'dhuhr':
+          prayerName = lang == 'ar' ? 'الظهر' : (lang == 'fr' ? 'Dohr' : 'Dhuhr');
+          break;
+        case 'asr':
+          prayerName = lang == 'ar' ? 'العصر' : (lang == 'fr' ? 'Asr' : 'Asr');
+          break;
+        case 'maghrib':
+          prayerName = lang == 'ar' ? 'المغرب' : (lang == 'fr' ? 'Maghreb' : 'Maghrib');
+          break;
+        case 'isha':
+          prayerName = lang == 'ar' ? 'العشاء' : (lang == 'fr' ? 'Icha' : 'Isha');
+          break;
+        default:
+          prayerName = lang == 'ar' ? 'اختبار' : (lang == 'fr' ? 'Test' : 'Test');
+      }
+    }
+    
+    String title, body;
+    switch (lang) {
+      case 'en':
+        title = 'Adhan - $prayerName';
+        body = 'Tap to open app';
+        break;
+      case 'fr':
+        title = 'Adhan - $prayerName';
+        body = 'Touchez pour ouvrir';
+        break;
+      default:
+        title = 'أذان $prayerName';
+        body = 'اضغط لفتح التطبيق';
+    }
+    
+    debugPrint('[AdhanScheduler] Creating notification plugin...');
+    final plugin = FlutterLocalNotificationsPlugin();
+    const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
+    const initSettings = InitializationSettings(android: androidInit);
+    
+    debugPrint('[AdhanScheduler] Initializing notification plugin...');
+    await plugin.initialize(initSettings);
+    
+    debugPrint('[AdhanScheduler] Creating notification details...');
+    // Simple tappable notification without action buttons
+    final androidDetails = AndroidNotificationDetails(
+      'adhan_stop_silent',
+      'Adhan Stop Control',
+      channelDescription: 'Silent notification to stop Adhan',
+      importance: Importance.high,
+      priority: Priority.high,
+      playSound: false,
+      enableVibration: false,
+      ongoing: false, // Allow dismissal
+      autoCancel: true, // Auto-cancel when tapped
+    );
+    
+    debugPrint('[AdhanScheduler] Showing notification with title: $title');
+    await plugin.show(
+      9999999,
+      title,
+      body,
+      NotificationDetails(android: androidDetails),
+      payload: 'stop_adhan',
+    );
+    debugPrint('[AdhanScheduler] ✓✓✓ NOTIFICATION SHOWN SUCCESSFULLY ✓✓✓');
+  } catch (e, stackTrace) {
+    debugPrint('[AdhanScheduler] ✗✗✗ FAILED TO SHOW NOTIFICATION ✗✗✗');
+    debugPrint('[AdhanScheduler] Error: $e');
+    debugPrint('[AdhanScheduler] Stack trace: $stackTrace');
   }
 }
 
@@ -173,12 +269,16 @@ Future<void> _playAdhanCallback(int id) async {
       debugPrint('[AdhanScheduler.Callback] ✗ Audio session error: $e');
     }
 
+
+
     debugPrint('[AdhanScheduler.Callback] Step 3: Attempting native playback first...');
     final nativePlayed =
         await AdhanAudioManager.tryPlayNativeFile(filePath, volumeOverride: volume);
     if (nativePlayed) {
       debugPrint('[AdhanScheduler.Callback] ✓ Native MediaPlayer started successfully');
-      await NotificationService.showActiveAdhanNotification(prayerId);
+      debugPrint('[AdhanScheduler.Callback] >>>>>> ABOUT TO CALL _showStopNotification <<<<<<');
+      await _showStopNotification(prayerId);
+      debugPrint('[AdhanScheduler.Callback] >>>>>> RETURNED FROM _showStopNotification <<<<<<');
       return;
     }
     debugPrint('[AdhanScheduler.Callback] ⊘ Native playback failed, falling back to just_audio');
@@ -192,11 +292,16 @@ Future<void> _playAdhanCallback(int id) async {
       await player.setAudioSource(AudioSource.file(filePath));
       debugPrint('[AdhanScheduler.Callback] ✓ Audio source set');
       
+      
       debugPrint('[AdhanScheduler.Callback] Starting playback...');
-      await player.play();
+      player.play(); // Don't await - start playback and continue immediately
       debugPrint('[AdhanScheduler.Callback] ✓ Playback started');
-      await NotificationService.showActiveAdhanNotification(prayerId);
+      debugPrint('[AdhanScheduler.Callback] >>>>>> CALLING NOTIFICATION NOW <<<<<<');
+      await _showStopNotification(prayerId);
+      debugPrint('[AdhanScheduler.Callback] >>>>>> NOTIFICATION CALL COMPLETED <<<<<<');
       AdhanAudioManager.registerBackgroundPlayer(player);
+
+
       
       // Keep player alive and don't dispose immediately
       // Let it play in background
@@ -208,14 +313,12 @@ Future<void> _playAdhanCallback(int id) async {
           .timeout(const Duration(seconds: 300))
           .then((_) async {
         debugPrint('[AdhanScheduler.Callback] ✓ Playback completed');
-        await NotificationService.cancelActiveAdhanNotification();
         player.dispose().catchError((e) {
           debugPrint('[AdhanScheduler.Callback] ⊘ Dispose error: $e');
         });
       }).catchError((e) {
         debugPrint('[AdhanScheduler.Callback] ⊘ Playback monitoring error: $e');
         Future.delayed(const Duration(seconds: 5), () async {
-          await NotificationService.cancelActiveAdhanNotification();
           player.dispose().catchError((err) {
             debugPrint('[AdhanScheduler.Callback] ⊘ Final dispose error: $err');
           });
@@ -226,7 +329,6 @@ Future<void> _playAdhanCallback(int id) async {
       debugPrint('[AdhanScheduler.Callback] ✓ Adhan playback initiated successfully');
     } catch (e) {
       debugPrint('[AdhanScheduler.Callback] ✗ Playback error: $e');
-      await NotificationService.cancelActiveAdhanNotification();
       try {
         await player.dispose();
       } catch (_) {}

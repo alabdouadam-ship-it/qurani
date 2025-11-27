@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
 import 'services/update_service.dart';
+
 import 'memorization_test_screen.dart';
 import 'qibla_screen.dart';
 import 'repetition_memorization_screen.dart';
@@ -15,6 +16,7 @@ import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
 import 'services/preferences_service.dart';
+
 
 class OptionsScreen extends StatefulWidget {
   const OptionsScreen({super.key});
@@ -259,7 +261,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
           color: Colors.teal,
         ),
 
-      // Row 5
+
       
       // Add more rows here as needed:
       // Row 3 (uncomment to add more options)
@@ -425,6 +427,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
           ),
         );
         break;
+
       default:
         _showComingSoon(context, option.title);
     }

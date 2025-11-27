@@ -2,13 +2,15 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
+import 'package:flutter_timezone/flutter_timezone.dart';
+
+
 import 'adhan_audio_manager.dart';
 import 'preferences_service.dart';
 
 class NotificationService {
   static final FlutterLocalNotificationsPlugin _plugin =
       FlutterLocalNotificationsPlugin();
-  static const int _activeAdhanNotificationId = 9000000;
   static bool _initialized = false;
   
   static FlutterLocalNotificationsPlugin get plugin => _plugin;
@@ -22,14 +24,33 @@ class NotificationService {
   static Future<void> _ensureInitialized() async {
     if (_initialized) return;
     tz.initializeTimeZones();
+    try {
+      final dynamic result = await FlutterTimezone.getLocalTimezone();
+      String timeZoneName;
+      if (result is String) {
+        timeZoneName = result;
+      } else {
+        // Handle TimezoneInfo object (likely has .id or .name)
+        // Using dynamic to avoid import issues if class is not available
+        try {
+          timeZoneName = (result as dynamic).id;
+        } catch (_) {
+          timeZoneName = result.toString();
+        }
+      }
+      tz.setLocalLocation(tz.getLocation(timeZoneName));
+    } catch (e) {
+      print('[NotificationService] Could not set local timezone: $e');
+      // Fallback to UTC or default if needed, but usually timezone data is loaded
+    }
     const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
     const initSettings = InitializationSettings(android: androidInit);
     await _plugin.initialize(
       initSettings,
       onDidReceiveNotificationResponse: (NotificationResponse response) async {
-        if (response.actionId == 'stop_adhan') {
+        if (response.actionId == 'stop_adhan' || response.payload == 'stop_adhan') {
           await AdhanAudioManager.stopAllAdhanPlayback();
-          await cancelActiveAdhanNotification();
+          // Cancel the notification that triggered this action
           final notificationId = response.id;
           if (notificationId != null) {
             await _plugin.cancel(notificationId);
@@ -51,29 +72,17 @@ class NotificationService {
       enableVibration: true,
     );
 
-    const audioChannel = AndroidNotificationChannel(
-      'quran_audio_playback',
-      'Quran Audio Playback',
-      description: 'Background Quran audio playback notification',
-      importance: Importance.low,
-      playSound: false,
-      enableVibration: false,
-    );
 
-    const controlChannel = AndroidNotificationChannel(
-      'prayer_adhans_control',
-      'Adhan Controls',
-      description: 'Silent notification to stop Adhan',
-      importance: Importance.low,
-      playSound: false,
-      enableVibration: false,
-    );
+
 
     final androidPlugin =
         _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
     await androidPlugin?.createNotificationChannel(adhanChannel);
-    await androidPlugin?.createNotificationChannel(audioChannel);
-    await androidPlugin?.createNotificationChannel(controlChannel);
+
+
+
+    // Request permissions explicitly during init if possible, or leave to caller
+    // We'll check in schedule methods
 
     _initialized = true;
     print('[NotificationService] Initialized');
@@ -83,45 +92,6 @@ class NotificationService {
     await _plugin.cancelAll();
   }
 
-  static Future<void> scheduleSilentAlert({
-    required int id,
-    required DateTime triggerTimeLocal,
-    required String title,
-    required String body,
-    String? payload,
-  }) async {
-    await _ensureInitialized();
-    final tz_time = tz.TZDateTime.from(triggerTimeLocal, tz.local);
-    if (tz_time.isBefore(tz.TZDateTime.now(tz.local))) {
-      print('[NotificationService] Alert time is in the past, skipping');
-      return;
-    }
-    
-    final androidDetails = AndroidNotificationDetails(
-      'prayer_adhans_default_v2',
-      'Prayer Adhan',
-      channelDescription: 'Adhan at prayer time',
-      importance: Importance.high,
-      priority: Priority.high,
-      playSound: true,
-      enableVibration: true,
-      category: AndroidNotificationCategory.reminder,
-    );
-    
-    await _plugin.zonedSchedule(
-      id,
-      title,
-      body,
-      tz_time,
-      NotificationDetails(android: androidDetails),
-      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
-      matchDateTimeComponents: null,
-      payload: payload,
-    );
-    print('[NotificationService] Scheduled silent alert for $tz_time');
-  }
 
   static Future<void> scheduleAdhanNotification({
     required int id,
@@ -139,6 +109,9 @@ class NotificationService {
       return;
     }
     
+    final lang = PreferencesService.getLanguage();
+    final stopLabel = _stopActionLabel(lang);
+    
     final androidDetails = AndroidNotificationDetails(
       'prayer_adhans_default_v2',
       'Prayer Adhan',
@@ -149,6 +122,16 @@ class NotificationService {
       enableVibration: true,
       category: AndroidNotificationCategory.alarm,
       fullScreenIntent: true,
+      ongoing: true,
+      autoCancel: false,
+      actions: [
+        AndroidNotificationAction(
+          'stop_adhan',
+          stopLabel,
+          showsUserInterface: false,
+          cancelNotification: true,
+        ),
+      ],
     );
     
     await _plugin.zonedSchedule(
@@ -157,7 +140,7 @@ class NotificationService {
       body,
       tz_time,
       NotificationDetails(android: androidDetails),
-      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      androidScheduleMode: AndroidScheduleMode.alarmClock,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: null,
@@ -209,17 +192,6 @@ class NotificationService {
       final baseId = _dailyId(prayerId: prayerId, date: time);
       final name = _localizedPrayerName(lang, prayerId);
       
-      // Schedule 5-minute reminder
-      final alertTime = time.subtract(const Duration(minutes: 5));
-      if (alertTime.isAfter(now)) {
-        await scheduleSilentAlert(
-          id: baseId + 1000,
-          triggerTimeLocal: alertTime,
-          title: lang == 'ar' ? 'تذكير بالصلاة' : (lang == 'fr' ? 'Rappel de prière' : 'Prayer Reminder'),
-          body: _silentAlertBody(lang, name),
-          payload: prayerId,
-        );
-      }
       
       // Schedule Adhan notification
       final title = lang == 'ar' ? 'أذان $name' : 'Adhan - $name';
@@ -234,77 +206,6 @@ class NotificationService {
         isFajr: prayerId == 'fajr',
       );
     }
-  }
-
-  static Future<void> scheduleTestAdhanInSeconds(int secondsFromNow, {String title = 'Test Adhan', String body = ''}) async {
-    await _ensureInitialized();
-    final triggerTime = DateTime.now().add(Duration(seconds: secondsFromNow));
-    
-    await scheduleAdhanNotification(
-      id: 999999,
-      triggerTimeLocal: triggerTime,
-      title: title,
-      body: body,
-      soundKey: PreferencesService.getAdhanSound(),
-      isFajr: false,
-    );
-  }
-
-  static Future<void> showActiveAdhanNotification(String prayerId) async {
-    await _ensureInitialized();
-    final lang = PreferencesService.getLanguage();
-    final name = _localizedPrayerName(lang, prayerId);
-    String title;
-    String body;
-    switch (lang) {
-      case 'en':
-        title = 'Adhan - $name';
-        body = 'Tap to stop the Adhan';
-        break;
-      case 'fr':
-        title = 'Adhan - $name';
-        body = 'Touchez pour arrêter l\'adhan';
-        break;
-      default:
-        title = 'أذان $name';
-        body = 'اضغط لإيقاف الأذان';
-        break;
-    }
-
-    final stopLabel = _stopActionLabel(lang);
-    final androidDetails = AndroidNotificationDetails(
-      'prayer_adhans_control',
-      'Adhan Controls',
-      channelDescription: 'Silent notification to stop Adhan',
-      importance: Importance.low,
-      priority: Priority.low,
-      playSound: false,
-      enableVibration: false,
-      category: AndroidNotificationCategory.alarm,
-      ongoing: true,
-      autoCancel: false,
-      fullScreenIntent: false,
-      actions: [
-        AndroidNotificationAction(
-          'stop_adhan',
-          stopLabel,
-          showsUserInterface: false,
-        ),
-      ],
-    );
-
-    await _plugin.show(
-      _activeAdhanNotificationId,
-      title,
-      body,
-      NotificationDetails(android: androidDetails),
-      payload: prayerId,
-    );
-  }
-
-  static Future<void> cancelActiveAdhanNotification() async {
-    await _ensureInitialized();
-    await _plugin.cancel(_activeAdhanNotificationId);
   }
 
   static String _localizedPrayerName(String lang, String id) {
@@ -339,16 +240,6 @@ class NotificationService {
     }
   }
 
-  static String _silentAlertBody(String lang, String prayerName) {
-    switch (lang) {
-      case 'en':
-        return 'Adhan for $prayerName in 5 minutes';
-      case 'fr':
-        return 'Adhan de $prayerName dans 5 minutes';
-      default:
-        return 'سيحين أذان $prayerName بعد خمس دقائق';
-    }
-  }
 
   static String _stopActionLabel(String lang) {
     switch (lang) {

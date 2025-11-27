@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'prayer_times_service.dart';
 import 'adhan_audio_manager.dart';
 import 'preferences_service.dart';
-import 'notification_service.dart';
-
 /// Global service that monitors prayer times and plays Adhan across all screens
 class GlobalAdhanService {
   static final GlobalAdhanService _instance = GlobalAdhanService._internal();
@@ -34,7 +32,7 @@ class GlobalAdhanService {
   static Future<void> stopAdhan() async {
     _isPlaying = false;
     await AdhanAudioManager.stopAllAdhanPlayback();
-    await NotificationService.cancelActiveAdhanNotification();
+    // Notification stop is handled by the scheduled notification's action button
   }
 
   Future<void> _start() async {
@@ -111,8 +109,7 @@ class GlobalAdhanService {
       _isPlaying = true;
       debugPrint('[GlobalAdhanService] Playing Adhan for $prayerId');
       
-      // Show notification with stop action
-      await NotificationService.showActiveAdhanNotification(prayerId);
+      // Stop button is now part of the scheduled Adhan notification
       
       // Play Adhan using the audio manager
       await AdhanAudioManager.playForegroundAdhan(prayerId);
@@ -122,13 +119,11 @@ class GlobalAdhanService {
       Future.delayed(const Duration(minutes: 5), () {
         if (_isPlaying) {
           _isPlaying = false;
-          NotificationService.cancelActiveAdhanNotification();
         }
       });
     } catch (e) {
       debugPrint('[GlobalAdhanService] Error playing Adhan: $e');
       _isPlaying = false;
-      await NotificationService.cancelActiveAdhanNotification();
     }
   }
 }
