@@ -122,7 +122,14 @@ class QuranRepository {
   }
 
   Future<void> _ensureDb() async {
-    if (_db != null) return;
+    if (_db != null && _db!.isOpen) return;
+    
+    // If database exists but is closed, reset it
+    if (_db != null && !_db!.isOpen) {
+      debugPrint('Database was closed, resetting connection');
+      _db = null;
+    }
+    
     final dir = await getApplicationSupportDirectory();
     final dbPath = p.join(dir.path, 'quran.db');
     
@@ -228,24 +235,26 @@ class QuranRepository {
     debugPrint('Database opened successfully');
   }
 
-  Future<PageData> loadPage(int pageNumber, QuranEdition edition) {
+  Future<PageData> loadPage(int pageNumber, QuranEdition edition) async {
     final key = '${edition.identifier}::$pageNumber';
-    return _pageCache.putIfAbsent(key, () async {
-      await _ensureDb();
-      if (_db == null) {
-        throw Exception('Database not initialized');
-      }
+    
+    try {
+      return await _pageCache.putIfAbsent(key, () async {
+        await _ensureDb();
+        if (_db == null) {
+          throw Exception('Database not initialized');
+        }
 
-      final textColumn = edition.dbColumn;
-      final rows = await _db!.rawQuery('''
-        SELECT 
-          a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
-          s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
-        FROM ayah a
-        LEFT JOIN surah s ON a.surah_order = s.order_no
-        WHERE a.page = ?
-        ORDER BY a.id
-      ''', [pageNumber]);
+        final textColumn = edition.dbColumn;
+        final rows = await _db!.rawQuery('''
+          SELECT 
+            a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
+            s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
+          FROM ayah a
+          LEFT JOIN surah s ON a.surah_order = s.order_no
+          WHERE a.page = ?
+          ORDER BY a.id
+        ''', [pageNumber]);
 
       final ayahs = <AyahData>[];
       for (final r in rows) {
@@ -296,12 +305,22 @@ class QuranRepository {
         );
       }
 
-      return PageData(
-        number: pageNumber,
-        ayahs: ayahs,
-        surahOccurrences: surahOccurrences,
-      );
-    });
+        return PageData(
+          number: pageNumber,
+          ayahs: ayahs,
+          surahOccurrences: surahOccurrences,
+        );
+      });
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        debugPrint('Database closed error, clearing cache and retrying');
+        _pageCache.remove(key);
+        _db = null;
+        await _ensureDb();
+        return loadPage(pageNumber, edition);
+      }
+      rethrow;
+    }
   }
 
   Future<String?> loadAyahText({
@@ -347,90 +366,122 @@ class QuranRepository {
   }
 
   Future<List<AyahBrief>> loadSurahAyahs(int surahNumber, QuranEdition edition) async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
+    try {
+      await _ensureDb();
+      if (_db == null) {
+        throw Exception('Database not initialized');
+      }
 
-    // Get surah metadata
-    final surahRows = await _db!.query(
-      'surah',
-      where: 'order_no = ?',
-      whereArgs: [surahNumber],
-    );
-    
-    if (surahRows.isEmpty) {
-      return [];
-    }
-
-    final surahRow = surahRows.first;
-    final surahMeta = SurahMeta(
-      number: (surahRow['order_no'] as int? ?? 0),
-      name: (surahRow['name_ar'] as String? ?? ''),
-      englishName: (surahRow['name_en'] as String? ?? ''),
-      englishNameTranslation: (surahRow['name_en_translation'] as String? ?? ''),
-      revelationType: (surahRow['revelation_type'] as String? ?? ''),
-    );
-
-    // Get ayahs
-    final textColumn = edition.dbColumn;
-    final ayahRows = await _db!.rawQuery('''
-      SELECT id, number_in_surah, $textColumn as text
-      FROM ayah
-      WHERE surah_order = ?
-      ORDER BY number_in_surah
-    ''', [surahNumber]);
-
-    return ayahRows.map((r) {
-      return AyahBrief(
-        number: (r['id'] as int? ?? 0),
-        numberInSurah: (r['number_in_surah'] as int? ?? 0),
-        text: (r['text'] as String? ?? ''),
-        surah: surahMeta,
+      // Get surah metadata
+      final surahRows = await _db!.query(
+        'surah',
+        where: 'order_no = ?',
+        whereArgs: [surahNumber],
       );
-    }).toList();
+      
+      if (surahRows.isEmpty) {
+        return [];
+      }
+
+      final surahRow = surahRows.first;
+      final surahMeta = SurahMeta(
+        number: (surahRow['order_no'] as int? ?? 0),
+        name: (surahRow['name_ar'] as String? ?? ''),
+        englishName: (surahRow['name_en'] as String? ?? ''),
+        englishNameTranslation: (surahRow['name_en_translation'] as String? ?? ''),
+        revelationType: (surahRow['revelation_type'] as String? ?? ''),
+      );
+
+      // Get ayahs
+      final textColumn = edition.dbColumn;
+      final ayahRows = await _db!.rawQuery('''
+        SELECT id, number_in_surah, $textColumn as text
+        FROM ayah
+        WHERE surah_order = ?
+        ORDER BY number_in_surah
+      ''', [surahNumber]);
+
+      return ayahRows.map((r) {
+        return AyahBrief(
+          number: (r['id'] as int? ?? 0),
+          numberInSurah: (r['number_in_surah'] as int? ?? 0),
+          text: (r['text'] as String? ?? ''),
+          surah: surahMeta,
+        );
+      }).toList();
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        debugPrint('Database closed error in loadSurahAyahs, retrying');
+        _db = null;
+        await _ensureDb();
+        return loadSurahAyahs(surahNumber, edition);
+      }
+      rethrow;
+    }
   }
 
   Future<List<SurahMeta>> _loadSurahList() async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
+    try {
+      await _ensureDb();
+      if (_db == null) {
+        throw Exception('Database not initialized');
+      }
 
-    final rows = await _db!.query('surah', orderBy: 'order_no');
-    return rows.map((r) {
-      return SurahMeta(
-        number: (r['order_no'] as int? ?? 0),
-        name: (r['name_ar'] as String? ?? ''),
-        englishName: (r['name_en'] as String? ?? ''),
-        englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
-        revelationType: (r['revelation_type'] as String? ?? ''),
-      );
-    }).toList();
+      final rows = await _db!.query('surah', orderBy: 'order_no');
+      return rows.map((r) {
+        return SurahMeta(
+          number: (r['order_no'] as int? ?? 0),
+          name: (r['name_ar'] as String? ?? ''),
+          englishName: (r['name_en'] as String? ?? ''),
+          englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
+          revelationType: (r['revelation_type'] as String? ?? ''),
+        );
+      }).toList();
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        debugPrint('Database closed error in _loadSurahList, retrying');
+        _surahListFuture = null;
+        _db = null;
+        await _ensureDb();
+        return _loadSurahList();
+      }
+      rethrow;
+    }
   }
 
   Future<Map<int, String>> _loadTranslationMap(QuranEdition edition) async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
-
-    final Map<int, String> map = {};
-    final textColumn = edition.dbColumn;
-    final rows = await _db!.rawQuery('''
-      SELECT id, $textColumn as text
-      FROM ayah
-      ORDER BY id
-    ''');
-
-    for (final r in rows) {
-      final id = r['id'] as int? ?? 0;
-      final text = r['text'] as String? ?? '';
-      if (id != 0) {
-        map[id] = text;
+    try {
+      await _ensureDb();
+      if (_db == null) {
+        throw Exception('Database not initialized');
       }
+
+      final Map<int, String> map = {};
+      final textColumn = edition.dbColumn;
+      final rows = await _db!.rawQuery('''
+        SELECT id, $textColumn as text
+        FROM ayah
+        ORDER BY id
+      ''');
+
+      for (final r in rows) {
+        final id = r['id'] as int? ?? 0;
+        final text = r['text'] as String? ?? '';
+        if (id != 0) {
+          map[id] = text;
+        }
+      }
+      return map;
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        debugPrint('Database closed error in _loadTranslationMap, retrying');
+        _translationCache.remove(edition);
+        _db = null;
+        await _ensureDb();
+        return _loadTranslationMap(edition);
+      }
+      rethrow;
     }
-    return map;
   }
 
   Future<String?> loadAyahTafsir(int ayahNumber) async {

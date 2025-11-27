@@ -18,7 +18,13 @@ class SurahService {
   }
 
   static Future<void> _ensureDb() async {
-    if (_db != null) return;
+    if (_db != null && _db!.isOpen) return;
+    
+    // If database exists but is closed, reset it
+    if (_db != null && !_db!.isOpen) {
+      _db = null;
+    }
+    
     final dir = await getApplicationSupportDirectory();
     final dbPath = p.join(dir.path, 'quran.db');
     
@@ -98,27 +104,37 @@ class SurahService {
   }
 
   static Future<List<Surah>> _loadFromDatabase({bool useEnglishName = false}) async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
-
-    final rows = await _db!.query('surah', orderBy: 'order_no');
-    
-    return rows.map((r) {
-      final String name;
-      if (useEnglishName) {
-        name = (r['name_en'] as String? ?? r['name_ar'] as String? ?? '');
-      } else {
-        name = (r['name_ar'] as String? ?? '');
+    try {
+      await _ensureDb();
+      if (_db == null) {
+        throw Exception('Database not initialized');
       }
+
+      final rows = await _db!.query('surah', orderBy: 'order_no');
       
-      return Surah(
-        name: name,
-        order: (r['order_no'] as int? ?? 0),
-        totalVerses: (r['total_verses'] as int? ?? 0),
-      );
-    }).toList();
+      return rows.map((r) {
+        final String name;
+        if (useEnglishName) {
+          name = (r['name_en'] as String? ?? r['name_ar'] as String? ?? '');
+        } else {
+          name = (r['name_ar'] as String? ?? '');
+        }
+        
+        return Surah(
+          name: name,
+          order: (r['order_no'] as int? ?? 0),
+          totalVerses: (r['total_verses'] as int? ?? 0),
+        );
+      }).toList();
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        _clearCache();
+        _db = null;
+        await _ensureDb();
+        return _loadFromDatabase(useEnglishName: useEnglishName);
+      }
+      rethrow;
+    }
   }
 
   static Future<List<Surah>> getArabicSurahs() async {
