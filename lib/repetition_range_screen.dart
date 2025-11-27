@@ -32,14 +32,14 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   int? _activeRangeEnd;
   String? _activeReciterKey;
   int? _activeRepeatCount;
-  List<AyahBrief> _currentAyahs = const [];
+  List<AyahBrief> _currentAyahs = [];
   int? _selectedAyah;
   int _verseRepeatCount = 10;
   int? _currentPlayingVerseNumber;
   int? _lastAutoScrolledVerse;
   final ScrollController _ayahScrollController = ScrollController();
   final Map<int, GlobalKey> _ayahTileKeys = <int, GlobalKey>{};
-  List<_VersePlaybackEntry> _playlistEntries = const [];
+  List<_VersePlaybackEntry> _playlistEntries = [];
   int _currentPlaylistIndex = 0;
   bool _isHandlingEntryCompletion = false;
   late String _arabicFontKey;
@@ -108,7 +108,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       _activeReciterKey = null;
       _activeRepeatCount = null;
       _currentPlayingVerseNumber = null;
-      _currentAyahs = const [];
+      _currentAyahs = [];
       _verseRepeatCount = PreferencesService.getVerseRepeatCount();
       _ayahTileKeys.clear();
       _lastAutoScrolledVerse = null;

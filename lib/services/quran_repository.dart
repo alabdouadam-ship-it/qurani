@@ -1,7 +1,11 @@
-import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:sqflite/sqflite.dart' as sqf;
 
 /// Supported Quran text editions.
 enum QuranEdition {
@@ -14,6 +18,23 @@ enum QuranEdition {
 }
 
 extension QuranEditionExt on QuranEdition {
+  String get dbColumn {
+    switch (this) {
+      case QuranEdition.simple:
+        return 'text_simple';
+      case QuranEdition.uthmani:
+        return 'text_uthmani';
+      case QuranEdition.tajweed:
+        return 'text_tajweed';
+      case QuranEdition.english:
+        return 'text_english';
+      case QuranEdition.french:
+        return 'text_french';
+      case QuranEdition.tafsir:
+        return 'text_tafsir';
+    }
+  }
+
   String get assetFolder {
     switch (this) {
       case QuranEdition.simple:
@@ -78,34 +99,208 @@ extension QuranEditionExt on QuranEdition {
 }
 
 class QuranRepository {
+  static const int _dbSchemaVersion = 2;
+  static const String _dbVersionKey = 'quran_db_schema_version';
+  
   QuranRepository._();
 
   static final QuranRepository instance = QuranRepository._();
 
+  sqf.Database? _db;
   final Map<String, Future<PageData>> _pageCache = {};
   Future<List<SurahMeta>>? _surahListFuture;
   final Map<QuranEdition, Future<Map<int, String>>> _translationCache = {};
   Future<Map<int, String>>? _tafsirCache;
   final Map<QuranEdition, Future<Map<int, AyahData>>> _ayahIndexCache = {};
 
+  void _clearCache() {
+    _pageCache.clear();
+    _surahListFuture = null;
+    _translationCache.clear();
+    _tafsirCache = null;
+    _ayahIndexCache.clear();
+  }
+
+  Future<void> _ensureDb() async {
+    if (_db != null) return;
+    final dir = await getApplicationSupportDirectory();
+    final dbPath = p.join(dir.path, 'quran.db');
+    
+    final prefs = await SharedPreferences.getInstance();
+    final storedVersion = prefs.getInt(_dbVersionKey) ?? 0;
+    
+    final dbFile = File(dbPath);
+    bool needsCopy = !dbFile.existsSync() || storedVersion < _dbSchemaVersion;
+    
+    if (!needsCopy) {
+      // Check if database has valid schema
+      sqf.Database? tempDb;
+      try {
+        tempDb = await sqf.openDatabase(dbPath, readOnly: true);
+        
+        // First check if required tables exist
+        final tables = await tempDb.rawQuery(
+          "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('ayah', 'surah')"
+        );
+        
+        if (tables.length != 2) {
+          throw Exception('Missing required tables');
+        }
+        
+        // Then check if required columns exist
+        await tempDb.rawQuery('SELECT text_simple FROM ayah LIMIT 1');
+        await tempDb.rawQuery('SELECT name_en, name_en_translation, revelation_type, total_verses FROM surah LIMIT 1');
+        
+        await tempDb.close();
+        tempDb = null;
+      } catch (e) {
+        // Database is invalid or outdated
+        debugPrint('Database validation failed, will replace: $e');
+        needsCopy = true;
+        
+        // Close any open connection
+        if (tempDb != null) {
+          try {
+            await tempDb.close();
+          } catch (_) {}
+          tempDb = null;
+        }
+        
+        // Clear any cached data from old database
+        _clearCache();
+        _db = null;
+        
+        // Wait for file handles to release
+        await Future.delayed(const Duration(milliseconds: 200));
+        
+        // Force delete the old database
+        try {
+          if (dbFile.existsSync()) {
+            await dbFile.delete();
+            debugPrint('Old database deleted');
+          }
+        } catch (deleteError) {
+          debugPrint('Could not delete old database: $deleteError');
+          // Try to delete related files
+          try {
+            final shmFile = File('$dbPath-shm');
+            final walFile = File('$dbPath-wal');
+            if (shmFile.existsSync()) await shmFile.delete();
+            if (walFile.existsSync()) await walFile.delete();
+          } catch (_) {}
+        }
+      }
+    }
+    
+    if (needsCopy) {
+      debugPrint('Copying database from assets (schema version $_dbSchemaVersion)...');
+      try {
+        // Delete old database if it exists
+        if (dbFile.existsSync()) {
+          await dbFile.delete();
+          debugPrint('Old database deleted');
+        }
+        final shmFile = File('$dbPath-shm');
+        final walFile = File('$dbPath-wal');
+        if (shmFile.existsSync()) await shmFile.delete();
+        if (walFile.existsSync()) await walFile.delete();
+        
+        final bytes = await rootBundle.load('assets/data/quran.db');
+        
+        // Ensure parent directory exists
+        await dbFile.parent.create(recursive: true);
+        
+        // Write the new database
+        await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+        debugPrint('Database copied successfully: ${dbFile.lengthSync()} bytes');
+        
+        // Update stored version
+        await prefs.setInt(_dbVersionKey, _dbSchemaVersion);
+        debugPrint('Database schema version updated to $_dbSchemaVersion');
+      } catch (copyError) {
+        debugPrint('Error copying database: $copyError');
+        throw Exception('Failed to copy database from assets');
+      }
+    }
+    
+    // Open the database
+    _db = await sqf.openDatabase(dbPath, readOnly: true);
+    debugPrint('Database opened successfully');
+  }
+
   Future<PageData> loadPage(int pageNumber, QuranEdition edition) {
     final key = '${edition.identifier}::$pageNumber';
     return _pageCache.putIfAbsent(key, () async {
-      final assetPath = '${edition.assetFolder}/pages/$pageNumber.json';
-      late final String jsonStr;
-      try {
-        jsonStr = await rootBundle.loadString(assetPath);
-      } catch (error, stackTrace) {
-        Error.throwWithStackTrace(
-          FlutterError(
-            'Failed to load Quran page asset "$assetPath": $error',
+      await _ensureDb();
+      if (_db == null) {
+        throw Exception('Database not initialized');
+      }
+
+      final textColumn = edition.dbColumn;
+      final rows = await _db!.rawQuery('''
+        SELECT 
+          a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
+          s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
+        FROM ayah a
+        LEFT JOIN surah s ON a.surah_order = s.order_no
+        WHERE a.page = ?
+        ORDER BY a.id
+      ''', [pageNumber]);
+
+      final ayahs = <AyahData>[];
+      for (final r in rows) {
+        final surahMeta = SurahMeta(
+          number: (r['order_no'] as int? ?? 0),
+          name: (r['name_ar'] as String? ?? ''),
+          englishName: (r['name_en'] as String? ?? ''),
+          englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
+          revelationType: (r['revelation_type'] as String? ?? ''),
+        );
+        ayahs.add(AyahData(
+          number: (r['id'] as int? ?? 0),
+          text: (r['text'] as String? ?? ''),
+          surah: surahMeta,
+          numberInSurah: (r['number_in_surah'] as int? ?? 0),
+          juz: (r['juz'] as int? ?? 1),
+          page: (r['page'] as int? ?? 1),
+        ));
+      }
+
+      // Build surah occurrences
+      final surahOccurrences = <SurahOccurrence>[];
+      SurahMeta? current;
+      int? startIndex;
+      for (var i = 0; i < ayahs.length; i++) {
+        final ayah = ayahs[i];
+        if (current == null || ayah.surah.number != current.number) {
+          if (current != null && startIndex != null) {
+            surahOccurrences.add(
+              SurahOccurrence(
+                surah: current,
+                startIndex: startIndex,
+                ayahCount: i - startIndex,
+              ),
+            );
+          }
+          current = ayah.surah;
+          startIndex = i;
+        }
+      }
+      if (current != null && startIndex != null) {
+        surahOccurrences.add(
+          SurahOccurrence(
+            surah: current,
+            startIndex: startIndex,
+            ayahCount: ayahs.length - startIndex,
           ),
-          stackTrace,
         );
       }
-      final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-      final dataMap = decoded['data'] as Map<String, dynamic>;
-      return PageData.fromJson(dataMap, edition);
+
+      return PageData(
+        number: pageNumber,
+        ayahs: ayahs,
+        surahOccurrences: surahOccurrences,
+      );
     });
   }
 
@@ -152,68 +347,87 @@ class QuranRepository {
   }
 
   Future<List<AyahBrief>> loadSurahAyahs(int surahNumber, QuranEdition edition) async {
-    final jsonStr = await rootBundle.loadString('${edition.assetFolder}/quran.json');
-    final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-    final data = decoded['data'] as Map<String, dynamic>;
-    final surahs = data['surahs'] as List<dynamic>;
-    final surahEntry = surahs.firstWhere(
-      (e) => (e as Map<String, dynamic>)['number'] == surahNumber,
-      orElse: () => <String, dynamic>{},
-    ) as Map<String, dynamic>;
-    final name = surahEntry['name'] as String? ?? '';
-    final englishName = surahEntry['englishName'] as String? ?? '';
-    final englishNameTranslation = surahEntry['englishNameTranslation'] as String? ?? '';
-    final revelationType = surahEntry['revelationType'] as String? ?? '';
-    final surahMeta = SurahMeta(
-      number: surahNumber,
-      name: name,
-      englishName: englishName,
-      englishNameTranslation: englishNameTranslation,
-      revelationType: revelationType,
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
+    }
+
+    // Get surah metadata
+    final surahRows = await _db!.query(
+      'surah',
+      where: 'order_no = ?',
+      whereArgs: [surahNumber],
     );
-    final ayahs = (surahEntry['ayahs'] as List<dynamic>? ?? const [])
-        .map((a) {
-          final m = a as Map<String, dynamic>;
-          return AyahBrief(
-            number: (m['number'] as num?)?.toInt() ?? 0,
-            numberInSurah: (m['numberInSurah'] as num?)?.toInt() ?? 0,
-            text: m['text'] as String? ?? '',
-            surah: surahMeta,
-          );
-        })
-        .toList();
-    return ayahs;
+    
+    if (surahRows.isEmpty) {
+      return [];
+    }
+
+    final surahRow = surahRows.first;
+    final surahMeta = SurahMeta(
+      number: (surahRow['order_no'] as int? ?? 0),
+      name: (surahRow['name_ar'] as String? ?? ''),
+      englishName: (surahRow['name_en'] as String? ?? ''),
+      englishNameTranslation: (surahRow['name_en_translation'] as String? ?? ''),
+      revelationType: (surahRow['revelation_type'] as String? ?? ''),
+    );
+
+    // Get ayahs
+    final textColumn = edition.dbColumn;
+    final ayahRows = await _db!.rawQuery('''
+      SELECT id, number_in_surah, $textColumn as text
+      FROM ayah
+      WHERE surah_order = ?
+      ORDER BY number_in_surah
+    ''', [surahNumber]);
+
+    return ayahRows.map((r) {
+      return AyahBrief(
+        number: (r['id'] as int? ?? 0),
+        numberInSurah: (r['number_in_surah'] as int? ?? 0),
+        text: (r['text'] as String? ?? ''),
+        surah: surahMeta,
+      );
+    }).toList();
   }
 
   Future<List<SurahMeta>> _loadSurahList() async {
-    final jsonStr =
-        await rootBundle.loadString('assets/data/quran-simple/quran.json');
-    final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-    final data = decoded['data'] as Map<String, dynamic>;
-    final surahList = data['surahs'] as List<dynamic>;
-    return surahList
-        .map((entry) =>
-            SurahMeta.fromJson(entry as Map<String, dynamic>))
-        .toList();
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
+    }
+
+    final rows = await _db!.query('surah', orderBy: 'order_no');
+    return rows.map((r) {
+      return SurahMeta(
+        number: (r['order_no'] as int? ?? 0),
+        name: (r['name_ar'] as String? ?? ''),
+        englishName: (r['name_en'] as String? ?? ''),
+        englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
+        revelationType: (r['revelation_type'] as String? ?? ''),
+      );
+    }).toList();
   }
 
   Future<Map<int, String>> _loadTranslationMap(QuranEdition edition) async {
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
+    }
+
     final Map<int, String> map = {};
-    final jsonStr = await rootBundle
-        .loadString('${edition.assetFolder}/quran.json');
-    final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-    final data = decoded['data'] as Map<String, dynamic>;
-    final surahs = data['surahs'] as List<dynamic>;
-    for (final surahEntry in surahs) {
-      final surah = surahEntry as Map<String, dynamic>;
-      final ayahs = surah['ayahs'] as List<dynamic>? ?? const [];
-      for (final ayahEntry in ayahs) {
-        final ayah = ayahEntry as Map<String, dynamic>;
-        final number = ayah['number'] as int? ?? 0;
-        final text = ayah['text'] as String? ?? '';
-        if (number != 0) {
-          map[number] = text;
-        }
+    final textColumn = edition.dbColumn;
+    final rows = await _db!.rawQuery('''
+      SELECT id, $textColumn as text
+      FROM ayah
+      ORDER BY id
+    ''');
+
+    for (final r in rows) {
+      final id = r['id'] as int? ?? 0;
+      final text = r['text'] as String? ?? '';
+      if (id != 0) {
+        map[id] = text;
       }
     }
     return map;
@@ -236,58 +450,67 @@ class QuranRepository {
   }
 
   Future<Map<int, AyahData>> _loadAyahIndex(QuranEdition edition) async {
-    final Map<int, AyahData> map = {};
-    final jsonStr =
-        await rootBundle.loadString('${edition.assetFolder}/quran.json');
-    final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-    final data = decoded['data'] as Map<String, dynamic>;
-    final surahs = data['surahs'] as List<dynamic>;
-
-    for (final surahEntry in surahs) {
-      final surahMap = surahEntry as Map<String, dynamic>;
-      final surahMeta = SurahMeta(
-        number: (surahMap['number'] as num?)?.toInt() ?? 0,
-        name: surahMap['name'] as String? ?? '',
-        englishName: surahMap['englishName'] as String? ?? '',
-        englishNameTranslation:
-            surahMap['englishNameTranslation'] as String? ?? '',
-        revelationType: surahMap['revelationType'] as String? ?? '',
-      );
-      final ayahs = surahMap['ayahs'] as List<dynamic>? ?? const [];
-      for (final ayahEntry in ayahs) {
-        final ayahMap = ayahEntry as Map<String, dynamic>;
-        final number = (ayahMap['number'] as num?)?.toInt();
-        if (number == null) continue;
-        map[number] = AyahData(
-          number: number,
-          text: ayahMap['text'] as String? ?? '',
-          surah: surahMeta,
-          numberInSurah: (ayahMap['numberInSurah'] as num?)?.toInt() ?? 0,
-          juz: (ayahMap['juz'] as num?)?.toInt() ?? 1,
-          page: (ayahMap['page'] as num?)?.toInt() ?? 1,
-        );
-      }
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
     }
+
+    final Map<int, AyahData> map = {};
+    final textColumn = edition.dbColumn;
+    
+    final rows = await _db!.rawQuery('''
+      SELECT 
+        a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
+        s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
+      FROM ayah a
+      LEFT JOIN surah s ON a.surah_order = s.order_no
+      ORDER BY a.id
+    ''');
+
+    for (final r in rows) {
+      final surahMeta = SurahMeta(
+        number: (r['order_no'] as int? ?? 0),
+        name: (r['name_ar'] as String? ?? ''),
+        englishName: (r['name_en'] as String? ?? ''),
+        englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
+        revelationType: (r['revelation_type'] as String? ?? ''),
+      );
+      
+      final ayahNumber = (r['id'] as int? ?? 0);
+      if (ayahNumber == 0) continue;
+      
+      map[ayahNumber] = AyahData(
+        number: ayahNumber,
+        text: (r['text'] as String? ?? ''),
+        surah: surahMeta,
+        numberInSurah: (r['number_in_surah'] as int? ?? 0),
+        juz: (r['juz'] as int? ?? 1),
+        page: (r['page'] as int? ?? 1),
+      );
+    }
+    
     return map;
   }
 
   Future<Map<int, String>> _loadTafsirMap() async {
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
+    }
+
     final Map<int, String> map = {};
-    final jsonStr =
-        await rootBundle.loadString('assets/data/quran_muyassar/quran.json');
-    final decoded = json.decode(jsonStr) as Map<String, dynamic>;
-    final data = decoded['data'] as Map<String, dynamic>;
-    final surahs = data['surahs'] as List<dynamic>;
-    for (final surahEntry in surahs) {
-      final surah = surahEntry as Map<String, dynamic>;
-      final ayahs = surah['ayahs'] as List<dynamic>? ?? const [];
-      for (final ayahEntry in ayahs) {
-        final ayah = ayahEntry as Map<String, dynamic>;
-        final number = ayah['number'] as int? ?? 0;
-        final text = ayah['text'] as String? ?? '';
-        if (number != 0) {
-          map[number] = text;
-        }
+    final rows = await _db!.rawQuery('''
+      SELECT id, text_tafsir
+      FROM ayah
+      WHERE text_tafsir IS NOT NULL AND text_tafsir != ''
+      ORDER BY id
+    ''');
+
+    for (final r in rows) {
+      final id = r['id'] as int? ?? 0;
+      final text = r['text_tafsir'] as String? ?? '';
+      if (id != 0 && text.isNotEmpty) {
+        map[id] = text;
       }
     }
     return map;

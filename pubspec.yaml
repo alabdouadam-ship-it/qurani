@@ -52,18 +52,6 @@ flutter:
   assets:
     - assets/data/
     - assets/data/quran.db
-    - assets/data/quran-simple/pages/
-    - assets/data/quran-simple/quran.json
-    - assets/data/quran-uthmani/pages/
-    - assets/data/quran-uthmani/quran.json
-    - assets/data/quran-tajweed/pages/
-    - assets/data/quran-tajweed/quran.json
-    - assets/data/quran-english/pages/
-    - assets/data/quran-english/quran.json
-    - assets/data/quran-french/pages/
-    - assets/data/quran-french/quran.json
-    - assets/data/quran_muyassar/pages/
-    - assets/data/quran_muyassar/quran.json
     - assets/audio/
     - public/
   fonts:
