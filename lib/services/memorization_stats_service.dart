@@ -59,7 +59,8 @@ class MemorizationStatsService {
       final int newCount = prevCount + 1;
       final int newCorrect = prevCorrect + correctAnswers;
       final int newTotal = prevTotal + totalQuestions;
-      surahAgg[key] = {'count': newCount, 'correct': newCorrect, 'total': newTotal};
+      final int lastScore = (correctAnswers / totalQuestions * 100).round();
+      surahAgg[key] = {'count': newCount, 'correct': newCorrect, 'total': newTotal, 'lastScore': lastScore};
       await prefs.setString(_keySurahAgg, json.encode(surahAgg));
 
       // Update mastery percentage from aggregated sums
@@ -118,10 +119,12 @@ class MemorizationStatsService {
       final int prevCount = (current['count'] as int?) ?? 0;
       final int prevCorrect = (current['correct'] as int?) ?? 0;
       final int prevTotal = (current['total'] as int?) ?? 0;
+      final int lastScore = (correctAnswers / totalQuestions * 100).round();
       juzAgg[key] = {
         'count': prevCount + 1,
         'correct': prevCorrect + correctAnswers,
         'total': prevTotal + totalQuestions,
+        'lastScore': lastScore,
       };
       await prefs.setString(_keyJuzAgg, json.encode(juzAgg));
 

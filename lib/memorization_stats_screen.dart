@@ -32,19 +32,16 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     final Map<String, dynamic> juzAggRaw = (stats['juzAgg'] as Map?)?.map((k,v)=>MapEntry(k.toString(), v)) ?? {};
 
     final Map<int, int> surahCount = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['count'] as int? ?? 0) : 0) };
-    final Map<int, int> surahCorrect = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['correct'] as int? ?? 0) : 0) };
-    final Map<int, int> surahTotal = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['total'] as int? ?? 0) : 0) };
+    final Map<int, int> surahLastScore = { for (int i=1;i<=114;i++) i: (surahAggRaw['$i'] is Map ? ((surahAggRaw['$i'] as Map)['lastScore'] as int? ?? 0) : 0) };
 
     final Map<int, int> juzCount = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['count'] as int? ?? 0) : 0) };
-    final Map<int, int> juzCorrect = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['correct'] as int? ?? 0) : 0) };
-    final Map<int, int> juzTotal = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['total'] as int? ?? 0) : 0) };
-    List<_AggRow> buildRows(int maxId, Map<int,int> countMap, Map<int,int> correctMap, Map<int,int> totalMap) {
+    final Map<int, int> juzLastScore = { for (int i=1;i<=30;i++) i: (juzAggRaw['$i'] is Map ? ((juzAggRaw['$i'] as Map)['lastScore'] as int? ?? 0) : 0) };
+    
+    List<_AggRow> buildRows(int maxId, Map<int,int> countMap, Map<int,int> lastScoreMap) {
       final rows = <_AggRow>[];
       for (int id=1; id<=maxId; id++) {
         final c = countMap[id] ?? 0;
-        final corr = correctMap[id] ?? 0;
-        final tot = totalMap[id] ?? 0;
-        final pct = tot > 0 ? ((corr / tot) * 100).round() : 0;
+        final pct = lastScoreMap[id] ?? 0; // Use last score instead of average
         rows.add(_AggRow(id: id, count: c, percent: pct));
       }
       rows.sort((a,b){
@@ -54,8 +51,8 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
       });
       return rows;
     }
-    List<_AggRow> surahRows = buildRows(114, surahCount, surahCorrect, surahTotal);
-    List<_AggRow> juzRows = buildRows(30, juzCount, juzCorrect, juzTotal);
+    List<_AggRow> surahRows = buildRows(114, surahCount, surahLastScore);
+    List<_AggRow> juzRows = buildRows(30, juzCount, juzLastScore);
 
     // Already sorted above
     if (mounted) {
