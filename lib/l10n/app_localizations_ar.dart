@@ -489,6 +489,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get goToPage => 'انتقل إلى الصفحة';
 
   @override
+  String get pageNumber => 'رقم الصفحة';
+
+  @override
+  String get previousPage => 'السابقة';
+
+  @override
+  String get nextPage => 'التالية';
+
+  @override
   String get page => 'الصفحة';
 
   @override

@@ -100,11 +100,11 @@ class _OptionsScreenState extends State<OptionsScreen> {
           padding: ResponsiveConfig.getPadding(context),
           child: Column(
             children: [
-              // Header
+              // Header - compact on web
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
-                margin: const EdgeInsets.only(bottom: 20),
+                padding: EdgeInsets.all(kIsWeb ? 12 : (isSmallScreen ? 16 : 20)),
+                margin: EdgeInsets.only(bottom: kIsWeb ? 12 : 20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: Theme.of(context).brightness == Brightness.dark
@@ -119,14 +119,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(kIsWeb ? 10 : 15),
                   boxShadow: [
                     BoxShadow(
                       color: Theme.of(context).brightness == Brightness.dark
                           ? Colors.black.withAlpha((255 * 0.5).round())
                           : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
+                      blurRadius: kIsWeb ? 6 : 10,
+                      offset: Offset(0, kIsWeb ? 3 : 5),
                     ),
                   ],
                 ),
@@ -137,7 +137,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     text,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, 22),
+                      fontSize: ResponsiveConfig.getFontSize(context, kIsWeb ? 18 : 22),
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -145,7 +145,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 }),
               ),
               
-              // Options Grid
+              // Options Grid - Fixed layout without scroll
               Expanded(
                 child: LayoutBuilder(
                   builder: (context, constraints) {
@@ -153,34 +153,26 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     if (kIsWeb) {
                       // On web, use responsive grid with smaller cards (more columns)
                       final width = constraints.maxWidth;
-                      final targetTileWidth = 260.0;
+                      final targetTileWidth = 180.0; // Reduced from 220 to fit more
                       final cols = width ~/ targetTileWidth;
-                      final crossAxisCount = cols.clamp(2, 6);
-                      return GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: crossAxisCount,
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 16,
-                          childAspectRatio: 1.15,
-                        ),
-                        itemCount: options.length,
-                        itemBuilder: (context, index) {
-                          return _buildOptionCard(context, options[index]);
-                        },
+                      final crossAxisCount = cols.clamp(3, 8); // Min 3, max 8 columns
+                      return GridView.count(
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        childAspectRatio: 1.25, // Slightly taller cards
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: options.map((option) => _buildOptionCard(context, option)).toList(),
                       );
                     }
-                    // Mobile/tablet default 2 columns
-                    return GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: isSmallScreen ? 10 : 15,
-                        mainAxisSpacing: isSmallScreen ? 10 : 15,
-                        childAspectRatio: isTablet ? 1.2 : 1.05, // Increased from 1.0 to 1.05 to prevent overflow
-                      ),
-                      itemCount: options.length,
-                      itemBuilder: (context, index) {
-                        return _buildOptionCard(context, options[index]);
-                      },
+                    // Mobile/tablet default 2 columns - no scroll
+                    return GridView.count(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: isSmallScreen ? 10 : 15,
+                      mainAxisSpacing: isSmallScreen ? 10 : 15,
+                      childAspectRatio: isTablet ? 1.2 : 1.05,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: options.map((option) => _buildOptionCard(context, option)).toList(),
                     );
                   },
                 ),
@@ -287,7 +279,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
         onTap: () => _handleOptionTap(context, option),
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+          padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
@@ -305,24 +297,24 @@ class _OptionsScreenState extends State<OptionsScreen> {
             children: [
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+                  padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
                   decoration: BoxDecoration(
                     color: option.color.withAlpha((255 * 0.1).round()),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     option.icon,
-                    size: isSmallScreen ? 26 : 30,
+                    size: kIsWeb ? 24 : (isSmallScreen ? 26 : 30),
                     color: option.color,
                   ),
                 ),
               ),
-              SizedBox(height: isSmallScreen ? 8 : 10),
+              SizedBox(height: kIsWeb ? 6 : (isSmallScreen ? 8 : 10)),
               Flexible(
                 child: Text(
                   option.title,
                   style: TextStyle(
-                    fontSize: ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontSize: kIsWeb ? 12 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -332,12 +324,12 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 ),
               ),
               if (option.subtitle.isNotEmpty) ...[
-                SizedBox(height: isSmallScreen ? 2 : 4),
+                SizedBox(height: kIsWeb ? 2 : (isSmallScreen ? 2 : 4)),
                 Flexible(
                   child: Text(
                     option.subtitle,
                     style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, 11),
+                      fontSize: kIsWeb ? 10 : ResponsiveConfig.getFontSize(context, 11),
                       color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
                     ),
                     textAlign: TextAlign.center,

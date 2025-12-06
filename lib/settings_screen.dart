@@ -43,88 +43,32 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: ResponsiveConfig.getPadding(context),
-          child: Column(
-            children: [
-              // Header
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
-                margin: const EdgeInsets.only(bottom: 20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: Theme.of(context).brightness == Brightness.dark
-                        ? [
-                            const Color(0xFF2C2C2C),
-                            const Color(0xFF1E1E1E),
-                          ]
-                        : [
-                            Theme.of(context).colorScheme.primary,
-                            Theme.of(context).colorScheme.primaryContainer,
-                          ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withAlpha((255 * 0.5).round())
-                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.settings,
-                      size: isSmallScreen ? 40 : 50,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
-              
-              // Settings Grid
-              Expanded(
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final settings = _getSettings(context);
-                    if (kIsWeb) {
-                      final width = constraints.maxWidth;
-                      final targetTileWidth = 240.0;
-                      final cols = width ~/ targetTileWidth;
-                      final crossAxisCount = cols.clamp(2, 6);
-                      return GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: crossAxisCount,
-                          crossAxisSpacing: 16,
-                          mainAxisSpacing: 16,
-                          childAspectRatio: 1.15,
-                        ),
-                        itemCount: settings.length,
-                        itemBuilder: (context, index) {
-                          return _buildSettingCard(context, settings[index]);
-                        },
-                      );
-                    }
-                    return GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: isSmallScreen ? 10 : 15,
-                        mainAxisSpacing: isSmallScreen ? 10 : 15,
-                        childAspectRatio: isTablet ? 1.2 : 1.05, // Increased from 1.0 to 1.05 to prevent overflow
-                      ),
-                      itemCount: settings.length,
-                      itemBuilder: (context, index) {
-                        return _buildSettingCard(context, settings[index]);
-                      },
-                    );
-                  },
-                ),
-              ),
-            ],
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final settings = _getSettings(context);
+              if (kIsWeb) {
+                final width = constraints.maxWidth;
+                final targetTileWidth = 180.0;
+                final cols = width ~/ targetTileWidth;
+                final crossAxisCount = cols.clamp(3, 8);
+                return GridView.count(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 1.25,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: settings.map((s) => _buildSettingCard(context, s)).toList(),
+                );
+              }
+              return GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: isSmallScreen ? 10 : 15,
+                mainAxisSpacing: isSmallScreen ? 10 : 15,
+                childAspectRatio: isTablet ? 1.2 : 1.05,
+                physics: const NeverScrollableScrollPhysics(),
+                children: settings.map((s) => _buildSettingCard(context, s)).toList(),
+              );
+            },
           ),
         ),
       ),
@@ -244,7 +188,7 @@ class SettingsScreen extends StatelessWidget {
         onTap: () => _handleSettingTap(context, setting),
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+          padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             gradient: LinearGradient(
@@ -262,24 +206,24 @@ class SettingsScreen extends StatelessWidget {
             children: [
               Flexible(
                 child: Container(
-                  padding: EdgeInsets.all(isSmallScreen ? 10 : 14),
+                  padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
                   decoration: BoxDecoration(
                     color: setting.color.withAlpha((255 * 0.1).round()),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     setting.icon,
-                    size: isSmallScreen ? 26 : 30,
+                    size: kIsWeb ? 24 : (isSmallScreen ? 26 : 30),
                     color: setting.color,
                   ),
                 ),
               ),
-              SizedBox(height: isSmallScreen ? 8 : 10),
+              SizedBox(height: kIsWeb ? 6 : (isSmallScreen ? 8 : 10)),
               Flexible(
                 child: Text(
                   setting.title,
                   style: TextStyle(
-                    fontSize: ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontSize: kIsWeb ? 12 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -289,12 +233,12 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
               if (setting.subtitle.isNotEmpty) ...[
-                SizedBox(height: isSmallScreen ? 2 : 4),
+                SizedBox(height: kIsWeb ? 2 : (isSmallScreen ? 2 : 4)),
                 Flexible(
                   child: Text(
                     setting.subtitle,
                     style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, 11),
+                      fontSize: kIsWeb ? 10 : ResponsiveConfig.getFontSize(context, 11),
                       color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
                     ),
                     textAlign: TextAlign.center,

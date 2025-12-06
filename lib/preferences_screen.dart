@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
@@ -402,216 +403,362 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
         ),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Padding(
           padding: ResponsiveConfig.getPadding(context),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Name
-              Card(
-                elevation: 3,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+          child: kIsWeb
+              ? _buildWebLayout(context, l10n, isSmallScreen)
+              : _buildMobileLayout(context, l10n, isSmallScreen),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildWebLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Left column
+          Expanded(
+            child: Column(
+              children: [
+                _buildNameCard(context, l10n, isSmallScreen),
+                const SizedBox(height: 12),
+                _buildDropdownSection(
+                  context,
+                  title: l10n.reciter,
+                  icon: Icons.mic,
+                  iconColor: Colors.purple,
+                  initialValue: _getReciterDisplayNameFromKey(
+                        (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
+                        context,
+                      ) ??
+                      _getReciterDisplayNames(context).first,
+                  items: _getReciterDisplayNames(context),
+                  onChanged: (String? value) {
+                    if (value == null) return;
+                    setState(() {
+                      _selectedReciter = _getReciterKeyFromDisplayName(value, context) ?? 'afs';
+                    });
+                  },
                 ),
-                child: Padding(
-                  padding: EdgeInsets.all(isSmallScreen ? 14 : 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: Colors.teal.withAlpha((255 * 0.1).round()),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: const Icon(Icons.person, color: Colors.teal, size: 22),
-                          ),
-                          const SizedBox(width: 12),
-                          Text(
-                            l10n.name,
-                            style: TextStyle(
-                              fontSize: ResponsiveConfig.getFontSize(context, 16),
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).colorScheme.onSurface,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12),
-                      TextField(
-                        controller: _nameController,
-                        textAlign: TextAlign.right,
-                        decoration: InputDecoration(
-                          hintText: l10n.enterYourName,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                        ),
-                      ),
-                    ],
-                  ),
+                const SizedBox(height: 12),
+                _buildDropdownSection(
+                  context,
+                  title: l10n.theme,
+                  icon: Icons.palette,
+                  iconColor: Colors.orange,
+                  initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
+                  items: _getThemeDisplayNames(context),
+                  onChanged: (String? value) {
+                    if (value == null) return;
+                    setState(() {
+                      _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
+                    });
+                  },
                 ),
-              ),
-              const SizedBox(height: 16),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
-                margin: const EdgeInsets.only(bottom: 20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: Theme.of(context).brightness == Brightness.dark
-                        ? [
-                            const Color(0xFF2C2C2C),
-                            const Color(0xFF1E1E1E),
-                          ]
-                        : [
-                            Theme.of(context).colorScheme.primary,
-                            Theme.of(context).colorScheme.primaryContainer,
-                          ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withAlpha((255 * 0.5).round())
-                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
+                const SizedBox(height: 12),
+                _buildDropdownSection(
+                  context,
+                  title: l10n.arabicFont,
+                  icon: Icons.font_download,
+                  iconColor: Colors.brown,
+                  initialValue: _getArabicFontLabel(_selectedArabicFont, context),
+                  items: _getArabicFontDisplayNames(context),
+                  onChanged: (String? value) {
+                    if (value == null) return;
+                    setState(() {
+                      _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
+                    });
+                  },
                 ),
-                child: Column(
-                  children: [
-                    Icon(
-                      Icons.tune,
-                      size: isSmallScreen ? 40 : 50,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
-              _buildDropdownSection(
-                context,
-                title: l10n.reciter,
-                icon: Icons.mic,
-                iconColor: Colors.purple,
-                initialValue: _getReciterDisplayNameFromKey(
-                      (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
-                      context,
-                    ) ??
-                    _getReciterDisplayNames(context).first,
-                items: _getReciterDisplayNames(context),
-                onChanged: (String? value) {
-                  if (value == null) return;
-                  setState(() {
-                    _selectedReciter = _getReciterKeyFromDisplayName(value, context) ?? 'afs';
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              _buildDropdownSection(
-                context,
-                title: l10n.theme,
-                icon: Icons.palette,
-                iconColor: Colors.orange,
-                initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
-                items: _getThemeDisplayNames(context),
-                onChanged: (String? value) {
-                  if (value == null) return;
-                  setState(() {
-                    _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              _buildDropdownSection(
-                context,
-                title: l10n.arabicFont,
-                icon: Icons.font_download,
-                iconColor: Colors.brown,
-                initialValue: _getArabicFontLabel(_selectedArabicFont, context),
-                items: _getArabicFontDisplayNames(context),
-                onChanged: (String? value) {
-                  if (value == null) return;
-                  setState(() {
-                    _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              _buildDropdownSection(
-                context,
-                title: l10n.fontSize,
-                icon: Icons.text_fields,
-                iconColor: Colors.indigo,
-                initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
-                items: _getFontSizeDisplayNames(context),
-                onChanged: (String? value) {
-                  if (value == null) return;
-                  setState(() {
-                    _selectedFontSize = _getFontSizeFromDisplayName(value, context);
-                  });
-                },
-              ),
-              const SizedBox(height: 16),
-              _buildVerseRepeatSection(context),
-              const SizedBox(height: 16),
-              _buildDropdownSection(
-                context,
-                title: l10n.language,
-                icon: Icons.language,
-                iconColor: Colors.teal,
-                initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
-                items: _getLanguageOptions(context),
-                onChanged: (String? value) async {
-                  final newLangCode = _getLanguageCode(value!, context);
-                  setState(() {
-                    _selectedLanguage = newLangCode;
-                  });
-                  // Wait for saving language before updating locale
-                  await PreferencesService.saveLanguage(newLangCode);
-                  // Update app locale after saving
-                  QuraniApp.of(context).setLocale(Locale(newLangCode));
-                  // Force rebuild to update all dropdowns
-                  await Future.delayed(const Duration(milliseconds: 100));
-                  if (mounted) {
-                    setState(() {});
-                  }
-                },
-              ),
-              const SizedBox(height: 24),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: _savePreferences,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.symmetric(
-                      vertical: isSmallScreen ? 14 : 16,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    elevation: 4,
-                  ),
-                  child: Text(
-                    l10n.savePreferences,
-                    style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, 16),
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 16),
-            ],
+              ],
+            ),
           ),
+          const SizedBox(width: 16),
+          // Right column
+          Expanded(
+            child: Column(
+              children: [
+                _buildDropdownSection(
+                  context,
+                  title: l10n.fontSize,
+                  icon: Icons.text_fields,
+                  iconColor: Colors.indigo,
+                  initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
+                  items: _getFontSizeDisplayNames(context),
+                  onChanged: (String? value) {
+                    if (value == null) return;
+                    setState(() {
+                      _selectedFontSize = _getFontSizeFromDisplayName(value, context);
+                    });
+                  },
+                ),
+                const SizedBox(height: 12),
+                _buildVerseRepeatSection(context),
+                const SizedBox(height: 12),
+                _buildDropdownSection(
+                  context,
+                  title: l10n.language,
+                  icon: Icons.language,
+                  iconColor: Colors.teal,
+                  initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
+                  items: _getLanguageOptions(context),
+                  onChanged: (String? value) async {
+                    final newLangCode = _getLanguageCode(value!, context);
+                    setState(() {
+                      _selectedLanguage = newLangCode;
+                    });
+                    await PreferencesService.saveLanguage(newLangCode);
+                    QuraniApp.of(context).setLocale(Locale(newLangCode));
+                    await Future.delayed(const Duration(milliseconds: 100));
+                    if (mounted) {
+                      setState(() {});
+                    }
+                  },
+                ),
+                const SizedBox(height: 16),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _savePreferences,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      elevation: 4,
+                    ),
+                    child: Text(
+                      l10n.savePreferences,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildMobileLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
+    return SingleChildScrollView(
+      padding: EdgeInsets.zero,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildNameCard(context, l10n, isSmallScreen),
+          const SizedBox(height: 16),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
+            margin: const EdgeInsets.only(bottom: 20),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: Theme.of(context).brightness == Brightness.dark
+                    ? [
+                        const Color(0xFF2C2C2C),
+                        const Color(0xFF1E1E1E),
+                      ]
+                    : [
+                        Theme.of(context).colorScheme.primary,
+                        Theme.of(context).colorScheme.primaryContainer,
+                      ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(15),
+              boxShadow: [
+                BoxShadow(
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? Colors.black.withAlpha((255 * 0.5).round())
+                      : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
+                  blurRadius: 10,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.tune,
+                  size: isSmallScreen ? 40 : 50,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ),
+          _buildDropdownSection(
+            context,
+            title: l10n.reciter,
+            icon: Icons.mic,
+            iconColor: Colors.purple,
+            initialValue: _getReciterDisplayNameFromKey(
+                  (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
+                  context,
+                ) ??
+                _getReciterDisplayNames(context).first,
+            items: _getReciterDisplayNames(context),
+            onChanged: (String? value) {
+              if (value == null) return;
+              setState(() {
+                _selectedReciter = _getReciterKeyFromDisplayName(value, context) ?? 'afs';
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          _buildDropdownSection(
+            context,
+            title: l10n.theme,
+            icon: Icons.palette,
+            iconColor: Colors.orange,
+            initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
+            items: _getThemeDisplayNames(context),
+            onChanged: (String? value) {
+              if (value == null) return;
+              setState(() {
+                _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          _buildDropdownSection(
+            context,
+            title: l10n.arabicFont,
+            icon: Icons.font_download,
+            iconColor: Colors.brown,
+            initialValue: _getArabicFontLabel(_selectedArabicFont, context),
+            items: _getArabicFontDisplayNames(context),
+            onChanged: (String? value) {
+              if (value == null) return;
+              setState(() {
+                _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          _buildDropdownSection(
+            context,
+            title: l10n.fontSize,
+            icon: Icons.text_fields,
+            iconColor: Colors.indigo,
+            initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
+            items: _getFontSizeDisplayNames(context),
+            onChanged: (String? value) {
+              if (value == null) return;
+              setState(() {
+                _selectedFontSize = _getFontSizeFromDisplayName(value, context);
+              });
+            },
+          ),
+          const SizedBox(height: 16),
+          _buildVerseRepeatSection(context),
+          const SizedBox(height: 16),
+          _buildDropdownSection(
+            context,
+            title: l10n.language,
+            icon: Icons.language,
+            iconColor: Colors.teal,
+            initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
+            items: _getLanguageOptions(context),
+            onChanged: (String? value) async {
+              final newLangCode = _getLanguageCode(value!, context);
+              setState(() {
+                _selectedLanguage = newLangCode;
+              });
+              await PreferencesService.saveLanguage(newLangCode);
+              QuraniApp.of(context).setLocale(Locale(newLangCode));
+              await Future.delayed(const Duration(milliseconds: 100));
+              if (mounted) {
+                setState(() {});
+              }
+            },
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: _savePreferences,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.primary,
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(
+                  vertical: isSmallScreen ? 14 : 16,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                elevation: 4,
+              ),
+              child: Text(
+                l10n.savePreferences,
+                style: TextStyle(
+                  fontSize: ResponsiveConfig.getFontSize(context, 16),
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildNameCard(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
+    return Card(
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(kIsWeb ? 12 : (isSmallScreen ? 14 : 16)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.teal.withAlpha((255 * 0.1).round()),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Icon(Icons.person, color: Colors.teal, size: kIsWeb ? 18 : 22),
+                ),
+                const SizedBox(width: 12),
+                Text(
+                  l10n.name,
+                  style: TextStyle(
+                    fontSize: kIsWeb ? 14 : ResponsiveConfig.getFontSize(context, 16),
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: _nameController,
+              textAlign: TextAlign.right,
+              style: TextStyle(fontSize: kIsWeb ? 13 : 14),
+              decoration: InputDecoration(
+                hintText: l10n.enterYourName,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: kIsWeb ? 10 : 12),
+              ),
+            ),
+          ],
         ),
       ),
     );

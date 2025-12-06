@@ -489,6 +489,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get goToPage => 'Go to page';
 
   @override
+  String get pageNumber => 'Page Number';
+
+  @override
+  String get previousPage => 'Previous';
+
+  @override
+  String get nextPage => 'Next';
+
+  @override
   String get page => 'Page';
 
   @override

@@ -1033,6 +1033,24 @@ abstract class AppLocalizations {
   /// **'Go to page'**
   String get goToPage;
 
+  /// No description provided for @pageNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Page Number'**
+  String get pageNumber;
+
+  /// No description provided for @previousPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get previousPage;
+
+  /// No description provided for @nextPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get nextPage;
+
   /// No description provided for @page.
   ///
   /// In en, this message translates to:

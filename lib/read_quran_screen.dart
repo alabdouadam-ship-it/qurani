@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
@@ -224,6 +225,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   Future<void> _openPagePicker() async {
     final l10n = AppLocalizations.of(context)!;
     final initialIndex = _currentPage - 1;
+    final textController = TextEditingController(text: _currentPage.toString());
+    
     final selected = await showModalBottomSheet<int>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -232,63 +235,105 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       builder: (context) {
         int tempIndex = initialIndex;
         return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                child: Text(
-                  l10n.goToPage,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
+          child: SizedBox(
+            height: 380, // Fixed height to prevent overflow
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
+                    l10n.goToPage,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium
+                        ?.copyWith(fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 200,
-                child: CupertinoPicker(
-                  itemExtent: 40,
-                  scrollController:
-                      FixedExtentScrollController(initialItem: initialIndex),
-                  onSelectedItemChanged: (value) {
-                    tempIndex = value;
-                  },
-                  children: List.generate(
-                    _totalPages,
-                    (i) => Center(
-                      child: Text(
-                        '${i + 1}',
-                        style: Theme.of(context).textTheme.titleLarge,
+                // Text field for direct input
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+                  child: TextField(
+                    controller: textController,
+                    keyboardType: TextInputType.number,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium,
+                    decoration: InputDecoration(
+                      labelText: l10n.pageNumber,
+                      hintText: '1-$_totalPages',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      isDense: true,
+                    ),
+                    onChanged: (value) {
+                      final page = int.tryParse(value);
+                      if (page != null && page >= 1 && page <= _totalPages) {
+                        tempIndex = page - 1;
+                      }
+                    },
+                  ),
+                ),
+                const SizedBox(height: 4),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  child: Divider(height: 1),
+                ),
+                const SizedBox(height: 4),
+                SizedBox(
+                  height: 200,
+                  child: CupertinoPicker(
+                    itemExtent: 40,
+                    scrollController:
+                        FixedExtentScrollController(initialItem: initialIndex),
+                    onSelectedItemChanged: (value) {
+                      tempIndex = value;
+                      textController.text = (value + 1).toString();
+                    },
+                    children: List.generate(
+                      _totalPages,
+                      (i) => Center(
+                        child: Text(
+                          '${i + 1}',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: Text(l10n.cancel),
-                    ),
-                    FilledButton(
-                      onPressed: () =>
-                          Navigator.pop<int>(context, tempIndex + 1),
-                      child: Text(l10n.go),
-                    ),
-                  ],
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text(l10n.cancel),
+                      ),
+                      FilledButton(
+                        onPressed: () {
+                          final page = int.tryParse(textController.text);
+                          if (page != null && page >= 1 && page <= _totalPages) {
+                            Navigator.pop<int>(context, page);
+                          } else {
+                            Navigator.pop<int>(context, tempIndex + 1);
+                          }
+                        },
+                        child: Text(l10n.go),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
     );
 
+    textController.dispose();
     if (selected != null) {
       _goToPage(selected);
     }
@@ -1301,6 +1346,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            // Previous button (web only)
+            if (kIsWeb)
+              IconButton(
+                onPressed: _currentPage > 1 ? () => _goToPage(_currentPage - 1) : null,
+                icon: const Icon(Icons.arrow_back),
+                tooltip: l10n.previousPage,
+              ),
             Expanded(
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,
@@ -1323,6 +1375,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                 ),
               ),
             ),
+            // Next button (web only)
+            if (kIsWeb)
+              IconButton(
+                onPressed: _currentPage < _totalPages ? () => _goToPage(_currentPage + 1) : null,
+                icon: const Icon(Icons.arrow_forward),
+                tooltip: l10n.nextPage,
+              ),
             Expanded(
               child: GestureDetector(
                 behavior: HitTestBehavior.opaque,

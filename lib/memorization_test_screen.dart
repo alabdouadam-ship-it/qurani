@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/memorization_test_service.dart';
 import 'package:qurani/services/surah_service.dart';
@@ -87,7 +88,21 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         final surahs = q.isEmpty
             ? allSurahs
             : allSurahs.where((s) => TextNormalizer.normalize(s.name).contains(q)).toList();
-        final crossAxisCount = isSmallScreen ? 2 : 3;
+        
+        // On web: 8-12 columns based on width, on tablet: 3 columns, on mobile: 2 columns
+        int crossAxisCount;
+        if (kIsWeb) {
+          final width = MediaQuery.of(context).size.width;
+          if (width >= 1600) {
+            crossAxisCount = 12;
+          } else if (width >= 1200) {
+            crossAxisCount = 10;
+          } else {
+            crossAxisCount = 8;
+          }
+        } else {
+          crossAxisCount = isSmallScreen ? 2 : 3;
+        }
         
         return Column(
           children: [
@@ -114,9 +129,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                 padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                  childAspectRatio: 1.8,
+                  crossAxisSpacing: kIsWeb ? 8 : 12,
+                  mainAxisSpacing: kIsWeb ? 8 : 12,
+                  childAspectRatio: kIsWeb ? 3.0 : 1.8,
                 ),
                 itemCount: surahs.length,
                 itemBuilder: (context, index) {
@@ -332,15 +347,29 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final l10n = AppLocalizations.of(context)!;
-    final crossAxisCount = isSmallScreen ? 2 : 4;
+    
+    // On web: 8-12 columns based on width, on tablet: 4 columns, on mobile: 2 columns
+    int crossAxisCount;
+    if (kIsWeb) {
+      final width = MediaQuery.of(context).size.width;
+      if (width >= 1600) {
+        crossAxisCount = 12;
+      } else if (width >= 1200) {
+        crossAxisCount = 10;
+      } else {
+        crossAxisCount = 8;
+      }
+    } else {
+      crossAxisCount = isSmallScreen ? 2 : 4;
+    }
 
     return GridView.builder(
       padding: const EdgeInsets.all(12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 1.8,
+        crossAxisSpacing: kIsWeb ? 8 : 12,
+        mainAxisSpacing: kIsWeb ? 8 : 12,
+        childAspectRatio: kIsWeb ? 3.0 : 1.8,
       ),
       itemCount: 30,
       itemBuilder: (context, index) {

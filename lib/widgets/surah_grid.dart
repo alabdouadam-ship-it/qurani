@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import '../models/surah.dart';
 import '../services/preferences_service.dart';
 import '../services/queue_service.dart';
@@ -135,7 +136,22 @@ class _SurahGridState extends State<SurahGrid> {
     final theme = Theme.of(context);
     final color = theme.colorScheme;
     final size = MediaQuery.of(context).size;
-    final crossAxisCount = size.width >= 768 ? 4 : 2;
+    
+    // Optimize for web: 8-12 columns based on width
+    int crossAxisCount;
+    if (kIsWeb) {
+      final width = size.width;
+      if (width >= 1600) {
+        crossAxisCount = 12;
+      } else if (width >= 1200) {
+        crossAxisCount = 10;
+      } else {
+        crossAxisCount = 8;
+      }
+    } else {
+      crossAxisCount = size.width >= 768 ? 4 : 2;
+    }
+    
     return FutureBuilder<List<Surah>>(
       future: _future,
       builder: (context, snapshot) {
@@ -188,9 +204,9 @@ class _SurahGridState extends State<SurahGrid> {
                 padding: widget.padding ?? const EdgeInsets.fromLTRB(12, 12, 12, 50),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                  childAspectRatio: 1.8,
+                  crossAxisSpacing: kIsWeb ? 8 : 12,
+                  mainAxisSpacing: kIsWeb ? 8 : 12,
+                  childAspectRatio: kIsWeb ? 3.0 : 1.8,
                 ),
                 itemCount: filtered.length,
                 itemBuilder: (context, index) {
@@ -227,15 +243,22 @@ class _SurahGridState extends State<SurahGrid> {
                         border: Border.all(color: borderColor, width: isFeatured ? 1.4 : 1.0),
                         boxShadow: boxShadow,
                       ),
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: kIsWeb ? 6 : 12,
+                        vertical: kIsWeb ? 4 : 10,
+                      ),
                       child: Row(
                         children: [
                           CircleAvatar(
                             backgroundColor: color.primary.withAlpha((255 * 0.1).round()),
                             foregroundColor: color.primary,
-                            child: Text('${surah.order}'),
+                            radius: kIsWeb ? 12 : 18,
+                            child: Text(
+                              '${surah.order}',
+                              style: TextStyle(fontSize: kIsWeb ? 10 : 14),
+                            ),
                           ),
-                          const SizedBox(width: 10),
+                          SizedBox(width: kIsWeb ? 4 : 10),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,30 +271,34 @@ class _SurahGridState extends State<SurahGrid> {
                                   style: theme.textTheme.titleMedium?.copyWith(
                                     color: color.onSurface,
                                     fontWeight: FontWeight.w600,
+                                    fontSize: kIsWeb ? 11 : null,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  '${surah.totalVerses} ${l10n.verses}',
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                    color: color.onSurface.withAlpha((255 * 0.6).round()),
+                                if (!kIsWeb || crossAxisCount <= 10) ...[
+                                  SizedBox(height: kIsWeb ? 1 : 4),
+                                  Text(
+                                    '${surah.totalVerses} ${l10n.verses}',
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: color.onSurface.withAlpha((255 * 0.6).round()),
+                                      fontSize: kIsWeb ? 9 : null,
+                                    ),
                                   ),
-                                ),
+                                ],
                               ],
                             ),
                           ),
                           if (widget.showQueueActions && isInQueue)
                             Icon(
                               Icons.queue_music,
-                              size: 18,
+                              size: kIsWeb ? 12 : 18,
                               color: color.primary,
                             ),
                           if (isFeatured)
                             Padding(
-                              padding: const EdgeInsets.only(left: 6),
+                              padding: EdgeInsets.only(left: kIsWeb ? 2 : 6),
                               child: Icon(
                                 Icons.star,
-                                size: 18,
+                                size: kIsWeb ? 12 : 18,
                                 color: Colors.amber.shade600,
                               ),
                             ),

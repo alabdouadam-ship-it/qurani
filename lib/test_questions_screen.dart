@@ -349,111 +349,109 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
                   valueColor: AlwaysStoppedAnimation<Color>(colorScheme.primary),
                 ),
                 const SizedBox(height: 16),
+                // Question card - compact
+                Card(
+                  elevation: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Text(
+                        question.text,
+                        textDirection: TextDirection.rtl,
+                        style: theme.textTheme.titleMedium?.copyWith(
+                          fontSize: PreferencesService.getFontSize() + 2,
+                          fontWeight: FontWeight.bold,
+                          height: 1.6,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                // Answers list - takes remaining space
                 Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Card(
-                          elevation: 2,
-                          child: Padding(
-                            padding: const EdgeInsets.all(16),
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                question.text,
-                                textDirection: TextDirection.rtl,
-                                style: theme.textTheme.titleLarge?.copyWith(
-                                  fontSize: PreferencesService.getFontSize() + 4,
-                                  fontWeight: FontWeight.bold,
-                                  height: 1.9,
-                                ),
+                  child: ListView.builder(
+                    itemCount: question.options.length,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      final option = question.options[index];
+                      final isSelected = _selectedAnswer == index;
+                      final isCorrectOption = index == question.correctIndex;
+                      final selectedIndex = _answers[_currentIndex];
+                      Color? backgroundColor;
+                      Color? textColor;
+
+                      if (hasAnswered) {
+                        if (isCorrectOption) {
+                          backgroundColor = Colors.green.withAlpha((255 * 0.2).round());
+                          textColor = Colors.green.shade700;
+                        } else if (selectedIndex == index && !isCorrect) {
+                          backgroundColor = Colors.red.withAlpha((255 * 0.2).round());
+                          textColor = Colors.red.shade700;
+                        }
+                      } else if (isSelected) {
+                        backgroundColor = colorScheme.primaryContainer.withAlpha((255 * 0.3).round());
+                        textColor = colorScheme.onPrimaryContainer;
+                      }
+
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Card(
+                          elevation: isSelected ? 4 : 1,
+                          color: backgroundColor,
+                          child: InkWell(
+                            onTap: hasAnswered || _isShowingResult ? null : () => _selectAnswer(index),
+                            borderRadius: BorderRadius.circular(12),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 28,
+                                    height: 28,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: isSelected
+                                          ? colorScheme.primary
+                                          : colorScheme.surfaceContainerHighest,
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${index + 1}',
+                                        style: TextStyle(
+                                          color: isSelected
+                                              ? colorScheme.onPrimary
+                                              : colorScheme.onSurfaceVariant,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: PreferencesService.getFontSize() - 2,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Expanded(
+                                    child: Text(
+                                      option,
+                                      textDirection: TextDirection.rtl,
+                                      style: theme.textTheme.bodyMedium?.copyWith(
+                                        color: textColor ?? colorScheme.onSurface,
+                                        fontSize: PreferencesService.getFontSize() - 1,
+                                        height: 1.5,
+                                      ),
+                                    ),
+                                  ),
+                                  if (hasAnswered && isCorrectOption)
+                                    const Icon(Icons.check_circle, color: Colors.green, size: 20),
+                                  if (hasAnswered && selectedIndex == index && !isCorrect && !isCorrectOption)
+                                    const Icon(Icons.cancel, color: Colors.red, size: 20),
+                                ],
                               ),
                             ),
                           ),
                         ),
-                        const SizedBox(height: 16),
-                        ...question.options.asMap().entries.map((entry) {
-                          final index = entry.key;
-                          final option = entry.value;
-                          final isSelected = _selectedAnswer == index;
-                          final isCorrectOption = index == question.correctIndex;
-                          final selectedIndex = _answers[_currentIndex];
-                          Color? backgroundColor;
-                          Color? textColor;
-
-                          if (hasAnswered) {
-                            if (isCorrectOption) {
-                              backgroundColor = Colors.green.withAlpha((255 * 0.2).round());
-                              textColor = Colors.green.shade700;
-                            } else if (selectedIndex == index && !isCorrect) {
-                              backgroundColor = Colors.red.withAlpha((255 * 0.2).round());
-                              textColor = Colors.red.shade700;
-                            }
-                          } else if (isSelected) {
-                            backgroundColor = colorScheme.primaryContainer.withAlpha((255 * 0.3).round());
-                            textColor = colorScheme.onPrimaryContainer;
-                          }
-
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 12),
-                            child: Card(
-                              elevation: isSelected ? 4 : 1,
-                              color: backgroundColor,
-                              child: InkWell(
-                                onTap: hasAnswered || _isShowingResult ? null : () => _selectAnswer(index),
-                                borderRadius: BorderRadius.circular(12),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        width: 32,
-                                        height: 32,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: isSelected
-                                              ? colorScheme.primary
-                                              : colorScheme.surfaceContainerHighest,
-                                        ),
-                                        child: Center(
-                                          child: Text(
-                                            '${index + 1}', // 1, 2, 3, 4
-                                            style: TextStyle(
-                                              color: isSelected
-                                                  ? colorScheme.onPrimary
-                                                  : colorScheme.onSurfaceVariant,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: PreferencesService.getFontSize(),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Expanded(
-                                        child: Text(
-                                          option,
-                                          textDirection: TextDirection.rtl,
-                                        style: theme.textTheme.bodyLarge?.copyWith(
-                                          color: textColor ?? colorScheme.onSurface,
-                                          fontSize: PreferencesService.getFontSize(),
-                                          height: 1.7,
-                                        ),
-                                        ),
-                                      ),
-                                      if (hasAnswered && isCorrectOption)
-                                        const Icon(Icons.check_circle, color: Colors.green),
-                                      if (hasAnswered && selectedIndex == index && !isCorrect && !isCorrectOption)
-                                        const Icon(Icons.cancel, color: Colors.red),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          );
-                        }),
-                      ],
-                    ),
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(height: 16),
