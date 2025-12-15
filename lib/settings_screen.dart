@@ -65,7 +65,6 @@ class SettingsScreen extends StatelessWidget {
                 crossAxisSpacing: isSmallScreen ? 10 : 15,
                 mainAxisSpacing: isSmallScreen ? 10 : 15,
                 childAspectRatio: isTablet ? 1.2 : 1.05,
-                physics: const NeverScrollableScrollPhysics(),
                 children: settings.map((s) => _buildSettingCard(context, s)).toList(),
               );
             },

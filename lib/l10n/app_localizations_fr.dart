@@ -92,6 +92,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get contactViaEmail => 'Email';
 
   @override
+  String get contactViaWhatsAppGroup => 'Groupe WhatsApp';
+
+  @override
   String get copy => 'Copier';
 
   @override
@@ -833,4 +836,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get getInTouch => 'Nous contacter';
+
+  @override
+  String get readAutoFlip => 'Auto flip page';
+
+  @override
+  String get readAutoFlipDesc => 'Automatically turn the page when audio ends.';
+
+  @override
+  String get chooseReciter => 'Choose reciter';
+
+  @override
+  String get chooseReciterDesc => 'Select your preferred reciter.';
+
+  @override
+  String get rangeRepeatCount => 'Range repeat count';
 }

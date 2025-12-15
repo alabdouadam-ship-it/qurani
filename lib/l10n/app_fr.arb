@@ -58,6 +58,8 @@
   "@contactViaWhatsApp": {},
   "contactViaEmail": "Email",
   "@contactViaEmail": {},
+  "contactViaWhatsAppGroup": "Groupe WhatsApp",
+  "@contactViaWhatsAppGroup": {},
   "copy": "Copier",
   "@copy": {},
   "copied": "Copié",

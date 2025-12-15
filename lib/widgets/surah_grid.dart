@@ -245,7 +245,7 @@ class _SurahGridState extends State<SurahGrid> {
                       ),
                       padding: EdgeInsets.symmetric(
                         horizontal: kIsWeb ? 6 : 12,
-                        vertical: kIsWeb ? 4 : 10,
+                        vertical: kIsWeb ? 3 : 10,
                       ),
                       child: Row(
                         children: [
@@ -263,6 +263,7 @@ class _SurahGridState extends State<SurahGrid> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Text(
                                   surah.name.replaceAll(RegExp(r'^سُورَةُ\s+'), ''),

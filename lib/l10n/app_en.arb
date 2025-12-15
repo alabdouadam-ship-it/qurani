@@ -58,6 +58,8 @@
   "@contactViaWhatsApp": {},
   "contactViaEmail": "Email",
   "@contactViaEmail": {},
+  "contactViaWhatsAppGroup": "WhatsApp Group",
+  "@contactViaWhatsAppGroup": {},
   "copy": "Copy",
   "@copy": {},
   "copied": "Copied",
@@ -571,4 +573,14 @@
   ,"@shareIdeaDesc":{}
   ,"getInTouch":"Get in touch"
   ,"@getInTouch":{}
+  ,"readAutoFlip": "Auto flip page"
+  ,"@readAutoFlip": {}
+  ,"readAutoFlipDesc": "Automatically turn the page when audio ends."
+  ,"@readAutoFlipDesc": {}
+  ,"chooseReciter": "Choose reciter"
+  ,"@chooseReciter": {}
+  ,"chooseReciterDesc": "Select your preferred reciter."
+  ,"@chooseReciterDesc": {}
+  ,"rangeRepeatCount": "Range repeat count"
+  ,"@rangeRepeatCount": {}
 }

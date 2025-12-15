@@ -259,6 +259,12 @@ abstract class AppLocalizations {
   /// **'Email'**
   String get contactViaEmail;
 
+  /// No description provided for @contactViaWhatsAppGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp Group'**
+  String get contactViaWhatsAppGroup;
+
   /// No description provided for @copy.
   ///
   /// In en, this message translates to:
@@ -1680,6 +1686,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Get in touch'**
   String get getInTouch;
+
+  /// No description provided for @readAutoFlip.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto flip page'**
+  String get readAutoFlip;
+
+  /// No description provided for @readAutoFlipDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatically turn the page when audio ends.'**
+  String get readAutoFlipDesc;
+
+  /// No description provided for @chooseReciter.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose reciter'**
+  String get chooseReciter;
+
+  /// No description provided for @chooseReciterDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your preferred reciter.'**
+  String get chooseReciterDesc;
+
+  /// No description provided for @rangeRepeatCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Range repeat count'**
+  String get rangeRepeatCount;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

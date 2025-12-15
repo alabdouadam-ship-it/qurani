@@ -165,13 +165,12 @@ class _OptionsScreenState extends State<OptionsScreen> {
                         children: options.map((option) => _buildOptionCard(context, option)).toList(),
                       );
                     }
-                    // Mobile/tablet default 2 columns - no scroll
+                    // Mobile/tablet default 2 columns - scrollable
                     return GridView.count(
                       crossAxisCount: 2,
                       crossAxisSpacing: isSmallScreen ? 10 : 15,
                       mainAxisSpacing: isSmallScreen ? 10 : 15,
                       childAspectRatio: isTablet ? 1.2 : 1.05,
-                      physics: const NeverScrollableScrollPhysics(),
                       children: options.map((option) => _buildOptionCard(context, option)).toList(),
                     );
                   },

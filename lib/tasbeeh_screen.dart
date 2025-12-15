@@ -158,6 +158,18 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
     );
     if (confirmed == true) {
       await TasbeehService.removePhrase(index);
+      
+      // Fix: Shift session counts to match new indices
+      final newSessionCounts = <int, int>{};
+      _sessionCounts.forEach((key, value) {
+        if (key < index) {
+          newSessionCounts[key] = value;
+        } else if (key > index) {
+          newSessionCounts[key - 1] = value;
+        }
+      });
+      _sessionCounts = newSessionCounts;
+
       await _loadData();
     }
   }

@@ -16,6 +16,7 @@ import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
 
 import 'responsive_config.dart';
+import 'util/settings_sheet_utils.dart';
 
 class ReadQuranScreen extends StatefulWidget {
   const ReadQuranScreen({super.key});
@@ -50,15 +51,26 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   final Map<int, GlobalKey> _ayahKeys = <int, GlobalKey>{};
   int? _pendingScrollAyah;
   late String _arabicFontKey;
+  bool _autoFlip = false;
   final Map<String, PageData> _pageCache = <String, PageData>{}; // Cache for loaded pages
 
   @override
   void initState() {
     super.initState();
+    final savedEdition = PreferencesService.getLastReadEdition();
+    try {
+      _edition = QuranEdition.values.firstWhere(
+        (e) => e.name == savedEdition,
+        orElse: () => QuranEdition.simple,
+      );
+    } catch (_) {
+      _edition = QuranEdition.simple;
+    }
     _pageController = PageController(initialPage: _currentPage - 1);
     _surahListFuture = _repository.loadAllSurahs();
     _highlightedAyahs.addAll(PreferencesService.getHighlightedAyahs());
     _arabicFontKey = PreferencesService.getArabicFontFamily();
+    _autoFlip = PreferencesService.getAutoFlipPage();
     PreferencesService.arabicFontNotifier.addListener(_onArabicFontChanged);
     _pagePlayer = AudioPlayer();
     _playerStateSub = _pagePlayer.playerStateStream.listen((state) {
@@ -74,6 +86,12 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       }
       if (completed) {
         unawaited(_stopPageAudio());
+        if (_autoFlip && _currentPage < _totalPages && mounted) {
+           // Delay slightly to allow the user to realize audio finished
+           Future.delayed(const Duration(milliseconds: 500), () {
+             if (mounted) _goToPage(_currentPage + 1);
+           });
+        }
       }
     });
     _sequenceStateSub =
@@ -408,6 +426,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   void _toggleEdition(QuranEdition edition) {
     if (edition == _edition) return;
     unawaited(_stopPageAudio());
+    PreferencesService.saveLastReadEdition(edition.name);
     setState(() {
       _edition = edition;
       _selectedAyah = null;
@@ -416,6 +435,71 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     });
   }
 
+
+
+  void _showSettingsSheet() {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setSheetState) {
+            return SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.settings,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 16),
+                    ListTile(
+                      title: Text(l10n.readAutoFlip),
+                      subtitle: Text(l10n.readAutoFlipDesc),
+                      trailing: Switch(
+                        value: _autoFlip,
+                        onChanged: (val) async {
+                          setSheetState(() => _autoFlip = val);
+                          setState(() => _autoFlip = val);
+                          await PreferencesService.saveAutoFlipPage(val);
+                        },
+                      ),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      title: Text(l10n.chooseReciter),
+                      subtitle: Text(l10n.chooseReciterDesc),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                         Navigator.pop(context);
+                         SettingsSheetUtils.showReciterSelectionSheet(
+                             context,
+                             onReciterSelected: (key) {
+                               PreferencesService.saveReciter(key);
+                               setState(() {
+                                 if (_pageAudioReciter != key) {
+                                    _pageAudioReciter = null;
+                                 }
+                               });
+                             }
+                         );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 
   Future<void> _openHighlightedAyahsSheet() async {
     final l10n = AppLocalizations.of(context)!;
@@ -1463,11 +1547,14 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         elevation: 2,
         actions: [
           IconButton(
-            icon: const Icon(Icons.bookmarks_outlined),
-            tooltip: l10n.highlightedAyahs,
+            icon: const Icon(Icons.bookmark_outline),
             onPressed: _highlightedAyahs.isEmpty
                 ? null
                 : _openHighlightedAyahsSheet,
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => _showSettingsSheet(),
           ),
           if (showPlayButton) ...[
             IconButton(

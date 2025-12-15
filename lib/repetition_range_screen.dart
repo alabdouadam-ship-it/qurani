@@ -11,6 +11,7 @@ import 'util/arabic_font_utils.dart';
 import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
 import 'models/surah.dart';
+import 'util/settings_sheet_utils.dart'; // Import utility
 
 class RepetitionRangeScreen extends StatefulWidget {
   const RepetitionRangeScreen({super.key, required this.surah});
@@ -35,6 +36,8 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   List<AyahBrief> _currentAyahs = [];
   int? _selectedAyah;
   int _verseRepeatCount = 10;
+  int _rangeRepeatCount = 1;
+  int _currentRangeIteration = 0;
   int? _currentPlayingVerseNumber;
   int? _lastAutoScrolledVerse;
   final ScrollController _ayahScrollController = ScrollController();
@@ -47,7 +50,17 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   @override
   void initState() {
     super.initState();
+    final savedEdition = PreferencesService.getLastRepetitionEdition();
+    try {
+      _edition = QuranEdition.values.firstWhere(
+        (e) => e.name == savedEdition,
+        orElse: () => QuranEdition.simple,
+      );
+    } catch (_) {
+      _edition = QuranEdition.simple;
+    }
     _verseRepeatCount = PreferencesService.getVerseRepeatCount();
+    _rangeRepeatCount = PreferencesService.getRangeRepetitionCount();
     _ayahsFuture = QuranRepository.instance
         .loadSurahAyahs(widget.surah.order, _edition);
     _arabicFontKey = PreferencesService.getArabicFontFamily();
@@ -297,6 +310,21 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     _isHandlingEntryCompletion = true;
     try {
       final nextIndex = (_currentPlaylistIndex + 1) % _playlistEntries.length;
+      bool shouldStop = false;
+
+      // Check for wrap-around
+      if (nextIndex == 0) {
+         _currentRangeIteration++;
+         if (_currentRangeIteration >= _rangeRepeatCount) {
+             shouldStop = true;
+         }
+      }
+      
+      if (shouldStop) {
+        if (mounted) setState(() => _isPlaying = false);
+        return;
+      }
+
       await _playEntryAt(nextIndex);
     } finally {
       _isHandlingEntryCompletion = false;
@@ -432,6 +460,10 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       (entry) => entry.globalAyahNumber == targetAyahNumber,
     );
     final entryIndex = targetEntryIndex >= 0 ? targetEntryIndex : 0;
+    
+    // Reset iteration count on new play start
+    _currentRangeIteration = 0;
+
     await _playEntryAt(entryIndex);
     return true;
   }
@@ -486,6 +518,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
               icon: const Icon(Icons.menu_book_outlined),
               onSelected: (e) async {
                 setState(() => _edition = e);
+                await PreferencesService.saveLastRepetitionEdition(e.name);
                 await _reloadAyahs();
               },
               itemBuilder: (context) {
@@ -512,7 +545,11 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                     )
                     .toList();
               },
-            )
+            ),
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () => _showSettingsSheet(),
+            ),
           ],
         ),
         const SizedBox(height: 8),
@@ -720,6 +757,92 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
           );
         },
       ),
+    );
+  }
+
+  void _showSettingsSheet() {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setSheetState) {
+            return SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      l10n.settings,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                    const SizedBox(height: 16),
+                    ListTile(
+                      title: Text(l10n.chooseReciter),
+                      subtitle: Text(l10n.chooseReciterDesc),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                         // Close settings to open reciter picker
+                         Navigator.pop(context);
+                         SettingsSheetUtils.showReciterSelectionSheet(
+                             context,
+                             onReciterSelected: (key) async {
+                               // Save to Repetition Reciter
+                               await PreferencesService.saveRepetitionReciter(key);
+                               setState(() {
+                                 // Trigger reload if playing logic checks this
+                                 _activeReciterKey = null; // Force reload
+                               });
+                             }
+                         );
+                      },
+                    ),
+                    const Divider(),
+                    ListTile(
+                      title: Text('${l10n.verseRepeatCount}: $_verseRepeatCount'),
+                      subtitle: Slider(
+                        value: _verseRepeatCount.toDouble(),
+                        min: 1,
+                        max: 20,
+                        divisions: 19,
+                        label: '$_verseRepeatCount',
+                        onChanged: (val) async {
+                           final newVal = val.toInt();
+                           setSheetState(() => _verseRepeatCount = newVal);
+                           setState(() => _verseRepeatCount = newVal);
+                           await PreferencesService.saveVerseRepeatCount(newVal);
+                        },
+                      ),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      title: Text('${l10n.rangeRepeatCount}: $_rangeRepeatCount'),
+                      subtitle: Slider(
+                        value: _rangeRepeatCount.toDouble(),
+                        min: 1,
+                        max: 10,
+                        divisions: 9,
+                        label: '$_rangeRepeatCount',
+                        onChanged: (val) async {
+                           final newVal = val.toInt();
+                           setSheetState(() => _rangeRepeatCount = newVal);
+                           setState(() => _rangeRepeatCount = newVal);
+                           await PreferencesService.saveRangeRepetitionCount(newVal);
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          },
+        );
+      },
     );
   }
 }

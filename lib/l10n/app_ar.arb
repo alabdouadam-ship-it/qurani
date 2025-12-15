@@ -58,6 +58,8 @@
   "@contactViaWhatsApp": {},
   "contactViaEmail": "البريد الإلكتروني",
   "@contactViaEmail": {},
+  "contactViaWhatsAppGroup": "مجموعة واتساب",
+  "@contactViaWhatsAppGroup": {},
   "copy": "نسخ",
   "@copy": {},
   "copied": "تم النسخ",
@@ -569,4 +571,14 @@
   ,"@shareIdeaDesc":{}
   ,"getInTouch":"تواصل معنا"
   ,"@getInTouch":{}
+  ,"readAutoFlip": "قلب الصفحة تلقائياً"
+  ,"@readAutoFlip": {}
+  ,"readAutoFlipDesc": "الانتقال للصفحة التالية عند انتهاء التلاوة."
+  ,"@readAutoFlipDesc": {}
+  ,"chooseReciter": "اختر القارئ"
+  ,"@chooseReciter": {}
+  ,"chooseReciterDesc": "اختر القارئ المفضل لديك."
+  ,"@chooseReciterDesc": {}
+  ,"rangeRepeatCount": "عدد تكرار النطاق"
+  ,"@rangeRepeatCount": {}
 }

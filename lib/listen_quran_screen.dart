@@ -7,7 +7,9 @@ import 'models/surah.dart';
 import 'services/preferences_service.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
+import 'services/download_service.dart';
 import 'audio_player_screen.dart';
+import 'util/settings_sheet_utils.dart'; // Import utility
 
 class ListenQuranScreen extends StatefulWidget {
   const ListenQuranScreen({super.key});
@@ -85,6 +87,21 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
         elevation: 2,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: l10n.settings,
+            onPressed: () {
+              SettingsSheetUtils.showReciterSelectionSheet(
+                context,
+                onReciterSelected: (reciterKey) {
+                  PreferencesService.saveReciter(reciterKey);
+                  setState(() {
+                    _lastReciterKey = reciterKey;
+                  });
+                },
+              );
+            },
+          ),
           if (!kIsWeb) _buildDownloadAction(l10n),
         ],
       ),

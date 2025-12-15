@@ -24,6 +24,14 @@ class PreferencesService {
   static const String keyDeviceInfoJson = 'device_info_json';
   static const String keyInstallationId = 'installation_id_v1';
 
+  // Last used edition (State persistence)
+  static const String keyLastReadEdition = 'last_read_edition';
+  static const String keyLastRepetitionEdition = 'last_repetition_edition';
+  
+  // New Settings (In-Screen)
+  static const String keyAutoFlipPage = 'auto_flip_page';
+  static const String keyRangeRepetitionCount = 'range_repetition_count';
+
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
   static final ValueNotifier<String> themeNotifier = ValueNotifier<String>('green'); // Default to green
   static final ValueNotifier<String> arabicFontNotifier =
@@ -106,6 +114,41 @@ class PreferencesService {
   static Future<void> saveTheme(String value) async {
     await _prefs?.setString(keyTheme, value);
     themeNotifier.value = value; // Notify listeners
+  }
+
+  static Future<void> saveLastReadEdition(String value) async {
+    await _prefs?.setString(keyLastReadEdition, value);
+  }
+
+  static String getLastReadEdition() {
+    final saved = _prefs?.getString(keyLastReadEdition);
+    return saved ?? 'simple';
+  }
+
+  static Future<void> saveLastRepetitionEdition(String value) async {
+    await _prefs?.setString(keyLastRepetitionEdition, value);
+  }
+
+  static String getLastRepetitionEdition() {
+    final saved = _prefs?.getString(keyLastRepetitionEdition);
+    return saved ?? 'simple';
+  }
+
+  static Future<void> saveAutoFlipPage(bool value) async {
+    await _prefs?.setBool(keyAutoFlipPage, value);
+  }
+
+  static bool getAutoFlipPage() {
+    return _prefs?.getBool(keyAutoFlipPage) ?? false;
+  }
+
+  static Future<void> saveRangeRepetitionCount(int value) async {
+    if (value < 1) value = 1;
+    await _prefs?.setInt(keyRangeRepetitionCount, value);
+  }
+
+  static int getRangeRepetitionCount() {
+    return _prefs?.getInt(keyRangeRepetitionCount) ?? 1;
   }
 
   static String getTheme() {

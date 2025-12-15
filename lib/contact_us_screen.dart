@@ -15,6 +15,7 @@ class ContactUsScreen extends StatefulWidget {
 class _ContactUsScreenState extends State<ContactUsScreen> {
   String? _email;
   String? _whatsApp;
+  String? _whatsAppGroup;
   bool _loading = true;
 
   @override
@@ -30,6 +31,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
       setState(() {
         _email = data['email'] as String?;
         _whatsApp = data['whatsapp'] as String?;
+        _whatsAppGroup = data['whatsapp_group'] as String?;
         _loading = false;
       });
     } catch (_) {
@@ -52,6 +54,13 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
     }
   }
 
+  Future<void> _openWhatsAppGroup(String groupUrl) async {
+    final uri = Uri.parse(groupUrl);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -61,7 +70,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : ListView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 48),
               children: [
                 Text(
                   l10n.whyContactUs,
@@ -184,6 +193,40 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           ? null
                           : () async {
                               final v = _whatsApp;
+                              if (v != null) {
+                                await Clipboard.setData(ClipboardData(text: v));
+                                if (!mounted) return;
+                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                              }
+                            },
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Card(
+                  child: ListTile(
+                    leading: const Icon(Icons.group),
+                    title: Text(l10n.contactViaWhatsAppGroup),
+                    subtitle: _whatsAppGroup == null 
+                        ? Text('-')
+                        : GestureDetector(
+                            onTap: () => _openWhatsAppGroup(_whatsAppGroup!),
+                            child: Text(
+                              l10n.contactViaWhatsAppGroup,
+                              style: TextStyle(
+                                color: theme.colorScheme.primary,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
+                    onTap: _whatsAppGroup == null ? null : () => _openWhatsAppGroup(_whatsAppGroup!),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.copy),
+                      tooltip: l10n.copy,
+                      onPressed: _whatsAppGroup == null
+                          ? null
+                          : () async {
+                              final v = _whatsAppGroup;
                               if (v != null) {
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
