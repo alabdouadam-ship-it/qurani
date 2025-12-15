@@ -16,6 +16,7 @@ import 'services/surah_service.dart';
 import 'widgets/sound_equalizer.dart';
 import 'services/queue_service.dart';
 import 'services/net_utils.dart';
+import 'util/debug_error_display.dart';
 
 /// Main audio player screen that handles full-surah playback, repeat, auto
 /// advance and verse-by-verse playback.
@@ -141,7 +142,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _configureAudioSession() async {
     try {
+      debugPrint('[AudioPlayer] Configuring audio session...');
       final session = await AudioSession.instance;
+      debugPrint('[AudioPlayer] Audio session obtained successfully');
+      
       await session.configure(const AudioSessionConfiguration(
         androidAudioAttributes: AndroidAudioAttributes(
           contentType: AndroidAudioContentType.music,
@@ -152,6 +156,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         androidWillPauseWhenDucked: false,
       ));
       await session.setActive(true);
+      debugPrint('[AudioPlayer] Audio session configured successfully');
       
       session.interruptionEventStream.listen((event) {
         debugPrint('[AudioPlayer] Audio interruption: ${event.begin} - ${event.type}');
@@ -175,8 +180,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       });
       
       debugPrint('[AudioPlayer] Audio session configured for background playback');
-    } catch (e) {
-      debugPrint('[AudioPlayer] Error configuring audio session: $e');
+    } catch (e, stackTrace) {
+      debugPrint('[AudioPlayer] CRITICAL ERROR configuring audio session: $e');
+      debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+      // Continue anyway - some devices may work without explicit configuration
     }
   }
 
@@ -267,13 +274,28 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
           : AudioSource.uri(Uri.parse(url), tag: mainItem);
 
-      await _player.setAudioSource(
-        source,
-        initialPosition: startPosition,
-      );
+      debugPrint('[AudioPlayer] Setting audio source for surah $order');
+      
+      try {
+        await _player.setAudioSource(
+          source,
+          initialPosition: startPosition,
+        );
+        debugPrint('[AudioPlayer] Audio source set successfully');
+      } catch (e, stackTrace) {
+        debugPrint('[AudioPlayer] CRITICAL ERROR setting audio source: $e');
+        debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+        throw Exception('Failed to load audio: ${e.toString()}');
+      }
 
       if (autoPlay) {
-        await _player.play();
+        try {
+          await _player.play();
+          debugPrint('[AudioPlayer] Playback started');
+        } catch (e) {
+          debugPrint('[AudioPlayer] ERROR starting playback: $e');
+          throw Exception('Failed to start playback: ${e.toString()}');
+        }
       } else {
         await _player.pause();
       }
@@ -288,14 +310,47 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       }
 
       await PreferencesService.addToHistory(order, _reciterKey!);
-    } catch (e) {
-      debugPrint('Error loading surah audio: $e');
+    } catch (e, stackTrace) {
+      debugPrint('[AudioPlayer] CRITICAL ERROR loading surah audio: $e');
+      debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+      
+      // Show debug error dialog
+      DebugErrorDisplay.showError(
+        context,
+        screen: 'Audio Player',
+        operation: 'Load Surah $order',
+        error: e.toString(),
+        stackTrace: stackTrace.toString(),
+      );
+      
+      final l10n = AppLocalizations.of(context)!;
+      String userMessage = l10n.errorLoadingAudio;
+      
+      if (e.toString().contains('Permission')) {
+        userMessage = 'Audio permission required. Please grant permission in settings.';
+      } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
+        userMessage = 'Network error. Please check your internet connection.';
+      } else if (e.toString().contains('Format') || e.toString().contains('Codec')) {
+        userMessage = 'Audio format not supported on this device.';
+      }
+      
       if (mounted) {
         setState(() {
-          _errorMessage = e.toString();
+          _errorMessage = userMessage;
           _isBuffering = false;
           _isCurrentSurahDownloaded = false;
         });
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(userMessage),
+            duration: const Duration(seconds: 5),
+            action: SnackBarAction(
+              label: 'OK',
+              onPressed: () {},
+            ),
+          ),
+        );
       }
     }
   }
@@ -750,19 +805,39 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
 
     try {
-      await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
+      debugPrint('[AudioPlayer] Playing verse $verseNumber');
+      
+      try {
+        await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
+      } catch (e, stackTrace) {
+        debugPrint('[AudioPlayer] ERROR setting verse audio source: $e');
+        debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+        throw Exception('Failed to load verse audio: ${e.toString()}');
+      }
+      
       await _player.setLoopMode(LoopMode.off);
       await _player.play();
+      
       if (mounted) {
         setState(() {
           _currentVerse = verseNumber;
           _isPlaying = true;
         });
       }
-    } catch (e) {
-      debugPrint('Error playing verse: $e');
+    } catch (e, stackTrace) {
+      debugPrint('[AudioPlayer] CRITICAL ERROR playing verse: $e');
+      debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+      
       if (mounted) {
-        setState(() => _errorMessage = e.toString());
+        final l10n = AppLocalizations.of(context)!;
+        setState(() => _errorMessage = l10n.errorLoadingAudio);
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.errorLoadingAudio),
+            duration: const Duration(seconds: 3),
+          ),
+        );
       }
     }
   }

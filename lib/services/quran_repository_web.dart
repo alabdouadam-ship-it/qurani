@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:shared_preferences/shared_preferences.dart';
 
 /// Supported Quran text editions.
 enum QuranEdition {
@@ -71,15 +70,6 @@ class QuranRepository {
   final Map<QuranEdition, Future<Map<int, String>>> _translationCache = {};
   final Map<QuranEdition, Future<Map<int, AyahData>>> _ayahIndexCache = {};
   Future<Map<String, dynamic>>? _muyassarCache;
-
-  void _clearCache() {
-    _jsonCache.clear();
-    _pageCache.clear();
-    _surahListFuture = null;
-    _translationCache.clear();
-    _ayahIndexCache.clear();
-    _muyassarCache = null;
-  }
 
   Future<Map<String, dynamic>> _loadJson(QuranEdition edition) async {
     return await _jsonCache.putIfAbsent(edition, () async {

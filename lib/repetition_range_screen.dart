@@ -10,6 +10,7 @@ import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
 import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
+import 'util/debug_error_display.dart';
 import 'models/surah.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
 
@@ -353,8 +354,44 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
 
     final uri = entry.verseUri;
     if (uri == null) return;
-    await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
-    await _player.play();
+    
+    try {
+      debugPrint('[RepetitionRange] Playing verse ${entry.verseInSurah}');
+      await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
+      await _player.play();
+      debugPrint('[RepetitionRange] Playback started successfully');
+    } catch (e, stackTrace) {
+      debugPrint('[RepetitionRange] CRITICAL ERROR playing verse: $e');
+      debugPrint('[RepetitionRange] Stack trace: $stackTrace');
+      
+      // Show debug error dialog
+      DebugErrorDisplay.showError(
+        context,
+        screen: 'Repetition Range',
+        operation: 'Play Verse ${entry.verseInSurah}',
+        error: e.toString(),
+        stackTrace: stackTrace.toString(),
+      );
+      
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        String userMessage = l10n.errorLoadingAudio;
+        
+        if (e.toString().contains('Permission')) {
+          userMessage = 'Audio permission required. Please grant permission in settings.';
+        } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
+          userMessage = l10n.audioInternetRequired;
+        }
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(userMessage),
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+      return; // Exit early on error
+    }
 
     if (mounted) {
       setState(() {

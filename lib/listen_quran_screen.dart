@@ -7,7 +7,6 @@ import 'models/surah.dart';
 import 'services/preferences_service.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
-import 'services/download_service.dart';
 import 'audio_player_screen.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
 

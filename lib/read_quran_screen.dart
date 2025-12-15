@@ -14,6 +14,7 @@ import 'util/arabic_font_utils.dart';
 import 'util/tajweed_parser.dart';
 import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
+import 'util/debug_error_display.dart';
 
 import 'responsive_config.dart';
 import 'util/settings_sheet_utils.dart';
@@ -812,7 +813,39 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       }
       completer.complete(true);
       return true;
-    } catch (error) {
+    } catch (error, stackTrace) {
+      debugPrint('[ReadQuran] CRITICAL ERROR loading page audio: $error');
+      debugPrint('[ReadQuran] Stack trace: $stackTrace');
+      
+      // Show debug error dialog
+      DebugErrorDisplay.showError(
+        context,
+        screen: 'Read Quran',
+        operation: 'Load Page $_currentPage Audio',
+        error: error.toString(),
+        stackTrace: stackTrace.toString(),
+      );
+      
+      if (mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        String userMessage = l10n.errorLoadingAudio;
+        
+        if (error.toString().contains('Permission')) {
+          userMessage = 'Audio permission required. Please grant permission in settings.';
+        } else if (error.toString().contains('Network') || error.toString().contains('Connection')) {
+          userMessage = l10n.audioInternetRequired;
+        } else if (error.toString().contains('Format') || error.toString().contains('Codec')) {
+          userMessage = 'Audio format not supported on this device.';
+        }
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(userMessage),
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
+      
       completer.completeError(error);
       rethrow;
     } finally {

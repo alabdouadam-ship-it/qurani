@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/audio_service.dart';
-import 'package:qurani/responsive_config.dart';
 
 class SettingsSheetUtils {
   static Future<void> showReciterSelectionSheet(

@@ -1,0 +1,32 @@
+﻿Analyzing Qurani...                                             
+
+warning - The operand can't be 'null', so the condition is always 'false' - lib\audio_player_screen.dart:148:19 - unnecessary_null_comparison
+warning - Duplicate import - lib\listen_quran_screen.dart:10:8 - duplicate_import
+   info - The import of 'package:flutter/foundation.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\local_webview_screen_web.dart:3:8 - unnecessary_import
+   info - 'dart:html' is deprecated and shouldn't be used. Use package:web and dart:js_interop instead - lib\local_webview_screen_web.dart:4:1 - deprecated_member_use
+warning - Unused import: 'package:shared_preferences/shared_preferences.dart' - lib\services\quran_repository_web.dart:4:8 - unused_import
+warning - The declaration '_clearCache' isn't referenced - lib\services\quran_repository_web.dart:75:8 - unused_element
+warning - The declaration '_clearCache' isn't referenced - lib\services\surah_service_web.dart:9:15 - unused_element
+
+flutter : 7 issues 
+found. (ran in 5.6s)
+Au caractère Ligne:1 
+: 1
++ flutter analyze 
+--no-pub 2>&1 | 
+Out-File -Encoding 
+UTF8 warnings.txt  ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
+    + CategoryInfo    
+          : 
+NotSpecified    : (7 
+issues found.     
+(ran in 5.6s):Strin   
+ g) [], RemoteExcept  
+  ion
+    + 
+FullyQualifiedErr    
+orId : NativeComman   
+ dError
+ 
