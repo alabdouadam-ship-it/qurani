@@ -86,12 +86,40 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _isPlayingPage = isPlaying;
       }
       if (completed) {
-        unawaited(_stopPageAudio());
+        debugPrint('[ReadQuran] Audio completed on page $_currentPage, autoFlip: $_autoFlip');
         if (_autoFlip && _currentPage < _totalPages && mounted) {
-           // Delay slightly to allow the user to realize audio finished
-           Future.delayed(const Duration(milliseconds: 500), () {
-             if (mounted) _goToPage(_currentPage + 1);
-           });
+          // Store the next page BEFORE any async operations
+          final nextPage = _currentPage + 1;
+          debugPrint('[ReadQuran] Auto-flipping from $_currentPage to $nextPage');
+          
+          // Stop current audio before flipping
+          unawaited(_stopPageAudio());
+          
+          Future.delayed(const Duration(milliseconds: 500), () async {
+            if (!mounted) return;
+            
+            debugPrint('[ReadQuran] Calling _goToPage($nextPage)');
+            _goToPage(nextPage);
+            
+            // Wait for page to load and onPageChanged to complete
+            await Future.delayed(const Duration(milliseconds: 500));
+            
+            if (!mounted) return;
+            
+            // Load and play audio for the next page
+            try {
+              debugPrint('[ReadQuran] Loading audio for page $nextPage');
+              final pageData = await _repository.loadPage(nextPage, _edition);
+              if (mounted) {
+                debugPrint('[ReadQuran] Playing audio for page $nextPage');
+                await _playSelectedAyah(page: pageData, showErrors: false);
+              }
+            } catch (e) {
+              debugPrint('[ReadQuran] Error loading next page audio: $e');
+            }
+          });
+        } else {
+          unawaited(_stopPageAudio());
         }
       }
     });
