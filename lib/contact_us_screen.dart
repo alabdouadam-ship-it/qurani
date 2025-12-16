@@ -1,8 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
+import 'package:qurani/services/contact_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactUsScreen extends StatefulWidget {
@@ -26,8 +25,8 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
 
   Future<void> _load() async {
     try {
-      final txt = await rootBundle.loadString('public/contact.json');
-      final data = json.decode(txt) as Map<String, dynamic>;
+      final data = await ContactService.getContactInfo();
+      if (!mounted) return;
       setState(() {
         _email = data['email'] as String?;
         _whatsApp = data['whatsapp'] as String?;

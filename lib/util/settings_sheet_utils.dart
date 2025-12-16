@@ -17,6 +17,7 @@ class SettingsSheetUtils {
       {'id': 'afs', 'name': AudioService.reciterDisplayName('afs', langCode)},
       {'id': 'basit', 'name': AudioService.reciterDisplayName('basit', langCode)},
       {'id': 'sds', 'name': AudioService.reciterDisplayName('sds', langCode)},
+      {'id': 'shuraym', 'name': AudioService.reciterDisplayName('shuraym', langCode)},
       {'id': 'frs_a', 'name': AudioService.reciterDisplayName('frs_a', langCode)},
       {'id': 'husr', 'name': AudioService.reciterDisplayName('husr', langCode)},
       {'id': 'minsh', 'name': AudioService.reciterDisplayName('minsh', langCode)},
@@ -38,13 +39,6 @@ class SettingsSheetUtils {
             builder: (context, scrollController) {
               return Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      l10n.chooseReciter,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                  ),
                   StatefulBuilder(
                     builder: (context, setState) {
                       final alwaysStart = PreferencesService.getAlwaysStartFromBeginning();
@@ -60,6 +54,13 @@ class SettingsSheetUtils {
                     },
                   ),
                   const Divider(height: 1),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      l10n.chooseReciter,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
                   Expanded(
                     child: ListView.builder(
                       controller: scrollController,

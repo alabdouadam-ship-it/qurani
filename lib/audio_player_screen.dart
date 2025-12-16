@@ -225,7 +225,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       _currentOrder = normalizedOrder;
     });
 
-    final bookmark = await _loadBookmarkFor(normalizedOrder);
     await _loadVerseUrls(normalizedOrder);
 
     Duration startPosition;
@@ -388,9 +387,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (playing != _isPlaying) {
       setState(() => _isPlaying = playing);
       if (!playing) {
-        _player.position.then((pos) {
-          PreferencesService.saveLastPlaybackPosition(_currentOrder, pos.inMilliseconds);
-        });
+        final pos = _player.position;
+        PreferencesService.saveLastPlaybackPosition(_currentOrder, pos.inMilliseconds);
       }
     }
 
@@ -507,14 +505,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  Future<Duration?> _loadBookmarkFor(int order) async {
-    final saved = await PreferencesService.getBookmark(order);
-    final duration = saved != null ? Duration(seconds: saved) : null;
-    if (order == _currentOrder) {
-      setState(() => _bookmarkPosition = duration);
-    }
-    return duration;
-  }
 
   Future<void> _toggleBookmark() async {
     if (_isPlayerDisposed) return;

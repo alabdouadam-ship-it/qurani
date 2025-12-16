@@ -12,6 +12,7 @@ class AudioService {
     'husr': '/data/full/husr',
     'minsh': '/data/full/minsh',
     'suwaid': '/data/full/suwaid',
+    'shuraym': 'https://server7.mp3quran.net/shur',
     'muyassar': '/data/muyassar_audio/full',
   };
 
@@ -23,6 +24,7 @@ class AudioService {
     'husr': {'ar': 'الحصري','en': 'Mahmoud Al Husary','fr': 'Mahmoud Al Husary'},
     'minsh': {'ar': 'المنشاوي','en': 'Mohamed Al Manshawi','fr': 'Mohamed Al Manshawi'},
     'suwaid': {'ar': 'أيمن سويد','en': 'Ayman Suwaid','fr': 'Ayman Suwaid'},
+    'shuraym': {'ar': 'سعود الشريم','en': 'Saood ash-Shuraym','fr': 'Saood ash-Shuraym'},
     'muyassar': {'ar': 'تفسير الميسر','en': 'Tafsir Al Muyassar','fr': 'Tafsir Al Muyassar'},
     'english_arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
     'english-arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
@@ -66,6 +68,12 @@ class AudioService {
     final base = _resolveBaseForReciter(reciterKeyAr);
     final padded = _pad3(surahOrder);
     if (padded == null) return null;
+    
+    // Handle external URL for shuraym
+    if (base.startsWith('http')) {
+      return '$base/$padded.mp3';
+    }
+    
     return 'https://www.qurani.info$base/$padded.mp3';
   }
 
@@ -78,6 +86,12 @@ class AudioService {
     final v = _pad3(verseNumber);
     if (s == null || v == null) return null;
     final reciterFolder = _getAyahsReciterFolder(reciterKeyAr);
+    
+    // Handle external URL for shuraym (everyayah.com)
+    if (reciterFolder == 'Saood_ash-Shuraym_64kbps') {
+      return 'https://everyayah.com/data/$reciterFolder/$s$v.mp3';
+    }
+    
     final basePath = reciterFolder == 'muyassar_audio'
         ? 'https://www.qurani.info/data/muyassar_audio'
         : 'https://www.qurani.info/data/ayahs/$reciterFolder';
@@ -92,6 +106,7 @@ class AudioService {
     'minsh': 'minsh',
     'suwaid': 'suwaid',
     'sds': 'sds',
+    'shuraym': 'Saood_ash-Shuraym_64kbps',
     'muyassar': 'muyassar_audio',
     'english_arabic': 'english-arabic',
     'english-arabic': 'english-arabic',
