@@ -123,7 +123,16 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   void _setupListeners() {
     if (_isPlayerDisposed) return;
-    _positionSub = _player.positionStream.listen((_) {});
+    _positionSub = _player.positionStream.listen((position) {
+      // Save position periodically (e.g. every 5 seconds) or check if we should save on pause?
+      // For simplicity and performance, saving on every update is too much.
+      // We can rely on _handlePlayerStateChange for Pause/Stop.
+      // But if app is killed, we might lose progress.
+      // Let's save every 5 seconds if playing.
+      if (_player.playing && position.inSeconds % 5 == 0) {
+         PreferencesService.saveLastPlaybackPosition(_currentOrder, position.inMilliseconds);
+      }
+    });
 
     _durationSub = _player.durationStream.listen((duration) {
       if (!mounted || duration == null) return;
@@ -219,7 +228,18 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final bookmark = await _loadBookmarkFor(normalizedOrder);
     await _loadVerseUrls(normalizedOrder);
 
-    final startPosition = resumePosition ?? bookmark ?? Duration.zero;
+    Duration startPosition;
+    if (resumePosition != null) {
+      startPosition = resumePosition;
+    } else {
+      if (PreferencesService.getAlwaysStartFromBeginning()) {
+        startPosition = Duration.zero;
+      } else {
+        final lastPosMs = PreferencesService.getLastPlaybackPosition(normalizedOrder);
+        startPosition = lastPosMs > 0 ? Duration(milliseconds: lastPosMs) : Duration.zero;
+      }
+    }
+
     await _loadAndPlaySurah(normalizedOrder, startPosition, autoPlay: autoPlay);
     await _updateDownloadStatus();
   }
@@ -367,6 +387,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final playing = state.playing;
     if (playing != _isPlaying) {
       setState(() => _isPlaying = playing);
+      if (!playing) {
+        _player.position.then((pos) {
+          PreferencesService.saveLastPlaybackPosition(_currentOrder, pos.inMilliseconds);
+        });
+      }
     }
 
     if (state.processingState == ProcessingState.completed) {

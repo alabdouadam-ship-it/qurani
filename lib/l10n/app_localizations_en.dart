@@ -851,4 +851,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rangeRepeatCount => 'Range repeat count';
+
+  @override
+  String get alwaysStartFromBeginning => 'Always Start from Beginning';
+
+  @override
+  String get alwaysStartFromBeginningDesc => 'When enabled, always start playing from the first verse. When disabled, resume from last position.';
 }

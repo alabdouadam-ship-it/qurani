@@ -31,6 +31,8 @@ class PreferencesService {
   // New Settings (In-Screen)
   static const String keyAutoFlipPage = 'auto_flip_page';
   static const String keyRangeRepetitionCount = 'range_repetition_count';
+  static const String keyAlwaysStartFromBeginning = 'always_start_from_beginning';
+  static const String keyLastPlaybackPositionPrefix = 'last_playback_position_';
 
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
   static final ValueNotifier<String> themeNotifier = ValueNotifier<String>('green'); // Default to green
@@ -540,5 +542,21 @@ class PreferencesService {
       default:
         return value;
     }
+  }
+
+  static Future<void> saveAlwaysStartFromBeginning(bool value) async {
+    await _prefs?.setBool(keyAlwaysStartFromBeginning, value);
+  }
+
+  static bool getAlwaysStartFromBeginning() {
+    return _prefs?.getBool(keyAlwaysStartFromBeginning) ?? true;
+  }
+
+  static Future<void> saveLastPlaybackPosition(int surahNumber, int verseIndex) async {
+    await _prefs?.setInt('${keyLastPlaybackPositionPrefix}$surahNumber', verseIndex);
+  }
+
+  static int getLastPlaybackPosition(int surahNumber) {
+    return _prefs?.getInt('${keyLastPlaybackPositionPrefix}$surahNumber') ?? 0;
   }
 }

@@ -582,5 +582,9 @@
   ,"chooseReciterDesc": "Select your preferred reciter."
   ,"@chooseReciterDesc": {}
   ,"rangeRepeatCount": "Range repeat count"
-  ,"@rangeRepeatCount": {}
+  ,"@rangeRepeatCount": {},
+  "alwaysStartFromBeginning": "Always Start from Beginning",
+  "@alwaysStartFromBeginning": {},
+  "alwaysStartFromBeginningDesc": "When enabled, always start playing from the first verse. When disabled, resume from last position.",
+  "@alwaysStartFromBeginningDesc": {}
 }

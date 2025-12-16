@@ -571,5 +571,9 @@
   ,"shareIdeaDesc":"Avez-vous une idée pour un site web, une application mobile ou tout autre projet technologique ? Partagez-la avec nous, et nous vous aiderons à la transformer en un projet réel."
   ,"@shareIdeaDesc":{}
   ,"getInTouch":"Nous contacter"
-  ,"@getInTouch":{}
+  ,"@getInTouch":{},
+  "alwaysStartFromBeginning": "Toujours commencer au début",
+  "@alwaysStartFromBeginning": {},
+  "alwaysStartFromBeginningDesc": "Si activé, la lecture commence toujours au premier verset. Si désactivé, elle reprend à la dernière position.",
+  "@alwaysStartFromBeginningDesc": {}
 }

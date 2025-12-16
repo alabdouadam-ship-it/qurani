@@ -851,4 +851,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get rangeRepeatCount => 'عدد تكرار النطاق';
+
+  @override
+  String get alwaysStartFromBeginning => 'ابدأ دائماً من البداية';
+
+  @override
+  String get alwaysStartFromBeginningDesc => 'عند التفعيل، يبدأ التشغيل دائماً من أول آية. عند التعطيل، يستأنف من آخر موضع.';
 }

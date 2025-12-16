@@ -1716,6 +1716,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Range repeat count'**
   String get rangeRepeatCount;
+
+  /// No description provided for @alwaysStartFromBeginning.
+  ///
+  /// In en, this message translates to:
+  /// **'Always Start from Beginning'**
+  String get alwaysStartFromBeginning;
+
+  /// No description provided for @alwaysStartFromBeginningDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'When enabled, always start playing from the first verse. When disabled, resume from last position.'**
+  String get alwaysStartFromBeginningDesc;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
