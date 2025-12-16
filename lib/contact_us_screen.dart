@@ -205,7 +205,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                 Card(
                   child: ListTile(
                     leading: const Icon(Icons.group),
-                    title: Text(l10n.contactViaWhatsAppGroup),
+                    //title: Text(l10n.contactViaWhatsAppGroup),
                     subtitle: _whatsAppGroup == null 
                         ? Text('-')
                         : GestureDetector(
