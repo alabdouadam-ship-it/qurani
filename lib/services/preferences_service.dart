@@ -32,6 +32,7 @@ class PreferencesService {
   static const String keyAutoFlipPage = 'auto_flip_page';
   static const String keyRangeRepetitionCount = 'range_repetition_count';
   static const String keyAlwaysStartFromBeginning = 'always_start_from_beginning';
+  static const String keyAutoPlayNextSurah = 'auto_play_next_surah';
   static const String keyLastPlaybackPositionPrefix = 'last_playback_position_';
 
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
@@ -142,6 +143,14 @@ class PreferencesService {
 
   static bool getAutoFlipPage() {
     return _prefs?.getBool(keyAutoFlipPage) ?? false;
+  }
+
+  static Future<void> saveAutoPlayNextSurah(bool value) async {
+    await _prefs?.setBool(keyAutoPlayNextSurah, value);
+  }
+
+  static bool getAutoPlayNextSurah() {
+    return _prefs?.getBool(keyAutoPlayNextSurah) ?? true;
   }
 
   static Future<void> saveRangeRepetitionCount(int value) async {

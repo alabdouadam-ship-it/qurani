@@ -81,6 +81,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _currentOrder = widget.initialSurahOrder;
     _reciterKey = PreferencesService.getReciter();
     _queue = _queueService.queue;
+    _autoPlayNext = PreferencesService.getAutoPlayNextSurah();
     _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
     _queueListener = () {
       if (!mounted) return;
@@ -1418,6 +1419,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                     _verseByVerseMode = false;
                   }
                 });
+                PreferencesService.saveAutoPlayNextSurah(value);
               },
             ),
             FilterChip(
