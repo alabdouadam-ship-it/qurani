@@ -66,18 +66,23 @@ class MemorizationTestService {
     final currentAyah = ayahs[currentIndex];
     final nextAyah = ayahs[currentIndex + 1];
     
-    // Get 3 wrong options from same surah/scope randomly
-    final wrongOptions = <String>[];
+    // Use Set to ensure uniqueness
+    final optionsSet = <String>{nextAyah.text};
+    
     final availableIndices = List.generate(ayahs.length, (i) => i)
         ..remove(currentIndex)
         ..remove(currentIndex + 1);
     availableIndices.shuffle(_random);
-    for (int i = 0; i < 3 && i < availableIndices.length; i++) {
-      wrongOptions.add(ayahs[availableIndices[i]].text);
-    }
-    if (wrongOptions.length < 3) return null;
     
-    final allOptions = [nextAyah.text, ...wrongOptions];
+    for (int i = 0; i < availableIndices.length && optionsSet.length < 4; i++) {
+      optionsSet.add(ayahs[availableIndices[i]].text);
+    }
+    
+    // If we couldn't find enough unique wrong answers (e.g. very short surah), 
+    // it's okay to have fewer options, but we must have at least 2
+    if (optionsSet.length < 2) return null;
+    
+    final allOptions = optionsSet.toList();
     allOptions.shuffle(_random);
     final correctIndex = allOptions.indexOf(nextAyah.text);
     
@@ -99,23 +104,27 @@ class MemorizationTestService {
     final parts = _splitAyahForCompletion(ayah.text);
     if (parts[1].isEmpty) return null; // Too short to split
     
-    // Get 3 wrong options from same surah/scope
-    final wrongOptions = <String>[];
+    final correctAnswer = parts[1];
+    // Use Set to ensure uniqueness
+    final optionsSet = <String>{correctAnswer};
+    
     final availableIndices = List.generate(ayahs.length, (i) => i)
       ..remove(ayahIndex);
     availableIndices.shuffle(_random);
-    for (int i = 0; i < 3 && i < availableIndices.length; i++) {
+    
+    for (int i = 0; i < availableIndices.length && optionsSet.length < 4; i++) {
       final wrongAyah = ayahs[availableIndices[i]];
       final wrongParts = _splitAyahForCompletion(wrongAyah.text);
       if (wrongParts[1].isNotEmpty) {
-        wrongOptions.add(wrongParts[1]);
+        optionsSet.add(wrongParts[1]);
       }
     }
-    if (wrongOptions.length < 3) return null;
     
-    final allOptions = [parts[1], ...wrongOptions];
+    if (optionsSet.length < 2) return null;
+    
+    final allOptions = optionsSet.toList();
     allOptions.shuffle(_random);
-    final correctIndex = allOptions.indexOf(parts[1]);
+    final correctIndex = allOptions.indexOf(correctAnswer);
     
     return MemorizationQuestion(
       type: QuestionType.completeAyah,
