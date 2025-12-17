@@ -1,21 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     package="com.qurani.app">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" tools:targetApi="33" />
-    <!-- Permissions for exact alarms (required for Adhan scheduling) -->
+    
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" tools:targetApi="31" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" tools:targetApi="33" />
-    <!-- Permission to ignore battery optimization for reliable Adhan playback -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-    <!-- Permission for full screen intent (required for Adhan notifications when app is closed) -->
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" tools:targetApi="29" />
-    <!-- Permission for reboot receiver (required for android_alarm_manager_plus) -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     
-    <!-- Support for all screen sizes -->
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
@@ -27,7 +24,9 @@
     <application
         android:label="Qurani"
         android:name=".Application"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/launcher_icon"
+        android:usesCleartextTraffic="true">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -48,14 +47,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service
-            android:name="com.ryanheise.audioservice.AudioService"
-            android:foregroundServiceType="mediaPlayback"
-            android:exported="false" />
 
-        <service
-            android:name="com.ryanheise.audioservice.AudioService$MediaBrowser"
-            android:exported="true">
+        <service 
+            android:name="com.ryanheise.audioservice.AudioService"
+            android:foregroundServiceType="mediaPlayback" 
+            android:exported="true"
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
             </intent-filter>
@@ -63,13 +60,12 @@
 
         <receiver
             android:name="com.ryanheise.audioservice.AudioServiceBroadcastReceiver"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
         
-        <!-- Required for android_alarm_manager_plus -->
         <receiver
             android:name="dev.fluttercommunity.plus.androidalarmmanager.RebootBroadcastReceiver"
             android:enabled="true"
@@ -108,7 +104,3 @@
         <package android:name="com.whatsapp.w4b" />
     </queries>
 </manifest>
-
-
-
-
