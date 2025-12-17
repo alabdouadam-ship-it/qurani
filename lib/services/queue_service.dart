@@ -29,8 +29,11 @@ class QueueService {
     _queueNotifier.value = [];
   }
 
-  int? getNext() {
+  int? getNext({bool peek = false}) {
     if (_queue.isEmpty) return null;
+    if (peek) {
+      return _queue.first;
+    }
     return _queue.removeAt(0);
   }
 

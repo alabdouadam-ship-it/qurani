@@ -369,6 +369,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
         // Initial Playlist Setup: [Current, Next]
         final playlistChildren = <AudioSource>[];
+        
+        final source = hasLocalFile
+            ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
+            : AudioSource.uri(Uri.parse(url), tag: mainItem);
+            
         playlistChildren.add(source);
 
         // Preload next surah if available and not repeating single surah
