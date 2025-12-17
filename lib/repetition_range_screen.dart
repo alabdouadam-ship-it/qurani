@@ -242,7 +242,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       case QuranEdition.simple:
       case QuranEdition.uthmani:
       case QuranEdition.tajweed:
-        final reciter = PreferencesService.getReciter();
+        final reciter = PreferencesService.getRepetitionReciter();
         return reciter.isNotEmpty ? reciter : 'afs';
       case QuranEdition.english:
         return 'arabic-english';
@@ -821,7 +821,12 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                     const SizedBox(height: 16),
                     ListTile(
                       title: Text(l10n.chooseReciter),
-                      subtitle: Text(l10n.chooseReciterDesc),
+                      subtitle: Text(
+                        AudioService.reciterDisplayName(
+                          PreferencesService.getRepetitionReciter(),
+                          l10n.localeName,
+                        ),
+                      ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                          // Close settings to open reciter picker

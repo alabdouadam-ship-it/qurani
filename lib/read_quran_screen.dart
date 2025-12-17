@@ -503,7 +503,12 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                     const Divider(),
                     ListTile(
                       title: Text(l10n.chooseReciter),
-                      subtitle: Text(l10n.chooseReciterDesc),
+                      subtitle: Text(
+                        AudioService.reciterDisplayName(
+                          PreferencesService.getReciter(),
+                          l10n.localeName,
+                        ),
+                      ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                          Navigator.pop(context);
