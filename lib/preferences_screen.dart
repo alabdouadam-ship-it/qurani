@@ -95,6 +95,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       'en': 'Maher AlMuaiqly',
       'fr': 'Maher AlMuaiqly',
     },
+    'ghamadi': {
+      'ar': 'سعد الغامدي',
+      'en': 'Saad Al-Ghamdi',
+      'fr': 'Saad Al-Ghamdi',
+    },
   };
   
   // Theme options (placeholder only, no actual options yet)

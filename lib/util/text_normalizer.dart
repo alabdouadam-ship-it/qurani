@@ -12,24 +12,21 @@ class TextNormalizer {
     
     String s = input;
     
-    // Remove all Arabic diacritics (tashkeel)
-    // Range \u064B-\u0652 covers: Fathatan, Dammatan, Kasratan, Fatha, Damma, Kasra, Shadda, Sukun
+    // Remove all Arabic diacritics (tashkeel) including extended range
+    // Covers \u064B-\u065F (Fathatan..Sukoon..Superscript Alef..etc)
     // \u0670 is Maddah (superscript alef)
     // \u0640 is Tatweel (kashida)
-    s = s.replaceAll(RegExp(r"[\u064B-\u0652\u0670\u0640]"), '');
+    s = s.replaceAll(RegExp(r"[\u064B-\u065F\u0670\u0640]"), '');
     
     // Normalize alef variations (أ إ آ ٱ → ا)
-    // \u0622 = آ (Alef with Madda above)
-    // \u0623 = أ (Alef with Hamza above)
-    // \u0625 = إ (Alef with Hamza below)
-    // \u0671 = ٱ (Alef Wasla - used in Quranic text)
     s = s.replaceAll(RegExp(r"[\u0622\u0623\u0625\u0671]"), '\u0627');
     
     // Normalize ta marbuta (ة → ه)
     s = s.replaceAll('\u0629', '\u0647');
     
     // Normalize alef maksura (ى → ي)
-    s = s.replaceAll('\u0649', '\u064A');
+    // Also handle Farsi Yeh (\u06CC) -> Arabic Yeh (\u064A)
+    s = s.replaceAll(RegExp(r"[\u0649\u06CC]"), '\u064A');
     
     // Normalize waw with hamza (ؤ → و)
     s = s.replaceAll('\u0624', '\u0648');
@@ -37,8 +34,9 @@ class TextNormalizer {
     // Normalize yeh with hamza (ئ → ي)
     s = s.replaceAll('\u0626', '\u064A');
     
-    // Note: We don't use toLowerCase() for Arabic text as it doesn't work correctly
-    // Arabic characters don't have case distinctions like Latin characters
+    // Normalize special characters often found in copy-pasted text
+    // Remove "ALM" marks or other decorative Quranic symbols if present in usual search range
+    // However, basic keyboard input shouldn't have them.
     
     return s.trim().toLowerCase();
   }

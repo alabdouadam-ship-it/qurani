@@ -68,6 +68,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   StreamSubscription<Duration?>? _durationSub;
   StreamSubscription<PlayerState>? _playerStateSub;
   StreamSubscription<ProcessingState>? _processingStateSub;
+  StreamSubscription<int?>? _currentIndexSub;
   VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
@@ -103,6 +104,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _durationSub?.cancel();
     _playerStateSub?.cancel();
     _processingStateSub?.cancel();
+    _currentIndexSub?.cancel();
     if (_queueListener != null) {
       _queueService.queueNotifier.removeListener(_queueListener!);
     }
@@ -147,6 +149,78 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     _playerStateSub = _player.playerStateStream.listen(_handlePlayerStateChange);
     _processingStateSub = _player.processingStateStream.listen(_handleProcessingChange);
+    _currentIndexSub = _player.currentIndexStream.listen(_onCurrentIndexChanged);
+  }
+
+  Future<void> _onCurrentIndexChanged(int? index) async {
+    if (index == null || !_isPlaying || _verseByVerseMode) return;
+    
+    // Index 1 implies we moved to the Next track in the playlist
+    if (index == 1) {
+      final playlist = _player.audioSource as ConcatenatingAudioSource?;
+      if (playlist == null) return;
+
+      int nextOrder = -1;
+      
+      // Check queue first
+      final justPlayed = _currentOrder; // Actually justPlayed is old current.
+      // NOTE: index changed means we ARE playing playlist[1].
+      // playlist[1] corresponds to what we set as Next.
+      
+       // Dequeue if queue active
+       final queued = _queueService.getNext();
+       if (queued != null) {
+          // We effectively just started playing 'queued'.
+          // So 'queued' is now current.
+           nextOrder = queued;
+           _queueService.removeFromQueue(queued); 
+           // BUT wait, if we used peek in _loadAndPlaySurah, we haven't popped it yet?
+           // Actually, _loadAndPlaySurah didn't pop.
+           // So if we are here, we consumed the peeked item.
+           // We should pop it now.
+       } else {
+           nextOrder = (_currentOrder < 114) ? _currentOrder + 1 : -1;
+       }
+       
+       // Correct logic: rely on MediaItem extras if possible
+       final sequence = _player.sequence;
+       if (sequence != null && sequence.length > 1) {
+          final item = sequence[1].tag as MediaItem;
+          final order = item.extras?['surahOrder'] as int?;
+          if (order != null) nextOrder = order;
+       }
+
+       if (nextOrder != -1) {
+          if (mounted) {
+             setState(() {
+               _currentOrder = nextOrder;
+             });
+          }
+          _updateDownloadStatus();
+          PreferencesService.addToHistory(nextOrder, _reciterKey!);
+          
+          // Maintain Rolling Playlist: [Current, Next]
+          // Currently list is [Previous, Current]. Index is 1.
+          
+          // 1. Prepare NextNext
+          AudioSource? nextNextSource;
+          final nextQueued = _queueService.getNext(peek: true);
+          if (nextQueued != null) {
+             nextNextSource = await _buildAudioSource(nextQueued);
+          } else if (!_isRepeat && nextOrder < 114) {
+             nextNextSource = await _buildAudioSource(nextOrder + 1);
+          }
+
+          // 2. Add NextNext to end
+           if (nextNextSource != null) {
+             await playlist.add(nextNextSource);
+           }
+           
+          // 3. Remove Previous (index 0)
+          // removing index 0 changes current index from 1 to 0. This is safe.
+          await playlist.removeAt(0);
+       }
+    }
   }
 
   Future<void> _configureAudioSession() async {
@@ -293,15 +367,41 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           extras: {'surahOrder': order},
         );
 
-        final source = hasLocalFile
-            ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
-            : AudioSource.uri(Uri.parse(url), tag: mainItem);
+        // Initial Playlist Setup: [Current, Next]
+        final playlistChildren = <AudioSource>[];
+        playlistChildren.add(source);
 
-        debugPrint('[AudioPlayer] Setting audio source for surah $order (attempt ${retryCount + 1})');
+        // Preload next surah if available and not repeating single surah
+        // (If repeating, we might use LoopMode.one, but here we keep simple auto-advance logic)
+        final nextQueued = _queueService.getNext(peek: true);
+        if (nextQueued != null) {
+           try {
+             final nextSource = await _buildAudioSource(nextQueued);
+             if (nextSource != null) playlistChildren.add(nextSource);
+           } catch (e) {
+             debugPrint('Error preloading next queued surah: $e');
+           }
+        } else if (!_isRepeat && order < 114) {
+           try {
+             final nextSource = await _buildAudioSource(order + 1);
+             if (nextSource != null) playlistChildren.add(nextSource);
+           } catch (e) {
+             debugPrint('Error preloading next surah: $e');
+           }
+        }
+
+        final playlist = ConcatenatingAudioSource(
+          children: playlistChildren,
+          useLazyPreparation: true,
+          shuffleOrder: DefaultShuffleOrder(),
+        );
+
+        debugPrint('[AudioPlayer] Setting playlist with ${playlistChildren.length} items');
         
         try {
           await _player.setAudioSource(
-            source,
+            playlist,
+            initialIndex: 0,
             initialPosition: startPosition,
           );
           debugPrint('[AudioPlayer] Audio source set successfully');
@@ -389,6 +489,34 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
+  Future<AudioSource?> _buildAudioSource(int order) async {
+      final url = AudioService.buildFullRecitationUrl(
+        reciterKeyAr: _reciterKey!,
+        surahOrder: order,
+      );
+      if (url == null) return null;
+
+      final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
+      final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
+      final langCode = PreferencesService.getLanguage();
+      final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+      // Ensure _surahs is populated or get safe name
+      final surahName = (order <= _surahs.length && order > 0) 
+         ? _surahs.firstWhere((s) => s.order == order, orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0)).name 
+         : 'Surah $order';
+
+      final mainItem = MediaItem(
+          id: '${_reciterKey!}_$order',
+          title: surahName,
+          album: reciterName,
+          extras: {'surahOrder': order},
+      );
+
+      return hasLocalFile
+          ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
+          : AudioSource.uri(Uri.parse(url), tag: mainItem);
+  }
+
   void _handlePlayerStateChange(PlayerState state) {
     if (!mounted) return;
     if (_isPlayerDisposed) return;
@@ -439,21 +567,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         return;
       }
 
-      final nextQueued = _queueService.getNext();
-      if (nextQueued != null) {
-        if (mounted) {
-          setState(() {
-            _queue = _queueService.queue;
-          });
-        }
-        await _playSurah(nextQueued, autoPlay: true, resumePosition: Duration.zero);
-      } else if (_isRepeat) {
-        await _playSurah(_currentOrder, autoPlay: true, resumePosition: Duration.zero);
-      } else if (_autoPlayNext && _currentOrder < 114) {
-        await _playSurah(_currentOrder + 1, autoPlay: true, resumePosition: Duration.zero);
-      } else {
-        await _seekToCurrentStart(play: false);
-        setState(() => _isPlaying = false);
+      // For full surah mode, ConcatenatingAudioSource handles transitions automatically.
+      // We only need to handle the end of the very last surah or playlist end.
+      if (_player.nextIndex == null && !_isRepeat) {
+          await _seekToCurrentStart(play: false);
+          setState(() => _isPlaying = false);
+      } else if (_isRepeat && _player.processingState == ProcessingState.completed) {
+           // Repeat logic for single surah handled by LoopMode, but if explicit logic:
+           await _playSurah(_currentOrder, autoPlay: true, resumePosition: Duration.zero);
       }
     } finally {
       _isHandlingCompletion = false;

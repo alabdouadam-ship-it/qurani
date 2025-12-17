@@ -242,7 +242,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       case QuranEdition.simple:
       case QuranEdition.uthmani:
       case QuranEdition.tajweed:
-        final reciter = PreferencesService.getRepetitionReciter();
+        final reciter = PreferencesService.getReciter();
         return reciter.isNotEmpty ? reciter : 'afs';
       case QuranEdition.english:
         return 'arabic-english';
@@ -823,7 +823,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                       title: Text(l10n.chooseReciter),
                       subtitle: Text(
                         AudioService.reciterDisplayName(
-                          PreferencesService.getRepetitionReciter(),
+                          PreferencesService.getReciter(),
                           l10n.localeName,
                         ),
                       ),
@@ -834,12 +834,12 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                          SettingsSheetUtils.showReciterSelectionSheet(
                              context,
                              onReciterSelected: (key) async {
-                               // Save to Repetition Reciter
-                               await PreferencesService.saveRepetitionReciter(key);
-                               setState(() {
-                                 // Trigger reload if playing logic checks this
-                                 _activeReciterKey = null; // Force reload
-                               });
+                              // Save to Global Reciter
+                              await PreferencesService.saveReciter(key);
+                              setState(() {
+                                // Trigger reload if playing logic checks this
+                                _activeReciterKey = null; // Force reload
+                              });
                              }
                          );
                       },
