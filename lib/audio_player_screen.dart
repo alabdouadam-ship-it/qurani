@@ -69,6 +69,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   StreamSubscription<PlayerState>? _playerStateSub;
   StreamSubscription<ProcessingState>? _processingStateSub;
   StreamSubscription<int?>? _currentIndexSub;
+  StreamSubscription<PlaybackEvent>? _playbackEventSub;
   VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
@@ -105,6 +106,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _playerStateSub?.cancel();
     _processingStateSub?.cancel();
     _currentIndexSub?.cancel();
+    _playbackEventSub?.cancel();
     if (_queueListener != null) {
       _queueService.queueNotifier.removeListener(_queueListener!);
     }
@@ -150,6 +152,16 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _playerStateSub = _player.playerStateStream.listen(_handlePlayerStateChange);
     _processingStateSub = _player.processingStateStream.listen(_handleProcessingChange);
     _currentIndexSub = _player.currentIndexStream.listen(_onCurrentIndexChanged);
+    _playbackEventSub = _player.playbackEventStream.listen(
+      (event) {},
+      onError: (Object e, StackTrace st) {
+        if (e is PlatformException) {
+             debugPrint('[AudioPlayer] Playback Error: ${e.message}');
+             // If error occurs, we might need to reload current.
+             // Usually just_audio propagates this to processingState idle or error.
+        }
+      },
+    );
   }
 
   Future<void> _onCurrentIndexChanged(int? index) async {
@@ -551,6 +563,20 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final buffering = state == ProcessingState.buffering;
     if (buffering != _isBuffering) {
       setState(() => _isBuffering = buffering);
+    }
+
+    // Auto-retry logic for background timeouts
+    if (state == ProcessingState.idle && _isPlaying && !_isHandlingCompletion) {
+       debugPrint('[AudioPlayer] Unexpected Idle State detected (Background kill?). Retrying in 5s...');
+       Future.delayed(const Duration(seconds: 5), () {
+          if (mounted && _isPlaying && _player.processingState == ProcessingState.idle) {
+             debugPrint('[AudioPlayer] Retrying playback of Order: $_currentOrder');
+             // Reload current surah
+             final pos = _player.position; 
+             final safePos = pos > Duration.zero ? pos : Duration.zero;
+             _loadAndPlaySurah(_currentOrder, safePos, autoPlay: true);
+          }
+       });
     }
   }
 
