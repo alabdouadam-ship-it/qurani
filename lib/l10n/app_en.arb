@@ -581,8 +581,12 @@
   ,"@chooseReciter": {}
   ,"chooseReciterDesc": "Select your preferred reciter."
   ,"@chooseReciterDesc": {}
-  ,"rangeRepeatCount": "Range repeat count"
-  ,"@rangeRepeatCount": {},
+  ,"rangeRepeatCount": "Range repeat count",
+  "@rangeRepeatCount": {},
+  "startAtLastPage": "Start at last page",
+  "@startAtLastPage": {},
+  "startAtLastPageDesc": "If enabled, resume reading from the last page you visited.",
+  "@startAtLastPageDesc": {},
   "alwaysStartFromBeginning": "Always Start from Beginning",
   "@alwaysStartFromBeginning": {},
   "alwaysStartFromBeginningDesc": "When enabled, always start playing from the first verse. When disabled, resume from last position.",

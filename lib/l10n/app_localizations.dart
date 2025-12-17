@@ -1717,6 +1717,18 @@ abstract class AppLocalizations {
   /// **'Range repeat count'**
   String get rangeRepeatCount;
 
+  /// No description provided for @startAtLastPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Start at last page'**
+  String get startAtLastPage;
+
+  /// No description provided for @startAtLastPageDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'If enabled, resume reading from the last page you visited.'**
+  String get startAtLastPageDesc;
+
   /// No description provided for @alwaysStartFromBeginning.
   ///
   /// In en, this message translates to:

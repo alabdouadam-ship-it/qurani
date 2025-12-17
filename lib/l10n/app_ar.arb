@@ -579,8 +579,12 @@
   ,"@chooseReciter": {}
   ,"chooseReciterDesc": "اختر القارئ المفضل لديك."
   ,"@chooseReciterDesc": {}
-  ,"rangeRepeatCount": "عدد تكرار النطاق"
-  ,"@rangeRepeatCount": {},
+  ,"rangeRepeatCount": "عدد تكرار النطاق",
+  "@rangeRepeatCount": {},
+  "startAtLastPage": "البدء من آخر صفحة",
+  "@startAtLastPage": {},
+  "startAtLastPageDesc": "عند التفعيل، يتم استئناف القراءة من آخر صفحة تم الوصول إليها.",
+  "@startAtLastPageDesc": {},
   "alwaysStartFromBeginning": "ابدأ دائماً من البداية",
   "@alwaysStartFromBeginning": {},
   "alwaysStartFromBeginningDesc": "عند التفعيل، يبدأ التشغيل دائماً من أول آية. عند التعطيل، يستأنف من آخر موضع.",

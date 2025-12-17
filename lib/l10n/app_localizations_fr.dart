@@ -853,6 +853,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get rangeRepeatCount => 'Range repeat count';
 
   @override
+  String get startAtLastPage => 'Commencer à la dernière page';
+
+  @override
+  String get startAtLastPageDesc => 'Si activé, reprendre la lecture à la dernière page visitée.';
+
+  @override
   String get alwaysStartFromBeginning => 'Toujours commencer au début';
 
   @override

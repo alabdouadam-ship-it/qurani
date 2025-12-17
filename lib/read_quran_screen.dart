@@ -67,6 +67,17 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     } catch (_) {
       _edition = QuranEdition.simple;
     }
+    
+    // Check start at last page preference
+    final startAtLastPage = PreferencesService.getStartAtLastPage();
+    if (startAtLastPage) {
+      _currentPage = PreferencesService.getLastReadPage(_edition.name);
+    }
+
+    if (_currentPage > _totalPages) {
+      _currentPage = 1;
+    }
+
     _pageController = PageController(initialPage: _currentPage - 1);
     _surahListFuture = _repository.loadAllSurahs();
     _highlightedAyahs.addAll(PreferencesService.getHighlightedAyahs());
@@ -497,6 +508,18 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                           setSheetState(() => _autoFlip = val);
                           setState(() => _autoFlip = val);
                           await PreferencesService.saveAutoFlipPage(val);
+                        },
+                      ),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      title: Text(l10n.startAtLastPage),
+                      subtitle: Text(l10n.startAtLastPageDesc),
+                      trailing: Switch(
+                        value: PreferencesService.getStartAtLastPage(),
+                        onChanged: (val) async {
+                           setSheetState(() {});
+                           await PreferencesService.saveStartAtLastPage(val);
                         },
                       ),
                     ),
@@ -1130,6 +1153,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           _currentPageData = null;
           _ayahKeys.clear();
         });
+        
+        // Save last read page
+        PreferencesService.saveLastReadPage(_edition.name, index + 1);
       },
       itemBuilder: (context, index) {
         final pageNumber = index + 1;

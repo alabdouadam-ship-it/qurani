@@ -559,4 +559,23 @@ class PreferencesService {
   static int getLastPlaybackPosition(int surahNumber) {
     return _prefs?.getInt('${keyLastPlaybackPositionPrefix}$surahNumber') ?? 0;
   }
+
+  static const String keyStartAtLastPage = 'start_at_last_page';
+  static const String keyLastReadPagePrefix = 'last_read_page_';
+
+  static Future<void> saveStartAtLastPage(bool value) async {
+    await _prefs?.setBool(keyStartAtLastPage, value);
+  }
+
+  static bool getStartAtLastPage() {
+    return _prefs?.getBool(keyStartAtLastPage) ?? false;
+  }
+
+  static Future<void> saveLastReadPage(String editionName, int page) async {
+    await _prefs?.setInt('${keyLastReadPagePrefix}$editionName', page);
+  }
+
+  static int getLastReadPage(String editionName) {
+    return _prefs?.getInt('${keyLastReadPagePrefix}$editionName') ?? 1;
+  }
 }

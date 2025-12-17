@@ -272,104 +272,119 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       return;
     }
 
-    try {
-      final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
-      final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
-      final langCode = PreferencesService.getLanguage();
-      final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
-      final currentSurah = _surahs.firstWhere(
-        (s) => s.order == order,
-        orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0),
-      );
+    int retryCount = 0;
+    const maxRetries = 3;
 
-      final mainItem = MediaItem(
-        id: '${_reciterKey!}_$order',
-        title: currentSurah.name,
-        album: reciterName,
-        extras: {'surahOrder': order},
-      );
-
-      final source = hasLocalFile
-          ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
-          : AudioSource.uri(Uri.parse(url), tag: mainItem);
-
-      debugPrint('[AudioPlayer] Setting audio source for surah $order');
-      
+    while (true) {
       try {
-        await _player.setAudioSource(
-          source,
-          initialPosition: startPosition,
+        final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
+        final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
+        final langCode = PreferencesService.getLanguage();
+        final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+        final currentSurah = _surahs.firstWhere(
+          (s) => s.order == order,
+          orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0),
         );
-        debugPrint('[AudioPlayer] Audio source set successfully');
-      } catch (e, stackTrace) {
-        debugPrint('[AudioPlayer] CRITICAL ERROR setting audio source: $e');
-        debugPrint('[AudioPlayer] Stack trace: $stackTrace');
-        throw Exception('Failed to load audio: ${e.toString()}');
-      }
 
-      if (autoPlay) {
-        try {
-          await _player.play();
-          debugPrint('[AudioPlayer] Playback started');
-        } catch (e) {
-          debugPrint('[AudioPlayer] ERROR starting playback: $e');
-          throw Exception('Failed to start playback: ${e.toString()}');
-        }
-      } else {
-        await _player.pause();
-      }
+        final mainItem = MediaItem(
+          id: '${_reciterKey!}_$order',
+          title: currentSurah.name,
+          album: reciterName,
+          extras: {'surahOrder': order},
+        );
 
-      if (mounted) {
-        setState(() {
-          _isPlaying = autoPlay;
-          _isBuffering = false;
-          _errorMessage = null;
-          _isCurrentSurahDownloaded = hasLocalFile;
-        });
-      }
+        final source = hasLocalFile
+            ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
+            : AudioSource.uri(Uri.parse(url), tag: mainItem);
 
-      await PreferencesService.addToHistory(order, _reciterKey!);
-    } catch (e, stackTrace) {
-      debugPrint('[AudioPlayer] CRITICAL ERROR loading surah audio: $e');
-      debugPrint('[AudioPlayer] Stack trace: $stackTrace');
-      
-      // Show debug error dialog
-      DebugErrorDisplay.showError(
-        context,
-        screen: 'Audio Player',
-        operation: 'Load Surah $order',
-        error: e.toString(),
-        stackTrace: stackTrace.toString(),
-      );
-      
-      final l10n = AppLocalizations.of(context)!;
-      String userMessage = l10n.errorLoadingAudio;
-      
-      if (e.toString().contains('Permission')) {
-        userMessage = 'Audio permission required. Please grant permission in settings.';
-      } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
-        userMessage = 'Network error. Please check your internet connection.';
-      } else if (e.toString().contains('Format') || e.toString().contains('Codec')) {
-        userMessage = 'Audio format not supported on this device.';
-      }
-      
-      if (mounted) {
-        setState(() {
-          _errorMessage = userMessage;
-          _isBuffering = false;
-          _isCurrentSurahDownloaded = false;
-        });
+        debugPrint('[AudioPlayer] Setting audio source for surah $order (attempt ${retryCount + 1})');
         
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(userMessage),
-            duration: const Duration(seconds: 5),
-            action: SnackBarAction(
-              label: 'OK',
-              onPressed: () {},
-            ),
-          ),
-        );
+        try {
+          await _player.setAudioSource(
+            source,
+            initialPosition: startPosition,
+          );
+          debugPrint('[AudioPlayer] Audio source set successfully');
+        } catch (e, stackTrace) {
+          debugPrint('[AudioPlayer] CRITICAL ERROR setting audio source: $e');
+          debugPrint('[AudioPlayer] Stack trace: $stackTrace');
+          throw Exception('Failed to load audio: ${e.toString()}');
+        }
+
+        if (autoPlay) {
+          try {
+            await _player.play();
+            debugPrint('[AudioPlayer] Playback started');
+          } catch (e) {
+            debugPrint('[AudioPlayer] ERROR starting playback: $e');
+            throw Exception('Failed to start playback: ${e.toString()}');
+          }
+        } else {
+          await _player.pause();
+        }
+
+        if (mounted) {
+          setState(() {
+            _isPlaying = autoPlay;
+            _isBuffering = false;
+            _errorMessage = null;
+            _isCurrentSurahDownloaded = hasLocalFile;
+          });
+        }
+
+        await PreferencesService.addToHistory(order, _reciterKey!);
+        break; // Success, exit loop
+      } catch (e, stackTrace) {
+        debugPrint('[AudioPlayer] Error loading surah audio (attempt ${retryCount + 1}): $e');
+        
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          debugPrint('[AudioPlayer] Max retries reached. Showing error.');
+          debugPrint('[AudioPlayer] Final Stack trace: $stackTrace');
+          
+          // Show debug error dialog
+          DebugErrorDisplay.showError(
+            context,
+            screen: 'Audio Player',
+            operation: 'Load Surah $order',
+            error: e.toString(),
+            stackTrace: stackTrace.toString(),
+          );
+          
+          final l10n = AppLocalizations.of(context)!;
+          String userMessage = l10n.errorLoadingAudio;
+          
+          if (e.toString().contains('Permission')) {
+            userMessage = 'Audio permission required. Please grant permission in settings.';
+          } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
+            userMessage = 'Network error. Please check your internet connection.';
+          } else if (e.toString().contains('Format') || e.toString().contains('Codec')) {
+            userMessage = 'Audio format not supported on this device.';
+          }
+          
+          if (mounted) {
+            setState(() {
+              _errorMessage = userMessage;
+              _isBuffering = false;
+              _isCurrentSurahDownloaded = false;
+            });
+            
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(userMessage),
+                duration: const Duration(seconds: 5),
+                action: SnackBarAction(
+                  label: 'OK',
+                  onPressed: () {},
+                ),
+              ),
+            );
+          }
+          break; // Exit loop after handling final error
+        } else {
+           // Wait before retrying (exponential backoff could be used, but simple delay is fine)
+           await Future.delayed(const Duration(milliseconds: 1500));
+        }
       }
     }
   }
