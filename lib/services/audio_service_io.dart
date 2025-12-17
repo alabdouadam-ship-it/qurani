@@ -14,6 +14,7 @@ class AudioService {
     'suwaid': '/data/full/suwaid',
     'shuraym': 'https://server7.mp3quran.net/shur',
     'maher': 'https://server12.mp3quran.net/maher',
+    'ghamadi': 'https://server7.mp3quran.net/s_gmd',
     'muyassar': '/data/muyassar_audio/full',
   };
 
@@ -27,6 +28,7 @@ class AudioService {
     'suwaid': {'ar': 'أيمن سويد','en': 'Ayman Suwaid','fr': 'Ayman Suwaid'},
     'shuraym': {'ar': 'سعود الشريم','en': 'Saood ash-Shuraym','fr': 'Saood ash-Shuraym'},
     'maher': {'ar': 'ماهر المعيقلي','en': 'Maher AlMuaiqly','fr': 'Maher AlMuaiqly'},
+    'ghamadi': {'ar': 'سعد الغامدي','en': 'Saad Al-Ghamdi','fr': 'Saad Al-Ghamdi'},
     'muyassar': {'ar': 'تفسير الميسر','en': 'Tafsir Al Muyassar','fr': 'Tafsir Al Muyassar'},
     'english_arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
     'english-arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
@@ -89,8 +91,10 @@ class AudioService {
     if (s == null || v == null) return null;
     final reciterFolder = _getAyahsReciterFolder(reciterKeyAr);
     
-    // Handle external URL for shuraym and maher (everyayah.com)
-    if (reciterFolder == 'Saood_ash-Shuraym_64kbps' || reciterFolder == 'Maher_AlMuaiqly_64kbps') {
+    // Handle external URL for shuraym, maher, and ghamadi (everyayah.com)
+    if (reciterFolder == 'Saood_ash-Shuraym_64kbps' || 
+        reciterFolder == 'Maher_AlMuaiqly_64kbps' || 
+        reciterFolder == 'Ghamadi_40kbps') {
       return 'https://everyayah.com/data/$reciterFolder/$s$v.mp3';
     }
     
@@ -110,6 +114,7 @@ class AudioService {
     'sds': 'sds',
     'shuraym': 'Saood_ash-Shuraym_64kbps',
     'maher': 'Maher_AlMuaiqly_64kbps',
+    'ghamadi': 'Ghamadi_40kbps',
     'muyassar': 'muyassar_audio',
     'english_arabic': 'english-arabic',
     'english-arabic': 'english-arabic',
