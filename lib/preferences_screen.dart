@@ -85,6 +85,16 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       'en': 'Ayman Suwaid',
       'fr': 'Ayman Suwaid',
     },
+    'shuraym': {
+      'ar': 'سعود الشريم',
+      'en': 'Saood ash-Shuraym',
+      'fr': 'Saood ash-Shuraym',
+    },
+    'maher': {
+      'ar': 'ماهر المعيقلي',
+      'en': 'Maher AlMuaiqly',
+      'fr': 'Maher AlMuaiqly',
+    },
   };
   
   // Theme options (placeholder only, no actual options yet)

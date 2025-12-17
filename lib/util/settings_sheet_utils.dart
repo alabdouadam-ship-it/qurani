@@ -18,6 +18,7 @@ class SettingsSheetUtils {
       {'id': 'basit', 'name': AudioService.reciterDisplayName('basit', langCode)},
       {'id': 'sds', 'name': AudioService.reciterDisplayName('sds', langCode)},
       {'id': 'shuraym', 'name': AudioService.reciterDisplayName('shuraym', langCode)},
+      {'id': 'maher', 'name': AudioService.reciterDisplayName('maher', langCode)},
       {'id': 'frs_a', 'name': AudioService.reciterDisplayName('frs_a', langCode)},
       {'id': 'husr', 'name': AudioService.reciterDisplayName('husr', langCode)},
       {'id': 'minsh', 'name': AudioService.reciterDisplayName('minsh', langCode)},
