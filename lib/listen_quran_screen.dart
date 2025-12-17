@@ -90,13 +90,62 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
             icon: const Icon(Icons.settings),
             tooltip: l10n.settings,
             onPressed: () {
-              SettingsSheetUtils.showReciterSelectionSheet(
-                context,
-                onReciterSelected: (reciterKey) {
-                  PreferencesService.saveReciter(reciterKey);
-                  setState(() {
-                    _lastReciterKey = reciterKey;
-                  });
+              showModalBottomSheet(
+                context: context,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                ),
+                builder: (context) {
+                  return StatefulBuilder(
+                    builder: (context, setSheetState) {
+                      final alwaysStart = PreferencesService.getAlwaysStartFromBeginning();
+                      final currentReciterKey = PreferencesService.getReciter();
+                      final reciterName = AudioService.reciterDisplayName(currentReciterKey, l10n.localeName);
+                      
+                      return SafeArea(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const SizedBox(height: 16),
+                            Text(
+                              l10n.settings,
+                              style: Theme.of(context).textTheme.titleLarge,
+                            ),
+                            const SizedBox(height: 16),
+                            SwitchListTile(
+                              title: Text(l10n.alwaysStartFromBeginning),
+                              subtitle: Text(l10n.alwaysStartFromBeginningDesc, style: Theme.of(context).textTheme.bodySmall),
+                              value: alwaysStart,
+                              onChanged: (value) async {
+                                await PreferencesService.saveAlwaysStartFromBeginning(value);
+                                setSheetState(() {});
+                              },
+                            ),
+                            const Divider(),
+                            ListTile(
+                              leading: const Icon(Icons.record_voice_over),
+                              title: Text(l10n.chooseReciter),
+                              subtitle: Text(reciterName),
+                              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                              onTap: () {
+                                Navigator.pop(context);
+                                SettingsSheetUtils.showReciterSelectionSheet(
+                                  context,
+                                  onReciterSelected: (reciterKey) {
+                                    PreferencesService.saveReciter(reciterKey);
+                                    setState(() {
+                                      _lastReciterKey = reciterKey;
+                                    });
+                                  },
+                                );
+                              },
+                            ),
+                            const SizedBox(height: 16),
+                          ],
+                        ),
+                      );
+                    },
+                  );
                 },
               );
             },

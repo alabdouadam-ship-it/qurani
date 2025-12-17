@@ -40,21 +40,7 @@ class SettingsSheetUtils {
             builder: (context, scrollController) {
               return Column(
                 children: [
-                  StatefulBuilder(
-                    builder: (context, setState) {
-                      final alwaysStart = PreferencesService.getAlwaysStartFromBeginning();
-                      return SwitchListTile(
-                        title: Text(l10n.alwaysStartFromBeginning),
-                        subtitle: Text(l10n.alwaysStartFromBeginningDesc, style: Theme.of(context).textTheme.bodySmall),
-                        value: alwaysStart,
-                        onChanged: (value) async {
-                          await PreferencesService.saveAlwaysStartFromBeginning(value);
-                          setState(() {});
-                        },
-                      );
-                    },
-                  ),
-                  const Divider(height: 1),
+
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
