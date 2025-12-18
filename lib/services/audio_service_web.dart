@@ -10,6 +10,9 @@ class AudioService {
     'husr': '/data/full/husr',
     'minsh': '/data/full/minsh',
     'suwaid': '/data/full/suwaid',
+    'shuraym': 'https://server7.mp3quran.net/shur',
+    'maher': 'https://server12.mp3quran.net/maher',
+    'ghamadi': 'https://server7.mp3quran.net/s_gmd',
     'muyassar': '/data/muyassar_audio/full',
   };
 
@@ -21,6 +24,9 @@ class AudioService {
     'husr': {'ar': 'الحصري','en': 'Mahmoud Al Husary','fr': 'Mahmoud Al Husary'},
     'minsh': {'ar': 'المنشاوي','en': 'Mohamed Al Manshawi','fr': 'Mohamed Al Manshawi'},
     'suwaid': {'ar': 'أيمن سويد','en': 'Ayman Suwaid','fr': 'Ayman Suwaid'},
+    'shuraym': {'ar': 'سعود الشريم','en': 'Saood ash-Shuraym','fr': 'Saood ash-Shuraym'},
+    'maher': {'ar': 'ماهر المعيقلي','en': 'Maher AlMuaiqly','fr': 'Maher AlMuaiqly'},
+    'ghamadi': {'ar': 'سعد الغامدي','en': 'Saad Al-Ghamdi','fr': 'Saad Al-Ghamdi'},
     'muyassar': {'ar': 'تفسير الميسر','en': 'Tafsir Al Muyassar','fr': 'Tafsir Al Muyassar'},
     'english_arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
     'english-arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
@@ -47,6 +53,12 @@ class AudioService {
     final base = _fullAudioBases[reciterKeyAr] ?? '/data/full/basit';
     final padded = _pad3(surahOrder);
     if (padded == null) return null;
+
+    // Handle external URL for shuraym, maher, ghamadi
+    if (base.startsWith('http')) {
+      return '$base/$padded.mp3';
+    }
+
     return 'https://www.qurani.info$base/$padded.mp3';
   }
 
@@ -58,6 +70,9 @@ class AudioService {
     'minsh': 'minsh',
     'suwaid': 'suwaid',
     'sds': 'sds',
+    'shuraym': 'Saood_ash-Shuraym_64kbps',
+    'maher': 'Maher_AlMuaiqly_64kbps',
+    'ghamadi': 'Ghamadi_40kbps',
     'muyassar': 'muyassar_audio',
     'english_arabic': 'english-arabic',
     'english-arabic': 'english-arabic',
@@ -82,6 +97,14 @@ class AudioService {
     final v = _pad3(verseNumber);
     if (s == null || v == null) return null;
     final reciterFolder = _getAyahsReciterFolder(reciterKeyAr);
+    
+    // Handle external URL for shuraym, maher, and ghamadi (everyayah.com)
+    if (reciterFolder == 'Saood_ash-Shuraym_64kbps' || 
+        reciterFolder == 'Maher_AlMuaiqly_64kbps' || 
+        reciterFolder == 'Ghamadi_40kbps') {
+      return 'https://everyayah.com/data/$reciterFolder/$s$v.mp3';
+    }
+
     final basePath = reciterFolder == 'muyassar_audio'
         ? 'https://www.qurani.info/data/muyassar_audio'
         : 'https://www.qurani.info/data/ayahs/$reciterFolder';
