@@ -779,11 +779,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get twentyFourHour => '24h';
 
   @override
-  String get homeGreetingGeneric => 'Hello, what would you like to do?';
+  String get homeGreetingGeneric => 'Welcome to Qurani App';
 
   @override
-  String homeGreetingNamed(String name) {
-    return 'Hello $name, what would you like to do?';
+  String homeGreetingNamed(String userName) {
+    return 'Welcome $userName to Qurani App';
   }
 
   @override

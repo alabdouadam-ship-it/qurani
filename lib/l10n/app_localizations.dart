@@ -1576,14 +1576,14 @@ abstract class AppLocalizations {
   /// No description provided for @homeGreetingGeneric.
   ///
   /// In en, this message translates to:
-  /// **'Hello, what would you like to do?'**
+  /// **'Welcome to Qurani App'**
   String get homeGreetingGeneric;
 
   /// No description provided for @homeGreetingNamed.
   ///
   /// In en, this message translates to:
-  /// **'Hello {name}, what would you like to do?'**
-  String homeGreetingNamed(String name);
+  /// **'Welcome {userName} to Qurani App'**
+  String homeGreetingNamed(String userName);
 
   /// No description provided for @hijriHeader.
   ///

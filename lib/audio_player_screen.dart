@@ -176,7 +176,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       int nextOrder = -1;
       
       // Check queue first
-      final justPlayed = _currentOrder; // Actually justPlayed is old current.
+      // Check queue first
       // NOTE: index changed means we ARE playing playlist[1].
       // playlist[1] corresponds to what we set as Next.
       

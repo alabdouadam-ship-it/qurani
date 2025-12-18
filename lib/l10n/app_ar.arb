@@ -588,5 +588,15 @@
   "alwaysStartFromBeginning": "ابدأ دائماً من البداية",
   "@alwaysStartFromBeginning": {},
   "alwaysStartFromBeginningDesc": "عند التفعيل، يبدأ التشغيل دائماً من أول آية. عند التعطيل، يستأنف من آخر موضع.",
-  "@alwaysStartFromBeginningDesc": {}
+  "@alwaysStartFromBeginningDesc": {},
+  "homeGreetingGeneric": "أهلا بك في تطبيق قرآني",
+  "@homeGreetingGeneric": {},
+  "homeGreetingNamed": "أهلا بك يا {userName} في تطبيق قرآني",
+  "@homeGreetingNamed": {
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -16,6 +16,7 @@ import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
 import 'services/preferences_service.dart';
+import 'services/prayer_times_service.dart';
 
 
 class OptionsScreen extends StatefulWidget {
@@ -130,19 +131,37 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     ),
                   ],
                 ),
-                child: Builder(builder: (context) {
-                  final name = PreferencesService.getUserName().trim();
-                  final text = name.isEmpty ? l10n.homeGreetingGeneric : l10n.homeGreetingNamed(name);
-                  return Text(
-                    text,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, kIsWeb ? 18 : 22),
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  );
-                }),
+                child: FutureBuilder<Map<String, String>?>(
+                  future: _getHijriDate(),
+                  builder: (context, snapshot) {
+                    final name = PreferencesService.getUserName().trim();
+                    final greeting = name.isEmpty 
+                        ? l10n.homeGreetingGeneric 
+                        : l10n.homeGreetingNamed(name);
+                    
+                    String fullText = greeting;
+                    if (snapshot.hasData && snapshot.data != null) {
+                      final hijri = snapshot.data!;
+                      final isArabic = l10n.localeName == 'ar';
+                      final day = hijri['day'];
+                      final month = isArabic ? hijri['monthAr'] : hijri['monthEn'];
+                      final year = hijri['year'];
+                      final hijriString = '$day $month $year';
+                      
+                      fullText = '$greeting\n$hijriString';
+                    }
+
+                    return Text(
+                      fullText,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: ResponsiveConfig.getFontSize(context, kIsWeb ? 18 : 22),
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    );
+                  },
+                ),
               ),
               
               // Options Grid - Fixed layout without scroll
@@ -165,7 +184,39 @@ class _OptionsScreenState extends State<OptionsScreen> {
                         children: options.map((option) => _buildOptionCard(context, option)).toList(),
                       );
                     }
-                    // Mobile/tablet default 2 columns - scrollable
+                    // Mobile/tablet default 2 columns - fit to screen
+                    if (!kIsWeb) {
+                      final crossAxisCount = 2;
+                      final itemCount = options.length;
+                      final rowCount = (itemCount / crossAxisCount).ceil();
+                      
+                      // Calculate available spacing
+                      final spaceC = isSmallScreen ? 10.0 : 15.0; // Cross axis spacing
+                      final spaceM = isSmallScreen ? 10.0 : 15.0; // Main axis spacing
+                      
+                      // Calculate width per item
+                      final width = (constraints.maxWidth - (spaceC * (crossAxisCount - 1))) / crossAxisCount;
+                      
+                      // Calculate height per item
+                      // We want it to fit in the available height, minus spacing
+                      final totalSpacingHistory = spaceM * (rowCount - 1);
+                      final height = (constraints.maxHeight - totalSpacingHistory) / rowCount;
+                      
+                      // Determine Aspect Ratio
+                      // Guard against very small screens or weird layout constraints
+                      final aspectRatio = (height > 0) ? (width / height) : 1.0;
+
+                      return GridView.count(
+                        crossAxisCount: crossAxisCount,
+                        crossAxisSpacing: spaceC,
+                        mainAxisSpacing: spaceM,
+                        childAspectRatio: aspectRatio,
+                        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
+                        children: options.map((option) => _buildOptionCard(context, option)).toList(),
+                      );
+                    }
+
+                    // Web fallback (existing)
                     return GridView.count(
                       crossAxisCount: 2,
                       crossAxisSpacing: isSmallScreen ? 10 : 15,
@@ -440,6 +491,19 @@ class _OptionsScreenState extends State<OptionsScreen> {
         );
       },
     );
+  }
+
+  Future<Map<String, String>?> _getHijriDate() async {
+    try {
+      final now = DateTime.now();
+      return await PrayerTimesService.getHijriForDate(
+        year: now.year, 
+        month: now.month, 
+        day: now.day
+      );
+    } catch (_) {
+      return null;
+    }
   }
 }
 

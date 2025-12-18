@@ -579,5 +579,15 @@
   "startAtLastPageDesc": "Si activé, reprendre la lecture à la dernière page visitée.",
   "@startAtLastPageDesc": {},
   "alwaysStartFromBeginningDesc": "Si activé, la lecture commence toujours au premier verset. Si désactivé, elle reprend à la dernière position.",
-  "@alwaysStartFromBeginningDesc": {}
+  "@alwaysStartFromBeginningDesc": {},
+  "homeGreetingGeneric": "Bienvenue sur l'application Qurani",
+  "@homeGreetingGeneric": {},
+  "homeGreetingNamed": "Bienvenue {userName} sur l'application Qurani",
+  "@homeGreetingNamed": {
+    "placeholders": {
+      "userName": {
+        "type": "String"
+      }
+    }
+  }
 }

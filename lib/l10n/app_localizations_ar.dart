@@ -779,11 +779,11 @@ class AppLocalizationsAr extends AppLocalizations {
   String get twentyFourHour => '‏24 ساعة';
 
   @override
-  String get homeGreetingGeneric => 'أهلا، ماذا تريد أن تفعل؟';
+  String get homeGreetingGeneric => 'أهلا بك في تطبيق قرآني';
 
   @override
-  String homeGreetingNamed(String name) {
-    return 'أهلا $name، ماذا تريد أن تفعل؟';
+  String homeGreetingNamed(String userName) {
+    return 'أهلا بك يا $userName في تطبيق قرآني';
   }
 
   @override
