@@ -83,25 +83,42 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           return const Center(child: Text('لا توجد سور'));
         }
         
+        if (snapshot.hasError) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Error: ${snapshot.error}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.red),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
+
         final allSurahs = snapshot.data!;
         final q = TextNormalizer.normalize(_surahQuery);
         final surahs = q.isEmpty
             ? allSurahs
             : allSurahs.where((s) => TextNormalizer.normalize(s.name).contains(q)).toList();
         
-        // On web: 8-12 columns based on width, on tablet: 3 columns, on mobile: 2 columns
+        // Responsive grid logic mirroring SurahGrid
+        // Use screen width to determine columns, regardless of platform
+        final width = MediaQuery.of(context).size.width;
         int crossAxisCount;
-        if (kIsWeb) {
-          final width = MediaQuery.of(context).size.width;
-          if (width >= 1600) {
-            crossAxisCount = 12;
-          } else if (width >= 1200) {
-            crossAxisCount = 10;
-          } else {
-            crossAxisCount = 8;
-          }
+        if (width >= 1200) {
+          crossAxisCount = 6;
+        } else if (width >= 800) {
+          crossAxisCount = 4;
         } else {
-          crossAxisCount = isSmallScreen ? 2 : 3;
+          crossAxisCount = 2; // Mobile / Small screens
         }
         
         return Column(
@@ -129,9 +146,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                 padding: EdgeInsets.all(isSmallScreen ? 12 : 16),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: kIsWeb ? 8 : 12,
-                  mainAxisSpacing: kIsWeb ? 8 : 12,
-                  childAspectRatio: kIsWeb ? 3.0 : 1.8,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: crossAxisCount <= 3 ? 2.5 : 2.0,
                 ),
                 itemCount: surahs.length,
                 itemBuilder: (context, index) {
@@ -348,28 +365,24 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final l10n = AppLocalizations.of(context)!;
     
-    // On web: 8-12 columns based on width, on tablet: 4 columns, on mobile: 2 columns
+    // Responsive grid logic for Juz selector
+    final width = MediaQuery.of(context).size.width;
     int crossAxisCount;
-    if (kIsWeb) {
-      final width = MediaQuery.of(context).size.width;
-      if (width >= 1600) {
-        crossAxisCount = 12;
-      } else if (width >= 1200) {
-        crossAxisCount = 10;
-      } else {
-        crossAxisCount = 8;
-      }
+    if (width >= 1200) {
+      crossAxisCount = 6;
+    } else if (width >= 800) {
+      crossAxisCount = 4;
     } else {
-      crossAxisCount = isSmallScreen ? 2 : 4;
+      crossAxisCount = 2; // Mobile
     }
 
     return GridView.builder(
       padding: const EdgeInsets.all(12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        crossAxisSpacing: kIsWeb ? 8 : 12,
-        mainAxisSpacing: kIsWeb ? 8 : 12,
-        childAspectRatio: kIsWeb ? 3.0 : 1.8,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
+        childAspectRatio: crossAxisCount <= 3 ? 2.5 : 2.0,
       ),
       itemCount: 30,
       itemBuilder: (context, index) {

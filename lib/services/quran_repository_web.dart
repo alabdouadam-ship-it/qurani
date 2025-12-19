@@ -26,7 +26,7 @@ extension QuranEditionExt on QuranEdition {
       case QuranEdition.french:
         return 'assets/data/quran-french.json';
       case QuranEdition.tafsir:
-        return 'assets/data/quran-simple.json'; // Fallback for tafsir
+        return 'assets/data/quran-muyassar.json';
     }
   }
 
