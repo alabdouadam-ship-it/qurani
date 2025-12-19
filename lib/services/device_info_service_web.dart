@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ui' as ui;
 // TODO: Replace 'dart:html' with 'package:web/web.dart' and 'dart:js_interop' when all dependencies migrate. Using 'dart:html' for now for browser info collection; safe to ignore info-level warning in analyzer.
 // ignore: deprecated_member_use
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 import 'package:package_info_plus/package_info_plus.dart';

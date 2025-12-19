@@ -68,6 +68,7 @@ class _SurahGridState extends State<SurahGrid> {
                     isCurrentlyFeatured ? l10n.removeFeatureSurah : l10n.featureSurah,
                   ),
                   onTap: () async {
+                    final navigator = Navigator.of(sheetContext);
                     final nowFeatured = await PreferencesService.toggleListenFeaturedSurah(surah.order);
                     if (!mounted) return;
                     setState(() {
@@ -77,7 +78,7 @@ class _SurahGridState extends State<SurahGrid> {
                         _featuredSurahs.remove(surah.order);
                       }
                     });
-                    Navigator.pop(sheetContext);
+                    navigator.pop();
                     messenger.showSnackBar(
                       SnackBar(
                         content: Text(nowFeatured ? l10n.surahFeatured : l10n.surahUnfeatured),
@@ -137,7 +138,7 @@ class _SurahGridState extends State<SurahGrid> {
     final color = theme.colorScheme;
     final size = MediaQuery.of(context).size;
     
-    // Optimize for web: 8-12 columns based on width
+    // Optimize for web
     int crossAxisCount;
     if (kIsWeb) {
       final width = size.width;
@@ -145,8 +146,12 @@ class _SurahGridState extends State<SurahGrid> {
         crossAxisCount = 12;
       } else if (width >= 1200) {
         crossAxisCount = 10;
-      } else {
+      } else if (width >= 900) {
         crossAxisCount = 8;
+      } else if (width >= 600) {
+        crossAxisCount = 4;
+      } else {
+        crossAxisCount = 2; // Mobile web
       }
     } else {
       crossAxisCount = size.width >= 768 ? 4 : 2;
@@ -155,6 +160,25 @@ class _SurahGridState extends State<SurahGrid> {
     return FutureBuilder<List<Surah>>(
       future: _future,
       builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Error loading Surahs: ${snapshot.error}',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.red),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
@@ -206,7 +230,7 @@ class _SurahGridState extends State<SurahGrid> {
                   crossAxisCount: crossAxisCount,
                   crossAxisSpacing: kIsWeb ? 8 : 12,
                   mainAxisSpacing: kIsWeb ? 8 : 12,
-                  childAspectRatio: kIsWeb ? 3.0 : 1.8,
+                  childAspectRatio: crossAxisCount <= 4 ? 1.8 : 3.0,
                 ),
                 itemCount: filtered.length,
                 itemBuilder: (context, index) {
@@ -243,7 +267,7 @@ class _SurahGridState extends State<SurahGrid> {
                         border: Border.all(color: borderColor, width: isFeatured ? 1.4 : 1.0),
                         boxShadow: boxShadow,
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: kIsWeb ? 6 : 12,
                         vertical: kIsWeb ? 3 : 10,
                       ),
@@ -255,10 +279,10 @@ class _SurahGridState extends State<SurahGrid> {
                             radius: kIsWeb ? 12 : 18,
                             child: Text(
                               '${surah.order}',
-                              style: TextStyle(fontSize: kIsWeb ? 10 : 14),
+                              style: const TextStyle(fontSize: kIsWeb ? 10 : 14),
                             ),
                           ),
-                          SizedBox(width: kIsWeb ? 4 : 10),
+                          const SizedBox(width: kIsWeb ? 4 : 10),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -276,7 +300,7 @@ class _SurahGridState extends State<SurahGrid> {
                                   ),
                                 ),
                                 if (!kIsWeb || crossAxisCount <= 10) ...[
-                                  SizedBox(height: kIsWeb ? 1 : 4),
+                                  const SizedBox(height: kIsWeb ? 1 : 4),
                                   Text(
                                     '${surah.totalVerses} ${l10n.verses}',
                                     style: theme.textTheme.bodySmall?.copyWith(
@@ -296,7 +320,7 @@ class _SurahGridState extends State<SurahGrid> {
                             ),
                           if (isFeatured)
                             Padding(
-                              padding: EdgeInsets.only(left: kIsWeb ? 2 : 6),
+                              padding: const EdgeInsets.only(left: kIsWeb ? 2 : 6),
                               child: Icon(
                                 Icons.star,
                                 size: kIsWeb ? 12 : 18,

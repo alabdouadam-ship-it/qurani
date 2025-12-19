@@ -250,11 +250,12 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Close results dialog
+              final navigator = Navigator.of(context);
+              navigator.pop(); // Close results dialog
               // Navigate back to app root (home screen)
               Future.microtask(() {
                 if (mounted) {
-                  Navigator.of(context).popUntil((route) => route.isFirst);
+                  navigator.popUntil((route) => route.isFirst);
                 }
               });
             },
@@ -323,14 +324,14 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
                     const SizedBox(width: 4),
                     Text(
                       '$currentCorrect',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(width: 16),
                     Icon(Icons.star, size: 18, color: Colors.amber.shade300),
                     const SizedBox(width: 4),
                     Text(
                       '$_totalScore',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

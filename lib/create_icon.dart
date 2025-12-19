@@ -11,25 +11,25 @@ void main() async {
   
   // Green background
   final paint = Paint()..color = const Color(0xFF2E7D32);
-  canvas.drawRect(Rect.fromLTWH(0, 0, 1024, 1024), paint);
+  canvas.drawRect(const Rect.fromLTWH(0, 0, 1024, 1024), paint);
   
   // White circle for content area
   paint.color = Colors.white;
-  canvas.drawCircle(Offset(512, 512), 400, paint);
+  canvas.drawCircle(const Offset(512, 512), 400, paint);
   
   // Green circle border
   paint.color = const Color(0xFF2E7D32);
   paint.style = PaintingStyle.stroke;
   paint.strokeWidth = 20;
-  canvas.drawCircle(Offset(512, 512), 400, paint);
+  canvas.drawCircle(const Offset(512, 512), 400, paint);
   
   // Arabic text "ق" (Qaf for Quran)
   final textPainter = TextPainter(
-    text: TextSpan(
+    text: const TextSpan(
       text: 'ق',
       style: TextStyle(
         fontSize: 300,
-        color: const Color(0xFF2E7D32),
+        color: Color(0xFF2E7D32),
         fontFamily: 'Cairo',
         fontWeight: FontWeight.bold,
       ),
@@ -46,7 +46,7 @@ void main() async {
   if (byteData != null) {
     final file = File('assets/icon/icon.png');
     await file.writeAsBytes(byteData.buffer.asUint8List());
-    print('Icon created successfully!');
+    //print('Icon created successfully!');
   }
 }
 

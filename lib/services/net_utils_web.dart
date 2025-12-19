@@ -1,5 +1,6 @@
 // TODO: Replace 'dart:html' with 'package:web/web.dart' when dependencies migrate (analyzer info-level warning only)
 // ignore: deprecated_member_use
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 class NetUtils {
@@ -15,7 +16,7 @@ class NetUtils {
     } catch (_) {
       // Fallback to navigator.onLine when request fails
       final online = html.window.navigator.onLine;
-      return online == null ? true : online;
+      return online ?? true;
     }
   }
 }

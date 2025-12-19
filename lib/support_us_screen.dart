@@ -61,9 +61,11 @@ class _SupportUsScreenState extends State<SupportUsScreen> {
                           : () async {
                               final v = _paypalEmail; // local promotion-safe
                               if (v != null) {
+                                final messenger = ScaffoldMessenger.of(context);
+                                final copiedText = l10n.copied;
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                                messenger.showSnackBar(SnackBar(content: Text(copiedText)));
                               }
                             },
                     ),
@@ -81,9 +83,11 @@ class _SupportUsScreenState extends State<SupportUsScreen> {
                           : () async {
                               final v = _usdt; // local promotion-safe
                               if (v != null) {
+                                final messenger = ScaffoldMessenger.of(context);
+                                final copiedText = l10n.copied;
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                                messenger.showSnackBar(SnackBar(content: Text(copiedText)));
                               }
                             },
                     ),

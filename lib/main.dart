@@ -51,18 +51,17 @@ Future<void> main() async {
       if (initialNotificationResponse?.didNotificationLaunchApp ?? false) {
         // Previously this could auto-play Adhan based on current time.
         // Adhan playback has been disabled by user request, so we only log.
-        print('[Main] App launched from notification – Adhan playback disabled, doing nothing.');
+        //print('[Main] App launched from notification – Adhan playback disabled, doing nothing.');
       }
     } catch (e) {
-      print('[Main] Error checking notification launch details: $e');
+      //print('[Main] Error checking notification launch details: $e');
     }
     
     // Set up notification tap handler.
     // Adhan playback has been disabled, so we just log and avoid playing anything.
     NotificationService.onNotificationTap = (String? payload) async {
       if (payload != null && payload != 'unknown') {
-        print(
-            '[Main] Notification received/tapped (payload: $payload) – Adhan playback disabled, ignoring.');
+        //print('[Main] Notification received/tapped (payload: $payload) – Adhan playback disabled, ignoring.');
       }
     };
   }
@@ -87,7 +86,7 @@ Future<void> main() async {
             id: PreferencesService.getBool('adhan_$id') ?? false,
         };
         final soundKey = PreferencesService.getAdhanSound();
-        print('[Main] Scheduling Adhans at startup');
+        //print('[Main] Scheduling Adhans at startup');
         await NotificationService.scheduleRemainingAdhans(
           times: times,
           soundKey: soundKey,
@@ -120,10 +119,10 @@ Future<void> main() async {
           }
           cursor = cursor.add(const Duration(days: 1));
         }
-        print('[Main] Adhans scheduled at startup');
+        //print('[Main] Adhans scheduled at startup');
       }
     } catch (e) {
-      print('[Main] Error scheduling Adhans at startup: $e');
+      //print('[Main] Error scheduling Adhans at startup: $e');
     }
   }
   
@@ -200,6 +199,7 @@ class QuraniApp extends StatefulWidget {
   @override
   State<QuraniApp> createState() => _QuraniAppState();
 
+  // ignore: library_private_types_in_public_api
   static _QuraniAppState of(BuildContext context) =>
       context.findAncestorStateOfType<_QuraniAppState>()!;
 }

@@ -16,7 +16,7 @@ class AdhanAudioManager {
     final soundKey = PreferencesService.getAdhanSound();
     final isFajr = prayerId == 'fajr';
     final asset =
-        isFajr ? 'assets/audio/${soundKey}-fajr.mp3' : 'assets/audio/$soundKey.mp3';
+        isFajr ? 'assets/audio/$soundKey-fajr.mp3' : 'assets/audio/$soundKey.mp3';
     final volume = PreferencesService.getAdhanVolume().clamp(0.0, 1.0);
 
     try {

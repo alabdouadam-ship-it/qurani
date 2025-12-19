@@ -32,9 +32,9 @@ class ResponsiveConfig {
   }
 
   static EdgeInsets getPadding(BuildContext context) {
-    if (isSmallScreen(context)) return EdgeInsets.all(8.0);
-    if (isTablet(context)) return EdgeInsets.all(16.0);
-    return EdgeInsets.all(12.0);
+    if (isSmallScreen(context)) return const EdgeInsets.all(8.0);
+    if (isTablet(context)) return const EdgeInsets.all(16.0);
+    return const EdgeInsets.all(12.0);
   }
 }
 

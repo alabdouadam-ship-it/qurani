@@ -173,7 +173,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     leading: const Icon(Icons.chat),
                     title: Text(l10n.contactViaWhatsApp),
                     subtitle: _whatsApp == null 
-                        ? Text('-')
+                        ? const Text('-')
                         : GestureDetector(
                             onTap: () => _openWhatsApp(_whatsApp!),
                             child: Text(
@@ -193,9 +193,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           : () async {
                               final v = _whatsApp;
                               if (v != null) {
+                                final messenger = ScaffoldMessenger.of(context);
+                                final copiedText = l10n.copied;
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                                messenger.showSnackBar(SnackBar(content: Text(copiedText)));
                               }
                             },
                     ),
@@ -207,7 +209,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     leading: const Icon(Icons.group),
                     //title: Text(l10n.contactViaWhatsAppGroup),
                     subtitle: _whatsAppGroup == null 
-                        ? Text('-')
+                        ? const Text('-')
                         : GestureDetector(
                             onTap: () => _openWhatsAppGroup(_whatsAppGroup!),
                             child: Text(
@@ -227,9 +229,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           : () async {
                               final v = _whatsAppGroup;
                               if (v != null) {
+                                final messenger = ScaffoldMessenger.of(context);
+                                final copiedText = l10n.copied;
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                                messenger.showSnackBar(SnackBar(content: Text(copiedText)));
                               }
                             },
                     ),
@@ -241,7 +245,7 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                     leading: const Icon(Icons.alternate_email),
                     title: Text(l10n.contactViaEmail),
                     subtitle: _email == null
-                        ? Text('-')
+                        ? const Text('-')
                         : GestureDetector(
                             onTap: () => _openEmail(_email!),
                             child: Text(
@@ -261,9 +265,11 @@ class _ContactUsScreenState extends State<ContactUsScreen> {
                           : () async {
                               final v = _email;
                               if (v != null) {
+                                final messenger = ScaffoldMessenger.of(context);
+                                final copiedText = l10n.copied;
                                 await Clipboard.setData(ClipboardData(text: v));
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.copied)));
+                                messenger.showSnackBar(SnackBar(content: Text(copiedText)));
                               }
                             },
                     ),

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -40,7 +41,7 @@ class NotificationService {
       }
       tz.setLocalLocation(tz.getLocation(timeZoneName));
     } catch (e) {
-      print('[NotificationService] Could not set local timezone: $e');
+      debugPrint('[NotificationService] Could not set local timezone: $e');
       // Fallback to UTC or default if needed, but usually timezone data is loaded
     }
     const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
@@ -85,7 +86,7 @@ class NotificationService {
     // We'll check in schedule methods
 
     _initialized = true;
-    print('[NotificationService] Initialized');
+    debugPrint('[NotificationService] Initialized');
   }
 
   static Future<void> cancelAllPrayerAlerts() async {
@@ -103,9 +104,9 @@ class NotificationService {
   }) async {
     // Note: This is just a notification, actual Adhan playback is handled by AdhanScheduler
     await _ensureInitialized();
-    final tz_time = tz.TZDateTime.from(triggerTimeLocal, tz.local);
-    if (tz_time.isBefore(tz.TZDateTime.now(tz.local))) {
-      print('[NotificationService] Adhan time is in the past, skipping');
+    final tzTime = tz.TZDateTime.from(triggerTimeLocal, tz.local);
+    if (tzTime.isBefore(tz.TZDateTime.now(tz.local))) {
+      debugPrint('[NotificationService] Adhan time is in the past, skipping');
       return;
     }
     
@@ -138,7 +139,7 @@ class NotificationService {
       id,
       title,
       body,
-      tz_time,
+      tzTime,
       NotificationDetails(android: androidDetails),
       androidScheduleMode: AndroidScheduleMode.alarmClock,
       uiLocalNotificationDateInterpretation:
@@ -146,7 +147,7 @@ class NotificationService {
       matchDateTimeComponents: null,
       payload: soundKey,
     );
-    print('[NotificationService] Scheduled Adhan notification for $tz_time');
+    debugPrint('[NotificationService] Scheduled Adhan notification for $tzTime');
   }
 
   static int _codeForPrayer(String id) {

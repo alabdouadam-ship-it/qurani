@@ -261,7 +261,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       // Schedule remaining adhans for today (even if app closes later)
       if (times != null) {
         final soundKey = PreferencesService.getAdhanSound();
-        print('[PrayerTimesScreen] Re-scheduling Adhans for today');
+        //print('[PrayerTimesScreen] Re-scheduling Adhans for today');
         await NotificationService.scheduleRemainingAdhans(
           times: times,
           soundKey: soundKey,
@@ -296,7 +296,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           }
           cursor = cursor.add(const Duration(days: 1));
         }
-        print('[PrayerTimesScreen] Adhans re-scheduled');
+        //print('[PrayerTimesScreen] Adhans re-scheduled');
       }
       _computeNextAndSchedule();
     } catch (_) {
@@ -381,13 +381,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   }
 
   Future<void> _toggleAdhan(BuildContext context, String id, bool value) async {
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
     setState(() {
       _adhanEnabled[id] = value;
     });
     await PreferencesService.setBool('adhan_$id', value);
-    final l10n = AppLocalizations.of(context)!;
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
+    messenger.showSnackBar(
       SnackBar(content: Text(value ? l10n.adhanEnabledMsg : l10n.adhanDisabledMsg)),
     );
     // Re-schedule for today with updated toggles
@@ -580,13 +581,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             padding: const EdgeInsets.all(12),
                             child: Column(
                               children: [
-                                Icon(Icons.info, color: Colors.orange),
+                                const Icon(Icons.info, color: Colors.orange),
                                 const SizedBox(height: 8),
                                 Text(
                                   isAr ? 'لتشغيل الأذان عند إغلاق التطبيق:' : 
                                   isFr ? 'Pour l\'Adhan quand l\'app est fermée :' : 
                                   'For Adhan when app is closed:',
-                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                  style: const TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(height: 4),
                                 Text(
@@ -594,7 +595,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                                   isFr ? '1. Désactivez l\'optimisation batterie\n2. Autorisez les alarmes exactes\n3. Redémarrez l\'application' : 
                                   '1. Disable battery optimization\n2. Allow exact alarms\n3. Restart the app',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(fontSize: 13),
+                                  style: const TextStyle(fontSize: 13),
                                 ),
                               ],
                             ),
@@ -733,13 +734,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             GestureDetector(
                               onLongPress: () async {
                                 // Test background Adhan after 10 seconds
+                                final messenger = ScaffoldMessenger.of(context);
                                 await AdhanScheduler.testAdhanPlaybackAfterSeconds(10, PreferencesService.getAdhanSound());
 
                                 if (!mounted) return;
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
+                                messenger.showSnackBar(
+                                  const SnackBar(
                                     content: Text('أذان تجريبي بعد 10 ثواني - أغلق التطبيق للاختبار'),
-                                    duration: const Duration(seconds: 8),
+                                    duration: Duration(seconds: 8),
                                   ),
                                 );
                               },
@@ -1132,7 +1134,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                         ],
                       ),
                     );
-                  }).toList(),
+                  }),
                   const SizedBox(height: 24),
                 ],
               ),
@@ -1170,7 +1172,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       await _previewPlayer.setVolume(PreferencesService.getAdhanVolume().clamp(0.0, 1.0));
       try {
         final primary = 'assets/audio/$key.mp3';
-        debugPrint('[AdhanPreview] Trying asset: ' + primary);
+        debugPrint('[AdhanPreview] Trying asset: $primary');
         await _previewPlayer.setAudioSource(
           AudioSource.asset(
             primary,
@@ -1183,29 +1185,29 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         );
       } catch (e) {
         // Fallback to fajr variant if generic not found
-        final fallback = 'assets/audio/' + key + '-fajr.mp3';
-        debugPrint('[AdhanPreview] Primary failed (' + e.toString() + '), trying fallback: ' + fallback);
+        final fallback = 'assets/audio/$key-fajr.mp3';
+        debugPrint('[AdhanPreview] Primary failed ($e), trying fallback: $fallback');
         await _previewPlayer.setAudioSource(
           AudioSource.asset(
             fallback,
             tag: MediaItem(
               id: fallback,
               album: 'Adhan',
-              title: key + ' (fajr)',
+              title: '$key (fajr)',
             ),
           ),
         );
       }
       await _previewPlayer.play();
-      debugPrint('[AdhanPreview] Playback started for key: ' + key);
+      debugPrint('[AdhanPreview] Playback started for key: $key');
       _previewPlayer.playerStateStream.firstWhere((s) => s.processingState == ProcessingState.completed).then((_) {
         _previewKey = null;
         if (mounted) setState(() {});
         try { onUiUpdate?.call(); } catch (_) {}
-        debugPrint('[AdhanPreview] Playback completed for key: ' + key);
+        debugPrint('[AdhanPreview] Playback completed for key: $key');
       });
     } catch (e) {
-      debugPrint('[AdhanPreview] Error: ' + e.toString());
+      debugPrint('[AdhanPreview] Error: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(AppLocalizations.of(context)!.errorLoadingAudio)),

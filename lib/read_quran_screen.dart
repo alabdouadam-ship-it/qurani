@@ -266,12 +266,14 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       }
       if (!mounted) return;
       try {
-        await Scrollable.ensureVisible(
-          context,
-          duration: immediate ? Duration.zero : const Duration(milliseconds: 350),
-          curve: Curves.easeInOut,
-          alignment: 0.2,
-        );
+        if (context.mounted) {
+          await Scrollable.ensureVisible(
+            context,
+            duration: immediate ? Duration.zero : const Duration(milliseconds: 350),
+            curve: Curves.easeInOut,
+            alignment: 0.2,
+          );
+        }
         _pendingScrollAyah = null;
       } catch (_) {
         _scheduleScrollToAyah(ayahNumber,
@@ -618,6 +620,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       return a.ayah.numberInSurah.compareTo(b.ayah.numberInSurah);
     });
 
+    if (!mounted) return;
     final selected = await showModalBottomSheet<_HighlightedAyah>(
       context: context,
       isScrollControlled: true,
@@ -874,13 +877,15 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       debugPrint('[ReadQuran] Stack trace: $stackTrace');
       
       // Show debug error dialog
-      DebugErrorDisplay.showError(
-        context,
-        screen: 'Read Quran',
-        operation: 'Load Page $_currentPage Audio',
-        error: error.toString(),
-        stackTrace: stackTrace.toString(),
-      );
+      if (mounted) {
+        DebugErrorDisplay.showError(
+          context,
+          screen: 'Read Quran',
+          operation: 'Load Page $_currentPage Audio',
+          error: error.toString(),
+          stackTrace: stackTrace.toString(),
+        );
+      }
       
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
@@ -1400,7 +1405,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             diacriticStyle: diacriticStyle,
           );
 
-    final Color highlightColor = const Color(0xFFFFF7C2);
+    const Color highlightColor = Color(0xFFFFF7C2);
     final Color playingColor = theme.brightness == Brightness.dark
         ? const Color(0xFF2C3C57)
         : const Color(0xFFFFE19C);

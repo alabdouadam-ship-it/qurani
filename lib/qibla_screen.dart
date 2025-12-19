@@ -428,10 +428,10 @@ class _CompassFace extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(top: 12, child: const _Cardinal('N')),
-          Positioned(bottom: 12, child: const _Cardinal('S')),
-          Positioned(left: 12, child: const _Cardinal('W')),
-          Positioned(right: 12, child: const _Cardinal('E')),
+          const Positioned(top: 12, child: _Cardinal('N')),
+          const Positioned(bottom: 12, child: _Cardinal('S')),
+          const Positioned(left: 12, child: _Cardinal('W')),
+          const Positioned(right: 12, child: _Cardinal('E')),
           Positioned.fill(
             child: Padding(
               padding: const EdgeInsets.all(24),

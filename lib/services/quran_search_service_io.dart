@@ -39,7 +39,7 @@ class QuranSearchService {
         await tempDb.close();
       } catch (e) {
         // Column doesn't exist, need to update database
-        print('Database outdated, updating from assets...');
+        //print('Database outdated, updating from assets...');
         needsCopy = true;
         await File(dbPath).delete();
       }
@@ -92,7 +92,7 @@ class QuranSearchService {
         }
       }).toList();
       
-      print('Quran search for "$query" returned ${rows.length} ayahs with $totalOccurrences total occurrences.');
+      //print('Quran search for "$query" returned ${rows.length} ayahs with $totalOccurrences total occurrences.');
       return SearchResult(ayahs: results, totalOccurrences: totalOccurrences);
     } catch (e) {
       throw Exception('Search failed: $e');

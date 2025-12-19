@@ -317,7 +317,7 @@ class PreferencesService {
 
   // Medium Priority: History
   static Future<void> addToHistory(int surahOrder, String reciterCode) async {
-    final key = 'history_list';
+    const key = 'history_list';
     final history = _prefs?.getStringList(key) ?? [];
     final entry = '$surahOrder:$reciterCode:${DateTime.now().millisecondsSinceEpoch}';
     history.insert(0, entry);
@@ -361,7 +361,7 @@ class PreferencesService {
   }
 
   static Future<void> toggleAyahHighlight(int ayahNumber) async {
-    final key = 'highlighted_ayahs';
+    const key = 'highlighted_ayahs';
     final list = _prefs?.getStringList(key) ?? [];
     final ayahKey = ayahNumber.toString();
     if (list.contains(ayahKey)) {
@@ -562,11 +562,11 @@ class PreferencesService {
   }
 
   static Future<void> saveLastPlaybackPosition(int surahNumber, int verseIndex) async {
-    await _prefs?.setInt('${keyLastPlaybackPositionPrefix}$surahNumber', verseIndex);
+    await _prefs?.setInt('$keyLastPlaybackPositionPrefix$surahNumber', verseIndex);
   }
 
   static int getLastPlaybackPosition(int surahNumber) {
-    return _prefs?.getInt('${keyLastPlaybackPositionPrefix}$surahNumber') ?? 0;
+    return _prefs?.getInt('$keyLastPlaybackPositionPrefix$surahNumber') ?? 0;
   }
 
   static const String keyStartAtLastPage = 'start_at_last_page';
@@ -581,10 +581,10 @@ class PreferencesService {
   }
 
   static Future<void> saveLastReadPage(String editionName, int page) async {
-    await _prefs?.setInt('${keyLastReadPagePrefix}$editionName', page);
+    await _prefs?.setInt('$keyLastReadPagePrefix$editionName', page);
   }
 
   static int getLastReadPage(String editionName) {
-    return _prefs?.getInt('${keyLastReadPagePrefix}$editionName') ?? 1;
+    return _prefs?.getInt('$keyLastReadPagePrefix$editionName') ?? 1;
   }
 }

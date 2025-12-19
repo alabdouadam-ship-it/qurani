@@ -160,6 +160,10 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
   Future<void> _playAyah(SearchAyah ayah) async {
     final l10n = AppLocalizations.of(context)!;
+    // Capture context-dependent values before any await
+    final langCode = Localizations.localeOf(context).languageCode;
+    final messenger = ScaffoldMessenger.of(context);
+    
     try {
       final reciter = PreferencesService.getReciter();
       final uri = await AudioService.getVerseUriPreferLocal(
@@ -169,7 +173,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       );
       if (uri == null) {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
+        messenger.showSnackBar(
           SnackBar(content: Text(l10n.errorLoadingAudio)),
         );
         return;
@@ -180,7 +184,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
         final hasNet = await _hasInternet();
         if (!hasNet) {
           if (!mounted) return;
-          ScaffoldMessenger.of(context).showSnackBar(
+          messenger.showSnackBar(
             SnackBar(content: Text(l10n.audioInternetRequired)),
           );
           return;
@@ -198,7 +202,6 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
       // Get surah name for MediaItem
       final surahName = QuranSearchService.instance.surahName(ayah.surahOrder);
-      final langCode = Localizations.localeOf(context).languageCode;
       final reciterName = AudioService.reciterDisplayName(reciter, langCode);
 
       // Create MediaItem (required for just_audio_background)
@@ -219,7 +222,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
       if (sources.isEmpty) {
         if (!mounted) return;
-        ScaffoldMessenger.of(context).showSnackBar(
+        messenger.showSnackBar(
           SnackBar(content: Text(l10n.errorLoadingAudio)),
         );
         return;
@@ -232,8 +235,10 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       debugPrint('Audio playback error: $e');
       debugPrint('Stack trace: $stackTrace');
       if (!mounted) return;
+      final messenger = ScaffoldMessenger.of(context);
       final hasNet = await _hasInternet();
-      ScaffoldMessenger.of(context).showSnackBar(
+      if (!mounted) return;
+      messenger.showSnackBar(
         SnackBar(content: Text(hasNet ? l10n.errorLoadingAudio : l10n.audioInternetRequired)),
       );
     }

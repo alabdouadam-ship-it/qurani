@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 // ignore: deprecated_member_use
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'dart:ui_web' as ui_web;
 

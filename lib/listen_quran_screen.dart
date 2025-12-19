@@ -214,6 +214,8 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
       return;
     }
 
+    final messenger = ScaffoldMessenger.of(context);
+    // ignore: use_build_context_synchronously
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (dialogContext) {
@@ -240,7 +242,9 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
     StateSetter? dialogSetState;
     String? errorMessage;
 
+
     final success = await showDialog<bool>(
+      // ignore: use_build_context_synchronously
       context: context,
       barrierDismissible: false,
       builder: (dialogContext) {
@@ -259,12 +263,12 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                       });
                     },
                   );
-                  if (Navigator.of(dialogContext).canPop()) {
+                  if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
                     Navigator.of(dialogContext).pop(true);
                   }
                 } catch (e) {
                   errorMessage = e.toString();
-                  if (Navigator.of(dialogContext).canPop()) {
+                  if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
                     Navigator.of(dialogContext).pop(false);
                   }
                 }
@@ -300,7 +304,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
 
     if (!mounted) return;
     if (success == true) {
-      ScaffoldMessenger.of(context).showSnackBar(
+      messenger.showSnackBar(
         SnackBar(content: Text(l10n.downloadComplete)),
       );
       _refreshDownloadButtonState();
@@ -308,7 +312,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
       final message = errorMessage?.isNotEmpty == true
           ? '${l10n.downloadFailed}: $errorMessage'
           : l10n.downloadFailed;
-      ScaffoldMessenger.of(context).showSnackBar(
+      messenger.showSnackBar(
         SnackBar(content: Text(message)),
       );
     }

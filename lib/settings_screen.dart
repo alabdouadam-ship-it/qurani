@@ -46,25 +46,53 @@ class SettingsScreen extends StatelessWidget {
           child: LayoutBuilder(
             builder: (context, constraints) {
               final settings = _getSettings(context);
-              if (kIsWeb) {
+              
+              // Determine column count based on width
+              int crossAxisCount;
+              if (isSmallScreen) {
+                crossAxisCount = 2;
+              } else if (isTablet) {
+                crossAxisCount = 3;
+              } else {
                 final width = constraints.maxWidth;
-                final targetTileWidth = 180.0;
+                const targetTileWidth = 180.0;
                 final cols = width ~/ targetTileWidth;
-                final crossAxisCount = cols.clamp(3, 8);
-                return GridView.count(
-                  crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 1.25,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: settings.map((s) => _buildSettingCard(context, s)).toList(),
-                );
+                crossAxisCount = cols.clamp(3, 8);
               }
+
+              // Calculate aspect ratio to fill the screen vertically
+              // We want to fit all items without scrolling if possible
+              // Total items: settings.length
+              final rows = (settings.length / crossAxisCount).ceil();
+              
+              // Available height for grid items
+              // Subtract padding (bottom 24) and spacing
+              final availableHeight = constraints.maxHeight - 24; 
+              final totalSpacingHeight = (rows - 1) * (isSmallScreen ? 10 : 15);
+              
+              // Target height per item to fill space
+              // Enforce a sensible minimum height to avoid squashing on landscape/small screens
+              final minItemHeight = isSmallScreen ? 120.0 : 140.0;
+              final calculatedItemHeight = (availableHeight - totalSpacingHeight) / rows;
+              
+              final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
+              
+              // Width per item
+              final workingWidth = constraints.maxWidth;
+              // No horizontal padding in GridView itself? 
+              // Parent Padding has 'ResponsiveConfig.getPadding(context)' which is usually 16.
+              // GridView doesn't have internal padding except bottom.
+              final totalSpacingWidth = (crossAxisCount - 1) * (isSmallScreen ? 10 : 15);
+              final itemWidth = (workingWidth - totalSpacingWidth) / crossAxisCount;
+
+              final aspectRatio = itemWidth / itemHeight;
+
               return GridView.count(
-                crossAxisCount: 2,
+                crossAxisCount: crossAxisCount,
                 crossAxisSpacing: isSmallScreen ? 10 : 15,
                 mainAxisSpacing: isSmallScreen ? 10 : 15,
-                childAspectRatio: isTablet ? 1.2 : 1.05,
+                childAspectRatio: aspectRatio,
+                padding: const EdgeInsets.only(bottom: 24),
                 children: settings.map((s) => _buildSettingCard(context, s)).toList(),
               );
             },
@@ -254,24 +282,24 @@ class SettingsScreen extends StatelessWidget {
   }
 
   void _handleSettingTap(BuildContext context, SettingItem setting) {
-    String _localizedHtml(String base) {
+    String localizedHtml(String base) {
       final code = AppLocalizations.of(context)!.localeName;
       final lang = code.startsWith('ar') ? 'ar' : code.startsWith('fr') ? 'fr' : 'en';
       return 'public/'
-          '${base}_${lang}.html';
+          '${base}_$lang.html';
     }
     switch (setting.id) {
       case 'about':
         _showAboutDialog(context);
         break;
       case 'help':
-        final fileName = _localizedHtml('help').split('/').last;
+        final fileName = localizedHtml('help').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.help,
-              assetPath: _localizedHtml('help'),
+              assetPath: localizedHtml('help'),
               onlineUrl: 'https://qurani.info/data/about-qurani/$fileName',
             ),
           ),
@@ -297,26 +325,26 @@ class SettingsScreen extends StatelessWidget {
         _shareApp(context);
         break;
       case 'privacy':
-        final privacyFileName = _localizedHtml('privacy-policy').split('/').last;
+        final privacyFileName = localizedHtml('privacy-policy').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.privacyPolicy,
-              assetPath: _localizedHtml('privacy-policy'),
+              assetPath: localizedHtml('privacy-policy'),
               onlineUrl: 'https://qurani.info/data/about-qurani/$privacyFileName',
             ),
           ),
         );
         break;
       case 'terms':
-        final termsFileName = _localizedHtml('conditions-terms').split('/').last;
+        final termsFileName = localizedHtml('conditions-terms').split('/').last;
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.termsConditions,
-              assetPath: _localizedHtml('conditions-terms'),
+              assetPath: localizedHtml('conditions-terms'),
               onlineUrl: 'https://qurani.info/data/about-qurani/$termsFileName',
             ),
           ),
@@ -388,6 +416,7 @@ class SettingsScreen extends StatelessWidget {
 
   Future<void> _shareApp(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
     try {
       final packageInfo = await PackageInfo.fromPlatform();
       final packageName = packageInfo.packageName;
@@ -395,7 +424,8 @@ class SettingsScreen extends StatelessWidget {
       final message = l10n.shareAppMessage(appUrl);
       await Share.share(message);
     } catch (_) {
-      ScaffoldMessenger.of(context).showSnackBar(
+      if (!context.mounted) return;
+      messenger.showSnackBar(
         SnackBar(content: Text(l10n.unknownError)),
       );
     }
@@ -408,12 +438,12 @@ class SettingsScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('$feature'),
-          content: Text('This feature is coming soon!'),
+          title: Text(feature),
+          content: const Text('This feature is coming soon!'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

@@ -50,7 +50,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   double _volume = 1.0;
   double _playbackSpeed = 1.0;
-  double _equalizerHeight = 120;
+  final double _equalizerHeight = 120;
   
   String? _errorMessage;
 
@@ -460,6 +460,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           debugPrint('[AudioPlayer] Max retries reached. Showing error.');
           debugPrint('[AudioPlayer] Final Stack trace: $stackTrace');
           
+          if (!mounted) return;
+          final l10n = AppLocalizations.of(context)!;
+          
           // Show debug error dialog
           DebugErrorDisplay.showError(
             context,
@@ -468,8 +471,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             error: e.toString(),
             stackTrace: stackTrace.toString(),
           );
-          
-          final l10n = AppLocalizations.of(context)!;
           String userMessage = l10n.errorLoadingAudio;
           
           if (e.toString().contains('Permission')) {
@@ -627,8 +628,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _seekRelative(Duration delta) async {
     if (_isPlayerDisposed) return;
-    final position = await _player.position;
-    final duration = await _player.duration ?? Duration.zero;
+    final position = _player.position;
+    final duration = _player.duration ?? Duration.zero;
     final target = position + delta;
 
     if (target <= Duration.zero) {
@@ -676,7 +677,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _toggleBookmark() async {
     if (_isPlayerDisposed) return;
-    final position = await _player.position;
+    final position = _player.position;
     if (_hasBookmark) {
       await PreferencesService.removeBookmark(_currentOrder);
       if (mounted) {
@@ -733,12 +734,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         Future.microtask(() async {
           try {
             await DownloadService.downloadSurah(_reciterKey!, _currentOrder);
-            if (Navigator.of(dialogContext).canPop()) {
+            if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
               Navigator.of(dialogContext).pop(true);
             }
           } catch (e) {
             errorMessage = e.toString();
-            if (Navigator.of(dialogContext).canPop()) {
+            if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
               Navigator.of(dialogContext).pop(false);
             }
           }
@@ -912,11 +913,13 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       surahOrder: _currentOrder,
     );
 
+
     if (url != null) {
+      final l10n = AppLocalizations.of(context)!;
+      final messenger = ScaffoldMessenger.of(context);
       await Clipboard.setData(ClipboardData(text: '$surahName - $reciterName\n$url'));
     if (mounted) {
-        final l10n = AppLocalizations.of(context)!;
-      ScaffoldMessenger.of(context).showSnackBar(
+      messenger.showSnackBar(
           SnackBar(content: Text(l10n.copiedToClipboard)),
         );
       }
@@ -1427,7 +1430,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
               selected: _verseByVerseMode,
               onSelected: (value) async {
                 if (value) {
-                  final currentPos = await _player.position;
+                  final currentPos = _player.position;
                   setState(() {
                     _savedSurahPositionBeforeVerseMode = currentPos;
                     _verseByVerseMode = true;

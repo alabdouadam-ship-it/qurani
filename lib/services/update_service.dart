@@ -37,6 +37,7 @@ class UpdateService {
       await PreferencesService.setInt(_keyLastSuccessEpoch, todayEpoch);
 
       if (info.updateAvailability == UpdateAvailability.updateAvailable) {
+        if (!context.mounted) return;
         await _notifyOncePerDay(context);
       }
     } catch (_) {
@@ -50,12 +51,14 @@ class UpdateService {
     final int lastNotify = PreferencesService.getInt(_keyLastNotifyEpoch) ?? 0;
     if (_isSameDayEpoch(lastNotify, todayEpoch)) return;
 
-    await PreferencesService.setInt(_keyLastNotifyEpoch, todayEpoch);
-
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    final messenger = ScaffoldMessenger.of(context);
+
+    await PreferencesService.setInt(_keyLastNotifyEpoch, todayEpoch);
+
     if (!context.mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
+    messenger.showSnackBar(
       SnackBar(
         content: Text(l10n.updateAvailable),
         action: SnackBarAction(

@@ -203,6 +203,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       if (!mounted) return;
       try {
         await Scrollable.ensureVisible(
+          // ignore: use_build_context_synchronously
           context,
           duration: immediate ? Duration.zero : const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
@@ -365,6 +366,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       debugPrint('[RepetitionRange] Stack trace: $stackTrace');
       
       // Show debug error dialog
+      if (!mounted) return;
       DebugErrorDisplay.showError(
         context,
         screen: 'Repetition Range',
@@ -546,7 +548,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
           children: [
             Expanded(
               child: Text(
-                '${widget.surah.name}',
+                widget.surah.name,
                 textDirection: TextDirection.rtl,
                 style: Theme.of(context).textTheme.titleMedium,
               ),

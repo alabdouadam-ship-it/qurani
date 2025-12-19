@@ -1,74 +1,72 @@
 # Hosting Flutter Web App
 
-Here are the two easiest and most popular ways to host your Flutter web application.
-
 ## Prerequisite: Build the Web App
 Before hosting, you must build the release version of your app:
 ```bash
 flutter build web --release
 ```
-This will create a `build/web` directory containing your static files.
+This will create a `build/web` directory containing your static files. This folder contains everything you need (`index.html`, `main.dart.js`, `assets/`, etc.).
 
 ---
 
-## Option 1: Firebase Hosting (Recommended for Google ecosystem)
-Fast, secure, and integrates well if you use other Firebase services.
+## **Option 3: Self-Hosted Linux Server (Nginx)**
+Since you have your own Linux server, using **Nginx** is the most efficient way to serve the static files.
 
-1. **Install Firebase CLI**:
-   ```bash
-   npm install -g firebase-tools
-   ```
-2. **Login**:
-   ```bash
-   firebase login
-   ```
-3. **Initialize**:
-   Run this in your project root:
-   ```bash
-   firebase init hosting
-   ```
-   - Select "Use an existing project" or "Create a new project".
-   - **Public directory**: Type `build/web`
-   - **Configure as a single-page app?**: Yes
-   - **Set up automatic builds and deploys with GitHub?**: Optional (No for now)
+### 1. Build & Transfer Files
+1.  Run the build command locally:
+    ```bash
+    flutter build web --release
+    ```
+2.  Transfer the contents of `build/web` to your server (e.g., using `scp` or FileZilla).
+    ```bash
+    # Example using SCP
+    scp -r build/web/* user@your-server-ip:/var/www/qurani/
+    ```
+    *(Ensure the destination folder `/var/www/qurani/` exists on the server)*
 
-4. **Deploy**:
-   ```bash
-   flutter build web --release
-   firebase deploy
-   ```
+### 2. Configure Nginx
+1.  SSH into your server.
+2.  Create a new Nginx configuration file (e.g., `/etc/nginx/sites-available/qurani`).
+    ```nginx
+    server {
+        listen 80;
+        server_name your-domain.com; # Or your server IP
+
+        root /var/www/qurani;
+        index index.html index.htm;
+
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
+
+        # Optional: Cache static assets for better performance
+        location ~* \.(?:ico|css|js|gif|jpe?g|png)$ {
+            expires 30d;
+            add_header Pragma public;
+            add_header Cache-Control "public";
+        }
+    }
+    ```
+    *Note: The `try_files $uri $uri/ /index.html;` line is crucial for Flutter's routing to work correctly when users refresh the page.*
+
+3.  Enable the site and restart Nginx:
+    ```bash
+    sudo ln -s /etc/nginx/sites-available/qurani /etc/nginx/sites-enabled/
+    sudo nginx -t
+    sudo systemctl restart nginx
+    ```
 
 ---
 
-## Option 2: GitHub Pages (Free & Easy)
-Great if your code is already on GitHub.
+## Option 1: Firebase Hosting (Google Ecosystem)
+1.  Install tools: `npm install -g firebase-tools`
+2.  Login: `firebase login`
+3.  Init: `firebase init hosting` (Choose `build/web` as public directory, "Yes" to single-page app).
+4.  Deploy: `firebase deploy`
 
-1. **Enable GitHub Pages**:
-   - Go to your repository **Settings** > **Pages**.
-   - Source: `Deploy from a branch`.
-   - Branch: `gh-pages` (we will create this).
-
-2. **Use `flutter_gh_pages` package** (Simplest method):
-   - Add dev dependency: It is not strictly necessary to add a package, you can just push the build folder, but `peanut` is a popular tool for this.
-   
-   **Manual Method (No extra packages):**
-   ```bash
-   flutter build web --release --base-href "/<REPO_NAME>/"
-   ```
-   *(Replace `<REPO_NAME>` with your repository name, e.g. `/Qurani/`)*
-
-   - Go to `build/web`.
-   - Initialize a git repo there:
-     ```bash
-     cd build/web
-     git init
-     git add .
-     git commit -m "Deploy"
-     git branch -M gh-pages
-     git remote add origin <YOUR_GITHUB_REPO_URL>
-     git push -u origin gh-pages --force
-     ```
-
-## Which one should I choose?
-- Choose **Firebase Hosting** if you want a professional URL (e.g., `web.app`), fast global CDN, or use other Firebase features.
-- Choose **GitHub Pages** if you want a completely free solution for a personal project hosted directly from your repository.
+## Option 2: GitHub Pages (Free)
+1.  Build with repo name as base path:
+    ```bash
+    flutter build web --release --base-href "/<REPO_NAME>/"
+    ```
+2.  Push contents of `build/web` to a `gh-pages` branch on your repo.

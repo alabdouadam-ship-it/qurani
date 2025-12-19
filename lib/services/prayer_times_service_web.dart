@@ -65,7 +65,7 @@ class PrayerTimesService {
     // Try using LocationSettings if available, fallback to desiredAccuracy for older geolocator versions
     try {
       return Geolocator.getCurrentPosition(
-        locationSettings: LocationSettings(accuracy: LocationAccuracy.low),
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.low),
       );
     } catch (_) {
       // Fallback for older geolocator versions

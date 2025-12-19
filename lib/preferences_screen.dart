@@ -420,9 +420,9 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       body: SafeArea(
         child: Padding(
           padding: ResponsiveConfig.getPadding(context),
-          child: kIsWeb
-              ? _buildWebLayout(context, l10n, isSmallScreen)
-              : _buildMobileLayout(context, l10n, isSmallScreen),
+          child: isSmallScreen
+              ? _buildMobileLayout(context, l10n, isSmallScreen)
+              : _buildWebLayout(context, l10n, isSmallScreen),
         ),
       ),
     );
@@ -430,7 +430,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
 
   Widget _buildWebLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
     return SingleChildScrollView(
-      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.only(bottom: 24),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -522,11 +522,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   items: _getLanguageOptions(context),
                   onChanged: (String? value) async {
                     final newLangCode = _getLanguageCode(value!, context);
+                    final appState = QuraniApp.of(context);
                     setState(() {
                       _selectedLanguage = newLangCode;
                     });
                     await PreferencesService.saveLanguage(newLangCode);
-                    QuraniApp.of(context).setLocale(Locale(newLangCode));
+                    if (!mounted) return;
+                    appState.setLocale(Locale(newLangCode));
                     await Future.delayed(const Duration(milliseconds: 100));
                     if (mounted) {
                       setState(() {});
@@ -686,11 +688,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             items: _getLanguageOptions(context),
             onChanged: (String? value) async {
               final newLangCode = _getLanguageCode(value!, context);
+              final appState = QuraniApp.of(context);
               setState(() {
                 _selectedLanguage = newLangCode;
               });
               await PreferencesService.saveLanguage(newLangCode);
-              QuraniApp.of(context).setLocale(Locale(newLangCode));
+              if (!mounted) return;
+              appState.setLocale(Locale(newLangCode));
               await Future.delayed(const Duration(milliseconds: 100));
               if (mounted) {
                 setState(() {});
@@ -722,7 +726,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 32), // Add extra bottom padding for visibility
         ],
       ),
     );
@@ -747,7 +751,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     color: Colors.teal.withAlpha((255 * 0.1).round()),
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Icon(Icons.person, color: Colors.teal, size: kIsWeb ? 18 : 22),
+                  child: const Icon(Icons.person, color: Colors.teal, size: kIsWeb ? 18 : 22),
                 ),
                 const SizedBox(width: 12),
                 Text(
@@ -764,13 +768,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
             TextField(
               controller: _nameController,
               textAlign: TextAlign.right,
-              style: TextStyle(fontSize: kIsWeb ? 13 : 14),
+              style: const TextStyle(fontSize: kIsWeb ? 13 : 14),
               decoration: InputDecoration(
                 hintText: l10n.enterYourName,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: kIsWeb ? 10 : 12),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: kIsWeb ? 10 : 12),
               ),
             ),
           ],
@@ -882,6 +886,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
 
   Future<void> _savePreferences() async {
     final l10n = AppLocalizations.of(context)!;
+    final appState = QuraniApp.of(context);
+    final messenger = ScaffoldMessenger.of(context);
     // Persist
     await PreferencesService.saveUserName(_nameController.text.trim());
     await PreferencesService.saveReciter(_selectedReciter ?? 'afs');
@@ -893,11 +899,12 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     if (_selectedLanguage != null) {
       await PreferencesService.saveLanguage(_selectedLanguage!);
       // Update app locale after saving
-      QuraniApp.of(context).setLocale(Locale(_selectedLanguage!));
+      if (!mounted) return;
+      appState.setLocale(Locale(_selectedLanguage!));
     }
 
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
+    messenger.showSnackBar(
       SnackBar(
         content: Text(l10n.preferencesSavedSuccessfully),
         backgroundColor: Colors.green[700],

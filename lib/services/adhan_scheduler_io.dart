@@ -52,7 +52,7 @@ int _dailyId({required String prayerId, required DateTime date}) {
 }
 
 String _assetFor(String soundKey, bool isFajr) {
-  return isFajr ? 'assets/audio/${soundKey}-fajr.mp3' : 'assets/audio/$soundKey.mp3';
+  return isFajr ? 'assets/audio/$soundKey-fajr.mp3' : 'assets/audio/$soundKey.mp3';
 }
 
 Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
@@ -146,7 +146,7 @@ Future<void> _showStopNotification(String prayerId) async {
     
     debugPrint('[AdhanScheduler] Creating notification details...');
     // Simple tappable notification without action buttons
-    final androidDetails = AndroidNotificationDetails(
+    const androidDetails = AndroidNotificationDetails(
       'adhan_stop_silent',
       'Adhan Stop Control',
       channelDescription: 'Silent notification to stop Adhan',
@@ -163,7 +163,7 @@ Future<void> _showStopNotification(String prayerId) async {
       9999999,
       title,
       body,
-      NotificationDetails(android: androidDetails),
+      const NotificationDetails(android: androidDetails),
       payload: 'stop_adhan',
     );
     debugPrint('[AdhanScheduler] ✓✓✓ NOTIFICATION SHOWN SUCCESSFULLY ✓✓✓');
@@ -176,21 +176,21 @@ Future<void> _showStopNotification(String prayerId) async {
 
 @pragma('vm:entry-point')
 Future<void> _playAdhanCallback(int id) async {
-  print('[AdhanScheduler.Callback] ===== ADHAN CALLBACK TRIGGERED (ID: $id) =====');
-  print('[AdhanScheduler.Callback] Step 0: Initializing Flutter bindings...');
+  //print('[AdhanScheduler.Callback] ===== ADHAN CALLBACK TRIGGERED (ID: $id) =====');
+  //print('[AdhanScheduler.Callback] Step 0: Initializing Flutter bindings...');
   try {
     WidgetsFlutterBinding.ensureInitialized();
-    print('[AdhanScheduler.Callback] ✓ WidgetsFlutterBinding initialized');
+    //print('[AdhanScheduler.Callback] ✓ WidgetsFlutterBinding initialized');
   } catch (e) {
-    print('[AdhanScheduler.Callback] ✗ WidgetsFlutterBinding error: $e');
+    //print('[AdhanScheduler.Callback] ✗ WidgetsFlutterBinding error: $e');
   }
   
   // DartPluginRegistrant is handled automatically by the platform
   
-  try {
-    print('[AdhanScheduler.Callback] Step 1: Getting preferences...');
+  //try {
+    //print('[AdhanScheduler.Callback] Step 1: Getting preferences...');
     final prefs = await SharedPreferences.getInstance();
-    print('[AdhanScheduler.Callback] ✓ SharedPreferences obtained');
+    //print('[AdhanScheduler.Callback] ✓ SharedPreferences obtained');
     
     // Decode prayer from id
     final code = id % 10;
@@ -234,7 +234,7 @@ Future<void> _playAdhanCallback(int id) async {
     
     // Try to get file path
     final docDir = await getApplicationDocumentsDirectory();
-    final fileName = isFajr ? '${soundKey}-fajr.mp3' : '$soundKey.mp3';
+    final fileName = isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3';
     final filePath = '${docDir.path}/adhan_cache/$fileName';
     bool fileExists = File(filePath).existsSync();
     
@@ -335,10 +335,10 @@ Future<void> _playAdhanCallback(int id) async {
     }
     
     debugPrint('[AdhanScheduler.Callback] ===== CALLBACK COMPLETE =====');
-  } catch (e, st) {
-    debugPrint('[AdhanScheduler.Callback] ✗✗✗ FATAL ERROR: $e');
-    debugPrint('[AdhanScheduler.Callback] Stack: $st');
-  }
+  // } catch (e, st) {
+  //   debugPrint('[AdhanScheduler.Callback] ✗✗✗ FATAL ERROR: $e');
+  //   debugPrint('[AdhanScheduler.Callback] Stack: $st');
+  // }
 }
 
 class AdhanScheduler {

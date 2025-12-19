@@ -192,8 +192,8 @@ class MemorizationStatsService {
         return [];
       }
       return asList
-          .where((e) => e is Map)
-          .map((e) => Map<String, dynamic>.from(e as Map))
+          .whereType<Map>()
+          .map((e) => Map<String, dynamic>.from(e))
           .toList();
     } catch (_) {
       return [];
@@ -233,7 +233,7 @@ class MemorizationStatsService {
       }
     }
 
-    final totalTests = counterTests != 0 ? counterTests : (history.length > 0 ? history.length : aggTests);
+    final totalTests = counterTests != 0 ? counterTests : (history.isNotEmpty ? history.length : aggTests);
     final totalCorrect = counterCorrect != 0 ? counterCorrect : (aggCorrect);
     final totalQuestions = counterQuestions != 0 ? counterQuestions : (aggQuestions);
     final averagePercentage = totalQuestions > 0 ? (totalCorrect / totalQuestions * 100).round() : 0;

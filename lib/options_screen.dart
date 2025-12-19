@@ -105,7 +105,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(kIsWeb ? 12 : (isSmallScreen ? 16 : 20)),
-                margin: EdgeInsets.only(bottom: kIsWeb ? 12 : 20),
+                margin: const EdgeInsets.only(bottom: kIsWeb ? 12 : 20),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: Theme.of(context).brightness == Brightness.dark
@@ -127,7 +127,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                           ? Colors.black.withAlpha((255 * 0.5).round())
                           : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
                       blurRadius: kIsWeb ? 6 : 10,
-                      offset: Offset(0, kIsWeb ? 3 : 5),
+                      offset: const Offset(0, kIsWeb ? 3 : 5),
                     ),
                   ],
                 ),
@@ -169,59 +169,56 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 child: LayoutBuilder(
                   builder: (context, constraints) {
                     final options = _getOptions(context);
-                    if (kIsWeb) {
-                      // On web, use responsive grid with smaller cards (more columns)
-                      final width = constraints.maxWidth;
-                      final targetTileWidth = 180.0; // Reduced from 220 to fit more
-                      final cols = width ~/ targetTileWidth;
-                      final crossAxisCount = cols.clamp(3, 8); // Min 3, max 8 columns
-                      return GridView.count(
-                        crossAxisCount: crossAxisCount,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        childAspectRatio: 1.25, // Slightly taller cards
-                        physics: const NeverScrollableScrollPhysics(),
-                        children: options.map((option) => _buildOptionCard(context, option)).toList(),
-                      );
+                    final width = constraints.maxWidth;
+                    
+                    // Determine column count
+                    // On mobile: 2
+                    // On web/tablet: adapt based on width
+                    int crossAxisCount;
+                    if (width < 600) {
+                      crossAxisCount = 2;
+                    } else {
+                       const targetTileWidth = 180.0; 
+                       final cols = width ~/ targetTileWidth;
+                       crossAxisCount = cols.clamp(3, 8);
                     }
-                    // Mobile/tablet default 2 columns - fit to screen
-                    if (!kIsWeb) {
-                      final crossAxisCount = 2;
-                      final itemCount = options.length;
-                      final rowCount = (itemCount / crossAxisCount).ceil();
-                      
-                      // Calculate available spacing
-                      final spaceC = isSmallScreen ? 10.0 : 15.0; // Cross axis spacing
-                      final spaceM = isSmallScreen ? 10.0 : 15.0; // Main axis spacing
-                      
-                      // Calculate width per item
-                      final width = (constraints.maxWidth - (spaceC * (crossAxisCount - 1))) / crossAxisCount;
-                      
-                      // Calculate height per item
-                      // We want it to fit in the available height, minus spacing
-                      final totalSpacingHistory = spaceM * (rowCount - 1);
-                      final height = (constraints.maxHeight - totalSpacingHistory) / rowCount;
-                      
-                      // Determine Aspect Ratio
-                      // Guard against very small screens or weird layout constraints
-                      final aspectRatio = (height > 0) ? (width / height) : 1.0;
+                    
+                    final itemCount = options.length;
+                    final rowCount = (itemCount / crossAxisCount).ceil();
+                    
+                    // Spacing
+                    final spaceC = width < 600 ? 10.0 : 15.0;
+                    final spaceM = width < 600 ? 10.0 : 15.0;
+                    
+                    // Calculate item width
+                    final itemWidth = (width - (spaceC * (crossAxisCount - 1))) / crossAxisCount;
+                    
+                    // Calculate item height to fill vertical space
+                    final totalSpacingHeight = spaceM * (rowCount - 1);
+                    final availableHeight = constraints.maxHeight;
+                    // Ensure we have a valid height
+                    final safeHeight = availableHeight.isFinite ? availableHeight : 500.0;
+                    
+                    // Minimum height check to avoid extreme squashing on landscape
+                    final minItemHeight = width < 600 ? 100.0 : 120.0;
+                    
+                    final calculatedItemHeight = (safeHeight - totalSpacingHeight) / rowCount;
+                    // If calculated is too small, use min (scrolling will happen if needed)
+                    // But user asked to "fill without scroll", so we prioritize fill.
+                    // If we clamp to min, it might overflow. 
+                    // But usually safeHeight is large enough.
+                    final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
+                    
+                    final aspectRatio = (itemHeight > 0) ? (itemWidth / itemHeight) : 1.0;
 
-                      return GridView.count(
-                        crossAxisCount: crossAxisCount,
-                        crossAxisSpacing: spaceC,
-                        mainAxisSpacing: spaceM,
-                        childAspectRatio: aspectRatio,
-                        physics: const NeverScrollableScrollPhysics(), // Disable scrolling
-                        children: options.map((option) => _buildOptionCard(context, option)).toList(),
-                      );
-                    }
-
-                    // Web fallback (existing)
                     return GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: isSmallScreen ? 10 : 15,
-                      mainAxisSpacing: isSmallScreen ? 10 : 15,
-                      childAspectRatio: isTablet ? 1.2 : 1.05,
+                      crossAxisCount: crossAxisCount,
+                      crossAxisSpacing: spaceC,
+                      mainAxisSpacing: spaceM,
+                      childAspectRatio: aspectRatio,
+                      // Allow scrolling only if content overflows (e.g. forced minHeight)
+                      // Otherwise it fits perfectly.
+                      physics: const ScrollPhysics(), 
                       children: options.map((option) => _buildOptionCard(context, option)).toList(),
                     );
                   },
@@ -480,12 +477,12 @@ class _OptionsScreenState extends State<OptionsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('$feature'),
-          content: Text('This feature is coming soon!'),
+          title: Text(feature),
+          content: const Text('This feature is coming soon!'),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

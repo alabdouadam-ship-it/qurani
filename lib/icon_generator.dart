@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(IconGeneratorApp());
+  runApp(const IconGeneratorApp());
 }
 
 class IconGeneratorApp extends StatelessWidget {
+  const IconGeneratorApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +20,7 @@ class IconGeneratorApp extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10,
@@ -34,7 +36,7 @@ class IconGeneratorApp extends StatelessWidget {
                   size: 80,
                   color: Colors.green[700],
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   'Qurani',
                   style: TextStyle(

@@ -13,7 +13,7 @@ class OfflineAudioScreen extends StatefulWidget {
 }
 
 class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
-  String _reciter = PreferencesService.getReciter();
+  final String _reciter = PreferencesService.getReciter();
   int _downloadedAyahs = 0;
   int _downloadedFull = 0;
   int _downloadedAE = 0; // arabic-english
