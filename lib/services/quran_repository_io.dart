@@ -230,8 +230,8 @@ class QuranRepository {
       }
     }
     
-    // Open the database
-    _db = await sqf.openDatabase(dbPath, readOnly: true);
+    // Open the database in single instance mode to prevent locking issues
+    _db = await sqf.openDatabase(dbPath, readOnly: true, singleInstance: false);
     debugPrint('Database opened successfully');
   }
 

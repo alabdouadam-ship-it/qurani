@@ -35,6 +35,10 @@ class PreferencesService {
   static const String keyAutoPlayNextSurah = 'auto_play_next_surah';
   static const String keyLastPlaybackPositionPrefix = 'last_playback_position_';
 
+  // PDF Mode Keys
+  static const String keyIsPdfMode = 'is_pdf_mode';
+  static const String keyPdfType = 'pdf_type';
+
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
   static final ValueNotifier<String> themeNotifier = ValueNotifier<String>('green'); // Default to green
   static final ValueNotifier<String> arabicFontNotifier =
@@ -586,5 +590,22 @@ class PreferencesService {
 
   static int getLastReadPage(String editionName) {
     return _prefs?.getInt('$keyLastReadPagePrefix$editionName') ?? 1;
+  }
+
+  // PDF Mode methods
+  static Future<void> saveIsPdfMode(bool value) async {
+    await _prefs?.setBool(keyIsPdfMode, value);
+  }
+
+  static bool getIsPdfMode() {
+    return _prefs?.getBool(keyIsPdfMode) ?? false;
+  }
+
+  static Future<void> savePdfType(String typeId) async {
+    await _prefs?.setString(keyPdfType, typeId);
+  }
+
+  static String getPdfType() {
+    return _prefs?.getString(keyPdfType) ?? 'blue';
   }
 }

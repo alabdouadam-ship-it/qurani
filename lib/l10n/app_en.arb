@@ -600,5 +600,25 @@
         "type": "String"
       }
     }
-  }
+  },
+  "downloadingMushaf": "Downloading Mushaf...",
+  "@downloadingMushaf": {},
+  "downloadMushafPdf": "Download Mushaf PDF",
+  "@downloadMushafPdf": {},
+  "chooseStyleToDownload": "Choose a style to download:",
+  "@chooseStyleToDownload": {},
+  "returnToTextView": "Return to Text View",
+  "@returnToTextView": {},
+  "errorLoadingPdf": "Error loading PDF file",
+  "@errorLoadingPdf": {},
+  "deleteAndRetry": "Delete and Retry",
+  "@deleteAndRetry": {},
+  "mushafTypeBlue": "Blue Mushaf (Shamarly)",
+  "@mushafTypeBlue": {},
+  "mushafTypeGreen": "Green Mushaf",
+  "@mushafTypeGreen": {},
+  "mushafTypeTajweed": "Tajweed Mushaf",
+  "@mushafTypeTajweed": {},
+  "mushafStyle": "Mushaf Style",
+  "@mushafStyle": {}
 }

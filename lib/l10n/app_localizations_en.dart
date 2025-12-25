@@ -863,4 +863,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get alwaysStartFromBeginningDesc => 'When enabled, always start playing from the first verse. When disabled, resume from last position.';
+
+  @override
+  String get downloadingMushaf => 'Downloading Mushaf...';
+
+  @override
+  String get downloadMushafPdf => 'Download Mushaf PDF';
+
+  @override
+  String get chooseStyleToDownload => 'Choose a style to download:';
+
+  @override
+  String get returnToTextView => 'Return to Text View';
+
+  @override
+  String get errorLoadingPdf => 'Error loading PDF file';
+
+  @override
+  String get deleteAndRetry => 'Delete and Retry';
+
+  @override
+  String get mushafTypeBlue => 'Blue Mushaf (Shamarly)';
+
+  @override
+  String get mushafTypeGreen => 'Green Mushaf';
+
+  @override
+  String get mushafTypeTajweed => 'Tajweed Mushaf';
+
+  @override
+  String get mushafStyle => 'Mushaf Style';
 }

@@ -863,4 +863,34 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get alwaysStartFromBeginningDesc => 'Si activé, la lecture commence toujours au premier verset. Si désactivé, elle reprend à la dernière position.';
+
+  @override
+  String get downloadingMushaf => 'Téléchargement du Mushaf...';
+
+  @override
+  String get downloadMushafPdf => 'Télécharger le PDF du Mushaf';
+
+  @override
+  String get chooseStyleToDownload => 'Choisissez un style à télécharger :';
+
+  @override
+  String get returnToTextView => 'Retour à la vue texte';
+
+  @override
+  String get errorLoadingPdf => 'Erreur de chargement du fichier PDF';
+
+  @override
+  String get deleteAndRetry => 'Supprimer et réessayer';
+
+  @override
+  String get mushafTypeBlue => 'Mushaf Bleu (Shamarly)';
+
+  @override
+  String get mushafTypeGreen => 'Mushaf Vert';
+
+  @override
+  String get mushafTypeTajweed => 'Mushaf Tajwid';
+
+  @override
+  String get mushafStyle => 'Style de Mushaf';
 }

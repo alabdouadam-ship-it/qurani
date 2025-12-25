@@ -16,7 +16,6 @@ class PreferencesScreen extends StatefulWidget {
 
 class _PreferencesScreenState extends State<PreferencesScreen> {
   final TextEditingController _nameController = TextEditingController();
-  String? _selectedReciter;
   String? _selectedTheme;
   String? _selectedLanguage;
   double _selectedFontSize = 22.0;
@@ -43,72 +42,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       'fr': 'KFGQPC Tajweed (grandes lettres)',
     },
   };
-  int _verseRepeatCount = 10;
-  // Removed unused Quran version labels
-
-  // Removed unused Quran version mapping helpers
-  
-  // Reciter options (key: reciter code matching folder name; values: localized display names)
-  final Map<String, Map<String, String>> _reciterMap = {
-    'basit': {
-      'ar': 'عبدالباسط عبدالصمد',
-      'en': 'Abdulbasit Abdulsamad',
-      'fr': 'Abdulbasit Abdulsamad',
-    },
-    'afs': {
-      'ar': 'العفاسي',
-      'en': 'Mishary Alafasy',
-      'fr': 'Mishary Alafasy',
-    },
-    'sds': {
-      'ar': 'عبدالرحمن السديس',
-      'en': 'Abdulrahman Al Sudais',
-      'fr': 'Abdulrahman Al Sudais',
-    },
-    'frs_a': {
-      'ar': 'فارس عباد',
-      'en': 'Fares Abbad',
-      'fr': 'Fares Abbad',
-    },
-    'husr': {
-      'ar': 'الحصري',
-      'en': 'Mahmoud Al Husary',
-      'fr': 'Mahmoud Al Husary',
-    },
-    'minsh': {
-      'ar': 'المنشاوي',
-      'en': 'Mohamed Al Manshawi',
-      'fr': 'Mohamed Al Manshawi',
-    },
-    'suwaid': {
-      'ar': 'أيمن سويد',
-      'en': 'Ayman Suwaid',
-      'fr': 'Ayman Suwaid',
-    },
-    'shuraym': {
-      'ar': 'سعود الشريم',
-      'en': 'Saood ash-Shuraym',
-      'fr': 'Saood ash-Shuraym',
-    },
-    'maher': {
-      'ar': 'ماهر المعيقلي',
-      'en': 'Maher AlMuaiqly',
-      'fr': 'Maher AlMuaiqly',
-    },
-    'ghamadi': {
-      'ar': 'سعد الغامدي',
-      'en': 'Saad Al-Ghamdi',
-      'fr': 'Saad Al-Ghamdi',
-    },
-  };
-  
-  // Theme options (placeholder only, no actual options yet)
-  
-  // Removed unused Tafsir labels
-
-  // Get keys only (Arabic names for saving)
-  List<String> get _reciterKeys => _reciterMap.keys.toList();
-  // Removed unused _tafsirKeys
   
   // Theme options with codes and localized display names
   static const String _themeGreen = 'green';
@@ -166,21 +99,15 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   void initState() {
     super.initState();
     _nameController.text = PreferencesService.getUserName();
-    // Load saved reciter key and convert to display name
-    final savedReciterKey = PreferencesService.getReciter();
     
     _selectedTheme = PreferencesService.getTheme();
     final savedLang = PreferencesService.getLanguage();
     _selectedLanguage = savedLang == 'en' ? 'en' : savedLang == 'fr' ? 'fr' : 'ar';
     _selectedFontSize = PreferencesService.getFontSize();
-    _verseRepeatCount = PreferencesService.getVerseRepeatCount();
     _selectedArabicFont = PreferencesService.getArabicFontFamily();
     if (!_fontKeys.contains(_selectedArabicFont)) {
       _selectedArabicFont = ArabicFontUtils.fontAmiri;
     }
-    
-    // Note: We'll convert keys to display names in build method after context is available
-    _selectedReciter = _reciterMap.containsKey(savedReciterKey) ? savedReciterKey : 'afs';
   }
 
   List<String> _getLanguageOptions(BuildContext context) {
@@ -262,100 +189,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     return 24.0;
   }
 
-  Widget _buildVerseRepeatSection(BuildContext context) {
-    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(isSmallScreen ? 14 : 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.secondary.withAlpha((255 * 0.1).round()),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Icon(
-                    Icons.repeat,
-                    color: theme.colorScheme.secondary,
-                    size: isSmallScreen ? 20 : 24,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        l10n.verseRepeatCount,
-                        style: TextStyle(
-                          fontSize: ResponsiveConfig.getFontSize(context, 16),
-                          fontWeight: FontWeight.bold,
-                          color: theme.colorScheme.onSurface,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        l10n.verseRepeatCountHint,
-                        style: TextStyle(
-                          fontSize: ResponsiveConfig.getFontSize(context, 13),
-                          color: theme.colorScheme.onSurface.withAlpha((255 * 0.6).round()),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              children: [
-                Expanded(
-                  child: Slider(
-                    value: _verseRepeatCount.toDouble(),
-                    min: 1,
-                    max: 25,
-                    divisions: 24,
-                    label: '$_verseRepeatCount',
-                    onChanged: (value) {
-                      setState(() {
-                        _verseRepeatCount = value.round();
-                      });
-                    },
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.secondaryContainer,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    '$_verseRepeatCount',
-                    style: TextStyle(
-                      fontSize: ResponsiveConfig.getFontSize(context, 16),
-                      fontWeight: FontWeight.bold,
-                      color: theme.colorScheme.onSecondaryContainer,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
 
   // Get current language code from context locale
   String _getCurrentLangCode(BuildContext context) {
@@ -364,32 +198,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   }
 
   // Get display names for reciters based on current language
-  List<String> _getReciterDisplayNames(BuildContext context) {
-    final langCode = _getCurrentLangCode(context);
-    return _reciterKeys.map((key) => _reciterMap[key]![langCode]!).toList();
-  }
 
-  // Get display names for tafsir based on current language
-  // Removed unused Tafsir mapping helpers
-
-  // Get Arabic key from display name
-  String? _getReciterKeyFromDisplayName(String? displayName, BuildContext context) {
-    if (displayName == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    for (var entry in _reciterMap.entries) {
-      if (entry.value[langCode] == displayName) return entry.key;
-    }
-    return null;
-  }
-
-
-
-  // Get display name from saved Arabic key
-  String? _getReciterDisplayNameFromKey(String? key, BuildContext context) {
-    final langCode = _getCurrentLangCode(context);
-    final lookupKey = (key != null && _reciterMap.containsKey(key)) ? key : 'afs';
-    return _reciterMap[lookupKey]?[langCode];
-  }
 
 
 
@@ -420,153 +229,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       body: SafeArea(
         child: Padding(
           padding: ResponsiveConfig.getPadding(context),
-          child: isSmallScreen
-              ? _buildMobileLayout(context, l10n, isSmallScreen)
-              : _buildWebLayout(context, l10n, isSmallScreen),
+          child: _buildSingleColumnLayout(context, l10n, isSmallScreen),
         ),
       ),
     );
   }
 
-  Widget _buildWebLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.only(bottom: 24),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Left column
-          Expanded(
-            child: Column(
-              children: [
-                _buildNameCard(context, l10n, isSmallScreen),
-                const SizedBox(height: 12),
-                _buildDropdownSection(
-                  context,
-                  title: l10n.reciter,
-                  icon: Icons.mic,
-                  iconColor: Colors.purple,
-                  initialValue: _getReciterDisplayNameFromKey(
-                        (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
-                        context,
-                      ) ??
-                      _getReciterDisplayNames(context).first,
-                  items: _getReciterDisplayNames(context),
-                  onChanged: (String? value) {
-                    if (value == null) return;
-                    setState(() {
-                      _selectedReciter = _getReciterKeyFromDisplayName(value, context) ?? 'afs';
-                    });
-                  },
-                ),
-                const SizedBox(height: 12),
-                _buildDropdownSection(
-                  context,
-                  title: l10n.theme,
-                  icon: Icons.palette,
-                  iconColor: Colors.orange,
-                  initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
-                  items: _getThemeDisplayNames(context),
-                  onChanged: (String? value) {
-                    if (value == null) return;
-                    setState(() {
-                      _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
-                    });
-                  },
-                ),
-                const SizedBox(height: 12),
-                _buildDropdownSection(
-                  context,
-                  title: l10n.arabicFont,
-                  icon: Icons.font_download,
-                  iconColor: Colors.brown,
-                  initialValue: _getArabicFontLabel(_selectedArabicFont, context),
-                  items: _getArabicFontDisplayNames(context),
-                  onChanged: (String? value) {
-                    if (value == null) return;
-                    setState(() {
-                      _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
-                    });
-                  },
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 16),
-          // Right column
-          Expanded(
-            child: Column(
-              children: [
-                _buildDropdownSection(
-                  context,
-                  title: l10n.fontSize,
-                  icon: Icons.text_fields,
-                  iconColor: Colors.indigo,
-                  initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
-                  items: _getFontSizeDisplayNames(context),
-                  onChanged: (String? value) {
-                    if (value == null) return;
-                    setState(() {
-                      _selectedFontSize = _getFontSizeFromDisplayName(value, context);
-                    });
-                  },
-                ),
-                const SizedBox(height: 12),
-                _buildVerseRepeatSection(context),
-                const SizedBox(height: 12),
-                _buildDropdownSection(
-                  context,
-                  title: l10n.language,
-                  icon: Icons.language,
-                  iconColor: Colors.teal,
-                  initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
-                  items: _getLanguageOptions(context),
-                  onChanged: (String? value) async {
-                    final newLangCode = _getLanguageCode(value!, context);
-                    final appState = QuraniApp.of(context);
-                    setState(() {
-                      _selectedLanguage = newLangCode;
-                    });
-                    await PreferencesService.saveLanguage(newLangCode);
-                    if (!mounted) return;
-                    appState.setLocale(Locale(newLangCode));
-                    await Future.delayed(const Duration(milliseconds: 100));
-                    if (mounted) {
-                      setState(() {});
-                    }
-                  },
-                ),
-                const SizedBox(height: 16),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: _savePreferences,
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).colorScheme.primary,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      elevation: 4,
-                    ),
-                    child: Text(
-                      l10n.savePreferences,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMobileLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
+  Widget _buildSingleColumnLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
     return SingleChildScrollView(
       padding: EdgeInsets.zero,
       child: Column(
@@ -615,25 +284,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
           ),
           _buildDropdownSection(
             context,
-            title: l10n.reciter,
-            icon: Icons.mic,
-            iconColor: Colors.purple,
-            initialValue: _getReciterDisplayNameFromKey(
-                  (_selectedReciter == null || _selectedReciter!.isEmpty) ? 'afs' : _selectedReciter!,
-                  context,
-                ) ??
-                _getReciterDisplayNames(context).first,
-            items: _getReciterDisplayNames(context),
-            onChanged: (String? value) {
-              if (value == null) return;
-              setState(() {
-                _selectedReciter = _getReciterKeyFromDisplayName(value, context) ?? 'afs';
-              });
-            },
-          ),
-          const SizedBox(height: 16),
-          _buildDropdownSection(
-            context,
             title: l10n.theme,
             icon: Icons.palette,
             iconColor: Colors.orange,
@@ -676,8 +326,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               });
             },
           ),
-          const SizedBox(height: 16),
-          _buildVerseRepeatSection(context),
           const SizedBox(height: 16),
           _buildDropdownSection(
             context,
@@ -726,11 +374,13 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               ),
             ),
           ),
-          const SizedBox(height: 32), // Add extra bottom padding for visibility
+          const SizedBox(height: 32),
         ],
       ),
     );
   }
+
+
 
   Widget _buildNameCard(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
     return Card(
@@ -890,10 +540,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     final messenger = ScaffoldMessenger.of(context);
     // Persist
     await PreferencesService.saveUserName(_nameController.text.trim());
-    await PreferencesService.saveReciter(_selectedReciter ?? 'afs');
     await PreferencesService.saveTheme(_selectedTheme ?? 'green');
     await PreferencesService.saveFontSize(_selectedFontSize);
-    await PreferencesService.saveVerseRepeatCount(_verseRepeatCount);
     await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
       // Theme change will be handled by the notifier in main.dart
     if (_selectedLanguage != null) {

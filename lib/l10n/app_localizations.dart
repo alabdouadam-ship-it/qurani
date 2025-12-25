@@ -1740,6 +1740,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'When enabled, always start playing from the first verse. When disabled, resume from last position.'**
   String get alwaysStartFromBeginningDesc;
+
+  /// No description provided for @downloadingMushaf.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading Mushaf...'**
+  String get downloadingMushaf;
+
+  /// No description provided for @downloadMushafPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Mushaf PDF'**
+  String get downloadMushafPdf;
+
+  /// No description provided for @chooseStyleToDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a style to download:'**
+  String get chooseStyleToDownload;
+
+  /// No description provided for @returnToTextView.
+  ///
+  /// In en, this message translates to:
+  /// **'Return to Text View'**
+  String get returnToTextView;
+
+  /// No description provided for @errorLoadingPdf.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading PDF file'**
+  String get errorLoadingPdf;
+
+  /// No description provided for @deleteAndRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete and Retry'**
+  String get deleteAndRetry;
+
+  /// No description provided for @mushafTypeBlue.
+  ///
+  /// In en, this message translates to:
+  /// **'Blue Mushaf (Shamarly)'**
+  String get mushafTypeBlue;
+
+  /// No description provided for @mushafTypeGreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Green Mushaf'**
+  String get mushafTypeGreen;
+
+  /// No description provided for @mushafTypeTajweed.
+  ///
+  /// In en, this message translates to:
+  /// **'Tajweed Mushaf'**
+  String get mushafTypeTajweed;
+
+  /// No description provided for @mushafStyle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mushaf Style'**
+  String get mushafStyle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

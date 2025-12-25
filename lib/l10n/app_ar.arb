@@ -598,5 +598,25 @@
         "type": "String"
       }
     }
-  }
+  },
+  "downloadingMushaf": "جاري تنزيل المصحف...",
+  "@downloadingMushaf": {},
+  "downloadMushafPdf": "تنزيل مصحف PDF",
+  "@downloadMushafPdf": {},
+  "chooseStyleToDownload": "اختر نمطًا للتنزيل:",
+  "@chooseStyleToDownload": {},
+  "returnToTextView": "العودة للعرض النصي",
+  "@returnToTextView": {},
+  "errorLoadingPdf": "خطأ في تحميل ملف PDF",
+  "@errorLoadingPdf": {},
+  "deleteAndRetry": "حذف وإعادة المحاولة",
+  "@deleteAndRetry": {},
+  "mushafTypeBlue": "النسخة الزرقاء",
+  "@mushafTypeBlue": {},
+  "mushafTypeGreen": "النسخة الخضراء",
+  "@mushafTypeGreen": {},
+  "mushafTypeTajweed": "النسخة المجودة",
+  "@mushafTypeTajweed": {},
+  "mushafStyle": "نوع المصحف",
+  "@mushafStyle": {}
 }

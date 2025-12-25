@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,10 @@ import 'util/tajweed_parser.dart';
 import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
 import 'util/debug_error_display.dart';
+
+import 'package:pdfrx/pdfrx.dart';
+import 'package:qurani/services/mushaf_pdf_service.dart';
+import 'package:dio/dio.dart'; // For CancelToken if needed
 
 import 'responsive_config.dart';
 import 'util/settings_sheet_utils.dart';
@@ -55,6 +60,18 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   bool _autoFlip = false;
   final Map<String, PageData> _pageCache = <String, PageData>{}; // Cache for loaded pages
 
+  // PDF Mode State
+  bool _isPdfMode = false;
+  bool _isPdfZoomed = false;
+  Future<PdfDocument>? _pdfDocumentFuture;
+  MushafType _pdfType = MushafType.blue;
+  PageController? _pdfPageController;
+  bool _isDownloadingPdf = false;
+  double? _downloadProgress;
+  String? _pdfPath;
+  CancelToken? _downloadCancelToken;
+  bool _isFullscreen = false;
+
   @override
   void initState() {
     super.initState();
@@ -84,6 +101,18 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     _arabicFontKey = PreferencesService.getArabicFontFamily();
     _autoFlip = PreferencesService.getAutoFlipPage();
     PreferencesService.arabicFontNotifier.addListener(_onArabicFontChanged);
+    
+    // Initialize PDF Mode
+    _isPdfMode = PreferencesService.getIsPdfMode();
+    final pdfTypeStr = PreferencesService.getPdfType();
+    _pdfType = MushafType.values.firstWhere(
+      (e) => e.name == pdfTypeStr,
+      orElse: () => MushafType.blue,
+    );
+    if (_isPdfMode) {
+      _checkPdfAvailability();
+    }
+
     _pagePlayer = AudioPlayer();
     _playerStateSub = _pagePlayer.playerStateStream.listen((state) {
       final completed =
@@ -134,8 +163,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         }
       }
     });
-    _sequenceStateSub =
+     _sequenceStateSub =
         _pagePlayer.sequenceStateStream.listen((sequenceState) {
+      if (!mounted) return; // Prevent processing if widget disposed
+      
       final index = sequenceState?.currentIndex;
       final page = _currentPageData;
       int? ayahNumber;
@@ -152,11 +183,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         if (ayahNumber != null) {
           _scheduleScrollToAyah(ayahNumber);
         }
-      } else {
-        _currentAyahIndex = index;
-        if (ayahNumber != null) {
-          _selectedAyah = ayahNumber;
-        }
       }
     });
   }
@@ -166,7 +192,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     PreferencesService.arabicFontNotifier.removeListener(_onArabicFontChanged);
     _playerStateSub?.cancel();
     _sequenceStateSub?.cancel();
-    _pagePlayer.dispose();
+    
+    // Dispose player safely
+    try {
+      _pagePlayer.dispose();
+    } catch (e) {
+      debugPrint('Error disposing audio player: $e');
+    }
     _pageController.dispose();
     _pageScrollController.dispose();
     super.dispose();
@@ -182,25 +214,52 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       _ayahKeys.clear();
       _pendingScrollAyah = highlightAyah;
     });
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-      if (_pageScrollController.hasClients) {
-        _pageScrollController.jumpTo(0);
-      }
-      if (highlightAyah != null) {
-        _scheduleScrollToAyah(highlightAyah, immediate: true);
-      }
-    });
-    try {
-      _pageController.jumpToPage(target - 1);
-    } catch (_) {
-      // Fallback to animated navigation if jump fails due to controller state
-      _pageController.animateToPage(
-        target - 1,
-        duration: const Duration(milliseconds: 250),
-        curve: Curves.easeInOut,
-      );
+    
+    // Jump PDF controller if in PDF mode
+    if (_isPdfMode && _pdfPath != null) {
+         final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+         // PDF Page Index = (Target Quran Page - 1) + Offset
+         // But wait, the offset logic:
+         // Text Page 1 (Fatiha) -> PDF Page 4.
+         // PDF Page 4 is Index 3 (if 0-based).
+         // My PageView.builder is 0-based.
+         // item 0 is PDF Page 1.
+         // item 3 is PDF Page 4.
+         // So Target Index = (Target - 1) + Offset.
+         // Example: Go to Page 1. Target=1. Offset=3. Index = 0 + 3 = 3. Correct (Page 4).
+         
+         final targetIndex = (target - 1) + offset;
+         
+         if (_pdfPageController?.hasClients == true) {
+             _pdfPageController!.jumpToPage(targetIndex);
+         }
+    } else {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          if (_pageScrollController.hasClients) {
+            _pageScrollController.jumpTo(0);
+          }
+          if (highlightAyah != null) {
+            _scheduleScrollToAyah(highlightAyah, immediate: true);
+          }
+        });
+        try {
+          _pageController.jumpToPage(target - 1);
+        } catch (_) {
+          // Fallback to animated navigation if jump fails due to controller state
+          _pageController.animateToPage(
+            target - 1,
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeInOut,
+          );
+        }
     }
+  }
+
+  void _toggleFullscreen() {
+    setState(() {
+        _isFullscreen = !_isFullscreen;
+    });
   }
 
   void _onArabicFontChanged() {
@@ -243,6 +302,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   void _scheduleScrollToAyah(int ayahNumber,
       {bool immediate = false, int attempt = 0}) {
+    // In PDF mode, we don't use the item scrolling logic
+    if (_isPdfMode) return;
+    
     if (attempt > 8) return;
     _pendingScrollAyah = ayahNumber;
     final key = _ayahKeys[ayahNumber];
@@ -550,11 +612,87 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                          );
                       },
                     ),
+                    if (_isPdfMode) ...[
+                      const Divider(),
+                      ListTile(
+                        title: Text(l10n.mushafStyle),
+                        subtitle: Text(
+                          _pdfType == MushafType.blue ? l10n.mushafTypeBlue :
+                          _pdfType == MushafType.green ? l10n.mushafTypeGreen :
+                          l10n.mushafTypeTajweed
+                        ),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () {
+                          Navigator.pop(context);
+                          _showMushafStylePicker();
+                        },
+                      ),
+                    ],
                   ],
                 ),
               ),
             );
           },
+        );
+      },
+    );
+  }
+
+  void _showMushafStylePicker() {
+    final l10n = AppLocalizations.of(context)!;
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return SafeArea(
+          child: Padding(
+             padding: const EdgeInsets.symmetric(vertical: 16),
+             child: Column(
+               mainAxisSize: MainAxisSize.min,
+               children: [
+                 Text(
+                   l10n.mushafStyle,
+                   style: Theme.of(context).textTheme.titleLarge,
+                 ),
+                 const SizedBox(height: 16),
+                 ...MushafType.values.map((type) {
+                   String typeName;
+                   switch (type) {
+                     case MushafType.blue:
+                       typeName = l10n.mushafTypeBlue;
+                       break;
+                     case MushafType.green:
+                       typeName = l10n.mushafTypeGreen;
+                       break;
+                     case MushafType.tajweed:
+                       typeName = l10n.mushafTypeTajweed;
+                       break;
+                   }
+                   
+                   return ListTile(
+                     title: Text(typeName),
+                     trailing: _pdfType == type ? const Icon(Icons.check, color: Colors.green) : null,
+                     onTap: () async {
+                       Navigator.pop(context);
+                       if (_pdfType != type) {
+                         setState(() {
+                           _pdfType = type;
+                           // Reset path so we check availability again or download
+                           _pdfPath = null;
+                           _pdfDocumentFuture = null;
+                           _pdfPageController = null;
+                         });
+                         await PreferencesService.savePdfType(type.name);
+                         await _checkPdfAvailability();
+                       }
+                     },
+                   );
+                 }),
+               ],
+             ),
+          ),
         );
       },
     );
@@ -1146,6 +1284,284 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     );
   }
 
+  Future<void> _checkPdfAvailability() async {
+    final path = await MushafPdfService.instance.getPdfPath(_pdfType);
+    final exists = await File(path).exists();
+    if (mounted) {
+      setState(() {
+        if (exists && _pdfPath != path) {
+           _pdfDocumentFuture = PdfDocument.openFile(path);
+        } else if (!exists) {
+           _pdfDocumentFuture = null;
+        }
+        _pdfPath = exists ? path : null;
+      });
+    }
+  }
+
+  Future<void> _downloadPdf(MushafType type) async {
+    setState(() {
+      _isDownloadingPdf = true;
+      _downloadProgress = 0;
+      _downloadCancelToken = CancelToken();
+    });
+
+    try {
+      await MushafPdfService.instance.downloadMushaf(
+        type,
+        onProgress: (received, total) {
+          if (mounted) {
+            setState(() {
+              _downloadProgress = received / total;
+            });
+          }
+        },
+        cancelToken: _downloadCancelToken,
+      );
+      
+      // Save the type as chosen
+      await PreferencesService.savePdfType(type.id);
+      
+      if (mounted) {
+        setState(() {
+          _pdfType = type;
+        });
+        await _checkPdfAvailability();
+      }
+    } catch (e) {
+      if (mounted && e is DioException && CancelToken.isCancel(e)) {
+        // Download cancelled, do nothing
+      } else if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Download failed: ${e.toString()}')),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isDownloadingPdf = false;
+          _downloadProgress = null;
+          _downloadCancelToken = null;
+        });
+      }
+    }
+  }
+
+  void _cancelDownload() {
+    _downloadCancelToken?.cancel();
+  }
+
+  Future<void> _togglePdfMode() async {
+    final newMode = !_isPdfMode;
+    await PreferencesService.saveIsPdfMode(newMode);
+    setState(() {
+      _isPdfMode = newMode;
+    });
+    
+    if (newMode) {
+      await _checkPdfAvailability();
+      // Wait for build then jump
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        // Offset logic handled in initialPageNumber
+      });
+    }
+  }
+
+  Widget _buildPdfView() {
+    final l10n = AppLocalizations.of(context)!;
+    
+    if (_isDownloadingPdf) {
+      return Center(
+        child: Card(
+          margin: const EdgeInsets.all(24),
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(l10n.downloadingMushaf, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 16),
+                LinearProgressIndicator(value: _downloadProgress),
+                const SizedBox(height: 8),
+                Text('${((_downloadProgress ?? 0) * 100).toStringAsFixed(1)}%'),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: _cancelDownload,
+                  child: Text(l10n.cancel),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (_pdfPath == null) {
+      return Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.download_for_offline, size: 64, color: Colors.grey),
+              const SizedBox(height: 16),
+              Text(l10n.downloadMushafPdf, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              Text(l10n.chooseStyleToDownload, style: const TextStyle(color: Colors.grey)),
+              const SizedBox(height: 24),
+              Wrap(
+                spacing: 16,
+                runSpacing: 16,
+                alignment: WrapAlignment.center,
+                children: MushafType.values.map((type) {
+                  String typeName;
+                  switch (type) {
+                    case MushafType.blue:
+                      typeName = l10n.mushafTypeBlue;
+                      break;
+                    case MushafType.green:
+                      typeName = l10n.mushafTypeGreen;
+                      break;
+                    case MushafType.tajweed:
+                      typeName = l10n.mushafTypeTajweed;
+                      break;
+                  }
+                  
+                  return ElevatedButton.icon(
+                    icon: const Icon(Icons.file_download),
+                    label: Text(typeName),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    ),
+                    onPressed: () => _downloadPdf(type),
+                  );
+                }).toList(),
+              ),
+              const SizedBox(height: 32),
+              TextButton(
+                onPressed: _togglePdfMode,
+                child: Text(l10n.returnToTextView),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+    
+    // Calculate initial index for PageView
+    // _currentPage is 1-based Quran page.
+    // initialIndex = (_currentPage - 1) + offset.
+    final initialIndex = (_currentPage - 1) + offset;
+    
+    // We recreate controller only if needed to avoid jumpy behavior, 
+    // but PageView needs controller with initialPage set correctly on first build.
+
+    // Actually, simply always use the state controller if it exists, or create one.
+    _pdfPageController ??= PageController(initialPage: initialIndex);
+    
+
+    if (_pdfPath == null) return const Center(child: CircularProgressIndicator());
+    
+    // Ensure future is initialized if path exists
+    if (_pdfDocumentFuture == null && _pdfPath != null) {
+      _pdfDocumentFuture = PdfDocument.openFile(_pdfPath!);
+    }
+
+
+
+    return FutureBuilder<PdfDocument>(
+      future: _pdfDocumentFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+           return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+           return Center(
+             child: Padding(
+               padding: const EdgeInsets.all(24.0),
+               child: Column(
+                 mainAxisAlignment: MainAxisAlignment.center,
+                 children: [
+                   const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                   const SizedBox(height: 16),
+                   Text(l10n.errorLoadingPdf, style: const TextStyle(fontSize: 18)),
+                   const SizedBox(height: 8),
+                   Text(
+                     snapshot.error.toString(),
+                     textAlign: TextAlign.center,
+                     style: const TextStyle(color: Colors.grey),
+                   ),
+                   const SizedBox(height: 24),
+                   ElevatedButton.icon(
+                     onPressed: () async {
+                       try {
+                         if (_pdfPath != null) {
+                           await File(_pdfPath!).delete();
+                         }
+                       } catch (e) {
+                         debugPrint('Error deleting file: $e');
+                       }
+                       await _checkPdfAvailability();
+                     },
+                     icon: const Icon(Icons.refresh),
+                     label: Text(l10n.deleteAndRetry),
+                   )
+                 ],
+               ),
+             ),
+           );
+        }
+        if (!snapshot.hasData) {
+           return const Center(child: CircularProgressIndicator());
+        }
+        
+        final document = snapshot.data!;
+        
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: PageView.builder(
+            controller: _pdfPageController,
+            physics: _isPdfZoomed ? const NeverScrollableScrollPhysics() : const PageScrollPhysics(),
+            itemCount: document.pages.length,
+            onPageChanged: (index) {
+               final quranPage = (index - offset) + 1;
+               if (quranPage >= 1 && quranPage <= 604 && _currentPage != quranPage) {
+                   unawaited(_stopPageAudio());
+                   setState(() {
+                     _currentPage = quranPage;
+                     _currentPageData = null; 
+                     _selectedAyah = null;
+                   });
+                   PreferencesService.saveLastReadPage(_edition.name, quranPage);
+                   _repository.loadPage(quranPage, _edition).then((data) {
+                       if (mounted && _currentPage == quranPage) {
+                           setState(() {
+                               _currentPageData = data;
+                           });
+                       }
+                   });
+               }
+            },
+           itemBuilder: (context, index) {
+             return _ZoomablePdfPage(
+               document: document,
+               pageNumber: index + 1,
+               onZoomChanged: (isZoomed) {
+                 if (mounted && isZoomed != _isPdfZoomed) {
+                    setState(() {
+                      _isPdfZoomed = isZoomed;
+                    });
+                 }
+               },
+             );
+           },
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildPageView() {
     return PageView.builder(
       controller: _pageController,
@@ -1628,10 +2044,16 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     const showPlayButton = true;
+    
+    // In full screen PDF mode, we hide the AppBar and the BottomBar
+    final hideUI = _isPdfMode && _isFullscreen;
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
+      extendBodyBehindAppBar: hideUI, // Optional: for true immersive if we used transparent appbar
+      appBar: hideUI 
+          ? null 
+          : AppBar(
         title: Text(
           '',
           style: TextStyle(
@@ -1644,11 +2066,18 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         elevation: 2,
         actions: [
           IconButton(
-            icon: const Icon(Icons.bookmark_outline),
-            onPressed: _highlightedAyahs.isEmpty
-                ? null
-                : _openHighlightedAyahsSheet,
+            // Changed icon to differentiate from Editions menu
+            icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
+            tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
+            onPressed: _togglePdfMode,
           ),
+          if (!_isPdfMode)
+            IconButton(
+              icon: const Icon(Icons.bookmark_outline),
+              onPressed: _highlightedAyahs.isEmpty
+                  ? null
+                  : _openHighlightedAyahsSheet,
+            ),
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () => _showSettingsSheet(),
@@ -1657,9 +2086,28 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             IconButton(
               icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
               tooltip: l10n.previousAyah,
-              onPressed: (_currentPageData == null || _isLoadingPageAudio)
+              onPressed: _isLoadingPageAudio
                   ? null
-                  : () => _seekToPreviousAyah(),
+                  : () async {
+                     // Check if we need to load data first
+                     if (_currentPageData == null) {
+                        setState(() { _isLoadingPageAudio = true; });
+                        try {
+                          final data = await _repository.loadPage(_currentPage, _edition);
+                          if (!mounted) return;
+                          
+                          setState(() {
+                             _currentPageData = data;
+                             _isLoadingPageAudio = false;
+                          });
+                          await _seekToPreviousAyah();
+                        } catch (e) {
+                          if (mounted) setState(() { _isLoadingPageAudio = false; });
+                        }
+                     } else {
+                       await _seekToPreviousAyah();
+                     }
+                  },
             ),
             IconButton(
               icon: _isLoadingPageAudio
@@ -1681,53 +2129,115 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               tooltip: _isPlayingPage
                   ? l10n.pausePageAudio
                   : l10n.playPageAudio,
-              onPressed: _currentPageData == null || _isLoadingPageAudio
+              onPressed: _isLoadingPageAudio
                   ? null
-                  : () => _togglePageAudio(_currentPageData!),
+                  : () async {
+                      if (_currentPageData != null) {
+                        await _togglePageAudio(_currentPageData!);
+                      } else {
+                        // Lazy load data for PDF mode
+                        setState(() {
+                           _isLoadingPageAudio = true;
+                        });
+                        try {
+                           final data = await _repository.loadPage(_currentPage, _edition);
+                           if (!mounted) return;
+                           
+                           setState(() {
+                             _currentPageData = data;
+                             _isLoadingPageAudio = false;
+                           });
+                           await _togglePageAudio(data);
+                        } catch (e) {
+                           if (!mounted) return;
+                           setState(() {
+                             _isLoadingPageAudio = false;
+                           });
+                           ScaffoldMessenger.of(context).showSnackBar(
+                               SnackBar(content: Text('Error loading audio data: $e')),
+                           );
+                        }
+                      }
+                  },
             ),
           ],
-          PopupMenuButton<QuranEdition>(
-            icon: const Icon(Icons.menu_book_outlined),
-            onSelected: _toggleEdition,
-            itemBuilder: (context) {
-              final colorScheme = Theme.of(context).colorScheme;
-              return QuranEdition.values
-                .map(
-                  (edition) => PopupMenuItem<QuranEdition>(
-                    value: edition,
-                    child: Row(
-                      children: [
-                        if (edition == _edition)
-                            Icon(
-                              Icons.check,
-                              size: 18,
-                              color: colorScheme.primary,
-                            )
-                        else
-                          const SizedBox(width: 18),
-                        const SizedBox(width: 8),
-                        Text(_editionLabel(edition, l10n)),
-                      ],
+          if (!_isPdfMode) // Only show Editions menu in Text Mode
+            PopupMenuButton<QuranEdition>(
+              icon: const Icon(Icons.menu_book_outlined),
+              onSelected: _toggleEdition,
+              itemBuilder: (context) {
+                final colorScheme = Theme.of(context).colorScheme;
+                return QuranEdition.values
+                  .map(
+                    (edition) => PopupMenuItem<QuranEdition>(
+                      value: edition,
+                      child: Row(
+                        children: [
+                          if (edition == _edition)
+                              Icon(
+                                Icons.check,
+                                size: 18,
+                                color: colorScheme.primary,
+                              )
+                          else
+                            const SizedBox(width: 18),
+                          const SizedBox(width: 8),
+                          Text(_editionLabel(edition, l10n)),
+                        ],
+                      ),
                     ),
-                  ),
-                )
-                  .toList();
-            },
-          ),
+                  )
+                    .toList();
+              },
+            ),
         ],
       ),
-      body: FutureBuilder<PageData>(
-        future: _repository.loadPage(_currentPage, _edition),
-        builder: (context, snapshot) {
-          final pageData = snapshot.data;
-          return Column(
-            children: [
-              Expanded(child: _buildPageView()),
-              _buildBottomBar(pageData),
-            ],
-          );
-        },
+      body: Stack(
+        children: [
+           // Body Content
+           if (_isPdfMode)
+             _buildPdfView()
+           else
+             FutureBuilder<PageData>(
+                future: _repository.loadPage(_currentPage, _edition),
+                builder: (context, snapshot) {
+                  // We also need to update _currentPageData for Audio playback context if possible
+                  // But in text mode, this is handled by _buildPageView Logic?
+                  // Actually the original code had FutureBuilder wrapping the whole body.
+                  // The _buildPageView used to load pages individually?
+                  // Wait, original code:
+                  // body: FutureBuilder<PageData>(... builder: (ctx, snap) { return Column(Expanded(child: _buildPageView()), _buildBottomBar(snap.data)); })
+                  // _buildPageView() uses PageView.builder which fetches pages independently.
+                  // The FutureBuilder in body was used MAINLY to get data for the BottomBar (Juz/Hizb info for current page)?
+                  // AND to initialize _currentPageData?
+                  // Let's check _buildPageView again. It has its own FutureBuilder inside itemBuilder!
+                  // So the outer FutureBuilder is largely for the BottomBar.
+                  // So separating them is correct.
+                  
+                  // However, we need to handle "Loading" state?
+                  // Just show empty or previous?
+                  final pageData = snapshot.data;
+                  return Column(
+                    children: [
+                      Expanded(child: _buildPageView()),
+                      if (!_isFullscreen) _buildBottomBar(pageData),
+                    ],
+                  );
+                },
+             ),
+             
+           // we handle BottomBar for PDF mode separately?
+           // Or can we merge?
+        ],
       ),
+      bottomNavigationBar: (_isPdfMode && !_isFullscreen)
+          ? FutureBuilder<PageData>(
+              future: _repository.loadPage(_currentPage, _edition),
+              builder: (context, snapshot) {
+                 return _buildBottomBar(snapshot.data);
+              },
+            )
+          : null,
     );
   }
 }
@@ -1943,4 +2453,143 @@ Future<List<AudioSource>> _buildPageAudioSources(
     if (src != null) sources.add(src);
   }
   return sources;
+}
+
+class _ZoomablePdfPage extends StatefulWidget {
+  final PdfDocument document;
+  final int pageNumber;
+  final ValueChanged<bool>? onZoomChanged;
+
+  const _ZoomablePdfPage({
+    super.key,
+    required this.document,
+    required this.pageNumber,
+    this.onZoomChanged,
+  });
+
+  @override
+  State<_ZoomablePdfPage> createState() => _ZoomablePdfPageState();
+}
+
+class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAliveClientMixin {
+  final TransformationController _transformationController = TransformationController();
+  
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  void dispose() {
+    _transformationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(_ZoomablePdfPage oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    // Reset transformation when page number changes
+    if (oldWidget.pageNumber != widget.pageNumber) {
+      // Use post-frame callback to ensure the widget tree is stable
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          _transformationController.value = Matrix4.identity();
+          // Notify that we're no longer zoomed
+          if (widget.onZoomChanged != null) {
+            widget.onZoomChanged!(false);
+          }
+        }
+      });
+    }
+  }
+
+  void _checkZoomState() {
+    final scale = _transformationController.value.getMaxScaleOnAxis();
+    final isZoomed = scale > 1.05;
+    if (widget.onZoomChanged != null) {
+      widget.onZoomChanged!(isZoomed);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
+    
+    // Get screen orientation
+    final orientation = MediaQuery.of(context).orientation;
+    final isLandscape = orientation == Orientation.landscape;
+    
+    // In landscape, scale up the PDF to make it more readable
+    final double scale = isLandscape ? 2.8 : 1.0;
+    
+    return GestureDetector(
+      onDoubleTap: () {
+        final currentScale = _transformationController.value.getMaxScaleOnAxis();
+        
+        if (currentScale > 1.5) {
+          // Zoom out to normal
+          _transformationController.value = Matrix4.identity();
+        } else {
+          // Zoom in to 2.5x, positioned at top-right for RTL content
+          final targetScale = 2.5;
+          
+          // Get the render box to calculate positioning
+          final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+          if (renderBox != null) {
+            final size = renderBox.size;
+            
+            // For RTL content, we want to show the top-right corner
+            // Calculate the translation needed to show top-right
+            final xTranslation = -(size.width * (targetScale - 1));
+            final yTranslation = 0.0;
+            
+            _transformationController.value = Matrix4.identity()
+              ..translate(xTranslation, yTranslation)
+              ..scale(targetScale);
+          } else {
+            // Fallback if renderBox is null
+            _transformationController.value = Matrix4.identity()..scale(targetScale);
+          }
+        }
+        
+        _checkZoomState();
+      },
+      child: Container(
+        color: Colors.white,
+        child: isLandscape
+            ? InteractiveViewer(
+                transformationController: _transformationController,
+                boundaryMargin: const EdgeInsets.all(double.infinity),
+                minScale: 0.5,
+                maxScale: 4.0,
+                panEnabled: true,
+                scaleEnabled: true,
+                onInteractionUpdate: (_) => _checkZoomState(),
+                onInteractionEnd: (_) => _checkZoomState(),
+                child: Transform.scale(
+                  scale: scale,
+                  alignment: Alignment.topCenter,
+                  child: PdfPageView(
+                    document: widget.document,
+                    pageNumber: widget.pageNumber,
+                    alignment: Alignment.center,
+                  ),
+                ),
+              )
+            : InteractiveViewer(
+                transformationController: _transformationController,
+                boundaryMargin: const EdgeInsets.all(double.infinity),
+                minScale: 1.0,
+                maxScale: 4.0,
+                panEnabled: true,
+                scaleEnabled: true,
+                onInteractionUpdate: (_) => _checkZoomState(),
+                onInteractionEnd: (_) => _checkZoomState(),
+                child: PdfPageView(
+                  document: widget.document,
+                  pageNumber: widget.pageNumber,
+                  alignment: Alignment.center,
+                ),
+              ),
+      ),
+    );
+  }
 }

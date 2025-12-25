@@ -15,8 +15,21 @@ import 'services/device_info_service.dart';
 import 'services/adhan_scheduler.dart';
 import 'prayer_times_screen.dart';
 import 'services/global_adhan_service.dart';
+import 'package:pdfrx/pdfrx.dart';
+import 'package:path_provider/path_provider.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize Pdfrx cache directory (Required for Android)
+  try {
+    Pdfrx.getCacheDirectory = () async {
+      final dir = await getApplicationCacheDirectory();
+      return dir.path;
+    };
+  } catch (e) {
+    debugPrint('Error initializing Pdfrx: $e');
+  }
   // Background audio init is mobile-only; web is no-op via not calling.
   // (just_audio works on web without background controls)
   if (!kIsWeb) {

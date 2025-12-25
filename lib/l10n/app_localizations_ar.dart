@@ -863,4 +863,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get alwaysStartFromBeginningDesc => 'عند التفعيل، يبدأ التشغيل دائماً من أول آية. عند التعطيل، يستأنف من آخر موضع.';
+
+  @override
+  String get downloadingMushaf => 'جاري تنزيل المصحف...';
+
+  @override
+  String get downloadMushafPdf => 'تنزيل مصحف PDF';
+
+  @override
+  String get chooseStyleToDownload => 'اختر نمطًا للتنزيل:';
+
+  @override
+  String get returnToTextView => 'العودة للعرض النصي';
+
+  @override
+  String get errorLoadingPdf => 'خطأ في تحميل ملف PDF';
+
+  @override
+  String get deleteAndRetry => 'حذف وإعادة المحاولة';
+
+  @override
+  String get mushafTypeBlue => 'النسخة الزرقاء';
+
+  @override
+  String get mushafTypeGreen => 'النسخة الخضراء';
+
+  @override
+  String get mushafTypeTajweed => 'النسخة المجودة';
+
+  @override
+  String get mushafStyle => 'نوع المصحف';
 }
