@@ -314,6 +314,13 @@ class PrayerTimesService {
   };
 
   static Future<int> resolveMethodForRegionFromPosition(Position pos) async {
+    // Check if user has set a preferred method
+    final userMethod = PreferencesService.getPrayerMethod();
+    if (userMethod != null) {
+      return userMethod;
+    }
+    
+    // Otherwise, auto-detect based on location
     final country = await getCountryFromCoordinates(pos);
     if (country == null || country.isEmpty) return 3;
     final key = country.toLowerCase().trim();

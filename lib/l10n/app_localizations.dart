@@ -451,6 +451,174 @@ abstract class AppLocalizations {
   /// **'Online service unavailable. Using local calculation.'**
   String get apiUnavailableUsingLocal;
 
+  /// No description provided for @prayerMethodSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer Time Calculation Method'**
+  String get prayerMethodSectionTitle;
+
+  /// No description provided for @prayerMethodSectionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your preferred method or leave it automatic based on your location'**
+  String get prayerMethodSectionDesc;
+
+  /// No description provided for @prayerMethodAuto.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic (based on location)'**
+  String get prayerMethodAuto;
+
+  /// No description provided for @prayerMethodChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating prayer times...'**
+  String get prayerMethodChanged;
+
+  /// No description provided for @prayerMethodChangedDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculation method changed, updating times'**
+  String get prayerMethodChangedDesc;
+
+  /// No description provided for @method0.
+  ///
+  /// In en, this message translates to:
+  /// **'Shia Ithna-Ashari, Leva Institute, Qum'**
+  String get method0;
+
+  /// No description provided for @method1.
+  ///
+  /// In en, this message translates to:
+  /// **'University of Islamic Sciences, Karachi'**
+  String get method1;
+
+  /// No description provided for @method2.
+  ///
+  /// In en, this message translates to:
+  /// **'Islamic Society of North America (ISNA)'**
+  String get method2;
+
+  /// No description provided for @method3.
+  ///
+  /// In en, this message translates to:
+  /// **'Muslim World League'**
+  String get method3;
+
+  /// No description provided for @method4.
+  ///
+  /// In en, this message translates to:
+  /// **'Umm Al-Qura University, Makkah'**
+  String get method4;
+
+  /// No description provided for @method5.
+  ///
+  /// In en, this message translates to:
+  /// **'Egyptian General Authority of Survey'**
+  String get method5;
+
+  /// No description provided for @method7.
+  ///
+  /// In en, this message translates to:
+  /// **'Institute of Geophysics, University of Tehran'**
+  String get method7;
+
+  /// No description provided for @method8.
+  ///
+  /// In en, this message translates to:
+  /// **'Gulf Region'**
+  String get method8;
+
+  /// No description provided for @method9.
+  ///
+  /// In en, this message translates to:
+  /// **'Kuwait'**
+  String get method9;
+
+  /// No description provided for @method10.
+  ///
+  /// In en, this message translates to:
+  /// **'Qatar'**
+  String get method10;
+
+  /// No description provided for @method11.
+  ///
+  /// In en, this message translates to:
+  /// **'Majlis Ugama Islam Singapura, Singapore'**
+  String get method11;
+
+  /// No description provided for @method12.
+  ///
+  /// In en, this message translates to:
+  /// **'Union Organization Islamic de France'**
+  String get method12;
+
+  /// No description provided for @method13.
+  ///
+  /// In en, this message translates to:
+  /// **'Diyanet İşleri Başkanlığı, Turkey'**
+  String get method13;
+
+  /// No description provided for @method14.
+  ///
+  /// In en, this message translates to:
+  /// **'Spiritual Administration of Muslims of Russia'**
+  String get method14;
+
+  /// No description provided for @method15.
+  ///
+  /// In en, this message translates to:
+  /// **'Moonsighting Committee Worldwide'**
+  String get method15;
+
+  /// No description provided for @method16.
+  ///
+  /// In en, this message translates to:
+  /// **'Dubai'**
+  String get method16;
+
+  /// No description provided for @method17.
+  ///
+  /// In en, this message translates to:
+  /// **'Jabatan Kemajuan Islam Malaysia (JAKIM)'**
+  String get method17;
+
+  /// No description provided for @method18.
+  ///
+  /// In en, this message translates to:
+  /// **'Tunisia'**
+  String get method18;
+
+  /// No description provided for @method19.
+  ///
+  /// In en, this message translates to:
+  /// **'Algeria'**
+  String get method19;
+
+  /// No description provided for @method20.
+  ///
+  /// In en, this message translates to:
+  /// **'Kementerian Agama Republik Indonesia'**
+  String get method20;
+
+  /// No description provided for @method21.
+  ///
+  /// In en, this message translates to:
+  /// **'Morocco'**
+  String get method21;
+
+  /// No description provided for @method22.
+  ///
+  /// In en, this message translates to:
+  /// **'Comunidade Islamica de Lisboa'**
+  String get method22;
+
+  /// No description provided for @method23.
+  ///
+  /// In en, this message translates to:
+  /// **'Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan'**
+  String get method23;
+
   /// No description provided for @prayerTimesSettings.
   ///
   /// In en, this message translates to:

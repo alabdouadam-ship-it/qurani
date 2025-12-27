@@ -194,6 +194,90 @@ class AppLocalizationsFr extends AppLocalizations {
   String get apiUnavailableUsingLocal => 'Service en ligne indisponible. Utilisation du calcul local.';
 
   @override
+  String get prayerMethodSectionTitle => 'Méthode de calcul des heures de prière';
+
+  @override
+  String get prayerMethodSectionDesc => 'Choisissez votre méthode préférée ou laissez-la automatique selon votre emplacement';
+
+  @override
+  String get prayerMethodAuto => 'Automatique (selon l\'emplacement)';
+
+  @override
+  String get prayerMethodChanged => 'Mise à jour des heures de prière...';
+
+  @override
+  String get prayerMethodChangedDesc => 'Méthode de calcul modifiée, mise à jour des heures';
+
+  @override
+  String get method0 => 'Chiite Ithna-Ashari, Institut Leva, Qom';
+
+  @override
+  String get method1 => 'Université des Sciences Islamiques, Karachi';
+
+  @override
+  String get method2 => 'Société Islamique d\'Amérique du Nord (ISNA)';
+
+  @override
+  String get method3 => 'Ligue du Monde Musulman';
+
+  @override
+  String get method4 => 'Université Oumm al-Qura, La Mecque';
+
+  @override
+  String get method5 => 'Autorité Générale Égyptienne d\'Arpentage';
+
+  @override
+  String get method7 => 'Institut de Géophysique, Université de Téhéran';
+
+  @override
+  String get method8 => 'Région du Golfe';
+
+  @override
+  String get method9 => 'Koweït';
+
+  @override
+  String get method10 => 'Qatar';
+
+  @override
+  String get method11 => 'Majlis Ugama Islam Singapura, Singapour';
+
+  @override
+  String get method12 => 'Union des Organisations Islamiques de France';
+
+  @override
+  String get method13 => 'Diyanet İşleri Başkanlığı, Turquie';
+
+  @override
+  String get method14 => 'Administration Spirituelle des Musulmans de Russie';
+
+  @override
+  String get method15 => 'Comité Mondial d\'Observation du Croissant';
+
+  @override
+  String get method16 => 'Dubaï';
+
+  @override
+  String get method17 => 'Jabatan Kemajuan Islam Malaysia (JAKIM)';
+
+  @override
+  String get method18 => 'Tunisie';
+
+  @override
+  String get method19 => 'Algérie';
+
+  @override
+  String get method20 => 'Ministère des Affaires Religieuses, Indonésie';
+
+  @override
+  String get method21 => 'Maroc';
+
+  @override
+  String get method22 => 'Communauté Islamique de Lisbonne';
+
+  @override
+  String get method23 => 'Ministère des Waqfs et des Affaires Islamiques, Jordanie';
+
+  @override
   String get prayerTimesSettings => 'Paramètres des heures de prière';
 
   @override
@@ -838,19 +922,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get getInTouch => 'Nous contacter';
 
   @override
-  String get readAutoFlip => 'Auto flip page';
+  String get readAutoFlip => 'Tourner automatiquement la page';
 
   @override
-  String get readAutoFlipDesc => 'Automatically turn the page when audio ends.';
+  String get readAutoFlipDesc => 'Tourner automatiquement la page lorsque l\'audio se termine.';
 
   @override
-  String get chooseReciter => 'Choose reciter';
+  String get chooseReciter => 'Choisir le récitateur';
 
   @override
-  String get chooseReciterDesc => 'Select your preferred reciter.';
+  String get chooseReciterDesc => 'Sélectionnez votre récitateur préféré.';
 
   @override
-  String get rangeRepeatCount => 'Range repeat count';
+  String get rangeRepeatCount => 'Nombre de répétitions de la plage';
 
   @override
   String get startAtLastPage => 'Commencer à la dernière page';

@@ -194,6 +194,90 @@ class AppLocalizationsAr extends AppLocalizations {
   String get apiUnavailableUsingLocal => 'الخدمة عبر الإنترنت غير متاحة. سيتم استخدام الحساب المحلي.';
 
   @override
+  String get prayerMethodSectionTitle => 'طريقة حساب أوقات الصلاة';
+
+  @override
+  String get prayerMethodSectionDesc => 'اختر الطريقة المفضلة لديك أو اترك الخيار التلقائي حسب موقعك';
+
+  @override
+  String get prayerMethodAuto => 'تلقائي (حسب الموقع)';
+
+  @override
+  String get prayerMethodChanged => 'جاري تحديث أوقات الصلاة...';
+
+  @override
+  String get prayerMethodChangedDesc => 'تم تغيير طريقة الحساب، جاري تحديث الأوقات';
+
+  @override
+  String get method0 => 'الشيعة الإثنا عشرية - معهد ليفا، قم';
+
+  @override
+  String get method1 => 'جامعة العلوم الإسلامية، كراتشي';
+
+  @override
+  String get method2 => 'الجمعية الإسلامية لأمريكا الشمالية';
+
+  @override
+  String get method3 => 'رابطة العالم الإسلامي';
+
+  @override
+  String get method4 => 'جامعة أم القرى، مكة المكرمة';
+
+  @override
+  String get method5 => 'الهيئة المصرية العامة للمساحة';
+
+  @override
+  String get method7 => 'معهد الجيوفيزياء، جامعة طهران';
+
+  @override
+  String get method8 => 'منطقة الخليج';
+
+  @override
+  String get method9 => 'الكويت';
+
+  @override
+  String get method10 => 'قطر';
+
+  @override
+  String get method11 => 'مجلس الشؤون الإسلامية، سنغافورة';
+
+  @override
+  String get method12 => 'الاتحاد الإسلامي لفرنسا';
+
+  @override
+  String get method13 => 'رئاسة الشؤون الدينية، تركيا';
+
+  @override
+  String get method14 => 'الإدارة الروحية لمسلمي روسيا';
+
+  @override
+  String get method15 => 'لجنة رؤية الهلال العالمية';
+
+  @override
+  String get method16 => 'دبي';
+
+  @override
+  String get method17 => 'دائرة التقدم الإسلامي، ماليزيا';
+
+  @override
+  String get method18 => 'تونس';
+
+  @override
+  String get method19 => 'الجزائر';
+
+  @override
+  String get method20 => 'وزارة الشؤون الدينية، إندونيسيا';
+
+  @override
+  String get method21 => 'المغرب';
+
+  @override
+  String get method22 => 'الجالية الإسلامية في لشبونة';
+
+  @override
+  String get method23 => 'وزارة الأوقاف والشؤون الإسلامية، الأردن';
+
+  @override
   String get prayerTimesSettings => 'إعدادات أوقات الصلاة';
 
   @override

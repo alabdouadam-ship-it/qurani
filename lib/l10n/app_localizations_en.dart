@@ -194,6 +194,90 @@ class AppLocalizationsEn extends AppLocalizations {
   String get apiUnavailableUsingLocal => 'Online service unavailable. Using local calculation.';
 
   @override
+  String get prayerMethodSectionTitle => 'Prayer Time Calculation Method';
+
+  @override
+  String get prayerMethodSectionDesc => 'Choose your preferred method or leave it automatic based on your location';
+
+  @override
+  String get prayerMethodAuto => 'Automatic (based on location)';
+
+  @override
+  String get prayerMethodChanged => 'Updating prayer times...';
+
+  @override
+  String get prayerMethodChangedDesc => 'Calculation method changed, updating times';
+
+  @override
+  String get method0 => 'Shia Ithna-Ashari, Leva Institute, Qum';
+
+  @override
+  String get method1 => 'University of Islamic Sciences, Karachi';
+
+  @override
+  String get method2 => 'Islamic Society of North America (ISNA)';
+
+  @override
+  String get method3 => 'Muslim World League';
+
+  @override
+  String get method4 => 'Umm Al-Qura University, Makkah';
+
+  @override
+  String get method5 => 'Egyptian General Authority of Survey';
+
+  @override
+  String get method7 => 'Institute of Geophysics, University of Tehran';
+
+  @override
+  String get method8 => 'Gulf Region';
+
+  @override
+  String get method9 => 'Kuwait';
+
+  @override
+  String get method10 => 'Qatar';
+
+  @override
+  String get method11 => 'Majlis Ugama Islam Singapura, Singapore';
+
+  @override
+  String get method12 => 'Union Organization Islamic de France';
+
+  @override
+  String get method13 => 'Diyanet İşleri Başkanlığı, Turkey';
+
+  @override
+  String get method14 => 'Spiritual Administration of Muslims of Russia';
+
+  @override
+  String get method15 => 'Moonsighting Committee Worldwide';
+
+  @override
+  String get method16 => 'Dubai';
+
+  @override
+  String get method17 => 'Jabatan Kemajuan Islam Malaysia (JAKIM)';
+
+  @override
+  String get method18 => 'Tunisia';
+
+  @override
+  String get method19 => 'Algeria';
+
+  @override
+  String get method20 => 'Kementerian Agama Republik Indonesia';
+
+  @override
+  String get method21 => 'Morocco';
+
+  @override
+  String get method22 => 'Comunidade Islamica de Lisboa';
+
+  @override
+  String get method23 => 'Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan';
+
+  @override
   String get prayerTimesSettings => 'Prayer times settings';
 
   @override

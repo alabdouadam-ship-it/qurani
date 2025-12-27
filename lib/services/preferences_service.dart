@@ -240,6 +240,26 @@ class PreferencesService {
     return _prefs?.getString(keyPrayerCalcMethod) ?? 'mwl';
   }
 
+  // User-selected prayer method (overrides auto-detection)
+  static const String keyUserPrayerMethod = 'user_prayer_method';
+  
+  /// Save user's preferred prayer calculation method ID
+  /// This overrides the auto-detected method based on location
+  static Future<void> savePrayerMethod(int methodId) async {
+    await _prefs?.setInt(keyUserPrayerMethod, methodId);
+  }
+
+  /// Get user's preferred prayer calculation method ID
+  /// Returns null if user hasn't set a preference (use auto-detection)
+  static int? getPrayerMethod() {
+    return _prefs?.getInt(keyUserPrayerMethod);
+  }
+
+  /// Clear user's prayer method preference to revert to auto-detection
+  static Future<void> clearPrayerMethod() async {
+    await _prefs?.remove(keyUserPrayerMethod);
+  }
+
   // Adhan sound selection
   static const String keyAdhanSound = 'adhan_sound';
   static const String keyAdhanVolume = 'adhan_volume';

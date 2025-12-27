@@ -96,6 +96,59 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     return id;
   }
 
+  String _getLocalizedMethodName(AppLocalizations l10n, int methodId) {
+    switch (methodId) {
+      case 0:
+        return l10n.method0;
+      case 1:
+        return l10n.method1;
+      case 2:
+        return l10n.method2;
+      case 3:
+        return l10n.method3;
+      case 4:
+        return l10n.method4;
+      case 5:
+        return l10n.method5;
+      case 7:
+        return l10n.method7;
+      case 8:
+        return l10n.method8;
+      case 9:
+        return l10n.method9;
+      case 10:
+        return l10n.method10;
+      case 11:
+        return l10n.method11;
+      case 12:
+        return l10n.method12;
+      case 13:
+        return l10n.method13;
+      case 14:
+        return l10n.method14;
+      case 15:
+        return l10n.method15;
+      case 16:
+        return l10n.method16;
+      case 17:
+        return l10n.method17;
+      case 18:
+        return l10n.method18;
+      case 19:
+        return l10n.method19;
+      case 20:
+        return l10n.method20;
+      case 21:
+        return l10n.method21;
+      case 22:
+        return l10n.method22;
+      case 23:
+        return l10n.method23;
+      default:
+        return 'Method $methodId';
+    }
+  }
+
   String _formatTimePlaceholder() => '—';
 
   Map<String, DateTime>? _todayTimes;
@@ -110,7 +163,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     await _loadTimes(fetchIfMissing: true);
   }
 
-  Future<void> _loadTimes({bool fetchIfMissing = false}) async {
+  Future<void> _loadTimes({bool fetchIfMissing = false, bool forceRefresh = false}) async {
     setState(() {
       _loading = true;
       _needsPermission = false;
@@ -143,7 +196,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       bool haveNext = await PrayerTimesService.hasMonth(nextMonth.year, nextMonth.month);
       bool havePrev = await PrayerTimesService.hasMonth(prevMonth.year, prevMonth.month);
 
-      if (fetchIfMissing && (!havePrev || !haveCurr || !haveNext)) {
+      // Force refresh when method changes, or fetch if missing
+      if (forceRefresh || (fetchIfMissing && (!havePrev || !haveCurr || !haveNext))) {
         // Need to fetch; require internet + GPS
         final hasNet = await _hasInternet();
         if (!hasNet) {
@@ -357,28 +411,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     // scheduling them here to respect the user's preference.
   }
 
-
-  String _adhanVolumeLabel() {
-    switch (PreferencesService.getLanguage()) {
-      case 'en':
-        return 'Adhan volume';
-      case 'fr':
-        return 'Volume de l\'adhan';
-      default:
-        return 'مستوى صوت الأذان';
-    }
-  }
-
-  String _adhanVolumeHint() {
-    switch (PreferencesService.getLanguage()) {
-      case 'en':
-        return 'Choose how loud the Adhan plays';
-      case 'fr':
-        return 'Choisissez l\'intensité sonore de l\'adhan';
-      default:
-        return 'اختر شدة صوت الأذان المناسبة لك';
-    }
-  }
 
   Future<void> _toggleAdhan(BuildContext context, String id, bool value) async {
     final l10n = AppLocalizations.of(context)!;
@@ -1002,7 +1034,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   Future<void> _openAdhanSettings() async {
     final l10n = AppLocalizations.of(context)!;
     final initial = PreferencesService.getAdhanSound();
-    double modalVolume = PreferencesService.getAdhanVolume();
+    final initialMethod = PreferencesService.getPrayerMethod();
+    bool methodChanged = false;
     final entries = [
       ('basit', 'عبد الباسط عبد الصمد'),
       ('afs', 'مشاري العفاسي'),
@@ -1059,6 +1092,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       ],
                     ),
                   ),
+                  const Divider(height: 1),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     child: Column(
@@ -1066,27 +1100,73 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                       children: [
                         Row(
                           children: [
-                            const Icon(Icons.volume_up, size: 18),
+                            const Icon(Icons.calculate, size: 18),
                             const SizedBox(width: 8),
-                            Text(_adhanVolumeLabel()),
-                            const Spacer(),
-                            Text('${(modalVolume * 100).round()}%'),
+                            Text(l10n.prayerMethodSectionTitle),
                           ],
                         ),
-                        Slider(
-                          value: modalVolume.clamp(0.2, 1.0),
-                          min: 0.2,
-                          max: 1.0,
-                          divisions: 8,
-                          label: '${(modalVolume * 100).round()}%',
+                        const SizedBox(height: 12),
+                        DropdownButtonFormField<int?>(
+                          value: PreferencesService.getPrayerMethod(),
+                          decoration: InputDecoration(
+                            contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                          isExpanded: true,
+                          items: [
+                            DropdownMenuItem<int?>(
+                              value: null,
+                              child: Text(l10n.prayerMethodAuto),
+                            ),
+                            const DropdownMenuItem<int?>(value: 0, child: Text('0')),
+                            const DropdownMenuItem<int?>(value: 1, child: Text('1')),
+                            const DropdownMenuItem<int?>(value: 2, child: Text('2')),
+                            const DropdownMenuItem<int?>(value: 3, child: Text('3')),
+                            const DropdownMenuItem<int?>(value: 4, child: Text('4')),
+                            const DropdownMenuItem<int?>(value: 5, child: Text('5')),
+                            const DropdownMenuItem<int?>(value: 7, child: Text('7')),
+                            const DropdownMenuItem<int?>(value: 8, child: Text('8')),
+                            const DropdownMenuItem<int?>(value: 9, child: Text('9')),
+                            const DropdownMenuItem<int?>(value: 10, child: Text('10')),
+                            const DropdownMenuItem<int?>(value: 11, child: Text('11')),
+                            const DropdownMenuItem<int?>(value: 12, child: Text('12')),
+                            const DropdownMenuItem<int?>(value: 13, child: Text('13')),
+                            const DropdownMenuItem<int?>(value: 14, child: Text('14')),
+                            const DropdownMenuItem<int?>(value: 15, child: Text('15')),
+                            const DropdownMenuItem<int?>(value: 16, child: Text('16')),
+                            const DropdownMenuItem<int?>(value: 17, child: Text('17')),
+                            const DropdownMenuItem<int?>(value: 18, child: Text('18')),
+                            const DropdownMenuItem<int?>(value: 19, child: Text('19')),
+                            const DropdownMenuItem<int?>(value: 20, child: Text('20')),
+                            const DropdownMenuItem<int?>(value: 21, child: Text('21')),
+                            const DropdownMenuItem<int?>(value: 22, child: Text('22')),
+                            const DropdownMenuItem<int?>(value: 23, child: Text('23')),
+                          ].map((item) {
+                            if (item.value == null) return item;
+                            final methodId = item.value!;
+                            return DropdownMenuItem<int?>(
+                              value: methodId,
+                              child: Text(_getLocalizedMethodName(l10n, methodId)),
+                            );
+                          }).toList(),
                           onChanged: (value) async {
-                            modalVolume = value;
-                            await PreferencesService.saveAdhanVolume(value);
-                            setModalState(() {});
+                            if (value == null) {
+                              await PreferencesService.clearPrayerMethod();
+                            } else {
+                              await PreferencesService.savePrayerMethod(value);
+                            }
+                            methodChanged = true;
+                            // Force refresh prayer times with new method
+                            await _loadTimes(forceRefresh: true);
+                            // Don't call setModalState here as it may be disposed after async operation
+                            if (mounted) setState(() {});
                           },
                         ),
+                        const SizedBox(height: 8),
                         Text(
-                          _adhanVolumeHint(),
+                          l10n.prayerMethodSectionDesc,
                           style: Theme.of(ctx).textTheme.bodySmall,
                         ),
                       ],
@@ -1146,6 +1226,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     ).whenComplete(() async {
       await _previewPlayer.stop();
       _previewKey = null;
+      
+      // If method changed, show notification and force refresh
+      if (methodChanged) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(l10n.prayerMethodChangedDesc),
+              duration: const Duration(seconds: 3),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+          // Force refresh prayer times one more time to ensure everything is updated
+          await _loadTimes(forceRefresh: true);
+          setState(() {});
+        }
+      }
     });
   }
 
