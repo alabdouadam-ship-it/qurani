@@ -220,7 +220,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           final nextQueued = _queueService.getNext(peek: true);
           if (nextQueued != null) {
              nextNextSource = await _buildAudioSource(nextQueued);
-          } else if (!_isRepeat && nextOrder < 114) {
+          } else if (_autoPlayNext && !_isRepeat && nextOrder < 114) {
              nextNextSource = await _buildAudioSource(nextOrder + 1);
           }
 
@@ -399,7 +399,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
            } catch (e) {
              debugPrint('Error preloading next queued surah: $e');
            }
-        } else if (!_isRepeat && order < 114) {
+        } else if (_autoPlayNext && !_isRepeat && order < 114) {
            try {
              final nextSource = await _buildAudioSource(order + 1);
              if (nextSource != null) playlistChildren.add(nextSource);
@@ -600,15 +600,15 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         return;
       }
 
-      // For full surah mode, ConcatenatingAudioSource handles transitions automatically.
-      // We only need to handle the end of the very last surah or playlist end.
+      // For full surah mode, LoopMode.all handles repeat automatically.
+      // ConcatenatingAudioSource handles transitions to next surah.
+      // We only need to handle the end of playlist when NOT repeating.
       if (_player.nextIndex == null && !_isRepeat) {
-          await _seekToCurrentStart(play: false);
-          setState(() => _isPlaying = false);
-      } else if (_isRepeat && _player.processingState == ProcessingState.completed) {
-           // Repeat logic for single surah handled by LoopMode, but if explicit logic:
-           await _playSurah(_currentOrder, autoPlay: true, resumePosition: Duration.zero);
+        // End of playlist and not repeating - stop playback
+        await _seekToCurrentStart(play: false);
+        setState(() => _isPlaying = false);
       }
+      // If _isRepeat is true, LoopMode.all will automatically restart the playlist
     } finally {
       _isHandlingCompletion = false;
     }
@@ -1407,22 +1407,35 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   if (value) {
                     _verseByVerseMode = false;
                     _autoPlayNext = false;
+                    _player.setLoopMode(LoopMode.all);
+                  } else {
+                    _player.setLoopMode(LoopMode.off);
                   }
                 });
+                if (value) {
+                  PreferencesService.saveAutoPlayNextSurah(false);
+                }
               },
             ),
             FilterChip(
               label: Text(l10n.autoPlayNext),
               selected: _autoPlayNext,
-              onSelected: (value) {
+              onSelected: (value) async {
                 setState(() {
                   _autoPlayNext = value;
                   if (value) {
                     _isRepeat = false;
                     _verseByVerseMode = false;
+                    _player.setLoopMode(LoopMode.off);
                   }
                 });
                 PreferencesService.saveAutoPlayNextSurah(value);
+                
+                // If enabling auto-play, reload playlist to add next surah
+                if (value && !_isPlayerDisposed) {
+                  final currentPos = _player.position;
+                  await _playSurah(_currentOrder, autoPlay: _isPlaying, resumePosition: currentPos);
+                }
               },
             ),
             FilterChip(
