@@ -61,13 +61,40 @@ class _OptionsScreenState extends State<OptionsScreen> {
             ),
             const SizedBox(width: 8),
             Text(
-          l10n.optionsTitle,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: ResponsiveConfig.getFontSize(context, 18),
-          ),
+              l10n.optionsTitle,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: ResponsiveConfig.getFontSize(context, 18),
+              ),
             ),
           ],
+        ),
+        centerTitle: false,
+        flexibleSpace: Center(
+          child: FutureBuilder<Map<String, String>?>(
+            future: _getHijriDate(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData && snapshot.data != null) {
+                final hijri = snapshot.data!;
+                final isArabic = l10n.localeName == 'ar';
+                final day = hijri['day'];
+                final month = isArabic ? hijri['monthAr'] : hijri['monthEn'];
+                final year = hijri['year'];
+                return Padding(
+                  padding: const EdgeInsets.only(top: 28),
+                  child: Text(
+                    '$day $month $year',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: ResponsiveConfig.getFontSize(context, 14),
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
+                  ),
+                );
+              }
+              return const SizedBox.shrink();
+            },
+          ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
@@ -99,77 +126,10 @@ class _OptionsScreenState extends State<OptionsScreen> {
       body: SafeArea(
         child: Padding(
           padding: ResponsiveConfig.getPadding(context),
-          child: Column(
-            children: [
-              // Header - compact on web
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(kIsWeb ? 12 : (isSmallScreen ? 16 : 20)),
-                margin: const EdgeInsets.only(bottom: kIsWeb ? 12 : 20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: Theme.of(context).brightness == Brightness.dark
-                        ? [
-                            const Color(0xFF2C2C2C),
-                            const Color(0xFF1E1E1E),
-                          ]
-                        : [
-                            Theme.of(context).colorScheme.primary,
-                            Theme.of(context).colorScheme.primaryContainer,
-                          ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(kIsWeb ? 10 : 15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Theme.of(context).brightness == Brightness.dark
-                          ? Colors.black.withAlpha((255 * 0.5).round())
-                          : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
-                      blurRadius: kIsWeb ? 6 : 10,
-                      offset: const Offset(0, kIsWeb ? 3 : 5),
-                    ),
-                  ],
-                ),
-                child: FutureBuilder<Map<String, String>?>(
-                  future: _getHijriDate(),
-                  builder: (context, snapshot) {
-                    final name = PreferencesService.getUserName().trim();
-                    final greeting = name.isEmpty 
-                        ? l10n.homeGreetingGeneric 
-                        : l10n.homeGreetingNamed(name);
-                    
-                    String fullText = greeting;
-                    if (snapshot.hasData && snapshot.data != null) {
-                      final hijri = snapshot.data!;
-                      final isArabic = l10n.localeName == 'ar';
-                      final day = hijri['day'];
-                      final month = isArabic ? hijri['monthAr'] : hijri['monthEn'];
-                      final year = hijri['year'];
-                      final hijriString = '$day $month $year';
-                      
-                      fullText = '$greeting\n$hijriString';
-                    }
-
-                    return Text(
-                      fullText,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: ResponsiveConfig.getFontSize(context, kIsWeb ? 18 : 22),
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    );
-                  },
-                ),
-              ),
-              
-              // Options Grid - Fixed layout without scroll
-              Expanded(
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    final options = _getOptions(context);
-                    final width = constraints.maxWidth;
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final options = _getOptions(context);
+              final width = constraints.maxWidth;
                     
                     // Determine column count
                     // On mobile: 2
@@ -223,13 +183,10 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     );
                   },
                 ),
-              ),
-            ],
+            ),
           ),
-        ),
-      ),
-    );
-  }
+        );
+      }
 
   List<OptionItem> _getOptions(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -361,7 +318,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 child: Text(
                   option.title,
                   style: TextStyle(
-                    fontSize: kIsWeb ? 12 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontSize: kIsWeb ? 11 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 13 : 14),
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),

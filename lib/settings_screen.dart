@@ -250,7 +250,7 @@ class SettingsScreen extends StatelessWidget {
                 child: Text(
                   setting.title,
                   style: TextStyle(
-                    fontSize: kIsWeb ? 12 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 14 : 16),
+                    fontSize: kIsWeb ? 11 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 13 : 14),
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onSurface,
                   ),

@@ -98,7 +98,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   @override
   void initState() {
     super.initState();
-    _nameController.text = PreferencesService.getUserName();
+
     
     _selectedTheme = PreferencesService.getTheme();
     final savedLang = PreferencesService.getLanguage();
@@ -236,147 +236,108 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   }
 
   Widget _buildSingleColumnLayout(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
-    return SingleChildScrollView(
-      padding: EdgeInsets.zero,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildNameCard(context, l10n, isSmallScreen),
-          const SizedBox(height: 16),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(isSmallScreen ? 16 : 20),
-            margin: const EdgeInsets.only(bottom: 20),
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: Theme.of(context).brightness == Brightness.dark
-                    ? [
-                        const Color(0xFF2C2C2C),
-                        const Color(0xFF1E1E1E),
-                      ]
-                    : [
-                        Theme.of(context).colorScheme.primary,
-                        Theme.of(context).colorScheme.primaryContainer,
-                      ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+    return Column(
+      children: [
+        Expanded(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              _buildDropdownSection(
+                context,
+                title: l10n.theme,
+                icon: Icons.palette,
+                iconColor: Colors.orange,
+                initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
+                items: _getThemeDisplayNames(context),
+                onChanged: (String? value) {
+                  if (value == null) return;
+                  setState(() {
+                    _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
+                  });
+                },
               ),
-              borderRadius: BorderRadius.circular(15),
-              boxShadow: [
-                BoxShadow(
-                  color: Theme.of(context).brightness == Brightness.dark
-                      ? Colors.black.withAlpha((255 * 0.5).round())
-                      : Theme.of(context).colorScheme.primary.withAlpha((255 * 0.3).round()),
-                  blurRadius: 10,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Icon(
-                  Icons.tune,
-                  size: isSmallScreen ? 40 : 50,
-                  color: Colors.white,
-                ),
-              ],
-            ),
-          ),
-          _buildDropdownSection(
-            context,
-            title: l10n.theme,
-            icon: Icons.palette,
-            iconColor: Colors.orange,
-            initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
-            items: _getThemeDisplayNames(context),
-            onChanged: (String? value) {
-              if (value == null) return;
-              setState(() {
-                _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
-              });
-            },
-          ),
-          const SizedBox(height: 16),
-          _buildDropdownSection(
-            context,
-            title: l10n.arabicFont,
-            icon: Icons.font_download,
-            iconColor: Colors.brown,
-            initialValue: _getArabicFontLabel(_selectedArabicFont, context),
-            items: _getArabicFontDisplayNames(context),
-            onChanged: (String? value) {
-              if (value == null) return;
-              setState(() {
-                _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
-              });
-            },
-          ),
-          const SizedBox(height: 16),
-          _buildDropdownSection(
-            context,
-            title: l10n.fontSize,
-            icon: Icons.text_fields,
-            iconColor: Colors.indigo,
-            initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
-            items: _getFontSizeDisplayNames(context),
-            onChanged: (String? value) {
-              if (value == null) return;
-              setState(() {
-                _selectedFontSize = _getFontSizeFromDisplayName(value, context);
-              });
-            },
-          ),
-          const SizedBox(height: 16),
-          _buildDropdownSection(
-            context,
-            title: l10n.language,
-            icon: Icons.language,
-            iconColor: Colors.teal,
-            initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
-            items: _getLanguageOptions(context),
-            onChanged: (String? value) async {
-              final newLangCode = _getLanguageCode(value!, context);
-              final appState = QuraniApp.of(context);
-              setState(() {
-                _selectedLanguage = newLangCode;
-              });
-              await PreferencesService.saveLanguage(newLangCode);
-              if (!mounted) return;
-              appState.setLocale(Locale(newLangCode));
-              await Future.delayed(const Duration(milliseconds: 100));
-              if (mounted) {
-                setState(() {});
-              }
-            },
-          ),
-          const SizedBox(height: 24),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _savePreferences,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                foregroundColor: Colors.white,
-                padding: EdgeInsets.symmetric(
-                  vertical: isSmallScreen ? 14 : 16,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                elevation: 4,
+              const SizedBox(height: 8),
+              _buildDropdownSection(
+                context,
+                title: l10n.language,
+                icon: Icons.language,
+                iconColor: Colors.teal,
+                initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
+                items: _getLanguageOptions(context),
+                onChanged: (String? value) async {
+                  final newLangCode = _getLanguageCode(value!, context);
+                  final appState = QuraniApp.of(context);
+                  setState(() {
+                    _selectedLanguage = newLangCode;
+                  });
+                  await PreferencesService.saveLanguage(newLangCode);
+                  if (!mounted) return;
+                  appState.setLocale(Locale(newLangCode));
+                  await Future.delayed(const Duration(milliseconds: 100));
+                  if (mounted) {
+                    setState(() {});
+                  }
+                },
               ),
-              child: Text(
-                l10n.savePreferences,
-                style: TextStyle(
-                  fontSize: ResponsiveConfig.getFontSize(context, 16),
-                  fontWeight: FontWeight.bold,
-                ),
+              const SizedBox(height: 8),
+              _buildDropdownSection(
+                context,
+                title: l10n.arabicFont,
+                icon: Icons.font_download,
+                iconColor: Colors.brown,
+                initialValue: _getArabicFontLabel(_selectedArabicFont, context),
+                items: _getArabicFontDisplayNames(context),
+                onChanged: (String? value) {
+                  if (value == null) return;
+                  setState(() {
+                    _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
+                  });
+                },
+              ),
+              const SizedBox(height: 8),
+              _buildDropdownSection(
+                context,
+                title: l10n.fontSize,
+                icon: Icons.text_fields,
+                iconColor: Colors.indigo,
+                initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
+                items: _getFontSizeDisplayNames(context),
+                onChanged: (String? value) {
+                  if (value == null) return;
+                  setState(() {
+                    _selectedFontSize = _getFontSizeFromDisplayName(value, context);
+                  });
+                },
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: _savePreferences,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.primary,
+              foregroundColor: Colors.white,
+              padding: EdgeInsets.symmetric(
+                vertical: isSmallScreen ? 14 : 16,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 4,
+            ),
+            child: Text(
+              l10n.savePreferences,
+              style: TextStyle(
+                fontSize: ResponsiveConfig.getFontSize(context, 16),
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          const SizedBox(height: 32),
-        ],
-      ),
+        ),
+        const SizedBox(height: 12),
+      ],
     );
   }
 
@@ -539,7 +500,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     final appState = QuraniApp.of(context);
     final messenger = ScaffoldMessenger.of(context);
     // Persist
-    await PreferencesService.saveUserName(_nameController.text.trim());
+
     await PreferencesService.saveTheme(_selectedTheme ?? 'green');
     await PreferencesService.saveFontSize(_selectedFontSize);
     await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
