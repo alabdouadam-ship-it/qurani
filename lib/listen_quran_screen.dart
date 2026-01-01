@@ -7,6 +7,7 @@ import 'models/surah.dart';
 import 'services/preferences_service.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
+import 'services/reciter_config_service.dart';
 import 'audio_player_screen.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
 
@@ -131,6 +132,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                                 Navigator.pop(context);
                                 SettingsSheetUtils.showReciterSelectionSheet(
                                   context,
+                                  requireFullSurahs: true,
                                   onReciterSelected: (reciterKey) {
                                     PreferencesService.saveReciter(reciterKey);
                                     setState(() {
@@ -154,7 +156,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
         ],
       ),
       body: SurahGrid(
-        onTapSurah: (Surah s) {
+        onTapSurah: (Surah s) async {
           final reciterKey = PreferencesService.getReciter();
           if (reciterKey.isEmpty) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -162,7 +164,43 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
             );
             return;
           }
-          final url = AudioService.buildFullRecitationUrl(
+          
+          // Check if reciter has full surahs
+          final reciter = await ReciterConfigService.getReciterByCode(reciterKey);
+          if (reciter == null || !reciter.hasFullSurahs()) {
+            if (!mounted) return;
+            showDialog(
+              context: context,
+              builder: (context) => AlertDialog(
+                title: Text(l10n.reciterNotCompatible),
+                content: Text(l10n.reciterNotAvailableForFullSurahs),
+                actions: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(l10n.cancel),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      SettingsSheetUtils.showReciterSelectionSheet(
+                        context,
+                        requireFullSurahs: true,
+                        onReciterSelected: (reciterKey) {
+                          PreferencesService.saveReciter(reciterKey);
+                          setState(() {
+                            _lastReciterKey = reciterKey;
+                          });
+                        },
+                      );
+                    },
+                    child: Text(l10n.chooseReciter),
+                  ),
+                ],
+              ),
+            );
+            return;
+          }
+          final url = await AudioService.buildFullRecitationUrl(
             reciterKeyAr: reciterKey,
             surahOrder: s.order,
           );

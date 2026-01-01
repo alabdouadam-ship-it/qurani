@@ -934,6 +934,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chooseReciterDesc => 'Select your preferred reciter.';
 
   @override
+  String get reciterNotCompatible => 'Reciter not compatible';
+
+  @override
+  String get reciterNotAvailableForFullSurahs => 'Full surah audio files are not available for this reciter. Please choose another reciter.';
+
+  @override
+  String reciterNotAvailableForVerses(Object reciterName) {
+    return 'Verse-by-verse audio files are not available for reciter $reciterName. Please choose another reciter.';
+  }
+
+  @override
   String get rangeRepeatCount => 'Range repeat count';
 
   @override

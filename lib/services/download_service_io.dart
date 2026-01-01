@@ -39,7 +39,7 @@ class DownloadService {
   }
 
   static Future<void> downloadSurah(String reciter, int order) async {
-    final url = AudioService.buildFullRecitationUrl(reciterKeyAr: reciter, surahOrder: order);
+    final url = await AudioService.buildFullRecitationUrl(reciterKeyAr: reciter, surahOrder: order);
     if (url == null) {
       throw Exception('Unable to resolve download URL for surah $order');
     }
@@ -54,7 +54,7 @@ class DownloadService {
   static Future<void> downloadFullReciter(String reciter, {void Function(double progress)? onProgress}) async {
     int completed = 0;
     for (int order = 1; order <= 114; order++) {
-      final url = AudioService.buildFullRecitationUrl(reciterKeyAr: reciter, surahOrder: order);
+      final url = await AudioService.buildFullRecitationUrl(reciterKeyAr: reciter, surahOrder: order);
       if (url == null) {
         completed++;
         onProgress?.call(completed / 114.0);

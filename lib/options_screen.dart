@@ -15,7 +15,6 @@ import 'tasbeeh_screen.dart';
 import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
-import 'services/preferences_service.dart';
 import 'services/prayer_times_service.dart';
 
 
@@ -45,7 +44,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
   @override
   Widget build(BuildContext context) {
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    final isTablet = ResponsiveConfig.isTablet(context);
+    // final isTablet = ResponsiveConfig.isTablet(context);
     final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(

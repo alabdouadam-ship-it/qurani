@@ -637,6 +637,16 @@
   ,"@chooseReciter": {}
   ,"chooseReciterDesc": "Select your preferred reciter."
   ,"@chooseReciterDesc": {}
+  ,"reciterNotCompatible": "Reciter not compatible"
+  ,"@reciterNotCompatible": {}
+  ,"reciterNotAvailableForFullSurahs": "Full surah audio files are not available for this reciter. Please choose another reciter."
+  ,"@reciterNotAvailableForFullSurahs": {}
+  ,"reciterNotAvailableForVerses": "Verse-by-verse audio files are not available for reciter {reciterName}. Please choose another reciter."
+  ,"@reciterNotAvailableForVerses": {
+    "placeholders": {
+      "reciterName": {}
+    }
+  }
   ,"rangeRepeatCount": "Range repeat count",
   "@rangeRepeatCount": {},
   "startAtLastPage": "Start at last page",

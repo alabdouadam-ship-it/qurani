@@ -1,0 +1,117 @@
+{
+    "reciters": [
+        {
+            "code": "basit",
+            "nameAr": "عبدالباسط عبدالصمد",
+            "nameLatin": "Abdulbasit Abdulsamad",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/basit",
+            "surahsPath": "https://www.qurani.info/data/full/basit"
+        },
+        {
+            "code": "afs",
+            "nameAr": "العفاسي",
+            "nameLatin": "Mishary Alafasy",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
+            "surahsPath": "https://www.qurani.info/data/full/afs"
+        },
+        {
+            "code": "sds",
+            "nameAr": "عبدالرحمن السديس",
+            "nameLatin": "Abdulrahman Al Sudais",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/sds",
+            "surahsPath": "https://www.qurani.info/data/full/sds"
+        },
+        {
+            "code": "frs_a",
+            "nameAr": "فارس عباد",
+            "nameLatin": "Fares Abbad",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/frs_a",
+            "surahsPath": "https://www.qurani.info/data/full/frs_a"
+        },
+        {
+            "code": "husr",
+            "nameAr": "الحصري",
+            "nameLatin": "Mahmoud Al Husary",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/husr",
+            "surahsPath": "https://www.qurani.info/data/full/husr"
+        },
+        {
+            "code": "minsh",
+            "nameAr": "المنشاوي",
+            "nameLatin": "Mohamed Al Manshawi",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/minsh",
+            "surahsPath": "https://www.qurani.info/data/full/minsh"
+        },
+        {
+            "code": "suwaid",
+            "nameAr": "أيمن سويد",
+            "nameLatin": "Ayman Suwaid",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/suwaid",
+            "surahsPath": "https://www.qurani.info/data/full/suwaid"
+        },
+        {
+            "code": "shuraym",
+            "nameAr": "سعود الشريم",
+            "nameLatin": "Saood ash-Shuraym",
+            "ayahsPath": "https://everyayah.com/data/Saood_ash-Shuraym_64kbps",
+            "surahsPath": "https://server7.mp3quran.net/shur"
+        },
+        {
+            "code": "maher",
+            "nameAr": "ماهر المعيقلي",
+            "nameLatin": "Maher AlMuaiqly",
+            "ayahsPath": "https://everyayah.com/data/Maher_AlMuaiqly_64kbps",
+            "surahsPath": "https://server12.mp3quran.net/maher"
+        },
+        {
+            "code": "ghamadi",
+            "nameAr": "سعد الغامدي",
+            "nameLatin": "Saad Al-Ghamdi",
+            "ayahsPath": "https://everyayah.com/data/Ghamadi_40kbps",
+            "surahsPath": "https://server7.mp3quran.net/s_gmd"
+        },
+        {
+            "code": "muyassar",
+            "nameAr": "تفسير الميسر",
+            "nameLatin": "Tafsir Al Muyassar",
+            "ayahsPath": "https://www.qurani.info/data/muyassar_audio",
+            "surahsPath": "https://www.qurani.info/data/muyassar_audio/full"
+        },
+        {
+            "code": "arabic_english",
+            "nameAr": "إنجليزي - عربي",
+            "nameLatin": "English - Arabic",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/arabic-english",
+            "surahsPath": null
+        },
+        {
+            "code": "arabic_french",
+            "nameAr": "فرنسي - عربي",
+            "nameLatin": "French - Arabic",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/arabic-french",
+            "surahsPath": null
+        },
+        {
+            "code": "nufais",
+            "nameAr": "أحمد النفيس",
+            "nameLatin": "Ahmed Nufais",
+            "ayahsPath": "",
+            "surahsPath": "https://server16.mp3quran.net/nufais/Rewayat-Hafs-A-n-Assem"
+        }
+    ],
+    "urlPatterns": {
+        "ayah": "{ayahsPath}/{surahPadded3}{versePadded3}.mp3",
+        "surah": "{surahsPath}/{surahPadded3}.mp3",
+        "examples": {
+            "ayah": "https://www.qurani.info/data/ayahs/afs/001001.mp3",
+            "surah": "https://www.qurani.info/data/full/afs/001.mp3"
+        }
+    },
+    "notes": {
+        "padding": "Surah numbers are padded to 3 digits (001-114), verse numbers are padded to 3 digits",
+        "externalSources": [
+            "mp3quran.net: shuraym, maher, ghamadi (full surahs)",
+            "everyayah.com: shuraym, maher, ghamadi (verses)"
+        ]
+    }
+}

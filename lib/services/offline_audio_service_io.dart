@@ -8,7 +8,7 @@ import 'package:qurani/services/preferences_service.dart';
 class OfflineAudioService {
   static Future<Directory> _ayahBaseDir(String reciterKey) async {
     final dir = await getApplicationDocumentsDirectory();
-    final folder = AudioService.ayahsReciterFolder(reciterKey);
+    final folder = await AudioService.ayahsReciterFolder(reciterKey);
     final base = Directory('${dir.path}/ayahs/$folder');
     if (!await base.exists()) {
       await base.create(recursive: true);
@@ -76,7 +76,7 @@ class OfflineAudioService {
     for (int surah = 1; surah <= 114; surah++) {
       final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEdition.simple);
       for (final a in ayahs) {
-        final url = AudioService.buildVerseUrl(
+        final url = await AudioService.buildVerseUrl(
           reciterKeyAr: reciterKey,
           surahOrder: surah,
           verseNumber: a.numberInSurah,
@@ -116,7 +116,7 @@ class OfflineAudioService {
     const int total = 114;
     onProgress(0, total);
     for (int surah = 1; surah <= 114; surah++) {
-      final url = AudioService.buildFullRecitationUrl(reciterKeyAr: reciterKey, surahOrder: surah);
+      final url = await AudioService.buildFullRecitationUrl(reciterKeyAr: reciterKey, surahOrder: surah);
       if (url == null) {
         completed++;
         onProgress(completed, total);

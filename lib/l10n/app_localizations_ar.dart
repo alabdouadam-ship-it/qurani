@@ -934,6 +934,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get chooseReciterDesc => 'اختر القارئ المفضل لديك.';
 
   @override
+  String get reciterNotCompatible => 'القارئ غير متوافق';
+
+  @override
+  String get reciterNotAvailableForFullSurahs => 'الملفات الصوتية للسور الكاملة غير متوفرة لهذا القارئ. يرجى اختيار قارئ آخر.';
+
+  @override
+  String reciterNotAvailableForVerses(Object reciterName) {
+    return 'الملفات الصوتية (آية بآية) غير متوفرة للقارئ $reciterName. يرجى اختيار قارئ آخر.';
+  }
+
+  @override
   String get rangeRepeatCount => 'عدد تكرار النطاق';
 
   @override

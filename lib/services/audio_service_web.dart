@@ -1,47 +1,15 @@
 import 'package:just_audio/just_audio.dart';
 import 'package:qurani/services/media_item_compat.dart';
+import 'package:qurani/services/reciter_config_service.dart';
 
 class AudioService {
-  static const Map<String, String> _fullAudioBases = {
-    'basit': '/data/full/basit',
-    'afs': '/data/full/afs',
-    'sds': '/data/full/sds',
-    'frs_a': '/data/full/frs_a',
-    'husr': '/data/full/husr',
-    'minsh': '/data/full/minsh',
-    'suwaid': '/data/full/suwaid',
-    'shuraym': 'https://server7.mp3quran.net/shur',
-    'maher': 'https://server12.mp3quran.net/maher',
-    'ghamadi': 'https://server7.mp3quran.net/s_gmd',
-    'muyassar': '/data/muyassar_audio/full',
-  };
-
-  static const Map<String, Map<String, String>> _reciterDisplayNames = {
-    'basit': {'ar': 'عبدالباسط عبدالصمد','en': 'Abdulbasit Abdulsamad','fr': 'Abdulbasit Abdulsamad'},
-    'afs': {'ar': 'العفاسي','en': 'Mishary Alafasy','fr': 'Mishary Alafasy'},
-    'sds': {'ar': 'عبدالرحمن السديس','en': 'Abdulrahman Al Sudais','fr': 'Abdulrahman Al Sudais'},
-    'frs_a': {'ar': 'فارس عباد','en': 'Fares Abbad','fr': 'Fares Abbad'},
-    'husr': {'ar': 'الحصري','en': 'Mahmoud Al Husary','fr': 'Mahmoud Al Husary'},
-    'minsh': {'ar': 'المنشاوي','en': 'Mohamed Al Manshawi','fr': 'Mohamed Al Manshawi'},
-    'suwaid': {'ar': 'أيمن سويد','en': 'Ayman Suwaid','fr': 'Ayman Suwaid'},
-    'shuraym': {'ar': 'سعود الشريم','en': 'Saood ash-Shuraym','fr': 'Saood ash-Shuraym'},
-    'maher': {'ar': 'ماهر المعيقلي','en': 'Maher AlMuaiqly','fr': 'Maher AlMuaiqly'},
-    'ghamadi': {'ar': 'سعد الغامدي','en': 'Saad Al-Ghamdi','fr': 'Saad Al-Ghamdi'},
-    'muyassar': {'ar': 'تفسير الميسر','en': 'Tafsir Al Muyassar','fr': 'Tafsir Al Muyassar'},
-    'english_arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
-    'english-arabic': {'ar': 'إنجليزي - عربي','en': 'English - Arabic','fr': 'Anglais - Arabe'},
-    'arabic_english': {'ar': 'عربي - إنجليزي','en': 'Arabic - English','fr': 'Arabe - Anglais'},
-    'arabic-english': {'ar': 'عربي - إنجليزي','en': 'Arabic - English','fr': 'Arabe - Anglais'},
-    'french_arabic': {'ar': 'فرنسي - عربي','en': 'French - Arabic','fr': 'Français - Arabe'},
-    'french-arabic': {'ar': 'فرنسي - عربي','en': 'French - Arabic','fr': 'Français - Arabe'},
-    'arabic_french': {'ar': 'عربي - فرنسي','en': 'Arabic - French','fr': 'Arabe - Français'},
-    'arabic-french': {'ar': 'عربي - فرنسي','en': 'Arabic - French','fr': 'Arabe - Français'},
-  };
-
+  /// Get reciter display name
+  /// Uses ReciterConfigService to load from JSON
   static String reciterDisplayName(String code, String langCode) {
-    final names = _reciterDisplayNames[code];
-    if (names == null) return code;
-    return names[langCode] ?? names['en'] ?? code;
+    // Synchronous access - data should be preloaded at app startup
+    final reciter = ReciterConfigService.reciterMap?[code];
+    if (reciter == null) return code;
+    return reciter.getDisplayName(langCode);
   }
 
   static String? _pad3(int order) {
@@ -49,12 +17,13 @@ class AudioService {
     return order.toString().padLeft(3, '0');
   }
 
-  static String? buildFullRecitationUrl({required String reciterKeyAr, required int surahOrder}) {
-    final base = _fullAudioBases[reciterKeyAr] ?? '/data/full/basit';
+  static Future<String?> buildFullRecitationUrl({required String reciterKeyAr, required int surahOrder}) async {
+    final reciter = await ReciterConfigService.getReciter(reciterKeyAr);
+    final base = reciter?.surahsPath ?? '/data/full/basit';
     final padded = _pad3(surahOrder);
     if (padded == null) return null;
 
-    // Handle external URL for shuraym, maher, ghamadi
+    // Handle external URL
     if (base.startsWith('http')) {
       return '$base/$padded.mp3';
     }
@@ -62,68 +31,39 @@ class AudioService {
     return 'https://www.qurani.info$base/$padded.mp3';
   }
 
-  static const Map<String, String> _ayahReciterFolders = {
-    'afs': 'afs',
-    'basit': 'basit',
-    'frs_a': 'frs_a',
-    'husr': 'husr',
-    'minsh': 'minsh',
-    'suwaid': 'suwaid',
-    'sds': 'sds',
-    'shuraym': 'Saood_ash-Shuraym_64kbps',
-    'maher': 'Maher_AlMuaiqly_64kbps',
-    'ghamadi': 'Ghamadi_40kbps',
-    'muyassar': 'muyassar_audio',
-    'english_arabic': 'english-arabic',
-    'english-arabic': 'english-arabic',
-    'arabic_english': 'arabic-english',
-    'arabic-english': 'arabic-english',
-    'french_arabic': 'french-arabic',
-    'french-arabic': 'french-arabic',
-    'arabic_french': 'arabic-french',
-    'arabic-french': 'arabic-french',
-  };
-
-  static String _getAyahsReciterFolder(String reciterKeyAr) {
-    return _ayahReciterFolders[reciterKeyAr] ?? _ayahReciterFolders['afs']!;
-  }
-
-  static String? buildVerseUrl({
+  static Future<String?> buildVerseUrl({
     required String reciterKeyAr,
     required int surahOrder,
     required int verseNumber,
-  }) {
+  }) async {
     final s = _pad3(surahOrder);
     final v = _pad3(verseNumber);
     if (s == null || v == null) return null;
-    final reciterFolder = _getAyahsReciterFolder(reciterKeyAr);
     
-    // Handle external URL for shuraym, maher, and ghamadi (everyayah.com)
-    if (reciterFolder == 'Saood_ash-Shuraym_64kbps' || 
-        reciterFolder == 'Maher_AlMuaiqly_64kbps' || 
-        reciterFolder == 'Ghamadi_40kbps') {
-      return 'https://everyayah.com/data/$reciterFolder/$s$v.mp3';
-    }
-
-    final basePath = reciterFolder == 'muyassar_audio'
-        ? 'https://www.qurani.info/data/muyassar_audio'
-        : 'https://www.qurani.info/data/ayahs/$reciterFolder';
-    return '$basePath/$s$v.mp3';
+    final reciter = await ReciterConfigService.getReciter(reciterKeyAr);
+    if (reciter == null) return null;
+    
+    final ayahsPath = reciter.ayahsPath;
+    return '$ayahsPath/$s$v.mp3';
   }
 
-  static List<String> buildVerseUrls({
+  static Future<List<String>> buildVerseUrls({
     required String reciterKeyAr,
     required int surahOrder,
     required int totalVerses,
-  }) {
-    return List.generate(
-      totalVerses,
-      (index) => buildVerseUrl(
+  }) async {
+    final urls = <String>[];
+    for (int i = 1; i <= totalVerses; i++) {
+      final url = await buildVerseUrl(
         reciterKeyAr: reciterKeyAr,
         surahOrder: surahOrder,
-        verseNumber: index + 1,
-      ) ?? '',
-    ).where((url) => url.isNotEmpty).toList();
+        verseNumber: i,
+      );
+      if (url != null && url.isNotEmpty) {
+        urls.add(url);
+      }
+    }
+    return urls;
   }
 
   static Future<String> localAyahFilePath({
@@ -148,7 +88,7 @@ class AudioService {
     required int surahOrder,
     required int verseNumber,
   }) async {
-    final url = buildVerseUrl(
+    final url = await buildVerseUrl(
       reciterKeyAr: reciterKeyAr,
       surahOrder: surahOrder,
       verseNumber: verseNumber,
@@ -171,9 +111,16 @@ class AudioService {
     return AudioSource.uri(uri, tag: mediaItem);
   }
 
-  static String ayahsReciterFolder(String reciterKeyAr) {
-    return _getAyahsReciterFolder(reciterKeyAr);
+  static Future<String> ayahsReciterFolder(String reciterKeyAr) async {
+    final reciter = await ReciterConfigService.getReciter(reciterKeyAr);
+    if (reciter == null) return 'afs'; // Fallback
+    
+    // Extract folder name from ayahsPath
+    final path = reciter.ayahsPath;
+    if (path.contains('/')) {
+      return path.split('/').last;
+    }
+    return path;
   }
 }
-
 

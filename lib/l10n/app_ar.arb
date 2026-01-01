@@ -635,6 +635,16 @@
   ,"@chooseReciter": {}
   ,"chooseReciterDesc": "اختر القارئ المفضل لديك."
   ,"@chooseReciterDesc": {}
+  ,"reciterNotCompatible": "القارئ غير متوافق"
+  ,"@reciterNotCompatible": {}
+  ,"reciterNotAvailableForFullSurahs": "الملفات الصوتية للسور الكاملة غير متوفرة لهذا القارئ. يرجى اختيار قارئ آخر."
+  ,"@reciterNotAvailableForFullSurahs": {}
+  ,"reciterNotAvailableForVerses": "الملفات الصوتية (آية بآية) غير متوفرة للقارئ {reciterName}. يرجى اختيار قارئ آخر."
+  ,"@reciterNotAvailableForVerses": {
+    "placeholders": {
+      "reciterName": {}
+    }
+  }
   ,"rangeRepeatCount": "عدد تكرار النطاق",
   "@rangeRepeatCount": {},
   "startAtLastPage": "البدء من آخر صفحة",

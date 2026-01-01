@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 
@@ -127,8 +126,7 @@ class MushafPdfService {
         return 3; // Page 1 of Quran is Page 4 of PDF
       case MushafType.tajweed:
         return 9; // Page 1 of Quran is Page 10 of PDF
-      default:
-        return 0; // Default for others until verified
+
     }
   }
 }

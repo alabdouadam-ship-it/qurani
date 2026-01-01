@@ -674,6 +674,16 @@
   "@chooseReciter": {},
   "chooseReciterDesc": "Sélectionnez votre récitateur préféré.",
   "@chooseReciterDesc": {},
+  "reciterNotCompatible": "Récitateur non compatible",
+  "@reciterNotCompatible": {},
+  "reciterNotAvailableForFullSurahs": "Les fichiers audio des sourates complètes ne sont pas disponibles pour ce récitateur. Veuillez choisir un autre récitateur.",
+  "@reciterNotAvailableForFullSurahs": {},
+  "reciterNotAvailableForVerses": "Les fichiers audio verset par verset ne sont pas disponibles pour le récitateur {reciterName}. Veuillez choisir un autre récitateur.",
+  "@reciterNotAvailableForVerses": {
+    "placeholders": {
+      "reciterName": {}
+    }
+  },
   "rangeRepeatCount": "Nombre de répétitions de la plage",
   "@rangeRepeatCount": {}
 }

@@ -1034,7 +1034,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   Future<void> _openAdhanSettings() async {
     final l10n = AppLocalizations.of(context)!;
     final initial = PreferencesService.getAdhanSound();
-    final initialMethod = PreferencesService.getPrayerMethod();
+    // final initialMethod = PreferencesService.getPrayerMethod();
     bool methodChanged = false;
     final entries = [
       ('basit', 'عبد الباسط عبد الصمد'),

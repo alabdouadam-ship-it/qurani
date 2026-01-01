@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
@@ -343,56 +342,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
 
 
 
-  Widget _buildNameCard(BuildContext context, AppLocalizations l10n, bool isSmallScreen) {
-    return Card(
-      elevation: 3,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Padding(
-        padding: EdgeInsets.all(kIsWeb ? 12 : (isSmallScreen ? 14 : 16)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Colors.teal.withAlpha((255 * 0.1).round()),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Icon(Icons.person, color: Colors.teal, size: kIsWeb ? 18 : 22),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  l10n.name,
-                  style: TextStyle(
-                    fontSize: kIsWeb ? 14 : ResponsiveConfig.getFontSize(context, 16),
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: _nameController,
-              textAlign: TextAlign.right,
-              style: const TextStyle(fontSize: kIsWeb ? 13 : 14),
-              decoration: InputDecoration(
-                hintText: l10n.enterYourName,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: kIsWeb ? 10 : 12),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
 
   Widget _buildDropdownSection(
     BuildContext context, {

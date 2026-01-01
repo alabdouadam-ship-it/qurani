@@ -344,11 +344,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       return;
     }
 
-    final url = AudioService.buildFullRecitationUrl(
+    final url = await AudioService.buildFullRecitationUrl(
       reciterKeyAr: _reciterKey!,
       surahOrder: order,
     );
     if (url == null) {
+      if (!mounted) return;
       final l10n = AppLocalizations.of(context)!;
       if (mounted) {
         setState(() {
@@ -509,7 +510,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   }
 
   Future<AudioSource?> _buildAudioSource(int order) async {
-      final url = AudioService.buildFullRecitationUrl(
+      final url = await AudioService.buildFullRecitationUrl(
         reciterKeyAr: _reciterKey!,
         surahOrder: order,
       );
@@ -908,7 +909,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final langCode = PreferencesService.getLanguage();
     final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
     final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
-    final url = AudioService.buildFullRecitationUrl(
+    final url = await AudioService.buildFullRecitationUrl(
       reciterKeyAr: _reciterKey!,
       surahOrder: _currentOrder,
     );
@@ -931,11 +932,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final surah = _currentSurah;
     if (surah == null) return;
     
-    _verseUrls = AudioService.buildVerseUrls(
-      reciterKeyAr: _reciterKey!,
-      surahOrder: surahOrder,
-      totalVerses: surah.totalVerses,
-    );
+      _verseUrls = await AudioService.buildVerseUrls(
+        reciterKeyAr: _reciterKey!,
+        surahOrder: surahOrder,
+        totalVerses: surah.totalVerses,
+      );
   }
 
   Future<void> _playVerse(int verseNumber) async {

@@ -23,6 +23,7 @@ import 'package:dio/dio.dart'; // For CancelToken if needed
 
 import 'responsive_config.dart';
 import 'util/settings_sheet_utils.dart';
+import 'services/reciter_config_service.dart';
 
 class ReadQuranScreen extends StatefulWidget {
   const ReadQuranScreen({super.key});
@@ -70,7 +71,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   double? _downloadProgress;
   String? _pdfPath;
   CancelToken? _downloadCancelToken;
-  bool _isFullscreen = false;
+
 
   @override
   void initState() {
@@ -256,11 +257,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
   }
 
-  void _toggleFullscreen() {
-    setState(() {
-        _isFullscreen = !_isFullscreen;
-    });
-  }
+
 
   void _onArabicFontChanged() {
     if (!mounted) return;
@@ -288,9 +285,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final target = edition ?? _edition;
     switch (target) {
       case QuranEdition.english:
-        return 'arabic-english';
+        return 'arabic_english';
       case QuranEdition.french:
-        return 'arabic-french';
+        return 'arabic_french';
       case QuranEdition.tafsir:
         return 'muyassar';
       case QuranEdition.simple:
@@ -894,6 +891,47 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
     final l10n = AppLocalizations.of(context)!;
     final reciterCode = _resolveReciterCodeForEdition();
+
+    // Validate if reciter supports verse-by-verse audio
+    final reciter = await ReciterConfigService.getReciterByCode(reciterCode);
+    if (reciter != null && !reciter.hasVerseByVerse()) {
+      if (showErrors && mounted) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(l10n.reciterNotCompatible),
+            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(PreferencesService.getLanguage()))),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  Navigator.pop(context);
+                  await SettingsSheetUtils.showReciterSelectionSheet(
+                    context,
+                    requireVerseByVerse: true,
+                    onReciterSelected: (newCode) async {
+                      await PreferencesService.saveReciter(newCode);
+                      if (mounted) {
+                        setState(() {
+                          // Trigger re-render or re-computation if needed
+                        });
+                        // Retry playback
+                        _playSelectedAyah(page: page, showErrors: true);
+                      }
+                    },
+                  );
+                },
+                child: Text(l10n.chooseReciter),
+              ),
+            ],
+          ),
+        );
+      }
+      return false;
+    }
 
     try {
       final prepared = await _preparePageAudio(page, reciterCode);
@@ -2046,14 +2084,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     const showPlayButton = true;
     
     // In full screen PDF mode, we hide the AppBar and the BottomBar
-    final hideUI = _isPdfMode && _isFullscreen;
+
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
-      extendBodyBehindAppBar: hideUI, // Optional: for true immersive if we used transparent appbar
-      appBar: hideUI 
-          ? null 
-          : AppBar(
+      appBar: AppBar(
         title: Text(
           '',
           style: TextStyle(
@@ -2220,7 +2255,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   return Column(
                     children: [
                       Expanded(child: _buildPageView()),
-                      if (!_isFullscreen) _buildBottomBar(pageData),
+
                     ],
                   );
                 },
@@ -2230,7 +2265,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
            // Or can we merge?
         ],
       ),
-      bottomNavigationBar: (_isPdfMode && !_isFullscreen)
+      bottomNavigationBar: _isPdfMode
           ? FutureBuilder<PageData>(
               future: _repository.loadPage(_currentPage, _edition),
               builder: (context, snapshot) {
@@ -2461,7 +2496,7 @@ class _ZoomablePdfPage extends StatefulWidget {
   final ValueChanged<bool>? onZoomChanged;
 
   const _ZoomablePdfPage({
-    super.key,
+    // super.key,  // Unused parameter
     required this.document,
     required this.pageNumber,
     this.onZoomChanged,
@@ -2529,7 +2564,7 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
           _transformationController.value = Matrix4.identity();
         } else {
           // Zoom in to 2.5x, positioned at top-right for RTL content
-          final targetScale = 2.5;
+          const targetScale = 2.5;
           
           // Get the render box to calculate positioning
           final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
@@ -2539,7 +2574,7 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
             // For RTL content, we want to show the top-right corner
             // Calculate the translation needed to show top-right
             final xTranslation = -(size.width * (targetScale - 1));
-            final yTranslation = 0.0;
+            const yTranslation = 0.0;
             
             _transformationController.value = Matrix4.identity()
               ..translate(xTranslation, yTranslation)

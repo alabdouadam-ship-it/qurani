@@ -13,6 +13,7 @@ import 'services/net_utils.dart';
 import 'util/debug_error_display.dart';
 import 'models/surah.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
+import 'services/reciter_config_service.dart';
 
 class RepetitionRangeScreen extends StatefulWidget {
   const RepetitionRangeScreen({super.key, required this.surah});
@@ -246,9 +247,9 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
         final reciter = PreferencesService.getReciter();
         return reciter.isNotEmpty ? reciter : 'afs';
       case QuranEdition.english:
-        return 'arabic-english';
+        return 'arabic_english';
       case QuranEdition.french:
-        return 'arabic-french';
+        return 'arabic_french';
       case QuranEdition.tafsir:
         return 'muyassar';
     }
@@ -441,6 +442,48 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     }
 
     final reciterKey = _resolveReciterKey();
+
+    // Validation
+    final reciter = await ReciterConfigService.getReciterByCode(reciterKey);
+    if (reciter != null && !reciter.hasVerseByVerse()) {
+      if (showErrors && mounted) {
+        final l10n = AppLocalizations.of(context)!;
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(l10n.reciterNotCompatible),
+            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(PreferencesService.getLanguage()))),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () async {
+                  Navigator.pop(context);
+                  await SettingsSheetUtils.showReciterSelectionSheet(
+                    context,
+                    requireVerseByVerse: true,
+                    onReciterSelected: (newCode) async {
+                      await PreferencesService.saveReciter(newCode);
+                      if (mounted) {
+                        setState(() {
+                             // Rebuild
+                        });
+                        // Retry
+                        _playSelectedAyah(showErrors: true);
+                      }
+                    },
+                  );
+                },
+                child: Text(l10n.chooseReciter),
+              ),
+            ],
+          ),
+        );
+      }
+      return false;
+    }
 
     // If target verse not downloaded and no internet, show a clear message
     try {

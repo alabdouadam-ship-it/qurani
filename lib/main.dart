@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'services/preferences_service.dart';
+import 'services/reciter_config_service.dart';
 import 'options_screen.dart';
 import 'services/notification_service.dart';
 import 'services/prayer_times_service.dart';
@@ -47,6 +48,10 @@ Future<void> main() async {
   await _ensureAdhanPermissions();
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
+  
+  // Load reciter configurations from JSON
+  await ReciterConfigService.loadReciters();
+  
   await NotificationService.init();
   
   // Initialize AdhanScheduler with proper background callback registration

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/memorization_test_service.dart';
 import 'package:qurani/services/surah_service.dart';
@@ -362,7 +361,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   Widget _buildJuzSelector() {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
+    // final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final l10n = AppLocalizations.of(context)!;
     
     // Responsive grid logic for Juz selector

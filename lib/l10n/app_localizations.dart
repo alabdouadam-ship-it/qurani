@@ -1879,6 +1879,24 @@ abstract class AppLocalizations {
   /// **'Select your preferred reciter.'**
   String get chooseReciterDesc;
 
+  /// No description provided for @reciterNotCompatible.
+  ///
+  /// In en, this message translates to:
+  /// **'Reciter not compatible'**
+  String get reciterNotCompatible;
+
+  /// No description provided for @reciterNotAvailableForFullSurahs.
+  ///
+  /// In en, this message translates to:
+  /// **'Full surah audio files are not available for this reciter. Please choose another reciter.'**
+  String get reciterNotAvailableForFullSurahs;
+
+  /// No description provided for @reciterNotAvailableForVerses.
+  ///
+  /// In en, this message translates to:
+  /// **'Verse-by-verse audio files are not available for reciter {reciterName}. Please choose another reciter.'**
+  String reciterNotAvailableForVerses(Object reciterName);
+
   /// No description provided for @rangeRepeatCount.
   ///
   /// In en, this message translates to:
