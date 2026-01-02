@@ -2263,7 +2263,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   return Column(
                     children: [
                       Expanded(child: _buildPageView()),
-
+                      _buildBottomBar(pageData),
                     ],
                   );
                 },
