@@ -1986,6 +1986,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mushaf Style'**
   String get mushafStyle;
+
+  /// No description provided for @allQuran.
+  ///
+  /// In en, this message translates to:
+  /// **'All Quran'**
+  String get allQuran;
+
+  /// No description provided for @filterBySurah.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah'**
+  String get filterBySurah;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

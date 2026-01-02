@@ -14,11 +14,14 @@ class QuranSearchService {
     s = s.replaceAll('\u0649', '\u064A');
     s = s.replaceAll('\u0624', '\u0648');
     s = s.replaceAll('\u0626', '\u064A');
-    return s.toLowerCase().trim();
+    // Collapse multiple spaces to one but preserve single leading/trailing spaces
+    s = s.replaceAll(RegExp(r' {2,}'), ' ');
+    return s.toLowerCase();
   }
 
   List<_IndexedAyah>? _index;
-  Map<int, String>? _surahNames;
+  Map<int, String>? _surahNames; // Arabic names
+  Map<int, String>? _surahNamesEn; // English names
   Map<int, String>? _displayTexts; // For displaying results from quran-simple
 
   Future<void> _ensureIndex() async {
@@ -38,6 +41,7 @@ class QuranSearchService {
 
     final list = <_IndexedAyah>[];
     final names = <int, String>{};
+    final namesEn = <int, String>{};
     final displayMap = <int, String>{};
 
     // Build index from quran-clean
@@ -45,7 +49,9 @@ class QuranSearchService {
       final m = entry as Map<String, dynamic>;
       final surahOrder = (m['number'] as num?)?.toInt() ?? 0;
       final surahName = m['name'] as String? ?? '';
+      final surahNameEn = m['englishName'] as String? ?? '';
       names[surahOrder] = surahName;
+      namesEn[surahOrder] = surahNameEn;
       final ayahs = m['ayahs'] as List<dynamic>? ?? const [];
       for (final a in ayahs) {
         final am = a as Map<String, dynamic>;
@@ -80,10 +86,11 @@ class QuranSearchService {
 
     _index = list;
     _surahNames = names;
+    _surahNamesEn = namesEn;
     _displayTexts = displayMap;
   }
 
-  Future<SearchResult> search(String query) async {
+  Future<SearchResult> search(String query, {int? surahOrder}) async {
     await _ensureIndex();
     final q = normalize(query);
     if (q.isEmpty) return SearchResult(ayahs: const <SearchAyah>[], totalOccurrences: 0);
@@ -91,6 +98,10 @@ class QuranSearchService {
     final results = <SearchAyah>[];
     int totalOccurrences = 0;
     for (final ayah in src) {
+      // Filter by surah if specified
+      if (surahOrder != null && ayah.surahOrder != surahOrder) {
+        continue;
+      }
       if (ayah.normalized.contains(q)) {
         final occurrences = _countOccurrences(ayah.normalized, q);
         totalOccurrences += occurrences;
@@ -122,6 +133,12 @@ class QuranSearchService {
   }
 
   String surahName(int surahOrder) => _surahNames?[surahOrder] ?? '';
+
+  /// Get all surah names in Arabic (order -> name)
+  Map<int, String> get surahNames => _surahNames ?? {};
+
+  /// Get all surah names in English (order -> name)
+  Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
 }
 
 class SearchResult {

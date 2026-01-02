@@ -7,6 +7,7 @@ import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_search_service.dart';
 import 'package:qurani/services/net_utils.dart';
+import 'package:qurani/services/reciter_config_service.dart';
 
 class SearchQuranScreen extends StatefulWidget {
   const SearchQuranScreen({super.key});
@@ -23,6 +24,26 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   int _totalOccurrences = 0;
   bool _isSearching = false;
   String _lastQuery = '';
+  int? _selectedSurah; // null = all Quran
+  Map<int, String> _surahNames = {};
+  Map<int, String> _surahNamesEn = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSurahNames();
+  }
+
+  Future<void> _loadSurahNames() async {
+    // Trigger search service initialization to load surah names
+    await QuranSearchService.instance.search('');
+    if (mounted) {
+      setState(() {
+        _surahNames = QuranSearchService.instance.surahNames;
+        _surahNamesEn = QuranSearchService.instance.surahNamesEn;
+      });
+    }
+  }
 
   @override
   void dispose() {
@@ -34,7 +55,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
   Future<void> _doSearch(String query) async {
     final l10n = AppLocalizations.of(context)!;
-    final q = query.trim();
+    // Preserve single spaces at start/end (helps search for standalone words)
+    // but collapse multiple consecutive spaces to one
+    final q = query.replaceAll(RegExp(r' {2,}'), ' ');
     final normalized = QuranSearchService.normalize(q);
     if (normalized.length < 2) {
       setState(() => _results = const <SearchAyah>[]);
@@ -50,7 +73,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       _lastQuery = q;
     });
     try {
-      final res = await QuranSearchService.instance.search(q);
+      final res = await QuranSearchService.instance.search(q, surahOrder: _selectedSurah);
       if (!mounted) return;
       setState(() {
         _results = res.ayahs;
@@ -165,7 +188,16 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final messenger = ScaffoldMessenger.of(context);
     
     try {
-      final reciter = PreferencesService.getReciter();
+      String reciter = PreferencesService.getReciter();
+      
+      // Check if selected reciter has ayah-by-ayah audio
+      // If not, fallback to Alafasy (afs)
+      final reciterConfig = await ReciterConfigService.getReciter(reciter);
+      if (reciterConfig == null || !reciterConfig.hasVerseByVerse()) {
+        debugPrint('Reciter $reciter has no ayah audio, falling back to Alafasy');
+        reciter = 'afs'; // Alafasy
+      }
+      
       final uri = await AudioService.getVerseUriPreferLocal(
         reciterKeyAr: reciter,
         surahOrder: ayah.surahOrder,
@@ -359,6 +391,64 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
               ],
             ),
           ),
+          // Surah filter dropdown
+          if (_surahNames.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+              child: Row(
+                children: [
+                  Text(
+                    '${l10n.filterBySurah}:',
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: DropdownButtonFormField<int?>(
+                      initialValue: _selectedSurah,
+                      isExpanded: true,
+                      isDense: true,
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      items: [
+                        DropdownMenuItem<int?>(
+                          value: null,
+                          child: Text(l10n.allQuran),
+                        ),
+                        ..._surahNames.entries.map((e) {
+                          // Use English/Latin names for English/French, Arabic for Arabic
+                          final langCode = Localizations.localeOf(context).languageCode;
+                          final name = (langCode == 'ar') 
+                              ? e.value 
+                              : (_surahNamesEn[e.key] ?? e.value);
+                          return DropdownMenuItem<int?>(
+                            value: e.key,
+                            child: Text(
+                              '${e.key}. $name',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          );
+                        }),
+                      ],
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedSurah = value;
+                        });
+                        // Re-run search if there's a query
+                        if (_lastQuery.isNotEmpty) {
+                          _doSearch(_lastQuery);
+                        }
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ),
           const Divider(height: 1),
           Expanded(
             child: Column(

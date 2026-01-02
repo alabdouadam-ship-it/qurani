@@ -684,5 +684,9 @@
   "mushafTypeTajweed": "النسخة المجودة",
   "@mushafTypeTajweed": {},
   "mushafStyle": "نوع المصحف",
-  "@mushafStyle": {}
+  "@mushafStyle": {},
+  "allQuran": "كل القرآن",
+  "@allQuran": {},
+  "filterBySurah": "السورة",
+  "@filterBySurah": {}
 }

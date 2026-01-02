@@ -685,5 +685,9 @@
     }
   },
   "rangeRepeatCount": "Nombre de répétitions de la plage",
-  "@rangeRepeatCount": {}
+  "@rangeRepeatCount": {},
+  "allQuran": "Tout le Coran",
+  "@allQuran": {},
+  "filterBySurah": "Sourate",
+  "@filterBySurah": {}
 }

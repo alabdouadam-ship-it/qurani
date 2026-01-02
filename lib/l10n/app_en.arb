@@ -686,5 +686,9 @@
   "mushafTypeTajweed": "Tajweed Mushaf",
   "@mushafTypeTajweed": {},
   "mushafStyle": "Mushaf Style",
-  "@mushafStyle": {}
+  "@mushafStyle": {},
+  "allQuran": "All Quran",
+  "@allQuran": {},
+  "filterBySurah": "Surah",
+  "@filterBySurah": {}
 }

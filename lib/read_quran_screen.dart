@@ -1882,19 +1882,27 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             ),
           ]
         : null;
-    return AnimatedContainer(
+    return TweenAnimationBuilder<Color?>(
       key: itemKey,
-      duration: const Duration(milliseconds: 200),
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: borderColor,
-        ),
-        boxShadow: boxShadow,
-      ),
+      tween: ColorTween(end: backgroundColor),
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeOut,
+      builder: (context, animatedColor, child) {
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 6),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
+          decoration: BoxDecoration(
+            color: animatedColor ?? backgroundColor,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: borderColor,
+              width: 1.0,
+            ),
+            boxShadow: boxShadow,
+          ),
+          child: child,
+        );
+      },
       child: InkWell(
         onTap: () => _selectAyah(ayah),
         onLongPress: () => _showAyahOptions(ayah),

@@ -988,4 +988,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get mushafStyle => 'نوع المصحف';
+
+  @override
+  String get allQuran => 'كل القرآن';
+
+  @override
+  String get filterBySurah => 'السورة';
 }

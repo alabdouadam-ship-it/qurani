@@ -17,11 +17,14 @@ class QuranSearchService {
     s = s.replaceAll('\u0649', '\u064A');
     s = s.replaceAll('\u0624', '\u0648');
     s = s.replaceAll('\u0626', '\u064A');
-    return s.toLowerCase().trim();
+    // Collapse multiple spaces to one but preserve single leading/trailing spaces
+    s = s.replaceAll(RegExp(r' {2,}'), ' ');
+    return s.toLowerCase();
   }
 
   sqf.Database? _db;
-  Map<int, String>? _surahNames; // cache
+  Map<int, String>? _surahNames; // Arabic names cache
+  Map<int, String>? _surahNamesEn; // English names cache
   // bool _hasFts = false; // FTS capability not used at runtime
 
   Future<void> _ensureDb() async {
@@ -57,9 +60,10 @@ class QuranSearchService {
     // _hasFts = rows.isNotEmpty;
     final surahRows = await _db!.query('surah');
     _surahNames = { for (final r in surahRows) (r['order_no'] as int): (r['name_ar'] as String) };
+    _surahNamesEn = { for (final r in surahRows) (r['order_no'] as int): (r['name_en'] as String? ?? '') };
   }
 
-  Future<SearchResult> search(String query) async {
+  Future<SearchResult> search(String query, {int? surahOrder}) async {
     try {
       await _ensureDb();
       final q = normalize(query);
@@ -67,10 +71,19 @@ class QuranSearchService {
       if (_db == null) {
         throw Exception('Database not initialized');
       }
-      final rows = await _db!.rawQuery(
-        'SELECT id, surah_order, number_in_surah, juz, text_simple, normalized FROM ayah WHERE instr(normalized, ?) > 0 LIMIT 5000',
-        [q],
-      );
+      
+      // Build query with optional surah filter
+      String sql = 'SELECT id, surah_order, number_in_surah, juz, text_simple, normalized FROM ayah WHERE instr(normalized, ?) > 0';
+      List<dynamic> params = [q];
+      
+      if (surahOrder != null) {
+        sql += ' AND surah_order = ?';
+        params.add(surahOrder);
+      }
+      
+      sql += ' LIMIT 5000';
+      
+      final rows = await _db!.rawQuery(sql, params);
       
       int totalOccurrences = 0;
       final results = rows.map((r) {
@@ -98,6 +111,12 @@ class QuranSearchService {
       throw Exception('Search failed: $e');
     }
   }
+
+  /// Get all surah names in Arabic (order -> name)
+  Map<int, String> get surahNames => _surahNames ?? {};
+
+  /// Get all surah names in English (order -> name)
+  Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
 
   int _countOccurrences(String text, String query) {
     if (query.isEmpty || text.isEmpty) return 0;
