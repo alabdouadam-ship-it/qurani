@@ -144,7 +144,7 @@ class QuranRepository {
       // Check if database has valid schema
       sqf.Database? tempDb;
       try {
-        tempDb = await sqf.openDatabase(dbPath, readOnly: true);
+        tempDb = await sqf.openDatabase(dbPath, readOnly: false);
         
         // First check if required tables exist
         final tables = await tempDb.rawQuery(
@@ -224,7 +224,7 @@ class QuranRepository {
     }
     
     // Open the database in single instance mode to prevent locking issues
-    _db = await sqf.openDatabase(dbPath, readOnly: true, singleInstance: false);
+    _db = await sqf.openDatabase(dbPath, readOnly: false, singleInstance: false);
     debugPrint('Database opened successfully');
   }
 

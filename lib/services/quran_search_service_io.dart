@@ -38,7 +38,7 @@ class QuranSearchService {
     if (!needsCopy) {
       // Check if database has text_simple column
       try {
-        final tempDb = await sqf.openDatabase(dbPath, readOnly: true);
+        final tempDb = await sqf.openDatabase(dbPath, readOnly: false);
         await tempDb.rawQuery('SELECT text_simple FROM ayah LIMIT 1');
         await tempDb.close();
       } catch (e) {
@@ -75,7 +75,7 @@ class QuranSearchService {
       }
     }
     
-    _db = await sqf.openDatabase(dbPath, readOnly: true);
+    _db = await sqf.openDatabase(dbPath, readOnly: false);
     // Detect FTS table (not used but kept for potential future optimizations)
     // final rows = await _db!.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='ayah_fts'");
     // _hasFts = rows.isNotEmpty;

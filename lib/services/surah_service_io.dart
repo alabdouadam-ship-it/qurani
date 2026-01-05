@@ -38,7 +38,7 @@ class SurahService {
     if (!needsCopy && dbExists) {
       sqf.Database? tempDb;
       try {
-        tempDb = await sqf.openDatabase(dbPath, readOnly: true);
+        tempDb = await sqf.openDatabase(dbPath, readOnly: false);
         
         // Check if surah table exists
         final tables = await tempDb.rawQuery(
@@ -114,7 +114,7 @@ class SurahService {
       }
     }
     
-    _db = await sqf.openDatabase(dbPath, readOnly: true);
+    _db = await sqf.openDatabase(dbPath, readOnly: false);
   }
 
   static Future<List<Surah>> _loadFromDatabase({bool useEnglishName = false}) async {
