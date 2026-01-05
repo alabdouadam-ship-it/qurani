@@ -83,21 +83,40 @@ class SurahService {
     }
     
     if (needsCopy) {
-      // Delete old database if it exists
-      if (dbFile.existsSync()) {
-        await dbFile.delete();
+      try {
+        // Delete old database if it exists
+        if (dbFile.existsSync()) {
+          await dbFile.delete();
+        }
+        final shmFile = File('$dbPath-shm');
+        final walFile = File('$dbPath-wal');
+        if (shmFile.existsSync()) await shmFile.delete();
+        if (walFile.existsSync()) await walFile.delete();
+        
+        // Ensure parent directory exists
+        final parentDir = dbFile.parent;
+        if (!await parentDir.exists()) {
+          await parentDir.create(recursive: true);
+        }
+        
+        // Load and write database file
+        final bytes = await rootBundle.load('assets/data/quran.db');
+        await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+        
+        // Verify file was written successfully
+        if (!await dbFile.exists()) {
+          throw Exception('Failed to write database file');
+        }
+        
+        // Update stored version
+        await prefs.setInt(_dbVersionKey, _dbSchemaVersion);
+      } catch (e) {
+        // Clean up on error
+        try {
+          if (dbFile.existsSync()) await dbFile.delete();
+        } catch (_) {}
+        throw Exception('Failed to copy database: $e');
       }
-      final shmFile = File('$dbPath-shm');
-      final walFile = File('$dbPath-wal');
-      if (shmFile.existsSync()) await shmFile.delete();
-      if (walFile.existsSync()) await walFile.delete();
-      
-      final bytes = await rootBundle.load('assets/data/quran.db');
-      await dbFile.parent.create(recursive: true);
-      await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
-      
-      // Update stored version
-      await prefs.setInt(_dbVersionKey, _dbSchemaVersion);
     }
     
     _db = await sqf.openDatabase(dbPath, readOnly: true);

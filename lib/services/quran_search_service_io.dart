@@ -49,9 +49,29 @@ class QuranSearchService {
     }
     
     if (needsCopy) {
-      final bytes = await rootBundle.load('assets/data/quran.db');
-      await File(dbPath).create(recursive: true);
-      await File(dbPath).writeAsBytes(bytes.buffer.asUint8List());
+      try {
+        // Ensure parent directory exists
+        final parentDir = File(dbPath).parent;
+        if (!await parentDir.exists()) {
+          await parentDir.create(recursive: true);
+        }
+        
+        final bytes = await rootBundle.load('assets/data/quran.db');
+        await File(dbPath).create(recursive: true);
+        await File(dbPath).writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+        
+        // Verify file was written
+        if (!await File(dbPath).exists()) {
+          throw Exception('Failed to write database file');
+        }
+      } catch (e) {
+        // Clean up on error
+        try {
+          final file = File(dbPath);
+          if (await file.exists()) await file.delete();
+        } catch (_) {}
+        throw Exception('Failed to copy database: $e');
+      }
     }
     
     _db = await sqf.openDatabase(dbPath, readOnly: true);
