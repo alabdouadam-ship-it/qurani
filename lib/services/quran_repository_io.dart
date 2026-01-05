@@ -136,10 +136,11 @@ class QuranRepository {
     final prefs = await SharedPreferences.getInstance();
     final storedVersion = prefs.getInt(_dbVersionKey) ?? 0;
     
-    final dbFile = File(dbPath);
-    bool needsCopy = !dbFile.existsSync() || storedVersion < _dbSchemaVersion;
+    // Use sqflite's databaseExists for proper check
+    bool dbExists = await sqf.databaseExists(dbPath);
+    bool needsCopy = !dbExists || storedVersion < _dbSchemaVersion;
     
-    if (!needsCopy) {
+    if (!needsCopy && dbExists) {
       // Check if database has valid schema
       sqf.Database? tempDb;
       try {
@@ -182,19 +183,12 @@ class QuranRepository {
         
         // Force delete the old database
         try {
-          if (dbFile.existsSync()) {
-            await dbFile.delete();
+          if (await sqf.databaseExists(dbPath)) {
+            await sqf.deleteDatabase(dbPath);
             debugPrint('Old database deleted');
           }
         } catch (deleteError) {
           debugPrint('Could not delete old database: $deleteError');
-          // Try to delete related files
-          try {
-            final shmFile = File('$dbPath-shm');
-            final walFile = File('$dbPath-wal');
-            if (shmFile.existsSync()) await shmFile.delete();
-            if (walFile.existsSync()) await walFile.delete();
-          } catch (_) {}
         }
       }
     }
@@ -202,20 +196,19 @@ class QuranRepository {
     if (needsCopy) {
       debugPrint('Copying database from assets (schema version $_dbSchemaVersion)...');
       try {
-        // Delete old database if it exists
-        if (dbFile.existsSync()) {
-          await dbFile.delete();
+        // Delete old database if exists using sqflite method
+        if (await sqf.databaseExists(dbPath)) {
+          await sqf.deleteDatabase(dbPath);
           debugPrint('Old database deleted');
         }
-        final shmFile = File('$dbPath-shm');
-        final walFile = File('$dbPath-wal');
-        if (shmFile.existsSync()) await shmFile.delete();
-        if (walFile.existsSync()) await walFile.delete();
-        
-        final bytes = await rootBundle.load('assets/data/quran.db');
         
         // Ensure parent directory exists
-        await dbFile.parent.create(recursive: true);
+        final dbFile = File(dbPath);
+        try {
+          await Directory(p.dirname(dbPath)).create(recursive: true);
+        } catch (_) {}
+        
+        final bytes = await rootBundle.load('assets/data/quran.db');
         
         // Write the new database
         await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
