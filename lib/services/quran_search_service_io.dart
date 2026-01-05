@@ -29,7 +29,8 @@ class QuranSearchService {
 
   Future<void> _ensureDb() async {
     if (_db != null) return;
-    final dir = await getApplicationSupportDirectory();
+    // Use Documents directory on iOS for better compatibility
+    final dir = await getApplicationDocumentsDirectory();
     final dbPath = p.join(dir.path, 'quran.db');
     
     bool needsCopy = !File(dbPath).existsSync();

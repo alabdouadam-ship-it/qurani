@@ -130,7 +130,8 @@ class QuranRepository {
       _db = null;
     }
     
-    final dir = await getApplicationSupportDirectory();
+    // Use Documents directory on iOS for better compatibility
+    final dir = await getApplicationDocumentsDirectory();
     final dbPath = p.join(dir.path, 'quran.db');
     
     final prefs = await SharedPreferences.getInstance();
