@@ -44,8 +44,23 @@ class NotificationService {
       debugPrint('[NotificationService] Could not set local timezone: $e');
       // Fallback to UTC or default if needed, but usually timezone data is loaded
     }
+    
+    // Android initialization
     const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
-    const initSettings = InitializationSettings(android: androidInit);
+    
+    // iOS/macOS initialization
+    const darwinInit = DarwinInitializationSettings(
+      requestAlertPermission: true,
+      requestBadgePermission: true,
+      requestSoundPermission: true,
+    );
+    
+    const initSettings = InitializationSettings(
+      android: androidInit,
+      iOS: darwinInit,
+      macOS: darwinInit,
+    );
+    
     await _plugin.initialize(
       initSettings,
       onDidReceiveNotificationResponse: (NotificationResponse response) async {
@@ -135,12 +150,19 @@ class NotificationService {
       ],
     );
     
+    // iOS notification details
+    const darwinDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentBadge: true,
+      presentSound: false, // Sound handled separately on iOS too
+    );
+    
     await _plugin.zonedSchedule(
       id,
       title,
       body,
       tzTime,
-      NotificationDetails(android: androidDetails),
+      NotificationDetails(android: androidDetails, iOS: darwinDetails),
       androidScheduleMode: AndroidScheduleMode.alarmClock,
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,

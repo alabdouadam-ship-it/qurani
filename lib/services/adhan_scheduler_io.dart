@@ -343,6 +343,12 @@ Future<void> _playAdhanCallback(int id) async {
 
 class AdhanScheduler {
   static Future<void> init() async {
+    // AndroidAlarmManager is Android-only
+    if (!Platform.isAndroid) {
+      debugPrint('[AdhanScheduler] Not Android, skipping AndroidAlarmManager initialization');
+      return;
+    }
+    
     try {
       debugPrint('[AdhanScheduler] INITIALIZING AndroidAlarmManager...');
       final success = await AndroidAlarmManager.initialize();
@@ -388,6 +394,12 @@ class AdhanScheduler {
     required Map<String, bool> toggles,
     required String soundKey,
   }) async {
+    // AndroidAlarmManager is Android-only
+    if (!Platform.isAndroid) {
+      debugPrint('[AdhanScheduler] Not Android, skipping alarm scheduling');
+      return;
+    }
+    
     debugPrint('[AdhanScheduler] Scheduling Adhan alarms...');
     final now = DateTime.now();
     
@@ -427,6 +439,8 @@ class AdhanScheduler {
 
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {
+    if (!Platform.isAndroid) return; // Android-only
+    
     debugPrint('[AdhanScheduler] TEST: Scheduling test Adhan playback after $seconds seconds with sound: $soundKey');
     final triggerTime = DateTime.now().add(Duration(seconds: seconds));
     
@@ -448,6 +462,8 @@ class AdhanScheduler {
   }
 
   static Future<void> testAdhanPlaybackImmediate() async {
+    if (!Platform.isAndroid) return; // Android-only
+    
     debugPrint('[AdhanScheduler] TEST: Triggering Adhan callback IMMEDIATELY');
     debugPrint('[AdhanScheduler] TEST: Close app now and check logs!');
     

@@ -97,6 +97,13 @@
             "nameLatin": "Ahmed Nufais",
             "ayahsPath": "",
             "surahsPath": "https://server16.mp3quran.net/nufais/Rewayat-Hafs-A-n-Assem"
+        },
+        {
+            "code": "ayyoub",
+            "nameAr": "محمد أيوب",
+            "nameLatin": "Mohamed Ayyoub",
+            "ayahsPath": "https://everyayah.com/data/Muhammad_Ayyoub_64kbps",
+            "surahsPath": "https://server16.mp3quran.net/ayyoub2/Rewayat-Hafs-A-n-Assem"
         }
     ],
     "urlPatterns": {
