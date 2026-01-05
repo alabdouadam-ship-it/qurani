@@ -2,7 +2,6 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'dart:async';
 import 'dart:io';
 import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart' as sqf;
 
 class QuranSearchService {
@@ -29,9 +28,9 @@ class QuranSearchService {
 
   Future<void> _ensureDb() async {
     if (_db != null) return;
-    // Use Documents directory on iOS for better compatibility
-    final dir = await getApplicationDocumentsDirectory();
-    final dbPath = p.join(dir.path, 'quran.db');
+    // Use sqflite's standard database directory
+    final databasesPath = await sqf.getDatabasesPath();
+    final dbPath = p.join(databasesPath, 'quran.db');
     
     bool needsCopy = !File(dbPath).existsSync();
     

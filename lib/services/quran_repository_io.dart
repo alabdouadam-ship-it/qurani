@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart' as sqf;
 
@@ -130,9 +129,9 @@ class QuranRepository {
       _db = null;
     }
     
-    // Use Documents directory on iOS for better compatibility
-    final dir = await getApplicationDocumentsDirectory();
-    final dbPath = p.join(dir.path, 'quran.db');
+    // Use sqflite's standard database directory
+    final databasesPath = await sqf.getDatabasesPath();
+    final dbPath = p.join(databasesPath, 'quran.db');
     
     final prefs = await SharedPreferences.getInstance();
     final storedVersion = prefs.getInt(_dbVersionKey) ?? 0;
