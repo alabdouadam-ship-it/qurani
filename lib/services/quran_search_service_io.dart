@@ -104,27 +104,11 @@ class QuranSearchService {
     }
   }
   
-  Future<void> _loadSurahNames() async {
-    if (_db == null) return;
-    
-    try {
-      final rows = await _db!.query('surah', orderBy: 'order_no');
-      _surahNames = {};
-      _surahNamesEn = {};
-      
-      for (final row in rows) {
-        final order = row['order_no'] as int;
-        _surahNames![order] = row['name_ar'] as String;
-        _surahNamesEn![order] = row['name_en'] as String;
-      }
-    } catch (e) {
-      print('[QuranSearchService] Error loading surah names: $e');
-    }
-  }
-  
   // Getters for surah names
   Map<int, String> get surahNames => _surahNames ?? {};
   Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
+
+  Future<SearchResult> search(String query, {int? surahOrder}) async {
     try {
       await _ensureDb();
       final q = normalize(query);
@@ -166,18 +150,11 @@ class QuranSearchService {
         }
       }).toList();
       
-      //print('Quran search for "$query" returned ${rows.length} ayahs with $totalOccurrences total occurrences.');
       return SearchResult(ayahs: results, totalOccurrences: totalOccurrences);
     } catch (e) {
       throw Exception('Search failed: $e');
     }
   }
-
-  /// Get all surah names in Arabic (order -> name)
-  Map<int, String> get surahNames => _surahNames ?? {};
-
-  /// Get all surah names in English (order -> name)
-  Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
 
   int _countOccurrences(String text, String query) {
     if (query.isEmpty || text.isEmpty) return 0;
