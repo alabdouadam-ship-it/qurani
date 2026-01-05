@@ -31,10 +31,11 @@ class SurahService {
     final prefs = await SharedPreferences.getInstance();
     final storedVersion = prefs.getInt(_dbVersionKey) ?? 0;
     
-    final dbFile = File(dbPath);
-    bool needsCopy = !dbFile.existsSync() || storedVersion < _dbSchemaVersion;
+    // Use sqflite's databaseExists for proper check
+    bool dbExists = await sqf.databaseExists(dbPath);
+    bool needsCopy = !dbExists || storedVersion < _dbSchemaVersion;
     
-    if (!needsCopy) {
+    if (!needsCopy && dbExists) {
       sqf.Database? tempDb;
       try {
         tempDb = await sqf.openDatabase(dbPath, readOnly: true);
@@ -70,30 +71,22 @@ class SurahService {
         await Future.delayed(const Duration(milliseconds: 200));
         
         try {
-          if (dbFile.existsSync()) {
-            await dbFile.delete();
+          if (await sqf.databaseExists(dbPath)) {
+            await sqf.deleteDatabase(dbPath);
           }
-          // Delete related files
-          final shmFile = File('$dbPath-shm');
-          final walFile = File('$dbPath-wal');
-          if (shmFile.existsSync()) await shmFile.delete();
-          if (walFile.existsSync()) await walFile.delete();
         } catch (_) {}
       }
     }
     
     if (needsCopy) {
       try {
-        // Delete old database if it exists
-        if (dbFile.existsSync()) {
-          await dbFile.delete();
+        // Delete old database if exists
+        if (await sqf.databaseExists(dbPath)) {
+          await sqf.deleteDatabase(dbPath);
         }
-        final shmFile = File('$dbPath-shm');
-        final walFile = File('$dbPath-wal');
-        if (shmFile.existsSync()) await shmFile.delete();
-        if (walFile.existsSync()) await walFile.delete();
         
         // Ensure parent directory exists
+        final dbFile = File(dbPath);
         final parentDir = dbFile.parent;
         if (!await parentDir.exists()) {
           await parentDir.create(recursive: true);
@@ -104,7 +97,7 @@ class SurahService {
         await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
         
         // Verify file was written successfully
-        if (!await dbFile.exists()) {
+        if (!await sqf.databaseExists(dbPath)) {
           throw Exception('Failed to write database file');
         }
         
@@ -113,7 +106,9 @@ class SurahService {
       } catch (e) {
         // Clean up on error
         try {
-          if (dbFile.existsSync()) await dbFile.delete();
+          if (await sqf.databaseExists(dbPath)) {
+            await sqf.deleteDatabase(dbPath);
+          }
         } catch (_) {}
         throw Exception('Failed to copy database: $e');
       }

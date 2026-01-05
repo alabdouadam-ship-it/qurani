@@ -32,7 +32,8 @@ class QuranSearchService {
     final databasesPath = await sqf.getDatabasesPath();
     final dbPath = p.join(databasesPath, 'quran.db');
     
-    bool needsCopy = !File(dbPath).existsSync();
+    // Use sqflite's databaseExists for proper check
+    bool needsCopy = !await sqf.databaseExists(dbPath);
     
     if (!needsCopy) {
       // Check if database has text_simple column
@@ -42,33 +43,33 @@ class QuranSearchService {
         await tempDb.close();
       } catch (e) {
         // Column doesn't exist, need to update database
-        //print('Database outdated, updating from assets...');
         needsCopy = true;
-        await File(dbPath).delete();
+        try {
+          await sqf.deleteDatabase(dbPath);
+        } catch (_) {}
       }
     }
     
     if (needsCopy) {
       try {
         // Ensure parent directory exists
-        final parentDir = File(dbPath).parent;
+        final dbFile = File(dbPath);
+        final parentDir = dbFile.parent;
         if (!await parentDir.exists()) {
           await parentDir.create(recursive: true);
         }
         
         final bytes = await rootBundle.load('assets/data/quran.db');
-        await File(dbPath).create(recursive: true);
-        await File(dbPath).writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+        await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
         
         // Verify file was written
-        if (!await File(dbPath).exists()) {
+        if (!await sqf.databaseExists(dbPath)) {
           throw Exception('Failed to write database file');
         }
       } catch (e) {
         // Clean up on error
         try {
-          final file = File(dbPath);
-          if (await file.exists()) await file.delete();
+          await sqf.deleteDatabase(dbPath);
         } catch (_) {}
         throw Exception('Failed to copy database: $e');
       }
