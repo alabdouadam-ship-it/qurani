@@ -79,10 +79,34 @@ class QuranSearchService {
     // Detect FTS table (not used but kept for potential future optimizations)
     // final rows = await _db!.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='ayah_fts'");
     // _hasFts = rows.isNotEmpty;
-    final surahRows = await _db!.query('surah');
-    _surahNames = { for (final r in surahRows) (r['order_no'] as int): (r['name_ar'] as String) };
-    _surahNamesEn = { for (final r in surahRows) (r['order_no'] as int): (r['name_en'] as String? ?? '') };
+    
+    // Load surah names if not already loaded
+    if (_surahNames == null || _surahNamesEn == null) {
+      await _loadSurahNames();
+    }
   }
+  
+  Future<void> _loadSurahNames() async {
+    if (_db == null) return;
+    
+    try {
+      final rows = await _db!.query('surah', orderBy: 'order_no');
+      _surahNames = {};
+      _surahNamesEn = {};
+      
+      for (final row in rows) {
+        final order = row['order_no'] as int;
+        _surahNames![order] = row['name_ar'] as String;
+        _surahNamesEn![order] = row['name_en'] as String;
+      }
+    } catch (e) {
+      debugPrint('[QuranSearchService] Error loading surah names: $e');
+    }
+  }
+  
+  // Getters for surah names
+  Map<int, String> get surahNames => _surahNames ?? {};
+  Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
 
   Future<SearchResult> search(String query, {int? surahOrder}) async {
     try {

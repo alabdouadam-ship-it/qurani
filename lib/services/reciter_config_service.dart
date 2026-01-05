@@ -75,15 +75,19 @@ class ReciterConfigService {
   static Future<void> loadReciters() async {
     if (_reciters != null) return; // Already loaded
 
+    debugPrint('[ReciterConfig] Starting to load reciters...');
     List<ReciterConfig> assetReciters = [];
     List<ReciterConfig> dynamicReciters = [];
 
     // 1. Load Asset
     try {
+      debugPrint('[ReciterConfig] Loading from assets...');
       final assetData = await _loadFallback();
       assetReciters = _parseList(assetData);
-    } catch (e) {
-      debugPrint('Error loading asset reciters: $e');
+      debugPrint('[ReciterConfig] Loaded ${assetReciters.length} reciters from assets');
+    } catch (e, stack) {
+      debugPrint('[ReciterConfig] ERROR loading asset reciters: $e');
+      debugPrint('[ReciterConfig] Stack: $stack');
     }
 
     // 2. Load Remote/Cache
@@ -92,24 +96,42 @@ class ReciterConfigService {
       
       // Check if cache is expired
       if (await _isCacheExpired()) {
+         debugPrint('[ReciterConfig] Cache expired, fetching remote...');
          dynamicData = await _fetchRemote();
-         if (dynamicData != null) await _saveCache(dynamicData);
+         if (dynamicData != null) {
+           debugPrint('[ReciterConfig] Remote fetch successful');
+           await _saveCache(dynamicData);
+         } else {
+           debugPrint('[ReciterConfig] Remote fetch returned null');
+         }
+      } else {
+        debugPrint('[ReciterConfig] Cache is valid, skipping remote');
       }
       
       // Fallback to cache if remote failed or valid
       if (dynamicData == null) {
+        debugPrint('[ReciterConfig] Loading from cache...');
         dynamicData = await _loadCached();
+        if (dynamicData != null) {
+          debugPrint('[ReciterConfig] Loaded from cache successfully');
+        } else {
+          debugPrint('[ReciterConfig] No cached data available');
+        }
       }
       
       if (dynamicData != null) {
         dynamicReciters = _parseList(dynamicData);
+        debugPrint('[ReciterConfig] Parsed ${dynamicReciters.length} dynamic reciters');
       }
-    } catch (e) {
-      debugPrint('Error loading dynamic reciters: $e');
+    } catch (e, stack) {
+      debugPrint('[ReciterConfig] ERROR loading dynamic reciters: $e');
+      debugPrint('[ReciterConfig] Stack: $stack');
     }
 
     // 3. Merge
     _mergeAndSet(assetReciters, dynamicReciters);
+    debugPrint('[ReciterConfig] Final count: ${_reciters?.length ?? 0} reciters');
+    debugPrint('[ReciterConfig] Reciters: ${_reciters?.map((r) => r.code).join(", ")}');
   }
 
   static void _mergeAndSet(List<ReciterConfig> assetList, List<ReciterConfig> dynamicList) {
@@ -144,15 +166,38 @@ class ReciterConfigService {
   /// Force refresh reciters from remote server (silent - no error messages)
   static Future<void> forceRefresh() async {
     try {
+      debugPrint('[ReciterConfig] Force refresh requested');
       final remoteData = await _fetchRemote();
       if (remoteData != null) {
+        debugPrint('[ReciterConfig] Remote data fetched, saving to cache');
         await _saveCache(remoteData);
         // Reload all to merge properly
         _reciters = null; 
+        reciterMap = null;
         await loadReciters();
+        debugPrint('[ReciterConfig] Refresh complete');
+      } else {
+        debugPrint('[ReciterConfig] Remote fetch failed, keeping current data');
       }
-    } catch (_) {
+    } catch (e) {
+      debugPrint('[ReciterConfig] Error in forceRefresh: $e');
       // Silent
+    }
+  }
+  
+  /// Clear cache and force reload from assets (useful for iOS fresh start)
+  static Future<void> clearAndReload() async {
+    debugPrint('[ReciterConfig] Clearing cache and reloading from assets');
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_cacheKey);
+      await prefs.remove(_cacheTimestampKey);
+      _reciters = null;
+      reciterMap = null;
+      await loadReciters();
+      debugPrint('[ReciterConfig] Cache cleared and reloaded');
+    } catch (e) {
+      debugPrint('[ReciterConfig] Error in clearAndReload: $e');
     }
   }
 

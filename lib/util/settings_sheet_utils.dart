@@ -137,31 +137,8 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
                     )
                   : ListView.builder(
                       controller: scrollController,
-                      itemCount: filteredReciters.length + 1,
+                      itemCount: filteredReciters.length,
                       itemBuilder: (context, index) {
-                        if (index == filteredReciters.length) {
-                          // Refresh button as last item
-                          return Padding(
-                            padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 24.0),
-                            child: Center(
-                              child: TextButton.icon(
-                                onPressed: _isRefreshing ? null : _handleRefresh,
-                                icon: _isRefreshing
-                                    ? const SizedBox(
-                                        width: 16,
-                                        height: 16,
-                                        child: CircularProgressIndicator(strokeWidth: 2),
-                                      )
-                                    : const Icon(Icons.refresh, size: 18),
-                                label: Text(
-                                  'تحديث القائمة',
-                                  style: TextStyle(fontSize: 12, color: _isRefreshing ? Colors.grey : null),
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        
                         final reciter = filteredReciters[index];
                         final isSelected = reciter['id'] == widget.currentReciter;
                         return ListTile(
@@ -177,6 +154,26 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
                         );
                       },
                     ),
+            ),
+            // Refresh button - always visible at bottom
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 24.0),
+              child: Center(
+                child: TextButton.icon(
+                  onPressed: _isRefreshing ? null : _handleRefresh,
+                  icon: _isRefreshing
+                      ? const SizedBox(
+                          width: 16,
+                          height: 16,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        )
+                      : const Icon(Icons.refresh, size: 18),
+                  label: Text(
+                    'تحديث القائمة',
+                    style: TextStyle(fontSize: 12, color: _isRefreshing ? Colors.grey : null),
+                  ),
+                ),
+              ),
             ),
           ],
         );

@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -49,8 +50,14 @@ Future<void> main() async {
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
   
-  // Load reciter configurations from JSON
-  await ReciterConfigService.loadReciters();
+  // On iOS, clear reciters cache to ensure fresh load from assets
+  // This fixes issues with outdated cached data on iOS
+  if (Platform.isIOS) {
+    await ReciterConfigService.clearAndReload();
+  } else {
+    // Load reciter configurations from JSON
+    await ReciterConfigService.loadReciters();
+  }
   
   await NotificationService.init();
   
