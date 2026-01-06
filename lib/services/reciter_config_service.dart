@@ -58,16 +58,14 @@ class ReciterConfigService {
   static const String _remoteUrl = 'https://qurani.info/data/about-qurani/reciters.json';
   static const String _cacheKey = 'reciters_cache';
   static const String _cacheTimestampKey = 'reciters_timestamp';
+  static const String _cacheVersionKey = 'reciters_version';
   static const int _cacheDurationDays = 7;
+  static const int _currentVersion = 2; // Increment to force reload
   
   static List<ReciterConfig>? _reciters;
   // Public for synchronous access from AudioService
   static Map<String, ReciterConfig>? reciterMap;
 
-  /// Load reciters with fallback strategy:
-  /// 1. Try remote (if cache expired and internet available)
-  /// 2. Use cached data (even if expired)
-  /// 3. Use bundled asset as last resort
   /// Load reciters with merge strategy:
   /// 1. Always load bundled asset (base truth)
   /// 2. Attempt to load from remote/cache
@@ -76,6 +74,21 @@ class ReciterConfigService {
     if (_reciters != null) return; // Already loaded
 
     debugPrint('[ReciterConfig] Starting to load reciters...');
+    
+    // Check version and clear cache if outdated
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final storedVersion = prefs.getInt(_cacheVersionKey) ?? 0;
+      if (storedVersion < _currentVersion) {
+        debugPrint('[ReciterConfig] Version mismatch ($storedVersion < $_currentVersion), clearing cache');
+        await prefs.remove(_cacheKey);
+        await prefs.remove(_cacheTimestampKey);
+        await prefs.setInt(_cacheVersionKey, _currentVersion);
+      }
+    } catch (e) {
+      debugPrint('[ReciterConfig] Error checking version: $e');
+    }
+    
     List<ReciterConfig> assetReciters = [];
     List<ReciterConfig> dynamicReciters = [];
 
@@ -153,7 +166,22 @@ class ReciterConfigService {
 
   static List<ReciterConfig> _parseList(Map<String, dynamic> jsonData) {
     final list = jsonData['reciters'] as List;
-    return list.map((json) => ReciterConfig.fromJson(json as Map<String, dynamic>)).toList();
+    final results = <ReciterConfig>[];
+    
+    for (int i = 0; i < list.length; i++) {
+      try {
+        final reciter = ReciterConfig.fromJson(list[i] as Map<String, dynamic>);
+        results.add(reciter);
+        debugPrint('[ReciterConfig] Loaded reciter: ${reciter.code}');
+      } catch (e, stack) {
+        debugPrint('[ReciterConfig] ERROR parsing reciter at index $i: $e');
+        debugPrint('[ReciterConfig] Stack: $stack');
+        debugPrint('[ReciterConfig] Data: ${list[i]}');
+        // Continue to next reciter instead of failing completely
+      }
+    }
+    
+    return results;
   }
 
   static void _parseReciters(Map<String, dynamic> jsonData) {
