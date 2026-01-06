@@ -60,7 +60,7 @@ class ReciterConfigService {
   static const String _cacheTimestampKey = 'reciters_timestamp';
   static const String _cacheVersionKey = 'reciters_version';
   static const int _cacheDurationDays = 7;
-  static const int _currentVersion = 4; // Increment to force reload
+  static const int _currentVersion = 5; // Increment to force reload
   
   static List<ReciterConfig>? _reciters;
   // Public for synchronous access from AudioService
@@ -348,10 +348,26 @@ class ReciterConfigService {
     return reciters.map((r) => r.code).toList();
   }
 
-  /// Get reciters with full surahs only
+  /// Get reciters with full surahs only (for Listen to Quran)
+  /// Filters: surahsPath must be non-null and non-empty
   static Future<List<ReciterConfig>> getRecitersWithFullSurahs() async {
     final reciters = await getReciters();
-    return reciters.where((r) => r.surahsPath != null).toList();
+    return reciters.where((r) => 
+      r.surahsPath != null && r.surahsPath!.isNotEmpty
+    ).toList();
+  }
+  
+  /// Get reciters for verse-by-verse playback (for Read Quran, Repetition Range)
+  /// Filters: ayahsPath must be non-null and non-empty
+  /// Excludes: translations (arabic-english, arabic-french) and tafsir (muyassar)
+  static Future<List<ReciterConfig>> getRecitersForVerseByVerse() async {
+    final reciters = await getReciters();
+    const excludedCodes = {'arabic_english', 'arabic_french', 'muyassar'};
+    
+    return reciters.where((r) => 
+      r.ayahsPath.isNotEmpty && 
+      !excludedCodes.contains(r.code)
+    ).toList();
   }
 
   /// Get reciters with verse-by-verse only

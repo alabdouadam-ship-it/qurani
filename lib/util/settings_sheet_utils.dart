@@ -14,16 +14,22 @@ class SettingsSheetUtils {
     final currentReciter = PreferencesService.getReciter();
     final langCode = PreferencesService.getLanguage();
     
-    // 1. Force refresh explicitly on iOS to ensure fresh data [Optional but recommended during debug]
-    // await ReciterConfigService.loadReciters(); 
-
-    final allReciters = await ReciterConfigService.getRecitersWithFullSurahs();
+    // Load reciters based on requirements
+    final List<ReciterConfig> allReciters;
     
-    final reciters = allReciters.where((r) {
-      if (requireFullSurahs && !r.hasFullSurahs()) return false;
-      if (requireVerseByVerse && !r.hasVerseByVerse()) return false;
-      return true;
-    }).map((r) => {
+    if (requireVerseByVerse) {
+      // For Read Quran / Repetition Range: exclude translations and tafsir
+      allReciters = await ReciterConfigService.getRecitersForVerseByVerse();
+    } else if (requireFullSurahs) {
+      // For Listen to Quran: only reciters with full surahs
+      allReciters = await ReciterConfigService.getRecitersWithFullSurahs();
+    } else {
+      // Default: all reciters
+      allReciters = await ReciterConfigService.getReciters();
+    }
+    
+    // Map to UI format
+    final reciters = allReciters.map((r) => {
       'id': r.code,
       'name': r.getDisplayName(langCode),
       'hasFullSurahs': r.hasFullSurahs(),
