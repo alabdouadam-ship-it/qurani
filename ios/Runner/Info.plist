@@ -62,6 +62,8 @@
 		<!-- Microphone (if needed for future features) -->
 		<key>NSMicrophoneUsageDescription</key>
 		<string>Qurani may use the microphone for voice features.</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	</dict>
 </plist>
 
