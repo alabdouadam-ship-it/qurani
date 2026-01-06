@@ -598,6 +598,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                          Navigator.pop(context);
                          SettingsSheetUtils.showReciterSelectionSheet(
                              context,
+                             requireVerseByVerse: true,
                              onReciterSelected: (key) {
                                PreferencesService.saveReciter(key);
                                setState(() {

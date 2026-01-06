@@ -878,6 +878,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                          Navigator.pop(context);
                          SettingsSheetUtils.showReciterSelectionSheet(
                              context,
+                             requireVerseByVerse: true,
                              onReciterSelected: (key) async {
                               // Save to Global Reciter
                               await PreferencesService.saveReciter(key);
