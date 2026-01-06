@@ -293,8 +293,17 @@ class ReciterConfigService {
   }
 
   static Future<Map<String, dynamic>> _loadFallback() async {
+    debugPrint('[ReciterConfig] Loading from assets/data/reciters.json');
     final jsonString = await rootBundle.loadString('assets/data/reciters.json');
-    return json.decode(jsonString) as Map<String, dynamic>;
+    debugPrint('[ReciterConfig] JSON string length: ${jsonString.length} chars');
+    debugPrint('[ReciterConfig] JSON start: ${jsonString.substring(0, jsonString.length > 200 ? 200 : jsonString.length)}');
+    if (jsonString.length > 200) {
+      debugPrint('[ReciterConfig] JSON end: ${jsonString.substring(jsonString.length - 200)}');
+    }
+    final decoded = json.decode(jsonString) as Map<String, dynamic>;
+    final recitersList = decoded['reciters'] as List;
+    debugPrint('[ReciterConfig] Decoded ${recitersList.length} reciters from JSON');
+    return decoded;
   }
 
   /// Get all reciters
