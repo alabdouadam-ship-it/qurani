@@ -50,10 +50,16 @@ Future<void> main() async {
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
   
-  // On iOS, clear reciters cache to ensure fresh load from assets
-  // This fixes issues with outdated cached data on iOS
+  // On iOS, force refresh from remote to get latest reciters
+  // Falls back to cache or assets if remote fails
   if (Platform.isIOS) {
-    await ReciterConfigService.clearAndReload();
+    await ReciterConfigService.loadReciters();
+    // Force async refresh in background (non-blocking)
+    ReciterConfigService.forceRefresh().then((_) {
+      debugPrint('[Main] iOS reciters refreshed from remote');
+    }).catchError((e) {
+      debugPrint('[Main] iOS remote refresh failed: $e');
+    });
   } else {
     // Load reciter configurations from JSON
     await ReciterConfigService.loadReciters();
