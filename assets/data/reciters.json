@@ -82,7 +82,7 @@
             "nameAr": "تفسير الميسر",
             "nameLatin": "Tafsir Al Muyassar",
             "ayahsPath": "https://www.qurani.info/data/muyassar_audio",
-            "surahsPath": "https://www.qurani.info/data/muyassar_audio/full"
+            "surahsPath": null
         },
         {
             "code": "arabic_english",

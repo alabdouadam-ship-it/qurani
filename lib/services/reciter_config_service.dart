@@ -60,7 +60,7 @@ class ReciterConfigService {
   static const String _cacheTimestampKey = 'reciters_timestamp';
   static const String _cacheVersionKey = 'reciters_version';
   static const int _cacheDurationDays = 7;
-  static const int _currentVersion = 3; // Increment to force reload
+  static const int _currentVersion = 4; // Increment to force reload
   
   static List<ReciterConfig>? _reciters;
   // Public for synchronous access from AudioService

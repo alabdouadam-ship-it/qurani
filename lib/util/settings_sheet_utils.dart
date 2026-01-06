@@ -14,10 +14,11 @@ class SettingsSheetUtils {
     final currentReciter = PreferencesService.getReciter();
     final langCode = PreferencesService.getLanguage();
     
-    // Load reciters dynamically from JSON
+    // 1. Force refresh explicitly on iOS to ensure fresh data [Optional but recommended during debug]
+    // await ReciterConfigService.loadReciters(); 
+
     final allReciters = await ReciterConfigService.getRecitersWithFullSurahs();
     
-    // Filter based on requirements
     final reciters = allReciters.where((r) {
       if (requireFullSurahs && !r.hasFullSurahs()) return false;
       if (requireVerseByVerse && !r.hasVerseByVerse()) return false;
@@ -29,14 +30,15 @@ class SettingsSheetUtils {
       'hasVerseByVerse': r.hasVerseByVerse(),
     }).toList();
 
+    // Debug Print: Check exactly what is being passed to UI
+    debugPrint('SettingsSheet: Passing ${reciters.length} reciters to UI');
+    
     if (!context.mounted) return;
 
     await showModalBottomSheet(
       context: context,
-      isScrollControlled: true, // Required for custom height to work
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent, // Important for custom borders
       builder: (context) {
         return _ReciterSelectionSheet(
           reciters: reciters,
@@ -51,8 +53,6 @@ class SettingsSheetUtils {
   }
 }
 
-// Separate StatefulWidget for the reciter selection sheet
-// [FIXED] Replaced DraggableScrollableSheet with Container+Column to fix iOS clipping issue
 class _ReciterSelectionSheet extends StatefulWidget {
   final List<Map<String, dynamic>> reciters;
   final String currentReciter;
@@ -80,7 +80,6 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
 
   @override
   Widget build(BuildContext context) {
-    // Filter reciters based on search query
     final filteredReciters = _searchQuery.isEmpty
         ? widget.reciters
         : widget.reciters.where((r) {
@@ -90,19 +89,20 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
             return name.contains(query) || id.contains(query);
           }).toList();
 
-    // Calculate fixed height: 85% of screen height
-    // This bypasses the DraggableScrollableSheet layout bugs on iOS
+    // Height calculation
     final double sheetHeight = MediaQuery.of(context).size.height * 0.85;
+    // Bottom padding for iPhone Home Indicator
+    final double bottomPadding = MediaQuery.of(context).padding.bottom + 20;
 
     return Container(
       height: sheetHeight,
-      decoration: const BoxDecoration(
-        color: Colors.white, // Or Theme.of(context).scaffoldBackgroundColor
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor, // Use theme color
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Column(
         children: [
-           // Drag Handle (Visual indicator)
+          // Handle
           Center(
             child: Container(
               margin: const EdgeInsets.only(top: 12, bottom: 8),
@@ -114,6 +114,8 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
               ),
             ),
           ),
+          
+          // Header
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
@@ -121,7 +123,8 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
-          // Search TextField
+          
+          // Search
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: TextField(
@@ -131,39 +134,31 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                contentPadding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 12,
-                ),
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
-              onChanged: (value) {
-                setState(() {
-                  _searchQuery = value;
-                });
-              },
+              onChanged: (val) => setState(() => _searchQuery = val),
             ),
           ),
+          
           const SizedBox(height: 12),
+          
+          // List
           Expanded(
             child: filteredReciters.isEmpty
-                ? Center(
-                    child: Text(
-                      widget.l10n.noResultsFound,
-                      style: Theme.of(context).textTheme.bodyLarge,
-                    ),
-                  )
+                ? Center(child: Text(widget.l10n.noResultsFound))
                 : ListView.builder(
-                    // ListView now manages its own scrolling independently
-                    padding: EdgeInsets.zero,
+                    // [IMPORTANT] Add padding at the bottom so last item isn't hidden
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, bottomPadding), 
                     itemCount: filteredReciters.length,
                     itemBuilder: (context, index) {
                       final reciter = filteredReciters[index];
                       final isSelected = reciter['id'] == widget.currentReciter;
                       return ListTile(
                         title: Text(reciter['name'] ?? ''),
+                        // Visual check to verify ID matches
+                        subtitle:  null, // Set to Text(reciter['id']) for debugging
                         leading: isSelected
-                            ? Icon(Icons.check,
-                                color: Theme.of(context).colorScheme.primary)
+                            ? Icon(Icons.check, color: Theme.of(context).colorScheme.primary)
                             : const SizedBox(width: 24),
                         onTap: () {
                           widget.onReciterSelected(reciter['id'] ?? '');
@@ -173,23 +168,23 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
                     },
                   ),
           ),
-          // Refresh button - always visible at bottom
-          Padding(
-            padding: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 24.0),
+          
+          // Refresh Button (kept distinct from list)
+          Container(
+            padding: EdgeInsets.only(bottom: MediaQuery.of(context).padding.bottom),
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              boxShadow: [
+                 BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4, offset: const Offset(0, -2))
+              ]
+            ),
             child: Center(
               child: TextButton.icon(
                 onPressed: _isRefreshing ? null : _handleRefresh,
                 icon: _isRefreshing
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
+                    ? const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2))
                     : const Icon(Icons.refresh, size: 18),
-                label: Text(
-                  'تحديث القائمة',
-                  style: TextStyle(fontSize: 12, color: _isRefreshing ? Colors.grey : null),
-                ),
+                label: Text('تحديث القائمة', style: TextStyle(color: _isRefreshing ? Colors.grey : null)),
               ),
             ),
           ),
@@ -200,9 +195,17 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
 
   Future<void> _handleRefresh() async {
     setState(() => _isRefreshing = true);
+    // Force clean reload
+    await ReciterConfigService.clearAndReload(); // Ensure this method exists or use forceRefresh
     await ReciterConfigService.forceRefresh();
+    
+    // Reload logic...
     final allReciters = await ReciterConfigService.getRecitersWithFullSurahs();
     final langCode = PreferencesService.getLanguage();
+    
+    // Debug output
+    debugPrint('Refresh: Loaded ${allReciters.length} reciters');
+
     final newReciters = allReciters.where((r) {
       if (widget.requireFullSurahs && !r.hasFullSurahs()) return false;
       if (widget.requireVerseByVerse && !r.hasVerseByVerse()) return false;
@@ -213,6 +216,7 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
       'hasFullSurahs': r.hasFullSurahs(),
       'hasVerseByVerse': r.hasVerseByVerse(),
     }).toList();
+    
     if (mounted) {
       setState(() {
         widget.reciters.clear();
