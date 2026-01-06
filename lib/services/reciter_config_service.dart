@@ -132,6 +132,11 @@ class ReciterConfigService {
     _mergeAndSet(assetReciters, dynamicReciters);
     debugPrint('[ReciterConfig] Final count: ${_reciters?.length ?? 0} reciters');
     debugPrint('[ReciterConfig] Reciters: ${_reciters?.map((r) => r.code).join(", ")}');
+    
+    // Log reciters with full surahs
+    final withFullSurahs = _reciters?.where((r) => r.hasFullSurahs()).toList() ?? [];
+    debugPrint('[ReciterConfig] Reciters with full surahs: ${withFullSurahs.length}');
+    debugPrint('[ReciterConfig] Full surahs list: ${withFullSurahs.map((r) => r.code).join(", ")}');
   }
 
   static void _mergeAndSet(List<ReciterConfig> assetList, List<ReciterConfig> dynamicList) {
@@ -222,7 +227,7 @@ class ReciterConfigService {
     try {
       final response = await http.get(
         Uri.parse(_remoteUrl),
-      ).timeout(const Duration(seconds: 10));
+      ).timeout(const Duration(seconds: 20));
       
       if (response.statusCode == 200) {
         final data = json.decode(response.body) as Map<String, dynamic>;
