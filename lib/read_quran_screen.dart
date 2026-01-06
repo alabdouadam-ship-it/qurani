@@ -1840,7 +1840,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         : PreferencesService.getFontSize();
     final TextStyle baseStyle = _arabicTextStyle(
       fontSize: baseFontSize,
-      height: 1.6,
+      height: 2.2,
       color: colorScheme.onSurface,
     );
     final TextStyle diacriticStyle =
@@ -2601,7 +2601,7 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
         child: isLandscape
             ? InteractiveViewer(
                 transformationController: _transformationController,
-                boundaryMargin: const EdgeInsets.all(double.infinity),
+                boundaryMargin: EdgeInsets.zero,
                 minScale: 0.5,
                 maxScale: 4.0,
                 panEnabled: true,
@@ -2620,7 +2620,7 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
               )
             : InteractiveViewer(
                 transformationController: _transformationController,
-                boundaryMargin: const EdgeInsets.all(double.infinity),
+                boundaryMargin: EdgeInsets.zero,
                 minScale: 1.0,
                 maxScale: 4.0,
                 panEnabled: true,

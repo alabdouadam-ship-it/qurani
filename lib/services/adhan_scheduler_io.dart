@@ -303,30 +303,20 @@ Future<void> _playAdhanCallback(int id) async {
 
 
       
-      // Keep player alive and don't dispose immediately
-      // Let it play in background
-      debugPrint('[AdhanScheduler.Callback] Adhan is playing, keeping player alive...');
+      // Wait for completion
+      debugPrint('[AdhanScheduler.Callback] Adhan is playing, waiting for completion...');
       
-      // Wait for completion but don't block
-      player.playerStateStream
-          .firstWhere((s) => s.processingState == ProcessingState.completed)
-          .timeout(const Duration(seconds: 300))
-          .then((_) async {
-        debugPrint('[AdhanScheduler.Callback] ✓ Playback completed');
-        player.dispose().catchError((e) {
-          debugPrint('[AdhanScheduler.Callback] ⊘ Dispose error: $e');
-        });
-      }).catchError((e) {
-        debugPrint('[AdhanScheduler.Callback] ⊘ Playback monitoring error: $e');
-        Future.delayed(const Duration(seconds: 5), () async {
-          player.dispose().catchError((err) {
-            debugPrint('[AdhanScheduler.Callback] ⊘ Final dispose error: $err');
-          });
-        });
-      });
-      
-      // Don't wait - return immediately to let it play
-      debugPrint('[AdhanScheduler.Callback] ✓ Adhan playback initiated successfully');
+      try {
+        await player.playerStateStream
+            .firstWhere((s) => s.processingState == ProcessingState.completed)
+            .timeout(const Duration(minutes: 5)); // Safety timeout
+        debugPrint('[AdhanScheduler.Callback] ✓ Playback completed normally');
+      } catch (e) {
+        debugPrint('[AdhanScheduler.Callback] ⊘ Playback timeout or error: $e');
+      } finally {
+        debugPrint('[AdhanScheduler.Callback] Disposing player...');
+        await player.dispose();
+      }
     } catch (e) {
       debugPrint('[AdhanScheduler.Callback] ✗ Playback error: $e');
       try {

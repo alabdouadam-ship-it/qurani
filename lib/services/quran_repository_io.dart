@@ -98,7 +98,7 @@ extension QuranEditionExt on QuranEdition {
 }
 
 class QuranRepository {
-  static const int _dbSchemaVersion = 2;
+  static const int _dbSchemaVersion = 3;
   static const String _dbVersionKey = 'quran_db_schema_version';
   
   QuranRepository._();
