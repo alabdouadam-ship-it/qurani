@@ -73,6 +73,7 @@ flutter:
   assets:
     - assets/data/
     - assets/data/quran.db
+    - assets/data/reciters.json
     - assets/audio/
     - public/
   fonts:
