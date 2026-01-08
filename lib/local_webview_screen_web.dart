@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-// ignore: deprecated_member_use
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 import 'dart:ui_web' as ui_web;
+import 'dart:js_interop';
 
 class LocalWebViewScreen extends StatefulWidget {
   const LocalWebViewScreen({
@@ -64,11 +63,11 @@ class _LocalWebViewScreenState extends State<LocalWebViewScreen> {
     ui_web.platformViewRegistry.registerViewFactory(
       _iframeId,
       (int viewId) {
-        final iframe = html.IFrameElement()
+        final iframe = web.HTMLIFrameElement()
           ..style.width = '100%'
           ..style.height = '100%'
           ..style.border = 'none'
-          ..srcdoc = _htmlContent;
+          ..srcdoc = (_htmlContent ?? '').toJS;
         
         return iframe;
       },

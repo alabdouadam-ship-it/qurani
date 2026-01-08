@@ -909,18 +909,19 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final langCode = PreferencesService.getLanguage();
     final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
     final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
     final url = await AudioService.buildFullRecitationUrl(
       reciterKeyAr: _reciterKey!,
       surahOrder: _currentOrder,
     );
 
+    if (!mounted) return;
 
     if (url != null) {
-      final l10n = AppLocalizations.of(context)!;
-      final messenger = ScaffoldMessenger.of(context);
       await Clipboard.setData(ClipboardData(text: '$surahName - $reciterName\n$url'));
-    if (mounted) {
-      messenger.showSnackBar(
+      if (mounted) {
+        messenger.showSnackBar(
           SnackBar(content: Text(l10n.copiedToClipboard)),
         );
       }

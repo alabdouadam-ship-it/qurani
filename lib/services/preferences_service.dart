@@ -628,4 +628,23 @@ class PreferencesService {
   static String getPdfType() {
     return _prefs?.getString(keyPdfType) ?? 'blue';
   }
+  static Future<void> togglePdfPageHighlight(int pageNumber) async {
+    const key = 'highlighted_pdf_pages';
+    final list = _prefs?.getStringList(key) ?? [];
+    final pageKey = pageNumber.toString();
+    if (list.contains(pageKey)) {
+      list.remove(pageKey);
+    } else {
+      list.add(pageKey);
+    }
+    await _prefs?.setStringList(key, list);
+  }
+
+  static Set<int> getHighlightedPdfPages() {
+    final list = _prefs?.getStringList('highlighted_pdf_pages') ?? [];
+    return list
+        .map((entry) => int.tryParse(entry))
+        .whereType<int>()
+        .toSet();
+  }
 }

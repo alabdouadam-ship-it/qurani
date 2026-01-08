@@ -1998,6 +1998,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Surah'**
   String get filterBySurah;
+
+  /// No description provided for @downloadConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Confirmation'**
+  String get downloadConfirmation;
+
+  /// No description provided for @downloadConfirmationMsg.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to download {mushafName}?'**
+  String downloadConfirmationMsg(String mushafName);
+
+  /// No description provided for @downloadFailedReverting.
+  ///
+  /// In en, this message translates to:
+  /// **'Download failed, reverting to previous edition.'**
+  String get downloadFailedReverting;
+
+  /// No description provided for @bookmarkPage.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark page'**
+  String get bookmarkPage;
+
+  /// No description provided for @removeBookmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove bookmark'**
+  String get removeBookmark;
+
+  /// No description provided for @noBookmarks.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookmarks yet'**
+  String get noBookmarks;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

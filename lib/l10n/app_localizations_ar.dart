@@ -994,4 +994,24 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get filterBySurah => 'السورة';
+
+  @override
+  String get downloadConfirmation => 'تأكيد التحميل';
+
+  @override
+  String downloadConfirmationMsg(String mushafName) {
+    return 'هل تريد تحميل $mushafName؟';
+  }
+
+  @override
+  String get downloadFailedReverting => 'فشل التحميل، جاري العودة للنسخة السابقة.';
+
+  @override
+  String get bookmarkPage => 'حفظ الصفحة';
+
+  @override
+  String get removeBookmark => 'إزالة الحفظ';
+
+  @override
+  String get noBookmarks => 'لا توجد صفحات محفوظة';
 }

@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'dart:ui' as ui;
-// TODO: Replace 'dart:html' with 'package:web/web.dart' and 'dart:js_interop' when all dependencies migrate. Using 'dart:html' for now for browser info collection; safe to ignore info-level warning in analyzer.
-// ignore: deprecated_member_use
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -25,8 +22,8 @@ class DeviceInfoService {
     final tzName = DateTime.now().timeZoneName;
     final tzOffsetMinutes = DateTime.now().timeZoneOffset.inMinutes;
 
-    final nav = html.window.navigator;
-    final screen = html.window.screen;
+    final nav = web.window.navigator;
+    final screen = web.window.screen;
 
     return <String, dynamic>{
       'app': {
@@ -43,8 +40,8 @@ class DeviceInfoService {
         'language': nav.language,
         'hardwareConcurrency': nav.hardwareConcurrency,
         'screen': {
-          'width': screen?.width,
-          'height': screen?.height,
+          'width': screen.width,
+          'height': screen.height,
           'pixelRatio': ui.PlatformDispatcher.instance.implicitView?.devicePixelRatio,
         },
       },

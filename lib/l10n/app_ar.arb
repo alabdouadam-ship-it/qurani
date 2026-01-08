@@ -688,5 +688,25 @@
   "allQuran": "كل القرآن",
   "@allQuran": {},
   "filterBySurah": "السورة",
-  "@filterBySurah": {}
+  "@filterBySurah": {},
+  "downloadConfirmation": "تأكيد التحميل",
+  "@downloadConfirmation": {},
+  "downloadConfirmationMsg": "هل تريد تحميل {mushafName}؟",
+  "@downloadConfirmationMsg": {
+    "placeholders": {
+      "mushafName": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadFailedReverting": "فشل التحميل، جاري العودة للنسخة السابقة.",
+  "@downloadFailedReverting": {},
+  "download": "تحميل",
+  "@download": {},
+  "bookmarkPage": "حفظ الصفحة",
+  "@bookmarkPage": {},
+  "removeBookmark": "إزالة الحفظ",
+  "@removeBookmark": {},
+  "noBookmarks": "لا توجد صفحات محفوظة",
+  "@noBookmarks": {}
 }

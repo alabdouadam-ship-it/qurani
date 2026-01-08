@@ -994,4 +994,24 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get filterBySurah => 'Sourate';
+
+  @override
+  String get downloadConfirmation => 'Confirmation de téléchargement';
+
+  @override
+  String downloadConfirmationMsg(String mushafName) {
+    return 'Voulez-vous télécharger le $mushafName ?';
+  }
+
+  @override
+  String get downloadFailedReverting => 'Le téléchargement a échoué, retour à l\'édition précédente.';
+
+  @override
+  String get bookmarkPage => 'Marquer la page';
+
+  @override
+  String get removeBookmark => 'Retirer le marque-page';
+
+  @override
+  String get noBookmarks => 'Aucun marque-page';
 }

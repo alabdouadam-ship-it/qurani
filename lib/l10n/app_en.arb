@@ -690,5 +690,25 @@
   "allQuran": "All Quran",
   "@allQuran": {},
   "filterBySurah": "Surah",
-  "@filterBySurah": {}
+  "@filterBySurah": {},
+  "downloadConfirmation": "Download Confirmation",
+  "@downloadConfirmation": {},
+  "downloadConfirmationMsg": "Do you want to download {mushafName}?",
+  "@downloadConfirmationMsg": {
+    "placeholders": {
+      "mushafName": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadFailedReverting": "Download failed, reverting to previous edition.",
+  "@downloadFailedReverting": {},
+  "download": "Download",
+  "@download": {},
+  "bookmarkPage": "Bookmark page",
+  "@bookmarkPage": {},
+  "removeBookmark": "Remove bookmark",
+  "@removeBookmark": {},
+  "noBookmarks": "No bookmarks yet",
+  "@noBookmarks": {}
 }

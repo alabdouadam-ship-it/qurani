@@ -994,4 +994,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get filterBySurah => 'Surah';
+
+  @override
+  String get downloadConfirmation => 'Download Confirmation';
+
+  @override
+  String downloadConfirmationMsg(String mushafName) {
+    return 'Do you want to download $mushafName?';
+  }
+
+  @override
+  String get downloadFailedReverting => 'Download failed, reverting to previous edition.';
+
+  @override
+  String get bookmarkPage => 'Bookmark page';
+
+  @override
+  String get removeBookmark => 'Remove bookmark';
+
+  @override
+  String get noBookmarks => 'No bookmarks yet';
 }

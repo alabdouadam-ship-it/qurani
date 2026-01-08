@@ -1107,7 +1107,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                         ),
                         const SizedBox(height: 12),
                         DropdownButtonFormField<int?>(
-                          value: PreferencesService.getPrayerMethod(),
+                          initialValue: PreferencesService.getPrayerMethod(),
                           decoration: InputDecoration(
                             contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                             border: OutlineInputBorder(

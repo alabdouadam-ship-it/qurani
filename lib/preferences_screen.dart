@@ -14,7 +14,7 @@ class PreferencesScreen extends StatefulWidget {
 }
 
 class _PreferencesScreenState extends State<PreferencesScreen> {
-  final TextEditingController _nameController = TextEditingController();
+
   String? _selectedTheme;
   String? _selectedLanguage;
   double _selectedFontSize = 22.0;

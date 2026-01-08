@@ -157,18 +157,22 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
       ),
       body: SurahGrid(
         onTapSurah: (Surah s) async {
+          final nav = Navigator.of(context);
+          final messenger = ScaffoldMessenger.of(context);
           final reciterKey = PreferencesService.getReciter();
           if (reciterKey.isEmpty) {
-            ScaffoldMessenger.of(context).showSnackBar(
+            messenger.showSnackBar(
               SnackBar(content: Text(l10n.selectReciterFirst)),
             );
             return;
           }
           
+          
           // Check if reciter has full surahs
           final reciter = await ReciterConfigService.getReciterByCode(reciterKey);
+          if (!context.mounted) return;
+          
           if (reciter == null || !reciter.hasFullSurahs()) {
-            if (!mounted) return;
             showDialog(
               context: context,
               builder: (context) => AlertDialog(
@@ -200,18 +204,21 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
             );
             return;
           }
+
           final url = await AudioService.buildFullRecitationUrl(
             reciterKeyAr: reciterKey,
             surahOrder: s.order,
           );
+          
+          if (!context.mounted) return;
+
           if (url == null) {
-            ScaffoldMessenger.of(context).showSnackBar(
+            messenger.showSnackBar(
               SnackBar(content: Text(l10n.surahUnavailable)),
             );
             return;
           }
-          Navigator.push(
-            context,
+          nav.push(
             MaterialPageRoute(
               builder: (context) => AudioPlayerScreen(initialSurahOrder: s.order),
             ),

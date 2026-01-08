@@ -155,10 +155,14 @@ class ReciterConfigService {
   static void _mergeAndSet(List<ReciterConfig> assetList, List<ReciterConfig> dynamicList) {
     // Create map from Asset first
     final Map<String, ReciterConfig> merged = {};
-    for (var r in assetList) merged[r.code] = r;
+    for (var r in assetList) {
+      merged[r.code] = r;
+    }
     
     // Override/Add from Dynamic (Remote/Cache)
-    for (var r in dynamicList) merged[r.code] = r;
+    for (var r in dynamicList) {
+      merged[r.code] = r;
+    }
 
     _reciters = merged.values.toList();
     reciterMap = merged;
@@ -184,11 +188,7 @@ class ReciterConfigService {
     return results;
   }
 
-  static void _parseReciters(Map<String, dynamic> jsonData) {
-     // Legacy method kept for simple calls, but now redirects to set
-     _reciters = _parseList(jsonData);
-     reciterMap = { for (var r in _reciters!) r.code: r };
-  }
+
 
   /// Get a specific reciter by code
   static Future<ReciterConfig?> getReciterByCode(String code) async {

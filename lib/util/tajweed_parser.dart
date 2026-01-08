@@ -50,32 +50,21 @@ class TajweedParser {
     0x0654, 0x0655, 0x0656, 0x0657, 0x0658, 0x0659, 0x065A, 0x065B, 0x065C,
     0x065D, 0x065E, 0x065F, //
     0x0670, // superscript alif
-    // Quranic annotation signs
-    0x06D6,
-    0x06D7,
-    0x06D8,
-    0x06D9,
-    0x06DA,
-    0x06DB,
-    0x06DC,
-    0x06DF,
-    0x06E0,
-    0x06E1,
-    0x06E2,
-    0x06E3,
-    0x06E4,
-    0x06E5,
-    0x06E6,
-    0x06E7,
-    0x06E8,
-    0x06EA,
-    0x06EB,
-    0x06EC,
-    0x06ED,
+    // Waqf signs
+    0x06D6, 0x06D7, 0x06D8, 0x06D9, 0x06DA, 0x06DB,
   ];
 
+
+  // Waqf signs that require preservation of shaping (cannot be separated from base)
+  static const Set<int> _waqfCodepoints = {
+    0x0615, 0x0617, // Small High Tah, Zain
+    0x06D6, 0x06D7, 0x06D8, 0x06D9, 0x06DA, 0x06DB, // Salla, Qala, Meem, La, Jeem, Three Dots
+  };
+
   static bool _isDiacritic(int rune) =>
-      _diacriticCodepoints.contains(rune);
+      _diacriticCodepoints.contains(rune) || _waqfCodepoints.contains(rune);
+
+  static bool _isWaqf(int rune) => _waqfCodepoints.contains(rune);
 
   /// Parse Tajweed-annotated text, optionally coloring diacritics separately.
   static List<InlineSpan> parseSpans(
@@ -98,7 +87,7 @@ class TajweedParser {
         final plain = _normalizeGlyphs(text.substring(cursor, end));
         if (plain.isNotEmpty) {
           spans.addAll(
-            _buildWithDiacritics(plain, baseStyle, diacriticStyle),
+            _buildContextualSpans(plain, baseStyle, diacriticStyle),
           );
         }
         cursor = end;
@@ -112,7 +101,7 @@ class TajweedParser {
       if (match.start > cursor) {
         final gap = _normalizeGlyphs(text.substring(cursor, match.start));
         spans.addAll(
-          _buildWithDiacritics(gap, baseStyle, diacriticStyle),
+          _buildContextualSpans(gap, baseStyle, diacriticStyle),
         );
       }
 
@@ -122,7 +111,7 @@ class TajweedParser {
       final style =
           color == null ? baseStyle : baseStyle.copyWith(color: color);
       spans.addAll(
-        _buildWithDiacritics(content, style, diacriticStyle),
+        _buildContextualSpans(content, style, diacriticStyle),
       );
       cursor = match.end;
     }
@@ -130,7 +119,7 @@ class TajweedParser {
     if (cursor < text.length) {
       final tail = _normalizeGlyphs(text.substring(cursor));
       spans.addAll(
-        _buildWithDiacritics(tail, baseStyle, diacriticStyle),
+        _buildContextualSpans(tail, baseStyle, diacriticStyle),
       );
     }
 
@@ -147,7 +136,7 @@ class TajweedParser {
     TextStyle? diacriticStyle,
   }) {
     final normalized = _normalizeGlyphs(text);
-    return _buildWithDiacritics(normalized, baseStyle, diacriticStyle);
+    return _buildContextualSpans(normalized, baseStyle, diacriticStyle);
   }
 
   static String _normalizeGlyphs(String input) {
@@ -160,48 +149,82 @@ class TajweedParser {
     return buffer.toString();
   }
 
-  static List<InlineSpan> _buildWithDiacritics(
+  /// Builds spans, keeping distinct coloring for diacritics UNLESS a Waqf sign is present.
+  /// If a Waqf sign is present in a cluster, the whole cluster uses baseStyle to preserve shaping.
+  static List<InlineSpan> _buildContextualSpans(
     String text,
     TextStyle baseStyle,
     TextStyle? diacriticStyle,
   ) {
-    if (text.isEmpty) {
-      return const [];
-    }
+    if (text.isEmpty) return const [];
     if (diacriticStyle == null) {
       return [TextSpan(text: text, style: baseStyle)];
     }
+
     final List<InlineSpan> spans = [];
-    final StringBuffer buffer = StringBuffer();
-    bool bufferIsDia = false;
+    final StringBuffer clusterBuffer = StringBuffer();
+    bool clusterHasWaqf = false;
 
-    void flush() {
-      if (buffer.isEmpty) return;
-      spans.add(
-        TextSpan(
-          text: buffer.toString(),
-          style: bufferIsDia ? diacriticStyle : baseStyle,
-        ),
-      );
-      buffer.clear();
-    }
-
+    // Process text as sequence of clusters (Base + Diacritics)
     for (final rune in text.runes) {
-      final ch = String.fromCharCode(rune);
-      final isDia = _isDiacritic(rune);
-      if (buffer.isEmpty) {
-        bufferIsDia = isDia;
-        buffer.write(ch);
-      } else if (isDia == bufferIsDia) {
-        buffer.write(ch);
+      final bool isDia = _isDiacritic(rune);
+      
+      if (!isDia) {
+        // Start of a new cluster (found a base char)
+        // Flush previous cluster
+        if (clusterBuffer.isNotEmpty) {
+           _flushCluster(spans, clusterBuffer.toString(), clusterHasWaqf, baseStyle, diacriticStyle);
+           clusterBuffer.clear();
+           clusterHasWaqf = false;
+        }
+        clusterBuffer.writeCharCode(rune);
       } else {
-        flush();
-        bufferIsDia = isDia;
-        buffer.write(ch);
+        // Continuation of current cluster (diacritic/mark)
+        if (_isWaqf(rune)) {
+          clusterHasWaqf = true;
+        }
+        clusterBuffer.writeCharCode(rune);
       }
     }
-    flush();
+    
+    // Flush final cluster
+    if (clusterBuffer.isNotEmpty) {
+      _flushCluster(spans, clusterBuffer.toString(), clusterHasWaqf, baseStyle, diacriticStyle);
+    }
+    
     return spans;
   }
-}
 
+  static void _flushCluster(
+      List<InlineSpan> spans, 
+      String clusterText, 
+      bool hasWaqf, 
+      TextStyle baseStyle, 
+      TextStyle diacriticStyle) {
+      
+      if (hasWaqf) {
+        // Keep together to fix vertical alignment (shaping context)
+        spans.add(TextSpan(text: clusterText, style: baseStyle));
+      } else {
+        // Split base and diacritics for coloring
+        final StringBuffer baseBuf = StringBuffer();
+        final StringBuffer diaBuf = StringBuffer();
+        
+        for (final rune in clusterText.runes) {
+          if (_isDiacritic(rune)) {
+            diaBuf.writeCharCode(rune);
+          } else {
+            baseBuf.writeCharCode(rune);
+          }
+        }
+        
+        if (baseBuf.isNotEmpty) {
+          spans.add(TextSpan(text: baseBuf.toString(), style: baseStyle));
+        }
+        if (diaBuf.isNotEmpty) {
+          spans.add(TextSpan(text: diaBuf.toString(), style: diacriticStyle));
+        }
+      }
+  }
+
+}

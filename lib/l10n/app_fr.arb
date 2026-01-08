@@ -364,7 +364,6 @@
   "@downloadComplete": {},
   "downloadFailed": "Échec du téléchargement",
   "@downloadFailed": {},
-
   "downloadCurrentSurahTitle": "Télécharger cette sourate ?",
   "@downloadCurrentSurahTitle": {},
   "downloadCurrentSurahMessage": "Télécharger la sourate actuelle pour une écoute hors ligne ?",
@@ -689,5 +688,25 @@
   "allQuran": "Tout le Coran",
   "@allQuran": {},
   "filterBySurah": "Sourate",
-  "@filterBySurah": {}
+  "@filterBySurah": {},
+  "downloadConfirmation": "Confirmation de téléchargement",
+  "@downloadConfirmation": {},
+  "downloadConfirmationMsg": "Voulez-vous télécharger le {mushafName} ?",
+  "@downloadConfirmationMsg": {
+    "placeholders": {
+      "mushafName": {
+        "type": "String"
+      }
+    }
+  },
+  "downloadFailedReverting": "Le téléchargement a échoué, retour à l'édition précédente.",
+  "@downloadFailedReverting": {},
+  "download": "Télécharger",
+  "@download": {},
+  "bookmarkPage": "Marquer la page",
+  "@bookmarkPage": {},
+  "removeBookmark": "Retirer le marque-page",
+  "@removeBookmark": {},
+  "noBookmarks": "Aucun marque-page",
+  "@noBookmarks": {}
 }
