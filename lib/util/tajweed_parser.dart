@@ -4,6 +4,38 @@ import 'package:flutter/material.dart';
 class TajweedParser {
   static final RegExp _tokenPattern =
       RegExp(r'\[([a-z]+)(?::[^\[]+)?\[(.*?)\]', caseSensitive: false);
+  
+  /// Strips Tajweed tags from the text, returning plain Arabic text.
+  static String stripTags(String text) {
+      if (text.isEmpty) return text;
+      // Recursively strip tags until no brackets are left or pattern doesn't match
+      // A simple regex replace can work if the structure is simple [tag[content]]
+      // However, Tajweed tags might be nested or adjacent.
+      // The parser logic uses regex: `\[([a-z]+)(?::[^\[]+)?\[(.*?)\]` which matches `[tag[content]`.
+      // We want to replace `[tag[content]` with `content`.
+      
+      String processed = text;
+      // We loop because replacing one tag might reveal another or if usage is complex. 
+      // Actually standard regex replaceAllMapped is safer.
+      
+      // Keep replacing until no change to handle nested if any (though usually not nested).
+      String previous;
+      do {
+        previous = processed;
+        // Match [tag[content]] or [tag:site[content]]
+        // Structure: [  tag   :param?   [ content ] ]
+        // Use negated class [^\]] for content to match innermost bracket pair first
+        processed = processed.replaceAllMapped(
+          RegExp(r'\[[a-zA-Z]+(?::[^\[\]]*)?\[([^\]]*)\]', caseSensitive: false),
+          (match) => match.group(1) ?? '',
+        );
+      } while (processed != previous);
+      
+      // Cleanup any remaining brackets that might be artifacts (e.g. if text was nested deeper than anticipated)
+      // or if the text had stray brackets. But for now trust the loop.
+      
+      return processed;
+  }
 
   // Approximate colors for different tajweed rule groups.
   static const Map<String, Color> _ruleColors = {

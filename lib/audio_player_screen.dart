@@ -4,6 +4,7 @@ import 'package:audio_session/audio_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:qurani/services/media_item_compat.dart';
 
 import 'l10n/app_localizations.dart';
@@ -818,6 +819,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
   }
 
+
+
   void _showSleepTimerDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -903,29 +906,23 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     });
   }
 
-  Future<void> _share(BuildContext context) async {
+  Future<void> _shareSurah() async {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
-
-    final langCode = PreferencesService.getLanguage();
-    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
-    final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
+    
     final l10n = AppLocalizations.of(context)!;
-    final messenger = ScaffoldMessenger.of(context);
     final url = await AudioService.buildFullRecitationUrl(
       reciterKeyAr: _reciterKey!,
       surahOrder: _currentOrder,
     );
-
-    if (!mounted) return;
-
-    if (url != null) {
-      await Clipboard.setData(ClipboardData(text: '$surahName - $reciterName\n$url'));
-      if (mounted) {
-        messenger.showSnackBar(
-          SnackBar(content: Text(l10n.copiedToClipboard)),
-        );
-      }
-    }
+    
+    if (url == null) return;
+    
+    final langCode = PreferencesService.getLanguage();
+    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+    final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
+    
+    final message = l10n.shareSurahMessage(surahName, reciterName, url);
+    await Share.share(message);
   }
 
   Future<void> _loadVerseUrls(int surahOrder) async {
@@ -1662,9 +1659,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.share),
-            tooltip: l10n.share,
-            onPressed: () => _share(context),
+            tooltip: AppLocalizations.of(context)!.share,
+            onPressed: _shareSurah,
           ),
+
         ],
       ),
       body: _surahs.isEmpty

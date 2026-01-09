@@ -148,6 +148,23 @@ class AppLocalizationsAr extends AppLocalizations {
   String get prayerAdjustmentOriginal => 'الوقت الأصلي';
 
   @override
+  String shareSurahMessage(String surahName, String reciterName, String url) {
+    return 'استمع إلى $surahName بصوت $reciterName: $url';
+  }
+
+  @override
+  String get shareAyah => 'مشاركة الآية';
+
+  @override
+  String get shareAudio => 'مشاركة رابط الصوت';
+
+  @override
+  String get shareText => 'مشاركة كنص';
+
+  @override
+  String get shareImage => 'مشاركة كصورة';
+
+  @override
   String prayerAdjustmentChange(Object value) {
     return 'التعديل: $value';
   }

@@ -98,6 +98,28 @@
   },
   "prayerAdjustmentOriginal": "الوقت الأصلي",
   "@prayerAdjustmentOriginal": {},
+  "shareSurahMessage": "استمع إلى {surahName} بصوت {reciterName}: {url}",
+  "@shareSurahMessage": {
+    "placeholders": {
+        "surahName": {
+            "type": "String"
+        },
+        "reciterName": {
+            "type": "String"
+        },
+        "url": {
+            "type": "String"
+        }
+    }
+  },
+  "shareAyah": "مشاركة الآية",
+  "@shareAyah": {},
+  "shareAudio": "مشاركة رابط الصوت",
+  "@shareAudio": {},
+  "shareText": "مشاركة كنص",
+  "@shareText": {},
+  "shareImage": "مشاركة كصورة",
+  "@shareImage": {},
   "prayerAdjustmentChange": "التعديل: {value}",
   "@prayerAdjustmentChange": {
     "placeholders": {

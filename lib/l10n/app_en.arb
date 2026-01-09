@@ -98,6 +98,28 @@
   },
   "prayerAdjustmentOriginal": "Original time",
   "@prayerAdjustmentOriginal": {},
+  "shareSurahMessage": "Listen to {surahName} by {reciterName}: {url}",
+  "@shareSurahMessage": {
+    "placeholders": {
+        "surahName": {
+            "type": "String"
+        },
+        "reciterName": {
+            "type": "String"
+        },
+        "url": {
+            "type": "String"
+        }
+    }
+  },
+  "shareAyah": "Share Ayah",
+  "@shareAyah": {},
+  "shareAudio": "Share Audio Link",
+  "@shareAudio": {},
+  "shareText": "Share Text",
+  "@shareText": {},
+  "shareImage": "Share Image",
+  "@shareImage": {},
   "prayerAdjustmentChange": "Adjustment: {value}",
   "@prayerAdjustmentChange": {
     "placeholders": {

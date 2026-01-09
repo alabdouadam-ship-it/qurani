@@ -12,6 +12,8 @@ import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'util/arabic_font_utils.dart';
+
+import 'widgets/share_ayah_sheet.dart';
 import 'util/tajweed_parser.dart';
 import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
@@ -1216,6 +1218,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       : _AyahAction.highlight,
                 ),
               ),
+              ListTile(
+                leading: const Icon(Icons.share),
+                title: Text(l10n.shareAyah),
+                onTap: () => Navigator.pop(context, _AyahAction.share),
+              ),
               if (_edition == QuranEdition.english ||
                   _edition == QuranEdition.french)
                 ListTile(
@@ -1268,6 +1275,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         break;
       case _AyahAction.tafsir:
         await _showTafsir(ayah);
+        break;
+      case _AyahAction.share:
+        _showShareAyahSheet(ayah);
         break;
       case null:
         break;
@@ -1329,6 +1339,24 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       },
     );
   }
+
+  void _showShareAyahSheet(AyahData ayah) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) => ShareAyahSheet(
+        surah: ayah.surah, 
+        ayah: ayah,
+        isTranslation: _edition.isTranslation,
+        textDirection: _edition.isRtl ? TextDirection.rtl : TextDirection.ltr,
+        reciterIdentifier: _pageAudioReciter,
+      ),
+    );
+  }
+
 
   Future<void> _checkPdfAvailability() async {
     final path = await MushafPdfService.instance.getPdfPath(_pdfType);
@@ -2726,6 +2754,7 @@ enum _AyahAction {
   translateEnglish,
   translateFrench,
   tafsir,
+  share,
 }
 
 String _editionLabel(QuranEdition edition, AppLocalizations l10n) {

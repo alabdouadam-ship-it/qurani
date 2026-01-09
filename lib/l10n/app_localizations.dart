@@ -367,6 +367,36 @@ abstract class AppLocalizations {
   /// **'Original time'**
   String get prayerAdjustmentOriginal;
 
+  /// No description provided for @shareSurahMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to {surahName} by {reciterName}: {url}'**
+  String shareSurahMessage(String surahName, String reciterName, String url);
+
+  /// No description provided for @shareAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Ayah'**
+  String get shareAyah;
+
+  /// No description provided for @shareAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Audio Link'**
+  String get shareAudio;
+
+  /// No description provided for @shareText.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Text'**
+  String get shareText;
+
+  /// No description provided for @shareImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Image'**
+  String get shareImage;
+
   /// No description provided for @prayerAdjustmentChange.
   ///
   /// In en, this message translates to:

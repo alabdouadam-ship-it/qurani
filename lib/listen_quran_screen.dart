@@ -152,6 +152,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
               );
             },
           ),
+
           if (!kIsWeb) _buildDownloadAction(l10n),
         ],
       ),
@@ -228,6 +229,8 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
       ),
     );
   }
+
+
 
   Widget _buildDownloadAction(AppLocalizations l10n) {
     return FutureBuilder<bool>(

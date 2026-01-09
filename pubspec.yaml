@@ -52,6 +52,7 @@ dependencies:
   url_launcher: ^6.3.1
   share_plus: ^7.2.1
   uuid: ^4.5.2
+  screenshot: ^3.0.0
   # [FIXED] Updated to match your Flutter SDK requirement
   intl: ^0.20.2                
   pdf: ^3.10.7
@@ -76,6 +77,7 @@ flutter:
     - assets/data/quran.db
     - assets/data/reciters.json
     - assets/audio/
+    - assets/images/
     - public/
   fonts:
       - family: Amiri Quran
