@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Background color matching the default green theme (always green regardless of system dark mode) -->
-    <item>
-        <color android:color="#4CAF50"/>
-    </item>
+    <!-- Background color matching the default sky blue theme -->
+    <item android:drawable="@color/splash_background"/>
     <item>
         <bitmap android:gravity="center" android:src="@drawable/splash"/>
     </item>
-
 </layer-list>

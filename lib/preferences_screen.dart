@@ -42,39 +42,91 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     },
   };
   
-  // Theme options with codes and localized display names
   static const String _themeGreen = 'green';
-  static const String _themeBlue = 'blue';
-  static const String _themePink = 'pink';
   static const String _themeDark = 'dark';
+  static const String _themeGray = 'gray';
+  static const String _themeGold = 'gold';
+  static const String _themeOrange = 'orange';
+  static const String _themePurple = 'purple';
+  static const String _themeBrown = 'brown';
+  static const String _themeLightBlue = 'lightBlue';
+  static const String _themeSkyBlue = 'skyBlue';
+  static const String _themeBlueGrey = 'blueGrey';
+  static const String _themeTeal = 'teal';
+  static const String _themeOliveGreen = 'oliveGreen';
+  static const String _themeBeige = 'beige';
 
-  // Display labels per language code
   final Map<String, Map<String, String>> _themeLabels = {
     _themeGreen: {
       'ar': 'أخضر',
       'en': 'Green',
       'fr': 'Vert',
     },
-    _themeBlue: {
-      'ar': 'أزرق',
-      'en': 'Blue',
-      'fr': 'Bleu',
-    },
-    _themePink: {
-      'ar': 'وردي',
-      'en': 'Pink',
-      'fr': 'Rose',
-    },
     _themeDark: {
       'ar': 'داكن',
       'en': 'Dark',
       'fr': 'Sombre',
     },
+    _themeGray: {
+      'ar': 'رمادي',
+      'en': 'Gray',
+      'fr': 'Gris',
+    },
+    _themeGold: {
+      'ar': 'ذهبي',
+      'en': 'Gold',
+      'fr': 'Or',
+    },
+    _themeOrange: {
+      'ar': 'برتقالي',
+      'en': 'Orange',
+      'fr': 'Orange',
+    },
+    _themePurple: {
+      'ar': 'بنفسجي',
+      'en': 'Purple',
+      'fr': 'Violet',
+    },
+    _themeBrown: {
+      'ar': 'بني',
+      'en': 'Brown',
+      'fr': 'Marron',
+    },
+    _themeLightBlue: {
+      'ar': 'أزرق فاتح',
+      'en': 'Light Blue',
+      'fr': 'Bleu clair',
+    },
+    _themeSkyBlue: {
+      'ar': 'أزرق سماوي',
+      'en': 'Sky Blue',
+      'fr': 'Bleu ciel',
+    },
+    _themeBlueGrey: {
+      'ar': 'رمادي-أزرق',
+      'en': 'Blue Grey',
+      'fr': 'Gris bleu',
+    },
+    _themeTeal: {
+      'ar': 'تركواز',
+      'en': 'Teal',
+      'fr': 'Sarcelle',
+    },
+    _themeOliveGreen: {
+      'ar': 'أخضر زيتوني',
+      'en': 'Olive Green',
+      'fr': 'Vert olive',
+    },
+    _themeBeige: {
+      'ar': 'بيج',
+      'en': 'Beige',
+      'fr': 'Beige',
+    },
   };
 
   List<String> _getThemeDisplayNames(BuildContext context) {
     final langCode = _getCurrentLangCode(context);
-    return [_themeGreen, _themeBlue, _themePink, _themeDark]
+    return [_themeGreen, _themeDark, _themeGray, _themeGold, _themeOrange, _themePurple, _themeBrown, _themeLightBlue, _themeSkyBlue, _themeBlueGrey, _themeTeal, _themeOliveGreen, _themeBeige]
         .map((code) => _themeLabels[code]![langCode]!)
         .toList();
   }

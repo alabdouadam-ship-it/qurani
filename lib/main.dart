@@ -234,44 +234,227 @@ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
     
     ThemeData baseTheme;
     switch (themeName) {
-      case 'blue':
+      case 'gray':
         baseTheme = ThemeData(
-          colorSchemeSeed: Colors.blue,
           useMaterial3: true,
-          brightness: brightness,
-        );
-        break;
-      case 'pink':
-        baseTheme = ThemeData(
-          colorSchemeSeed: Colors.pink,
-          useMaterial3: true,
-          brightness: brightness,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF616175),      // رمادي داكن للـ AppBar
+            onPrimary: Colors.white,                // نص أبيض
+            secondary: Color(0xFF757575),
+            surface: Color(0xFFF5F5F5),       // خلفية
+            onSurface: Colors.black87,              // نص
+          ),
         );
         break;
       case 'dark':
         baseTheme = ThemeData(
           useMaterial3: true,
           brightness: Brightness.dark,
+          scaffoldBackgroundColor: const Color(0xFF121212),
           colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF424242), // Dark grey
+            primary: Color(0xFF00796B),           // تركواز داكن
             onPrimary: Colors.white,
-            secondary: Color(0xFF616161),
-            onSecondary: Colors.white,
-            surface: Color(0xFF121212), // Very dark background
+            secondary: Color(0xFF004D40),
+            surface: Color(0xFF121212),            // خلفية داكنة جداً
             onSurface: Colors.white,
-            error: Color(0xFFCF6679),
-            onError: Colors.white,
-            primaryContainer: Color(0xFF2C2C2C),
+            primaryContainer: Color(0xFF1E1E1E),
             onPrimaryContainer: Colors.white,
           ),
         );
         break;
+      case 'gold':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFFFFBF0),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFFB7950B),           // ذهبي داكن
+            onPrimary: Colors.white,
+            secondary: Color(0xFFD4AF37),          // ذهبي فاتح
+            surface: Color(0xFFFFFBF0),            // خلفية كريمية
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFFFF9E6),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'orange':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFFFF3E0),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFFE65100),           // برتقالي داكن
+            onPrimary: Colors.white,
+            secondary: Color(0xFFFF6F00),
+            surface: Color(0xFFFFF3E0),            // خلفية برتقالية فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFFFE0B2),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'purple':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFF3E5F5),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF4A148C),           // بنفسجي داكن
+            onPrimary: Colors.white,
+            secondary: Color(0xFF7B1FA2),
+            surface: Color(0xFFF3E5F5),            // خلفية بنفسجية فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFE1BEE7),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'brown':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFEFEBE9),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF5D4037),           // بني داكن
+            onPrimary: Colors.white,
+            secondary: Color(0xFF795548),
+            surface: Color(0xFFEFEBE9),            // خلفية بنية فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFD7CCC8),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'lightBlue':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFE1F5FE),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF0288D1),           // أزرق فاتح
+            onPrimary: Colors.white,
+            secondary: Color(0xFF03A9F4),
+            surface: Color(0xFFE1F5FE),            // خلفية أزرق فاتح جداً
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFB3E5FC),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'skyBlue':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFF0F8FF), // أزرق فاتح جداً (Alice Blue)
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF42A5D5),      // أزرق سماوي أفتح
+            onPrimary: Colors.white,                // نص أبيض
+            secondary: Color(0xFF64B5F6),     // أزرق سماوي فاتح
+            surface: Color(0xFFF0F8FF),       // خلفية فاتحة جداً
+            onSurface: Colors.black87,              // نص داكن
+            primaryContainer: Color(0xFFE1F5FE), // حاويات بلون أزرق فاتح جداً
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'blueGrey':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFECEFF1),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF546E7A),           // رمادي-أزرق
+            onPrimary: Colors.white,
+            secondary: Color(0xFF78909C),
+            surface: Color(0xFFECEFF1),            // خلفية رمادية-زرقاء فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFCFD8DC),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'teal':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFE0F2F1),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF00796B),           // تركواز
+            onPrimary: Colors.white,
+            secondary: Color(0xFF009688),
+            surface: Color(0xFFE0F2F1),            // خلفية تركواز فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFB2DFDB),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'oliveGreen':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFF1F8E9),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF558B2F),           // أخضر زيتوني
+            onPrimary: Colors.white,
+            secondary: Color(0xFF689F38),
+            surface: Color(0xFFF1F8E9),            // خلفية خضراء فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFDCEDC8),
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'beige':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFFFF8E1),
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF8D6E63),           // بني فاتح للـ AppBar
+            onPrimary: Colors.white,
+            secondary: Color(0xFFA1887F),          // بني أفتح
+            surface: Color(0xFFFFF8E1),            // خلفية بيج فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFFFECB3),   // حاويات بيج فاتح جداً
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
       case 'green':
+        baseTheme = ThemeData(
+          useMaterial3: true,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFE8F5E9), // أخضر فاتح جداً
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF2E7D32),           // أخضر داكن
+            onPrimary: Colors.white,
+            secondary: Color(0xFF43A047),         // أخضر متوسط
+            surface: Color(0xFFE8F5E9),            // خلفية خضراء فاتحة
+            onSurface: Colors.black87,
+            primaryContainer: Color(0xFFC8E6C9),   // حاويات خضراء فاتحة
+            onPrimaryContainer: Colors.black87,
+          ),
+        );
+        break;
+      case 'skyBlue':
       default:
         baseTheme = ThemeData(
-          colorSchemeSeed: Colors.green,
           useMaterial3: true,
-          brightness: brightness,
+          brightness: Brightness.light,
+          scaffoldBackgroundColor: const Color(0xFFF0F8FF), // أزرق فاتح جداً (Alice Blue)
+          colorScheme: const ColorScheme.light(
+            primary: Color(0xFF42A5D5),      // أزرق سماوي أفتح
+            onPrimary: Colors.white,
+            secondary: Color(0xFF64B5F6),     // أزرق سماوي فاتح
+            surface: Color(0xFFF0F8FF),       // خلفية فاتحة جداً
+            onSurface: Colors.black87,              // نص داكن
+            primaryContainer: Color(0xFFE1F5FE), // حاويات بلون أزرق فاتح جداً
+            onPrimaryContainer: Colors.black87,
+          ),
         );
         break;
     }

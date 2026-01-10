@@ -168,7 +168,7 @@ class PreferencesService {
 
   static String getTheme() {
     final saved = _prefs?.getString(keyTheme);
-    return saved ?? 'green'; // Default to green if not set
+    return saved ?? 'skyBlue'; // Default to sky blue if not set
   }
 
   static Future<void> saveLanguage(String langCode) async {
