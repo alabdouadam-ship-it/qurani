@@ -243,15 +243,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       final session = await AudioSession.instance;
       debugPrint('[AudioPlayer] Audio session obtained successfully');
       
-      await session.configure(const AudioSessionConfiguration(
-        androidAudioAttributes: AndroidAudioAttributes(
-          contentType: AndroidAudioContentType.music,
-          flags: AndroidAudioFlags.none,
-          usage: AndroidAudioUsage.media,
-        ),
-        androidAudioFocusGainType: AndroidAudioFocusGainType.gain,
-        androidWillPauseWhenDucked: false,
-      ));
+      await session.configure(const AudioSessionConfiguration.music());
       await session.setActive(true);
       debugPrint('[AudioPlayer] Audio session configured successfully');
       
@@ -922,7 +914,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
     
     final message = l10n.shareSurahMessage(surahName, reciterName, url);
-    await Share.share(message);
+    
+    // Calculate share position origin for iPad
+    final box = context.findRenderObject() as RenderBox?;
+    
+    await Share.share(
+      message,
+      sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+    );
   }
 
   Future<void> _loadVerseUrls(int surahOrder) async {

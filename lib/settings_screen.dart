@@ -422,7 +422,14 @@ class SettingsScreen extends StatelessWidget {
       final packageName = packageInfo.packageName;
       final appUrl = 'https://play.google.com/store/apps/details?id=$packageName';
       final message = l10n.shareAppMessage(appUrl);
-      await Share.share(message);
+      
+      // Calculate share position origin for iPad
+      final box = context.findRenderObject() as RenderBox?;
+      
+      await Share.share(
+        message,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+      );
     } catch (_) {
       if (!context.mounted) return;
       messenger.showSnackBar(

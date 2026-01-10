@@ -56,6 +56,12 @@ class ShareAyahUtils {
     );
 
     final text = '$processedText \n\n$footer${url != null ? '\n\n$url' : ''}';
-    await Share.share(text);
+    // Calculate share position origin for iPad
+    final box = context.findRenderObject() as RenderBox?;
+    
+    await Share.share(
+      text,
+      sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+    );
   }
 }

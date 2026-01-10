@@ -439,7 +439,16 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       final dir = await getTemporaryDirectory();
       final file = File('${dir.path}/qurani_prayer_times_${DateTime.now().millisecondsSinceEpoch}.pdf');
       await file.writeAsBytes(bytes, flush: true);
-      await Share.shareXFiles([XFile(file.path)], text: title, subject: title);
+      
+      // Calculate share position origin for iPad
+      final box = context.findRenderObject() as RenderBox?;
+      
+      await Share.shareXFiles(
+        [XFile(file.path)],
+        text: title,
+        subject: title,
+        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+      );
     } catch (_) {
       // ignore share or generation failures silently for now
     } finally {
