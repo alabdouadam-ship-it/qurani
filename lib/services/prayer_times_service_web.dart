@@ -205,8 +205,18 @@ class PrayerTimesService {
 
   static const Map<String, int> _prayerMethodByCountryName = {
     'saudi arabia': 4,
+    'kingdom of saudi arabia': 4,
+    'السعودية': 4,
+    'المملكة العربية السعودية': 4,
     'france': 12,
+    'فرنسا': 12,
+    'egypt': 5,
+    'مصر': 5,
+    'united arab emirates': 16,
+    'الإمارات': 16,
     'germany': 12,
+    'ألمانيا': 12,
+
     'belgium': 12,
     'netherlands': 12,
     'luxembourg': 12,
@@ -226,7 +236,7 @@ class PrayerTimesService {
     'liechtenstein': 12,
     'andorra': 12,
     'turkey': 13,
-    'egypt': 5,
+    // 'egypt': 5, // Duplicate
     'jordan': 23,
     'syria': 23,
     'palestine': 23,
@@ -238,7 +248,7 @@ class PrayerTimesService {
     'iraq': 1,
     'kuwait': 9,
     'qatar': 10,
-    'united arab emirates': 16,
+    // 'united arab emirates': 16, // Duplicate
     'oman': 8,
     'bahrain': 8,
     'malaysia': 17,
@@ -250,7 +260,64 @@ class PrayerTimesService {
     'russia': 14,
     'united states': 2,
     'canada': 2,
+    'afghanistan': 1,
+    'nepal': 1,
+    'sri lanka': 1,
+    'nigeria': 5,
+    'sudan': 5,
+    'yemen': 4,
+    'libya': 5,
+    'ethiopia': 5,
+    'kenya': 5,
+    'somalia': 8,
+    'brunei': 17,
+    'cyprus (north)': 13,
     'rest of europe / africa / americas': 3,
+  };
+
+  static const Map<String, int> _prayerMethodByIsoCode = {
+    'SA': 4, // Saudi Arabia
+    'FR': 12, // France
+    'US': 2, // USA
+    'CA': 2, // Canada
+    'GB': 12, // UK
+    'TR': 13, // Turkey
+    'EG': 5, // Egypt
+    'AE': 16, // UAE
+    'KW': 9, // Kuwait
+    'QA': 10, // Qatar
+    'BH': 8, // Bahrain
+    'OM': 8, // Oman
+    'LB': 23, // Lebanon
+    'PS': 23, // Palestine
+    'JO': 23, // Jordan
+    'SY': 23, // Syria
+    'IQ': 1, // Iraq
+    'IR': 7, // Iran
+    'PK': 1, // Pakistan
+    'IN': 1, // India
+    'BD': 1, // Bangladesh
+    'ID': 20, // Indonesia
+    'MY': 17, // Malaysia
+    'SG': 11, // Singapore
+    'MA': 21, // Morocco
+    'DZ': 19, // Algeria
+    'TN': 18, // Tunisia
+    'DE': 12, // Germany
+    'BE': 12, // Belgium
+    'NL': 12, // Netherlands
+    'LU': 12, // Luxembourg
+    'CH': 12, // Switzerland
+    'ES': 12, // Spain
+    'IT': 12, // Italy
+    'PT': 22, // Portugal
+    'IE': 12, // Ireland
+    'AT': 12, // Austria
+    'DK': 12, // Denmark
+    'SE': 12, // Sweden
+    'NO': 12, // Norway
+    'FI': 12, // Finland
+    'IS': 12, // Iceland
   };
 
   static Future<int> resolveMethodForRegionFromPosition(Position pos) async {
@@ -261,10 +328,30 @@ class PrayerTimesService {
     }
     
     // Otherwise, auto-detect based on location
-    final country = await getCountryFromCoordinates(pos);
-    if (country == null || country.isEmpty) return 3;
-    final key = country.toLowerCase().trim();
-    return _prayerMethodByCountryName[key] ?? 3;
+    try {
+      final placemarks = await placemarkFromCoordinates(pos.latitude, pos.longitude);
+      if (placemarks.isNotEmpty) {
+         final p = placemarks.first;
+         
+         // 1. Try ISO Country Code (Most reliable)
+         if (p.isoCountryCode != null && p.isoCountryCode!.isNotEmpty) {
+            final code = p.isoCountryCode!.toUpperCase();
+            if (_prayerMethodByIsoCode.containsKey(code)) {
+               return _prayerMethodByIsoCode[code]!;
+            }
+         }
+         
+         // 2. Try Country Name
+         if (p.country != null && p.country!.isNotEmpty) {
+             final name = p.country!.toLowerCase().trim();
+             if (_prayerMethodByCountryName.containsKey(name)) {
+                return _prayerMethodByCountryName[name]!;
+             }
+         }
+      }
+    } catch (_) {}
+
+    return 3; // Default
   }
 
   static Future<int> resolveMethodFromLastKnownPosition() async {

@@ -896,8 +896,8 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                       subtitle: Slider(
                         value: _verseRepeatCount.toDouble(),
                         min: 1,
-                        max: 20,
-                        divisions: 19,
+                        max: 50,
+                        divisions: 49,
                         label: '$_verseRepeatCount',
                         onChanged: (val) async {
                            final newVal = val.toInt();
@@ -913,8 +913,8 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                       subtitle: Slider(
                         value: _rangeRepeatCount.toDouble(),
                         min: 1,
-                        max: 10,
-                        divisions: 9,
+                        max: 20,
+                        divisions: 19,
                         label: '$_rangeRepeatCount',
                         onChanged: (val) async {
                            final newVal = val.toInt();

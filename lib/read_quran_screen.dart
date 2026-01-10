@@ -1257,6 +1257,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       },
     );
 
+    if (selection == null) return;
+    if (!mounted) return;
+
     switch (selection) {
       case _AyahAction.highlight:
         _toggleHighlight(ayah);
@@ -1277,10 +1280,15 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         await _showTafsir(ayah);
         break;
       case _AyahAction.share:
-        _showShareAyahSheet(ayah);
+        ShareAyahUtils.shareAyahAsText(
+          context,
+          surah: ayah.surah,
+          ayah: ayah,
+          isTranslation: _edition.isTranslation,
+          reciterIdentifier: _pageAudioReciter,
+        );
         break;
-      case null:
-        break;
+
     }
   }
 
@@ -1337,23 +1345,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ],
         );
       },
-    );
-  }
-
-  void _showShareAyahSheet(AyahData ayah) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) => ShareAyahSheet(
-        surah: ayah.surah, 
-        ayah: ayah,
-        isTranslation: _edition.isTranslation,
-        textDirection: _edition.isRtl ? TextDirection.rtl : TextDirection.ltr,
-        reciterIdentifier: _pageAudioReciter,
-      ),
     );
   }
 

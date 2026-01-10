@@ -351,19 +351,24 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
                 ),
                 const SizedBox(height: 16),
                 // Question card - compact
-                Card(
-                  elevation: 2,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: Text(
-                        question.text,
-                        textDirection: TextDirection.rtl,
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontSize: PreferencesService.getFontSize() + 2,
-                          fontWeight: FontWeight.bold,
-                          height: 1.6,
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.30,
+                  ),
+                  child: Card(
+                    elevation: 2,
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.all(12),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                          question.text,
+                          textDirection: TextDirection.rtl,
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontSize: PreferencesService.getFontSize() + 2,
+                            fontWeight: FontWeight.bold,
+                            height: 1.6,
+                          ),
                         ),
                       ),
                     ),
