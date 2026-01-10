@@ -394,24 +394,60 @@ class PreferencesService {
     return _prefs?.getString('download_reciter');
   }
 
-  static Future<void> toggleAyahHighlight(int ayahNumber) async {
-    const key = 'highlighted_ayahs';
-    final list = _prefs?.getStringList(key) ?? [];
-    final ayahKey = ayahNumber.toString();
-    if (list.contains(ayahKey)) {
-      list.remove(ayahKey);
-    } else {
-      list.add(ayahKey);
-    }
-    await _prefs?.setStringList(key, list);
+  static const String keyHighlightedAyahsColors = 'highlighted_ayahs_colors';
+
+  static Future<void> saveAyahHighlight(int ayahNumber, int color) async {
+    final Map<String, int> map = _loadHighlightedColorsMap();
+    map[ayahNumber.toString()] = color;
+    await _saveHighlightedColorsMap(map);
   }
 
-  static Set<int> getHighlightedAyahs() {
-    final list = _prefs?.getStringList('highlighted_ayahs') ?? [];
-    return list
-        .map((entry) => int.tryParse(entry))
-        .whereType<int>()
-        .toSet();
+  static Future<void> removeAyahHighlight(int ayahNumber) async {
+    final Map<String, int> map = _loadHighlightedColorsMap();
+    map.remove(ayahNumber.toString());
+    await _saveHighlightedColorsMap(map);
+  }
+
+  static Map<int, int> getHighlightedAyahs() {
+    // Check migration
+    if (_prefs?.containsKey('highlighted_ayahs') == true &&
+        !_prefs!.containsKey(keyHighlightedAyahsColors)) {
+      _migrateOldHighlights();
+    }
+
+    final Map<String, int> map = _loadHighlightedColorsMap();
+    return map.map((key, value) => MapEntry(int.parse(key), value));
+  }
+
+  static Map<String, int> _loadHighlightedColorsMap() {
+    final jsonStr = _prefs?.getString(keyHighlightedAyahsColors);
+    if (jsonStr == null || jsonStr.isEmpty) return {};
+    try {
+      final decoded = json.decode(jsonStr) as Map<String, dynamic>;
+      return decoded.map((k, v) => MapEntry(k, v as int));
+    } catch (_) {
+      return {};
+    }
+  }
+
+  static Future<void> _saveHighlightedColorsMap(Map<String, int> map) async {
+    await _prefs?.setString(keyHighlightedAyahsColors, json.encode(map));
+  }
+
+  static void _migrateOldHighlights() {
+    final oldList = _prefs?.getStringList('highlighted_ayahs') ?? [];
+    if (oldList.isEmpty) return;
+
+    final Map<String, int> newMap = {};
+    for (final ayahId in oldList) {
+      newMap[ayahId] = 0xFFFFF7C2; // Default Cream color
+    }
+    
+    // Save new format
+    _prefs?.setString(keyHighlightedAyahsColors, json.encode(newMap));
+    
+    // Remove old format
+    _prefs?.remove('highlighted_ayahs');
   }
 
   /// Featured (bookmarked) surahs management for Listen to Quran feature

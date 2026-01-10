@@ -1031,4 +1031,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noBookmarks => 'لا توجد صفحات محفوظة';
+
+  @override
+  String get colorDefault => 'افتراضي (كريمي)';
+
+  @override
+  String get colorRed => 'أحمر';
+
+  @override
+  String get colorBlue => 'أزرق';
+
+  @override
+  String get colorGreen => 'أخضر';
 }

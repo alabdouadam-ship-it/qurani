@@ -732,5 +732,13 @@
   "removeBookmark": "Remove bookmark",
   "@removeBookmark": {},
   "noBookmarks": "No bookmarks yet",
-  "@noBookmarks": {}
+  "@noBookmarks": {},
+  "colorDefault": "Default (Cream)",
+  "@colorDefault": {},
+  "colorRed": "Red",
+  "@colorRed": {},
+  "colorBlue": "Blue",
+  "@colorBlue": {},
+  "colorGreen": "Green",
+  "@colorGreen": {}
 }

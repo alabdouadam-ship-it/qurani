@@ -730,5 +730,13 @@
   "removeBookmark": "إزالة الحفظ",
   "@removeBookmark": {},
   "noBookmarks": "لا توجد صفحات محفوظة",
-  "@noBookmarks": {}
+  "@noBookmarks": {},
+  "colorDefault": "افتراضي (كريمي)",
+  "@colorDefault": {},
+  "colorRed": "أحمر",
+  "@colorRed": {},
+  "colorBlue": "أزرق",
+  "@colorBlue": {},
+  "colorGreen": "أخضر",
+  "@colorGreen": {}
 }

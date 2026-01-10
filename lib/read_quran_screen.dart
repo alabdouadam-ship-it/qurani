@@ -44,7 +44,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   int _currentPage = 1;
   QuranEdition _edition = QuranEdition.simple;
-  final Set<int> _highlightedAyahs = <int>{};
+  final Map<int, int> _highlightedAyahs = <int, int>{};
   final Set<int> _highlightedPdfPages = <int>{};
   int? _selectedAyah;
   late Future<List<SurahMeta>> _surahListFuture;
@@ -707,19 +707,19 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   Future<void> _openHighlightedAyahsSheet() async {
     final l10n = AppLocalizations.of(context)!;
-    final storedHighlights = PreferencesService.getHighlightedAyahs();
+    final storedHighlightsMap = PreferencesService.getHighlightedAyahs();
 
     if (mounted &&
-        (storedHighlights.length != _highlightedAyahs.length ||
-            !_highlightedAyahs.containsAll(storedHighlights))) {
+        (storedHighlightsMap.length != _highlightedAyahs.length ||
+            !_highlightedAyahs.keys.toSet().containsAll(storedHighlightsMap.keys))) {
       setState(() {
         _highlightedAyahs
           ..clear()
-          ..addAll(storedHighlights);
+          ..addAll(storedHighlightsMap);
       });
     }
 
-    if (storedHighlights.isEmpty) {
+    if (storedHighlightsMap.isEmpty) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.noHighlightsYet)),
@@ -728,7 +728,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       return;
     }
 
-    final ayahNumbers = storedHighlights.toList()..sort();
+    final ayahNumbers = storedHighlightsMap.keys.toList()..sort();
     final ayahDataList = await Future.wait(
       ayahNumbers
           .map((number) => _repository.lookupAyahByNumber(
@@ -746,6 +746,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           _HighlightedAyah(
             ayahNumber: ayahNumbers[i],
             ayah: ayah,
+            color: storedHighlightsMap[ayahNumbers[i]] ?? 0xFFFFF7C2,
           ),
         );
       }
@@ -811,9 +812,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                         final entry = entries[index];
                         return ListTile(
                           leading: CircleAvatar(
-                            backgroundColor: theme.colorScheme.primary
-                                .withAlpha((255 * 0.1).round()),
-                            foregroundColor: theme.colorScheme.primary,
+                            backgroundColor: Color(entry.color),
+                            foregroundColor: Colors.black87,
                             child: Text(
                               entry.ayah.numberInSurah.toString(),
                               style: const TextStyle(fontWeight: FontWeight.bold),
@@ -1179,20 +1179,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
   }
 
-  void _toggleHighlight(AyahData ayah) async {
-    setState(() {
-      if (_highlightedAyahs.contains(ayah.number)) {
-        _highlightedAyahs.remove(ayah.number);
-      } else {
-        _highlightedAyahs.add(ayah.number);
-      }
-    });
-    await PreferencesService.toggleAyahHighlight(ayah.number);
-  }
+
 
   Future<void> _showAyahOptions(AyahData ayah) async {
     final l10n = AppLocalizations.of(context)!;
-    final isHighlighted = _highlightedAyahs.contains(ayah.number);
+    final isHighlighted = _highlightedAyahs.containsKey(ayah.number);
     final selection = await showModalBottomSheet<_AyahAction>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -1205,19 +1196,16 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ListTile(
-                leading: Icon(
-                  isHighlighted ? Icons.bookmark_remove : Icons.bookmark_add,
-                ),
-                title: Text(
-                  isHighlighted ? l10n.removeHighlight : l10n.addHighlight,
-                ),
-                onTap: () => Navigator.pop(
-                  context,
-                  isHighlighted
-                      ? _AyahAction.removeHighlight
-                      : _AyahAction.highlight,
-                ),
+                leading: const Icon(Icons.bookmark_add),
+                title: Text(isHighlighted ? l10n.bookmarks : l10n.addHighlight),
+                onTap: () => Navigator.pop(context, _AyahAction.pickColor),
               ),
+              if (isHighlighted)
+                ListTile(
+                  leading: const Icon(Icons.bookmark_remove),
+                  title: Text(l10n.removeHighlight),
+                  onTap: () => Navigator.pop(context, _AyahAction.removeHighlight),
+                ),
               ListTile(
                 leading: const Icon(Icons.share),
                 title: Text(l10n.shareAyah),
@@ -1261,11 +1249,14 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     if (!mounted) return;
 
     switch (selection) {
-      case _AyahAction.highlight:
-        _toggleHighlight(ayah);
+      case _AyahAction.pickColor:
+        _showColorPicker(ayah);
+        break;
+      case _AyahAction.highlight: // Legacy fallback
+        _setAyahHighlight(ayah, 0xFFFFF7C2);
         break;
       case _AyahAction.removeHighlight:
-        _toggleHighlight(ayah);
+        _removeAyahHighlight(ayah);
         break;
       case _AyahAction.translateEnglish:
         await _showTranslation(ayah, QuranEdition.english);
@@ -1290,6 +1281,66 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         break;
 
     }
+  }
+
+  Future<void> _setAyahHighlight(AyahData ayah, int color) async {
+    await PreferencesService.saveAyahHighlight(ayah.number, color);
+    if (mounted) {
+      setState(() {
+        _highlightedAyahs[ayah.number] = color;
+      });
+    }
+  }
+
+  Future<void> _removeAyahHighlight(AyahData ayah) async {
+    await PreferencesService.removeAyahHighlight(ayah.number);
+    if (mounted) {
+      setState(() {
+        _highlightedAyahs.remove(ayah.number);
+      });
+    }
+  }
+
+  void _showColorPicker(AyahData ayah) {
+     final l10n = AppLocalizations.of(context)!;
+     final colors = [
+       {'name': l10n.colorDefault, 'value': 0xFFFFF7C2, 'color': const Color(0xFFFFF7C2)},
+       {'name': l10n.colorRed, 'value': 0xFFFFCDD2, 'color': Colors.red.shade100},
+       {'name': l10n.colorBlue, 'value': 0xFFBBDEFB, 'color': Colors.blue.shade100},
+       {'name': l10n.colorGreen, 'value': 0xFFC8E6C9, 'color': Colors.green.shade100},
+     ];
+     
+     showModalBottomSheet(
+       context: context,
+       shape: const RoundedRectangleBorder(
+         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+       ),
+       builder: (context) {
+         return SafeArea(
+           child: Column(
+             mainAxisSize: MainAxisSize.min,
+             children: [
+               Padding(
+                 padding: const EdgeInsets.symmetric(vertical: 16),
+                 child: Text(
+                   l10n.addHighlight, // Or "Choose Color" if localized
+                   style: Theme.of(context).textTheme.titleMedium,
+                 ),
+               ),
+               ...colors.map((c) => ListTile(
+                 leading: CircleAvatar(backgroundColor: c['color'] as Color),
+                 title: Text(c['name'] as String),
+                 onTap: () {
+                    Navigator.pop(context);
+                    _setAyahHighlight(ayah, c['value'] as int);
+                 },
+               )),
+               const SizedBox(height: 12),
+             ],
+           )
+         );
+       }
+     );
   }
 
   Future<void> _showTranslation(AyahData ayah, QuranEdition edition) async {
@@ -2084,16 +2135,17 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final GlobalKey itemKey =
         _ayahKeys.putIfAbsent(ayah.number, () => GlobalKey());
     final theme = Theme.of(context);
-    final bool isHighlighted = _highlightedAyahs.contains(ayah.number);
+    final int? highlightColorValue = _highlightedAyahs[ayah.number];
+    final bool isHighlighted = highlightColorValue != null;
     final bool isSelected = _selectedAyah == ayah.number;
 
     final double baseFontSize = _edition.isTranslation
         ? ((PreferencesService.getFontSize() - 4).clamp(12.0, 48.0)).toDouble()
         : PreferencesService.getFontSize();
     final TextStyle baseStyle = _arabicTextStyle(
-      fontSize: baseFontSize,
-      height: 2.5,
-      color: colorScheme.onSurface,
+        fontSize: baseFontSize,
+        height: 2.5,
+        color: colorScheme.onSurface,
     );
     final TextStyle diacriticStyle =
         baseStyle.copyWith(color: colorScheme.primary);
@@ -2112,7 +2164,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             diacriticStyle: diacriticStyle,
           );
 
-    const Color highlightColor = Color(0xFFFFF7C2);
     final Color playingColor = theme.brightness == Brightness.dark
         ? const Color(0xFF2C3C57)
         : const Color(0xFFFFE19C);
@@ -2121,7 +2172,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         : isSelected
             ? colorScheme.secondaryContainer.withAlpha((255 * 0.6).round())
             : isHighlighted
-                ? highlightColor
+                ? Color(highlightColorValue)
                 : colorScheme.surface.withAlpha((255 * 0.4).round());
     final Color borderColor = isPlaying || isHighlighted
         ? colorScheme.primary
@@ -2732,13 +2783,16 @@ class _HighlightedAyah {
   const _HighlightedAyah({
     required this.ayahNumber,
     required this.ayah,
+    required this.color,
   });
 
   final int ayahNumber;
   final AyahData ayah;
+  final int color;
 }
 
 enum _AyahAction {
+  pickColor,
   highlight,
   removeHighlight,
   translateArabic,

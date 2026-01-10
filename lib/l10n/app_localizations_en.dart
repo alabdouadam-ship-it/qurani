@@ -1031,4 +1031,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noBookmarks => 'No bookmarks yet';
+
+  @override
+  String get colorDefault => 'Default (Cream)';
+
+  @override
+  String get colorRed => 'Red';
+
+  @override
+  String get colorBlue => 'Blue';
+
+  @override
+  String get colorGreen => 'Green';
 }

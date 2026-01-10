@@ -1031,4 +1031,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get noBookmarks => 'Aucun marque-page';
+
+  @override
+  String get colorDefault => 'Défaut (Crème)';
+
+  @override
+  String get colorRed => 'Rouge';
+
+  @override
+  String get colorBlue => 'Bleu';
+
+  @override
+  String get colorGreen => 'Vert';
 }

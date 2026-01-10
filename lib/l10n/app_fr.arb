@@ -730,5 +730,13 @@
   "removeBookmark": "Retirer le marque-page",
   "@removeBookmark": {},
   "noBookmarks": "Aucun marque-page",
-  "@noBookmarks": {}
+  "@noBookmarks": {},
+  "colorDefault": "Défaut (Crème)",
+  "@colorDefault": {},
+  "colorRed": "Rouge",
+  "@colorRed": {},
+  "colorBlue": "Bleu",
+  "@colorBlue": {},
+  "colorGreen": "Vert",
+  "@colorGreen": {}
 }
