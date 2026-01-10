@@ -83,6 +83,16 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _reciterKey = PreferencesService.getReciter();
     _queue = _queueService.queue;
     _autoPlayNext = PreferencesService.getAutoPlayNextSurah();
+    _isRepeat = PreferencesService.getIsRepeat();
+    
+    // Enforce mutual exclusivity on load
+    if (_isRepeat) {
+      _autoPlayNext = false;
+    }
+    
+    // Apply initial loop mode
+    _player.setLoopMode(_isRepeat ? LoopMode.one : LoopMode.off);
+
     _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
     _queueListener = () {
       if (!mounted) return;
@@ -1406,7 +1416,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   if (value) {
                     _verseByVerseMode = false;
                     _autoPlayNext = false;
-                    _player.setLoopMode(LoopMode.all);
+                    _player.setLoopMode(LoopMode.one);
                   } else {
                     _player.setLoopMode(LoopMode.off);
                   }
@@ -1414,6 +1424,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                 if (value) {
                   PreferencesService.saveAutoPlayNextSurah(false);
                 }
+                PreferencesService.saveIsRepeat(value);
               },
             ),
             FilterChip(
@@ -1429,6 +1440,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   }
                 });
                 PreferencesService.saveAutoPlayNextSurah(value);
+                PreferencesService.saveIsRepeat(_isRepeat);
                 
                 // If enabling auto-play, reload playlist to add next surah
                 if (value && !_isPlayerDisposed) {

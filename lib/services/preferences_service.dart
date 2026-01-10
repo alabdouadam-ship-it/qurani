@@ -166,6 +166,16 @@ class PreferencesService {
     return _prefs?.getInt(keyRangeRepetitionCount) ?? 1;
   }
 
+  static const String keyIsRepeat = 'is_repeat';
+
+  static Future<void> saveIsRepeat(bool value) async {
+    await _prefs?.setBool(keyIsRepeat, value);
+  }
+
+  static bool getIsRepeat() {
+    return _prefs?.getBool(keyIsRepeat) ?? false;
+  }
+
   static String getTheme() {
     final saved = _prefs?.getString(keyTheme);
     return saved ?? 'skyBlue'; // Default to sky blue if not set
