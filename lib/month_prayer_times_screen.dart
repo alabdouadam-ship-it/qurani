@@ -441,6 +441,7 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       await file.writeAsBytes(bytes, flush: true);
       
       // Calculate share position origin for iPad
+      if (!mounted) return;
       final box = context.findRenderObject() as RenderBox?;
       
       await Share.shareXFiles(

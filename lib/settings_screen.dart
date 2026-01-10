@@ -7,7 +7,7 @@ import 'local_webview_screen.dart';
 import 'package:share_plus/share_plus.dart';
 import 'responsive_config.dart';
 import 'preferences_screen.dart';
-import 'support_us_screen.dart';
+
 import 'contact_us_screen.dart';
 import 'offline_audio_screen.dart';
 
@@ -158,13 +158,7 @@ class SettingsScreen extends StatelessWidget {
         subtitle: '',
         color: Colors.brown,
       ),
-      /*SettingItem(
-        id: 'support',
-        icon: Icons.favorite_outline,
-        title: l10n.supportUs,
-        subtitle: '',
-        color: Colors.redAccent,
-      ),*/
+
       SettingItem(
         id: 'contact',
         icon: Icons.support_agent,
@@ -350,14 +344,7 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
         break;
-      case 'support':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SupportUsScreen(),
-          ),
-        );
-        break;
+
       case 'contact':
         Navigator.push(
           context,
@@ -424,6 +411,7 @@ class SettingsScreen extends StatelessWidget {
       final message = l10n.shareAppMessage(appUrl);
       
       // Calculate share position origin for iPad
+      if (!context.mounted) return;
       final box = context.findRenderObject() as RenderBox?;
       
       await Share.share(

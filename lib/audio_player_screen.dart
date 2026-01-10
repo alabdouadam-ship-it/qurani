@@ -916,6 +916,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final message = l10n.shareSurahMessage(surahName, reciterName, url);
     
     // Calculate share position origin for iPad
+    if (!mounted) return;
     final box = context.findRenderObject() as RenderBox?;
     
     await Share.share(

@@ -57,6 +57,7 @@ class ShareAyahUtils {
 
     final text = '$processedText \n\n$footer${url != null ? '\n\n$url' : ''}';
     // Calculate share position origin for iPad
+    if (!context.mounted) return;
     final box = context.findRenderObject() as RenderBox?;
     
     await Share.share(

@@ -255,17 +255,6 @@ class _OptionsScreenState extends State<OptionsScreen> {
           subtitle: '',
           color: Colors.teal,
         ),
-
-
-      
-      // Add more rows here as needed:
-      // Row 3 (uncomment to add more options)
-      // OptionItem(
-      //   icon: Icons.audiotrack,
-      //   title: 'Audio',
-      //   subtitle: 'Recitations',
-      //   color: Colors.deepOrange,
-      // ),
     ];
     return items;
   }

@@ -230,7 +230,7 @@ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
   // Theme data factories
   ThemeData _getThemeData(String themeName) {
     final isDark = themeName == 'dark';
-    final brightness = isDark ? Brightness.dark : Brightness.light;
+    
     
     ThemeData baseTheme;
     switch (themeName) {
@@ -440,7 +440,7 @@ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
           ),
         );
         break;
-      case 'skyBlue':
+
       default:
         baseTheme = ThemeData(
           useMaterial3: true,
