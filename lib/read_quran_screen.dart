@@ -2412,12 +2412,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         foregroundColor: Theme.of(context).colorScheme.onPrimary,
         elevation: 2,
         actions: [
-          IconButton(
-            // Changed icon to differentiate from Editions menu
-            icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
-            tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
-             onPressed: _togglePdfMode,
-           ),
+          if (!kIsWeb)
+            IconButton(
+              // Changed icon to differentiate from Editions menu
+              icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
+              tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
+              onPressed: _togglePdfMode,
+            ),
            if (_isPdfMode)
               IconButton(
                 icon: const Icon(Icons.bookmarks),
