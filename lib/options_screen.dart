@@ -240,13 +240,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
         ),
 
       // Row 4
-      OptionItem(
-        id: 'prayer_times',
-        icon: Icons.schedule,
-        title: l10n.prayerTimes,
-        subtitle: '',
-        color: Colors.orange,
-      ),
+      if (!kIsWeb)
+        OptionItem(
+          id: 'prayer_times',
+          icon: Icons.schedule,
+          title: l10n.prayerTimes,
+          subtitle: '',
+          color: Colors.orange,
+        ),
       if (!kIsWeb)
         OptionItem(
           id: 'qibla',
