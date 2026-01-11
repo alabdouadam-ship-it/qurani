@@ -151,10 +151,12 @@ class NotificationService {
     );
     
     // iOS notification details
-    const darwinDetails = DarwinNotificationDetails(
+    final soundFileName = isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3';
+    final darwinDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentBadge: true,
-      presentSound: false, // Sound handled separately on iOS too
+      presentSound: true, 
+      sound: soundFileName,
     );
     
     await _plugin.zonedSchedule(

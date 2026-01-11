@@ -12,6 +12,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'adhan_audio_manager.dart';
 import 'preferences_service.dart';
+import 'notification_service_io.dart';
 
 const List<String> _defaultSoundKeys = [
   'basit',
@@ -71,6 +72,25 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
     final byteData = await rootBundle.load(assetPath);
     await file.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
     debugPrint('[AdhanScheduler] ✓ Cached: $fileName (${byteData.lengthInBytes} bytes)');
+    
+    // iOS specific: Copy to Library/Sounds for notification sound
+    if (Platform.isIOS) {
+      try {
+        final libDir = await getLibraryDirectory();
+        final soundsDir = Directory('${libDir.path}/Sounds');
+        if (!await soundsDir.exists()) {
+          await soundsDir.create(recursive: true);
+        }
+        final iosFile = File('${soundsDir.path}/$fileName');
+        if (!await iosFile.exists()) {
+          await file.copy(iosFile.path);
+          debugPrint('[AdhanScheduler] ✓ Copied to Library/Sounds: $fileName');
+        }
+      } catch (e) {
+        debugPrint('[AdhanScheduler] ✗ Failed to copy to Library/Sounds: $e');
+      }
+    }
+
     return true;
   } catch (e) {
     debugPrint('[AdhanScheduler] ✗ Failed to cache $soundKey (fajr: $isFajr): $e');
@@ -333,10 +353,11 @@ Future<void> _playAdhanCallback(int id) async {
 
 class AdhanScheduler {
   static Future<void> init() async {
-    // AndroidAlarmManager is Android-only
-    if (!Platform.isAndroid) {
-      debugPrint('[AdhanScheduler] Not Android, skipping AndroidAlarmManager initialization');
-      return;
+    // Cache audio first (Platform agnostic logic inside)
+    await _cacheAdhanAudio();
+
+    if (Platform.isAndroid) {
+       await AndroidAlarmManager.initialize();
     }
     
     try {
@@ -384,11 +405,16 @@ class AdhanScheduler {
     required Map<String, bool> toggles,
     required String soundKey,
   }) async {
-    // AndroidAlarmManager is Android-only
-    if (!Platform.isAndroid) {
-      debugPrint('[AdhanScheduler] Not Android, skipping alarm scheduling');
+    debugPrint('[AdhanScheduler] Scheduling Adhan alarms (Platform: ${Platform.operatingSystem})...');
+    
+    // Convert times to Map<String, DateTime> for NotificationService
+    if (Platform.isIOS) {
+      await NotificationService.scheduleRemainingAdhans(times: times, toggles: toggles, soundKey: soundKey);
+      _scheduleForegroundTimers(times, toggles);
       return;
     }
+
+    if (!Platform.isAndroid) return;
     
     debugPrint('[AdhanScheduler] Scheduling Adhan alarms...');
     final now = DateTime.now();
@@ -427,6 +453,37 @@ class AdhanScheduler {
     }
   }
 
+
+  static final List<Timer> _foregroundTimers = [];
+
+  static void _scheduleForegroundTimers(Map<String, DateTime> times, Map<String, bool> toggles) {
+    // Cancel existing timers
+    for (var t in _foregroundTimers) t.cancel();
+    _foregroundTimers.clear();
+
+    final now = DateTime.now();
+    for (final entry in times.entries) {
+      final prayerId = entry.key;
+      final time = entry.value;
+      
+      if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
+      if (!(toggles[prayerId] ?? false)) continue;
+      
+      if (time.isAfter(now)) {
+        final duration = time.difference(now);
+        if (duration.inHours > 24) continue; // Safety check
+        
+        debugPrint('[AdhanScheduler] Scheduling foreground timer for $prayerId in $duration');
+        final id = _dailyId(prayerId: prayerId, date: time);
+        
+        final timer = Timer(duration, () {
+          debugPrint('[AdhanScheduler] Triggering foreground timer for $prayerId');
+          _playAdhanCallback(id);
+        });
+        _foregroundTimers.add(timer);
+      }
+    }
+  }
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {
     if (!Platform.isAndroid) return; // Android-only
