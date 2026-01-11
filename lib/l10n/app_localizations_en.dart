@@ -1043,4 +1043,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get colorGreen => 'Green';
+
+  @override
+  String get groupMyAzkar => 'My Azkar';
+
+  @override
+  String get groupMorning => 'Morning Azkar';
+
+  @override
+  String get groupEvening => 'Evening Azkar';
+
+  @override
+  String get groupPostPrayerGeneral => 'Post-Prayer Azkar (General)';
+
+  @override
+  String get groupPostPrayerFajrMaghrib => 'Post-Prayer Azkar (Fajr & Maghrib)';
+
+  @override
+  String get groupFriday => 'Friday Azkar';
+
+  @override
+  String get groupSleep => 'Sleep Azkar';
+
+  @override
+  String get groupWaking => 'Waking Azkar';
+
+  @override
+  String get createNewGroup => 'Create New Group';
+
+  @override
+  String get enterGroupName => 'Enter group name';
+
+  @override
+  String get addGroup => 'Add Group';
+
+  @override
+  String get deleteGroup => 'Delete Group';
+
+  @override
+  String get deleteGroupConfirmation => 'Are you sure you want to delete this group and all its azkar?';
+
+  @override
+  String get resetGroup => 'Reset Group';
+
+  @override
+  String get addAzkar => 'Add Azkar';
+
+  @override
+  String get enterAzkar => 'Enter Azkar text';
+
+  @override
+  String get resetAll => 'Reset All';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get resetGroupConfirmation => 'Are you sure you want to reset counters for this group?';
 }

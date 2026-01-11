@@ -2088,6 +2088,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Green'**
   String get colorGreen;
+
+  /// No description provided for @groupMyAzkar.
+  ///
+  /// In en, this message translates to:
+  /// **'My Azkar'**
+  String get groupMyAzkar;
+
+  /// No description provided for @groupMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Azkar'**
+  String get groupMorning;
+
+  /// No description provided for @groupEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening Azkar'**
+  String get groupEvening;
+
+  /// No description provided for @groupPostPrayerGeneral.
+  ///
+  /// In en, this message translates to:
+  /// **'Post-Prayer Azkar (General)'**
+  String get groupPostPrayerGeneral;
+
+  /// No description provided for @groupPostPrayerFajrMaghrib.
+  ///
+  /// In en, this message translates to:
+  /// **'Post-Prayer Azkar (Fajr & Maghrib)'**
+  String get groupPostPrayerFajrMaghrib;
+
+  /// No description provided for @groupFriday.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday Azkar'**
+  String get groupFriday;
+
+  /// No description provided for @groupSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleep Azkar'**
+  String get groupSleep;
+
+  /// No description provided for @groupWaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Waking Azkar'**
+  String get groupWaking;
+
+  /// No description provided for @createNewGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Create New Group'**
+  String get createNewGroup;
+
+  /// No description provided for @enterGroupName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter group name'**
+  String get enterGroupName;
+
+  /// No description provided for @addGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Group'**
+  String get addGroup;
+
+  /// No description provided for @deleteGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Group'**
+  String get deleteGroup;
+
+  /// No description provided for @deleteGroupConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this group and all its azkar?'**
+  String get deleteGroupConfirmation;
+
+  /// No description provided for @resetGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Group'**
+  String get resetGroup;
+
+  /// No description provided for @addAzkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Azkar'**
+  String get addAzkar;
+
+  /// No description provided for @enterAzkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Azkar text'**
+  String get enterAzkar;
+
+  /// No description provided for @resetAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset All'**
+  String get resetAll;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @resetGroupConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to reset counters for this group?'**
+  String get resetGroupConfirmation;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

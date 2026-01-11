@@ -1043,4 +1043,61 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get colorGreen => 'أخضر';
+
+  @override
+  String get groupMyAzkar => 'أذكاري';
+
+  @override
+  String get groupMorning => 'أذكار الصباح';
+
+  @override
+  String get groupEvening => 'أذكار المساء';
+
+  @override
+  String get groupPostPrayerGeneral => 'أذكار ما بعد الصلاة (عامة)';
+
+  @override
+  String get groupPostPrayerFajrMaghrib => 'أذكار الفجر والمغرب';
+
+  @override
+  String get groupFriday => 'أذكار يوم الجمعة';
+
+  @override
+  String get groupSleep => 'أذكار النوم';
+
+  @override
+  String get groupWaking => 'أذكار الاستيقاظ';
+
+  @override
+  String get createNewGroup => 'إنشاء مجموعة جديدة';
+
+  @override
+  String get enterGroupName => 'أدخل اسم المجموعة';
+
+  @override
+  String get addGroup => 'إضافة مجموعة';
+
+  @override
+  String get deleteGroup => 'حذف المجموعة';
+
+  @override
+  String get deleteGroupConfirmation => 'هل أنت متأكد من حذف هذه المجموعة وجميع الأذكار بداخلها؟';
+
+  @override
+  String get resetGroup => 'تصفير المجموعة';
+
+  @override
+  String get addAzkar => 'إضافة ذكر';
+
+  @override
+  String get enterAzkar => 'أدخل نص الذكر';
+
+  @override
+  String get resetAll => 'تصفير الكل';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get resetGroupConfirmation => 'هل أنت متأكد من تصفير عدادات هذه المجموعة؟';
 }

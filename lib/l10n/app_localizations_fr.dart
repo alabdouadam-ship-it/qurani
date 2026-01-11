@@ -1043,4 +1043,61 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get colorGreen => 'Vert';
+
+  @override
+  String get groupMyAzkar => 'Mes Adhkar';
+
+  @override
+  String get groupMorning => 'Adhkar du Matin';
+
+  @override
+  String get groupEvening => 'Adhkar du Soir';
+
+  @override
+  String get groupPostPrayerGeneral => 'Adhkar après la prière (Général)';
+
+  @override
+  String get groupPostPrayerFajrMaghrib => 'Adhkar Fajr et Maghrib';
+
+  @override
+  String get groupFriday => 'Adhkar du Vendredi';
+
+  @override
+  String get groupSleep => 'Adhkar du Sommeil';
+
+  @override
+  String get groupWaking => 'Adhkar du Réveil';
+
+  @override
+  String get createNewGroup => 'Créer un nouveau groupe';
+
+  @override
+  String get enterGroupName => 'Entrez le nom du groupe';
+
+  @override
+  String get addGroup => 'Ajouter un groupe';
+
+  @override
+  String get deleteGroup => 'Supprimer le groupe';
+
+  @override
+  String get deleteGroupConfirmation => 'Voulez-vous vraiment supprimer ce groupe et tous ses adhkars ?';
+
+  @override
+  String get resetGroup => 'Réinitialiser le groupe';
+
+  @override
+  String get addAzkar => 'Ajouter un Adhkar';
+
+  @override
+  String get enterAzkar => 'Entrez le texte de l\'Adhkar';
+
+  @override
+  String get resetAll => 'Tout réinitialiser';
+
+  @override
+  String get delete => 'Supprimer';
+
+  @override
+  String get resetGroupConfirmation => 'Voulez-vous vraiment réinitialiser les compteurs de ce groupe ?';
 }
