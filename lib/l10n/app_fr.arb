@@ -776,5 +776,7 @@
   "delete": "Supprimer",
   "@delete": {},
   "resetGroupConfirmation": "Voulez-vous vraiment réinitialiser les compteurs de ce groupe ?",
-  "@resetGroupConfirmation": {}
+  "@resetGroupConfirmation": {},
+  "bookmarkSaved": "Marque-page enregistré",
+  "@bookmarkSaved": {}
 }

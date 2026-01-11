@@ -7,9 +7,11 @@ import 'package:just_audio/just_audio.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:qurani/services/media_item_compat.dart';
 
+import 'package:intl/intl.dart' hide TextDirection;
 import 'l10n/app_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'models/surah.dart';
+import 'models/audio_bookmark.dart';
 import 'services/audio_service.dart';
 import 'services/download_service.dart';
 import 'services/preferences_service.dart';
@@ -56,7 +58,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   String? _errorMessage;
 
   Duration? _currentTrackDuration;
-  Duration? _bookmarkPosition;
   Duration? _savedSurahPositionBeforeVerseMode;
   
   int _currentVerse = 1;
@@ -74,7 +75,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
-  bool get _hasBookmark => _bookmarkPosition != null;
+
 
   @override
   void initState() {
@@ -679,27 +680,135 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   }
 
 
-  Future<void> _toggleBookmark() async {
+  Future<void> _addBookmark() async {
     if (_isPlayerDisposed) return;
     final position = _player.position;
-    if (_hasBookmark) {
-      await PreferencesService.removeBookmark(_currentOrder);
-      if (mounted) {
-        setState(() => _bookmarkPosition = null);
-      }
+    final l10n = AppLocalizations.of(context)!;
+    
+    // Optional: Ask for note? For now just save with timestamp/date
+    final bookmark = AudioBookmark.create(
+      surahId: _currentOrder,
+      positionMs: position.inMilliseconds,
+      reciterId: _reciterKey,
+    );
+    
+    await PreferencesService.saveAudioBookmark(bookmark);
+    
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.bookmarkSaved)),
+      );
+    }
+  }
+
+  Future<void> _showBookmarksDialog() async {
+    // Load bookmarks
+    final allBookmarks = await PreferencesService.getAudioBookmarks();
+    // Filter by current surah? Or show all? 
+    // Usually user wants for current audio, but seeing all is nice.
+    // Let's feature current surah first or filter.
+    // User asked "give possibility to take more than one bookmarks".
+    
+    if (!mounted) return;
+    
+    // Sort: Current Surah first, then by date descending
+    allBookmarks.sort((a, b) {
+      if (a.surahId == _currentOrder && b.surahId != _currentOrder) return -1;
+      if (b.surahId == _currentOrder && a.surahId != _currentOrder) return 1;
+      return b.createdAt.compareTo(a.createdAt);
+    });
+
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
+        return StatefulBuilder(
+          builder: (context, setStateSheet) {
+            return Container(
+               padding: const EdgeInsets.all(16),
+               child: Column(
+                 mainAxisSize: MainAxisSize.min,
+                 children: [
+                   Text(
+                     l10n.bookmarks,
+                     style: Theme.of(context).textTheme.titleLarge,
+                   ),
+                   const SizedBox(height: 16),
+                   if (allBookmarks.isEmpty)
+                      Expanded(child: Center(child: Text(l10n.noBookmarks))),
+                   if (allBookmarks.isNotEmpty)
+                     Expanded(
+                       child: ListView.builder(
+                         itemCount: allBookmarks.length,
+                         itemBuilder: (context, index) {
+                           final bm = allBookmarks[index];
+                           // final isCurrentSurah = bm.surahId == _currentOrder; // Unused for now
+                           final duration = Duration(milliseconds: bm.positionMs);
+                           final timeStr = _formatDuration(duration);
+                           
+                           // Get Surah Name
+                           final surahName = _surahs.firstWhere(
+                              (s) => s.order == bm.surahId, 
+                              orElse: () => Surah(name: 'Surah ${bm.surahId}', order: bm.surahId, totalVerses: 0)
+                           ).name;
+
+                           return ListTile(
+                             leading: const Icon(Icons.bookmark),
+                             title: Text("$surahName - $timeStr"),
+                             subtitle: Text(DateFormat.yMMMd().add_Hm().format(DateTime.fromMillisecondsSinceEpoch(bm.createdAt))),
+                             trailing: IconButton(
+                               icon: const Icon(Icons.delete, color: Colors.red),
+                               onPressed: () async {
+                                 await PreferencesService.removeAudioBookmark(bm.id);
+                                 final newList = await PreferencesService.getAudioBookmarks();
+                                 newList.sort((a, b) {
+                                  if (a.surahId == _currentOrder && b.surahId != _currentOrder) return -1;
+                                  if (b.surahId == _currentOrder && a.surahId != _currentOrder) return 1;
+                                  return b.createdAt.compareTo(a.createdAt);
+                                });
+                                 setStateSheet(() {
+                                    allBookmarks.clear();
+                                    allBookmarks.addAll(newList);
+                                 });
+                               },
+                             ),
+                             onTap: () {
+                               Navigator.pop(context);
+                               _playBookmark(bm);
+                             },
+                           );
+                         },
+                       ),
+                     ),
+                 ],
+               ),
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Future<void> _playBookmark(AudioBookmark bm) async {
+    if (bm.surahId != _currentOrder) {
+      await _playSurah(bm.surahId, autoPlay: true, resumePosition: Duration(milliseconds: bm.positionMs));
     } else {
-      await PreferencesService.saveBookmark(_currentOrder, position.inSeconds);
-      if (mounted) {
-        setState(() => _bookmarkPosition = position);
+      await _player.seek(Duration(milliseconds: bm.positionMs));
+      if (!_player.playing) {
+        await _player.play();
       }
     }
   }
 
-  Future<void> _jumpToBookmark() async {
-    if (_isPlayerDisposed) return;
-    if (_bookmarkPosition != null) {
-      await _player.seek(_bookmarkPosition!);
-    }
+  String _formatDuration(Duration d) {
+    String twoDigits(int n) => n.toString().padLeft(2, '0');
+    final hours = twoDigits(d.inHours);
+    final minutes = twoDigits(d.inMinutes.remainder(60));
+    final seconds = twoDigits(d.inSeconds.remainder(60));
+    return d.inHours > 0 ? '$hours:$minutes:$seconds' : '$minutes:$seconds';
   }
 
   Future<void> _promptDownloadCurrentSurah() async {
@@ -1485,15 +1594,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           ],
         ),
         _buildVerseControls(color, isRtl),
-        if (_hasBookmark && _bookmarkPosition != null)
-          Padding(
-            padding: const EdgeInsets.only(top: 12),
-            child: OutlinedButton.icon(
-              onPressed: _jumpToBookmark,
-              icon: const Icon(Icons.bookmark),
-              label: Text('${l10n.bookmarked} - ${_fmt(_bookmarkPosition!)}'),
-            ),
-          ),
+
       ],
     );
   }
@@ -1665,9 +1766,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             onPressed: () => _showSleepTimerDialog(context),
           ),
                                 IconButton(
-            icon: Icon(_hasBookmark ? Icons.bookmark : Icons.bookmark_border),
-            tooltip: _hasBookmark ? l10n.bookmarked : l10n.bookmark,
-            onPressed: _toggleBookmark,
+            icon: const Icon(Icons.bookmark_add),
+            tooltip: l10n.bookmark,
+            onPressed: _addBookmark,
+          ),
+          IconButton(
+            icon: const Icon(Icons.list),
+            tooltip: l10n.bookmarks,
+            onPressed: _showBookmarksDialog,
           ),
           IconButton(
             icon: const Icon(Icons.share),

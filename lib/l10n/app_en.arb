@@ -778,5 +778,7 @@
   "delete": "Delete",
   "@delete": {},
   "resetGroupConfirmation": "Are you sure you want to reset counters for this group?",
-  "@resetGroupConfirmation": {}
+  "@resetGroupConfirmation": {},
+  "bookmarkSaved": "Bookmark saved",
+  "@bookmarkSaved": {}
 }

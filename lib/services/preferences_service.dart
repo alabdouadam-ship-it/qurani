@@ -6,6 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:qurani/util/arabic_font_utils.dart';
+import 'package:qurani/models/audio_bookmark.dart';
 
 class PreferencesService {
   static SharedPreferences? _prefs;
@@ -328,7 +329,40 @@ class PreferencesService {
   }
 
   // Medium Priority: Bookmarking
+  static const String keyAudioBookmarks = 'audio_bookmarks_list_v1';
+
+  static Future<void> saveAudioBookmark(AudioBookmark bookmark) async {
+    final list = await getAudioBookmarks();
+    list.add(bookmark);
+    await _saveAudioBookmarksList(list);
+  }
+
+  static Future<List<AudioBookmark>> getAudioBookmarks() async {
+    final jsonStr = _prefs?.getString(keyAudioBookmarks);
+    if (jsonStr == null || jsonStr.isEmpty) return [];
+    try {
+      final List<dynamic> decoded = jsonDecode(jsonStr);
+      return decoded.map((e) => AudioBookmark.fromJson(e)).toList();
+    } catch (e) {
+      debugPrint("Error loading bookmarks: $e");
+      return [];
+    }
+  }
+
+  static Future<void> removeAudioBookmark(String id) async {
+    final list = await getAudioBookmarks();
+    list.removeWhere((b) => b.id == id);
+    await _saveAudioBookmarksList(list);
+  }
+
+  static Future<void> _saveAudioBookmarksList(List<AudioBookmark> list) async {
+    final jsonStr = jsonEncode(list.map((e) => e.toJson()).toList());
+    await _prefs?.setString(keyAudioBookmarks, jsonStr);
+  }
+
+  // Deprecated single bookmark methods (kept for reference or migration if needed)
   static Future<void> saveBookmark(int surahOrder, int positionSeconds) async {
+     // Migration to new system could happen here, or we just abandon old key
     await _prefs?.setInt('bookmark_$surahOrder', positionSeconds);
   }
 

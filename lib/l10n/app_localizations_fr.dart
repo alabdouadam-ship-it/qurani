@@ -1100,4 +1100,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get resetGroupConfirmation => 'Voulez-vous vraiment réinitialiser les compteurs de ce groupe ?';
+
+  @override
+  String get bookmarkSaved => 'Marque-page enregistré';
 }

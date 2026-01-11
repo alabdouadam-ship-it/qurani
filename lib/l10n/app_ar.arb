@@ -729,7 +729,7 @@
   "@bookmarkPage": {},
   "removeBookmark": "إزالة الحفظ",
   "@removeBookmark": {},
-  "noBookmarks": "لا توجد صفحات محفوظة",
+  "noBookmarks": "لا توجد إشارات مرجعية بعد",
   "@noBookmarks": {},
   "colorDefault": "افتراضي (كريمي)",
   "@colorDefault": {},
@@ -776,5 +776,7 @@
   "delete": "حذف",
   "@delete": {},
   "resetGroupConfirmation": "هل أنت متأكد من تصفير عدادات هذه المجموعة؟",
-  "@resetGroupConfirmation": {}
+  "@resetGroupConfirmation": {},
+  "bookmarkSaved": "تم حفظ الإشارة",
+  "@bookmarkSaved": {}
 }

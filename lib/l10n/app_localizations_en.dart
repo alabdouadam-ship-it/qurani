@@ -1100,4 +1100,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resetGroupConfirmation => 'Are you sure you want to reset counters for this group?';
+
+  @override
+  String get bookmarkSaved => 'Bookmark saved';
 }

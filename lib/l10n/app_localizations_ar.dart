@@ -1030,7 +1030,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get removeBookmark => 'إزالة الحفظ';
 
   @override
-  String get noBookmarks => 'لا توجد صفحات محفوظة';
+  String get noBookmarks => 'لا توجد إشارات مرجعية بعد';
 
   @override
   String get colorDefault => 'افتراضي (كريمي)';
@@ -1100,4 +1100,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get resetGroupConfirmation => 'هل أنت متأكد من تصفير عدادات هذه المجموعة؟';
+
+  @override
+  String get bookmarkSaved => 'تم حفظ الإشارة';
 }
