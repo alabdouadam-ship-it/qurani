@@ -2208,6 +2208,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Bookmark saved'**
   String get bookmarkSaved;
+
+  /// No description provided for @hadithLibrary.
+  ///
+  /// In en, this message translates to:
+  /// **'Hadith Library'**
+  String get hadithLibrary;
+
+  /// No description provided for @sahihain.
+  ///
+  /// In en, this message translates to:
+  /// **'Sahihain (The Two Sahihs)'**
+  String get sahihain;
+
+  /// No description provided for @sunan.
+  ///
+  /// In en, this message translates to:
+  /// **'The Four Sunan'**
+  String get sunan;
+
+  /// No description provided for @others.
+  ///
+  /// In en, this message translates to:
+  /// **'Other Books'**
+  String get others;
+
+  /// No description provided for @downloadBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Book'**
+  String get downloadBook;
+
+  /// No description provided for @bookNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This book is not available locally. Do you want to download it?'**
+  String get bookNotAvailable;
+
+  /// No description provided for @downloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading...'**
+  String get downloading;
+
+  /// No description provided for @open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get open;
+
+  /// No description provided for @book.
+  ///
+  /// In en, this message translates to:
+  /// **'Book'**
+  String get book;
+
+  /// No description provided for @grade.
+  ///
+  /// In en, this message translates to:
+  /// **'Grade'**
+  String get grade;
+
+  /// No description provided for @enterHadithNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Hadith number'**
+  String get enterHadithNumber;
+
+  /// No description provided for @hadithHiddenOrNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Hadith hidden or not found'**
+  String get hadithHiddenOrNotFound;
+
+  /// No description provided for @noReadableContent.
+  ///
+  /// In en, this message translates to:
+  /// **'No readable content found in this book.'**
+  String get noReadableContent;
+
+  /// No description provided for @chapterStartNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapter start not found in visible hadiths'**
+  String get chapterStartNotFound;
+
+  /// No description provided for @generalHadiths.
+  ///
+  /// In en, this message translates to:
+  /// **'General Hadiths'**
+  String get generalHadiths;
+
+  /// No description provided for @chapters.
+  ///
+  /// In en, this message translates to:
+  /// **'Chapters'**
+  String get chapters;
+
+  /// No description provided for @searchButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Go'**
+  String get searchButton;
+
+  /// No description provided for @allChapters.
+  ///
+  /// In en, this message translates to:
+  /// **'All Chapters'**
+  String get allChapters;
+
+  /// No description provided for @goButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Go'**
+  String get goButton;
+
+  /// No description provided for @newsAndNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'News and Notifications'**
+  String get newsAndNotifications;
+
+  /// No description provided for @noNewsMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'No current news or notifications'**
+  String get noNewsMessage;
+
+  /// No description provided for @bookUnavailableMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'It seems the book is not currently available, please check back later and we will work on providing it.'**
+  String get bookUnavailableMessage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

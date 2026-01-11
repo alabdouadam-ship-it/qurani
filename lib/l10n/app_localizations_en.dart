@@ -1103,4 +1103,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bookmarkSaved => 'Bookmark saved';
+
+  @override
+  String get hadithLibrary => 'Hadith Library';
+
+  @override
+  String get sahihain => 'Sahihain (The Two Sahihs)';
+
+  @override
+  String get sunan => 'The Four Sunan';
+
+  @override
+  String get others => 'Other Books';
+
+  @override
+  String get downloadBook => 'Download Book';
+
+  @override
+  String get bookNotAvailable => 'This book is not available locally. Do you want to download it?';
+
+  @override
+  String get downloading => 'Downloading...';
+
+  @override
+  String get open => 'Open';
+
+  @override
+  String get book => 'Book';
+
+  @override
+  String get grade => 'Grade';
+
+  @override
+  String get enterHadithNumber => 'Enter Hadith number';
+
+  @override
+  String get hadithHiddenOrNotFound => 'Hadith hidden or not found';
+
+  @override
+  String get noReadableContent => 'No readable content found in this book.';
+
+  @override
+  String get chapterStartNotFound => 'Chapter start not found in visible hadiths';
+
+  @override
+  String get generalHadiths => 'General Hadiths';
+
+  @override
+  String get chapters => 'Chapters';
+
+  @override
+  String get searchButton => 'Go';
+
+  @override
+  String get allChapters => 'All Chapters';
+
+  @override
+  String get goButton => 'Go';
+
+  @override
+  String get newsAndNotifications => 'News and Notifications';
+
+  @override
+  String get noNewsMessage => 'No current news or notifications';
+
+  @override
+  String get bookUnavailableMessage => 'It seems the book is not currently available, please check back later and we will work on providing it.';
 }

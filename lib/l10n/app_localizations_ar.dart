@@ -375,7 +375,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get readQuran => 'اقرأ القرآن';
 
   @override
-  String get hadith => 'الحديث';
+  String get hadith => 'حديث';
 
   @override
   String get tasbeeh => 'المسبحة';
@@ -1103,4 +1103,70 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get bookmarkSaved => 'تم حفظ الإشارة';
+
+  @override
+  String get hadithLibrary => 'مكتبة الحديث';
+
+  @override
+  String get sahihain => 'الصحيحان';
+
+  @override
+  String get sunan => 'السنن الأربعة';
+
+  @override
+  String get others => 'كتب أخرى';
+
+  @override
+  String get downloadBook => 'تحميل الكتاب';
+
+  @override
+  String get bookNotAvailable => 'هذا الكتاب غير موجود محلياً. هل تريد تحميله؟';
+
+  @override
+  String get downloading => 'جاري التحميل...';
+
+  @override
+  String get open => 'فتح';
+
+  @override
+  String get book => 'كتاب';
+
+  @override
+  String get grade => 'الدرجة';
+
+  @override
+  String get enterHadithNumber => 'أدخل رقم الحديث';
+
+  @override
+  String get hadithHiddenOrNotFound => 'الحديث مخفي أو غير موجود';
+
+  @override
+  String get noReadableContent => 'لا يوجد محتوى قابل للقراءة في هذا الكتاب.';
+
+  @override
+  String get chapterStartNotFound => 'بداية الفصل غير موجودة في الأحاديث الظاهرة';
+
+  @override
+  String get generalHadiths => 'أحاديث عامة';
+
+  @override
+  String get chapters => 'الفصول';
+
+  @override
+  String get searchButton => 'ابحث';
+
+  @override
+  String get allChapters => 'كل الفصول';
+
+  @override
+  String get goButton => 'اذهب';
+
+  @override
+  String get newsAndNotifications => 'أخبار وإشعارات';
+
+  @override
+  String get noNewsMessage => 'لا توجد حالياً أي أخبار أو إشعارات';
+
+  @override
+  String get bookUnavailableMessage => 'يبدو أن الكتاب غير متوفر حاليا، عد لاحقا وسنحرص على توفره ان شاء الله';
 }

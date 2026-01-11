@@ -7,7 +7,7 @@ description: >
 
 publish_to: 'none'
 
-version: 1.0.2+30
+version: 1.0.2+35
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -62,18 +62,23 @@ dependencies:
   geolocator: any
   http: any
   web: ^1.1.1
+
+  json_annotation: ^4.8.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^3.0.0        
   sqlite3: ^2.4.0
+  build_runner: ^2.10.4
+  json_serializable: ^6.11.3
 
 flutter:
   uses-material-design: true
   generate: true
   assets:
     - assets/data/
+    - assets/data/hadithdata/
     - assets/data/quran.db
     - assets/data/reciters.json
     - assets/audio/

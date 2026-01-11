@@ -1,0 +1,236 @@
+{
+	"abudawud": {
+		"name": "Sunan Abu Dawud",
+		"namear": "سنن أبو داوود",
+		"collection": [
+			{
+				"id": "ara-abudawud",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-abudawud.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.json"
+			},
+			{
+				"id": "eng-abudawud",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-abudawud.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-abudawud.json"
+			},
+			{
+				"id": "fra-abudawud",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-abudawud.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-abudawud.json"
+			}
+		]
+	},
+	"bukhari": {
+		"name": "Sahih al Bukhari",
+		"namear": "صحيح البخاري",
+		"collection": [
+			{
+				"id": "ara-bukhari",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-bukhari.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-bukhari.json"
+			},
+			{
+				"id": "eng-bukhari",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-bukhari.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-bukhari.json"
+			},
+			{
+				"id": "fra-bukhari",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-bukhari.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-bukhari.json"
+			}
+		]
+	},
+	"dehlawi": {
+		"name": "Forty Hadith of Shah Waliullah Dehlawi",
+		"namear": "أربعون حديث للشاه ولي الله الدهلوي",
+		"collection": [
+			{
+				"id": "ara-dehlawi",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-dehlawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-dehlawi.json"
+			},
+			{
+				"id": "eng-dehlawi",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-dehlawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-dehlawi.json"
+			},
+			{
+				"id": "fra-dehlawi",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-dehlawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-dehlawi.json"
+			}
+		]
+	},
+	"ibnmajah": {
+		"name": "Sunan Ibn Majah",
+		"namear": "سنن ابن ماجه",
+		"collection": [
+			{
+				"id": "ara-ibnmajah",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-ibnmajah.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-ibnmajah.json"
+			},
+			{
+				"id": "eng-ibnmajah",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-ibnmajah.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-ibnmajah.json"
+			},
+			{
+				"id": "fra-ibnmajah",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-ibnmajah.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-ibnmajah.json"
+			}
+		]
+	},
+	"malik": {
+		"name": "Muwatta Malik",
+		"namear": "موطأ الإمام مالك",
+		"collection": [
+			{
+				"id": "ara-malik",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-malik.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-malik.json"
+			},
+			{
+				"id": "eng-malik",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-malik.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-malik.json"
+			},
+			{
+				"id": "fra-malik",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-malik.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-malik.json"
+			}
+		]
+	},
+	"muslim": {
+		"name": "Sahih Muslim",
+		"namear": "صحيح مسلم",
+		"collection": [
+			{
+				"id": "ara-muslim",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-muslim.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-muslim.json"
+			},
+			{
+				"id": "eng-muslim",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-muslim.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-muslim.json"
+			},
+			{
+				"id": "fra-muslim",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-muslim.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-muslim.json"
+			}
+		]
+	},
+	"nasai": {
+		"name": "Sunan an Nasai",
+		"namear": "سنن النسائي",
+		"collection": [
+			{
+				"id": "ara-nasai",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-nasai.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nasai.json"
+			},
+			{
+				"id": "eng-nasai",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-nasai.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-nasai.json"
+			},
+			{
+				"id": "fra-nasai",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-nasai.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-nasai.json"
+			}
+		]
+	},
+	"nawawi": {
+		"name": "Forty Hadith of an-Nawawi",
+		"namear": "الأربعون النووية",
+		"collection": [
+			{
+				"id": "ara-nawawi",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-nawawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-nawawi.json"
+			},
+			{
+				"id": "eng-nawawi",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-nawawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-nawawi.json"
+			},
+			{
+				"id": "fra-nawawi",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-nawawi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-nawawi.json"
+			}
+		]
+	},
+	"qudsi": {
+		"name": "Forty Hadith Qudsi",
+		"namear": "أربعون حديث قدسي",
+		"collection": [
+			{
+				"id": "ara-qudsi",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-qudsi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-qudsi.json"
+			},
+			{
+				"id": "eng-qudsi",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-qudsi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-qudsi.json"
+			},
+			{
+				"id": "fra-qudsi",
+				"language": "French",
+				"link": "https://qurani.info/data/about-qurani/hadith/fra-qudsi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/fra-qudsi.json"
+			}
+		]
+	},
+	"tirmidhi": {
+		"name": "Jami At Tirmidhi",
+		"namear": "جامع الترمذي",
+		"collection": [
+			{
+				"id": "ara-tirmidhi",
+				"language": "Arabic",
+				"link": "https://qurani.info/data/about-qurani/hadith/ara-tirmidhi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-tirmidhi.json"
+			},
+			{
+				"id": "eng-tirmidhi",
+				"language": "English",
+				"link": "https://qurani.info/data/about-qurani/hadith/eng-tirmidhi.json",
+				"_link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/eng-tirmidhi.json"
+			}
+		]
+	}
+}

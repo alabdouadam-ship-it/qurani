@@ -16,6 +16,7 @@ import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
 import 'services/prayer_times_service.dart';
+import 'hadith_books_screen.dart';
 
 
 class OptionsScreen extends StatefulWidget {
@@ -248,6 +249,13 @@ class _OptionsScreenState extends State<OptionsScreen> {
           subtitle: '',
           color: Colors.orange,
         ),
+      OptionItem(
+        id: 'hadith',
+        icon: Icons.menu_book,
+        title: l10n.hadithLibrary,
+        subtitle: '',
+        color: Colors.brown,
+      ),
       if (!kIsWeb)
         OptionItem(
           id: 'qibla',
@@ -256,6 +264,13 @@ class _OptionsScreenState extends State<OptionsScreen> {
           subtitle: '',
           color: Colors.teal,
         ),
+      OptionItem(
+        id: 'news',
+        icon: Icons.notifications,
+        title: l10n.newsAndNotifications,
+        subtitle: '',
+        color: Colors.redAccent,
+      ),
     ];
     return items;
   }
@@ -396,6 +411,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
           ),
         );
         break;
+      case 'hadith':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HadithBooksScreen(),
+          ),
+        );
+        break;
       case 'prayer_times':
         Navigator.push(
           context,
@@ -409,6 +432,15 @@ class _OptionsScreenState extends State<OptionsScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => const SearchQuranScreen(),
+          ),
+        );
+        break;
+      case 'news':
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.noNewsMessage),
+            duration: const Duration(seconds: 3),
+            showCloseIcon: true,
           ),
         );
         break;

@@ -1103,4 +1103,70 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get bookmarkSaved => 'Marque-page enregistré';
+
+  @override
+  String get hadithLibrary => 'Bibliothèque Hadith';
+
+  @override
+  String get sahihain => 'Les Deux Sahihs';
+
+  @override
+  String get sunan => 'Les Quatre Sunan';
+
+  @override
+  String get others => 'Autres Livres';
+
+  @override
+  String get downloadBook => 'Télécharger le livre';
+
+  @override
+  String get bookNotAvailable => 'Ce livre n\'est pas disponible localement. Voulez-vous le télécharger ?';
+
+  @override
+  String get downloading => 'Téléchargement...';
+
+  @override
+  String get open => 'Ouvrir';
+
+  @override
+  String get book => 'Livre';
+
+  @override
+  String get grade => 'Grade';
+
+  @override
+  String get enterHadithNumber => 'Entrez le numéro du Hadith';
+
+  @override
+  String get hadithHiddenOrNotFound => 'Hadith caché ou introuvable';
+
+  @override
+  String get noReadableContent => 'Aucun contenu lisible trouvé dans ce livre.';
+
+  @override
+  String get chapterStartNotFound => 'Début du chapitre introuvable dans les hadiths visibles';
+
+  @override
+  String get generalHadiths => 'Hadiths Généraux';
+
+  @override
+  String get chapters => 'Chapitres';
+
+  @override
+  String get searchButton => 'Rechercher';
+
+  @override
+  String get allChapters => 'Tous les Chapitres';
+
+  @override
+  String get goButton => 'Aller';
+
+  @override
+  String get newsAndNotifications => 'Actualités et Notifications';
+
+  @override
+  String get noNewsMessage => 'Aucune actualité ou notification pour le moment';
+
+  @override
+  String get bookUnavailableMessage => 'Il semble que le livre ne soit pas disponible pour le moment, veuillez revenir plus tard, nous nous efforcerons de le rendre disponible.';
 }
