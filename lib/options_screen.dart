@@ -230,7 +230,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
          subtitle: '',
          color: Colors.cyan,
        ),
-      if (!kIsWeb)
+      //if (!kIsWeb)
         OptionItem(
           id: 'tasbeeh',
           icon: Icons.countertops,
