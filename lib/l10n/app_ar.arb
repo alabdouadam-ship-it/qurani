@@ -817,6 +817,9 @@
   "newsAndNotifications": "أخبار وإشعارات",
   "noNewsMessage": "لا توجد حالياً أي أخبار أو إشعارات",
   "bookUnavailableMessage": "يبدو أن الكتاب غير متوفر حاليا، عد لاحقا وسنحرص على توفره ان شاء الله",
+  "downloadOurApp": "حمل تطبيقنا",
+  "googlePlay": "جوجل بلاي",
+  "appStore": "آب ستور",
   "@searchButton": {},
   "@generalHadiths": {}
 }

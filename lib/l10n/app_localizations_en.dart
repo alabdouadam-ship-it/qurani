@@ -1169,4 +1169,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bookUnavailableMessage => 'It seems the book is not currently available, please check back later and we will work on providing it.';
+
+  @override
+  String get downloadOurApp => 'Download Our App';
+
+  @override
+  String get googlePlay => 'Google Play';
+
+  @override
+  String get appStore => 'App Store';
 }

@@ -819,6 +819,9 @@
   "newsAndNotifications": "News and Notifications",
   "noNewsMessage": "No current news or notifications",
   "bookUnavailableMessage": "It seems the book is not currently available, please check back later and we will work on providing it.",
+  "downloadOurApp": "Download Our App",
+  "googlePlay": "Google Play",
+  "appStore": "App Store",
   "@searchButton": {},
   "@generalHadiths": {}
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/models/hadith_model.dart';
@@ -205,6 +206,9 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     }
 
     final l10n = AppLocalizations.of(context)!;
+    final contentLocale = _getContentLocale();
+    final isRtl = contentLocale.languageCode == 'ar';
+    final textDirection = isRtl ? TextDirection.rtl : TextDirection.ltr;
     
     return Scaffold(
       appBar: AppBar(
@@ -231,7 +235,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
                      _visibleHadiths, 
                      _pageController, 
                      _book!.metadata, 
-                     _getContentLocale(),
+                     contentLocale,
                      hideChapterZero: _shouldHideChapterZero(),
                    )
                  );
@@ -242,13 +246,16 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
       ),
       body: _visibleHadiths.isEmpty
         ? Center(child: Text(l10n.noReadableContent))
-        : PageView.builder(
-            controller: _pageController,
-            onPageChanged: _onPageChanged,
-            itemCount: _visibleHadiths.length,
-            itemBuilder: (context, index) {
-               return _buildHadithPage(_visibleHadiths[index], widget.bookId, _book!.metadata);
-            },
+        : Directionality(
+            textDirection: textDirection,
+            child: PageView.builder(
+              controller: _pageController,
+              onPageChanged: _onPageChanged,
+              itemCount: _visibleHadiths.length,
+              itemBuilder: (context, index) {
+                 return _buildHadithPage(index, _visibleHadiths[index], widget.bookId, _book!.metadata);
+              },
+            ),
           ),
     );
   }
@@ -272,7 +279,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     return Localizations.localeOf(context);
   }
 
-  Widget _buildHadithPage(Hadith hadith, String bookId, HadithBookMetadata metadata) {
+  Widget _buildHadithPage(int index, Hadith hadith, String bookId, HadithBookMetadata metadata) {
     final theme = Theme.of(context);
     final l10n = AppLocalizations.of(context)!;
     
@@ -281,6 +288,9 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     Color gradeColor = Colors.green;
 
     final contentLocale = _getContentLocale();
+    final isRtl = contentLocale.languageCode == 'ar';
+    final textDirection = isRtl ? TextDirection.rtl : TextDirection.ltr;
+
 
     if (bookId.contains('bukhari') || bookId.contains('muslim')) {
        gradeStr = HadithGradeTranslationService.translateGrade('Sahih', contentLocale);
@@ -321,70 +331,76 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // Header: Hadith Number & Chapter/Book Info
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Clickable Hadith Number
-              InkWell(
-                onTap: _goToHadithNumber,
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primaryContainer,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        '${l10n.hadith} ${hadith.hadithnumber}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: theme.colorScheme.primary,
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Icon(Icons.arrow_drop_down, size: 18, color: theme.colorScheme.primary),
-                    ],
-                  ),
-                ),
-              ),
-              
-              // Clickable Section/Book Name
-              if (sectionName.isNotEmpty)
-                Flexible(
-                  child: InkWell(
-                    onTap: _showChapters,
-                    borderRadius: BorderRadius.circular(8),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Flexible(
-                            child: Text(
-                              sectionName,
-                              style: theme.textTheme.bodyMedium?.copyWith(
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-                                decorationStyle: TextDecorationStyle.dotted,
-                              ),
-                              textAlign: TextAlign.end,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+          // Use Directionality to ensure Header row respects Content Language? 
+          // Or should header follow App Language? 
+          // Use Directionality widget for the whole page content to be safe.
+          Directionality(
+            textDirection: textDirection,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Clickable Hadith Number
+                InkWell(
+                  onTap: _goToHadithNumber,
+                  borderRadius: BorderRadius.circular(16),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          '${l10n.hadith} ${hadith.hadithnumber}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: theme.colorScheme.primary,
                           ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(width: 4),
+                        Icon(Icons.arrow_drop_down, size: 18, color: theme.colorScheme.primary),
+                      ],
                     ),
                   ),
-                )
-              else if (hadith.reference != null)
-                Text(
-                  '${l10n.book}: ${hadith.reference!.book}',
-                  style: theme.textTheme.bodySmall,
                 ),
-            ],
+                
+                // Clickable Section/Book Name
+                if (sectionName.isNotEmpty)
+                  Flexible(
+                    child: InkWell(
+                      onTap: _showChapters,
+                      borderRadius: BorderRadius.circular(8),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                sectionName,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline,
+                                  decorationStyle: TextDecorationStyle.dotted,
+                                ),
+                                textAlign: TextAlign.end,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                else if (hadith.reference != null)
+                  Text(
+                    '${l10n.book}: ${hadith.reference!.book}',
+                    style: theme.textTheme.bodySmall,
+                  ),
+              ],
+            ),
           ),
           
           const Divider(height: 32),
@@ -397,39 +413,100 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
               fontFamily: 'Amiri Quran',
             ),
             textAlign: TextAlign.justify,
-            textDirection: TextDirection.rtl, // Should probably verify based on language
+            textDirection: textDirection, 
           ),
           
           const SizedBox(height: 24),
           
-          // Grading Footer
-          if (gradeStr != null)
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: gradeColor.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: gradeColor.withValues(alpha: 0.5)),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                   Text(
-                     l10n.grade,
-                     style: TextStyle(
-                       fontWeight: FontWeight.bold,
-                       color: gradeColor,
-                       fontSize: 12,
+          // Grading Footer & Web Navigation
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+               // Left Button (Visual Result: Previous in LTR, Next in RTL)
+               if (kIsWeb)
+                 Visibility(
+                   visible: index > 0,
+                   maintainSize: true, 
+                   maintainAnimation: true,
+                   maintainState: true,
+                   child: Container(
+                     decoration: BoxDecoration(
+                       color: theme.colorScheme.primary, // Solid color for high visibility
+                       shape: BoxShape.circle,
+                     ),
+                     child: IconButton(
+                       icon: const Icon(Icons.arrow_back_ios_new),
+                       color: theme.colorScheme.onPrimary, // White/Contrast color
+                       tooltip: l10n.previousLabel,
+                       onPressed: () {
+                          _pageController.previousPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                       },
                      ),
                    ),
-                   const SizedBox(height: 4),
-                   Text(
-                     gradeStr,
-                     style: TextStyle(color: gradeColor),
+                 ),
+
+               Expanded(
+                 child: gradeStr != null 
+                   ? Container(
+                       margin: const EdgeInsets.symmetric(horizontal: 8),
+                       padding: const EdgeInsets.all(12),
+                       decoration: BoxDecoration(
+                         color: gradeColor.withValues(alpha: 0.1),
+                         borderRadius: BorderRadius.circular(8),
+                         border: Border.all(color: gradeColor.withValues(alpha: 0.5)),
+                       ),
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                            Text(
+                              l10n.grade,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: gradeColor,
+                                fontSize: 12,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              gradeStr,
+                              style: TextStyle(color: gradeColor),
+                            ),
+                         ],
+                       ),
+                     )
+                   : const SizedBox(),
+               ),
+
+               // Right Button (Visual Result: Next in LTR, Previous in RTL)
+               if (kIsWeb)
+                 Visibility(
+                   visible: index < _visibleHadiths.length - 1,
+                   maintainSize: true, 
+                   maintainAnimation: true,
+                   maintainState: true,
+                   child: Container(
+                     decoration: BoxDecoration(
+                       color: theme.colorScheme.primary, // Solid color
+                       shape: BoxShape.circle,
+                     ),
+                     child: IconButton(
+                       icon: const Icon(Icons.arrow_forward_ios),
+                       color: theme.colorScheme.onPrimary, // White/Contrast color
+                       tooltip: l10n.nextLabel,
+                       onPressed: () {
+                          _pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                       },
+                     ),
                    ),
-                ],
-              ),
-            ),
+                 ),
+            ],
+          ),
         ],
       ),
     );
@@ -623,7 +700,7 @@ class HadithSearchDelegate extends SearchDelegate {
                       title: Text('${AppLocalizations.of(context)!.hadith} ${hadith.hadithnumber}', style: const TextStyle(fontWeight: FontWeight.bold)),
                       subtitle: Text(
                         displayText,
-                        textDirection: TextDirection.rtl,
+                        textDirection: contentLocale.languageCode == 'ar' ? TextDirection.rtl : TextDirection.ltr,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(fontFamily: 'Amiri Quran'),

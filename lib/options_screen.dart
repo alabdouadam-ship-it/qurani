@@ -5,6 +5,7 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
 import 'services/update_service.dart';
 
+import 'package:url_launcher/url_launcher.dart';
 import 'memorization_test_screen.dart';
 import 'qibla_screen.dart';
 import 'repetition_memorization_screen.dart';
@@ -124,13 +125,16 @@ class _OptionsScreenState extends State<OptionsScreen> {
         ],
       ),
       body: SafeArea(
-        child: Padding(
-          padding: ResponsiveConfig.getPadding(context),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final options = _getOptions(context);
-              final width = constraints.maxWidth;
-                    
+        child: Column(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: ResponsiveConfig.getPadding(context),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final options = _getOptions(context);
+                    final width = constraints.maxWidth;
+                          
                     // Determine column count
                     // On mobile: 2
                     // On web/tablet: adapt based on width
@@ -170,7 +174,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
                     
                     final aspectRatio = (itemHeight > 0) ? (itemWidth / itemHeight) : 1.0;
-
+      
                     return GridView.count(
                       crossAxisCount: crossAxisCount,
                       crossAxisSpacing: spaceC,
@@ -183,10 +187,108 @@ class _OptionsScreenState extends State<OptionsScreen> {
                     );
                   },
                 ),
+              ),
+            ),
+            if (kIsWeb) _buildWebFooter(context),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildWebFooter(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16), // Reduced padding
+      color: Theme.of(context).colorScheme.surface,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            l10n.downloadOurApp,
+            style: TextStyle(
+              fontSize: 14, // Reduced font size
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
-        );
-      }
+          const SizedBox(height: 8), // Reduced spacing
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildStoreButton(
+                context,
+                icon: Icons.android,
+                label: l10n.googlePlay,
+                url: 'https://play.google.com/store/apps/details?id=com.qurani.app',
+                color: const Color(0xFF3DDC84), // Android Green
+              ),
+              const SizedBox(width: 16), // Reduced spacing
+              _buildStoreButton(
+                context,
+                icon: Icons.apple,
+                label: l10n.appStore,
+                url: 'https://apps.apple.com/app/id6757434993',
+                color: Colors.black, // Apple Black
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildStoreButton(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required String url,
+    required Color color,
+  }) {
+    return InkWell(
+      onTap: () async {
+        final uri = Uri.parse(url);
+        if (await canLaunchUrl(uri)) {
+          await launchUrl(uri);
+        }
+      },
+      borderRadius: BorderRadius.circular(30),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // Reduced padding
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: color.withOpacity(0.3),
+              blurRadius: 4, // Reduced blur
+              offset: const Offset(0, 2), // Reduced offset
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              icon,
+              color: Colors.white,
+              size: 20, // Reduced icon size
+            ),
+            const SizedBox(width: 6),
+            Text(
+              label,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 12, // Reduced font size
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   List<OptionItem> _getOptions(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;

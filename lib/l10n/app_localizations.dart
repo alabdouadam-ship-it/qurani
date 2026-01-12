@@ -2340,6 +2340,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'It seems the book is not currently available, please check back later and we will work on providing it.'**
   String get bookUnavailableMessage;
+
+  /// No description provided for @downloadOurApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Download Our App'**
+  String get downloadOurApp;
+
+  /// No description provided for @googlePlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Google Play'**
+  String get googlePlay;
+
+  /// No description provided for @appStore.
+  ///
+  /// In en, this message translates to:
+  /// **'App Store'**
+  String get appStore;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

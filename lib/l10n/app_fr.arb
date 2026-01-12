@@ -817,6 +817,9 @@
   "newsAndNotifications": "Actualités et Notifications",
   "noNewsMessage": "Aucune actualité ou notification pour le moment",
   "bookUnavailableMessage": "Il semble que le livre ne soit pas disponible pour le moment, veuillez revenir plus tard, nous nous efforcerons de le rendre disponible.",
+  "downloadOurApp": "Téléchargez notre application",
+  "googlePlay": "Google Play",
+  "appStore": "App Store",
   "@searchButton": {},
   "@generalHadiths": {}
 }

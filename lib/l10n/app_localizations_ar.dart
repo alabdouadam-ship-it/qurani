@@ -1169,4 +1169,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get bookUnavailableMessage => 'يبدو أن الكتاب غير متوفر حاليا، عد لاحقا وسنحرص على توفره ان شاء الله';
+
+  @override
+  String get downloadOurApp => 'حمل تطبيقنا';
+
+  @override
+  String get googlePlay => 'جوجل بلاي';
+
+  @override
+  String get appStore => 'آب ستور';
 }
