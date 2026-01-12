@@ -407,6 +407,14 @@ class AdhanScheduler {
   }) async {
     debugPrint('[AdhanScheduler] Scheduling Adhan alarms (Platform: ${Platform.operatingSystem})...');
     
+    // CRITICAL: Ensure files are cached/copied BEFORE scheduling
+    final now = DateTime.now();
+    for (final prayerId in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha']) {
+      if (toggles[prayerId] ?? false) {
+        await _ensureAdhanFileExists(soundKey, prayerId == 'fajr');
+      }
+    }
+    
     // Convert times to Map<String, DateTime> for NotificationService
     if (Platform.isIOS) {
       await NotificationService.scheduleRemainingAdhans(times: times, toggles: toggles, soundKey: soundKey);
@@ -416,16 +424,7 @@ class AdhanScheduler {
 
     if (!Platform.isAndroid) return;
     
-    debugPrint('[AdhanScheduler] Scheduling Adhan alarms...');
-    final now = DateTime.now();
-    
-    // Pre-cache the sound files we'll need
-    for (final prayerId in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha']) {
-      if (toggles[prayerId] ?? false) {
-        await _ensureAdhanFileExists(soundKey, prayerId == 'fajr');
-      }
-    }
-    
+    debugPrint('[AdhanScheduler] Scheduling Adhan alarms for Android...');
     // Schedule alarms for enabled prayers
     for (final entry in times.entries) {
       final prayerId = entry.key;
@@ -458,7 +457,9 @@ class AdhanScheduler {
 
   static void _scheduleForegroundTimers(Map<String, DateTime> times, Map<String, bool> toggles) {
     // Cancel existing timers
-    for (var t in _foregroundTimers) t.cancel();
+    for (var t in _foregroundTimers) {
+      t.cancel();
+    }
     _foregroundTimers.clear();
 
     final now = DateTime.now();
@@ -486,14 +487,32 @@ class AdhanScheduler {
   }
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {
-    if (!Platform.isAndroid) return; // Android-only
-    
     debugPrint('[AdhanScheduler] TEST: Scheduling test Adhan playback after $seconds seconds with sound: $soundKey');
     final triggerTime = DateTime.now().add(Duration(seconds: seconds));
     
     // Pre-cache the test adhan file
     await _ensureAdhanFileExists(soundKey, false);
     await _ensureAdhanFileExists(soundKey, true);
+
+    if (Platform.isIOS) {
+        // For iOS test, trigger timer immediately after delay
+        Timer(Duration(seconds: seconds), () {
+          debugPrint('[AdhanScheduler] TEST: Triggering iOS foreground callback');
+          _playAdhanCallback(999991);
+        });
+        // Also schedule a notification
+        await NotificationService.scheduleAdhanNotification(
+          id: 999991, 
+          triggerTimeLocal: triggerTime, 
+          title: 'Test Adhan', 
+          body: 'Testing Adhan Sound', 
+          soundKey: soundKey,
+          isFajr: true,
+        );
+        return;
+    }
+
+    if (!Platform.isAndroid) return; // Android-only
     
     // Schedule test with a unique ID that will trigger fajr
     await AndroidAlarmManager.oneShotAt(
