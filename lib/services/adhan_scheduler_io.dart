@@ -63,17 +63,26 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
     if (!await cacheDir.exists()) {
       await cacheDir.create(recursive: true);
     }
+    
+    // 1. Cache FULL audio for in-app playback (Android & iOS Foreground/Background)
     final assetPath = _assetFor(soundKey, isFajr);
     final fileName = assetPath.split('/').last;
     final file = File('${cacheDir.path}/$fileName');
-    if (await file.exists()) {
-      return true;
-    }
-    final byteData = await rootBundle.load(assetPath);
-    await file.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
-    debugPrint('[AdhanScheduler] ✓ Cached: $fileName (${byteData.lengthInBytes} bytes)');
     
-    // iOS specific: Copy to Library/Sounds for notification sound
+    // Check if full audio exists in cache
+    if (!await file.exists()) {
+      try {
+        final byteData = await rootBundle.load(assetPath);
+        await file.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
+        debugPrint('[AdhanScheduler] ✓ Cached full audio: $fileName');
+      } catch (e) {
+        debugPrint('[AdhanScheduler] ✗ Failed to load asset $assetPath: $e');
+        // If we can't load the full asset, we probably can't play it.
+        // But we continue to try iOS notification sound setup.
+      }
+    }
+
+    // 2. iOS Specific: Copy SHORT/IOS audio to Library/Sounds for Notifications
     if (Platform.isIOS) {
       try {
         final libDir = await getLibraryDirectory();
@@ -81,17 +90,37 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
         if (!await soundsDir.exists()) {
           await soundsDir.create(recursive: true);
         }
-        final iosFile = File('${soundsDir.path}/$fileName');
-        if (!await iosFile.exists()) {
-          await file.copy(iosFile.path);
-          debugPrint('[AdhanScheduler] ✓ Copied to Library/Sounds: $fileName');
+        
+        // Use [key]-ios.mp3 for notification sound
+        // We assume this file exists for the supported keys
+        final iosFileName = '$soundKey-ios.mp3'; 
+        final iosAssetPath = 'assets/audio/$iosFileName';
+        final iosDestFile = File('${soundsDir.path}/$iosFileName');
+        
+        // FORCE COPY: Always overwrite or copy if missing
+        // Verify asset exists first
+        try {
+           final iosByteData = await rootBundle.load(iosAssetPath);
+           
+           // If file exists, delete it first to ensure fresh copy (Force Copy)
+           if (await iosDestFile.exists()) {
+             await iosDestFile.delete();
+           }
+           
+           await iosDestFile.writeAsBytes(iosByteData.buffer.asUint8List(), flush: true);
+           debugPrint('[AdhanScheduler] ✓ Force-copied to Library/Sounds: $iosFileName');
+        } catch (e) {
+           debugPrint('[AdhanScheduler] ⚠ Could not find/copy iOS specific asset $iosAssetPath: $e');
+           // Fallback? If specific ios file doesn't exist, maybe try to copy the full file?
+           // Only if it's short enough? No, safer to fail silently and let default or silence happen 
+           // rather than copying a large file that won't play.
         }
       } catch (e) {
-        debugPrint('[AdhanScheduler] ✗ Failed to copy to Library/Sounds: $e');
+        debugPrint('[AdhanScheduler] ✗ Failed to handle iOS Library/Sounds: $e');
       }
     }
 
-    return true;
+    return await file.exists();
   } catch (e) {
     debugPrint('[AdhanScheduler] ✗ Failed to cache $soundKey (fajr: $isFajr): $e');
     return false;

@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'dart:io';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -151,7 +152,14 @@ class NotificationService {
     );
     
     // iOS notification details
-    final soundFileName = isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3';
+    // Use the iOS-specific short file for the notification sound
+    String soundFileName;
+    if (Platform.isIOS) {
+       soundFileName = '$soundKey-ios.mp3';
+    } else {
+       soundFileName = isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3';
+    }
+
     final darwinDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentBadge: true,
