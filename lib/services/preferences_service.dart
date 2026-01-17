@@ -605,6 +605,17 @@ class PreferencesService {
     return saved;
   }
 
+  // Memorization Test Settings
+  static const String keyMemorizationQuestionLimit = 'memorization_question_limit';
+
+  static Future<void> saveMemorizationQuestionLimit(int limit) async {
+    await _prefs?.setInt(keyMemorizationQuestionLimit, limit);
+  }
+
+  static int getMemorizationQuestionLimit() {
+    return _prefs?.getInt(keyMemorizationQuestionLimit) ?? 25;
+  }
+
   static Future<void> saveArabicFontFamily(String fontKey) async {
     final normalized = _normalizeArabicFontKey(fontKey);
     await _prefs?.setString(keyArabicFontFamily, normalized);

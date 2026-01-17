@@ -24,9 +24,11 @@ class TextNormalizer {
     // Normalize ta marbuta (ة → ه)
     s = s.replaceAll('\u0629', '\u0647');
     
-    // Normalize alef maksura (ى → ي)
-    // Also handle Farsi Yeh (\u06CC) -> Arabic Yeh (\u064A)
-    s = s.replaceAll(RegExp(r"[\u0649\u06CC]"), '\u064A');
+    // Normalize Alef Maqsura case:
+    // User requested to SEPARATE ى from ي.
+    // So we ONLY handle Farsi Yeh (\u06CC) -> Arabic Yeh (\u064A)
+    // We do NOT convert \u0649 (ى) to \u064A (ي) anymore.
+    s = s.replaceAll('\u06CC', '\u064A');
     
     // Normalize waw with hamza (ؤ → و)
     s = s.replaceAll('\u0624', '\u0648');

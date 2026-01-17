@@ -5,6 +5,7 @@ import 'package:qurani/models/hadith_model.dart';
 import 'package:qurani/services/hadith_service.dart';
 import 'package:qurani/services/chapter_translation_service.dart';
 import 'package:qurani/services/hadith_grade_translation_service.dart';
+import 'package:share_plus/share_plus.dart';
 
 class HadithReadScreen extends StatefulWidget {
   final String bookId;
@@ -60,6 +61,59 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     setState(() {
       _currentPage = page;
     });
+  }
+
+  String _cleanText(String text) {
+    return text.replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n');
+  }
+
+  void _shareHadith(Hadith hadith) {
+    if (_book == null) return;
+    
+    final l10n = AppLocalizations.of(context)!;
+    final contentLocale = _getContentLocale();
+    
+    // 1. Get Section Name
+    String sectionName = '';
+    if (hadith.reference != null) {
+      final sectionId = hadith.reference!.book.toString();
+      final englishTitle = _book!.metadata.sections[sectionId] ?? '';
+      if (sectionId == '0' || englishTitle.trim().isEmpty) {
+        sectionName = l10n.generalHadiths;
+      } else {
+        sectionName = ChapterTranslationService.translate(englishTitle, contentLocale);
+      }
+    }
+
+    // 2. Get Grade
+    String gradeStr = '';
+    if (widget.bookId.contains('bukhari') || widget.bookId.contains('muslim')) {
+       gradeStr = HadithGradeTranslationService.translateGrade('Sahih', contentLocale);
+    } else if (hadith.grades.isNotEmpty) {
+       gradeStr = hadith.grades.map((g) {
+         final scholar = HadithGradeTranslationService.translateScholar(g.name, contentLocale);
+         final grade = HadithGradeTranslationService.translateGrade(g.grade, contentLocale);
+         return '$scholar: $grade';
+       }).join('\n');
+    }
+
+    // 3. Construct Text
+    final sb = StringBuffer();
+    sb.writeln(_cleanText(hadith.text));
+    sb.writeln();
+    sb.writeln();
+    
+    if (gradeStr.isNotEmpty) {
+      sb.writeln('${l10n.grade}: $gradeStr');
+    }
+    
+    sb.writeln('${widget.bookName} - $sectionName');
+    sb.writeln('${l10n.hadith} ${hadith.hadithnumber}');
+    sb.writeln();
+    sb.writeln(l10n.shareHadithFooter);
+
+    // 4. Share
+    Share.share(sb.toString());
   }
 
   void _goToHadithNumber() async {
@@ -194,7 +248,16 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     if (_isLoading) {
       return Scaffold(
         appBar: AppBar(title: Text(widget.bookName)),
-        body: const Center(child: CircularProgressIndicator()),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircularProgressIndicator(),
+              const SizedBox(height: 16),
+              Text(AppLocalizations.of(context)!.loadingBook),
+            ],
+          ),
+        ),
       );
     }
 
@@ -224,6 +287,15 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
         ),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            tooltip: l10n.share,
+            onPressed: () {
+              if (_visibleHadiths.isNotEmpty) {
+                 _shareHadith(_visibleHadiths[_currentPage]);
+              }
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.search),
             tooltip: l10n.search,
@@ -407,7 +479,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
           
           // Hadith Text
           SelectableText(
-            hadith.text,
+            _cleanText(hadith.text),
             style: theme.textTheme.headlineSmall?.copyWith(
               height: 1.6,
               fontFamily: 'Amiri Quran',
@@ -692,9 +764,10 @@ class HadithSearchDelegate extends SearchDelegate {
                   separatorBuilder: (_, __) => const Divider(),
                   itemBuilder: (context, index) {
                     final hadith = results[index];
-                    final displayText = hadith.text.length > 100 
-                        ? '${hadith.text.substring(0, 100)}...' 
-                        : hadith.text;
+                    final cleanText = hadith.text.replaceAll(RegExp(r'<br\s*/?>', caseSensitive: false), '\n');
+                    final displayText = cleanText.length > 100 
+                        ? '${cleanText.substring(0, 100)}...' 
+                        : cleanText;
                         
                     return ListTile(
                       title: Text('${AppLocalizations.of(context)!.hadith} ${hadith.hadithnumber}', style: const TextStyle(fontWeight: FontWeight.bold)),

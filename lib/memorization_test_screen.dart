@@ -8,6 +8,8 @@ import 'models/surah.dart';
 import 'test_questions_screen.dart';
 import 'memorization_stats_screen.dart';
 
+import 'package:qurani/services/preferences_service.dart';
+
 class MemorizationTestScreen extends StatefulWidget {
   const MemorizationTestScreen({super.key});
 
@@ -18,7 +20,8 @@ class MemorizationTestScreen extends StatefulWidget {
 class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   final Set<int> _selectedSurahs = {};
   String _surahQuery = '';
-  int? _selectedJuz;
+  final Set<int> _selectedJuzs = {};
+  // _surahQuery is already defined above
   bool _isSurahMode = true;
   bool _isGenerating = false;
   late final TextEditingController _searchController;
@@ -47,14 +50,18 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
       } else {
         _selectedSurahs.add(surah.order);
       }
-      _selectedJuz = null;
+      _selectedJuzs.clear();
       _isSurahMode = true;
     });
   }
 
-  Future<void> _selectJuz(int juz) async {
+  void _toggleJuz(int juz) {
     setState(() {
-      _selectedJuz = juz;
+      if (_selectedJuzs.contains(juz)) {
+        _selectedJuzs.remove(juz);
+      } else {
+        _selectedJuzs.add(juz);
+      }
       _selectedSurahs.clear();
       _isSurahMode = false;
     });
@@ -195,13 +202,13 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   }
 
   Future<void> _startTest() async {
-    if (_selectedSurahs.isEmpty && _selectedJuz == null) return;
+    if (_selectedSurahs.isEmpty && _selectedJuzs.isEmpty) return;
     setState(() => _isGenerating = true);
 
     try {
       final questions = await MemorizationTestService.instance.generateQuestions(
         surahNumbers: _selectedSurahs.isEmpty ? null : _selectedSurahs.toList(),
-        juzNumber: _selectedJuz,
+        juzNumbers: _selectedJuzs.isEmpty ? null : _selectedJuzs.toList(),
       );
 
       if (!mounted) return;
@@ -220,7 +227,8 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           builder: (_) => TestQuestionsScreen(
             questions: questions,
             surahNumbers: _selectedSurahs.isEmpty ? null : _selectedSurahs.toList(),
-            juzNumber: _selectedJuz,
+
+            juzNumber: _selectedJuzs.isNotEmpty ? _selectedJuzs.first : null, // Providing first Juz just for stats compatibility if needed, though strictly we should update stats too if it takes single int
           ),
         ),
       );
@@ -256,6 +264,11 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         elevation: 2,
         actions: [
           IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'الإعدادات',
+            onPressed: () => _showSettingsDialog(context),
+          ),
+          IconButton(
             icon: const Icon(Icons.bar_chart),
             tooltip: 'إحصائيات',
             onPressed: () {
@@ -280,7 +293,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                   child: FilledButton.tonal(
                     onPressed: () => setState(() {
                       _isSurahMode = true;
-                      _selectedJuz = null;
+                      _selectedJuzs.clear();
                     }),
                     style: FilledButton.styleFrom(
                       backgroundColor: _isSurahMode
@@ -319,7 +332,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                 ? _buildSurahSelector()
                 : _buildJuzSelector(),
           ),
-          if (_selectedSurahs.isNotEmpty || _selectedJuz != null)
+          if (_selectedSurahs.isNotEmpty || _selectedJuzs.isNotEmpty)
             SafeArea(
               child: Container(
                 width: double.infinity,
@@ -386,7 +399,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
       itemCount: 30,
       itemBuilder: (context, index) {
         final juz = index + 1;
-        final isSelected = _selectedJuz == juz;
+        final isSelected = _selectedJuzs.contains(juz);
         String juzLabel;
         if (juz == 29) {
           juzLabel = 'جزء تبارك';
@@ -396,7 +409,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           juzLabel = '${l10n.juzLabel} $juz';
         }
         return InkWell(
-          onTap: () => _selectJuz(juz),
+          onTap: () => _toggleJuz(juz),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
@@ -422,6 +435,65 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
               ),
             ),
           ),
+        );
+      },
+    );
+  }
+
+  Future<void> _showSettingsDialog(BuildContext context) async {
+    final currentLimit = PreferencesService.getMemorizationQuestionLimit();
+    int? selectedLimit = currentLimit;
+
+    final l10n = AppLocalizations.of(context)!;
+    await showDialog<void>(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: Text(l10n.testSettingsTitle),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(l10n.maxQuestionsLabel),
+                   const SizedBox(height: 8),
+                   DropdownButton<int>(
+                     value: selectedLimit,
+                     isExpanded: true,
+                     items: [10, 15, 20, 25, 30, 40, 50, 75, 100, 200].map((int value) {
+                       return DropdownMenuItem<int>(
+                         value: value,
+                         child: Text(value.toString()),
+                       );
+                     }).toList(),
+                     onChanged: (int? newValue) {
+                       if (newValue != null) {
+                         setState(() {
+                           selectedLimit = newValue;
+                         });
+                       }
+                     },
+                   ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text(l10n.cancel),
+                ),
+                TextButton(
+                  onPressed: () {
+                    if (selectedLimit != null) {
+                      PreferencesService.saveMemorizationQuestionLimit(selectedLimit!);
+                    }
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(l10n.save),
+                ),
+              ],
+            );
+          },
         );
       },
     );

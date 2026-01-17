@@ -27,6 +27,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   int? _selectedSurah; // null = all Quran
   Map<int, String> _surahNames = {};
   Map<int, String> _surahNamesEn = {};
+  String _selectedLanguage = 'ar'; // 'ar', 'en', 'fr'
 
   @override
   void initState() {
@@ -45,8 +46,11 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     }
   }
 
+  bool _isDisposed = false;
+
   @override
   void dispose() {
+    _isDisposed = true;
     _controller.dispose();
     _focusNode.dispose();
     _player.dispose();
@@ -57,8 +61,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     // Preserve single spaces at start/end (helps search for standalone words)
     // but collapse multiple consecutive spaces to one
+    // but collapse multiple consecutive spaces to one
     final q = query.replaceAll(RegExp(r' {2,}'), ' ');
-    final normalized = QuranSearchService.normalize(q);
+    final normalized = QuranSearchService.normalize(q, language: _selectedLanguage);
     if (normalized.length < 2) {
       setState(() => _results = const <SearchAyah>[]);
       if (normalized.isNotEmpty) {
@@ -73,7 +78,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       _lastQuery = q;
     });
     try {
-      final res = await QuranSearchService.instance.search(q, surahOrder: _selectedSurah);
+      final res = await QuranSearchService.instance.search(q, surahOrder: _selectedSurah, language: _selectedLanguage);
       if (!mounted) return;
       setState(() {
         _results = res.ayahs;
@@ -95,7 +100,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       return const TextSpan(text: '');
     }
 
-    final normalizedQuery = QuranSearchService.normalize(query);
+    final normalizedQuery = QuranSearchService.normalize(query, language: _selectedLanguage);
     if (normalizedQuery.isEmpty) {
       return TextSpan(
         text: text,
@@ -109,7 +114,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     int offset = 0;
     for (final rune in text.runes) {
       final segment = String.fromCharCode(rune);
-      final normalizedSegment = QuranSearchService.normalize(segment);
+      final normalizedSegment = QuranSearchService.normalize(segment, language: _selectedLanguage);
       final segmentLength = segment.length;
       final nextOffset = offset + segmentLength;
 
@@ -188,11 +193,21 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final messenger = ScaffoldMessenger.of(context);
     
     try {
-      String reciter = PreferencesService.getReciter();
+      String reciter;
+      
+      // Use translated audio if searching in English or French
+      if (_selectedLanguage == 'en') {
+        reciter = 'arabic_english';
+      } else if (_selectedLanguage == 'fr') {
+        reciter = 'arabic_french';
+      } else {
+        reciter = PreferencesService.getReciter();
+      }
       
       // Check if selected reciter has ayah-by-ayah audio
       // If not, fallback to Alafasy (afs)
       final reciterConfig = await ReciterConfigService.getReciter(reciter);
+      // For translations, we know they have verse-by-verse, but safer to check existing logic
       if (reciterConfig == null || !reciterConfig.hasVerseByVerse()) {
         debugPrint('Reciter $reciter has no ayah audio, falling back to Alafasy');
         reciter = 'afs'; // Alafasy
@@ -203,8 +218,10 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
         surahOrder: ayah.surahOrder,
         verseNumber: ayah.numberInSurah,
       );
+      
+      if (_isDisposed || !mounted) return;
+
       if (uri == null) {
-        if (!mounted) return;
         messenger.showSnackBar(
           SnackBar(content: Text(l10n.errorLoadingAudio)),
         );
@@ -214,8 +231,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       // If this is a network URL and there is no internet, show a clear message
       if (uri.scheme != 'file') {
         final hasNet = await _hasInternet();
+        if (_isDisposed || !mounted) return;
+        
         if (!hasNet) {
-          if (!mounted) return;
           messenger.showSnackBar(
             SnackBar(content: Text(l10n.audioInternetRequired)),
           );
@@ -227,10 +245,14 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
       // Stop any current playback
       try {
-        await _player.stop();
+        if (!_isDisposed) {
+          await _player.stop();
+        }
       } catch (_) {
         // Ignore errors from stop
       }
+      
+      if (_isDisposed) return;
 
       // Get surah name for MediaItem
       final surahName = QuranSearchService.instance.surahName(ayah.surahOrder);
@@ -259,15 +281,22 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
         );
         return;
       }
+      
+      if (_isDisposed) return;
 
       final playlist = ConcatenatingAudioSource(children: sources);
-      await _player.setAudioSource(playlist, preload: true);
-      await _player.play();
+      if (!_isDisposed) {
+        await _player.setAudioSource(playlist, preload: true);
+        if (!_isDisposed) {
+          await _player.play();
+        }
+      }
     } catch (e, stackTrace) {
+      if (_isDisposed) return;
       debugPrint('Audio playback error: $e');
       debugPrint('Stack trace: $stackTrace');
       if (!mounted) return;
-      final messenger = ScaffoldMessenger.of(context);
+      // We already captured messenger, but check mounted for SnackBar safety
       final hasNet = await _hasInternet();
       if (!mounted) return;
       messenger.showSnackBar(
@@ -359,6 +388,62 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.searchQuran),
+        actions: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.2),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: Colors.white.withValues(alpha: 0.5)),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                value: _selectedLanguage,
+                dropdownColor: theme.appBarTheme.backgroundColor ?? theme.primaryColor,
+                icon: const Icon(Icons.language, color: Colors.white),
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  color: Colors.white,
+                ),
+                items: [
+                   DropdownMenuItem(
+                     value: 'ar', 
+                     child: Text(
+                       l10n.searchLanguageArabic, 
+                       style: TextStyle(color: _selectedLanguage == 'ar' ? theme.colorScheme.secondary : null),
+                     ),
+                   ),
+                   DropdownMenuItem(
+                     value: 'en', 
+                     child: Text(
+                       l10n.searchLanguageEnglish,
+                       style: TextStyle(color: _selectedLanguage == 'en' ? theme.colorScheme.secondary : null),
+                     ),
+                   ),
+                   DropdownMenuItem(
+                     value: 'fr', 
+                     child: Text(
+                       l10n.searchLanguageFrench,
+                       style: TextStyle(color: _selectedLanguage == 'fr' ? theme.colorScheme.secondary : null),
+                     ),
+                   ),
+                ],
+                onChanged: (val) {
+                  if (val != null && val != _selectedLanguage) {
+                    setState(() {
+                       _selectedLanguage = val;
+                       _results = []; // Clear results on language change
+                       _lastQuery = '';
+                       _isSearching = false;
+                       _controller.clear();
+                    });
+                  }
+                },
+              ),
+            ),
+          ),
+          const SizedBox(width: 16),
+        ],
       ),
       body: Column(
         children: [
@@ -523,7 +608,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                   child: ListTile(
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                                     title: Directionality(
-                                      textDirection: TextDirection.rtl,
+                                      textDirection: _selectedLanguage == 'ar' ? TextDirection.rtl : TextDirection.ltr,
                                       child: DefaultTextStyle(
                                         style: theme.textTheme.bodyLarge?.copyWith(
                                               fontSize: PreferencesService.getFontSize(),
@@ -536,7 +621,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                               color: colorScheme.onSurface,
                                             ),
                                         child: RichText(
-                                          textAlign: TextAlign.right,
+                                          textAlign: _selectedLanguage == 'ar' ? TextAlign.right : TextAlign.left,
                                           text: _buildHighlightedText(a.text, _lastQuery, colorScheme),
                                         ),
                                       ),

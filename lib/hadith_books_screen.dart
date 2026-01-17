@@ -147,19 +147,19 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _LanguageChip(
-                  label: 'عربي',
+                  label: l10n.booksInArabic,
                   isSelected: _selectedLanguage == 'Arabic',
                   onTap: () => _onLanguageSelected('Arabic'),
                 ),
                 const SizedBox(width: 12),
                 _LanguageChip(
-                  label: 'English',
+                  label: l10n.booksInEnglish,
                   isSelected: _selectedLanguage == 'English',
                   onTap: () => _onLanguageSelected('English'),
                 ),
                 const SizedBox(width: 12),
                 _LanguageChip(
-                  label: 'Français',
+                  label: l10n.booksInFrench,
                   isSelected: _selectedLanguage == 'French',
                   onTap: () => _onLanguageSelected('French'),
                 ),

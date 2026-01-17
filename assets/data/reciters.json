@@ -104,6 +104,13 @@
             "nameLatin": "Ahmed Nufais",
             "ayahsPath": "",
             "surahsPath": "https://server16.mp3quran.net/nufais/Rewayat-Hafs-A-n-Assem"
+        },
+        {
+            "code": "dussary",
+            "nameAr": "ياسر الدوسري",
+            "nameLatin": "Yasser Ad-Dussary",
+            "ayahsPath": "https://everyayah.com/data/Yasser_Ad-Dussary_128kbps",
+            "surahsPath": "https://server11.mp3quran.net/yasser"
         }
     ],
     "urlPatterns": {

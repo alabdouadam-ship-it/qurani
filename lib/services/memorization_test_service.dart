@@ -1,12 +1,17 @@
 import 'dart:math';
 import 'package:qurani/services/quran_repository.dart';
 import 'package:qurani/services/quran_constants.dart';
+import 'package:qurani/services/preferences_service.dart';
 
 class MemorizationTestService {
   MemorizationTestService._();
   static final MemorizationTestService instance = MemorizationTestService._();
 
   final _random = Random();
+
+  int _getQuestionLimit() {
+    return PreferencesService.getMemorizationQuestionLimit(); 
+  }
 
   // Load ayahs for a surah
   Future<List<AyahBrief>> _loadSurahAyahs(int surahNumber) async {
@@ -178,15 +183,16 @@ class MemorizationTestService {
 
   Future<List<MemorizationQuestion>> generateQuestions({
     List<int>? surahNumbers,
-    int? juzNumber,
+    List<int>? juzNumbers,
   }) async {
+    final limit = _getQuestionLimit();
     final bool hasSurahs = surahNumbers != null && surahNumbers.isNotEmpty;
-    final bool hasJuz = juzNumber != null;
+    final bool hasJuz = juzNumbers != null && juzNumbers.isNotEmpty;
     if (!hasSurahs && !hasJuz) {
-      throw ArgumentError('Either surahNumbers or juzNumber must be provided');
+      throw ArgumentError('Either surahNumbers or juzNumbers must be provided');
     }
     if (hasSurahs && hasJuz) {
-      throw ArgumentError('Cannot specify both surahNumbers and juzNumber');
+      throw ArgumentError('Cannot specify both surahNumbers and juzNumbers');
     }
 
     final allQuestions = <MemorizationQuestion>[];
@@ -227,7 +233,7 @@ class MemorizationTestService {
       }
       
       // Distribute questions evenly from each surah
-      int remaining = 100;
+      int remaining = limit;
       
       while (remaining > 0 && surahQuestions.isNotEmpty) {
         for (int i = 0; i < surahQuestions.length && remaining > 0; i++) {
@@ -248,30 +254,58 @@ class MemorizationTestService {
       
       // Shuffle final questions
       allQuestions.shuffle(_random);
-      return allQuestions.take(100).toList();
+      return allQuestions.take(limit).toList();
     } else {
-      // Juz mode - existing logic
-      final ayahs = await _loadJuzAyahs(juzNumber!);
-      if (ayahs.isEmpty) {
-        throw Exception('No ayahs found for the selected scope');
-      }
+      // Juz mode - now supports multiple Juzs
+      final List<List<MemorizationQuestion>> juzQuestions = [];
 
-      // Generate questions from ayahs
-      for (int i = 0; i < ayahs.length; i++) {
-        final nextQuestion = _generateNextAyahQuestion(ayahs, i);
-        if (nextQuestion != null) {
-          allQuestions.add(nextQuestion);
+      for (final juzNumber in juzNumbers!) {
+        final ayahs = await _loadJuzAyahs(juzNumber);
+        if (ayahs.isEmpty) continue;
+        
+        final juzQuestionsList = <MemorizationQuestion>[];
+
+        // Generate questions from ayahs
+        for (int i = 0; i < ayahs.length; i++) {
+          final nextQuestion = _generateNextAyahQuestion(ayahs, i);
+          if (nextQuestion != null) {
+            juzQuestionsList.add(nextQuestion);
+          }
+          
+          final completeQuestion = _generateCompleteAyahQuestion(ayahs, i);
+          if (completeQuestion != null) {
+            juzQuestionsList.add(completeQuestion);
+          }
         }
         
-        final completeQuestion = _generateCompleteAyahQuestion(ayahs, i);
-        if (completeQuestion != null) {
-          allQuestions.add(completeQuestion);
-        }
+        juzQuestionsList.shuffle(_random);
+        juzQuestions.add(juzQuestionsList);
       }
 
-      // Shuffle and limit to 100
+      // Distribute questions evenly from each Juz
+      int remaining = limit;
+      
+      while (remaining > 0 && juzQuestions.isNotEmpty) {
+        for (int i = 0; i < juzQuestions.length && remaining > 0; i++) {
+          if (juzQuestions[i].isEmpty) continue;
+          // Dynamically calculate how many to take based on remaining collections
+          final questionsFromThisJuz = (remaining / (juzQuestions.length - i)).ceil();
+          final actualQuestions = questionsFromThisJuz > juzQuestions[i].length
+              ? juzQuestions[i].length
+              : questionsFromThisJuz;
+          
+          for (int j = 0; j < actualQuestions && juzQuestions[i].isNotEmpty && remaining > 0; j++) {
+            allQuestions.add(juzQuestions[i].removeAt(0));
+            remaining--;
+          }
+        }
+        // Remove empty juz lists
+        juzQuestions.removeWhere((list) => list.isEmpty);
+      }
+
+      // Shuffle and limit
       allQuestions.shuffle(_random);
-      return allQuestions.take(100).toList();
+      return allQuestions.take(limit).toList();
     }
   }
 }

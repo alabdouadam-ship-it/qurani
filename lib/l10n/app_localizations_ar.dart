@@ -1111,7 +1111,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get sahihain => 'الصحيحان';
 
   @override
-  String get sunan => 'السنن الأربعة';
+  String get sunan => 'السنن';
 
   @override
   String get others => 'كتب أخرى';
@@ -1127,6 +1127,21 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get open => 'فتح';
+
+  @override
+  String get booksInArabic => 'الكتب بالعربية';
+
+  @override
+  String get booksInEnglish => 'الكتب بالإنجليزية';
+
+  @override
+  String get booksInFrench => 'الكتب بالفرنسية';
+
+  @override
+  String get shareHadithFooter => 'تمت المشاركة من تطبيق قرآني\nhttps://www.qurani.botsify.app/';
+
+  @override
+  String get loadingBook => 'جاري تحميل محتوى الكتاب...';
 
   @override
   String get book => 'كتاب';
@@ -1178,4 +1193,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get appStore => 'آب ستور';
+
+  @override
+  String get searchLanguageArabic => 'النص العربي';
+
+  @override
+  String get searchLanguageEnglish => 'النص الإنجليزي';
+
+  @override
+  String get searchLanguageFrench => 'النص الفرنسي';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get testSettingsTitle => 'إعدادات الاختبار';
+
+  @override
+  String get maxQuestionsLabel => 'عدد الأسئلة الأقصى';
 }

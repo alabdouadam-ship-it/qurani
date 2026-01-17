@@ -9,7 +9,10 @@ class QuranSearchService {
   QuranSearchService._();
   static final QuranSearchService instance = QuranSearchService._();
 
-  static String normalize(String input) {
+  static String normalize(String input, {String language = 'ar'}) {
+    if (language != 'ar') {
+      return input.toLowerCase();
+    }
     String s = input;
     s = s.replaceAll(RegExp(r"[\u064B-\u0652\u0670\u0640]"), '');
     s = s.replaceAll(RegExp(r"[\u0622\u0623\u0625]"), '\u0627');
@@ -40,7 +43,8 @@ class QuranSearchService {
       // Check if database has text_simple column
       try {
         final tempDb = await sqf.openDatabase(dbPath, readOnly: false);
-        await tempDb.rawQuery('SELECT text_simple FROM ayah LIMIT 1');
+        // Check for required text columns
+        await tempDb.rawQuery('SELECT text_simple, text_english FROM ayah LIMIT 1');
         await tempDb.close();
       } catch (e) {
         // Column doesn't exist, need to update database
@@ -109,18 +113,44 @@ class QuranSearchService {
   Map<int, String> get surahNames => _surahNames ?? {};
   Map<int, String> get surahNamesEn => _surahNamesEn ?? {};
 
-  Future<SearchResult> search(String query, {int? surahOrder}) async {
+  Future<SearchResult> search(String query, {int? surahOrder, String language = 'ar'}) async {
     try {
       await _ensureDb();
-      final q = normalize(query);
+      final q = normalize(query, language: language);
       if (q.isEmpty) return SearchResult(ayahs: const <SearchAyah>[], totalOccurrences: 0);
       if (_db == null) {
         throw Exception('Database not initialized');
       }
       
+      String textColumn = 'text_simple';
+      String searchColumn = 'normalized';
+      bool isTranslation = false;
+
+      if (language == 'en') {
+        textColumn = 'text_english';
+        searchColumn = 'text_english';
+        isTranslation = true;
+      } else if (language == 'fr') {
+        textColumn = 'text_french';
+        searchColumn = 'text_french';
+        isTranslation = true;
+      }
+
       // Build query with optional surah filter
-      String sql = 'SELECT id, surah_order, number_in_surah, juz, text_simple, normalized FROM ayah WHERE instr(normalized, ?) > 0';
-      List<dynamic> params = [q];
+      String sql;
+      if (isTranslation) {
+        // use LIKE for translations (case insensitive typically, or we handle it via lower())
+        // Assuming database collation is standard, LIKE is case insensitive for ASCII. 
+        // For accurate results we might need LOWER(col) depending on SQLite build.
+        // Let's rely on LIKE for now as it's standard for search. 
+        // NOTE: 'normalized' column for Arabic is specially prepared. 
+        // For EN/FR we search the text column directly.
+        sql = 'SELECT id, surah_order, number_in_surah, juz, $textColumn as text FROM ayah WHERE LOWER($searchColumn) LIKE ?';
+      } else {
+         sql = 'SELECT id, surah_order, number_in_surah, juz, text_simple, normalized FROM ayah WHERE instr(normalized, ?) > 0';
+      }
+      
+      List<dynamic> params = isTranslation ? ['%$q%'] : [q];
       
       if (surahOrder != null) {
         sql += ' AND surah_order = ?';
@@ -131,11 +161,26 @@ class QuranSearchService {
       
       final rows = await _db!.rawQuery(sql, params);
       
+      // Temporary Debug Logging
+      debugPrint('Search Query: $sql');
+      debugPrint('Params: $params');
+      if (isTranslation) {
+        final check = await _db!.rawQuery('SELECT count(*) as c FROM ayah WHERE LOWER($textColumn) LIKE ?', ['%$q%']);
+        debugPrint('Direct Count Check ($textColumn): ${check.first['c']}');
+        
+        // Check sample data
+        final sample = await _db!.rawQuery('SELECT $textColumn FROM ayah LIMIT 1');
+        debugPrint('Sample Data ($textColumn): ${sample.first[textColumn]}');
+      }
+      
       int totalOccurrences = 0;
       final results = rows.map((r) {
         try {
-          final normalizedText = (r['normalized'] as String? ?? '');
-          final occurrences = _countOccurrences(normalizedText, q);
+          // For Arabic we use 'normalized' column to count, for others we use the text column itself
+          final textToSearch = isTranslation ? (r['text'] as String? ?? '').toLowerCase() : (r['normalized'] as String? ?? '');
+          final textToDisplay = r['text'] as String? ?? '';
+          
+          final occurrences = _countOccurrences(textToSearch, q);
           totalOccurrences += occurrences;
           
           return SearchAyah(
@@ -143,7 +188,7 @@ class QuranSearchService {
             surahOrder: (r['surah_order'] as int? ?? 0),
             numberInSurah: (r['number_in_surah'] as int? ?? 0),
             juz: (r['juz'] as int? ?? 1),
-            text: (r['text_simple'] as String? ?? ''),
+            text: textToDisplay,
             occurrenceCount: occurrences,
           );
         } catch (e) {

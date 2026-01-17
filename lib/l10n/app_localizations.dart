@@ -2224,7 +2224,7 @@ abstract class AppLocalizations {
   /// No description provided for @sunan.
   ///
   /// In en, this message translates to:
-  /// **'The Four Sunan'**
+  /// **'The Sunan'**
   String get sunan;
 
   /// No description provided for @others.
@@ -2256,6 +2256,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open'**
   String get open;
+
+  /// No description provided for @booksInArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Books in Arabic'**
+  String get booksInArabic;
+
+  /// No description provided for @booksInEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'Books in English'**
+  String get booksInEnglish;
+
+  /// No description provided for @booksInFrench.
+  ///
+  /// In en, this message translates to:
+  /// **'Books in French'**
+  String get booksInFrench;
+
+  /// No description provided for @shareHadithFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared from Qurani App\nhttps://www.qurani.botsify.app/'**
+  String get shareHadithFooter;
+
+  /// No description provided for @loadingBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading book content...'**
+  String get loadingBook;
 
   /// No description provided for @book.
   ///
@@ -2358,6 +2388,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'App Store'**
   String get appStore;
+
+  /// No description provided for @searchLanguageArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic Text'**
+  String get searchLanguageArabic;
+
+  /// No description provided for @searchLanguageEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English Text'**
+  String get searchLanguageEnglish;
+
+  /// No description provided for @searchLanguageFrench.
+  ///
+  /// In en, this message translates to:
+  /// **'French Text'**
+  String get searchLanguageFrench;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @testSettingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Settings'**
+  String get testSettingsTitle;
+
+  /// No description provided for @maxQuestionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Max Questions'**
+  String get maxQuestionsLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

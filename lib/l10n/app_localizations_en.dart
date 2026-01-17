@@ -1111,7 +1111,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sahihain => 'Sahihain (The Two Sahihs)';
 
   @override
-  String get sunan => 'The Four Sunan';
+  String get sunan => 'The Sunan';
 
   @override
   String get others => 'Other Books';
@@ -1127,6 +1127,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get open => 'Open';
+
+  @override
+  String get booksInArabic => 'Books in Arabic';
+
+  @override
+  String get booksInEnglish => 'Books in English';
+
+  @override
+  String get booksInFrench => 'Books in French';
+
+  @override
+  String get shareHadithFooter => 'Shared from Qurani App\nhttps://www.qurani.botsify.app/';
+
+  @override
+  String get loadingBook => 'Loading book content...';
 
   @override
   String get book => 'Book';
@@ -1178,4 +1193,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appStore => 'App Store';
+
+  @override
+  String get searchLanguageArabic => 'Arabic Text';
+
+  @override
+  String get searchLanguageEnglish => 'English Text';
+
+  @override
+  String get searchLanguageFrench => 'French Text';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get testSettingsTitle => 'Test Settings';
+
+  @override
+  String get maxQuestionsLabel => 'Max Questions';
 }
