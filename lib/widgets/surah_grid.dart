@@ -260,6 +260,8 @@ class _SurahGridState extends State<SurahGrid> {
                     onTap: () => widget.onTapSurah(surah),
                     onLongPress: _hasLongPressActions ? () => _showSurahOptions(context, surah) : null,
                     borderRadius: BorderRadius.circular(12),
+                    canRequestFocus: true,
+                    focusColor: theme.colorScheme.primary.withAlpha(50),
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),

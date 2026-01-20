@@ -385,9 +385,12 @@ class _OptionsScreenState extends State<OptionsScreen> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
+      clipBehavior: Clip.antiAlias, // Ensure focus border is clipped if needed
       child: InkWell(
         onTap: () => _handleOptionTap(context, option),
         borderRadius: BorderRadius.circular(15),
+        canRequestFocus: true, // Explicitly allow D-Pad focus
+        focusColor: option.color.withAlpha(50), // Visual feedback on focus
         child: Container(
           padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
           decoration: BoxDecoration(
