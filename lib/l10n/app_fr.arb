@@ -843,5 +843,7 @@
   "testSettingsTitle": "Paramètres du test",
   "@testSettingsTitle": {},
   "maxQuestionsLabel": "Questions maximum",
-  "@maxQuestionsLabel": {}
+  "@maxQuestionsLabel": {},
+  "fileSize": "Taille du fichier",
+  "@fileSize": {}
 }

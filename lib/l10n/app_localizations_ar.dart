@@ -1211,4 +1211,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get maxQuestionsLabel => 'عدد الأسئلة الأقصى';
+
+  @override
+  String get fileSize => 'حجم الملف';
 }

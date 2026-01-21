@@ -66,11 +66,22 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
       // Prompt Download
       if (!mounted) return;
       
+      // Fetch size
+      String sizeInfo = '';
+      try {
+        final size = await _hadithService.getBookSize(collection.link);
+        if (size != null) {
+          sizeInfo = '\n\n${l10n.fileSize}: $size';
+        }
+      } catch (_) {}
+      
+      if (!mounted) return;
+
       final confirm = await showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
           title: Text(l10n.downloadBook),
-          content: Text(l10n.bookNotAvailable),
+          content: Text('${l10n.bookNotAvailable}$sizeInfo'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
@@ -141,7 +152,8 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
       body: Column(
         children: [
           // Language Filter
-          Container(
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.all(16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

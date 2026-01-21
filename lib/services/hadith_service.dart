@@ -159,4 +159,60 @@ class HadithService {
     }
     return false;
   }
+  /// Static map of known book sizes to avoid network requests
+  static const Map<String, String> _staticBookSizes = {
+    'ara-abudawud.json': '7.0 MB',
+    'eng-abudawud.json': '4.1 MB',
+    'fra-abudawud.json': '4.4 MB',
+    'ara-bukhari.json': '9.3 MB',
+    'eng-bukhari.json': '4.9 MB',
+    'fra-bukhari.json': '5.3 MB',
+    'ara-dehlawi.json': '9.0 KB',
+    'eng-dehlawi.json': '7.9 KB',
+    'fra-dehlawi.json': '8.2 KB',
+    'ara-ibnmajah.json': '5.3 MB',
+    'eng-ibnmajah.json': '3.1 MB',
+    'fra-ibnmajah.json': '3.1 MB',
+    'ara-malik.json': '2.1 MB',
+    'eng-malik.json': '1.5 MB',
+    'fra-malik.json': '1.4 MB',
+    'ara-muslim.json': '8.3 MB',
+    'eng-muslim.json': '4.1 MB',
+    'fra-muslim.json': '4.2 MB',
+    'ara-nasai.json': '6.8 MB',
+    'eng-nasai.json': '3.8 MB',
+    'fra-nasai.json': '4.0 MB',
+    'ara-nawawi.json': '48.2 KB',
+    'eng-nawawi.json': '35.2 KB',
+    'fra-nawawi.json': '31.4 KB',
+    'ara-qudsi.json': '54.0 KB',
+    'eng-qudsi.json': '40.4 KB',
+    'fra-qudsi.json': '35.6 KB',
+    'ara-tirmidhi.json': '6.8 MB',
+    'eng-tirmidhi.json': '3.0 MB',
+  };
+
+  /// Fetches the file size of the book from the server (HEAD request)
+  /// Uses a static map if available to avoid network call
+  Future<String?> getBookSize(String url) async {
+    try {
+      final fileName = url.split('/').last;
+      if (_staticBookSizes.containsKey(fileName)) {
+        return _staticBookSizes[fileName];
+      }
+      
+      final dio = Dio();
+      final response = await dio.head(url);
+      final size = response.headers.value('content-length');
+      if (size != null) {
+        final bytes = int.parse(size);
+        if (bytes < 1024) return '$bytes B';
+        if (bytes < 1024 * 1024) return '${(bytes / 1024).toStringAsFixed(1)} KB';
+        return '${(bytes / (1024 * 1024)).toStringAsFixed(1)} MB';
+      }
+    } catch (e) {
+      debugPrint('Error fetching book size: $e');
+    }
+    return null;
+  }
 }

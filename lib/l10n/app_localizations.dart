@@ -2424,6 +2424,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Max Questions'**
   String get maxQuestionsLabel;
+
+  /// No description provided for @fileSize.
+  ///
+  /// In en, this message translates to:
+  /// **'File Size'**
+  String get fileSize;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

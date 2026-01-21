@@ -1211,4 +1211,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get maxQuestionsLabel => 'Max Questions';
+
+  @override
+  String get fileSize => 'File Size';
 }

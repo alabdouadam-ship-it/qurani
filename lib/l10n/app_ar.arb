@@ -843,5 +843,7 @@
   "testSettingsTitle": "إعدادات الاختبار",
   "@testSettingsTitle": {},
   "maxQuestionsLabel": "عدد الأسئلة الأقصى",
-  "@maxQuestionsLabel": {}
+  "@maxQuestionsLabel": {},
+  "fileSize": "حجم الملف",
+  "@fileSize": {}
 }
