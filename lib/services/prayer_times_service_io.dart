@@ -256,8 +256,8 @@ class PrayerTimesService {
     'kingdom of saudi arabia': 4,
     'السعودية': 4,
     'المملكة العربية السعودية': 4,
-    'france': 12,
-    'فرنسا': 12,
+    'france': 4,
+    'فرنسا': 4,
     'egypt': 5,
     'مصر': 5,
     'united arab emirates': 16,
@@ -325,7 +325,7 @@ class PrayerTimesService {
 
   static const Map<String, int> _prayerMethodByIsoCode = {
     'SA': 4, // Saudi Arabia
-    'FR': 12, // France
+    'FR': 4, // France
     'US': 2, // USA
     'CA': 2, // Canada
     'GB': 12, // UK
