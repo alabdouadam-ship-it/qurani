@@ -393,38 +393,48 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             margin: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.2),
+              color: Colors.white,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.5)),
+              border: Border.all(color: colorScheme.primary, width: 1.5),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedLanguage,
-                dropdownColor: theme.appBarTheme.backgroundColor ?? theme.primaryColor,
-                icon: const Icon(Icons.language, color: Colors.white),
+                dropdownColor: colorScheme.primaryContainer,
+                icon: Icon(Icons.language, color: colorScheme.primary),
                 style: theme.textTheme.bodyMedium?.copyWith(
-                  color: Colors.white,
+                  color: colorScheme.primary,
+                  fontWeight: FontWeight.w600,
                 ),
                 items: [
                    DropdownMenuItem(
                      value: 'ar', 
                      child: Text(
                        l10n.searchLanguageArabic, 
-                       style: TextStyle(color: _selectedLanguage == 'ar' ? theme.colorScheme.secondary : null),
+                       style: TextStyle(
+                         color: colorScheme.onPrimaryContainer,
+                         fontWeight: _selectedLanguage == 'ar' ? FontWeight.bold : FontWeight.normal,
+                       ),
                      ),
                    ),
                    DropdownMenuItem(
                      value: 'en', 
                      child: Text(
                        l10n.searchLanguageEnglish,
-                       style: TextStyle(color: _selectedLanguage == 'en' ? theme.colorScheme.secondary : null),
+                       style: TextStyle(
+                         color: colorScheme.onPrimaryContainer,
+                         fontWeight: _selectedLanguage == 'en' ? FontWeight.bold : FontWeight.normal,
+                       ),
                      ),
                    ),
                    DropdownMenuItem(
                      value: 'fr', 
                      child: Text(
                        l10n.searchLanguageFrench,
-                       style: TextStyle(color: _selectedLanguage == 'fr' ? theme.colorScheme.secondary : null),
+                       style: TextStyle(
+                         color: colorScheme.onPrimaryContainer,
+                         fontWeight: _selectedLanguage == 'fr' ? FontWeight.bold : FontWeight.normal,
+                       ),
                      ),
                    ),
                 ],
@@ -620,9 +630,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                               height: 1.8,
                                               color: colorScheme.onSurface,
                                             ),
-                                        child: RichText(
+                                        child: Text.rich(
+                                          _buildHighlightedText(a.text, _lastQuery, colorScheme) as TextSpan,
                                           textAlign: _selectedLanguage == 'ar' ? TextAlign.right : TextAlign.left,
-                                          text: _buildHighlightedText(a.text, _lastQuery, colorScheme),
                                         ),
                                       ),
                                     ),

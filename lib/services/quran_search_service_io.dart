@@ -147,7 +147,7 @@ class QuranSearchService {
         // For EN/FR we search the text column directly.
         sql = 'SELECT id, surah_order, number_in_surah, juz, $textColumn as text FROM ayah WHERE LOWER($searchColumn) LIKE ?';
       } else {
-         sql = 'SELECT id, surah_order, number_in_surah, juz, text_simple, normalized FROM ayah WHERE instr(normalized, ?) > 0';
+         sql = 'SELECT id, surah_order, number_in_surah, juz, text_simple as text, normalized FROM ayah WHERE instr(normalized, ?) > 0';
       }
       
       List<dynamic> params = isTranslation ? ['%$q%'] : [q];
