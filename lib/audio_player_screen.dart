@@ -42,7 +42,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   String? _reciterKey;
   List<int> _queue = const [];
   Set<int> _featuredListenSurahs = <int>{};
-  
+
   bool _isRepeat = false;
   bool _autoPlayNext = false;
   bool _isPlaying = false;
@@ -55,12 +55,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   double _volume = 1.0;
   double _playbackSpeed = 1.0;
   final double _equalizerHeight = 120;
-  
+
   String? _errorMessage;
 
   Duration? _currentTrackDuration;
   Duration? _savedSurahPositionBeforeVerseMode;
-  
+
   int _currentVerse = 1;
   List<String>? _verseUrls;
 
@@ -76,8 +76,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
-
-
   @override
   void initState() {
     super.initState();
@@ -86,12 +84,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _queue = _queueService.queue;
     _autoPlayNext = PreferencesService.getAutoPlayNextSurah();
     _isRepeat = PreferencesService.getIsRepeat();
-    
+
     // Enforce mutual exclusivity on load
     if (_isRepeat) {
       _autoPlayNext = false;
     }
-    
+
     // Apply initial loop mode
     _player.setLoopMode(_isRepeat ? LoopMode.one : LoopMode.off);
 
@@ -148,7 +146,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       // But if app is killed, we might lose progress.
       // Let's save every 5 seconds if playing.
       if (_player.playing && position.inSeconds % 5 == 0) {
-         PreferencesService.saveLastPlaybackPosition(_currentOrder, position.inMilliseconds);
+        PreferencesService.saveLastPlaybackPosition(
+            _currentOrder, position.inMilliseconds);
       }
     });
 
@@ -156,23 +155,26 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       if (!mounted || duration == null) return;
       final sequence = _player.sequenceState;
       final tag = sequence?.currentSource?.tag;
-      final isPlaceholder = tag is MediaItem &&
-          (tag.extras?['placeholder'] as String?) != null;
+      final isPlaceholder =
+          tag is MediaItem && (tag.extras?['placeholder'] as String?) != null;
       if (!isPlaceholder) {
         _currentTrackDuration = duration;
       }
     });
 
-    _playerStateSub = _player.playerStateStream.listen(_handlePlayerStateChange);
-    _processingStateSub = _player.processingStateStream.listen(_handleProcessingChange);
-    _currentIndexSub = _player.currentIndexStream.listen(_onCurrentIndexChanged);
+    _playerStateSub =
+        _player.playerStateStream.listen(_handlePlayerStateChange);
+    _processingStateSub =
+        _player.processingStateStream.listen(_handleProcessingChange);
+    _currentIndexSub =
+        _player.currentIndexStream.listen(_onCurrentIndexChanged);
     _playbackEventSub = _player.playbackEventStream.listen(
       (event) {},
       onError: (Object e, StackTrace st) {
         if (e is PlatformException) {
-             debugPrint('[AudioPlayer] Playback Error: ${e.message}');
-             // If error occurs, we might need to reload current.
-             // Usually just_audio propagates this to processingState idle or error.
+          debugPrint('[AudioPlayer] Playback Error: ${e.message}');
+          // If error occurs, we might need to reload current.
+          // Usually just_audio propagates this to processingState idle or error.
         }
       },
     );
@@ -180,72 +182,72 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _onCurrentIndexChanged(int? index) async {
     if (index == null || !_isPlaying || _verseByVerseMode) return;
-    
+
     // Index 1 implies we moved to the Next track in the playlist
     if (index == 1) {
       final playlist = _player.audioSource as ConcatenatingAudioSource?;
       if (playlist == null) return;
 
       int nextOrder = -1;
-      
+
       // Check queue first
       // Check queue first
       // NOTE: index changed means we ARE playing playlist[1].
       // playlist[1] corresponds to what we set as Next.
-      
-       // Dequeue if queue active
-       final queued = _queueService.getNext();
-       if (queued != null) {
-          // We effectively just started playing 'queued'.
-          // So 'queued' is now current.
-           nextOrder = queued;
-           _queueService.removeFromQueue(queued); 
-           // BUT wait, if we used peek in _loadAndPlaySurah, we haven't popped it yet?
-           // Actually, _loadAndPlaySurah didn't pop.
-           // So if we are here, we consumed the peeked item.
-           // We should pop it now.
-       } else {
-           nextOrder = (_currentOrder < 114) ? _currentOrder + 1 : -1;
-       }
-       
-       // Correct logic: rely on MediaItem extras if possible
-       final sequence = _player.sequence;
-       if (sequence != null && sequence.length > 1) {
-          final item = sequence[1].tag as MediaItem;
-          final order = item.extras?['surahOrder'] as int?;
-          if (order != null) nextOrder = order;
-       }
 
-       if (nextOrder != -1) {
-          if (mounted) {
-             setState(() {
-               _currentOrder = nextOrder;
-             });
-          }
-          _updateDownloadStatus();
-          PreferencesService.addToHistory(nextOrder, _reciterKey!);
-          
-          // Maintain Rolling Playlist: [Current, Next]
-          // Currently list is [Previous, Current]. Index is 1.
-          
-          // 1. Prepare NextNext
-          AudioSource? nextNextSource;
-          final nextQueued = _queueService.getNext(peek: true);
-          if (nextQueued != null) {
-             nextNextSource = await _buildAudioSource(nextQueued);
-          } else if (_autoPlayNext && !_isRepeat && nextOrder < 114) {
-             nextNextSource = await _buildAudioSource(nextOrder + 1);
-          }
+      // Dequeue if queue active
+      final queued = _queueService.getNext();
+      if (queued != null) {
+        // We effectively just started playing 'queued'.
+        // So 'queued' is now current.
+        nextOrder = queued;
+        _queueService.removeFromQueue(queued);
+        // BUT wait, if we used peek in _loadAndPlaySurah, we haven't popped it yet?
+        // Actually, _loadAndPlaySurah didn't pop.
+        // So if we are here, we consumed the peeked item.
+        // We should pop it now.
+      } else {
+        nextOrder = (_currentOrder < 114) ? _currentOrder + 1 : -1;
+      }
 
-          // 2. Add NextNext to end
-           if (nextNextSource != null) {
-             await playlist.add(nextNextSource);
-           }
-           
-          // 3. Remove Previous (index 0)
-          // removing index 0 changes current index from 1 to 0. This is safe.
-          await playlist.removeAt(0);
-       }
+      // Correct logic: rely on MediaItem extras if possible
+      final sequence = _player.sequence;
+      if (sequence != null && sequence.length > 1) {
+        final item = sequence[1].tag as MediaItem;
+        final order = item.extras?['surahOrder'] as int?;
+        if (order != null) nextOrder = order;
+      }
+
+      if (nextOrder != -1) {
+        if (mounted) {
+          setState(() {
+            _currentOrder = nextOrder;
+          });
+        }
+        _updateDownloadStatus();
+        PreferencesService.addToHistory(nextOrder, _reciterKey!);
+
+        // Maintain Rolling Playlist: [Current, Next]
+        // Currently list is [Previous, Current]. Index is 1.
+
+        // 1. Prepare NextNext
+        AudioSource? nextNextSource;
+        final nextQueued = _queueService.getNext(peek: true);
+        if (nextQueued != null) {
+          nextNextSource = await _buildAudioSource(nextQueued);
+        } else if (_autoPlayNext && !_isRepeat && nextOrder < 114) {
+          nextNextSource = await _buildAudioSource(nextOrder + 1);
+        }
+
+        // 2. Add NextNext to end
+        if (nextNextSource != null) {
+          await playlist.add(nextNextSource);
+        }
+
+        // 3. Remove Previous (index 0)
+        // removing index 0 changes current index from 1 to 0. This is safe.
+        await playlist.removeAt(0);
+      }
     }
   }
 
@@ -254,13 +256,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       debugPrint('[AudioPlayer] Configuring audio session...');
       final session = await AudioSession.instance;
       debugPrint('[AudioPlayer] Audio session obtained successfully');
-      
+
       await session.configure(const AudioSessionConfiguration.music());
       await session.setActive(true);
       debugPrint('[AudioPlayer] Audio session configured successfully');
-      
+
       session.interruptionEventStream.listen((event) {
-        debugPrint('[AudioPlayer] Audio interruption: ${event.begin} - ${event.type}');
+        debugPrint(
+            '[AudioPlayer] Audio interruption: ${event.begin} - ${event.type}');
         if (event.begin) {
           // Only pause if it's a permanent interruption (like a phone call)
           if (event.type == AudioInterruptionType.duck) {
@@ -279,8 +282,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           }
         }
       });
-      
-      debugPrint('[AudioPlayer] Audio session configured for background playback');
+
+      debugPrint(
+          '[AudioPlayer] Audio session configured for background playback');
     } catch (e, stackTrace) {
       debugPrint('[AudioPlayer] CRITICAL ERROR configuring audio session: $e');
       debugPrint('[AudioPlayer] Stack trace: $stackTrace');
@@ -290,13 +294,13 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _loadInitialData() async {
     try {
-    final lang = PreferencesService.getLanguage();
-    final surahs = await SurahService.getLocalizedSurahs(lang);
-    if (!mounted) return;
-    setState(() {
-      _surahs = surahs;
-      _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
-    });
+      final lang = PreferencesService.getLanguage();
+      final surahs = await SurahService.getLocalizedSurahs(lang);
+      if (!mounted) return;
+      setState(() {
+        _surahs = surahs;
+        _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
+      });
       await _playSurah(_currentOrder, autoPlay: true);
     } catch (e) {
       debugPrint('Error loading surahs: $e');
@@ -326,8 +330,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       if (PreferencesService.getAlwaysStartFromBeginning()) {
         startPosition = Duration.zero;
       } else {
-        final lastPosMs = PreferencesService.getLastPlaybackPosition(normalizedOrder);
-        startPosition = lastPosMs > 0 ? Duration(milliseconds: lastPosMs) : Duration.zero;
+        final lastPosMs =
+            PreferencesService.getLastPlaybackPosition(normalizedOrder);
+        startPosition =
+            lastPosMs > 0 ? Duration(milliseconds: lastPosMs) : Duration.zero;
       }
     }
 
@@ -343,9 +349,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (_isPlayerDisposed) return;
     if (_reciterKey == null || _reciterKey!.isEmpty) {
       final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.selectReciterFirst)),
-        );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l10n.selectReciterFirst)),
+      );
       return;
     }
 
@@ -370,13 +376,17 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     while (true) {
       try {
-        final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
-        final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
+        final localPath =
+            await DownloadService.localSurahPath(_reciterKey!, order);
+        final hasLocalFile =
+            await DownloadService.isSurahDownloaded(_reciterKey!, order);
         final langCode = PreferencesService.getLanguage();
-        final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+        final reciterName =
+            AudioService.reciterDisplayName(_reciterKey!, langCode);
         final currentSurah = _surahs.firstWhere(
           (s) => s.order == order,
-          orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0),
+          orElse: () =>
+              Surah(name: 'Surah $order', order: order, totalVerses: 0),
         );
 
         final mainItem = MediaItem(
@@ -388,30 +398,30 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
         // Initial Playlist Setup: [Current, Next]
         final playlistChildren = <AudioSource>[];
-        
+
         final source = hasLocalFile
             ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
             : AudioSource.uri(Uri.parse(url), tag: mainItem);
-            
+
         playlistChildren.add(source);
 
         // Preload next surah if available and not repeating single surah
         // (If repeating, we might use LoopMode.one, but here we keep simple auto-advance logic)
         final nextQueued = _queueService.getNext(peek: true);
         if (nextQueued != null) {
-           try {
-             final nextSource = await _buildAudioSource(nextQueued);
-             if (nextSource != null) playlistChildren.add(nextSource);
-           } catch (e) {
-             debugPrint('Error preloading next queued surah: $e');
-           }
+          try {
+            final nextSource = await _buildAudioSource(nextQueued);
+            if (nextSource != null) playlistChildren.add(nextSource);
+          } catch (e) {
+            debugPrint('Error preloading next queued surah: $e');
+          }
         } else if (_autoPlayNext && !_isRepeat && order < 114) {
-           try {
-             final nextSource = await _buildAudioSource(order + 1);
-             if (nextSource != null) playlistChildren.add(nextSource);
-           } catch (e) {
-             debugPrint('Error preloading next surah: $e');
-           }
+          try {
+            final nextSource = await _buildAudioSource(order + 1);
+            if (nextSource != null) playlistChildren.add(nextSource);
+          } catch (e) {
+            debugPrint('Error preloading next surah: $e');
+          }
         }
 
         final playlist = ConcatenatingAudioSource(
@@ -420,8 +430,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           shuffleOrder: DefaultShuffleOrder(),
         );
 
-        debugPrint('[AudioPlayer] Setting playlist with ${playlistChildren.length} items');
-        
+        debugPrint(
+            '[AudioPlayer] Setting playlist with ${playlistChildren.length} items');
+
         try {
           await _player.setAudioSource(
             playlist,
@@ -459,16 +470,17 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         await PreferencesService.addToHistory(order, _reciterKey!);
         break; // Success, exit loop
       } catch (e, stackTrace) {
-        debugPrint('[AudioPlayer] Error loading surah audio (attempt ${retryCount + 1}): $e');
-        
+        debugPrint(
+            '[AudioPlayer] Error loading surah audio (attempt ${retryCount + 1}): $e');
+
         retryCount++;
         if (retryCount >= maxRetries) {
           debugPrint('[AudioPlayer] Max retries reached. Showing error.');
           debugPrint('[AudioPlayer] Final Stack trace: $stackTrace');
-          
+
           if (!mounted) return;
           final l10n = AppLocalizations.of(context)!;
-          
+
           // Show debug error dialog
           DebugErrorDisplay.showError(
             context,
@@ -478,22 +490,26 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             stackTrace: stackTrace.toString(),
           );
           String userMessage = l10n.errorLoadingAudio;
-          
+
           if (e.toString().contains('Permission')) {
-            userMessage = 'Audio permission required. Please grant permission in settings.';
-          } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
-            userMessage = 'Network error. Please check your internet connection.';
-          } else if (e.toString().contains('Format') || e.toString().contains('Codec')) {
+            userMessage =
+                'Audio permission required. Please grant permission in settings.';
+          } else if (e.toString().contains('Network') ||
+              e.toString().contains('Connection')) {
+            userMessage =
+                'Network error. Please check your internet connection.';
+          } else if (e.toString().contains('Format') ||
+              e.toString().contains('Codec')) {
             userMessage = 'Audio format not supported on this device.';
           }
-          
+
           if (mounted) {
             setState(() {
               _errorMessage = userMessage;
               _isBuffering = false;
               _isCurrentSurahDownloaded = false;
             });
-            
+
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(userMessage),
@@ -507,39 +523,44 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           }
           break; // Exit loop after handling final error
         } else {
-           // Wait before retrying (exponential backoff could be used, but simple delay is fine)
-           await Future.delayed(const Duration(milliseconds: 1500));
+          // Wait before retrying (exponential backoff could be used, but simple delay is fine)
+          await Future.delayed(const Duration(milliseconds: 1500));
         }
       }
     }
   }
 
   Future<AudioSource?> _buildAudioSource(int order) async {
-      final url = await AudioService.buildFullRecitationUrl(
-        reciterKeyAr: _reciterKey!,
-        surahOrder: order,
-      );
-      if (url == null) return null;
+    final url = await AudioService.buildFullRecitationUrl(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: order,
+    );
+    if (url == null) return null;
 
-      final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
-      final hasLocalFile = await DownloadService.isSurahDownloaded(_reciterKey!, order);
-      final langCode = PreferencesService.getLanguage();
-      final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
-      // Ensure _surahs is populated or get safe name
-      final surahName = (order <= _surahs.length && order > 0) 
-         ? _surahs.firstWhere((s) => s.order == order, orElse: () => Surah(name: 'Surah $order', order: order, totalVerses: 0)).name 
-         : 'Surah $order';
+    final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
+    final hasLocalFile =
+        await DownloadService.isSurahDownloaded(_reciterKey!, order);
+    final langCode = PreferencesService.getLanguage();
+    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+    // Ensure _surahs is populated or get safe name
+    final surahName = (order <= _surahs.length && order > 0)
+        ? _surahs
+            .firstWhere((s) => s.order == order,
+                orElse: () =>
+                    Surah(name: 'Surah $order', order: order, totalVerses: 0))
+            .name
+        : 'Surah $order';
 
-      final mainItem = MediaItem(
-          id: '${_reciterKey!}_$order',
-          title: surahName,
-          album: reciterName,
-          extras: {'surahOrder': order},
-      );
+    final mainItem = MediaItem(
+      id: '${_reciterKey!}_$order',
+      title: surahName,
+      album: reciterName,
+      extras: {'surahOrder': order},
+    );
 
-      return hasLocalFile
-          ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
-          : AudioSource.uri(Uri.parse(url), tag: mainItem);
+    return hasLocalFile
+        ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
+        : AudioSource.uri(Uri.parse(url), tag: mainItem);
   }
 
   void _handlePlayerStateChange(PlayerState state) {
@@ -556,7 +577,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       setState(() => _isPlaying = playing);
       if (!playing) {
         final pos = _player.position;
-        PreferencesService.saveLastPlaybackPosition(_currentOrder, pos.inMilliseconds);
+        PreferencesService.saveLastPlaybackPosition(
+            _currentOrder, pos.inMilliseconds);
       }
     }
 
@@ -575,16 +597,20 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     // Auto-retry logic for background timeouts
     if (state == ProcessingState.idle && _isPlaying && !_isHandlingCompletion) {
-       debugPrint('[AudioPlayer] Unexpected Idle State detected (Background kill?). Retrying in 5s...');
-       Future.delayed(const Duration(seconds: 5), () {
-          if (mounted && _isPlaying && _player.processingState == ProcessingState.idle) {
-             debugPrint('[AudioPlayer] Retrying playback of Order: $_currentOrder');
-             // Reload current surah
-             final pos = _player.position; 
-             final safePos = pos > Duration.zero ? pos : Duration.zero;
-             _loadAndPlaySurah(_currentOrder, safePos, autoPlay: true);
-          }
-       });
+      debugPrint(
+          '[AudioPlayer] Unexpected Idle State detected (Background kill?). Retrying in 5s...');
+      Future.delayed(const Duration(seconds: 5), () {
+        if (mounted &&
+            _isPlaying &&
+            _player.processingState == ProcessingState.idle) {
+          debugPrint(
+              '[AudioPlayer] Retrying playback of Order: $_currentOrder');
+          // Reload current surah
+          final pos = _player.position;
+          final safePos = pos > Duration.zero ? pos : Duration.zero;
+          _loadAndPlaySurah(_currentOrder, safePos, autoPlay: true);
+        }
+      });
     }
   }
 
@@ -671,8 +697,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
     if (_isPlayerDisposed) return;
     try {
-      final downloaded = await DownloadService.isSurahDownloaded(_reciterKey!, _currentOrder);
-    if (mounted) {
+      final downloaded =
+          await DownloadService.isSurahDownloaded(_reciterKey!, _currentOrder);
+      if (mounted) {
         setState(() => _isCurrentSurahDownloaded = downloaded);
       }
     } catch (e) {
@@ -680,21 +707,20 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-
   Future<void> _addBookmark() async {
     if (_isPlayerDisposed) return;
     final position = _player.position;
     final l10n = AppLocalizations.of(context)!;
-    
+
     // Optional: Ask for note? For now just save with timestamp/date
     final bookmark = AudioBookmark.create(
       surahId: _currentOrder,
       positionMs: position.inMilliseconds,
       reciterId: _reciterKey,
     );
-    
+
     await PreferencesService.saveAudioBookmark(bookmark);
-    
+
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.bookmarkSaved)),
@@ -705,13 +731,13 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   Future<void> _showBookmarksDialog() async {
     // Load bookmarks
     final allBookmarks = await PreferencesService.getAudioBookmarks();
-    // Filter by current surah? Or show all? 
+    // Filter by current surah? Or show all?
     // Usually user wants for current audio, but seeing all is nice.
     // Let's feature current surah first or filter.
     // User asked "give possibility to take more than one bookmarks".
-    
+
     if (!mounted) return;
-    
+
     // Sort: Current Surah first, then by date descending
     allBookmarks.sort((a, b) {
       if (a.surahId == _currentOrder && b.surahId != _currentOrder) return -1;
@@ -729,63 +755,73 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         return StatefulBuilder(
           builder: (context, setStateSheet) {
             return Container(
-               padding: const EdgeInsets.all(16),
-               child: Column(
-                 mainAxisSize: MainAxisSize.min,
-                 children: [
-                   Text(
-                     l10n.bookmarks,
-                     style: Theme.of(context).textTheme.titleLarge,
-                   ),
-                   const SizedBox(height: 16),
-                   if (allBookmarks.isEmpty)
-                      Expanded(child: Center(child: Text(l10n.noBookmarks))),
-                   if (allBookmarks.isNotEmpty)
-                     Expanded(
-                       child: ListView.builder(
-                         itemCount: allBookmarks.length,
-                         itemBuilder: (context, index) {
-                           final bm = allBookmarks[index];
-                           // final isCurrentSurah = bm.surahId == _currentOrder; // Unused for now
-                           final duration = Duration(milliseconds: bm.positionMs);
-                           final timeStr = _formatDuration(duration);
-                           
-                           // Get Surah Name
-                           final surahName = _surahs.firstWhere(
-                              (s) => s.order == bm.surahId, 
-                              orElse: () => Surah(name: 'Surah ${bm.surahId}', order: bm.surahId, totalVerses: 0)
-                           ).name;
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    l10n.bookmarks,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 16),
+                  if (allBookmarks.isEmpty)
+                    Expanded(child: Center(child: Text(l10n.noBookmarks))),
+                  if (allBookmarks.isNotEmpty)
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: allBookmarks.length,
+                        itemBuilder: (context, index) {
+                          final bm = allBookmarks[index];
+                          // final isCurrentSurah = bm.surahId == _currentOrder; // Unused for now
+                          final duration =
+                              Duration(milliseconds: bm.positionMs);
+                          final timeStr = _formatDuration(duration);
 
-                           return ListTile(
-                             leading: const Icon(Icons.bookmark),
-                             title: Text("$surahName - $timeStr"),
-                             subtitle: Text(DateFormat.yMMMd().add_Hm().format(DateTime.fromMillisecondsSinceEpoch(bm.createdAt))),
-                             trailing: IconButton(
-                               icon: const Icon(Icons.delete, color: Colors.red),
-                               onPressed: () async {
-                                 await PreferencesService.removeAudioBookmark(bm.id);
-                                 final newList = await PreferencesService.getAudioBookmarks();
-                                 newList.sort((a, b) {
-                                  if (a.surahId == _currentOrder && b.surahId != _currentOrder) return -1;
-                                  if (b.surahId == _currentOrder && a.surahId != _currentOrder) return 1;
+                          // Get Surah Name
+                          final surahName = _surahs
+                              .firstWhere((s) => s.order == bm.surahId,
+                                  orElse: () => Surah(
+                                      name: 'Surah ${bm.surahId}',
+                                      order: bm.surahId,
+                                      totalVerses: 0))
+                              .name;
+
+                          return ListTile(
+                            leading: const Icon(Icons.bookmark),
+                            title: Text("$surahName - $timeStr"),
+                            subtitle: Text(DateFormat.yMMMd().add_Hm().format(
+                                DateTime.fromMillisecondsSinceEpoch(
+                                    bm.createdAt))),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.delete, color: Colors.red),
+                              onPressed: () async {
+                                await PreferencesService.removeAudioBookmark(
+                                    bm.id);
+                                final newList = await PreferencesService
+                                    .getAudioBookmarks();
+                                newList.sort((a, b) {
+                                  if (a.surahId == _currentOrder &&
+                                      b.surahId != _currentOrder) return -1;
+                                  if (b.surahId == _currentOrder &&
+                                      a.surahId != _currentOrder) return 1;
                                   return b.createdAt.compareTo(a.createdAt);
                                 });
-                                 setStateSheet(() {
-                                    allBookmarks.clear();
-                                    allBookmarks.addAll(newList);
-                                 });
-                               },
-                             ),
-                             onTap: () {
-                               Navigator.pop(context);
-                               _playBookmark(bm);
-                             },
-                           );
-                         },
-                       ),
-                     ),
-                 ],
-               ),
+                                setStateSheet(() {
+                                  allBookmarks.clear();
+                                  allBookmarks.addAll(newList);
+                                });
+                              },
+                            ),
+                            onTap: () {
+                              Navigator.pop(context);
+                              _playBookmark(bm);
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                ],
+              ),
             );
           },
         );
@@ -795,7 +831,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _playBookmark(AudioBookmark bm) async {
     if (bm.surahId != _currentOrder) {
-      await _playSurah(bm.surahId, autoPlay: true, resumePosition: Duration(milliseconds: bm.positionMs));
+      await _playSurah(bm.surahId,
+          autoPlay: true,
+          resumePosition: Duration(milliseconds: bm.positionMs));
     } else {
       await _player.seek(Duration(milliseconds: bm.positionMs));
       if (!_player.playing) {
@@ -912,7 +950,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                     label: '${_playbackSpeed.toStringAsFixed(1)}x',
                     onChanged: (value) {
                       setDialogState(() => _playbackSpeed = value);
-                        _player.setSpeed(value);
+                      _player.setSpeed(value);
                     },
                   ),
                   Text('${_playbackSpeed.toStringAsFixed(1)}x'),
@@ -931,8 +969,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
   }
 
-
-
   void _showSleepTimerDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -946,7 +982,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
               title: Text(l10n.sleepTimer),
               content: RadioGroup<int?>(
                 groupValue: tempSelected,
-                onChanged: (value) => setDialogState(() => tempSelected = value),
+                onChanged: (value) =>
+                    setDialogState(() => tempSelected = value),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -1020,25 +1057,25 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _shareSurah() async {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
-    
+
     final l10n = AppLocalizations.of(context)!;
     final url = await AudioService.buildFullRecitationUrl(
       reciterKeyAr: _reciterKey!,
       surahOrder: _currentOrder,
     );
-    
+
     if (url == null) return;
-    
+
     final langCode = PreferencesService.getLanguage();
     final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
     final surahName = _currentSurah?.name ?? 'Surah $_currentOrder';
-    
+
     final message = l10n.shareSurahMessage(surahName, reciterName, url);
-    
+
     // Calculate share position origin for iPad
     if (!mounted) return;
     final box = context.findRenderObject() as RenderBox?;
-    
+
     await Share.share(
       message,
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
@@ -1049,12 +1086,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
     final surah = _currentSurah;
     if (surah == null) return;
-    
-      _verseUrls = await AudioService.buildVerseUrls(
-        reciterKeyAr: _reciterKey!,
-        surahOrder: surahOrder,
-        totalVerses: surah.totalVerses,
-      );
+
+    _verseUrls = await AudioService.buildVerseUrls(
+      reciterKeyAr: _reciterKey!,
+      surahOrder: surahOrder,
+      totalVerses: surah.totalVerses,
+    );
   }
 
   Future<void> _playVerse(int verseNumber) async {
@@ -1079,7 +1116,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (uri == null) {
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.errorLoadingAudio)));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text(l10n.errorLoadingAudio)));
       }
       return;
     }
@@ -1090,7 +1128,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       if (!hasNet) {
         if (mounted) {
           final l10n = AppLocalizations.of(context)!;
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.audioInternetRequired)));
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(l10n.audioInternetRequired)));
         }
         return;
       }
@@ -1111,7 +1150,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     try {
       debugPrint('[AudioPlayer] Playing verse $verseNumber');
-      
+
       try {
         await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
       } catch (e, stackTrace) {
@@ -1119,10 +1158,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         debugPrint('[AudioPlayer] Stack trace: $stackTrace');
         throw Exception('Failed to load verse audio: ${e.toString()}');
       }
-      
+
       await _player.setLoopMode(LoopMode.off);
       await _player.play();
-      
+
       if (mounted) {
         setState(() {
           _currentVerse = verseNumber;
@@ -1132,11 +1171,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     } catch (e, stackTrace) {
       debugPrint('[AudioPlayer] CRITICAL ERROR playing verse: $e');
       debugPrint('[AudioPlayer] Stack trace: $stackTrace');
-      
+
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
         setState(() => _errorMessage = l10n.errorLoadingAudio);
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(l10n.errorLoadingAudio),
@@ -1182,16 +1221,18 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  Widget _buildTransportControls({required bool isRtl, required ColorScheme color}) {
+  Widget _buildTransportControls(
+      {required bool isRtl, required ColorScheme color}) {
     final controls = <Widget>[
-    IconButton(
-      icon: Icon(isRtl ? Icons.skip_next_rounded : Icons.skip_previous_rounded),
+      IconButton(
+        icon:
+            Icon(isRtl ? Icons.skip_next_rounded : Icons.skip_previous_rounded),
         iconSize: 32,
         onPressed: _goToPreviousSurah,
       ),
       const SizedBox(width: 8),
-    IconButton(
-      icon: Icon(isRtl ? Icons.forward_10 : Icons.replay_10),
+      IconButton(
+        icon: Icon(isRtl ? Icons.forward_10 : Icons.replay_10),
         iconSize: 28,
         onPressed: () => _seekRelative(const Duration(seconds: -10)),
       ),
@@ -1207,7 +1248,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
               return Transform.scale(
                 scale: scale,
                 child: IconButton(
-                  icon: Icon(playing ? Icons.pause_circle_filled : Icons.play_circle_fill),
+                  icon: Icon(playing
+                      ? Icons.pause_circle_filled
+                      : Icons.play_circle_fill),
                   iconSize: 44,
                   color: color.primary,
                   onPressed: _togglePlayPause,
@@ -1218,24 +1261,31 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         },
       ),
       const SizedBox(width: 8),
-    IconButton(
-      icon: Icon(isRtl ? Icons.replay_10 : Icons.forward_10),
+      IconButton(
+        icon: Icon(isRtl ? Icons.replay_10 : Icons.forward_10),
         iconSize: 28,
         onPressed: () => _seekRelative(const Duration(seconds: 10)),
       ),
       const SizedBox(width: 8),
-    IconButton(
-      icon: Icon(isRtl ? Icons.skip_previous_rounded : Icons.skip_next_rounded),
+      IconButton(
+        icon:
+            Icon(isRtl ? Icons.skip_previous_rounded : Icons.skip_next_rounded),
         iconSize: 32,
         onPressed: _goToNextSurah,
       ),
     ];
-  return ModernSurfaceCard(
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: controls,
-    ),
-  );
+    return ModernSurfaceCard(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: controls,
+          ),
+        ),
+      ),
+    );
   }
 
   Widget _buildVerseControls(ColorScheme color, bool isRtl) {
@@ -1246,7 +1296,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final total = _currentSurah!.totalVerses;
     return Padding(
       padding: const EdgeInsets.only(top: 16),
-                  child: ModernSurfaceCard(
+      child: ModernSurfaceCard(
         child: Column(
           children: [
             Text(
@@ -1263,7 +1313,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   ? [
                       IconButton(
                         icon: const Icon(Icons.skip_next),
-                        onPressed: _currentVerse > 1 ? () => _playVerse(_currentVerse - 1) : null,
+                        onPressed: _currentVerse > 1
+                            ? () => _playVerse(_currentVerse - 1)
+                            : null,
                       ),
                       const SizedBox(width: 8),
                       Flexible(
@@ -1277,15 +1329,19 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                         ),
                       ),
                       const SizedBox(width: 8),
-          IconButton(
+                      IconButton(
                         icon: const Icon(Icons.skip_previous),
-                        onPressed: _currentVerse < total ? () => _playVerse(_currentVerse + 1) : null,
+                        onPressed: _currentVerse < total
+                            ? () => _playVerse(_currentVerse + 1)
+                            : null,
                       ),
                     ]
                   : [
                       IconButton(
                         icon: const Icon(Icons.skip_previous),
-                        onPressed: _currentVerse > 1 ? () => _playVerse(_currentVerse - 1) : null,
+                        onPressed: _currentVerse > 1
+                            ? () => _playVerse(_currentVerse - 1)
+                            : null,
                       ),
                       const SizedBox(width: 8),
                       Flexible(
@@ -1301,17 +1357,20 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                       const SizedBox(width: 8),
                       IconButton(
                         icon: const Icon(Icons.skip_next),
-                        onPressed: _currentVerse < total ? () => _playVerse(_currentVerse + 1) : null,
-          ),
-        ],
-      ),
+                        onPressed: _currentVerse < total
+                            ? () => _playVerse(_currentVerse + 1)
+                            : null,
+                      ),
+                    ],
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildBody(ColorScheme color, bool isRtl, String title, String reciterName) {
+  Widget _buildBody(
+      ColorScheme color, bool isRtl, String title, String reciterName) {
     final l10n = AppLocalizations.of(context)!;
     return CustomScrollView(
       slivers: [
@@ -1358,12 +1417,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
   }
 
-  Widget _buildTopSection(ColorScheme color, bool isRtl, String title, String reciterName) {
+  Widget _buildTopSection(
+      ColorScheme color, bool isRtl, String title, String reciterName) {
     final l10n = AppLocalizations.of(context)!;
     final durationStream = StreamBuilder<Duration?>(
       stream: _player.durationStream,
       builder: (context, snapshot) {
-        final duration = _currentTrackDuration ?? snapshot.data ?? Duration.zero;
+        final duration =
+            _currentTrackDuration ?? snapshot.data ?? Duration.zero;
         return StreamBuilder<Duration>(
           stream: _player.positionStream,
           builder: (context, snap) {
@@ -1372,7 +1433,9 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                 ? duration.inMilliseconds.toDouble()
                 : 1.0;
             final double sliderValue = duration.inMilliseconds > 0
-                ? pos.inMilliseconds.clamp(0, duration.inMilliseconds).toDouble()
+                ? pos.inMilliseconds
+                    .clamp(0, duration.inMilliseconds)
+                    .toDouble()
                 : 0.0;
             return Column(
               children: [
@@ -1388,11 +1451,15 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   children: [
                     Text(
                       _fmt(pos),
-                      style: TextStyle(color: color.onSurface.withAlpha((255 * 0.7).round())),
+                      style: TextStyle(
+                          color:
+                              color.onSurface.withAlpha((255 * 0.7).round())),
                     ),
                     Text(
                       _fmt(duration),
-                      style: TextStyle(color: color.onSurface.withAlpha((255 * 0.7).round())),
+                      style: TextStyle(
+                          color:
+                              color.onSurface.withAlpha((255 * 0.7).round())),
                     ),
                   ],
                 ),
@@ -1440,7 +1507,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             child: Center(
               child: Text(
                 title,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -1453,7 +1521,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                 child: Text(
                   reciterName,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.w700),
                 ),
               ),
             ),
@@ -1549,10 +1618,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   });
                   PreferencesService.saveAutoPlayNextSurah(value);
                   PreferencesService.saveIsRepeat(_isRepeat);
-                  
+
                   if (value && !_isPlayerDisposed) {
                     final currentPos = _player.position;
-                    await _playSurah(_currentOrder, autoPlay: _isPlaying, resumePosition: currentPos);
+                    await _playSurah(_currentOrder,
+                        autoPlay: _isPlaying, resumePosition: currentPos);
                   }
                 },
               ),
@@ -1669,9 +1739,10 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         child: ModernSurfaceCard(
           padding: EdgeInsets.zero,
           child: ListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            onTap: () =>
-                _playSurah(surah.order, autoPlay: true, resumePosition: Duration.zero),
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            onTap: () => _playSurah(surah.order,
+                autoPlay: true, resumePosition: Duration.zero),
             title: Text(
               '${surah.order}. ${surah.name}',
               textAlign: textAlign,
@@ -1683,7 +1754,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             subtitle: Text(
               '${surah.totalVerses} ${l10n.verses}',
               textAlign: textAlign,
-              style: TextStyle(color: color.onSurface.withAlpha((255 * 0.6).round())),
+              style: TextStyle(
+                  color: color.onSurface.withAlpha((255 * 0.6).round())),
             ),
             trailing: Wrap(
               spacing: 4,
@@ -1736,9 +1808,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     return ModernPageScaffold(
       title: surahTitle,
       icon: Icons.headphones_rounded,
-      subtitle: reciterName.isNotEmpty
-          ? reciterName
-          : l10n.listenQuran,
+      subtitle: reciterName.isNotEmpty ? reciterName : l10n.listenQuran,
       actions: [
         if (!kIsWeb && !_isCurrentSurahDownloaded)
           _isDownloadingCurrentSurah
@@ -1761,7 +1831,8 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           onPressed: () => _showSpeedDialog(context),
         ),
         IconButton(
-          icon: Icon(_sleepTimerMinutes != null ? Icons.timer : Icons.timer_outlined),
+          icon: Icon(
+              _sleepTimerMinutes != null ? Icons.timer : Icons.timer_outlined),
           tooltip: l10n.sleepTimer,
           onPressed: () => _showSleepTimerDialog(context),
         ),
@@ -1792,5 +1863,3 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 extension<E> on Iterable<E> {
   E? get firstOrNull => isEmpty ? null : first;
 }
-
-
