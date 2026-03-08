@@ -39,6 +39,7 @@ dependencies:
   in_app_update: ^4.2.2
   webview_flutter: ^4.7.0
   pdfrx: ^2.2.18 
+  wakelock_plus: ^1.2.8
 
   # --- Notifications & Alarms ---
   flutter_local_notifications: ^18.0.1 

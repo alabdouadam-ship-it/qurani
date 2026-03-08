@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
@@ -22,6 +23,7 @@ import 'util/debug_error_display.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:qurani/services/mushaf_pdf_service.dart';
 import 'package:dio/dio.dart'; // For CancelToken if needed
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'util/settings_sheet_utils.dart';
 import 'services/reciter_config_service.dart';
@@ -76,6 +78,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   double? _downloadProgress;
   String? _pdfPath;
   CancelToken? _downloadCancelToken;
+  bool _isFullscreen = false;
+  bool _fullscreenControlsVisible = false;
 
 
   @override
@@ -122,6 +126,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     if (_isPdfMode) {
       _checkPdfAvailability();
     }
+    unawaited(_setKeepScreenAwake(true));
 
     _pagePlayer = AudioPlayer();
     _playerStateSub = _pagePlayer.playerStateStream.listen((state) {
@@ -202,6 +207,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     PreferencesService.arabicFontNotifier.removeListener(_onArabicFontChanged);
     _playerStateSub?.cancel();
     _sequenceStateSub?.cancel();
+    unawaited(_restoreReadingScreenUi());
     
     // Dispose player safely
     try {
@@ -273,6 +279,335 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     setState(() {
       _arabicFontKey = PreferencesService.getArabicFontFamily();
     });
+  }
+
+  Future<void> _setKeepScreenAwake(bool enabled) async {
+    try {
+      await WakelockPlus.toggle(enable: enabled);
+    } catch (_) {}
+  }
+
+  Future<void> _applyFullscreenSystemUi() async {
+    try {
+      await SystemChrome.setEnabledSystemUIMode(
+        _isFullscreen ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
+      );
+    } catch (_) {}
+  }
+
+  void _setFullscreenControlsVisible(bool visible) {
+    if (!_isFullscreen || _fullscreenControlsVisible == visible) return;
+
+    if (mounted) {
+      setState(() {
+        _fullscreenControlsVisible = visible;
+      });
+    } else {
+      _fullscreenControlsVisible = visible;
+    }
+  }
+
+  void _showFullscreenControls() {
+    _setFullscreenControlsVisible(true);
+  }
+
+  void _hideFullscreenControls() {
+    _setFullscreenControlsVisible(false);
+  }
+
+  void _syncActiveReaderPage() {
+    final targetPage = _currentPage.clamp(1, _totalPages);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+
+      if (_isPdfMode) {
+        final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+        final targetIndex = (targetPage - 1) + offset;
+        final controller = _pdfPageController;
+        if (controller?.hasClients == true) {
+          try {
+            controller!.jumpToPage(targetIndex);
+          } catch (_) {}
+        }
+        return;
+      }
+
+      if (_pageController.hasClients) {
+        try {
+          _pageController.jumpToPage(targetPage - 1);
+        } catch (_) {}
+      }
+    });
+  }
+
+  Future<void> _setFullscreen(bool value) async {
+    if (_isFullscreen == value) return;
+
+    final targetPage = _currentPage.clamp(1, _totalPages);
+    PageController? oldPdfController;
+    PageController? oldPageController;
+
+    if (_isPdfMode) {
+      final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+      final targetIndex = (targetPage - 1) + offset;
+      oldPdfController = _pdfPageController;
+      _pdfPageController = PageController(initialPage: targetIndex);
+    } else {
+      oldPageController = _pageController;
+      _pageController = PageController(initialPage: targetPage - 1);
+    }
+
+    if (mounted) {
+      setState(() {
+        _isFullscreen = value;
+        _fullscreenControlsVisible = false;
+      });
+    } else {
+      _isFullscreen = value;
+      _fullscreenControlsVisible = false;
+    }
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      try {
+        oldPdfController?.dispose();
+      } catch (_) {}
+      try {
+        oldPageController?.dispose();
+      } catch (_) {}
+    });
+
+    await _applyFullscreenSystemUi();
+    _syncActiveReaderPage();
+  }
+
+  Future<void> _toggleFullscreen() async {
+    await _setFullscreen(!_isFullscreen);
+  }
+
+  Future<void> _restoreReadingScreenUi() async {
+    try {
+      await WakelockPlus.disable();
+    } catch (_) {}
+    try {
+      await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    } catch (_) {}
+  }
+
+  Future<void> _handlePopInvoked(bool didPop) async {
+    if (!didPop && _isFullscreen) {
+      await _setFullscreen(false);
+    }
+  }
+
+  String _fullscreenTooltip(AppLocalizations l10n, {required bool exiting}) {
+    if (l10n.localeName == 'ar') {
+      return exiting ? 'الخروج من ملء الشاشة' : 'ملء الشاشة';
+    }
+    if (l10n.localeName == 'fr') {
+      return exiting ? 'Quitter le plein écran' : 'Plein écran';
+    }
+    return exiting ? 'Exit fullscreen' : 'Fullscreen';
+  }
+
+  Widget _buildFullscreenExitButton() {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final topInset = MediaQuery.of(context).viewPadding.top;
+
+    return PositionedDirectional(
+      top: topInset + 10,
+      end: 10,
+      child: Material(
+        color: theme.colorScheme.surface.withAlpha(
+          theme.brightness == Brightness.dark ? 205 : 232,
+        ),
+        borderRadius: BorderRadius.circular(18),
+        elevation: 3,
+        child: Tooltip(
+          message: _fullscreenTooltip(l10n, exiting: true),
+          child: InkWell(
+            onTap: () => unawaited(_setFullscreen(false)),
+            borderRadius: BorderRadius.circular(18),
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Icon(
+                Icons.fullscreen_exit_rounded,
+                color: theme.colorScheme.onSurface,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _handlePreviousAyahPressed() async {
+    if (_isLoadingPageAudio) return;
+
+    if (_currentPageData == null) {
+      setState(() {
+        _isLoadingPageAudio = true;
+      });
+      try {
+        final data = await _repository.loadPage(_currentPage, _edition);
+        if (!mounted) return;
+
+        setState(() {
+          _currentPageData = data;
+          _isLoadingPageAudio = false;
+        });
+        await _seekToPreviousAyah();
+      } catch (_) {
+        if (mounted) {
+          setState(() {
+            _isLoadingPageAudio = false;
+          });
+        }
+      }
+      return;
+    }
+
+    await _seekToPreviousAyah();
+  }
+
+  Future<void> _handlePlayPausePressed() async {
+    if (_isLoadingPageAudio) return;
+
+    if (_currentPageData != null) {
+      await _togglePageAudio(_currentPageData!);
+      return;
+    }
+
+    setState(() {
+      _isLoadingPageAudio = true;
+    });
+    final messenger = ScaffoldMessenger.of(context);
+    try {
+      final data = await _repository.loadPage(_currentPage, _edition);
+      if (!mounted) return;
+
+      setState(() {
+        _currentPageData = data;
+        _isLoadingPageAudio = false;
+      });
+      await _togglePageAudio(data);
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoadingPageAudio = false;
+        });
+      }
+      messenger.showSnackBar(
+        SnackBar(content: Text('Error loading audio data: $e')),
+      );
+    }
+  }
+
+  Widget _buildFullscreenPlaybackControls() {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final bottomInset = MediaQuery.of(context).viewPadding.bottom;
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
+
+    return PositionedDirectional(
+      bottom: bottomInset + 16,
+      start: 16,
+      end: 16,
+      child: Center(
+        child: Material(
+          color: theme.colorScheme.surface.withAlpha(
+            theme.brightness == Brightness.dark ? 220 : 238,
+          ),
+          borderRadius: BorderRadius.circular(24),
+          elevation: 6,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
+                  tooltip: l10n.previousAyah,
+                  onPressed: _isLoadingPageAudio
+                      ? null
+                      : () => unawaited(_handlePreviousAyahPressed()),
+                ),
+                IconButton(
+                  iconSize: 34,
+                  icon: _isLoadingPageAudio
+                      ? SizedBox(
+                          width: 26,
+                          height: 26,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2.4,
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              theme.colorScheme.onSurface,
+                            ),
+                          ),
+                        )
+                      : Icon(
+                          _isPlayingPage
+                              ? Icons.pause_circle_filled
+                              : Icons.play_circle_fill,
+                        ),
+                  tooltip: _isPlayingPage
+                      ? l10n.pausePageAudio
+                      : l10n.playPageAudio,
+                  onPressed: _isLoadingPageAudio
+                      ? null
+                      : () => unawaited(_handlePlayPausePressed()),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildReaderContent() {
+    Widget content = _isPdfMode
+        ? _buildPdfView()
+        : FutureBuilder<PageData>(
+            future: _repository.loadPage(_currentPage, _edition),
+            builder: (context, snapshot) {
+              final pageData = snapshot.data;
+              return Column(
+                children: [
+                  Expanded(child: _buildPageView()),
+                  if (!_isFullscreen) _buildBottomBar(pageData),
+                ],
+              );
+            },
+          );
+
+    if (_isFullscreen) {
+      content = GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onLongPress: _showFullscreenControls,
+        child: content,
+      );
+    }
+
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        content,
+        if (_isFullscreen && _fullscreenControlsVisible)
+          Positioned.fill(
+            child: GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: _hideFullscreenControls,
+              child: const SizedBox.expand(),
+            ),
+          ),
+        if (_isFullscreen && _fullscreenControlsVisible)
+          _buildFullscreenPlaybackControls(),
+        if (_isFullscreen)
+          _buildFullscreenExitButton(),
+      ],
+    );
   }
 
   TextStyle _arabicTextStyle({
@@ -1865,6 +2200,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
              return _ZoomablePdfPage(
                document: document,
                pageNumber: index + 1,
+               isFullscreen: _isFullscreen,
                onZoomChanged: (isZoomed) {
                  if (mounted && isZoomed != _isPdfZoomed) {
                     setState(() {
@@ -1873,6 +2209,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                  }
                },
                onLongPress: () {
+                  if (_isFullscreen) {
+                    _showFullscreenControls();
+                    return;
+                  }
                   // Calculate Quran page
                   final quranPage = (index - offset) + 1;
                   if (quranPage >= 1 && quranPage <= 604) {
@@ -2051,8 +2391,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         ),
       ),
       child: SafeArea(
+        top: !_isFullscreen,
+        bottom: !_isFullscreen,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+          padding: EdgeInsets.symmetric(
+            horizontal: _isFullscreen ? 8 : 12,
+            vertical: _isFullscreen ? 8 : 16,
+          ),
           child: SingleChildScrollView(
             controller: _pageScrollController,
             child: Column(
@@ -2212,7 +2557,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       },
       child: InkWell(
         onTap: () => _selectAyah(ayah),
-        onLongPress: () => _showAyahOptions(ayah),
+        onLongPress: () {
+          if (_isFullscreen) {
+            _showFullscreenControls();
+            return;
+          }
+          _showAyahOptions(ayah);
+        },
         child: Directionality(
           textDirection: textDirection,
           child: Column(
@@ -2386,217 +2737,176 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     const showPlayButton = true;
-    
-    return ModernPageScaffold(
-      title: l10n.readQuran,
-      icon: Icons.menu_book_rounded,
-      subtitle: _isPdfMode
-          ? (l10n.localeName == 'ar'
-              ? 'عرض المصحف مع التنقل السريع والإشارات المرجعية والصوت.'
-              : l10n.localeName == 'fr'
-                  ? 'Affichage du mushaf avec navigation rapide, signets et audio.'
-                  : 'Mushaf view with quick navigation, bookmarks, and audio.')
-          : (l10n.localeName == 'ar'
-              ? 'اقرأ القرآن مع التصفح الذكي والتظليل والصوت وإعدادات العرض.'
-              : l10n.localeName == 'fr'
-                  ? 'Lisez le Coran avec navigation intelligente, mise en évidence et audio.'
-                  : 'Read the Quran with smart navigation, highlights, and audio.'),
-      actions: [
-        if (!kIsWeb)
-          IconButton(
-            icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
-            tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
-            onPressed: _togglePdfMode,
-          ),
-        if (_isPdfMode)
-          IconButton(
-            icon: const Icon(Icons.bookmarks),
-            onPressed: _openHighlightedPdfPagesSheet,
-            tooltip: l10n.bookmarks,
-          ),
-        if (!_isPdfMode)
-          IconButton(
-            icon: const Icon(Icons.bookmark_outline),
-            onPressed: _highlightedAyahs.isEmpty
-                ? null
-                : _openHighlightedAyahsSheet,
-          ),
-        IconButton(
-          icon: const Icon(Icons.settings_rounded),
-          onPressed: () => _showSettingsSheet(),
-        ),
-        if (showPlayButton) ...[
-          IconButton(
-            icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
-            tooltip: l10n.previousAyah,
-            onPressed: _isLoadingPageAudio
-                ? null
-                : () async {
-                   if (_currentPageData == null) {
-                      setState(() { _isLoadingPageAudio = true; });
-                      try {
-                        final data = await _repository.loadPage(_currentPage, _edition);
-                        if (!mounted) return;
-                        
-                        setState(() {
-                           _currentPageData = data;
-                           _isLoadingPageAudio = false;
-                        });
-                        await _seekToPreviousAyah();
-                      } catch (e) {
-                        if (mounted) setState(() { _isLoadingPageAudio = false; });
-                      }
-                   } else {
-                     await _seekToPreviousAyah();
-                   }
-                },
-          ),
-          IconButton(
-            icon: _isLoadingPageAudio
-                ? SizedBox(
-                    width: 20,
-                    height: 20,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Theme.of(context).colorScheme.onSurface,
-                      ),
-                    ),
-                  )
-                : Icon(
-                    _isPlayingPage
-                        ? Icons.pause_circle_filled
-                        : Icons.play_circle_fill,
-                  ),
-            tooltip: _isPlayingPage
-                ? l10n.pausePageAudio
-                : l10n.playPageAudio,
-            onPressed: _isLoadingPageAudio
-                ? null
-                : () async {
-                    if (_currentPageData != null) {
-                      await _togglePageAudio(_currentPageData!);
-                    } else {
-                      setState(() {
-                         _isLoadingPageAudio = true;
-                      });
-                      final messenger = ScaffoldMessenger.of(context);
-                      try {
-                         final data = await _repository.loadPage(_currentPage, _edition);
-                         if (!mounted) return;
+
+    final screen = _isFullscreen
+        ? Scaffold(
+            backgroundColor: Theme.of(context).colorScheme.surface,
+            body: _buildReaderContent(),
+          )
+        : ModernPageScaffold(
+            title: l10n.readQuran,
+            icon: Icons.menu_book_rounded,
+            subtitle: _isPdfMode
+                ? (l10n.localeName == 'ar'
+                    ? 'عرض المصحف مع التنقل السريع والإشارات المرجعية والصوت.'
+                    : l10n.localeName == 'fr'
+                        ? 'Affichage du mushaf avec navigation rapide, signets et audio.'
+                        : 'Mushaf view with quick navigation, bookmarks, and audio.')
+                : (l10n.localeName == 'ar'
+                    ? 'اقرأ القرآن مع التصفح الذكي والتظليل والصوت وإعدادات العرض.'
+                    : l10n.localeName == 'fr'
+                        ? 'Lisez le Coran avec navigation intelligente, mise en évidence et audio.'
+                        : 'Read the Quran with smart navigation, highlights, and audio.'),
+            actions: [
+              IconButton(
+                icon: const Icon(Icons.fullscreen_rounded),
+                tooltip: _fullscreenTooltip(l10n, exiting: false),
+                onPressed: () => unawaited(_toggleFullscreen()),
+              ),
+              if (!kIsWeb)
+                IconButton(
+                  icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
+                  tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
+                  onPressed: _togglePdfMode,
+                ),
+              if (_isPdfMode)
+                IconButton(
+                  icon: const Icon(Icons.bookmarks),
+                  onPressed: _openHighlightedPdfPagesSheet,
+                  tooltip: l10n.bookmarks,
+                ),
+              if (!_isPdfMode)
+                IconButton(
+                  icon: const Icon(Icons.bookmark_outline),
+                  onPressed: _highlightedAyahs.isEmpty
+                      ? null
+                      : _openHighlightedAyahsSheet,
+                ),
+              IconButton(
+                icon: const Icon(Icons.settings_rounded),
+                onPressed: () => _showSettingsSheet(),
+              ),
+              if (showPlayButton) ...[
+                IconButton(
+                  icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
+                  tooltip: l10n.previousAyah,
+                  onPressed: _isLoadingPageAudio
+                      ? null
+                      : () => unawaited(_handlePreviousAyahPressed()),
+                ),
+                IconButton(
+                  icon: _isLoadingPageAudio
+                      ? SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              Theme.of(context).colorScheme.onSurface,
+                            ),
+                          ),
+                        )
+                      : Icon(
+                          _isPlayingPage
+                              ? Icons.pause_circle_filled
+                              : Icons.play_circle_fill,
+                        ),
+                  tooltip: _isPlayingPage
+                      ? l10n.pausePageAudio
+                      : l10n.playPageAudio,
+                  onPressed: _isLoadingPageAudio
+                      ? null
+                      : () => unawaited(_handlePlayPausePressed()),
+                ),
+              ],
+              if (!_isPdfMode)
+                PopupMenuButton<QuranEdition>(
+                  icon: const Icon(Icons.menu_book_outlined),
+                  onSelected: _toggleEdition,
+                  itemBuilder: (context) {
+                    final colorScheme = Theme.of(context).colorScheme;
+                    return QuranEdition.values
+                      .map(
+                        (edition) => PopupMenuItem<QuranEdition>(
+                          value: edition,
+                          child: Row(
+                            children: [
+                              if (edition == _edition)
+                                  Icon(
+                                    Icons.check,
+                                    size: 18,
+                                    color: colorScheme.primary,
+                                  )
+                              else
+                                const SizedBox(width: 18),
+                              const SizedBox(width: 8),
+                              Text(_editionLabel(edition, l10n)),
+                            ],
+                          ),
+                        ),
+                      )
+                        .toList();
+                  },
+                ),
+              if (_isPdfMode)
+                 PopupMenuButton<MushafType>(
+                   icon: const Icon(Icons.style),
+                   tooltip: l10n.chooseStyleToDownload,
+                   onSelected: _downloadPdf,
+                   itemBuilder: (context) {
+                     final colorScheme = Theme.of(context).colorScheme;
+                     return MushafType.values.map((type) {
+                         String typeName;
+                         switch (type) {
+                           case MushafType.blue:
+                             typeName = l10n.mushafTypeBlue;
+                             break;
+                           case MushafType.green:
+                             typeName = l10n.mushafTypeGreen;
+                             break;
+                           case MushafType.tajweed:
+                             typeName = l10n.mushafTypeTajweed;
+                             break;
+                         }
                          
-                         setState(() {
-                           _currentPageData = data;
-                           _isLoadingPageAudio = false;
-                         });
-                         await _togglePageAudio(data);
-                      } catch (e) {
-                         messenger.showSnackBar(
-                             SnackBar(content: Text('Error loading audio data: $e')),
+                         return PopupMenuItem<MushafType>(
+                           value: type,
+                           child: Row(
+                             children: [
+                               if (type == _pdfType)
+                                   Icon(
+                                     Icons.check,
+                                     size: 18,
+                                     color: colorScheme.primary,
+                                   )
+                               else
+                                   const SizedBox(width: 18),
+                               const SizedBox(width: 8),
+                               Text(typeName),
+                             ],
+                           ),
                          );
-                      }
-                    }
-                },
-          ),
-        ],
-        if (!_isPdfMode)
-          PopupMenuButton<QuranEdition>(
-            icon: const Icon(Icons.menu_book_outlined),
-            onSelected: _toggleEdition,
-            itemBuilder: (context) {
-              final colorScheme = Theme.of(context).colorScheme;
-              return QuranEdition.values
-                .map(
-                  (edition) => PopupMenuItem<QuranEdition>(
-                    value: edition,
-                    child: Row(
-                      children: [
-                        if (edition == _edition)
-                            Icon(
-                              Icons.check,
-                              size: 18,
-                              color: colorScheme.primary,
-                            )
-                        else
-                          const SizedBox(width: 18),
-                        const SizedBox(width: 8),
-                        Text(_editionLabel(edition, l10n)),
-                      ],
-                    ),
-                  ),
-                )
-                  .toList();
-            },
-          ),
-        if (_isPdfMode)
-           PopupMenuButton<MushafType>(
-             icon: const Icon(Icons.style),
-             tooltip: l10n.chooseStyleToDownload,
-             onSelected: _downloadPdf,
-             itemBuilder: (context) {
-               final colorScheme = Theme.of(context).colorScheme;
-               return MushafType.values.map((type) {
-                   String typeName;
-                   switch (type) {
-                     case MushafType.blue:
-                       typeName = l10n.mushafTypeBlue;
-                       break;
-                     case MushafType.green:
-                       typeName = l10n.mushafTypeGreen;
-                       break;
-                     case MushafType.tajweed:
-                       typeName = l10n.mushafTypeTajweed;
-                       break;
-                   }
-                   
-                   return PopupMenuItem<MushafType>(
-                     value: type,
-                     child: Row(
-                       children: [
-                         if (type == _pdfType)
-                             Icon(
-                               Icons.check,
-                               size: 18,
-                               color: colorScheme.primary,
-                             )
-                         else
-                             const SizedBox(width: 18),
-                         const SizedBox(width: 8),
-                         Text(typeName),
-                       ],
-                     ),
-                   );
-               }).toList();
-             },
-           ),
-      ],
-      body: Stack(
-        children: [
-           if (_isPdfMode)
-             _buildPdfView()
-           else
-             FutureBuilder<PageData>(
-                future: _repository.loadPage(_currentPage, _edition),
-                builder: (context, snapshot) {
-                  final pageData = snapshot.data;
-                  return Column(
-                    children: [
-                      Expanded(child: _buildPageView()),
-                      _buildBottomBar(pageData),
-                    ],
-                  );
-                },
-             ),
-        ],
-      ),
-      bottomNavigationBar: _isPdfMode
-          ? FutureBuilder<PageData>(
-              future: _repository.loadPage(_currentPage, _edition),
-              builder: (context, snapshot) {
-                 return _buildBottomBar(snapshot.data);
-              },
-            )
-          : null,
+                     }).toList();
+                   },
+                 ),
+            ],
+            body: _buildReaderContent(),
+            bottomNavigationBar: _isPdfMode
+                ? FutureBuilder<PageData>(
+                    future: _repository.loadPage(_currentPage, _edition),
+                    builder: (context, snapshot) {
+                       return _buildBottomBar(snapshot.data);
+                    },
+                  )
+                : null,
+          );
+
+    return PopScope(
+      canPop: !_isFullscreen,
+      onPopInvokedWithResult: (didPop, result) async {
+        await _handlePopInvoked(didPop);
+      },
+      child: screen,
     );
   }
 }
@@ -2882,11 +3192,13 @@ class _ZoomablePdfPage extends StatefulWidget {
   final PdfDocument document;
   final int pageNumber;
   final ValueChanged<bool>? onZoomChanged;
+  final bool isFullscreen;
 
   const _ZoomablePdfPage({
     // super.key,  // Unused parameter
     required this.document,
     required this.pageNumber,
+    required this.isFullscreen,
     this.onZoomChanged,
     this.onLongPress,
   });
@@ -2944,9 +3256,11 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
     // Get screen orientation
     final orientation = MediaQuery.of(context).orientation;
     final isLandscape = orientation == Orientation.landscape;
+    final pdfPageInfo = widget.document.pages[widget.pageNumber - 1];
     
     // In landscape, scale up the PDF to make it more readable
     final double scale = isLandscape ? 2.8 : 1.0;
+    final pageAlignment = widget.isFullscreen ? Alignment.topCenter : Alignment.center;
     
     return GestureDetector(
       onLongPress: widget.onLongPress,
@@ -2982,43 +3296,59 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
         
         _checkZoomState();
       },
-      child: Container(
-        color: Colors.white,
-        child: isLandscape
-            ? InteractiveViewer(
-                transformationController: _transformationController,
-                boundaryMargin: EdgeInsets.zero,
-                minScale: 0.5,
-                maxScale: 4.0,
-                panEnabled: true,
-                scaleEnabled: true,
-                onInteractionUpdate: (_) => _checkZoomState(),
-                onInteractionEnd: (_) => _checkZoomState(),
-                child: Transform.scale(
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final viewportAspectRatio = constraints.maxHeight > 0 && constraints.maxWidth > 0
+              ? constraints.maxHeight / constraints.maxWidth
+              : 1.0;
+          final pageAspectRatio = pdfPageInfo.width > 0
+              ? pdfPageInfo.height / pdfPageInfo.width
+              : 1.0;
+          const portraitFullscreenFitSafety = 0.95;
+          final portraitFullscreenScale = widget.isFullscreen && !isLandscape
+              ? ((viewportAspectRatio / pageAspectRatio) * portraitFullscreenFitSafety)
+                  .clamp(1.0, 1.8)
+              : 1.0;
+
+          final pdfPage = SizedBox(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            child: PdfPageView(
+              document: widget.document,
+              pageNumber: widget.pageNumber,
+              alignment: pageAlignment,
+            ),
+          );
+
+          final zoomableChild = isLandscape
+              ? Transform.scale(
                   scale: scale,
-                  alignment: Alignment.topCenter,
-                  child: PdfPageView(
-                    document: widget.document,
-                    pageNumber: widget.pageNumber,
-                    alignment: Alignment.center,
-                  ),
-                ),
-              )
-            : InteractiveViewer(
+                  alignment: pageAlignment,
+                  child: pdfPage,
+                )
+              : Transform.scale(
+                  scale: portraitFullscreenScale,
+                  alignment: pageAlignment,
+                  child: pdfPage,
+                );
+
+          return ClipRect(
+            child: ColoredBox(
+              color: Colors.white,
+              child: InteractiveViewer(
                 transformationController: _transformationController,
                 boundaryMargin: EdgeInsets.zero,
-                minScale: 1.0,
+                minScale: widget.isFullscreen && !isLandscape ? 0.9 : (isLandscape ? 0.5 : 1.0),
                 maxScale: 4.0,
                 panEnabled: true,
                 scaleEnabled: true,
                 onInteractionUpdate: (_) => _checkZoomState(),
                 onInteractionEnd: (_) => _checkZoomState(),
-                child: PdfPageView(
-                  document: widget.document,
-                  pageNumber: widget.pageNumber,
-                  alignment: Alignment.center,
-                ),
+                child: zoomableChild,
               ),
+            ),
+          );
+        },
       ),
     );
   }
