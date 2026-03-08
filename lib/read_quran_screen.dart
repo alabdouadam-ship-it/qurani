@@ -66,7 +66,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   int? _pendingScrollAyah;
   late String _arabicFontKey;
   bool _autoFlip = false;
-  final Map<String, PageData> _pageCache = <String, PageData>{}; // Cache for loaded pages
+  final Map<String, PageData> _pageCache =
+      <String, PageData>{}; // Cache for loaded pages
 
   // PDF Mode State
   bool _isPdfMode = false;
@@ -81,7 +82,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   bool _isFullscreen = false;
   bool _fullscreenControlsVisible = false;
 
-
   @override
   void initState() {
     super.initState();
@@ -94,7 +94,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     } catch (_) {
       _edition = QuranEdition.simple;
     }
-    
+
     // Check start at last page preference
     final startAtLastPage = PreferencesService.getStartAtLastPage();
     if (startAtLastPage) {
@@ -115,7 +115,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     _arabicFontKey = PreferencesService.getArabicFontFamily();
     _autoFlip = PreferencesService.getAutoFlipPage();
     PreferencesService.arabicFontNotifier.addListener(_onArabicFontChanged);
-    
+
     // Initialize PDF Mode
     _isPdfMode = PreferencesService.getIsPdfMode();
     final pdfTypeStr = PreferencesService.getPdfType();
@@ -130,8 +130,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
     _pagePlayer = AudioPlayer();
     _playerStateSub = _pagePlayer.playerStateStream.listen((state) {
-      final completed =
-          state.processingState == ProcessingState.completed;
+      final completed = state.processingState == ProcessingState.completed;
       final isPlaying = state.playing && !completed;
       if (mounted) {
         setState(() {
@@ -141,26 +140,28 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _isPlayingPage = isPlaying;
       }
       if (completed) {
-        debugPrint('[ReadQuran] Audio completed on page $_currentPage, autoFlip: $_autoFlip');
+        debugPrint(
+            '[ReadQuran] Audio completed on page $_currentPage, autoFlip: $_autoFlip');
         if (_autoFlip && _currentPage < _totalPages && mounted) {
           // Store the next page BEFORE any async operations
           final nextPage = _currentPage + 1;
-          debugPrint('[ReadQuran] Auto-flipping from $_currentPage to $nextPage');
-          
+          debugPrint(
+              '[ReadQuran] Auto-flipping from $_currentPage to $nextPage');
+
           // Stop current audio before flipping
           unawaited(_stopPageAudio());
-          
+
           Future.delayed(const Duration(milliseconds: 500), () async {
             if (!mounted) return;
-            
+
             debugPrint('[ReadQuran] Calling _goToPage($nextPage)');
             _goToPage(nextPage);
-            
+
             // Wait for page to load and onPageChanged to complete
             await Future.delayed(const Duration(milliseconds: 500));
-            
+
             if (!mounted) return;
-            
+
             // Load and play audio for the next page
             try {
               debugPrint('[ReadQuran] Loading audio for page $nextPage');
@@ -178,14 +179,16 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         }
       }
     });
-     _sequenceStateSub =
-        _pagePlayer.sequenceStateStream.listen((sequenceState) {
+    _sequenceStateSub = _pagePlayer.sequenceStateStream.listen((sequenceState) {
       if (!mounted) return; // Prevent processing if widget disposed
-      
+
       final index = sequenceState?.currentIndex;
       final page = _currentPageData;
       int? ayahNumber;
-      if (index != null && page != null && index >= 0 && index < page.ayahs.length) {
+      if (index != null &&
+          page != null &&
+          index >= 0 &&
+          index < page.ayahs.length) {
         ayahNumber = page.ayahs[index].number;
       }
       if (mounted) {
@@ -208,7 +211,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     _playerStateSub?.cancel();
     _sequenceStateSub?.cancel();
     unawaited(_restoreReadingScreenUi());
-    
+
     // Dispose player safely
     try {
       _pagePlayer.dispose();
@@ -230,49 +233,47 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       _ayahKeys.clear();
       _pendingScrollAyah = highlightAyah;
     });
-    
+
     // Jump PDF controller if in PDF mode
     if (_isPdfMode && _pdfPath != null) {
-         final offset = MushafPdfService.instance.getPageOffset(_pdfType);
-         // PDF Page Index = (Target Quran Page - 1) + Offset
-         // But wait, the offset logic:
-         // Text Page 1 (Fatiha) -> PDF Page 4.
-         // PDF Page 4 is Index 3 (if 0-based).
-         // My PageView.builder is 0-based.
-         // item 0 is PDF Page 1.
-         // item 3 is PDF Page 4.
-         // So Target Index = (Target - 1) + Offset.
-         // Example: Go to Page 1. Target=1. Offset=3. Index = 0 + 3 = 3. Correct (Page 4).
-         
-         final targetIndex = (target - 1) + offset;
-         
-         if (_pdfPageController?.hasClients == true) {
-             _pdfPageController!.jumpToPage(targetIndex);
-         }
+      final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+      // PDF Page Index = (Target Quran Page - 1) + Offset
+      // But wait, the offset logic:
+      // Text Page 1 (Fatiha) -> PDF Page 4.
+      // PDF Page 4 is Index 3 (if 0-based).
+      // My PageView.builder is 0-based.
+      // item 0 is PDF Page 1.
+      // item 3 is PDF Page 4.
+      // So Target Index = (Target - 1) + Offset.
+      // Example: Go to Page 1. Target=1. Offset=3. Index = 0 + 3 = 3. Correct (Page 4).
+
+      final targetIndex = (target - 1) + offset;
+
+      if (_pdfPageController?.hasClients == true) {
+        _pdfPageController!.jumpToPage(targetIndex);
+      }
     } else {
-        WidgetsBinding.instance.addPostFrameCallback((_) {
-          if (!mounted) return;
-          if (_pageScrollController.hasClients) {
-            _pageScrollController.jumpTo(0);
-          }
-          if (highlightAyah != null) {
-            _scheduleScrollToAyah(highlightAyah, immediate: true);
-          }
-        });
-        try {
-          _pageController.jumpToPage(target - 1);
-        } catch (_) {
-          // Fallback to animated navigation if jump fails due to controller state
-          _pageController.animateToPage(
-            target - 1,
-            duration: const Duration(milliseconds: 250),
-            curve: Curves.easeInOut,
-          );
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        if (_pageScrollController.hasClients) {
+          _pageScrollController.jumpTo(0);
         }
+        if (highlightAyah != null) {
+          _scheduleScrollToAyah(highlightAyah, immediate: true);
+        }
+      });
+      try {
+        _pageController.jumpToPage(target - 1);
+      } catch (_) {
+        // Fallback to animated navigation if jump fails due to controller state
+        _pageController.animateToPage(
+          target - 1,
+          duration: const Duration(milliseconds: 250),
+          curve: Curves.easeInOut,
+        );
+      }
     }
   }
-
-
 
   void _onArabicFontChanged() {
     if (!mounted) return;
@@ -551,9 +552,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                               ? Icons.pause_circle_filled
                               : Icons.play_circle_fill,
                         ),
-                  tooltip: _isPlayingPage
-                      ? l10n.pausePageAudio
-                      : l10n.playPageAudio,
+                  tooltip:
+                      _isPlayingPage ? l10n.pausePageAudio : l10n.playPageAudio,
                   onPressed: _isLoadingPageAudio
                       ? null
                       : () => unawaited(_handlePlayPausePressed()),
@@ -604,8 +604,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ),
         if (_isFullscreen && _fullscreenControlsVisible)
           _buildFullscreenPlaybackControls(),
-        if (_isFullscreen)
-          _buildFullscreenExitButton(),
+        if (_isFullscreen) _buildFullscreenExitButton(),
       ],
     );
   }
@@ -645,7 +644,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       {bool immediate = false, int attempt = 0}) {
     // In PDF mode, we don't use the item scrolling logic
     if (_isPdfMode) return;
-    
+
     if (attempt > 8) return;
     _pendingScrollAyah = ayahNumber;
     final key = _ayahKeys[ayahNumber];
@@ -672,7 +671,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         if (context.mounted) {
           await Scrollable.ensureVisible(
             context,
-            duration: immediate ? Duration.zero : const Duration(milliseconds: 350),
+            duration:
+                immediate ? Duration.zero : const Duration(milliseconds: 350),
             curve: Curves.easeInOut,
             alignment: 0.2,
           );
@@ -689,7 +689,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     final initialIndex = _currentPage - 1;
     final textController = TextEditingController(text: _currentPage.toString());
-    
+
     final selected = await showModalBottomSheet<int>(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -715,7 +715,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                 ),
                 // Text field for direct input
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                   child: TextField(
                     controller: textController,
                     keyboardType: TextInputType.number,
@@ -727,7 +728,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 8),
                       isDense: true,
                     ),
                     onChanged: (value) {
@@ -778,7 +780,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       FilledButton(
                         onPressed: () {
                           final page = int.tryParse(textController.text);
-                          if (page != null && page >= 1 && page <= _totalPages) {
+                          if (page != null &&
+                              page >= 1 &&
+                              page <= _totalPages) {
                             Navigator.pop<int>(context, page);
                           } else {
                             Navigator.pop<int>(context, tempIndex + 1);
@@ -880,8 +884,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     });
   }
 
-
-
   void _showSettingsSheet() {
     final l10n = AppLocalizations.of(context)!;
     showModalBottomSheet(
@@ -923,8 +925,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       trailing: Switch(
                         value: PreferencesService.getStartAtLastPage(),
                         onChanged: (val) async {
-                           setSheetState(() {});
-                           await PreferencesService.saveStartAtLastPage(val);
+                          setSheetState(() {});
+                          await PreferencesService.saveStartAtLastPage(val);
                         },
                       ),
                     ),
@@ -939,30 +941,28 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       ),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
-                         Navigator.pop(context);
-                         SettingsSheetUtils.showReciterSelectionSheet(
-                             context,
-                             requireVerseByVerse: true,
-                             onReciterSelected: (key) {
-                               PreferencesService.saveReciter(key);
-                               setState(() {
-                                 if (_pageAudioReciter != key) {
-                                    _pageAudioReciter = null;
-                                 }
-                               });
-                             }
-                         );
+                        Navigator.pop(context);
+                        SettingsSheetUtils.showReciterSelectionSheet(context,
+                            requireVerseByVerse: true,
+                            onReciterSelected: (key) {
+                          PreferencesService.saveReciter(key);
+                          setState(() {
+                            if (_pageAudioReciter != key) {
+                              _pageAudioReciter = null;
+                            }
+                          });
+                        });
                       },
                     ),
                     if (_isPdfMode) ...[
                       const Divider(),
                       ListTile(
                         title: Text(l10n.mushafStyle),
-                        subtitle: Text(
-                          _pdfType == MushafType.blue ? l10n.mushafTypeBlue :
-                          _pdfType == MushafType.green ? l10n.mushafTypeGreen :
-                          l10n.mushafTypeTajweed
-                        ),
+                        subtitle: Text(_pdfType == MushafType.blue
+                            ? l10n.mushafTypeBlue
+                            : _pdfType == MushafType.green
+                                ? l10n.mushafTypeGreen
+                                : l10n.mushafTypeTajweed),
                         trailing: const Icon(Icons.chevron_right),
                         onTap: () {
                           Navigator.pop(context);
@@ -990,50 +990,52 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       builder: (context) {
         return SafeArea(
           child: Padding(
-             padding: const EdgeInsets.symmetric(vertical: 16),
-             child: Column(
-               mainAxisSize: MainAxisSize.min,
-               children: [
-                 Text(
-                   l10n.mushafStyle,
-                   style: Theme.of(context).textTheme.titleLarge,
-                 ),
-                 const SizedBox(height: 16),
-                 ...MushafType.values.map((type) {
-                   String typeName;
-                   switch (type) {
-                     case MushafType.blue:
-                       typeName = l10n.mushafTypeBlue;
-                       break;
-                     case MushafType.green:
-                       typeName = l10n.mushafTypeGreen;
-                       break;
-                     case MushafType.tajweed:
-                       typeName = l10n.mushafTypeTajweed;
-                       break;
-                   }
-                   
-                   return ListTile(
-                     title: Text(typeName),
-                     trailing: _pdfType == type ? const Icon(Icons.check, color: Colors.green) : null,
-                     onTap: () async {
-                       Navigator.pop(context);
-                       if (_pdfType != type) {
-                         setState(() {
-                           _pdfType = type;
-                           // Reset path so we check availability again or download
-                           _pdfPath = null;
-                           _pdfDocumentFuture = null;
-                           _pdfPageController = null;
-                         });
-                         await PreferencesService.savePdfType(type.name);
-                         await _checkPdfAvailability();
-                       }
-                     },
-                   );
-                 }),
-               ],
-             ),
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  l10n.mushafStyle,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const SizedBox(height: 16),
+                ...MushafType.values.map((type) {
+                  String typeName;
+                  switch (type) {
+                    case MushafType.blue:
+                      typeName = l10n.mushafTypeBlue;
+                      break;
+                    case MushafType.green:
+                      typeName = l10n.mushafTypeGreen;
+                      break;
+                    case MushafType.tajweed:
+                      typeName = l10n.mushafTypeTajweed;
+                      break;
+                  }
+
+                  return ListTile(
+                    title: Text(typeName),
+                    trailing: _pdfType == type
+                        ? const Icon(Icons.check, color: Colors.green)
+                        : null,
+                    onTap: () async {
+                      Navigator.pop(context);
+                      if (_pdfType != type) {
+                        setState(() {
+                          _pdfType = type;
+                          // Reset path so we check availability again or download
+                          _pdfPath = null;
+                          _pdfDocumentFuture = null;
+                          _pdfPageController = null;
+                        });
+                        await PreferencesService.savePdfType(type.name);
+                        await _checkPdfAvailability();
+                      }
+                    },
+                  );
+                }),
+              ],
+            ),
           ),
         );
       },
@@ -1046,7 +1048,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
     if (mounted &&
         (storedHighlightsMap.length != _highlightedAyahs.length ||
-            !_highlightedAyahs.keys.toSet().containsAll(storedHighlightsMap.keys))) {
+            !_highlightedAyahs.keys
+                .toSet()
+                .containsAll(storedHighlightsMap.keys))) {
       setState(() {
         _highlightedAyahs
           ..clear()
@@ -1110,8 +1114,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       ),
       builder: (context) {
         final theme = Theme.of(context);
-        final height = ((MediaQuery.of(context).size.height * 0.6)
-            .clamp(320.0, 520.0)).toDouble();
+        final height =
+            ((MediaQuery.of(context).size.height * 0.6).clamp(320.0, 520.0))
+                .toDouble();
         return SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
@@ -1151,7 +1156,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                             foregroundColor: Colors.black87,
                             child: Text(
                               entry.ayah.numberInSurah.toString(),
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                           title: Text(
@@ -1190,11 +1196,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       });
 
       final theme = Theme.of(context);
-      final textDirection = _edition.isRtl ? TextDirection.rtl : TextDirection.ltr;
+      final textDirection =
+          _edition.isRtl ? TextDirection.rtl : TextDirection.ltr;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           duration: const Duration(seconds: 2),
-          backgroundColor: theme.colorScheme.surface.withAlpha((255 * 0.95).round()),
+          backgroundColor:
+              theme.colorScheme.surface.withAlpha((255 * 0.95).round()),
           content: Text(
             '${selected.ayah.surah.name} • $verseInSurah',
             textDirection: textDirection,
@@ -1228,7 +1236,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
   }
 
-  Future<bool> _playSelectedAyah({PageData? page, bool showErrors = false}) async {
+  Future<bool> _playSelectedAyah(
+      {PageData? page, bool showErrors = false}) async {
     page ??= _currentPageData;
     if (page == null || page.ayahs.isEmpty) {
       return false;
@@ -1245,7 +1254,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           context: context,
           builder: (context) => AlertDialog(
             title: Text(l10n.reciterNotCompatible),
-            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(PreferencesService.getLanguage()))),
+            content: Text(l10n.reciterNotAvailableForVerses(
+                reciter.getDisplayName(PreferencesService.getLanguage()))),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -1282,15 +1292,16 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       final prepared = await _preparePageAudio(page, reciterCode);
       if (!prepared) {
         if (showErrors && mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.surahUnavailable)),
-        );
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(l10n.surahUnavailable)),
+          );
         }
         return false;
       }
 
       final selectedAyahNumber = _selectedAyah ?? page.ayahs.first.number;
-      final targetIndex = page.ayahs.indexWhere((a) => a.number == selectedAyahNumber);
+      final targetIndex =
+          page.ayahs.indexWhere((a) => a.number == selectedAyahNumber);
       final safeIndex = targetIndex >= 0 ? targetIndex : 0;
 
       final playingAyahNumber = page.ayahs[safeIndex].number;
@@ -1396,7 +1407,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     } catch (error, stackTrace) {
       debugPrint('[ReadQuran] CRITICAL ERROR loading page audio: $error');
       debugPrint('[ReadQuran] Stack trace: $stackTrace');
-      
+
       // Show debug error dialog
       if (mounted) {
         DebugErrorDisplay.showError(
@@ -1407,19 +1418,22 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           stackTrace: stackTrace.toString(),
         );
       }
-      
+
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
         String userMessage = l10n.errorLoadingAudio;
-        
+
         if (error.toString().contains('Permission')) {
-          userMessage = 'Audio permission required. Please grant permission in settings.';
-        } else if (error.toString().contains('Network') || error.toString().contains('Connection')) {
+          userMessage =
+              'Audio permission required. Please grant permission in settings.';
+        } else if (error.toString().contains('Network') ||
+            error.toString().contains('Connection')) {
           userMessage = l10n.audioInternetRequired;
-        } else if (error.toString().contains('Format') || error.toString().contains('Codec')) {
+        } else if (error.toString().contains('Format') ||
+            error.toString().contains('Codec')) {
           userMessage = 'Audio format not supported on this device.';
         }
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(userMessage),
@@ -1427,7 +1441,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ),
         );
       }
-      
+
       completer.completeError(error);
       rethrow;
     } finally {
@@ -1514,8 +1528,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
   }
 
-
-
   Future<void> _showAyahOptions(AyahData ayah) async {
     final l10n = AppLocalizations.of(context)!;
     final isHighlighted = _highlightedAyahs.containsKey(ayah.number);
@@ -1539,7 +1551,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                 ListTile(
                   leading: const Icon(Icons.bookmark_remove),
                   title: Text(l10n.removeHighlight),
-                  onTap: () => Navigator.pop(context, _AyahAction.removeHighlight),
+                  onTap: () =>
+                      Navigator.pop(context, _AyahAction.removeHighlight),
                 ),
               ListTile(
                 leading: const Icon(Icons.share),
@@ -1614,7 +1627,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           reciterIdentifier: _pageAudioReciter,
         );
         break;
-
     }
   }
 
@@ -1637,45 +1649,59 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   void _showColorPicker(AyahData ayah) {
-     final l10n = AppLocalizations.of(context)!;
-     final colors = [
-       {'name': l10n.colorDefault, 'value': 0xFFFFF7C2, 'color': const Color(0xFFFFF7C2)},
-       {'name': l10n.colorRed, 'value': 0xFFFFCDD2, 'color': Colors.red.shade100},
-       {'name': l10n.colorBlue, 'value': 0xFFBBDEFB, 'color': Colors.blue.shade100},
-       {'name': l10n.colorGreen, 'value': 0xFFC8E6C9, 'color': Colors.green.shade100},
-     ];
-     
-     showModalBottomSheet(
-       context: context,
-       shape: const RoundedRectangleBorder(
-         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-       ),
-       builder: (context) {
-         return SafeArea(
-           child: Column(
-             mainAxisSize: MainAxisSize.min,
-             children: [
-               Padding(
-                 padding: const EdgeInsets.symmetric(vertical: 16),
-                 child: Text(
-                   l10n.addHighlight, // Or "Choose Color" if localized
-                   style: Theme.of(context).textTheme.titleMedium,
-                 ),
-               ),
-               ...colors.map((c) => ListTile(
-                 leading: CircleAvatar(backgroundColor: c['color'] as Color),
-                 title: Text(c['name'] as String),
-                 onTap: () {
-                    Navigator.pop(context);
-                    _setAyahHighlight(ayah, c['value'] as int);
-                 },
-               )),
-               const SizedBox(height: 12),
-             ],
-           )
-         );
-       }
-     );
+    final l10n = AppLocalizations.of(context)!;
+    final colors = [
+      {
+        'name': l10n.colorDefault,
+        'value': 0xFFFFF7C2,
+        'color': const Color(0xFFFFF7C2)
+      },
+      {
+        'name': l10n.colorRed,
+        'value': 0xFFFFCDD2,
+        'color': Colors.red.shade100
+      },
+      {
+        'name': l10n.colorBlue,
+        'value': 0xFFBBDEFB,
+        'color': Colors.blue.shade100
+      },
+      {
+        'name': l10n.colorGreen,
+        'value': 0xFFC8E6C9,
+        'color': Colors.green.shade100
+      },
+    ];
+
+    showModalBottomSheet(
+        context: context,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        builder: (context) {
+          return SafeArea(
+              child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: Text(
+                  l10n.addHighlight, // Or "Choose Color" if localized
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+              ),
+              ...colors.map((c) => ListTile(
+                    leading: CircleAvatar(backgroundColor: c['color'] as Color),
+                    title: Text(c['name'] as String),
+                    onTap: () {
+                      Navigator.pop(context);
+                      _setAyahHighlight(ayah, c['value'] as int);
+                    },
+                  )),
+              const SizedBox(height: 12),
+            ],
+          ));
+        });
   }
 
   Future<void> _showTranslation(AyahData ayah, QuranEdition edition) async {
@@ -1734,16 +1760,15 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     );
   }
 
-
   Future<void> _checkPdfAvailability() async {
     final path = await MushafPdfService.instance.getPdfPath(_pdfType);
     final exists = await File(path).exists();
     if (mounted) {
       setState(() {
         if (exists && _pdfPath != path) {
-           _pdfDocumentFuture = PdfDocument.openFile(path);
+          _pdfDocumentFuture = PdfDocument.openFile(path);
         } else if (!exists) {
-           _pdfDocumentFuture = null;
+          _pdfDocumentFuture = null;
         }
         _pdfPath = exists ? path : null;
       });
@@ -1752,11 +1777,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   Future<void> _downloadPdf(MushafType type) async {
     final l10n = AppLocalizations.of(context)!;
-    
+
     // Check if files exist first
     final path = await MushafPdfService.instance.getPdfPath(type);
     final exists = await File(path).exists();
-    
+
     if (exists) {
       // Just switch
       await PreferencesService.savePdfType(type.id);
@@ -1785,7 +1810,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           break;
       }
 
-      
       if (!mounted) return;
 
       final confirm = await showDialog<bool>(
@@ -1805,7 +1829,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ],
         ),
       );
-      
+
       if (confirm != true) return;
     }
 
@@ -1827,10 +1851,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         },
         cancelToken: _downloadCancelToken,
       );
-      
+
       // Save the type as chosen ONLY after successful download
       await PreferencesService.savePdfType(type.id);
-      
+
       if (mounted) {
         setState(() {
           _pdfType = type;
@@ -1878,9 +1902,12 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               ListTile(
                 leading: Icon(
                   isHighlighted ? Icons.bookmark_remove : Icons.bookmark_add,
-                  color: isHighlighted ? Theme.of(context).colorScheme.error : null,
+                  color: isHighlighted
+                      ? Theme.of(context).colorScheme.error
+                      : null,
                 ),
-                title: Text(isHighlighted ? l10n.removeBookmark : l10n.bookmarkPage),
+                title: Text(
+                    isHighlighted ? l10n.removeBookmark : l10n.bookmarkPage),
                 onTap: () {
                   Navigator.pop(context);
                   _togglePdfPageHighlightParam(page);
@@ -1941,37 +1968,40 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       final page = sortedPages[index];
                       int surahNum = 1;
                       for (final entry in surahStartPages.entries) {
-                          if (entry.value <= page) {
-                              if (entry.key > surahNum) surahNum = entry.key;
-                          }
-                      }
-                      
-                      return FutureBuilder<List<SurahMeta>>(
-                        future: _surahListFuture,
-                        builder: (context, snapshot) {
-                          String subtitle = '${l10n.page} $page';
-                          if (snapshot.hasData) {
-                             final s = snapshot.data!.firstWhere((s) => s.number == surahNum, orElse: () => snapshot.data!.first);
-                             subtitle = '${s.name} • $subtitle';
-                          }
-                          
-                          return ListTile(
-                            leading: Icon(Icons.bookmark, color: theme.colorScheme.primary),
-                            title: Text(subtitle, textDirection: TextDirection.rtl),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete_outline),
-                              onPressed: () {
-                                Navigator.pop(context); 
-                                _togglePdfPageHighlightParam(page);
-                              },
-                            ),
-                            onTap: () {
-                              Navigator.pop(context);
-                              _goToPage(page);
-                            },
-                          );
+                        if (entry.value <= page) {
+                          if (entry.key > surahNum) surahNum = entry.key;
                         }
-                      );
+                      }
+
+                      return FutureBuilder<List<SurahMeta>>(
+                          future: _surahListFuture,
+                          builder: (context, snapshot) {
+                            String subtitle = '${l10n.page} $page';
+                            if (snapshot.hasData) {
+                              final s = snapshot.data!.firstWhere(
+                                  (s) => s.number == surahNum,
+                                  orElse: () => snapshot.data!.first);
+                              subtitle = '${s.name} • $subtitle';
+                            }
+
+                            return ListTile(
+                              leading: Icon(Icons.bookmark,
+                                  color: theme.colorScheme.primary),
+                              title: Text(subtitle,
+                                  textDirection: TextDirection.rtl),
+                              trailing: IconButton(
+                                icon: const Icon(Icons.delete_outline),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  _togglePdfPageHighlightParam(page);
+                                },
+                              ),
+                              onTap: () {
+                                Navigator.pop(context);
+                                _goToPage(page);
+                              },
+                            );
+                          });
                     },
                   ),
                 ),
@@ -1985,14 +2015,14 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   Future<void> _togglePdfMode() async {
     final newMode = !_isPdfMode;
     await PreferencesService.saveIsPdfMode(newMode);
-    
+
     // Stop audio when switching modes
     await _stopPageAudio();
-    
+
     setState(() {
       _isPdfMode = newMode;
     });
-    
+
     if (newMode) {
       // Switching TO PDF
       // Dispose old PDF controller to force recreation with correct initial page
@@ -2000,7 +2030,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _pdfPageController?.dispose();
       } catch (_) {}
       _pdfPageController = null;
-      
+
       await _checkPdfAvailability();
     } else {
       // Switching TO Text
@@ -2009,7 +2039,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _pageController.dispose();
       } catch (_) {}
       _pageController = PageController(initialPage: _currentPage - 1);
-      
+
       // Reset scroll controller for text view
       if (_pageScrollController.hasClients) {
         _pageScrollController.jumpTo(0);
@@ -2019,7 +2049,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   Widget _buildPdfView() {
     final l10n = AppLocalizations.of(context)!;
-    
+
     if (_isDownloadingPdf) {
       return Center(
         child: ModernSurfaceCard(
@@ -2029,7 +2059,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(l10n.downloadingMushaf, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                Text(l10n.downloadingMushaf,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 16),
                 LinearProgressIndicator(value: _downloadProgress),
                 const SizedBox(height: 8),
@@ -2054,11 +2086,15 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.download_for_offline, size: 64, color: Colors.grey),
+                const Icon(Icons.download_for_offline,
+                    size: 64, color: Colors.grey),
                 const SizedBox(height: 16),
-                Text(l10n.downloadMushafPdf, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                Text(l10n.downloadMushafPdf,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 8),
-                Text(l10n.chooseStyleToDownload, style: const TextStyle(color: Colors.grey)),
+                Text(l10n.chooseStyleToDownload,
+                    style: const TextStyle(color: Colors.grey)),
                 const SizedBox(height: 24),
                 Wrap(
                   spacing: 16,
@@ -2077,12 +2113,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                         typeName = l10n.mushafTypeTajweed;
                         break;
                     }
-                    
+
                     return ElevatedButton.icon(
                       icon: const Icon(Icons.file_download),
                       label: Text(typeName),
                       style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 24, vertical: 12),
                       ),
                       onPressed: () => _downloadPdf(type),
                     );
@@ -2101,114 +2138,118 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
 
     final offset = MushafPdfService.instance.getPageOffset(_pdfType);
-    
+
     // Calculate initial index for PageView
     // _currentPage is 1-based Quran page.
     // initialIndex = (_currentPage - 1) + offset.
     final initialIndex = (_currentPage - 1) + offset;
-    
-    // We recreate controller only if needed to avoid jumpy behavior, 
+
+    // We recreate controller only if needed to avoid jumpy behavior,
     // but PageView needs controller with initialPage set correctly on first build.
 
     // Actually, simply always use the state controller if it exists, or create one.
     _pdfPageController ??= PageController(initialPage: initialIndex);
-    
 
-    if (_pdfPath == null) return const Center(child: CircularProgressIndicator());
-    
+    if (_pdfPath == null)
+      return const Center(child: CircularProgressIndicator());
+
     // Ensure future is initialized if path exists
     if (_pdfDocumentFuture == null && _pdfPath != null) {
       _pdfDocumentFuture = PdfDocument.openFile(_pdfPath!);
     }
 
-
-
     return FutureBuilder<PdfDocument>(
       future: _pdfDocumentFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-           return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
         if (snapshot.hasError) {
-           return Center(
-             child: Padding(
-               padding: const EdgeInsets.all(24.0),
-               child: Column(
-                 mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                   const Icon(Icons.error_outline, size: 48, color: Colors.red),
-                   const SizedBox(height: 16),
-                   Text(l10n.errorLoadingPdf, style: const TextStyle(fontSize: 18)),
-                   const SizedBox(height: 8),
-                   Text(
-                     snapshot.error.toString(),
-                     textAlign: TextAlign.center,
-                     style: const TextStyle(color: Colors.grey),
-                   ),
-                   const SizedBox(height: 24),
-                   ElevatedButton.icon(
-                     onPressed: () async {
-                       try {
-                         if (_pdfPath != null) {
-                           await File(_pdfPath!).delete();
-                         }
-                       } catch (e) {
-                         debugPrint('Error deleting file: $e');
-                       }
-                       await _checkPdfAvailability();
-                     },
-                     icon: const Icon(Icons.refresh),
-                     label: Text(l10n.deleteAndRetry),
-                   )
-                 ],
-               ),
-             ),
-           );
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                  const SizedBox(height: 16),
+                  Text(l10n.errorLoadingPdf,
+                      style: const TextStyle(fontSize: 18)),
+                  const SizedBox(height: 8),
+                  Text(
+                    snapshot.error.toString(),
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                  const SizedBox(height: 24),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      try {
+                        if (_pdfPath != null) {
+                          await File(_pdfPath!).delete();
+                        }
+                      } catch (e) {
+                        debugPrint('Error deleting file: $e');
+                      }
+                      await _checkPdfAvailability();
+                    },
+                    icon: const Icon(Icons.refresh),
+                    label: Text(l10n.deleteAndRetry),
+                  )
+                ],
+              ),
+            ),
+          );
         }
         if (!snapshot.hasData) {
-           return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
-        
+
         final document = snapshot.data!;
-        
+
         return Directionality(
           textDirection: TextDirection.rtl,
           child: PageView.builder(
             controller: _pdfPageController,
-            physics: _isPdfZoomed ? const NeverScrollableScrollPhysics() : const PageScrollPhysics(),
+            physics: _isPdfZoomed
+                ? const NeverScrollableScrollPhysics()
+                : const PageScrollPhysics(),
             itemCount: document.pages.length,
             onPageChanged: (index) {
-               final quranPage = (index - offset) + 1;
-               if (quranPage >= 1 && quranPage <= 604 && _currentPage != quranPage) {
-                   unawaited(_stopPageAudio());
-                   setState(() {
-                     _currentPage = quranPage;
-                     _currentPageData = null; 
-                     _selectedAyah = null;
-                   });
-                   PreferencesService.saveLastReadPage(_edition.name, quranPage);
-                   _repository.loadPage(quranPage, _edition).then((data) {
-                       if (mounted && _currentPage == quranPage) {
-                           setState(() {
-                               _currentPageData = data;
-                           });
-                       }
-                   });
-               }
+              final quranPage = (index - offset) + 1;
+              if (quranPage >= 1 &&
+                  quranPage <= 604 &&
+                  _currentPage != quranPage) {
+                unawaited(_stopPageAudio());
+                setState(() {
+                  _currentPage = quranPage;
+                  _currentPageData = null;
+                  _selectedAyah = null;
+                });
+                PreferencesService.saveLastReadPage(_edition.name, quranPage);
+                _repository.loadPage(quranPage, _edition).then((data) {
+                  if (mounted && _currentPage == quranPage) {
+                    setState(() {
+                      _currentPageData = data;
+                    });
+                  }
+                });
+              }
             },
-           itemBuilder: (context, index) {
-             return _ZoomablePdfPage(
-               document: document,
-               pageNumber: index + 1,
-               isFullscreen: _isFullscreen,
-               onZoomChanged: (isZoomed) {
-                 if (mounted && isZoomed != _isPdfZoomed) {
+            itemBuilder: (context, index) {
+              return _ZoomablePdfPage(
+                document: document,
+                pageNumber: index + 1,
+                isFullscreen: _isFullscreen,
+                mushafType: _pdfType,
+                onZoomChanged: (isZoomed) {
+                  if (mounted && isZoomed != _isPdfZoomed) {
                     setState(() {
                       _isPdfZoomed = isZoomed;
                     });
-                 }
-               },
-               onLongPress: () {
+                  }
+                },
+                onLongPress: () {
                   if (_isFullscreen) {
                     _showFullscreenControls();
                     return;
@@ -2218,9 +2259,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   if (quranPage >= 1 && quranPage <= 604) {
                     _showPdfPageOptions(quranPage);
                   }
-               },
-             );
-           },
+                },
+              );
+            },
           ),
         );
       },
@@ -2239,14 +2280,14 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           _currentPageData = null;
           _ayahKeys.clear();
         });
-        
+
         // Save last read page
         PreferencesService.saveLastReadPage(_edition.name, index + 1);
       },
       itemBuilder: (context, index) {
         final pageNumber = index + 1;
         final cacheKey = '${pageNumber}_${_edition.name}';
-        
+
         // Check cache first
         if (_pageCache.containsKey(cacheKey)) {
           final cachedData = _pageCache[cacheKey]!;
@@ -2269,7 +2310,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             child: _buildPageContent(cachedData),
           );
         }
-        
+
         // Load from repository if not cached
         return FutureBuilder<PageData>(
           future: _repository.loadPage(pageNumber, _edition),
@@ -2295,10 +2336,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               }
               return const SizedBox.shrink();
             }
-            
+
             // Cache the loaded page
             _pageCache[cacheKey] = data;
-            
+
             if (pageNumber == _currentPage) {
               _currentPageData = data;
               if (_selectedAyah == null && data.ayahs.isNotEmpty) {
@@ -2343,11 +2384,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final children = <Widget>[];
     for (final occurrence in page.surahOccurrences) {
       final firstAyah = page.ayahs[occurrence.startIndex];
-      
+
       // Only show header if this is the start of the surah (Ayah 1)
       if (firstAyah.numberInSurah == 1) {
         children.add(_buildSurahHeader(occurrence.surah, colorScheme));
-        
+
         if (occurrence.surah.number != 1 && occurrence.surah.number != 9) {
           children.add(const _BasmalahHeader());
         }
@@ -2356,14 +2397,17 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       for (int i = 0; i < occurrence.ayahCount; i++) {
         final globalIndex = occurrence.startIndex + i;
         final ayah = page.ayahs[globalIndex];
-        final bool isPlaying =
-            isCurrentPage && _currentAyahIndex != null && globalIndex == _currentAyahIndex;
-        
+        final bool isPlaying = isCurrentPage &&
+            _currentAyahIndex != null &&
+            globalIndex == _currentAyahIndex;
+
         String? displayText;
         // Strip Basmalah from first verse text if present
         // Strip Basmalah from first verse text if present
-        if (ayah.numberInSurah == 1 && occurrence.surah.number != 1 && occurrence.surah.number != 9) {
-           displayText = _removeBasmalah(ayah.text.trim());
+        if (ayah.numberInSurah == 1 &&
+            occurrence.surah.number != 1 &&
+            occurrence.surah.number != 9) {
+          displayText = _removeBasmalah(ayah.text.trim());
         }
 
         children.add(
@@ -2491,9 +2535,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         ? ((PreferencesService.getFontSize() - 4).clamp(12.0, 48.0)).toDouble()
         : PreferencesService.getFontSize();
     final TextStyle baseStyle = _arabicTextStyle(
-        fontSize: baseFontSize,
-        height: 2.5,
-        color: colorScheme.onSurface,
+      fontSize: baseFontSize,
+      height: 2.5,
+      color: colorScheme.onSurface,
     );
     final TextStyle diacriticStyle =
         baseStyle.copyWith(color: colorScheme.primary);
@@ -2605,7 +2649,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   child: Text(
                     '${ayah.surah.englishName} ${ayah.numberInSurah}',
                     style: textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurface.withAlpha((255 * 0.6).round()),
+                      color:
+                          colorScheme.onSurface.withAlpha((255 * 0.6).round()),
                     ),
                     textAlign: textDirection == TextDirection.rtl
                         ? TextAlign.right
@@ -2639,7 +2684,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
             children: [
               if (kIsWeb)
                 IconButton(
-                  onPressed: _currentPage > 1 ? () => _goToPage(_currentPage - 1) : null,
+                  onPressed: _currentPage > 1
+                      ? () => _goToPage(_currentPage - 1)
+                      : null,
                   icon: const Icon(Icons.arrow_back),
                   tooltip: l10n.previousPage,
                 ),
@@ -2658,8 +2705,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       const SizedBox(height: 4),
                       Text(
                         l10n.tapToChange,
-                        style: textTheme.bodySmall
-                            ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                        style: textTheme.bodySmall?.copyWith(
+                            color:
+                                Theme.of(context).colorScheme.onSurfaceVariant),
                       ),
                     ],
                   ),
@@ -2667,7 +2715,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               ),
               if (kIsWeb)
                 IconButton(
-                  onPressed: _currentPage < _totalPages ? () => _goToPage(_currentPage + 1) : null,
+                  onPressed: _currentPage < _totalPages
+                      ? () => _goToPage(_currentPage + 1)
+                      : null,
                   icon: const Icon(Icons.arrow_forward),
                   tooltip: l10n.nextPage,
                 ),
@@ -2686,8 +2736,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                       const SizedBox(height: 4),
                       Text(
                         l10n.tapToChange,
-                        style: textTheme.bodySmall
-                            ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                        style: textTheme.bodySmall?.copyWith(
+                            color:
+                                Theme.of(context).colorScheme.onSurfaceVariant),
                       ),
                     ],
                   ),
@@ -2714,8 +2765,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                           const SizedBox(height: 4),
                           Text(
                             l10n.tapToChange,
-                            style: textTheme.bodySmall
-                                ?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant),
+                            style: textTheme.bodySmall?.copyWith(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onSurfaceVariant),
                           ),
                         ],
                       ),
@@ -2729,8 +2782,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       ),
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -2766,7 +2817,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               if (!kIsWeb)
                 IconButton(
                   icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
-                  tooltip: _isPdfMode ? l10n.returnToTextView : l10n.downloadMushafPdf,
+                  tooltip: _isPdfMode
+                      ? l10n.returnToTextView
+                      : l10n.downloadMushafPdf,
                   onPressed: _togglePdfMode,
                 ),
               if (_isPdfMode)
@@ -2811,9 +2864,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                               ? Icons.pause_circle_filled
                               : Icons.play_circle_fill,
                         ),
-                  tooltip: _isPlayingPage
-                      ? l10n.pausePageAudio
-                      : l10n.playPageAudio,
+                  tooltip:
+                      _isPlayingPage ? l10n.pausePageAudio : l10n.playPageAudio,
                   onPressed: _isLoadingPageAudio
                       ? null
                       : () => unawaited(_handlePlayPausePressed()),
@@ -2826,76 +2878,76 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                   itemBuilder: (context) {
                     final colorScheme = Theme.of(context).colorScheme;
                     return QuranEdition.values
-                      .map(
-                        (edition) => PopupMenuItem<QuranEdition>(
-                          value: edition,
-                          child: Row(
-                            children: [
-                              if (edition == _edition)
+                        .map(
+                          (edition) => PopupMenuItem<QuranEdition>(
+                            value: edition,
+                            child: Row(
+                              children: [
+                                if (edition == _edition)
                                   Icon(
                                     Icons.check,
                                     size: 18,
                                     color: colorScheme.primary,
                                   )
-                              else
-                                const SizedBox(width: 18),
-                              const SizedBox(width: 8),
-                              Text(_editionLabel(edition, l10n)),
-                            ],
+                                else
+                                  const SizedBox(width: 18),
+                                const SizedBox(width: 8),
+                                Text(_editionLabel(edition, l10n)),
+                              ],
+                            ),
                           ),
-                        ),
-                      )
+                        )
                         .toList();
                   },
                 ),
               if (_isPdfMode)
-                 PopupMenuButton<MushafType>(
-                   icon: const Icon(Icons.style),
-                   tooltip: l10n.chooseStyleToDownload,
-                   onSelected: _downloadPdf,
-                   itemBuilder: (context) {
-                     final colorScheme = Theme.of(context).colorScheme;
-                     return MushafType.values.map((type) {
-                         String typeName;
-                         switch (type) {
-                           case MushafType.blue:
-                             typeName = l10n.mushafTypeBlue;
-                             break;
-                           case MushafType.green:
-                             typeName = l10n.mushafTypeGreen;
-                             break;
-                           case MushafType.tajweed:
-                             typeName = l10n.mushafTypeTajweed;
-                             break;
-                         }
-                         
-                         return PopupMenuItem<MushafType>(
-                           value: type,
-                           child: Row(
-                             children: [
-                               if (type == _pdfType)
-                                   Icon(
-                                     Icons.check,
-                                     size: 18,
-                                     color: colorScheme.primary,
-                                   )
-                               else
-                                   const SizedBox(width: 18),
-                               const SizedBox(width: 8),
-                               Text(typeName),
-                             ],
-                           ),
-                         );
-                     }).toList();
-                   },
-                 ),
+                PopupMenuButton<MushafType>(
+                  icon: const Icon(Icons.style),
+                  tooltip: l10n.chooseStyleToDownload,
+                  onSelected: _downloadPdf,
+                  itemBuilder: (context) {
+                    final colorScheme = Theme.of(context).colorScheme;
+                    return MushafType.values.map((type) {
+                      String typeName;
+                      switch (type) {
+                        case MushafType.blue:
+                          typeName = l10n.mushafTypeBlue;
+                          break;
+                        case MushafType.green:
+                          typeName = l10n.mushafTypeGreen;
+                          break;
+                        case MushafType.tajweed:
+                          typeName = l10n.mushafTypeTajweed;
+                          break;
+                      }
+
+                      return PopupMenuItem<MushafType>(
+                        value: type,
+                        child: Row(
+                          children: [
+                            if (type == _pdfType)
+                              Icon(
+                                Icons.check,
+                                size: 18,
+                                color: colorScheme.primary,
+                              )
+                            else
+                              const SizedBox(width: 18),
+                            const SizedBox(width: 8),
+                            Text(typeName),
+                          ],
+                        ),
+                      );
+                    }).toList();
+                  },
+                ),
             ],
             body: _buildReaderContent(),
             bottomNavigationBar: _isPdfMode
                 ? FutureBuilder<PageData>(
                     future: _repository.loadPage(_currentPage, _edition),
                     builder: (context, snapshot) {
-                       return _buildBottomBar(snapshot.data);
+                      return _buildBottomBar(snapshot.data);
                     },
                   )
                 : null,
@@ -2945,7 +2997,7 @@ class _SurahPickerSheetState extends State<_SurahPickerSheet> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    
+
     final filtered = _query.isEmpty
         ? widget.surahs
         : widget.surahs.where((s) {
@@ -3098,25 +3150,25 @@ String _editionLabel(QuranEdition edition, AppLocalizations l10n) {
 }
 
 Future<List<AudioSource>> _buildPageAudioSources(
-    PageData page,
-    String reciterCode,
-    ) async {
+  PageData page,
+  String reciterCode,
+) async {
   final sources = <AudioSource>[];
   final langCode = PreferencesService.getLanguage();
   final reciterName = AudioService.reciterDisplayName(reciterCode, langCode);
 
   for (final ayah in page.ayahs) {
     final mediaItem = MediaItem(
-        id: '${reciterCode}_${ayah.surah.number}_${ayah.numberInSurah}',
-        title: '${ayah.surah.name} • ${ayah.numberInSurah}',
-        album: reciterName,
-        artUri: null,
-        extras: {
-          'surahOrder': ayah.surah.number,
-          'verse': ayah.numberInSurah,
-          'page': page.number,
-        },
-      );
+      id: '${reciterCode}_${ayah.surah.number}_${ayah.numberInSurah}',
+      title: '${ayah.surah.name} • ${ayah.numberInSurah}',
+      album: reciterName,
+      artUri: null,
+      extras: {
+        'surahOrder': ayah.surah.number,
+        'verse': ayah.numberInSurah,
+        'page': page.number,
+      },
+    );
     final src = await AudioService.buildVerseAudioSource(
       reciterKeyAr: reciterCode,
       surahOrder: ayah.surah.number,
@@ -3128,77 +3180,82 @@ Future<List<AudioSource>> _buildPageAudioSources(
   return sources;
 }
 
-  String? _removeBasmalah(String text) {
-    // "بسم الله الرحمن الرحيم" without diacritics
-    // We also include variations for Uthmani script where "Allah" might be 4 characters or more depending on ligatures.
-    // The safest is to normalize the input text by stripping diacritics, then check start.
-    
-    // Simple helper to check if a char is a basic Arabic letter (not diacritic)
-    bool isArabicLetter(int codeUnit) {
-      if (codeUnit >= 0x0621 && codeUnit <= 0x064A) return true; // Standard letters
-      if (codeUnit == 0x0671) return true; // Alif Wasla (ٱ)
-      return false;
-    }
-    
-    // Skeleton of Basmalah letters (بسم الله الرحمن الرحيم)
-    // ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م
-    // But in Uthmani: بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
-    // Letters: Ba, Seen, Meem, AlifWasla, Lam, Lam, Ha, AlifWasla, Lam, Ra, Ha, Meem, Noon, AlifWasla, Lam, Ra, Ha, Ya, Meem.
-    // Note: The "Allah" in Uthmani often uses special Lam sequence or just Lam Lam Ha.
-    // Let's build the expected sequence of BASE characters.
-    // Expect: ب س م ٱ ل ل ه ٱ ل ر ح م ن ٱ ل ر ح ي م
-    // 0x0628 0x0633 0x0645 0x0671 0x0644 0x0644 0x0647 0x0671 0x0644 0x0631 0x062D 0x0645 0x0646 0x0671 0x0644 0x0631 0x062D 0x064A 0x0645
-    
-    final expectedSkeleton = [
-      0x0628, 0x0633, 0x0645, // B S M
-      0x0671, 0x0644, 0x0644, 0x0647, // A L L H (Alif Wasla)
-      0x0671, 0x0644, 0x0631, 0x062D, 0x0645, 0x0646, // A L R H M N
-      0x0671, 0x0644, 0x0631, 0x062D, 0x064A, 0x0645, // A L R H Y M
-    ];
-    
-    // Also support Standard Alif (0x0627) instead of 0x0671
-    
-    int skeletonIndex = 0;
-    int originalIndex = 0;
-    
-    while (originalIndex < text.length && skeletonIndex < expectedSkeleton.length) {
-      final code = text.codeUnitAt(originalIndex);
-      
-      // If matches expected
-      if (code == expectedSkeleton[skeletonIndex] || 
-          (expectedSkeleton[skeletonIndex] == 0x0671 && code == 0x0627)) { // Match Wasla with standard Alif
-        skeletonIndex++;
-        originalIndex++;
-      } else if (!isArabicLetter(code)) {
-        // Skip diacritics / spaces / symbols in original text
-        originalIndex++;
-      } else {
-        // Mismatch in base letter.
-        return null; // Not Basmalah
-      }
-    }
-    
-    if (skeletonIndex == expectedSkeleton.length) {
-      // Found complete Basmalah.
-      // originalIndex is now after the Basmalah letters + intervening marks.
-      // We should return the substring starting from here.
-      return text.substring(originalIndex).trim();
-    }
-    
-    return null; // Partial match or not found
+String? _removeBasmalah(String text) {
+  // "بسم الله الرحمن الرحيم" without diacritics
+  // We also include variations for Uthmani script where "Allah" might be 4 characters or more depending on ligatures.
+  // The safest is to normalize the input text by stripping diacritics, then check start.
+
+  // Simple helper to check if a char is a basic Arabic letter (not diacritic)
+  bool isArabicLetter(int codeUnit) {
+    if (codeUnit >= 0x0621 && codeUnit <= 0x064A)
+      return true; // Standard letters
+    if (codeUnit == 0x0671) return true; // Alif Wasla (ٱ)
+    return false;
   }
+
+  // Skeleton of Basmalah letters (بسم الله الرحمن الرحيم)
+  // ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م
+  // But in Uthmani: بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
+  // Letters: Ba, Seen, Meem, AlifWasla, Lam, Lam, Ha, AlifWasla, Lam, Ra, Ha, Meem, Noon, AlifWasla, Lam, Ra, Ha, Ya, Meem.
+  // Note: The "Allah" in Uthmani often uses special Lam sequence or just Lam Lam Ha.
+  // Let's build the expected sequence of BASE characters.
+  // Expect: ب س م ٱ ل ل ه ٱ ل ر ح م ن ٱ ل ر ح ي م
+  // 0x0628 0x0633 0x0645 0x0671 0x0644 0x0644 0x0647 0x0671 0x0644 0x0631 0x062D 0x0645 0x0646 0x0671 0x0644 0x0631 0x062D 0x064A 0x0645
+
+  final expectedSkeleton = [
+    0x0628, 0x0633, 0x0645, // B S M
+    0x0671, 0x0644, 0x0644, 0x0647, // A L L H (Alif Wasla)
+    0x0671, 0x0644, 0x0631, 0x062D, 0x0645, 0x0646, // A L R H M N
+    0x0671, 0x0644, 0x0631, 0x062D, 0x064A, 0x0645, // A L R H Y M
+  ];
+
+  // Also support Standard Alif (0x0627) instead of 0x0671
+
+  int skeletonIndex = 0;
+  int originalIndex = 0;
+
+  while (
+      originalIndex < text.length && skeletonIndex < expectedSkeleton.length) {
+    final code = text.codeUnitAt(originalIndex);
+
+    // If matches expected
+    if (code == expectedSkeleton[skeletonIndex] ||
+        (expectedSkeleton[skeletonIndex] == 0x0671 && code == 0x0627)) {
+      // Match Wasla with standard Alif
+      skeletonIndex++;
+      originalIndex++;
+    } else if (!isArabicLetter(code)) {
+      // Skip diacritics / spaces / symbols in original text
+      originalIndex++;
+    } else {
+      // Mismatch in base letter.
+      return null; // Not Basmalah
+    }
+  }
+
+  if (skeletonIndex == expectedSkeleton.length) {
+    // Found complete Basmalah.
+    // originalIndex is now after the Basmalah letters + intervening marks.
+    // We should return the substring starting from here.
+    return text.substring(originalIndex).trim();
+  }
+
+  return null; // Partial match or not found
+}
 
 class _ZoomablePdfPage extends StatefulWidget {
   final PdfDocument document;
   final int pageNumber;
   final ValueChanged<bool>? onZoomChanged;
   final bool isFullscreen;
+  final MushafType mushafType;
 
   const _ZoomablePdfPage({
     // super.key,  // Unused parameter
     required this.document,
     required this.pageNumber,
     required this.isFullscreen,
+    required this.mushafType,
     this.onZoomChanged,
     this.onLongPress,
   });
@@ -3209,13 +3266,13 @@ class _ZoomablePdfPage extends StatefulWidget {
   State<_ZoomablePdfPage> createState() => _ZoomablePdfPageState();
 }
 
-class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAliveClientMixin {
-  final TransformationController _transformationController = TransformationController();
-  
+class _ZoomablePdfPageState extends State<_ZoomablePdfPage>
+    with AutomaticKeepAliveClientMixin {
+  final TransformationController _transformationController =
+      TransformationController();
+
   @override
   bool get wantKeepAlive => true;
-
-
 
   @override
   void dispose() {
@@ -3252,63 +3309,98 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    
+
     // Get screen orientation
     final orientation = MediaQuery.of(context).orientation;
     final isLandscape = orientation == Orientation.landscape;
     final pdfPageInfo = widget.document.pages[widget.pageNumber - 1];
-    
+
     // In landscape, scale up the PDF to make it more readable
     final double scale = isLandscape ? 2.8 : 1.0;
-    final pageAlignment = widget.isFullscreen ? Alignment.topCenter : Alignment.center;
-    
+
+    // 2. Always center the page perfectly to balance the top and bottom margins.
+    const pageAlignment = Alignment.center;
+
+    // Determine paper background color based on MushafType to blend unused vertical space
+    final Color paperColor;
+    switch (widget.mushafType) {
+      case MushafType.blue:
+      case MushafType.green:
+        paperColor = const Color(0xFFFDF7E5);
+        break;
+      case MushafType.tajweed:
+        paperColor = const Color(0xFFF9F6EB);
+        break;
+    }
+
     return GestureDetector(
       onLongPress: widget.onLongPress,
       onDoubleTap: () {
-        final currentScale = _transformationController.value.getMaxScaleOnAxis();
-        
+        final currentScale =
+            _transformationController.value.getMaxScaleOnAxis();
+
         if (currentScale > 1.5) {
           // Zoom out to normal
           _transformationController.value = Matrix4.identity();
         } else {
           // Zoom in to 2.5x, positioned at top-right for RTL content
           const targetScale = 2.5;
-          
+
           // Get the render box to calculate positioning
           final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
           if (renderBox != null) {
             final size = renderBox.size;
-            
+
             // For RTL content, we want to show the top-right corner
             // Calculate the translation needed to show top-right
             final xTranslation = -(size.width * (targetScale - 1));
             const yTranslation = 0.0;
-            
-            
+
             _transformationController.value = Matrix4.identity()
               ..setTranslationRaw(xTranslation, yTranslation, 0)
-              ..multiply(Matrix4.diagonal3Values(targetScale, targetScale, targetScale));
+              ..multiply(Matrix4.diagonal3Values(
+                  targetScale, targetScale, targetScale));
           } else {
             // Fallback if renderBox is null
-            _transformationController.value = Matrix4.identity()..multiply(Matrix4.diagonal3Values(targetScale, targetScale, targetScale));
+            _transformationController.value = Matrix4.identity()
+              ..multiply(Matrix4.diagonal3Values(
+                  targetScale, targetScale, targetScale));
           }
         }
-        
+
         _checkZoomState();
       },
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final viewportAspectRatio = constraints.maxHeight > 0 && constraints.maxWidth > 0
-              ? constraints.maxHeight / constraints.maxWidth
-              : 1.0;
+          final viewportAspectRatio =
+              constraints.maxHeight > 0 && constraints.maxWidth > 0
+                  ? constraints.maxHeight / constraints.maxWidth
+                  : 1.0;
           final pageAspectRatio = pdfPageInfo.width > 0
               ? pdfPageInfo.height / pdfPageInfo.width
               : 1.0;
-          const portraitFullscreenFitSafety = 0.95;
-          final portraitFullscreenScale = widget.isFullscreen && !isLandscape
-              ? ((viewportAspectRatio / pageAspectRatio) * portraitFullscreenFitSafety)
-                  .clamp(1.0, 1.8)
-              : 1.0;
+          // 1. Calculate a proportional scale to fill more width without breaking vertical bounds
+          // We use min() to ensure we don't scale so much that the height bleeds off screen.
+          final double fitWidthScale =
+              constraints.maxWidth > 0 && pdfPageInfo.width > 0
+                  ? (constraints.maxWidth / pdfPageInfo.width)
+                  : 1.0;
+
+          final double fitHeightScale =
+              constraints.maxHeight > 0 && pdfPageInfo.height > 0
+                  ? (constraints.maxHeight / pdfPageInfo.height)
+                  : 1.0;
+
+          // Safe scale: take the smaller of the two to guarantee no clipping,
+          // but pad it slightly up by 1.1x to reduce horizontal margins if we have vertical space.
+          // Fall back to min(fitWidth, fitHeight * 1.05) to ensure it fits completely within bounds.
+          final double portraitFullscreenScale =
+              widget.isFullscreen && !isLandscape
+                  ? (fitWidthScale < fitHeightScale
+                          ? fitWidthScale
+                          : fitHeightScale * 1.05)
+                      .clamp(1.0, 1.3)
+                  : 1.0;
 
           final pdfPage = SizedBox(
             width: constraints.maxWidth,
@@ -3334,11 +3426,13 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage> with AutomaticKeepAl
 
           return ClipRect(
             child: ColoredBox(
-              color: Colors.white,
+              color: paperColor,
               child: InteractiveViewer(
                 transformationController: _transformationController,
                 boundaryMargin: EdgeInsets.zero,
-                minScale: widget.isFullscreen && !isLandscape ? 0.9 : (isLandscape ? 0.5 : 1.0),
+                minScale: widget.isFullscreen && !isLandscape
+                    ? 0.9
+                    : (isLandscape ? 0.5 : 1.0),
                 maxScale: 4.0,
                 panEnabled: true,
                 scaleEnabled: true,
