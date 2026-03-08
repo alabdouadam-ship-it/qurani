@@ -9,6 +9,7 @@ import 'test_questions_screen.dart';
 import 'memorization_stats_screen.dart';
 
 import 'package:qurani/services/preferences_service.dart';
+import 'package:qurani/widgets/modern_ui.dart';
 
 class MemorizationTestScreen extends StatefulWidget {
   const MemorizationTestScreen({super.key});
@@ -21,13 +22,13 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   final Set<int> _selectedSurahs = {};
   String _surahQuery = '';
   final Set<int> _selectedJuzs = {};
-  // _surahQuery is already defined above
   bool _isSurahMode = true;
   bool _isGenerating = false;
   late final TextEditingController _searchController;
   late final FocusNode _searchFocus;
   Future<List<Surah>>? _surahsFuture;
   Locale? _lastLocale;
+
   @override
   void initState() {
     super.initState();
@@ -41,7 +42,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     _searchFocus.dispose();
     super.dispose();
   }
-
 
   void _toggleSurah(Surah surah) {
     setState(() {
@@ -71,8 +71,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    
-    // Initialize/cached future to avoid rebuilding and losing focus
+
     final currentLocale = Localizations.localeOf(context);
     if (_surahsFuture == null || _lastLocale?.languageCode != currentLocale.languageCode) {
       _lastLocale = currentLocale;
@@ -88,7 +87,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const Center(child: Text('لا توجد سور'));
         }
-        
+
         if (snapshot.hasError) {
           return Center(
             child: Padding(
@@ -114,9 +113,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         final surahs = q.isEmpty
             ? allSurahs
             : allSurahs.where((s) => TextNormalizer.normalize(s.name).contains(q)).toList();
-        
-        // Responsive grid logic mirroring SurahGrid
-        // Use screen width to determine columns, regardless of platform
+
         final width = MediaQuery.of(context).size.width;
         int crossAxisCount;
         if (width >= 1200) {
@@ -126,7 +123,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         } else {
           crossAxisCount = 2; // Mobile / Small screens
         }
-        
+
         return Column(
           children: [
             Padding(
@@ -160,7 +157,7 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                 itemBuilder: (context, index) {
                   final surah = surahs[index];
                   final isSelected = _selectedSurahs.contains(surah.order);
-                  
+
                   return InkWell(
                     onTap: () => _toggleSurah(surah),
                     borderRadius: BorderRadius.circular(12),
@@ -249,44 +246,35 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     final l10n = AppLocalizations.of(context)!;
     final colorScheme = Theme.of(context).colorScheme;
 
-    return Scaffold(
-      backgroundColor: colorScheme.surface,
-      appBar: AppBar(
-        title: Text(
-          l10n.memorizationTest,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: ResponsiveConfig.getFontSize(context, 18),
-          ),
+    return ModernPageScaffold(
+      title: l10n.memorizationTest,
+      icon: Icons.quiz_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'اختر السور أو الأجزاء وابدأ اختبار حفظك في واجهة أكثر هدوءًا وتنظيمًا.'
+          : l10n.localeName == 'fr'
+              ? 'Choisissez les sourates ou les juz et lancez votre test dans une interface plus claire.'
+              : 'Choose surahs or ajza and start your memorization test in a calmer interface.',
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.settings_rounded),
+          tooltip: 'الإعدادات',
+          onPressed: () => _showSettingsDialog(context),
         ),
-        backgroundColor: colorScheme.primary,
-        foregroundColor: colorScheme.onPrimary,
-        elevation: 2,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            tooltip: 'الإعدادات',
-            onPressed: () => _showSettingsDialog(context),
-          ),
-          IconButton(
-            icon: const Icon(Icons.bar_chart),
-            tooltip: 'إحصائيات',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const MemorizationStatsScreen(),
-                ),
-              );
-            },
-          ),
-        ],
-      ),
+        IconButton(
+          icon: const Icon(Icons.bar_chart_rounded),
+          tooltip: 'إحصائيات',
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const MemorizationStatsScreen(),
+              ),
+            );
+          },
+        ),
+      ],
       body: Column(
         children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            color: colorScheme.primaryContainer.withAlpha((255 * 0.3).round()),
+          ModernSurfaceCard(
             child: Row(
               children: [
                 Expanded(
@@ -327,11 +315,13 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
               ],
             ),
           ),
+          const SizedBox(height: 12),
           Expanded(
             child: _isSurahMode
                 ? _buildSurahSelector()
                 : _buildJuzSelector(),
           ),
+
           if (_selectedSurahs.isNotEmpty || _selectedJuzs.isNotEmpty)
             SafeArea(
               child: Container(

@@ -8,6 +8,7 @@ import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_search_service.dart';
 import 'package:qurani/services/net_utils.dart';
 import 'package:qurani/services/reciter_config_service.dart';
+import 'package:qurani/widgets/modern_ui.dart';
 
 class SearchQuranScreen extends StatefulWidget {
   const SearchQuranScreen({super.key});
@@ -385,13 +386,19 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final showNoResults = !_isSearching && hasQuery && _results.isEmpty;
     final showResultsHeader = hasQuery && (_results.isNotEmpty || showNoResults);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.searchQuran),
-        actions: [
-          Container(
+    return ModernPageScaffold(
+      title: l10n.searchQuran,
+      icon: Icons.manage_search_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'ابحث في القرآن بسرعة مع دعم العربية والإنجليزية والفرنسية ومعاينة صوتية للآية.'
+          : l10n.localeName == 'fr'
+              ? 'Recherchez rapidement dans le Coran avec aperçu audio et filtres par langue.'
+              : 'Search the Quran quickly with language filters and ayah audio preview.',
+      actions: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-            margin: const EdgeInsets.symmetric(vertical: 8),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
@@ -407,58 +414,57 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                   fontWeight: FontWeight.w600,
                 ),
                 items: [
-                   DropdownMenuItem(
-                     value: 'ar', 
-                     child: Text(
-                       l10n.searchLanguageArabic, 
-                       style: TextStyle(
-                         color: colorScheme.onPrimaryContainer,
-                         fontWeight: _selectedLanguage == 'ar' ? FontWeight.bold : FontWeight.normal,
-                       ),
-                     ),
-                   ),
-                   DropdownMenuItem(
-                     value: 'en', 
-                     child: Text(
-                       l10n.searchLanguageEnglish,
-                       style: TextStyle(
-                         color: colorScheme.onPrimaryContainer,
-                         fontWeight: _selectedLanguage == 'en' ? FontWeight.bold : FontWeight.normal,
-                       ),
-                     ),
-                   ),
-                   DropdownMenuItem(
-                     value: 'fr', 
-                     child: Text(
-                       l10n.searchLanguageFrench,
-                       style: TextStyle(
-                         color: colorScheme.onPrimaryContainer,
-                         fontWeight: _selectedLanguage == 'fr' ? FontWeight.bold : FontWeight.normal,
-                       ),
-                     ),
-                   ),
+                  DropdownMenuItem(
+                    value: 'ar',
+                    child: Text(
+                      l10n.searchLanguageArabic,
+                      style: TextStyle(
+                        color: colorScheme.onPrimaryContainer,
+                        fontWeight: _selectedLanguage == 'ar' ? FontWeight.bold : FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                  DropdownMenuItem(
+                    value: 'en',
+                    child: Text(
+                      l10n.searchLanguageEnglish,
+                      style: TextStyle(
+                        color: colorScheme.onPrimaryContainer,
+                        fontWeight: _selectedLanguage == 'en' ? FontWeight.bold : FontWeight.normal,
+                      ),
+                    ),
+                  ),
+                  DropdownMenuItem(
+                    value: 'fr',
+                    child: Text(
+                      l10n.searchLanguageFrench,
+                      style: TextStyle(
+                        color: colorScheme.onPrimaryContainer,
+                        fontWeight: _selectedLanguage == 'fr' ? FontWeight.bold : FontWeight.normal,
+                      ),
+                    ),
+                  ),
                 ],
                 onChanged: (val) {
                   if (val != null && val != _selectedLanguage) {
                     setState(() {
-                       _selectedLanguage = val;
-                       _results = []; // Clear results on language change
-                       _lastQuery = '';
-                       _isSearching = false;
-                       _controller.clear();
+                      _selectedLanguage = val;
+                      _results = [];
+                      _lastQuery = '';
+                      _isSearching = false;
+                      _controller.clear();
                     });
                   }
                 },
               ),
             ),
           ),
-          const SizedBox(width: 16),
-        ],
-      ),
+        ),
+        const SizedBox(width: 12),
+      ],
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+          ModernSurfaceCard(
             child: Row(
               children: [
                 Expanded(
@@ -486,10 +492,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
               ],
             ),
           ),
-          // Surah filter dropdown
+          const SizedBox(height: 12),
           if (_surahNames.isNotEmpty)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+            ModernSurfaceCard(
               child: Row(
                 children: [
                   Text(
@@ -516,10 +521,9 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                           child: Text(l10n.allQuran),
                         ),
                         ..._surahNames.entries.map((e) {
-                          // Use English/Latin names for English/French, Arabic for Arabic
                           final langCode = Localizations.localeOf(context).languageCode;
-                          final name = (langCode == 'ar') 
-                              ? e.value 
+                          final name = (langCode == 'ar')
+                              ? e.value
                               : (_surahNamesEn[e.key] ?? e.value);
                           return DropdownMenuItem<int?>(
                             value: e.key,
@@ -534,7 +538,6 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                         setState(() {
                           _selectedSurah = value;
                         });
-                        // Re-run search if there's a query
                         if (_lastQuery.isNotEmpty) {
                           _doSearch(_lastQuery);
                         }
@@ -544,64 +547,58 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                 ],
               ),
             ),
-          const Divider(height: 1),
+          const SizedBox(height: 12),
           Expanded(
             child: Column(
               children: [
                 if (showResultsHeader) ...[
-                  Container(
+                  SizedBox(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: colorScheme.primaryContainer.withAlpha((255 * 0.85).round()),
-                      border: Border(
-                        bottom: BorderSide(
-                          color: colorScheme.outlineVariant.withAlpha((255 * 0.4).round()),
-                        ),
-                      ),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 18,
-                          backgroundColor: colorScheme.onPrimaryContainer.withAlpha((255 * 0.15).round()),
-                          child: Icon(
-                            Icons.manage_search,
-                            color: colorScheme.onPrimaryContainer,
+                    child: ModernSurfaceCard(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 18,
+                            backgroundColor: colorScheme.onPrimaryContainer.withAlpha((255 * 0.15).round()),
+                            child: Icon(
+                              Icons.manage_search,
+                              color: colorScheme.onPrimaryContainer,
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 12),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                l10n.searchResultsDetailed(
-                                  showNoResults ? 0 : _totalOccurrences,
-                                  showNoResults ? 0 : _results.length,
-                                ),
-                                style: theme.textTheme.titleMedium?.copyWith(
-                                  color: colorScheme.onPrimaryContainer,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              if (_lastQuery.isNotEmpty)
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
                                 Text(
-                                  '"${_lastQuery.trim()}"',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: theme.textTheme.bodySmall?.copyWith(
-                                    color: colorScheme.onPrimaryContainer.withAlpha((255 * 0.8).round()),
+                                  l10n.searchResultsDetailed(
+                                    showNoResults ? 0 : _totalOccurrences,
+                                    showNoResults ? 0 : _results.length,
+                                  ),
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    color: colorScheme.onPrimaryContainer,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                            ],
+                                if (_lastQuery.isNotEmpty)
+                                  Text(
+                                    '"${_lastQuery.trim()}"',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: colorScheme.onPrimaryContainer.withAlpha((255 * 0.8).round()),
+                                    ),
+                                  ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
-                  const Divider(height: 1),
+                  const SizedBox(height: 8),
                 ],
                 Expanded(
                   child: showNoResults
@@ -609,12 +606,13 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                       : _results.isEmpty
                           ? _buildIdlePlaceholder(l10n, theme, colorScheme)
                           : ListView.builder(
+                              padding: const EdgeInsets.only(bottom: 16),
                               itemCount: _results.length,
                               itemBuilder: (context, index) {
                                 final a = _results[index];
                                 final surahName = QuranSearchService.instance.surahName(a.surahOrder);
-                                return Card(
-                                  margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                return ModernSurfaceCard(
+                                  margin: const EdgeInsets.only(bottom: 8),
                                   child: ListTile(
                                     contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                                     title: Directionality(

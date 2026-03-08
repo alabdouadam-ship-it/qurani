@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
-import 'responsive_config.dart';
 import 'widgets/surah_grid.dart';
 import 'models/surah.dart';
 import 'services/preferences_service.dart';
@@ -10,6 +9,7 @@ import 'services/download_service.dart';
 import 'services/reciter_config_service.dart';
 import 'audio_player_screen.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
+import 'widgets/modern_ui.dart';
 
 class ListenQuranScreen extends StatefulWidget {
   const ListenQuranScreen({super.key});
@@ -73,91 +73,87 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
       });
     }
 
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: Text(
-          l10n.listenQuran,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: ResponsiveConfig.getFontSize(context, 18),
-          ),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 2,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            tooltip: l10n.settings,
-            onPressed: () {
-              showModalBottomSheet(
-                context: context,
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                ),
-                builder: (context) {
-                  return StatefulBuilder(
-                    builder: (context, setSheetState) {
-                      final alwaysStart = PreferencesService.getAlwaysStartFromBeginning();
-                      final currentReciterKey = PreferencesService.getReciter();
-                      final reciterName = AudioService.reciterDisplayName(currentReciterKey, l10n.localeName);
-                      
-                      return SafeArea(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const SizedBox(height: 16),
-                            Text(
-                              l10n.settings,
-                              style: Theme.of(context).textTheme.titleLarge,
-                            ),
-                            const SizedBox(height: 16),
-                            SwitchListTile(
-                              title: Text(l10n.alwaysStartFromBeginning),
-                              subtitle: Text(l10n.alwaysStartFromBeginningDesc, style: Theme.of(context).textTheme.bodySmall),
-                              value: alwaysStart,
-                              onChanged: (value) async {
-                                await PreferencesService.saveAlwaysStartFromBeginning(value);
-                                setSheetState(() {});
-                              },
-                            ),
-                            const Divider(),
-                            ListTile(
-                              leading: const Icon(Icons.record_voice_over),
-                              title: Text(l10n.chooseReciter),
-                              subtitle: Text(reciterName),
-                              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                              onTap: () {
-                                Navigator.pop(context);
-                                SettingsSheetUtils.showReciterSelectionSheet(
-                                  context,
-                                  requireFullSurahs: true,
-                                  onReciterSelected: (reciterKey) {
-                                    PreferencesService.saveReciter(reciterKey);
-                                    setState(() {
-                                      _lastReciterKey = reciterKey;
-                                    });
-                                  },
-                                );
-                              },
-                            ),
-                            const SizedBox(height: 16),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                },
-              );
-            },
-          ),
+    return ModernPageScaffold(
+      title: l10n.listenQuran,
+      icon: Icons.headset_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'اختر السورة والقارئ في واجهة هادئة مع وصول أسرع للإعدادات والتنزيل.'
+          : l10n.localeName == 'fr'
+              ? 'Choisissez la sourate et le récitateur dans une interface plus sereine et rapide.'
+              : 'Choose a surah and reciter in a calmer, faster listening interface.',
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.tune_rounded),
+          tooltip: l10n.settings,
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              builder: (context) {
+                return StatefulBuilder(
+                  builder: (context, setSheetState) {
+                    final alwaysStart = PreferencesService.getAlwaysStartFromBeginning();
+                    final currentReciterKey = PreferencesService.getReciter();
+                    final reciterName = AudioService.reciterDisplayName(currentReciterKey, l10n.localeName);
 
-          if (!kIsWeb) _buildDownloadAction(l10n),
-        ],
-      ),
-      body: SurahGrid(
-        onTapSurah: (Surah s) async {
+                    return SafeArea(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(height: 16),
+                          Text(
+                            l10n.settings,
+                            style: Theme.of(context).textTheme.titleLarge,
+                          ),
+                          const SizedBox(height: 16),
+                          SwitchListTile(
+                            title: Text(l10n.alwaysStartFromBeginning),
+                            subtitle: Text(l10n.alwaysStartFromBeginningDesc, style: Theme.of(context).textTheme.bodySmall),
+                            value: alwaysStart,
+                            onChanged: (value) async {
+                              await PreferencesService.saveAlwaysStartFromBeginning(value);
+                              setSheetState(() {});
+                            },
+                          ),
+                          const Divider(),
+                          ListTile(
+                            leading: const Icon(Icons.record_voice_over),
+                            title: Text(l10n.chooseReciter),
+                            subtitle: Text(reciterName),
+                            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                            onTap: () {
+                              Navigator.pop(context);
+                              SettingsSheetUtils.showReciterSelectionSheet(
+                                context,
+                                requireFullSurahs: true,
+                                onReciterSelected: (reciterKey) {
+                                  PreferencesService.saveReciter(reciterKey);
+                                  setState(() {
+                                    _lastReciterKey = reciterKey;
+                                  });
+                                },
+                              );
+                            },
+                          ),
+                          const SizedBox(height: 16),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+            );
+          },
+        ),
+        if (!kIsWeb) _buildDownloadAction(l10n),
+      ],
+      body: Column(
+        children: [
+          Expanded(
+            child: SurahGrid(
+              onTapSurah: (Surah s) async {
           final nav = Navigator.of(context);
           final messenger = ScaffoldMessenger.of(context);
           final reciterKey = PreferencesService.getReciter();
@@ -224,8 +220,11 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
               builder: (context) => AudioPlayerScreen(initialSurahOrder: s.order),
             ),
           );
-        },
-        allowHighlight: true,
+              },
+              allowHighlight: true,
+            ),
+          ),
+        ],
       ),
     );
   }

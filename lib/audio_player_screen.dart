@@ -17,6 +17,7 @@ import 'services/download_service.dart';
 import 'services/preferences_service.dart';
 import 'services/surah_service.dart';
 import 'widgets/sound_equalizer.dart';
+import 'widgets/modern_ui.dart';
 import 'services/queue_service.dart';
 import 'services/net_utils.dart';
 import 'util/debug_error_display.dart';
@@ -1229,9 +1230,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         onPressed: _goToNextSurah,
       ),
     ];
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: controls,
+  return ModernSurfaceCard(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: controls,
+    ),
   );
   }
 
@@ -1243,12 +1246,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     final total = _currentSurah!.totalVerses;
     return Padding(
       padding: const EdgeInsets.only(top: 16),
-                  child: Container(
-        padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-          color: color.surfaceContainerHighest,
-          borderRadius: BorderRadius.circular(12),
-        ),
+                  child: ModernSurfaceCard(
         child: Column(
           children: [
             Text(
@@ -1405,208 +1403,203 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       },
     );
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        if (_errorMessage != null)
-          Container(
-            padding: const EdgeInsets.all(12),
-            margin: const EdgeInsets.only(bottom: 12),
-            decoration: BoxDecoration(
-              color: color.errorContainer,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    _errorMessage!,
-                    style: TextStyle(color: color.onErrorContainer),
+    return ModernSurfaceCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          if (_errorMessage != null)
+            Container(
+              padding: const EdgeInsets.all(12),
+              margin: const EdgeInsets.only(bottom: 12),
+              decoration: BoxDecoration(
+                color: color.errorContainer,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      _errorMessage!,
+                      style: TextStyle(color: color.onErrorContainer),
+                    ),
                   ),
-                ),
-                TextButton(
-                  onPressed: _retry,
-                  child: Text(l10n.retry),
-                ),
-              ],
+                  TextButton(
+                    onPressed: _retry,
+                    child: Text(l10n.retry),
+                  ),
+                ],
+              ),
             ),
-          ),
-        if (_isBuffering)
-          LinearProgressIndicator(
-            backgroundColor: color.surfaceContainerHighest,
-            valueColor: AlwaysStoppedAnimation<Color>(color.primary),
-          ),
-        Padding(
-          padding: const EdgeInsets.only(top: 8, bottom: 4),
-          child: Center(
-            child: Text(
-              title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
-              textAlign: TextAlign.center,
+          if (_isBuffering)
+            LinearProgressIndicator(
+              backgroundColor: color.surfaceContainerHighest,
+              valueColor: AlwaysStoppedAnimation<Color>(color.primary),
             ),
-          ),
-        ),
-        durationStream,
-        if (reciterName.isNotEmpty)
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+            padding: const EdgeInsets.only(top: 8, bottom: 4),
             child: Center(
               child: Text(
-                reciterName,
-                textAlign: TextAlign.center,
+                title,
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                textAlign: TextAlign.center,
               ),
             ),
           ),
-        const SizedBox(height: 8),
-        SoundEqualizer(
-          player: _player,
-          height: _equalizerHeight,
-        ),
-        const SizedBox(height: 20),
-        Row(
-          children: [
-            IconButton(
-              icon: Icon(
-                _volume == 0.0
-                    ? Icons.volume_off
-                    : _volume < 0.5
-                        ? Icons.volume_down
-                        : Icons.volume_up,
+          durationStream,
+          if (reciterName.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+              child: Center(
+                child: Text(
+                  reciterName,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                ),
               ),
-              iconSize: 24,
-              onPressed: () {
-                setState(() {
-                  _volume = _volume > 0.0 ? 0.0 : 1.0;
-                  _player.setVolume(_volume);
-                });
-              },
             ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Slider(
-                value: _volume,
-                min: 0.0,
-                max: 1.0,
-                onChanged: (value) {
-                  setState(() => _volume = value);
-                  _player.setVolume(value);
+          const SizedBox(height: 8),
+          SoundEqualizer(
+            player: _player,
+            height: _equalizerHeight,
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  _volume == 0.0
+                      ? Icons.volume_off
+                      : _volume < 0.5
+                          ? Icons.volume_down
+                          : Icons.volume_up,
+                ),
+                iconSize: 24,
+                onPressed: () {
+                  setState(() {
+                    _volume = _volume > 0.0 ? 0.0 : 1.0;
+                    _player.setVolume(_volume);
+                  });
                 },
               ),
-            ),
-            const SizedBox(width: 12),
-            SizedBox(
-              width: 50,
-              child: Text(
-                '${(_volume * 100).toInt()}%',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: color.onSurface.withAlpha((255 * 0.7).round()),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Slider(
+                  value: _volume,
+                  min: 0.0,
+                  max: 1.0,
+                  onChanged: (value) {
+                    setState(() => _volume = value);
+                    _player.setVolume(value);
+                  },
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 16),
-        _buildTransportControls(isRtl: isRtl, color: color),
-        const SizedBox(height: 16),
-        Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 12,
-          runSpacing: 8,
-          children: [
-            FilterChip(
-              label: Text(l10n.repeatSurah),
-              selected: _isRepeat,
-              onSelected: (value) {
-                setState(() {
-                  _isRepeat = value;
+              const SizedBox(width: 12),
+              SizedBox(
+                width: 50,
+                child: Text(
+                  '${(_volume * 100).toInt()}%',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: color.onSurface.withAlpha((255 * 0.7).round()),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          _buildTransportControls(isRtl: isRtl, color: color),
+          const SizedBox(height: 16),
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 12,
+            runSpacing: 8,
+            children: [
+              FilterChip(
+                label: Text(l10n.repeatSurah),
+                selected: _isRepeat,
+                onSelected: (value) {
+                  setState(() {
+                    _isRepeat = value;
+                    if (value) {
+                      _verseByVerseMode = false;
+                      _autoPlayNext = false;
+                      _player.setLoopMode(LoopMode.one);
+                    } else {
+                      _player.setLoopMode(LoopMode.off);
+                    }
+                  });
                   if (value) {
-                    _verseByVerseMode = false;
-                    _autoPlayNext = false;
-                    _player.setLoopMode(LoopMode.one);
+                    PreferencesService.saveAutoPlayNextSurah(false);
+                  }
+                  PreferencesService.saveIsRepeat(value);
+                },
+              ),
+              FilterChip(
+                label: Text(l10n.autoPlayNext),
+                selected: _autoPlayNext,
+                onSelected: (value) async {
+                  setState(() {
+                    _autoPlayNext = value;
+                    if (value) {
+                      _isRepeat = false;
+                      _verseByVerseMode = false;
+                      _player.setLoopMode(LoopMode.off);
+                    }
+                  });
+                  PreferencesService.saveAutoPlayNextSurah(value);
+                  PreferencesService.saveIsRepeat(_isRepeat);
+                  
+                  if (value && !_isPlayerDisposed) {
+                    final currentPos = _player.position;
+                    await _playSurah(_currentOrder, autoPlay: _isPlaying, resumePosition: currentPos);
+                  }
+                },
+              ),
+              FilterChip(
+                label: Text(l10n.verseByVerse),
+                selected: _verseByVerseMode,
+                onSelected: (value) async {
+                  if (value) {
+                    final currentPos = _player.position;
+                    setState(() {
+                      _savedSurahPositionBeforeVerseMode = currentPos;
+                      _verseByVerseMode = true;
+                      _isRepeat = false;
+                      _autoPlayNext = false;
+                      _currentVerse = 1;
+                    });
+                    await _loadVerseUrls(_currentOrder);
+                    if (_verseUrls != null && _verseUrls!.isNotEmpty) {
+                      await _playVerse(1);
+                    }
                   } else {
-                    _player.setLoopMode(LoopMode.off);
+                    final resume = _savedSurahPositionBeforeVerseMode;
+                    setState(() {
+                      _verseByVerseMode = false;
+                      _verseUrls = null;
+                      _currentVerse = 1;
+                    });
+                    await _playSurah(
+                      _currentOrder,
+                      autoPlay: _player.playing,
+                      resumePosition: resume,
+                    );
+                    setState(() => _savedSurahPositionBeforeVerseMode = null);
                   }
-                });
-                if (value) {
-                  PreferencesService.saveAutoPlayNextSurah(false);
-                }
-                PreferencesService.saveIsRepeat(value);
-              },
-            ),
-            FilterChip(
-              label: Text(l10n.autoPlayNext),
-              selected: _autoPlayNext,
-              onSelected: (value) async {
-                setState(() {
-                  _autoPlayNext = value;
-                  if (value) {
-                    _isRepeat = false;
-                    _verseByVerseMode = false;
-                    _player.setLoopMode(LoopMode.off);
-                  }
-                });
-                PreferencesService.saveAutoPlayNextSurah(value);
-                PreferencesService.saveIsRepeat(_isRepeat);
-                
-                // If enabling auto-play, reload playlist to add next surah
-                if (value && !_isPlayerDisposed) {
-                  final currentPos = _player.position;
-                  await _playSurah(_currentOrder, autoPlay: _isPlaying, resumePosition: currentPos);
-                }
-              },
-            ),
-            FilterChip(
-              label: Text(l10n.verseByVerse),
-              selected: _verseByVerseMode,
-              onSelected: (value) async {
-                if (value) {
-                  final currentPos = _player.position;
-                  setState(() {
-                    _savedSurahPositionBeforeVerseMode = currentPos;
-                    _verseByVerseMode = true;
-                    _isRepeat = false;
-                    _autoPlayNext = false;
-                    _currentVerse = 1;
-                  });
-                  await _loadVerseUrls(_currentOrder);
-                  if (_verseUrls != null && _verseUrls!.isNotEmpty) {
-                    await _playVerse(1);
-                  }
-                } else {
-                  final resume = _savedSurahPositionBeforeVerseMode;
-                  setState(() {
-                    _verseByVerseMode = false;
-                    _verseUrls = null;
-                    _currentVerse = 1;
-                  });
-                  await _playSurah(
-                    _currentOrder,
-                    autoPlay: _player.playing,
-                    resumePosition: resume,
-                  );
-                  setState(() => _savedSurahPositionBeforeVerseMode = null);
-                }
-              },
-            ),
-          ],
-        ),
-        _buildVerseControls(color, isRtl),
-
-      ],
+                },
+              ),
+            ],
+          ),
+          _buildVerseControls(color, isRtl),
+        ],
+      ),
     );
   }
 
   Widget _buildQueueSection(ColorScheme color) {
     final l10n = AppLocalizations.of(context)!;
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: color.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(12),
-      ),
+    return ModernSurfaceCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1668,45 +1661,51 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      child: Material(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(12),
-        child: ListTile(
-          onTap: () =>
-              _playSurah(surah.order, autoPlay: true, resumePosition: Duration.zero),
-          title: Text(
-            '${surah.order}. ${surah.name}',
-            textAlign: textAlign,
-            style: TextStyle(
-              fontWeight: isCurrent ? FontWeight.w700 : FontWeight.w500,
-              color: color.onSurface,
+      child: Container(
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: ModernSurfaceCard(
+          padding: EdgeInsets.zero,
+          child: ListTile(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            onTap: () =>
+                _playSurah(surah.order, autoPlay: true, resumePosition: Duration.zero),
+            title: Text(
+              '${surah.order}. ${surah.name}',
+              textAlign: textAlign,
+              style: TextStyle(
+                fontWeight: isCurrent ? FontWeight.w700 : FontWeight.w500,
+                color: color.onSurface,
+              ),
             ),
-          ),
-          subtitle: Text(
-            '${surah.totalVerses} ${l10n.verses}',
-            textAlign: textAlign,
-            style: TextStyle(color: color.onSurface.withAlpha((255 * 0.6).round())),
-          ),
-          trailing: Wrap(
-            spacing: 4,
-            children: [
-              IconButton(
-                icon: Icon(
-                  inQueue ? Icons.playlist_remove : Icons.playlist_add,
+            subtitle: Text(
+              '${surah.totalVerses} ${l10n.verses}',
+              textAlign: textAlign,
+              style: TextStyle(color: color.onSurface.withAlpha((255 * 0.6).round())),
+            ),
+            trailing: Wrap(
+              spacing: 4,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    inQueue ? Icons.playlist_remove : Icons.playlist_add,
+                  ),
+                  tooltip: inQueue ? l10n.clearQueue : l10n.addToQueue,
+                  onPressed: () => _toggleQueueEntry(surah.order),
                 ),
-                tooltip: inQueue ? l10n.clearQueue : l10n.addToQueue,
-                onPressed: () => _toggleQueueEntry(surah.order),
-              ),
-              IconButton(
-                icon: Icon(
-                  isFeatured ? Icons.star : Icons.star_border,
-                  color: Colors.amber.shade600,
+                IconButton(
+                  icon: Icon(
+                    isFeatured ? Icons.star : Icons.star_border,
+                    color: Colors.amber.shade600,
+                  ),
+                  tooltip:
+                      isFeatured ? l10n.removeFeatureSurah : l10n.featureSurah,
+                  onPressed: () => _toggleFeature(surah.order),
                 ),
-                tooltip:
-                    isFeatured ? l10n.removeFeatureSurah : l10n.featureSurah,
-                onPressed: () => _toggleFeature(surah.order),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -1734,55 +1733,54 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         ? AudioService.reciterDisplayName(_reciterKey!, langCode)
         : '';
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('', style: Theme.of(context).textTheme.titleLarge),
-        backgroundColor: color.primary,
-        foregroundColor: color.onPrimary,
-        actions: [
-          if (!kIsWeb && !_isCurrentSurahDownloaded)
-            _isDownloadingCurrentSurah
-                ? const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
-                    child: SizedBox(
-                      width: 18,
-                      height: 18,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    ),
-                  )
-                : IconButton(
-                    icon: const Icon(Icons.download),
-                    tooltip: l10n.download,
-                    onPressed: _promptDownloadCurrentSurah,
+    return ModernPageScaffold(
+      title: surahTitle,
+      icon: Icons.headphones_rounded,
+      subtitle: reciterName.isNotEmpty
+          ? reciterName
+          : l10n.listenQuran,
+      actions: [
+        if (!kIsWeb && !_isCurrentSurahDownloaded)
+          _isDownloadingCurrentSurah
+              ? const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+                  child: SizedBox(
+                    width: 18,
+                    height: 18,
+                    child: CircularProgressIndicator(strokeWidth: 2),
                   ),
-          IconButton(
-            icon: const Icon(Icons.speed),
-            tooltip: l10n.playbackSpeed,
-            onPressed: () => _showSpeedDialog(context),
-          ),
-                                IconButton(
-            icon: Icon(_sleepTimerMinutes != null ? Icons.timer : Icons.timer_outlined),
-            tooltip: l10n.sleepTimer,
-            onPressed: () => _showSleepTimerDialog(context),
-          ),
-                                IconButton(
-            icon: const Icon(Icons.bookmark_add),
-            tooltip: l10n.bookmark,
-            onPressed: _addBookmark,
-          ),
-          IconButton(
-            icon: const Icon(Icons.list),
-            tooltip: l10n.bookmarks,
-            onPressed: _showBookmarksDialog,
-          ),
-          IconButton(
-            icon: const Icon(Icons.share),
-            tooltip: AppLocalizations.of(context)!.share,
-            onPressed: _shareSurah,
-          ),
-
-        ],
-      ),
+                )
+              : IconButton(
+                  icon: const Icon(Icons.download_rounded),
+                  tooltip: l10n.download,
+                  onPressed: _promptDownloadCurrentSurah,
+                ),
+        IconButton(
+          icon: const Icon(Icons.speed_rounded),
+          tooltip: l10n.playbackSpeed,
+          onPressed: () => _showSpeedDialog(context),
+        ),
+        IconButton(
+          icon: Icon(_sleepTimerMinutes != null ? Icons.timer : Icons.timer_outlined),
+          tooltip: l10n.sleepTimer,
+          onPressed: () => _showSleepTimerDialog(context),
+        ),
+        IconButton(
+          icon: const Icon(Icons.bookmark_add_rounded),
+          tooltip: l10n.bookmark,
+          onPressed: _addBookmark,
+        ),
+        IconButton(
+          icon: const Icon(Icons.list_rounded),
+          tooltip: l10n.bookmarks,
+          onPressed: _showBookmarksDialog,
+        ),
+        IconButton(
+          icon: const Icon(Icons.share_rounded),
+          tooltip: AppLocalizations.of(context)!.share,
+          onPressed: _shareSurah,
+        ),
+      ],
       body: _surahs.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : _buildBody(color, isRtl, surahTitle, reciterName),

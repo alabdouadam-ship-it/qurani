@@ -19,6 +19,7 @@ import 'prayer_times_screen.dart';
 import 'services/global_adhan_service.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:path_provider/path_provider.dart';
+import 'themes/app_theme_config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -223,257 +224,21 @@ class QuraniApp extends StatefulWidget {
       context.findAncestorStateOfType<_QuraniAppState>()!;
 }
 
-class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
+ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
   Locale _locale = const Locale('ar');
-  String _theme = 'green';
+  String _theme = AppThemeConfig.defaultThemeId;
 
-  // Theme data factories
-  ThemeData _getThemeData(String themeName) {
-    final isDark = themeName == 'dark';
-    
-    
-    ThemeData baseTheme;
-    switch (themeName) {
-      case 'gray':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFF5F5F5),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF616175),      // رمادي داكن للـ AppBar
-            onPrimary: Colors.white,                // نص أبيض
-            secondary: Color(0xFF757575),
-            surface: Color(0xFFF5F5F5),       // خلفية
-            onSurface: Colors.black87,              // نص
-          ),
-        );
-        break;
-      case 'dark':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.dark,
-          scaffoldBackgroundColor: const Color(0xFF121212),
-          colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF00796B),           // تركواز داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFF004D40),
-            surface: Color(0xFF121212),            // خلفية داكنة جداً
-            onSurface: Colors.white,
-            primaryContainer: Color(0xFF1E1E1E),
-            onPrimaryContainer: Colors.white,
-          ),
-        );
-        break;
-      case 'gold':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFFFFBF0),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFFB7950B),           // ذهبي داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFFD4AF37),          // ذهبي فاتح
-            surface: Color(0xFFFFFBF0),            // خلفية كريمية
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFFFF9E6),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'orange':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFFFF3E0),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFFE65100),           // برتقالي داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFFFF6F00),
-            surface: Color(0xFFFFF3E0),            // خلفية برتقالية فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFFFE0B2),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'purple':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFF3E5F5),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF4A148C),           // بنفسجي داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFF7B1FA2),
-            surface: Color(0xFFF3E5F5),            // خلفية بنفسجية فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFE1BEE7),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'brown':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFEFEBE9),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF5D4037),           // بني داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFF795548),
-            surface: Color(0xFFEFEBE9),            // خلفية بنية فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFD7CCC8),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'lightBlue':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFE1F5FE),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF0288D1),           // أزرق فاتح
-            onPrimary: Colors.white,
-            secondary: Color(0xFF03A9F4),
-            surface: Color(0xFFE1F5FE),            // خلفية أزرق فاتح جداً
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFB3E5FC),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'skyBlue':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFF0F8FF), // أزرق فاتح جداً (Alice Blue)
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF42A5D5),      // أزرق سماوي أفتح
-            onPrimary: Colors.white,                // نص أبيض
-            secondary: Color(0xFF64B5F6),     // أزرق سماوي فاتح
-            surface: Color(0xFFF0F8FF),       // خلفية فاتحة جداً
-            onSurface: Colors.black87,              // نص داكن
-            primaryContainer: Color(0xFFE1F5FE), // حاويات بلون أزرق فاتح جداً
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'blueGrey':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFECEFF1),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF546E7A),           // رمادي-أزرق
-            onPrimary: Colors.white,
-            secondary: Color(0xFF78909C),
-            surface: Color(0xFFECEFF1),            // خلفية رمادية-زرقاء فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFCFD8DC),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'teal':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFE0F2F1),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF00796B),           // تركواز
-            onPrimary: Colors.white,
-            secondary: Color(0xFF009688),
-            surface: Color(0xFFE0F2F1),            // خلفية تركواز فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFB2DFDB),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'oliveGreen':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFF1F8E9),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF558B2F),           // أخضر زيتوني
-            onPrimary: Colors.white,
-            secondary: Color(0xFF689F38),
-            surface: Color(0xFFF1F8E9),            // خلفية خضراء فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFDCEDC8),
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'beige':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFFFF8E1),
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF8D6E63),           // بني فاتح للـ AppBar
-            onPrimary: Colors.white,
-            secondary: Color(0xFFA1887F),          // بني أفتح
-            surface: Color(0xFFFFF8E1),            // خلفية بيج فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFFFECB3),   // حاويات بيج فاتح جداً
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-      case 'green':
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFE8F5E9), // أخضر فاتح جداً
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF2E7D32),           // أخضر داكن
-            onPrimary: Colors.white,
-            secondary: Color(0xFF43A047),         // أخضر متوسط
-            surface: Color(0xFFE8F5E9),            // خلفية خضراء فاتحة
-            onSurface: Colors.black87,
-            primaryContainer: Color(0xFFC8E6C9),   // حاويات خضراء فاتحة
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-
-      default:
-        baseTheme = ThemeData(
-          useMaterial3: true,
-          brightness: Brightness.light,
-          scaffoldBackgroundColor: const Color(0xFFF0F8FF), // أزرق فاتح جداً (Alice Blue)
-          colorScheme: const ColorScheme.light(
-            primary: Color(0xFF42A5D5),      // أزرق سماوي أفتح
-            onPrimary: Colors.white,
-            secondary: Color(0xFF64B5F6),     // أزرق سماوي فاتح
-            surface: Color(0xFFF0F8FF),       // خلفية فاتحة جداً
-            onSurface: Colors.black87,              // نص داكن
-            primaryContainer: Color(0xFFE1F5FE), // حاويات بلون أزرق فاتح جداً
-            onPrimaryContainer: Colors.black87,
-          ),
-        );
-        break;
-    }
-    
-    // Update system UI overlay style based on theme
-    final statusBarIconBrightness = isDark ? Brightness.light : Brightness.light;
-    final navBarIconBrightness = isDark ? Brightness.light : Brightness.light;
-    
+  void _applySystemUiOverlay(AppThemeOption themeOption) {
+    final iconBrightness = themeOption.isDark
+        ? Brightness.light
+        : Brightness.dark;
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
-        statusBarIconBrightness: statusBarIconBrightness,
-        systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarIconBrightness: navBarIconBrightness,
+        statusBarIconBrightness: iconBrightness,
+        systemNavigationBarColor: themeOption.surfaceColor,
+        systemNavigationBarIconBrightness: iconBrightness,
       ),
-    );
-    
-    return baseTheme.copyWith(
-      scaffoldBackgroundColor: baseTheme.colorScheme.surface,
     );
   }
 
@@ -547,10 +312,10 @@ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    // For dark theme, use dark. For others, use their light version
-    final isDark = _theme == 'dark';
-    final lightTheme = isDark ? _getThemeData('green') : _getThemeData(_theme);
-    final darkTheme = _getThemeData('dark');
+    final currentTheme = AppThemeConfig.getTheme(_theme);
+    final activeThemeData = AppThemeConfig.themeDataFor(currentTheme.id);
+    final darkThemeData = AppThemeConfig.themeDataFor(AppThemeConfig.deepNightThemeId);
+    _applySystemUiOverlay(currentTheme);
     
     return MaterialApp(
       title: 'Qurani',
@@ -566,12 +331,13 @@ class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
         Locale('en'),
         Locale('fr'),
       ],
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
+      theme: activeThemeData,
+      darkTheme: darkThemeData,
+      themeMode: currentTheme.isDark ? ThemeMode.dark : ThemeMode.light,
+      themeAnimationDuration: const Duration(milliseconds: 320),
+      themeAnimationCurve: Curves.easeOutCubic,
       home: const OptionsScreen(),
       debugShowCheckedModeBanner: false,
-      // Handle app launch from notification
       onGenerateRoute: (settings) {
         if (settings.name == '/prayer-times') {
           return MaterialPageRoute(builder: (_) => const PrayerTimesScreen());

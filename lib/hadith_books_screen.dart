@@ -3,6 +3,7 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/models/hadith_model.dart';
 import 'package:qurani/services/hadith_service.dart';
 import 'package:qurani/hadith_read_screen.dart';
+import 'package:qurani/widgets/modern_ui.dart';
 
 class HadithBooksScreen extends StatefulWidget {
   const HadithBooksScreen({super.key});
@@ -144,41 +145,46 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.hadithLibrary),
-        centerTitle: true,
-      ),
+    return ModernPageScaffold(
+      title: l10n.hadithLibrary,
+      icon: Icons.auto_stories_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'تصفح كتب الحديث بواجهة أهدأ مع تصفية سريعة حسب اللغة.'
+          : l10n.localeName == 'fr'
+              ? 'Parcourez les livres de hadith dans une interface plus sereine avec un filtre rapide par langue.'
+              : 'Browse hadith books in a calmer interface with quick language filtering.',
       body: Column(
         children: [
-          // Language Filter
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.all(16),
+          ModernSurfaceCard(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                _LanguageChip(
-                  label: l10n.booksInArabic,
-                  isSelected: _selectedLanguage == 'Arabic',
-                  onTap: () => _onLanguageSelected('Arabic'),
+                Expanded(
+                  child: _LanguageChip(
+                    label: l10n.booksInArabic,
+                    isSelected: _selectedLanguage == 'Arabic',
+                    onTap: () => _onLanguageSelected('Arabic'),
+                  ),
                 ),
-                const SizedBox(width: 12),
-                _LanguageChip(
-                  label: l10n.booksInEnglish,
-                  isSelected: _selectedLanguage == 'English',
-                  onTap: () => _onLanguageSelected('English'),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: _LanguageChip(
+                    label: l10n.booksInEnglish,
+                    isSelected: _selectedLanguage == 'English',
+                    onTap: () => _onLanguageSelected('English'),
+                  ),
                 ),
-                const SizedBox(width: 12),
-                _LanguageChip(
-                  label: l10n.booksInFrench,
-                  isSelected: _selectedLanguage == 'French',
-                  onTap: () => _onLanguageSelected('French'),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: _LanguageChip(
+                    label: l10n.booksInFrench,
+                    isSelected: _selectedLanguage == 'French',
+                    onTap: () => _onLanguageSelected('French'),
+                  ),
                 ),
               ],
             ),
           ),
-          
+          const SizedBox(height: 16),
           Expanded(
             child: FutureBuilder<List<HadithEditionEntry>>(
               future: _editionsFuture,
@@ -189,23 +195,18 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
                 if (snapshot.hasError) {
                   return Center(child: Text('Error: ${snapshot.error}'));
                 }
-                
+
                 final editions = snapshot.data ?? [];
                 final categorized = _hadithService.categorizeBooks(editions);
-                
-                // We need to filter editions that HAVE the selected language
-                // categorized map values are List<HadithEditionEntry>.
-                // We need to display them if they have a collection with language == _selectedLanguage
-                
+
                 return SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.only(bottom: 24),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       _buildCategorySection(l10n.sahihain, categorized['Sahihain']!),
                       _buildCategorySection(l10n.sunan, categorized['Sunan']!),
                       _buildCategorySection(l10n.others, categorized['Others']!),
-                      const SizedBox(height: 32),
                     ],
                   ),
                 );
@@ -225,66 +226,69 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
 
     if (filteredBooks.isEmpty) return const SizedBox.shrink();
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6),
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            // Adaptive Grid:
-            // Calculate crossAxisCount based on available width
-            // Assume ideal item width is around 160-180
-            const double itemWidth = 170;
-            final int crossAxisCount = (constraints.maxWidth / itemWidth).floor().clamp(2, 6); // Min 2 columns
-
-            return GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: crossAxisCount,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-                childAspectRatio: 0.85, // Adjust based on card content
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: ModernSurfaceCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
               ),
-              itemCount: filteredBooks.length,
-              itemBuilder: (context, index) {
-                final book = filteredBooks[index];
-                final collection = book.collection.firstWhere(
-                  (c) => c.language.toLowerCase() == _selectedLanguage.toLowerCase()
-                );
-                
-                final isDownloading = _downloadProgress.containsKey(collection.id);
-                final progress = isDownloading ? _downloadProgress[collection.id]! : 0.0;
-                
-                final displayName = (_selectedLanguage.toLowerCase() == 'arabic' && book.namear != null && book.namear!.isNotEmpty)
-                    ? book.namear!
-                    : book.name;
+            ),
+            const SizedBox(height: 8),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                const double itemWidth = 170;
+                final int crossAxisCount = (constraints.maxWidth / itemWidth).floor().clamp(2, 6);
 
-                  final style = _getBookStyle(collection.id);
+                return GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: crossAxisCount,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                    childAspectRatio: 0.85,
+                  ),
+                  itemCount: filteredBooks.length,
+                  itemBuilder: (context, index) {
+                    final book = filteredBooks[index];
+                    final collection = book.collection.firstWhere(
+                      (c) => c.language.toLowerCase() == _selectedLanguage.toLowerCase(),
+                    );
 
-                return _BookCard(
-                  title: displayName,
-                  collection: collection,
-                  isDownloading: isDownloading,
-                  progress: progress,
-                  onTap: () => _handleBookTap(collection, displayName),
-                  color: style.color,
-                  icon: style.icon,
+                    final isDownloading = _downloadProgress.containsKey(collection.id);
+                    final progress = isDownloading ? _downloadProgress[collection.id]! : 0.0;
+
+                    final displayName = (_selectedLanguage.toLowerCase() == 'arabic' && book.namear != null && book.namear!.isNotEmpty)
+                        ? book.namear!
+                        : book.name;
+
+                    final style = _getBookStyle(collection.id);
+
+                    return _BookCard(
+                      title: displayName,
+                      collection: collection,
+                      isDownloading: isDownloading,
+                      progress: progress,
+                      onTap: () => _handleBookTap(collection, displayName),
+                      color: style.color,
+                      icon: style.icon,
+                    );
+                  },
                 );
               },
-            );
-          }
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
@@ -444,15 +448,53 @@ class _LanguageChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return FilterChip(
-      label: Text(label),
-      selected: isSelected,
-      onSelected: (_) => onTap(),
-      checkmarkColor: theme.colorScheme.onPrimary,
-      selectedColor: theme.colorScheme.primary,
-      labelStyle: TextStyle(
-        color: isSelected ? theme.colorScheme.onPrimary : theme.colorScheme.onSurface,
-        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(999),
+        child: Ink(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(999),
+            gradient: isSelected
+                ? LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      theme.colorScheme.primary,
+                      theme.colorScheme.secondary,
+                    ],
+                  )
+                : null,
+            color: isSelected
+                ? null
+                : theme.colorScheme.primaryContainer.withAlpha(
+                    theme.brightness == Brightness.dark ? 95 : 150,
+                  ),
+            border: Border.all(
+              color: isSelected
+                  ? Colors.transparent
+                  : theme.colorScheme.outline.withAlpha(36),
+            ),
+          ),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              label,
+              maxLines: 1,
+              softWrap: false,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                color: isSelected
+                    ? theme.colorScheme.onPrimary
+                    : theme.colorScheme.onSurface,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

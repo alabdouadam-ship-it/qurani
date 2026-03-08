@@ -7,6 +7,7 @@ import 'package:uuid/uuid.dart';
 
 import 'package:qurani/util/arabic_font_utils.dart';
 import 'package:qurani/models/audio_bookmark.dart';
+import 'package:qurani/themes/app_theme_config.dart';
 
 class PreferencesService {
   static SharedPreferences? _prefs;
@@ -41,7 +42,8 @@ class PreferencesService {
   static const String keyPdfType = 'pdf_type';
 
   static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
-  static final ValueNotifier<String> themeNotifier = ValueNotifier<String>('green'); // Default to green
+  static final ValueNotifier<String> themeNotifier =
+      ValueNotifier<String>(AppThemeConfig.defaultThemeId);
   static final ValueNotifier<String> arabicFontNotifier =
       ValueNotifier<String>(ArabicFontUtils.fontAmiri);
 
@@ -53,7 +55,14 @@ class PreferencesService {
     }
     final savedTheme = _prefs!.getString(keyTheme);
     if (savedTheme != null && savedTheme.isNotEmpty) {
-      themeNotifier.value = savedTheme;
+      final normalizedTheme = AppThemeConfig.resolveThemeId(savedTheme);
+      themeNotifier.value = normalizedTheme;
+      if (normalizedTheme != savedTheme) {
+        await _prefs!.setString(keyTheme, normalizedTheme);
+      }
+    } else {
+      themeNotifier.value = AppThemeConfig.defaultThemeId;
+      await _prefs!.setString(keyTheme, themeNotifier.value);
     }
     final savedArabicFont = _prefs!.getString(keyArabicFontFamily);
     if (savedArabicFont != null && savedArabicFont.isNotEmpty) {
@@ -120,8 +129,9 @@ class PreferencesService {
   }
 
   static Future<void> saveTheme(String value) async {
-    await _prefs?.setString(keyTheme, value);
-    themeNotifier.value = value; // Notify listeners
+    final normalizedTheme = AppThemeConfig.resolveThemeId(value);
+    await _prefs?.setString(keyTheme, normalizedTheme);
+    themeNotifier.value = normalizedTheme;
   }
 
   static Future<void> saveLastReadEdition(String value) async {
@@ -179,7 +189,7 @@ class PreferencesService {
 
   static String getTheme() {
     final saved = _prefs?.getString(keyTheme);
-    return saved ?? 'skyBlue'; // Default to sky blue if not set
+    return AppThemeConfig.resolveThemeId(saved);
   }
 
   static Future<void> saveLanguage(String langCode) async {

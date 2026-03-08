@@ -4,6 +4,7 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/offline_audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
+import 'package:qurani/widgets/modern_ui.dart';
 
 class OfflineAudioScreen extends StatefulWidget {
   const OfflineAudioScreen({super.key});
@@ -229,22 +230,68 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     final reciterName = AudioService.reciterDisplayName(_reciter, lang);
     final percentAyah = (_progressTotalAyah > 0) ? (_progressCurrentAyah / _progressTotalAyah) : 0.0;
     final percentFull = (_progressTotalFull > 0) ? (_progressCurrentFull / _progressTotalFull) : 0.0;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.offlineAudioTitle),
-      ),
+    return ModernPageScaffold(
+      title: l10n.offlineAudioTitle,
+      icon: Icons.cloud_download_outlined,
+      subtitle: l10n.localeName == 'ar'
+          ? 'إدارة تنزيلات التلاوة كاملة أو آية بآية مع متابعة أوضح للتقدم.'
+          : l10n.localeName == 'fr'
+              ? 'Gérez les téléchargements audio avec un suivi plus clair de la progression.'
+              : 'Manage audio downloads with clearer progress and calmer presentation.',
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.only(bottom: 24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Full surah card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
+            ModernSurfaceCard(
+              child: Row(
+                children: [
+                  Container(
+                    width: 48,
+                    height: 48,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          theme.colorScheme.primary,
+                          theme.colorScheme.secondary,
+                        ],
+                      ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Icon(
+                      Icons.library_music_rounded,
+                      color: theme.colorScheme.onPrimary,
+                    ),
+                  ),
+                  const SizedBox(width: 14),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          l10n.reciterLabel(reciterName),
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          l10n.downloadFullSurahNote,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: theme.colorScheme.onSurface.withAlpha(170),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            ModernSurfaceCard(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -289,16 +336,10 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
                     ],
                   ],
                 ),
-              ),
             ),
-            const SizedBox(height: 8),
-            // Verse-by-verse card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
+            const SizedBox(height: 12),
+            ModernSurfaceCard(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -343,16 +384,10 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
                     ],
                   ],
                 ),
-              ),
             ),
-            const SizedBox(height: 8),
-            // Additional verse-by-verse sets (Arabic-English, Arabic-French, Tafsir)
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
+            const SizedBox(height: 12),
+            ModernSurfaceCard(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -427,23 +462,16 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
                           ),
                   ],
                 ),
-              ),
             ),
-            const SizedBox(height: 8),
-            // Full surah info
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 16, 16, 48),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(Icons.info_outline, color: theme.colorScheme.primary),
-                    const SizedBox(width: 8),
-                    Expanded(child: Text(l10n.downloadFullSurahNote)),
-                  ],
-                ),
+            const SizedBox(height: 12),
+            ModernSurfaceCard(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.info_outline, color: theme.colorScheme.primary),
+                  const SizedBox(width: 8),
+                  Expanded(child: Text(l10n.downloadFullSurahNote)),
+                ],
               ),
             ),
           ],

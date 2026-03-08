@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
+import 'package:qurani/themes/app_theme_config.dart';
+import 'package:qurani/widgets/theme_selector.dart';
 import 'responsive_config.dart';
 import 'services/preferences_service.dart';
 import 'util/arabic_font_utils.dart';
@@ -41,110 +43,6 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       'fr': 'KFGQPC Tajweed (grandes lettres)',
     },
   };
-  
-  static const String _themeGreen = 'green';
-  static const String _themeDark = 'dark';
-  static const String _themeGray = 'gray';
-  static const String _themeGold = 'gold';
-  static const String _themeOrange = 'orange';
-  static const String _themePurple = 'purple';
-  static const String _themeBrown = 'brown';
-  static const String _themeLightBlue = 'lightBlue';
-  static const String _themeSkyBlue = 'skyBlue';
-  static const String _themeBlueGrey = 'blueGrey';
-  static const String _themeTeal = 'teal';
-  static const String _themeOliveGreen = 'oliveGreen';
-  static const String _themeBeige = 'beige';
-
-  final Map<String, Map<String, String>> _themeLabels = {
-    _themeGreen: {
-      'ar': 'أخضر',
-      'en': 'Green',
-      'fr': 'Vert',
-    },
-    _themeDark: {
-      'ar': 'داكن',
-      'en': 'Dark',
-      'fr': 'Sombre',
-    },
-    _themeGray: {
-      'ar': 'رمادي',
-      'en': 'Gray',
-      'fr': 'Gris',
-    },
-    _themeGold: {
-      'ar': 'ذهبي',
-      'en': 'Gold',
-      'fr': 'Or',
-    },
-    _themeOrange: {
-      'ar': 'برتقالي',
-      'en': 'Orange',
-      'fr': 'Orange',
-    },
-    _themePurple: {
-      'ar': 'بنفسجي',
-      'en': 'Purple',
-      'fr': 'Violet',
-    },
-    _themeBrown: {
-      'ar': 'بني',
-      'en': 'Brown',
-      'fr': 'Marron',
-    },
-    _themeLightBlue: {
-      'ar': 'أزرق فاتح',
-      'en': 'Light Blue',
-      'fr': 'Bleu clair',
-    },
-    _themeSkyBlue: {
-      'ar': 'أزرق سماوي',
-      'en': 'Sky Blue',
-      'fr': 'Bleu ciel',
-    },
-    _themeBlueGrey: {
-      'ar': 'رمادي-أزرق',
-      'en': 'Blue Grey',
-      'fr': 'Gris bleu',
-    },
-    _themeTeal: {
-      'ar': 'تركواز',
-      'en': 'Teal',
-      'fr': 'Sarcelle',
-    },
-    _themeOliveGreen: {
-      'ar': 'أخضر زيتوني',
-      'en': 'Olive Green',
-      'fr': 'Vert olive',
-    },
-    _themeBeige: {
-      'ar': 'بيج',
-      'en': 'Beige',
-      'fr': 'Beige',
-    },
-  };
-
-  List<String> _getThemeDisplayNames(BuildContext context) {
-    final langCode = _getCurrentLangCode(context);
-    return [_themeGreen, _themeDark, _themeGray, _themeGold, _themeOrange, _themePurple, _themeBrown, _themeLightBlue, _themeSkyBlue, _themeBlueGrey, _themeTeal, _themeOliveGreen, _themeBeige]
-        .map((code) => _themeLabels[code]![langCode]!)
-        .toList();
-  }
-
-  String? _getThemeLabelFromCode(String? code, BuildContext context) {
-    if (code == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    return _themeLabels[code]?[langCode];
-  }
-
-  String? _getThemeCodeFromLabel(String? label, BuildContext context) {
-    if (label == null) return null;
-    final langCode = _getCurrentLangCode(context);
-    for (final entry in _themeLabels.entries) {
-      if (entry.value[langCode] == label) return entry.key;
-    }
-    return null;
-  }
   
   @override
   void initState() {
@@ -257,30 +155,47 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   Widget build(BuildContext context) {
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final l10n = AppLocalizations.of(context)!;
+    final currentTheme = AppThemeConfig.getTheme(_selectedTheme);
+    final overlayBrightness = Theme.of(context).brightness == Brightness.dark
+        ? Brightness.light
+        : Brightness.dark;
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: Text(
           l10n.preferences,
           style: TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w800,
             fontSize: ResponsiveConfig.getFontSize(context, 18),
           ),
         ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 2,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
+        elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Theme.of(context).brightness == Brightness.dark
-              ? Brightness.light
-              : Brightness.light,
+          statusBarIconBrightness: overlayBrightness,
         ),
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: ResponsiveConfig.getPadding(context),
-          child: _buildSingleColumnLayout(context, l10n, isSmallScreen),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              currentTheme.gradientColors.first.withAlpha(currentTheme.isDark ? 110 : 65),
+              Theme.of(context).colorScheme.surface,
+              Theme.of(context).colorScheme.surface,
+            ],
+          ),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: ResponsiveConfig.getPadding(context),
+            child: _buildSingleColumnLayout(context, l10n, isSmallScreen),
+          ),
         ),
       ),
     );
@@ -291,23 +206,18 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
       children: [
         Expanded(
           child: ListView(
-            padding: EdgeInsets.zero,
+            padding: const EdgeInsets.only(top: 8, bottom: 8),
             children: [
-              _buildDropdownSection(
-                context,
-                title: l10n.theme,
-                icon: Icons.palette,
-                iconColor: Colors.orange,
-                initialValue: _getThemeLabelFromCode(_selectedTheme ?? 'green', context)!,
-                items: _getThemeDisplayNames(context),
-                onChanged: (String? value) {
-                  if (value == null) return;
+              ThemeSelector(
+                selectedThemeId: _selectedTheme ?? AppThemeConfig.defaultThemeId,
+                onThemeSelected: (String themeId) async {
                   setState(() {
-                    _selectedTheme = _getThemeCodeFromLabel(value, context) ?? 'green';
+                    _selectedTheme = themeId;
                   });
+                  await PreferencesService.saveTheme(themeId);
                 },
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 14),
               _buildDropdownSection(
                 context,
                 title: l10n.language,
@@ -330,7 +240,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   }
                 },
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 14),
               _buildDropdownSection(
                 context,
                 title: l10n.arabicFont,
@@ -345,7 +255,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   });
                 },
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 14),
               _buildDropdownSection(
                 context,
                 title: l10n.fontSize,
@@ -374,9 +284,9 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 vertical: isSmallScreen ? 14 : 16,
               ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(18),
               ),
-              elevation: 4,
+              elevation: 0,
             ),
             child: Text(
               l10n.savePreferences,
@@ -407,12 +317,18 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
   }) {
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     return Card(
-      elevation: 3,
+      elevation: 0,
+      color: Theme.of(context).colorScheme.primaryContainer.withAlpha(
+            Theme.of(context).brightness == Brightness.dark ? 100 : 150,
+          ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: Theme.of(context).colorScheme.outline.withAlpha(36),
+        ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(isSmallScreen ? 14 : 16),
+        padding: EdgeInsets.all(isSmallScreen ? 16 : 18),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -421,12 +337,19 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: iconColor.withAlpha((255 * 0.1).round()),
-                    borderRadius: BorderRadius.circular(8),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        iconColor.withAlpha(220),
+                        iconColor.withAlpha(130),
+                      ],
+                    ),
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: Icon(
                     icon,
-                    color: iconColor,
+                    color: Colors.white,
                     size: isSmallScreen ? 20 : 24,
                   ),
                 ),
@@ -446,19 +369,21 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
               initialValue: initialValue,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withAlpha((255 * 0.5).round())),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide(color: Theme.of(context).colorScheme.outline.withAlpha((255 * 0.5).round())),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide(color: Theme.of(context).colorScheme.primary, width: 2),
                 ),
                 filled: true,
-                fillColor: Theme.of(context).colorScheme.surface,
+                fillColor: Theme.of(context).colorScheme.surface.withAlpha(
+                      Theme.of(context).brightness == Brightness.dark ? 180 : 235,
+                    ),
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: 16,
                   vertical: isSmallScreen ? 12 : 16,
@@ -501,15 +426,14 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     final l10n = AppLocalizations.of(context)!;
     final appState = QuraniApp.of(context);
     final messenger = ScaffoldMessenger.of(context);
-    // Persist
 
-    await PreferencesService.saveTheme(_selectedTheme ?? 'green');
+    await PreferencesService.saveTheme(
+      _selectedTheme ?? AppThemeConfig.defaultThemeId,
+    );
     await PreferencesService.saveFontSize(_selectedFontSize);
     await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
-      // Theme change will be handled by the notifier in main.dart
     if (_selectedLanguage != null) {
       await PreferencesService.saveLanguage(_selectedLanguage!);
-      // Update app locale after saving
       if (!mounted) return;
       appState.setLocale(Locale(_selectedLanguage!));
     }
@@ -518,15 +442,14 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
     messenger.showSnackBar(
       SnackBar(
         content: Text(l10n.preferencesSavedSuccessfully),
-        backgroundColor: Colors.green[700],
+        backgroundColor: Theme.of(context).colorScheme.primary,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(16),
         ),
       ),
     );
 
-    // Return to the previous screen (typically Settings)
     if (!mounted) return;
     Navigator.of(context).pop(true);
   }

@@ -16,6 +16,7 @@ import 'package:audio_session/audio_session.dart';
 import 'services/media_item_compat.dart';
 import 'services/net_utils.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'widgets/modern_ui.dart';
 
 class PrayerTimesScreen extends StatefulWidget {
   const PrayerTimesScreen({super.key});
@@ -528,22 +529,26 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.prayerTimes),
-        actions: [
-          IconButton(
-            tooltip: 'Help',
-            icon: const Icon(Icons.help_outline),
-            onPressed: () => _openPrayerTimesHelp(context),
-          ),
-          IconButton(
-            tooltip: l10n.settings,
-            icon: const Icon(Icons.settings),
-            onPressed: _openAdhanSettings,
-          ),
-        ],
-      ),
+    return ModernPageScaffold(
+      title: l10n.prayerTimes,
+      icon: Icons.schedule_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'تابع أوقات الصلاة والتنبيه والأذان اليومي في واجهة أوضح وأكثر هدوءًا.'
+          : l10n.localeName == 'fr'
+              ? 'Suivez les horaires de prière et l’adhan quotidien dans une interface plus claire.'
+              : 'Follow prayer times and daily adhan controls in a calmer, clearer interface.',
+      actions: [
+        IconButton(
+          tooltip: 'Help',
+          icon: const Icon(Icons.help_outline_rounded),
+          onPressed: () => _openPrayerTimesHelp(context),
+        ),
+        IconButton(
+          tooltip: l10n.settings,
+          icon: const Icon(Icons.settings_rounded),
+          onPressed: _openAdhanSettings,
+        ),
+      ],
       body: _buildBody(context, theme, l10n),
     );
   }
@@ -802,56 +807,58 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     }
     if (_needsInternet || _needsService || _needsPermission) {
       return Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(Icons.info_outline,
-                  size: 48, color: theme.colorScheme.primary),
-              const SizedBox(height: 12),
-              Text(
-                _needsInternet
-                    ? l10n.prayerInternetGpsRequired
-                    : _needsService
-                        ? l10n.qiblaLocationDisabled
-                        : l10n.qiblaPermissionRequired,
-                textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge,
-              ),
-              const SizedBox(height: 16),
-              if (_needsInternet)
+        child: ModernSurfaceCard(
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.info_outline,
+                    size: 48, color: theme.colorScheme.primary),
+                const SizedBox(height: 12),
+                Text(
+                  _needsInternet
+                      ? l10n.prayerInternetGpsRequired
+                      : _needsService
+                          ? l10n.qiblaLocationDisabled
+                          : l10n.qiblaPermissionRequired,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.bodyLarge,
+                ),
+                const SizedBox(height: 16),
+                if (_needsInternet)
+                  TextButton(
+                    onPressed: _loadTimes,
+                    child: Text(l10n.qiblaRetry),
+                  ),
+                if (_needsPermission)
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      await Geolocator.openAppSettings();
+                      if (!mounted) return;
+                      _loadTimes();
+                    },
+                    icon: const Icon(Icons.app_settings_alt),
+                    label: Text(l10n.qiblaOpenAppSettings),
+                  ),
+                if (_needsService) const SizedBox(height: 8),
+                if (_needsService)
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      await Geolocator.openLocationSettings();
+                      if (!mounted) return;
+                      _loadTimes();
+                    },
+                    icon: const Icon(Icons.gps_fixed),
+                    label: Text(l10n.qiblaOpenLocationSettings),
+                  ),
+                const SizedBox(height: 8),
                 TextButton(
                   onPressed: _loadTimes,
                   child: Text(l10n.qiblaRetry),
                 ),
-              if (_needsPermission)
-                ElevatedButton.icon(
-                  onPressed: () async {
-                    await Geolocator.openAppSettings();
-                    if (!mounted) return;
-                    _loadTimes();
-                  },
-                  icon: const Icon(Icons.app_settings_alt),
-                  label: Text(l10n.qiblaOpenAppSettings),
-                ),
-              if (_needsService) const SizedBox(height: 8),
-              if (_needsService)
-                ElevatedButton.icon(
-                  onPressed: () async {
-                    await Geolocator.openLocationSettings();
-                    if (!mounted) return;
-                    _loadTimes();
-                  },
-                  icon: const Icon(Icons.gps_fixed),
-                  label: Text(l10n.qiblaOpenLocationSettings),
-                ),
-              const SizedBox(height: 8),
-              TextButton(
-                onPressed: _loadTimes,
-                child: Text(l10n.qiblaRetry),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
@@ -871,115 +878,158 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           final primary =
               theme.colorScheme.primary.withAlpha((255 * 0.85).round());
           final onSurface = theme.colorScheme.onSurface;
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: IconButton(
-                        tooltip: l10n.previousLabel,
-                        icon: const Icon(Icons.arrow_back),
-                        onPressed: _canGoPrev() ? _goPrevDay : null,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          GestureDetector(
-                            onLongPress: () async {
-                              // Test background Adhan after 10 seconds
-                              final messenger = ScaffoldMessenger.of(context);
-                              await AdhanScheduler
-                                  .testAdhanPlaybackAfterSeconds(
-                                      10, PreferencesService.getAdhanSound());
-
-                              if (!mounted) return;
-                              messenger.showSnackBar(
-                                const SnackBar(
-                                  content: Text(
-                                      'أذان تجريبي بعد 10 ثواني - أغلق التطبيق للاختبار'),
-                                  duration: Duration(seconds: 8),
-                                ),
-                              );
-                            },
-                            child: ElevatedButton.icon(
-                              onPressed: _onRefreshPressed,
-                              icon: const Icon(Icons.refresh),
-                              label: Text(l10n.refresh),
-                            ),
-                          ),
-                          if (_cityName != null && _cityName!.isNotEmpty) ...[
-                            const SizedBox(height: 4),
-                            Text(
-                              _cityName!,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurfaceVariant,
-                                  ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: IconButton(
-                        tooltip: l10n.nextLabel,
-                        icon: const Icon(Icons.arrow_forward),
-                        onPressed: _canGoNext() ? _goNextDay : null,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              RichText(
-                text: TextSpan(
-                  style:
-                      theme.textTheme.titleMedium?.copyWith(color: onSurface),
+          final nextPrayerTitle = _nextPrayerId == null
+              ? null
+              : _localizedName(context, _nextPrayerId!);
+          return ModernSurfaceCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
                   children: [
-                    if (_hijriDay != null &&
-                        _hijriMonth != null &&
-                        _hijriYear != null) ...[
-                      TextSpan(text: _toWesternDigits(_hijriDay!)),
-                      const TextSpan(text: ' '),
-                      TextSpan(
-                        text: _hijriMonth!,
-                        style: TextStyle(color: primary),
-                        recognizer: _hijriMonthTap,
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: IconButton(
+                          tooltip: l10n.previousLabel,
+                          icon: const Icon(Icons.arrow_back),
+                          onPressed: _canGoPrev() ? _goPrevDay : null,
+                        ),
                       ),
-                      const TextSpan(text: ' '),
-                      TextSpan(text: _toWesternDigits(_hijriYear!)),
-                    ],
-                    const TextSpan(text: '  -  '),
-                    TextSpan(text: weekday),
-                    const TextSpan(text: '  -  '),
-                    TextSpan(text: _toWesternDigits(gDay)),
-                    const TextSpan(text: ' '),
-                    TextSpan(
-                      text: gMonth,
-                      style: TextStyle(color: primary),
-                      recognizer: _gregorianMonthTap,
                     ),
-                    const TextSpan(text: ' '),
-                    TextSpan(text: _toWesternDigits(gYear)),
+                    Expanded(
+                      child: Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            GestureDetector(
+                              onLongPress: () async {
+                                // Test background Adhan after 10 seconds
+                                final messenger = ScaffoldMessenger.of(context);
+                                await AdhanScheduler
+                                    .testAdhanPlaybackAfterSeconds(
+                                        10, PreferencesService.getAdhanSound());
+
+                                if (!mounted) return;
+                                messenger.showSnackBar(
+                                  const SnackBar(
+                                    content: Text(
+                                        'أذان تجريبي بعد 10 ثواني - أغلق التطبيق للاختبار'),
+                                    duration: Duration(seconds: 8),
+                                  ),
+                                );
+                              },
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: ElevatedButton.icon(
+                                  onPressed: _onRefreshPressed,
+                                  icon: const Icon(Icons.refresh),
+                                  label: Text(
+                                    l10n.refresh,
+                                    maxLines: 1,
+                                    softWrap: false,
+                                    overflow: TextOverflow.fade,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            if (_cityName != null && _cityName!.isNotEmpty) ...[
+                              const SizedBox(height: 8),
+                              Text(
+                                _cityName!,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurfaceVariant,
+                                    ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: IconButton(
+                          tooltip: l10n.nextLabel,
+                          icon: const Icon(Icons.arrow_forward),
+                          onPressed: _canGoNext() ? _goNextDay : null,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-            ],
+                const SizedBox(height: 12),
+                RichText(
+                  text: TextSpan(
+                    style:
+                        theme.textTheme.titleMedium?.copyWith(color: onSurface),
+                    children: [
+                      if (_hijriDay != null &&
+                          _hijriMonth != null &&
+                          _hijriYear != null) ...[
+                        TextSpan(text: _toWesternDigits(_hijriDay!)),
+                        const TextSpan(text: ' '),
+                        TextSpan(
+                          text: _hijriMonth!,
+                          style: TextStyle(color: primary),
+                          recognizer: _hijriMonthTap,
+                        ),
+                        const TextSpan(text: ' '),
+                        TextSpan(text: _toWesternDigits(_hijriYear!)),
+                      ],
+                      const TextSpan(text: '  -  '),
+                      TextSpan(text: weekday),
+                      const TextSpan(text: '  -  '),
+                      TextSpan(text: _toWesternDigits(gDay)),
+                      const TextSpan(text: ' '),
+                      TextSpan(
+                        text: gMonth,
+                        style: TextStyle(color: primary),
+                        recognizer: _gregorianMonthTap,
+                      ),
+                      const TextSpan(text: ' '),
+                      TextSpan(text: _toWesternDigits(gYear)),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: [
+                    if (nextPrayerTitle != null)
+                      _buildInfoPill(
+                        context,
+                        icon: Icons.notifications_active_outlined,
+                        label: _countdown != null
+                            ? '$nextPrayerTitle • ${_formatDuration(_countdown!)}'
+                            : nextPrayerTitle,
+                      ),
+                    _buildInfoPill(
+                      context,
+                      icon: Icons.calendar_today_outlined,
+                      label: weekday,
+                    ),
+                    if (_isRamadan)
+                      _buildInfoPill(
+                        context,
+                        icon: Icons.nightlight_round,
+                        label: l10n.localeName == 'ar'
+                            ? 'رمضان'
+                            : l10n.localeName == 'fr'
+                                ? 'Ramadan'
+                                : 'Ramadan',
+                      ),
+                  ],
+                ),
+              ],
+            ),
           );
         }
         if (index == _prayers.length + 1) {
@@ -1001,68 +1051,140 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
             : BorderSide.none;
         return Opacity(
           opacity: isPast && !isNext ? 0.55 : 1.0,
-          child: Card(
-            elevation: isNext ? 4 : 2,
-            color: isNext ? Colors.amber.withAlpha((255 * 0.15).round()) : null,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12), side: borderSide),
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: isNext
-                    ? Colors.amber.withAlpha((255 * 0.3).round())
-                    : theme.colorScheme.primary.withAlpha((255 * 0.12).round()),
-                foregroundColor: theme.colorScheme.primary,
-                child: const Icon(Icons.access_time),
-              ),
-              title: Text(
-                title,
-                style: isNext
-                    ? const TextStyle(fontWeight: FontWeight.bold)
-                    : null,
-                overflow: TextOverflow.ellipsis,
-              ),
-              subtitle: Row(
-                children: [
-                  Expanded(
-                    child: Text(_formatClock(dtAdj)),
-                  ),
-                  if (isNext && _countdown != null)
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 8),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(18),
+              border: Border.fromBorderSide(borderSide),
+            ),
+            child: ModernSurfaceCard(
+              padding: EdgeInsets.zero,
+              child: ListTile(
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                leading: CircleAvatar(
+                  backgroundColor: isNext
+                      ? Colors.amber.withAlpha((255 * 0.3).round())
+                      : theme.colorScheme.primary.withAlpha((255 * 0.12).round()),
+                  foregroundColor: theme.colorScheme.primary,
+                  child: const Icon(Icons.access_time),
+                ),
+                title: Row(
+                  children: [
+                    Expanded(
                       child: Text(
-                        _formatDuration(_countdown!),
-                        style: TextStyle(color: theme.colorScheme.primary),
+                        title,
+                        style: isNext
+                            ? const TextStyle(fontWeight: FontWeight.bold)
+                            : null,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                ],
-              ),
-              trailing: Semantics(
-                label: '${AppLocalizations.of(context)!.adhanSound}: $title',
-                button: true,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if (id != 'sunrise' && id != 'imsak')
-                      IconButton(
-                        icon: const Icon(Icons.tune, size: 20),
-                        tooltip: AppLocalizations.of(context)!
-                            .prayerAdjustmentTooltip,
-                        onPressed: () =>
-                            _openPrayerTimeAdjustment(context, id, dtAdj),
-                      ),
-                    if (id != 'sunrise' && id != 'imsak')
-                      Switch.adaptive(
-                        materialTapTargetSize: MaterialTapTargetSize.padded,
-                        value: enabled,
-                        onChanged: (v) => _toggleAdhan(context, id, v),
+                    if (isNext)
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withAlpha((255 * 0.18).round()),
+                          borderRadius: BorderRadius.circular(999),
+                        ),
+                        child: Text(
+                          l10n.nextLabel,
+                          style: theme.textTheme.labelSmall?.copyWith(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
                       ),
                   ],
+                ),
+                subtitle: Row(
+                  children: [
+                    Expanded(
+                      child: Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: AlignmentDirectional.centerStart,
+                          child: Text(
+                            _formatClock(dtAdj),
+                            maxLines: 1,
+                            softWrap: false,
+                          ),
+                        ),
+                      ),
+                    ),
+                    if (isNext && _countdown != null)
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(start: 8),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            _formatDuration(_countdown!),
+                            maxLines: 1,
+                            softWrap: false,
+                            style: TextStyle(color: theme.colorScheme.primary),
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+                trailing: Semantics(
+                  label: '${AppLocalizations.of(context)!.adhanSound}: $title',
+                  button: true,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (id != 'sunrise' && id != 'imsak')
+                        IconButton(
+                          icon: const Icon(Icons.tune, size: 20),
+                          tooltip: AppLocalizations.of(context)!
+                              .prayerAdjustmentTooltip,
+                          onPressed: () =>
+                              _openPrayerTimeAdjustment(context, id, dtAdj),
+                        ),
+                      if (id != 'sunrise' && id != 'imsak')
+                        Switch.adaptive(
+                          materialTapTargetSize: MaterialTapTargetSize.padded,
+                          value: enabled,
+                          onChanged: (v) => _toggleAdhan(context, id, v),
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
         );
       },
+    );
+  }
+
+  Widget _buildInfoPill(
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+  }) {
+    final theme = Theme.of(context);
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.primary.withAlpha((255 * 0.08).round()),
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 16, color: theme.colorScheme.primary),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurface,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
     );
   }
 

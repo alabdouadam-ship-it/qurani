@@ -4,6 +4,7 @@ import 'package:qurani/models/tasbeeh_model.dart';
 import 'package:qurani/services/tasbeeh_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'responsive_config.dart';
+import 'widgets/modern_ui.dart';
 
 class TasbeehScreen extends StatefulWidget {
   const TasbeehScreen({super.key});
@@ -278,111 +279,131 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     
-    return Scaffold(
-      backgroundColor: theme.colorScheme.surface,
-      appBar: AppBar(
-        title: Text(
-          l10n.tasbeeh,
-           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: ResponsiveConfig.getFontSize(context, 18),
-          ),
+    return ModernPageScaffold(
+      title: l10n.tasbeeh,
+      icon: Icons.auto_awesome_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'أذكارك ومجموعاتك اليومية في واجهة أكثر سكينة ووضوحًا.'
+          : l10n.localeName == 'fr'
+              ? 'Vos adhkar et groupes quotidiens dans une interface plus sereine et plus claire.'
+              : 'Your adhkar and daily groups in a calmer, clearer interface.',
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.refresh_rounded),
+          tooltip: l10n.resetAll,
+          onPressed: _resetAll,
         ),
-        actions: [
-            IconButton(
-                icon: const Icon(Icons.refresh),
-                tooltip: l10n.resetAll,
-                onPressed: _resetAll,
-            ),
-             IconButton(
-                icon: const Icon(Icons.add),
-                tooltip: l10n.createNewGroup,
-                onPressed: _showAddGroupDialog,
-            ),
-        ],
-      ),
+        IconButton(
+          icon: const Icon(Icons.add_rounded),
+          tooltip: l10n.createNewGroup,
+          onPressed: _showAddGroupDialog,
+        ),
+      ],
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              padding: const EdgeInsets.only(bottom: 80),
-              itemCount: _groups.length,
-              itemBuilder: (context, index) {
-                final group = _groups[index];
-                return _buildGroupTile(group, l10n, theme);
-              },
+          : Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.only(bottom: 80),
+                    itemCount: _groups.length,
+                    itemBuilder: (context, index) {
+                      final group = _groups[index];
+                      return _buildGroupTile(group, l10n, theme);
+                    },
+                  ),
+                ),
+              ],
             ),
     );
   }
 
   Widget _buildGroupTile(TasbeehGroup group, AppLocalizations l10n, ThemeData theme) {
-    return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return ModernSurfaceCard(
+      margin: const EdgeInsets.only(bottom: 12),
       child: Theme(
         data: theme.copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
           key: Key(group.id),
-          initiallyExpanded: group.name == 'groupMyAzkar', // Default expanded
+          initiallyExpanded: group.name == 'groupMyAzkar',
+          tilePadding: EdgeInsets.zero,
+          childrenPadding: EdgeInsets.zero,
           title: Text(
             _getLocalizedGroupName(group, l10n),
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: ResponsiveConfig.getFontSize(context, 17),
+            ),
           ),
-          leading: Icon(
+          leading: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  theme.colorScheme.primary,
+                  theme.colorScheme.secondary,
+                ],
+              ),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Icon(
               group.isCustom ? Icons.folder_shared_outlined : Icons.folder_special_outlined,
-              color: theme.colorScheme.primary,
+              color: theme.colorScheme.onPrimary,
+            ),
           ),
           trailing: PopupMenuButton<String>(
-              icon: const Icon(Icons.more_vert),
-              onSelected: (value) {
-                  if (value == 'add') _addItem(group);
-                  if (value == 'reset') _resetGroup(group);
-                  if (value == 'delete') _deleteGroup(group);
-              },
-              itemBuilder: (context) => [
-                   PopupMenuItem(
-                      value: 'add',
-                      child: Row(
-                          children: [
-                              Icon(Icons.add, color: theme.colorScheme.primary),
-                              const SizedBox(width: 8),
-                              Text(l10n.addAzkar),
-                          ],
-                      ),
+            icon: const Icon(Icons.more_vert),
+            onSelected: (value) {
+              if (value == 'add') _addItem(group);
+              if (value == 'reset') _resetGroup(group);
+              if (value == 'delete') _deleteGroup(group);
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'add',
+                child: Row(
+                  children: [
+                    Icon(Icons.add, color: theme.colorScheme.primary),
+                    const SizedBox(width: 8),
+                    Text(l10n.addAzkar),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'reset',
+                child: Row(
+                  children: [
+                    const Icon(Icons.refresh, color: Colors.orange),
+                    const SizedBox(width: 8),
+                    Text(l10n.resetGroup),
+                  ],
+                ),
+              ),
+              if (group.isCustom)
+                PopupMenuItem(
+                  value: 'delete',
+                  child: Row(
+                    children: [
+                      const Icon(Icons.delete, color: Colors.red),
+                      const SizedBox(width: 8),
+                      Text(l10n.deleteGroup),
+                    ],
                   ),
-                   PopupMenuItem(
-                      value: 'reset',
-                      child: Row(
-                          children: [
-                              const Icon(Icons.refresh, color: Colors.orange),
-                              const SizedBox(width: 8),
-                              Text(l10n.resetGroup),
-                          ],
-                      ),
-                  ),
-                  if (group.isCustom)
-                      PopupMenuItem(
-                          value: 'delete',
-                          child: Row(
-                              children: [
-                                  const Icon(Icons.delete, color: Colors.red),
-                                  const SizedBox(width: 8),
-                                  Text(l10n.deleteGroup),
-                              ],
-                          ),
-                      ),
-              ],
+                ),
+            ],
           ),
           children: [
-              if (group.items.isEmpty)
-                  Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(
-                          "لا توجد أذكار في هذه المجموعة. اضغط على القائمة لإضافة ذكر.",
-                          style: theme.textTheme.bodySmall,
-                          textAlign: TextAlign.center,
-                      ),
-                  ),
+            if (group.items.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "لا توجد أذكار في هذه المجموعة. اضغط على القائمة لإضافة ذكر.",
+                  style: theme.textTheme.bodySmall,
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ...group.items.map((item) => _buildAzkarItem(group, item, theme)),
           ],
         ),

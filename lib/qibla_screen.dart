@@ -5,6 +5,7 @@ import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:geolocator/geolocator.dart';
 import 'l10n/app_localizations.dart';
 import 'responsive_config.dart';
+import 'widgets/modern_ui.dart';
 
 class QiblaScreen extends StatefulWidget {
   const QiblaScreen({super.key});
@@ -91,34 +92,21 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
     final colorScheme = Theme.of(context).colorScheme;
     final isSmall = ResponsiveConfig.isSmallScreen(context);
 
-    return Scaffold(
-      backgroundColor: colorScheme.surface,
-      appBar: AppBar(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.explore),
-            const SizedBox(width: 8),
-            Text(
-              l10n.qiblaTitle,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: ResponsiveConfig.getFontSize(context, 18),
-              ),
-            ),
-          ],
+    return ModernPageScaffold(
+      title: l10n.qiblaTitle,
+      icon: Icons.explore_rounded,
+      subtitle: l10n.localeName == 'ar'
+          ? 'اعرف اتجاه القبلة في واجهة هادئة وواضحة مع تعليمات سهلة.'
+          : l10n.localeName == 'fr'
+              ? 'Trouvez la qibla dans une interface claire et apaisée avec des indications simples.'
+              : 'Find the qibla in a calm, clear interface with simple guidance.',
+      actions: [
+        IconButton(
+          icon: const Icon(Icons.refresh_rounded),
+          onPressed: _checkLocationStatus,
+          tooltip: l10n.qiblaRetry,
         ),
-        backgroundColor: colorScheme.primary,
-        foregroundColor: colorScheme.onPrimary,
-        elevation: 2,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: _checkLocationStatus,
-            tooltip: l10n.qiblaRetry,
-          ),
-        ],
-      ),
+      ],
       body: StreamBuilder<LocationStatus>(
         stream: _locationStatusStream,
         builder: (context, snapshot) {
@@ -268,44 +256,46 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
         final needleAngle = -(data.qiblah * (math.pi / 180));
 
         return Center(
-          child: Padding(
-            padding: EdgeInsets.all(isSmall ? 16 : 24),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _CompassCard(
-                  compassAngle: compassAngle,
-                  needleAngle: needleAngle,
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  l10n.qiblaTurnUntilArrowUp,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: colorScheme.onSurface.withAlpha((255 * 0.8).round()),
+          child: ModernSurfaceCard(
+            child: Padding(
+              padding: EdgeInsets.all(isSmall ? 4 : 8),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _CompassCard(
+                    compassAngle: compassAngle,
+                    needleAngle: needleAngle,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  l10n.qiblaAngleLabel(data.offset.toStringAsFixed(1)),
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: colorScheme.onSurfaceVariant,
+                  const SizedBox(height: 20),
+                  Text(
+                    l10n.qiblaTurnUntilArrowUp,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: colorScheme.onSurface.withAlpha((255 * 0.8).round()),
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  spacing: 12,
-                  runSpacing: 12,
-                  alignment: WrapAlignment.center,
-                  children: [
-                    _TipChip(icon: Icons.my_location, label: l10n.qiblaTipGps),
-                    _TipChip(icon: Icons.screen_rotation, label: l10n.qiblaTipCalibrate),
-                    _TipChip(icon: Icons.sensors, label: l10n.qiblaTipInterference),
-                  ],
-                ),
-              ],
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.qiblaAngleLabel(data.offset.toStringAsFixed(1)),
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Wrap(
+                    spacing: 12,
+                    runSpacing: 12,
+                    alignment: WrapAlignment.center,
+                    children: [
+                      _TipChip(icon: Icons.my_location, label: l10n.qiblaTipGps),
+                      _TipChip(icon: Icons.screen_rotation, label: l10n.qiblaTipCalibrate),
+                      _TipChip(icon: Icons.sensors, label: l10n.qiblaTipInterference),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         );
@@ -320,28 +310,30 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
     List<Widget>? actions,
   }) {
     return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 64, color: colorScheme.onSurfaceVariant),
-            const SizedBox(height: 16),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: colorScheme.onSurfaceVariant),
-            ),
-            if (actions != null && actions.isNotEmpty) ...[
-              const SizedBox(height: 20),
-              Wrap(
-                spacing: 12,
-                runSpacing: 12,
-                alignment: WrapAlignment.center,
-                children: actions,
+      child: ModernSurfaceCard(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: 64, color: colorScheme.onSurfaceVariant),
+              const SizedBox(height: 16),
+              Text(
+                message,
+                textAlign: TextAlign.center,
+                style: TextStyle(color: colorScheme.onSurfaceVariant),
               ),
+              if (actions != null && actions.isNotEmpty) ...[
+                const SizedBox(height: 20),
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  alignment: WrapAlignment.center,
+                  children: actions,
+                ),
+              ],
             ],
-          ],
+          ),
         ),
       ),
     );

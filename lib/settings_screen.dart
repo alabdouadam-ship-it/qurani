@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'local_webview_screen.dart';
@@ -10,6 +9,7 @@ import 'preferences_screen.dart';
 
 import 'contact_us_screen.dart';
 import 'offline_audio_screen.dart';
+import 'widgets/modern_ui.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -20,84 +20,49 @@ class SettingsScreen extends StatelessWidget {
     final isTablet = ResponsiveConfig.isTablet(context);
     final l10n = AppLocalizations.of(context)!;
 
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      appBar: AppBar(
-        title: Text(
-          l10n.settings,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: ResponsiveConfig.getFontSize(context, 18),
-          ),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-        elevation: 2,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Theme.of(context).brightness == Brightness.dark
-              ? Brightness.light
-              : Brightness.light,
-        ),
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: ResponsiveConfig.getPadding(context),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final settings = _getSettings(context);
-              
-              // Determine column count based on width
-              int crossAxisCount;
-              if (isSmallScreen) {
-                crossAxisCount = 2;
-              } else if (isTablet) {
-                crossAxisCount = 3;
-              } else {
-                final width = constraints.maxWidth;
-                const targetTileWidth = 180.0;
-                final cols = width ~/ targetTileWidth;
-                crossAxisCount = cols.clamp(3, 8);
-              }
+    return ModernPageScaffold(
+      title: l10n.settings,
+      icon: Icons.settings_outlined,
+      subtitle: l10n.localeName == 'ar'
+          ? 'تحكم في التفضيلات والمحتوى والتنزيلات وروابط المساعدة في واجهة أكثر هدوءًا ووضوحًا.'
+          : l10n.localeName == 'fr'
+              ? 'Gérez les préférences, les téléchargements et l’aide dans une interface plus apaisée et claire.'
+              : 'Manage preferences, downloads, and help links in a calmer, clearer interface.',
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final settings = _getSettings(context);
+          int crossAxisCount;
+          if (isSmallScreen) {
+            crossAxisCount = 2;
+          } else if (isTablet) {
+            crossAxisCount = 3;
+          } else {
+            final width = constraints.maxWidth;
+            const targetTileWidth = 180.0;
+            final cols = width ~/ targetTileWidth;
+            crossAxisCount = cols.clamp(3, 8);
+          }
 
-              // Calculate aspect ratio to fill the screen vertically
-              // We want to fit all items without scrolling if possible
-              // Total items: settings.length
-              final rows = (settings.length / crossAxisCount).ceil();
-              
-              // Available height for grid items
-              // Subtract padding (bottom 24) and spacing
-              final availableHeight = constraints.maxHeight - 24; 
-              final totalSpacingHeight = (rows - 1) * (isSmallScreen ? 10 : 15);
-              
-              // Target height per item to fill space
-              // Enforce a sensible minimum height to avoid squashing on landscape/small screens
-              final minItemHeight = isSmallScreen ? 120.0 : 140.0;
-              final calculatedItemHeight = (availableHeight - totalSpacingHeight) / rows;
-              
-              final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
-              
-              // Width per item
-              final workingWidth = constraints.maxWidth;
-              // No horizontal padding in GridView itself? 
-              // Parent Padding has 'ResponsiveConfig.getPadding(context)' which is usually 16.
-              // GridView doesn't have internal padding except bottom.
-              final totalSpacingWidth = (crossAxisCount - 1) * (isSmallScreen ? 10 : 15);
-              final itemWidth = (workingWidth - totalSpacingWidth) / crossAxisCount;
+          final rows = (settings.length / crossAxisCount).ceil();
+          final availableHeight = constraints.maxHeight - 24;
+          final totalSpacingHeight = (rows - 1) * (isSmallScreen ? 12 : 16);
+          final minItemHeight = isSmallScreen ? 120.0 : 140.0;
+          final calculatedItemHeight = (availableHeight - totalSpacingHeight) / rows;
+          final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
+          final totalSpacingWidth = (crossAxisCount - 1) * (isSmallScreen ? 12 : 16);
+          final itemWidth = (constraints.maxWidth - totalSpacingWidth) / crossAxisCount;
+          final aspectRatio = itemWidth / itemHeight;
 
-              final aspectRatio = itemWidth / itemHeight;
-
-              return GridView.count(
-                crossAxisCount: crossAxisCount,
-                crossAxisSpacing: isSmallScreen ? 10 : 15,
-                mainAxisSpacing: isSmallScreen ? 10 : 15,
-                childAspectRatio: aspectRatio,
-                padding: const EdgeInsets.only(bottom: 24),
-                children: settings.map((s) => _buildSettingCard(context, s)).toList(),
-              );
-            },
-          ),
-        ),
+          return GridView.count(
+            crossAxisCount: crossAxisCount,
+            crossAxisSpacing: isSmallScreen ? 12 : 16,
+            mainAxisSpacing: isSmallScreen ? 12 : 16,
+            childAspectRatio: aspectRatio,
+            padding: const EdgeInsets.only(bottom: 24),
+            physics: const BouncingScrollPhysics(),
+            children: settings.map((s) => _buildSettingCard(context, s)).toList(),
+          );
+        },
       ),
     );
   }
@@ -198,80 +163,12 @@ class SettingsScreen extends StatelessWidget {
   }
 
   Widget _buildSettingCard(BuildContext context, SettingItem setting) {
-    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: InkWell(
-        onTap: () => _handleSettingTap(context, setting),
-        borderRadius: BorderRadius.circular(15),
-        child: Container(
-          padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              colors: [
-                setting.color.withAlpha((255 * 0.1).round()),
-                setting.color.withAlpha((255 * 0.05).round()),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(
-                child: Container(
-                  padding: EdgeInsets.all(kIsWeb ? 8 : (isSmallScreen ? 10 : 14)),
-                  decoration: BoxDecoration(
-                    color: setting.color.withAlpha((255 * 0.1).round()),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    setting.icon,
-                    size: kIsWeb ? 24 : (isSmallScreen ? 26 : 30),
-                    color: setting.color,
-                  ),
-                ),
-              ),
-              SizedBox(height: kIsWeb ? 6 : (isSmallScreen ? 8 : 10)),
-              Flexible(
-                child: Text(
-                  setting.title,
-                  style: TextStyle(
-                    fontSize: kIsWeb ? 11 : ResponsiveConfig.getFontSize(context, isSmallScreen ? 13 : 14),
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              if (setting.subtitle.isNotEmpty) ...[
-                SizedBox(height: kIsWeb ? 2 : (isSmallScreen ? 2 : 4)),
-                Flexible(
-                  child: Text(
-                    setting.subtitle,
-                    style: TextStyle(
-                      fontSize: kIsWeb ? 10 : ResponsiveConfig.getFontSize(context, 11),
-                      color: Theme.of(context).colorScheme.onSurface.withAlpha((255 * 0.7).round()),
-                    ),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                ),
-              ],
-            ],
-          ),
-        ),
-      ),
+    return ModernFeatureTile(
+      icon: setting.icon,
+      title: setting.title,
+      subtitle: setting.subtitle,
+      color: setting.color,
+      onTap: () => _handleSettingTap(context, setting),
     );
   }
 

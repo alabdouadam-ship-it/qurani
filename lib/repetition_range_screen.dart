@@ -588,54 +588,6 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          children: [
-            Expanded(
-              child: Text(
-                widget.surah.name,
-                textDirection: TextDirection.rtl,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ),
-            PopupMenuButton<QuranEdition>(
-              icon: const Icon(Icons.menu_book_outlined),
-              onSelected: (e) async {
-                setState(() => _edition = e);
-                await PreferencesService.saveLastRepetitionEdition(e.name);
-                await _reloadAyahs();
-              },
-              itemBuilder: (context) {
-                final colorScheme = Theme.of(context).colorScheme;
-                return QuranEdition.values
-                    .map(
-                      (edition) => PopupMenuItem<QuranEdition>(
-                        value: edition,
-                        child: Row(
-                          children: [
-                            if (edition == _edition)
-                              Icon(
-                                Icons.check,
-                                size: 18,
-                                color: colorScheme.primary,
-                              )
-                            else
-                              const SizedBox(width: 18),
-                            const SizedBox(width: 8),
-                            Text(_localizedEditionName(l10n, edition)),
-                          ],
-                        ),
-                      ),
-                    )
-                    .toList();
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.settings),
-              onPressed: () => _showSettingsSheet(),
-            ),
-          ],
-        ),
-        const SizedBox(height: 8),
-        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text('${range.start.round()}'),
@@ -720,7 +672,48 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.repetitionMemorization),
+        title: Text(
+          widget.surah.name,
+          textDirection: TextDirection.rtl,
+        ),
+        actions: [
+          PopupMenuButton<QuranEdition>(
+            icon: const Icon(Icons.menu_book_outlined),
+            onSelected: (e) async {
+              setState(() => _edition = e);
+              await PreferencesService.saveLastRepetitionEdition(e.name);
+              await _reloadAyahs();
+            },
+            itemBuilder: (context) {
+              final colorScheme = Theme.of(context).colorScheme;
+              return QuranEdition.values
+                  .map(
+                    (edition) => PopupMenuItem<QuranEdition>(
+                      value: edition,
+                      child: Row(
+                        children: [
+                          if (edition == _edition)
+                            Icon(
+                              Icons.check,
+                              size: 18,
+                              color: colorScheme.primary,
+                            )
+                          else
+                            const SizedBox(width: 18),
+                          const SizedBox(width: 8),
+                          Text(_localizedEditionName(l10n, edition)),
+                        ],
+                      ),
+                    ),
+                  )
+                  .toList();
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => _showSettingsSheet(),
+          ),
+        ],
       ),
       body: FutureBuilder<List<AyahBrief>>(
         future: _ayahsFuture,
@@ -758,7 +751,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
           return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
                 child: _buildTopBar(ayahs),
               ),
               const Divider(height: 1),
