@@ -50,6 +50,13 @@
             "surahsPath": "https://www.qurani.info/data/full/minsh"
         },
         {
+            "code": "minsh_teacher",
+            "nameAr": "المنشاوي المعلم",
+            "nameLatin": "Mohamed Al Manshawi Teacher",
+            "ayahsPath": "https://everyayah.com/data/Minshawy_Teacher_128kbps",
+            "surahsPath": "https://www.qurani.info/data/full/minsh"
+        },
+        {
             "code": "suwaid",
             "nameAr": "أيمن سويد",
             "nameLatin": "Ayman Suwaid",

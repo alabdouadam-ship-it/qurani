@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
 import 'services/update_service.dart';
+import 'services/preferences_service.dart';
 import 'widgets/modern_ui.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -11,14 +12,12 @@ import 'qibla_screen.dart';
 import 'repetition_memorization_screen.dart';
 import 'listen_quran_screen.dart';
 import 'read_quran_screen.dart';
-import 'tafsir_screen.dart';
 import 'tasbeeh_screen.dart';
 import 'settings_screen.dart';
 import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
 import 'services/prayer_times_service.dart';
 import 'hadith_books_screen.dart';
-
 
 class OptionsScreen extends StatefulWidget {
   const OptionsScreen({super.key});
@@ -60,7 +59,8 @@ class _OptionsScreenState extends State<OptionsScreen> {
         IconButton(
           icon: Icon(
             Icons.settings_outlined,
-            size: ResponsiveConfig.getFontSize(context, isSmallScreen ? 20 : 24),
+            size:
+                ResponsiveConfig.getFontSize(context, isSmallScreen ? 20 : 24),
           ),
           onPressed: () {
             Navigator.push(
@@ -93,7 +93,8 @@ class _OptionsScreenState extends State<OptionsScreen> {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 12),
                   child: ModernSurfaceCard(
-                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14, vertical: 12),
                     child: Row(
                       children: [
                         Container(
@@ -128,9 +129,11 @@ class _OptionsScreenState extends State<OptionsScreen> {
                                 maxLines: 1,
                                 softWrap: false,
                                 style: TextStyle(
-                                  fontSize: ResponsiveConfig.getFontSize(context, 15),
+                                  fontSize:
+                                      ResponsiveConfig.getFontSize(context, 15),
                                   fontWeight: FontWeight.w800,
-                                  color: Theme.of(context).colorScheme.onSurface,
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
                                 ),
                               ),
                             ),
@@ -147,35 +150,45 @@ class _OptionsScreenState extends State<OptionsScreen> {
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                final options = _getOptions(context);
-                final width = constraints.maxWidth;
-                final height = constraints.maxHeight;
-                int crossAxisCount;
-                if (width < 600) {
-                  crossAxisCount = 2;
-                } else {
-                  const targetTileWidth = 180.0;
-                  final cols = width ~/ targetTileWidth;
-                  crossAxisCount = cols.clamp(3, 8);
-                }
-                final rowCount = (options.length / crossAxisCount).ceil();
-                final spaceC = width < 600 ? 6.0 : 16.0;
-                final spaceM = width < 600 ? 6.0 : 16.0;
-                final itemWidth =
-                    (width - (spaceC * (crossAxisCount - 1))) / crossAxisCount;
-                final itemHeight = ((height - (spaceM * (rowCount - 1))) / rowCount)
-                    .clamp(72.0, 220.0)
-                    .toDouble();
-                final aspectRatio = itemWidth / itemHeight;
+                return ValueListenableBuilder<Set<String>>(
+                  valueListenable: PreferencesService.disabledScreensNotifier,
+                  builder: (context, disabledScreens, _) {
+                    final options = _getOptions(context)
+                        .where((item) => !disabledScreens.contains(item.id))
+                        .toList();
+                    final width = constraints.maxWidth;
+                    final height = constraints.maxHeight;
+                    int crossAxisCount;
+                    if (width < 600) {
+                      crossAxisCount = 2;
+                    } else {
+                      const targetTileWidth = 180.0;
+                      final cols = width ~/ targetTileWidth;
+                      crossAxisCount = cols.clamp(3, 8);
+                    }
+                    final rowCount = (options.length / crossAxisCount).ceil();
+                    final spaceC = width < 600 ? 6.0 : 16.0;
+                    final spaceM = width < 600 ? 6.0 : 16.0;
+                    final itemWidth = (width - (spaceC * (crossAxisCount - 1))) /
+                        crossAxisCount;
+                    final itemHeight = ((height - (spaceM * (rowCount - 1))) /
+                            rowCount)
+                        .clamp(72.0, 220.0)
+                        .toDouble();
+                    final aspectRatio = itemWidth / itemHeight;
 
-                return GridView.count(
-                  crossAxisCount: crossAxisCount,
-                  crossAxisSpacing: spaceC,
-                  mainAxisSpacing: spaceM,
-                  childAspectRatio: aspectRatio,
-                  physics: const NeverScrollableScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  children: options.map((option) => _buildOptionCard(context, option)).toList(),
+                    return GridView.count(
+                      crossAxisCount: crossAxisCount,
+                      crossAxisSpacing: spaceC,
+                      mainAxisSpacing: spaceM,
+                      childAspectRatio: aspectRatio,
+                      physics: const NeverScrollableScrollPhysics(),
+                      padding: EdgeInsets.zero,
+                      children: options
+                          .map((option) => _buildOptionCard(context, option))
+                          .toList(),
+                    );
+                  },
                 );
               },
             ),
@@ -209,7 +222,8 @@ class _OptionsScreenState extends State<OptionsScreen> {
                   context,
                   icon: Icons.android,
                   label: l10n.googlePlay,
-                  url: 'https://play.google.com/store/apps/details?id=com.qurani.app',
+                  url:
+                      'https://play.google.com/store/apps/details?id=com.qurani.app',
                   color: const Color(0xFF3DDC84),
                 ),
                 const SizedBox(width: 16),
@@ -244,7 +258,8 @@ class _OptionsScreenState extends State<OptionsScreen> {
       },
       borderRadius: BorderRadius.circular(30),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8), // Reduced padding
+        padding: const EdgeInsets.symmetric(
+            horizontal: 16, vertical: 8), // Reduced padding
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(30),
@@ -297,7 +312,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
         subtitle: '',
         color: Colors.blueGrey,
       ),
-      
+
       // Row 2
       OptionItem(
         id: 'repetition_memorization',
@@ -317,19 +332,19 @@ class _OptionsScreenState extends State<OptionsScreen> {
       // Row 3
       OptionItem(
         id: 'search',
-         icon: Icons.search,
-         title: l10n.searchQuran,
-         subtitle: '',
-         color: Colors.cyan,
-       ),
+        icon: Icons.search,
+        title: l10n.searchQuran,
+        subtitle: '',
+        color: Colors.cyan,
+      ),
       //if (!kIsWeb)
-        OptionItem(
-          id: 'tasbeeh',
-          icon: Icons.countertops,
-          title: l10n.tasbeeh,
-          subtitle: '',
-          color: Colors.green,
-        ),
+      OptionItem(
+        id: 'tasbeeh',
+        icon: Icons.countertops,
+        title: l10n.tasbeeh,
+        subtitle: '',
+        color: Colors.green,
+      ),
 
       // Row 4
       if (!kIsWeb)
@@ -410,14 +425,6 @@ class _OptionsScreenState extends State<OptionsScreen> {
           ),
         );
         break;
-      case 'tafsir':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const TafsirScreen(),
-          ),
-        );
-        break;
       case 'tasbeeh':
         Navigator.push(
           context,
@@ -495,10 +502,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
     try {
       final now = DateTime.now();
       return await PrayerTimesService.getHijriForDate(
-        year: now.year, 
-        month: now.month, 
-        day: now.day
-      );
+          year: now.year, month: now.month, day: now.day);
     } catch (_) {
       return null;
     }

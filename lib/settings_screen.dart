@@ -7,8 +7,9 @@ import 'package:share_plus/share_plus.dart';
 import 'responsive_config.dart';
 import 'preferences_screen.dart';
 
-import 'contact_us_screen.dart';
+
 import 'offline_audio_screen.dart';
+import 'screen_customization_screen.dart';
 import 'widgets/modern_ui.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -79,6 +80,13 @@ class SettingsScreen extends StatelessWidget {
         color: Colors.green,
       ),
       SettingItem(
+        id: 'customize_screens',
+        icon: Icons.dashboard_customize_outlined,
+        title: l10n.localeName == 'ar' ? 'تخصيص الشاشات' : (l10n.localeName == 'fr' ? 'Personnaliser les écrans' : 'Customize Screens'),
+        subtitle: "",
+        color: Colors.blueAccent,
+      ),
+      SettingItem(
         id: 'share',
         icon: Icons.share,
         title: l10n.shareApp,
@@ -124,13 +132,7 @@ class SettingsScreen extends StatelessWidget {
         color: Colors.brown,
       ),
 
-      SettingItem(
-        id: 'contact',
-        icon: Icons.support_agent,
-        title: l10n.contactUs,
-        subtitle: '',
-        color: Colors.teal,
-      ),
+
       
       // Row 3 (uncomment to add more settings)
       // SettingItem(
@@ -212,6 +214,14 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
         break;
+      case 'customize_screens':
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const ScreenCustomizationScreen(),
+          ),
+        );
+        break;
       case 'share':
         _shareApp(context);
         break;
@@ -242,14 +252,7 @@ class SettingsScreen extends StatelessWidget {
         );
         break;
 
-      case 'contact':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ContactUsScreen(),
-          ),
-        );
-        break;
+
       default:
         _showComingSoon(context, setting.title);
     }

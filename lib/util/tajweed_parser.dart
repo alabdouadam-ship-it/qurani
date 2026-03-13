@@ -15,25 +15,24 @@ class TajweedParser {
       // We want to replace `[tag[content]` with `content`.
       
       String processed = text;
-      // We loop because replacing one tag might reveal another or if usage is complex. 
-      // Actually standard regex replaceAllMapped is safer.
-      
-      // Keep replacing until no change to handle nested if any (though usually not nested).
+
+      // Keep replacing valid tajweed tokens [tag:param[content]] until no more remain.
       String previous;
       do {
         previous = processed;
-        // Match [tag[content]] or [tag:site[content]]
-        // Structure: [  tag   :param?   [ content ] ]
-        // Use negated class [^\]] for content to match innermost bracket pair first
         processed = processed.replaceAllMapped(
           RegExp(r'\[[a-zA-Z]+(?::[^\[\]]*)?\[([^\]]*)\]', caseSensitive: false),
           (match) => match.group(1) ?? '',
         );
       } while (processed != previous);
-      
-      // Cleanup any remaining brackets that might be artifacts (e.g. if text was nested deeper than anticipated)
-      // or if the text had stray brackets. But for now trust the loop.
-      
+
+      // After removing all valid tokens, some broken standalone sequences of the form
+      // [arabic-text] (no inner bracket) may remain — strip their brackets but keep the content.
+      processed = processed.replaceAllMapped(
+        RegExp(r'\[([^\[\]]*)\]'),
+        (match) => match.group(1) ?? '',
+      );
+
       return processed;
   }
 
@@ -113,7 +112,28 @@ class TajweedParser {
     while (cursor < text.length) {
       final match = _tokenPattern.matchAsPrefix(text, cursor);
       if (match == null) {
-        // Add remaining plain text until next potential token or end.
+        // Check if we are sitting at a '[' that does NOT start a valid tajweed token
+        // (e.g. broken sequences like [وٲٓاْ], [اْۚ] found in some ayahs).
+        // In that case extract the content between [ and ] and render it as plain text,
+        // then skip past the closing ] to avoid an infinite loop.
+        if (cursor < text.length && text[cursor] == '[') {
+          final closeIdx = text.indexOf(']', cursor + 1);
+          final nextOpenIdx = text.indexOf('[', cursor + 1);
+          // It's a broken standalone [xxx] when ] comes before the next [ (or no next [).
+          if (closeIdx != -1 && (nextOpenIdx == -1 || closeIdx < nextOpenIdx)) {
+            final content = _normalizeGlyphs(text.substring(cursor + 1, closeIdx));
+            if (content.isNotEmpty) {
+              spans.addAll(_buildContextualSpans(content, baseStyle, diacriticStyle));
+            }
+            cursor = closeIdx + 1;
+          } else {
+            // No safe closing bracket — skip this lone '[' to avoid stalling.
+            cursor++;
+          }
+          continue;
+        }
+
+        // Normal plain-text segment: advance to the next '[' (start of next token).
         final nextTokenIndex = text.indexOf('[', cursor);
         final end = nextTokenIndex == -1 ? text.length : nextTokenIndex;
         final plain = _normalizeGlyphs(text.substring(cursor, end));

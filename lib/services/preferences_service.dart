@@ -25,6 +25,7 @@ class PreferencesService {
   static const String keyDeviceInfoCollected = 'device_info_collected_v1';
   static const String keyDeviceInfoJson = 'device_info_json';
   static const String keyInstallationId = 'installation_id_v1';
+  static const String keyDisabledScreens = 'disabled_screens_v1';
 
   // Last used edition (State persistence)
   static const String keyLastReadEdition = 'last_read_edition';
@@ -46,6 +47,8 @@ class PreferencesService {
       ValueNotifier<String>(AppThemeConfig.defaultThemeId);
   static final ValueNotifier<String> arabicFontNotifier =
       ValueNotifier<String>(ArabicFontUtils.fontAmiri);
+  static final ValueNotifier<Set<String>> disabledScreensNotifier =
+      ValueNotifier<Set<String>>({});
 
   static Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -93,6 +96,11 @@ class PreferencesService {
       if (normalized != savedFont) {
         await _prefs!.setString(keyArabicFontFamily, normalized);
       }
+    }
+
+    final savedDisabled = _prefs!.getStringList(keyDisabledScreens);
+    if (savedDisabled != null) {
+      disabledScreensNotifier.value = savedDisabled.toSet();
     }
   }
 
@@ -747,5 +755,22 @@ class PreferencesService {
         .map((entry) => int.tryParse(entry))
         .whereType<int>()
         .toSet();
+  }
+
+  static Future<void> saveDisabledScreens(Set<String> screenIds) async {
+    // Update notifier immediately to ensure UI responsiveness. 
+    // We create a new Set instance to force ValueNotifier to fire listeners.
+    disabledScreensNotifier.value = Set<String>.from(screenIds);
+    
+    // Then persist to disk in background
+    await _prefs?.setStringList(keyDisabledScreens, screenIds.toList());
+  }
+
+  static Set<String> getDisabledScreens() {
+    return disabledScreensNotifier.value;
+  }
+
+  static bool isScreenDisabled(String screenId) {
+    return disabledScreensNotifier.value.contains(screenId);
   }
 }

@@ -81,6 +81,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   CancelToken? _downloadCancelToken;
   bool _isFullscreen = false;
   bool _fullscreenControlsVisible = false;
+  bool _fullscreenButtonVisible = false;
+  Timer? _fullscreenButtonTimer;
 
   @override
   void initState() {
@@ -220,6 +222,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
     _pageController.dispose();
     _pageScrollController.dispose();
+    _fullscreenButtonTimer?.cancel();
     super.dispose();
   }
 
@@ -310,11 +313,49 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   void _showFullscreenControls() {
     _setFullscreenControlsVisible(true);
+    // Also reveal the exit button while audio controls are open
+    _autoShowFullscreenButton();
   }
 
   void _hideFullscreenControls() {
     _setFullscreenControlsVisible(false);
+    // Schedule the button to auto-hide after controls close
+    _scheduleHideFullscreenButton();
   }
+
+  /// Shows the fullscreen exit button and schedules it to auto-hide after a delay.
+  void _autoShowFullscreenButton() {
+    _fullscreenButtonTimer?.cancel();
+    if (!_isFullscreen) return;
+    if (mounted) {
+      setState(() => _fullscreenButtonVisible = true);
+    }
+    _scheduleHideFullscreenButton();
+  }
+
+  /// Tap-toggle: shows button if hidden (resets timer), hides immediately if visible.
+  void _toggleFullscreenButton() {
+    if (!_isFullscreen) return;
+    if (_fullscreenButtonVisible) {
+      _fullscreenButtonTimer?.cancel();
+      if (mounted) setState(() => _fullscreenButtonVisible = false);
+    } else {
+      _autoShowFullscreenButton();
+    }
+  }
+
+  /// Schedules the exit button to slide away after [delay].
+  void _scheduleHideFullscreenButton({
+    Duration delay = const Duration(milliseconds: 3500),
+  }) {
+    _fullscreenButtonTimer?.cancel();
+    _fullscreenButtonTimer = Timer(delay, () {
+      if (mounted && _isFullscreen && !_fullscreenControlsVisible) {
+        setState(() => _fullscreenButtonVisible = false);
+      }
+    });
+  }
+
 
   void _syncActiveReaderPage() {
     final targetPage = _currentPage.clamp(1, _totalPages);
@@ -363,10 +404,19 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       setState(() {
         _isFullscreen = value;
         _fullscreenControlsVisible = false;
+        _fullscreenButtonVisible = false;
       });
     } else {
       _isFullscreen = value;
       _fullscreenControlsVisible = false;
+      _fullscreenButtonVisible = false;
+    }
+
+    // Auto-show the exit button briefly when entering fullscreen
+    if (value) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _autoShowFullscreenButton());
+    } else {
+      _fullscreenButtonTimer?.cancel();
     }
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -414,29 +464,23 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   Widget _buildFullscreenExitButton() {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final topInset = MediaQuery.of(context).viewPadding.top;
 
-    return PositionedDirectional(
-      top: topInset + 10,
-      end: 10,
-      child: Material(
-        color: theme.colorScheme.surface.withAlpha(
-          theme.brightness == Brightness.dark ? 205 : 232,
-        ),
-        borderRadius: BorderRadius.circular(18),
-        elevation: 3,
-        child: Tooltip(
-          message: _fullscreenTooltip(l10n, exiting: true),
-          child: InkWell(
-            onTap: () => unawaited(_setFullscreen(false)),
-            borderRadius: BorderRadius.circular(18),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Icon(
-                Icons.fullscreen_exit_rounded,
-                color: theme.colorScheme.onSurface,
-              ),
-            ),
+    // NOTE: This returns the button content only — NO PositionedDirectional.
+    // Positioning is handled at the Stack level so Positioned is always a direct child.
+    return Material(
+      color: theme.colorScheme.surface.withAlpha(
+        theme.brightness == Brightness.dark ? 205 : 232,
+      ),
+      borderRadius: BorderRadius.circular(18),
+      elevation: 3,
+      child: Tooltip(
+        message: _fullscreenTooltip(l10n, exiting: true),
+        child: InkWell(
+          onTap: () => unawaited(_setFullscreen(false)),
+          borderRadius: BorderRadius.circular(18),
+          child: const Padding(
+            padding: EdgeInsets.all(10),
+            child: Icon(Icons.fullscreen_exit_rounded),
           ),
         ),
       ),
@@ -585,6 +629,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     if (_isFullscreen) {
       content = GestureDetector(
         behavior: HitTestBehavior.translucent,
+        onTap: _toggleFullscreenButton,
         onLongPress: _showFullscreenControls,
         child: content,
       );
@@ -604,7 +649,29 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           ),
         if (_isFullscreen && _fullscreenControlsVisible)
           _buildFullscreenPlaybackControls(),
-        if (_isFullscreen) _buildFullscreenExitButton(),
+        if (_isFullscreen)
+          // PositionedDirectional MUST be a direct Stack child — never inside
+          // AnimatedSlide/AnimatedOpacity. IgnorePointer is outermost to ensure
+          // the invisible full-screen widget never absorbs pointer events.
+          PositionedDirectional(
+            top: MediaQuery.of(context).viewPadding.top + 10,
+            end: 10,
+            child: IgnorePointer(
+              ignoring: !_fullscreenButtonVisible,
+              child: AnimatedSlide(
+                offset: _fullscreenButtonVisible
+                    ? Offset.zero
+                    : const Offset(0, -2.0),
+                duration: const Duration(milliseconds: 280),
+                curve: Curves.easeInOutCubic,
+                child: AnimatedOpacity(
+                  opacity: _fullscreenButtonVisible ? 1.0 : 0.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: _buildFullscreenExitButton(),
+                ),
+              ),
+            ),
+          ),
       ],
     );
   }
