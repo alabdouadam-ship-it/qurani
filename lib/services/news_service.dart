@@ -39,15 +39,17 @@ class NewsService {
     // 2. Load and Merge Data
     Map<String, NewsItem> newsMap = {};
 
-    // First load from assets (as the base)
-    try {
-      _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
-      final initialNews = _parseNews(_initialAssetCache!);
-      for (var item in initialNews) {
-        newsMap[item.id] = item;
+    // First load from assets (as the base) - ONLY IN DEBUG MODE to prevent test data leaks
+    if (kDebugMode) {
+      try {
+        _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
+        final initialNews = _parseNews(_initialAssetCache!);
+        for (var item in initialNews) {
+          newsMap[item.id] = item;
+        }
+      } catch (e) {
+        debugPrint('[NewsService] Error loading initial asset: $e');
       }
-    } catch (e) {
-      debugPrint('[NewsService] Error loading initial asset: $e');
     }
 
     // Then load from cache (overwriting or adding)
