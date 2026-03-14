@@ -154,4 +154,9 @@ class NewsService {
     
     unseenCountNotifier.value = 0;
   }
+
+  /// Get list of seen news IDs
+  static List<String> getSeenNewsIds(SharedPreferences prefs) {
+    return prefs.getStringList(_seenKey) ?? [];
+  }
 }

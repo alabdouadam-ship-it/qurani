@@ -853,5 +853,6 @@
   "newsTabSaved": "Enregistré",
   "noSavedNews": "Aucune nouvelle enregistrée",
   "noNewsAtTheMoment": "Aucune nouvelle pour le moment",
-  "newsSource": "Source"
+  "newsSource": "Source",
+  "newItemBadge": "NOUVEAU"
 }

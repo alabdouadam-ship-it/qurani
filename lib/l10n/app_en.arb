@@ -855,5 +855,6 @@
   "newsTabSaved": "Saved",
   "noSavedNews": "No saved news",
   "noNewsAtTheMoment": "No news at the moment",
-  "newsSource": "Source"
+  "newsSource": "Source",
+  "newItemBadge": "NEW"
 }

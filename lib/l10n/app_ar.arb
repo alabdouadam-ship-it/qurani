@@ -853,5 +853,6 @@
   "newsTabSaved": "المحفوظة",
   "noSavedNews": "لا يوجد أخبار محفوظة",
   "noNewsAtTheMoment": "لا يوجد أخبار حالياً",
-  "newsSource": "المصدر"
+  "newsSource": "المصدر",
+  "newItemBadge": "جديد"
 }

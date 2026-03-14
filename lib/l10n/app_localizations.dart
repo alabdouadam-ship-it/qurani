@@ -2478,6 +2478,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Source'**
   String get newsSource;
+
+  /// No description provided for @newItemBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'NEW'**
+  String get newItemBadge;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

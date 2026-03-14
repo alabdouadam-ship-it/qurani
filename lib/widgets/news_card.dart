@@ -6,16 +6,19 @@ import '../models/news_item.dart';
 import '../widgets/modern_ui.dart';
 import 'package:webview_flutter_android/webview_flutter_android.dart';
 import 'package:intl/intl.dart' as intl;
+import 'package:cached_network_image/cached_network_image.dart';
 
 class NewsCard extends StatefulWidget {
   final NewsItem item;
   final bool isSaved;
+  final bool isNew;
   final VoidCallback onToggleSave;
 
   const NewsCard({
     super.key,
     required this.item,
     required this.isSaved,
+    required this.isNew,
     required this.onToggleSave,
   });
 
@@ -56,12 +59,35 @@ class _NewsCardState extends State<NewsCard> {
                       Expanded(
                         child: Directionality(
                           textDirection: widget.item.isRtl ? TextDirection.rtl : TextDirection.ltr,
-                          child: Text(
-                            widget.item.title,
-                            style: theme.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.w800,
-                              color: theme.colorScheme.onSurface,
-                            ),
+                          child: Row(
+                            children: [
+                              if (widget.isNew)
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    color: theme.colorScheme.primary,
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                  child: Text(
+                                    AppLocalizations.of(context)!.newItemBadge,
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              Expanded(
+                                child: Text(
+                                  widget.item.title,
+                                  style: theme.textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.w800,
+                                    color: theme.colorScheme.onSurface,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -130,12 +156,14 @@ class _NewsCardState extends State<NewsCard> {
   Widget _buildImage(BuildContext context) {
     return ClipRRect(
       borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-      child: Image.network(
-        widget.item.mediaUrl,
+      child: CachedNetworkImage(
+        imageUrl: widget.item.mediaUrl,
         height: 180,
         width: double.infinity,
         fit: BoxFit.cover,
-        errorBuilder: (_, __, ___) => _buildPlaceholder(),
+        placeholder: (context, url) => _buildPlaceholder(),
+        errorWidget: (context, url, error) => _buildPlaceholder(),
+        fadeInDuration: const Duration(milliseconds: 500),
       ),
     );
   }
@@ -151,12 +179,14 @@ class _NewsCardState extends State<NewsCard> {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
-            child: Image.network(
-              thumbnailUrl,
+            child: CachedNetworkImage(
+              imageUrl: thumbnailUrl,
               height: 180,
               width: double.infinity,
               fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => _buildPlaceholder(),
+              placeholder: (context, url) => _buildPlaceholder(),
+              errorWidget: (context, url, error) => _buildPlaceholder(),
+              fadeInDuration: const Duration(milliseconds: 500),
             ),
           ),
           Container(

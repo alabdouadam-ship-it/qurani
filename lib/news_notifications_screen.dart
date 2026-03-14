@@ -16,6 +16,7 @@ class NewsNotificationsScreen extends StatefulWidget {
 class _NewsNotificationsScreenState extends State<NewsNotificationsScreen> {
   List<NewsItem> _allNews = [];
   Set<String> _savedIds = {};
+  Set<String> _newIds = {};
   bool _isLoading = true;
 
   @override
@@ -30,11 +31,13 @@ class _NewsNotificationsScreenState extends State<NewsNotificationsScreen> {
       final news = await NewsService.getNews(forceRefresh: isManual);
       final prefs = await SharedPreferences.getInstance();
       final savedIds = NewsService.getSavedNewsIds(prefs);
+      final seenIds = NewsService.getSeenNewsIds(prefs);
       
       if (mounted) {
         setState(() {
           _allNews = news;
           _savedIds = savedIds;
+          _newIds = news.map((n) => n.id).where((id) => !seenIds.contains(id)).toSet();
           _isLoading = false;
         });
         
@@ -127,6 +130,7 @@ class _NewsNotificationsScreenState extends State<NewsNotificationsScreen> {
           return NewsCard(
             item: item,
             isSaved: _savedIds.contains(item.id),
+            isNew: _newIds.contains(item.id),
             onToggleSave: () => _toggleSave(item.id),
           );
         },

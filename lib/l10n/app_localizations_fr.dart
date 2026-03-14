@@ -1238,4 +1238,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get newsSource => 'Source';
+
+  @override
+  String get newItemBadge => 'NOUVEAU';
 }

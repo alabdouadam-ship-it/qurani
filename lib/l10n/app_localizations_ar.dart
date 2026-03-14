@@ -1238,4 +1238,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get newsSource => 'المصدر';
+
+  @override
+  String get newItemBadge => 'جديد';
 }
