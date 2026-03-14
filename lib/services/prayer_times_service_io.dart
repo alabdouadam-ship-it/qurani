@@ -251,7 +251,7 @@ class PrayerTimesService {
     }
   }
 
-  static const Map<String, int> _prayerMethodByCountryName = {
+  static const Map<String, int> prayerMethodByCountryName = {
     'saudi arabia': 4,
     'kingdom of saudi arabia': 4,
     'السعودية': 4,
@@ -323,7 +323,7 @@ class PrayerTimesService {
     'rest of europe / africa / americas': 3,
   };
 
-  static const Map<String, int> _prayerMethodByIsoCode = {
+  static const Map<String, int> prayerMethodByIsoCode = {
     'SA': 4, // Saudi Arabia
     'FR': 4, // France
     'US': 2, // USA
@@ -384,16 +384,16 @@ class PrayerTimesService {
          // 1. Try ISO Country Code (Most reliable)
          if (p.isoCountryCode != null && p.isoCountryCode!.isNotEmpty) {
             final code = p.isoCountryCode!.toUpperCase();
-            if (_prayerMethodByIsoCode.containsKey(code)) {
-               return _prayerMethodByIsoCode[code]!;
+            if (prayerMethodByIsoCode.containsKey(code)) {
+               return prayerMethodByIsoCode[code]!;
             }
          }
          
          // 2. Try Country Name
          if (p.country != null && p.country!.isNotEmpty) {
              final name = p.country!.toLowerCase().trim();
-             if (_prayerMethodByCountryName.containsKey(name)) {
-                return _prayerMethodByCountryName[name]!;
+             if (prayerMethodByCountryName.containsKey(name)) {
+                return prayerMethodByCountryName[name]!;
              }
          }
       }

@@ -37,38 +37,25 @@ class NewsService {
     }
     
     // 2. Load and Merge Data
-    Map<String, NewsItem> newsMap = {};
-
-    // First load from assets (as the base) - ONLY IN DEBUG MODE to prevent test data leaks
+    final List<NewsItem> assetItems = [];
     if (kDebugMode) {
       try {
         _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
-        final initialNews = _parseNews(_initialAssetCache!);
-        for (var item in initialNews) {
-          newsMap[item.id] = item;
-        }
+        assetItems.addAll(parseNews(_initialAssetCache!));
       } catch (e) {
         debugPrint('[NewsService] Error loading initial asset: $e');
       }
     }
 
-    // Then load from cache (overwriting or adding)
-    final cachedJson = prefs.getString(_cacheKey);
-    if (cachedJson != null && cachedJson.isNotEmpty) {
-      final cachedNews = _parseNews(cachedJson);
-      for (var item in cachedNews) {
-        newsMap[item.id] = item;
-      }
-    }
+    final String? cachedJson = prefs.getString(_cacheKey);
+    final List<NewsItem> cachedItems = cachedJson != null ? parseNews(cachedJson) : [];
 
-    List<NewsItem> news = newsMap.values.toList();
-    
-    // 3. Filter expired items (unless they are saved)
     final savedIds = getSavedNewsIds(prefs);
-    news = news.where((item) => !item.isExpired || savedIds.contains(item.id)).toList();
-    
-    // Sort by date (newest first)
-    news.sort((a, b) => b.publishDate.compareTo(a.publishDate));
+    final news = mergeAndFilterNews(
+      assetItems: assetItems,
+      remoteItems: cachedItems,
+      savedIds: savedIds,
+    );
 
     // 4. Calculate Unseen Count
     final hasEverSeen = prefs.getBool(_hasEverSeenKey) ?? false;
@@ -83,7 +70,7 @@ class NewsService {
     return news;
   }
 
-  static List<NewsItem> _parseNews(String jsonStr) {
+  static List<NewsItem> parseNews(String jsonStr) {
     try {
       final Map<String, dynamic> decoded = json.decode(jsonStr);
       final List<dynamic> list = decoded['news'] ?? [];
@@ -92,6 +79,35 @@ class NewsService {
       debugPrint('[NewsService] Error parsing JSON: $e');
       return [];
     }
+  }
+
+  /// Merges asset news with remote news and filters expired items.
+  /// Remote items with the same ID overwrite asset items.
+  static List<NewsItem> mergeAndFilterNews({
+    required List<NewsItem> assetItems,
+    required List<NewsItem> remoteItems,
+    required Set<String> savedIds,
+  }) {
+    Map<String, NewsItem> newsMap = {};
+
+    // 1. Load from assets
+    for (var item in assetItems) {
+      newsMap[item.id] = item;
+    }
+
+    // 2. Overwrite with remote
+    for (var item in remoteItems) {
+      newsMap[item.id] = item;
+    }
+
+    // 3. Filter and Sort
+    List<NewsItem> news = newsMap.values.where((item) {
+      return !item.isExpired || savedIds.contains(item.id);
+    }).toList();
+
+    news.sort((a, b) => b.publishDate.compareTo(a.publishDate));
+
+    return news;
   }
 
   static Future<void> _fetchRemote(SharedPreferences prefs) async {
