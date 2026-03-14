@@ -845,5 +845,13 @@
   "maxQuestionsLabel": "عدد الأسئلة الأقصى",
   "@maxQuestionsLabel": {},
   "fileSize": "حجم الملف",
-  "@fileSize": {}
+  "@fileSize": {},
+  "showMore": "عرض المزيد",
+  "showLess": "عرض أقل",
+  "noNewsYet": "لا توجد إشعارات أو أخبار بعد",
+  "newsTabAll": "الكل",
+  "newsTabSaved": "المحفوظة",
+  "noSavedNews": "لا يوجد أخبار محفوظة",
+  "noNewsAtTheMoment": "لا يوجد أخبار حالياً",
+  "newsSource": "المصدر"
 }

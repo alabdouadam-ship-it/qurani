@@ -81,6 +81,7 @@ flutter:
     - assets/data/hadithdata/
     - assets/data/quran.db
     - assets/data/reciters.json
+    - assets/data/news_initial.json
     - assets/audio/
     - assets/images/
     - public/

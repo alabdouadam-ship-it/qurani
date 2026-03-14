@@ -13,6 +13,7 @@ class ModernPageScaffold extends StatelessWidget {
     this.padding,
     this.floatingActionButton,
     this.bottomNavigationBar,
+    this.appBarBottom,
   });
 
   final String title;
@@ -23,6 +24,7 @@ class ModernPageScaffold extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final Widget? floatingActionButton;
   final Widget? bottomNavigationBar;
+  final PreferredSizeWidget? appBarBottom;
 
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,7 @@ class ModernPageScaffold extends StatelessWidget {
           ),
         ),
         actions: actions,
+        bottom: appBarBottom,
       ),
       body: Container(
         decoration: BoxDecoration(
@@ -233,6 +236,7 @@ class ModernFeatureTile extends StatelessWidget {
     required this.color,
     required this.onTap,
     this.subtitle = '',
+    this.badgeCount = 0,
   });
 
   final IconData icon;
@@ -240,6 +244,7 @@ class ModernFeatureTile extends StatelessWidget {
   final String subtitle;
   final Color color;
   final VoidCallback onTap;
+  final int badgeCount;
 
   @override
   Widget build(BuildContext context) {
@@ -302,24 +307,55 @@ class ModernFeatureTile extends StatelessWidget {
                       flex: compactHeight ? 3 : 4,
                       child: FittedBox(
                         fit: BoxFit.scaleDown,
-                        child: Container(
-                          padding: EdgeInsets.all(iconPadding),
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                color.withAlpha(230),
-                                color.withAlpha(150),
-                              ],
+                        child: Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.all(iconPadding),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.bottomRight,
+                                  colors: [
+                                    color.withAlpha(230),
+                                    color.withAlpha(150),
+                                  ],
+                                ),
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                              child: Icon(
+                                icon,
+                                size: iconSize,
+                                color: Colors.white,
+                              ),
                             ),
-                            borderRadius: BorderRadius.circular(18),
-                          ),
-                          child: Icon(
-                            icon,
-                            size: iconSize,
-                            color: Colors.white,
-                          ),
+                            if (badgeCount > 0)
+                              Positioned(
+                                right: -4,
+                                top: -4,
+                                child: Container(
+                                  padding: const EdgeInsets.all(4),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  constraints: const BoxConstraints(
+                                    minWidth: 16,
+                                    minHeight: 16,
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      badgeCount.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 9,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                          ],
                         ),
                       ),
                     ),

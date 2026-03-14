@@ -1214,4 +1214,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get fileSize => 'حجم الملف';
+
+  @override
+  String get showMore => 'عرض المزيد';
+
+  @override
+  String get showLess => 'عرض أقل';
+
+  @override
+  String get noNewsYet => 'لا توجد إشعارات أو أخبار بعد';
+
+  @override
+  String get newsTabAll => 'الكل';
+
+  @override
+  String get newsTabSaved => 'المحفوظة';
+
+  @override
+  String get noSavedNews => 'لا يوجد أخبار محفوظة';
+
+  @override
+  String get noNewsAtTheMoment => 'لا يوجد أخبار حالياً';
+
+  @override
+  String get newsSource => 'المصدر';
 }

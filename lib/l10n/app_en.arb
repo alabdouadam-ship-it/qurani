@@ -847,5 +847,13 @@
   "maxQuestionsLabel": "Max Questions",
   "@maxQuestionsLabel": {},
   "fileSize": "File Size",
-  "@fileSize": {}
+  "@fileSize": {},
+  "showMore": "Show More",
+  "showLess": "Show Less",
+  "noNewsYet": "There's no notifications or news yet",
+  "newsTabAll": "All",
+  "newsTabSaved": "Saved",
+  "noSavedNews": "No saved news",
+  "noNewsAtTheMoment": "No news at the moment",
+  "newsSource": "Source"
 }

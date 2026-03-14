@@ -18,6 +18,8 @@ import 'search_quran_screen.dart';
 import 'prayer_times_screen.dart';
 import 'services/prayer_times_service.dart';
 import 'hadith_books_screen.dart';
+import 'news_notifications_screen.dart';
+import 'services/news_service.dart';
 
 class OptionsScreen extends StatefulWidget {
   const OptionsScreen({super.key});
@@ -28,6 +30,13 @@ class OptionsScreen extends StatefulWidget {
 
 class _OptionsScreenState extends State<OptionsScreen> {
   bool _updateCheckedThisSession = false;
+
+  @override
+  void initState() {
+    super.initState();
+    // Fetch news to update the unseen count badge
+    NewsService.getNews();
+  }
 
   @override
   void didChangeDependencies() {
@@ -382,6 +391,21 @@ class _OptionsScreenState extends State<OptionsScreen> {
   }
 
   Widget _buildOptionCard(BuildContext context, OptionItem option) {
+    if (option.id == 'news') {
+      return ValueListenableBuilder<int>(
+        valueListenable: NewsService.unseenCountNotifier,
+        builder: (context, unseenCount, _) {
+          return ModernFeatureTile(
+            icon: option.icon,
+            title: option.title,
+            subtitle: option.subtitle,
+            color: option.color,
+            onTap: () => _handleOptionTap(context, option),
+            badgeCount: unseenCount,
+          );
+        },
+      );
+    }
     return ModernFeatureTile(
       icon: option.icon,
       title: option.title,
@@ -466,17 +490,40 @@ class _OptionsScreenState extends State<OptionsScreen> {
         );
         break;
       case 'news':
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(AppLocalizations.of(context)!.noNewsMessage),
-            duration: const Duration(seconds: 3),
-            showCloseIcon: true,
-          ),
-        );
+        _handleNewsNavigation(context);
         break;
 
       default:
         _showComingSoon(context, option.title);
+    }
+  }
+
+  Future<void> _handleNewsNavigation(BuildContext context) async {
+    final news = await NewsService.getNews();
+    if (news.isEmpty) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(context)!.noNewsYet,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
+              ),
+            ),
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          ),
+        );
+      }
+    } else {
+      if (mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const NewsNotificationsScreen(),
+          ),
+        );
+      }
     }
   }
 

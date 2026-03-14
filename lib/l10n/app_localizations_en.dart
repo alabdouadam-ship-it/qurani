@@ -1214,4 +1214,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fileSize => 'File Size';
+
+  @override
+  String get showMore => 'Show More';
+
+  @override
+  String get showLess => 'Show Less';
+
+  @override
+  String get noNewsYet => 'There\'s no notifications or news yet';
+
+  @override
+  String get newsTabAll => 'All';
+
+  @override
+  String get newsTabSaved => 'Saved';
+
+  @override
+  String get noSavedNews => 'No saved news';
+
+  @override
+  String get noNewsAtTheMoment => 'No news at the moment';
+
+  @override
+  String get newsSource => 'Source';
 }

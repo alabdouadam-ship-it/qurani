@@ -2430,6 +2430,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'File Size'**
   String get fileSize;
+
+  /// No description provided for @showMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Show More'**
+  String get showMore;
+
+  /// No description provided for @showLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Show Less'**
+  String get showLess;
+
+  /// No description provided for @noNewsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'There\'s no notifications or news yet'**
+  String get noNewsYet;
+
+  /// No description provided for @newsTabAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get newsTabAll;
+
+  /// No description provided for @newsTabSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get newsTabSaved;
+
+  /// No description provided for @noSavedNews.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved news'**
+  String get noSavedNews;
+
+  /// No description provided for @noNewsAtTheMoment.
+  ///
+  /// In en, this message translates to:
+  /// **'No news at the moment'**
+  String get noNewsAtTheMoment;
+
+  /// No description provided for @newsSource.
+  ///
+  /// In en, this message translates to:
+  /// **'Source'**
+  String get newsSource;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

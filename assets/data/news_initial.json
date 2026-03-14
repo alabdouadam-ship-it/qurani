@@ -1,0 +1,37 @@
+{
+  "news": [
+    {
+      "id": "welcome_news_107",
+      "title": "Welcome to Qurani 1.0.7",
+      "description": "We are excited to introduce the **News & Notifications** feature! \n\nThis will allow us to stay in touch with you, share app updates, and provide helpful reminders. You can save your favorite news items by clicking the bookmark icon. \n\nJazakAllah Khair for using Qurani.",
+      "type": "text",
+      "mediaUrl": "",
+      "sourceUrl": "https://qurani.info",
+      "publishDate": "2025-12-01T00:00:00Z",
+      "validUntil": "2027-01-01T00:00:00Z",
+      "language": "en"
+    },
+    {
+      "id": "video_tutorial_news",
+      "title": "كيفية استخدام ميزة التكرار",
+      "description": "شاهد هذا الفيديو القصير لتعلم كيفية استخدام ميزة التكرار بشكل فعال لتحسين حفظك للقرآن الكريم. \n\nتساعدك هذه الميزة على تثبيت الآيات من خلال التكرار التلقائي والممنهج.",
+      "type": "youtube",
+      "mediaUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "sourceUrl": "",
+      "publishDate": "2025-11-20T00:00:00Z",
+      "validUntil": "2027-01-01T00:00:00Z",
+      "language": "ar"
+    },
+    {
+      "id": "new_reciter_promo_v2",
+      "title": "إضافة قارئ جديد",
+      "description": "لقد أضفنا تلاوة جديدة عالية الجودة إلى المكتبة الصوتية. \n\nيمكنك الآن الانتقال إلى الإعدادات واختيار قارئك المفضل من قائمة القراء المتاحين للاستماع إلى تلاواتهم العطرة.",
+      "type": "image",
+      "mediaUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800",
+      "sourceUrl": "",
+      "publishDate": "2025-11-25T00:00:00Z",
+      "validUntil": "2027-01-01T00:00:00Z",
+      "language": "ar"
+    }
+  ]
+}
