@@ -2217,8 +2217,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     // Actually, simply always use the state controller if it exists, or create one.
     _pdfPageController ??= PageController(initialPage: initialIndex);
 
-    if (_pdfPath == null)
+    if (_pdfPath == null) {
       return const Center(child: CircularProgressIndicator());
+    }
 
     // Ensure future is initialized if path exists
     if (_pdfDocumentFuture == null && _pdfPath != null) {
@@ -3254,8 +3255,9 @@ String? _removeBasmalah(String text) {
 
   // Simple helper to check if a char is a basic Arabic letter (not diacritic)
   bool isArabicLetter(int codeUnit) {
-    if (codeUnit >= 0x0621 && codeUnit <= 0x064A)
+    if (codeUnit >= 0x0621 && codeUnit <= 0x064A) {
       return true; // Standard letters
+    }
     if (codeUnit == 0x0671) return true; // Alif Wasla (ٱ)
     return false;
   }
@@ -3439,13 +3441,6 @@ class _ZoomablePdfPageState extends State<_ZoomablePdfPage>
       },
       child: LayoutBuilder(
         builder: (context, constraints) {
-          final viewportAspectRatio =
-              constraints.maxHeight > 0 && constraints.maxWidth > 0
-                  ? constraints.maxHeight / constraints.maxWidth
-                  : 1.0;
-          final pageAspectRatio = pdfPageInfo.width > 0
-              ? pdfPageInfo.height / pdfPageInfo.width
-              : 1.0;
           // 1. Calculate a proportional scale to fill more width without breaking vertical bounds
           // We use min() to ensure we don't scale so much that the height bleeds off screen.
           final double fitWidthScale =

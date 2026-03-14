@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qurani/l10n/app_localizations.dart';
+import 'package:qurani/providers/app_state_providers.dart';
 import 'package:qurani/themes/app_theme_config.dart';
 import 'package:qurani/widgets/theme_selector.dart';
 import 'responsive_config.dart';
 import 'services/preferences_service.dart';
 import 'util/arabic_font_utils.dart';
-import 'main.dart';
 
-class PreferencesScreen extends StatefulWidget {
+class PreferencesScreen extends ConsumerStatefulWidget {
   const PreferencesScreen({super.key});
 
   @override
-  State<PreferencesScreen> createState() => _PreferencesScreenState();
+  ConsumerState<PreferencesScreen> createState() => _PreferencesScreenState();
 }
 
-class _PreferencesScreenState extends State<PreferencesScreen> {
+class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
 
   String? _selectedTheme;
   String? _selectedLanguage;
@@ -214,7 +215,8 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                   setState(() {
                     _selectedTheme = themeId;
                   });
-                  await PreferencesService.saveTheme(themeId);
+                  // Update provider immediately for real-time preview
+                  ref.read(themeProvider.notifier).setTheme(themeId);
                 },
               ),
               const SizedBox(height: 14),
@@ -227,17 +229,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                 items: _getLanguageOptions(context),
                 onChanged: (String? value) async {
                   final newLangCode = _getLanguageCode(value!, context);
-                  final appState = QuraniApp.of(context);
                   setState(() {
                     _selectedLanguage = newLangCode;
                   });
-                  await PreferencesService.saveLanguage(newLangCode);
-                  if (!mounted) return;
-                  appState.setLocale(Locale(newLangCode));
-                  await Future.delayed(const Duration(milliseconds: 100));
-                  if (mounted) {
-                    setState(() {});
-                  }
+                  // Update provider to see language change immediately
+                  ref.read(localeProvider.notifier).setLocale(Locale(newLangCode));
                 },
               ),
               const SizedBox(height: 14),
@@ -424,22 +420,14 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
 
   Future<void> _savePreferences() async {
     final l10n = AppLocalizations.of(context)!;
-    final appState = QuraniApp.of(context);
-    final messenger = ScaffoldMessenger.of(context);
-
-    await PreferencesService.saveTheme(
-      _selectedTheme ?? AppThemeConfig.defaultThemeId,
-    );
     await PreferencesService.saveFontSize(_selectedFontSize);
     await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
-    if (_selectedLanguage != null) {
-      await PreferencesService.saveLanguage(_selectedLanguage!);
-      if (!mounted) return;
-      appState.setLocale(Locale(_selectedLanguage!));
-    }
+    
+    // We already updated locale/theme via the dropdown/selector callbacks
+    // so we just ensure persistence is final (though callbacks already did it)
 
     if (!mounted) return;
-    messenger.showSnackBar(
+    ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(l10n.preferencesSavedSuccessfully),
         backgroundColor: Theme.of(context).colorScheme.primary,

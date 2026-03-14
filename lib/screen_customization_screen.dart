@@ -1,35 +1,22 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:qurani/l10n/app_localizations.dart';
-import 'package:qurani/services/preferences_service.dart';
+import 'package:qurani/providers/app_state_providers.dart';
 import 'package:qurani/widgets/modern_ui.dart';
 
-class ScreenCustomizationScreen extends StatefulWidget {
+class ScreenCustomizationScreen extends ConsumerStatefulWidget {
   const ScreenCustomizationScreen({super.key});
 
   @override
-  State<ScreenCustomizationScreen> createState() =>
+  ConsumerState<ScreenCustomizationScreen> createState() =>
       _ScreenCustomizationScreenState();
 }
 
-class _ScreenCustomizationScreenState extends State<ScreenCustomizationScreen> {
-  late Set<String> _disabledScreens;
-
-  @override
-  void initState() {
-    super.initState();
-    _disabledScreens = Set.from(PreferencesService.getDisabledScreens());
-  }
+class _ScreenCustomizationScreenState extends ConsumerState<ScreenCustomizationScreen> {
 
   void _toggleScreen(String screenId, bool isEnabled) {
-    setState(() {
-      if (isEnabled) {
-        _disabledScreens.remove(screenId);
-      } else {
-        _disabledScreens.add(screenId);
-      }
-    });
-    PreferencesService.saveDisabledScreens(_disabledScreens);
+    ref.read(disabledScreensProvider.notifier).toggleScreen(screenId, isEnabled);
   }
 
   @override
@@ -127,7 +114,8 @@ class _ScreenCustomizationScreenState extends State<ScreenCustomizationScreen> {
           ),
           const SizedBox(height: 24),
           ...customizableScreens.map((screen) {
-            final isEnabled = !_disabledScreens.contains(screen.id);
+            final disabledScreens = ref.watch(disabledScreensProvider);
+            final isEnabled = !disabledScreens.contains(screen.id);
             return Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: ModernSurfaceCard(

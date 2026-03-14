@@ -801,9 +801,13 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                                     .getAudioBookmarks();
                                 newList.sort((a, b) {
                                   if (a.surahId == _currentOrder &&
-                                      b.surahId != _currentOrder) return -1;
+                                      b.surahId != _currentOrder) {
+                                    return -1;
+                                  }
                                   if (b.surahId == _currentOrder &&
-                                      a.surahId != _currentOrder) return 1;
+                                      a.surahId != _currentOrder) {
+                                    return 1;
+                                  }
                                   return b.createdAt.compareTo(a.createdAt);
                                 });
                                 setStateSheet(() {

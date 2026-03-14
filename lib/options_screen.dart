@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:qurani/providers/app_state_providers.dart';
+import 'package:qurani/providers/news_provider.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'responsive_config.dart';
 import 'services/update_service.dart';
-import 'services/preferences_service.dart';
 import 'widgets/modern_ui.dart';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -21,14 +23,14 @@ import 'hadith_books_screen.dart';
 import 'news_notifications_screen.dart';
 import 'services/news_service.dart';
 
-class OptionsScreen extends StatefulWidget {
+class OptionsScreen extends ConsumerStatefulWidget {
   const OptionsScreen({super.key});
 
   @override
-  State<OptionsScreen> createState() => _OptionsScreenState();
+  ConsumerState<OptionsScreen> createState() => _OptionsScreenState();
 }
 
-class _OptionsScreenState extends State<OptionsScreen> {
+class _OptionsScreenState extends ConsumerState<OptionsScreen> {
   bool _updateCheckedThisSession = false;
 
   @override
@@ -159,45 +161,41 @@ class _OptionsScreenState extends State<OptionsScreen> {
           Expanded(
             child: LayoutBuilder(
               builder: (context, constraints) {
-                return ValueListenableBuilder<Set<String>>(
-                  valueListenable: PreferencesService.disabledScreensNotifier,
-                  builder: (context, disabledScreens, _) {
-                    final options = _getOptions(context)
-                        .where((item) => !disabledScreens.contains(item.id))
-                        .toList();
-                    final width = constraints.maxWidth;
-                    final height = constraints.maxHeight;
-                    int crossAxisCount;
-                    if (width < 600) {
-                      crossAxisCount = 2;
-                    } else {
-                      const targetTileWidth = 180.0;
-                      final cols = width ~/ targetTileWidth;
-                      crossAxisCount = cols.clamp(3, 8);
-                    }
-                    final rowCount = (options.length / crossAxisCount).ceil();
-                    final spaceC = width < 600 ? 6.0 : 16.0;
-                    final spaceM = width < 600 ? 6.0 : 16.0;
-                    final itemWidth = (width - (spaceC * (crossAxisCount - 1))) /
-                        crossAxisCount;
-                    final itemHeight = ((height - (spaceM * (rowCount - 1))) /
-                            rowCount)
-                        .clamp(72.0, 220.0)
-                        .toDouble();
-                    final aspectRatio = itemWidth / itemHeight;
+                final disabledScreens = ref.watch(disabledScreensProvider);
+                final options = _getOptions(context)
+                    .where((item) => !disabledScreens.contains(item.id))
+                    .toList();
+                final width = constraints.maxWidth;
+                final height = constraints.maxHeight;
+                int crossAxisCount;
+                if (width < 600) {
+                  crossAxisCount = 2;
+                } else {
+                  const targetTileWidth = 180.0;
+                  final cols = width ~/ targetTileWidth;
+                  crossAxisCount = cols.clamp(3, 8);
+                }
+                final rowCount = (options.length / crossAxisCount).ceil();
+                final spaceC = width < 600 ? 6.0 : 16.0;
+                final spaceM = width < 600 ? 6.0 : 16.0;
+                final itemWidth = (width - (spaceC * (crossAxisCount - 1))) /
+                    crossAxisCount;
+                final itemHeight = ((height - (spaceM * (rowCount - 1))) /
+                        rowCount)
+                    .clamp(72.0, 220.0)
+                    .toDouble();
+                final aspectRatio = itemWidth / itemHeight;
 
-                    return GridView.count(
-                      crossAxisCount: crossAxisCount,
-                      crossAxisSpacing: spaceC,
-                      mainAxisSpacing: spaceM,
-                      childAspectRatio: aspectRatio,
-                      physics: const NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.zero,
-                      children: options
-                          .map((option) => _buildOptionCard(context, option))
-                          .toList(),
-                    );
-                  },
+                return GridView.count(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: spaceC,
+                  mainAxisSpacing: spaceM,
+                  childAspectRatio: aspectRatio,
+                  physics: const NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.zero,
+                  children: options
+                      .map((option) => _buildOptionCard(context, option))
+                      .toList(),
                 );
               },
             ),
@@ -392,18 +390,14 @@ class _OptionsScreenState extends State<OptionsScreen> {
 
   Widget _buildOptionCard(BuildContext context, OptionItem option) {
     if (option.id == 'news') {
-      return ValueListenableBuilder<int>(
-        valueListenable: NewsService.unseenCountNotifier,
-        builder: (context, unseenCount, _) {
-          return ModernFeatureTile(
-            icon: option.icon,
-            title: option.title,
-            subtitle: option.subtitle,
-            color: option.color,
-            onTap: () => _handleOptionTap(context, option),
-            badgeCount: unseenCount,
-          );
-        },
+      final unseenCount = ref.watch(unseenNewsCountProvider);
+      return ModernFeatureTile(
+        icon: option.icon,
+        title: option.title,
+        subtitle: option.subtitle,
+        color: option.color,
+        onTap: () => _handleOptionTap(context, option),
+        badgeCount: unseenCount,
       );
     }
     return ModernFeatureTile(
@@ -500,30 +494,28 @@ class _OptionsScreenState extends State<OptionsScreen> {
 
   Future<void> _handleNewsNavigation(BuildContext context) async {
     final news = await NewsService.getNews();
+    if (!context.mounted) return;
+    
     if (news.isEmpty) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              AppLocalizations.of(context)!.noNewsYet,
-              style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-              ),
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            AppLocalizations.of(context)!.noNewsYet,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
             ),
-            behavior: SnackBarBehavior.floating,
-            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
           ),
-        );
-      }
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        ),
+      );
     } else {
-      if (mounted) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const NewsNotificationsScreen(),
-          ),
-        );
-      }
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const NewsNotificationsScreen(),
+        ),
+      );
     }
   }
 

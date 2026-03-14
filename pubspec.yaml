@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.4.7
   in_app_update: ^4.2.2
   webview_flutter: ^4.7.0
+  webview_flutter_android: ^3.15.0
   pdfrx: ^2.2.18 
   wakelock_plus: ^1.2.8
 
@@ -59,6 +60,8 @@ dependencies:
   geocoding: ^2.1.1
   flutter_qiblah: ^3.1.0+1
   cached_network_image: ^3.3.1
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
 
   geolocator: any
   http: any
@@ -71,8 +74,9 @@ dev_dependencies:
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^3.0.0        
   sqlite3: ^2.4.0
-  build_runner: ^2.10.4
-  json_serializable: ^6.11.3
+  json_serializable: any
+  riverpod_generator: any
+  build_runner: any
 
 flutter:
   uses-material-design: true

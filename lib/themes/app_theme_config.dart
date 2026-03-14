@@ -244,13 +244,13 @@ class AppThemeConfig {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(theme.primaryColor),
-          foregroundColor: MaterialStateProperty.all(Colors.white),
-          elevation: MaterialStateProperty.all(0),
-          padding: MaterialStateProperty.all(
-            EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          backgroundColor: WidgetStateProperty.all(theme.primaryColor),
+          foregroundColor: WidgetStateProperty.all(Colors.white),
+          elevation: WidgetStateProperty.all(0),
+          padding: WidgetStateProperty.all(
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           ),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18),
             ),
@@ -259,11 +259,11 @@ class AppThemeConfig {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all(theme.textColor),
-          side: MaterialStateProperty.all(
+          foregroundColor: WidgetStateProperty.all(theme.textColor),
+          side: WidgetStateProperty.all(
             BorderSide(color: borderColor),
           ),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18),
             ),

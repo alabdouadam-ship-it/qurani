@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +19,8 @@ import 'services/global_adhan_service.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:path_provider/path_provider.dart';
 import 'themes/app_theme_config.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'providers/app_state_providers.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -146,7 +147,11 @@ Future<void> main() async {
     }
   }
   
-  runApp(const QuraniApp());
+  runApp(
+    const ProviderScope(
+      child: QuraniApp(),
+    ),
+  );
 }
 
 Future<void> _ensureNotificationPermission() async {
@@ -213,21 +218,14 @@ Future<int?> _androidSdkInt() async {
 }
 
 
-class QuraniApp extends StatefulWidget {
+class QuraniApp extends ConsumerStatefulWidget {
   const QuraniApp({super.key});
 
   @override
-  State<QuraniApp> createState() => _QuraniAppState();
-
-  // ignore: library_private_types_in_public_api
-  static _QuraniAppState of(BuildContext context) =>
-      context.findAncestorStateOfType<_QuraniAppState>()!;
+  ConsumerState<QuraniApp> createState() => _QuraniAppState();
 }
 
- class _QuraniAppState extends State<QuraniApp> with WidgetsBindingObserver {
-  Locale _locale = const Locale('ar');
-  String _theme = AppThemeConfig.defaultThemeId;
-
+ class _QuraniAppState extends ConsumerState<QuraniApp> with WidgetsBindingObserver {
   void _applySystemUiOverlay(AppThemeOption themeOption) {
     final iconBrightness = themeOption.isDark
         ? Brightness.light
@@ -247,10 +245,6 @@ class QuraniApp extends StatefulWidget {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _updateAppState(true);
-    _loadLocale();
-    _loadTheme();
-    PreferencesService.languageNotifier.addListener(_onLanguageChanged);
-    PreferencesService.themeNotifier.addListener(_onThemeChanged);
   }
 
   @override
@@ -271,55 +265,22 @@ class QuraniApp extends StatefulWidget {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _updateAppState(false);
-    PreferencesService.languageNotifier.removeListener(_onLanguageChanged);
-    PreferencesService.themeNotifier.removeListener(_onThemeChanged);
     super.dispose();
-  }
-
-  void _loadLocale() {
-    final langCode = PreferencesService.getLanguage();
-    setState(() {
-      _locale = Locale(langCode);
-    });
-  }
-
-  void _loadTheme() {
-    final themeName = PreferencesService.getTheme();
-    setState(() {
-      _theme = themeName;
-    });
-  }
-
-  void _onLanguageChanged() {
-    final langCode = PreferencesService.getLanguage();
-    setState(() {
-      _locale = Locale(langCode);
-    });
-  }
-
-  void _onThemeChanged() {
-    final themeName = PreferencesService.themeNotifier.value;
-    setState(() {
-      _theme = themeName;
-    });
-  }
-
-  void setLocale(Locale locale) {
-    setState(() {
-      _locale = locale;
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final currentTheme = AppThemeConfig.getTheme(_theme);
+    final locale = ref.watch(localeProvider);
+    final themeId = ref.watch(themeProvider);
+    
+    final currentTheme = AppThemeConfig.getTheme(themeId);
     final activeThemeData = AppThemeConfig.themeDataFor(currentTheme.id);
     final darkThemeData = AppThemeConfig.themeDataFor(AppThemeConfig.deepNightThemeId);
     _applySystemUiOverlay(currentTheme);
     
     return MaterialApp(
       title: 'Qurani',
-      locale: _locale,
+      locale: locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
