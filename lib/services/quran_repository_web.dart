@@ -10,6 +10,7 @@ enum QuranEdition {
   english,
   french,
   tafsir,
+  irab,
 }
 
 extension QuranEditionExt on QuranEdition {
@@ -27,6 +28,8 @@ extension QuranEditionExt on QuranEdition {
         return 'assets/data/quran-french.json';
       case QuranEdition.tafsir:
         return 'assets/data/quran-muyassar.json';
+      case QuranEdition.irab:
+        return 'assets/data/quran-simple.json'; // Audio uses simple
     }
   }
 
@@ -44,6 +47,8 @@ extension QuranEditionExt on QuranEdition {
         return 'Français';
       case QuranEdition.tafsir:
         return 'Tafsir (Muyassar)';
+      case QuranEdition.irab:
+        return 'إعراب القرآن';
     }
   }
 
@@ -51,12 +56,15 @@ extension QuranEditionExt on QuranEdition {
       this == QuranEdition.simple ||
       this == QuranEdition.uthmani ||
       this == QuranEdition.tajweed ||
-      this == QuranEdition.tafsir;
+      this == QuranEdition.tafsir ||
+      this == QuranEdition.irab;
 
   bool get isTranslation =>
       this == QuranEdition.english || this == QuranEdition.french;
 
   bool get isTafsir => this == QuranEdition.tafsir;
+
+  bool get isIrab => this == QuranEdition.irab;
 }
 
 class QuranRepository {

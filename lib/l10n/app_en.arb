@@ -856,5 +856,13 @@
   "noSavedNews": "No saved news",
   "noNewsAtTheMoment": "No news at the moment",
   "newsSource": "Source",
-  "newItemBadge": "NEW"
+  "newItemBadge": "NEW",
+  "editionIrab": "Quran I'rab (Grammar)",
+  "@editionIrab": {},
+  "irabDataNotAvailable": "I'rab data is not available locally. Would you like to download it?",
+  "@irabDataNotAvailable": {},
+  "irabDownloading": "Downloading I'rab data...",
+  "@irabDownloading": {},
+  "irabLoading": "Loading I'rab data...",
+  "@irabLoading": {}
 }

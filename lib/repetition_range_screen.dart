@@ -7,6 +7,8 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_repository.dart';
+import 'package:qurani/services/irab_service.dart';
+import 'package:qurani/widgets/irab_verse_widget.dart';
 import 'util/arabic_font_utils.dart';
 import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
@@ -252,6 +254,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       case QuranEdition.simple:
       case QuranEdition.uthmani:
       case QuranEdition.tajweed:
+      case QuranEdition.irab:
         final reciter = PreferencesService.getReciter();
         return reciter.isNotEmpty ? reciter : 'afs';
       case QuranEdition.english:
@@ -686,6 +689,116 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     );
   }
 
+  Future<void> _toggleEdition(QuranEdition edition) async {
+    if (edition == _edition) return;
+
+    if (edition == QuranEdition.irab) {
+      final available = await IrabService().isDataAvailable();
+      if (!available) {
+        if (!mounted) return;
+        final l10n = AppLocalizations.of(context)!;
+        final confirm = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.download),
+            content: Text(l10n.irabDataNotAvailable),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: Text(l10n.download),
+              ),
+            ],
+          ),
+        );
+        if (confirm != true) return;
+
+        if (!mounted) return;
+        final ValueNotifier<double> downloadProgress = ValueNotifier(0.0);
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (ctx) => AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    const CircularProgressIndicator(),
+                    const SizedBox(width: 16),
+                    Expanded(child: Text(l10n.irabDownloading)),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                ValueListenableBuilder<double>(
+                  valueListenable: downloadProgress,
+                  builder: (context, value, child) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        LinearProgressIndicator(value: value),
+                        const SizedBox(height: 8),
+                        Text(
+                          '${(value * 100).toStringAsFixed(0)}%',
+                          textAlign: TextAlign.end,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+
+        try {
+          await IrabService().downloadData(
+            onProgress: (received, total) {
+              if (total != -1) {
+                downloadProgress.value = received / total;
+              }
+            },
+          );
+          if (mounted) Navigator.pop(context); // Close loading
+        } catch (e) {
+          if (mounted) {
+            Navigator.pop(context); // Close loading
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(l10n.downloadFailed)),
+            );
+          }
+          return;
+        }
+      }
+
+      if (!mounted) return;
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => AlertDialog(
+          content: Row(
+            children: [
+              const CircularProgressIndicator(),
+              const SizedBox(width: 16),
+              Expanded(child: Text(AppLocalizations.of(context)!.irabLoading)),
+            ],
+          ),
+        ),
+      );
+      final loaded = await IrabService().loadData();
+      if (mounted) Navigator.pop(context); // Close loading
+
+      if (!loaded) return;
+    }
+
+    setState(() => _edition = edition);
+    await PreferencesService.saveLastRepetitionEdition(edition.name);
+    await _reloadAyahs();
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -698,11 +811,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
         actions: [
           PopupMenuButton<QuranEdition>(
             icon: const Icon(Icons.menu_book_outlined),
-            onSelected: (e) async {
-              setState(() => _edition = e);
-              await PreferencesService.saveLastRepetitionEdition(e.name);
-              await _reloadAyahs();
-            },
+            onSelected: _toggleEdition,
             itemBuilder: (context) {
               final colorScheme = Theme.of(context).colorScheme;
               return QuranEdition.values
@@ -830,13 +939,19 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                                   : null,
                       title: Directionality(
                         textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
-                        child: RichText(
-                          textAlign: rtl ? TextAlign.right : TextAlign.left,
-                          text: TextSpan(
-                            style: baseStyle,
-                            children: spans,
-                          ),
-                        ),
+                        child: _edition == QuranEdition.irab && IrabService().isLoaded
+                            ? IrabVerseWidget(
+                                verse: IrabService().getVerse(a.surah.number, a.numberInSurah) ??
+                                    IrabVerse(surahNumber: a.surah.number, verseNumber: a.numberInSurah, words: []),
+                                fontSize: baseFontSize,
+                              )
+                            : RichText(
+                                textAlign: rtl ? TextAlign.right : TextAlign.left,
+                                text: TextSpan(
+                                  style: baseStyle,
+                                  children: spans,
+                                ),
+                              ),
                       ),
                       onTap: () => _selectAyah(a),
                       trailing: CircleAvatar(
@@ -997,6 +1112,8 @@ String _localizedEditionName(AppLocalizations l10n, QuranEdition edition) {
       return l10n.editionFrench;
     case QuranEdition.tafsir:
       return l10n.editionTafsir;
+    case QuranEdition.irab:
+      return l10n.editionIrab;
   }
 }
 

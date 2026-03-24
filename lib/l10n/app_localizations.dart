@@ -2484,6 +2484,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'NEW'**
   String get newItemBadge;
+
+  /// No description provided for @editionIrab.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran I\'rab (Grammar)'**
+  String get editionIrab;
+
+  /// No description provided for @irabDataNotAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'I\'rab data is not available locally. Would you like to download it?'**
+  String get irabDataNotAvailable;
+
+  /// No description provided for @irabDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading I\'rab data...'**
+  String get irabDownloading;
+
+  /// No description provided for @irabLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading I\'rab data...'**
+  String get irabLoading;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

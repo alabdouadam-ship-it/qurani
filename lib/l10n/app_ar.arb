@@ -854,5 +854,13 @@
   "noSavedNews": "لا يوجد أخبار محفوظة",
   "noNewsAtTheMoment": "لا يوجد أخبار حالياً",
   "newsSource": "المصدر",
-  "newItemBadge": "جديد"
+  "newItemBadge": "جديد",
+  "editionIrab": "إعراب القرآن",
+  "@editionIrab": {},
+  "irabDataNotAvailable": "بيانات الإعراب غير متوفرة محلياً. هل تريد تحميلها؟",
+  "@irabDataNotAvailable": {},
+  "irabDownloading": "جاري تحميل بيانات الإعراب...",
+  "@irabDownloading": {},
+  "irabLoading": "جاري تحميل بيانات الإعراب...",
+  "@irabLoading": {}
 }

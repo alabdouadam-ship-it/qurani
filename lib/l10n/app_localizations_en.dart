@@ -1241,4 +1241,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get newItemBadge => 'NEW';
+
+  @override
+  String get editionIrab => 'Quran I\'rab (Grammar)';
+
+  @override
+  String get irabDataNotAvailable => 'I\'rab data is not available locally. Would you like to download it?';
+
+  @override
+  String get irabDownloading => 'Downloading I\'rab data...';
+
+  @override
+  String get irabLoading => 'Loading I\'rab data...';
 }

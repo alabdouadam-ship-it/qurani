@@ -854,5 +854,13 @@
   "noSavedNews": "Aucune nouvelle enregistrée",
   "noNewsAtTheMoment": "Aucune nouvelle pour le moment",
   "newsSource": "Source",
-  "newItemBadge": "NOUVEAU"
+  "newItemBadge": "NOUVEAU",
+  "editionIrab": "I'rab du Coran (Grammaire)",
+  "@editionIrab": {},
+  "irabDataNotAvailable": "Les données I'rab ne sont pas disponibles localement. Voulez-vous les télécharger ?",
+  "@irabDataNotAvailable": {},
+  "irabDownloading": "Téléchargement des données I'rab...",
+  "@irabDownloading": {},
+  "irabLoading": "Chargement des données I'rab...",
+  "@irabLoading": {}
 }

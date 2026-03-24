@@ -1241,4 +1241,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get newItemBadge => 'جديد';
+
+  @override
+  String get editionIrab => 'إعراب القرآن';
+
+  @override
+  String get irabDataNotAvailable => 'بيانات الإعراب غير متوفرة محلياً. هل تريد تحميلها؟';
+
+  @override
+  String get irabDownloading => 'جاري تحميل بيانات الإعراب...';
+
+  @override
+  String get irabLoading => 'جاري تحميل بيانات الإعراب...';
 }

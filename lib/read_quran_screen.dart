@@ -12,6 +12,8 @@ import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/quran_repository.dart';
+import 'package:qurani/services/irab_service.dart';
+import 'package:qurani/widgets/irab_verse_widget.dart';
 import 'util/arabic_font_utils.dart';
 
 import 'widgets/share_ayah_sheet.dart';
@@ -706,6 +708,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       case QuranEdition.simple:
       case QuranEdition.uthmani:
       case QuranEdition.tajweed:
+      case QuranEdition.irab:
         return PreferencesService.getReciter();
     }
   }
@@ -942,8 +945,111 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     }
   }
 
-  void _toggleEdition(QuranEdition edition) {
+  Future<void> _toggleEdition(QuranEdition edition) async {
     if (edition == _edition) return;
+
+    if (edition == QuranEdition.irab) {
+      final available = await IrabService().isDataAvailable();
+      if (!available) {
+        if (!mounted) return;
+        final l10n = AppLocalizations.of(context)!;
+        final confirm = await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.download),
+            content: Text(l10n.irabDataNotAvailable),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(ctx, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () => Navigator.pop(ctx, true),
+                child: Text(l10n.download),
+              ),
+            ],
+          ),
+        );
+        if (confirm != true) return;
+
+        if (!mounted) return;
+        final ValueNotifier<double> downloadProgress = ValueNotifier(0.0);
+        showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (ctx) => AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    const CircularProgressIndicator(),
+                    const SizedBox(width: 16),
+                    Expanded(child: Text(l10n.irabDownloading)),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                ValueListenableBuilder<double>(
+                  valueListenable: downloadProgress,
+                  builder: (context, value, child) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        LinearProgressIndicator(value: value),
+                        const SizedBox(height: 8),
+                        Text(
+                          '${(value * 100).toStringAsFixed(0)}%',
+                          textAlign: TextAlign.end,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+
+        try {
+          await IrabService().downloadData(
+            onProgress: (received, total) {
+              if (total != -1) {
+                downloadProgress.value = received / total;
+              }
+            },
+          );
+          if (mounted) Navigator.pop(context); // Close loading
+        } catch (e) {
+          if (mounted) {
+            Navigator.pop(context); // Close loading
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text(l10n.downloadFailed)),
+            );
+          }
+          return;
+        }
+      }
+
+      if (!mounted) return;
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (ctx) => AlertDialog(
+          content: Row(
+            children: [
+              const CircularProgressIndicator(),
+              const SizedBox(width: 16),
+              Expanded(child: Text(AppLocalizations.of(context)!.irabLoading)),
+            ],
+          ),
+        ),
+      );
+      final loaded = await IrabService().loadData();
+      if (mounted) Navigator.pop(context); // Close loading
+
+      if (!loaded) return;
+    }
+
     _autoFlipGeneration++;
     unawaited(_stopPageAudio());
     PreferencesService.saveLastReadEdition(edition.name);
@@ -2846,27 +2952,45 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                 alignment: textDirection == TextDirection.rtl
                     ? Alignment.centerRight
                     : Alignment.centerLeft,
-                child: RichText(
-                  textAlign: textDirection == TextDirection.rtl
-                      ? TextAlign.right
-                      : TextAlign.left,
-                  textDirection: textDirection,
-                  text: TextSpan(
-                    style: baseStyle,
-                    children: [
-                      ...ayahContentSpans,
-                      const TextSpan(text: '  '),
-                      WidgetSpan(
-                        alignment: PlaceholderAlignment.middle,
-                        child: _AyahNumberBadge(
-                          number: ayah.numberInSurah,
-                          rtl: _edition.isRtl,
-                          colorScheme: colorScheme,
+                child: _edition == QuranEdition.irab && IrabService().isLoaded
+                    ? Wrap(
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          IrabVerseWidget(
+                            verse: IrabService().getVerse(ayah.surah.number, ayah.numberInSurah) ?? 
+                                IrabVerse(surahNumber: ayah.surah.number, verseNumber: ayah.numberInSurah, words: []),
+                            fontSize: baseFontSize,
+                          ),
+                          const SizedBox(width: 8),
+                          _AyahNumberBadge(
+                            number: ayah.numberInSurah,
+                            rtl: _edition.isRtl,
+                            colorScheme: colorScheme,
+                          ),
+                        ],
+                      )
+                    : RichText(
+                        textAlign: textDirection == TextDirection.rtl
+                            ? TextAlign.right
+                            : TextAlign.left,
+                        textDirection: textDirection,
+                        text: TextSpan(
+                          style: baseStyle,
+                          children: [
+                            ...ayahContentSpans,
+                            const TextSpan(text: '  '),
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: _AyahNumberBadge(
+                                number: ayah.numberInSurah,
+                                rtl: _edition.isRtl,
+                                colorScheme: colorScheme,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                ),
               ),
               if (_edition.isTranslation)
                 Align(
@@ -3373,6 +3497,8 @@ String _editionLabel(QuranEdition edition, AppLocalizations l10n) {
       return l10n.french;
     case QuranEdition.tafsir:
       return l10n.tafsir;
+    case QuranEdition.irab:
+      return l10n.editionIrab;
   }
 }
 
