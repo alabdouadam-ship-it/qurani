@@ -191,11 +191,13 @@ class ModernSurfaceCard extends StatelessWidget {
     required this.child,
     this.padding,
     this.margin = EdgeInsets.zero,
+    this.borderColor,
   });
 
   final Widget child;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry margin;
+  final Color? borderColor;
 
   @override
   Widget build(BuildContext context) {
@@ -210,7 +212,7 @@ class ModernSurfaceCard extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: colorScheme.outline.withAlpha(36),
+          color: borderColor ?? colorScheme.outline.withAlpha(36),
         ),
         boxShadow: [
           BoxShadow(

@@ -49,6 +49,10 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   bool _isHandlingEntryCompletion = false;
   late String _arabicFontKey;
 
+  /// Monotonic counter; incremented on playlist changes to cancel stale
+  /// completion chains.
+  int _playbackGeneration = 0;
+
   @override
   void initState() {
     super.initState();
@@ -75,8 +79,11 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       } else {
         _isPlaying = isPlaying;
       }
+      // Guard at listener level to prevent double-trigger
       if (completed && !_isHandlingEntryCompletion) {
-        unawaited(_handleEntryCompleted());
+        _isHandlingEntryCompletion = true;
+        final generation = _playbackGeneration;
+        unawaited(_handleEntryCompleted(generation));
       }
     });
     _player.sequenceStateStream.listen((sequenceState) {
@@ -113,6 +120,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   }
 
   Future<void> _reloadAyahs() async {
+    _playbackGeneration++;
     setState(() {
       _ayahsFuture = QuranRepository.instance
           .loadSurahAyahs(widget.surah.order, _edition);
@@ -301,8 +309,9 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     return true;
   }
 
-  Future<void> _handleEntryCompleted() async {
+  Future<void> _handleEntryCompleted(int generation) async {
     if (_playlistEntries.isEmpty) {
+      _isHandlingEntryCompletion = false;
       if (mounted) {
         setState(() => _isPlaying = false);
       } else {
@@ -310,24 +319,34 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
       }
       return;
     }
-    _isHandlingEntryCompletion = true;
     try {
+      // Abort if generation changed (user tapped a different verse or reloaded)
+      if (_playbackGeneration != generation) return;
+
       final nextIndex = (_currentPlaylistIndex + 1) % _playlistEntries.length;
       bool shouldStop = false;
+
+      debugPrint('[RepetitionRange] Entry completed: currentIdx=$_currentPlaylistIndex, '
+          'nextIdx=$nextIndex, totalEntries=${_playlistEntries.length}, '
+          'rangeIter=$_currentRangeIteration, rangeRepeatCount=$_rangeRepeatCount');
 
       // Check for wrap-around
       if (nextIndex == 0) {
          _currentRangeIteration++;
+         debugPrint('[RepetitionRange] Wrap-around! iteration=$_currentRangeIteration / $_rangeRepeatCount');
          if (_currentRangeIteration >= _rangeRepeatCount) {
              shouldStop = true;
          }
       }
       
       if (shouldStop) {
+        debugPrint('[RepetitionRange] STOPPING: range repeat limit reached');
+        try { await _player.stop(); } catch (_) {}
         if (mounted) setState(() => _isPlaying = false);
         return;
       }
 
+      if (_playbackGeneration != generation) return;
       await _playEntryAt(nextIndex);
     } finally {
       _isHandlingEntryCompletion = false;
@@ -355,18 +374,29 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     );
 
     final uri = entry.verseUri;
-    if (uri == null) return;
+    // If URI is null (missing audio), skip to next entry
+    if (uri == null) {
+      debugPrint('[RepetitionRange] Null URI for verse ${entry.verseInSurah}, skipping');
+      _currentPlaylistIndex = index;
+      final generation = _playbackGeneration;
+      unawaited(_handleEntryCompleted(generation));
+      return;
+    }
     
+    // Update index BEFORE play so completion handler reads the correct value
+    _currentPlaylistIndex = index;
+    _currentPlayingVerseNumber = entry.verseInSurah;
+    _isPlaying = true;
+    if (mounted) setState(() {});
+
     try {
-      debugPrint('[RepetitionRange] Playing verse ${entry.verseInSurah}');
+      debugPrint('[RepetitionRange] Playing verse ${entry.verseInSurah} (entry $index/${_playlistEntries.length})');
       await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
-      await _player.play();
-      debugPrint('[RepetitionRange] Playback started successfully');
+      _player.play(); // Don't await — completion handled by listener
     } catch (e, stackTrace) {
       debugPrint('[RepetitionRange] CRITICAL ERROR playing verse: $e');
       debugPrint('[RepetitionRange] Stack trace: $stackTrace');
       
-      // Show debug error dialog
       if (!mounted) return;
       DebugErrorDisplay.showError(
         context,
@@ -393,20 +423,9 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
           ),
         );
       }
-      return; // Exit early on error
+      return;
     }
 
-    if (mounted) {
-      setState(() {
-        _currentPlaylistIndex = index;
-        _currentPlayingVerseNumber = entry.verseInSurah;
-        _isPlaying = true;
-      });
-    } else {
-      _currentPlaylistIndex = index;
-      _currentPlayingVerseNumber = entry.verseInSurah;
-      _isPlaying = true;
-    }
     _scrollToMemorizationVerse(entry.verseInSurah);
   }
 
@@ -914,6 +933,22 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
                            setSheetState(() => _rangeRepeatCount = newVal);
                            setState(() => _rangeRepeatCount = newVal);
                            await PreferencesService.saveRangeRepetitionCount(newVal);
+                        },
+                      ),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      title: Text('${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
+                      subtitle: Slider(
+                        value: PreferencesService.getFontSize(),
+                        min: 16,
+                        max: 28,
+                        divisions: 3,
+                        label: '${PreferencesService.getFontSize().toInt()}',
+                        onChanged: (val) async {
+                          await PreferencesService.saveFontSize(val);
+                          setSheetState(() {});
+                          setState(() {});
                         },
                       ),
                     ),

@@ -76,6 +76,11 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
+  // ── Fix: generation counter to cancel stale async operations ──
+  /// Monotonic counter; incremented on every surah/verse change to cancel
+  /// stale idle-retry and playlist mutation operations.
+  int _playbackGeneration = 0;
+
   @override
   void initState() {
     super.initState();
@@ -188,29 +193,22 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       final playlist = _player.audioSource as ConcatenatingAudioSource?;
       if (playlist == null) return;
 
-      int nextOrder = -1;
+      // Fix 2: Capture generation so we can detect if the user changed
+      // surah during the async playlist mutation below.
+      final generation = _playbackGeneration;
 
-      // Check queue first
-      // Check queue first
-      // NOTE: index changed means we ARE playing playlist[1].
-      // playlist[1] corresponds to what we set as Next.
+      int nextOrder = -1;
 
       // Dequeue if queue active
       final queued = _queueService.getNext();
       if (queued != null) {
-        // We effectively just started playing 'queued'.
-        // So 'queued' is now current.
         nextOrder = queued;
         _queueService.removeFromQueue(queued);
-        // BUT wait, if we used peek in _loadAndPlaySurah, we haven't popped it yet?
-        // Actually, _loadAndPlaySurah didn't pop.
-        // So if we are here, we consumed the peeked item.
-        // We should pop it now.
       } else {
         nextOrder = (_currentOrder < 114) ? _currentOrder + 1 : -1;
       }
 
-      // Correct logic: rely on MediaItem extras if possible
+      // Rely on MediaItem extras if possible
       final sequence = _player.sequence;
       if (sequence != null && sequence.length > 1) {
         final item = sequence[1].tag as MediaItem;
@@ -228,8 +226,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
         PreferencesService.addToHistory(nextOrder, _reciterKey!);
 
         // Maintain Rolling Playlist: [Current, Next]
-        // Currently list is [Previous, Current]. Index is 1.
-
         // 1. Prepare NextNext
         AudioSource? nextNextSource;
         final nextQueued = _queueService.getNext(peek: true);
@@ -239,13 +235,20 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           nextNextSource = await _buildAudioSource(nextOrder + 1);
         }
 
+        // Fix 2: After async build, verify playlist is still the active one.
+        // If user changed surah during the await, bail out to avoid mutating
+        // a replaced playlist.
+        if (_playbackGeneration != generation) return;
+        if (_player.audioSource != playlist) return;
+
         // 2. Add NextNext to end
         if (nextNextSource != null) {
           await playlist.add(nextNextSource);
         }
 
         // 3. Remove Previous (index 0)
-        // removing index 0 changes current index from 1 to 0. This is safe.
+        if (_playbackGeneration != generation) return;
+        if (_player.audioSource != playlist) return;
         await playlist.removeAt(0);
       }
     }
@@ -316,6 +319,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     Duration? resumePosition,
   }) async {
     if (_isPlayerDisposed) return;
+    _playbackGeneration++; // Cancel stale async operations
     final normalizedOrder = order.clamp(1, 114);
     setState(() {
       _currentOrder = normalizedOrder;
@@ -595,17 +599,26 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
       setState(() => _isBuffering = buffering);
     }
 
-    // Auto-retry logic for background timeouts
-    if (state == ProcessingState.idle && _isPlaying && !_isHandlingCompletion) {
+    // Fix 1+3+5: Auto-retry logic for background timeouts.
+    // Skip retry when in verse-by-verse mode (verse transitions cause
+    // transient idle states) and use generation counter to cancel stale
+    // retries that would overwrite a user's manual surah change.
+    if (state == ProcessingState.idle &&
+        _isPlaying &&
+        !_isHandlingCompletion &&
+        !_verseByVerseMode) {
+      final generation = _playbackGeneration;
       debugPrint(
-          '[AudioPlayer] Unexpected Idle State detected (Background kill?). Retrying in 5s...');
+          '[AudioPlayer] Unexpected Idle State detected (Background kill?). Retrying in 5s... (gen=$generation)');
       Future.delayed(const Duration(seconds: 5), () {
         if (mounted &&
             _isPlaying &&
+            !_isHandlingCompletion &&
+            !_verseByVerseMode &&
+            _playbackGeneration == generation &&
             _player.processingState == ProcessingState.idle) {
           debugPrint(
-              '[AudioPlayer] Retrying playback of Order: $_currentOrder');
-          // Reload current surah
+              '[AudioPlayer] Retrying playback of Order: $_currentOrder (gen=$generation)');
           final pos = _player.position;
           final safePos = pos > Duration.zero ? pos : Duration.zero;
           _loadAndPlaySurah(_currentOrder, safePos, autoPlay: true);
@@ -648,12 +661,14 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _goToNextSurah() async {
     if (_isPlayerDisposed) return;
+    _playbackGeneration++;
     final nextOrder = (_currentOrder >= 114) ? 114 : _currentOrder + 1;
     await _playSurah(nextOrder, autoPlay: true, resumePosition: Duration.zero);
   }
 
   Future<void> _goToPreviousSurah() async {
     if (_isPlayerDisposed) return;
+    _playbackGeneration++;
     final prevOrder = (_currentOrder <= 1) ? 1 : _currentOrder - 1;
     await _playSurah(prevOrder, autoPlay: true, resumePosition: Duration.zero);
   }
@@ -1100,6 +1115,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
 
   Future<void> _playVerse(int verseNumber) async {
     if (_isPlayerDisposed) return;
+    _playbackGeneration++; // Cancel stale idle-retry
     if (_verseUrls == null ||
         verseNumber < 1 ||
         verseNumber > (_verseUrls?.length ?? 0) ||

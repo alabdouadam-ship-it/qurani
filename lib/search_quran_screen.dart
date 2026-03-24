@@ -29,11 +29,22 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   Map<int, String> _surahNames = {};
   Map<int, String> _surahNamesEn = {};
   String _selectedLanguage = 'ar'; // 'ar', 'en', 'fr'
+  String? _playingAyahId; // tracks which ayah is currently playing
+  bool _isPlayerPlaying = false;
 
   @override
   void initState() {
     super.initState();
     _loadSurahNames();
+    _player.playerStateStream.listen((state) {
+      if (_isDisposed) return;
+      final playing = state.playing && state.processingState != ProcessingState.completed;
+      if (state.processingState == ProcessingState.completed) {
+        if (mounted) setState(() { _playingAyahId = null; _isPlayerPlaying = false; });
+      } else if (playing != _isPlayerPlaying) {
+        if (mounted) setState(() => _isPlayerPlaying = playing);
+      }
+    });
   }
 
   Future<void> _loadSurahNames() async {
@@ -188,6 +199,19 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   }
 
   Future<void> _playAyah(SearchAyah ayah) async {
+    final ayahId = '${ayah.surahOrder}_${ayah.numberInSurah}';
+
+    // Toggle: if this ayah is already playing, pause it
+    if (_playingAyahId == ayahId && _isPlayerPlaying) {
+      await _player.pause();
+      return;
+    }
+    // If paused on the same ayah, resume
+    if (_playingAyahId == ayahId && !_isPlayerPlaying) {
+      await _player.play();
+      return;
+    }
+
     final l10n = AppLocalizations.of(context)!;
     // Capture context-dependent values before any await
     final langCode = Localizations.localeOf(context).languageCode;
@@ -289,6 +313,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       if (!_isDisposed) {
         await _player.setAudioSource(playlist, preload: true);
         if (!_isDisposed) {
+          setState(() => _playingAyahId = ayahId);
           await _player.play();
         }
       }
@@ -465,6 +490,8 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       body: Column(
         children: [
           ModernSurfaceCard(
+            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+            borderColor: colorScheme.primary.withAlpha(80),
             child: Row(
               children: [
                 Expanded(
@@ -492,9 +519,11 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
               ],
             ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 4),
           if (_surahNames.isNotEmpty)
             ModernSurfaceCard(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+              borderColor: colorScheme.primary.withAlpha(80),
               child: Row(
                 children: [
                   Text(
@@ -547,7 +576,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                 ],
               ),
             ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 4),
           Expanded(
             child: Column(
               children: [
@@ -556,6 +585,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                     width: double.infinity,
                     child: ModernSurfaceCard(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      borderColor: colorScheme.primary.withAlpha(80),
                       child: Row(
                         children: [
                           CircleAvatar(
@@ -582,15 +612,6 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                if (_lastQuery.isNotEmpty)
-                                  Text(
-                                    '"${_lastQuery.trim()}"',
-                                    maxLines: 1,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: theme.textTheme.bodySmall?.copyWith(
-                                      color: colorScheme.onPrimaryContainer.withAlpha((255 * 0.8).round()),
-                                    ),
-                                  ),
                               ],
                             ),
                           ),
@@ -613,49 +634,67 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                 final surahName = QuranSearchService.instance.surahName(a.surahOrder);
                                 return ModernSurfaceCard(
                                   margin: const EdgeInsets.only(bottom: 8),
-                                  child: ListTile(
-                                    contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                                    title: Directionality(
-                                      textDirection: _selectedLanguage == 'ar' ? TextDirection.rtl : TextDirection.ltr,
-                                      child: DefaultTextStyle(
-                                        style: theme.textTheme.bodyLarge?.copyWith(
-                                              fontSize: PreferencesService.getFontSize(),
-                                              height: 1.8,
-                                              color: colorScheme.onSurface,
-                                            ) ??
-                                            TextStyle(
-                                              fontSize: PreferencesService.getFontSize(),
-                                              height: 1.8,
-                                              color: colorScheme.onSurface,
+                                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                                  borderColor: colorScheme.primary.withAlpha(50),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      Directionality(
+                                        textDirection: _selectedLanguage == 'ar' ? TextDirection.rtl : TextDirection.ltr,
+                                        child: DefaultTextStyle(
+                                          style: theme.textTheme.bodyLarge?.copyWith(
+                                                fontSize: PreferencesService.getFontSize(),
+                                                height: 1.8,
+                                                color: colorScheme.onSurface,
+                                              ) ??
+                                              TextStyle(
+                                                fontSize: PreferencesService.getFontSize(),
+                                                height: 1.8,
+                                                color: colorScheme.onSurface,
+                                              ),
+                                          child: Text.rich(
+                                            _buildHighlightedText(a.text, _lastQuery, colorScheme) as TextSpan,
+                                            textAlign: _selectedLanguage == 'ar' ? TextAlign.right : TextAlign.left,
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              '$surahName • ${a.numberInSurah} • ${l10n.juzLabel} ${a.juz}',
+                                              style: theme.textTheme.bodySmall,
                                             ),
-                                        child: Text.rich(
-                                          _buildHighlightedText(a.text, _lastQuery, colorScheme) as TextSpan,
-                                          textAlign: _selectedLanguage == 'ar' ? TextAlign.right : TextAlign.left,
-                                        ),
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            width: 32,
+                                            child: IconButton(
+                                              icon: Icon(
+                                                (_playingAyahId == '${a.surahOrder}_${a.numberInSurah}' && _isPlayerPlaying)
+                                                    ? Icons.pause : Icons.play_arrow,
+                                                size: 20,
+                                              ),
+                                              onPressed: () => _playAyah(a),
+                                              tooltip: (_playingAyahId == '${a.surahOrder}_${a.numberInSurah}' && _isPlayerPlaying)
+                                                  ? 'Pause' : 'Play',
+                                              padding: EdgeInsets.zero,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            width: 32,
+                                            child: IconButton(
+                                              icon: const Icon(Icons.content_copy, size: 18),
+                                              onPressed: () => _copyAyah(a),
+                                              tooltip: 'Copy',
+                                              padding: EdgeInsets.zero,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                    subtitle: Padding(
-                                      padding: const EdgeInsets.only(top: 8),
-                                      child: Text(
-                                        '$surahName • ${a.numberInSurah} • ${l10n.juzLabel} ${a.juz}',
-                                        style: theme.textTheme.bodySmall,
-                                      ),
-                                    ),
-                                    trailing: Row(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        IconButton(
-                                          icon: const Icon(Icons.content_copy),
-                                          onPressed: () => _copyAyah(a),
-                                          tooltip: 'Copy',
-                                        ),
-                                        IconButton(
-                                          icon: const Icon(Icons.play_arrow),
-                                          onPressed: () => _playAyah(a),
-                                          tooltip: 'Play',
-                                        ),
-                                      ],
-                                    ),
+                                    ],
                                   ),
                                 );
                               },
