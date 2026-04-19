@@ -2,8 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
-import 'package:audio_session/audio_session.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'adhan_audio_manager.dart';
+import 'logger.dart';
 import 'preferences_service.dart';
 import 'notification_service_io.dart';
 
@@ -74,9 +73,9 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
       try {
         final byteData = await rootBundle.load(assetPath);
         await file.writeAsBytes(byteData.buffer.asUint8List(), flush: true);
-        debugPrint('[AdhanScheduler] ✓ Cached full audio: $fileName');
-      } catch (e) {
-        debugPrint('[AdhanScheduler] ✗ Failed to load asset $assetPath: $e');
+        Log.i('AdhanScheduler', 'Cached full audio: $fileName');
+      } catch (e, st) {
+        Log.e('AdhanScheduler', 'Failed to load asset $assetPath', e, st);
         // If we can't load the full asset, we probably can't play it.
         // But we continue to try iOS notification sound setup.
       }
@@ -90,59 +89,69 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
         if (!await soundsDir.exists()) {
           await soundsDir.create(recursive: true);
         }
-        
-        // Use [key]-ios.mp3 for notification sound
-        // We assume this file exists for the supported keys
-        final iosFileName = '$soundKey-ios.mp3'; 
+
+        // `$soundKey-ios.mp3` is the short (~30s) file referenced by the
+        // iOS `UNNotificationSound` — must live in `Library/Sounds/`.
+        final iosFileName = '$soundKey-ios.mp3';
         final iosAssetPath = 'assets/audio/$iosFileName';
         final iosDestFile = File('${soundsDir.path}/$iosFileName');
-        
-        // FORCE COPY: Always overwrite or copy if missing
-        // Verify asset exists first
+
         try {
-           final iosByteData = await rootBundle.load(iosAssetPath);
-           
-           // If file exists, delete it first to ensure fresh copy (Force Copy)
-           if (await iosDestFile.exists()) {
-             await iosDestFile.delete();
-           }
-           
-           await iosDestFile.writeAsBytes(iosByteData.buffer.asUint8List(), flush: true);
-           debugPrint('[AdhanScheduler] ✓ Force-copied to Library/Sounds: $iosFileName');
-        } catch (e) {
-           debugPrint('[AdhanScheduler] ⚠ Could not find/copy iOS specific asset $iosAssetPath: $e');
-           // Fallback? If specific ios file doesn't exist, maybe try to copy the full file?
-           // Only if it's short enough? No, safer to fail silently and let default or silence happen 
-           // rather than copying a large file that won't play.
+          final iosByteData = await rootBundle.load(iosAssetPath);
+          final expectedLen = iosByteData.lengthInBytes;
+
+          // Skip the rewrite when the file already matches the bundled
+          // asset byte-for-byte (size is sufficient — assets are immutable
+          // per-build). This was previously a force-copy on every launch,
+          // multiplied across 11 sound keys, which was measurable cold-start
+          // cost on iOS.
+          if (await iosDestFile.exists() &&
+              await iosDestFile.length() == expectedLen) {
+            // Already installed, nothing to do.
+          } else {
+            if (await iosDestFile.exists()) {
+              await iosDestFile.delete();
+            }
+            await iosDestFile.writeAsBytes(
+                iosByteData.buffer.asUint8List(),
+                flush: true);
+            Log.i('AdhanScheduler',
+                'Copied to Library/Sounds: $iosFileName');
+          }
+        } catch (e, st) {
+          Log.w('AdhanScheduler',
+              'Could not find/copy iOS specific asset $iosAssetPath', e, st);
+          // Fail silently — the scheduling side validates the file and will
+          // fall back to the system default sound if this asset is missing.
         }
-      } catch (e) {
-        debugPrint('[AdhanScheduler] ✗ Failed to handle iOS Library/Sounds: $e');
+      } catch (e, st) {
+        Log.e('AdhanScheduler', 'Failed to handle iOS Library/Sounds', e, st);
       }
     }
 
     return await file.exists();
-  } catch (e) {
-    debugPrint('[AdhanScheduler] ✗ Failed to cache $soundKey (fajr: $isFajr): $e');
+  } catch (e, st) {
+    Log.e('AdhanScheduler', 'Failed to cache $soundKey (fajr: $isFajr)', e, st);
     return false;
   }
 }
 
 Future<void> _showStopNotification(String prayerId) async {
   try {
-    debugPrint('[AdhanScheduler] ========== SHOWING STOP NOTIFICATION ==========');
-    
+    Log.d('AdhanStopNotif', 'Preparing stop-notification for $prayerId');
+
     final prefs = await SharedPreferences.getInstance();
-    
-    // Check if app is in foreground using shared preferences
-    // WidgetsBinding.instance.lifecycleState is not reliable in background isolate
+
+    // Check if app is in foreground using shared preferences.
+    // WidgetsBinding.instance.lifecycleState is not reliable in background isolate.
     final isForeground = prefs.getBool('is_app_in_foreground') ?? false;
     if (isForeground) {
-      debugPrint('[AdhanScheduler] App is in foreground (pref=true), skipping notification');
+      Log.d('AdhanStopNotif',
+          'App foregrounded (pref=true), suppressing stop-notification');
       return;
     }
 
     final lang = prefs.getString(PreferencesService.keyLanguage) ?? 'ar';
-    debugPrint('[AdhanScheduler] Language: $lang');
     
     // Get localized prayer name
     String prayerName;
@@ -185,15 +194,10 @@ Future<void> _showStopNotification(String prayerId) async {
         body = 'اضغط لفتح التطبيق';
     }
     
-    debugPrint('[AdhanScheduler] Creating notification plugin...');
     final plugin = FlutterLocalNotificationsPlugin();
     const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
     const initSettings = InitializationSettings(android: androidInit);
-    
-    debugPrint('[AdhanScheduler] Initializing notification plugin...');
     await plugin.initialize(initSettings);
-    
-    debugPrint('[AdhanScheduler] Creating notification details...');
     // Simple tappable notification without action buttons
     const androidDetails = AndroidNotificationDetails(
       'adhan_stop_silent',
@@ -207,7 +211,7 @@ Future<void> _showStopNotification(String prayerId) async {
       autoCancel: true, // Auto-cancel when tapped
     );
     
-    debugPrint('[AdhanScheduler] Showing notification with title: $title');
+    Log.d('AdhanStopNotif', 'Showing notification: $title');
     await plugin.show(
       9999999,
       title,
@@ -215,190 +219,192 @@ Future<void> _showStopNotification(String prayerId) async {
       const NotificationDetails(android: androidDetails),
       payload: 'stop_adhan',
     );
-    debugPrint('[AdhanScheduler] ✓✓✓ NOTIFICATION SHOWN SUCCESSFULLY ✓✓✓');
+    Log.i('AdhanStopNotif', 'Stop-notification shown for $prayerId');
   } catch (e, stackTrace) {
-    debugPrint('[AdhanScheduler] ✗✗✗ FAILED TO SHOW NOTIFICATION ✗✗✗');
-    debugPrint('[AdhanScheduler] Error: $e');
-    debugPrint('[AdhanScheduler] Stack trace: $stackTrace');
+    Log.e('AdhanStopNotif', 'Failed to show stop-notification', e, stackTrace);
   }
 }
 
 @pragma('vm:entry-point')
 Future<void> _playAdhanCallback(int id) async {
-  //print('[AdhanScheduler.Callback] ===== ADHAN CALLBACK TRIGGERED (ID: $id) =====');
-  //print('[AdhanScheduler.Callback] Step 0: Initializing Flutter bindings...');
   try {
     WidgetsFlutterBinding.ensureInitialized();
-    //print('[AdhanScheduler.Callback] ✓ WidgetsFlutterBinding initialized');
-  } catch (e) {
-    //print('[AdhanScheduler.Callback] ✗ WidgetsFlutterBinding error: $e');
+  } catch (_) {}
+
+  // Ensure PreferencesService is hydrated in this isolate so that the
+  // unified [AdhanAudioManager.playAdhan] can read the toggle/sound/volume
+  // keys reliably.
+  await PreferencesService.ensureInitialized();
+
+  // Decode prayer from alarm id.
+  final code = id % 10;
+  String? prayerId;
+  switch (code) {
+    case 1: prayerId = 'fajr'; break;
+    case 3: prayerId = 'dhuhr'; break;
+    case 4: prayerId = 'asr'; break;
+    case 5: prayerId = 'maghrib'; break;
+    case 6: prayerId = 'isha'; break;
   }
-  
-  // DartPluginRegistrant is handled automatically by the platform
-  
-  //try {
-    //print('[AdhanScheduler.Callback] Step 1: Getting preferences...');
-    final prefs = await SharedPreferences.getInstance();
-    //print('[AdhanScheduler.Callback] ✓ SharedPreferences obtained');
-    
-    // Decode prayer from id
-    final code = id % 10;
-    String? prayerId;
-    switch (code) {
-      case 1: prayerId = 'fajr'; break;
-      case 3: prayerId = 'dhuhr'; break;
-      case 4: prayerId = 'asr'; break;
-      case 5: prayerId = 'maghrib'; break;
-      case 6: prayerId = 'isha'; break;
-      default: prayerId = null;
-    }
-    
-    // For test IDs, always enable and use fajr
-    if (id == 999991) {
-      prayerId = 'fajr';
-      debugPrint('[AdhanScheduler.Callback] TEST MODE: Forcing fajr prayer');
-    }
 
-    if (prayerId == null) {
-      debugPrint('[AdhanScheduler.Callback] ✗ Invalid prayer code: $code');
+  // Test IDs always play fajr and bypass the enable gate.
+  final isTest = id == 999991;
+  if (isTest) {
+    prayerId = 'fajr';
+    Log.i('AdhanCallback', 'TEST MODE — forcing fajr');
+  }
+  if (prayerId == null) {
+    Log.w('AdhanCallback', 'Invalid prayer code: $code');
+    return;
+  }
+
+  Log.i('AdhanCallback', 'Firing for $prayerId');
+
+  // Respect the enable toggle (test bypasses).
+  if (!isTest) {
+    final enabled =
+        PreferencesService.getBool('adhan_$prayerId') ?? false;
+    if (!enabled) {
+      Log.d('AdhanCallback', '$prayerId disabled, skipping');
       return;
     }
-    
-    debugPrint('[AdhanScheduler.Callback] Prayer ID: $prayerId');
-    
-    final enabled = prefs.getBool('adhan_$prayerId') ?? false;
-    debugPrint('[AdhanScheduler.Callback] Enabled for $prayerId: $enabled');
-    
-    // For test mode, bypass the enable check
-    if (id != 999991 && !enabled) {
-      debugPrint('[AdhanScheduler.Callback] Adhan is disabled for $prayerId, skipping');
-      return;
-    }
+  }
 
-    final soundKey = prefs.getString(PreferencesService.keyAdhanSound) ?? 'afs';
-    final volume = (prefs.getDouble(PreferencesService.keyAdhanVolume) ?? 1.0)
-        .clamp(0.0, 1.0);
-    final isFajr = prayerId == 'fajr';
-    debugPrint('[AdhanScheduler.Callback] Sound: $soundKey, Fajr: $isFajr');
-    
-    // Try to get file path
-    final docDir = await getApplicationDocumentsDirectory();
-    final fileName = isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3';
-    final filePath = '${docDir.path}/adhan_cache/$fileName';
-    bool fileExists = File(filePath).existsSync();
-    
-    debugPrint('[AdhanScheduler.Callback] File path: $filePath');
-    debugPrint('[AdhanScheduler.Callback] File exists: $fileExists');
-    
-    if (!fileExists) {
-      debugPrint('[AdhanScheduler.Callback] ✗ File not found, attempting to cache...');
-      final ensured = await _ensureAdhanFileExists(soundKey, isFajr);
-      fileExists = ensured && File(filePath).existsSync();
-      if (!fileExists) {
-        debugPrint('[AdhanScheduler.Callback] ✗ File still missing after caching');
-        return;
-      }
-    }
+  // Make sure the cached audio file exists so the native MediaPlayer path
+  // has something to play. just_audio asset fallback works without a file,
+  // but native MediaPlayer requires a filesystem path. This is the only
+  // reason the callback still does pre-caching work before delegating.
+  final soundKey = PreferencesService.getAdhanSound();
+  final isFajr = prayerId == 'fajr';
+  if (!File(
+          '${(await getApplicationDocumentsDirectory()).path}/adhan_cache/'
+          '${isFajr ? '$soundKey-fajr.mp3' : '$soundKey.mp3'}')
+      .existsSync()) {
+    Log.d('AdhanCallback', 'Pre-caching adhan file...');
+    await _ensureAdhanFileExists(soundKey, isFajr);
+  }
 
-    debugPrint('[AdhanScheduler.Callback] Step 2: Configuring audio session...');
-    try {
-      final session = await AudioSession.instance;
-      await session.configure(const AudioSessionConfiguration(
-        androidAudioAttributes: AndroidAudioAttributes(
-          contentType: AndroidAudioContentType.sonification,
-          flags: AndroidAudioFlags.none,
-          usage: AndroidAudioUsage.alarm,
-        ),
-        androidAudioFocusGainType: AndroidAudioFocusGainType.gain,
-        androidWillPauseWhenDucked: false,
-      ));
-      await session.setActive(true);
-      debugPrint('[AdhanScheduler.Callback] ✓ Audio session configured');
-    } catch (e) {
-      debugPrint('[AdhanScheduler.Callback] ✗ Audio session error: $e');
-    }
+  // Delegate engine selection, state tracking, and completion hookup to
+  // the single authoritative manager. For tests we pass 'test' so the
+  // manager bypasses its own enable-gate (we already bypassed ours above).
+  final started = await AdhanAudioManager.playAdhan(isTest ? 'test' : prayerId);
+  if (!started) {
+    Log.w('AdhanCallback', 'No engine started playback for $prayerId');
+    return;
+  }
 
+  // Surface the tappable stop-notification *after* playback has begun, so
+  // the user sees it only when Adhan is actually audible.
+  await _showStopNotification(prayerId);
 
-
-    debugPrint('[AdhanScheduler.Callback] Step 3: Attempting native playback first...');
-    final nativePlayed =
-        await AdhanAudioManager.tryPlayNativeFile(filePath, volumeOverride: volume);
-    if (nativePlayed) {
-      debugPrint('[AdhanScheduler.Callback] ✓ Native MediaPlayer started successfully');
-      debugPrint('[AdhanScheduler.Callback] >>>>>> ABOUT TO CALL _showStopNotification <<<<<<');
-      await _showStopNotification(prayerId);
-      debugPrint('[AdhanScheduler.Callback] >>>>>> RETURNED FROM _showStopNotification <<<<<<');
-      return;
-    }
-    debugPrint('[AdhanScheduler.Callback] ⊘ Native playback failed, falling back to just_audio');
-
-    debugPrint('[AdhanScheduler.Callback] Step 4: Creating audio player (fallback) ...');
-    final player = AudioPlayer();
-    try {
-      await player.setVolume(volume);
-      
-      debugPrint('[AdhanScheduler.Callback] Loading: $filePath');
-      await player.setAudioSource(AudioSource.file(filePath));
-      debugPrint('[AdhanScheduler.Callback] ✓ Audio source set');
-      
-      
-      debugPrint('[AdhanScheduler.Callback] Starting playback...');
-      player.play(); // Don't await - start playback and continue immediately
-      debugPrint('[AdhanScheduler.Callback] ✓ Playback started');
-      debugPrint('[AdhanScheduler.Callback] >>>>>> CALLING NOTIFICATION NOW <<<<<<');
-      await _showStopNotification(prayerId);
-      debugPrint('[AdhanScheduler.Callback] >>>>>> NOTIFICATION CALL COMPLETED <<<<<<');
-      AdhanAudioManager.registerBackgroundPlayer(player);
-
-
-      
-      // Wait for completion
-      debugPrint('[AdhanScheduler.Callback] Adhan is playing, waiting for completion...');
-      
-      try {
-        await player.playerStateStream
-            .firstWhere((s) => s.processingState == ProcessingState.completed)
-            .timeout(const Duration(minutes: 5)); // Safety timeout
-        debugPrint('[AdhanScheduler.Callback] ✓ Playback completed normally');
-      } catch (e) {
-        debugPrint('[AdhanScheduler.Callback] ⊘ Playback timeout or error: $e');
-      } finally {
-        debugPrint('[AdhanScheduler.Callback] Disposing player...');
-        await player.dispose();
-      }
-    } catch (e) {
-      debugPrint('[AdhanScheduler.Callback] ✗ Playback error: $e');
-      try {
-        await player.dispose();
-      } catch (_) {}
-    }
-    
-    debugPrint('[AdhanScheduler.Callback] ===== CALLBACK COMPLETE =====');
-  // } catch (e, st) {
-  //   debugPrint('[AdhanScheduler.Callback] ✗✗✗ FATAL ERROR: $e');
-  //   debugPrint('[AdhanScheduler.Callback] Stack: $st');
-  // }
+  // AndroidAlarmManager tears down this isolate once the callback returns,
+  // which would kill just_audio playback mid-Adhan. Block here until the
+  // manager's session completes (or a safety timeout fires).
+  await AdhanAudioManager.awaitCurrentSession(
+    timeout: const Duration(minutes: 6),
+  );
+  Log.i('AdhanCallback', 'Session completed for $prayerId');
 }
 
 class AdhanScheduler {
-  static Future<void> init() async {
-    // Cache audio first (Platform agnostic logic inside)
-    await _cacheAdhanAudio();
+  static bool _initialized = false;
 
-    if (Platform.isAndroid) {
-       await AndroidAlarmManager.initialize();
-    }
-    
+  // Keys used to remember how far into the future we last scheduled alarms
+  // and with which settings, so we can skip redundant Android alarm-manager
+  // round-trips on every cold start / screen rebuild.
+  static const String _keyLastScheduledThrough =
+      'adhan_last_scheduled_through_day';
+  static const String _keyLastScheduledSoundHash =
+      'adhan_last_scheduled_sound_hash';
+  static const String _keyLastScheduledTogglesHash =
+      'adhan_last_scheduled_toggles_hash';
+
+  /// Returns a stable, order-independent fingerprint of a toggles map so we
+  /// can detect whether the user changed their Adhan prayer selection since
+  /// the last scheduling pass.
+  static String _togglesFingerprint(Map<String, bool> toggles) {
+    final keys = toggles.keys.toList()..sort();
+    return keys.map((k) => '$k=${toggles[k] == true ? 1 : 0}').join(',');
+  }
+
+  static int _dayKey(DateTime d) => d.year * 10000 + d.month * 100 + d.day;
+
+  /// Returns `true` if we have *not* already scheduled alarms for every day
+  /// from today through (today + [daysAhead]) with the given [soundKey] and
+  /// [toggles]. Call this before running the 7-day scheduling loop to avoid
+  /// queuing duplicate Android alarm-manager entries on every launch.
+  static Future<bool> shouldScheduleThroughDay({
+    required String soundKey,
+    required Map<String, bool> toggles,
+    int daysAhead = 7,
+  }) async {
     try {
-      debugPrint('[AdhanScheduler] INITIALIZING AndroidAlarmManager...');
-      final success = await AndroidAlarmManager.initialize();
-      debugPrint('[AdhanScheduler] AndroidAlarmManager.initialize() returned: $success');
-      
-      debugPrint('[AdhanScheduler] CACHING Adhan audio files...');
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final today = _dayKey(now);
+      final target =
+          _dayKey(DateTime(now.year, now.month, now.day + daysAhead));
+      final lastThrough = prefs.getInt(_keyLastScheduledThrough) ?? 0;
+      final lastSound = prefs.getString(_keyLastScheduledSoundHash);
+      final lastToggles = prefs.getString(_keyLastScheduledTogglesHash);
+      final togglesHash = _togglesFingerprint(toggles);
+      if (lastSound != soundKey || lastToggles != togglesHash) {
+        return true; // settings changed -> must re-schedule
+      }
+      // Already scheduled today AND covered the full horizon: skip.
+      return lastThrough < target || lastThrough < today;
+    } catch (_) {
+      return true; // on any pref error, err on the side of scheduling
+    }
+  }
+
+  /// Persist the fact that we just finished scheduling through (today +
+  /// [daysAhead]) with [soundKey] and [toggles]. Must be called after a
+  /// successful scheduling pass that was gated by [shouldScheduleThroughDay].
+  static Future<void> markScheduledThroughDay({
+    required String soundKey,
+    required Map<String, bool> toggles,
+    int daysAhead = 7,
+  }) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final now = DateTime.now();
+      final target =
+          _dayKey(DateTime(now.year, now.month, now.day + daysAhead));
+      await prefs.setInt(_keyLastScheduledThrough, target);
+      await prefs.setString(_keyLastScheduledSoundHash, soundKey);
+      await prefs.setString(
+          _keyLastScheduledTogglesHash, _togglesFingerprint(toggles));
+    } catch (_) {}
+  }
+
+  /// Forget the "already scheduled through" state. Call this whenever the
+  /// user changes their Adhan sound or toggles a prayer on/off, so the next
+  /// scheduling pass is guaranteed to run.
+  static Future<void> invalidateScheduling() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove(_keyLastScheduledThrough);
+      await prefs.remove(_keyLastScheduledSoundHash);
+      await prefs.remove(_keyLastScheduledTogglesHash);
+    } catch (_) {}
+  }
+
+  /// Initialises the Adhan scheduler exactly once per app process. Repeated
+  /// calls (e.g. hot reload during dev, or duplicate entry-points) are no-ops.
+  static Future<void> init() async {
+    if (_initialized) return;
+    try {
+      // Only initialise AndroidAlarmManager on Android; it's a no-op elsewhere.
+      if (Platform.isAndroid) {
+        final success = await AndroidAlarmManager.initialize();
+        Log.i('AdhanScheduler',
+            'AndroidAlarmManager.initialize() returned: $success');
+      }
       await _cacheAdhanAudio();
-      debugPrint('[AdhanScheduler] Adhan audio caching complete');
-    } catch (e) {
-      debugPrint('[AdhanScheduler] ✗ CRITICAL INIT ERROR: $e');
+      _initialized = true;
+    } catch (e, st) {
+      Log.e('AdhanScheduler', 'Critical init error', e, st);
     }
   }
 
@@ -409,7 +415,7 @@ class AdhanScheduler {
       if (!await cacheDir.exists()) {
         await cacheDir.create(recursive: true);
       }
-      debugPrint('[AdhanScheduler] Adhan cache directory: ${cacheDir.path}');
+      Log.d('AdhanScheduler', 'Adhan cache directory: ${cacheDir.path}');
 
       final prefs = await SharedPreferences.getInstance();
       final selected = prefs.getString(PreferencesService.keyAdhanSound) ?? 'afs';
@@ -423,9 +429,9 @@ class AdhanScheduler {
           }
         }
       }
-      debugPrint('[AdhanScheduler] Caching complete. Total new files: $cachedCount');
-    } catch (e) {
-      debugPrint('[AdhanScheduler] Error during caching: $e');
+      Log.i('AdhanScheduler', 'Caching complete. Total new files: $cachedCount');
+    } catch (e, st) {
+      Log.e('AdhanScheduler', 'Error during caching', e, st);
     }
   }
 
@@ -434,7 +440,8 @@ class AdhanScheduler {
     required Map<String, bool> toggles,
     required String soundKey,
   }) async {
-    debugPrint('[AdhanScheduler] Scheduling Adhan alarms (Platform: ${Platform.operatingSystem})...');
+    Log.d('AdhanScheduler',
+        'Scheduling Adhan alarms (Platform: ${Platform.operatingSystem})...');
     
     // CRITICAL: Ensure files are cached/copied BEFORE scheduling
     final now = DateTime.now();
@@ -452,8 +459,8 @@ class AdhanScheduler {
     }
 
     if (!Platform.isAndroid) return;
-    
-    debugPrint('[AdhanScheduler] Scheduling Adhan alarms for Android...');
+
+    Log.d('AdhanScheduler', 'Scheduling Adhan alarms for Android...');
     // Schedule alarms for enabled prayers
     for (final entry in times.entries) {
       final prayerId = entry.key;
@@ -474,9 +481,9 @@ class AdhanScheduler {
           wakeup: true,
           allowWhileIdle: true,
         );
-        debugPrint('[AdhanScheduler] ✓ Scheduled $prayerId at $time (id: $id)');
-      } catch (e) {
-        debugPrint('[AdhanScheduler] ✗ Failed to schedule $prayerId: $e');
+        Log.i('AdhanScheduler', 'Scheduled $prayerId at $time (id: $id)');
+      } catch (e, st) {
+        Log.e('AdhanScheduler', 'Failed to schedule $prayerId', e, st);
       }
     }
   }
@@ -503,11 +510,12 @@ class AdhanScheduler {
         final duration = time.difference(now);
         if (duration.inHours > 24) continue; // Safety check
         
-        debugPrint('[AdhanScheduler] Scheduling foreground timer for $prayerId in $duration');
+        Log.d('AdhanScheduler',
+            'Scheduling foreground timer for $prayerId in $duration');
         final id = _dailyId(prayerId: prayerId, date: time);
-        
+
         final timer = Timer(duration, () {
-          debugPrint('[AdhanScheduler] Triggering foreground timer for $prayerId');
+          Log.i('AdhanScheduler', 'Foreground timer firing for $prayerId');
           _playAdhanCallback(id);
         });
         _foregroundTimers.add(timer);
@@ -516,7 +524,8 @@ class AdhanScheduler {
   }
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {
-    debugPrint('[AdhanScheduler] TEST: Scheduling test Adhan playback after $seconds seconds with sound: $soundKey');
+    Log.i('AdhanScheduler',
+        'TEST: Scheduling test Adhan in ${seconds}s with sound "$soundKey"');
     final triggerTime = DateTime.now().add(Duration(seconds: seconds));
     
     // Pre-cache the test adhan file
@@ -526,7 +535,7 @@ class AdhanScheduler {
     if (Platform.isIOS) {
         // For iOS test, trigger timer immediately after delay
         Timer(Duration(seconds: seconds), () {
-          debugPrint('[AdhanScheduler] TEST: Triggering iOS foreground callback');
+          Log.i('AdhanScheduler', 'TEST: Triggering iOS foreground callback');
           _playAdhanCallback(999991);
         });
         // Also schedule a notification
@@ -553,22 +562,18 @@ class AdhanScheduler {
       allowWhileIdle: true,
     );
     
-    debugPrint('[AdhanScheduler] TEST: Alarm scheduled for $triggerTime');
+    Log.i('AdhanScheduler', 'TEST: Alarm scheduled for $triggerTime');
   }
 
   static Future<void> testAdhanPlaybackImmediate() async {
     if (!Platform.isAndroid) return; // Android-only
-    
-    debugPrint('[AdhanScheduler] TEST: Triggering Adhan callback IMMEDIATELY');
-    debugPrint('[AdhanScheduler] TEST: Close app now and check logs!');
-    
-    // Call callback directly first to verify it works
-    debugPrint('[AdhanScheduler] TEST: Calling callback directly...');
+
+    Log.i('AdhanScheduler', 'TEST: Triggering Adhan callback IMMEDIATELY');
     try {
       await _playAdhanCallback(202511251); // fajr code
-      debugPrint('[AdhanScheduler] TEST: Direct callback call completed');
-    } catch (e) {
-      debugPrint('[AdhanScheduler] TEST: Direct callback error: $e');
+      Log.i('AdhanScheduler', 'TEST: Direct callback completed');
+    } catch (e, st) {
+      Log.e('AdhanScheduler', 'TEST: Direct callback error', e, st);
     }
   }
 }

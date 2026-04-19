@@ -256,8 +256,8 @@ class PrayerTimesService {
     'kingdom of saudi arabia': 4,
     'السعودية': 4,
     'المملكة العربية السعودية': 4,
-    'france': 4,
-    'فرنسا': 4,
+    'france': 12,
+    'فرنسا': 12,
     'egypt': 5,
     'مصر': 5,
     'united arab emirates': 16,
@@ -325,7 +325,7 @@ class PrayerTimesService {
 
   static const Map<String, int> prayerMethodByIsoCode = {
     'SA': 4, // Saudi Arabia
-    'FR': 4, // France
+    'FR': 12, // France (UOIF)
     'US': 2, // USA
     'CA': 2, // Canada
     'GB': 12, // UK
@@ -425,6 +425,34 @@ class PrayerTimesService {
     try {
       final pos = await Geolocator.getLastKnownPosition();
       if (pos == null) return;
+
+      // GPS-delta fast-path: if the user has barely moved since the last
+      // successful refresh AND the cache is less than 60 days old, there's
+      // no point re-fetching from Aladhan — prayer times drift by < 1 minute
+      // over such a small distance. We just bump the "last success" marker
+      // so the next refresh attempt is delayed another 10 days.
+      final lastLatLng = prefs.getString('prayer_last_latlng');
+      if (lastLatLng != null && daysSince < 60 && lastSuccessMs != 0) {
+        final parts = lastLatLng.split(',');
+        if (parts.length == 2) {
+          final prevLat = double.tryParse(parts[0]);
+          final prevLng = double.tryParse(parts[1]);
+          if (prevLat != null && prevLng != null) {
+            final distanceMeters = Geolocator.distanceBetween(
+              prevLat,
+              prevLng,
+              pos.latitude,
+              pos.longitude,
+            );
+            if (distanceMeters < 2000) {
+              await prefs.setInt(
+                  'prayer_last_success', DateTime.now().millisecondsSinceEpoch);
+              return;
+            }
+          }
+        }
+      }
+
       final method = await resolveMethodForRegionFromPosition(pos);
       final curr = DateTime(now.year, now.month, 1);
       final next = DateTime(now.year, now.month + 1, 1);
@@ -444,39 +472,64 @@ class PrayerTimesService {
           'isha': prefs.getBool('adhan_isha') ?? false,
         };
 
-        // Schedule for the remainder of today
-        final timesToday = await getTimesForDate(year: now.year, month: now.month, day: now.day);
-        if (timesToday != null) {
-          await NotificationService.scheduleRemainingAdhans(
-            times: timesToday,
-            soundKey: soundKey,
-            toggles: toggles,
-          );
-          // Background full Adhan playback
-          await AdhanScheduler.scheduleForTimes(
-            times: timesToday,
-            toggles: toggles,
-            soundKey: soundKey,
-          );
-        }
-
-        // Additionally schedule for the next 7 days using cached month data
-        DateTime cursor = now.add(const Duration(days: 1));
-        for (int i = 0; i < 7; i++) {
-          final times = await getTimesForDate(year: cursor.year, month: cursor.month, day: cursor.day);
-          if (times != null) {
+        // Skip the 7-day scheduling if we already did it today with the same
+        // settings. Without this guard, every 10-day cache refresh re-queues
+        // dozens of Android alarms that the OS silently coalesces but counts
+        // against alarm-scheduling budgets.
+        final shouldSchedule = await AdhanScheduler.shouldScheduleThroughDay(
+          soundKey: soundKey,
+          toggles: toggles,
+          daysAhead: 7,
+        );
+        if (shouldSchedule) {
+          // Schedule for the remainder of today
+          final timesToday = await getTimesForDate(year: now.year, month: now.month, day: now.day);
+          if (timesToday != null) {
             await NotificationService.scheduleRemainingAdhans(
-              times: times,
+              times: timesToday,
               soundKey: soundKey,
               toggles: toggles,
             );
+            // Background full Adhan playback
             await AdhanScheduler.scheduleForTimes(
-              times: times,
+              times: timesToday,
               toggles: toggles,
               soundKey: soundKey,
             );
           }
-          cursor = cursor.add(const Duration(days: 1));
+
+          // Additionally schedule for the next 7 days using cached month data.
+          //
+          // IMPORTANT — DST safety: we iterate via the calendar-aware
+          // `DateTime(y, m, d + 1)` constructor rather than
+          // `cursor.add(Duration(days: 1))`. The latter adds exactly 86400
+          // seconds of absolute time, so on DST transition days the
+          // cursor's wall-clock drifts by ±1 hour and can skip or repeat
+          // a calendar day depending on time-of-day. `DateTime(y, m, d+1)`
+          // always advances to the same wall-clock moment on the next
+          // calendar date, which is what we want for "tomorrow's times".
+          DateTime cursor = DateTime(now.year, now.month, now.day + 1);
+          for (int i = 0; i < 7; i++) {
+            final times = await getTimesForDate(year: cursor.year, month: cursor.month, day: cursor.day);
+            if (times != null) {
+              await NotificationService.scheduleRemainingAdhans(
+                times: times,
+                soundKey: soundKey,
+                toggles: toggles,
+              );
+              await AdhanScheduler.scheduleForTimes(
+                times: times,
+                toggles: toggles,
+                soundKey: soundKey,
+              );
+            }
+            cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
+          }
+          await AdhanScheduler.markScheduledThroughDay(
+            soundKey: soundKey,
+            toggles: toggles,
+            daysAhead: 7,
+          );
         }
       } catch (_) {}
     } catch (_) {}

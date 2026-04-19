@@ -314,6 +314,7 @@ class SettingsScreen extends StatelessWidget {
       if (!context.mounted) return;
       final box = context.findRenderObject() as RenderBox?;
       
+      // ignore: deprecated_member_use
       await Share.share(
         message,
         sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,

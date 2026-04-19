@@ -47,10 +47,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   bool _needsPermission = false;
   bool _needsService = false;
   bool _needsInternet = false;
+  // Tracks whether Android's SCHEDULE_EXACT_ALARM permission is *denied*.
+  // On Android < 33 and on non-Android platforms, permission_handler reports
+  // the permission as granted, so this flag stays false and the banner is
+  // never shown. We only warn the user when they have at least one adhan
+  // toggled on — without any enabled adhan, exact alarms are irrelevant.
+  bool _needsExactAlarm = false;
   bool _isRamadan = false;
   String? _cityName;
-
-  Timer? _uiRefreshTimer;
 
   @override
   void initState() {
@@ -67,11 +71,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     // ignore: discarded_futures
     _currentDate = DateTime.now();
     _initialLoad();
-
-    // Refresh UI periodically to update stop button visibility
-    _uiRefreshTimer = Timer.periodic(const Duration(seconds: 2), (_) {
-      if (mounted) setState(() {});
-    });
+    // Fire-and-forget exact-alarm check. On Android 33+ this will set
+    // `_needsExactAlarm` and reveal the banner once initial layout finishes.
+    // ignore: discarded_futures
+    _checkExactAlarmStatus();
   }
 
   @override
@@ -79,8 +82,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     _hijriMonthTap.dispose();
     _gregorianMonthTap.dispose();
     _previewPlayer.dispose();
-    _uiRefreshTimer?.cancel();
     _tick?.cancel();
+    _countdownNotifier.dispose();
     super.dispose();
   }
 
@@ -162,7 +165,12 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
 
   Map<String, DateTime>? _todayTimes;
   String? _nextPrayerId;
-  Duration? _countdown;
+  // Countdown is ticked from a 1-second timer and consumed by a
+  // `ValueListenableBuilder` so only the two pill/label subtrees rebuild,
+  // not the whole screen. The previous implementation called `setState`
+  // each second, which rebuilt the entire prayer list (6 tiles + header +
+  // calendar + CTA) at 1 Hz.
+  final ValueNotifier<Duration?> _countdownNotifier = ValueNotifier<Duration?>(null);
   Timer? _tick;
   final AudioPlayer _previewPlayer = AudioPlayer();
   String? _previewKey;
@@ -353,45 +361,12 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         }
         _loading = false;
       });
-      // Schedule remaining adhans for today (even if app closes later)
+      // Schedule remaining adhans for today (even if app closes later).
+      // This call is deduped by AdhanScheduler — the scheduling loop only
+      // runs if main.dart's startup pass hasn't already covered today + 7
+      // days with the current sound/toggles.
       if (times != null) {
-        final soundKey = PreferencesService.getAdhanSound();
-        //print('[PrayerTimesScreen] Re-scheduling Adhans for today');
-        await NotificationService.scheduleRemainingAdhans(
-          times: times,
-          soundKey: soundKey,
-          toggles: _adhanEnabled,
-        );
-        // Also schedule background full Adhan playback (Android)
-        await AdhanScheduler.scheduleForTimes(
-          times: times,
-          toggles: _adhanEnabled,
-          soundKey: soundKey,
-        );
-        // Also schedule for next 7 days to ensure coverage
-        final now = DateTime.now();
-        DateTime cursor = now.add(const Duration(days: 1));
-        for (int i = 0; i < 7; i++) {
-          final futureTimes = await PrayerTimesService.getTimesForDate(
-            year: cursor.year,
-            month: cursor.month,
-            day: cursor.day,
-          );
-          if (futureTimes != null) {
-            await NotificationService.scheduleRemainingAdhans(
-              times: futureTimes,
-              soundKey: soundKey,
-              toggles: _adhanEnabled,
-            );
-            await AdhanScheduler.scheduleForTimes(
-              times: futureTimes,
-              toggles: _adhanEnabled,
-              soundKey: soundKey,
-            );
-          }
-          cursor = cursor.add(const Duration(days: 1));
-        }
-        //print('[PrayerTimesScreen] Adhans re-scheduled');
+        await _rescheduleAllAdhans();
       }
       _computeNextAndSchedule();
     } catch (_) {
@@ -430,18 +405,21 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     final nextDt = nextTime!; // safe: nextTime is set when nextId is found
     setState(() {
       _nextPrayerId = nextId;
-      _countdown = nextDt.difference(now);
     });
+    _countdownNotifier.value = nextDt.difference(now);
     _tick = Timer.periodic(const Duration(seconds: 1), (_) {
       if (!mounted || _nextPrayerId == null) return;
       final remain = nextDt.difference(DateTime.now());
       if (remain.isNegative) {
         _tick?.cancel();
-        // GlobalAdhanService will handle playing the Adhan
-        // We just reload times to update the UI
+        // GlobalAdhanService will handle playing the Adhan. We just reload
+        // times to update the UI.
         _loadTimes();
       } else {
-        setState(() => _countdown = remain);
+        // Notifier-only update — no setState, so only the two
+        // `ValueListenableBuilder` subtrees rebuild (the header pill and
+        // the current-prayer row countdown), keeping the 1 Hz tick cheap.
+        _countdownNotifier.value = remain;
       }
     });
   }
@@ -461,18 +439,19 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         if (firstTime != null && mounted) {
           setState(() {
             _nextPrayerId = firstId;
-            _countdown = firstTime.difference(DateTime.now());
           });
+          _countdownNotifier.value = firstTime.difference(DateTime.now());
 
           _tick = Timer.periodic(const Duration(seconds: 1), (_) {
             if (!mounted || _nextPrayerId == null) return;
             final remain = firstTime.difference(DateTime.now());
-            // If we reach the prayer time, reload to refreshing the view (likely switching to tomorrow by user or just update)
+            // If we reach the prayer time, reload to refresh the view
+            // (likely switching to tomorrow).
             if (remain.isNegative) {
               _tick?.cancel();
               _loadTimes();
             } else {
-              setState(() => _countdown = remain);
+              _countdownNotifier.value = remain;
             }
           });
         }
@@ -481,16 +460,16 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         if (mounted) {
           setState(() {
             _nextPrayerId = null;
-            _countdown = null;
           });
+          _countdownNotifier.value = null;
         }
       }
     } catch (_) {
       if (mounted) {
         setState(() {
           _nextPrayerId = null;
-          _countdown = null;
         });
+        _countdownNotifier.value = null;
       }
     }
   }
@@ -507,21 +486,108 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       SnackBar(
           content: Text(value ? l10n.adhanEnabledMsg : l10n.adhanDisabledMsg)),
     );
-    // Re-schedule for today with updated toggles
+    // Re-schedule for today (and the next 7 days) with the updated toggles.
+    // We must invalidate the scheduling-dedup cache first so the next pass
+    // actually runs; otherwise the guard would skip scheduling since the
+    // horizon was "already covered" with the previous toggles.
+    await _rescheduleAllAdhans(invalidateFirst: true);
+    // Re-check exact-alarm status after any toggle change: turning an adhan
+    // ON without SCHEDULE_EXACT_ALARM is the moment the banner is most useful.
+    await _checkExactAlarmStatus();
+  }
+
+  /// Polls Android's SCHEDULE_EXACT_ALARM permission (API 33+). On earlier
+  /// Android versions and all other platforms permission_handler reports
+  /// the permission as granted, which intentionally suppresses the banner.
+  Future<void> _checkExactAlarmStatus() async {
     try {
-      if (_todayTimes != null) {
-        final soundKey = PreferencesService.getAdhanSound();
-        await NotificationService.scheduleRemainingAdhans(
-          times: _todayTimes!,
-          soundKey: soundKey,
-          toggles: _adhanEnabled,
-        );
-        await AdhanScheduler.scheduleForTimes(
-          times: _todayTimes!,
-          toggles: _adhanEnabled,
-          soundKey: soundKey,
-        );
+      final status = await Permission.scheduleExactAlarm.status;
+      if (!mounted) return;
+      final needs = status != PermissionStatus.granted;
+      if (needs != _needsExactAlarm) {
+        setState(() => _needsExactAlarm = needs);
       }
+    } catch (e) {
+      // Plugin can throw on exotic platforms / embedded webviews. Treat as
+      // "granted" so we never show a false-positive banner.
+      debugPrint('[PrayerTimesScreen] exact-alarm status check failed: $e');
+    }
+  }
+
+  /// Opens the system page where the user can grant SCHEDULE_EXACT_ALARM.
+  /// On Android 33+ this is a dedicated "Alarms & reminders" screen; the
+  /// permission_handler plugin handles the intent correctly.
+  Future<void> _requestExactAlarm() async {
+    try {
+      await Permission.scheduleExactAlarm.request();
+    } catch (e) {
+      debugPrint('[PrayerTimesScreen] exact-alarm request failed: $e');
+      // Fallback: generic app settings page.
+      await openAppSettings();
+    }
+    // Re-check after the user returns from settings — they may have granted
+    // the permission, in which case we should hide the banner immediately.
+    if (mounted) {
+      await _checkExactAlarmStatus();
+    }
+  }
+
+  /// Re-schedules today + the next 7 days of Adhan alarms using the current
+  /// `_adhanEnabled` toggles and the user's selected sound. Pass
+  /// [invalidateFirst] when the user changed a setting, so the dedup cache
+  /// is cleared and the scheduling pass is guaranteed to run.
+  Future<void> _rescheduleAllAdhans({bool invalidateFirst = false}) async {
+    try {
+      if (invalidateFirst) {
+        await AdhanScheduler.invalidateScheduling();
+      }
+      if (_todayTimes == null) return;
+      final soundKey = PreferencesService.getAdhanSound();
+      final shouldSchedule = await AdhanScheduler.shouldScheduleThroughDay(
+        soundKey: soundKey,
+        toggles: _adhanEnabled,
+        daysAhead: 7,
+      );
+      if (!shouldSchedule) return;
+
+      await NotificationService.scheduleRemainingAdhans(
+        times: _todayTimes!,
+        soundKey: soundKey,
+        toggles: _adhanEnabled,
+      );
+      await AdhanScheduler.scheduleForTimes(
+        times: _todayTimes!,
+        toggles: _adhanEnabled,
+        soundKey: soundKey,
+      );
+
+      final now = DateTime.now();
+      DateTime cursor = now.add(const Duration(days: 1));
+      for (int i = 0; i < 7; i++) {
+        final futureTimes = await PrayerTimesService.getTimesForDate(
+          year: cursor.year,
+          month: cursor.month,
+          day: cursor.day,
+        );
+        if (futureTimes != null) {
+          await NotificationService.scheduleRemainingAdhans(
+            times: futureTimes,
+            soundKey: soundKey,
+            toggles: _adhanEnabled,
+          );
+          await AdhanScheduler.scheduleForTimes(
+            times: futureTimes,
+            toggles: _adhanEnabled,
+            soundKey: soundKey,
+          );
+        }
+        cursor = cursor.add(const Duration(days: 1));
+      }
+      await AdhanScheduler.markScheduledThroughDay(
+        soundKey: soundKey,
+        toggles: _adhanEnabled,
+        daysAhead: 7,
+      );
     } catch (_) {}
   }
 
@@ -539,7 +605,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
               : 'Follow prayer times and daily adhan controls in a calmer, clearer interface.',
       actions: [
         IconButton(
-          tooltip: 'Help',
+          tooltip: l10n.help,
           icon: const Icon(Icons.help_outline_rounded),
           onPressed: () => _openPrayerTimesHelp(context),
         ),
@@ -549,7 +615,73 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           onPressed: _openAdhanSettings,
         ),
       ],
-      body: _buildBody(context, theme, l10n),
+      body: _buildBodyWithBanner(context, theme, l10n),
+    );
+  }
+
+  /// Wraps [_buildBody] with the SCHEDULE_EXACT_ALARM warning banner when
+  /// it's needed. Only shown when at least one adhan is enabled — there's
+  /// no point warning users who aren't using alarms in the first place.
+  Widget _buildBodyWithBanner(
+      BuildContext context, ThemeData theme, AppLocalizations l10n) {
+    final body = _buildBody(context, theme, l10n);
+    final hasEnabledAdhan = _adhanEnabled.values.any((v) => v);
+    if (!_needsExactAlarm || !hasEnabledAdhan) {
+      return body;
+    }
+    return Column(
+      children: [
+        Material(
+          color: theme.colorScheme.errorContainer,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 8, 12),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.notifications_off_outlined,
+                  color: theme.colorScheme.onErrorContainer,
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        l10n.exactAlarmNeededTitle,
+                        style: theme.textTheme.titleSmall?.copyWith(
+                          color: theme.colorScheme.onErrorContainer,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(height: 2),
+                      Text(
+                        l10n.exactAlarmNeededBody,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.onErrorContainer,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                TextButton(
+                  onPressed: _requestExactAlarm,
+                  child: Text(l10n.openSettingsAction),
+                ),
+                IconButton(
+                  tooltip: l10n.later,
+                  icon: Icon(
+                    Icons.close,
+                    color: theme.colorScheme.onErrorContainer,
+                  ),
+                  onPressed: () => setState(() => _needsExactAlarm = false),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Expanded(child: body),
+      ],
     );
   }
 
@@ -1004,12 +1136,15 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                   runSpacing: 10,
                   children: [
                     if (nextPrayerTitle != null)
-                      _buildInfoPill(
-                        context,
-                        icon: Icons.notifications_active_outlined,
-                        label: _countdown != null
-                            ? '$nextPrayerTitle • ${_formatDuration(_countdown!)}'
-                            : nextPrayerTitle,
+                      ValueListenableBuilder<Duration?>(
+                        valueListenable: _countdownNotifier,
+                        builder: (context, countdown, _) => _buildInfoPill(
+                          context,
+                          icon: Icons.notifications_active_outlined,
+                          label: countdown != null
+                              ? '$nextPrayerTitle • ${_formatDuration(countdown)}'
+                              : nextPrayerTitle,
+                        ),
                       ),
                     _buildInfoPill(
                       context,
@@ -1113,18 +1248,24 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                         ),
                       ),
                     ),
-                    if (isNext && _countdown != null)
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(start: 8),
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            _formatDuration(_countdown!),
-                            maxLines: 1,
-                            softWrap: false,
-                            style: TextStyle(color: theme.colorScheme.primary),
-                          ),
-                        ),
+                    if (isNext)
+                      ValueListenableBuilder<Duration?>(
+                        valueListenable: _countdownNotifier,
+                        builder: (context, countdown, _) {
+                          if (countdown == null) return const SizedBox.shrink();
+                          return Padding(
+                            padding: const EdgeInsetsDirectional.only(start: 8),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                _formatDuration(countdown),
+                                maxLines: 1,
+                                softWrap: false,
+                                style: TextStyle(color: theme.colorScheme.primary),
+                              ),
+                            ),
+                          );
+                        },
                       ),
                   ],
                 ),
@@ -1546,6 +1687,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                                 selectedKey = key;
                                 setModalState(() {});
                                 if (mounted) setState(() {});
+                                // Re-schedule so the new sound is applied to
+                                // iOS notifications (which bake the sound
+                                // name in at schedule time) and so the
+                                // scheduling-dedup cache reflects the change.
+                                // Android alarm callback reads the sound
+                                // dynamically at fire time, so this is
+                                // mostly defensive there.
+                                await _rescheduleAllAdhans(invalidateFirst: true);
                               },
                               child: Text(selected
                                   ? l10n.selectedLabel

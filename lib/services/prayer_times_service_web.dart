@@ -378,6 +378,32 @@ class PrayerTimesService {
     try {
       final pos = await Geolocator.getLastKnownPosition();
       if (pos == null) return;
+
+      // GPS-delta fast-path: mirror the native behaviour on web (the 60-day
+      // ceiling is a safety net in case the stored coordinates are stale
+      // due to a different device / account).
+      final lastLatLng = prefs.getString('prayer_last_latlng');
+      if (lastLatLng != null && daysSince < 60 && lastSuccessMs != 0) {
+        final parts = lastLatLng.split(',');
+        if (parts.length == 2) {
+          final prevLat = double.tryParse(parts[0]);
+          final prevLng = double.tryParse(parts[1]);
+          if (prevLat != null && prevLng != null) {
+            final distanceMeters = Geolocator.distanceBetween(
+              prevLat,
+              prevLng,
+              pos.latitude,
+              pos.longitude,
+            );
+            if (distanceMeters < 2000) {
+              await prefs.setInt('prayer_last_success',
+                  DateTime.now().millisecondsSinceEpoch);
+              return;
+            }
+          }
+        }
+      }
+
       final method = await resolveMethodForRegionFromPosition(pos);
       final curr = DateTime(now.year, now.month, 1);
       final next = DateTime(now.year, now.month + 1, 1);

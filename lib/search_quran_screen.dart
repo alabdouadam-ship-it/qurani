@@ -414,11 +414,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     return ModernPageScaffold(
       title: l10n.searchQuran,
       icon: Icons.manage_search_rounded,
-      subtitle: l10n.localeName == 'ar'
-          ? 'ابحث في القرآن بسرعة مع دعم العربية والإنجليزية والفرنسية ومعاينة صوتية للآية.'
-          : l10n.localeName == 'fr'
-              ? 'Recherchez rapidement dans le Coran avec aperçu audio et filtres par langue.'
-              : 'Search the Quran quickly with language filters and ayah audio preview.',
+      subtitle: l10n.searchQuranDescription,
       actions: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
@@ -678,7 +674,8 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                               ),
                                               onPressed: () => _playAyah(a),
                                               tooltip: (_playingAyahId == '${a.surahOrder}_${a.numberInSurah}' && _isPlayerPlaying)
-                                                  ? 'Pause' : 'Play',
+                                                  ? l10n.pauseSurahAudio
+                                                  : l10n.playSurahAudio,
                                               padding: EdgeInsets.zero,
                                             ),
                                           ),
@@ -688,7 +685,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                             child: IconButton(
                                               icon: const Icon(Icons.content_copy, size: 18),
                                               onPressed: () => _copyAyah(a),
-                                              tooltip: 'Copy',
+                                              tooltip: l10n.copy,
                                               padding: EdgeInsets.zero,
                                             ),
                                           ),

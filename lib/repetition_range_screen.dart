@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:qurani/providers/reader_prefs_providers.dart';
 import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
@@ -17,16 +19,17 @@ import 'models/surah.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
 import 'services/reciter_config_service.dart';
 
-class RepetitionRangeScreen extends StatefulWidget {
+class RepetitionRangeScreen extends ConsumerStatefulWidget {
   const RepetitionRangeScreen({super.key, required this.surah});
 
   final Surah surah;
 
   @override
-  State<RepetitionRangeScreen> createState() => _RepetitionRangeScreenState();
+  ConsumerState<RepetitionRangeScreen> createState() =>
+      _RepetitionRangeScreenState();
 }
 
-class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
+class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   final AudioPlayer _player = AudioPlayer();
   QuranEdition _edition = QuranEdition.simple;
   late Future<List<AyahBrief>> _ayahsFuture;
@@ -71,8 +74,7 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     _rangeRepeatCount = PreferencesService.getRangeRepetitionCount();
     _ayahsFuture = QuranRepository.instance
         .loadSurahAyahs(widget.surah.order, _edition);
-    _arabicFontKey = PreferencesService.getArabicFontFamily();
-    PreferencesService.arabicFontNotifier.addListener(_onArabicFontChange);
+    _arabicFontKey = ref.read(arabicFontProvider);
     _player.playerStateStream.listen((state) {
       final completed = state.processingState == ProcessingState.completed;
       final isPlaying = state.playing && !completed;
@@ -117,7 +119,6 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
   void dispose() {
     _player.dispose();
     _ayahScrollController.dispose();
-    PreferencesService.arabicFontNotifier.removeListener(_onArabicFontChange);
     super.dispose();
   }
 
@@ -224,13 +225,6 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
         _scrollToMemorizationVerse(verseInSurah,
             immediate: immediate, attempt: attempt + 1);
       }
-    });
-  }
-
-  void _onArabicFontChange() {
-    if (!mounted) return;
-    setState(() {
-      _arabicFontKey = PreferencesService.getArabicFontFamily();
     });
   }
 
@@ -470,11 +464,12 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
     if (reciter != null && !reciter.hasVerseByVerse()) {
       if (showErrors && mounted) {
         final l10n = AppLocalizations.of(context)!;
+        final langCode = Localizations.localeOf(context).languageCode;
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
             title: Text(l10n.reciterNotCompatible),
-            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(PreferencesService.getLanguage()))),
+            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(langCode))),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -801,6 +796,11 @@ class _RepetitionRangeScreenState extends State<RepetitionRangeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<String>(arabicFontProvider, (prev, next) {
+      if (_arabicFontKey != next) {
+        setState(() => _arabicFontKey = next);
+      }
+    });
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(

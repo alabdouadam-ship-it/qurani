@@ -70,8 +70,8 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('حذف الإحصائيات'),
-        content: const Text('هل أنت متأكد أنك تريد حذف جميع الإحصائيات؟'),
+        title: Text(l10n.clearStatsTitle),
+        content: Text(l10n.clearStatsConfirmation),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -79,7 +79,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
           ),
           FilledButton(
             onPressed: () => Navigator.pop(context, true),
-            child: const Text('حذف'),
+            child: Text(l10n.delete),
           ),
         ],
       ),
@@ -97,16 +97,17 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
     final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('إحصائيات الاختبارات'),
+        title: Text(l10n.memorizationStatsTitle),
         backgroundColor: colorScheme.primary,
         foregroundColor: colorScheme.onPrimary,
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_outline),
-            tooltip: 'حذف الإحصائيات',
+            tooltip: l10n.clearStatsTitle,
             onPressed: _clearStats,
           ),
         ],
@@ -114,7 +115,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _stats == null
-              ? const Center(child: Text('لا توجد إحصائيات'))
+              ? Center(child: Text(l10n.noStats))
               : RefreshIndicator(
                   onRefresh: _loadStats,
                   child: ListView(
@@ -128,7 +129,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                           child: Column(
                             children: [
                               Text(
-                                'العلامات المتراكمة',
+                                l10n.totalScoreHeader,
                                 style: theme.textTheme.titleLarge?.copyWith(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -153,7 +154,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                         child: Padding(
                           padding: const EdgeInsets.all(16),
                           child: _buildStatRow(
-                            'عدد الاختبارات',
+                            l10n.totalTestsLabel,
                             '${_stats!['totalTests']}',
                             theme,
                             colorScheme,
@@ -170,10 +171,10 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                             padding: const EdgeInsets.all(8),
                             child: Column(
                               children: [
-                                const TabBar(
+                                TabBar(
                                   tabs: [
-                                    Tab(text: 'سور'),
-                                    Tab(text: 'أجزاء'),
+                                    Tab(text: l10n.surahTab),
+                                    Tab(text: l10n.juzTab),
                                   ],
                                 ),
                                 const SizedBox(height: 8),
@@ -181,8 +182,8 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                   height: 360,
                                   child: TabBarView(
                                     children: [
-                                      _buildSurahAggList(theme, colorScheme),
-                                      _buildJuzAggList(theme, colorScheme),
+                                      _buildSurahAggList(theme, colorScheme, l10n),
+                                      _buildJuzAggList(theme, colorScheme, l10n),
                                     ],
                                   ),
                                 ),
@@ -201,11 +202,24 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'نسبة الإتقان لكل سورة',
-                                  style: theme.textTheme.titleMedium?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        l10n.surahMasteryHeader,
+                                        style: theme.textTheme.titleMedium?.copyWith(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    IconButton(
+                                      visualDensity: VisualDensity.compact,
+                                      padding: EdgeInsets.zero,
+                                      tooltip: l10n.surahMasteryHelpTooltip,
+                                      icon: const Icon(Icons.info_outline, size: 20),
+                                      onPressed: () => _showMasteryHelpDialog(context, l10n),
+                                    ),
+                                  ],
                                 ),
                                 const SizedBox(height: 12),
                                 FutureBuilder<List<SurahMeta>>(
@@ -227,8 +241,8 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                           (s) => s.number == entry.key,
                                           orElse: () => SurahMeta(
                                             number: entry.key,
-                                            name: 'سورة $entry.key',
-                                            englishName: 'Surah $entry.key',
+                                            name: l10n.surahNamePrefix(entry.key),
+                                            englishName: l10n.surahNamePrefix(entry.key),
                                             englishNameTranslation: '',
                                             revelationType: '',
                                           ),
@@ -278,7 +292,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'الاختبارات الأخيرة',
+                                  l10n.recentTestsHeader,
                                   style: theme.textTheme.titleMedium?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -303,14 +317,14 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                               children: [
                                                 Text(
                                                   test['surahNumber'] != null
-                                                      ? 'سورة ${test['surahNumber']}'
-                                                      : 'جزء ${test['juzNumber']}',
+                                                      ? '${l10n.surah} ${test['surahNumber']}'
+                                                      : '${l10n.juzLabel} ${test['juzNumber']}',
                                                   style: theme.textTheme.bodyMedium?.copyWith(
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
                                                 Text(
-                                                  '${test['correctAnswers']} / ${test['totalQuestions']} • ${test['percentage']}% • ${test['score']} علامة',
+                                                  '${test['correctAnswers']} / ${test['totalQuestions']} • ${test['percentage']}% • ${l10n.pointsSuffix(test['score'] as int)}',
                                                   style: theme.textTheme.bodySmall,
                                                 ),
                                               ],
@@ -360,7 +374,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     return Colors.red;
   }
 
-  Widget _buildSurahAggList(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildSurahAggList(ThemeData theme, ColorScheme colorScheme, AppLocalizations l10n) {
     return FutureBuilder<List<SurahMeta>>(
       future: QuranRepository.instance.loadAllSurahs(),
       builder: (context, snapshot) {
@@ -378,7 +392,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                 (s) => s.number == r.id,
                 orElse: () => SurahMeta(
                   number: r.id,
-                  name: 'سورة ${r.id}',
+                  name: '${l10n.surah} ${r.id}',
                   englishName: '',
                   englishNameTranslation: '',
                   revelationType: '',
@@ -394,7 +408,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
     );
   }
 
-  Widget _buildJuzAggList(ThemeData theme, ColorScheme colorScheme) {
+  Widget _buildJuzAggList(ThemeData theme, ColorScheme colorScheme, AppLocalizations l10n) {
     final rows = _juzRows;
     return ListView.separated(
       itemCount: rows.length,
@@ -402,7 +416,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
       itemBuilder: (context, index) {
         final r = rows[index];
         return ListTile(
-          title: Text('جزء ${r.id}', textDirection: TextDirection.rtl),
+          title: Text('${l10n.juzLabel} ${r.id}', textDirection: TextDirection.rtl),
           trailing: Text('${r.count} ×  |  ${r.percent}%', style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: colorScheme.primary)),
         );
       },
@@ -412,16 +426,36 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
   String _formatDate(DateTime date) {
     final now = DateTime.now();
     final diff = now.difference(date);
+    final l10n = AppLocalizations.of(context)!;
     if (diff.inDays == 0) {
       if (diff.inHours == 0) {
-        return 'منذ ${diff.inMinutes} دقيقة';
+        return l10n.minutesAgo(diff.inMinutes);
       }
-      return 'منذ ${diff.inHours} ساعة';
+      return l10n.hoursAgo(diff.inHours);
     } else if (diff.inDays < 7) {
-      return 'منذ ${diff.inDays} يوم';
+      return l10n.daysAgo(diff.inDays);
     } else {
       return '${date.day}/${date.month}/${date.year}';
     }
+  }
+
+  Future<void> _showMasteryHelpDialog(
+    BuildContext context,
+    AppLocalizations l10n,
+  ) {
+    return showDialog<void>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.surahMasteryHeader),
+        content: Text(l10n.surahMasteryHelp),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(),
+            child: Text(l10n.close),
+          ),
+        ],
+      ),
+    );
   }
 }
 

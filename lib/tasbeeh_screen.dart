@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/models/tasbeeh_model.dart';
 import 'package:qurani/services/tasbeeh_service.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'responsive_config.dart';
 import 'widgets/modern_ui.dart';
 
@@ -26,14 +26,6 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
 
   Future<void> _loadData() async {
     setState(() => _isLoading = true);
-    
-    // TEMP: Force reload for dev
-    final prefs = await SharedPreferences.getInstance();
-    if (prefs.getBool('dev_force_reload_v3') != true) {
-      await prefs.remove('tasbeeh_data_v2'); 
-      await prefs.setBool('dev_force_reload_v3', true);
-    }
-
     final groups = await TasbeehService.getGroups();
     if (mounted) {
       setState(() {
@@ -211,7 +203,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
         context: context,
         builder: (context) => AlertDialog(
             title: Text(l10n.delete), // Generic delete
-            content: Text('هل تريد حذف هذا الذكر؟\n${item.text}'),
+            content: Text(l10n.deleteAzkarConfirmation(item.text)),
             actions: [
                 TextButton(onPressed: () => Navigator.pop(context, false), child: Text(l10n.cancel)),
                 FilledButton(style: FilledButton.styleFrom(backgroundColor: Colors.red), onPressed: () => Navigator.pop(context, true), child: Text(l10n.delete)), 
@@ -226,6 +218,10 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
   }
   
   Future<void> _incrementCount(TasbeehGroup group, TasbeehItem item) async {
+      // Light tactile click per tap — mirrors the discrete "bead slide" of a
+      // physical misbaha. Fire-and-forget; no-op on web.
+      HapticFeedback.lightImpact();
+
       // Optimistic update
       final sessionKey = '${group.id}_${item.id}';
       setState(() {
@@ -250,7 +246,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(l10n.resetAll),
-        content: const Text("سيتم تصفير جميع العدادات لجميع المجموعات."),
+        content: Text(l10n.resetAllConfirmation),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -282,11 +278,7 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
     return ModernPageScaffold(
       title: l10n.tasbeeh,
       icon: Icons.auto_awesome_rounded,
-      subtitle: l10n.localeName == 'ar'
-          ? 'أذكارك ومجموعاتك اليومية في واجهة أكثر سكينة ووضوحًا.'
-          : l10n.localeName == 'fr'
-              ? 'Vos adhkar et groupes quotidiens dans une interface plus sereine et plus claire.'
-              : 'Your adhkar and daily groups in a calmer, clearer interface.',
+      subtitle: l10n.tasbeehDescription,
       actions: [
         IconButton(
           icon: const Icon(Icons.refresh_rounded),
@@ -399,19 +391,19 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                  "لا توجد أذكار في هذه المجموعة. اضغط على القائمة لإضافة ذكر.",
+                  l10n.noAzkarInGroup,
                   style: theme.textTheme.bodySmall,
                   textAlign: TextAlign.center,
                 ),
               ),
-            ...group.items.map((item) => _buildAzkarItem(group, item, theme)),
+            ...group.items.map((item) => _buildAzkarItem(group, item, theme, l10n)),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildAzkarItem(TasbeehGroup group, TasbeehItem item, ThemeData theme) {
+  Widget _buildAzkarItem(TasbeehGroup group, TasbeehItem item, ThemeData theme, AppLocalizations l10n) {
       final sessionCount = _sessionCounts['${group.id}_${item.id}'] ?? 0;
       
       return Container(
@@ -439,9 +431,9 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                                       const SizedBox(height: 8),
                                       Row(
                                           children: [
-                                              _buildBadge(theme, "الجلسة: $sessionCount", theme.colorScheme.primaryContainer, theme.colorScheme.onPrimaryContainer),
+                                              _buildBadge(theme, "${l10n.sessionLabel}: $sessionCount", theme.colorScheme.primaryContainer, theme.colorScheme.onPrimaryContainer),
                                               const SizedBox(width: 8),
-                                              _buildBadge(theme, "الكل: ${item.count}", theme.colorScheme.secondaryContainer, theme.colorScheme.onSecondaryContainer),
+                                              _buildBadge(theme, "${l10n.totalLabel}: ${item.count}", theme.colorScheme.secondaryContainer, theme.colorScheme.onSecondaryContainer),
                                           ],
                                       )
                                   ],
@@ -452,12 +444,12 @@ class _TasbeehScreenState extends State<TasbeehScreen> {
                                   IconButton(
                                       icon: const Icon(Icons.refresh, size: 20),
                                       onPressed: () => _resetSession(group, item),
-                                      tooltip: "تصفير الجلسة",
+                                      tooltip: l10n.resetSessionTooltip,
                                   ),
                                   IconButton(
                                       icon: const Icon(Icons.delete_outline, size: 20, color: Colors.grey),
                                       onPressed: () => _deleteItem(group, item),
-                                      tooltip: "حذف",
+                                      tooltip: l10n.delete,
                                   ),
                               ],
                           )

@@ -150,6 +150,40 @@ class AppThemeConfig {
       gradientColors: [Color(0xFF58B5BE), Color(0xFFEAF8F9)],
       brightness: Brightness.light,
     ),
+    // ---------------------------------------------------------------------
+    // Accessibility themes.
+    // Both variants target WCAG AAA (≥7:1 contrast) for body text on surface.
+    // - Light: pure black text on pure white, deep-navy primary.
+    // - Dark:  pure white text on pure black, vivid yellow primary
+    //   (yellow-on-black is the canonical high-visibility pairing used by
+    //   low-vision UI kits).
+    // ---------------------------------------------------------------------
+    AppThemeOption(
+      id: 'highContrastLight',
+      nameAr: 'تباين عالٍ فاتح',
+      nameEn: 'High Contrast Light',
+      nameFr: 'Contraste élevé (clair)',
+      primaryColor: Color(0xFF000080),
+      accentColor: Color(0xFF0000CC),
+      textColor: Color(0xFF000000),
+      surfaceColor: Color(0xFFFFFFFF),
+      cardColor: Color(0xFFF2F2F2),
+      gradientColors: [Color(0xFFFFFFFF), Color(0xFFDCDCDC)],
+      brightness: Brightness.light,
+    ),
+    AppThemeOption(
+      id: 'highContrastDark',
+      nameAr: 'تباين عالٍ داكن',
+      nameEn: 'High Contrast Dark',
+      nameFr: 'Contraste élevé (sombre)',
+      primaryColor: Color(0xFFFFEB3B),
+      accentColor: Color(0xFFFFF59D),
+      textColor: Color(0xFFFFFFFF),
+      surfaceColor: Color(0xFF000000),
+      cardColor: Color(0xFF121212),
+      gradientColors: [Color(0xFF000000), Color(0xFF1A1A1A)],
+      brightness: Brightness.dark,
+    ),
   ];
 
   static const Map<String, String> legacyThemeAliases = {

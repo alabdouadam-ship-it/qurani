@@ -444,6 +444,7 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       if (!mounted) return;
       final box = context.findRenderObject() as RenderBox?;
       
+      // ignore: deprecated_member_use
       await Share.shareXFiles(
         [XFile(file.path)],
         text: title,

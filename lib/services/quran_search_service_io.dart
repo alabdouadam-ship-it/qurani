@@ -1,9 +1,8 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'dart:async';
-import 'dart:io';
-import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart' as sqf;
+
+import 'quran_database_service.dart';
 
 class QuranSearchService {
   QuranSearchService._();
@@ -30,62 +29,11 @@ class QuranSearchService {
   Map<int, String>? _surahNamesEn; // English names cache
   // bool _hasFts = false; // FTS capability not used at runtime
 
+  /// Routes through the shared [QuranDatabaseService]. See the repository
+  /// for why we funnel all three Quran-DB consumers through one opener.
   Future<void> _ensureDb() async {
-    if (_db != null) return;
-    // Use sqflite's standard database directory
-    final databasesPath = await sqf.getDatabasesPath();
-    final dbPath = p.join(databasesPath, 'quran.db');
-    
-    // Use sqflite's databaseExists for proper check
-    bool needsCopy = !await sqf.databaseExists(dbPath);
-    
-    if (!needsCopy) {
-      // Check if database has text_simple column
-      try {
-        final tempDb = await sqf.openDatabase(dbPath, readOnly: false);
-        // Check for required text columns
-        await tempDb.rawQuery('SELECT text_simple, text_english FROM ayah LIMIT 1');
-        await tempDb.close();
-      } catch (e) {
-        // Column doesn't exist, need to update database
-        needsCopy = true;
-        try {
-          await sqf.deleteDatabase(dbPath);
-        } catch (_) {}
-      }
-    }
-    
-    if (needsCopy) {
-      try {
-        // Ensure parent directory exists
-        final dbFile = File(dbPath);
-        final parentDir = dbFile.parent;
-        if (!await parentDir.exists()) {
-          await parentDir.create(recursive: true);
-        }
-        
-        final bytes = await rootBundle.load('assets/data/quran.db');
-        await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
-        
-        // Verify file was written
-        if (!await sqf.databaseExists(dbPath)) {
-          throw Exception('Failed to write database file');
-        }
-      } catch (e) {
-        // Clean up on error
-        try {
-          await sqf.deleteDatabase(dbPath);
-        } catch (_) {}
-        throw Exception('Failed to copy database: $e');
-      }
-    }
-    
-    _db = await sqf.openDatabase(dbPath, readOnly: false);
-    // Detect FTS table (not used but kept for potential future optimizations)
-    // final rows = await _db!.rawQuery("SELECT name FROM sqlite_master WHERE type='table' AND name='ayah_fts'");
-    // _hasFts = rows.isNotEmpty;
-    
-    // Load surah names if not already loaded
+    if (_db != null && _db!.isOpen) return;
+    _db = await QuranDatabaseService.database();
     if (_surahNames == null || _surahNamesEn == null) {
       await _loadSurahNames();
     }

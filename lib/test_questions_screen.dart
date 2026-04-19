@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qurani/services/memorization_test_service.dart';
 import 'package:qurani/services/memorization_stats_service.dart';
 import 'package:qurani/services/preferences_service.dart';
@@ -48,6 +49,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
 
   void _selectAnswer(int index) {
     if (_isShowingResult) return;
+    HapticFeedback.selectionClick();
     setState(() => _selectedAnswer = index);
   }
 
@@ -156,20 +158,20 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
     String sub;
     if (percentage >= 90) {
       emoji = '🌟';
-      headline = 'ما شاء الله!';
-      sub = 'إتقان رائع! استمر على هذا المستوى';
+      headline = l10n.testResultHeadlineExcellent;
+      sub = l10n.testResultSubExcellent;
     } else if (percentage >= 75) {
       emoji = '👍';
-      headline = 'أحسنت!';
-      sub = 'نتيجة ممتازة، بضع مراجعات وستصل للكمال';
+      headline = l10n.testResultHeadlineGood;
+      sub = l10n.testResultSubGood;
     } else if (percentage >= 50) {
       emoji = '🙂';
-      headline = 'جيد!';
-      sub = 'تابع المراجعة، التقدم واضح';
+      headline = l10n.testResultHeadlineOk;
+      sub = l10n.testResultSubOk;
     } else {
       emoji = '💪';
-      headline = 'لا بأس!';
-      sub = 'المحاولة تصنع الفرق، أعد الاختبار بعد مراجعة الأخطاء';
+      headline = l10n.testResultHeadlineEffort;
+      sub = l10n.testResultSubEffort;
     }
 
     showDialog(
@@ -201,7 +203,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'نتيجة الاختبار الحالي',
+                      l10n.currentTestResult,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -282,7 +284,7 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
     if (widget.questions.isEmpty) {
       return Scaffold(
         appBar: AppBar(title: Text(l10n.memorizationTest)),
-        body: const Center(child: Text('لا توجد أسئلة')),
+        body: Center(child: Text(l10n.noQuestionsAvailable)),
       );
     }
 

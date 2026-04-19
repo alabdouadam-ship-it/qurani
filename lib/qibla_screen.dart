@@ -1,6 +1,10 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+// HapticFeedback — used below for the Qibla-alignment haptic pulse.
+// Do not auto-remove as "unused": the reference lives inside the compass
+// StreamBuilder in _buildCompass.
+import 'package:flutter/services.dart';
 import 'package:flutter_qiblah/flutter_qiblah.dart';
 import 'package:geolocator/geolocator.dart';
 import 'l10n/app_localizations.dart';
@@ -19,6 +23,11 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
       StreamController<LocationStatus>.broadcast();
   bool _hasSensorSupport = true;
   bool _isCheckingStatus = false;
+  // Tracks the previous alignment-to-Qibla state so we only fire a haptic
+  // pulse on the *transition* into alignment, not on every compass frame.
+  // 5° tolerance matches the needle graphic's visual "centered" zone.
+  bool _wasAlignedWithQibla = false;
+  static const double _qiblaAlignmentTolerance = 5.0;
 
   Stream<LocationStatus> get _locationStatusStream =>
       _locationStatusController.stream;
@@ -35,7 +44,14 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
   void dispose() {
     WidgetsBinding.instance.removeObserver(this);
     _locationStatusController.close();
-    FlutterQiblah().dispose();
+    // `FlutterQiblah()` is a factory that returns the package's internal
+    // singleton, so calling dispose on it correctly nulls out the cached
+    // qiblah stream without allocating a throw-away instance.
+    try {
+      FlutterQiblah().dispose();
+    } catch (_) {
+      // Plugin is lazily initialised; ignore if it was never attached.
+    }
     super.dispose();
   }
 
@@ -254,6 +270,16 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
 
         final compassAngle = -(data.direction * (math.pi / 180));
         final needleAngle = -(data.qiblah * (math.pi / 180));
+
+        // Fire a single medium-impact haptic pulse on the transition *into*
+        // alignment. `data.offset` is the angular error in degrees; <5° counts
+        // as aligned. Updating a plain field in build is safe — we intentionally
+        // do not call setState because we don't need a rebuild for this.
+        final isAligned = data.offset.abs() < _qiblaAlignmentTolerance;
+        if (isAligned && !_wasAlignedWithQibla) {
+          HapticFeedback.mediumImpact();
+        }
+        _wasAlignedWithQibla = isAligned;
 
         return Center(
           child: ModernSurfaceCard(

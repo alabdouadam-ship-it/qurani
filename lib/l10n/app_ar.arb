@@ -862,5 +862,153 @@
   "irabDownloading": "جاري تحميل بيانات الإعراب...",
   "@irabDownloading": {},
   "irabLoading": "جاري تحميل بيانات الإعراب...",
-  "@irabLoading": {}
+  "@irabLoading": {},
+  "noSurahsAvailable": "لا توجد سور",
+  "@noSurahsAvailable": {},
+  "noQuestionsAvailable": "لا توجد أسئلة متاحة",
+  "@noQuestionsAvailable": {},
+  "testErrorGeneric": "خطأ: {error}",
+  "@testErrorGeneric": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "startTestButton": "بدء الاختبار",
+  "@startTestButton": {},
+  "statisticsTitle": "إحصائيات",
+  "@statisticsTitle": {},
+  "juzTabarak": "جزء تبارك",
+  "@juzTabarak": {},
+  "juzAmma": "جزء عم",
+  "@juzAmma": {},
+  "deleteAzkarConfirmation": "هل تريد حذف هذا الذكر؟\n{text}",
+  "@deleteAzkarConfirmation": {
+    "placeholders": {
+      "text": {}
+    }
+  },
+  "resetAllConfirmation": "سيتم تصفير جميع العدادات لجميع المجموعات.",
+  "@resetAllConfirmation": {},
+  "noAzkarInGroup": "لا توجد أذكار في هذه المجموعة. اضغط على القائمة لإضافة ذكر.",
+  "@noAzkarInGroup": {},
+  "sessionLabel": "الجلسة",
+  "@sessionLabel": {},
+  "totalLabel": "الكل",
+  "@totalLabel": {},
+  "resetSessionTooltip": "تصفير الجلسة",
+  "@resetSessionTooltip": {},
+  "memorizationStatsTitle": "إحصائيات الاختبارات",
+  "@memorizationStatsTitle": {},
+  "clearStatsTitle": "حذف الإحصائيات",
+  "@clearStatsTitle": {},
+  "clearStatsConfirmation": "هل أنت متأكد أنك تريد حذف جميع الإحصائيات؟",
+  "@clearStatsConfirmation": {},
+  "noStats": "لا توجد إحصائيات",
+  "@noStats": {},
+  "totalScoreHeader": "العلامات المتراكمة",
+  "@totalScoreHeader": {},
+  "totalTestsLabel": "عدد الاختبارات",
+  "@totalTestsLabel": {},
+  "surahTab": "سور",
+  "@surahTab": {},
+  "juzTab": "أجزاء",
+  "@juzTab": {},
+  "surahMasteryHeader": "نسبة الإتقان لكل سورة",
+  "@surahMasteryHeader": {},
+  "recentTestsHeader": "الاختبارات الأخيرة",
+  "@recentTestsHeader": {},
+  "pointsSuffix": "{n} علامة",
+  "@pointsSuffix": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "minutesAgo": "منذ {n} دقيقة",
+  "@minutesAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "hoursAgo": "منذ {n} ساعة",
+  "@hoursAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "daysAgo": "منذ {n} يوم",
+  "@daysAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "refreshList": "تحديث القائمة",
+  "@refreshList": {},
+  "memorizationTestDescription": "اختر السور أو الأجزاء وابدأ اختبار حفظك في واجهة أكثر هدوءًا وتنظيمًا.",
+  "@memorizationTestDescription": {},
+  "tasbeehDescription": "أذكارك ومجموعاتك اليومية في واجهة أكثر سكينة ووضوحًا.",
+  "@tasbeehDescription": {},
+  "searchQuranDescription": "ابحث في القرآن بسرعة مع دعم العربية والإنجليزية والفرنسية ومعاينة صوتية للآية.",
+  "@searchQuranDescription": {},
+  "memorizationQNextAyah": "في {surahName}\nما هي الآية التي تأتي بعد الآية التالية؟\n{ayahText}",
+  "@memorizationQNextAyah": {
+    "placeholders": {
+      "surahName": {},
+      "ayahText": {}
+    }
+  },
+  "memorizationQCompleteAyah": "في {surahName}\nأكمل قوله تعالى:\n{ayahPrefix}...",
+  "@memorizationQCompleteAyah": {
+    "placeholders": {
+      "surahName": {},
+      "ayahPrefix": {}
+    }
+  },
+  "memorizationQSurahNumber": "ما هو رقم {surahName} في القرآن الكريم؟",
+  "@memorizationQSurahNumber": {
+    "placeholders": {
+      "surahName": {}
+    }
+  },
+  "memorizationQSurahAyahCount": "كم عدد آيات {surahName}؟",
+  "@memorizationQSurahAyahCount": {
+    "placeholders": {
+      "surahName": {}
+    }
+  },
+  "surahMasteryHelp": "الإتقان هو متوسط نسبة إجاباتك الصحيحة عبر جميع اختباراتك لهذه السورة.",
+  "@surahMasteryHelp": {},
+  "surahMasteryHelpTooltip": "ماذا يعني الإتقان؟",
+  "@surahMasteryHelpTooltip": {},
+  "surahNamePrefix": "سورة {number}",
+  "@surahNamePrefix": {
+    "placeholders": {
+      "number": {"type": "int"}
+    }
+  },
+  "surahLongPressHint": "اضغط مطوّلًا لخيارات أخرى",
+  "@surahLongPressHint": {},
+  "exactAlarmNeededTitle": "الإنذارات الدقيقة معطّلة",
+  "@exactAlarmNeededTitle": {},
+  "exactAlarmNeededBody": "قد يتأخر الأذان حتى 15 دقيقة. فعّل الإنذارات الدقيقة من الإعدادات للحصول على تشغيل دقيق.",
+  "@exactAlarmNeededBody": {},
+  "openSettingsAction": "فتح الإعدادات",
+  "@openSettingsAction": {},
+  "testResultHeadlineExcellent": "ما شاء الله!",
+  "@testResultHeadlineExcellent": {},
+  "testResultSubExcellent": "إتقان رائع! استمر على هذا المستوى.",
+  "@testResultSubExcellent": {},
+  "testResultHeadlineGood": "أحسنت!",
+  "@testResultHeadlineGood": {},
+  "testResultSubGood": "نتيجة ممتازة، بضع مراجعات وستصل للكمال.",
+  "@testResultSubGood": {},
+  "testResultHeadlineOk": "جيّد!",
+  "@testResultHeadlineOk": {},
+  "testResultSubOk": "تابع المراجعة، التقدم واضح.",
+  "@testResultSubOk": {},
+  "testResultHeadlineEffort": "لا بأس!",
+  "@testResultHeadlineEffort": {},
+  "testResultSubEffort": "المحاولة تصنع الفرق — أعد الاختبار بعد مراجعة الأخطاء.",
+  "@testResultSubEffort": {},
+  "currentTestResult": "نتيجة الاختبار الحالي",
+  "@currentTestResult": {}
 }

@@ -190,7 +190,7 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
                 icon: _isRefreshing
                     ? const SizedBox(width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2))
                     : const Icon(Icons.refresh, size: 18),
-                label: Text('تحديث القائمة', style: TextStyle(color: _isRefreshing ? Colors.grey : null)),
+                label: Text(widget.l10n.refreshList, style: TextStyle(color: _isRefreshing ? Colors.grey : null)),
               ),
             ),
           ),

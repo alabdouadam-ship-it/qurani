@@ -60,6 +60,7 @@ class ShareAyahUtils {
     if (!context.mounted) return;
     final box = context.findRenderObject() as RenderBox?;
     
+    // ignore: deprecated_member_use
     await Share.share(
       text,
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,

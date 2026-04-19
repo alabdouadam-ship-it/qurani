@@ -226,7 +226,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final lang = PreferencesService.getLanguage();
+    final lang = Localizations.localeOf(context).languageCode;
     final reciterName = AudioService.reciterDisplayName(_reciter, lang);
     final percentAyah = (_progressTotalAyah > 0) ? (_progressCurrentAyah / _progressTotalAyah) : 0.0;
     final percentFull = (_progressTotalFull > 0) ? (_progressCurrentFull / _progressTotalFull) : 0.0;

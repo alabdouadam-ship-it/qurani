@@ -12,6 +12,12 @@ class NewsItem {
   final DateTime publishDate;
   final DateTime validUntil;
   final String language;
+  final String? categoryAr;
+  final String? categoryEn;
+  final String? categoryFr;
+  final List<String> targetLanguages;
+  final bool isFeatured;
+  final bool sendNotification;
 
   NewsItem({
     required this.id,
@@ -23,6 +29,12 @@ class NewsItem {
     required this.publishDate,
     required this.validUntil,
     this.language = 'ar',
+    this.categoryAr,
+    this.categoryEn,
+    this.categoryFr,
+    this.targetLanguages = const [],
+    this.isFeatured = false,
+    this.sendNotification = false,
   });
 
   factory NewsItem.fromJson(Map<String, dynamic> json) {
@@ -46,6 +58,12 @@ class NewsItem {
       publishDate: parseDate(json['publishDate']),
       validUntil: parseDate(json['validUntil']),
       language: json['language'] as String? ?? 'ar',
+      categoryAr: json['category_ar'] as String?,
+      categoryEn: json['category_en'] as String?,
+      categoryFr: json['category_fr'] as String?,
+      targetLanguages: (json['target_languages'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
+      isFeatured: json['is_featured'] == true || json['featured'] == true,
+      sendNotification: json['push'] == true,
     );
   }
 
@@ -60,7 +78,36 @@ class NewsItem {
       'publishDate': publishDate.toIso8601String(),
       'validUntil': validUntil.toIso8601String(),
       'language': language,
+      'category_ar': categoryAr,
+      'category_en': categoryEn,
+      'category_fr': categoryFr,
+      'target_languages': targetLanguages,
+      'featured': isFeatured,
+      'push': sendNotification,
     };
+  }
+
+  String? localizedCategory(String currentLang) {
+    if (currentLang == 'ar') return categoryAr;
+    if (currentLang == 'fr') return categoryFr;
+    return categoryEn;
+  }
+
+  bool isVisibleForLanguage(String currentLang) {
+    // Hide if targeted languages array exists but current language is not in it
+    if (targetLanguages.isNotEmpty && !targetLanguages.contains(currentLang)) {
+      return false;
+    }
+    
+    // Strict logic: hide if the category for this language is missing but others exist
+    bool hasAnyCategory = categoryAr != null || categoryEn != null || categoryFr != null;
+    if (hasAnyCategory) {
+      if (currentLang == 'ar' && categoryAr == null) return false;
+      if (currentLang == 'fr' && categoryFr == null) return false;
+      if (currentLang == 'en' && categoryEn == null) return false;
+    }
+    
+    return true;
   }
 
   static NewsType _parseType(String type) {

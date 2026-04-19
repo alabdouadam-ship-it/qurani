@@ -161,18 +161,32 @@ class _SurahGridState extends State<SurahGrid> {
       future: _future,
       builder: (context, snapshot) {
         if (snapshot.hasError) {
+          debugPrint('[SurahGrid] load surahs error: ${snapshot.error}');
+          final l10n = AppLocalizations.of(context)!;
+          final theme = Theme.of(context);
           return Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                  Icon(Icons.error_outline, size: 48, color: theme.colorScheme.error),
                   const SizedBox(height: 16),
                   Text(
-                    'Error loading Surahs: ${snapshot.error}',
+                    l10n.unknownError,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.red),
+                    style: TextStyle(color: theme.colorScheme.error),
+                  ),
+                  const SizedBox(height: 12),
+                  FilledButton.icon(
+                    onPressed: () {
+                      final lang = Localizations.localeOf(context).languageCode;
+                      setState(() {
+                        _future = SurahService.getLocalizedSurahs(lang);
+                      });
+                    },
+                    icon: const Icon(Icons.refresh),
+                    label: Text(l10n.retry),
                   ),
                 ],
               ),
@@ -256,13 +270,24 @@ class _SurahGridState extends State<SurahGrid> {
                         ]
                       : null;
 
-                  return InkWell(
-                    onTap: () => widget.onTapSurah(surah),
-                    onLongPress: _hasLongPressActions ? () => _showSurahOptions(context, surah) : null,
-                    borderRadius: BorderRadius.circular(12),
-                    canRequestFocus: true,
-                    focusColor: theme.colorScheme.primary.withAlpha(50),
-                    child: Container(
+                  return Tooltip(
+                    // Long-press discoverability: Material Tooltip with
+                    // `triggerMode: longPress` shows the hint on first long
+                    // press *before* the bottom sheet comes up, teaching new
+                    // users that long-press is actionable. When the bottom
+                    // sheet opens, the tooltip is dismissed automatically.
+                    message: _hasLongPressActions ? l10n.surahLongPressHint : '',
+                    triggerMode: _hasLongPressActions
+                        ? TooltipTriggerMode.longPress
+                        : TooltipTriggerMode.manual,
+                    waitDuration: const Duration(milliseconds: 300),
+                    child: InkWell(
+                      onTap: () => widget.onTapSurah(surah),
+                      onLongPress: _hasLongPressActions ? () => _showSurahOptions(context, surah) : null,
+                      borderRadius: BorderRadius.circular(12),
+                      canRequestFocus: true,
+                      focusColor: theme.colorScheme.primary.withAlpha(50),
+                      child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: backgroundColor,
@@ -332,7 +357,8 @@ class _SurahGridState extends State<SurahGrid> {
                         ],
                       ),
                     ),
-                  );
+                  ),
+                );
                 },
               ),
             ),

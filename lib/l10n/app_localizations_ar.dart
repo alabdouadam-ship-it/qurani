@@ -1253,4 +1253,179 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get irabLoading => 'جاري تحميل بيانات الإعراب...';
+
+  @override
+  String get noSurahsAvailable => 'لا توجد سور';
+
+  @override
+  String get noQuestionsAvailable => 'لا توجد أسئلة متاحة';
+
+  @override
+  String testErrorGeneric(Object error) {
+    return 'خطأ: $error';
+  }
+
+  @override
+  String get startTestButton => 'بدء الاختبار';
+
+  @override
+  String get statisticsTitle => 'إحصائيات';
+
+  @override
+  String get juzTabarak => 'جزء تبارك';
+
+  @override
+  String get juzAmma => 'جزء عم';
+
+  @override
+  String deleteAzkarConfirmation(Object text) {
+    return 'هل تريد حذف هذا الذكر؟\n$text';
+  }
+
+  @override
+  String get resetAllConfirmation => 'سيتم تصفير جميع العدادات لجميع المجموعات.';
+
+  @override
+  String get noAzkarInGroup => 'لا توجد أذكار في هذه المجموعة. اضغط على القائمة لإضافة ذكر.';
+
+  @override
+  String get sessionLabel => 'الجلسة';
+
+  @override
+  String get totalLabel => 'الكل';
+
+  @override
+  String get resetSessionTooltip => 'تصفير الجلسة';
+
+  @override
+  String get memorizationStatsTitle => 'إحصائيات الاختبارات';
+
+  @override
+  String get clearStatsTitle => 'حذف الإحصائيات';
+
+  @override
+  String get clearStatsConfirmation => 'هل أنت متأكد أنك تريد حذف جميع الإحصائيات؟';
+
+  @override
+  String get noStats => 'لا توجد إحصائيات';
+
+  @override
+  String get totalScoreHeader => 'العلامات المتراكمة';
+
+  @override
+  String get totalTestsLabel => 'عدد الاختبارات';
+
+  @override
+  String get surahTab => 'سور';
+
+  @override
+  String get juzTab => 'أجزاء';
+
+  @override
+  String get surahMasteryHeader => 'نسبة الإتقان لكل سورة';
+
+  @override
+  String get recentTestsHeader => 'الاختبارات الأخيرة';
+
+  @override
+  String pointsSuffix(int n) {
+    return '$n علامة';
+  }
+
+  @override
+  String minutesAgo(int n) {
+    return 'منذ $n دقيقة';
+  }
+
+  @override
+  String hoursAgo(int n) {
+    return 'منذ $n ساعة';
+  }
+
+  @override
+  String daysAgo(int n) {
+    return 'منذ $n يوم';
+  }
+
+  @override
+  String get refreshList => 'تحديث القائمة';
+
+  @override
+  String get memorizationTestDescription => 'اختر السور أو الأجزاء وابدأ اختبار حفظك في واجهة أكثر هدوءًا وتنظيمًا.';
+
+  @override
+  String get tasbeehDescription => 'أذكارك ومجموعاتك اليومية في واجهة أكثر سكينة ووضوحًا.';
+
+  @override
+  String get searchQuranDescription => 'ابحث في القرآن بسرعة مع دعم العربية والإنجليزية والفرنسية ومعاينة صوتية للآية.';
+
+  @override
+  String memorizationQNextAyah(Object surahName, Object ayahText) {
+    return 'في $surahName\nما هي الآية التي تأتي بعد الآية التالية؟\n$ayahText';
+  }
+
+  @override
+  String memorizationQCompleteAyah(Object surahName, Object ayahPrefix) {
+    return 'في $surahName\nأكمل قوله تعالى:\n$ayahPrefix...';
+  }
+
+  @override
+  String memorizationQSurahNumber(Object surahName) {
+    return 'ما هو رقم $surahName في القرآن الكريم؟';
+  }
+
+  @override
+  String memorizationQSurahAyahCount(Object surahName) {
+    return 'كم عدد آيات $surahName؟';
+  }
+
+  @override
+  String get surahMasteryHelp => 'الإتقان هو متوسط نسبة إجاباتك الصحيحة عبر جميع اختباراتك لهذه السورة.';
+
+  @override
+  String get surahMasteryHelpTooltip => 'ماذا يعني الإتقان؟';
+
+  @override
+  String surahNamePrefix(int number) {
+    return 'سورة $number';
+  }
+
+  @override
+  String get surahLongPressHint => 'اضغط مطوّلًا لخيارات أخرى';
+
+  @override
+  String get exactAlarmNeededTitle => 'الإنذارات الدقيقة معطّلة';
+
+  @override
+  String get exactAlarmNeededBody => 'قد يتأخر الأذان حتى 15 دقيقة. فعّل الإنذارات الدقيقة من الإعدادات للحصول على تشغيل دقيق.';
+
+  @override
+  String get openSettingsAction => 'فتح الإعدادات';
+
+  @override
+  String get testResultHeadlineExcellent => 'ما شاء الله!';
+
+  @override
+  String get testResultSubExcellent => 'إتقان رائع! استمر على هذا المستوى.';
+
+  @override
+  String get testResultHeadlineGood => 'أحسنت!';
+
+  @override
+  String get testResultSubGood => 'نتيجة ممتازة، بضع مراجعات وستصل للكمال.';
+
+  @override
+  String get testResultHeadlineOk => 'جيّد!';
+
+  @override
+  String get testResultSubOk => 'تابع المراجعة، التقدم واضح.';
+
+  @override
+  String get testResultHeadlineEffort => 'لا بأس!';
+
+  @override
+  String get testResultSubEffort => 'المحاولة تصنع الفرق — أعد الاختبار بعد مراجعة الأخطاء.';
+
+  @override
+  String get currentTestResult => 'نتيجة الاختبار الحالي';
 }

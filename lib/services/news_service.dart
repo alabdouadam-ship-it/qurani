@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/news_item.dart';
+import 'notification_service_io.dart';
 
 class NewsService {
   // CONFIGURATION: Simple to change the URL here
@@ -37,27 +38,38 @@ class NewsService {
     }
     
     // 2. Load and Merge Data
+    // Load bundled baseline news in ALL build modes so that offline / first-launch
+    // users see initial content. Remote items (cached below) will override by id.
     final List<NewsItem> assetItems = [];
-    if (kDebugMode) {
-      try {
-        _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
-        assetItems.addAll(parseNews(_initialAssetCache!));
-      } catch (e) {
-        debugPrint('[NewsService] Error loading initial asset: $e');
-      }
+    try {
+      _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
+      assetItems.addAll(parseNews(_initialAssetCache!));
+    } catch (e) {
+      debugPrint('[NewsService] Error loading initial asset: $e');
     }
 
     final String? cachedJson = prefs.getString(_cacheKey);
     final List<NewsItem> cachedItems = cachedJson != null ? parseNews(cachedJson) : [];
 
     final savedIds = getSavedNewsIds(prefs);
+    
+    // Run Garbage Collection
+    final allItemsRaw = <String, NewsItem>{};
+    for (var item in assetItems) { allItemsRaw[item.id] = item; }
+    for (var item in cachedItems) { allItemsRaw[item.id] = item; }
+    await _runGarbageCollection(prefs, allItemsRaw.values.toList());
+
     final news = mergeAndFilterNews(
       assetItems: assetItems,
       remoteItems: cachedItems,
       savedIds: savedIds,
     );
 
-    // 4. Calculate Unseen Count
+    // Read Global App Installation Baseline
+    final installTimeMs = prefs.getInt('app_install_time') ?? 0;
+    final installTime = DateTime.fromMillisecondsSinceEpoch(installTimeMs);
+
+    // 4. Calculate Unseen Count & Notifications
     final hasEverSeen = prefs.getBool(_hasEverSeenKey) ?? false;
     if (!hasEverSeen) {
       unseenCountNotifier.value = 0;
@@ -65,9 +77,58 @@ class NewsService {
       final seenIds = prefs.getStringList(_seenKey) ?? [];
       final unseenItems = news.where((item) => !seenIds.contains(item.id)).toList();
       unseenCountNotifier.value = unseenItems.length;
+
+      // Handle Push Notifications for unseen items
+      final notifiedIds = prefs.getStringList('news_notified_ids') ?? [];
+      
+      List<String> newlyNotified = [];
+      for (final item in unseenItems) {
+        // PUSH RULE: The app must have been installed BEFORE the news was published.
+        final isAfterInstall = !item.publishDate.isBefore(installTime);
+        
+        if (item.sendNotification && !notifiedIds.contains(item.id) && isAfterInstall) {
+          try {
+            await NotificationService.showNewsNotification(item);
+            newlyNotified.add(item.id);
+          } catch (e) {
+            debugPrint('[NewsService] Failed to notify: $e');
+          }
+        }
+      }
+      
+      if (newlyNotified.isNotEmpty) {
+        notifiedIds.addAll(newlyNotified);
+        await prefs.setStringList('news_notified_ids', notifiedIds);
+      }
     }
     
     return news;
+  }
+
+  static Future<void> _runGarbageCollection(SharedPreferences prefs, List<NewsItem> allItems) async {
+    final seenIds = prefs.getStringList(_seenKey) ?? [];
+    final savedIds = getSavedNewsIds(prefs);
+    final notifiedIds = prefs.getStringList('news_notified_ids') ?? [];
+
+    final validItemIds = allItems.map((e) => e.id).toSet();
+    final expiredIds = allItems.where((e) => e.isExpired).map((e) => e.id).toSet();
+
+    bool shouldKeep(String id) {
+      if (savedIds.contains(id)) return true; // Strictly conserve user saved items
+      if (expiredIds.contains(id)) return false; // Clean expired
+      if (!validItemIds.contains(id)) return false; // Clean ghost/dropped IDs
+      return true;
+    }
+
+    final newSeenIds = seenIds.where(shouldKeep).toList();
+    if (newSeenIds.length != seenIds.length) {
+      await prefs.setStringList(_seenKey, newSeenIds);
+    }
+    
+    final newNotifiedIds = notifiedIds.where(shouldKeep).toList();
+    if (newNotifiedIds.length != notifiedIds.length) {
+      await prefs.setStringList('news_notified_ids', newNotifiedIds);
+    }
   }
 
   static List<NewsItem> parseNews(String jsonStr) {
@@ -105,7 +166,11 @@ class NewsService {
       return !item.isExpired || savedIds.contains(item.id);
     }).toList();
 
-    news.sort((a, b) => b.publishDate.compareTo(a.publishDate));
+    news.sort((a, b) {
+      if (a.isFeatured && !b.isFeatured) return -1;
+      if (!a.isFeatured && b.isFeatured) return 1;
+      return b.publishDate.compareTo(a.publishDate);
+    });
 
     return news;
   }

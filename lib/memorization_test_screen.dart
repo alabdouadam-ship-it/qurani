@@ -9,6 +9,7 @@ import 'test_questions_screen.dart';
 import 'memorization_stats_screen.dart';
 
 import 'package:qurani/services/preferences_service.dart';
+import 'package:qurani/widgets/empty_state_view.dart';
 import 'package:qurani/widgets/modern_ui.dart';
 
 class MemorizationTestScreen extends StatefulWidget {
@@ -84,26 +85,27 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
         }
+        final l10n = AppLocalizations.of(context)!;
         if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return const Center(child: Text('لا توجد سور'));
+          return Center(child: Text(l10n.noSurahsAvailable));
         }
 
         if (snapshot.hasError) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Error: ${snapshot.error}',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.red),
-                  ),
-                ],
-              ),
+          debugPrint('[MemorizationTestScreen] load surahs error: ${snapshot.error}');
+          return EmptyStateView(
+            icon: Icons.error_outline,
+            iconColor: Theme.of(context).colorScheme.error,
+            title: l10n.unknownError,
+            primaryAction: EmptyStateAction(
+              label: l10n.retry,
+              icon: Icons.refresh,
+              onPressed: () {
+                setState(() {
+                  _surahsFuture = SurahService.getLocalizedSurahs(
+                    Localizations.localeOf(context).languageCode,
+                  );
+                });
+              },
             ),
           );
         }
@@ -131,11 +133,11 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
               child: TextField(
                 controller: _searchController,
                 focusNode: _searchFocus,
-                textAlign: TextAlign.right,
+                textAlign: Directionality.of(context) == TextDirection.rtl ? TextAlign.right : TextAlign.left,
                 onChanged: (v) => setState(() => _surahQuery = v),
                 decoration: InputDecoration(
                   isDense: true,
-                  hintText: 'ابحث عن سورة...',
+                  hintText: l10n.searchSurah,
                   prefixIcon: const Icon(Icons.search, size: 20),
                   contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   border: OutlineInputBorder(
@@ -202,8 +204,10 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     if (_selectedSurahs.isEmpty && _selectedJuzs.isEmpty) return;
     setState(() => _isGenerating = true);
 
+    final l10n = AppLocalizations.of(context)!;
     try {
       final questions = await MemorizationTestService.instance.generateQuestions(
+        l10n: l10n,
         surahNumbers: _selectedSurahs.isEmpty ? null : _selectedSurahs.toList(),
         juzNumbers: _selectedJuzs.isEmpty ? null : _selectedJuzs.toList(),
       );
@@ -211,8 +215,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
       if (!mounted) return;
 
       if (questions.isEmpty) {
+        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('لا توجد أسئلة متاحة')),
+          SnackBar(content: Text(l10n.noQuestionsAvailable)),
         );
         setState(() => _isGenerating = false);
         return;
@@ -231,8 +236,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
       );
     } catch (e) {
       if (!mounted) return;
+      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('خطأ: $e')),
+        SnackBar(content: Text(l10n.testErrorGeneric(e.toString()))),
       );
     } finally {
       if (mounted) {
@@ -249,20 +255,16 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     return ModernPageScaffold(
       title: l10n.memorizationTest,
       icon: Icons.quiz_rounded,
-      subtitle: l10n.localeName == 'ar'
-          ? 'اختر السور أو الأجزاء وابدأ اختبار حفظك في واجهة أكثر هدوءًا وتنظيمًا.'
-          : l10n.localeName == 'fr'
-              ? 'Choisissez les sourates ou les juz et lancez votre test dans une interface plus claire.'
-              : 'Choose surahs or ajza and start your memorization test in a calmer interface.',
+      subtitle: l10n.memorizationTestDescription,
       actions: [
         IconButton(
           icon: const Icon(Icons.settings_rounded),
-          tooltip: 'الإعدادات',
+          tooltip: l10n.settings,
           onPressed: () => _showSettingsDialog(context),
         ),
         IconButton(
           icon: const Icon(Icons.bar_chart_rounded),
-          tooltip: 'إحصائيات',
+          tooltip: l10n.statisticsTitle,
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -349,9 +351,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
                           width: 20,
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
-                      : const Text(
-                          'بدء الاختبار',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      : Text(
+                          l10n.startTestButton,
+                          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                 ),
               ),
@@ -392,9 +394,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
         final isSelected = _selectedJuzs.contains(juz);
         String juzLabel;
         if (juz == 29) {
-          juzLabel = 'جزء تبارك';
+          juzLabel = l10n.juzTabarak;
         } else if (juz == 30) {
-          juzLabel = 'جزء عم';
+          juzLabel = l10n.juzAmma;
         } else {
           juzLabel = '${l10n.juzLabel} $juz';
         }

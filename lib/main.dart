@@ -14,6 +14,7 @@ import 'services/notification_service.dart';
 import 'services/prayer_times_service.dart';
 import 'services/device_info_service.dart';
 import 'services/adhan_scheduler.dart';
+import 'services/adhan_audio_manager.dart';
 import 'prayer_times_screen.dart';
 import 'services/global_adhan_service.dart';
 import 'package:pdfrx/pdfrx.dart';
@@ -51,7 +52,23 @@ Future<void> main() async {
   await _ensureAdhanPermissions();
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
-  
+
+  // Force a clean slate for the cross-isolate foreground flag at every cold
+  // start. If the previous process was force-killed (Settings → Force Stop,
+  // low-memory kill, or crash) the `dispose()` path that resets this flag
+  // never ran and the pref stayed `true`. The Adhan background alarm isolate
+  // reads this pref to decide whether to suppress the stop-notification, so
+  // a stale `true` would wrongly silence the "Stop Adhan" action on the
+  // next alarm. Writing `false` here guarantees the flag is only `true`
+  // while our UI isolate is actually alive; `QuraniApp.initState` and the
+  // lifecycle observer flip it back to `true` once the first frame is drawn.
+  try {
+    await (await SharedPreferences.getInstance())
+        .setBool('is_app_in_foreground', false);
+  } catch (_) {
+    // Best-effort reset; any failure just leaves the previous value in place.
+  }
+
   // Load reciter configurations from JSON (same for both platforms)
   await ReciterConfigService.loadReciters();
   
@@ -107,40 +124,62 @@ Future<void> main() async {
             id: PreferencesService.getBool('adhan_$id') ?? false,
         };
         final soundKey = PreferencesService.getAdhanSound();
-        //print('[Main] Scheduling Adhans at startup');
-        await NotificationService.scheduleRemainingAdhans(
-          times: times,
+        // Gate the 7-day scheduling pass behind AdhanScheduler's dedup check:
+        // without this guard, the same alarms get re-queued 3-4× per cold
+        // start (main + maybeRefreshCacheOnLaunch + prayer_times_screen init)
+        // which triggers Android alarm-manager throttling on API 31+.
+        final shouldSchedule = await AdhanScheduler.shouldScheduleThroughDay(
           soundKey: soundKey,
           toggles: adhanEnabled,
+          daysAhead: 7,
         );
-        await AdhanScheduler.scheduleForTimes(
-          times: times,
-          toggles: adhanEnabled,
-          soundKey: soundKey,
-        );
-        // Also schedule for next 7 days
-        DateTime cursor = now.add(const Duration(days: 1));
-        for (int i = 0; i < 7; i++) {
-          final futureTimes = await PrayerTimesService.getTimesForDate(
-            year: cursor.year,
-            month: cursor.month,
-            day: cursor.day,
+        if (shouldSchedule) {
+          await NotificationService.scheduleRemainingAdhans(
+            times: times,
+            soundKey: soundKey,
+            toggles: adhanEnabled,
           );
-          if (futureTimes != null) {
-            await NotificationService.scheduleRemainingAdhans(
-              times: futureTimes,
-              soundKey: soundKey,
-              toggles: adhanEnabled,
+          await AdhanScheduler.scheduleForTimes(
+            times: times,
+            toggles: adhanEnabled,
+            soundKey: soundKey,
+          );
+          // Also schedule for the next 7 days.
+          //
+          // DST safety: advance the cursor via the calendar-aware
+          // `DateTime(y, m, d + 1)` constructor rather than
+          // `cursor.add(Duration(days: 1))`. The latter adds 86400s of
+          // absolute time, which on DST transition days drifts the
+          // wall-clock by ±1 hour and can make the loop skip or double
+          // a calendar date. See `prayer_times_service_io.dart` for the
+          // full rationale.
+          DateTime cursor = DateTime(now.year, now.month, now.day + 1);
+          for (int i = 0; i < 7; i++) {
+            final futureTimes = await PrayerTimesService.getTimesForDate(
+              year: cursor.year,
+              month: cursor.month,
+              day: cursor.day,
             );
-            await AdhanScheduler.scheduleForTimes(
-              times: futureTimes,
-              toggles: adhanEnabled,
-              soundKey: soundKey,
-            );
+            if (futureTimes != null) {
+              await NotificationService.scheduleRemainingAdhans(
+                times: futureTimes,
+                soundKey: soundKey,
+                toggles: adhanEnabled,
+              );
+              await AdhanScheduler.scheduleForTimes(
+                times: futureTimes,
+                toggles: adhanEnabled,
+                soundKey: soundKey,
+              );
+            }
+            cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
           }
-          cursor = cursor.add(const Duration(days: 1));
+          await AdhanScheduler.markScheduledThroughDay(
+            soundKey: soundKey,
+            toggles: adhanEnabled,
+            daysAhead: 7,
+          );
         }
-        //print('[Main] Adhans scheduled at startup');
       }
     } catch (e) {
       //print('[Main] Error scheduling Adhans at startup: $e');
@@ -180,28 +219,28 @@ Future<void> _ensureAdhanPermissions() async {
   try {
     final sdk = await _androidSdkInt();
     if (sdk == null) return;
-    
-    // Request exact alarm permission (Android 12+)
-    if (sdk >= 31) {
-      // SCHEDULE_EXACT_ALARM is granted by default for system apps, but user can revoke it
-      // We check if it's available and request if needed
+
+    // SCHEDULE_EXACT_ALARM: from Android 13 (API 33) onward, apps that are NOT
+    // classified as clock/alarm/calendar must explicitly request this permission
+    // from the user. Without it `AndroidAlarmManager.oneShotAt(exact: true)`
+    // silently falls back to inexact alarms that can drift by 15+ minutes —
+    // which would make Adhan fire noticeably late.
+    if (sdk >= 33) {
       try {
-        // Note: SCHEDULE_EXACT_ALARM can't be requested via permission_handler
-        // It's granted by default but user can revoke it in settings
-        // We'll handle this in the help dialog
-      } catch (_) {}
-    }
-    
-    // Request ignore battery optimization (important for background Adhan)
-    if (sdk >= 23) {
-      try {
-        final batteryStatus = await Permission.ignoreBatteryOptimizations.status;
-        if (!batteryStatus.isGranted) {
-          // Don't request automatically - let user do it from settings if needed
-          // This is too intrusive to request automatically
+        final status = await Permission.scheduleExactAlarm.status;
+        if (!status.isGranted) {
+          await Permission.scheduleExactAlarm.request();
         }
-      } catch (_) {}
+      } catch (e) {
+        // Older plugin versions may not know about this permission on some
+        // devices; we fall back silently and alarms will use inexact scheduling.
+        debugPrint('[Main] scheduleExactAlarm request failed: $e');
+      }
     }
+
+    // REQUEST_IGNORE_BATTERY_OPTIMIZATIONS: kept opt-in / non-automatic so we
+    // don't disrupt users with an intrusive system prompt at cold start. The
+    // Settings screen exposes this as a manual toggle.
   } catch (_) {
     // Ignore errors
   }
@@ -245,11 +284,33 @@ class QuraniApp extends ConsumerStatefulWidget {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _updateAppState(true);
+    // Apply overlay once for the initial theme. Subsequent theme changes are
+    // driven by the `ref.listen` call in `build` so `setSystemUIOverlayStyle`
+    // never fires from inside build() itself (which would spam the platform
+    // channel on every rebuild).
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final themeId = ref.read(themeProvider);
+      _applySystemUiOverlay(AppThemeConfig.getTheme(themeId));
+    });
   }
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    _updateAppState(state == AppLifecycleState.resumed);
+    // The Adhan background alarm isolate reads `is_app_in_foreground` from
+    // shared prefs to decide whether to show the stop-notification. We must
+    // therefore mark the app as backgrounded on *any* non-resumed state
+    // (paused, inactive, hidden, detached) — not only on `resumed`. This
+    // prevents a stale `true` flag after the user swipes the app away, which
+    // was previously suppressing the stop-notification on the next alarm.
+    final isForeground = state == AppLifecycleState.resumed;
+    _updateAppState(isForeground);
+    if (isForeground) {
+      // Reconcile the in-memory "Adhan playing" notifier with the cross-isolate
+      // shared-prefs flag so the UI reflects playback that was started in the
+      // AndroidAlarmManager background isolate while we were backgrounded.
+      AdhanAudioManager.syncPlayingStateFromPrefs();
+    }
   }
 
   Future<void> _updateAppState(bool isForeground) async {
@@ -272,12 +333,20 @@ class QuraniApp extends ConsumerStatefulWidget {
   Widget build(BuildContext context) {
     final locale = ref.watch(localeProvider);
     final themeId = ref.watch(themeProvider);
-    
+
+    // React to theme changes exactly once per transition instead of on every
+    // rebuild. `ref.listen` keeps `SystemChrome.setSystemUIOverlayStyle` out of
+    // the hot path; the initial application is handled by the post-frame
+    // callback registered in `initState`.
+    ref.listen<String>(themeProvider, (previous, next) {
+      if (previous == next) return;
+      _applySystemUiOverlay(AppThemeConfig.getTheme(next));
+    });
+
     final currentTheme = AppThemeConfig.getTheme(themeId);
     final activeThemeData = AppThemeConfig.themeDataFor(currentTheme.id);
     final darkThemeData = AppThemeConfig.themeDataFor(AppThemeConfig.deepNightThemeId);
-    _applySystemUiOverlay(currentTheme);
-    
+
     return MaterialApp(
       title: 'Qurani',
       locale: locale,
@@ -297,6 +366,25 @@ class QuraniApp extends ConsumerStatefulWidget {
       themeMode: currentTheme.isDark ? ThemeMode.dark : ThemeMode.light,
       themeAnimationDuration: const Duration(milliseconds: 320),
       themeAnimationCurve: Curves.easeOutCubic,
+      // Clamp OS text scale to [1.0, 1.4] globally. Rationale:
+      //   - We honor the user's accessibility preference up to +40%, which
+      //     covers all standard Android/iOS "large text" settings.
+      //   - Above 1.4× the 2-col Surah grid, Prayer Times pills, and the
+      //     Read-Quran toolbar overflow in ways that require per-screen fixes
+      //     we haven't shipped yet; clamping is the pragmatic interim.
+      //   - We never shrink below 1.0 even if the OS reports 0.85× (Android
+      //     "smaller"), because Arabic diacritics become unreadable.
+      builder: (context, child) {
+        final mq = MediaQuery.of(context);
+        final clamped = mq.textScaler.clamp(
+          minScaleFactor: 1.0,
+          maxScaleFactor: 1.4,
+        );
+        return MediaQuery(
+          data: mq.copyWith(textScaler: clamped),
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
       home: const OptionsScreen(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) {

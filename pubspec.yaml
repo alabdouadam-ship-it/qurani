@@ -51,7 +51,7 @@ dependencies:
   # --- Network & Tools ---
   dio: ^5.4.0
   url_launcher: ^6.3.1
-  share_plus: ^7.2.1
+  share_plus: ^12.0.1
   uuid: ^4.5.2
   screenshot: ^3.0.0
   # [FIXED] Updated to match your Flutter SDK requirement
@@ -63,8 +63,8 @@ dependencies:
   flutter_riverpod: ^2.5.1
   riverpod_annotation: ^2.3.5
 
-  geolocator: any
-  http: any
+  geolocator: ^13.0.4
+  http: ^1.5.0
   web: ^1.1.1
 
   json_annotation: ^4.8.1
@@ -74,9 +74,9 @@ dev_dependencies:
   flutter_launcher_icons: ^0.14.4
   flutter_lints: ^3.0.0        
   sqlite3: ^2.4.0
-  json_serializable: any
-  riverpod_generator: any
-  build_runner: any
+  json_serializable: ^6.9.5
+  riverpod_generator: ^2.6.5
+  build_runner: ^2.5.4
 
 flutter:
   uses-material-design: true

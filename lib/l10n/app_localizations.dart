@@ -2508,6 +2508,312 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Loading I\'rab data...'**
   String get irabLoading;
+
+  /// No description provided for @noSurahsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No surahs available'**
+  String get noSurahsAvailable;
+
+  /// No description provided for @noQuestionsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions available'**
+  String get noQuestionsAvailable;
+
+  /// No description provided for @testErrorGeneric.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String testErrorGeneric(Object error);
+
+  /// No description provided for @startTestButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Test'**
+  String get startTestButton;
+
+  /// No description provided for @statisticsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statisticsTitle;
+
+  /// No description provided for @juzTabarak.
+  ///
+  /// In en, this message translates to:
+  /// **'Juz Tabarak'**
+  String get juzTabarak;
+
+  /// No description provided for @juzAmma.
+  ///
+  /// In en, this message translates to:
+  /// **'Juz Amma'**
+  String get juzAmma;
+
+  /// No description provided for @deleteAzkarConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you want to delete this azkar?\n{text}'**
+  String deleteAzkarConfirmation(Object text);
+
+  /// No description provided for @resetAllConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'All counters across all groups will be reset.'**
+  String get resetAllConfirmation;
+
+  /// No description provided for @noAzkarInGroup.
+  ///
+  /// In en, this message translates to:
+  /// **'No azkar in this group. Tap the menu to add one.'**
+  String get noAzkarInGroup;
+
+  /// No description provided for @sessionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Session'**
+  String get sessionLabel;
+
+  /// No description provided for @totalLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get totalLabel;
+
+  /// No description provided for @resetSessionTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset session'**
+  String get resetSessionTooltip;
+
+  /// No description provided for @memorizationStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Test Statistics'**
+  String get memorizationStatsTitle;
+
+  /// No description provided for @clearStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear Statistics'**
+  String get clearStatsTitle;
+
+  /// No description provided for @clearStatsConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to clear all statistics?'**
+  String get clearStatsConfirmation;
+
+  /// No description provided for @noStats.
+  ///
+  /// In en, this message translates to:
+  /// **'No statistics available'**
+  String get noStats;
+
+  /// No description provided for @totalScoreHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Accumulated Score'**
+  String get totalScoreHeader;
+
+  /// No description provided for @totalTestsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Tests'**
+  String get totalTestsLabel;
+
+  /// No description provided for @surahTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Surahs'**
+  String get surahTab;
+
+  /// No description provided for @juzTab.
+  ///
+  /// In en, this message translates to:
+  /// **'Juz'**
+  String get juzTab;
+
+  /// No description provided for @surahMasteryHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastery per Surah'**
+  String get surahMasteryHeader;
+
+  /// No description provided for @recentTestsHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Tests'**
+  String get recentTestsHeader;
+
+  /// No description provided for @pointsSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} points'**
+  String pointsSuffix(int n);
+
+  /// No description provided for @minutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} min ago'**
+  String minutesAgo(int n);
+
+  /// No description provided for @hoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} h ago'**
+  String hoursAgo(int n);
+
+  /// No description provided for @daysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} d ago'**
+  String daysAgo(int n);
+
+  /// No description provided for @refreshList.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh list'**
+  String get refreshList;
+
+  /// No description provided for @memorizationTestDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose surahs or ajza and start your memorization test in a calmer, more organised interface.'**
+  String get memorizationTestDescription;
+
+  /// No description provided for @tasbeehDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Your adhkar and daily groups in a calmer, clearer interface.'**
+  String get tasbeehDescription;
+
+  /// No description provided for @searchQuranDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Search the Quran quickly with language filters and ayah audio preview.'**
+  String get searchQuranDescription;
+
+  /// No description provided for @memorizationQNextAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'In {surahName}\nWhich ayah comes after the following one?\n{ayahText}'**
+  String memorizationQNextAyah(Object surahName, Object ayahText);
+
+  /// No description provided for @memorizationQCompleteAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'In {surahName}\nComplete the verse:\n{ayahPrefix}...'**
+  String memorizationQCompleteAyah(Object surahName, Object ayahPrefix);
+
+  /// No description provided for @memorizationQSurahNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'What is the number of {surahName} in the Holy Quran?'**
+  String memorizationQSurahNumber(Object surahName);
+
+  /// No description provided for @memorizationQSurahAyahCount.
+  ///
+  /// In en, this message translates to:
+  /// **'How many verses does {surahName} have?'**
+  String memorizationQSurahAyahCount(Object surahName);
+
+  /// No description provided for @surahMasteryHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastery is the average percentage of correct answers across every test you have taken for this surah.'**
+  String get surahMasteryHelp;
+
+  /// No description provided for @surahMasteryHelpTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'What does Mastery mean?'**
+  String get surahMasteryHelpTooltip;
+
+  /// No description provided for @surahNamePrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah {number}'**
+  String surahNamePrefix(int number);
+
+  /// No description provided for @surahLongPressHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-press for more actions'**
+  String get surahLongPressHint;
+
+  /// No description provided for @exactAlarmNeededTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exact alarms disabled'**
+  String get exactAlarmNeededTitle;
+
+  /// No description provided for @exactAlarmNeededBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan may be delayed by up to 15 minutes. Enable exact alarms in Settings for precise playback.'**
+  String get exactAlarmNeededBody;
+
+  /// No description provided for @openSettingsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Settings'**
+  String get openSettingsAction;
+
+  /// No description provided for @testResultHeadlineExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Excellent!'**
+  String get testResultHeadlineExcellent;
+
+  /// No description provided for @testResultSubExcellent.
+  ///
+  /// In en, this message translates to:
+  /// **'Masterful — keep it up at this level.'**
+  String get testResultSubExcellent;
+
+  /// No description provided for @testResultHeadlineGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Well done!'**
+  String get testResultHeadlineGood;
+
+  /// No description provided for @testResultSubGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Great result — a few reviews and you will reach mastery.'**
+  String get testResultSubGood;
+
+  /// No description provided for @testResultHeadlineOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Good!'**
+  String get testResultHeadlineOk;
+
+  /// No description provided for @testResultSubOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep reviewing — your progress is clear.'**
+  String get testResultSubOk;
+
+  /// No description provided for @testResultHeadlineEffort.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep trying!'**
+  String get testResultHeadlineEffort;
+
+  /// No description provided for @testResultSubEffort.
+  ///
+  /// In en, this message translates to:
+  /// **'Effort makes the difference — retake the test after reviewing the mistakes.'**
+  String get testResultSubEffort;
+
+  /// No description provided for @currentTestResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Current test result'**
+  String get currentTestResult;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

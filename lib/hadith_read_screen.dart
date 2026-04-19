@@ -113,6 +113,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     sb.writeln(l10n.shareHadithFooter);
 
     // 4. Share
+    // ignore: deprecated_member_use
     Share.share(sb.toString());
   }
 

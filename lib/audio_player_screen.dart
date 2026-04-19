@@ -3,13 +3,21 @@ import 'dart:async';
 import 'package:audio_session/audio_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:qurani/providers/audio_providers.dart';
 import 'package:qurani/services/media_item_compat.dart';
 
-import 'package:intl/intl.dart' hide TextDirection;
 import 'l10n/app_localizations.dart';
 import 'package:flutter/foundation.dart';
+import 'audio_player/bookmarks_sheet.dart';
+import 'audio_player/download_prompt_dialog.dart';
+import 'audio_player/duration_formatter.dart';
+import 'audio_player/queue_section.dart';
+import 'audio_player/sleep_timer_dialog.dart' as sleep_dlg;
+import 'audio_player/speed_dialog.dart';
+import 'audio_player/transport_controls.dart';
 import 'models/surah.dart';
 import 'models/audio_bookmark.dart';
 import 'services/audio_service.dart';
@@ -24,16 +32,16 @@ import 'util/debug_error_display.dart';
 
 /// Main audio player screen that handles full-surah playback, repeat, auto
 /// advance and verse-by-verse playback.
-class AudioPlayerScreen extends StatefulWidget {
+class AudioPlayerScreen extends ConsumerStatefulWidget {
   const AudioPlayerScreen({super.key, required this.initialSurahOrder});
 
   final int initialSurahOrder;
 
   @override
-  State<AudioPlayerScreen> createState() => _AudioPlayerScreenState();
+  ConsumerState<AudioPlayerScreen> createState() => _AudioPlayerScreenState();
 }
 
-class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
+class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   final AudioPlayer _player = AudioPlayer();
   final QueueService _queueService = QueueService();
 
@@ -73,7 +81,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   StreamSubscription<ProcessingState>? _processingStateSub;
   StreamSubscription<int?>? _currentIndexSub;
   StreamSubscription<PlaybackEvent>? _playbackEventSub;
-  VoidCallback? _queueListener;
   bool _isPlayerDisposed = false;
 
   // ── Fix: generation counter to cancel stale async operations ──
@@ -86,7 +93,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     super.initState();
     _currentOrder = widget.initialSurahOrder;
     _reciterKey = PreferencesService.getReciter();
-    _queue = _queueService.queue;
+    _queue = ref.read(queueProvider);
     _autoPlayNext = PreferencesService.getAutoPlayNextSurah();
     _isRepeat = PreferencesService.getIsRepeat();
 
@@ -99,13 +106,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _player.setLoopMode(_isRepeat ? LoopMode.one : LoopMode.off);
 
     _featuredListenSurahs = PreferencesService.getListenFeaturedSurahs();
-    _queueListener = () {
-      if (!mounted) return;
-      setState(() {
-        _queue = _queueService.queue;
-      });
-    };
-    _queueService.queueNotifier.addListener(_queueListener!);
     _player.setSpeed(_playbackSpeed);
     _player.setVolume(_volume);
     _setupListeners();
@@ -124,9 +124,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     _processingStateSub?.cancel();
     _currentIndexSub?.cancel();
     _playbackEventSub?.cancel();
-    if (_queueListener != null) {
-      _queueService.queueNotifier.removeListener(_queueListener!);
-    }
     unawaited(_disposePlayer());
     super.dispose();
   }
@@ -743,108 +740,12 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  Future<void> _showBookmarksDialog() async {
-    // Load bookmarks
-    final allBookmarks = await PreferencesService.getAudioBookmarks();
-    // Filter by current surah? Or show all?
-    // Usually user wants for current audio, but seeing all is nice.
-    // Let's feature current surah first or filter.
-    // User asked "give possibility to take more than one bookmarks".
-
-    if (!mounted) return;
-
-    // Sort: Current Surah first, then by date descending
-    allBookmarks.sort((a, b) {
-      if (a.surahId == _currentOrder && b.surahId != _currentOrder) return -1;
-      if (b.surahId == _currentOrder && a.surahId != _currentOrder) return 1;
-      return b.createdAt.compareTo(a.createdAt);
-    });
-
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        final l10n = AppLocalizations.of(context)!;
-        return StatefulBuilder(
-          builder: (context, setStateSheet) {
-            return Container(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    l10n.bookmarks,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 16),
-                  if (allBookmarks.isEmpty)
-                    Expanded(child: Center(child: Text(l10n.noBookmarks))),
-                  if (allBookmarks.isNotEmpty)
-                    Expanded(
-                      child: ListView.builder(
-                        itemCount: allBookmarks.length,
-                        itemBuilder: (context, index) {
-                          final bm = allBookmarks[index];
-                          // final isCurrentSurah = bm.surahId == _currentOrder; // Unused for now
-                          final duration =
-                              Duration(milliseconds: bm.positionMs);
-                          final timeStr = _formatDuration(duration);
-
-                          // Get Surah Name
-                          final surahName = _surahs
-                              .firstWhere((s) => s.order == bm.surahId,
-                                  orElse: () => Surah(
-                                      name: 'Surah ${bm.surahId}',
-                                      order: bm.surahId,
-                                      totalVerses: 0))
-                              .name;
-
-                          return ListTile(
-                            leading: const Icon(Icons.bookmark),
-                            title: Text("$surahName - $timeStr"),
-                            subtitle: Text(DateFormat.yMMMd().add_Hm().format(
-                                DateTime.fromMillisecondsSinceEpoch(
-                                    bm.createdAt))),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete, color: Colors.red),
-                              onPressed: () async {
-                                await PreferencesService.removeAudioBookmark(
-                                    bm.id);
-                                final newList = await PreferencesService
-                                    .getAudioBookmarks();
-                                newList.sort((a, b) {
-                                  if (a.surahId == _currentOrder &&
-                                      b.surahId != _currentOrder) {
-                                    return -1;
-                                  }
-                                  if (b.surahId == _currentOrder &&
-                                      a.surahId != _currentOrder) {
-                                    return 1;
-                                  }
-                                  return b.createdAt.compareTo(a.createdAt);
-                                });
-                                setStateSheet(() {
-                                  allBookmarks.clear();
-                                  allBookmarks.addAll(newList);
-                                });
-                              },
-                            ),
-                            onTap: () {
-                              Navigator.pop(context);
-                              _playBookmark(bm);
-                            },
-                          );
-                        },
-                      ),
-                    ),
-                ],
-              ),
-            );
-          },
-        );
-      },
+  Future<void> _showBookmarksDialog() {
+    return showAudioBookmarksSheet(
+      context,
+      currentSurahOrder: _currentOrder,
+      surahs: _surahs,
+      onPlayBookmark: _playBookmark,
     );
   }
 
@@ -861,87 +762,35 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  String _formatDuration(Duration d) {
-    String twoDigits(int n) => n.toString().padLeft(2, '0');
-    final hours = twoDigits(d.inHours);
-    final minutes = twoDigits(d.inMinutes.remainder(60));
-    final seconds = twoDigits(d.inSeconds.remainder(60));
-    return d.inHours > 0 ? '$hours:$minutes:$seconds' : '$minutes:$seconds';
-  }
-
   Future<void> _promptDownloadCurrentSurah() async {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
     final l10n = AppLocalizations.of(context)!;
 
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(l10n.downloadCurrentSurahTitle),
-          content: Text(l10n.downloadCurrentSurahMessage),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context, false),
-              child: Text(l10n.cancel),
-            ),
-            TextButton(
-              onPressed: () => Navigator.pop(context, true),
-              child: Text(l10n.download),
-            ),
-          ],
-        );
-      },
-    );
-
-    if (confirmed != true || !mounted) return;
-
     setState(() => _isDownloadingCurrentSurah = true);
-    String? errorMessage;
-
-    final result = await showDialog<bool>(
-      context: context,
-      barrierDismissible: false,
-      builder: (dialogContext) {
-        Future.microtask(() async {
-          try {
-            await DownloadService.downloadSurah(_reciterKey!, _currentOrder);
-            if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
-              Navigator.of(dialogContext).pop(true);
-            }
-          } catch (e) {
-            errorMessage = e.toString();
-            if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
-              Navigator.of(dialogContext).pop(false);
-            }
-          }
-        });
-
-        return AlertDialog(
-          title: Text(l10n.downloadingSurah),
-          content: const SizedBox(
-            height: 48,
-            child: Center(child: CircularProgressIndicator()),
-          ),
-        );
-      },
+    final result = await promptAndDownloadSurah(
+      context,
+      reciterKey: _reciterKey!,
+      surahOrder: _currentOrder,
     );
 
     if (!mounted) return;
 
     setState(() {
       _isDownloadingCurrentSurah = false;
-      if (result == true) {
+      if (result.success) {
         _isCurrentSurahDownloaded = true;
       }
     });
 
-    if (result == true) {
+    if (result.cancelled) return;
+
+    if (result.success) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.downloadComplete)),
       );
-    } else if (result == false) {
-      final message = (errorMessage != null && errorMessage!.isNotEmpty)
-          ? '${l10n.downloadFailed}: $errorMessage'
+    } else {
+      final message = (result.error != null && result.error!.isNotEmpty)
+          ? '${l10n.downloadFailed}: ${result.error}'
           : l10n.downloadFailed;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message)),
@@ -950,105 +799,22 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
   }
 
   void _showSpeedDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        final l10n = AppLocalizations.of(context)!;
-        return AlertDialog(
-          title: Text(l10n.playbackSpeed),
-          content: StatefulBuilder(
-            builder: (context, setDialogState) {
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Slider(
-                    value: _playbackSpeed,
-                    min: 0.5,
-                    max: 2.0,
-                    divisions: 6,
-                    label: '${_playbackSpeed.toStringAsFixed(1)}x',
-                    onChanged: (value) {
-                      setDialogState(() => _playbackSpeed = value);
-                      _player.setSpeed(value);
-                    },
-                  ),
-                  Text('${_playbackSpeed.toStringAsFixed(1)}x'),
-                ],
-              );
-            },
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        );
+    showPlaybackSpeedDialog(
+      context,
+      initialSpeed: _playbackSpeed,
+      player: _player,
+      onChanged: (value) {
+        if (!mounted) return;
+        setState(() => _playbackSpeed = value);
       },
     );
   }
 
   void _showSleepTimerDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (dialogContext) {
-        final l10n = AppLocalizations.of(context)!;
-        int? tempSelected = _sleepTimerMinutes;
-
-        return StatefulBuilder(
-          builder: (context, setDialogState) {
-            return AlertDialog(
-              title: Text(l10n.sleepTimer),
-              content: RadioGroup<int?>(
-                groupValue: tempSelected,
-                onChanged: (value) =>
-                    setDialogState(() => tempSelected = value),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    RadioListTile<int?>(
-                      title: Text(l10n.off),
-                      value: null,
-                    ),
-                    RadioListTile<int?>(
-                      title: Text('15 ${l10n.minutes}'),
-                      value: 15,
-                    ),
-                    RadioListTile<int?>(
-                      title: Text('30 ${l10n.minutes}'),
-                      value: 30,
-                    ),
-                    RadioListTile<int?>(
-                      title: Text('60 ${l10n.minutes}'),
-                      value: 60,
-                    ),
-                    RadioListTile<int?>(
-                      title: Text('90 ${l10n.minutes}'),
-                      value: 90,
-                    ),
-                  ],
-                ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    _setSleepTimer(null);
-                    Navigator.pop(dialogContext);
-                  },
-                  child: Text(l10n.off),
-                ),
-                TextButton(
-                  onPressed: () {
-                    _setSleepTimer(tempSelected);
-                    Navigator.pop(dialogContext);
-                  },
-                  child: const Text('OK'),
-                ),
-              ],
-            );
-          },
-        );
-      },
+    sleep_dlg.showSleepTimerDialog(
+      context,
+      currentMinutes: _sleepTimerMinutes,
+      onSet: _setSleepTimer,
     );
   }
 
@@ -1095,6 +861,7 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     if (!mounted) return;
     final box = context.findRenderObject() as RenderBox?;
 
+    // ignore: deprecated_member_use
     await Share.share(
       message,
       sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
@@ -1241,73 +1008,6 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     }
   }
 
-  Widget _buildTransportControls(
-      {required bool isRtl, required ColorScheme color}) {
-    final controls = <Widget>[
-      IconButton(
-        icon:
-            Icon(isRtl ? Icons.skip_next_rounded : Icons.skip_previous_rounded),
-        iconSize: 32,
-        onPressed: _goToPreviousSurah,
-      ),
-      const SizedBox(width: 8),
-      IconButton(
-        icon: Icon(isRtl ? Icons.forward_10 : Icons.replay_10),
-        iconSize: 28,
-        onPressed: () => _seekRelative(const Duration(seconds: -10)),
-      ),
-      const SizedBox(width: 8),
-      StreamBuilder<PlayerState>(
-        stream: _player.playerStateStream,
-        builder: (context, snapshot) {
-          final playing = snapshot.data?.playing ?? false;
-          return TweenAnimationBuilder<double>(
-            tween: Tween(begin: 0.95, end: playing ? 1.05 : 1.0),
-            duration: const Duration(milliseconds: 200),
-            builder: (context, scale, child) {
-              return Transform.scale(
-                scale: scale,
-                child: IconButton(
-                  icon: Icon(playing
-                      ? Icons.pause_circle_filled
-                      : Icons.play_circle_fill),
-                  iconSize: 44,
-                  color: color.primary,
-                  onPressed: _togglePlayPause,
-                ),
-              );
-            },
-          );
-        },
-      ),
-      const SizedBox(width: 8),
-      IconButton(
-        icon: Icon(isRtl ? Icons.replay_10 : Icons.forward_10),
-        iconSize: 28,
-        onPressed: () => _seekRelative(const Duration(seconds: 10)),
-      ),
-      const SizedBox(width: 8),
-      IconButton(
-        icon:
-            Icon(isRtl ? Icons.skip_previous_rounded : Icons.skip_next_rounded),
-        iconSize: 32,
-        onPressed: _goToNextSurah,
-      ),
-    ];
-    return ModernSurfaceCard(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: controls,
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget _buildVerseControls(ColorScheme color, bool isRtl) {
     if (!_verseByVerseMode || _verseUrls == null || _currentSurah == null) {
       return const SizedBox.shrink();
@@ -1404,7 +1104,19 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-              child: _buildQueueSection(color),
+              child: AudioPlayerQueueSection(
+                queue: _queue,
+                currentOrder: _currentOrder,
+                findSurah: _findSurah,
+                color: color,
+                onPlayOrder: (order) => _playSurah(
+                  order,
+                  autoPlay: true,
+                  resumePosition: Duration.zero,
+                ),
+                onRemoveOrder: _queueService.removeFromQueue,
+                onClearQueue: _queueService.clearQueue,
+              ),
             ),
           ),
         SliverToBoxAdapter(
@@ -1427,7 +1139,21 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
           delegate: SliverChildBuilderDelegate(
             (context, index) {
               final surah = _surahs[index];
-              return _buildPlaylistTile(surah, color, isRtl);
+              return AudioPlayerPlaylistTile(
+                surah: surah,
+                currentOrder: _currentOrder,
+                isFeatured: _featuredListenSurahs.contains(surah.order),
+                inQueue: _queue.contains(surah.order),
+                color: color,
+                isRtl: isRtl,
+                onPlay: () => _playSurah(
+                  surah.order,
+                  autoPlay: true,
+                  resumePosition: Duration.zero,
+                ),
+                onToggleQueue: () => _toggleQueueEntry(surah.order),
+                onToggleFeature: () => _toggleFeature(surah.order),
+              );
             },
             childCount: _surahs.length,
           ),
@@ -1470,13 +1196,13 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      _fmt(pos),
+                      formatPlaybackDuration(pos),
                       style: TextStyle(
                           color:
                               color.onSurface.withAlpha((255 * 0.7).round())),
                     ),
                     Text(
-                      _fmt(duration),
+                      formatPlaybackDuration(duration),
                       style: TextStyle(
                           color:
                               color.onSurface.withAlpha((255 * 0.7).round())),
@@ -1597,7 +1323,16 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
             ],
           ),
           const SizedBox(height: 16),
-          _buildTransportControls(isRtl: isRtl, color: color),
+          AudioPlayerTransportControls(
+            player: _player,
+            isRtl: isRtl,
+            color: color,
+            onPrevious: _goToPreviousSurah,
+            onNext: _goToNextSurah,
+            onSeekBack10: () => _seekRelative(const Duration(seconds: -10)),
+            onSeekForward10: () => _seekRelative(const Duration(seconds: 10)),
+            onTogglePlayPause: _togglePlayPause,
+          ),
           const SizedBox(height: 16),
           Wrap(
             alignment: WrapAlignment.center,
@@ -1687,135 +1422,16 @@ class _AudioPlayerScreenState extends State<AudioPlayerScreen> {
     );
   }
 
-  Widget _buildQueueSection(ColorScheme color) {
-    final l10n = AppLocalizations.of(context)!;
-    return ModernSurfaceCard(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Text(
-                  l10n.queue,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    color: color.onSurface,
-                  ),
-                ),
-              ),
-              TextButton.icon(
-                onPressed: _queue.isEmpty
-                    ? null
-                    : () {
-                        _queueService.clearQueue();
-                      },
-                icon: const Icon(Icons.clear_all, size: 18),
-                label: Text(l10n.clearQueue),
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Wrap(
-            spacing: 8,
-            runSpacing: 8,
-            children: _queue.map((order) {
-              final surah = _findSurah(order);
-              final isCurrent = order == _currentOrder;
-              final label = surah != null
-                  ? '${surah.order}. ${surah.name}'
-                  : '${AppLocalizations.of(context)!.surah} $order';
-              return InputChip(
-                label: Text(label),
-                selected: isCurrent,
-                onPressed: () => _playSurah(order,
-                    autoPlay: true, resumePosition: Duration.zero),
-                onDeleted: () => _queueService.removeFromQueue(order),
-              );
-            }).toList(),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildPlaylistTile(Surah surah, ColorScheme color, bool isRtl) {
-    final l10n = AppLocalizations.of(context)!;
-    final isCurrent = surah.order == _currentOrder;
-    final isFeatured = _featuredListenSurahs.contains(surah.order);
-    final inQueue = _queue.contains(surah.order);
-    final backgroundColor = isCurrent
-        ? color.primaryContainer.withAlpha((255 * 0.5).round())
-        : color.surface;
-    final textAlign = isRtl ? TextAlign.right : TextAlign.left;
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      child: Container(
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.circular(18),
-        ),
-        child: ModernSurfaceCard(
-          padding: EdgeInsets.zero,
-          child: ListTile(
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            onTap: () => _playSurah(surah.order,
-                autoPlay: true, resumePosition: Duration.zero),
-            title: Text(
-              '${surah.order}. ${surah.name}',
-              textAlign: textAlign,
-              style: TextStyle(
-                fontWeight: isCurrent ? FontWeight.w700 : FontWeight.w500,
-                color: color.onSurface,
-              ),
-            ),
-            subtitle: Text(
-              '${surah.totalVerses} ${l10n.verses}',
-              textAlign: textAlign,
-              style: TextStyle(
-                  color: color.onSurface.withAlpha((255 * 0.6).round())),
-            ),
-            trailing: Wrap(
-              spacing: 4,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    inQueue ? Icons.playlist_remove : Icons.playlist_add,
-                  ),
-                  tooltip: inQueue ? l10n.clearQueue : l10n.addToQueue,
-                  onPressed: () => _toggleQueueEntry(surah.order),
-                ),
-                IconButton(
-                  icon: Icon(
-                    isFeatured ? Icons.star : Icons.star_border,
-                    color: Colors.amber.shade600,
-                  ),
-                  tooltip:
-                      isFeatured ? l10n.removeFeatureSurah : l10n.featureSurah,
-                  onPressed: () => _toggleFeature(surah.order),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   void _retry() {
     unawaited(_playSurah(_currentOrder, autoPlay: _player.playing));
   }
 
-  String _fmt(Duration duration) {
-    final minutes = duration.inMinutes.remainder(60).toString().padLeft(2, '0');
-    final seconds = duration.inSeconds.remainder(60).toString().padLeft(2, '0');
-    return '${duration.inHours > 0 ? '${duration.inHours.toString().padLeft(2, '0')}:' : ''}$minutes:$seconds';
-  }
-
   @override
   Widget build(BuildContext context) {
+    ref.listen<List<int>>(queueProvider, (prev, next) {
+      if (!mounted) return;
+      setState(() => _queue = next);
+    });
     final l10n = AppLocalizations.of(context)!;
     final color = Theme.of(context).colorScheme;
     final isRtl = Directionality.of(context) == TextDirection.rtl;

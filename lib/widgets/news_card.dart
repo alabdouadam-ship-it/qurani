@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:share_plus/share_plus.dart';
 import '../l10n/app_localizations.dart';
 import '../models/news_item.dart';
 import '../widgets/modern_ui.dart';
@@ -13,6 +14,8 @@ class NewsCard extends StatefulWidget {
   final bool isSaved;
   final bool isNew;
   final VoidCallback onToggleSave;
+  final VoidCallback? onHide;
+  final double fontScale;
 
   const NewsCard({
     super.key,
@@ -20,6 +23,8 @@ class NewsCard extends StatefulWidget {
     required this.isSaved,
     required this.isNew,
     required this.onToggleSave,
+    this.onHide,
+    this.fontScale = 1.0,
   });
 
   @override
@@ -32,14 +37,28 @@ class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final currentLang = Localizations.localeOf(context).languageCode;
 
-    return ModernSurfaceCard(
+    final cardContent = ModernSurfaceCard(
       margin: const EdgeInsets.only(bottom: 16),
       padding: EdgeInsets.zero,
       child: Container(
         decoration: BoxDecoration(
           color: widget.item.backgroundColor,
           borderRadius: BorderRadius.circular(24),
+          border: widget.item.isFeatured 
+              ? Border.all(color: theme.colorScheme.primary.withAlpha(80), width: 1.5)
+              : null,
+          boxShadow: widget.item.isFeatured 
+              ? [
+                  BoxShadow(
+                    color: theme.colorScheme.primary.withAlpha(20),
+                    blurRadius: 15,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 4),
+                  )
+                ]
+              : null,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -61,6 +80,22 @@ class _NewsCardState extends State<NewsCard> {
                           textDirection: widget.item.isRtl ? TextDirection.rtl : TextDirection.ltr,
                           child: Row(
                             children: [
+                              if (widget.item.isFeatured)
+                                Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 4),
+                                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                  decoration: BoxDecoration(
+                                    gradient: const LinearGradient(
+                                      colors: [Colors.orangeAccent, Colors.deepOrange],
+                                    ),
+                                    borderRadius: BorderRadius.circular(4),
+                                    boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4)],
+                                  ),
+                                  child: Text(
+                                    currentLang == 'ar' ? 'عاجل' : (currentLang == 'fr' ? 'Important' : 'Featured'),
+                                    style: const TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                               if (widget.isNew)
                                 Container(
                                   margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -91,13 +126,28 @@ class _NewsCardState extends State<NewsCard> {
                           ),
                         ),
                       ),
-                      IconButton(
-                        icon: Icon(
-                          widget.isSaved ? Icons.bookmark : Icons.bookmark_border,
-                          color: widget.isSaved ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
-                        ),
-                        onPressed: widget.onToggleSave,
-                        visualDensity: VisualDensity.compact,
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: Icon(Icons.share_outlined, color: theme.colorScheme.onSurfaceVariant),
+                            onPressed: () {
+                              // ignore: deprecated_member_use
+                              Share.share(widget.item.sourceUrl.isNotEmpty 
+                                  ? '${widget.item.title}\n\n${widget.item.sourceUrl}'
+                                  : widget.item.title);
+                            },
+                            visualDensity: VisualDensity.compact,
+                          ),
+                          IconButton(
+                            icon: Icon(
+                              widget.isSaved ? Icons.bookmark : Icons.bookmark_border,
+                              color: widget.isSaved ? theme.colorScheme.primary : theme.colorScheme.onSurfaceVariant,
+                            ),
+                            onPressed: widget.onToggleSave,
+                            visualDensity: VisualDensity.compact,
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -141,6 +191,38 @@ class _NewsCardState extends State<NewsCard> {
           ],
         ),
       ),
+    );
+
+    return Dismissible(
+      key: ValueKey('news_card_${widget.item.id}'),
+      direction: widget.onHide != null ? DismissDirection.horizontal : DismissDirection.startToEnd,
+      background: Container(
+        alignment: widget.item.isRtl ? Alignment.centerRight : Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        decoration: BoxDecoration(color: theme.colorScheme.primaryContainer, borderRadius: BorderRadius.circular(24)),
+        child: Icon(Icons.bookmark, color: theme.colorScheme.onPrimaryContainer),
+      ),
+      secondaryBackground: Container(
+        alignment: widget.item.isRtl ? Alignment.centerLeft : Alignment.centerRight,
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        decoration: BoxDecoration(color: theme.colorScheme.errorContainer, borderRadius: BorderRadius.circular(24)),
+        child: Icon(Icons.delete_outline, color: theme.colorScheme.onErrorContainer),
+      ),
+      confirmDismiss: (direction) async {
+        // rtl vs ltr logic for swipe directions
+        final isRightSwipe = widget.item.isRtl ? direction == DismissDirection.endToStart : direction == DismissDirection.startToEnd;
+        
+        if (isRightSwipe) {
+          widget.onToggleSave();
+          return false; // Bounce back for save
+        }
+        return true; // Proceed with hide
+      },
+      onDismissed: (direction) {
+        final isLeftSwipe = widget.item.isRtl ? direction == DismissDirection.startToEnd : direction == DismissDirection.endToStart;
+        if (isLeftSwipe) widget.onHide?.call();
+      },
+      child: cardContent,
     );
   }
 
@@ -222,10 +304,12 @@ class _NewsCardState extends State<NewsCard> {
     final style = theme.textTheme.bodyMedium?.copyWith(
       color: theme.colorScheme.onSurface.withAlpha(210),
       height: 1.5,
+      fontSize: (theme.textTheme.bodyMedium?.fontSize ?? 14.0) * widget.fontScale,
     );
 
-    // Check if text is long enough to need expansion
-    final isLongText = widget.item.description.length > 150;
+    // Check if text is long enough to need expansion (either char count or multiple newlines)
+    final textLines = widget.item.description.split('\n').length;
+    final isLongText = widget.item.description.length > 150 || textLines > 3;
 
     return Directionality(
       textDirection: widget.item.isRtl ? TextDirection.rtl : TextDirection.ltr,
@@ -322,7 +406,11 @@ class _NewsCardState extends State<NewsCard> {
                   actions: [
                     IconButton(
                       icon: const Icon(Icons.close),
-                      onPressed: () => Navigator.of(context).pop(),
+                      onPressed: () {
+                        // Prevent background audio leak
+                        controller.loadHtmlString('');
+                        Navigator.of(context).pop();
+                      },
                     ),
                   ],
                 ),

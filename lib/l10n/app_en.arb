@@ -864,5 +864,153 @@
   "irabDownloading": "Downloading I'rab data...",
   "@irabDownloading": {},
   "irabLoading": "Loading I'rab data...",
-  "@irabLoading": {}
+  "@irabLoading": {},
+  "noSurahsAvailable": "No surahs available",
+  "@noSurahsAvailable": {},
+  "noQuestionsAvailable": "No questions available",
+  "@noQuestionsAvailable": {},
+  "testErrorGeneric": "Error: {error}",
+  "@testErrorGeneric": {
+    "placeholders": {
+      "error": {}
+    }
+  },
+  "startTestButton": "Start Test",
+  "@startTestButton": {},
+  "statisticsTitle": "Statistics",
+  "@statisticsTitle": {},
+  "juzTabarak": "Juz Tabarak",
+  "@juzTabarak": {},
+  "juzAmma": "Juz Amma",
+  "@juzAmma": {},
+  "deleteAzkarConfirmation": "Do you want to delete this azkar?\n{text}",
+  "@deleteAzkarConfirmation": {
+    "placeholders": {
+      "text": {}
+    }
+  },
+  "resetAllConfirmation": "All counters across all groups will be reset.",
+  "@resetAllConfirmation": {},
+  "noAzkarInGroup": "No azkar in this group. Tap the menu to add one.",
+  "@noAzkarInGroup": {},
+  "sessionLabel": "Session",
+  "@sessionLabel": {},
+  "totalLabel": "Total",
+  "@totalLabel": {},
+  "resetSessionTooltip": "Reset session",
+  "@resetSessionTooltip": {},
+  "memorizationStatsTitle": "Test Statistics",
+  "@memorizationStatsTitle": {},
+  "clearStatsTitle": "Clear Statistics",
+  "@clearStatsTitle": {},
+  "clearStatsConfirmation": "Are you sure you want to clear all statistics?",
+  "@clearStatsConfirmation": {},
+  "noStats": "No statistics available",
+  "@noStats": {},
+  "totalScoreHeader": "Accumulated Score",
+  "@totalScoreHeader": {},
+  "totalTestsLabel": "Total Tests",
+  "@totalTestsLabel": {},
+  "surahTab": "Surahs",
+  "@surahTab": {},
+  "juzTab": "Juz",
+  "@juzTab": {},
+  "surahMasteryHeader": "Mastery per Surah",
+  "@surahMasteryHeader": {},
+  "recentTestsHeader": "Recent Tests",
+  "@recentTestsHeader": {},
+  "pointsSuffix": "{n} points",
+  "@pointsSuffix": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "minutesAgo": "{n} min ago",
+  "@minutesAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "hoursAgo": "{n} h ago",
+  "@hoursAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "daysAgo": "{n} d ago",
+  "@daysAgo": {
+    "placeholders": {
+      "n": {"type": "int"}
+    }
+  },
+  "refreshList": "Refresh list",
+  "@refreshList": {},
+  "memorizationTestDescription": "Choose surahs or ajza and start your memorization test in a calmer, more organised interface.",
+  "@memorizationTestDescription": {},
+  "tasbeehDescription": "Your adhkar and daily groups in a calmer, clearer interface.",
+  "@tasbeehDescription": {},
+  "searchQuranDescription": "Search the Quran quickly with language filters and ayah audio preview.",
+  "@searchQuranDescription": {},
+  "memorizationQNextAyah": "In {surahName}\nWhich ayah comes after the following one?\n{ayahText}",
+  "@memorizationQNextAyah": {
+    "placeholders": {
+      "surahName": {},
+      "ayahText": {}
+    }
+  },
+  "memorizationQCompleteAyah": "In {surahName}\nComplete the verse:\n{ayahPrefix}...",
+  "@memorizationQCompleteAyah": {
+    "placeholders": {
+      "surahName": {},
+      "ayahPrefix": {}
+    }
+  },
+  "memorizationQSurahNumber": "What is the number of {surahName} in the Holy Quran?",
+  "@memorizationQSurahNumber": {
+    "placeholders": {
+      "surahName": {}
+    }
+  },
+  "memorizationQSurahAyahCount": "How many verses does {surahName} have?",
+  "@memorizationQSurahAyahCount": {
+    "placeholders": {
+      "surahName": {}
+    }
+  },
+  "surahMasteryHelp": "Mastery is the average percentage of correct answers across every test you have taken for this surah.",
+  "@surahMasteryHelp": {},
+  "surahMasteryHelpTooltip": "What does Mastery mean?",
+  "@surahMasteryHelpTooltip": {},
+  "surahNamePrefix": "Surah {number}",
+  "@surahNamePrefix": {
+    "placeholders": {
+      "number": {"type": "int"}
+    }
+  },
+  "surahLongPressHint": "Long-press for more actions",
+  "@surahLongPressHint": {},
+  "exactAlarmNeededTitle": "Exact alarms disabled",
+  "@exactAlarmNeededTitle": {},
+  "exactAlarmNeededBody": "Adhan may be delayed by up to 15 minutes. Enable exact alarms in Settings for precise playback.",
+  "@exactAlarmNeededBody": {},
+  "openSettingsAction": "Open Settings",
+  "@openSettingsAction": {},
+  "testResultHeadlineExcellent": "Excellent!",
+  "@testResultHeadlineExcellent": {},
+  "testResultSubExcellent": "Masterful — keep it up at this level.",
+  "@testResultSubExcellent": {},
+  "testResultHeadlineGood": "Well done!",
+  "@testResultHeadlineGood": {},
+  "testResultSubGood": "Great result — a few reviews and you will reach mastery.",
+  "@testResultSubGood": {},
+  "testResultHeadlineOk": "Good!",
+  "@testResultHeadlineOk": {},
+  "testResultSubOk": "Keep reviewing — your progress is clear.",
+  "@testResultSubOk": {},
+  "testResultHeadlineEffort": "Keep trying!",
+  "@testResultHeadlineEffort": {},
+  "testResultSubEffort": "Effort makes the difference — retake the test after reviewing the mistakes.",
+  "@testResultSubEffort": {},
+  "currentTestResult": "Current test result",
+  "@currentTestResult": {}
 }

@@ -9,7 +9,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" tools:targetApi="31" />
-    <uses-permission android:name="android.permission.USE_EXACT_ALARM" tools:targetApi="33" />
+    <!-- USE_EXACT_ALARM removed: it is restricted by Google Play to clock/alarm/calendar
+         apps. For a Qur'an app, SCHEDULE_EXACT_ALARM (user-grantable on API 33+) is
+         the correct choice. We prompt for it at runtime via permission_handler. -->
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" tools:targetApi="29" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -30,7 +32,10 @@
         android:name=".Application"
         android:icon="@mipmap/launcher_icon"
         android:banner="@mipmap/tv_banner"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="false"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        tools:replace="android:allowBackup">
         
         <activity
             android:name=".MainActivity"

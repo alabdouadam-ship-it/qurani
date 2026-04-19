@@ -1,10 +1,9 @@
-import 'dart:io';
+import 'dart:collection';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:path/path.dart' as p;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart' as sqf;
+
+import 'quran_database_service.dart';
 
 /// Supported Quran text editions.
 enum QuranEdition {
@@ -110,212 +109,73 @@ extension QuranEditionExt on QuranEdition {
 }
 
 class QuranRepository {
-  static const int _dbSchemaVersion = 3;
-  static const String _dbVersionKey = 'quran_db_schema_version';
-  
   QuranRepository._();
 
   static final QuranRepository instance = QuranRepository._();
 
-  sqf.Database? _db;
-  final Map<String, Future<PageData>> _pageCache = {};
-  Future<List<SurahMeta>>? _surahListFuture;
-  final Map<QuranEdition, Future<Map<int, String>>> _translationCache = {};
-  Future<Map<int, String>>? _tafsirCache;
-  final Map<QuranEdition, Future<Map<int, AyahData>>> _ayahIndexCache = {};
+  // LRU bound for page-level caches. A bound of 32 comfortably covers the
+  // typical forward/backward swipe window (tens of pages) while keeping worst-
+  // case memory to roughly 32 × ~15 ayahs × ~120 bytes ≈ 60 KB per edition.
+  static const int _pageCacheMaxEntries = 32;
 
-  void _clearCache() {
-    _pageCache.clear();
-    _surahListFuture = null;
-    _translationCache.clear();
-    _tafsirCache = null;
-    _ayahIndexCache.clear();
+  sqf.Database? _db;
+  // Insertion-ordered LRU of parsed `PageData`, keyed by `edition::page`. We
+  // cache Future objects (rather than resolved PageData) so that concurrent
+  // requests for the same page coalesce to a single DB query.
+  final LinkedHashMap<String, Future<PageData>> _pageCache = LinkedHashMap();
+  Future<List<SurahMeta>>? _surahListFuture;
+  // NOTE: the previous implementation kept full per-edition maps of every
+  // single ayah (`_translationCache`, `_tafsirCache`, `_ayahIndexCache`) in
+  // memory — ~6236 entries × N editions, easily several MB, and all just to
+  // serve single-ayah lookups that SQLite can do in <1ms via the primary
+  // key. We dropped those bulk caches and now issue direct indexed SELECTs
+  // per lookup; that eliminates the long-tail OOM risk on constrained
+  // devices while being imperceptibly slower in practice.
+
+  /// Reads [key] from [_pageCache], bumping it to the MRU slot so the oldest
+  /// entry is the one evicted on overflow. Returns `null` if the key is
+  /// missing.
+  Future<PageData>? _getCachedPage(String key) {
+    final cached = _pageCache.remove(key);
+    if (cached == null) return null;
+    _pageCache[key] = cached; // re-insert as most-recent
+    return cached;
   }
 
+  /// Inserts [future] at the MRU slot and evicts the LRU entries once the
+  /// cache exceeds [_pageCacheMaxEntries].
+  void _putCachedPage(String key, Future<PageData> future) {
+    _pageCache[key] = future;
+    while (_pageCache.length > _pageCacheMaxEntries) {
+      _pageCache.remove(_pageCache.keys.first);
+    }
+  }
+
+  /// Ensures the repository has a live handle to the shared `quran.db`.
+  ///
+  /// All asset-copy / schema-validation / lock-management logic now lives
+  /// in [QuranDatabaseService] so `QuranRepository`, `SurahService`, and
+  /// `QuranSearchService` share a single connection. If a previously
+  /// cached handle was closed (e.g. by an error-recovery path elsewhere),
+  /// we transparently re-request a fresh one here.
   Future<void> _ensureDb() async {
     if (_db != null && _db!.isOpen) return;
-    
-    // If database exists but is closed, reset it
-    if (_db != null && !_db!.isOpen) {
-      debugPrint('Database was closed, resetting connection');
-      _db = null;
-    }
-    
-    // Use sqflite's standard database directory
-    final databasesPath = await sqf.getDatabasesPath();
-    final dbPath = p.join(databasesPath, 'quran.db');
-    
-    final prefs = await SharedPreferences.getInstance();
-    final storedVersion = prefs.getInt(_dbVersionKey) ?? 0;
-    
-    // Use sqflite's databaseExists for proper check
-    bool dbExists = await sqf.databaseExists(dbPath);
-    bool needsCopy = !dbExists || storedVersion < _dbSchemaVersion;
-    
-    if (!needsCopy && dbExists) {
-      // Check if database has valid schema
-      sqf.Database? tempDb;
-      try {
-        tempDb = await sqf.openDatabase(dbPath, readOnly: false);
-        
-        // First check if required tables exist
-        final tables = await tempDb.rawQuery(
-          "SELECT name FROM sqlite_master WHERE type='table' AND name IN ('ayah', 'surah')"
-        );
-        
-        if (tables.length != 2) {
-          throw Exception('Missing required tables');
-        }
-        
-        // Then check if required columns exist
-        await tempDb.rawQuery('SELECT text_simple FROM ayah LIMIT 1');
-        await tempDb.rawQuery('SELECT name_en, name_en_translation, revelation_type, total_verses FROM surah LIMIT 1');
-        
-        await tempDb.close();
-        tempDb = null;
-      } catch (e) {
-        // Database is invalid or outdated
-        debugPrint('Database validation failed, will replace: $e');
-        needsCopy = true;
-        
-        // Close any open connection
-        if (tempDb != null) {
-          try {
-            await tempDb.close();
-          } catch (_) {}
-          tempDb = null;
-        }
-        
-        // Clear any cached data from old database
-        _clearCache();
-        _db = null;
-        
-        // Wait for file handles to release
-        await Future.delayed(const Duration(milliseconds: 200));
-        
-        // Force delete the old database
-        try {
-          if (await sqf.databaseExists(dbPath)) {
-            await sqf.deleteDatabase(dbPath);
-            debugPrint('Old database deleted');
-          }
-        } catch (deleteError) {
-          debugPrint('Could not delete old database: $deleteError');
-        }
-      }
-    }
-    
-    if (needsCopy) {
-      debugPrint('Copying database from assets (schema version $_dbSchemaVersion)...');
-      try {
-        // Delete old database if exists using sqflite method
-        if (await sqf.databaseExists(dbPath)) {
-          await sqf.deleteDatabase(dbPath);
-          debugPrint('Old database deleted');
-        }
-        
-        // Ensure parent directory exists
-        final dbFile = File(dbPath);
-        try {
-          await Directory(p.dirname(dbPath)).create(recursive: true);
-        } catch (_) {}
-        
-        final bytes = await rootBundle.load('assets/data/quran.db');
-        
-        // Write the new database
-        await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
-        debugPrint('Database copied successfully: ${dbFile.lengthSync()} bytes');
-        
-        // Update stored version
-        await prefs.setInt(_dbVersionKey, _dbSchemaVersion);
-        debugPrint('Database schema version updated to $_dbSchemaVersion');
-      } catch (copyError) {
-        debugPrint('Error copying database: $copyError');
-        throw Exception('Failed to copy database from assets');
-      }
-    }
-    
-    // Open the database in single instance mode to prevent locking issues
-    _db = await sqf.openDatabase(dbPath, readOnly: false, singleInstance: false);
-    debugPrint('Database opened successfully');
+    _db = await QuranDatabaseService.database();
   }
 
   Future<PageData> loadPage(int pageNumber, QuranEdition edition) async {
     final key = '${edition.identifier}::$pageNumber';
-    
+
     try {
-      return await _pageCache.putIfAbsent(key, () async {
-        await _ensureDb();
-        if (_db == null) {
-          throw Exception('Database not initialized');
-        }
+      final existing = _getCachedPage(key);
+      if (existing != null) return await existing;
 
-        final textColumn = edition.dbColumn;
-        final rows = await _db!.rawQuery('''
-          SELECT 
-            a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
-            s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
-          FROM ayah a
-          LEFT JOIN surah s ON a.surah_order = s.order_no
-          WHERE a.page = ?
-          ORDER BY a.id
-        ''', [pageNumber]);
-
-      final ayahs = <AyahData>[];
-      for (final r in rows) {
-        final surahMeta = SurahMeta(
-          number: (r['order_no'] as int? ?? 0),
-          name: (r['name_ar'] as String? ?? ''),
-          englishName: (r['name_en'] as String? ?? ''),
-          englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
-          revelationType: (r['revelation_type'] as String? ?? ''),
-        );
-        ayahs.add(AyahData(
-          number: (r['id'] as int? ?? 0),
-          text: (r['text'] as String? ?? ''),
-          surah: surahMeta,
-          numberInSurah: (r['number_in_surah'] as int? ?? 0),
-          juz: (r['juz'] as int? ?? 1),
-          page: (r['page'] as int? ?? 1),
-        ));
-      }
-
-      // Build surah occurrences
-      final surahOccurrences = <SurahOccurrence>[];
-      SurahMeta? current;
-      int? startIndex;
-      for (var i = 0; i < ayahs.length; i++) {
-        final ayah = ayahs[i];
-        if (current == null || ayah.surah.number != current.number) {
-          if (current != null && startIndex != null) {
-            surahOccurrences.add(
-              SurahOccurrence(
-                surah: current,
-                startIndex: startIndex,
-                ayahCount: i - startIndex,
-              ),
-            );
-          }
-          current = ayah.surah;
-          startIndex = i;
-        }
-      }
-      if (current != null && startIndex != null) {
-        surahOccurrences.add(
-          SurahOccurrence(
-            surah: current,
-            startIndex: startIndex,
-            ayahCount: ayahs.length - startIndex,
-          ),
-        );
-      }
-
-        return PageData(
-          number: pageNumber,
-          ayahs: ayahs,
-          surahOccurrences: surahOccurrences,
-        );
-      });
+      // Launch the DB query and store the Future in the LRU cache *before*
+      // awaiting. Concurrent callers for the same key will coalesce on the
+      // same Future rather than each firing a separate query.
+      final future = _loadPageFromDb(pageNumber, edition);
+      _putCachedPage(key, future);
+      return await future;
     } catch (e) {
       if (e.toString().contains('database_closed')) {
         debugPrint('Database closed error, clearing cache and retrying');
@@ -324,8 +184,84 @@ class QuranRepository {
         await _ensureDb();
         return loadPage(pageNumber, edition);
       }
+      // On any other failure, drop the (failed) cached Future so subsequent
+      // callers get a fresh attempt rather than replaying the exception.
+      _pageCache.remove(key);
       rethrow;
     }
+  }
+
+  Future<PageData> _loadPageFromDb(int pageNumber, QuranEdition edition) async {
+    await _ensureDb();
+    if (_db == null) {
+      throw Exception('Database not initialized');
+    }
+
+    final textColumn = edition.dbColumn;
+    final rows = await _db!.rawQuery('''
+      SELECT 
+        a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
+        s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
+      FROM ayah a
+      LEFT JOIN surah s ON a.surah_order = s.order_no
+      WHERE a.page = ?
+      ORDER BY a.id
+    ''', [pageNumber]);
+
+    final ayahs = <AyahData>[];
+    for (final r in rows) {
+      final surahMeta = SurahMeta(
+        number: (r['order_no'] as int? ?? 0),
+        name: (r['name_ar'] as String? ?? ''),
+        englishName: (r['name_en'] as String? ?? ''),
+        englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
+        revelationType: (r['revelation_type'] as String? ?? ''),
+      );
+      ayahs.add(AyahData(
+        number: (r['id'] as int? ?? 0),
+        text: (r['text'] as String? ?? ''),
+        surah: surahMeta,
+        numberInSurah: (r['number_in_surah'] as int? ?? 0),
+        juz: (r['juz'] as int? ?? 1),
+        page: (r['page'] as int? ?? 1),
+      ));
+    }
+
+    // Build surah occurrences
+    final surahOccurrences = <SurahOccurrence>[];
+    SurahMeta? current;
+    int? startIndex;
+    for (var i = 0; i < ayahs.length; i++) {
+      final ayah = ayahs[i];
+      if (current == null || ayah.surah.number != current.number) {
+        if (current != null && startIndex != null) {
+          surahOccurrences.add(
+            SurahOccurrence(
+              surah: current,
+              startIndex: startIndex,
+              ayahCount: i - startIndex,
+            ),
+          );
+        }
+        current = ayah.surah;
+        startIndex = i;
+      }
+    }
+    if (current != null && startIndex != null) {
+      surahOccurrences.add(
+        SurahOccurrence(
+          surah: current,
+          startIndex: startIndex,
+          ayahCount: ayahs.length - startIndex,
+        ),
+      );
+    }
+
+    return PageData(
+      number: pageNumber,
+      ayahs: ayahs,
+      surahOccurrences: surahOccurrences,
+    );
   }
 
   Future<String?> loadAyahText({
@@ -347,22 +283,40 @@ class QuranRepository {
     required QuranEdition edition,
     int? pageNumber,
   }) async {
-    final cache = await _translationCache.putIfAbsent(
-      edition,
-      () => _loadTranslationMap(edition),
-    );
-    final text = cache[ayahNumber];
-    if (text != null) {
-      return text;
-    }
-    if (pageNumber != null) {
-      return loadAyahText(
-        ayahNumber: ayahNumber,
-        pageNumber: pageNumber,
-        edition: edition,
+    try {
+      await _ensureDb();
+      if (_db == null) return null;
+      final textColumn = edition.dbColumn;
+      // Direct PK lookup on the `ayah.id` primary key — SQLite responds in
+      // sub-millisecond. This replaces the old 6k-entry in-memory map that
+      // was loaded per edition just to serve one lookup.
+      final rows = await _db!.rawQuery(
+        'SELECT $textColumn AS text FROM ayah WHERE id = ? LIMIT 1',
+        [ayahNumber],
       );
+      if (rows.isNotEmpty) {
+        final text = rows.first['text'] as String?;
+        if (text != null && text.isNotEmpty) return text;
+      }
+      if (pageNumber != null) {
+        return loadAyahText(
+          ayahNumber: ayahNumber,
+          pageNumber: pageNumber,
+          edition: edition,
+        );
+      }
+      return null;
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        _db = null;
+        await _ensureDb();
+        return loadAyahTranslation(
+            ayahNumber: ayahNumber,
+            edition: edition,
+            pageNumber: pageNumber);
+      }
+      rethrow;
     }
-    return null;
   }
 
   Future<List<SurahMeta>> loadAllSurahs() {
@@ -454,76 +408,48 @@ class QuranRepository {
     }
   }
 
-  Future<Map<int, String>> _loadTranslationMap(QuranEdition edition) async {
+  Future<String?> loadAyahTafsir(int ayahNumber) async {
     try {
       await _ensureDb();
-      if (_db == null) {
-        throw Exception('Database not initialized');
-      }
-
-      final Map<int, String> map = {};
-      final textColumn = edition.dbColumn;
-      final rows = await _db!.rawQuery('''
-        SELECT id, $textColumn as text
-        FROM ayah
-        ORDER BY id
-      ''');
-
-      for (final r in rows) {
-        final id = r['id'] as int? ?? 0;
-        final text = r['text'] as String? ?? '';
-        if (id != 0) {
-          map[id] = text;
-        }
-      }
-      return map;
+      if (_db == null) return null;
+      final rows = await _db!.rawQuery(
+        'SELECT text_tafsir FROM ayah WHERE id = ? LIMIT 1',
+        [ayahNumber],
+      );
+      if (rows.isEmpty) return null;
+      final text = rows.first['text_tafsir'] as String?;
+      return (text != null && text.isNotEmpty) ? text : null;
     } catch (e) {
       if (e.toString().contains('database_closed')) {
-        debugPrint('Database closed error in _loadTranslationMap, retrying');
-        _translationCache.remove(edition);
         _db = null;
         await _ensureDb();
-        return _loadTranslationMap(edition);
+        return loadAyahTafsir(ayahNumber);
       }
       rethrow;
     }
-  }
-
-  Future<String?> loadAyahTafsir(int ayahNumber) async {
-    final cache = await (_tafsirCache ??= _loadTafsirMap());
-    return cache[ayahNumber];
   }
 
   Future<AyahData?> lookupAyahByNumber(
     int ayahNumber, {
     QuranEdition edition = QuranEdition.simple,
   }) async {
-    final cache = await _ayahIndexCache.putIfAbsent(
-      edition,
-      () => _loadAyahIndex(edition),
-    );
-    return cache[ayahNumber];
-  }
-
-  Future<Map<int, AyahData>> _loadAyahIndex(QuranEdition edition) async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
-
-    final Map<int, AyahData> map = {};
-    final textColumn = edition.dbColumn;
-    
-    final rows = await _db!.rawQuery('''
-      SELECT 
-        a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
-        s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
-      FROM ayah a
-      LEFT JOIN surah s ON a.surah_order = s.order_no
-      ORDER BY a.id
-    ''');
-
-    for (final r in rows) {
+    try {
+      await _ensureDb();
+      if (_db == null) return null;
+      final textColumn = edition.dbColumn;
+      // Single indexed-PK query with a JOIN for surah metadata — sub-ms on
+      // SQLite. Replaces the previous ~6k-entry in-memory index per edition.
+      final rows = await _db!.rawQuery('''
+        SELECT
+          a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn AS text,
+          s.order_no, s.name_ar, s.name_en, s.name_en_translation, s.revelation_type
+        FROM ayah a
+        LEFT JOIN surah s ON a.surah_order = s.order_no
+        WHERE a.id = ?
+        LIMIT 1
+      ''', [ayahNumber]);
+      if (rows.isEmpty) return null;
+      final r = rows.first;
       final surahMeta = SurahMeta(
         number: (r['order_no'] as int? ?? 0),
         name: (r['name_ar'] as String? ?? ''),
@@ -531,11 +457,7 @@ class QuranRepository {
         englishNameTranslation: (r['name_en_translation'] as String? ?? ''),
         revelationType: (r['revelation_type'] as String? ?? ''),
       );
-      
-      final ayahNumber = (r['id'] as int? ?? 0);
-      if (ayahNumber == 0) continue;
-      
-      map[ayahNumber] = AyahData(
+      return AyahData(
         number: ayahNumber,
         text: (r['text'] as String? ?? ''),
         surah: surahMeta,
@@ -543,33 +465,14 @@ class QuranRepository {
         juz: (r['juz'] as int? ?? 1),
         page: (r['page'] as int? ?? 1),
       );
-    }
-    
-    return map;
-  }
-
-  Future<Map<int, String>> _loadTafsirMap() async {
-    await _ensureDb();
-    if (_db == null) {
-      throw Exception('Database not initialized');
-    }
-
-    final Map<int, String> map = {};
-    final rows = await _db!.rawQuery('''
-      SELECT id, text_tafsir
-      FROM ayah
-      WHERE text_tafsir IS NOT NULL AND text_tafsir != ''
-      ORDER BY id
-    ''');
-
-    for (final r in rows) {
-      final id = r['id'] as int? ?? 0;
-      final text = r['text_tafsir'] as String? ?? '';
-      if (id != 0 && text.isNotEmpty) {
-        map[id] = text;
+    } catch (e) {
+      if (e.toString().contains('database_closed')) {
+        _db = null;
+        await _ensureDb();
+        return lookupAyahByNumber(ayahNumber, edition: edition);
       }
+      rethrow;
     }
-    return map;
   }
 }
 

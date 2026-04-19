@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:qurani/services/media_item_compat.dart';
 import 'package:qurani/l10n/app_localizations.dart';
+import 'package:qurani/providers/reader_prefs_providers.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_constants.dart';
@@ -18,7 +18,6 @@ import 'util/arabic_font_utils.dart';
 
 import 'widgets/share_ayah_sheet.dart';
 import 'util/tajweed_parser.dart';
-import 'util/text_normalizer.dart';
 import 'services/net_utils.dart';
 import 'util/debug_error_display.dart';
 
@@ -31,16 +30,35 @@ import 'util/settings_sheet_utils.dart';
 import 'services/reciter_config_service.dart';
 import 'widgets/modern_ui.dart';
 
+import 'read_quran/ayah_color_picker_sheet.dart';
+import 'read_quran/ayah_number_badge.dart';
+import 'read_quran/ayah_options_sheet.dart';
+import 'read_quran/ayah_text_dialog.dart';
+import 'read_quran/basmalah_header.dart';
+import 'read_quran/basmalah_text_utils.dart';
+import 'read_quran/edition_label.dart';
+import 'read_quran/highlight_models.dart';
+import 'read_quran/highlighted_ayahs_sheet.dart';
+import 'read_quran/highlighted_pdf_pages_sheet.dart';
+import 'read_quran/juz_picker_sheet.dart';
+import 'read_quran/mushaf_style_picker.dart';
+import 'read_quran/page_audio_sources.dart';
+import 'read_quran/page_picker_sheet.dart';
+import 'read_quran/pdf_page_options_sheet.dart';
+import 'read_quran/reader_settings_sheet.dart';
+import 'read_quran/surah_picker_sheet.dart';
+import 'read_quran/zoomable_pdf_page.dart';
+
 const String kBasmalah = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
 
-class ReadQuranScreen extends StatefulWidget {
+class ReadQuranScreen extends ConsumerStatefulWidget {
   const ReadQuranScreen({super.key});
 
   @override
-  State<ReadQuranScreen> createState() => _ReadQuranScreenState();
+  ConsumerState<ReadQuranScreen> createState() => _ReadQuranScreenState();
 }
 
-class _ReadQuranScreenState extends State<ReadQuranScreen> {
+class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   static const int _totalPages = 604;
 
   final QuranRepository _repository = QuranRepository.instance;
@@ -126,9 +144,8 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     _highlightedPdfPages.addAll(PreferencesService.getHighlightedPdfPages());
 
     // Load initial data
-    _arabicFontKey = PreferencesService.getArabicFontFamily();
+    _arabicFontKey = ref.read(arabicFontProvider);
     _autoFlip = PreferencesService.getAutoFlipPage();
-    PreferencesService.arabicFontNotifier.addListener(_onArabicFontChanged);
 
     // Initialize PDF Mode
     _isPdfMode = PreferencesService.getIsPdfMode();
@@ -213,7 +230,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   @override
   void dispose() {
-    PreferencesService.arabicFontNotifier.removeListener(_onArabicFontChanged);
     _playerStateSub?.cancel();
     _sequenceStateSub?.cancel();
     unawaited(_restoreReadingScreenUi());
@@ -281,13 +297,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         );
       }
     }
-  }
-
-  void _onArabicFontChanged() {
-    if (!mounted) return;
-    setState(() {
-      _arabicFontKey = PreferencesService.getArabicFontFamily();
-    });
   }
 
   Future<void> _setKeepScreenAwake(bool enabled) async {
@@ -542,14 +551,17 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         _isLoadingPageAudio = false;
       });
       await _togglePageAudio(data);
-    } catch (e) {
+    } catch (e, st) {
+      debugPrint('[ReadQuranScreen] loadPage audio error: $e\n$st');
       if (mounted) {
         setState(() {
           _isLoadingPageAudio = false;
         });
       }
+      if (!mounted) return;
+      final l10n = AppLocalizations.of(context)!;
       messenger.showSnackBar(
-        SnackBar(content: Text('Error loading audio data: $e')),
+        SnackBar(content: Text(l10n.errorLoadingAudio)),
       );
     }
   }
@@ -759,121 +771,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   Future<void> _openPagePicker() async {
-    final l10n = AppLocalizations.of(context)!;
-    final initialIndex = _currentPage - 1;
-    final textController = TextEditingController(text: _currentPage.toString());
-
-    final selected = await showModalBottomSheet<int>(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        int tempIndex = initialIndex;
-        return SafeArea(
-          child: SizedBox(
-            height: 380, // Fixed height to prevent overflow
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Text(
-                    l10n.goToPage,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                // Text field for direct input
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
-                  child: TextField(
-                    controller: textController,
-                    keyboardType: TextInputType.number,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleMedium,
-                    decoration: InputDecoration(
-                      labelText: l10n.pageNumber,
-                      hintText: '1-$_totalPages',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 8),
-                      isDense: true,
-                    ),
-                    onChanged: (value) {
-                      final page = int.tryParse(value);
-                      if (page != null && page >= 1 && page <= _totalPages) {
-                        tempIndex = page - 1;
-                      }
-                    },
-                  ),
-                ),
-                const SizedBox(height: 4),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
-                  child: Divider(height: 1),
-                ),
-                const SizedBox(height: 4),
-                SizedBox(
-                  height: 200,
-                  child: CupertinoPicker(
-                    itemExtent: 40,
-                    scrollController:
-                        FixedExtentScrollController(initialItem: initialIndex),
-                    onSelectedItemChanged: (value) {
-                      tempIndex = value;
-                      textController.text = (value + 1).toString();
-                    },
-                    children: List.generate(
-                      _totalPages,
-                      (i) => Center(
-                        child: Text(
-                          '${i + 1}',
-                          style: Theme.of(context).textTheme.titleLarge,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text(l10n.cancel),
-                      ),
-                      FilledButton(
-                        onPressed: () {
-                          final page = int.tryParse(textController.text);
-                          if (page != null &&
-                              page >= 1 &&
-                              page <= _totalPages) {
-                            Navigator.pop<int>(context, page);
-                          } else {
-                            Navigator.pop<int>(context, tempIndex + 1);
-                          }
-                        },
-                        child: Text(l10n.go),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+    final selected = await showPagePickerSheet(
+      context,
+      currentPage: _currentPage,
+      totalPages: _totalPages,
     );
-
-    textController.dispose();
     if (selected != null) {
       _goToPage(selected);
     }
@@ -886,7 +788,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
-      builder: (context) => _SurahPickerSheet(surahs: surahs),
+      builder: (context) => SurahPickerSheet(surahs: surahs),
     );
 
     if (selected != null) {
@@ -896,52 +798,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   Future<void> _openJuzPicker() async {
-    final l10n = AppLocalizations.of(context)!;
-    final entries = juzStartPages.entries.toList()
-      ..sort((a, b) => a.key.compareTo(b.key));
-    final selected = await showModalBottomSheet<MapEntry<int, int>>(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 12),
-              Text(
-                l10n.chooseJuz,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 12),
-              Flexible(
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    final entry = entries[index];
-                    return ListTile(
-                      title: Text('${l10n.juzLabel} ${entry.key}'),
-                      subtitle: Text('${l10n.page} ${entry.value}'),
-                      onTap: () => Navigator.pop(context, entry),
-                    );
-                  },
-                  separatorBuilder: (_, __) => const Divider(height: 1),
-                  itemCount: entries.length,
-                ),
-              ),
-              const SizedBox(height: 12),
-            ],
-          ),
-        );
-      },
-    );
-
-    if (selected != null) {
-      _goToPage(selected.value);
+    final targetPage = await showJuzPickerSheet(context);
+    if (targetPage != null) {
+      _goToPage(targetPage);
     }
   }
 
@@ -1062,175 +921,53 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   void _showSettingsSheet() {
-    final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setSheetState) {
-            return SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      l10n.settings,
-                      style: Theme.of(context).textTheme.titleLarge,
-                    ),
-                    const SizedBox(height: 16),
-                    ListTile(
-                      title: Text(l10n.readAutoFlip),
-                      subtitle: Text(l10n.readAutoFlipDesc),
-                      trailing: Switch(
-                        value: _autoFlip,
-                        onChanged: (val) async {
-                          setSheetState(() => _autoFlip = val);
-                          setState(() => _autoFlip = val);
-                          await PreferencesService.saveAutoFlipPage(val);
-                        },
-                      ),
-                    ),
-                    const Divider(),
-                    ListTile(
-                      title: Text(l10n.startAtLastPage),
-                      subtitle: Text(l10n.startAtLastPageDesc),
-                      trailing: Switch(
-                        value: PreferencesService.getStartAtLastPage(),
-                        onChanged: (val) async {
-                          setSheetState(() {});
-                          await PreferencesService.saveStartAtLastPage(val);
-                        },
-                      ),
-                    ),
-                    const Divider(),
-                    ListTile(
-                      title: Text(l10n.chooseReciter),
-                      subtitle: Text(
-                        AudioService.reciterDisplayName(
-                          PreferencesService.getReciter(),
-                          l10n.localeName,
-                        ),
-                      ),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        Navigator.pop(context);
-                        SettingsSheetUtils.showReciterSelectionSheet(context,
-                            requireVerseByVerse: true,
-                            onReciterSelected: (key) {
-                          PreferencesService.saveReciter(key);
-                          setState(() {
-                            if (_pageAudioReciter != key) {
-                              _pageAudioReciter = null;
-                            }
-                          });
-                        });
-                      },
-                    ),
-                    if (_isPdfMode) ...[
-                      const Divider(),
-                      ListTile(
-                        title: Text(l10n.mushafStyle),
-                        subtitle: Text(_pdfType == MushafType.blue
-                            ? l10n.mushafTypeBlue
-                            : _pdfType == MushafType.green
-                                ? l10n.mushafTypeGreen
-                                : l10n.mushafTypeTajweed),
-                        trailing: const Icon(Icons.chevron_right),
-                        onTap: () {
-                          Navigator.pop(context);
-                          _showMushafStylePicker();
-                        },
-                      ),
-                    ],
-                    const Divider(),
-                    ListTile(
-                      title: Text('${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
-                      subtitle: Slider(
-                        value: PreferencesService.getFontSize(),
-                        min: 16,
-                        max: 28,
-                        divisions: 3,
-                        label: '${PreferencesService.getFontSize().toInt()}',
-                        onChanged: (val) async {
-                          await PreferencesService.saveFontSize(val);
-                          setSheetState(() {});
-                          setState(() {});
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+    showReaderSettingsSheet(
+      context,
+      autoFlip: _autoFlip,
+      onAutoFlipChanged: (val) {
+        if (!mounted) return;
+        setState(() => _autoFlip = val);
+      },
+      isPdfMode: _isPdfMode,
+      pdfType: _pdfType,
+      onOpenReciterPicker: () {
+        SettingsSheetUtils.showReciterSelectionSheet(
+          context,
+          requireVerseByVerse: true,
+          onReciterSelected: (key) {
+            PreferencesService.saveReciter(key);
+            if (!mounted) return;
+            setState(() {
+              if (_pageAudioReciter != key) {
+                _pageAudioReciter = null;
+              }
+            });
           },
         );
+      },
+      onOpenMushafStylePicker: _showMushafStylePicker,
+      onFontSizeChanged: () {
+        if (!mounted) return;
+        setState(() {});
       },
     );
   }
 
   void _showMushafStylePicker() {
-    final l10n = AppLocalizations.of(context)!;
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  l10n.mushafStyle,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-                const SizedBox(height: 16),
-                ...MushafType.values.map((type) {
-                  String typeName;
-                  switch (type) {
-                    case MushafType.blue:
-                      typeName = l10n.mushafTypeBlue;
-                      break;
-                    case MushafType.green:
-                      typeName = l10n.mushafTypeGreen;
-                      break;
-                    case MushafType.tajweed:
-                      typeName = l10n.mushafTypeTajweed;
-                      break;
-                  }
-
-                  return ListTile(
-                    title: Text(typeName),
-                    trailing: _pdfType == type
-                        ? const Icon(Icons.check, color: Colors.green)
-                        : null,
-                    onTap: () async {
-                      Navigator.pop(context);
-                      if (_pdfType != type) {
-                        setState(() {
-                          _pdfType = type;
-                          // Reset path so we check availability again or download
-                          _pdfPath = null;
-                          _pdfDocumentFuture = null;
-                          _pdfPageController = null;
-                        });
-                        await PreferencesService.savePdfType(type.name);
-                        await _checkPdfAvailability();
-                      }
-                    },
-                  );
-                }),
-              ],
-            ),
-          ),
-        );
+    showMushafStylePickerSheet(
+      context,
+      currentType: _pdfType,
+      onSelected: (type) async {
+        if (!mounted) return;
+        setState(() {
+          _pdfType = type;
+          // Reset path so we check availability again or download.
+          _pdfPath = null;
+          _pdfDocumentFuture = null;
+          _pdfPageController = null;
+        });
+        await PreferencesService.savePdfType(type.name);
+        await _checkPdfAvailability();
       },
     );
   }
@@ -1270,12 +1007,12 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
           .toList(),
     );
 
-    final entries = <_HighlightedAyah>[];
+    final entries = <HighlightedAyah>[];
     for (var i = 0; i < ayahNumbers.length; i++) {
       final ayah = ayahDataList[i];
       if (ayah != null) {
         entries.add(
-          _HighlightedAyah(
+          HighlightedAyah(
             ayahNumber: ayahNumbers[i],
             ayah: ayah,
             color: storedHighlightsMap[ayahNumbers[i]] ?? 0xFFFFF7C2,
@@ -1299,81 +1036,9 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     });
 
     if (!mounted) return;
-    final selected = await showModalBottomSheet<_HighlightedAyah>(
-      context: context,
-      isScrollControlled: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        final theme = Theme.of(context);
-        final height =
-            ((MediaQuery.of(context).size.height * 0.6).clamp(320.0, 520.0))
-                .toDouble();
-        return SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            child: SizedBox(
-              height: height,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Center(
-                    child: Container(
-                      width: 40,
-                      height: 4,
-                      margin: const EdgeInsets.only(bottom: 12),
-                      decoration: BoxDecoration(
-                        color: theme.colorScheme.outlineVariant,
-                        borderRadius: BorderRadius.circular(2),
-                      ),
-                    ),
-                  ),
-                  Text(
-                    l10n.highlightedAyahs,
-                    style: theme.textTheme.titleMedium
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 12),
-                  Expanded(
-                    child: ListView.separated(
-                      itemCount: entries.length,
-                      separatorBuilder: (_, __) =>
-                          const Divider(height: 1, thickness: 0.5),
-                      itemBuilder: (context, index) {
-                        final entry = entries[index];
-                        return ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Color(entry.color),
-                            foregroundColor: Colors.black87,
-                            child: Text(
-                              entry.ayah.numberInSurah.toString(),
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          title: Text(
-                            entry.ayah.surah.name,
-                            textDirection: TextDirection.rtl,
-                            style: theme.textTheme.titleMedium,
-                          ),
-                          subtitle: Text(
-                            '${entry.ayah.surah.englishName} • ${l10n.page} ${entry.ayah.page}',
-                            style: theme.textTheme.bodySmall,
-                          ),
-                          trailing: const Icon(Icons.chevron_right),
-                          onTap: () => Navigator.pop(context, entry),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        );
-      },
+    final selected = await showHighlightedAyahsSheet(
+      context,
+      entries: entries,
     );
 
     if (selected != null && mounted) {
@@ -1443,12 +1108,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final reciter = await ReciterConfigService.getReciterByCode(reciterCode);
     if (reciter != null && !reciter.hasVerseByVerse()) {
       if (showErrors && mounted) {
+        final langCode = Localizations.localeOf(context).languageCode;
         showDialog(
           context: context,
           builder: (context) => AlertDialog(
             title: Text(l10n.reciterNotCompatible),
             content: Text(l10n.reciterNotAvailableForVerses(
-                reciter.getDisplayName(PreferencesService.getLanguage()))),
+                reciter.getDisplayName(langCode))),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
@@ -1587,7 +1253,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
       // Fix 3: Build sources + index mapping together so skipped null
       // sources don't break _sequenceStateSub index resolution.
-      final result = await _buildPageAudioSourcesWithMapping(page, reciterCode);
+      final result = await buildPageAudioSourcesWithMapping(page, reciterCode);
       if (result.sources.isEmpty) {
         completer.complete(false);
         return false;
@@ -1855,96 +1521,39 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   Future<void> _showAyahOptions(AyahData ayah) async {
-    final l10n = AppLocalizations.of(context)!;
-    final isHighlighted = _highlightedAyahs.containsKey(ayah.number);
-    final selection = await showModalBottomSheet<_AyahAction>(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ListTile(
-                leading: const Icon(Icons.bookmark_add),
-                title: Text(isHighlighted ? l10n.bookmarks : l10n.addHighlight),
-                onTap: () => Navigator.pop(context, _AyahAction.pickColor),
-              ),
-              if (isHighlighted)
-                ListTile(
-                  leading: const Icon(Icons.bookmark_remove),
-                  title: Text(l10n.removeHighlight),
-                  onTap: () =>
-                      Navigator.pop(context, _AyahAction.removeHighlight),
-                ),
-              ListTile(
-                leading: const Icon(Icons.share),
-                title: Text(l10n.shareAyah),
-                onTap: () => Navigator.pop(context, _AyahAction.share),
-              ),
-              if (_edition == QuranEdition.english ||
-                  _edition == QuranEdition.french)
-                ListTile(
-                  leading: const Icon(Icons.language),
-                  title: Text(l10n.showArabicText),
-                  onTap: () =>
-                      Navigator.pop(context, _AyahAction.translateArabic),
-                ),
-              if (_edition != QuranEdition.english)
-                ListTile(
-                  leading: const Icon(Icons.translate),
-                  title: Text(l10n.showEnglishTranslation),
-                  onTap: () =>
-                      Navigator.pop(context, _AyahAction.translateEnglish),
-                ),
-              if (_edition != QuranEdition.french)
-                ListTile(
-                  leading: const Icon(Icons.g_translate),
-                  title: Text(l10n.showFrenchTranslation),
-                  onTap: () =>
-                      Navigator.pop(context, _AyahAction.translateFrench),
-                ),
-              if (!_edition.isTranslation && !_edition.isTafsir)
-                ListTile(
-                  leading: const Icon(Icons.menu_book),
-                  title: Text(l10n.showTafsir),
-                  onTap: () => Navigator.pop(context, _AyahAction.tafsir),
-                ),
-            ],
-          ),
-        );
-      },
+    final selection = await showAyahOptionsSheet(
+      context,
+      ayah: ayah,
+      isHighlighted: _highlightedAyahs.containsKey(ayah.number),
+      edition: _edition,
     );
 
     if (selection == null) return;
     if (!mounted) return;
 
     switch (selection) {
-      case _AyahAction.pickColor:
+      case AyahAction.pickColor:
         _showColorPicker(ayah);
         break;
-      case _AyahAction.highlight: // Legacy fallback
+      case AyahAction.highlight: // Legacy fallback
         _setAyahHighlight(ayah, 0xFFFFF7C2);
         break;
-      case _AyahAction.removeHighlight:
+      case AyahAction.removeHighlight:
         _removeAyahHighlight(ayah);
         break;
-      case _AyahAction.translateEnglish:
+      case AyahAction.translateEnglish:
         await _showTranslation(ayah, QuranEdition.english);
         break;
-      case _AyahAction.translateFrench:
+      case AyahAction.translateFrench:
         await _showTranslation(ayah, QuranEdition.french);
         break;
-      case _AyahAction.translateArabic:
+      case AyahAction.translateArabic:
         await _showTranslation(ayah, QuranEdition.simple);
         break;
-      case _AyahAction.tafsir:
+      case AyahAction.tafsir:
         await _showTafsir(ayah);
         break;
-      case _AyahAction.share:
+      case AyahAction.share:
         ShareAyahUtils.shareAyahAsText(
           context,
           surah: ayah.surah,
@@ -1975,59 +1584,12 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   void _showColorPicker(AyahData ayah) {
-    final l10n = AppLocalizations.of(context)!;
-    final colors = [
-      {
-        'name': l10n.colorDefault,
-        'value': 0xFFFFF7C2,
-        'color': const Color(0xFFFFF7C2)
+    showAyahColorPickerSheet(
+      context,
+      onColorPicked: (colorValue) {
+        _setAyahHighlight(ayah, colorValue);
       },
-      {
-        'name': l10n.colorRed,
-        'value': 0xFFFFCDD2,
-        'color': Colors.red.shade100
-      },
-      {
-        'name': l10n.colorBlue,
-        'value': 0xFFBBDEFB,
-        'color': Colors.blue.shade100
-      },
-      {
-        'name': l10n.colorGreen,
-        'value': 0xFFC8E6C9,
-        'color': Colors.green.shade100
-      },
-    ];
-
-    showModalBottomSheet(
-        context: context,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        builder: (context) {
-          return SafeArea(
-              child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                child: Text(
-                  l10n.addHighlight, // Or "Choose Color" if localized
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-              ),
-              ...colors.map((c) => ListTile(
-                    leading: CircleAvatar(backgroundColor: c['color'] as Color),
-                    title: Text(c['name'] as String),
-                    onTap: () {
-                      Navigator.pop(context);
-                      _setAyahHighlight(ayah, c['value'] as int);
-                    },
-                  )),
-              const SizedBox(height: 12),
-            ],
-          ));
-        });
+    );
   }
 
   Future<void> _showTranslation(AyahData ayah, QuranEdition edition) async {
@@ -2040,24 +1602,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
     if (!mounted) return;
 
-    await showDialog<void>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            '${edition.displayName} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
-          ),
-          content: SingleChildScrollView(
-            child: Text(text ?? l10n.translationNotAvailable),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(l10n.close),
-            ),
-          ],
-        );
-      },
+    await showAyahTextDialog(
+      context,
+      title:
+          '${edition.displayName} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
+      body: text ?? l10n.translationNotAvailable,
     );
   }
 
@@ -2065,24 +1614,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
     final l10n = AppLocalizations.of(context)!;
     final text = await _repository.loadAyahTafsir(ayah.number);
     if (!mounted) return;
-    await showDialog<void>(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(
-            '${l10n.tafsir} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
-          ),
-          content: SingleChildScrollView(
-            child: Text(text ?? l10n.translationNotAvailable),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(l10n.close),
-            ),
-          ],
-        );
-      },
+    await showAyahTextDialog(
+      context,
+      title:
+          '${l10n.tafsir} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
+      body: text ?? l10n.translationNotAvailable,
     );
   }
 
@@ -2212,37 +1748,10 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   void _showPdfPageOptions(int page) {
     if (!mounted) return;
-    final l10n = AppLocalizations.of(context)!;
-    final isHighlighted = _highlightedPdfPages.contains(page);
-
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ListTile(
-                leading: Icon(
-                  isHighlighted ? Icons.bookmark_remove : Icons.bookmark_add,
-                  color: isHighlighted
-                      ? Theme.of(context).colorScheme.error
-                      : null,
-                ),
-                title: Text(
-                    isHighlighted ? l10n.removeBookmark : l10n.bookmarkPage),
-                onTap: () {
-                  Navigator.pop(context);
-                  _togglePdfPageHighlightParam(page);
-                },
-              ),
-            ],
-          ),
-        );
-      },
+    showPdfPageOptionsSheet(
+      context,
+      isHighlighted: _highlightedPdfPages.contains(page),
+      onToggleBookmark: () => _togglePdfPageHighlightParam(page),
     );
   }
 
@@ -2258,83 +1767,13 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
   }
 
   void _openHighlightedPdfPagesSheet() {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
     final sortedPages = _highlightedPdfPages.toList()..sort();
-
-    showModalBottomSheet(
-      context: context,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-      ),
-      builder: (context) {
-        return SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  l10n.bookmarks,
-                  style: theme.textTheme.titleLarge,
-                ),
-              ),
-              if (sortedPages.isEmpty)
-                Padding(
-                  padding: const EdgeInsets.all(32.0),
-                  child: Text(l10n.noBookmarks),
-                )
-              else
-                Flexible(
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    itemCount: sortedPages.length,
-                    separatorBuilder: (_, __) => const Divider(height: 1),
-                    itemBuilder: (context, index) {
-                      final page = sortedPages[index];
-                      int surahNum = 1;
-                      for (final entry in surahStartPages.entries) {
-                        if (entry.value <= page) {
-                          if (entry.key > surahNum) surahNum = entry.key;
-                        }
-                      }
-
-                      return FutureBuilder<List<SurahMeta>>(
-                          future: _surahListFuture,
-                          builder: (context, snapshot) {
-                            String subtitle = '${l10n.page} $page';
-                            if (snapshot.hasData) {
-                              final s = snapshot.data!.firstWhere(
-                                  (s) => s.number == surahNum,
-                                  orElse: () => snapshot.data!.first);
-                              subtitle = '${s.name} • $subtitle';
-                            }
-
-                            return ListTile(
-                              leading: Icon(Icons.bookmark,
-                                  color: theme.colorScheme.primary),
-                              title: Text(subtitle,
-                                  textDirection: TextDirection.rtl),
-                              trailing: IconButton(
-                                icon: const Icon(Icons.delete_outline),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                  _togglePdfPageHighlightParam(page);
-                                },
-                              ),
-                              onTap: () {
-                                Navigator.pop(context);
-                                _goToPage(page);
-                              },
-                            );
-                          });
-                    },
-                  ),
-                ),
-            ],
-          ),
-        );
-      },
+    showHighlightedPdfPagesSheet(
+      context,
+      sortedPages: sortedPages,
+      surahListFuture: _surahListFuture,
+      onOpenPage: _goToPage,
+      onDeletePage: _togglePdfPageHighlightParam,
     );
   }
 
@@ -2565,7 +2004,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
               }
             },
             itemBuilder: (context, index) {
-              return _ZoomablePdfPage(
+              return ZoomablePdfPage(
                 document: document,
                 pageNumber: index + 1,
                 isFullscreen: _isFullscreen,
@@ -2723,7 +2162,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         children.add(_buildSurahHeader(occurrence.surah, colorScheme));
 
         if (occurrence.surah.number != 1 && occurrence.surah.number != 9) {
-          children.add(const _BasmalahHeader());
+          children.add(const BasmalahHeader());
         }
       }
 
@@ -2740,7 +2179,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         if (ayah.numberInSurah == 1 &&
             occurrence.surah.number != 1 &&
             occurrence.surah.number != 9) {
-          displayText = _removeBasmalah(ayah.text.trim());
+          displayText = removeBasmalah(ayah.text.trim());
         }
 
         children.add(
@@ -2963,7 +2402,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                             fontSize: baseFontSize,
                           ),
                           const SizedBox(width: 8),
-                          _AyahNumberBadge(
+                          AyahNumberBadge(
                             number: ayah.numberInSurah,
                             rtl: _edition.isRtl,
                             colorScheme: colorScheme,
@@ -2982,7 +2421,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                             const TextSpan(text: '  '),
                             WidgetSpan(
                               alignment: PlaceholderAlignment.middle,
-                              child: _AyahNumberBadge(
+                              child: AyahNumberBadge(
                                 number: ayah.numberInSurah,
                                 rtl: _edition.isRtl,
                                 colorScheme: colorScheme,
@@ -3136,6 +2575,11 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ref.listen<String>(arabicFontProvider, (prev, next) {
+      if (_arabicFontKey != next) {
+        setState(() => _arabicFontKey = next);
+      }
+    });
     final l10n = AppLocalizations.of(context)!;
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     const showPlayButton = true;
@@ -3243,7 +2687,7 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
                                 else
                                   const SizedBox(width: 18),
                                 const SizedBox(width: 8),
-                                Text(_editionLabel(edition, l10n)),
+                                Text(editionLabel(edition, l10n)),
                               ],
                             ),
                           ),
@@ -3310,526 +2754,6 @@ class _ReadQuranScreenState extends State<ReadQuranScreen> {
         await _handlePopInvoked(didPop);
       },
       child: screen,
-    );
-  }
-}
-
-class _SurahPickerSheet extends StatefulWidget {
-  final List<SurahMeta> surahs;
-
-  const _SurahPickerSheet({required this.surahs});
-
-  @override
-  State<_SurahPickerSheet> createState() => _SurahPickerSheetState();
-}
-
-class _SurahPickerSheetState extends State<_SurahPickerSheet> {
-  late final TextEditingController _controller;
-  String _query = '';
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = TextEditingController();
-    _controller.addListener(() {
-      setState(() {
-        _query = TextNormalizer.normalize(_controller.text);
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-
-    final filtered = _query.isEmpty
-        ? widget.surahs
-        : widget.surahs.where((s) {
-            final normalizedEnglishName =
-                TextNormalizer.normalize(s.englishName);
-            final normalizedEnglishTranslation =
-                TextNormalizer.normalize(s.englishNameTranslation);
-            final normalizedArabicName = TextNormalizer.normalize(s.name);
-            final numberText = s.number.toString();
-            return normalizedEnglishName.contains(_query) ||
-                normalizedEnglishTranslation.contains(_query) ||
-                normalizedArabicName.contains(_query) ||
-                numberText.contains(_query);
-          }).toList();
-
-    return Container(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-      ),
-      constraints: BoxConstraints(
-        maxHeight: MediaQuery.of(context).size.height * 0.85,
-      ),
-      child: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 12),
-              Text(
-                l10n.chooseSurah,
-                style: theme.textTheme.titleMedium
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 12),
-              TextField(
-                controller: _controller,
-                autofocus: true,
-                decoration: InputDecoration(
-                  hintText: l10n.search,
-                  prefixIcon: const Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-              Flexible(
-                child: ListView.separated(
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    final surah = filtered[index];
-                    final startPage = surahStartPages[surah.number] ?? 1;
-                    return ListTile(
-                      title: Text(
-                        surah.name,
-                        textDirection: TextDirection.rtl,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      subtitle: Text(
-                        '${surah.number}. ${surah.englishName} • ${l10n.page} $startPage',
-                      ),
-                      onTap: () => Navigator.pop(context, surah),
-                    );
-                  },
-                  separatorBuilder: (_, __) => const Divider(height: 1),
-                  itemCount: filtered.length,
-                ),
-              ),
-              const SizedBox(height: 12),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _AyahNumberBadge extends StatelessWidget {
-  const _AyahNumberBadge({
-    required this.number,
-    required this.rtl,
-    required this.colorScheme,
-  });
-
-  final int number;
-  final bool rtl;
-  final ColorScheme colorScheme;
-
-  @override
-  Widget build(BuildContext context) {
-    final content = number.toString();
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: colorScheme.primary),
-        color: colorScheme.primary.withAlpha((255 * 0.1).round()),
-      ),
-      child: Text(
-        content,
-        textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: colorScheme.primary,
-        ),
-      ),
-    );
-  }
-}
-
-class _HighlightedAyah {
-  const _HighlightedAyah({
-    required this.ayahNumber,
-    required this.ayah,
-    required this.color,
-  });
-
-  final int ayahNumber;
-  final AyahData ayah;
-  final int color;
-}
-
-enum _AyahAction {
-  pickColor,
-  highlight,
-  removeHighlight,
-  translateArabic,
-  translateEnglish,
-  translateFrench,
-  tafsir,
-  share,
-}
-
-String _editionLabel(QuranEdition edition, AppLocalizations l10n) {
-  switch (edition) {
-    case QuranEdition.simple:
-      return '${l10n.arabic} (${l10n.simple})';
-    case QuranEdition.uthmani:
-      return '${l10n.arabic} (${l10n.uthmani})';
-    case QuranEdition.tajweed:
-      return l10n.editionArabicTajweed;
-    case QuranEdition.english:
-      return l10n.english;
-    case QuranEdition.french:
-      return l10n.french;
-    case QuranEdition.tafsir:
-      return l10n.tafsir;
-    case QuranEdition.irab:
-      return l10n.editionIrab;
-  }
-}
-
-/// Result of building audio sources: the list of sources plus a mapping
-/// from each source index to its corresponding index in PageData.ayahs.
-class _PageAudioSourcesResult {
-  const _PageAudioSourcesResult(this.sources, this.indexMapping);
-  final List<AudioSource> sources;
-  final List<int> indexMapping;
-}
-
-/// Builds audio sources for all ayahs on [page] and returns a mapping so
-/// that skipped null sources (e.g. missing audio files) don't break the
-/// index→ayah correspondence used by _sequenceStateSub.
-Future<_PageAudioSourcesResult> _buildPageAudioSourcesWithMapping(
-  PageData page,
-  String reciterCode,
-) async {
-  final sources = <AudioSource>[];
-  final indexMapping = <int>[];
-  final langCode = PreferencesService.getLanguage();
-  final reciterName = AudioService.reciterDisplayName(reciterCode, langCode);
-
-  for (int i = 0; i < page.ayahs.length; i++) {
-    final ayah = page.ayahs[i];
-    final mediaItem = MediaItem(
-      id: '${reciterCode}_${ayah.surah.number}_${ayah.numberInSurah}',
-      title: '${ayah.surah.name} • ${ayah.numberInSurah}',
-      album: reciterName,
-      artUri: null,
-      extras: {
-        'surahOrder': ayah.surah.number,
-        'verse': ayah.numberInSurah,
-        'page': page.number,
-      },
-    );
-    final src = await AudioService.buildVerseAudioSource(
-      reciterKeyAr: reciterCode,
-      surahOrder: ayah.surah.number,
-      verseNumber: ayah.numberInSurah,
-      mediaItem: mediaItem,
-    );
-    if (src != null) {
-      sources.add(src);
-      indexMapping.add(i); // source[sources.length-1] → ayahs[i]
-    }
-  }
-  return _PageAudioSourcesResult(sources, indexMapping);
-}
-
-String? _removeBasmalah(String text) {
-  // "بسم الله الرحمن الرحيم" without diacritics
-  // We also include variations for Uthmani script where "Allah" might be 4 characters or more depending on ligatures.
-  // The safest is to normalize the input text by stripping diacritics, then check start.
-
-  // Simple helper to check if a char is a basic Arabic letter (not diacritic)
-  bool isArabicLetter(int codeUnit) {
-    if (codeUnit >= 0x0621 && codeUnit <= 0x064A) {
-      return true; // Standard letters
-    }
-    if (codeUnit == 0x0671) return true; // Alif Wasla (ٱ)
-    return false;
-  }
-
-  // Skeleton of Basmalah letters (بسم الله الرحمن الرحيم)
-  // ب س م ا ل ل ه ا ل ر ح م ن ا ل ر ح ي م
-  // But in Uthmani: بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
-  // Letters: Ba, Seen, Meem, AlifWasla, Lam, Lam, Ha, AlifWasla, Lam, Ra, Ha, Meem, Noon, AlifWasla, Lam, Ra, Ha, Ya, Meem.
-  // Note: The "Allah" in Uthmani often uses special Lam sequence or just Lam Lam Ha.
-  // Let's build the expected sequence of BASE characters.
-  // Expect: ب س م ٱ ل ل ه ٱ ل ر ح م ن ٱ ل ر ح ي م
-  // 0x0628 0x0633 0x0645 0x0671 0x0644 0x0644 0x0647 0x0671 0x0644 0x0631 0x062D 0x0645 0x0646 0x0671 0x0644 0x0631 0x062D 0x064A 0x0645
-
-  final expectedSkeleton = [
-    0x0628, 0x0633, 0x0645, // B S M
-    0x0671, 0x0644, 0x0644, 0x0647, // A L L H (Alif Wasla)
-    0x0671, 0x0644, 0x0631, 0x062D, 0x0645, 0x0646, // A L R H M N
-    0x0671, 0x0644, 0x0631, 0x062D, 0x064A, 0x0645, // A L R H Y M
-  ];
-
-  // Also support Standard Alif (0x0627) instead of 0x0671
-
-  int skeletonIndex = 0;
-  int originalIndex = 0;
-
-  while (
-      originalIndex < text.length && skeletonIndex < expectedSkeleton.length) {
-    final code = text.codeUnitAt(originalIndex);
-
-    // If matches expected
-    if (code == expectedSkeleton[skeletonIndex] ||
-        (expectedSkeleton[skeletonIndex] == 0x0671 && code == 0x0627)) {
-      // Match Wasla with standard Alif
-      skeletonIndex++;
-      originalIndex++;
-    } else if (!isArabicLetter(code)) {
-      // Skip diacritics / spaces / symbols in original text
-      originalIndex++;
-    } else {
-      // Mismatch in base letter.
-      return null; // Not Basmalah
-    }
-  }
-
-  if (skeletonIndex == expectedSkeleton.length) {
-    // Found complete Basmalah.
-    // originalIndex is now after the Basmalah letters + intervening marks.
-    // We should return the substring starting from here.
-    return text.substring(originalIndex).trim();
-  }
-
-  return null; // Partial match or not found
-}
-
-class _ZoomablePdfPage extends StatefulWidget {
-  final PdfDocument document;
-  final int pageNumber;
-  final ValueChanged<bool>? onZoomChanged;
-  final bool isFullscreen;
-  final MushafType mushafType;
-
-  const _ZoomablePdfPage({
-    // super.key,  // Unused parameter
-    required this.document,
-    required this.pageNumber,
-    required this.isFullscreen,
-    required this.mushafType,
-    this.onZoomChanged,
-    this.onLongPress,
-  });
-
-  final VoidCallback? onLongPress;
-
-  @override
-  State<_ZoomablePdfPage> createState() => _ZoomablePdfPageState();
-}
-
-class _ZoomablePdfPageState extends State<_ZoomablePdfPage>
-    with AutomaticKeepAliveClientMixin {
-  final TransformationController _transformationController =
-      TransformationController();
-
-  @override
-  bool get wantKeepAlive => true;
-
-  @override
-  void dispose() {
-    _transformationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didUpdateWidget(_ZoomablePdfPage oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    // Reset transformation when page number changes
-    if (oldWidget.pageNumber != widget.pageNumber) {
-      // Use post-frame callback to ensure the widget tree is stable
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) {
-          _transformationController.value = Matrix4.identity();
-          // Notify that we're no longer zoomed
-          if (widget.onZoomChanged != null) {
-            widget.onZoomChanged!(false);
-          }
-        }
-      });
-    }
-  }
-
-  void _checkZoomState() {
-    final scale = _transformationController.value.getMaxScaleOnAxis();
-    final isZoomed = scale > 1.05;
-    if (widget.onZoomChanged != null) {
-      widget.onZoomChanged!(isZoomed);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    super.build(context);
-
-    // Get screen orientation
-    final orientation = MediaQuery.of(context).orientation;
-    final isLandscape = orientation == Orientation.landscape;
-    final pdfPageInfo = widget.document.pages[widget.pageNumber - 1];
-
-    // In landscape, scale up the PDF to make it more readable
-    final double scale = isLandscape ? 2.8 : 1.0;
-
-    // 2. Always center the page perfectly to balance the top and bottom margins.
-    const pageAlignment = Alignment.center;
-
-    // Determine paper background color based on MushafType to blend unused vertical space
-    final Color paperColor;
-    switch (widget.mushafType) {
-      case MushafType.blue:
-      case MushafType.green:
-        paperColor = const Color(0xFFFDF7E5);
-        break;
-      case MushafType.tajweed:
-        paperColor = const Color(0xFFF9F6EB);
-        break;
-    }
-
-    return GestureDetector(
-      onLongPress: widget.onLongPress,
-      onDoubleTap: () {
-        final currentScale =
-            _transformationController.value.getMaxScaleOnAxis();
-
-        if (currentScale > 1.5) {
-          // Zoom out to normal
-          _transformationController.value = Matrix4.identity();
-        } else {
-          // Zoom in to 2.5x, positioned at top-right for RTL content
-          const targetScale = 2.5;
-
-          // Get the render box to calculate positioning
-          final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
-          if (renderBox != null) {
-            final size = renderBox.size;
-
-            // For RTL content, we want to show the top-right corner
-            // Calculate the translation needed to show top-right
-            final xTranslation = -(size.width * (targetScale - 1));
-            const yTranslation = 0.0;
-
-            _transformationController.value = Matrix4.identity()
-              ..setTranslationRaw(xTranslation, yTranslation, 0)
-              ..multiply(Matrix4.diagonal3Values(
-                  targetScale, targetScale, targetScale));
-          } else {
-            // Fallback if renderBox is null
-            _transformationController.value = Matrix4.identity()
-              ..multiply(Matrix4.diagonal3Values(
-                  targetScale, targetScale, targetScale));
-          }
-        }
-
-        _checkZoomState();
-      },
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          // 1. Calculate a proportional scale to fill more width without breaking vertical bounds
-          // We use min() to ensure we don't scale so much that the height bleeds off screen.
-          final double fitWidthScale =
-              constraints.maxWidth > 0 && pdfPageInfo.width > 0
-                  ? (constraints.maxWidth / pdfPageInfo.width)
-                  : 1.0;
-
-          final double fitHeightScale =
-              constraints.maxHeight > 0 && pdfPageInfo.height > 0
-                  ? (constraints.maxHeight / pdfPageInfo.height)
-                  : 1.0;
-
-          // Safe scale: take the smaller of the two to guarantee no clipping,
-          // but pad it slightly up by 1.1x to reduce horizontal margins if we have vertical space.
-          // Fall back to min(fitWidth, fitHeight * 1.05) to ensure it fits completely within bounds.
-          final double portraitFullscreenScale =
-              widget.isFullscreen && !isLandscape
-                  ? (fitWidthScale < fitHeightScale
-                          ? fitWidthScale
-                          : fitHeightScale * 1.05)
-                      .clamp(1.0, 1.3)
-                  : 1.0;
-
-          final pdfPage = SizedBox(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight,
-            child: PdfPageView(
-              document: widget.document,
-              pageNumber: widget.pageNumber,
-              alignment: pageAlignment,
-            ),
-          );
-
-          final zoomableChild = isLandscape
-              ? Transform.scale(
-                  scale: scale,
-                  alignment: pageAlignment,
-                  child: pdfPage,
-                )
-              : Transform.scale(
-                  scale: portraitFullscreenScale,
-                  alignment: pageAlignment,
-                  child: pdfPage,
-                );
-
-          return ClipRect(
-            child: ColoredBox(
-              color: paperColor,
-              child: InteractiveViewer(
-                transformationController: _transformationController,
-                boundaryMargin: EdgeInsets.zero,
-                minScale: widget.isFullscreen && !isLandscape
-                    ? 0.9
-                    : (isLandscape ? 0.5 : 1.0),
-                maxScale: 4.0,
-                panEnabled: true,
-                scaleEnabled: true,
-                onInteractionUpdate: (_) => _checkZoomState(),
-                onInteractionEnd: (_) => _checkZoomState(),
-                child: zoomableChild,
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class _BasmalahHeader extends StatelessWidget {
-  const _BasmalahHeader();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      child: Center(
-        child: Text(
-          '﷽',
-          style: TextStyle(
-            fontFamily: 'Amiri', // Or a dedicated calligraphy font if available
-            fontSize: 42,
-            height: 1.0,
-            color: Theme.of(context).colorScheme.primary,
-          ),
-          textDirection: TextDirection.rtl,
-        ),
-      ),
     );
   }
 }

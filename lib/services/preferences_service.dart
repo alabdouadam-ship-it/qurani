@@ -42,30 +42,41 @@ class PreferencesService {
   static const String keyIsPdfMode = 'is_pdf_mode';
   static const String keyPdfType = 'pdf_type';
 
-  static final ValueNotifier<String> languageNotifier = ValueNotifier<String>('ar');
-  static final ValueNotifier<String> themeNotifier =
-      ValueNotifier<String>(AppThemeConfig.defaultThemeId);
+  // Legacy cross-screen event bus. `arabicFontNotifier` is still required
+  // because `arabicFontProvider` (providers/reader_prefs_providers.dart)
+  // bridges this ValueNotifier into Riverpod state; writers come from
+  // multiple paths (settings sheet, preferences screen) so the VN remains
+  // the single in-memory source of truth until all writers move through
+  // a Riverpod notifier.
+  //
+  // The sibling notifiers for language, theme and disabled-screens were
+  // removed in Phase 7f — their owning Riverpod notifiers
+  // (`localeProvider`, `themeProvider`, `disabledScreensProvider`) are now
+  // the single source of truth, and the static getters below read straight
+  // from SharedPreferences.
   static final ValueNotifier<String> arabicFontNotifier =
       ValueNotifier<String>(ArabicFontUtils.fontAmiri);
-  static final ValueNotifier<Set<String>> disabledScreensNotifier =
-      ValueNotifier<Set<String>>({});
+
+  /// Lightweight hydration without side-effects. Safe to call from the
+  /// AndroidAlarmManager background Dart isolate where the full [init]
+  /// would be wasteful and (given its default-writing) undesirable.
+  /// No-op if [_prefs] is already set.
+  static Future<void> ensureInitialized() async {
+    _prefs ??= await SharedPreferences.getInstance();
+  }
 
   static Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
-    final savedLang = _prefs!.getString(keyLanguage);
-    if (savedLang != null && savedLang.isNotEmpty) {
-      languageNotifier.value = savedLang;
-    }
+    // Language: nothing to do at init — getLanguage() reads from disk on
+    // demand with an 'ar' default.
     final savedTheme = _prefs!.getString(keyTheme);
     if (savedTheme != null && savedTheme.isNotEmpty) {
       final normalizedTheme = AppThemeConfig.resolveThemeId(savedTheme);
-      themeNotifier.value = normalizedTheme;
       if (normalizedTheme != savedTheme) {
         await _prefs!.setString(keyTheme, normalizedTheme);
       }
     } else {
-      themeNotifier.value = AppThemeConfig.defaultThemeId;
-      await _prefs!.setString(keyTheme, themeNotifier.value);
+      await _prefs!.setString(keyTheme, AppThemeConfig.defaultThemeId);
     }
     final savedArabicFont = _prefs!.getString(keyArabicFontFamily);
     if (savedArabicFont != null && savedArabicFont.isNotEmpty) {
@@ -98,9 +109,28 @@ class PreferencesService {
       }
     }
 
-    final savedDisabled = _prefs!.getStringList(keyDisabledScreens);
-    if (savedDisabled != null) {
-      disabledScreensNotifier.value = savedDisabled.toSet();
+    // Disabled screens: nothing to do at init — getDisabledScreens() reads
+    // from disk on demand with an empty-set default.
+
+    // Capture absolute App Installation Time globally
+    int? installTimeMs = _prefs!.getInt('app_install_time');
+    if (installTimeMs == null) {
+      // If they already have a saved language or theme, they are an existing active user.
+      final isExistingUser = _prefs!.containsKey(keyLanguage) || _prefs!.containsKey(keyTheme);
+      installTimeMs = isExistingUser ? 0 : DateTime.now().millisecondsSinceEpoch;
+      await _prefs!.setInt('app_install_time', installTimeMs);
+    }
+
+    // One-shot migration: move the legacy `_debug`-suffixed prayer-time
+    // adjustments blob over to the clean key. Runs exactly once per device
+    // (guarded by the absence of the new key) and is a no-op for new installs.
+    if (_prefs!.containsKey(_legacyKeyPrayerTimeAdjustmentsDebug) &&
+        !_prefs!.containsKey(keyPrayerTimeAdjustments)) {
+      final legacy = _prefs!.getString(_legacyKeyPrayerTimeAdjustmentsDebug);
+      if (legacy != null && legacy.isNotEmpty) {
+        await _prefs!.setString(keyPrayerTimeAdjustments, legacy);
+      }
+      await _prefs!.remove(_legacyKeyPrayerTimeAdjustmentsDebug);
     }
   }
 
@@ -139,7 +169,6 @@ class PreferencesService {
   static Future<void> saveTheme(String value) async {
     final normalizedTheme = AppThemeConfig.resolveThemeId(value);
     await _prefs?.setString(keyTheme, normalizedTheme);
-    themeNotifier.value = normalizedTheme;
   }
 
   static Future<void> saveLastReadEdition(String value) async {
@@ -202,11 +231,11 @@ class PreferencesService {
 
   static Future<void> saveLanguage(String langCode) async {
     await _prefs?.setString(keyLanguage, langCode);
-    languageNotifier.value = langCode;
   }
 
   static String getLanguage() {
-    return languageNotifier.value; // default 'ar'
+    final saved = _prefs?.getString(keyLanguage);
+    return (saved != null && saved.isNotEmpty) ? saved : 'ar';
   }
 
   // Device info collection flags / storage
@@ -531,8 +560,13 @@ class PreferencesService {
         .toSet();
   }
 
-  // Prayer time adjustments (offset in minutes per prayer)
-  static const String keyPrayerTimeAdjustments = 'prayer_time_adjustments_debug';
+  // Prayer time adjustments (offset in minutes per prayer).
+  // Historical note: previously shipped as 'prayer_time_adjustments_debug' by
+  // accident; a one-shot migration in [init] copies values from the legacy
+  // key into the clean key and then deletes the legacy one.
+  static const String keyPrayerTimeAdjustments = 'prayer_time_adjustments';
+  static const String _legacyKeyPrayerTimeAdjustmentsDebug =
+      'prayer_time_adjustments_debug';
   
   /// Get prayer time adjustment (offset in minutes) for a specific prayer
   /// Returns 0 if no adjustment is set
@@ -758,19 +792,15 @@ class PreferencesService {
   }
 
   static Future<void> saveDisabledScreens(Set<String> screenIds) async {
-    // Update notifier immediately to ensure UI responsiveness. 
-    // We create a new Set instance to force ValueNotifier to fire listeners.
-    disabledScreensNotifier.value = Set<String>.from(screenIds);
-    
-    // Then persist to disk in background
     await _prefs?.setStringList(keyDisabledScreens, screenIds.toList());
   }
 
   static Set<String> getDisabledScreens() {
-    return disabledScreensNotifier.value;
+    final list = _prefs?.getStringList(keyDisabledScreens);
+    return list != null ? list.toSet() : <String>{};
   }
 
   static bool isScreenDisabled(String screenId) {
-    return disabledScreensNotifier.value.contains(screenId);
+    return getDisabledScreens().contains(screenId);
   }
 }

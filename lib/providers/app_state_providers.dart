@@ -1,17 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'dart:ui' show Locale;
+
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../services/preferences_service.dart';
 
-/// Provider for the app locale
-final localeProvider = NotifierProvider<LocaleNotifier, Locale>(() {
-  return LocaleNotifier();
-});
+part 'app_state_providers.g.dart';
 
-class LocaleNotifier extends Notifier<Locale> {
+/// Notifier for the app locale.
+///
+/// Class is intentionally named `LocaleNotifier` rather than `Locale` because
+/// `Locale` would collide with `dart:ui.Locale` (the state type). Codegen
+/// therefore generates `localeNotifierProvider`; the `localeProvider`
+/// forwarder below preserves the pre-codegen public name so every
+/// `ref.watch(localeProvider)` / `ref.read(localeProvider.notifier).setLocale`
+/// callsite continues to work unchanged.
+@riverpod
+class LocaleNotifier extends _$LocaleNotifier {
   @override
   Locale build() {
-    // Listen to the legacy languageNotifier for now to stay synced
-    // but eventually this notifier will handle the logic.
     final langCode = PreferencesService.getLanguage();
     return Locale(langCode);
   }
@@ -22,12 +28,16 @@ class LocaleNotifier extends Notifier<Locale> {
   }
 }
 
-/// Provider for the app theme ID
-final themeProvider = NotifierProvider<ThemeNotifier, String>(() {
-  return ThemeNotifier();
-});
+/// Back-compat alias for the pre-codegen `localeProvider` symbol.
+final localeProvider = localeNotifierProvider;
 
-class ThemeNotifier extends Notifier<String> {
+/// Notifier for the app theme id.
+///
+/// Name stays `ThemeNotifier` to avoid colliding with Material's `Theme`
+/// widget when callers import both `material.dart` and this file. See the
+/// `localeProvider` note above.
+@riverpod
+class ThemeNotifier extends _$ThemeNotifier {
   @override
   String build() {
     return PreferencesService.getTheme();
@@ -39,12 +49,12 @@ class ThemeNotifier extends Notifier<String> {
   }
 }
 
-/// Provider for disabled screens
-final disabledScreensProvider = NotifierProvider<DisabledScreensNotifier, Set<String>>(() {
-  return DisabledScreensNotifier();
-});
+/// Back-compat alias for the pre-codegen `themeProvider` symbol.
+final themeProvider = themeNotifierProvider;
 
-class DisabledScreensNotifier extends Notifier<Set<String>> {
+/// Notifier for the set of user-disabled screen ids.
+@riverpod
+class DisabledScreensNotifier extends _$DisabledScreensNotifier {
   @override
   Set<String> build() {
     return PreferencesService.getDisabledScreens();
@@ -62,3 +72,6 @@ class DisabledScreensNotifier extends Notifier<Set<String>> {
     state = updated;
   }
 }
+
+/// Back-compat alias for the pre-codegen `disabledScreensProvider` symbol.
+final disabledScreensProvider = disabledScreensNotifierProvider;
