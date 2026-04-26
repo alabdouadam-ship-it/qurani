@@ -366,7 +366,7 @@ class _EditorScreenState extends ConsumerState<EditorScreen> {
                   TextField(controller: _idCtrl, decoration: const InputDecoration(labelText: 'Unique ID (e.g. ramadan_update_26)', border: OutlineInputBorder())),
                   DropdownButtonFormField<NewsType>(
                     decoration: const InputDecoration(labelText: 'Media Type', border: OutlineInputBorder()),
-                    value: _type,
+                    initialValue: _type,
                     items: NewsType.values.map((t) => DropdownMenuItem(value: t, child: Text(t.name.toUpperCase()))).toList(),
                     onChanged: (v) { 
                       if (v != null) {

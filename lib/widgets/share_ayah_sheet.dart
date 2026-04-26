@@ -37,7 +37,11 @@ class ShareAyahUtils {
     // Cleaner logic for Surah Name
     String cleanSurahName(String name) {
        var cleaned = name.trim();
-       final prefixes = ['Surah', 'surah', 'سورة', 'السورة'];
+       final prefixes = [
+         'Surah', 'surah', 
+         'سورة', 'السورة',
+         'سُورَةُ', 'سُورَةِ', 'سُورَةَ'
+       ];
        bool changed = true;
        while (changed) {
           changed = false;
