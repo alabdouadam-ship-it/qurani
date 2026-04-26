@@ -14,7 +14,26 @@ class ShareAyahUtils {
     required bool isTranslation,
     String? reciterIdentifier,
   }) async {
+    return shareRawAyahAsText(
+      context,
+      surahOrder: surah.number,
+      numberInSurah: ayah.numberInSurah,
+      surahName: isTranslation ? surah.englishName : surah.name,
+      ayahText: ayah.text,
+      isTranslation: isTranslation,
+      reciterIdentifier: reciterIdentifier,
+    );
+  }
 
+  static Future<void> shareRawAyahAsText(
+    BuildContext context, {
+    required int surahOrder,
+    required int numberInSurah,
+    required String surahName,
+    required String ayahText,
+    required bool isTranslation,
+    String? reciterIdentifier,
+  }) async {
     // Cleaner logic for Surah Name
     String cleanSurahName(String name) {
        var cleaned = name.trim();
@@ -32,27 +51,25 @@ class ShareAyahUtils {
        return cleaned;
     }
 
-    final rawName = isTranslation ? surah.englishName : surah.name;
-    final cleanedName = cleanSurahName(rawName);
+    final cleanedName = cleanSurahName(surahName);
     
     // Force standard prefix
     final footerName = isTranslation 
        ? "Surah $cleanedName" 
        : "سورة $cleanedName";
 
-    
-    final footer = "[$footerName - ${ayah.numberInSurah}]";
+    final footer = "[$footerName - $numberInSurah]";
 
     final String processedText = isTranslation 
-        ? ayah.text 
-        : TajweedParser.stripTags(ayah.text);
+        ? ayahText 
+        : TajweedParser.stripTags(ayahText);
 
     // Generate Audio Link
     final reciterKey = reciterIdentifier ?? PreferencesService.getReciter();
     final url = await AudioService.buildVerseUrl(
        reciterKeyAr: reciterKey,
-       surahOrder: surah.number,
-       verseNumber: ayah.numberInSurah
+       surahOrder: surahOrder,
+       verseNumber: numberInSurah
     );
 
     final text = '$processedText \n\n$footer${url != null ? '\n\n$url' : ''}';

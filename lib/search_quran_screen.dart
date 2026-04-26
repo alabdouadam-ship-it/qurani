@@ -9,6 +9,7 @@ import 'package:qurani/services/quran_search_service.dart';
 import 'package:qurani/services/net_utils.dart';
 import 'package:qurani/services/reciter_config_service.dart';
 import 'package:qurani/widgets/modern_ui.dart';
+import 'package:qurani/widgets/share_ayah_sheet.dart';
 
 class SearchQuranScreen extends StatefulWidget {
   const SearchQuranScreen({super.key});
@@ -339,6 +340,23 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(l10n.copiedToClipboard)),
+    );
+  }
+
+  Future<void> _shareAyah(SearchAyah ayah) async {
+    final langCode = Localizations.localeOf(context).languageCode;
+    final isTranslation = _selectedLanguage != 'ar';
+    final surahName = (langCode == 'ar') 
+        ? QuranSearchService.instance.surahNames[ayah.surahOrder] ?? ''
+        : QuranSearchService.instance.surahNamesEn[ayah.surahOrder] ?? '';
+
+    await ShareAyahUtils.shareRawAyahAsText(
+      context,
+      surahOrder: ayah.surahOrder,
+      numberInSurah: ayah.numberInSurah,
+      surahName: surahName,
+      ayahText: ayah.text,
+      isTranslation: isTranslation,
     );
   }
 
@@ -676,6 +694,16 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                               tooltip: (_playingAyahId == '${a.surahOrder}_${a.numberInSurah}' && _isPlayerPlaying)
                                                   ? l10n.pauseSurahAudio
                                                   : l10n.playSurahAudio,
+                                              padding: EdgeInsets.zero,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            width: 32,
+                                            child: IconButton(
+                                              icon: const Icon(Icons.share, size: 18),
+                                              onPressed: () => _shareAyah(a),
+                                              tooltip: l10n.share,
                                               padding: EdgeInsets.zero,
                                             ),
                                           ),

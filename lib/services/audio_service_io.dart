@@ -67,7 +67,7 @@ class AudioService {
     if (s == null || v == null) return null;
     
     final reciter = await ReciterConfigService.getReciter(reciterKeyAr);
-    if (reciter == null) return null;
+    if (reciter == null || !reciter.hasVerseByVerse()) return null;
     
     final ayahsPath = reciter.ayahsPath;
     return '$ayahsPath/$s$v.mp3';
