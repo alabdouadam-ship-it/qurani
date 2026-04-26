@@ -1428,4 +1428,199 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get currentTestResult => 'نتيجة الاختبار الحالي';
+
+  @override
+  String get pause => 'إيقاف مؤقت';
+
+  @override
+  String get resume => 'استئناف';
+
+  @override
+  String get downloadPaused => 'تم إيقاف التنزيل مؤقتًا';
+
+  @override
+  String integrityVerified(int count, int total) {
+    return '$count من $total متحقق منها';
+  }
+
+  @override
+  String integrityCorrupt(int count) {
+    return '$count تالف';
+  }
+
+  @override
+  String integrityMissing(int count) {
+    return '$count ناقص';
+  }
+
+  @override
+  String get repairCorruptFiles => 'إصلاح';
+
+  @override
+  String get repairing => 'جاري الإصلاح…';
+
+  @override
+  String repairCompleted(int count) {
+    return 'تم إصلاح $count ملف. استأنف التنزيل لإعادة جلبها.';
+  }
+
+  @override
+  String integrityAllVerified(int total) {
+    return 'تم التحقق من جميع السور الـ $total';
+  }
+
+  @override
+  String comingSoonFeature(String feature) {
+    return '$feature قريباً!';
+  }
+
+  @override
+  String errorLoadingBook(String error) {
+    return 'تعذّر تحميل الكتاب: $error';
+  }
+
+  @override
+  String get noChaptersAvailable => 'لا توجد فصول متاحة';
+
+  @override
+  String get tasbeehTabLabel => 'المسبحة';
+
+  @override
+  String get wirdTabLabel => 'الورد';
+
+  @override
+  String get wirdAddTitle => 'إضافة ورد';
+
+  @override
+  String get wirdEditTitle => 'تعديل الورد';
+
+  @override
+  String get wirdFieldTitle => 'العنوان';
+
+  @override
+  String get wirdFieldDhikrText => 'نص الذكر';
+
+  @override
+  String get wirdFieldTargetCount => 'العدد المطلوب';
+
+  @override
+  String get wirdFieldDaysOfWeek => 'الأيام';
+
+  @override
+  String get wirdAllDays => 'كل يوم';
+
+  @override
+  String get dayMonday => 'الاثنين';
+
+  @override
+  String get dayTuesday => 'الثلاثاء';
+
+  @override
+  String get dayWednesday => 'الأربعاء';
+
+  @override
+  String get dayThursday => 'الخميس';
+
+  @override
+  String get dayFriday => 'الجمعة';
+
+  @override
+  String get daySaturday => 'السبت';
+
+  @override
+  String get daySunday => 'الأحد';
+
+  @override
+  String get wirdRemindMe => 'ذكّرني بهذا الورد';
+
+  @override
+  String get wirdReminderTime => 'وقت التذكير';
+
+  @override
+  String get wirdDeleteConfirm => 'حذف هذا الورد؟';
+
+  @override
+  String get wirdStart => 'ابدأ';
+
+  @override
+  String get wirdResume => 'متابعة';
+
+  @override
+  String get wirdViewAll => 'عرض كل الأوراد';
+
+  @override
+  String wirdViewAllWithCount(int count) {
+    return 'عرض كل الأوراد ($count)';
+  }
+
+  @override
+  String get wirdAllScreenTitle => 'كل الأوراد';
+
+  @override
+  String get wirdAllScreenSubtitle => 'إدارة جميع الأوراد المجدولة';
+
+  @override
+  String get wirdAllEmptyTitle => 'لم تُنشئ أي ورد بعد';
+
+  @override
+  String get wirdFilterToday => 'اليوم';
+
+  @override
+  String get wirdFilterAll => 'الكل';
+
+  @override
+  String get wirdSendTest => 'إرسال اختبار';
+
+  @override
+  String get wirdTestSent => 'تم إرسال إشعار الاختبار. إن لم يظهر، راجع إعدادات الإشعارات للتطبيق في النظام.';
+
+  @override
+  String get wirdTestPermissionDenied => 'الإشعارات غير مسموحة لهذا التطبيق. فعّلها من إعدادات النظام.';
+
+  @override
+  String get wirdTestFailed => 'تعذّر إرسال إشعار الاختبار. يرجى المحاولة مرة أخرى.';
+
+  @override
+  String get wirdExactAlarmDenied => 'التذكيرات مفعّلة لكنها قد تتأخر. لضمان وصولها في الموعد، فعّل \"المنبهات والتذكيرات\" لهذا التطبيق من إعدادات النظام.';
+
+  @override
+  String wirdProgressFraction(int current, int target) {
+    return '$current / $target';
+  }
+
+  @override
+  String get wirdCompletedToast => 'ما شاء الله — أتممت الورد!';
+
+  @override
+  String get wirdCompletedBadge => 'تم';
+
+  @override
+  String get wirdTodayEmptyTitle => 'لا يوجد ورد لهذا اليوم';
+
+  @override
+  String get wirdTodayEmptyHint => 'أضف ورداً جديداً بزر +، أو عدّل أيام ورد موجود.';
+
+  @override
+  String get wirdSectionTitle => 'ورد اليوم';
+
+  @override
+  String get wirdTabSubtitle => 'أذكارك اليومية مع تذكيرات هادئة.';
+
+  @override
+  String get wirdValidationTitleRequired => 'الرجاء إدخال عنوان';
+
+  @override
+  String get wirdValidationDaysRequired => 'اختر يوماً واحداً على الأقل';
+
+  @override
+  String get wirdValidationTargetInvalid => 'العدد يجب أن يكون بين 1 و 9999';
+
+  @override
+  String get wirdExitFocus => 'إنهاء الجلسة';
+
+  @override
+  String get wirdFocusHintTap => 'اضغط في أي مكان للعدّ';
+
+  @override
+  String get wirdResetProgress => 'إعادة تصفير اليوم';
 }

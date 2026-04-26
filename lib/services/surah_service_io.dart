@@ -18,7 +18,10 @@ class SurahService {
     _db = await QuranDatabaseService.database();
   }
 
+  static const int _maxDbRetries = 2;
+
   static Future<List<Surah>> _loadFromDatabase({bool useEnglishName = false}) async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) {
@@ -42,14 +45,20 @@ class SurahService {
         );
       }).toList();
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
         _clearCache();
         _db = null;
         await _ensureDb();
-        return _loadFromDatabase(useEnglishName: useEnglishName);
+        if (attempt > 0) {
+          await Future.delayed(Duration(milliseconds: 100 * (attempt + 1)));
+        }
+        continue;
       }
       rethrow;
     }
+    }
+    throw StateError('_loadFromDatabase: unreachable');
   }
 
   static Future<List<Surah>> getArabicSurahs() async {

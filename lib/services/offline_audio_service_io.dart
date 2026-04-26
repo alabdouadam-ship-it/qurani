@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:qurani/services/audio_service.dart';
+import 'package:qurani/services/download_service.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'package:qurani/services/preferences_service.dart';
 
@@ -31,10 +32,11 @@ class OfflineAudioService {
   }
 
   static Future<int> countDownloadedFullSurahs(String reciterKey) async {
+    // Path layout owned by DownloadService — delegate so the two services
+    // can never disagree on where files live.
+    final newBase = await DownloadService.surahsBaseDir(reciterKey);
     final dir = await getApplicationDocumentsDirectory();
-    final folder = reciterKey;
-    final newBase = Directory('${dir.path}/qurani/full/$folder');
-    final oldBase = Directory('${dir.path}/full/$folder');
+    final oldBase = Directory('${dir.path}/full/$reciterKey');
     int countNew = 0;
     int countOld = 0;
     if (await newBase.exists()) {
@@ -49,8 +51,8 @@ class OfflineAudioService {
   }
 
   static Future<void> deleteDownloadedFullSurahs(String reciterKey) async {
+    final newBase = await DownloadService.surahsBaseDir(reciterKey);
     final dir = await getApplicationDocumentsDirectory();
-    final newBase = Directory('${dir.path}/qurani/full/$reciterKey');
     final oldBase = Directory('${dir.path}/full/$reciterKey');
     if (await newBase.exists()) {
       await newBase.delete(recursive: true);
@@ -58,6 +60,9 @@ class OfflineAudioService {
     if (await oldBase.exists()) {
       await oldBase.delete(recursive: true);
     }
+    // Drop integrity cache so next render shows a clean slate, not stale
+    // "verified" entries that point at deleted files.
+    await PreferencesService.clearVerifiedFullCache(reciterKey);
   }
 
   static Future<void> downloadAllAyahAudios({
@@ -65,7 +70,6 @@ class OfflineAudioService {
     required void Function(int completed, int total) onProgress,
     CancelToken? cancelToken,
   }) async {
-    final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 15), receiveTimeout: const Duration(seconds: 30)));
     int totalCount = 0;
     int completed = 0;
     for (int surah = 1; surah <= 114; surah++) {
@@ -74,28 +78,25 @@ class OfflineAudioService {
     }
     onProgress(0, totalCount);
     for (int surah = 1; surah <= 114; surah++) {
+      // Ayah-level cancel granularity is fine: a typical ayah is < 1MB,
+      // so honouring cancel between ayahs caps the wasted bandwidth
+      // without bloating DownloadService with a CancelToken parameter.
+      if (cancelToken?.isCancelled == true) return;
       final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEdition.simple);
       for (final a in ayahs) {
-        final url = await AudioService.buildVerseUrl(
-          reciterKeyAr: reciterKey,
-          surahOrder: surah,
-          verseNumber: a.numberInSurah,
-        );
-        final localPath = await AudioService.localAyahFilePath(
-          reciterKeyAr: reciterKey,
-          surahOrder: surah,
-          verseNumber: a.numberInSurah,
-        );
+        if (cancelToken?.isCancelled == true) return;
         completed++;
         onProgress(completed, totalCount);
-        if (url == null) continue;
-        final file = File(localPath);
-        if (await file.exists()) continue;
-        await file.parent.create(recursive: true);
         try {
-          await dio.download(url, localPath, cancelToken: cancelToken);
+          // Delegate to DownloadService so ayah downloads inherit the
+          // same `.part`/resume/MP3-validation behaviour as full surahs.
+          await DownloadService.downloadAyah(
+            reciter: reciterKey,
+            surahOrder: surah,
+            verseNumber: a.numberInSurah,
+          );
         } catch (_) {
-          // ignore and continue
+          // ignore and continue — the next bulk run will pick up misses.
         }
       }
     }
@@ -106,31 +107,29 @@ class OfflineAudioService {
     required void Function(int completed, int total) onProgress,
     CancelToken? cancelToken,
   }) async {
-    final dio = Dio(BaseOptions(connectTimeout: const Duration(seconds: 15), receiveTimeout: const Duration(seconds: 60)));
-    final dir = await getApplicationDocumentsDirectory();
-    final base = Directory('${dir.path}/qurani/full/$reciterKey');
-    if (!await base.exists()) {
-      await base.create(recursive: true);
-    }
+    // Ensure the unified base dir exists once up-front; per-surah delegate
+    // also creates it but this avoids a transient "0 of 114" race on the UI.
+    await DownloadService.surahsBaseDir(reciterKey);
     int completed = 0;
     const int total = 114;
     onProgress(0, total);
     for (int surah = 1; surah <= 114; surah++) {
-      final url = await AudioService.buildFullRecitationUrl(reciterKeyAr: reciterKey, surahOrder: surah);
-      if (url == null) {
-        completed++;
-        onProgress(completed, total);
-        continue;
+      // Coarse cancel granularity (per-surah). A surah is the smallest unit
+      // that DownloadService can resume, so cancelling mid-surah would only
+      // discard the in-memory progress — the `.part` file is preserved and
+      // the next run will resume from the same byte offset.
+      if (cancelToken?.isCancelled == true) {
+        // Persist completion of finished items + flags so the offline
+        // screen reflects partial progress on reopen.
+        await PreferencesService.setDownloadedReciter(reciterKey);
+        return;
       }
-      final padded = surah.toString().padLeft(3, '0');
-      final file = File('${base.path}/$padded.mp3');
-      if (!await file.exists()) {
-        await file.parent.create(recursive: true);
-        try {
-          await dio.download(url, file.path, cancelToken: cancelToken);
-        } catch (_) {
-          // ignore errors and continue
-        }
+      try {
+        // Delegates through DownloadService → `.part` resume, MP3
+        // validation, retry/backoff, and pause-skip via PreferencesService.
+        await DownloadService.downloadSurah(reciterKey, surah);
+      } catch (_) {
+        // ignore and continue — same forgiving semantics as before.
       }
       completed++;
       onProgress(completed, total);

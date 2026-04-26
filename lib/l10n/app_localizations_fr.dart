@@ -1428,4 +1428,199 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get currentTestResult => 'Résultat du test actuel';
+
+  @override
+  String get pause => 'Pause';
+
+  @override
+  String get resume => 'Reprendre';
+
+  @override
+  String get downloadPaused => 'Téléchargement en pause';
+
+  @override
+  String integrityVerified(int count, int total) {
+    return '$count sur $total vérifiés';
+  }
+
+  @override
+  String integrityCorrupt(int count) {
+    return '$count corrompu(s)';
+  }
+
+  @override
+  String integrityMissing(int count) {
+    return '$count manquant(s)';
+  }
+
+  @override
+  String get repairCorruptFiles => 'Réparer';
+
+  @override
+  String get repairing => 'Réparation…';
+
+  @override
+  String repairCompleted(int count) {
+    return '$count fichier(s) réparé(s). Reprenez le téléchargement pour les retélécharger.';
+  }
+
+  @override
+  String integrityAllVerified(int total) {
+    return 'Les $total sourates sont vérifiées';
+  }
+
+  @override
+  String comingSoonFeature(String feature) {
+    return '$feature arrive bientôt !';
+  }
+
+  @override
+  String errorLoadingBook(String error) {
+    return 'Échec du chargement du livre : $error';
+  }
+
+  @override
+  String get noChaptersAvailable => 'Aucun chapitre disponible';
+
+  @override
+  String get tasbeehTabLabel => 'Tasbih';
+
+  @override
+  String get wirdTabLabel => 'Wird';
+
+  @override
+  String get wirdAddTitle => 'Ajouter un wird';
+
+  @override
+  String get wirdEditTitle => 'Modifier le wird';
+
+  @override
+  String get wirdFieldTitle => 'Titre';
+
+  @override
+  String get wirdFieldDhikrText => 'Dhikr';
+
+  @override
+  String get wirdFieldTargetCount => 'Objectif';
+
+  @override
+  String get wirdFieldDaysOfWeek => 'Jours';
+
+  @override
+  String get wirdAllDays => 'Tous les jours';
+
+  @override
+  String get dayMonday => 'Lundi';
+
+  @override
+  String get dayTuesday => 'Mardi';
+
+  @override
+  String get dayWednesday => 'Mercredi';
+
+  @override
+  String get dayThursday => 'Jeudi';
+
+  @override
+  String get dayFriday => 'Vendredi';
+
+  @override
+  String get daySaturday => 'Samedi';
+
+  @override
+  String get daySunday => 'Dimanche';
+
+  @override
+  String get wirdRemindMe => 'Me rappeler';
+
+  @override
+  String get wirdReminderTime => 'Heure du rappel';
+
+  @override
+  String get wirdDeleteConfirm => 'Supprimer ce wird ?';
+
+  @override
+  String get wirdStart => 'Commencer';
+
+  @override
+  String get wirdResume => 'Reprendre';
+
+  @override
+  String get wirdViewAll => 'Voir tous les wirds';
+
+  @override
+  String wirdViewAllWithCount(int count) {
+    return 'Voir tous les wirds ($count)';
+  }
+
+  @override
+  String get wirdAllScreenTitle => 'Tous les wirds';
+
+  @override
+  String get wirdAllScreenSubtitle => 'Gérer tous les wirds programmés';
+
+  @override
+  String get wirdAllEmptyTitle => 'Aucun wird créé pour l’instant';
+
+  @override
+  String get wirdFilterToday => 'Du jour';
+
+  @override
+  String get wirdFilterAll => 'Tous';
+
+  @override
+  String get wirdSendTest => 'Tester';
+
+  @override
+  String get wirdTestSent => 'Notification de test envoyée. Si vous ne la voyez pas, vérifiez les paramètres de notification système pour cette application.';
+
+  @override
+  String get wirdTestPermissionDenied => 'Les notifications ne sont pas autorisées pour cette application. Activez-les dans les paramètres système.';
+
+  @override
+  String get wirdTestFailed => 'Impossible d\'envoyer la notification de test. Veuillez réessayer.';
+
+  @override
+  String get wirdExactAlarmDenied => 'Les rappels sont activés mais peuvent être retardés. Pour une livraison à l\'heure, autorisez « Alarmes et rappels » pour cette application dans les paramètres système.';
+
+  @override
+  String wirdProgressFraction(int current, int target) {
+    return '$current / $target';
+  }
+
+  @override
+  String get wirdCompletedToast => 'MashaAllah — wird terminé !';
+
+  @override
+  String get wirdCompletedBadge => 'Fait';
+
+  @override
+  String get wirdTodayEmptyTitle => 'Aucun wird prévu aujourd\'hui';
+
+  @override
+  String get wirdTodayEmptyHint => 'Ajoutez-en un avec le bouton +, ou modifiez les jours d\'un wird existant.';
+
+  @override
+  String get wirdSectionTitle => 'Wird du jour';
+
+  @override
+  String get wirdTabSubtitle => 'Vos adhkar quotidiens avec de doux rappels.';
+
+  @override
+  String get wirdValidationTitleRequired => 'Veuillez saisir un titre';
+
+  @override
+  String get wirdValidationDaysRequired => 'Choisissez au moins un jour';
+
+  @override
+  String get wirdValidationTargetInvalid => 'L\'objectif doit être entre 1 et 9999';
+
+  @override
+  String get wirdExitFocus => 'Terminer la session';
+
+  @override
+  String get wirdFocusHintTap => 'Touchez n\'importe où pour compter';
+
+  @override
+  String get wirdResetProgress => 'Réinitialiser la progression';
 }

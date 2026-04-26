@@ -36,6 +36,15 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     _loadBook();
   }
 
+  @override
+  void dispose() {
+    // PageController holds listeners for every page transition; without this
+    // explicit dispose we leak one controller per hadith-book visit — and
+    // PageView caches neighbouring pages, so the leak is compounded.
+    _pageController.dispose();
+    super.dispose();
+  }
+
   Future<void> _loadBook() async {
     try {
       final book = await _hadithService.loadBook(widget.bookId);
@@ -120,33 +129,41 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
   void _goToHadithNumber() async {
     if (_visibleHadiths.isEmpty) return;
 
+    // try/finally pattern ensures the controller is freed even if the user
+    // dismisses the dialog by tapping outside or pressing back — which
+    // returns `null` and would otherwise leak one controller per attempt.
     final controller = TextEditingController();
-    final result = await showDialog<int>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.search),
-        content: TextField(
-          controller: controller,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            hintText: AppLocalizations.of(context)!.enterHadithNumber, 
+    final int? result;
+    try {
+      result = await showDialog<int>(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(AppLocalizations.of(context)!.search),
+          content: TextField(
+            controller: controller,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+              hintText: AppLocalizations.of(context)!.enterHadithNumber,
+            ),
           ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
+            ),
+            FilledButton(
+              onPressed: () {
+                final num = int.tryParse(controller.text);
+                Navigator.pop(context, num);
+              },
+              child: Text(AppLocalizations.of(context)!.goButton),
+            ),
+          ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
-          ),
-          FilledButton(
-            onPressed: () {
-              final num = int.tryParse(controller.text);
-              Navigator.pop(context, num);
-            },
-            child: Text(AppLocalizations.of(context)!.goButton),
-          ),
-        ],
-      ),
-    );
+      );
+    } finally {
+      controller.dispose();
+    }
 
     if (result != null) {
       // Find index in VISIBLE hadiths
@@ -166,7 +183,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
   void _showChapters() {
     if (_book == null || _book!.metadata.sections.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-           const SnackBar(content: Text('No chapters available')),
+           SnackBar(content: Text(AppLocalizations.of(context)!.noChaptersAvailable)),
         );
         return;
     }
@@ -265,7 +282,11 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     if (_errorMessage != null) {
       return Scaffold(
         appBar: AppBar(title: Text(widget.bookName)),
-        body: Center(child: Text('Error: $_errorMessage')),
+        body: Center(
+          child: Text(
+            AppLocalizations.of(context)!.errorLoadingBook(_errorMessage!),
+          ),
+        ),
       );
     }
 

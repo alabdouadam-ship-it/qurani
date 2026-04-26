@@ -27,6 +27,18 @@ class DownloadService {
     return base;
   }
 
+  /// Public accessor for the per-reciter full-surah directory. Used by
+  /// `OfflineAudioService` so both services agree on a single layout
+  /// (`<docs>/qurani/full/<reciter>/`) and we can't drift apart.
+  static Future<Directory> surahsBaseDir(String reciter) async {
+    final base = await _baseDir();
+    final dir = Directory('${base.path}/$reciter');
+    if (!await dir.exists()) {
+      await dir.create(recursive: true);
+    }
+    return dir;
+  }
+
   static Future<String> localSurahPath(String reciter, int order) async {
     final base = await _baseDir();
     final padded = order.toString().padLeft(3, '0');
@@ -46,6 +58,128 @@ class DownloadService {
   static Future<bool> isSurahDownloaded(String reciter, int order) async {
     final path = await localSurahPath(reciter, order);
     return File(path).exists();
+  }
+
+  // ---------------------------------------------------------------------
+  // Public integrity API
+  // ---------------------------------------------------------------------
+
+  /// Non-throwing wrapper around [_validateMp3]. Returns `true` if [file]
+  /// exists, is large enough, and starts with an MP3 signature.
+  static Future<bool> verifyFile(File file) async {
+    try {
+      if (!await file.exists()) return false;
+      await _validateMp3(file);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// Verifies a single full-surah MP3 on disk. Returns `false` for missing,
+  /// truncated, or wrong-magic-byte files.
+  static Future<bool> verifySurahFile(String reciter, int order) async {
+    final path = await localSurahPath(reciter, order);
+    return verifyFile(File(path));
+  }
+
+  /// Cached variant of [verifySurahFile]. The result is keyed by file size +
+  /// mtime in [PreferencesService], so subsequent calls in the same UI
+  /// session (or across restarts) are O(1) until the file changes.
+  ///
+  /// When [forceRefresh] is true, the cache entry is bypassed and the file
+  /// is re-sniffed; useful right after a (re)download completes.
+  static Future<bool> verifySurahFileCached(
+    String reciter,
+    int order, {
+    bool forceRefresh = false,
+  }) async {
+    final path = await localSurahPath(reciter, order);
+    final file = File(path);
+    if (!await file.exists()) {
+      // Drop a stale cache entry so the UI badge flips to "missing".
+      await PreferencesService.removeVerifiedFullEntry(reciter, order);
+      return false;
+    }
+    final stat = await file.stat();
+    final size = stat.size;
+    final mtimeMs = stat.modified.millisecondsSinceEpoch;
+
+    if (!forceRefresh) {
+      final cache = PreferencesService.getVerifiedFullCache(reciter);
+      final padded = order.toString().padLeft(3, '0');
+      final entry = cache[padded];
+      if (entry != null) {
+        final cachedSize = (entry['s'] as num?)?.toInt();
+        final cachedMtime = (entry['m'] as num?)?.toInt();
+        final cachedOk = entry['ok'] == true;
+        if (cachedSize == size && cachedMtime == mtimeMs) {
+          return cachedOk;
+        }
+      }
+    }
+
+    final ok = await verifyFile(file);
+    await PreferencesService.setVerifiedFullEntry(
+      reciter,
+      order,
+      size: size,
+      mtimeMs: mtimeMs,
+      ok: ok,
+    );
+    return ok;
+  }
+
+  /// Deletes every full-surah file for [reciter] that fails MP3 validation
+  /// (truncated, wrong magic bytes, error-page payload, etc.) and clears
+  /// their cache entries. Returns the number of files removed.
+  ///
+  /// The caller typically follows up with `downloadFullReciter` so the
+  /// hole-punched files get re-downloaded on the next bulk run.
+  static Future<int> repairCorruptSurahs(String reciter) async {
+    int removed = 0;
+    for (int order = 1; order <= 114; order++) {
+      final path = await localSurahPath(reciter, order);
+      final file = File(path);
+      if (!await file.exists()) continue;
+      // forceRefresh: a "Repair" action should never trust a stale OK.
+      final ok = await verifySurahFileCached(reciter, order, forceRefresh: true);
+      if (!ok) {
+        try {
+          await file.delete();
+          removed++;
+        } catch (e, st) {
+          Log.w('DownloadService',
+              'repairCorruptSurahs: failed to delete $path', e, st);
+        }
+        await PreferencesService.removeVerifiedFullEntry(reciter, order);
+      }
+    }
+    return removed;
+  }
+
+  /// Aggregate integrity report for a reciter's bulk download. Returns the
+  /// counts of `present`, `missing`, and `corrupt` surahs out of 114, so a
+  /// UI badge can show e.g. "112/114 verified" at a glance.
+  static Future<({int present, int missing, int corrupt})>
+      verifyAllSurahs(String reciter) async {
+    int present = 0;
+    int missing = 0;
+    int corrupt = 0;
+    for (int order = 1; order <= 114; order++) {
+      final path = await localSurahPath(reciter, order);
+      if (!await File(path).exists()) {
+        missing++;
+        continue;
+      }
+      final ok = await verifySurahFileCached(reciter, order);
+      if (ok) {
+        present++;
+      } else {
+        corrupt++;
+      }
+    }
+    return (present: present, missing: missing, corrupt: corrupt);
   }
 
   /// Verifies that the downloaded [file] looks like a valid MP3. Performs:
@@ -245,6 +379,39 @@ class DownloadService {
       return;
     }
     await _downloadWithRetry(url, target);
+    // Refresh the verification cache so the UI doesn't have to wait for
+    // the next render to learn the new file is good.
+    await verifySurahFileCached(reciter, order, forceRefresh: true);
+  }
+
+  /// Per-ayah download for `OfflineAudioService.downloadAllAyahAudios`.
+  /// Reuses [_downloadWithRetry] so ayah downloads inherit the same
+  /// `.part`/resume/MP3-validation behaviour as full surahs.
+  static Future<void> downloadAyah({
+    required String reciter,
+    required int surahOrder,
+    required int verseNumber,
+  }) async {
+    final url = await AudioService.buildVerseUrl(
+      reciterKeyAr: reciter,
+      surahOrder: surahOrder,
+      verseNumber: verseNumber,
+    );
+    if (url == null) {
+      throw Exception(
+          'Unable to resolve ayah URL for $reciter $surahOrder:$verseNumber');
+    }
+    final target = await AudioService.localAyahFilePath(
+      reciterKeyAr: reciter,
+      surahOrder: surahOrder,
+      verseNumber: verseNumber,
+    );
+    final file = File(target);
+    if (await file.exists()) {
+      return;
+    }
+    await file.parent.create(recursive: true);
+    await _downloadWithRetry(url, target);
   }
 
   /// Downloads the full 114-surah recitation for [reciter] with up to
@@ -279,6 +446,14 @@ class DownloadService {
     }
 
     Future<void> downloadOne(int order) async {
+      // Honour a persisted pause request: a user who tapped "Pause" in PR2
+      // will have this entry set, and we skip the surah without burning
+      // bandwidth. The next bulk run picks it up once they tap "Resume".
+      if (PreferencesService.isFullSurahPaused(reciter, order)) {
+        done[order] = true;
+        report();
+        return;
+      }
       final url = await AudioService.buildFullRecitationUrl(
           reciterKeyAr: reciter, surahOrder: order);
       if (url == null) {
@@ -303,6 +478,9 @@ class DownloadService {
             report();
           },
         );
+        // Warm the verification cache for the freshly written file so the
+        // UI badge flips to "verified" without an extra disk sniff.
+        await verifySurahFileCached(reciter, order, forceRefresh: true);
       } catch (e, st) {
         Log.w('DownloadService', 'Surah $order failed after retries', e, st);
       }

@@ -2814,6 +2814,360 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Current test result'**
   String get currentTestResult;
+
+  /// No description provided for @pause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get pause;
+
+  /// No description provided for @resume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get resume;
+
+  /// No description provided for @downloadPaused.
+  ///
+  /// In en, this message translates to:
+  /// **'Download paused'**
+  String get downloadPaused;
+
+  /// No description provided for @integrityVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {total} verified'**
+  String integrityVerified(int count, int total);
+
+  /// No description provided for @integrityCorrupt.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} corrupt'**
+  String integrityCorrupt(int count);
+
+  /// No description provided for @integrityMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} missing'**
+  String integrityMissing(int count);
+
+  /// No description provided for @repairCorruptFiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Repair'**
+  String get repairCorruptFiles;
+
+  /// No description provided for @repairing.
+  ///
+  /// In en, this message translates to:
+  /// **'Repairing…'**
+  String get repairing;
+
+  /// No description provided for @repairCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Repaired {count} file(s). Resume the download to fetch them again.'**
+  String repairCompleted(int count);
+
+  /// No description provided for @integrityAllVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'All {total} surahs verified'**
+  String integrityAllVerified(int total);
+
+  /// No description provided for @comingSoonFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'{feature} is coming soon!'**
+  String comingSoonFeature(String feature);
+
+  /// No description provided for @errorLoadingBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load book: {error}'**
+  String errorLoadingBook(String error);
+
+  /// No description provided for @noChaptersAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No chapters available'**
+  String get noChaptersAvailable;
+
+  /// No description provided for @tasbeehTabLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasbeeh'**
+  String get tasbeehTabLabel;
+
+  /// No description provided for @wirdTabLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Wird'**
+  String get wirdTabLabel;
+
+  /// No description provided for @wirdAddTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Wird'**
+  String get wirdAddTitle;
+
+  /// No description provided for @wirdEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Wird'**
+  String get wirdEditTitle;
+
+  /// No description provided for @wirdFieldTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get wirdFieldTitle;
+
+  /// No description provided for @wirdFieldDhikrText.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhikr'**
+  String get wirdFieldDhikrText;
+
+  /// No description provided for @wirdFieldTargetCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Target count'**
+  String get wirdFieldTargetCount;
+
+  /// No description provided for @wirdFieldDaysOfWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get wirdFieldDaysOfWeek;
+
+  /// No description provided for @wirdAllDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day'**
+  String get wirdAllDays;
+
+  /// No description provided for @dayMonday.
+  ///
+  /// In en, this message translates to:
+  /// **'Monday'**
+  String get dayMonday;
+
+  /// No description provided for @dayTuesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Tuesday'**
+  String get dayTuesday;
+
+  /// No description provided for @dayWednesday.
+  ///
+  /// In en, this message translates to:
+  /// **'Wednesday'**
+  String get dayWednesday;
+
+  /// No description provided for @dayThursday.
+  ///
+  /// In en, this message translates to:
+  /// **'Thursday'**
+  String get dayThursday;
+
+  /// No description provided for @dayFriday.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday'**
+  String get dayFriday;
+
+  /// No description provided for @daySaturday.
+  ///
+  /// In en, this message translates to:
+  /// **'Saturday'**
+  String get daySaturday;
+
+  /// No description provided for @daySunday.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunday'**
+  String get daySunday;
+
+  /// No description provided for @wirdRemindMe.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me'**
+  String get wirdRemindMe;
+
+  /// No description provided for @wirdReminderTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get wirdReminderTime;
+
+  /// No description provided for @wirdDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this wird?'**
+  String get wirdDeleteConfirm;
+
+  /// No description provided for @wirdStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get wirdStart;
+
+  /// No description provided for @wirdResume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get wirdResume;
+
+  /// No description provided for @wirdViewAll.
+  ///
+  /// In en, this message translates to:
+  /// **'View all wirds'**
+  String get wirdViewAll;
+
+  /// No description provided for @wirdViewAllWithCount.
+  ///
+  /// In en, this message translates to:
+  /// **'View all wirds ({count})'**
+  String wirdViewAllWithCount(int count);
+
+  /// No description provided for @wirdAllScreenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All wirds'**
+  String get wirdAllScreenTitle;
+
+  /// No description provided for @wirdAllScreenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage every scheduled wird'**
+  String get wirdAllScreenSubtitle;
+
+  /// No description provided for @wirdAllEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No wirds created yet'**
+  String get wirdAllEmptyTitle;
+
+  /// No description provided for @wirdFilterToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get wirdFilterToday;
+
+  /// No description provided for @wirdFilterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get wirdFilterAll;
+
+  /// No description provided for @wirdSendTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Send test'**
+  String get wirdSendTest;
+
+  /// No description provided for @wirdTestSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Test notification sent. If you don\'t see it, check your system notification settings for this app.'**
+  String get wirdTestSent;
+
+  /// No description provided for @wirdTestPermissionDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications aren\'t allowed for this app. Please enable them in system settings.'**
+  String get wirdTestPermissionDenied;
+
+  /// No description provided for @wirdTestFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t send the test notification. Please try again.'**
+  String get wirdTestFailed;
+
+  /// No description provided for @wirdExactAlarmDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders are enabled but may be delayed. For on-time delivery, allow \"Alarms & reminders\" for this app in system settings.'**
+  String get wirdExactAlarmDenied;
+
+  /// No description provided for @wirdProgressFraction.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} / {target}'**
+  String wirdProgressFraction(int current, int target);
+
+  /// No description provided for @wirdCompletedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'MashaAllah — completed!'**
+  String get wirdCompletedToast;
+
+  /// No description provided for @wirdCompletedBadge.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get wirdCompletedBadge;
+
+  /// No description provided for @wirdTodayEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No wird scheduled for today'**
+  String get wirdTodayEmptyTitle;
+
+  /// No description provided for @wirdTodayEmptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add one with the + button, or edit an existing wird\'s days.'**
+  String get wirdTodayEmptyHint;
+
+  /// No description provided for @wirdSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s Wird'**
+  String get wirdSectionTitle;
+
+  /// No description provided for @wirdTabSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily adhkar with gentle reminders.'**
+  String get wirdTabSubtitle;
+
+  /// No description provided for @wirdValidationTitleRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a title'**
+  String get wirdValidationTitleRequired;
+
+  /// No description provided for @wirdValidationDaysRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick at least one day'**
+  String get wirdValidationDaysRequired;
+
+  /// No description provided for @wirdValidationTargetInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Target must be between 1 and 9999'**
+  String get wirdValidationTargetInvalid;
+
+  /// No description provided for @wirdExitFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'End session'**
+  String get wirdExitFocus;
+
+  /// No description provided for @wirdFocusHintTap.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap anywhere to count'**
+  String get wirdFocusHintTap;
+
+  /// No description provided for @wirdResetProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset today\'s progress'**
+  String get wirdResetProgress;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

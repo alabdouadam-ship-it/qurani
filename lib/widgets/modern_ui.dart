@@ -256,7 +256,15 @@ class ModernFeatureTile extends StatelessWidget {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: onTap,
+        // Wrap the caller's onTap so every feature tile tap emits a tactile
+        // tick. Using `selectionClick` (not `lightImpact`) because these are
+        // discrete choices in a grid — the former maps to
+        // UISelectionFeedbackGenerator on iOS, which is the platform-idiomatic
+        // feedback for list/grid item taps.
+        onTap: () {
+          HapticFeedback.selectionClick();
+          onTap();
+        },
         borderRadius: BorderRadius.circular(28),
         child: Ink(
           decoration: BoxDecoration(
@@ -429,7 +437,10 @@ class ModernFilterChip extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: onTap,
+          onTap: () {
+            HapticFeedback.selectionClick();
+            onTap();
+          },
           borderRadius: BorderRadius.circular(999),
           child: Ink(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

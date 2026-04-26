@@ -33,6 +33,14 @@ class OptionsScreen extends ConsumerStatefulWidget {
 class _OptionsScreenState extends ConsumerState<OptionsScreen> {
   bool _updateCheckedThisSession = false;
 
+  // Cache the Hijri-date future once per screen lifetime. Previously we passed
+  // `future: _getHijriDate()` directly into FutureBuilder, which created a
+  // fresh Future on every rebuild — and every Riverpod change (theme, locale,
+  // unseen news count) triggers a rebuild on this hub screen. That meant a
+  // burst of redundant async date computations per session. A `late final`
+  // field memoizes it without needing setState.
+  late final Future<Map<String, String>?> _hijriFuture = _getHijriDate();
+
   @override
   void initState() {
     super.initState();
@@ -88,7 +96,7 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
       body: Column(
         children: [
           FutureBuilder<Map<String, String>?>(
-            future: _getHijriDate(),
+            future: _hijriFuture,
             builder: (context, snapshot) {
               if (snapshot.hasData && snapshot.data != null) {
                 final hijri = snapshot.data!;
@@ -520,16 +528,17 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
   }
 
   void _showComingSoon(BuildContext context, String feature) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(feature),
-          content: const Text('This feature is coming soon!'),
+          content: Text(l10n.comingSoonFeature(feature)),
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
+              child: Text(MaterialLocalizations.of(context).okButtonLabel),
             ),
           ],
         );

@@ -15,6 +15,12 @@ Future<int?> showPagePickerSheet(
   final l10n = AppLocalizations.of(context)!;
   final initialIndex = currentPage - 1;
   final textController = TextEditingController(text: currentPage.toString());
+  // Hoisted outside the builder so we can dispose it after the sheet closes.
+  // Previously constructed inline inside CupertinoPicker, which meant each
+  // sheet-open leaked one controller (it was never referenced after the
+  // builder returned, so Dart's GC couldn't reclaim the listener chain).
+  final pickerController =
+      FixedExtentScrollController(initialItem: initialIndex);
 
   final selected = await showModalBottomSheet<int>(
     context: context,
@@ -75,8 +81,7 @@ Future<int?> showPagePickerSheet(
                 height: 200,
                 child: CupertinoPicker(
                   itemExtent: 40,
-                  scrollController:
-                      FixedExtentScrollController(initialItem: initialIndex),
+                  scrollController: pickerController,
                   onSelectedItemChanged: (value) {
                     tempIndex = value;
                     textController.text = (value + 1).toString();
@@ -126,5 +131,6 @@ Future<int?> showPagePickerSheet(
   );
 
   textController.dispose();
+  pickerController.dispose();
   return selected;
 }

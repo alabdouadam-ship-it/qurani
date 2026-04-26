@@ -215,6 +215,21 @@ class AdhanAudioManager {
         await _markStopped();
         return;
       }
+      // Double-check: if the flag says playing but no engine is actually
+      // active in THIS isolate, and the pref is older than 30 seconds,
+      // treat it as orphaned from a dead background isolate. This catches
+      // the case where OEM ROMs serve a stale SharedPreferences disk cache
+      // despite the reload() above.
+      if (flag && !_foregroundPlayer.playing && _backgroundPlayers.isEmpty) {
+        final age = now - startMs;
+        if (age > 30000) {
+          Log.w('AdhanAudioManager',
+              'Playing flag set but no engine active and age=${age}ms; '
+              'clearing orphaned state');
+          await _markStopped();
+          return;
+        }
+      }
       if (isPlayingListenable.value != flag) {
         isPlayingListenable.value = flag;
       }
@@ -358,6 +373,9 @@ class AdhanAudioManager {
     });
     try {
       final prefs = await SharedPreferences.getInstance();
+      // Force fresh read before writing so we don't fight a stale disk
+      // cache left by a dead isolate on OEM ROMs.
+      await prefs.reload();
       await prefs.setBool(_kIsPlaying, true);
       await prefs.setInt(
           _kPlayingStartMs, DateTime.now().millisecondsSinceEpoch);

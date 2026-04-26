@@ -1,6 +1,11 @@
 import 'package:uuid/uuid.dart';
 
 class TasbeehItem {
+  /// NB: [count] is intentionally non-final. The Tasbeeh UI optimistically
+  /// increments it in-place on each tap for immediate visual feedback, while
+  /// the authoritative value lives in SQLite via atomic `count = count + 1`.
+  /// A concurrent `_loadData()` will overwrite the optimistic value with the
+  /// DB truth — this is acceptable because both converge to the same number.
   String id;
   String text;
   int count;

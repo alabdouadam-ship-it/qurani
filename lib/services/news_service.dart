@@ -82,12 +82,19 @@ class NewsService {
       final notifiedIds = prefs.getStringList('news_notified_ids') ?? [];
       
       List<String> newlyNotified = [];
+      // Cap notifications per sync to avoid flooding the user when the
+      // app first syncs a large backlog of unseen items.
+      const int maxNotificationsPerBatch = 3;
       for (final item in unseenItems) {
+        if (newlyNotified.length >= maxNotificationsPerBatch) break;
         // PUSH RULE: The app must have been installed BEFORE the news was published.
         final isAfterInstall = !item.publishDate.isBefore(installTime);
         
         if (item.sendNotification && !notifiedIds.contains(item.id) && isAfterInstall) {
           try {
+            if (newlyNotified.isNotEmpty) {
+              await Future.delayed(const Duration(milliseconds: 500));
+            }
             await NotificationService.showNewsNotification(item);
             newlyNotified.add(item.id);
           } catch (e) {

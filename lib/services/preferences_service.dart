@@ -475,6 +475,114 @@ class PreferencesService {
     return _prefs?.getString('download_reciter');
   }
 
+  // --- Downloads: pause state (full-surah recitations) ---
+  // Stores the padded surah orders ("001".."114") for which the user has
+  // explicitly paused/cancelled an in-flight bulk download. Bulk workers
+  // skip these so a "Pause" toggle survives app restarts and process death.
+  static String _pausedFullKey(String reciter) => 'paused_full_$reciter';
+
+  static List<String> getPausedFullSurahs(String reciter) {
+    return _prefs?.getStringList(_pausedFullKey(reciter)) ?? const [];
+  }
+
+  static bool isFullSurahPaused(String reciter, int order) {
+    final padded = order.toString().padLeft(3, '0');
+    return getPausedFullSurahs(reciter).contains(padded);
+  }
+
+  static Future<void> markFullSurahPaused(String reciter, int order) async {
+    final padded = order.toString().padLeft(3, '0');
+    final list = List<String>.from(getPausedFullSurahs(reciter));
+    if (!list.contains(padded)) {
+      list.add(padded);
+      await _prefs?.setStringList(_pausedFullKey(reciter), list);
+    }
+  }
+
+  static Future<void> markFullSurahResumed(String reciter, int order) async {
+    final padded = order.toString().padLeft(3, '0');
+    final list = List<String>.from(getPausedFullSurahs(reciter));
+    if (list.remove(padded)) {
+      await _prefs?.setStringList(_pausedFullKey(reciter), list);
+    }
+  }
+
+  static Future<void> clearPausedFullSurahs(String reciter) async {
+    await _prefs?.remove(_pausedFullKey(reciter));
+  }
+
+  // --- Downloads: integrity verification cache ---
+  // Magic-byte sniffing every file on every UI render is wasteful on a
+  // 114-surah grid. We cache "this file at this size+mtime is OK" so the
+  // UI can render badges instantly and only re-verify when the file
+  // actually changes (re-download, sideload, partial wipe).
+  //
+  // Stored as a JSON map under `verified_full_<reciter>`:
+  //   { "001": { "s": <size>, "m": <mtimeMs>, "ok": true }, ... }
+  static String _verifiedFullKey(String reciter) => 'verified_full_$reciter';
+
+  static Map<String, Map<String, dynamic>> getVerifiedFullCache(String reciter) {
+    final raw = _prefs?.getString(_verifiedFullKey(reciter));
+    if (raw == null || raw.isEmpty) return <String, Map<String, dynamic>>{};
+    try {
+      final decoded = json.decode(raw);
+      if (decoded is! Map) return <String, Map<String, dynamic>>{};
+      return decoded.map(
+        (k, v) => MapEntry(
+          k.toString(),
+          v is Map ? v.map((kk, vv) => MapEntry(kk.toString(), vv)) : <String, dynamic>{},
+        ),
+      );
+    } catch (_) {
+      return <String, Map<String, dynamic>>{};
+    }
+  }
+
+  static Future<void> setVerifiedFullEntry(
+    String reciter,
+    int order, {
+    required int size,
+    required int mtimeMs,
+    required bool ok,
+  }) async {
+    final padded = order.toString().padLeft(3, '0');
+    final map = getVerifiedFullCache(reciter);
+    map[padded] = {'s': size, 'm': mtimeMs, 'ok': ok};
+    await _prefs?.setString(_verifiedFullKey(reciter), json.encode(map));
+  }
+
+  static Future<void> removeVerifiedFullEntry(String reciter, int order) async {
+    final padded = order.toString().padLeft(3, '0');
+    final map = getVerifiedFullCache(reciter);
+    if (map.remove(padded) != null) {
+      await _prefs?.setString(_verifiedFullKey(reciter), json.encode(map));
+    }
+  }
+
+  static Future<void> clearVerifiedFullCache(String reciter) async {
+    await _prefs?.remove(_verifiedFullKey(reciter));
+  }
+
+  // --- Downloads: bulk-paused flag (per reciter) ---
+  // The Offline Audio screen exposes a single "Pause / Resume" toggle for
+  // the bulk full-surah download. We persist that toggle so closing and
+  // reopening the screen (or killing the app) preserves the user's intent
+  // — no spontaneous resumption of a 4GB download just because the screen
+  // was reopened.
+  static String _bulkPausedFullKey(String reciter) => 'bulk_paused_full_$reciter';
+
+  static bool isBulkFullPaused(String reciter) {
+    return _prefs?.getBool(_bulkPausedFullKey(reciter)) ?? false;
+  }
+
+  static Future<void> setBulkFullPaused(String reciter, bool paused) async {
+    if (paused) {
+      await _prefs?.setBool(_bulkPausedFullKey(reciter), true);
+    } else {
+      await _prefs?.remove(_bulkPausedFullKey(reciter));
+    }
+  }
+
   static const String keyHighlightedAyahsColors = 'highlighted_ayahs_colors';
 
   static Future<void> saveAyahHighlight(int ayahNumber, int color) async {

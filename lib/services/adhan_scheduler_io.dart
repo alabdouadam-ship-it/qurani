@@ -236,6 +236,11 @@ Future<void> _playAdhanCallback(int id) async {
   // keys reliably.
   await PreferencesService.ensureInitialized();
 
+  // Lazily init the notification plugin so any stop/cancel calls from
+  // AdhanAudioManager work correctly in this background isolate.
+  // NotificationService.init() is idempotent (guarded by _initialized).
+  try { await NotificationService.init(); } catch (_) {}
+
   // Decode prayer from alarm id.
   final code = id % 10;
   String? prayerId;

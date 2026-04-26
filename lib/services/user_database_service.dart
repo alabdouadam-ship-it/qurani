@@ -32,9 +32,8 @@ class UserDatabaseService {
 
   /// Current expected schema version. Bump this and append a migration
   /// block to [_migrations] whenever the schema changes. Never edit an
-  /// existing migration — add a new one so users on older versions
-  /// upgrade through the full chain.
-  static const int _schemaVersion = 1;
+  /// existing migration — add a new one instead.
+  static const int _schemaVersion = 2;
 
   /// Returns the shared database, opening and migrating it lazily on the
   /// first call. All callers share the same [Database] instance, which is
@@ -119,6 +118,30 @@ class UserDatabaseService {
       await db.execute('''
         CREATE INDEX idx_tasbeeh_items_group
           ON tasbeeh_items(group_id, position)
+      ''');
+    },
+
+    // v1 -> v2: Wird table — migrates wirds from SharedPreferences JSON
+    // into crash-safe, journaled SQLite. The actual data migration
+    // (reading `wirds_v1` from prefs and INSERT-ing rows) runs in
+    // `WirdService._migrateFromPrefsIfNeeded()` on first access, not
+    // here, because `onUpgrade` doesn't have access to SharedPreferences.
+    (db) async {
+      await db.execute('''
+        CREATE TABLE wirds (
+          id                    TEXT PRIMARY KEY,
+          title                 TEXT NOT NULL,
+          dhikr_text            TEXT NOT NULL DEFAULT '',
+          target_count          INTEGER NOT NULL DEFAULT 33,
+          current_count         INTEGER NOT NULL DEFAULT 0,
+          days_of_week          TEXT NOT NULL DEFAULT '1,2,3,4,5,6,7',
+          notifications_enabled INTEGER NOT NULL DEFAULT 0,
+          notification_time     TEXT NOT NULL DEFAULT '14:00',
+          last_updated_date     TEXT,
+          is_deleted            INTEGER NOT NULL DEFAULT 0,
+          created_at            TEXT NOT NULL,
+          position              INTEGER NOT NULL DEFAULT 0
+        )
       ''');
     },
   ];

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -17,6 +19,7 @@ import 'services/adhan_scheduler.dart';
 import 'services/adhan_audio_manager.dart';
 import 'prayer_times_screen.dart';
 import 'services/global_adhan_service.dart';
+import 'services/wird_service.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:path_provider/path_provider.dart';
 import 'themes/app_theme_config.dart';
@@ -109,88 +112,118 @@ Future<void> main() async {
   // Silent background refresh of prayer times cache every 10 days using last known position
   await PrayerTimesService.maybeRefreshCacheOnLaunch();
   
-  // Schedule Adhan notifications at app startup (so they work even when not on prayer times screen)
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-    try {
-      final now = DateTime.now();
-      final times = await PrayerTimesService.getTimesForDate(
-        year: now.year,
-        month: now.month,
-        day: now.day,
-      );
-      if (times != null) {
-        final adhanEnabled = {
-          for (final id in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'])
-            id: PreferencesService.getBool('adhan_$id') ?? false,
-        };
-        final soundKey = PreferencesService.getAdhanSound();
-        // Gate the 7-day scheduling pass behind AdhanScheduler's dedup check:
-        // without this guard, the same alarms get re-queued 3-4× per cold
-        // start (main + maybeRefreshCacheOnLaunch + prayer_times_screen init)
-        // which triggers Android alarm-manager throttling on API 31+.
-        final shouldSchedule = await AdhanScheduler.shouldScheduleThroughDay(
-          soundKey: soundKey,
-          toggles: adhanEnabled,
-          daysAhead: 7,
-        );
-        if (shouldSchedule) {
-          await NotificationService.scheduleRemainingAdhans(
-            times: times,
-            soundKey: soundKey,
-            toggles: adhanEnabled,
-          );
-          await AdhanScheduler.scheduleForTimes(
-            times: times,
-            toggles: adhanEnabled,
-            soundKey: soundKey,
-          );
-          // Also schedule for the next 7 days.
-          //
-          // DST safety: advance the cursor via the calendar-aware
-          // `DateTime(y, m, d + 1)` constructor rather than
-          // `cursor.add(Duration(days: 1))`. The latter adds 86400s of
-          // absolute time, which on DST transition days drifts the
-          // wall-clock by ±1 hour and can make the loop skip or double
-          // a calendar date. See `prayer_times_service_io.dart` for the
-          // full rationale.
-          DateTime cursor = DateTime(now.year, now.month, now.day + 1);
-          for (int i = 0; i < 7; i++) {
-            final futureTimes = await PrayerTimesService.getTimesForDate(
-              year: cursor.year,
-              month: cursor.month,
-              day: cursor.day,
-            );
-            if (futureTimes != null) {
-              await NotificationService.scheduleRemainingAdhans(
-                times: futureTimes,
-                soundKey: soundKey,
-                toggles: adhanEnabled,
-              );
-              await AdhanScheduler.scheduleForTimes(
-                times: futureTimes,
-                toggles: adhanEnabled,
-                soundKey: soundKey,
-              );
-            }
-            cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
-          }
-          await AdhanScheduler.markScheduledThroughDay(
-            soundKey: soundKey,
-            toggles: adhanEnabled,
-            daysAhead: 7,
-          );
-        }
-      }
-    } catch (e) {
-      //print('[Main] Error scheduling Adhans at startup: $e');
-    }
-  }
-  
   runApp(
     const ProviderScope(
       child: QuraniApp(),
     ),
   );
+
+  // Defer the 7-day Adhan scheduling pass until AFTER the first frame so the
+  // user sees the UI immediately instead of a black pre-splash while we do
+  // ~8 sequential day lookups + NotificationService + AlarmManager writes.
+  //
+  // Correctness trade-off: if the user opens the app literally seconds before
+  // a prayer, there is now a ~1-frame (≤16ms) delay before the alarm would be
+  // re-armed. This is acceptable because:
+  //   1. `AdhanScheduler.shouldScheduleThroughDay` already dedups — a fresh
+  //      scheduling pass is a no-op if one ran recently.
+  //   2. Today's imminent Adhan is handled by the already-scheduled alarm
+  //      from the previous session; we're only re-arming day+1..+7 here.
+  //   3. `unawaited` + `Future.microtask` ensures this runs on the event
+  //      loop after the first frame without blocking runApp.
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    unawaited(Future.microtask(_scheduleSevenDaysOfAdhans));
+  }
+
+  // Daily Wird: seed defaults on first launch, apply the daily-reset pass,
+  // and re-arm the rolling 7-day one-shot notification window for every
+  // active wird. Runs on all platforms — on web the NotificationService
+  // scheduling calls are no-ops, but the seeding + reset logic still
+  // works so users get a consistent Wird UI everywhere.
+  //
+  // Kept outside the Android gate because wird reminders are also a valid
+  // iOS feature, and the seeding step must run regardless of platform.
+  unawaited(Future.microtask(WirdService.ensureReadyAndReschedule));
+}
+
+/// Schedules up to 7 days of Adhan notifications + alarm-manager entries.
+/// Extracted from `main()` so it can be deferred until after the first frame.
+/// Any failure is swallowed — the prayer-times screen re-runs this flow when
+/// the user navigates to it, so a startup miss is recoverable.
+Future<void> _scheduleSevenDaysOfAdhans() async {
+  try {
+    final now = DateTime.now();
+    final times = await PrayerTimesService.getTimesForDate(
+      year: now.year,
+      month: now.month,
+      day: now.day,
+    );
+    if (times == null) return;
+
+    final adhanEnabled = {
+      for (final id in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'])
+        id: PreferencesService.getBool('adhan_$id') ?? false,
+    };
+    final soundKey = PreferencesService.getAdhanSound();
+    // Gate the 7-day scheduling pass behind AdhanScheduler's dedup check:
+    // without this guard, the same alarms get re-queued 3-4× per cold
+    // start (main + maybeRefreshCacheOnLaunch + prayer_times_screen init)
+    // which triggers Android alarm-manager throttling on API 31+.
+    final shouldSchedule = await AdhanScheduler.shouldScheduleThroughDay(
+      soundKey: soundKey,
+      toggles: adhanEnabled,
+      daysAhead: 7,
+    );
+    if (!shouldSchedule) return;
+
+    await NotificationService.scheduleRemainingAdhans(
+      times: times,
+      soundKey: soundKey,
+      toggles: adhanEnabled,
+    );
+    await AdhanScheduler.scheduleForTimes(
+      times: times,
+      toggles: adhanEnabled,
+      soundKey: soundKey,
+    );
+    // Also schedule for the next 7 days.
+    //
+    // DST safety: advance the cursor via the calendar-aware
+    // `DateTime(y, m, d + 1)` constructor rather than
+    // `cursor.add(Duration(days: 1))`. The latter adds 86400s of
+    // absolute time, which on DST transition days drifts the
+    // wall-clock by ±1 hour and can make the loop skip or double
+    // a calendar date. See `prayer_times_service_io.dart` for the
+    // full rationale.
+    DateTime cursor = DateTime(now.year, now.month, now.day + 1);
+    for (int i = 0; i < 7; i++) {
+      final futureTimes = await PrayerTimesService.getTimesForDate(
+        year: cursor.year,
+        month: cursor.month,
+        day: cursor.day,
+      );
+      if (futureTimes != null) {
+        await NotificationService.scheduleRemainingAdhans(
+          times: futureTimes,
+          soundKey: soundKey,
+          toggles: adhanEnabled,
+        );
+        await AdhanScheduler.scheduleForTimes(
+          times: futureTimes,
+          toggles: adhanEnabled,
+          soundKey: soundKey,
+        );
+      }
+      cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
+    }
+    await AdhanScheduler.markScheduledThroughDay(
+      soundKey: soundKey,
+      toggles: adhanEnabled,
+      daysAhead: 7,
+    );
+  } catch (e) {
+    debugPrint('[Main] Error scheduling Adhans at startup: $e');
+  }
 }
 
 Future<void> _ensureNotificationPermission() async {

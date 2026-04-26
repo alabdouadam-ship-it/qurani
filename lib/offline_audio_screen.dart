@@ -1,7 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+// Used for haptic feedback on Pause / Resume / Repair actions.
+import 'package:flutter/services.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
+import 'package:qurani/services/download_service.dart';
 import 'package:qurani/services/offline_audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/widgets/modern_ui.dart';
@@ -41,6 +44,18 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
   CancelToken? _cancelTokenAF;
   CancelToken? _cancelTokenTafsir;
 
+  // Pause / integrity state for the bulk full-surah download (PR 2).
+  // `_isFullPaused` mirrors the persisted `bulk_paused_full_<reciter>` flag
+  // so the UI can render "Resume" instead of "Download full surahs" after
+  // the user reopens the screen.
+  bool _isFullPaused = false;
+  bool _isRepairing = false;
+  // Counts from `DownloadService.verifyAllSurahs`. Recomputed on every
+  // `_refreshCounts` so the UI badge always reflects on-disk reality.
+  int _verifiedFull = 0;
+  int _corruptFull = 0;
+  int _missingFull = 0;
+
   static const int _totalAyahs = 6236;
   static const int _totalFull = 114;
 
@@ -54,12 +69,31 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     _refreshCounts();
   }
 
+  @override
+  void dispose() {
+    // Cancel any in-flight bulk downloads when the screen leaves the tree.
+    // Before this, a user tapping Back mid-download left 5 potential HTTP
+    // streams running silently on Wi-Fi/mobile — wasting bandwidth, battery,
+    // and (on iOS) occasionally keeping the process alive longer than needed.
+    // CancelToken.cancel() is idempotent, so calling it on tokens that were
+    // never created or already completed is a safe no-op.
+    _cancelTokenAyah?.cancel();
+    _cancelTokenFull?.cancel();
+    _cancelTokenAE?.cancel();
+    _cancelTokenAF?.cancel();
+    _cancelTokenTafsir?.cancel();
+    super.dispose();
+  }
+
   Future<void> _refreshCounts() async {
     final ayahCount = await OfflineAudioService.countDownloadedAyahs(_reciter);
     final fullCount = await OfflineAudioService.countDownloadedFullSurahs(_reciter);
     final aeCount = await OfflineAudioService.countDownloadedAyahs('arabic-english');
     final afCount = await OfflineAudioService.countDownloadedAyahs('arabic-french');
     final tafsirCount = await OfflineAudioService.countDownloadedAyahs('muyassar');
+    // Integrity sweep (cached — only re-sniffs files whose size/mtime changed).
+    final integrity = await DownloadService.verifyAllSurahs(_reciter);
+    final paused = PreferencesService.isBulkFullPaused(_reciter);
     if (mounted) {
       setState(() {
         _downloadedAyahs = ayahCount;
@@ -67,6 +101,10 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         _downloadedAE = aeCount;
         _downloadedAF = afCount;
         _downloadedTafsir = tafsirCount;
+        _verifiedFull = integrity.present;
+        _corruptFull = integrity.corrupt;
+        _missingFull = integrity.missing;
+        _isFullPaused = paused;
       });
     }
   }
@@ -103,8 +141,14 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
 
   Future<void> _startDownloadFull() async {
     if (_downloadingFull) return;
+    // A fresh download (or resume) implicitly clears the persisted pause flag
+    // — the user explicitly opted in by tapping the button.
+    if (_isFullPaused) {
+      await PreferencesService.setBulkFullPaused(_reciter, false);
+    }
     setState(() {
       _downloadingFull = true;
+      _isFullPaused = false;
       _progressCurrentFull = 0;
       _progressTotalFull = 0;
     });
@@ -127,6 +171,58 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
           _downloadingFull = false;
         });
         await _refreshCounts();
+      }
+    }
+  }
+
+  /// Pauses an in-flight bulk full-surah download. Cancels the active token
+  /// (so per-surah work returns at the next granularity boundary) and
+  /// persists the paused state so the user's intent survives an app kill.
+  Future<void> _pauseFull() async {
+    if (!_downloadingFull) return;
+    HapticFeedback.lightImpact();
+    _cancelTokenFull?.cancel();
+    await PreferencesService.setBulkFullPaused(_reciter, true);
+    if (mounted) {
+      setState(() => _isFullPaused = true);
+    }
+  }
+
+  /// Resumes a paused bulk download by clearing the persisted flag and
+  /// re-running the bulk worker. Already-downloaded files are skipped
+  /// instantly by `DownloadService.downloadSurah`'s existence check, and
+  /// any in-flight `.part` files resume from the last byte offset.
+  Future<void> _resumeFull() async {
+    HapticFeedback.lightImpact();
+    await PreferencesService.setBulkFullPaused(_reciter, false);
+    if (mounted) {
+      setState(() => _isFullPaused = false);
+    }
+    await _startDownloadFull();
+  }
+
+  /// Deletes corrupt files (failed magic-byte sniff) and refreshes counts.
+  /// The user is then prompted via SnackBar to resume the download so the
+  /// repaired holes get re-fetched on the next bulk run.
+  Future<void> _repairFull() async {
+    if (_isRepairing || _downloadingFull) return;
+    HapticFeedback.mediumImpact();
+    setState(() => _isRepairing = true);
+    try {
+      final removed = await DownloadService.repairCorruptSurahs(_reciter);
+      await _refreshCounts();
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              AppLocalizations.of(context)!.repairCompleted(removed),
+            ),
+          ),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isRepairing = false);
       }
     }
   }
@@ -313,18 +409,56 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
                       const SizedBox(height: 12),
                       Wrap(spacing: 8, runSpacing: 8, children: [
                         OutlinedButton.icon(
-                          onPressed: () { _cancelTokenFull?.cancel(); },
-                          icon: const Icon(Icons.stop_circle_outlined),
-                          label: Text(l10n.cancel),
+                          onPressed: _pauseFull,
+                          icon: const Icon(Icons.pause_circle_outline),
+                          label: Text(l10n.pause),
                         ),
                       ]),
                     ] else ...[
+                      // Integrity badge — only meaningful once at least one
+                      // surah is on disk; otherwise we'd be telling the user
+                      // "0 of 114 verified" right next to the download CTA.
+                      if (_anyFullDownloaded) _buildFullIntegrityBadge(theme, l10n),
+                      if (_anyFullDownloaded) const SizedBox(height: 12),
+                      if (_isFullPaused)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8),
+                          child: Row(children: [
+                            Icon(Icons.pause_circle_filled,
+                                color: theme.colorScheme.tertiary, size: 18),
+                            const SizedBox(width: 6),
+                            Text(l10n.downloadPaused,
+                                style: theme.textTheme.bodySmall?.copyWith(
+                                    color: theme.colorScheme.tertiary,
+                                    fontWeight: FontWeight.w600)),
+                          ]),
+                        ),
                       Wrap(spacing: 8, runSpacing: 8, children: [
-                        if (!_allFullDownloaded)
+                        if (_isFullPaused)
+                          ElevatedButton.icon(
+                            onPressed: _resumeFull,
+                            icon: const Icon(Icons.play_circle_outline),
+                            label: Text(l10n.resume),
+                          )
+                        else if (!_allFullDownloaded)
                           ElevatedButton.icon(
                             onPressed: _startDownloadFull,
                             icon: const Icon(Icons.cloud_download_outlined),
                             label: Text(l10n.downloadFullSurahs),
+                          ),
+                        if (_corruptFull > 0)
+                          OutlinedButton.icon(
+                            onPressed: _isRepairing ? null : _repairFull,
+                            icon: _isRepairing
+                                ? const SizedBox(
+                                    width: 16,
+                                    height: 16,
+                                    child: CircularProgressIndicator(strokeWidth: 2),
+                                  )
+                                : const Icon(Icons.healing_outlined),
+                            label: Text(_isRepairing
+                                ? l10n.repairing
+                                : l10n.repairCorruptFiles),
                           ),
                         if (_anyFullDownloaded)
                           OutlinedButton.icon(
@@ -476,6 +610,85 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  /// Renders the integrity badge row for the full-surah card. Three chips,
+  /// each colour-coded by severity: green for verified, red for corrupt,
+  /// neutral for missing. When everything is good we collapse to a single
+  /// celebratory "All 114 verified" line so the card stays calm.
+  Widget _buildFullIntegrityBadge(ThemeData theme, AppLocalizations l10n) {
+    final allGood = _verifiedFull == _totalFull;
+    if (allGood) {
+      return Row(
+        children: [
+          Icon(Icons.verified_outlined,
+              size: 18, color: theme.colorScheme.primary),
+          const SizedBox(width: 6),
+          Expanded(
+            child: Text(
+              l10n.integrityAllVerified(_totalFull),
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.primary,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+    final chips = <Widget>[
+      _integrityChip(
+        theme: theme,
+        icon: Icons.verified_outlined,
+        label: l10n.integrityVerified(_verifiedFull, _totalFull),
+        fg: theme.colorScheme.primary,
+      ),
+      if (_corruptFull > 0)
+        _integrityChip(
+          theme: theme,
+          icon: Icons.error_outline,
+          label: l10n.integrityCorrupt(_corruptFull),
+          fg: theme.colorScheme.error,
+        ),
+      if (_missingFull > 0)
+        _integrityChip(
+          theme: theme,
+          icon: Icons.cloud_off_outlined,
+          label: l10n.integrityMissing(_missingFull),
+          fg: theme.colorScheme.onSurface.withAlpha(170),
+        ),
+    ];
+    return Wrap(spacing: 8, runSpacing: 8, children: chips);
+  }
+
+  Widget _integrityChip({
+    required ThemeData theme,
+    required IconData icon,
+    required String label,
+    required Color fg,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: fg.withAlpha(28),
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: fg.withAlpha(80)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(icon, size: 14, color: fg),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: fg,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
       ),
     );
   }

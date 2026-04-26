@@ -163,32 +163,44 @@ class QuranRepository {
     _db = await QuranDatabaseService.database();
   }
 
+  /// Maximum number of reconnect attempts when a `database_closed` error is
+  /// caught. Prevents unbounded recursion if the DB is persistently dead
+  /// (corrupted WAL, revoked permissions, etc.).
+  static const int _maxDbRetries = 2;
+
+  /// Resets the DB handle and waits briefly before the next attempt.
+  Future<void> _resetDbForRetry(int attempt) async {
+    _db = null;
+    await _ensureDb();
+    if (attempt > 0) {
+      await Future.delayed(Duration(milliseconds: 100 * (attempt + 1)));
+    }
+  }
+
   Future<PageData> loadPage(int pageNumber, QuranEdition edition) async {
     final key = '${edition.identifier}::$pageNumber';
 
-    try {
-      final existing = _getCachedPage(key);
-      if (existing != null) return await existing;
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
+      try {
+        final existing = _getCachedPage(key);
+        if (existing != null) return await existing;
 
-      // Launch the DB query and store the Future in the LRU cache *before*
-      // awaiting. Concurrent callers for the same key will coalesce on the
-      // same Future rather than each firing a separate query.
-      final future = _loadPageFromDb(pageNumber, edition);
-      _putCachedPage(key, future);
-      return await future;
-    } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        debugPrint('Database closed error, clearing cache and retrying');
+        final future = _loadPageFromDb(pageNumber, edition);
+        _putCachedPage(key, future);
+        return await future;
+      } catch (e) {
         _pageCache.remove(key);
-        _db = null;
-        await _ensureDb();
-        return loadPage(pageNumber, edition);
+        if (e.toString().contains('database_closed') &&
+            attempt < _maxDbRetries) {
+          debugPrint(
+              'Database closed (attempt ${attempt + 1}/$_maxDbRetries), retrying...');
+          await _resetDbForRetry(attempt);
+          continue;
+        }
+        rethrow;
       }
-      // On any other failure, drop the (failed) cached Future so subsequent
-      // callers get a fresh attempt rather than replaying the exception.
-      _pageCache.remove(key);
-      rethrow;
     }
+    throw StateError('loadPage: unreachable');
   }
 
   Future<PageData> _loadPageFromDb(int pageNumber, QuranEdition edition) async {
@@ -283,6 +295,7 @@ class QuranRepository {
     required QuranEdition edition,
     int? pageNumber,
   }) async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) return null;
@@ -307,16 +320,15 @@ class QuranRepository {
       }
       return null;
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        _db = null;
-        await _ensureDb();
-        return loadAyahTranslation(
-            ayahNumber: ayahNumber,
-            edition: edition,
-            pageNumber: pageNumber);
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
+        await _resetDbForRetry(attempt);
+        continue;
       }
       rethrow;
     }
+    }
+    return null; // unreachable
   }
 
   Future<List<SurahMeta>> loadAllSurahs() {
@@ -325,6 +337,7 @@ class QuranRepository {
   }
 
   Future<List<AyahBrief>> loadSurahAyahs(int surahNumber, QuranEdition edition) async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) {
@@ -369,17 +382,20 @@ class QuranRepository {
         );
       }).toList();
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        debugPrint('Database closed error in loadSurahAyahs, retrying');
-        _db = null;
-        await _ensureDb();
-        return loadSurahAyahs(surahNumber, edition);
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
+        debugPrint('Database closed in loadSurahAyahs (attempt ${attempt + 1}/$_maxDbRetries)');
+        await _resetDbForRetry(attempt);
+        continue;
       }
       rethrow;
     }
+    }
+    throw StateError('loadSurahAyahs: unreachable');
   }
 
   Future<List<SurahMeta>> _loadSurahList() async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) {
@@ -397,18 +413,21 @@ class QuranRepository {
         );
       }).toList();
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        debugPrint('Database closed error in _loadSurahList, retrying');
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
+        debugPrint('Database closed in _loadSurahList (attempt ${attempt + 1}/$_maxDbRetries)');
         _surahListFuture = null;
-        _db = null;
-        await _ensureDb();
-        return _loadSurahList();
+        await _resetDbForRetry(attempt);
+        continue;
       }
       rethrow;
     }
+    }
+    throw StateError('_loadSurahList: unreachable');
   }
 
   Future<String?> loadAyahTafsir(int ayahNumber) async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) return null;
@@ -420,19 +439,22 @@ class QuranRepository {
       final text = rows.first['text_tafsir'] as String?;
       return (text != null && text.isNotEmpty) ? text : null;
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        _db = null;
-        await _ensureDb();
-        return loadAyahTafsir(ayahNumber);
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
+        await _resetDbForRetry(attempt);
+        continue;
       }
       rethrow;
     }
+    }
+    return null; // unreachable
   }
 
   Future<AyahData?> lookupAyahByNumber(
     int ayahNumber, {
     QuranEdition edition = QuranEdition.simple,
   }) async {
+    for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) return null;
@@ -466,13 +488,15 @@ class QuranRepository {
         page: (r['page'] as int? ?? 1),
       );
     } catch (e) {
-      if (e.toString().contains('database_closed')) {
-        _db = null;
-        await _ensureDb();
-        return lookupAyahByNumber(ayahNumber, edition: edition);
+      if (e.toString().contains('database_closed') &&
+          attempt < _maxDbRetries) {
+        await _resetDbForRetry(attempt);
+        continue;
       }
       rethrow;
     }
+    }
+    return null; // unreachable
   }
 }
 
