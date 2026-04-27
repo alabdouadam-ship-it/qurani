@@ -61,6 +61,8 @@
 		<string>Qurani needs your location to determine Qibla direction and calculate accurate prayer times for your area.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires microphone access to fulfill audio system requirements, though it does not actually record audio.</string>
 	</dict>
 </plist>
 
