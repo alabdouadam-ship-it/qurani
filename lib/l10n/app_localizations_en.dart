@@ -1623,4 +1623,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wirdResetProgress => 'Reset today\'s progress';
+
+  @override
+  String get hadithSearchHint => 'Enter text to search or select a chapter';
+
+  @override
+  String get hadithNoMatches => 'No matches found';
 }

@@ -733,7 +733,7 @@ class HadithSearchDelegate extends SearchDelegate {
 
   Widget _buildSearchResults(BuildContext context) {
     if (query.trim().isEmpty && _selectedSectionId == null) {
-      return const Center(child: Text('Enter text to search or select a chapter'));
+      return Center(child: Text(AppLocalizations.of(context)!.hadithSearchHint));
     }
 
     final normalizedQuery = _normalize(query);
@@ -780,7 +780,7 @@ class HadithSearchDelegate extends SearchDelegate {
           ),
         Expanded(
           child: results.isEmpty
-              ? const Center(child: Text('No matches found'))
+              ? Center(child: Text(AppLocalizations.of(context)!.hadithNoMatches))
               : ListView.separated(
                   itemCount: results.length,
                   separatorBuilder: (_, __) => const Divider(),

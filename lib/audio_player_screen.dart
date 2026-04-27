@@ -184,69 +184,72 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
 
   Future<void> _onCurrentIndexChanged(int? index) async {
     if (index == null || !_isPlaying || _verseByVerseMode) return;
+    
+    final sequence = _player.sequence;
+    if (sequence == null || index >= sequence.length) return;
+    final item = sequence[index].tag as MediaItem;
+    final newOrder = item.extras?['surahOrder'] as int?;
+    if (newOrder == null || newOrder == _currentOrder) return;
 
-    // Index 1 implies we moved to the Next track in the playlist
-    if (index == 1) {
-      final playlist = _player.audioSource as ConcatenatingAudioSource?;
-      if (playlist == null) return;
+    // We moved! Update state and cancel any stale operations
+    _playbackGeneration++;
+    final generation = _playbackGeneration;
 
-      // Fix 2: Capture generation so we can detect if the user changed
-      // surah during the async playlist mutation below.
-      final generation = _playbackGeneration;
+    if (mounted) {
+      setState(() {
+        _currentOrder = newOrder;
+      });
+    }
+    _updateDownloadStatus();
+    PreferencesService.addToHistory(newOrder, _reciterKey!);
 
-      int nextOrder = -1;
+    final playlist = _player.audioSource as ConcatenatingAudioSource?;
+    if (playlist == null) return;
 
-      // Dequeue if queue active
-      final queued = _queueService.getNext();
-      if (queued != null) {
-        nextOrder = queued;
-        _queueService.removeFromQueue(queued);
-      } else {
-        nextOrder = (_currentOrder < 114) ? _currentOrder + 1 : -1;
+    // If queue is active and matches newOrder, dequeue it
+    final queued = _queueService.getNext(peek: true);
+    if (queued == newOrder) {
+      _queueService.getNext(); // pop it
+    }
+
+    // --- Self-healing Sliding Window: [Previous, Current, Next] ---
+    
+    // 1. Cull old 'Previous' items (index should shift down to 1 or 0)
+    while ((_player.currentIndex ?? 0) > 1) {
+      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+      await playlist.removeAt(0);
+    }
+
+    // 2. Insert new 'Previous' if we are at index 0 and a previous surah exists
+    if ((_player.currentIndex ?? 0) == 0 && newOrder > 1) {
+      final prevOrder = newOrder - 1;
+      final prevSource = await _buildAudioSource(prevOrder);
+      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+      if (prevSource != null) {
+        // Inserting at 0 while playing at 0 automatically shifts the current index to 1
+        await playlist.insert(0, prevSource);
       }
+    }
 
-      // Rely on MediaItem extras if possible
-      final sequence = _player.sequence;
-      if (sequence != null && sequence.length > 1) {
-        final item = sequence[1].tag as MediaItem;
-        final order = item.extras?['surahOrder'] as int?;
-        if (order != null) nextOrder = order;
+    // 3. Cull old 'Next' items
+    while (playlist.length > (_player.currentIndex ?? 0) + 2) {
+      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+      await playlist.removeAt(playlist.length - 1);
+    }
+
+    // 4. Append new 'Next' if we don't have one
+    if (playlist.length == (_player.currentIndex ?? 0) + 1) {
+      AudioSource? nextSource;
+      final nextQ = _queueService.getNext(peek: true);
+      if (nextQ != null) {
+        nextSource = await _buildAudioSource(nextQ);
+      } else if (_autoPlayNext && !_isRepeat && newOrder < 114) {
+        nextSource = await _buildAudioSource(newOrder + 1);
       }
-
-      if (nextOrder != -1) {
-        if (mounted) {
-          setState(() {
-            _currentOrder = nextOrder;
-          });
-        }
-        _updateDownloadStatus();
-        PreferencesService.addToHistory(nextOrder, _reciterKey!);
-
-        // Maintain Rolling Playlist: [Current, Next]
-        // 1. Prepare NextNext
-        AudioSource? nextNextSource;
-        final nextQueued = _queueService.getNext(peek: true);
-        if (nextQueued != null) {
-          nextNextSource = await _buildAudioSource(nextQueued);
-        } else if (_autoPlayNext && !_isRepeat && nextOrder < 114) {
-          nextNextSource = await _buildAudioSource(nextOrder + 1);
-        }
-
-        // Fix 2: After async build, verify playlist is still the active one.
-        // If user changed surah during the await, bail out to avoid mutating
-        // a replaced playlist.
-        if (_playbackGeneration != generation) return;
-        if (_player.audioSource != playlist) return;
-
-        // 2. Add NextNext to end
-        if (nextNextSource != null) {
-          await playlist.add(nextNextSource);
-        }
-
-        // 3. Remove Previous (index 0)
-        if (_playbackGeneration != generation) return;
-        if (_player.audioSource != playlist) return;
-        await playlist.removeAt(0);
+      
+      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+      if (nextSource != null) {
+        await playlist.add(nextSource);
       }
     }
   }
@@ -397,31 +400,47 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           extras: {'surahOrder': order},
         );
 
-        // Initial Playlist Setup: [Current, Next]
+        // Initial Playlist Setup: [Previous (optional), Current, Next (optional)]
         final playlistChildren = <AudioSource>[];
+        int initialIndex = 0;
 
+        // 1. Preload Previous
+        if (order > 1 && !_verseByVerseMode) {
+          try {
+            final prevSource = await _buildAudioSource(order - 1);
+            if (prevSource != null) {
+              playlistChildren.add(prevSource);
+              initialIndex = 1;
+            }
+          } catch (e) {
+            debugPrint('Error preloading previous surah: $e');
+          }
+        }
+
+        // 2. Add Current
         final source = hasLocalFile
             ? AudioSource.uri(Uri.file(localPath), tag: mainItem)
             : AudioSource.uri(Uri.parse(url), tag: mainItem);
 
         playlistChildren.add(source);
 
-        // Preload next surah if available and not repeating single surah
-        // (If repeating, we might use LoopMode.one, but here we keep simple auto-advance logic)
-        final nextQueued = _queueService.getNext(peek: true);
-        if (nextQueued != null) {
-          try {
-            final nextSource = await _buildAudioSource(nextQueued);
-            if (nextSource != null) playlistChildren.add(nextSource);
-          } catch (e) {
-            debugPrint('Error preloading next queued surah: $e');
-          }
-        } else if (_autoPlayNext && !_isRepeat && order < 114) {
-          try {
-            final nextSource = await _buildAudioSource(order + 1);
-            if (nextSource != null) playlistChildren.add(nextSource);
-          } catch (e) {
-            debugPrint('Error preloading next surah: $e');
+        // 3. Preload Next
+        if (!_verseByVerseMode) {
+          final nextQueued = _queueService.getNext(peek: true);
+          if (nextQueued != null) {
+            try {
+              final nextSource = await _buildAudioSource(nextQueued);
+              if (nextSource != null) playlistChildren.add(nextSource);
+            } catch (e) {
+              debugPrint('Error preloading next queued surah: $e');
+            }
+          } else if (_autoPlayNext && !_isRepeat && order < 114) {
+            try {
+              final nextSource = await _buildAudioSource(order + 1);
+              if (nextSource != null) playlistChildren.add(nextSource);
+            } catch (e) {
+              debugPrint('Error preloading next surah: $e');
+            }
           }
         }
 
@@ -432,12 +451,12 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         );
 
         debugPrint(
-            '[AudioPlayer] Setting playlist with ${playlistChildren.length} items');
+            '[AudioPlayer] Setting playlist with ${playlistChildren.length} items (initialIndex=$initialIndex)');
 
         try {
           await _player.setAudioSource(
             playlist,
-            initialIndex: 0,
+            initialIndex: initialIndex,
             initialPosition: startPosition,
           );
           debugPrint('[AudioPlayer] Audio source set successfully');

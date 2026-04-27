@@ -64,7 +64,7 @@
   "@copy": {},
   "copied": "تم النسخ",
   "@copied": {},
-  "prayerTimes": "أوقات الصلاة",
+  "prayerTimes": "أوقات الأذان",
   "@prayerTimes": {},
   "fajr": "الفجر",
   "@fajr": {},
@@ -212,7 +212,7 @@
   "@method22": {},
   "method23": "وزارة الأوقاف والشؤون الإسلامية، الأردن",
   "@method23": {},
-  "prayerTimesSettings": "إعدادات أوقات الصلاة",
+  "prayerTimesSettings": "إعدادات أوقات الأذان",
   "@prayerTimesSettings": {},
   "adhanSound": "صوت الأذان",
   "@adhanSound": {},
@@ -1132,5 +1132,9 @@
   "wirdFocusHintTap": "اضغط في أي مكان للعدّ",
   "@wirdFocusHintTap": {},
   "wirdResetProgress": "إعادة تصفير اليوم",
-  "@wirdResetProgress": {}
+  "@wirdResetProgress": {},
+  "hadithSearchHint": "أدخل نصاً للبحث أو اختر فصلاً",
+  "@hadithSearchHint": {},
+  "hadithNoMatches": "لا توجد نتائج مطابقة",
+  "@hadithNoMatches": {}
 }

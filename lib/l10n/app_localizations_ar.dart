@@ -101,7 +101,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get copied => 'تم النسخ';
 
   @override
-  String get prayerTimes => 'أوقات الصلاة';
+  String get prayerTimes => 'أوقات الأذان';
 
   @override
   String get fajr => 'الفجر';
@@ -295,7 +295,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get method23 => 'وزارة الأوقاف والشؤون الإسلامية، الأردن';
 
   @override
-  String get prayerTimesSettings => 'إعدادات أوقات الصلاة';
+  String get prayerTimesSettings => 'إعدادات أوقات الأذان';
 
   @override
   String get adhanSound => 'صوت الأذان';
@@ -1623,4 +1623,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get wirdResetProgress => 'إعادة تصفير اليوم';
+
+  @override
+  String get hadithSearchHint => 'أدخل نصاً للبحث أو اختر فصلاً';
+
+  @override
+  String get hadithNoMatches => 'لا توجد نتائج مطابقة';
 }

@@ -46,7 +46,6 @@ Future<void> main() async {
       androidNotificationChannelId: 'com.qurani.app.audio',
       androidNotificationChannelName: 'Quran Audio Playback',
       androidNotificationChannelDescription: 'Background Quran audio playback',
-      androidNotificationOngoing: true,
     );
     final audioSession = await AudioSession.instance;
     await audioSession.configure(const AudioSessionConfiguration.music());

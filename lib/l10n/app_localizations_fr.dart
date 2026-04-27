@@ -1623,4 +1623,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get wirdResetProgress => 'Réinitialiser la progression';
+
+  @override
+  String get hadithSearchHint => 'Entrez du texte pour rechercher ou sélectionnez un chapitre';
+
+  @override
+  String get hadithNoMatches => 'Aucun résultat trouvé';
 }

@@ -1132,5 +1132,9 @@
   "wirdFocusHintTap": "Touchez n'importe où pour compter",
   "@wirdFocusHintTap": {},
   "wirdResetProgress": "Réinitialiser la progression",
-  "@wirdResetProgress": {}
+  "@wirdResetProgress": {},
+  "hadithSearchHint": "Entrez du texte pour rechercher ou sélectionnez un chapitre",
+  "@hadithSearchHint": {},
+  "hadithNoMatches": "Aucun résultat trouvé",
+  "@hadithNoMatches": {}
 }

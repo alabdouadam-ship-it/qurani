@@ -1134,5 +1134,9 @@
   "wirdFocusHintTap": "Tap anywhere to count",
   "@wirdFocusHintTap": {},
   "wirdResetProgress": "Reset today's progress",
-  "@wirdResetProgress": {}
+  "@wirdResetProgress": {},
+  "hadithSearchHint": "Enter text to search or select a chapter",
+  "@hadithSearchHint": {},
+  "hadithNoMatches": "No matches found",
+  "@hadithNoMatches": {}
 }

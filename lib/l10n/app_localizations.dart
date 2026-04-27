@@ -3168,6 +3168,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reset today\'s progress'**
   String get wirdResetProgress;
+
+  /// No description provided for @hadithSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter text to search or select a chapter'**
+  String get hadithSearchHint;
+
+  /// No description provided for @hadithNoMatches.
+  ///
+  /// In en, this message translates to:
+  /// **'No matches found'**
+  String get hadithNoMatches;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

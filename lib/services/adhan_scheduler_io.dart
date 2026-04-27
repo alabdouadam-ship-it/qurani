@@ -138,19 +138,7 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
 
 Future<void> _showStopNotification(String prayerId) async {
   try {
-    Log.d('AdhanStopNotif', 'Preparing stop-notification for $prayerId');
-
     final prefs = await SharedPreferences.getInstance();
-
-    // Check if app is in foreground using shared preferences.
-    // WidgetsBinding.instance.lifecycleState is not reliable in background isolate.
-    final isForeground = prefs.getBool('is_app_in_foreground') ?? false;
-    if (isForeground) {
-      Log.d('AdhanStopNotif',
-          'App foregrounded (pref=true), suppressing stop-notification');
-      return;
-    }
-
     final lang = prefs.getString(PreferencesService.keyLanguage) ?? 'ar';
     
     // Get localized prayer name
@@ -179,44 +167,53 @@ Future<void> _showStopNotification(String prayerId) async {
       }
     }
     
-    String title, body;
+    String title, body, stopLabel;
     switch (lang) {
       case 'en':
         title = 'Adhan - $prayerName';
         body = 'Tap to open app';
+        stopLabel = 'Stop';
         break;
       case 'fr':
         title = 'Adhan - $prayerName';
         body = 'Touchez pour ouvrir';
+        stopLabel = 'Arrêter';
         break;
       default:
         title = 'أذان $prayerName';
         body = 'اضغط لفتح التطبيق';
+        stopLabel = 'إيقاف';
     }
     
-    final plugin = FlutterLocalNotificationsPlugin();
-    const androidInit = AndroidInitializationSettings('@mipmap/launcher_icon');
-    const initSettings = InitializationSettings(android: androidInit);
-    await plugin.initialize(initSettings);
-    // Simple tappable notification without action buttons
-    const androidDetails = AndroidNotificationDetails(
-      'adhan_stop_silent',
-      'Adhan Stop Control',
-      channelDescription: 'Silent notification to stop Adhan',
+    // Ensure NotificationService is initialized properly to preserve callbacks
+    await NotificationService.init();
+
+    final androidDetails = AndroidNotificationDetails(
+      'prayer_adhans_default_v2', // Use the main adhan channel
+      'Prayer Adhan',
+      channelDescription: 'Adhan at prayer time',
       importance: Importance.high,
       priority: Priority.high,
-      playSound: false,
+      playSound: false, // The audio is already playing via AdhanAudioManager
       enableVibration: false,
-      ongoing: false, // Allow dismissal
-      autoCancel: true, // Auto-cancel when tapped
+      ongoing: true, // Keep it active while audio is playing
+      autoCancel: false,
+      actions: [
+        AndroidNotificationAction(
+          'stop_adhan',
+          stopLabel,
+          showsUserInterface: false,
+          cancelNotification: true,
+        ),
+      ],
     );
     
     Log.d('AdhanStopNotif', 'Showing notification: $title');
-    await plugin.show(
-      9999999,
+    await NotificationService.plugin.show(
+      9999999, // Specific ID for the active playback notification
       title,
       body,
-      const NotificationDetails(android: androidDetails),
+      NotificationDetails(android: androidDetails),
       payload: 'stop_adhan',
     );
     Log.i('AdhanStopNotif', 'Stop-notification shown for $prayerId');
@@ -309,6 +306,11 @@ Future<void> _playAdhanCallback(int id) async {
     timeout: const Duration(minutes: 6),
   );
   Log.i('AdhanCallback', 'Session completed for $prayerId');
+  
+  // Clean up the stop-notification once playback naturally finishes
+  try {
+    await NotificationService.plugin.cancel(9999999);
+  } catch (_) {}
 }
 
 class AdhanScheduler {
