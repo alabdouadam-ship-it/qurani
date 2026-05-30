@@ -11,6 +11,7 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'adhan_audio_manager.dart';
 import 'logger.dart';
 import 'preferences_service.dart';
+import 'wird_schedule_logic.dart';
 import '../models/news_item.dart';
 
 /// Outcome of [NotificationService.sendWirdTestNotification]. Lets the UI
@@ -116,6 +117,15 @@ class NotificationService {
       enableVibration: true,
     );
 
+    // Wire the AdhanAudioManager playback-lifecycle hooks so the
+    // "Adhan playing — [Stop]" notification is a guaranteed side-effect of
+    // playback on EVERY path: the background alarm isolate, the foreground
+    // GlobalAdhanService 30s loop, and any future caller. Previously the
+    // notification was posted only from the alarm callback, so an Adhan that
+    // played while the app was in the foreground had no Stop button at all.
+    AdhanAudioManager.onAdhanStarted = showAdhanStopNotification;
+    AdhanAudioManager.onAdhanStopped = cancelAdhanStopNotification;
+
 
 
 
@@ -155,6 +165,74 @@ class NotificationService {
 
   static Future<void> cancelAllPrayerAlerts() async {
     await _plugin.cancelAll();
+  }
+
+  /// Fixed id for the ongoing "Adhan playing — [Stop]" notification. A single
+  /// id means a new Adhan replaces any leftover one, and [cancelAdhanStopNotification]
+  /// can clear it unconditionally.
+  static const int adhanStopNotificationId = 9999999;
+
+  /// Shows the ongoing, tappable "Adhan playing" notification with a Stop
+  /// action. Wired to [AdhanAudioManager.onAdhanStarted] in [init], so it
+  /// fires on every playback path (background alarm, foreground loop, manual).
+  ///
+  /// Android-only: on iOS the Adhan is delivered as the notification sound
+  /// itself (there is no long-running player to attach a Stop button to), so
+  /// this is a no-op there.
+  static Future<void> showAdhanStopNotification(String prayerId) async {
+    if (!Platform.isAndroid) return;
+    try {
+      await _ensureInitialized();
+      final lang = PreferencesService.getLanguage();
+      final prayerName = (prayerId == 'test')
+          ? (lang == 'ar' ? 'اختبار' : 'Test')
+          : _localizedPrayerName(lang, prayerId);
+      final stopLabel = _stopActionLabel(lang);
+
+      final String title = lang == 'ar' ? 'أذان $prayerName' : 'Adhan - $prayerName';
+      final String body = lang == 'ar'
+          ? 'اضغط لفتح التطبيق'
+          : (lang == 'fr' ? 'Touchez pour ouvrir' : 'Tap to open app');
+
+      final androidDetails = AndroidNotificationDetails(
+        'prayer_adhans_default_v2',
+        'Prayer Adhan',
+        channelDescription: 'Adhan at prayer time',
+        importance: Importance.high,
+        priority: Priority.high,
+        playSound: false, // Audio is handled by AdhanAudioManager.
+        enableVibration: false,
+        ongoing: true, // Stays put while the Adhan plays.
+        autoCancel: false,
+        actions: [
+          AndroidNotificationAction(
+            'stop_adhan',
+            stopLabel,
+            showsUserInterface: false,
+            cancelNotification: true,
+          ),
+        ],
+      );
+
+      await _plugin.show(
+        adhanStopNotificationId,
+        title,
+        body,
+        NotificationDetails(android: androidDetails),
+        payload: 'stop_adhan',
+      );
+      Log.i('NotificationService', 'Stop-notification shown for $prayerId');
+    } catch (e, st) {
+      Log.e('NotificationService', 'Failed to show stop-notification', e, st);
+    }
+  }
+
+  /// Clears the ongoing "Adhan playing" notification. Wired to
+  /// [AdhanAudioManager.onAdhanStopped] in [init].
+  static Future<void> cancelAdhanStopNotification() async {
+    try {
+      await _plugin.cancel(adhanStopNotificationId);
+    } catch (_) {}
   }
 
 
@@ -316,10 +394,21 @@ class NotificationService {
       final time = entry.value;
       
       if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
-      if (!(toggles[prayerId] ?? false)) continue;
-      if (time.isBefore(now)) continue;
-      
+
       final baseId = _dailyId(prayerId: prayerId, date: time);
+
+      // Cancel the notification for prayers that are toggled OFF or already
+      // past, so disabling a prayer actually clears its pending notification
+      // instead of leaving a previously-scheduled one to fire. This mirrors
+      // the alarm cancellation in AdhanScheduler.scheduleForTimes and keeps
+      // the pending set in sync with the toggles on every reschedule.
+      if (!(toggles[prayerId] ?? false) || time.isBefore(now)) {
+        try {
+          await _plugin.cancel(baseId);
+        } catch (_) {}
+        continue;
+      }
+
       final name = _localizedPrayerName(lang, prayerId);
       
       
@@ -639,7 +728,7 @@ class NotificationService {
         presentSound: false,
       );
 
-      const int testId = 0x60000000;
+      const int testId = WirdScheduleLogic.testNotificationId;
 
       await _plugin.show(
         testId,
@@ -865,23 +954,13 @@ class NotificationService {
   }) =>
       _wirdNotifIdRaw(wirdId: wirdId, weekday: occurrence.weekday);
 
-  /// See the namespace comment above for the bit layout.
+  /// See the namespace comment above for the bit layout. Delegates to the
+  /// pure, unit-tested [WirdScheduleLogic.notificationId].
   static int _wirdNotifIdRaw({
     required String wirdId,
     required int weekday,
-  }) {
-    const int fnvOffset = 0x811c9dc5;
-    const int fnvPrime = 0x01000193;
-    int hash = fnvOffset;
-    for (final codeUnit in wirdId.codeUnits) {
-      hash = (hash ^ codeUnit) & 0xffffffff;
-      hash = (hash * fnvPrime) & 0xffffffff;
-    }
-    // Keep 25 bits of the hash, shift left by 3 to make room for weekday.
-    final wirdBits = (hash & 0x01ffffff) << 3;
-    final weekdayBits = weekday & 0x07;
-    return 0x60000000 | wirdBits | weekdayBits;
-  }
+  }) =>
+      WirdScheduleLogic.notificationId(wirdId: wirdId, weekday: weekday);
 }
 
 

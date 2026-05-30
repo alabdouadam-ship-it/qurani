@@ -6,10 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:audio_session/audio_session.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'services/preferences_service.dart';
+import 'services/notification_permissions.dart';
 import 'services/reciter_config_service.dart';
 import 'options_screen.dart';
 import 'services/notification_service.dart';
@@ -18,6 +18,7 @@ import 'services/device_info_service.dart';
 import 'services/adhan_scheduler.dart';
 import 'services/adhan_audio_manager.dart';
 import 'prayer_times_screen.dart';
+import 'tasbeeh_screen.dart';
 import 'services/global_adhan_service.dart';
 import 'services/wird_service.dart';
 import 'package:pdfrx/pdfrx.dart';
@@ -25,6 +26,24 @@ import 'package:path_provider/path_provider.dart';
 import 'themes/app_theme_config.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'providers/app_state_providers.dart';
+
+/// Global navigator key so notification-tap handlers (which run outside any
+/// widget's BuildContext) can push routes. Attached to the root MaterialApp.
+final GlobalKey<NavigatorState> rootNavigatorKey =
+    GlobalKey<NavigatorState>();
+
+/// Pushes the Tasbeeh screen opened on its Wird tab. Used by the
+/// `wird_<id>` notification deep-link. Safe to call from the notification
+/// tap handler: it no-ops if the navigator isn't mounted yet.
+void _openWirdTab() {
+  final navigator = rootNavigatorKey.currentState;
+  if (navigator == null) return;
+  navigator.push(
+    MaterialPageRoute(
+      builder: (_) => const TasbeehScreen(initialTab: 1),
+    ),
+  );
+}
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,8 +69,7 @@ Future<void> main() async {
     final audioSession = await AudioSession.instance;
     await audioSession.configure(const AudioSessionConfiguration.music());
   }
-  await _ensureNotificationPermission();
-  await _ensureAdhanPermissions();
+  await _ensureNotificationPermissions();
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
 
@@ -89,19 +107,30 @@ Future<void> main() async {
       final plugin = NotificationService.plugin;
       final initialNotificationResponse = await plugin.getNotificationAppLaunchDetails();
       if (initialNotificationResponse?.didNotificationLaunchApp ?? false) {
-        // Previously this could auto-play Adhan based on current time.
-        // Adhan playback has been disabled by user request, so we only log.
-        //print('[Main] App launched from notification – Adhan playback disabled, doing nothing.');
+        // Cold launch from a notification tap. Adhan auto-play stays disabled,
+        // but a `wird_<id>` reminder should still deep-link to the Wird tab.
+        // Defer until after the first frame so the root navigator exists.
+        final launchPayload =
+            initialNotificationResponse?.notificationResponse?.payload;
+        if (launchPayload != null && launchPayload.startsWith('wird_')) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            _openWirdTab();
+          });
+        }
       }
     } catch (e) {
       //print('[Main] Error checking notification launch details: $e');
     }
     
     // Set up notification tap handler.
-    // Adhan playback has been disabled, so we just log and avoid playing anything.
+    //
+    // - `wird_<id>` reminders deep-link to the Wird tab so tapping a reminder
+    //   lands the user where they can act on it.
+    // - Adhan playback has been disabled, so adhan-related taps are ignored.
     NotificationService.onNotificationTap = (String? payload) async {
-      if (payload != null && payload != 'unknown') {
-        //print('[Main] Notification received/tapped (payload: $payload) – Adhan playback disabled, ignoring.');
+      if (payload == null || payload == 'unknown') return;
+      if (payload.startsWith('wird_')) {
+        _openWirdTab();
       }
     };
   }
@@ -225,67 +254,11 @@ Future<void> _scheduleSevenDaysOfAdhans() async {
   }
 }
 
-Future<void> _ensureNotificationPermission() async {
-  if (kIsWeb) return;
-  if (defaultTargetPlatform != TargetPlatform.android) return;
-  final sdk = await _androidSdkInt();
-  if (sdk != null && sdk >= 33) {
-    final status = await Permission.notification.status;
-    if (!status.isGranted) {
-      await Permission.notification.request();
-    }
-  }
-  // Request full screen intent permission for Android 10+ (required for Adhan notifications)
-  if (sdk != null && sdk >= 29) {
-    try {
-      // Note: USE_FULL_SCREEN_INTENT is a normal permission on Android 10-12
-      // On Android 13+, it's a special permission that needs to be granted manually
-      // We'll handle this in the help dialog
-    } catch (_) {}
-  }
-}
-
-Future<void> _ensureAdhanPermissions() async {
-  if (kIsWeb) return;
-  if (defaultTargetPlatform != TargetPlatform.android) return;
-  try {
-    final sdk = await _androidSdkInt();
-    if (sdk == null) return;
-
-    // SCHEDULE_EXACT_ALARM: from Android 13 (API 33) onward, apps that are NOT
-    // classified as clock/alarm/calendar must explicitly request this permission
-    // from the user. Without it `AndroidAlarmManager.oneShotAt(exact: true)`
-    // silently falls back to inexact alarms that can drift by 15+ minutes —
-    // which would make Adhan fire noticeably late.
-    if (sdk >= 33) {
-      try {
-        final status = await Permission.scheduleExactAlarm.status;
-        if (!status.isGranted) {
-          await Permission.scheduleExactAlarm.request();
-        }
-      } catch (e) {
-        // Older plugin versions may not know about this permission on some
-        // devices; we fall back silently and alarms will use inexact scheduling.
-        debugPrint('[Main] scheduleExactAlarm request failed: $e');
-      }
-    }
-
-    // REQUEST_IGNORE_BATTERY_OPTIMIZATIONS: kept opt-in / non-automatic so we
-    // don't disrupt users with an intrusive system prompt at cold start. The
-    // Settings screen exposes this as a manual toggle.
-  } catch (_) {
-    // Ignore errors
-  }
-}
-
-Future<int?> _androidSdkInt() async {
-  const methodChannel = MethodChannel('qurani/system');
-  try {
-    final result = await methodChannel.invokeMethod<int>('getSdkInt');
-    return result;
-  } catch (_) {
-    return null;
-  }
+Future<void> _ensureNotificationPermissions() async {
+  // Delegated to the shared gateway so Adhan's startup permission requests
+  // live in exactly one place (see NotificationPermissions for the rationale
+  // and the deliberate Wird-path exception).
+  await NotificationPermissions.ensureBaselineForAdhan();
 }
 
 
@@ -342,6 +315,15 @@ class QuraniApp extends ConsumerStatefulWidget {
       // shared-prefs flag so the UI reflects playback that was started in the
       // AndroidAlarmManager background isolate while we were backgrounded.
       AdhanAudioManager.syncPlayingStateFromPrefs();
+      // Resume the foreground prayer-time polling timer: while foreground, the
+      // app (not the alarm isolate) is the primary Adhan trigger.
+      GlobalAdhanService.resume();
+    } else {
+      // Backgrounded: hand Adhan responsibility to the AndroidAlarmManager
+      // background isolate and stop the foreground polling timer so the two
+      // don't race near prayer time (and so we don't burn battery ticking
+      // every 30s in the background).
+      GlobalAdhanService.pause();
     }
   }
 
@@ -381,6 +363,7 @@ class QuraniApp extends ConsumerStatefulWidget {
 
     return MaterialApp(
       title: 'Qurani',
+      navigatorKey: rootNavigatorKey,
       locale: locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,

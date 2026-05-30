@@ -1,3 +1,5 @@
+import 'preferences_service.dart';
+
 class AdhanScheduler {
   static Future<void> init() async {}
   static Future<void> scheduleForTimes({
@@ -23,6 +25,16 @@ class AdhanScheduler {
   }) async {}
 
   static Future<void> invalidateScheduling() async {}
+
+  // Web mirrors of the atomic write-and-invalidate helpers. On web there is
+  // no background scheduling, so these just persist the preference.
+  static Future<void> setPrayerEnabled(String prayerId, bool enabled) async {
+    await PreferencesService.setBool('adhan_$prayerId', enabled);
+  }
+
+  static Future<void> setSound(String soundKey) async {
+    await PreferencesService.saveAdhanSound(soundKey);
+  }
 
   // Stub for web - background Adhan not supported on web
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {

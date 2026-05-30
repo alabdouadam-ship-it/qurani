@@ -10,6 +10,7 @@ import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/prayer_times_service.dart';
 import 'package:qurani/services/adhan_scheduler.dart';
 import 'services/notification_service.dart';
+import 'package:qurani/services/wird_service.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:audio_session/audio_session.dart';
@@ -480,17 +481,26 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     setState(() {
       _adhanEnabled[id] = value;
     });
-    await PreferencesService.setBool('adhan_$id', value);
+    // Atomic write + dedup-cache invalidation: changing a toggle without
+    // invalidating would let shouldScheduleThroughDay short-circuit and the
+    // change would silently never take effect. setPrayerEnabled fuses the two
+    // so that invariant can't be violated.
+    await AdhanScheduler.setPrayerEnabled(id, value);
     if (!mounted) return;
     messenger.showSnackBar(
       SnackBar(
           content: Text(value ? l10n.adhanEnabledMsg : l10n.adhanDisabledMsg)),
     );
     // Re-schedule for today (and the next 7 days) with the updated toggles.
-    // We must invalidate the scheduling-dedup cache first so the next pass
-    // actually runs; otherwise the guard would skip scheduling since the
-    // horizon was "already covered" with the previous toggles.
-    await _rescheduleAllAdhans(invalidateFirst: true);
+    // The dedup cache was already invalidated by setPrayerEnabled above, so a
+    // plain reschedule is guaranteed to run.
+    await _rescheduleAllAdhans();
+    // iOS only: changing the enabled-prayer set changes how many pending
+    // notification slots Adhan reserves, which changes the per-wird day
+    // horizon the budget allows. Re-fit every wird's window so the combined
+    // Adhan + Wird pending count stays under iOS's 64 cap. No-op-cheap on
+    // Android/web (horizon is always the full 7 days there).
+    await WirdService.rescheduleAll();
     // Re-check exact-alarm status after any toggle change: turning an adhan
     // ON without SCHEDULE_EXACT_ALARM is the moment the banner is most useful.
     await _checkExactAlarmStatus();
@@ -562,7 +572,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       );
 
       final now = DateTime.now();
-      DateTime cursor = now.add(const Duration(days: 1));
+      // DST safety: advance the cursor via the calendar-aware
+      // `DateTime(y, m, d + 1)` constructor rather than
+      // `cursor.add(Duration(days: 1))`. The latter adds 86400s of absolute
+      // time, which on DST transition days drifts the wall-clock by ±1 hour
+      // and can make the loop skip or double a calendar date. This matches
+      // the DST-safe pattern already used in `main._scheduleSevenDaysOfAdhans`
+      // and `prayer_times_service_io.maybeRefreshCacheOnLaunch`.
+      DateTime cursor = DateTime(now.year, now.month, now.day + 1);
       for (int i = 0; i < 7; i++) {
         final futureTimes = await PrayerTimesService.getTimesForDate(
           year: cursor.year,
@@ -581,7 +598,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
             soundKey: soundKey,
           );
         }
-        cursor = cursor.add(const Duration(days: 1));
+        cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
       }
       await AdhanScheduler.markScheduledThroughDay(
         soundKey: soundKey,
@@ -1683,18 +1700,22 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                               onPressed: () async {
                                 // Stop any preview first
                                 await _previewPlayer.stop();
-                                await PreferencesService.saveAdhanSound(key);
+                                // Atomic write + invalidate (see
+                                // AdhanScheduler.setSound): the sound is part
+                                // of the dedup fingerprint, so this guarantees
+                                // the reschedule below isn't short-circuited.
+                                await AdhanScheduler.setSound(key);
                                 selectedKey = key;
                                 setModalState(() {});
                                 if (mounted) setState(() {});
                                 // Re-schedule so the new sound is applied to
                                 // iOS notifications (which bake the sound
-                                // name in at schedule time) and so the
-                                // scheduling-dedup cache reflects the change.
+                                // name in at schedule time). The dedup cache
+                                // was already invalidated by setSound above.
                                 // Android alarm callback reads the sound
                                 // dynamically at fire time, so this is
                                 // mostly defensive there.
-                                await _rescheduleAllAdhans(invalidateFirst: true);
+                                await _rescheduleAllAdhans();
                               },
                               child: Text(selected
                                   ? l10n.selectedLabel

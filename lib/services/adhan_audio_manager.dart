@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'logger.dart';
 import 'preferences_service.dart';
+import 'adhan_schedule_logic.dart';
 
 /// Single authoritative Adhan playback engine.
 ///
@@ -60,6 +61,38 @@ class AdhanAudioManager {
   static final ValueNotifier<bool> isPlayingListenable =
       ValueNotifier<bool>(false);
 
+  /// Playback-lifecycle hooks, wired by `NotificationService.init()` (which
+  /// runs in BOTH the main isolate and the alarm background isolate). They
+  /// let the notification layer surface/clear the "Adhan playing — [Stop]"
+  /// notification as a guaranteed side-effect of playback starting/stopping,
+  /// on EVERY path (background alarm, foreground 30s GlobalAdhanService loop,
+  /// or any future caller) — without AdhanAudioManager importing
+  /// NotificationService (which would create an import cycle, since
+  /// NotificationService already imports this file for its stop-action
+  /// handler).
+  ///
+  /// Null until wired; a play before wiring simply shows no notification
+  /// rather than crashing.
+  static Future<void> Function(String prayerId)? onAdhanStarted;
+  static Future<void> Function()? onAdhanStopped;
+
+  /// Emits one structured, greppable line tracing an Adhan through its
+  /// lifecycle across the isolate boundary. All boundary events use the
+  /// single tag `AdhanTrace` and `key=value` fields so a post-incident
+  /// `grep AdhanTrace` reconstructs the full story of a given Adhan:
+  /// scheduled → fired → engine chosen → completed/timed-out. This is the
+  /// observability counterpart to WirdService's reschedule logging.
+  ///
+  /// [event] is a short verb (`fired`, `engine`, `completed`, `timeout`,
+  /// `no-engine`); [fields] are appended as `k=v` pairs.
+  static void trace(String event, {Map<String, Object?>? fields}) {
+    final buf = StringBuffer('event=$event');
+    if (fields != null) {
+      fields.forEach((k, v) => buf.write(' $k=$v'));
+    }
+    Log.i('AdhanTrace', buf.toString());
+  }
+
   // --- Public API --------------------------------------------------------
 
   /// Unified entry point for starting Adhan playback.
@@ -106,53 +139,88 @@ class AdhanAudioManager {
     // leaves a well-defined state that the safety timeout will clear.
     await _markPlaying(prayerId);
 
-    final filePath = await _resolveCachedFilePath(soundKey, isFajr);
+    // The whole engine-selection sequence is wrapped so that ANY thrown
+    // exception (e.g. `_resolveCachedFilePath` or `_tryNative` blowing up,
+    // not just the inner `just_audio` try/catch blocks) still routes to
+    // `_markStopped()` in the catch below. Without this guard a throw here
+    // would leave `_sessionCompleter` uncompleted, and the AndroidAlarmManager
+    // background isolate — which blocks on `awaitCurrentSession` — would hang
+    // for the full 6-minute safety timeout before being torn down.
+    try {
+      final filePath = await _resolveCachedFilePath(soundKey, isFajr);
 
-    // --- 1) Native -------------------------------------------------------
-    if (filePath != null) {
-      if (await _tryNative(filePath, volume)) {
-        Log.i('AdhanAudioManager',
-            'Native MediaPlayer started for $prayerId '
-            '($soundKey${isFajr ? "-fajr" : ""})');
-        // Native playback reports completion via MethodChannel callback; no
-        // safety timer needed beyond the max-duration watchdog that
-        // `_markPlaying` already armed.
-        return true;
+      // --- 1) Native -----------------------------------------------------
+      if (filePath != null) {
+        if (await _tryNative(filePath, volume)) {
+          Log.i('AdhanAudioManager',
+              'Native MediaPlayer started for $prayerId '
+              '($soundKey${isFajr ? "-fajr" : ""})');
+          trace('engine', fields: {
+            'prayer': prayerId,
+            'engine': 'native',
+            'sound': soundKey,
+          });
+          // Native playback reports completion via MethodChannel callback; no
+          // safety timer needed beyond the max-duration watchdog that
+          // `_markPlaying` already armed.
+          await _fireStarted(prayerId);
+          return true;
+        }
       }
-    }
 
-    // --- 2) just_audio from cached file ---------------------------------
-    if (filePath != null) {
+      // --- 2) just_audio from cached file -------------------------------
+      if (filePath != null) {
+        try {
+          await _foregroundPlayer.stop();
+          await _foregroundPlayer.setAudioSource(AudioSource.file(filePath));
+          await _foregroundPlayer.setVolume(volume);
+          _attachForegroundCompletionListener();
+          await _foregroundPlayer.play();
+          Log.i('AdhanAudioManager', 'just_audio(file) started for $prayerId');
+          trace('engine', fields: {
+            'prayer': prayerId,
+            'engine': 'just_audio_file',
+            'sound': soundKey,
+          });
+          await _fireStarted(prayerId);
+          return true;
+        } catch (e, st) {
+          Log.w('AdhanAudioManager', 'just_audio(file) failed', e, st);
+        }
+      }
+
+      // --- 3) just_audio from bundled asset -----------------------------
+      final asset = isFajr
+          ? 'assets/audio/$soundKey-fajr.mp3'
+          : 'assets/audio/$soundKey.mp3';
       try {
         await _foregroundPlayer.stop();
-        await _foregroundPlayer.setAudioSource(AudioSource.file(filePath));
+        await _foregroundPlayer.setAudioSource(AudioSource.asset(asset));
         await _foregroundPlayer.setVolume(volume);
         _attachForegroundCompletionListener();
         await _foregroundPlayer.play();
-        Log.i('AdhanAudioManager', 'just_audio(file) started for $prayerId');
+        Log.i('AdhanAudioManager', 'just_audio(asset) started for $prayerId');
+        trace('engine', fields: {
+          'prayer': prayerId,
+          'engine': 'just_audio_asset',
+          'sound': soundKey,
+        });
+        await _fireStarted(prayerId);
         return true;
       } catch (e, st) {
-        Log.w('AdhanAudioManager', 'just_audio(file) failed', e, st);
+        Log.w('AdhanAudioManager', 'just_audio(asset) failed', e, st);
       }
-    }
-
-    // --- 3) just_audio from bundled asset -------------------------------
-    final asset = isFajr
-        ? 'assets/audio/$soundKey-fajr.mp3'
-        : 'assets/audio/$soundKey.mp3';
-    try {
-      await _foregroundPlayer.stop();
-      await _foregroundPlayer.setAudioSource(AudioSource.asset(asset));
-      await _foregroundPlayer.setVolume(volume);
-      _attachForegroundCompletionListener();
-      await _foregroundPlayer.play();
-      Log.i('AdhanAudioManager', 'just_audio(asset) started for $prayerId');
-      return true;
     } catch (e, st) {
-      Log.w('AdhanAudioManager', 'just_audio(asset) failed', e, st);
+      // Unexpected failure outside the per-engine try/catch (e.g. file-path
+      // resolution or native channel error). Fall through to the cleanup
+      // below so the session never leaks.
+      Log.e('AdhanAudioManager',
+          'Unexpected error during engine selection for $prayerId', e, st);
     }
 
-    // No engine started — clear the flag we set optimistically.
+    // No engine started (or an unexpected error occurred) — clear the flag
+    // we set optimistically so awaiters unblock immediately.
+    trace('no-engine', fields: {'prayer': prayerId});
     await _markStopped();
     return false;
   }
@@ -168,11 +236,14 @@ class AdhanAudioManager {
     if (timeout != null) {
       try {
         await completer.future.timeout(timeout);
+        trace('completed', fields: {'via': 'await'});
       } on TimeoutException {
         Log.w('AdhanAudioManager', 'awaitCurrentSession timed out');
+        trace('timeout', fields: {'after': '${timeout.inMinutes}m'});
       }
     } else {
       await completer.future;
+      trace('completed', fields: {'via': 'await'});
     }
   }
 
@@ -208,8 +279,11 @@ class AdhanAudioManager {
       final flag = prefs.getBool(_kIsPlaying) ?? false;
       final startMs = prefs.getInt(_kPlayingStartMs) ?? 0;
       final now = DateTime.now().millisecondsSinceEpoch;
-      final stale =
-          startMs == 0 || (now - startMs) > _maxAdhanDuration.inMilliseconds;
+      final stale = AdhanScheduleLogic.isPlayingFlagStale(
+        startMs: startMs,
+        nowMs: now,
+        maxDuration: _maxAdhanDuration,
+      );
       if (flag && stale) {
         // Stale flag from a crashed/terminated isolate — clear it.
         await _markStopped();
@@ -403,6 +477,27 @@ class AdhanAudioManager {
       await prefs.remove(_kPlayingStartMs);
       await prefs.remove(_kPlayingPrayerId);
     } catch (_) {}
+
+    // Clear the "Adhan playing — [Stop]" notification as a guaranteed
+    // side-effect of stopping, regardless of which path stopped playback
+    // (user tapped Stop, completion listener, native callback, or the
+    // 6-minute safety timeout).
+    try {
+      await onAdhanStopped?.call();
+    } catch (e, st) {
+      Log.w('AdhanAudioManager', 'onAdhanStopped hook failed', e, st);
+    }
+  }
+
+  /// Fires the [onAdhanStarted] hook (if wired) so the notification layer can
+  /// surface the stop-notification. Failures are swallowed: a missing
+  /// notification must never take down playback.
+  static Future<void> _fireStarted(String prayerId) async {
+    try {
+      await onAdhanStarted?.call(prayerId);
+    } catch (e, st) {
+      Log.w('AdhanAudioManager', 'onAdhanStarted hook failed', e, st);
+    }
   }
 }
 

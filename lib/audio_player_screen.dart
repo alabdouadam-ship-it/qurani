@@ -81,6 +81,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   StreamSubscription<ProcessingState>? _processingStateSub;
   StreamSubscription<int?>? _currentIndexSub;
   StreamSubscription<PlaybackEvent>? _playbackEventSub;
+  StreamSubscription<AudioInterruptionEvent>? _interruptionSub;
   bool _isPlayerDisposed = false;
 
   // ── Fix: generation counter to cancel stale async operations ──
@@ -124,6 +125,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     _processingStateSub?.cancel();
     _currentIndexSub?.cancel();
     _playbackEventSub?.cancel();
+    _interruptionSub?.cancel();
     unawaited(_disposePlayer());
     super.dispose();
   }
@@ -264,9 +266,13 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       await session.setActive(true);
       debugPrint('[AudioPlayer] Audio session configured successfully');
 
-      session.interruptionEventStream.listen((event) {
+      _interruptionSub = session.interruptionEventStream.listen((event) {
         debugPrint(
             '[AudioPlayer] Audio interruption: ${event.begin} - ${event.type}');
+        // Guard against firing on a disposed player: AudioSession is an
+        // app-lifetime singleton, so a stale subscription that outlived this
+        // screen would otherwise call pause()/play() on a disposed _player.
+        if (_isPlayerDisposed || !mounted) return;
         if (event.begin) {
           // Only pause if it's a permanent interruption (like a phone call)
           if (event.type == AudioInterruptionType.duck) {
@@ -883,7 +889,11 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     // ignore: deprecated_member_use
     await Share.share(
       message,
-      sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+      // `box` can be null if the element is detached; pass no origin in that
+      // case rather than crashing on a force-unwrap (iPad popover just falls
+      // back to a default anchor).
+      sharePositionOrigin:
+          box != null ? box.localToGlobal(Offset.zero) & box.size : null,
     );
   }
 

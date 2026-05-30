@@ -6,9 +6,9 @@ import 'package:flutter/widgets.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'adhan_audio_manager.dart';
+import 'adhan_schedule_logic.dart';
 import 'logger.dart';
 import 'preferences_service.dart';
 import 'notification_service_io.dart';
@@ -27,29 +27,10 @@ const List<String> _defaultSoundKeys = [
   'ibrahim-jabr-masr',
 ];
 
-// We reuse the same id scheme as notifications: yyyymmdd*10 + code
-int _codeForPrayer(String id) {
-  switch (id) {
-    case 'fajr':
-      return 1;
-    case 'sunrise':
-      return 2;
-    case 'dhuhr':
-      return 3;
-    case 'asr':
-      return 4;
-    case 'maghrib':
-      return 5;
-    case 'isha':
-      return 6;
-  }
-  return 0;
-}
-
-int _dailyId({required String prayerId, required DateTime date}) {
-  final ymd = date.year * 10000 + date.month * 100 + date.day;
-  return ymd * 10 + _codeForPrayer(prayerId);
-}
+// We reuse the same id scheme as notifications: yyyymmdd*10 + code.
+// The id derivation now lives in the pure, testable AdhanScheduleLogic.
+int _dailyId({required String prayerId, required DateTime date}) =>
+    AdhanScheduleLogic.dailyId(prayerId: prayerId, date: date);
 
 String _assetFor(String soundKey, bool isFajr) {
   return isFajr ? 'assets/audio/$soundKey-fajr.mp3' : 'assets/audio/$soundKey.mp3';
@@ -136,107 +117,45 @@ Future<bool> _ensureAdhanFileExists(String soundKey, bool isFajr) async {
   }
 }
 
-Future<void> _showStopNotification(String prayerId) async {
-  try {
-    final prefs = await SharedPreferences.getInstance();
-    final lang = prefs.getString(PreferencesService.keyLanguage) ?? 'ar';
-    
-    // Get localized prayer name
-    String prayerName;
-    if (prayerId == 'test' || prayerId == 'fajr' && prefs.getBool('test_mode') == true) {
-      prayerName = lang == 'ar' ? 'اختبار' : (lang == 'fr' ? 'Test' : 'Test');
-    } else {
-      switch (prayerId) {
-        case 'fajr':
-          prayerName = lang == 'ar' ? 'الفجر' : (lang == 'fr' ? 'Fajr' : 'Fajr');
-          break;
-        case 'dhuhr':
-          prayerName = lang == 'ar' ? 'الظهر' : (lang == 'fr' ? 'Dohr' : 'Dhuhr');
-          break;
-        case 'asr':
-          prayerName = lang == 'ar' ? 'العصر' : (lang == 'fr' ? 'Asr' : 'Asr');
-          break;
-        case 'maghrib':
-          prayerName = lang == 'ar' ? 'المغرب' : (lang == 'fr' ? 'Maghreb' : 'Maghrib');
-          break;
-        case 'isha':
-          prayerName = lang == 'ar' ? 'العشاء' : (lang == 'fr' ? 'Icha' : 'Isha');
-          break;
-        default:
-          prayerName = lang == 'ar' ? 'اختبار' : (lang == 'fr' ? 'Test' : 'Test');
-      }
-    }
-    
-    String title, body, stopLabel;
-    switch (lang) {
-      case 'en':
-        title = 'Adhan - $prayerName';
-        body = 'Tap to open app';
-        stopLabel = 'Stop';
-        break;
-      case 'fr':
-        title = 'Adhan - $prayerName';
-        body = 'Touchez pour ouvrir';
-        stopLabel = 'Arrêter';
-        break;
-      default:
-        title = 'أذان $prayerName';
-        body = 'اضغط لفتح التطبيق';
-        stopLabel = 'إيقاف';
-    }
-    
-    // Ensure NotificationService is initialized properly to preserve callbacks
-    await NotificationService.init();
-
-    final androidDetails = AndroidNotificationDetails(
-      'prayer_adhans_default_v2', // Use the main adhan channel
-      'Prayer Adhan',
-      channelDescription: 'Adhan at prayer time',
-      importance: Importance.high,
-      priority: Priority.high,
-      playSound: false, // The audio is already playing via AdhanAudioManager
-      enableVibration: false,
-      ongoing: true, // Keep it active while audio is playing
-      autoCancel: false,
-      actions: [
-        AndroidNotificationAction(
-          'stop_adhan',
-          stopLabel,
-          showsUserInterface: false,
-          cancelNotification: true,
-        ),
-      ],
-    );
-    
-    Log.d('AdhanStopNotif', 'Showing notification: $title');
-    await NotificationService.plugin.show(
-      9999999, // Specific ID for the active playback notification
-      title,
-      body,
-      NotificationDetails(android: androidDetails),
-      payload: 'stop_adhan',
-    );
-    Log.i('AdhanStopNotif', 'Stop-notification shown for $prayerId');
-  } catch (e, stackTrace) {
-    Log.e('AdhanStopNotif', 'Failed to show stop-notification', e, stackTrace);
-  }
-}
-
+/// Re-initialises everything Adhan playback depends on, so it works in BOTH
+/// the AndroidAlarmManager background isolate (which never runs `main()` and
+/// therefore starts with none of the app's singletons initialised) and any
+/// foreground caller.
+///
+/// **The invariant this protects:** anything Adhan playback needs at fire time
+/// must be initialised here. The background alarm isolate is a fresh Dart VM —
+/// `PreferencesService._prefs` is null, `NotificationService` is uninitialised,
+/// etc. Code that "works" in the foreground will silently no-op in the isolate
+/// if its dependency was only set up in `main()`. Adding a new dependency to
+/// Adhan playback? Initialise it HERE, not just in `main()`.
+///
+/// Idempotent: `PreferencesService.ensureInitialized` and
+/// `NotificationService.init` both guard against repeat work, so calling this
+/// from a warm foreground path is cheap.
 @pragma('vm:entry-point')
-Future<void> _playAdhanCallback(int id) async {
+Future<void> ensureAdhanRuntimeReady() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
   } catch (_) {}
 
-  // Ensure PreferencesService is hydrated in this isolate so that the
-  // unified [AdhanAudioManager.playAdhan] can read the toggle/sound/volume
-  // keys reliably.
+  // Hydrate SharedPreferences in this isolate so [AdhanAudioManager.playAdhan]
+  // can read the toggle/sound/volume keys reliably.
   await PreferencesService.ensureInitialized();
 
   // Lazily init the notification plugin so any stop/cancel calls from
   // AdhanAudioManager work correctly in this background isolate.
   // NotificationService.init() is idempotent (guarded by _initialized).
-  try { await NotificationService.init(); } catch (_) {}
+  try {
+    await NotificationService.init();
+  } catch (_) {}
+}
+
+@pragma('vm:entry-point')
+Future<void> _playAdhanCallback(int id) async {
+  // Single bootstrap point shared with the foreground path. See
+  // [ensureAdhanRuntimeReady] for the "initialise dependencies here, not just
+  // in main()" invariant this enforces.
+  await ensureAdhanRuntimeReady();
 
   // Decode prayer from alarm id.
   final code = id % 10;
@@ -261,6 +180,26 @@ Future<void> _playAdhanCallback(int id) async {
   }
 
   Log.i('AdhanCallback', 'Firing for $prayerId');
+  AdhanAudioManager.trace('fired', fields: {
+    'prayer': prayerId,
+    'id': id,
+    'isolate': 'background-alarm',
+  });
+
+  // Read (don't act on) the cross-isolate foreground flag. This is the
+  // designated reader for `is_app_in_foreground`: it makes the flag's value
+  // observable in logs at the moment an alarm fires in the background isolate,
+  // which is invaluable for diagnosing "did the UI isolate think it was alive
+  // when this alarm ran?" incidents. We deliberately do NOT use it to suppress
+  // the stop-notification — the notification's Stop action is the only way to
+  // stop a playing Adhan, so it must always show, foreground or not.
+  try {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.reload();
+    final appForeground = prefs.getBool('is_app_in_foreground') ?? false;
+    Log.d('AdhanCallback',
+        'Alarm fired with is_app_in_foreground=$appForeground');
+  } catch (_) {}
 
   // Respect the enable toggle (test bypasses).
   if (!isTest) {
@@ -289,15 +228,17 @@ Future<void> _playAdhanCallback(int id) async {
   // Delegate engine selection, state tracking, and completion hookup to
   // the single authoritative manager. For tests we pass 'test' so the
   // manager bypasses its own enable-gate (we already bypassed ours above).
+  //
+  // The "Adhan playing — [Stop]" notification is now surfaced automatically
+  // by AdhanAudioManager's onAdhanStarted hook (wired in
+  // NotificationService.init), so every playback path — this background
+  // callback AND the foreground GlobalAdhanService loop — gets the Stop
+  // button. No explicit _showStopNotification call is needed here anymore.
   final started = await AdhanAudioManager.playAdhan(isTest ? 'test' : prayerId);
   if (!started) {
     Log.w('AdhanCallback', 'No engine started playback for $prayerId');
     return;
   }
-
-  // Surface the tappable stop-notification *after* playback has begun, so
-  // the user sees it only when Adhan is actually audible.
-  await _showStopNotification(prayerId);
 
   // AndroidAlarmManager tears down this isolate once the callback returns,
   // which would kill just_audio playback mid-Adhan. Block here until the
@@ -306,11 +247,8 @@ Future<void> _playAdhanCallback(int id) async {
     timeout: const Duration(minutes: 6),
   );
   Log.i('AdhanCallback', 'Session completed for $prayerId');
-  
-  // Clean up the stop-notification once playback naturally finishes
-  try {
-    await NotificationService.plugin.cancel(9999999);
-  } catch (_) {}
+  // The stop-notification is cleared by AdhanAudioManager's onAdhanStopped
+  // hook when the session ends, so no explicit cancel is needed here.
 }
 
 class AdhanScheduler {
@@ -329,12 +267,10 @@ class AdhanScheduler {
   /// Returns a stable, order-independent fingerprint of a toggles map so we
   /// can detect whether the user changed their Adhan prayer selection since
   /// the last scheduling pass.
-  static String _togglesFingerprint(Map<String, bool> toggles) {
-    final keys = toggles.keys.toList()..sort();
-    return keys.map((k) => '$k=${toggles[k] == true ? 1 : 0}').join(',');
-  }
+  static String _togglesFingerprint(Map<String, bool> toggles) =>
+      AdhanScheduleLogic.togglesFingerprint(toggles);
 
-  static int _dayKey(DateTime d) => d.year * 10000 + d.month * 100 + d.day;
+  static int _dayKey(DateTime d) => AdhanScheduleLogic.dayKey(d);
 
   /// Returns `true` if we have *not* already scheduled alarms for every day
   /// from today through (today + [daysAhead]) with the given [soundKey] and
@@ -347,19 +283,15 @@ class AdhanScheduler {
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final now = DateTime.now();
-      final today = _dayKey(now);
-      final target =
-          _dayKey(DateTime(now.year, now.month, now.day + daysAhead));
-      final lastThrough = prefs.getInt(_keyLastScheduledThrough) ?? 0;
-      final lastSound = prefs.getString(_keyLastScheduledSoundHash);
-      final lastToggles = prefs.getString(_keyLastScheduledTogglesHash);
-      final togglesHash = _togglesFingerprint(toggles);
-      if (lastSound != soundKey || lastToggles != togglesHash) {
-        return true; // settings changed -> must re-schedule
-      }
-      // Already scheduled today AND covered the full horizon: skip.
-      return lastThrough < target || lastThrough < today;
+      return AdhanScheduleLogic.shouldSchedule(
+        now: DateTime.now(),
+        soundKey: soundKey,
+        toggles: toggles,
+        lastScheduledThrough: prefs.getInt(_keyLastScheduledThrough) ?? 0,
+        lastSoundHash: prefs.getString(_keyLastScheduledSoundHash),
+        lastTogglesHash: prefs.getString(_keyLastScheduledTogglesHash),
+        daysAhead: daysAhead,
+      );
     } catch (_) {
       return true; // on any pref error, err on the side of scheduling
     }
@@ -395,6 +327,30 @@ class AdhanScheduler {
       await prefs.remove(_keyLastScheduledSoundHash);
       await prefs.remove(_keyLastScheduledTogglesHash);
     } catch (_) {}
+  }
+
+  /// Atomically persists the enabled state of [prayerId] AND invalidates the
+  /// scheduling-dedup cache.
+  ///
+  /// This is the ONLY sanctioned way to change a prayer's Adhan toggle. By
+  /// fusing the write to `adhan_<prayerId>` with [invalidateScheduling], it
+  /// becomes structurally impossible to change a toggle without the next
+  /// scheduling pass actually running — previously a caller had to remember
+  /// to invalidate, and forgetting meant `shouldScheduleThroughDay`
+  /// short-circuited and the change silently never took effect. Callers
+  /// should still follow with a reschedule pass to (re)arm alarms now.
+  static Future<void> setPrayerEnabled(String prayerId, bool enabled) async {
+    await PreferencesService.setBool('adhan_$prayerId', enabled);
+    await invalidateScheduling();
+  }
+
+  /// Atomically persists the selected Adhan [soundKey] AND invalidates the
+  /// scheduling-dedup cache, for the same reason as [setPrayerEnabled]: the
+  /// sound is part of the dedup fingerprint, so changing it without
+  /// invalidating would leave the next pass thinking it had nothing to do.
+  static Future<void> setSound(String soundKey) async {
+    await PreferencesService.saveAdhanSound(soundKey);
+    await invalidateScheduling();
   }
 
   /// Initialises the Adhan scheduler exactly once per app process. Repeated
@@ -468,17 +424,35 @@ class AdhanScheduler {
     if (!Platform.isAndroid) return;
 
     Log.d('AdhanScheduler', 'Scheduling Adhan alarms for Android...');
-    // Schedule alarms for enabled prayers
+    // Schedule alarms for enabled prayers; cancel alarms (and their paired
+    // notifications) for prayers that are toggled OFF or whose time has
+    // already passed. This is what makes "turn a prayer off" actually stop a
+    // future Adhan: scheduling-only would leave a previously-armed alarm in
+    // AndroidAlarmManager's queue, so the Adhan would still fire tomorrow.
+    // Cancelling here, on every (re)schedule pass, keeps the armed set exactly
+    // in sync with the current toggles without a separate code path.
     for (final entry in times.entries) {
       final prayerId = entry.key;
       final time = entry.value;
-      
+
       if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
-      if (!(toggles[prayerId] ?? false)) continue;
-      if (time.isBefore(now)) continue;
-      
+
       final id = _dailyId(prayerId: prayerId, date: time);
-      
+      final enabled = toggles[prayerId] ?? false;
+
+      if (!enabled || time.isBefore(now)) {
+        // Cancel any previously-armed alarm for this slot. (The paired
+        // notification is cancelled centrally in
+        // NotificationService.scheduleRemainingAdhans, which runs on both
+        // platforms.)
+        try {
+          await AndroidAlarmManager.cancel(id);
+        } catch (e, st) {
+          Log.w('AdhanScheduler', 'Failed to cancel alarm $id', e, st);
+        }
+        continue;
+      }
+
       try {
         await AndroidAlarmManager.oneShotAt(
           time,
@@ -489,6 +463,11 @@ class AdhanScheduler {
           allowWhileIdle: true,
         );
         Log.i('AdhanScheduler', 'Scheduled $prayerId at $time (id: $id)');
+        AdhanAudioManager.trace('scheduled', fields: {
+          'prayer': prayerId,
+          'id': id,
+          'at': time.toIso8601String(),
+        });
       } catch (e, st) {
         Log.e('AdhanScheduler', 'Failed to schedule $prayerId', e, st);
       }

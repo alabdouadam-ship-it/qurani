@@ -22,7 +22,12 @@ import 'widgets/modern_ui.dart';
 ///   2. The mental model "tasbeeh is the counter, wird is the schedule" is
 ///      unified in one muscle-memory destination for the user.
 class TasbeehScreen extends StatefulWidget {
-  const TasbeehScreen({super.key});
+  const TasbeehScreen({super.key, this.initialTab = 0});
+
+  /// Which tab to open on first build: 0 = Tasbeeh (default), 1 = Wird.
+  /// Used by the Wird-reminder notification deep-link so tapping a reminder
+  /// lands the user directly on the Wird tab.
+  final int initialTab;
 
   @override
   State<TasbeehScreen> createState() => _TasbeehScreenState();
@@ -49,7 +54,11 @@ class _TasbeehScreenState extends State<TasbeehScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+      initialIndex: widget.initialTab.clamp(0, 1),
+    );
     // Rebuild actions/FAB whenever the tab changes so they stay in sync
     // with the currently-visible tab.
     _tabController.addListener(() {

@@ -242,8 +242,26 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
     _pageController.dispose();
     _pageScrollController.dispose();
+    // Dispose the PDF-mode controllers/handle too — these are only created in
+    // PDF mode, so leaving the screen while in PDF mode previously leaked both
+    // the PageController and the native pdfrx document handle.
+    _pdfPageController?.dispose();
+    _disposePdfDocument(_pdfDocumentFuture);
+    _pdfDocumentFuture = null;
     _fullscreenButtonTimer?.cancel();
     super.dispose();
+  }
+
+  /// Disposes the native pdfrx document behind [future] once it resolves.
+  /// Safe to call with null or an already-settled future; errors are ignored
+  /// (a failed-to-open document has nothing to dispose).
+  void _disposePdfDocument(Future<PdfDocument>? future) {
+    if (future == null) return;
+    future.then((doc) {
+      try {
+        doc.dispose();
+      } catch (_) {}
+    }).catchError((_) {});
   }
 
   void _goToPage(int page, {int? highlightAyah}) {
@@ -959,6 +977,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       currentType: _pdfType,
       onSelected: (type) async {
         if (!mounted) return;
+        // Dispose the outgoing document + controller before discarding them,
+        // otherwise switching mushaf style leaks the native handle and the
+        // old PageController.
+        _disposePdfDocument(_pdfDocumentFuture);
+        _pdfPageController?.dispose();
         setState(() {
           _pdfType = type;
           // Reset path so we check availability again or download.
@@ -1246,6 +1269,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           );
           final hasNet = await _hasInternet();
           if (!hasLocal && !hasNet) {
+            // Complete the prepared-future so any concurrent awaiter unblocks
+            // instead of hanging on a never-completed completer.
+            completer.complete(false);
             return false;
           }
         }
@@ -1628,8 +1654,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     if (mounted) {
       setState(() {
         if (exists && _pdfPath != path) {
+          // Dispose any previously-opened document before opening a new one.
+          _disposePdfDocument(_pdfDocumentFuture);
           _pdfDocumentFuture = PdfDocument.openFile(path);
         } else if (!exists) {
+          _disposePdfDocument(_pdfDocumentFuture);
           _pdfDocumentFuture = null;
         }
         _pdfPath = exists ? path : null;
@@ -2169,9 +2198,20 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       for (int i = 0; i < occurrence.ayahCount; i++) {
         final globalIndex = occurrence.startIndex + i;
         final ayah = page.ayahs[globalIndex];
+        // `_currentAyahIndex` is an audio SOURCE index, which diverges from the
+        // page.ayahs index whenever an ayah's audio source was skipped (null).
+        // Map it back through `_sourceIndexToAyahIndex` before comparing, the
+        // same bridge used by `_selectedAyah` elsewhere, so the right ayah is
+        // highlighted during playback.
+        final int? playingAyahIndex = _currentAyahIndex == null
+            ? null
+            : (_currentAyahIndex! >= 0 &&
+                    _currentAyahIndex! < _sourceIndexToAyahIndex.length
+                ? _sourceIndexToAyahIndex[_currentAyahIndex!]
+                : _currentAyahIndex);
         final bool isPlaying = isCurrentPage &&
-            _currentAyahIndex != null &&
-            globalIndex == _currentAyahIndex;
+            playingAyahIndex != null &&
+            globalIndex == playingAyahIndex;
 
         String? displayText;
         // Strip Basmalah from first verse text if present

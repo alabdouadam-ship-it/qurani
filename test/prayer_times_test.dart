@@ -5,14 +5,17 @@ void main() {
   group('PrayerTimesService Mapping', () {
     test('should map known countries to correct methods', () {
       expect(PrayerTimesService.prayerMethodByCountryName['saudi arabia'], 4);
-      expect(PrayerTimesService.prayerMethodByCountryName['france'], 4);
+      // France uses method 12 (UOIF — Union des organisations islamiques de
+      // France), not the Umm al-Qura (4) used in KSA.
+      expect(PrayerTimesService.prayerMethodByCountryName['france'], 12);
       expect(PrayerTimesService.prayerMethodByCountryName['egypt'], 5);
       expect(PrayerTimesService.prayerMethodByCountryName['pakistan'], 1);
     });
 
     test('should map known ISO codes to correct methods', () {
       expect(PrayerTimesService.prayerMethodByIsoCode['SA'], 4);
-      expect(PrayerTimesService.prayerMethodByIsoCode['FR'], 4);
+      // FR mirrors the country-name map: UOIF (12).
+      expect(PrayerTimesService.prayerMethodByIsoCode['FR'], 12);
       expect(PrayerTimesService.prayerMethodByIsoCode['EG'], 5);
       expect(PrayerTimesService.prayerMethodByIsoCode['GB'], 12);
     });

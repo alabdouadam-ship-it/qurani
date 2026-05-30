@@ -1,12 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 import 'package:qurani/models/wird_model.dart';
+import 'package:qurani/services/notification_budget.dart';
 import 'package:qurani/services/notification_service.dart';
+import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/user_database_service.dart';
+import 'package:qurani/services/wird_schedule_logic.dart';
 
 import 'logger.dart';
 
@@ -189,13 +193,17 @@ class WirdService {
   /// Called from `main.dart` shortly after `runApp`. Does three things:
   /// 1. Seeds the 5 default wirds on a brand-new install.
   /// 2. Applies today's daily reset.
-  /// 3. Re-arms the rolling 14-day notification window for every active wird.
+  /// 3. Re-arms the rolling notification window for every active wird,
+  ///    using a single budget-aware day-horizon (see [_computeWirdDayHorizon]).
   static Future<void> ensureReadyAndReschedule() async {
     await _ensureMigrated();
     await _seedDefaultsIfFirstLaunch();
     final active = await getActive();
+    // Compute the per-wird horizon ONCE for the whole batch rather than
+    // re-querying the prayer toggles + reminder count for every wird.
+    final horizon = await _computeWirdDayHorizon();
     for (final w in active) {
-      await _rescheduleOne(w);
+      await _rescheduleOne(w, dayHorizon: horizon);
     }
   }
 
@@ -282,11 +290,20 @@ class WirdService {
     );
 
     if (candidates.isNotEmpty) {
-      final todayWeekday = now.weekday;
       await db.transaction((txn) async {
         for (final row in candidates) {
           final days = Wird.parseDaysColumn(row['days_of_week'] as String?);
-          if (!days.contains(todayWeekday)) continue;
+          // Eligibility (last-update-before-today AND today is a scheduled
+          // weekday) is decided by the pure, unit-tested predicate. The SQL
+          // above already pre-filtered on the date, but we re-check via the
+          // predicate so the rule lives in exactly one verifiable place.
+          final lastStr = row['last_updated_date'] as String?;
+          final due = WirdScheduleLogic.isDueForDailyReset(
+            today: now,
+            lastUpdatedDate: _parseCalendarDateStr(lastStr),
+            daysOfWeek: days,
+          );
+          if (!due) continue;
           await txn.update(
             'wirds',
             {'current_count': 0, 'last_updated_date': todayStr},
@@ -298,11 +315,25 @@ class WirdService {
     }
 
     await prefs.setBool(flagKey, true);
-  }
 
-  // ---------------------------------------------------------------------------
-  // Seeding
-  // ---------------------------------------------------------------------------
+    // Prune stale daily-reset flags. Each day writes a unique
+    // `wird_daily_reset_YYYY-MM-DD` key; without cleanup these accumulate
+    // unbounded in SharedPreferences (one per day the app is opened, for the
+    // life of the install). We keep only today's key and drop every other
+    // `_resetPrefix`-prefixed key — yesterday's is never read again, and the
+    // guard for any future day is its own absence.
+    try {
+      final stale = prefs
+          .getKeys()
+          .where((k) => k.startsWith(_resetPrefix) && k != flagKey)
+          .toList();
+      for (final k in stale) {
+        await prefs.remove(k);
+      }
+    } catch (_) {
+      // Best-effort cleanup; a failure here just leaves a few extra keys.
+    }
+  }
 
   /// Seeds the 5 default wirds on first launch. Gated by a prefs flag so
   /// a user who deletes all defaults doesn't see them reappear.
@@ -375,10 +406,15 @@ class WirdService {
   // ---------------------------------------------------------------------------
 
   /// Cancels any pending notifications for this wird and, if it's still
-  /// active and has reminders on, re-schedules one-shots for the next 7
-  /// days. Today's notification is skipped if the wird is already
-  /// completed OR the chosen time has already passed.
-  static Future<void> _rescheduleOne(Wird w) async {
+  /// active and has reminders on, re-schedules one-shots for the next
+  /// [dayHorizon] days (≤7). Today's notification is skipped if the wird is
+  /// already completed OR the chosen time has already passed.
+  ///
+  /// [dayHorizon] defaults to a freshly-computed value via
+  /// [_computeWirdDayHorizon]; bulk callers ([ensureReadyAndReschedule],
+  /// [rescheduleAll]) compute it ONCE and pass it in to avoid an O(wirds)
+  /// burst of identical budget queries.
+  static Future<void> _rescheduleOne(Wird w, {int? dayHorizon}) async {
     await NotificationService.cancelWirdNotifications(w.id);
     if (w.isDeleted) return;
     if (!w.notificationsEnabled) {
@@ -392,52 +428,110 @@ class WirdService {
       return;
     }
 
+    final horizon = dayHorizon ?? await _computeWirdDayHorizon();
+
     final now = DateTime.now();
     final today = _dateOnly(now);
     final alreadyDoneToday = w.isCompleted &&
         w.lastUpdatedDate != null &&
         !w.lastUpdatedDate!.isBefore(today);
 
-    // 7-day rolling window. Notification IDs are derived from
-    // `(wirdId, weekday)` — there are only 7 distinct slots per wird, so
-    // scheduling "this Friday" and "next Friday" would collide (the second
-    // `zonedSchedule` silently replaces the first). We therefore keep a
-    // `scheduledWeekdays` set and accept only the NEAREST future occurrence
-    // of each weekday. For multi-day wirds that means up to 7 pending notifications
-    // in the next week. We limit lookahead to 7 days to avoid hitting
-    // the 64-notification cap on iOS.
-    final scheduledWeekdays = <int>{};
-    DateTime? firstTrigger;
-    for (int offset = 0; offset < 7; offset++) {
-      final day = DateTime(now.year, now.month, now.day + offset);
-      if (!w.daysOfWeek.contains(day.weekday)) continue;
-      if (scheduledWeekdays.contains(day.weekday)) continue;
+    // Rolling window of [horizon] days. The set of concrete trigger times is
+    // computed by the pure, unit-tested [WirdScheduleLogic.windowTriggers]:
+    // it walks offsets 0..horizon-1, keeps only the nearest future occurrence
+    // of each weekday (notification IDs are keyed by `(wirdId, weekday)`, so a
+    // second occurrence of the same weekday would collide), skips past times,
+    // and skips today when the wird is already done. [horizon] is normally 7
+    // but is shrunk on iOS when the combined Adhan + Wird pending count would
+    // exceed the 64-cap (see [NotificationBudget]).
+    final triggers = WirdScheduleLogic.windowTriggers(
+      now: now,
+      daysOfWeek: w.daysOfWeek,
+      hour: w.notificationTime.hour,
+      minute: w.notificationTime.minute,
+      alreadyDoneToday: alreadyDoneToday,
+      horizon: horizon,
+    );
 
-      final triggerAt = DateTime(day.year, day.month, day.day,
-          w.notificationTime.hour, w.notificationTime.minute);
-
-      if (triggerAt.isBefore(now)) continue; // time already passed today
-      if (offset == 0 && alreadyDoneToday) continue; // nothing to remind
-
+    for (final triggerAt in triggers) {
       await NotificationService.scheduleWirdOneShot(
         wirdId: w.id,
-        occurrenceDate: day,
+        occurrenceDate: triggerAt,
         triggerTimeLocal: triggerAt,
         title: w.title,
         body: w.dhikrText,
       );
-      scheduledWeekdays.add(day.weekday);
-      firstTrigger ??= triggerAt;
     }
-    if (scheduledWeekdays.isEmpty) {
+
+    if (triggers.isEmpty) {
       Log.w('WirdService',
           'Rescheduled "${w.title}" but nothing was queued — all candidate '
-              'times in the next 7 days are in the past or today is done.');
+              'times in the next $horizon day(s) are in the past or today is done.');
     } else {
       Log.i('WirdService',
-          'Rescheduled "${w.title}": ${scheduledWeekdays.length} '
-              'occurrence(s); next at ${firstTrigger?.toIso8601String()}');
+          'Rescheduled "${w.title}": ${triggers.length} '
+              'occurrence(s) over ${horizon}d; next at ${triggers.first.toIso8601String()}');
     }
+  }
+
+  /// Re-arms every active wird's notification window. Used as the iOS
+  /// cross-trigger when the enabled-prayer set changes (which changes how
+  /// much pending-notification budget Adhan reserves, and therefore the
+  /// per-wird day-horizon). No-op-cheap on Android/web where the horizon is
+  /// always the full 7 days.
+  static Future<void> rescheduleAll() async {
+    final active = await getActive();
+    final horizon = await _computeWirdDayHorizon();
+    for (final w in active) {
+      await _rescheduleOne(w, dayHorizon: horizon);
+    }
+  }
+
+  /// Computes the per-wird day-horizon that keeps the combined Adhan + Wird
+  /// pending-notification count within the platform budget. On platforms with
+  /// no hard cap (Android, web) this is always 7 (current behavior); only iOS
+  /// can shrink it. Adhan keeps its full week and Wird absorbs the remainder.
+  static Future<int> _computeWirdDayHorizon() async {
+    // iOS is the only platform with a hard pending-notification cap. Guard
+    // with `!kIsWeb` because flutter_local_notifications is a no-op on web
+    // even when the browser reports an iOS user-agent.
+    final isIos = !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+    final usable =
+        isIos ? NotificationBudget.iosUsable : NotificationBudget.unlimited;
+    if (usable >= NotificationBudget.unlimited) {
+      return 7; // Fast path: no cap, no query needed.
+    }
+    final enabledPrayers = _enabledPrayerCount();
+    final reminderWirds = await _reminderEnabledWirdCount();
+    return NotificationBudget.wirdDayHorizon(
+      enabledPrayerCount: enabledPrayers,
+      reminderWirdCount: reminderWirds,
+      usable: usable,
+    );
+  }
+
+  /// Counts the prayers (of the five daily prayers) whose Adhan toggle is on.
+  /// Mirrors the `adhan_<prayer>` bool keys written by the prayer-times screen.
+  static int _enabledPrayerCount() {
+    const ids = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
+    var count = 0;
+    for (final id in ids) {
+      if (PreferencesService.getBool('adhan_$id') ?? false) count++;
+    }
+    return count;
+  }
+
+  /// Counts non-deleted wirds that have reminders enabled — i.e. the wirds
+  /// that actually consume pending-notification slots.
+  static Future<int> _reminderEnabledWirdCount() async {
+    final db = await UserDatabaseService.database();
+    final c = Sqflite.firstIntValue(
+      await db.rawQuery(
+        'SELECT COUNT(*) FROM wirds '
+        'WHERE is_deleted = 0 AND notifications_enabled = 1',
+      ),
+    );
+    return c ?? 0;
   }
 
   // ---------------------------------------------------------------------------
@@ -452,6 +546,19 @@ class WirdService {
       '${d.year.toString().padLeft(4, '0')}-'
       '${d.month.toString().padLeft(2, '0')}-'
       '${d.day.toString().padLeft(2, '0')}';
+
+  /// Parses a `YYYY-MM-DD` calendar-date string (as stored in
+  /// `last_updated_date`) back into a [DateTime], or null if absent/malformed.
+  static DateTime? _parseCalendarDateStr(String? raw) {
+    if (raw == null || raw.isEmpty) return null;
+    final parts = raw.split('-');
+    if (parts.length != 3) return null;
+    final y = int.tryParse(parts[0]);
+    final m = int.tryParse(parts[1]);
+    final d = int.tryParse(parts[2]);
+    if (y == null || m == null || d == null) return null;
+    return DateTime(y, m, d);
+  }
 
   static Future<int> _nextPosition(Database db) async {
     final v = Sqflite.firstIntValue(

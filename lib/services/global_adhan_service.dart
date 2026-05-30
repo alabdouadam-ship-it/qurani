@@ -47,6 +47,25 @@ class GlobalAdhanService {
     _instance._stop();
   }
 
+  /// Pause the 30s foreground monitoring timer. Called when the app is
+  /// backgrounded: the AndroidAlarmManager background isolate owns Adhan
+  /// playback while we're not in the foreground, so a foreground polling
+  /// timer running in parallel would be redundant work that also widens the
+  /// race window where both paths could try to play near prayer time. Pausing
+  /// it on background partitions responsibility cleanly (alarm = background,
+  /// timer = foreground) and saves battery.
+  static void pause() {
+    _instance._stop();
+  }
+
+  /// Resume foreground monitoring. Reloads today's times and re-syncs the
+  /// playing flag before restarting the timer, so state is fresh after a
+  /// possibly-long background period. Safe to call repeatedly — `_start`
+  /// cancels any existing timer first.
+  static Future<void> resume() async {
+    await _instance._start();
+  }
+
   /// Check if Adhan is currently playing.
   static bool get isAdhanPlaying => AdhanAudioManager.isPlayingListenable.value;
 

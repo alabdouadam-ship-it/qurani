@@ -20,6 +20,11 @@ class NotificationService {
   static Future<void> init() async {}
   static Future<void> cancelAllPrayerAlerts() async {}
 
+  // Adhan stop-notification — Android-only feature; web has no equivalent.
+  static const int adhanStopNotificationId = 9999999;
+  static Future<void> showAdhanStopNotification(String prayerId) async {}
+  static Future<void> cancelAdhanStopNotification() async {}
+
   static Future<void> scheduleSilentAlert({
     required int id,
     required DateTime triggerTimeLocal,
