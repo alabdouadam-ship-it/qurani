@@ -31,7 +31,11 @@ class QuranDatabaseService {
 
   /// Bundled schema version. Bump this whenever the bundled `quran.db`
   /// changes its schema so existing installs force a re-copy.
-  static const int _schemaVersion = 3;
+  ///
+  /// v4: renamed `text_tafsir` -> `text_tafsir_muyassar` and added the
+  /// turkish/german translation columns plus the jalalayn/qurtubi/miqbas/
+  /// waseet/baghawi tafsir columns (see tool/build_quran_db.dart).
+  static const int _schemaVersion = 4;
   static const String _versionKey = 'quran_db_schema_version';
 
   static sqf.Database? _db;
@@ -100,6 +104,12 @@ class QuranDatabaseService {
         // Union of columns needed by QuranRepository + QuranSearchService.
         await probe.rawQuery(
             'SELECT text_simple, text_english FROM ayah LIMIT 1');
+        // v4 columns: the renamed muyassar tafsir + a representative new
+        // translation and tafsir. A pre-v4 DB lacks these and throws here,
+        // forcing the re-copy even if the stored version key somehow matched.
+        await probe.rawQuery(
+            'SELECT text_tafsir_muyassar, text_tr_vakfi, text_tafsir_jalalayn '
+            'FROM ayah LIMIT 1');
         // Union of columns needed by SurahService + QuranRepository.
         await probe.rawQuery(
             'SELECT name_ar, name_en, name_en_translation, revelation_type, '

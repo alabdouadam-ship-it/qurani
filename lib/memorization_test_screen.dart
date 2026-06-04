@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/memorization_test_service.dart';
 import 'package:qurani/services/surah_service.dart';
@@ -86,12 +87,12 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           return const Center(child: CircularProgressIndicator());
         }
         final l10n = AppLocalizations.of(context)!;
-        if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Center(child: Text(l10n.noSurahsAvailable));
-        }
 
         if (snapshot.hasError) {
-          debugPrint('[MemorizationTestScreen] load surahs error: ${snapshot.error}');
+          if (kDebugMode) {
+            debugPrint(
+                '[MemorizationTestScreen] load surahs error: ${snapshot.error}');
+          }
           return EmptyStateView(
             icon: Icons.error_outline,
             iconColor: Theme.of(context).colorScheme.error,
@@ -108,6 +109,10 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
               },
             ),
           );
+        }
+
+        if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return Center(child: Text(l10n.noSurahsAvailable));
         }
 
         final allSurahs = snapshot.data!;
@@ -215,7 +220,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
       if (!mounted) return;
 
       if (questions.isEmpty) {
-        final l10n = AppLocalizations.of(context)!;
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.noQuestionsAvailable)),
         );
@@ -229,14 +233,15 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
           builder: (_) => TestQuestionsScreen(
             questions: questions,
             surahNumbers: _selectedSurahs.isEmpty ? null : _selectedSurahs.toList(),
-
-            juzNumber: _selectedJuzs.isNotEmpty ? _selectedJuzs.first : null, // Providing first Juz just for stats compatibility if needed, though strictly we should update stats too if it takes single int
+            // Only attribute juz stats when exactly one juz is selected. A
+            // multi-juz test has a mixed score, so passing null keeps it out
+            // of any single juz's mastery (it still counts toward totals).
+            juzNumber: _selectedJuzs.length == 1 ? _selectedJuzs.first : null,
           ),
         ),
       );
     } catch (e) {
       if (!mounted) return;
-      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.testErrorGeneric(e.toString()))),
       );
@@ -366,7 +371,6 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
   Widget _buildJuzSelector() {
     final theme = Theme.of(context);
     final colorScheme = theme.colorScheme;
-    // final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
     final l10n = AppLocalizations.of(context)!;
     
     // Responsive grid logic for Juz selector

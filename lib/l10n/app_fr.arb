@@ -302,10 +302,6 @@
   "@language": {},
   "tafsir": "Tafsir",
   "@tafsir": {},
-  "savePreferences": "Enregistrer les préférences",
-  "@savePreferences": {},
-  "preferencesSavedSuccessfully": "Préférences enregistrées avec succès !",
-  "@preferencesSavedSuccessfully": {},
   "selectQuranVersion": "Sélectionner la version du Coran...",
   "@selectQuranVersion": {},
   "selectReciter": "Sélectionner un récitateur...",
@@ -517,8 +513,6 @@
   "@qiblaOpenLocationSettings": {},
   "qiblaSensorNotSupported": "Cet appareil ne prend pas en charge les capteurs nécessaires au mode boussole.",
   "@qiblaSensorNotSupported": {},
-  "verseOutsideRange": "Ce verset est en dehors de la plage sélectionnée.",
-  "@verseOutsideRange": {},
   "qiblaAngleLabel": "Angle de la Qibla : {angle}°",
   "@qiblaAngleLabel": {"placeholders": {"angle": {"type": "String"}}},
   "qiblaTipGps": "Activez le GPS et la haute précision",
@@ -923,6 +917,12 @@
       "n": {"type": "int"}
     }
   },
+  "statsNoDataYet": "Aucun test pour l'instant",
+  "@statsNoDataYet": {},
+  "statsMixedSelection": "Sélection mixte",
+  "@statsMixedSelection": {},
+  "statsAggLegend": "× tests · % dernier score",
+  "@statsAggLegend": {},
   "minutesAgo": "il y a {n} min",
   "@minutesAgo": {
     "placeholders": {
@@ -1136,5 +1136,15 @@
   "hadithSearchHint": "Entrez du texte pour rechercher ou sélectionnez un chapitre",
   "@hadithSearchHint": {},
   "hadithNoMatches": "Aucun résultat trouvé",
-  "@hadithNoMatches": {}
+  "@hadithNoMatches": {},
+  "editionTitle": "Édition",
+  "@editionTitle": {},
+  "editionTranslationsCategory": "Traductions",
+  "@editionTranslationsCategory": {},
+  "editionTafsirCategory": "Tafsir",
+  "@editionTafsirCategory": {},
+  "editionTurkish": "Turc",
+  "@editionTurkish": {},
+  "editionGerman": "Allemand",
+  "@editionGerman": {}
 }

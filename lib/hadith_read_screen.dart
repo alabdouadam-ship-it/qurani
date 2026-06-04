@@ -11,10 +11,15 @@ class HadithReadScreen extends StatefulWidget {
   final String bookId;
   final String bookName;
 
+  /// When set, the reader opens positioned on this hadith number (used when
+  /// a search result is opened in a fresh reader pushed on top of the search).
+  final int? initialHadithNumber;
+
   const HadithReadScreen({
     super.key,
     required this.bookId,
     required this.bookName,
+    this.initialHadithNumber,
   });
 
   @override
@@ -55,6 +60,21 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
           _visibleHadiths = book.hadiths.where((h) => h.text.trim().isNotEmpty).toList();
           _isLoading = false;
         });
+        // If asked to open at a specific hadith (search-result deep open),
+        // position the controller once the first frame is laid out.
+        final target = widget.initialHadithNumber;
+        if (target != null) {
+          final index =
+              _visibleHadiths.indexWhere((h) => h.hadithnumber == target);
+          if (index > 0) {
+            _currentPage = index;
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (mounted && _pageController.hasClients) {
+                _pageController.jumpToPage(index);
+              }
+            });
+          }
+        }
       }
     } catch (e) {
       if (mounted) {
@@ -122,8 +142,7 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
     sb.writeln(l10n.shareHadithFooter);
 
     // 4. Share
-    // ignore: deprecated_member_use
-    Share.share(sb.toString());
+    SharePlus.instance.share(ShareParams(text: sb.toString()));
   }
 
   void _goToHadithNumber() async {
@@ -327,9 +346,10 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
                    context: context, 
                    delegate: HadithSearchDelegate(
                      _visibleHadiths, 
-                     _pageController, 
                      _book!.metadata, 
                      contentLocale,
+                     bookId: widget.bookId,
+                     bookName: widget.bookName,
                      hideChapterZero: _shouldHideChapterZero(),
                    )
                  );
@@ -609,17 +629,19 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
 
 class HadithSearchDelegate extends SearchDelegate {
   final List<Hadith> _visibleHadiths;
-  final PageController pageController;
   final HadithBookMetadata metadata;
   final Locale contentLocale;
+  final String bookId;
+  final String bookName;
   final bool hideChapterZero;
   String? _selectedSectionId;
 
   HadithSearchDelegate(
     this._visibleHadiths, 
-    this.pageController, 
     this.metadata, 
     this.contentLocale, {
+    required this.bookId,
+    required this.bookName,
     this.hideChapterZero = false,
   });
 
@@ -801,12 +823,21 @@ class HadithSearchDelegate extends SearchDelegate {
                         style: const TextStyle(fontFamily: 'Amiri Quran'),
                       ),
                       onTap: () {
-                        // Find index in VISIBLE list
-                        final originalIndex = _visibleHadiths.indexOf(hadith);
-                        if (originalIndex != -1) {
-                          pageController.jumpToPage(originalIndex);
-                          close(context, null);
-                        }
+                        // Open the selected hadith in a FRESH reader pushed on
+                        // top of the search. This keeps the navigation stack as
+                        // [BooksList, Reader, Search, Result] so the back button
+                        // returns to the search results, then to the original
+                        // reader, then to the books list — instead of the old
+                        // jump+close which collapsed straight to the books list.
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => HadithReadScreen(
+                              bookId: bookId,
+                              bookName: bookName,
+                              initialHadithNumber: hadith.hadithnumber,
+                            ),
+                          ),
+                        );
                       },
                     );
                   },

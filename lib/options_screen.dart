@@ -312,7 +312,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
   List<OptionItem> _getOptions(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final items = <OptionItem>[
-      // Row 1
       OptionItem(
         id: 'listen_quran',
         icon: Icons.headset,
@@ -327,8 +326,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
         subtitle: '',
         color: Colors.blueGrey,
       ),
-
-      // Row 2
       OptionItem(
         id: 'repetition_memorization',
         icon: Icons.repeat,
@@ -343,8 +340,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
         subtitle: '',
         color: Theme.of(context).colorScheme.primary,
       ),
-
-      // Row 3
       OptionItem(
         id: 'search',
         icon: Icons.search,
@@ -352,7 +347,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
         subtitle: '',
         color: Colors.cyan,
       ),
-      //if (!kIsWeb)
       OptionItem(
         id: 'tasbeeh',
         icon: Icons.countertops,
@@ -360,8 +354,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
         subtitle: '',
         color: Colors.green,
       ),
-
-      // Row 4
       if (!kIsWeb)
         OptionItem(
           id: 'prayer_times',
@@ -494,9 +486,6 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
       case 'news':
         _handleNewsNavigation(context);
         break;
-
-      default:
-        _showComingSoon(context, option.title);
     }
   }
 
@@ -527,27 +516,14 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
     }
   }
 
-  void _showComingSoon(BuildContext context, String feature) {
-    final l10n = AppLocalizations.of(context)!;
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(feature),
-          content: Text(l10n.comingSoonFeature(feature)),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: Text(MaterialLocalizations.of(context).okButtonLabel),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   Future<Map<String, String>?> _getHijriDate() async {
     try {
+      // Make sure the current month's calendar exists so the Hijri date is
+      // available even before the user opens Prayer Times or grants location.
+      // Seeds with a default (Makkah/KSA) location when no position is known;
+      // Hijri is location-independent so this won't disagree with the Prayer
+      // Times screen. No-ops when already cached or offline.
+      await PrayerTimesService.ensureHijriSeed();
       final now = DateTime.now();
       return await PrayerTimesService.getHijriForDate(
           year: now.year, month: now.month, day: now.day);

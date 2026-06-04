@@ -426,12 +426,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tafsir => 'Tafsir';
 
   @override
-  String get savePreferences => 'Enregistrer les préférences';
-
-  @override
-  String get preferencesSavedSuccessfully => 'Préférences enregistrées avec succès !';
-
-  @override
   String get selectQuranVersion => 'Sélectionner la version du Coran...';
 
   @override
@@ -721,9 +715,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get qiblaSensorNotSupported => 'Cet appareil ne prend pas en charge les capteurs nécessaires au mode boussole.';
-
-  @override
-  String get verseOutsideRange => 'Ce verset est en dehors de la plage sélectionnée.';
 
   @override
   String qiblaAngleLabel(String angle) {
@@ -1333,6 +1324,15 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get statsNoDataYet => 'Aucun test pour l\'instant';
+
+  @override
+  String get statsMixedSelection => 'Sélection mixte';
+
+  @override
+  String get statsAggLegend => '× tests · % dernier score';
+
+  @override
   String minutesAgo(int n) {
     return 'il y a $n min';
   }
@@ -1629,4 +1629,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadithNoMatches => 'Aucun résultat trouvé';
+
+  @override
+  String get editionTitle => 'Édition';
+
+  @override
+  String get editionTranslationsCategory => 'Traductions';
+
+  @override
+  String get editionTafsirCategory => 'Tafsir';
+
+  @override
+  String get editionTurkish => 'Turc';
+
+  @override
+  String get editionGerman => 'Allemand';
 }

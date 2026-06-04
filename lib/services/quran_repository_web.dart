@@ -1,71 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:http/http.dart' as http;
 
-/// Supported Quran text editions.
-enum QuranEdition {
-  simple,
-  uthmani,
-  tajweed,
-  english,
-  french,
-  tafsir,
-  irab,
-}
+import 'quran_edition.dart';
 
-extension QuranEditionExt on QuranEdition {
-  String get jsonFile {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'assets/data/quran-simple.json';
-      case QuranEdition.uthmani:
-        return 'assets/data/quran-uthmani.json';
-      case QuranEdition.tajweed:
-        return 'assets/data/quran-tajweed.json';
-      case QuranEdition.english:
-        return 'assets/data/quran-english.json';
-      case QuranEdition.french:
-        return 'assets/data/quran-french.json';
-      case QuranEdition.tafsir:
-        return 'assets/data/quran-muyassar.json';
-      case QuranEdition.irab:
-        return 'assets/data/quran-simple.json'; // Audio uses simple
-    }
-  }
-
-  String get displayName {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'Arabic (Simple)';
-      case QuranEdition.uthmani:
-        return 'Arabic (Uthmani)';
-      case QuranEdition.tajweed:
-        return 'Quran Tajweed';
-      case QuranEdition.english:
-        return 'English';
-      case QuranEdition.french:
-        return 'Français';
-      case QuranEdition.tafsir:
-        return 'Tafsir (Muyassar)';
-      case QuranEdition.irab:
-        return 'إعراب القرآن';
-    }
-  }
-
-  bool get isRtl =>
-      this == QuranEdition.simple ||
-      this == QuranEdition.uthmani ||
-      this == QuranEdition.tajweed ||
-      this == QuranEdition.tafsir ||
-      this == QuranEdition.irab;
-
-  bool get isTranslation =>
-      this == QuranEdition.english || this == QuranEdition.french;
-
-  bool get isTafsir => this == QuranEdition.tafsir;
-
-  bool get isIrab => this == QuranEdition.irab;
-}
+export 'quran_edition.dart';
 
 class QuranRepository {
   QuranRepository._();
@@ -77,20 +17,33 @@ class QuranRepository {
   Future<List<SurahMeta>>? _surahListFuture;
   final Map<QuranEdition, Future<Map<int, String>>> _translationCache = {};
   final Map<QuranEdition, Future<Map<int, AyahData>>> _ayahIndexCache = {};
-  Future<Map<String, dynamic>>? _muyassarCache;
 
   Future<Map<String, dynamic>> _loadJson(QuranEdition edition) async {
     return await _jsonCache.putIfAbsent(edition, () async {
-      debugPrint('[QuranRepository] Loading ${edition.jsonFile}...');
-      final jsonString = await rootBundle.loadString(edition.jsonFile);
+      final src = edition.jsonAsset ?? '';
+      debugPrint('[QuranRepository] Loading $src...');
+      final String jsonString;
+      if (src.startsWith('http://') || src.startsWith('https://')) {
+        // New editions (turkish/german/extra tafsirs) are NOT bundled on web —
+        // they are fetched from the server on demand to keep the web payload
+        // small. Pre-existing editions still load from bundled assets.
+        final resp = await http.get(Uri.parse(src));
+        if (resp.statusCode != 200) {
+          throw Exception(
+              'Failed to load edition ${edition.id} ($src): HTTP ${resp.statusCode}');
+        }
+        jsonString = utf8.decode(resp.bodyBytes);
+      } else {
+        jsonString = await rootBundle.loadString(src);
+      }
       final data = json.decode(jsonString) as Map<String, dynamic>;
-      debugPrint('[QuranRepository] ✓ Loaded ${edition.name}');
+      debugPrint('[QuranRepository] ✓ Loaded ${edition.id}');
       return data;
     });
   }
 
   Future<PageData> loadPage(int pageNumber, QuranEdition edition) async {
-    final key = '${edition.name}::$pageNumber';
+    final key = '${edition.id}::$pageNumber';
     
     return await _pageCache.putIfAbsent(key, () async {
       final jsonData = await _loadJson(edition);
@@ -217,7 +170,7 @@ class QuranRepository {
   }
 
   Future<List<SurahMeta>> _loadSurahList() async {
-    final jsonData = await _loadJson(QuranEdition.simple);
+    final jsonData = await _loadJson(QuranEditions.simple);
     final surahs = (jsonData['data']['surahs'] as List<dynamic>);
     
     return surahs.map((surahJson) {
@@ -247,11 +200,12 @@ class QuranRepository {
     return map;
   }
 
-  Future<String?> loadAyahTafsir(int ayahNumber) async {
+  Future<String?> loadAyahTafsir(int ayahNumber,
+      {QuranEdition? edition}) async {
     try {
-      final muyassarData = await _loadMuyassarJson();
-      final surahs = (muyassarData['data']['surahs'] as List<dynamic>);
-      
+      final data = await _loadJson(edition ?? QuranEditions.tafsirMuyassar);
+      final surahs = (data['data']['surahs'] as List<dynamic>);
+
       // Find the ayah by global ayah number
       for (final surahData in surahs) {
         final ayahs = (surahData['ayahs'] as List<dynamic>);
@@ -267,22 +221,10 @@ class QuranRepository {
       return null;
     }
   }
-  
-  Future<Map<String, dynamic>> _loadMuyassarJson() async {
-    return await (_muyassarCache ??= _loadMuyassarJsonImpl());
-  }
-  
-  Future<Map<String, dynamic>> _loadMuyassarJsonImpl() async {
-    debugPrint('[QuranRepository] Loading quran-muyassar.json...');
-    final jsonString = await rootBundle.loadString('assets/data/quran-muyassar.json');
-    final data = json.decode(jsonString) as Map<String, dynamic>;
-    debugPrint('[QuranRepository] ✓ Loaded muyassar');
-    return data;
-  }
 
   Future<AyahData?> lookupAyahByNumber(
     int ayahNumber, {
-    QuranEdition edition = QuranEdition.simple,
+    QuranEdition edition = QuranEditions.simple,
   }) async {
     final cache = await _ayahIndexCache.putIfAbsent(
       edition,

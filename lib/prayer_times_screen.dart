@@ -166,6 +166,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
 
   Map<String, DateTime>? _todayTimes;
   String? _nextPrayerId;
+  // True when [_nextPrayerId] refers to tomorrow's first prayer (set after the
+  // last prayer of today has passed). Used so the list doesn't paint the
+  // "NEXT" badge / countdown on today's already-passed row of the same id.
+  bool _nextIsTomorrow = false;
   // Countdown is ticked from a 1-second timer and consumed by a
   // `ValueListenableBuilder` so only the two pill/label subtrees rebuild,
   // not the whole screen. The previous implementation called `setState`
@@ -406,6 +410,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     final nextDt = nextTime!; // safe: nextTime is set when nextId is found
     setState(() {
       _nextPrayerId = nextId;
+      _nextIsTomorrow = false;
     });
     _countdownNotifier.value = nextDt.difference(now);
     _tick = Timer.periodic(const Duration(seconds: 1), (_) {
@@ -440,6 +445,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         if (firstTime != null && mounted) {
           setState(() {
             _nextPrayerId = firstId;
+            _nextIsTomorrow = true;
           });
           _countdownNotifier.value = firstTime.difference(DateTime.now());
 
@@ -461,6 +467,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         if (mounted) {
           setState(() {
             _nextPrayerId = null;
+            _nextIsTomorrow = false;
           });
           _countdownNotifier.value = null;
         }
@@ -469,6 +476,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       if (mounted) {
         setState(() {
           _nextPrayerId = null;
+          _nextIsTomorrow = false;
         });
         _countdownNotifier.value = null;
       }
@@ -1052,8 +1060,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             GestureDetector(
-                              onLongPress: () async {
-                                // Test background Adhan after 10 seconds
+                              onLongPress: !kDebugMode
+                                  ? null
+                                  : () async {
+                                // Debug-only: schedule a test background Adhan
+                                // 10 seconds out so the alarm/isolate pipeline
+                                // can be verified with the app closed. Gated
+                                // behind kDebugMode so release users can't
+                                // trigger a surprise Adhan by long-pressing.
                                 final messenger = ScaffoldMessenger.of(context);
                                 await AdhanScheduler
                                     .testAdhanPlaybackAfterSeconds(
@@ -1194,7 +1208,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         final dt = _todayTimes?[id];
         final DateTime? dtAdj = dt;
         final enabled = _adhanEnabled[id] ?? false;
-        final bool isNext = id == _nextPrayerId;
+        // When the next prayer is tomorrow's (set after today's last prayer
+        // has passed), don't paint the NEXT badge/countdown on today's
+        // already-passed row of the same id — it's in the past, not upcoming.
+        final bool isNext = id == _nextPrayerId && !_nextIsTomorrow;
         final bool isPast = dtAdj != null && dtAdj.isBefore(DateTime.now());
         final borderSide = isNext
             ? BorderSide(
@@ -1404,14 +1421,18 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
 
   Future<void> _goNextDay() async {
     if (!_canGoNext()) return;
-    setState(() => _currentDate = _currentDate.add(const Duration(days: 1)));
+    // DST-safe: advance via the calendar-aware DateTime constructor rather than
+    // add(Duration(days: 1)), which adds 86400s and can land on the same or a
+    // skipped wall-clock date across a DST transition.
+    setState(() => _currentDate = DateTime(
+        _currentDate.year, _currentDate.month, _currentDate.day + 1));
     await _loadTimes(fetchIfMissing: false);
   }
 
   Future<void> _goPrevDay() async {
     if (!_canGoPrev()) return;
-    setState(
-        () => _currentDate = _currentDate.subtract(const Duration(days: 1)));
+    setState(() => _currentDate = DateTime(
+        _currentDate.year, _currentDate.month, _currentDate.day - 1));
     await _loadTimes(fetchIfMissing: false);
   }
 
@@ -1645,6 +1666,13 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                                     value);
                               }
                               methodChanged = true;
+                              // The calculation method shifts every prayer
+                              // time, so the already-armed alarms are now
+                              // stale. Invalidate the scheduling dedup cache
+                              // so the reschedule inside _loadTimes actually
+                              // runs instead of short-circuiting on the
+                              // sound+toggles fingerprint.
+                              await AdhanScheduler.invalidateScheduling();
                               // Force refresh prayer times with new method
                               await _loadTimes(forceRefresh: true);
                               // Don't call setModalState here as it may be disposed after async operation
@@ -1737,7 +1765,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       await _previewPlayer.stop();
       _previewKey = null;
 
-      // If method changed, show notification and force refresh
+      // If method changed, inform the user. The actual refresh already
+      // happened in the dropdown's onChanged (forceRefresh + reschedule), so
+      // we don't re-fetch the 3-month window again here — that was a redundant
+      // second round of ~6 API calls on every method change.
       if (methodChanged) {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -1747,9 +1778,6 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
               behavior: SnackBarBehavior.floating,
             ),
           );
-          // Force refresh prayer times one more time to ensure everything is updated
-          await _loadTimes(forceRefresh: true);
-          setState(() {});
         }
       }
     });
@@ -1779,7 +1807,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           .setVolume(PreferencesService.getAdhanVolume().clamp(0.0, 1.0));
       try {
         final primary = 'assets/audio/$key.mp3';
-        debugPrint('[AdhanPreview] Trying asset: $primary');
+        if (kDebugMode) debugPrint('[AdhanPreview] Trying asset: $primary');
         await _previewPlayer.setAudioSource(
           AudioSource.asset(
             primary,
@@ -1793,8 +1821,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       } catch (e) {
         // Fallback to fajr variant if generic not found
         final fallback = 'assets/audio/$key-fajr.mp3';
-        debugPrint(
-            '[AdhanPreview] Primary failed ($e), trying fallback: $fallback');
+        if (kDebugMode) {
+          debugPrint(
+              '[AdhanPreview] Primary failed ($e), trying fallback: $fallback');
+        }
         await _previewPlayer.setAudioSource(
           AudioSource.asset(
             fallback,
@@ -1807,7 +1837,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         );
       }
       await _previewPlayer.play();
-      debugPrint('[AdhanPreview] Playback started for key: $key');
+      if (kDebugMode) debugPrint('[AdhanPreview] Playback started for key: $key');
       _previewPlayer.playerStateStream
           .firstWhere((s) => s.processingState == ProcessingState.completed)
           .then((_) {
@@ -1816,10 +1846,12 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
         try {
           onUiUpdate?.call();
         } catch (_) {}
-        debugPrint('[AdhanPreview] Playback completed for key: $key');
+        if (kDebugMode) {
+          debugPrint('[AdhanPreview] Playback completed for key: $key');
+        }
       });
     } catch (e) {
-      debugPrint('[AdhanPreview] Error: $e');
+      if (kDebugMode) debugPrint('[AdhanPreview] Error: $e');
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -1832,7 +1864,9 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     }
   }
 
-  // Debug mode: Open prayer time adjustment dialog
+  // Opens the per-prayer time fine-tuning sheet (±1/±5 minute nudges with a
+  // reset). Available to all users — it lets people align times with their
+  // local mosque when the calculated time differs slightly.
   Future<void> _openPrayerTimeAdjustment(
       BuildContext context, String prayerId, DateTime? currentTime) async {
     final prayerName = _localizedName(context, prayerId);
@@ -1867,6 +1901,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
             Future<void> applyAdjustment(int offsetMinutes) async {
               await PreferencesService.adjustPrayerTime(
                   prayerId, offsetMinutes);
+              // Shifting a prayer time invalidates the alarm already armed for
+              // it. Clear the scheduling dedup cache so _loadTimes' reschedule
+              // re-arms at the new time instead of short-circuiting.
+              await AdhanScheduler.invalidateScheduling();
               if (mounted) {
                 setState(() {});
                 await _loadTimes(fetchIfMissing: false);
@@ -2044,6 +2082,9 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                           onPressed: () async {
                             await PreferencesService.setPrayerTimeAdjustment(
                                 prayerId, 0);
+                            // Resetting the offset moves the prayer back to its
+                            // original time, so the armed alarm is stale too.
+                            await AdhanScheduler.invalidateScheduling();
                             currentAdjustment = 0;
                             setModalState(() {});
                             if (mounted) {

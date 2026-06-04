@@ -38,14 +38,19 @@ class NewsService {
     }
     
     // 2. Load and Merge Data
-    // Load bundled baseline news in ALL build modes so that offline / first-launch
-    // users see initial content. Remote items (cached below) will override by id.
+    // The bundled `news_initial.json` is TEST/placeholder content (welcome
+    // message + sample media). It is loaded ONLY in debug builds so it never
+    // ships to production users; release builds rely solely on remote + cached
+    // news. See the scan note about first-launch-offline having no baseline.
     final List<NewsItem> assetItems = [];
-    try {
-      _initialAssetCache ??= await rootBundle.loadString('assets/data/news_initial.json');
-      assetItems.addAll(parseNews(_initialAssetCache!));
-    } catch (e) {
-      debugPrint('[NewsService] Error loading initial asset: $e');
+    if (kDebugMode) {
+      try {
+        _initialAssetCache ??=
+            await rootBundle.loadString('assets/data/news_initial.json');
+        assetItems.addAll(parseNews(_initialAssetCache!));
+      } catch (e) {
+        debugPrint('[NewsService] Error loading initial asset: $e');
+      }
     }
 
     final String? cachedJson = prefs.getString(_cacheKey);
@@ -112,10 +117,13 @@ class NewsService {
     return news;
   }
 
+  static const String _hiddenKey = 'news_hidden_ids';
+
   static Future<void> _runGarbageCollection(SharedPreferences prefs, List<NewsItem> allItems) async {
     final seenIds = prefs.getStringList(_seenKey) ?? [];
     final savedIds = getSavedNewsIds(prefs);
     final notifiedIds = prefs.getStringList('news_notified_ids') ?? [];
+    final hiddenIds = prefs.getStringList(_hiddenKey) ?? [];
 
     final validItemIds = allItems.map((e) => e.id).toSet();
     final expiredIds = allItems.where((e) => e.isExpired).map((e) => e.id).toSet();
@@ -135,6 +143,14 @@ class NewsService {
     final newNotifiedIds = notifiedIds.where(shouldKeep).toList();
     if (newNotifiedIds.length != notifiedIds.length) {
       await prefs.setStringList('news_notified_ids', newNotifiedIds);
+    }
+
+    // Prune hidden IDs the same way (previously this set grew unbounded —
+    // every swipe-to-hide added an ID and nothing ever removed dead ones).
+    // A hidden item that expired or no longer exists need not stay hidden.
+    final newHiddenIds = hiddenIds.where(shouldKeep).toList();
+    if (newHiddenIds.length != hiddenIds.length) {
+      await prefs.setStringList(_hiddenKey, newHiddenIds);
     }
   }
 

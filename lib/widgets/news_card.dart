@@ -132,10 +132,13 @@ class _NewsCardState extends State<NewsCard> {
                           IconButton(
                             icon: Icon(Icons.share_outlined, color: theme.colorScheme.onSurfaceVariant),
                             onPressed: () {
-                              // ignore: deprecated_member_use
-                              Share.share(widget.item.sourceUrl.isNotEmpty 
-                                  ? '${widget.item.title}\n\n${widget.item.sourceUrl}'
-                                  : widget.item.title);
+                              SharePlus.instance.share(
+                                ShareParams(
+                                  text: widget.item.sourceUrl.isNotEmpty
+                                      ? '${widget.item.title}\n\n${widget.item.sourceUrl}'
+                                      : widget.item.title,
+                                ),
+                              );
                             },
                             visualDensity: VisualDensity.compact,
                           ),
@@ -252,7 +255,10 @@ class _NewsCardState extends State<NewsCard> {
 
   Widget _buildYoutubeThumbnail(BuildContext context) {
     final videoId = _extractYoutubeId(widget.item.mediaUrl);
-    final thumbnailUrl = 'https://img.youtube.com/vi/$videoId/maxresdefault.jpg';
+    // Use `hqdefault.jpg` rather than `maxresdefault.jpg`: maxres only exists
+    // for HD uploads, so it 404s for many videos and shows the broken-image
+    // placeholder. hqdefault is generated for every YouTube video.
+    final thumbnailUrl = 'https://img.youtube.com/vi/$videoId/hqdefault.jpg';
 
     return GestureDetector(
       onTap: () => _playVideo(context, widget.item.mediaUrl),
@@ -362,69 +368,10 @@ class _NewsCardState extends State<NewsCard> {
   }
 
   Future<void> _playVideo(BuildContext context, String url) async {
-    final theme = Theme.of(context);
-    
+    final videoId = _extractYoutubeId(url);
     showDialog(
       context: context,
-      builder: (context) {
-        final videoId = _extractYoutubeId(url);
-        final embedUrl = 'https://www.youtube.com/embed/$videoId?autoplay=1&origin=https://qurani.info';
-        
-        final controller = WebViewController()
-          ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
-          ..setBackgroundColor(Colors.black);
-
-        // Enable autoplay for Android (Samsumg/Mobile focus)
-        if (controller.platform is AndroidWebViewController) {
-          (controller.platform as AndroidWebViewController).setMediaPlaybackRequiresUserGesture(false);
-        }
-
-        controller.loadRequest(
-          Uri.parse('$embedUrl&mute=0&rel=0&showinfo=0'),
-          headers: {
-            'referer': 'https://qurani.info',
-          },
-        );
-
-        return Dialog(
-          backgroundColor: Colors.transparent,
-          insetPadding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.width * 9 / 16 + 80, // Aspect ratio + padding
-            decoration: BoxDecoration(
-              color: theme.colorScheme.surface,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              children: [
-                AppBar(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  automaticallyImplyLeading: false,
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () {
-                        // Prevent background audio leak
-                        controller.loadHtmlString('');
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
-                    child: WebViewWidget(controller: controller),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
+      builder: (context) => _YoutubeDialog(videoId: videoId),
     );
   }
 
@@ -433,5 +380,95 @@ class _NewsCardState extends State<NewsCard> {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     }
+  }
+}
+
+/// YouTube playback dialog.
+///
+/// A StatefulWidget so the WebView is reliably torn down in [dispose] no matter
+/// how the dialog is dismissed — the close button, a barrier tap, or the system
+/// back gesture. Previously cleanup only ran from the close button, so
+/// dismissing the dialog any other way could leave the video's audio playing
+/// in the background.
+class _YoutubeDialog extends StatefulWidget {
+  const _YoutubeDialog({required this.videoId});
+
+  final String videoId;
+
+  @override
+  State<_YoutubeDialog> createState() => _YoutubeDialogState();
+}
+
+class _YoutubeDialogState extends State<_YoutubeDialog> {
+  late final WebViewController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    final embedUrl =
+        'https://www.youtube.com/embed/${widget.videoId}?autoplay=1&origin=https://qurani.info';
+    _controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setUserAgent(
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
+      ..setBackgroundColor(Colors.black);
+
+    // Enable autoplay for Android (Samsung/mobile focus).
+    if (_controller.platform is AndroidWebViewController) {
+      (_controller.platform as AndroidWebViewController)
+          .setMediaPlaybackRequiresUserGesture(false);
+    }
+
+    _controller.loadRequest(
+      Uri.parse('$embedUrl&mute=0&rel=0&showinfo=0'),
+      headers: {'referer': 'https://qurani.info'},
+    );
+  }
+
+  @override
+  void dispose() {
+    // Stop playback / release the page so audio can't leak after the dialog
+    // is gone, regardless of how it was dismissed.
+    _controller.loadHtmlString('');
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.width * 9 / 16 + 80,
+        decoration: BoxDecoration(
+          color: theme.colorScheme.surface,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          children: [
+            AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              automaticallyImplyLeading: false,
+              actions: [
+                IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
+              ],
+            ),
+            Expanded(
+              child: ClipRRect(
+                borderRadius:
+                    const BorderRadius.vertical(bottom: Radius.circular(20)),
+                child: WebViewWidget(controller: _controller),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

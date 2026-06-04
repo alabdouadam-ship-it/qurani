@@ -41,6 +41,7 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
       final rows = <_AggRow>[];
       for (int id=1; id<=maxId; id++) {
         final c = countMap[id] ?? 0;
+        if (c == 0) continue; // Only show items that have actually been tested.
         final pct = lastScoreMap[id] ?? 0; // Use last score instead of average
         rows.add(_AggRow(id: id, count: c, percent: pct));
       }
@@ -176,6 +177,20 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                     Tab(text: l10n.surahTab),
                                     Tab(text: l10n.juzTab),
                                   ],
+                                ),
+                                const SizedBox(height: 4),
+                                // Clarifies the "N ×  |  P%" trailing format:
+                                // N = number of tests, P = last score (these
+                                // tabs show last score, while the Mastery card
+                                // below shows the average).
+                                Align(
+                                  alignment: AlignmentDirectional.centerEnd,
+                                  child: Text(
+                                    l10n.statsAggLegend,
+                                    style: theme.textTheme.bodySmall?.copyWith(
+                                      color: colorScheme.onSurfaceVariant,
+                                    ),
+                                  ),
                                 ),
                                 const SizedBox(height: 8),
                                 SizedBox(
@@ -318,7 +333,9 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
                                                 Text(
                                                   test['surahNumber'] != null
                                                       ? '${l10n.surah} ${test['surahNumber']}'
-                                                      : '${l10n.juzLabel} ${test['juzNumber']}',
+                                                      : test['juzNumber'] != null
+                                                          ? '${l10n.juzLabel} ${test['juzNumber']}'
+                                                          : l10n.statsMixedSelection,
                                                   style: theme.textTheme.bodyMedium?.copyWith(
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -382,6 +399,15 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         }
+        if (rows.isEmpty) {
+          return Center(
+            child: Text(
+              l10n.statsNoDataYet,
+              style: theme.textTheme.bodyMedium
+                  ?.copyWith(color: colorScheme.onSurfaceVariant),
+            ),
+          );
+        }
         final surahs = snapshot.data!;
         return ListView.separated(
           itemCount: rows.length,
@@ -410,6 +436,15 @@ class _MemorizationStatsScreenState extends State<MemorizationStatsScreen> {
 
   Widget _buildJuzAggList(ThemeData theme, ColorScheme colorScheme, AppLocalizations l10n) {
     final rows = _juzRows;
+    if (rows.isEmpty) {
+      return Center(
+        child: Text(
+          l10n.statsNoDataYet,
+          style: theme.textTheme.bodyMedium
+              ?.copyWith(color: colorScheme.onSurfaceVariant),
+        ),
+      );
+    }
     return ListView.separated(
       itemCount: rows.length,
       separatorBuilder: (_, __) => const Divider(height: 1),

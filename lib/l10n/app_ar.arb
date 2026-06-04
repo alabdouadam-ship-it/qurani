@@ -302,10 +302,6 @@
   "@language": {},
   "tafsir": "التفسير",
   "@tafsir": {},
-  "savePreferences": "حفظ التفضيلات",
-  "@savePreferences": {},
-  "preferencesSavedSuccessfully": "تم حفظ التفضيلات بنجاح!",
-  "@preferencesSavedSuccessfully": {},
   "selectQuranVersion": "اختر نسخة القرآن...",
   "@selectQuranVersion": {},
   "selectReciter": "اختر القارئ...",
@@ -517,8 +513,6 @@
   "@qiblaOpenLocationSettings": {},
   "qiblaSensorNotSupported": "هذا الجهاز لا يدعم الحساسات المطلوبة لوضع البوصلة.",
   "@qiblaSensorNotSupported": {},
-  "verseOutsideRange": "هذه الآية خارج النطاق المحدد.",
-  "@verseOutsideRange": {},
   "qiblaAngleLabel": "زاوية القبلة: {angle}°",
   "@qiblaAngleLabel": {"placeholders": {"angle": {"type": "String"}}},
   "qiblaTipGps": "فعّل GPS ودقة عالية",
@@ -923,6 +917,12 @@
       "n": {"type": "int"}
     }
   },
+  "statsNoDataYet": "لا توجد اختبارات بعد",
+  "@statsNoDataYet": {},
+  "statsMixedSelection": "اختيار متعدد",
+  "@statsMixedSelection": {},
+  "statsAggLegend": "× اختبارات · % آخر نتيجة",
+  "@statsAggLegend": {},
   "minutesAgo": "منذ {n} دقيقة",
   "@minutesAgo": {
     "placeholders": {
@@ -1136,5 +1136,15 @@
   "hadithSearchHint": "أدخل نصاً للبحث أو اختر فصلاً",
   "@hadithSearchHint": {},
   "hadithNoMatches": "لا توجد نتائج مطابقة",
-  "@hadithNoMatches": {}
+  "@hadithNoMatches": {},
+  "editionTitle": "النسخة",
+  "@editionTitle": {},
+  "editionTranslationsCategory": "الترجمات",
+  "@editionTranslationsCategory": {},
+  "editionTafsirCategory": "التفسير",
+  "@editionTafsirCategory": {},
+  "editionTurkish": "التركية",
+  "@editionTurkish": {},
+  "editionGerman": "الألمانية",
+  "@editionGerman": {}
 }

@@ -66,22 +66,27 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
     if (_isCheckingStatus) return;
     _isCheckingStatus = true;
 
-    final status = await FlutterQiblah.checkLocationStatus();
-    final enabled = status.enabled;
-    var permission = status.status;
+    try {
+      final status = await FlutterQiblah.checkLocationStatus();
+      final enabled = status.enabled;
+      var permission = status.status;
 
-    if (enabled && permission == LocationPermission.denied) {
-      permission = await FlutterQiblah.requestPermissions();
+      if (enabled && permission == LocationPermission.denied) {
+        permission = await FlutterQiblah.requestPermissions();
+      }
+
+      final sensorSupported = await FlutterQiblah.androidDeviceSensorSupport();
+
+      if (mounted) {
+        setState(() => _hasSensorSupport = sensorSupported ?? true);
+        _locationStatusController.add(LocationStatus(enabled, permission));
+      }
+    } finally {
+      // Always clear the guard, even if a plugin call threw — otherwise the
+      // flag would stay `true` forever and every subsequent retry/resume
+      // would silently early-return, freezing the screen on its last state.
+      _isCheckingStatus = false;
     }
-
-    final sensorSupported = await FlutterQiblah.androidDeviceSensorSupport();
-
-    if (mounted) {
-      setState(() => _hasSensorSupport = sensorSupported ?? true);
-      _locationStatusController.add(LocationStatus(enabled, permission));
-    }
-
-    _isCheckingStatus = false;
   }
 
   Future<void> _requestPermission() async {
@@ -335,6 +340,11 @@ class _QiblaScreenState extends State<QiblaScreen> with WidgetsBindingObserver {
     required String message,
     List<Widget>? actions,
   }) {
+    // Whenever a non-compass status view is shown (no permission, no sensor,
+    // location off, error…), reset the alignment flag so that when the user
+    // returns to a working compass the next aligned frame fires the haptic
+    // pulse again instead of being suppressed by a stale `true`.
+    _wasAlignedWithQibla = false;
     return Center(
       child: ModernSurfaceCard(
         child: Padding(

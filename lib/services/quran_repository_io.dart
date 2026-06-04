@@ -4,109 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart' as sqf;
 
 import 'quran_database_service.dart';
+import 'quran_edition.dart';
 
-/// Supported Quran text editions.
-enum QuranEdition {
-  simple,
-  uthmani,
-  tajweed,
-  english,
-  french,
-  tafsir,
-  irab,
-}
-
-extension QuranEditionExt on QuranEdition {
-  String get dbColumn {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'text_simple';
-      case QuranEdition.uthmani:
-        return 'text_uthmani';
-      case QuranEdition.tajweed:
-        return 'text_tajweed';
-      case QuranEdition.english:
-        return 'text_english';
-      case QuranEdition.french:
-        return 'text_french';
-      case QuranEdition.tafsir:
-        return 'text_tafsir';
-      case QuranEdition.irab:
-        return 'text_simple'; // Audio uses simple edition
-    }
-  }
-
-  String get assetFolder {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'assets/data/quran-simple';
-      case QuranEdition.uthmani:
-        return 'assets/data/quran-uthmani';
-      case QuranEdition.tajweed:
-        return 'assets/data/quran-tajweed';
-      case QuranEdition.english:
-        return 'assets/data/quran-english';
-      case QuranEdition.french:
-        return 'assets/data/quran-french';
-      case QuranEdition.tafsir:
-        return 'assets/data/quran_muyassar';
-      case QuranEdition.irab:
-        return 'assets/data'; // MASAQ.csv location
-    }
-  }
-
-  String get identifier {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'quran-simple';
-      case QuranEdition.uthmani:
-        return 'quran-uthmani';
-      case QuranEdition.tajweed:
-        return 'quran-tajweed';
-      case QuranEdition.english:
-        return 'quran-english';
-      case QuranEdition.french:
-        return 'quran-french';
-      case QuranEdition.tafsir:
-        return 'quran_muyassar';
-      case QuranEdition.irab:
-        return 'quran-irab';
-    }
-  }
-
-  String get displayName {
-    switch (this) {
-      case QuranEdition.simple:
-        return 'Arabic (Simple)';
-      case QuranEdition.uthmani:
-        return 'Arabic (Uthmani)';
-      case QuranEdition.tajweed:
-        return 'Quran Tajweed';
-      case QuranEdition.english:
-        return 'English';
-      case QuranEdition.french:
-        return 'Français';
-      case QuranEdition.tafsir:
-        return 'Tafsir (Muyassar)';
-      case QuranEdition.irab:
-        return 'إعراب القرآن';
-    }
-  }
-
-  bool get isRtl =>
-      this == QuranEdition.simple ||
-      this == QuranEdition.uthmani ||
-      this == QuranEdition.tajweed ||
-      this == QuranEdition.tafsir ||
-      this == QuranEdition.irab;
-
-  bool get isTranslation =>
-      this == QuranEdition.english || this == QuranEdition.french;
-
-  bool get isTafsir => this == QuranEdition.tafsir;
-
-  bool get isIrab => this == QuranEdition.irab;
-}
+export 'quran_edition.dart';
 
 class QuranRepository {
   QuranRepository._();
@@ -209,7 +109,7 @@ class QuranRepository {
       throw Exception('Database not initialized');
     }
 
-    final textColumn = edition.dbColumn;
+    final textColumn = edition.column;
     final rows = await _db!.rawQuery('''
       SELECT 
         a.id, a.surah_order, a.number_in_surah, a.juz, a.page, a.$textColumn as text,
@@ -299,7 +199,7 @@ class QuranRepository {
     try {
       await _ensureDb();
       if (_db == null) return null;
-      final textColumn = edition.dbColumn;
+      final textColumn = edition.column;
       // Direct PK lookup on the `ayah.id` primary key — SQLite responds in
       // sub-millisecond. This replaces the old 6k-entry in-memory map that
       // was loaded per edition just to serve one lookup.
@@ -365,7 +265,7 @@ class QuranRepository {
       );
 
       // Get ayahs
-      final textColumn = edition.dbColumn;
+      final textColumn = edition.column;
       final ayahRows = await _db!.rawQuery('''
         SELECT id, number_in_surah, $textColumn as text
         FROM ayah
@@ -426,17 +326,19 @@ class QuranRepository {
     throw StateError('_loadSurahList: unreachable');
   }
 
-  Future<String?> loadAyahTafsir(int ayahNumber) async {
+  Future<String?> loadAyahTafsir(int ayahNumber,
+      {QuranEdition? edition}) async {
+    final column = (edition ?? QuranEditions.tafsirMuyassar).column;
     for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) return null;
       final rows = await _db!.rawQuery(
-        'SELECT text_tafsir FROM ayah WHERE id = ? LIMIT 1',
+        'SELECT $column AS text FROM ayah WHERE id = ? LIMIT 1',
         [ayahNumber],
       );
       if (rows.isEmpty) return null;
-      final text = rows.first['text_tafsir'] as String?;
+      final text = rows.first['text'] as String?;
       return (text != null && text.isNotEmpty) ? text : null;
     } catch (e) {
       if (e.toString().contains('database_closed') &&
@@ -452,13 +354,13 @@ class QuranRepository {
 
   Future<AyahData?> lookupAyahByNumber(
     int ayahNumber, {
-    QuranEdition edition = QuranEdition.simple,
+    QuranEdition edition = QuranEditions.simple,
   }) async {
     for (int attempt = 0; attempt <= _maxDbRetries; attempt++) {
     try {
       await _ensureDb();
       if (_db == null) return null;
-      final textColumn = edition.dbColumn;
+      final textColumn = edition.column;
       // Single indexed-PK query with a JOIN for surah metadata — sub-ms on
       // SQLite. Replaces the previous ~6k-entry in-memory index per edition.
       final rows = await _db!.rawQuery('''

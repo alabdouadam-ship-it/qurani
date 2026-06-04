@@ -907,18 +907,6 @@ abstract class AppLocalizations {
   /// **'Tafsir'**
   String get tafsir;
 
-  /// No description provided for @savePreferences.
-  ///
-  /// In en, this message translates to:
-  /// **'Save Preferences'**
-  String get savePreferences;
-
-  /// No description provided for @preferencesSavedSuccessfully.
-  ///
-  /// In en, this message translates to:
-  /// **'Preferences saved successfully!'**
-  String get preferencesSavedSuccessfully;
-
   /// No description provided for @selectQuranVersion.
   ///
   /// In en, this message translates to:
@@ -1488,12 +1476,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This device does not support the required sensors for compass mode.'**
   String get qiblaSensorNotSupported;
-
-  /// No description provided for @verseOutsideRange.
-  ///
-  /// In en, this message translates to:
-  /// **'This verse is outside the selected range.'**
-  String get verseOutsideRange;
 
   /// No description provided for @qiblaAngleLabel.
   ///
@@ -2653,6 +2635,24 @@ abstract class AppLocalizations {
   /// **'{n} points'**
   String pointsSuffix(int n);
 
+  /// No description provided for @statsNoDataYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No tests yet'**
+  String get statsNoDataYet;
+
+  /// No description provided for @statsMixedSelection.
+  ///
+  /// In en, this message translates to:
+  /// **'Mixed selection'**
+  String get statsMixedSelection;
+
+  /// No description provided for @statsAggLegend.
+  ///
+  /// In en, this message translates to:
+  /// **'× tests · % last score'**
+  String get statsAggLegend;
+
   /// No description provided for @minutesAgo.
   ///
   /// In en, this message translates to:
@@ -3180,6 +3180,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No matches found'**
   String get hadithNoMatches;
+
+  /// No description provided for @editionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edition'**
+  String get editionTitle;
+
+  /// No description provided for @editionTranslationsCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Translations'**
+  String get editionTranslationsCategory;
+
+  /// No description provided for @editionTafsirCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Tafsir'**
+  String get editionTafsirCategory;
+
+  /// No description provided for @editionTurkish.
+  ///
+  /// In en, this message translates to:
+  /// **'Turkish'**
+  String get editionTurkish;
+
+  /// No description provided for @editionGerman.
+  ///
+  /// In en, this message translates to:
+  /// **'German'**
+  String get editionGerman;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

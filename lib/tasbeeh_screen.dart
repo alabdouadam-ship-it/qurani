@@ -298,14 +298,22 @@ class _TasbeehScreenState extends State<TasbeehScreen>
   Future<void> _incrementCount(TasbeehGroup group, TasbeehItem item) async {
     HapticFeedback.lightImpact();
 
-    // Optimistic update
     final sessionKey = '${group.id}_${item.id}';
+    // Session count is optimistic for instant tap feedback. The authoritative
+    // TOTAL (`item.count`) is bumped only AFTER the atomic DB write commits —
+    // so a concurrent `_loadData()` (triggered by add/delete/reset) can never
+    // rebuild the tree from a not-yet-committed DB value and momentarily roll
+    // the displayed total backward. The write is serialised by SQLite, so
+    // rapid taps still apply in order and the total only ever moves forward.
     setState(() {
       _sessionCounts[sessionKey] = (_sessionCounts[sessionKey] ?? 0) + 1;
-      item.count++;
     });
 
     await TasbeehService.incrementCount(group.id, item.id);
+    if (!mounted) return;
+    setState(() {
+      item.count++;
+    });
   }
 
   Future<void> _resetSession(TasbeehGroup group, TasbeehItem item) async {

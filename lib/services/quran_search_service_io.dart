@@ -108,19 +108,7 @@ class QuranSearchService {
       sql += ' LIMIT 5000';
       
       final rows = await _db!.rawQuery(sql, params);
-      
-      // Temporary Debug Logging
-      debugPrint('Search Query: $sql');
-      debugPrint('Params: $params');
-      if (isTranslation) {
-        final check = await _db!.rawQuery('SELECT count(*) as c FROM ayah WHERE LOWER($textColumn) LIKE ?', ['%$q%']);
-        debugPrint('Direct Count Check ($textColumn): ${check.first['c']}');
-        
-        // Check sample data
-        final sample = await _db!.rawQuery('SELECT $textColumn FROM ayah LIMIT 1');
-        debugPrint('Sample Data ($textColumn): ${sample.first[textColumn]}');
-      }
-      
+
       int totalOccurrences = 0;
       final results = rows.map((r) {
         try {

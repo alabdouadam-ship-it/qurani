@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:qurani/services/media_item_compat.dart';
@@ -32,12 +34,13 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   String _selectedLanguage = 'ar'; // 'ar', 'en', 'fr'
   String? _playingAyahId; // tracks which ayah is currently playing
   bool _isPlayerPlaying = false;
+  StreamSubscription<PlayerState>? _playerStateSub;
 
   @override
   void initState() {
     super.initState();
     _loadSurahNames();
-    _player.playerStateStream.listen((state) {
+    _playerStateSub = _player.playerStateStream.listen((state) {
       if (_isDisposed) return;
       final playing = state.playing && state.processingState != ProcessingState.completed;
       if (state.processingState == ProcessingState.completed) {
@@ -64,6 +67,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   @override
   void dispose() {
     _isDisposed = true;
+    _playerStateSub?.cancel();
     _controller.dispose();
     _focusNode.dispose();
     _player.dispose();

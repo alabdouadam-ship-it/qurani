@@ -244,11 +244,16 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
                 iconColor: Colors.brown,
                 initialValue: _getArabicFontLabel(_selectedArabicFont, context),
                 items: _getArabicFontDisplayNames(context),
-                onChanged: (String? value) {
+                onChanged: (String? value) async {
                   if (value == null) return;
+                  final key = _getArabicFontKeyFromLabel(value, context);
                   setState(() {
-                    _selectedArabicFont = _getArabicFontKeyFromLabel(value, context);
+                    _selectedArabicFont = key;
                   });
+                  // Persist + apply live (via arabicFontNotifier → provider) so
+                  // all four preferences behave consistently; the bottom button
+                  // is just a "done/close" confirmation.
+                  await PreferencesService.saveArabicFontFamily(key);
                 },
               ),
               const SizedBox(height: 14),
@@ -259,11 +264,14 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
                 iconColor: Colors.indigo,
                 initialValue: _getFontSizeDisplayName(_selectedFontSize, context),
                 items: _getFontSizeDisplayNames(context),
-                onChanged: (String? value) {
+                onChanged: (String? value) async {
                   if (value == null) return;
+                  final size = _getFontSizeFromDisplayName(value, context);
                   setState(() {
-                    _selectedFontSize = _getFontSizeFromDisplayName(value, context);
+                    _selectedFontSize = size;
                   });
+                  // Persist live for consistency with theme/language/font.
+                  await PreferencesService.saveFontSize(size);
                 },
               ),
             ],
@@ -272,7 +280,7 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: _savePreferences,
+            onPressed: _closePreferences,
             style: ElevatedButton.styleFrom(
               backgroundColor: Theme.of(context).colorScheme.primary,
               foregroundColor: Colors.white,
@@ -285,7 +293,7 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
               elevation: 0,
             ),
             child: Text(
-              l10n.savePreferences,
+              l10n.close,
               style: TextStyle(
                 fontSize: ResponsiveConfig.getFontSize(context, 16),
                 fontWeight: FontWeight.bold,
@@ -418,26 +426,10 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
     );
   }
 
-  Future<void> _savePreferences() async {
-    final l10n = AppLocalizations.of(context)!;
-    await PreferencesService.saveFontSize(_selectedFontSize);
-    await PreferencesService.saveArabicFontFamily(_selectedArabicFont);
-    
-    // We already updated locale/theme via the dropdown/selector callbacks
-    // so we just ensure persistence is final (though callbacks already did it)
-
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.preferencesSavedSuccessfully),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-      ),
-    );
-
+  Future<void> _closePreferences() async {
+    // All preferences (theme, language, Arabic font, font size) are applied and
+    // persisted live as the user changes them, so there's nothing to commit
+    // here — this just closes the screen.
     if (!mounted) return;
     Navigator.of(context).pop(true);
   }

@@ -71,7 +71,6 @@ class SettingsScreen extends StatelessWidget {
   List<SettingItem> _getSettings(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return [
-      // Row 1
       SettingItem(
         id: 'preferences',
         icon: Icons.tune,
@@ -101,7 +100,6 @@ class SettingsScreen extends StatelessWidget {
           subtitle: '',
           color: Colors.orange,
         ),
-      // Row 2
       SettingItem(
         id: 'about',
         icon: Icons.info_outline,
@@ -116,7 +114,6 @@ class SettingsScreen extends StatelessWidget {
         subtitle: '',
         color: Colors.purple,
       ),
-      // Row 3
       SettingItem(
         id: 'privacy',
         icon: Icons.privacy_tip_outlined,
@@ -131,36 +128,6 @@ class SettingsScreen extends StatelessWidget {
         subtitle: '',
         color: Colors.brown,
       ),
-
-
-      
-      // Row 3 (uncomment to add more settings)
-      // SettingItem(
-      //   icon: Icons.notifications,
-      //   title: 'Notifications',
-      //   subtitle: 'Alert settings',
-      //   color: Colors.orange,
-      // ),
-      // SettingItem(
-      //   icon: Icons.language,
-      //   title: 'Language',
-      //   subtitle: 'App language',
-      //   color: Colors.red,
-      // ),
-      
-      // Row 4 (uncomment to add more settings)
-      // SettingItem(
-      //   icon: Icons.dark_mode,
-      //   title: 'Theme',
-      //   subtitle: 'App appearance',
-      //   color: Colors.grey,
-      // ),
-      // SettingItem(
-      //   icon: Icons.storage,
-      //   title: 'Storage',
-      //   subtitle: 'Cache management',
-      //   color: Colors.brown,
-      // ),
     ];
   }
 
@@ -251,10 +218,6 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
         break;
-
-
-      default:
-        _showComingSoon(context, setting.title);
     }
   }
 
@@ -299,8 +262,6 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  // Removed unused _showHelpDialog
-
   Future<void> _shareApp(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
     final messenger = ScaffoldMessenger.of(context);
@@ -309,15 +270,18 @@ class SettingsScreen extends StatelessWidget {
       final packageName = packageInfo.packageName;
       final appUrl = 'https://play.google.com/store/apps/details?id=$packageName';
       final message = l10n.shareAppMessage(appUrl);
-      
+
       // Calculate share position origin for iPad
       if (!context.mounted) return;
       final box = context.findRenderObject() as RenderBox?;
-      
-      // ignore: deprecated_member_use
-      await Share.share(
-        message,
-        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+
+      await SharePlus.instance.share(
+        ShareParams(
+          text: message,
+          sharePositionOrigin: box != null
+              ? box.localToGlobal(Offset.zero) & box.size
+              : null,
+        ),
       );
     } catch (_) {
       if (!context.mounted) return;
@@ -325,26 +289,6 @@ class SettingsScreen extends StatelessWidget {
         SnackBar(content: Text(l10n.unknownError)),
       );
     }
-  }
-
-  // Removed unused _showPrivacyDialog
-
-  void _showComingSoon(BuildContext context, String feature) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(feature),
-          content: const Text('This feature is coming soon!'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(),
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
   }
 }
 

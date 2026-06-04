@@ -82,13 +82,6 @@ class WirdService {
     return rows.map((r) => Wird.fromRow(r)).toList();
   }
 
-  /// Wirds that are non-deleted AND scheduled for today's weekday.
-  static Future<List<Wird>> getTodays() async {
-    final today = DateTime.now();
-    final active = await getActive();
-    return active.where((w) => w.isActiveOn(today)).toList();
-  }
-
   /// Looks up a wird by id. Returns `null` if missing or soft-deleted.
   static Future<Wird?> findById(String id) async {
     await _ensureMigrated();

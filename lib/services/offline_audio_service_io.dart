@@ -73,7 +73,7 @@ class OfflineAudioService {
     int totalCount = 0;
     int completed = 0;
     for (int surah = 1; surah <= 114; surah++) {
-      final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEdition.simple);
+      final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEditions.simple);
       totalCount += ayahs.length;
     }
     onProgress(0, totalCount);
@@ -82,7 +82,7 @@ class OfflineAudioService {
       // so honouring cancel between ayahs caps the wasted bandwidth
       // without bloating DownloadService with a CancelToken parameter.
       if (cancelToken?.isCancelled == true) return;
-      final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEdition.simple);
+      final ayahs = await QuranRepository.instance.loadSurahAyahs(surah, QuranEditions.simple);
       for (final a in ayahs) {
         if (cancelToken?.isCancelled == true) return;
         completed++;

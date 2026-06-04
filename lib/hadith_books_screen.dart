@@ -48,7 +48,6 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
     final l10n = AppLocalizations.of(context)!;
     
     // 1. Check availability
-    // final isAvailable = await _hadithService.isBookAvailable(collection.id);
     final isAvailable = await _hadithService.verifyBookIntegrity(collection.id);
     
     if (isAvailable) {
@@ -97,12 +96,12 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
       );
       
       if (confirm == true) {
-        _downloadBook(collection);
+        _downloadBook(collection, bookName);
       }
     }
   }
 
-  Future<void> _downloadBook(HadithCollection collection) async {
+  Future<void> _downloadBook(HadithCollection collection, String bookName) async {
     setState(() {
       _downloadProgress[collection.id] = 0.0;
     });
@@ -124,10 +123,18 @@ class _HadithBooksScreenState extends State<HadithBooksScreen> {
         setState(() {
           _downloadProgress.remove(collection.id);
         });
-        // Auto open after download? Or let user tap again.
-        // Let's let user tap again to be safe, or show success snackbar.
-        // Or just open it? The user explicitly asked to "download then browse".
-        // Let's just finish download and let UI reflect availability (we need to trigger a rebuild which setState does).
+        // The user tapped the book intending to read it, so open the reader
+        // straight away once the download completes — this also gives clear
+        // feedback that the download succeeded.
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HadithReadScreen(
+              bookId: collection.id,
+              bookName: bookName,
+            ),
+          ),
+        );
       }
     } catch (e) {
       if (mounted) {
@@ -415,15 +422,6 @@ class _BookCard extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text('${(progress * 100).toInt()}%', style: theme.textTheme.labelSmall),
                     ],
-                  )
-                else
-                  Text(
-                    '',
-                    style: TextStyle(
-                      color: color.withValues(alpha: 0.8), // Action text matches book
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12,
-                    ),
                   ),
               ],
             ),

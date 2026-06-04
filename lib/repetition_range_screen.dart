@@ -9,6 +9,7 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_repository.dart';
+import 'package:qurani/read_quran/edition_picker_sheet.dart';
 import 'package:qurani/services/irab_service.dart';
 import 'package:qurani/widgets/irab_verse_widget.dart';
 import 'util/arabic_font_utils.dart';
@@ -31,7 +32,7 @@ class RepetitionRangeScreen extends ConsumerStatefulWidget {
 
 class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   final AudioPlayer _player = AudioPlayer();
-  QuranEdition _edition = QuranEdition.simple;
+  QuranEdition _edition = QuranEditions.simple;
   late Future<List<AyahBrief>> _ayahsFuture;
   RangeValues? _range;
   bool _isPreparing = false;
@@ -54,6 +55,16 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   bool _isHandlingEntryCompletion = false;
   late String _arabicFontKey;
 
+  StreamSubscription<PlayerState>? _playerStateSub;
+  StreamSubscription<SequenceState?>? _sequenceStateSub;
+
+  /// True when playback was paused by the user while a still-valid playlist is
+  /// loaded. Lets pause → play resume from the paused position instead of
+  /// rebuilding and restarting the whole range. Cleared whenever the loaded
+  /// playlist becomes stale (range/reciter/repeat/edition change, reload, or an
+  /// explicit verse selection).
+  bool _pausedForResume = false;
+
   /// Monotonic counter; incremented on playlist changes to cancel stale
   /// completion chains.
   int _playbackGeneration = 0;
@@ -62,20 +73,13 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   void initState() {
     super.initState();
     final savedEdition = PreferencesService.getLastRepetitionEdition();
-    try {
-      _edition = QuranEdition.values.firstWhere(
-        (e) => e.name == savedEdition,
-        orElse: () => QuranEdition.simple,
-      );
-    } catch (_) {
-      _edition = QuranEdition.simple;
-    }
+    _edition = QuranEditions.byId(savedEdition);
     _verseRepeatCount = PreferencesService.getVerseRepeatCount();
     _rangeRepeatCount = PreferencesService.getRangeRepetitionCount();
     _ayahsFuture = QuranRepository.instance
         .loadSurahAyahs(widget.surah.order, _edition);
     _arabicFontKey = ref.read(arabicFontProvider);
-    _player.playerStateStream.listen((state) {
+    _playerStateSub = _player.playerStateStream.listen((state) {
       final completed = state.processingState == ProcessingState.completed;
       final isPlaying = state.playing && !completed;
       if (mounted) {
@@ -90,7 +94,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
         unawaited(_handleEntryCompleted(generation));
       }
     });
-    _player.sequenceStateStream.listen((sequenceState) {
+    _sequenceStateSub = _player.sequenceStateStream.listen((sequenceState) {
       final tag = sequenceState?.currentSource?.tag;
       int? verseNumber;
       if (tag is MediaItem) {
@@ -117,6 +121,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
 
   @override
   void dispose() {
+    _playerStateSub?.cancel();
+    _sequenceStateSub?.cancel();
     _player.dispose();
     _ayahScrollController.dispose();
     super.dispose();
@@ -140,6 +146,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       _lastAutoScrolledVerse = null;
       _playlistEntries.clear();
       _currentPlaylistIndex = 0;
+      _pausedForResume = false;
     });
     if (_ayahScrollController.hasClients) {
       _ayahScrollController.jumpTo(0);
@@ -158,7 +165,20 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     if (_isPreparing) return;
     if (_player.playing) {
       await _player.pause();
+      // Remember that we can resume the currently-loaded playlist instead of
+      // rebuilding it from the start on the next play.
+      _pausedForResume = _playlistEntries.isNotEmpty;
       setState(() => _isPlaying = false);
+      return;
+    }
+
+    // Resume from the paused position when the loaded playlist is still valid.
+    if (_pausedForResume &&
+        _playlistEntries.isNotEmpty &&
+        _player.audioSource != null) {
+      _pausedForResume = false;
+      _player.play();
+      setState(() => _isPlaying = true);
       return;
     }
 
@@ -244,20 +264,13 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   }
 
   String _resolveReciterKey() {
-    switch (_edition) {
-      case QuranEdition.simple:
-      case QuranEdition.uthmani:
-      case QuranEdition.tajweed:
-      case QuranEdition.irab:
-        final reciter = PreferencesService.getReciter();
-        return reciter.isNotEmpty ? reciter : 'afs';
-      case QuranEdition.english:
-        return 'arabic_english';
-      case QuranEdition.french:
-        return 'arabic_french';
-      case QuranEdition.tafsir:
-        return 'muyassar';
-    }
+    // Editions with associated recitation carry an audioReciterKey; others
+    // fall back to the user's selected Arabic reciter (read translation/tafsir,
+    // hear the Arabic ayah).
+    final key = _edition.audioReciterKey;
+    if (key != null) return key;
+    final reciter = PreferencesService.getReciter();
+    return reciter.isNotEmpty ? reciter : 'afs';
   }
 
   Future<bool> _preparePlaylist({
@@ -323,23 +336,28 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       final nextIndex = (_currentPlaylistIndex + 1) % _playlistEntries.length;
       bool shouldStop = false;
 
-      debugPrint('[RepetitionRange] Entry completed: currentIdx=$_currentPlaylistIndex, '
-          'nextIdx=$nextIndex, totalEntries=${_playlistEntries.length}, '
-          'rangeIter=$_currentRangeIteration, rangeRepeatCount=$_rangeRepeatCount');
-
       // Check for wrap-around
       if (nextIndex == 0) {
          _currentRangeIteration++;
-         debugPrint('[RepetitionRange] Wrap-around! iteration=$_currentRangeIteration / $_rangeRepeatCount');
          if (_currentRangeIteration >= _rangeRepeatCount) {
              shouldStop = true;
          }
       }
-      
+
       if (shouldStop) {
-        debugPrint('[RepetitionRange] STOPPING: range repeat limit reached');
         try { await _player.stop(); } catch (_) {}
-        if (mounted) setState(() => _isPlaying = false);
+        // Range finished: clear playback flags and the verse highlight so the
+        // list doesn't leave the last verse looking like it's still playing.
+        _pausedForResume = false;
+        if (mounted) {
+          setState(() {
+            _isPlaying = false;
+            _currentPlayingVerseNumber = null;
+          });
+        } else {
+          _isPlaying = false;
+          _currentPlayingVerseNumber = null;
+        }
         return;
       }
 
@@ -373,7 +391,6 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     final uri = entry.verseUri;
     // If URI is null (missing audio), skip to next entry
     if (uri == null) {
-      debugPrint('[RepetitionRange] Null URI for verse ${entry.verseInSurah}, skipping');
       _currentPlaylistIndex = index;
       final generation = _playbackGeneration;
       unawaited(_handleEntryCompleted(generation));
@@ -387,13 +404,9 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     if (mounted) setState(() {});
 
     try {
-      debugPrint('[RepetitionRange] Playing verse ${entry.verseInSurah} (entry $index/${_playlistEntries.length})');
       await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
       _player.play(); // Don't await — completion handled by listener
     } catch (e, stackTrace) {
-      debugPrint('[RepetitionRange] CRITICAL ERROR playing verse: $e');
-      debugPrint('[RepetitionRange] Stack trace: $stackTrace');
-      
       if (!mounted) return;
       DebugErrorDisplay.showError(
         context,
@@ -562,6 +575,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     
     // Reset iteration count on new play start
     _currentRangeIteration = 0;
+    // This is a fresh start (not a resume), so drop any stale resume flag.
+    _pausedForResume = false;
 
     await _playEntryAt(entryIndex);
     return true;
@@ -575,22 +590,12 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     if (total == 0) {
       return;
     }
-    final RangeValues currentRange = _range ?? RangeValues(1, total.toDouble());
-    final int start = currentRange.start.round();
-    final int end = currentRange.end.round();
-    final bool inRange = ayah.numberInSurah >= start && ayah.numberInSurah <= end;
-    if (!inRange) {
-      if (mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(l10n.verseOutsideRange)),
-        );
-      }
-      return;
-    }
     setState(() {
       _selectedAyah = ayah.number;
     });
+    // Selecting an ayah re-anchors playback to it, so a previously paused
+    // playlist can no longer be resumed in place.
+    _pausedForResume = false;
     _scrollToMemorizationVerse(ayah.numberInSurah);
     if (wasPlaying) {
       unawaited(_playSelectedAyah(showErrors: false));
@@ -628,6 +633,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
               _activeRangeEnd = null;
               _activeReciterKey = null;
               _activeRepeatCount = null;
+              // Range changed → loaded playlist is stale, can't resume.
+              _pausedForResume = false;
 
               if (_selectedAyah != null && _currentAyahs.isNotEmpty) {
                 AyahBrief? selectedBrief;
@@ -663,13 +670,14 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                 ? null
                 : () {
                     final ayahs = _currentAyahs;
-                    int? startVerseInSurah;
-                    if (ayahs.isNotEmpty) {
+                    // Only jump to the range start on a genuine fresh start.
+                    // When pausing or resuming an existing playlist, keep the
+                    // view on the current verse.
+                    final bool freshStart = !_player.playing && !_pausedForResume;
+                    if (freshStart && ayahs.isNotEmpty) {
                       final currentRange = _range ?? RangeValues(1, ayahs.length.toDouble());
                       final start = currentRange.start.round().clamp(1, ayahs.length);
-                      startVerseInSurah = ayahs[start - 1].numberInSurah;
-                    }
-                    if (startVerseInSurah != null) {
+                      final startVerseInSurah = ayahs[start - 1].numberInSurah;
                       _scrollToMemorizationVerse(startVerseInSurah, immediate: true);
                     }
                     _togglePlay(ayahs);
@@ -687,7 +695,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   Future<void> _toggleEdition(QuranEdition edition) async {
     if (edition == _edition) return;
 
-    if (edition == QuranEdition.irab) {
+    if (edition == QuranEditions.irab) {
       final available = await IrabService().isDataAvailable();
       if (!available) {
         if (!mounted) return;
@@ -809,32 +817,17 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
           textDirection: TextDirection.rtl,
         ),
         actions: [
-          PopupMenuButton<QuranEdition>(
+          IconButton(
             icon: const Icon(Icons.menu_book_outlined),
-            onSelected: _toggleEdition,
-            itemBuilder: (context) {
-              final colorScheme = Theme.of(context).colorScheme;
-              return QuranEdition.values
-                  .map(
-                    (edition) => PopupMenuItem<QuranEdition>(
-                      value: edition,
-                      child: Row(
-                        children: [
-                          if (edition == _edition)
-                            Icon(
-                              Icons.check,
-                              size: 18,
-                              color: colorScheme.primary,
-                            )
-                          else
-                            const SizedBox(width: 18),
-                          const SizedBox(width: 8),
-                          Text(_localizedEditionName(l10n, edition)),
-                        ],
-                      ),
-                    ),
-                  )
-                  .toList();
+            tooltip: l10n.editionTitle,
+            onPressed: () async {
+              final selected = await showEditionPickerSheet(
+                context,
+                current: _edition,
+              );
+              if (selected != null && selected != _edition) {
+                await _toggleEdition(selected);
+              }
             },
           ),
           IconButton(
@@ -915,7 +908,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                     );
                     final TextStyle diacriticStyle =
                         baseStyle.copyWith(color: theme.colorScheme.primary);
-                    final bool isTajweed = _edition == QuranEdition.tajweed;
+                    final bool isTajweed = _edition.isTajweed;
                     final List<InlineSpan> spans = isTajweed
                         ? TajweedParser.parseSpans(
                             a.text,
@@ -939,7 +932,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                                   : null,
                       title: Directionality(
                         textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
-                        child: _edition == QuranEdition.irab && IrabService().isLoaded
+                        child: _edition == QuranEditions.irab && IrabService().isLoaded
                             ? IrabVerseWidget(
                                 verse: IrabService().getVerse(a.surah.number, a.numberInSurah) ??
                                     IrabVerse(surahNumber: a.surah.number, verseNumber: a.numberInSurah, words: []),
@@ -991,33 +984,41 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 16),
-                    ListTile(
-                      title: Text(l10n.chooseReciter),
-                      subtitle: Text(
-                        AudioService.reciterDisplayName(
-                          PreferencesService.getReciter(),
-                          l10n.localeName,
+                    // The reciter picker only affects playback for editions
+                    // that fall back to the user's selected Arabic reciter
+                    // (audioReciterKey == null). Editions with their own fixed
+                    // recitation (english/french/muyassar) ignore it, so we
+                    // hide the row there to avoid implying it has an effect.
+                    if (_edition.audioReciterKey == null) ...[
+                      ListTile(
+                        title: Text(l10n.chooseReciter),
+                        subtitle: Text(
+                          AudioService.reciterDisplayName(
+                            PreferencesService.getReciter(),
+                            l10n.localeName,
+                          ),
                         ),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () {
+                           // Close settings to open reciter picker
+                           Navigator.pop(context);
+                           SettingsSheetUtils.showReciterSelectionSheet(
+                               context,
+                               requireVerseByVerse: true,
+                               onReciterSelected: (key) async {
+                                // Save to Global Reciter
+                                await PreferencesService.saveReciter(key);
+                                setState(() {
+                                  // Trigger reload if playing logic checks this
+                                  _activeReciterKey = null; // Force reload
+                                  _pausedForResume = false; // Reciter changed → can't resume
+                                });
+                               }
+                           );
+                        },
                       ),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                         // Close settings to open reciter picker
-                         Navigator.pop(context);
-                         SettingsSheetUtils.showReciterSelectionSheet(
-                             context,
-                             requireVerseByVerse: true,
-                             onReciterSelected: (key) async {
-                              // Save to Global Reciter
-                              await PreferencesService.saveReciter(key);
-                              setState(() {
-                                // Trigger reload if playing logic checks this
-                                _activeReciterKey = null; // Force reload
-                              });
-                             }
-                         );
-                      },
-                    ),
-                    const Divider(),
+                      const Divider(),
+                    ],
                     ListTile(
                       title: Text('${l10n.verseRepeatCount}: $_verseRepeatCount'),
                       subtitle: Slider(
@@ -1029,7 +1030,12 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                         onChanged: (val) async {
                            final newVal = val.toInt();
                            setSheetState(() => _verseRepeatCount = newVal);
-                           setState(() => _verseRepeatCount = newVal);
+                           setState(() {
+                             _verseRepeatCount = newVal;
+                             // Verse repeat count is baked into the playlist, so
+                             // changing it invalidates any paused playlist.
+                             _pausedForResume = false;
+                           });
                            await PreferencesService.saveVerseRepeatCount(newVal);
                         },
                       ),
@@ -1098,23 +1104,5 @@ class _VersePlaybackEntry {
   });
 }
 
-String _localizedEditionName(AppLocalizations l10n, QuranEdition edition) {
-  switch (edition) {
-    case QuranEdition.simple:
-      return l10n.editionArabicSimple;
-    case QuranEdition.uthmani:
-      return l10n.editionArabicUthmani;
-    case QuranEdition.tajweed:
-      return l10n.editionArabicTajweed;
-    case QuranEdition.english:
-      return l10n.editionEnglish;
-    case QuranEdition.french:
-      return l10n.editionFrench;
-    case QuranEdition.tafsir:
-      return l10n.editionTafsir;
-    case QuranEdition.irab:
-      return l10n.editionIrab;
-  }
-}
 
 

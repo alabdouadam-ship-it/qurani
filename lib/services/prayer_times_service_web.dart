@@ -136,7 +136,7 @@ class PrayerTimesService {
       result['imsak'] = imsak;
     }
     
-    // Apply debug mode adjustments if any
+    // Apply user per-prayer time adjustments (±minutes) if any
     final adjustments = PreferencesService.getAllPrayerTimeAdjustments();
     for (final entry in adjustments.entries) {
       final prayerId = entry.key;
@@ -174,6 +174,45 @@ class PrayerTimesService {
   static Future<bool> hasMonth(int year, int month) async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.containsKey(_monthKey(year, month));
+  }
+
+  // Default location used purely to seed the current month's calendar so the
+  // home Hijri-date card can render before the user grants location. Makkah
+  // (Kaaba) + method 4 (Umm al-Qura) gives the authoritative Hijri date.
+  static const double _defaultSeedLat = 21.4225;
+  static const double _defaultSeedLng = 39.8262;
+  static const int _defaultSeedMethod = 4;
+
+  /// Ensures the CURRENT month's calendar is cached so the Hijri date is
+  /// available without first opening Prayer Times or granting GPS. See the io
+  /// implementation for the full rationale; behaviour is identical on web.
+  static Future<void> ensureHijriSeed() async {
+    final now = DateTime.now();
+    if (await hasMonth(now.year, now.month)) return;
+
+    double lat = _defaultSeedLat;
+    double lng = _defaultSeedLng;
+    int method = _defaultSeedMethod;
+    try {
+      final pos = await Geolocator.getLastKnownPosition();
+      if (pos != null) {
+        lat = pos.latitude;
+        lng = pos.longitude;
+        method = await resolveMethodForRegionFromPosition(pos);
+      }
+    } catch (_) {}
+
+    try {
+      await fetchAndCacheMonth(
+        year: now.year,
+        month: now.month,
+        latitude: lat,
+        longitude: lng,
+        method: method,
+      );
+    } catch (_) {
+      // Offline / fetch failed — nothing to do; the card stays hidden.
+    }
   }
 
   static Future<String?> getCountryFromCoordinates(Position position) async {

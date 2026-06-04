@@ -108,7 +108,7 @@ class _WirdTabState extends State<WirdTab> {
   Future<void> _reload() async {
     if (mounted) setState(() => _isLoading = true);
     // One `getActive()` call feeds both views. `getActive()` internally
-    // calls `getAll()` which runs the daily-reset pass, so every time
+    // runs the daily-reset pass (`_applyDailyResetIfNeeded`), so every time
     // the user returns to this tab after midnight we pick up fresh
     // zeros without any extra wiring.
     final active = await WirdService.getActive();

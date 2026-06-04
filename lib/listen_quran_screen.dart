@@ -130,9 +130,13 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                                 requireFullSurahs: true,
                                 onReciterSelected: (reciterKey) {
                                   PreferencesService.saveReciter(reciterKey);
-                                  setState(() {
-                                    _lastReciterKey = reciterKey;
-                                  });
+                                  // Recompute the download-button state for the
+                                  // new reciter. Setting _lastReciterKey
+                                  // directly here would make build()'s
+                                  // change-guard false, so the button would
+                                  // stay stale (e.g. hidden) for a reciter that
+                                  // isn't downloaded yet.
+                                  _refreshDownloadButtonState();
                                 },
                               );
                             },
@@ -188,9 +192,10 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                         requireFullSurahs: true,
                         onReciterSelected: (reciterKey) {
                           PreferencesService.saveReciter(reciterKey);
-                          setState(() {
-                            _lastReciterKey = reciterKey;
-                          });
+                          // Recompute the download-button state (not just
+                          // _lastReciterKey) so it reflects whether the newly
+                          // chosen reciter is downloaded.
+                          _refreshDownloadButtonState();
                         },
                       );
                     },
@@ -310,11 +315,16 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                       });
                     },
                   );
+                  // Stop accepting further progress callbacks before popping,
+                  // so a late callback can't setState on the disposed
+                  // StatefulBuilder.
+                  dialogSetState = null;
                   if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
                     Navigator.of(dialogContext).pop(true);
                   }
                 } catch (e) {
                   errorMessage = e.toString();
+                  dialogSetState = null;
                   if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
                     Navigator.of(dialogContext).pop(false);
                   }

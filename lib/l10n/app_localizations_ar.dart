@@ -426,12 +426,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get tafsir => 'التفسير';
 
   @override
-  String get savePreferences => 'حفظ التفضيلات';
-
-  @override
-  String get preferencesSavedSuccessfully => 'تم حفظ التفضيلات بنجاح!';
-
-  @override
   String get selectQuranVersion => 'اختر نسخة القرآن...';
 
   @override
@@ -721,9 +715,6 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get qiblaSensorNotSupported => 'هذا الجهاز لا يدعم الحساسات المطلوبة لوضع البوصلة.';
-
-  @override
-  String get verseOutsideRange => 'هذه الآية خارج النطاق المحدد.';
 
   @override
   String qiblaAngleLabel(String angle) {
@@ -1333,6 +1324,15 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get statsNoDataYet => 'لا توجد اختبارات بعد';
+
+  @override
+  String get statsMixedSelection => 'اختيار متعدد';
+
+  @override
+  String get statsAggLegend => '× اختبارات · % آخر نتيجة';
+
+  @override
   String minutesAgo(int n) {
     return 'منذ $n دقيقة';
   }
@@ -1629,4 +1629,19 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hadithNoMatches => 'لا توجد نتائج مطابقة';
+
+  @override
+  String get editionTitle => 'النسخة';
+
+  @override
+  String get editionTranslationsCategory => 'الترجمات';
+
+  @override
+  String get editionTafsirCategory => 'التفسير';
+
+  @override
+  String get editionTurkish => 'التركية';
+
+  @override
+  String get editionGerman => 'الألمانية';
 }

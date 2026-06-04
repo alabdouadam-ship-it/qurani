@@ -138,10 +138,24 @@ class _TestQuestionsScreenState extends State<TestQuestionsScreen> {
     final score = correct * 10; // 10 points per correct answer
     int newTotalScore = _totalScore + score; // compute eagerly for UI
     try {
+      // Mastery/aggregate stats are per single surah or juz. A test that
+      // spans multiple selections has a mixed score that can't be credited
+      // to one item without polluting its mastery, so we pass null for both
+      // in that case — the test still counts toward total score/tests/history,
+      // just not toward a single surah's/juz's mastery. Single-selection (the
+      // common case) is attributed normally.
+      final int? statsSurah =
+          (widget.surahNumbers != null && widget.surahNumbers!.length == 1)
+              ? widget.surahNumbers!.first
+              : null;
+      final int? statsJuz =
+          (statsSurah == null && widget.surahNumbers == null)
+              ? widget.juzNumber
+              : null;
       // Save test result
       await MemorizationStatsService.instance.saveTestResult(
-        surahNumber: widget.surahNumbers?.isNotEmpty == true ? widget.surahNumbers!.first : null,
-        juzNumber: widget.juzNumber,
+        surahNumber: statsSurah,
+        juzNumber: statsJuz,
         correctAnswers: correct,
         totalQuestions: total,
         score: score,

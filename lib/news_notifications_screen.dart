@@ -16,6 +16,11 @@ class NewsNotificationsScreen extends ConsumerStatefulWidget {
 
 class _NewsNotificationsScreenState extends ConsumerState<NewsNotificationsScreen> {
   double _fontScale = 1.0;
+  // Guards the mark-as-seen pass so it runs once per screen visit, not on
+  // every rebuild (tab switch, font-scale toggle, save/hide, refresh). Marking
+  // on every build zeroed the "NEW" badges and the home unseen-count the
+  // instant the screen rendered, defeating their purpose.
+  bool _markedSeen = false;
 
   void _toggleFontScale() {
     setState(() {
@@ -53,8 +58,12 @@ class _NewsNotificationsScreenState extends ConsumerState<NewsNotificationsScree
         body: Center(child: Text('Error: $err')),
       ),
       data: (news) {
-        // Mark as seen when data is loaded (only for first time or refresh)
-        if (news.isNotEmpty) {
+        // Mark as seen once per screen visit (not on every rebuild). We delay
+        // to a post-frame callback so it doesn't mutate provider state during
+        // build. The badges/unseen-count therefore reflect what was new when
+        // the user opened the screen and only clear on the next visit.
+        if (news.isNotEmpty && !_markedSeen) {
+          _markedSeen = true;
           WidgetsBinding.instance.addPostFrameCallback((_) {
             NewsNewsNotificationsLogic.markAsSeen(news);
           });

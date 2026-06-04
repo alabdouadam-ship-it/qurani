@@ -15,6 +15,15 @@ class HadithService {
   // Cache for loaded editions
   List<HadithEditionEntry>? _cachedEditions;
 
+  // One-entry cache of the most recently loaded book. Returning to a book you
+  // just opened (e.g. opening a search result in a fresh reader on top of the
+  // search) then reuses the same parsed object instead of re-reading and
+  // re-parsing the JSON (which is several MB for Bukhari/Muslim). Both readers
+  // share the same immutable HadithBook reference, so there's no extra data
+  // memory either.
+  String? _lastBookId;
+  HadithBook? _lastBook;
+
   // Singleton instance
   static final HadithService _instance = HadithService._internal();
   factory HadithService() => _instance;
@@ -46,7 +55,12 @@ class HadithService {
     }
   }
 
-  /// Categorizes books into Sahihain, Sunan, and Others
+  /// Categorizes books into Sahihain, Sunan, and Others.
+  ///
+  /// Matching is done on the stable `collection.id` (e.g. `ara-bukhari`,
+  /// `eng-tirmidhi`) rather than the localized `name`, because `name` is a
+  /// display string that may not contain the English keyword in every
+  /// language — which would silently misfile books into "Others".
   Map<String, List<HadithEditionEntry>> categorizeBooks(List<HadithEditionEntry> editions) {
     final Map<String, List<HadithEditionEntry>> categories = {
       'Sahihain': [],
@@ -55,11 +69,22 @@ class HadithService {
     };
 
     for (var edition in editions) {
-      final nameLower = edition.name.toLowerCase();
-      if (nameLower.contains('bukhari') || nameLower.contains('muslim')) {
+      // Build a keyword string from both the name and every collection id so
+      // categorization is robust regardless of the display language.
+      final keys = <String>[
+        edition.name.toLowerCase(),
+        ...edition.collection.map((c) => c.id.toLowerCase()),
+      ].join(' ');
+
+      if (keys.contains('bukhari') || keys.contains('muslim')) {
         categories['Sahihain']!.add(edition);
-      } else if (nameLower.contains('sunan') || nameLower.contains('tirmidhi')) { // Tirmidhi is Jami but often grouped with Sunan
-         categories['Sunan']!.add(edition);
+      } else if (keys.contains('sunan') ||
+          keys.contains('tirmidhi') ||
+          keys.contains('abudawud') ||
+          keys.contains('nasai') ||
+          keys.contains('ibnmajah')) {
+        // Tirmidhi is a Jami but is conventionally grouped with the Sunan.
+        categories['Sunan']!.add(edition);
       } else {
         categories['Others']!.add(edition);
       }
@@ -67,41 +92,13 @@ class HadithService {
     return categories;
   }
 
-  /// Checks if a book file exists locally (assets or downloaded)
-  Future<bool> isBookAvailable(String bookId) async {
-    // Check assets first
-    try {
-      // We can't synchronously check asset existence easily without loading.
-      // But we know specific files:
-      // partial check based on file listing I saw earlier:
-      final assetFiles = [
-        'ara-abudawud.json', 'ara-bukhari.json', 'ara-dehlawi.json',
-        'ara-ibnmajah.json', 'ara-malik.json', 'ara-muslim.json',
-        'ara-nasai.json', 'ara-nawawi.json', 'ara-qudsi.json',
-        'ara-tirmidhi.json', 'eng-abudawud.json', 'eng-bukhari.json',
-        'eng-dehlawi.json', 'eng-ibnmajah.json', 'eng-malik.json',
-        'eng-muslim.json', 'eng-nasai.json', 'eng-nawawi.json',
-        'eng-qudsi.json', 'eng-tirmidhi.json', 'fra-abudawud.json',
-        'fra-bukhari.json', 'fra-dehlawi.json', 'fra-ibnmajah.json',
-        'fra-malik.json', 'fra-muslim.json', 'fra-nasai.json',
-        'fra-nawawi.json', 'fra-qudsi.json'
-      ];
-      
-      if (assetFiles.contains('$bookId.json')) {
-        return true;
-      }
-    } catch (_) {}
-
-    // Check local storage
-    if (kIsWeb) return false; // Web doesn't have file storage in the same way, assume assets only for now or network needed
-
-    final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/$bookId.json');
-    return file.exists();
-  }
-
   /// Loads book content
   Future<HadithBook> loadBook(String bookId) async {
+    // Serve the most-recently-loaded book from cache so reopening the same
+    // book (e.g. a search result in a fresh reader) is instant.
+    if (_lastBookId == bookId && _lastBook != null) {
+      return _lastBook!;
+    }
     String jsonString;
     
     // 1. Try Assets
@@ -123,7 +120,10 @@ class HadithService {
     }
 
     final jsonMap = json.decode(jsonString);
-    return HadithBook.fromJson(jsonMap);
+    final book = HadithBook.fromJson(jsonMap);
+    _lastBookId = bookId;
+    _lastBook = book;
+    return book;
   }
 
   /// Downloads a book entry from URL

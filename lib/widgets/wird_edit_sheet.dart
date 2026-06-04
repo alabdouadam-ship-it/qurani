@@ -775,7 +775,7 @@ class _ReminderSection extends StatelessWidget {
   final TimeOfDay time;
   final ValueChanged<bool> onToggle;
   final VoidCallback onPickTime;
-  /// Fires a diagnostic notification in 5 seconds so the user can verify
+  /// Fires a diagnostic notification immediately so the user can verify
   /// notifications actually reach them before trusting the scheduled time.
   final VoidCallback onSendTest;
 

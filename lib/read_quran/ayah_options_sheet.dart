@@ -45,22 +45,22 @@ Future<AyahAction?> showAyahOptionsSheet(
               title: Text(l10n.shareAyah),
               onTap: () => Navigator.pop(sheetContext, AyahAction.share),
             ),
-            if (edition == QuranEdition.english ||
-                edition == QuranEdition.french)
+            if (edition == QuranEditions.english ||
+                edition == QuranEditions.french)
               ListTile(
                 leading: const Icon(Icons.language),
                 title: Text(l10n.showArabicText),
                 onTap: () =>
                     Navigator.pop(sheetContext, AyahAction.translateArabic),
               ),
-            if (edition != QuranEdition.english)
+            if (edition != QuranEditions.english)
               ListTile(
                 leading: const Icon(Icons.translate),
                 title: Text(l10n.showEnglishTranslation),
                 onTap: () =>
                     Navigator.pop(sheetContext, AyahAction.translateEnglish),
               ),
-            if (edition != QuranEdition.french)
+            if (edition != QuranEditions.french)
               ListTile(
                 leading: const Icon(Icons.g_translate),
                 title: Text(l10n.showFrenchTranslation),

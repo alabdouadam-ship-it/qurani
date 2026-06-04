@@ -17,7 +17,7 @@ class MemorizationTestService {
   // Load ayahs for a surah
   Future<List<AyahBrief>> _loadSurahAyahs(int surahNumber) async {
     return await QuranRepository.instance
-        .loadSurahAyahs(surahNumber, QuranEdition.simple);
+        .loadSurahAyahs(surahNumber, QuranEditions.simple);
   }
 
   // Load ayahs for a juz by scanning pages
@@ -31,7 +31,7 @@ class MemorizationTestService {
     for (int page = startPage; page <= endPage; page++) {
       try {
         final pageData = await QuranRepository.instance
-            .loadPage(page, QuranEdition.simple);
+            .loadPage(page, QuranEditions.simple);
         for (final ayahData in pageData.ayahs) {
           if (ayahData.juz == juzNumber) {
             final surahMeta = ayahData.surah;

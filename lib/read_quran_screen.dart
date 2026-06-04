@@ -36,7 +36,7 @@ import 'read_quran/ayah_options_sheet.dart';
 import 'read_quran/ayah_text_dialog.dart';
 import 'read_quran/basmalah_header.dart';
 import 'read_quran/basmalah_text_utils.dart';
-import 'read_quran/edition_label.dart';
+import 'read_quran/edition_picker_sheet.dart';
 import 'read_quran/highlight_models.dart';
 import 'read_quran/highlighted_ayahs_sheet.dart';
 import 'read_quran/highlighted_pdf_pages_sheet.dart';
@@ -65,7 +65,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   late PageController _pageController;
 
   int _currentPage = 1;
-  QuranEdition _edition = QuranEdition.simple;
+  QuranEdition _edition = QuranEditions.simple;
   final Map<int, int> _highlightedAyahs = <int, int>{};
   final Set<int> _highlightedPdfPages = <int>{};
   int? _selectedAyah;
@@ -83,11 +83,36 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   StreamSubscription<SequenceState?>? _sequenceStateSub;
   final ScrollController _pageScrollController = ScrollController();
   final Map<int, GlobalKey> _ayahKeys = <int, GlobalKey>{};
+  // Memoized parsed ayah spans, keyed by a fingerprint of every input that
+  // affects the output (text, edition rendering, font, size, base color).
+  // Avoids re-running the tajweed regex + per-rune clustering on every
+  // rebuild (selection, playing-highlight, animation ticks). Bounded so it
+  // can't grow without limit on a long reading session.
+  final Map<String, List<InlineSpan>> _spanCache =
+      <String, List<InlineSpan>>{};
+  static const int _spanCacheMaxEntries = 400;
   int? _pendingScrollAyah;
   late String _arabicFontKey;
   bool _autoFlip = false;
   final Map<String, PageData> _pageCache =
-      <String, PageData>{}; // Cache for loaded pages
+      <String, PageData>{}; // Cache for loaded pages (bounded LRU, see below)
+
+  /// Upper bound for the screen-level page cache. Mirrors the repository's
+  /// own LRU bound so a long reading session can't accumulate all 604 pages
+  /// of the active edition in memory. LinkedHashMap iteration order is
+  /// insertion order, so the oldest entry is evicted first.
+  static const int _pageCacheMaxEntries = 32;
+
+  /// Inserts [data] for [key], evicting the oldest entries once the cache
+  /// exceeds [_pageCacheMaxEntries].
+  void _putPageCache(String key, PageData data) {
+    // Re-insert as most-recent so frequently-revisited pages survive.
+    _pageCache.remove(key);
+    _pageCache[key] = data;
+    while (_pageCache.length > _pageCacheMaxEntries) {
+      _pageCache.remove(_pageCache.keys.first);
+    }
+  }
 
   // ── Fix: independent audio tracking to prevent race conditions ──
   /// Monotonic counter; incremented on user actions to cancel stale auto-flip.
@@ -118,14 +143,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   void initState() {
     super.initState();
     final savedEdition = PreferencesService.getLastReadEdition();
-    try {
-      _edition = QuranEdition.values.firstWhere(
-        (e) => e.name == savedEdition,
-        orElse: () => QuranEdition.simple,
-      );
-    } catch (_) {
-      _edition = QuranEdition.simple;
-    }
+    _edition = QuranEditions.byId(savedEdition);
 
     // Check start at last page preference
     final startAtLastPage = PreferencesService.getStartAtLastPage();
@@ -248,6 +266,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _pdfPageController?.dispose();
     _disposePdfDocument(_pdfDocumentFuture);
     _pdfDocumentFuture = null;
+    // Cancel any in-flight PDF download so it doesn't keep streaming/writing
+    // after the user leaves the screen.
+    _downloadCancelToken?.cancel();
     _fullscreenButtonTimer?.cancel();
     super.dispose();
   }
@@ -728,19 +749,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   String _resolveReciterCodeForEdition([QuranEdition? edition]) {
     final target = edition ?? _edition;
-    switch (target) {
-      case QuranEdition.english:
-        return 'arabic_english';
-      case QuranEdition.french:
-        return 'arabic_french';
-      case QuranEdition.tafsir:
-        return 'muyassar';
-      case QuranEdition.simple:
-      case QuranEdition.uthmani:
-      case QuranEdition.tajweed:
-      case QuranEdition.irab:
-        return PreferencesService.getReciter();
-    }
+    // Editions with their own associated recitation carry an audioReciterKey;
+    // those without (null) fall back to the user's selected Arabic reciter, so
+    // the user reads the translation/tafsir while hearing the Arabic ayah.
+    return target.audioReciterKey ?? PreferencesService.getReciter();
   }
 
   void _scheduleScrollToAyah(int ayahNumber,
@@ -825,7 +837,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   Future<void> _toggleEdition(QuranEdition edition) async {
     if (edition == _edition) return;
 
-    if (edition == QuranEdition.irab) {
+    if (edition == QuranEditions.irab) {
       final available = await IrabService().isDataAvailable();
       if (!available) {
         if (!mounted) return;
@@ -930,6 +942,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _autoFlipGeneration++;
     unawaited(_stopPageAudio());
     PreferencesService.saveLastReadEdition(edition.name);
+    if (!mounted) return;
     setState(() {
       _edition = edition;
       _selectedAyah = null;
@@ -1178,6 +1191,15 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
             SnackBar(content: Text(l10n.surahUnavailable)),
           );
         }
+        return false;
+      }
+
+      // Guard against the user having swiped to another page (or left the
+      // screen) while `_preparePageAudio` was in flight: that path bumps the
+      // generation and calls `_stopPageAudio()`, but the in-flight prepare
+      // completes anyway. Without this re-check we'd start playing the OLD
+      // page's audio over the new page.
+      if (!mounted || _currentPage != page.number) {
         return false;
       }
 
@@ -1568,13 +1590,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         _removeAyahHighlight(ayah);
         break;
       case AyahAction.translateEnglish:
-        await _showTranslation(ayah, QuranEdition.english);
+        await _showTranslation(ayah, QuranEditions.english);
         break;
       case AyahAction.translateFrench:
-        await _showTranslation(ayah, QuranEdition.french);
+        await _showTranslation(ayah, QuranEditions.french);
         break;
       case AyahAction.translateArabic:
-        await _showTranslation(ayah, QuranEdition.simple);
+        await _showTranslation(ayah, QuranEditions.simple);
         break;
       case AyahAction.tafsir:
         await _showTafsir(ayah);
@@ -1724,6 +1746,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       if (confirm != true) return;
     }
 
+    if (!mounted) return;
     setState(() {
       _isDownloadingPdf = true;
       _downloadProgress = 0;
@@ -1786,6 +1809,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   Future<void> _togglePdfPageHighlightParam(int page) async {
     await PreferencesService.togglePdfPageHighlight(page);
+    if (!mounted) return;
     setState(() {
       if (_highlightedPdfPages.contains(page)) {
         _highlightedPdfPages.remove(page);
@@ -1813,6 +1837,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     // Stop audio when switching modes
     await _stopPageAudio();
 
+    if (!mounted) return;
     setState(() {
       _isPdfMode = newMode;
     });
@@ -2138,8 +2163,8 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
               return const SizedBox.shrink();
             }
 
-            // Cache the loaded page
-            _pageCache[cacheKey] = data;
+            // Cache the loaded page (bounded LRU to cap memory growth).
+            _putPageCache(cacheKey, data);
 
             if (pageNumber == _currentPage) {
               _currentPageData = data;
@@ -2354,19 +2379,34 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     final TextStyle diacriticStyle =
         baseStyle.copyWith(color: colorScheme.primary);
 
-    final bool isTajweedEdition = _edition == QuranEdition.tajweed;
+    final bool isTajweedEdition = _edition.isTajweed;
     final String rawText = displayText ?? ayah.text.trim();
-    final List<InlineSpan> ayahContentSpans = isTajweedEdition
-        ? TajweedParser.parseSpans(
-            rawText,
-            baseStyle,
-            diacriticStyle: diacriticStyle,
-          )
-        : TajweedParser.buildPlainSpans(
-            rawText,
-            baseStyle,
-            diacriticStyle: diacriticStyle,
-          );
+    // Memoize span parsing — it's pure for a given (text, rendering, font,
+    // size, base color). Keyed so theme/font/edition changes invalidate it.
+    final String spanKey = '${ayah.number}|${_edition.id}|$isTajweedEdition|'
+        '$_arabicFontKey|${baseFontSize.toStringAsFixed(1)}|'
+        '${baseStyle.color?.hashCode ?? 0}|'
+        '${diacriticStyle.color?.hashCode ?? 0}|${rawText.hashCode}';
+    final List<InlineSpan> ayahContentSpans = _spanCache.putIfAbsent(spanKey, () {
+      final spans = isTajweedEdition
+          ? TajweedParser.parseSpans(
+              rawText,
+              baseStyle,
+              diacriticStyle: diacriticStyle,
+            )
+          : TajweedParser.buildPlainSpans(
+              rawText,
+              baseStyle,
+              diacriticStyle: diacriticStyle,
+            );
+      // Cheap bound: clear when it grows too large rather than full LRU — the
+      // working set is one page (~15 ayahs), so this only trips after many
+      // page/edition/theme permutations accumulate.
+      if (_spanCache.length > _spanCacheMaxEntries) {
+        _spanCache.clear();
+      }
+      return spans;
+    });
 
     final Color playingColor = theme.brightness == Brightness.dark
         ? const Color(0xFF2C3C57)
@@ -2431,7 +2471,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                 alignment: textDirection == TextDirection.rtl
                     ? Alignment.centerRight
                     : Alignment.centerLeft,
-                child: _edition == QuranEdition.irab && IrabService().isLoaded
+                child: _edition == QuranEditions.irab && IrabService().isLoaded
                     ? Wrap(
                         alignment: WrapAlignment.start,
                         crossAxisAlignment: WrapCrossAlignment.center,
@@ -2707,32 +2747,17 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                 ),
               ],
               if (!_isPdfMode)
-                PopupMenuButton<QuranEdition>(
+                IconButton(
                   icon: const Icon(Icons.menu_book_outlined),
-                  onSelected: _toggleEdition,
-                  itemBuilder: (context) {
-                    final colorScheme = Theme.of(context).colorScheme;
-                    return QuranEdition.values
-                        .map(
-                          (edition) => PopupMenuItem<QuranEdition>(
-                            value: edition,
-                            child: Row(
-                              children: [
-                                if (edition == _edition)
-                                  Icon(
-                                    Icons.check,
-                                    size: 18,
-                                    color: colorScheme.primary,
-                                  )
-                                else
-                                  const SizedBox(width: 18),
-                                const SizedBox(width: 8),
-                                Text(editionLabel(edition, l10n)),
-                              ],
-                            ),
-                          ),
-                        )
-                        .toList();
+                  tooltip: l10n.editionTitle,
+                  onPressed: () async {
+                    final selected = await showEditionPickerSheet(
+                      context,
+                      current: _edition,
+                    );
+                    if (selected != null && selected != _edition) {
+                      await _toggleEdition(selected);
+                    }
                   },
                 ),
               if (_isPdfMode)
