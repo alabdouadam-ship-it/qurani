@@ -800,6 +800,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get verseRepeatCountHint => 'Repeat each verse this many times during repetition memorization.';
 
   @override
+  String get shareUsageStatsTitle => 'Share anonymous usage statistics';
+
+  @override
+  String get shareUsageStatsSubtitle => 'Help improve the app by sharing anonymous data (device type, language, country, and which features are used). No personal information, location, or account data is collected. You can turn this off anytime.';
+
+  @override
   String get arabicFont => 'Arabic font';
 
   @override

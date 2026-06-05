@@ -10,6 +10,7 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'services/preferences_service.dart';
 import 'services/notification_permissions.dart';
+import 'services/supabase_config.dart';
 import 'services/reciter_config_service.dart';
 import 'options_screen.dart';
 import 'services/notification_service.dart';
@@ -21,6 +22,8 @@ import 'prayer_times_screen.dart';
 import 'tasbeeh_screen.dart';
 import 'services/global_adhan_service.dart';
 import 'services/wird_service.dart';
+import 'services/usage_stats_service.dart';
+import 'services/screen_time_observer.dart';
 import 'package:pdfrx/pdfrx.dart';
 import 'package:path_provider/path_provider.dart';
 import 'themes/app_theme_config.dart';
@@ -31,6 +34,11 @@ import 'providers/app_state_providers.dart';
 /// widget's BuildContext) can push routes. Attached to the root MaterialApp.
 final GlobalKey<NavigatorState> rootNavigatorKey =
     GlobalKey<NavigatorState>();
+
+/// Single navigator observer that measures per-screen view time (named routes
+/// only) and reports it via UsageStatsService. Held at top level so the app
+/// lifecycle handler can flush the in-progress screen when backgrounded.
+final ScreenTimeObserver screenTimeObserver = ScreenTimeObserver();
 
 /// Pushes the Tasbeeh screen opened on its Wird tab. Used by the
 /// `wird_<id>` notification deep-link. Safe to call from the notification
@@ -72,6 +80,10 @@ Future<void> main() async {
   await _ensureNotificationPermissions();
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
+
+  // Link Supabase (online-only enhancement). No-op when credentials aren't
+  // provided via --dart-define; never blocks the offline experience.
+  await SupabaseConfig.initialize();
 
   // Force a clean slate for the cross-isolate foreground flag at every cold
   // start. If the previous process was force-killed (Settings → Force Stop,
@@ -137,6 +149,10 @@ Future<void> main() async {
   
   // Collect legal device info once, and re-collect if flag missing
   await DeviceInfoService.collectIfNeeded();
+
+  // Anonymous, opt-out-able usage stats. No-op when Supabase isn't configured,
+  // the user opted out, or offline. Never blocks startup.
+  unawaited(UsageStatsService.instance.init());
   // Silent background refresh of prayer times cache every 10 days using last known position
   await PrayerTimesService.maybeRefreshCacheOnLaunch();
   
@@ -311,6 +327,9 @@ class QuraniApp extends ConsumerStatefulWidget {
     final isForeground = state == AppLifecycleState.resumed;
     _updateAppState(isForeground);
     if (isForeground) {
+      // Begin a new usage-stats session on resume.
+      UsageStatsService.instance.startSession();
+      screenTimeObserver.onAppResumed();
       // Reconcile the in-memory "Adhan playing" notifier with the cross-isolate
       // shared-prefs flag so the UI reflects playback that was started in the
       // AndroidAlarmManager background isolate while we were backgrounded.
@@ -319,6 +338,9 @@ class QuraniApp extends ConsumerStatefulWidget {
       // app (not the alarm isolate) is the primary Adhan trigger.
       GlobalAdhanService.resume();
     } else {
+      // Flush + record the finished session's duration (fire-and-forget).
+      screenTimeObserver.onAppPaused();
+      unawaited(UsageStatsService.instance.endSession());
       // Backgrounded: hand Adhan responsibility to the AndroidAlarmManager
       // background isolate and stop the foreground polling timer so the two
       // don't race near prayer time (and so we don't burn battery ticking
@@ -364,6 +386,7 @@ class QuraniApp extends ConsumerStatefulWidget {
     return MaterialApp(
       title: 'Qurani',
       navigatorKey: rootNavigatorKey,
+      navigatorObservers: [screenTimeObserver],
       locale: locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,

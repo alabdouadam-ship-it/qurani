@@ -56,3 +56,12 @@ Thumbs.db
 # JSONs are bulky data artifacts kept out of the repo intentionally.
 tool/editions_src/
 
+# Supabase credentials injected via --dart-define-from-file (publishable key is
+# public-by-design + RLS, but kept out of git as good hygiene).
+supabase.env.json
+*.env.json
+
+# Supabase CLI working state (machine/account-specific, not source).
+supabase/.temp/
+supabase/.branches/
+supabase/.env

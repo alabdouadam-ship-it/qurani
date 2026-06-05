@@ -60,18 +60,30 @@ class NotificationService {
       if (result is String) {
         timeZoneName = result;
       } else {
-        // Handle TimezoneInfo object (likely has .id or .name)
-        // Using dynamic to avoid import issues if class is not available
+        // flutter_timezone may return a TimezoneInfo object on some devices.
+        // Try known field names in order: id → name → toString fallback.
+        // Then strip any object-wrapper text so we get a bare IANA name
+        // e.g. "Europe/Paris" rather than "TimezoneInfo(Europe/Paris, ...)".
+        String raw;
         try {
-          timeZoneName = (result as dynamic).id;
+          raw = (result as dynamic).id as String;
         } catch (_) {
-          timeZoneName = result.toString();
+          try {
+            raw = (result as dynamic).name as String;
+          } catch (_) {
+            raw = result.toString();
+          }
         }
+        // Extract the IANA name from patterns like:
+        //   "TimezoneInfo(Europe/Paris, (locale: en_US, name: Central European Standard Time))"
+        final parenMatch = RegExp(r'TimezoneInfo\(([^,)]+)').firstMatch(raw);
+        timeZoneName = parenMatch != null ? parenMatch.group(1)!.trim() : raw;
       }
       tz.setLocalLocation(tz.getLocation(timeZoneName));
     } catch (e, st) {
       Log.w('NotificationService', 'Could not set local timezone', e, st);
-      // Fallback to UTC or default if needed, but usually timezone data is loaded
+      // Safe fallback: keep UTC so scheduled notifications still fire,
+      // just at the wrong clock offset until the next app restart.
     }
     
     // Android initialization

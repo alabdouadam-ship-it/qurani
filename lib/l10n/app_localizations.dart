@@ -1627,6 +1627,18 @@ abstract class AppLocalizations {
   /// **'Repeat each verse this many times during repetition memorization.'**
   String get verseRepeatCountHint;
 
+  /// No description provided for @shareUsageStatsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Share anonymous usage statistics'**
+  String get shareUsageStatsTitle;
+
+  /// No description provided for @shareUsageStatsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help improve the app by sharing anonymous data (device type, language, country, and which features are used). No personal information, location, or account data is collected. You can turn this off anytime.'**
+  String get shareUsageStatsSubtitle;
+
   /// No description provided for @arabicFont.
   ///
   /// In en, this message translates to:

@@ -68,6 +68,7 @@ dependencies:
   web: ^1.1.1
 
   json_annotation: ^4.8.1
+  supabase_flutter: ^2.14.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -86,7 +87,6 @@ flutter:
     - assets/data/hadithdata/
     - assets/data/quran.db
     - assets/data/reciters.json
-    - assets/data/news_initial.json
     - assets/audio/
     - assets/images/
     - public/

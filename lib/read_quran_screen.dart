@@ -52,7 +52,20 @@ import 'read_quran/zoomable_pdf_page.dart';
 const String kBasmalah = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
 
 class ReadQuranScreen extends ConsumerStatefulWidget {
-  const ReadQuranScreen({super.key});
+  const ReadQuranScreen({
+    super.key,
+    this.initialHighlightAyah,
+    this.initialEditionId,
+  });
+
+  /// When provided, the reader opens on the page containing this GLOBAL ayah
+  /// number and highlights it (used by the in-Quran search "open in reader"
+  /// action). The page is resolved from the ayah after first build.
+  final int? initialHighlightAyah;
+
+  /// Optional edition id to open in (e.g. match the search language). Falls
+  /// back to the user's last-read edition when null.
+  final String? initialEditionId;
 
   @override
   ConsumerState<ReadQuranScreen> createState() => _ReadQuranScreenState();
@@ -92,6 +105,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       <String, List<InlineSpan>>{};
   static const int _spanCacheMaxEntries = 400;
   int? _pendingScrollAyah;
+  // Deep-link target from search → reader. Kept until the user navigates away
+  // (page swipe/picker) so the FutureBuilder can always re-trigger the scroll
+  // even if the first post-frame fires before the ayah widgets are laid out.
+  int? _deepLinkAyah;
   late String _arabicFontKey;
   bool _autoFlip = false;
   final Map<String, PageData> _pageCache =
@@ -123,6 +140,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   List<int> _sourceIndexToAyahIndex = <int>[];
   /// True while _goToPageForAutoFlip is executing, suppresses onPageChanged.
   bool _isAutoFlipping = false;
+  /// True while _goToPage is programmatically jumping the PageView.
+  /// Prevents onPageChanged from clearing _selectedAyah/_deepLinkAyah when
+  /// the jump is initiated by us (e.g. deep-link, surah picker, juz picker).
+  bool _isProgrammaticPageChange = false;
 
   // PDF Mode State
   bool _isPdfMode = false;
@@ -143,7 +164,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   void initState() {
     super.initState();
     final savedEdition = PreferencesService.getLastReadEdition();
-    _edition = QuranEditions.byId(savedEdition);
+    // An explicit edition from the caller (e.g. search language) wins over the
+    // user's last-read edition.
+    _edition = QuranEditions.byId(widget.initialEditionId ?? savedEdition);
 
     // Check start at last page preference
     final startAtLastPage = PreferencesService.getStartAtLastPage();
@@ -244,6 +267,34 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         }
       }
     });
+
+    // Deep-link: open on the page of a specific ayah (e.g. from in-Quran
+    // search) and highlight it. Page is resolved from the global ayah number
+    // after the first frame so the reader/controllers are ready.
+    final target = widget.initialHighlightAyah;
+    if (target != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        unawaited(_openInitialTargetAyah(target));
+      });
+    }
+  }
+
+  /// Resolves the page for [globalAyahNumber] and navigates the reader there
+  /// with the ayah highlighted. Used for the search → reader deep link.
+  Future<void> _openInitialTargetAyah(int globalAyahNumber) async {
+    try {
+      final ayah = await _repository.lookupAyahByNumber(
+        globalAyahNumber,
+        edition: _edition,
+      );
+      if (!mounted || ayah == null) return;
+      // Store as deep-link target so the FutureBuilder can reliably scroll
+      // to it once the page widgets are fully laid out.
+      _deepLinkAyah = globalAyahNumber;
+      _goToPage(ayah.page, highlightAyah: globalAyahNumber);
+    } catch (e) {
+      debugPrint('[ReadQuran] Failed to open initial target ayah: $e');
+    }
   }
 
   @override
@@ -325,6 +376,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           _scheduleScrollToAyah(highlightAyah, immediate: true);
         }
       });
+      _isProgrammaticPageChange = true;
       try {
         _pageController.jumpToPage(target - 1);
       } catch (_) {
@@ -1109,6 +1161,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   Future<void> _togglePageAudio(PageData page) async {
     if (_isLoadingPageAudio) return;
+    // User hit play — release any pending deep-link so audio's ayah tracking
+    // takes over the highlight cleanly.
+    _deepLinkAyah = null;
 
     if (_pagePlayer.playing) {
       await _pagePlayer.pause();
@@ -1430,6 +1485,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   // Fix 5: When audio is already playing, seek directly instead of
   // re-preparing the entire source (avoids position reset on multi-surah pages).
   void _selectAyah(AyahData ayah) {
+    // User tapped an ayah — release any pending deep-link lock immediately
+    // so the selection transfers to the tapped ayah without fighting it.
+    _deepLinkAyah = null;
     final wasPlaying = _pagePlayer.playing;
     setState(() {
       _selectedAyah = ayah.number;
@@ -1539,6 +1597,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = null;
       _currentPageData = null;
       _ayahKeys.clear();
+      _deepLinkAyah = null; // Auto-flip is always user-initiated audio flow
     });
 
     if (_isPdfMode && _pdfPath != null) {
@@ -2100,9 +2159,19 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           _autoFlipGeneration++;
           unawaited(_stopPageAudio());
         }
+
+        final isProgrammatic = _isProgrammaticPageChange;
+        _isProgrammaticPageChange = false; // consume the flag
+
         setState(() {
           _currentPage = index + 1;
-          _selectedAyah = null;
+          // Don't wipe _selectedAyah/_deepLinkAyah when WE triggered the
+          // jump (deep-link, picker, etc.). The FutureBuilder handles the
+          // highlight. Only clear on genuine user swipes.
+          if (!isProgrammatic) {
+            _selectedAyah = null;
+            _deepLinkAyah = null; // User swiped away; cancel deep-link target
+          }
           _currentPageData = null;
           _ayahKeys.clear();
         });
@@ -2119,7 +2188,25 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           final cachedData = _pageCache[cacheKey]!;
           if (pageNumber == _currentPage) {
             _currentPageData = cachedData;
-            if (_selectedAyah == null && cachedData.ayahs.isNotEmpty) {
+            if (_deepLinkAyah != null) {
+              // Deep-link takes priority — scroll to the exact target ayah.
+              final target = _deepLinkAyah!;
+              if (cachedData.ayahs.any((a) => a.number == target)) {
+                WidgetsBinding.instance.addPostFrameCallback((_) async {
+                  if (!mounted) return;
+                  if (_selectedAyah != target) {
+                    setState(() => _selectedAyah = target);
+                  }
+                  await Future.delayed(const Duration(milliseconds: 80));
+                  if (!mounted) return;
+                  // Clear the deep-link lock so the user is free to interact.
+                  _deepLinkAyah = null;
+                  _scheduleScrollToAyah(target, immediate: false);
+                });
+              } else {
+                _deepLinkAyah = null; // Target not on this page; release lock.
+              }
+            } else if (_selectedAyah == null && cachedData.ayahs.isNotEmpty) {
               final firstAyahNumber = cachedData.ayahs.first.number;
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 if (!mounted) return;
@@ -2168,17 +2255,42 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
             if (pageNumber == _currentPage) {
               _currentPageData = data;
-              if (_selectedAyah == null && data.ayahs.isNotEmpty) {
-                final firstAyahNumber = data.ayahs.first.number;
-                if (_selectedAyah != firstAyahNumber) {
-                  WidgetsBinding.instance.addPostFrameCallback((_) {
-                    if (!mounted) return;
-                    setState(() {
-                      _selectedAyah = firstAyahNumber;
+              if (_deepLinkAyah != null) {
+                // Deep-link from search: always takes priority over the
+                // first-ayah fallback. _selectedAyah may have been wiped to
+                // null by onPageChanged after _goToPage set it, so we restore
+                // it here and scroll to the exact target ayah.
+                final target = _deepLinkAyah!;
+                final contains = data.ayahs.any((a) => a.number == target);
+                if (contains) {
+                  // Restore the selection that onPageChanged cleared.
+                  if (_selectedAyah != target) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      if (!mounted) return;
+                      setState(() => _selectedAyah = target);
                     });
-                    _scheduleScrollToAyah(firstAyahNumber, immediate: true);
+                  }
+                  // Small delay so GlobalKeys are attached before scroll.
+                  WidgetsBinding.instance.addPostFrameCallback((_) async {
+                    if (!mounted) return;
+                    await Future.delayed(const Duration(milliseconds: 80));
+                    if (!mounted) return;
+                    // Clear the deep-link lock so the user is free to interact.
+                    _deepLinkAyah = null;
+                    _scheduleScrollToAyah(target, immediate: false);
                   });
+                } else {
+                  _deepLinkAyah = null; // Target not on this page; release lock.
                 }
+              } else if (_selectedAyah == null && data.ayahs.isNotEmpty) {
+                final firstAyahNumber = data.ayahs.first.number;
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  if (!mounted) return;
+                  setState(() {
+                    _selectedAyah = firstAyahNumber;
+                  });
+                  _scheduleScrollToAyah(firstAyahNumber, immediate: true);
+                });
               } else if (_pendingScrollAyah != null) {
                 final pending = _pendingScrollAyah!;
                 final contains =

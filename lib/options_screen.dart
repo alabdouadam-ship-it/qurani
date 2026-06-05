@@ -22,6 +22,7 @@ import 'services/prayer_times_service.dart';
 import 'hadith_books_screen.dart';
 import 'news_notifications_screen.dart';
 import 'services/news_service.dart';
+import 'services/usage_stats_service.dart';
 
 class OptionsScreen extends ConsumerStatefulWidget {
   const OptionsScreen({super.key});
@@ -410,82 +411,54 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
   }
 
   void _handleOptionTap(BuildContext context, OptionItem option) {
-    switch (option.id) {
+    // Anonymous feature-usage stat — in-memory only (no disk/network on tap),
+    // no-op when opted out / unconfigured. Zero hot-path cost.
+    UsageStatsService.instance.logFeature(option.id);
+
+    // News has its own (conditional) navigation flow.
+    if (option.id == 'news') {
+      _handleNewsNavigation(context);
+      return;
+    }
+
+    final Widget? screen = _screenForOption(option.id);
+    if (screen == null) return;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        // Naming the route lets ScreenTimeObserver measure per-screen view
+        // time (action 'view') without any per-screen timer wiring.
+        settings: RouteSettings(name: option.id),
+        builder: (context) => screen,
+      ),
+    );
+  }
+
+  /// Maps an option id to its destination screen. Centralized so every push
+  /// goes through one named route (for screen-time analytics).
+  Widget? _screenForOption(String id) {
+    switch (id) {
       case 'memorization_test':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const MemorizationTestScreen(),
-          ),
-        );
-        break;
+        return const MemorizationTestScreen();
       case 'repetition_memorization':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RepetitionMemorizationScreen(),
-          ),
-        );
-        break;
+        return const RepetitionMemorizationScreen();
       case 'listen_quran':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ListenQuranScreen(),
-          ),
-        );
-        break;
+        return const ListenQuranScreen();
       case 'read_quran':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const ReadQuranScreen(),
-          ),
-        );
-        break;
+        return const ReadQuranScreen();
       case 'tasbeeh':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const TasbeehScreen(),
-          ),
-        );
-        break;
+        return const TasbeehScreen();
       case 'qibla':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const QiblaScreen(),
-          ),
-        );
-        break;
+        return const QiblaScreen();
       case 'hadith':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HadithBooksScreen(),
-          ),
-        );
-        break;
+        return const HadithBooksScreen();
       case 'prayer_times':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const PrayerTimesScreen(),
-          ),
-        );
-        break;
+        return const PrayerTimesScreen();
       case 'search':
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SearchQuranScreen(),
-          ),
-        );
-        break;
-      case 'news':
-        _handleNewsNavigation(context);
-        break;
+        return const SearchQuranScreen();
+      default:
+        return null;
     }
   }
 
@@ -510,6 +483,7 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
+          settings: const RouteSettings(name: 'news'),
           builder: (context) => const NewsNotificationsScreen(),
         ),
       );

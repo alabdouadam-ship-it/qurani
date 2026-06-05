@@ -210,7 +210,11 @@ handlers (Adhan auto-play intentionally disabled) →
 ## 9. Networking & external dependencies
 - `dio` + `http` for: Aladhan prayer-times API
   (`api.aladhan.com/v1/calendar/...`), audio/PDF/hadith/irab downloads from
-  `qurani.info`, news (`qurani.info/data/news-v1.json`).
+  `qurani.info`. **News & reciters are Supabase-only now** (no remote JSON
+  fetch): news = Supabase `news_items` → SharedPreferences cache → nothing
+  (no bundled asset; `news_initial.json` removed). Reciters = Supabase
+  `reciters` → cache → bundled `assets/data/reciters.json`. Empty DB result
+  is treated as "no data" so the cache/bundled fallback is preserved.
 - `geolocator` + `geocoding` for location/method resolution; `flutter_qiblah`
   for compass. `flutter_local_notifications` + `android_alarm_manager_plus` +
   `timezone`/`flutter_timezone` for alarms. `just_audio(_background)` +

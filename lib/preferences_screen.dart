@@ -7,6 +7,7 @@ import 'package:qurani/themes/app_theme_config.dart';
 import 'package:qurani/widgets/theme_selector.dart';
 import 'responsive_config.dart';
 import 'services/preferences_service.dart';
+import 'services/usage_stats_service.dart';
 import 'util/arabic_font_utils.dart';
 
 class PreferencesScreen extends ConsumerStatefulWidget {
@@ -22,6 +23,7 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
   String? _selectedLanguage;
   double _selectedFontSize = 22.0;
   String _selectedArabicFont = ArabicFontUtils.fontAmiri;
+  bool _shareUsageStats = true;
   final List<String> _fontKeys = const [
     ArabicFontUtils.fontAmiri,
     ArabicFontUtils.fontKfgqpcSmall,
@@ -58,6 +60,8 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
     if (!_fontKeys.contains(_selectedArabicFont)) {
       _selectedArabicFont = ArabicFontUtils.fontAmiri;
     }
+    // Opt-out is stored inverted (analytics_opt_out); the UI shows "share".
+    _shareUsageStats = !UsageStatsService.isOptedOut;
   }
 
   List<String> _getLanguageOptions(BuildContext context) {
@@ -274,6 +278,8 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
                   await PreferencesService.saveFontSize(size);
                 },
               ),
+              const SizedBox(height: 14),
+              _buildPrivacyToggleSection(context, l10n),
             ],
           ),
         ),
@@ -309,6 +315,79 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
 
 
 
+
+  Widget _buildPrivacyToggleSection(BuildContext context, AppLocalizations l10n) {
+    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
+    final theme = Theme.of(context);
+    return Card(
+      elevation: 0,
+      color: theme.colorScheme.primaryContainer.withAlpha(
+            theme.brightness == Brightness.dark ? 100 : 150,
+          ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(24),
+        side: BorderSide(
+          color: theme.colorScheme.outline.withAlpha(36),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(isSmallScreen ? 16 : 18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Color(0xFF607D8B), Color(0xFF90A4AE)],
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    Icons.insights_outlined,
+                    color: Colors.white,
+                    size: isSmallScreen ? 20 : 24,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    l10n.shareUsageStatsTitle,
+                    style: TextStyle(
+                      fontSize: ResponsiveConfig.getFontSize(context, 16),
+                      fontWeight: FontWeight.bold,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                ),
+                Switch.adaptive(
+                  value: _shareUsageStats,
+                  onChanged: (value) async {
+                    setState(() => _shareUsageStats = value);
+                    // UI shows "share"; storage is the inverse opt-out flag.
+                    await UsageStatsService.setOptedOut(!value);
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              l10n.shareUsageStatsSubtitle,
+              style: TextStyle(
+                fontSize: ResponsiveConfig.getFontSize(context, 13),
+                color: theme.colorScheme.onSurface.withAlpha(170),
+                height: 1.4,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 
   Widget _buildDropdownSection(
     BuildContext context, {

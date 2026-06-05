@@ -1,14 +1,20 @@
 import 'dart:convert';
-import 'package:dio/dio.dart';
+import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/news_item.dart';
 import 'notification_service_io.dart';
+import 'supabase_config.dart';
 
 class NewsService {
-  // CONFIGURATION: Simple to change the URL here
-  static const String newsUrl = 'https://qurani.info/data/news-v1.json';
+  /// Supabase table that is the SINGLE source of remote news. When Supabase
+  /// is configured we fetch from here; the result is normalised into the
+  /// `{ "news": [...] }` JSON shape and written to the cache, so all
+  /// downstream logic (parse / merge / seen / GC / notifications / offline
+  /// fallback) is unchanged. There is intentionally NO remote JSON-URL fetch
+  /// and NO bundled initial asset — if Supabase is unavailable/empty we serve
+  /// the last cached news, and nothing if the cache is empty too.
+  static const String _newsTable = 'news_items';
   
   static const String _cacheKey = 'news_cache';
   static const String _lastFetchKey = 'news_last_fetch';
@@ -17,13 +23,6 @@ class NewsService {
   static const String _hasEverSeenKey = 'news_has_ever_seen';
   
   static final ValueNotifier<int> unseenCountNotifier = ValueNotifier<int>(0);
-  
-  static final Dio _dio = Dio(BaseOptions(
-    connectTimeout: const Duration(seconds: 10),
-    receiveTimeout: const Duration(seconds: 10),
-  ));
-
-  static String? _initialAssetCache;
 
   /// Fetches news with caching logic
   static Future<List<NewsItem>> getNews({bool forceRefresh = false}) async {
@@ -37,22 +36,11 @@ class NewsService {
       await _fetchRemote(prefs);
     }
     
-    // 2. Load and Merge Data
-    // The bundled `news_initial.json` is TEST/placeholder content (welcome
-    // message + sample media). It is loaded ONLY in debug builds so it never
-    // ships to production users; release builds rely solely on remote + cached
-    // news. See the scan note about first-launch-offline having no baseline.
-    final List<NewsItem> assetItems = [];
-    if (kDebugMode) {
-      try {
-        _initialAssetCache ??=
-            await rootBundle.loadString('assets/data/news_initial.json');
-        assetItems.addAll(parseNews(_initialAssetCache!));
-      } catch (e) {
-        debugPrint('[NewsService] Error loading initial asset: $e');
-      }
-    }
-
+    // 2. Load Data
+    // News comes solely from Supabase (cached). There is no bundled initial
+    // asset and no remote JSON fallback — if the cache is empty (e.g. first
+    // launch offline with no DB), the news list is simply empty and the UI
+    // shows its empty state. No error is surfaced to the user.
     final String? cachedJson = prefs.getString(_cacheKey);
     final List<NewsItem> cachedItems = cachedJson != null ? parseNews(cachedJson) : [];
 
@@ -60,14 +48,14 @@ class NewsService {
     
     // Run Garbage Collection
     final allItemsRaw = <String, NewsItem>{};
-    for (var item in assetItems) { allItemsRaw[item.id] = item; }
     for (var item in cachedItems) { allItemsRaw[item.id] = item; }
     await _runGarbageCollection(prefs, allItemsRaw.values.toList());
 
     final news = mergeAndFilterNews(
-      assetItems: assetItems,
+      assetItems: const [],
       remoteItems: cachedItems,
       savedIds: savedIds,
+      deviceCountry: deviceCountryCode(),
     );
 
     // Read Global App Installation Baseline
@@ -167,10 +155,17 @@ class NewsService {
 
   /// Merges asset news with remote news and filters expired items.
   /// Remote items with the same ID overwrite asset items.
+  ///
+  /// [deviceCountry] is the device-locale country (ISO alpha-2) used for
+  /// country targeting. When null, only "exclude" rules that can't match an
+  /// unknown country are skipped (see [NewsItem.isVisibleForCountry]). Saved
+  /// items always bypass expiry but still respect country targeting — a user
+  /// can't save an item they were never shown anyway.
   static List<NewsItem> mergeAndFilterNews({
     required List<NewsItem> assetItems,
     required List<NewsItem> remoteItems,
     required Set<String> savedIds,
+    String? deviceCountry,
   }) {
     Map<String, NewsItem> newsMap = {};
 
@@ -186,6 +181,8 @@ class NewsService {
 
     // 3. Filter and Sort
     List<NewsItem> news = newsMap.values.where((item) {
+      // Country targeting (Option A — client-side display filter).
+      if (!item.isVisibleForCountry(deviceCountry)) return false;
       return !item.isExpired || savedIds.contains(item.id);
     }).toList();
 
@@ -198,22 +195,90 @@ class NewsService {
     return news;
   }
 
+  /// Device-locale country (ISO 3166-1 alpha-2, uppercase) used for news
+  /// country targeting. Empty string when the locale has no country.
+  static String deviceCountryCode() {
+    final cc = ui.PlatformDispatcher.instance.locale.countryCode;
+    return (cc ?? '').trim().toUpperCase();
+  }
+
   static Future<void> _fetchRemote(SharedPreferences prefs) async {
-    try {
-      final response = await _dio.get(newsUrl);
-      if (response.statusCode == 200) {
-        // Dio usually decodes JSON automatically to a Map or List.
-        // We ensure it's a string for storage.
-        final data = response.data;
-        final jsonStr = data is String ? data : json.encode(data);
-        
+    // Supabase is the ONLY remote source. When it isn't linked/ready, or
+    // returns no usable data, we leave the existing cache untouched so the
+    // last-known news keeps showing. No JSON-URL fetch is performed.
+    if (SupabaseConfig.isReady) {
+      final jsonStr = await _fetchFromSupabase();
+      if (jsonStr != null) {
         await prefs.setString(_cacheKey, jsonStr);
         await prefs.setInt(_lastFetchKey, DateTime.now().millisecondsSinceEpoch);
-        debugPrint('[NewsService] Remote fetch successful');
+        if (kDebugMode) debugPrint('[NewsService] Supabase fetch successful');
+        return;
       }
-    } catch (e) {
-      debugPrint('[NewsService] Silent network error (expected if offline): $e');
+      if (kDebugMode) {
+        debugPrint('[NewsService] Supabase unavailable/empty; keeping cache');
+      }
     }
+  }
+
+  /// Queries the Supabase `news_items` table and normalises rows back into the
+  /// legacy `{ "news": [...] }` JSON string consumed by [parseNews]. Returns
+  /// null on any error OR when the table is empty, so the caller keeps the
+  /// existing cache instead of overwriting it with an empty set.
+  ///
+  /// RLS already restricts anon reads to published, in-validity-window rows
+  /// (see migration 0002); we still request a generous window and let the
+  /// existing expiry filter in [mergeAndFilterNews] do the final pass so saved
+  /// items keep working exactly as before.
+  static Future<String?> _fetchFromSupabase() async {
+    try {
+      final rows = await SupabaseConfig.client
+          .from(_newsTable)
+          .select()
+          .order('publish_date', ascending: false);
+
+      final list = (rows as List)
+          .map((r) => _rowToLegacyJson(r as Map<String, dynamic>))
+          .toList();
+      // DB reachable but empty → return null so the caller preserves the
+      // current cache rather than blanking it.
+      if (list.isEmpty) {
+        if (kDebugMode) {
+          debugPrint('[NewsService] Supabase returned 0 rows; keeping cache');
+        }
+        return null;
+      }
+      return json.encode({'news': list});
+    } catch (e) {
+      if (kDebugMode) debugPrint('[NewsService] _fetchFromSupabase error: $e');
+      return null;
+    }
+  }
+
+  /// Maps a `news_items` DB row to the exact key shape `NewsItem.fromJson`
+  /// expects. `fromJson` reads a MIX of camelCase (`mediaUrl`, `sourceUrl`,
+  /// `publishDate`, `validUntil`) and snake/other (`category_ar`,
+  /// `target_languages`, `featured`/`is_featured`, `push`) — so we translate
+  /// the snake_case DB columns precisely to those keys.
+  static Map<String, dynamic> _rowToLegacyJson(Map<String, dynamic> row) {
+    return {
+      'id': row['id'],
+      'title': row['title'],
+      'description': row['description'],
+      'type': row['type'],
+      'mediaUrl': row['media_url'],
+      'sourceUrl': row['source_url'],
+      'publishDate': row['publish_date'],
+      'validUntil': row['valid_until'],
+      'language': row['language'],
+      'category_ar': row['category_ar'],
+      'category_en': row['category_en'],
+      'category_fr': row['category_fr'],
+      'target_languages': row['target_languages'],
+      'target_countries': row['target_countries'],
+      'excluded_countries': row['excluded_countries'],
+      'is_featured': row['is_featured'],
+      'push': row['send_notification'],
+    };
   }
 
   /// Get list of saved news IDs

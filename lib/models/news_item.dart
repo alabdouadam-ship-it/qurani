@@ -16,6 +16,11 @@ class NewsItem {
   final String? categoryEn;
   final String? categoryFr;
   final List<String> targetLanguages;
+  /// ISO 3166-1 alpha-2 country codes (uppercase). When non-empty, the item is
+  /// shown ONLY to users whose device-locale country is in this list.
+  final List<String> targetCountries;
+  /// Country codes the item is hidden from. Takes precedence over everything.
+  final List<String> excludedCountries;
   final bool isFeatured;
   final bool sendNotification;
 
@@ -33,6 +38,8 @@ class NewsItem {
     this.categoryEn,
     this.categoryFr,
     this.targetLanguages = const [],
+    this.targetCountries = const [],
+    this.excludedCountries = const [],
     this.isFeatured = false,
     this.sendNotification = false,
   });
@@ -62,6 +69,8 @@ class NewsItem {
       categoryEn: json['category_en'] as String?,
       categoryFr: json['category_fr'] as String?,
       targetLanguages: (json['target_languages'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
+      targetCountries: _parseCountryList(json['target_countries']),
+      excludedCountries: _parseCountryList(json['excluded_countries']),
       isFeatured: json['is_featured'] == true || json['featured'] == true,
       sendNotification: json['push'] == true,
     );
@@ -82,6 +91,8 @@ class NewsItem {
       'category_en': categoryEn,
       'category_fr': categoryFr,
       'target_languages': targetLanguages,
+      'target_countries': targetCountries,
+      'excluded_countries': excludedCountries,
       'featured': isFeatured,
       'push': sendNotification,
     };
@@ -108,6 +119,51 @@ class NewsItem {
     }
     
     return true;
+  }
+
+  /// Country targeting check. [countryCode] is the device-locale country
+  /// (ISO 3166-1 alpha-2). Case-insensitive.
+  ///   * excluded_countries wins: if the user's country is excluded, hide.
+  ///   * if target_countries is non-empty, show ONLY when the user's country
+  ///     is in it.
+  ///   * both empty → visible everywhere (default).
+  /// A null/empty [countryCode] (locale has no country) is treated as "not in
+  /// any specific country": excluded lists can't match it, and a target list
+  /// hides it (since we can't confirm membership) — except when there's no
+  /// targeting at all, where it stays visible.
+  bool isVisibleForCountry(String? countryCode) {
+    final code = (countryCode ?? '').trim().toUpperCase();
+
+    if (excludedCountries.isNotEmpty &&
+        code.isNotEmpty &&
+        excludedCountries.contains(code)) {
+      return false;
+    }
+
+    if (targetCountries.isNotEmpty) {
+      if (code.isEmpty) return false; // can't confirm membership
+      return targetCountries.contains(code);
+    }
+
+    return true;
+  }
+
+  /// Normalises a country-list field (from JSON array or comma string) into a
+  /// list of uppercase ISO codes.
+  static List<String> _parseCountryList(dynamic raw) {
+    if (raw == null) return const [];
+    Iterable<dynamic> items;
+    if (raw is List) {
+      items = raw;
+    } else if (raw is String) {
+      items = raw.split(',');
+    } else {
+      return const [];
+    }
+    return items
+        .map((e) => e.toString().trim().toUpperCase())
+        .where((e) => e.isNotEmpty)
+        .toList();
   }
 
   static NewsType _parseType(String type) {

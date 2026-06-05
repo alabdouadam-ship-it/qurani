@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'supabase_config.dart';
 
 /// Model class for reciter configuration
 class ReciterConfig {
@@ -55,12 +56,16 @@ class ReciterConfig {
 
 /// Service to load and manage reciter configurations
 class ReciterConfigService {
-  static const String _remoteUrl = 'https://qurani.info/data/about-qurani/reciters.json';
+  /// Supabase table mirroring the bundled reciters asset. When linked, this is
+  /// the only remote source. On any failure (or when the table is empty) we
+  /// fall back to the cache, then the bundled asset — so reciters never break
+  /// and no error reaches the user. There is intentionally NO JSON-URL fetch.
+  static const String _recitersTable = 'reciters';
   static const String _cacheKey = 'reciters_cache';
   static const String _cacheTimestampKey = 'reciters_timestamp';
   static const String _cacheVersionKey = 'reciters_version';
-  static const int _cacheDurationDays = 7;
-  static const int _currentVersion = 5; // Increment to force reload
+  static const int _cacheDurationDays = 5;
+  static const int _currentVersion = 6; // Increment to force reload
   
   static List<ReciterConfig>? _reciters;
   // Public for synchronous access from AudioService
@@ -196,7 +201,8 @@ class ReciterConfigService {
     return reciterMap?[code];
   }
 
-  /// Force refresh reciters from remote server (silent - no error messages)
+  /// Force refresh reciters from Supabase (silent - no error messages).
+  /// Falls back to existing data when Supabase is unavailable or empty.
   static Future<void> forceRefresh() async {
     try {
       debugPrint('[ReciterConfig] Force refresh requested');
@@ -252,18 +258,56 @@ class ReciterConfigService {
   }
 
   static Future<Map<String, dynamic>?> _fetchRemote() async {
-    try {
-      final response = await http.get(
-        Uri.parse(_remoteUrl),
-      ).timeout(const Duration(seconds: 20));
-      
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body) as Map<String, dynamic>;
-        return data;
+    // Supabase is the ONLY remote source. When it isn't linked/ready, or
+    // returns no usable data, we return null and the caller falls back to the
+    // cache and then the bundled asset. No JSON-URL fetch is performed.
+    if (SupabaseConfig.isReady) {
+      final fromDb = await _fetchFromSupabase();
+      if (fromDb != null) {
+        if (kDebugMode) debugPrint('[ReciterConfig] Supabase fetch successful');
+        return fromDb;
       }
-      return null;
-    } catch (_) {
-      // Silent failure - will use cache or fallback
+      if (kDebugMode) {
+        debugPrint('[ReciterConfig] Supabase fetch failed; using cache/bundled');
+      }
+    }
+    return null;
+  }
+
+  /// Queries the Supabase `reciters` table and normalises rows back into the
+  /// legacy `{ "reciters": [...] }` shape consumed by [_parseList]. Returns
+  /// null on any error (caller falls back to JSON / cache / bundled asset).
+  ///
+  /// RLS already restricts anon reads to enabled reciters (migration 0003).
+  static Future<Map<String, dynamic>?> _fetchFromSupabase() async {
+    try {
+      final rows = await SupabaseConfig.client
+          .from(_recitersTable)
+          .select()
+          .order('sort_order', ascending: true);
+
+      final list = (rows as List).map((r) {
+        final row = r as Map<String, dynamic>;
+        // Map snake_case DB columns to ReciterConfig.fromJson's keys.
+        return {
+          'code': row['code'],
+          'nameAr': row['name_ar'],
+          'nameLatin': row['name_latin'],
+          'ayahsPath': row['ayahs_path'] ?? '',
+          'surahsPath': row['surahs_path'],
+        };
+      }).toList();
+      // DB reachable but empty → treat as "no remote data" so we fall back to
+      // the cache / bundled asset instead of caching an empty set.
+      if (list.isEmpty) {
+        if (kDebugMode) {
+          debugPrint('[ReciterConfig] Supabase returned 0 rows; using bundled');
+        }
+        return null;
+      }
+      return {'reciters': list};
+    } catch (e) {
+      if (kDebugMode) debugPrint('[ReciterConfig] _fetchFromSupabase error: $e');
       return null;
     }
   }

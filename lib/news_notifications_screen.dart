@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'l10n/app_localizations.dart';
 import 'models/news_item.dart';
@@ -52,11 +53,37 @@ class _NewsNotificationsScreenState extends ConsumerState<NewsNotificationsScree
         icon: Icons.notifications_active_outlined,
         body: const Center(child: CircularProgressIndicator()),
       ),
-      error: (err, stack) => ModernPageScaffold(
-        title: l10n.newsAndNotifications,
-        icon: Icons.notifications_active_outlined,
-        body: Center(child: Text('Error: $err')),
-      ),
+      error: (err, stack) {
+        // News must never surface an error to the user. If the future chain
+        // throws (rare — getNews swallows fetch/parse failures and serves the
+        // last cache), degrade gracefully to the same calm "no news" state.
+        // The error is reported in debug builds only.
+        if (kDebugMode) {
+          debugPrint('[NewsScreen] news provider error: $err\n$stack');
+        }
+        return ModernPageScaffold(
+          title: l10n.newsAndNotifications,
+          icon: Icons.notifications_active_outlined,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.notifications_none,
+                  size: 64,
+                  color: theme.colorScheme.onSurfaceVariant.withAlpha(50),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  l10n.noNewsAtTheMoment,
+                  style:
+                      TextStyle(color: theme.colorScheme.onSurfaceVariant),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
       data: (news) {
         // Mark as seen once per screen visit (not on every rebuild). We delay
         // to a post-frame callback so it doesn't mutate provider state during

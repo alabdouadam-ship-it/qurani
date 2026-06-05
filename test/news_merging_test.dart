@@ -102,4 +102,91 @@ void main() {
       expect(merged.last.id, 'older');
     });
   });
+
+  group('NewsItem country targeting', () {
+    NewsItem make({
+      List<String> target = const [],
+      List<String> excluded = const [],
+    }) {
+      final now = DateTime.now();
+      return NewsItem(
+        id: 'c',
+        title: 't',
+        description: '',
+        type: NewsType.text,
+        mediaUrl: '',
+        sourceUrl: '',
+        publishDate: now,
+        validUntil: now.add(const Duration(days: 1)),
+        targetCountries: target,
+        excludedCountries: excluded,
+      );
+    }
+
+    test('no targeting → visible everywhere', () {
+      final item = make();
+      expect(item.isVisibleForCountry('SA'), true);
+      expect(item.isVisibleForCountry('FR'), true);
+      expect(item.isVisibleForCountry(null), true);
+    });
+
+    test('target list → visible only to listed countries', () {
+      final item = make(target: ['SA', 'EG']);
+      expect(item.isVisibleForCountry('SA'), true);
+      expect(item.isVisibleForCountry('eg'), true); // case-insensitive
+      expect(item.isVisibleForCountry('FR'), false);
+      expect(item.isVisibleForCountry(null), false); // can't confirm membership
+    });
+
+    test('excluded list → hidden from listed countries, visible elsewhere', () {
+      final item = make(excluded: ['FR']);
+      expect(item.isVisibleForCountry('FR'), false);
+      expect(item.isVisibleForCountry('SA'), true);
+      expect(item.isVisibleForCountry(null), true);
+    });
+
+    test('exclusion takes precedence over targeting', () {
+      final item = make(target: ['SA', 'FR'], excluded: ['FR']);
+      expect(item.isVisibleForCountry('SA'), true);
+      expect(item.isVisibleForCountry('FR'), false);
+    });
+  });
+
+  group('NewsService country filter in merge', () {
+    NewsItem make(String id, {List<String> excluded = const []}) {
+      final now = DateTime.now();
+      return NewsItem(
+        id: id,
+        title: id,
+        description: '',
+        type: NewsType.text,
+        mediaUrl: '',
+        sourceUrl: '',
+        publishDate: now,
+        validUntil: now.add(const Duration(days: 1)),
+        excludedCountries: excluded,
+      );
+    }
+
+    test('excluded-country item is filtered out for that country', () {
+      final merged = NewsService.mergeAndFilterNews(
+        assetItems: [make('all'), make('notFr', excluded: ['FR'])],
+        remoteItems: [],
+        savedIds: {},
+        deviceCountry: 'FR',
+      );
+      expect(merged.any((i) => i.id == 'all'), true);
+      expect(merged.any((i) => i.id == 'notFr'), false);
+    });
+
+    test('excluded-country item is shown to other countries', () {
+      final merged = NewsService.mergeAndFilterNews(
+        assetItems: [make('notFr', excluded: ['FR'])],
+        remoteItems: [],
+        savedIds: {},
+        deviceCountry: 'SA',
+      );
+      expect(merged.any((i) => i.id == 'notFr'), true);
+    });
+  });
 }

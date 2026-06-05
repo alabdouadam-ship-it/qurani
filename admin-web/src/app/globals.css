@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ── Theme tokens ─────────────────────────────────────────────────────────
+   Three themes selected via data-theme on <html>: light, dark, sand.
+   Components read the CSS variables below (never hardcoded colors).        */
+
+:root,
+:root[data-theme="light"] {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #eef2f7;
+  --border: #dbe2ea;
+  --text: #14202e;
+  --muted: #5b6b7c;
+  --primary: #1f6feb;
+  --primary-contrast: #ffffff;
+  --danger: #d33;
+  --success: #1a7f44;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0c1116;
+  --surface: #131a22;
+  --surface-2: #1b2530;
+  --border: #2a3744;
+  --text: #e7eef6;
+  --muted: #9fb0c0;
+  --primary: #4f9dff;
+  --primary-contrast: #06101c;
+  --danger: #ff6b6b;
+  --success: #41c97e;
+}
+
+:root[data-theme="sand"] {
+  --bg: #f3ecdf;
+  --surface: #fbf6ec;
+  --surface-2: #ece0cc;
+  --border: #d8c7a8;
+  --text: #3b2f1c;
+  --muted: #7a6a4f;
+  --primary: #a9762f;
+  --primary-contrast: #fffaf0;
+  --danger: #b23b2e;
+  --success: #5b7d33;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, Arial, sans-serif;
+}
+
+/* RTL: the Arabic UI flips automatically via <html dir="rtl">; we only need
+   font fallback that renders Arabic well. */
+:root[lang="ar"] body {
+  font-family: var(--font-geist-sans), "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ── Small component utility classes (kept minimal) ─────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  outline: none;
+}
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--primary);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border-radius: 10px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity 0.15s ease;
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border-color: var(--danger);
+}
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.muted {
+  color: var(--muted);
+}

@@ -12,6 +12,7 @@ import 'package:qurani/services/net_utils.dart';
 import 'package:qurani/services/reciter_config_service.dart';
 import 'package:qurani/widgets/modern_ui.dart';
 import 'package:qurani/widgets/share_ayah_sheet.dart';
+import 'package:qurani/read_quran_screen.dart';
 
 class SearchQuranScreen extends StatefulWidget {
   const SearchQuranScreen({super.key});
@@ -337,6 +338,27 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   }
 
   Future<bool> _hasInternet() => NetUtils.hasInternet();
+
+  /// Opens the Read Quran screen on the page of [ayah] and highlights it.
+  /// Passes the global ayah number (the reader resolves its page and scrolls
+  /// to it). For en/fr searches we still open an Arabic script edition since
+  /// the reader's highlight is keyed by the global ayah number regardless.
+  void _openInReader(SearchAyah ayah) {
+    final editionId = _selectedLanguage == 'en'
+        ? 'english'
+        : _selectedLanguage == 'fr'
+            ? 'french'
+            : null; // null → reader uses the user's last-read Arabic edition
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ReadQuranScreen(
+          initialHighlightAyah: ayah.globalNumber,
+          initialEditionId: editionId,
+        ),
+      ),
+    );
+  }
 
   Future<void> _copyAyah(SearchAyah ayah) async {
     final l10n = AppLocalizations.of(context)!;
@@ -683,6 +705,16 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                                             child: Text(
                                               '$surahName • ${a.numberInSurah} • ${l10n.juzLabel} ${a.juz}',
                                               style: theme.textTheme.bodySmall,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 32,
+                                            width: 32,
+                                            child: IconButton(
+                                              icon: const Icon(Icons.menu_book, size: 18),
+                                              onPressed: () => _openInReader(a),
+                                              tooltip: l10n.readQuran,
+                                              padding: EdgeInsets.zero,
                                             ),
                                           ),
                                           SizedBox(

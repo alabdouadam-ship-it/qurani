@@ -13,17 +13,17 @@ import 'logger.dart';
 import 'preferences_service.dart';
 import 'notification_service_io.dart';
 
+// Sound keys whose MP3 files are bundled under assets/audio/.
+// ONLY list keys that have actual files — the scheduler tries to pre-cache
+// every entry at startup and logs errors for missing ones.
+// Bundled: basit, afs, mecca, medina, ibrahim-jabr-masr (5 keys × 2 variants).
+// Others (sds, frs_a, husr, minsh, suwaid, muyassar) are downloaded on demand
+// and must NOT be listed here.
 const List<String> _defaultSoundKeys = [
   'basit',
   'afs',
-  'sds',
-  'frs_a',
-  'husr',
-  'minsh',
-  'suwaid',
-  'muyassar',
   'mecca',
-  'medina', 
+  'medina',
   'ibrahim-jabr-masr',
 ];
 

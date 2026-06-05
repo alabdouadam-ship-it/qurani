@@ -800,6 +800,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verseRepeatCountHint => 'كرر كل آية هذا العدد من المرات أثناء الحفظ بالتكرار.';
 
   @override
+  String get shareUsageStatsTitle => 'مشاركة إحصائيات استخدام مجهولة';
+
+  @override
+  String get shareUsageStatsSubtitle => 'ساعد في تحسين التطبيق بمشاركة بيانات مجهولة (نوع الجهاز واللغة والدولة والميزات المستخدمة). لا يتم جمع أي معلومات شخصية أو موقع أو بيانات حساب. يمكنك إيقاف ذلك في أي وقت.';
+
+  @override
   String get arabicFont => 'الخط العربي';
 
   @override
