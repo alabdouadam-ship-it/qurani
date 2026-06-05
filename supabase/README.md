@@ -13,6 +13,7 @@ them **in filename order**.
 | `0003_reciters.sql` | Reciters catalogue source table | Client implemented (`ReciterConfigService`, Supabase-first + JSON/cache/asset fallback) |
 | `0004_admin.sql` | Admin access for the `admin-web` dashboard (admins table, RLS, attribution) | Used by the Next.js admin dashboard |
 | `0005_grants.sql` | Table-level GRANTs for anon/authenticated (RLS scopes the rows; grants open the tables) | Required — fixes "permission denied for table" |
+| `0006_seed_reciters.sql` | Seeds `reciters` from the bundled `assets/data/reciters.json` (idempotent, `ON CONFLICT DO NOTHING`) | Pre-populates the admin Reciters section + client fetch |
 
 ## How to apply
 
