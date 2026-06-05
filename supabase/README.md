@@ -14,6 +14,7 @@ them **in filename order**.
 | `0004_admin.sql` | Admin access for the `admin-web` dashboard (admins table, RLS, attribution) | Used by the Next.js admin dashboard |
 | `0005_grants.sql` | Table-level GRANTs for anon/authenticated (RLS scopes the rows; grants open the tables) | Required — fixes "permission denied for table" |
 | `0006_seed_reciters.sql` | Seeds `reciters` from the bundled `assets/data/reciters.json` (idempotent, `ON CONFLICT DO NOTHING`) | Pre-populates the admin Reciters section + client fetch |
+| `0007_seed_news_ar.sql` | Seeds three Arabic announcements (tafsir books, TR/DE translations, search→read) into `news_items` (idempotent) | Initial Arabic news feed content |
 
 ## How to apply
 
