@@ -803,7 +803,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shareUsageStatsTitle => 'Partager des statistiques d\'utilisation anonymes';
 
   @override
-  String get shareUsageStatsSubtitle => 'Aidez à améliorer l\'application en partageant des données anonymes (type d\'appareil, langue, pays et fonctionnalités utilisées). Aucune information personnelle, localisation ou donnée de compte n\'est collectée. Vous pouvez désactiver cela à tout moment.';
+  String get shareUsageStatsSubtitle => 'Aidez à améliorer l\'application en partageant des données anonymes (type d\'appareil, langue, zone approximative — pays et ville, et fonctionnalités utilisées). Aucune information personnelle, localisation précise (coordonnées ou adresse) ni donnée de compte n\'est collectée. Vous pouvez désactiver cela à tout moment.';
 
   @override
   String get arabicFont => 'Police arabe';

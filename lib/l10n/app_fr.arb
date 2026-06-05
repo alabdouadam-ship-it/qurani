@@ -565,7 +565,7 @@
   "@verseRepeatCountHint": {},
   "shareUsageStatsTitle": "Partager des statistiques d'utilisation anonymes",
   "@shareUsageStatsTitle": {},
-  "shareUsageStatsSubtitle": "Aidez à améliorer l'application en partageant des données anonymes (type d'appareil, langue, pays et fonctionnalités utilisées). Aucune information personnelle, localisation ou donnée de compte n'est collectée. Vous pouvez désactiver cela à tout moment.",
+  "shareUsageStatsSubtitle": "Aidez à améliorer l'application en partageant des données anonymes (type d'appareil, langue, zone approximative — pays et ville, et fonctionnalités utilisées). Aucune information personnelle, localisation précise (coordonnées ou adresse) ni donnée de compte n'est collectée. Vous pouvez désactiver cela à tout moment.",
   "@shareUsageStatsSubtitle": {},
   "arabicFont": "Police arabe",
   "@arabicFont": {},

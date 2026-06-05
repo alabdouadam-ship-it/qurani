@@ -403,14 +403,29 @@ class ReciterConfigService {
   
   /// Get reciters for verse-by-verse playback (for Read Quran, Repetition Range)
   /// Filters: ayahsPath must be non-null and non-empty
-  /// Excludes: translations (arabic-english, arabic-french) and tafsir (muyassar)
+  /// Excludes: translation + tafsir editions. These carry audio paths (so a
+  /// translation/tafsir can be read while the Arabic ayah plays), but they are
+  /// NOT standalone reciters and must never appear in the reciter picker.
+  static const Set<String> verseByVerseExcludedCodes = {
+    // Translations
+    'arabic_english',
+    'arabic_french',
+    'turkish',
+    'german',
+    // Tafsir books
+    'muyassar',
+    'jalalayn',
+    'qurtubi',
+    'miqbas',
+    'waseet',
+    'baghawi',
+  };
+
   static Future<List<ReciterConfig>> getRecitersForVerseByVerse() async {
     final reciters = await getReciters();
-    const excludedCodes = {'arabic_english', 'arabic_french', 'muyassar'};
-    
-    return reciters.where((r) => 
-      r.ayahsPath.isNotEmpty && 
-      !excludedCodes.contains(r.code)
+    return reciters.where((r) =>
+      r.ayahsPath.isNotEmpty &&
+      !verseByVerseExcludedCodes.contains(r.code)
     ).toList();
   }
 

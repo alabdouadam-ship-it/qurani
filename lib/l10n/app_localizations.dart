@@ -1636,7 +1636,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareUsageStatsSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Help improve the app by sharing anonymous data (device type, language, country, and which features are used). No personal information, location, or account data is collected. You can turn this off anytime.'**
+  /// **'Help improve the app by sharing anonymous data (device type, language, approximate area — country and town, and which features are used). No personal information, precise location (coordinates or address), or account data is collected. You can turn this off anytime.'**
   String get shareUsageStatsSubtitle;
 
   /// No description provided for @arabicFont.
