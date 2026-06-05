@@ -16,6 +16,7 @@ them **in filename order**.
 | `0006_seed_reciters.sql` | Seeds `reciters` from the bundled `assets/data/reciters.json` (idempotent, `ON CONFLICT DO NOTHING`) | Pre-populates the admin Reciters section + client fetch |
 | `0007_seed_news_ar.sql` | Seeds three Arabic announcements (tafsir books, TR/DE translations, search→read) into `news_items` (idempotent) | Initial Arabic news feed content |
 | `0008_seed_news_en_fr.sql` | English + French copies of the three 0007 announcements (one row per language, language-targeted) | Initial EN/FR news feed content |
+| `0009_seed_reciters_editions_audio.sql` | Adds placeholder audio reciter rows for Turkish, German + 5 tafsir books (empty paths) to mirror the bundled JSON | Edition→audio mapping; URLs filled later |
 
 ## How to apply
 

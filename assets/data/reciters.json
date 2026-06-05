@@ -118,6 +118,55 @@
             "nameLatin": "Yasser Ad-Dussary",
             "ayahsPath": "https://everyayah.com/data/Yasser_Ad-Dussary_128kbps",
             "surahsPath": "https://server11.mp3quran.net/yasser"
+        },
+        {
+            "code": "turkish",
+            "nameAr": "تركي - الديانة",
+            "nameLatin": "Turkish (Diyanet Vakfı)",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "german",
+            "nameAr": "ألماني - بوبنهايم",
+            "nameLatin": "German (Bubenheim & Elyas)",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "jalalayn",
+            "nameAr": "تفسير الجلالين",
+            "nameLatin": "Tafsir Al-Jalalayn",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "qurtubi",
+            "nameAr": "تفسير القرطبي",
+            "nameLatin": "Tafsir Al-Qurtubi",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "miqbas",
+            "nameAr": "تنوير المقباس من تفسير ابن عباس",
+            "nameLatin": "Tafsir Tanwir al-Miqbas",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "waseet",
+            "nameAr": "التفسير الوسيط",
+            "nameLatin": "Tafsir Al-Waseet",
+            "ayahsPath": "",
+            "surahsPath": null
+        },
+        {
+            "code": "baghawi",
+            "nameAr": "تفسير البغوي",
+            "nameLatin": "Tafsir Al-Baghawi",
+            "ayahsPath": "",
+            "surahsPath": null
         }
     ],
     "urlPatterns": {
