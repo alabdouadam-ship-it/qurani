@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'net_utils.dart';
 import 'preferences_service.dart';
 import 'supabase_config.dart';
 
@@ -27,8 +26,12 @@ import 'supabase_config.dart';
 /// - **Disk is touched only on lifecycle edges** (background/opt-out), never
 ///   per interaction. SharedPreferences writes therefore happen at most ~once
 ///   per session, off the interaction path.
-/// - **All network calls are fire-and-forget and connectivity-gated**, run via
-///   `unawaited`, so they never block a frame or the offline experience.
+/// - **All network calls are fire-and-forget**, run via `unawaited`, so they
+///   never block a frame or the offline experience. We do NOT pre-probe
+///   connectivity (a DNS lookup) before sending — the Supabase RPCs fail fast
+///   and are caught/logged, so an offline call is cheap and harmless, while a
+///   false-negative probe (host blocked on some networks) can no longer
+///   silently suppress all telemetry.
 /// - When disabled (opted out / unconfigured) every entry point returns on the
 ///   first line — the feature is a true no-op with zero allocation.
 ///
@@ -99,12 +102,14 @@ class UsageStatsService {
     // Recover a session cut off by an app kill last time.
     await _recoverInterruptedSession();
 
-    // One connectivity probe gates ALL network work below (avoids redundant
-    // DNS lookups on launch). If offline, everything stays buffered for later.
-    if (await NetUtils.hasInternet()) {
-      unawaited(_flushOverNetwork());
-      unawaited(_dailyHeartbeat());
-    }
+    // Attempt the installation heartbeat + a flush. We do NOT pre-probe
+    // connectivity here: the previous DNS lookup to example.com produced false
+    // negatives on networks/regions where that host is blocked or slow, which
+    // silently prevented the installation from ever being recorded even on a
+    // working connection. Supabase RPCs fail fast and are caught/logged below,
+    // so a genuinely offline launch just leaves the buffer for a later flush.
+    unawaited(_dailyHeartbeat());
+    unawaited(_flushOverNetwork());
 
     await _startSession();
   }
@@ -160,13 +165,10 @@ class UsageStatsService {
     final startMs = prefs.getInt(_keySessionStart);
     await prefs.remove(_keySessionStart);
 
-    if (!await NetUtils.hasInternet()) {
-      // Offline: keep everything on disk; record session on a later launch
-      // only if it matters — here we simply drop the (already-persisted)
-      // attempt to avoid a hanging request.
-      return;
-    }
-    await flushEvents();
+    // Attempt to flush + record the session. No connectivity pre-probe: the
+    // RPCs fail fast and are caught, and the buffer is already persisted above,
+    // so an offline close loses nothing (it flushes on a later launch).
+    await _flushOverNetwork();
     if (startMs != null) {
       final start = DateTime.fromMillisecondsSinceEpoch(startMs);
       final seconds = DateTime.now().difference(start).inSeconds;
@@ -177,10 +179,9 @@ class UsageStatsService {
   }
 
   /// Sends buffered events in a single RPC, clearing them (memory + disk) only
-  /// on success. Connectivity-gated and re-entrancy-guarded.
+  /// on success. Re-entrancy-guarded.
   Future<void> flushEvents() async {
     if (!_enabled || _flushing || _buffer.isEmpty) return;
-    if (!await NetUtils.hasInternet()) return;
     await _flushOverNetwork();
   }
 
@@ -231,7 +232,14 @@ class UsageStatsService {
         'p_app_build': _appBuild,
         'p_app_language': PreferencesService.getLanguage(),
         'p_locale_language': locale['languageCode'],
+        // Locale country (from device settings) — always available, set from
+        // first launch. Reflects the UI language region, not physical location.
         'p_country_code': locale['countryCode'],
+        // Exact country from GPS reverse-geocode (only once the user granted
+        // location via prayer times / qibla). Null until then.
+        'p_gps_country': _statsGpsCountry(),
+        // Coarse town/city from the same GPS reverse-geocode (locality name).
+        'p_city': _statsCity(),
         'p_timezone': tz['name'],
         'p_tz_offset_minutes': tz['offsetMinutes'],
         'p_theme_id': PreferencesService.getTheme(),
@@ -278,7 +286,6 @@ class UsageStatsService {
     }
     final seconds = end.difference(start).inSeconds.clamp(0, _maxSessionSeconds);
     if (seconds <= 0) return;
-    if (!await NetUtils.hasInternet()) return;
     unawaited(_recordSession(start, seconds, appVersionOverride: version));
   }
 
@@ -354,5 +361,19 @@ class UsageStatsService {
       if (PreferencesService.getBool('adhan_$id') ?? false) return true;
     }
     return false;
+  }
+
+  /// Exact country from GPS reverse-geocode (ISO alpha-2). Null when location
+  /// was never resolved (e.g. user never opened prayer times / qibla).
+  String? _statsGpsCountry() {
+    final code = PreferencesService.getLocationCountryCode();
+    return code.isEmpty ? null : code;
+  }
+
+  /// Coarse town/city from location (locality name only). Null when location
+  /// was never resolved (e.g. prayer times not set up).
+  String? _statsCity() {
+    final city = PreferencesService.getLocationCity();
+    return city.isEmpty ? null : city;
   }
 }

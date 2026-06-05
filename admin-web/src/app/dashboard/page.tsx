@@ -13,7 +13,9 @@ type Stats = {
   totalSessions: number;
   avgSessionMin: number;
   features: { feature: string; opens: number; avgMin: number }[];
-  countries: { key: string; count: number }[];
+  localeCountries: { key: string; count: number }[];
+  gpsCountries: { key: string; count: number }[];
+  cities: { key: string; count: number }[];
   platforms: { key: string; count: number }[];
   languages: { key: string; count: number }[];
 };
@@ -23,6 +25,8 @@ type InstallRow = {
   locale_language: string | null;
   app_language: string | null;
   country_code: string | null;
+  gps_country: string | null;
+  city: string | null;
 };
 type SessionRow = { duration_seconds: number | null };
 type EventRow = {
@@ -63,7 +67,9 @@ function DashboardBody() {
         // Installations (with platform / language / country breakdowns).
         const { data: installs } = await supabase
           .from("app_installations")
-          .select("platform, locale_language, app_language, country_code");
+          .select(
+            "platform, locale_language, app_language, country_code, gps_country, city"
+          );
 
         // Active days (DAU/MAU windows).
         const { data: activeDays } = await supabase
@@ -95,9 +101,13 @@ function DashboardBody() {
             (r) => r.app_language || r.locale_language || "unknown"
           )
         );
-        const countries = topCounts(
+        const localeCountries = topCounts(
           installRows.map((r) => r.country_code || "—")
         );
+        const gpsCountries = topCounts(
+          installRows.map((r) => r.gps_country || "—")
+        );
+        const cities = topCounts(installRows.map((r) => r.city || "—"));
 
         const todayKey = dayStr(today);
         const d7Key = dayStr(d7);
@@ -153,7 +163,9 @@ function DashboardBody() {
           totalSessions,
           avgSessionMin,
           features,
-          countries,
+          localeCountries,
+          gpsCountries,
+          cities,
           platforms,
           languages,
         });
@@ -195,8 +207,14 @@ function DashboardBody() {
             />
           )}
         </Panel>
-        <Panel title={t.topCountries}>
-          <BreakRows rows={stats.countries} emptyLabel={t.noData} />
+        <Panel title={t.topCountriesGps}>
+          <BreakRows rows={stats.gpsCountries} emptyLabel={t.noData} />
+        </Panel>
+        <Panel title={t.topCountriesLocale}>
+          <BreakRows rows={stats.localeCountries} emptyLabel={t.noData} />
+        </Panel>
+        <Panel title={t.topCities}>
+          <BreakRows rows={stats.cities} emptyLabel={t.noData} />
         </Panel>
         <Panel title={t.platformSplit}>
           <BreakRows rows={stats.platforms} emptyLabel={t.noData} />

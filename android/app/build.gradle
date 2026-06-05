@@ -73,6 +73,13 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            // R8 runs in release builds. Apply our keep rules so plugins that
+            // rely on reflection/Gson (notably flutter_local_notifications,
+            // which otherwise throws "Missing type parameter." when loading
+            // scheduled notifications) are not broken by shrinking/obfuscation.
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }

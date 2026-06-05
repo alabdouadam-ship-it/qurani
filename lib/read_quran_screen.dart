@@ -109,6 +109,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   // (page swipe/picker) so the FutureBuilder can always re-trigger the scroll
   // even if the first post-frame fires before the ayah widgets are laid out.
   int? _deepLinkAyah;
+  // When true, the next page load should land at the TOP of the page (scroll
+  // offset 0) instead of scroll-to-first-ayah. Set on edition change so a long
+  // first ayah isn't scrolled with its beginning off-screen.
+  bool _landAtTopOnNextLoad = false;
   late String _arabicFontKey;
   bool _autoFlip = false;
   final Map<String, PageData> _pageCache =
@@ -1000,6 +1004,15 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = null;
       _currentPageData = null;
       _pageCache.clear(); // Clear cache when edition changes
+      _landAtTopOnNextLoad = true; // Land at page top, not mid-first-ayah
+    });
+    // Reset the scroll position to the top immediately so the new edition's
+    // page starts from the beginning even before the first ayah is measured.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      if (_pageScrollController.hasClients) {
+        _pageScrollController.jumpTo(0);
+      }
     });
   }
 
@@ -2208,12 +2221,17 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
               }
             } else if (_selectedAyah == null && cachedData.ayahs.isNotEmpty) {
               final firstAyahNumber = cachedData.ayahs.first.number;
+              final landAtTop = _landAtTopOnNextLoad;
+              _landAtTopOnNextLoad = false;
               WidgetsBinding.instance.addPostFrameCallback((_) {
                 if (!mounted) return;
                 if (_selectedAyah != firstAyahNumber) {
                   setState(() {
                     _selectedAyah = firstAyahNumber;
                   });
+                }
+                if (landAtTop && _pageScrollController.hasClients) {
+                  _pageScrollController.jumpTo(0);
                 }
               });
             }
@@ -2284,12 +2302,24 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                 }
               } else if (_selectedAyah == null && data.ayahs.isNotEmpty) {
                 final firstAyahNumber = data.ayahs.first.number;
+                // On edition change we want the page to start at the very top
+                // (so a long first ayah shows its beginning), not scroll the
+                // first ayah to alignment 0.2 which can push its start off
+                // the top. Consume the one-shot flag here.
+                final landAtTop = _landAtTopOnNextLoad;
+                _landAtTopOnNextLoad = false;
                 WidgetsBinding.instance.addPostFrameCallback((_) {
                   if (!mounted) return;
                   setState(() {
                     _selectedAyah = firstAyahNumber;
                   });
-                  _scheduleScrollToAyah(firstAyahNumber, immediate: true);
+                  if (landAtTop) {
+                    if (_pageScrollController.hasClients) {
+                      _pageScrollController.jumpTo(0);
+                    }
+                  } else {
+                    _scheduleScrollToAyah(firstAyahNumber, immediate: true);
+                  }
                 });
               } else if (_pendingScrollAyah != null) {
                 final pending = _pendingScrollAyah!;
@@ -2796,19 +2826,15 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                         ? 'Lisez le Coran avec navigation intelligente, mise en évidence et audio.'
                         : 'Read the Quran with smart navigation, highlights, and audio.'),
             actions: [
-              IconButton(
-                icon: const Icon(Icons.fullscreen_rounded),
-                tooltip: _fullscreenTooltip(l10n, exiting: false),
-                onPressed: () => unawaited(_toggleFullscreen()),
-              ),
-              if (!kIsWeb)
-                IconButton(
-                  icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
-                  tooltip: _isPdfMode
-                      ? l10n.returnToTextView
-                      : l10n.downloadMushafPdf,
-                  onPressed: _togglePdfMode,
-                ),
+              // Small spacer so the first action isn't crammed against the
+              // title/back button (in RTL the leading back button is on the
+              // right, immediately past the title — this wins it some room).
+              const SizedBox(width: 4),
+              // Featured/saved ayahs (or PDF page bookmarks) — moved to FIRST.
+              // In RTL the first action sits next to the back button; this
+              // button is disabled (greyed) when there are no highlights, so a
+              // stray tap here is harmless, unlike the fullscreen toggle that
+              // used to live in this slot.
               if (_isPdfMode)
                 IconButton(
                   icon: const Icon(Icons.bookmarks),
@@ -2818,10 +2844,26 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
               if (!_isPdfMode)
                 IconButton(
                   icon: const Icon(Icons.bookmark_outline),
+                  tooltip: l10n.bookmarks,
                   onPressed: _highlightedAyahs.isEmpty
                       ? null
                       : _openHighlightedAyahsSheet,
                 ),
+              if (!kIsWeb)
+                IconButton(
+                  icon: Icon(_isPdfMode ? Icons.article : Icons.picture_as_pdf),
+                  tooltip: _isPdfMode
+                      ? l10n.returnToTextView
+                      : l10n.downloadMushafPdf,
+                  onPressed: _togglePdfMode,
+                ),
+              // Fullscreen — moved OUT of the first slot so it's no longer
+              // adjacent to the back button (the original mis-tap problem).
+              IconButton(
+                icon: const Icon(Icons.fullscreen_rounded),
+                tooltip: _fullscreenTooltip(l10n, exiting: false),
+                onPressed: () => unawaited(_toggleFullscreen()),
+              ),
               IconButton(
                 icon: const Icon(Icons.settings_rounded),
                 onPressed: () => _showSettingsSheet(),

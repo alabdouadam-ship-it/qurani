@@ -271,6 +271,43 @@ class PreferencesService {
     return existing ?? '';
   }
 
+  // Location-derived country (ISO 3166-1 alpha-2, uppercase) resolved from the
+  // user's GPS via reverse-geocoding during prayer-time setup. This is the
+  // PHYSICAL country (location permission already granted for prayer times),
+  // used for news country targeting — far more accurate than the device locale
+  // region, which only reflects the chosen UI language (e.g. an English-set
+  // phone in France reports US). Only the 2-letter code is stored; coordinates
+  // are never persisted for this purpose.
+  static const String keyLocationCountryCode = 'location_country_code_v1';
+
+  static Future<void> saveLocationCountryCode(String isoCode) async {
+    final normalized = isoCode.trim().toUpperCase();
+    if (normalized.isEmpty) return;
+    await _prefs?.setString(keyLocationCountryCode, normalized);
+  }
+
+  /// Physical country from location (ISO alpha-2, uppercase), or empty string
+  /// when location was never resolved (e.g. prayer times not set up).
+  static String getLocationCountryCode() {
+    final saved = _prefs?.getString(keyLocationCountryCode);
+    return (saved ?? '').trim().toUpperCase();
+  }
+
+  // Location-derived town/city (coarse — locality name only, never coordinates
+  // or an address). Resolved from the same reverse-geocode as the country and
+  // used for coarse stats geography. Empty when location was never resolved.
+  static const String keyLocationCity = 'location_city_v1';
+
+  static Future<void> saveLocationCity(String city) async {
+    final trimmed = city.trim();
+    if (trimmed.isEmpty) return;
+    await _prefs?.setString(keyLocationCity, trimmed);
+  }
+
+  static String getLocationCity() {
+    return (_prefs?.getString(keyLocationCity) ?? '').trim();
+  }
+
   // Generic helpers for simple int flags/epochs used by services (e.g., update checks)
   static Future<void> setInt(String key, int value) async {
     await _prefs?.setInt(key, value);

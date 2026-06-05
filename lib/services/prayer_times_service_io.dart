@@ -424,37 +424,59 @@ class PrayerTimesService {
   };
 
   static Future<int> resolveMethodForRegionFromPosition(Position pos) async {
-    // Check if user has set a preferred method
-    final userMethod = PreferencesService.getPrayerMethod();
-    if (userMethod != null) {
-      return userMethod;
-    }
-    
-    // Otherwise, auto-detect based on location
+    // Reverse-geocode once. We use the result both to persist the user's
+    // PHYSICAL country (for news targeting — see PreferencesService
+    // .saveLocationCountryCode) and to auto-detect the prayer method. We do
+    // this even when the user has a manually-chosen method so the country is
+    // still kept fresh for news.
+    int? detectedMethod;
     try {
       final placemarks = await placemarkFromCoordinates(pos.latitude, pos.longitude);
       if (placemarks.isNotEmpty) {
          final p = placemarks.first;
-         
-         // 1. Try ISO Country Code (Most reliable)
+
+         // Persist the physical country (ISO alpha-2) for news targeting.
          if (p.isoCountryCode != null && p.isoCountryCode!.isNotEmpty) {
             final code = p.isoCountryCode!.toUpperCase();
+            await PreferencesService.saveLocationCountryCode(code);
             if (prayerMethodByIsoCode.containsKey(code)) {
-               return prayerMethodByIsoCode[code]!;
+               detectedMethod = prayerMethodByIsoCode[code]!;
             }
          }
-         
-         // 2. Try Country Name
-         if (p.country != null && p.country!.isNotEmpty) {
+
+         // Persist the coarse town/city for stats geography (locality name
+         // only — never coordinates). Mirrors getCityFromCoordinates' field
+         // preference so it matches what prayer times shows.
+         final city = (p.locality?.isNotEmpty == true)
+             ? p.locality!
+             : (p.subAdministrativeArea?.isNotEmpty == true)
+                 ? p.subAdministrativeArea!
+                 : (p.administrativeArea?.isNotEmpty == true)
+                     ? p.administrativeArea!
+                     : '';
+         if (city.isNotEmpty) {
+            await PreferencesService.saveLocationCity(city);
+         }
+
+         // 2. Try Country Name (only if ISO code didn't resolve a method)
+         if (detectedMethod == null &&
+             p.country != null && p.country!.isNotEmpty) {
              final name = p.country!.toLowerCase().trim();
              if (prayerMethodByCountryName.containsKey(name)) {
-                return prayerMethodByCountryName[name]!;
+                detectedMethod = prayerMethodByCountryName[name]!;
              }
          }
       }
     } catch (_) {}
 
-    return 3; // Default
+    // A user-chosen method overrides auto-detection (but we still saved the
+    // country above).
+    final userMethod = PreferencesService.getPrayerMethod();
+    if (userMethod != null) {
+      return userMethod;
+    }
+
+    return detectedMethod ?? 3; // Default
   }
 
   static Future<int> resolveMethodFromLastKnownPosition() async {

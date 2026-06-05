@@ -17,6 +17,7 @@ them **in filename order**.
 | `0007_seed_news_ar.sql` | Seeds three Arabic announcements (tafsir books, TR/DE translations, search→read) into `news_items` (idempotent) | Initial Arabic news feed content |
 | `0008_seed_news_en_fr.sql` | English + French copies of the three 0007 announcements (one row per language, language-targeted) | Initial EN/FR news feed content |
 | `0009_seed_reciters_editions_audio.sql` | Adds placeholder audio reciter rows for Turkish, German + 5 tafsir books (empty paths) to mirror the bundled JSON | Edition→audio mapping; URLs filled later |
+| `0010_stats_city.sql` | Adds coarse `city` (locality name) to `app_installations` + `p_city` to `record_installation` | Coarse geography in stats (from granted location) |
 
 ## How to apply
 
@@ -45,11 +46,13 @@ supabase db push           # applies migrations/ to the linked project
 
 Telemetry identity is the app's **random installation UUID** — never a
 hardware id, advertising id, or any PII. Only coarse, non-identifying data is
-stored (platform/OS/model, app version, language, coarse country from locale,
-timezone, anonymous product preferences, and usage counters). No precise GPS,
-contacts, names, emails, or IPs are stored by the app. This must be disclosed
-in the privacy policy and is gated behind an in-app opt-out
-(`analytics_opt_out`) the client honours before sending anything.
+stored (platform/OS/model, app version, language, **coarse country and town
+(locality name) derived on-device from the location the user already granted
+for prayer times — never coordinates or an address**, timezone, anonymous
+product preferences, and usage counters). No precise GPS, contacts, names,
+emails, or IPs are stored by the app. This must be disclosed in the privacy
+policy and is gated behind an in-app opt-out (`analytics_opt_out`) the client
+honours before sending anything.
 
 ## Write cadence & performance (client)
 

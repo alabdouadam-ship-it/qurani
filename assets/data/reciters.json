@@ -123,14 +123,14 @@
             "code": "turkish",
             "nameAr": "تركي - الديانة",
             "nameLatin": "Turkish (Diyanet Vakfı)",
-            "ayahsPath": "",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
             "surahsPath": null
         },
         {
             "code": "german",
             "nameAr": "ألماني - بوبنهايم",
             "nameLatin": "German (Bubenheim & Elyas)",
-            "ayahsPath": "",
+            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
             "surahsPath": null
         },
         {

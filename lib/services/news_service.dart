@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/news_item.dart';
 import 'notification_service_io.dart';
+import 'preferences_service.dart';
 import 'supabase_config.dart';
 
 class NewsService {
@@ -195,9 +196,16 @@ class NewsService {
     return news;
   }
 
-  /// Device-locale country (ISO 3166-1 alpha-2, uppercase) used for news
-  /// country targeting. Empty string when the locale has no country.
+  /// Country (ISO 3166-1 alpha-2, uppercase) used for news country targeting.
+  ///
+  /// Prefers the PHYSICAL country resolved from the user's GPS during
+  /// prayer-time setup (location permission already granted), because the
+  /// device locale only reflects the chosen UI language — an English-set phone
+  /// in France reports `US`, which would mis-target news. Falls back to the
+  /// locale country when location was never resolved (prayer times not set up).
   static String deviceCountryCode() {
+    final fromLocation = PreferencesService.getLocationCountryCode();
+    if (fromLocation.isNotEmpty) return fromLocation;
     final cc = ui.PlatformDispatcher.instance.locale.countryCode;
     return (cc ?? '').trim().toUpperCase();
   }
