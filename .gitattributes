@@ -1,0 +1,1 @@
+assets/data/quran.db filter=lfs diff=lfs merge=lfs -text
