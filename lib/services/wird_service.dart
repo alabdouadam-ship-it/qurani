@@ -189,6 +189,11 @@ class WirdService {
   /// 3. Re-arms the rolling notification window for every active wird,
   ///    using a single budget-aware day-horizon (see [_computeWirdDayHorizon]).
   static Future<void> ensureReadyAndReschedule() async {
+    // Wirds are backed by the sqflite user DB (path_provider +
+    // getApplicationDocumentsDirectory) and delivered via local notifications —
+    // none of which exist on web. Bail out before touching the DB so web
+    // startup doesn't throw a MissingPluginException.
+    if (kIsWeb) return;
     await _ensureMigrated();
     await _seedDefaultsIfFirstLaunch();
     final active = await getActive();

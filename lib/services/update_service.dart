@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:in_app_update/in_app_update.dart';
 import 'package:qurani/l10n/app_localizations.dart';
@@ -11,6 +12,10 @@ class UpdateService {
   static const String _keyLastNotifyEpoch = 'update_last_notify_epoch';
 
   static Future<void> maybeCheckForUpdate(BuildContext context) async {
+    // in_app_update is Android-only. On web, `Platform.isAndroid` itself
+    // throws (dart:io is unavailable), so the kIsWeb guard MUST come first —
+    // never touch Platform.* on web.
+    if (kIsWeb) return;
     if (!Platform.isAndroid) return;
 
     final DateTime today = _stripTime(DateTime.now().toUtc());

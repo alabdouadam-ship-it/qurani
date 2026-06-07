@@ -348,13 +348,17 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
         subtitle: '',
         color: Colors.cyan,
       ),
-      OptionItem(
-        id: 'tasbeeh',
-        icon: Icons.countertops,
-        title: l10n.tasbeeh,
-        subtitle: '',
-        color: Colors.green,
-      ),
+      // Tasbeeh + Wird are backed by the sqflite user DB (qurani_user.db),
+      // which isn't available on web (path_provider/sqflite are mobile-only),
+      // so the screen would throw on open. Hide it from the web home grid.
+      if (!kIsWeb)
+        OptionItem(
+          id: 'tasbeeh',
+          icon: Icons.countertops,
+          title: l10n.tasbeeh,
+          subtitle: '',
+          color: Colors.green,
+        ),
       if (!kIsWeb)
         OptionItem(
           id: 'prayer_times',
