@@ -56,12 +56,15 @@ class _ScreenCustomizationScreenState extends ConsumerState<ScreenCustomizationS
         title: l10n.searchQuran,
         color: Colors.cyan,
       ),
-      _CustomizableScreenData(
-        id: 'tasbeeh',
-        icon: Icons.countertops,
-        title: l10n.tasbeeh,
-        color: Colors.green,
-      ),
+      // Tasbeeh/Wird is sqflite-backed (mobile-only), hidden on web — so it
+      // shouldn't be customizable on web either.
+      if (!kIsWeb)
+        _CustomizableScreenData(
+          id: 'tasbeeh',
+          icon: Icons.countertops,
+          title: l10n.tasbeeh,
+          color: Colors.green,
+        ),
       if (!kIsWeb)
         _CustomizableScreenData(
           id: 'prayer_times',
