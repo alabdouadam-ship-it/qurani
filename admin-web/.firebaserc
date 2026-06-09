@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "qurani-appli"
+  },
+  "targets": {
+    "qurani-appli": {
+      "hosting": {
+        "quraniapp": [
+          "quraniapp"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

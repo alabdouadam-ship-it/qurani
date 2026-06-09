@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "target": "quraniapp",
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [],
+    "cleanUrls": true,
+    "trailingSlash": true
+  }
+}

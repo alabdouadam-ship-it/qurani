@@ -82,6 +82,17 @@ class SupabaseConfig {
       await Supabase.initialize(
         url: url,
         publishableKey: publishableKey,
+        // This app uses ONLY the anon key + RPCs — it never signs users in.
+        // Disable auth session persistence and auto-refresh so supabase_flutter
+        // doesn't store/restore a session or loop on token refreshes. This also
+        // prevents a stale session from a previously-configured project (saved
+        // in local storage during earlier testing) from triggering background
+        // refresh attempts against a now-dead host.
+        authOptions: const FlutterAuthClientOptions(
+          autoRefreshToken: false,
+          // No persisted session ⇒ nothing to restore or refresh on launch.
+          localStorage: EmptyLocalStorage(),
+        ),
       );
       _initialized = true;
       if (kDebugMode) debugPrint('[Supabase] Initialized.');
