@@ -30,6 +30,35 @@ supabase db push           # applies migrations/ to the linked project
 ```
 (Requires `supabase link --project-ref zqqqipzbkkrgpdnzliyg` once.)
 
+## Building the app (IMPORTANT — credentials are compile-time)
+
+The Supabase URL + publishable key are injected at build time via
+`--dart-define-from-file=supabase.env.json`. A plain
+`flutter build appbundle --release` (without the flag) ships a build with
+**Supabase disabled** — no news, no stats, no DB reciters — because the
+defines default to empty and `SupabaseConfig.isConfigured` becomes false.
+
+**Always build releases through the helper scripts**, which inject the file
+and fail fast if it's missing/placeholder:
+
+```
+# Windows
+./tool/build_release.ps1            # Android App Bundle (default)
+./tool/build_release.ps1 apk        # APK
+./tool/build_release.ps1 install    # build + install release on a device
+
+# macOS / Linux / CI
+tool/build_release.sh               # Android App Bundle
+tool/build_release.sh ipa           # iOS (macOS)
+tool/build_release.sh web           # Web
+```
+
+`supabase.env.json` is gitignored (copy `supabase.env.example.json`). For CI
+(Codemagic), set `SUPABASE_URL` + `SUPABASE_PUBLISHABLE_KEY` as env vars and
+pass `--dart-define=SUPABASE_URL=$SUPABASE_URL --dart-define=SUPABASE_PUBLISHABLE_KEY=$SUPABASE_PUBLISHABLE_KEY`
+in the build args (the `.sh` script also auto-builds the file from those env
+vars when present).
+
 ## Security model (important)
 
 - **Stats tables** (`app_installations`, `installation_active_days`,
