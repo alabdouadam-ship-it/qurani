@@ -7,7 +7,7 @@ class SurahService {
   static List<Surah>? _cachedEnglish;
 
   static Future<List<Surah>> _loadFromJson({bool useEnglishName = false}) async {
-    final jsonString = await rootBundle.loadString('assets/data/quran-simple.json');
+    final jsonString = await rootBundle.loadString('assets/data/editions/quran-simple.json');
     final data = json.decode(jsonString) as Map<String, dynamic>;
     final surahs = (data['data']['surahs'] as List<dynamic>);
     

@@ -37,22 +37,22 @@ class QuranSearchService {
       await _loadArabicIndex();
     } else if (language == 'en') {
       if (_indexEn != null) return;
-      await _loadTranslationIndex('en', 'assets/data/quran-english.json');
+      await _loadTranslationIndex('en', 'assets/data/editions/quran-english.json');
     } else if (language == 'fr') {
       if (_indexFr != null) return;
-      await _loadTranslationIndex('fr', 'assets/data/quran-french.json');
+      await _loadTranslationIndex('fr', 'assets/data/editions/quran-french.json');
     }
   }
 
   Future<void> _loadArabicIndex() async {
     // Load quran-clean for searching (normalized text)
-    final cleanJsonStr = await rootBundle.loadString('assets/data/quran-clean.json');
+    final cleanJsonStr = await rootBundle.loadString('assets/data/editions/quran-clean.json');
     final cleanDecoded = json.decode(cleanJsonStr) as Map<String, dynamic>;
     final cleanData = cleanDecoded['data'] as Map<String, dynamic>;
     final cleanSurahs = cleanData['surahs'] as List<dynamic>;
     
     // Load quran-simple for displaying results
-    final simpleJsonStr = await rootBundle.loadString('assets/data/quran-simple.json');
+    final simpleJsonStr = await rootBundle.loadString('assets/data/editions/quran-simple.json');
     final simpleDecoded = json.decode(simpleJsonStr) as Map<String, dynamic>;
     final simpleData = simpleDecoded['data'] as Map<String, dynamic>;
     final simpleSurahs = simpleData['surahs'] as List<dynamic>;
