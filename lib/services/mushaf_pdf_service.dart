@@ -23,7 +23,8 @@ enum MushafType {
   
   String get fileName => '$name.pdf';
   
-  String get downloadUrl => 'https://qurani.info/data/pdfs/$fileName';
+  String get downloadUrl =>
+      'https://github.com/alabdouadam-ship-it/qurani/releases/download/Juin26/$fileName';
 }
 
 class MushafPdfService {

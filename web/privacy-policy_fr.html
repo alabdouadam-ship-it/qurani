@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; line-height: 1.6; }
+    h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    p { color: #444; }
+    .soon { background: #fff8db; border: 1px solid #f6e27f; padding: 12px 16px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Politique de confidentialité</h1>
+  <p>Date d’entrée en vigueur : 2026-06-06</p>
+
+  <h2>Qui sommes-nous</h2>
+  <p>Qurani (« nous ») est une application du Coran qui privilégie le local-first et la confidentialité.</p>
+
+  <h2>Données collectées</h2>
+  <p>Au premier lancement, l’application collecte des informations techniques non identifiantes et les stocke localement (elles pourront être envoyées plus tard à notre serveur pour améliorer la fiabilité et le support). Nous ne collectons pas votre nom, e-mail, identifiants publicitaires ou localisation précise.</p>
+  <ul>
+    <li><strong>ID d’installation</strong> : UUID aléatoire généré une fois par installation (pas un identifiant matériel).</li>
+    <li><strong>Infos app</strong> : nom, identifiant du package, version, numéro de build.</li>
+    <li><strong>Infos plateforme</strong> (selon l’OS) :
+      <ul>
+        <li>Android : version, niveau SDK, fabricant, modèle, appareil physique.</li>
+        <li>iOS : nom/version du système, modèle, appareil physique.</li>
+        <li>Windows/macOS/Linux : informations système de base (modèle/arch/OS, cœurs, mémoire).</li>
+        <li>Web : userAgent, platform, language, hardwareConcurrency, dimensions d’écran et ratio de pixels (si disponibles).</li>
+      </ul>
+    </li>
+    <li><strong>Langue et région</strong> : langue/pays du système et langue choisie dans l’app.</li>
+    <li><strong>Zone approximative</strong> : nom du pays et de la ville uniquement. Le pays provient de la région de votre appareil ; si vous accordez la localisation pour les horaires de prière/Qibla, le pays et la ville sont déduits sur l’appareil à partir de cette position. Nous ne stockons jamais de coordonnées ni d’adresse.</li>
+    <li><strong>Fuseau horaire</strong> : nom et décalage UTC.</li>
+    <li><strong horodatage>Horodatage</strong> : moment de la collecte.</li>
+  </ul>
+
+  <p>Nous ne collectons pas d’identifiants matériels (ex. IMEI), d’identifiants publicitaires, de contacts, photos ou localisation précise.</p>
+
+  <h2>Finalités</h2>
+  <ul>
+    <li><strong>Diagnostic et support</strong> : comprendre l’environnement de l’app pour résoudre les problèmes.</li>
+    <li><strong>Fiabilité</strong> : améliorations spécifiques à la plateforme.</li>
+    <li><strong>Notifications futures</strong> : si vous activez les notifications, nous pourrons stocker un jeton de push (FCM/APNs/Web Push) pour délivrer les messages. Ces jetons tournent et ne sont pas des IDs matériels.</li>
+  </ul>
+
+  <h2>Statistiques d’utilisation anonymes</h2>
+  <p>Pour comprendre comment l’application est utilisée et prioriser les améliorations, nous collectons des statistiques d’utilisation anonymes et agrégées, liées uniquement à l’identifiant d’installation aléatoire ci-dessus — jamais à votre identité. Cela inclut les fonctionnalités ouvertes, la durée de session anonyme, la version de l’app/du système, la langue de l’app, votre zone approximative (pays et ville) et des préférences anonymes (thème, récitateur choisi, notifications activées ou non). Nous ne collectons ni noms, ni e-mails, ni contacts, ni votre localisation précise (coordonnées ou adresse), ni identifiants personnels.</p>
+  <p><strong>Comment la zone est déterminée.</strong> Le pays provient toujours, au minimum, du réglage langue/région de votre appareil. De plus, si vous avez accordé l’autorisation de localisation pour les horaires de prière ou la direction de la Qibla, nous convertissons cette position <em>sur votre appareil</em> en un nom de pays et de ville <strong>uniquement</strong>, et ne stockons que ces noms — jamais vos coordonnées ni votre adresse. Le pays et la ville servent à une géographie approximative dans les statistiques et à afficher des actualités pertinentes pour votre région, et sont couverts par l’option de désactivation ci-dessous.</p>
+  <p>Vous pouvez désactiver cela à tout moment dans <em>Paramètres → Préférences → « Partager des statistiques d’utilisation anonymes ».</em> Une fois désactivé, aucune statistique n’est envoyée et les données mises en file localement sont supprimées. Les statistiques ne sont transmises qu’en ligne ; les fonctionnalités essentielles du Coran fonctionnent entièrement hors ligne.</p>
+
+  <h2>Stockage et conservation</h2>
+  <ul>
+    <li>Les données sont enregistrées localement. Si la synchronisation serveur est activée, nous transmettrons le même JSON de manière sécurisée.</li>
+    <li>Nous ne conservons que ce qui est nécessaire et supprimons/agrégeons lorsque possible.</li>
+  </ul>
+
+  <h2>Partage</h2>
+  <p>Nous ne vendons pas vos données. Nous pouvons partager des informations strictement nécessaires avec des prestataires (p. ex. service de notifications) dans le cadre d’accords de protection des données.</p>
+
+  <h2>Vos choix</h2>
+  <ul>
+    <li>Vous pouvez effacer les données de l’app pour supprimer les informations stockées.</li>
+    <li>Vous pouvez ne pas activer les notifications, ou les désactiver ultérieurement dans les réglages système.</li>
+  </ul>
+
+  <h2>Enfants</h2>
+  <p>L’app convient à tous les âges. Nous ne collectons pas sciemment de données personnelles d’enfants.</p>
+
+  <h2>Modifications</h2>
+  <p>Nous pouvons mettre à jour cette politique. La « date d’entrée en vigueur » sera actualisée en cas de changements.</p>
+
+  <h2>Contact</h2>
+  <p>E-mail : qurani.supp@outlook.com</p>
+</body>
+</html>
+
+

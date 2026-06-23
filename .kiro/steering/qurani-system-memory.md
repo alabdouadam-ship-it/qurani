@@ -135,9 +135,14 @@ handlers (Adhan auto-play intentionally disabled) →
   repetition_range `_previewPlayer`, prayer_times preview, plus
   AdhanAudioManager's static players). Only the OS audio session coordinates
   them → two screens *can* play at once.
-- `AudioService` (static) only builds URLs (`https://www.qurani.info/...NNN.mp3`)
-  / `AudioSource`s and resolves local-preferred file paths. `MediaItem` comes
-  from `media_item_compat` (io = just_audio_background; web = local stub).
+- `AudioService` (static) only builds URLs / `AudioSource`s and resolves
+  local-preferred file paths. **Audio is no longer on qurani.info**: reciter
+  `ayahsPath`/`surahsPath` come from Supabase `reciters` (→ cache → bundled
+  `reciters.json`) and point at `everyayah.com` (verses) + `mp3quran.net` (full
+  surahs). If a `base` doesn't start with `http` it is still prefixed with
+  `https://www.qurani.info` (legacy path-join fallback), but no current reciter
+  uses a relative base. Hardcoded basit fallback = `https://server7.mp3quran.net/basit`.
+  `MediaItem` comes from `media_item_compat` (io = just_audio_background; web = local stub).
 - **Two queue concepts**: `QueueService` (singleton `List<int>` + notifier,
   surface for the UI "play next" queue) vs the actual playback
   `ConcatenatingAudioSource` **sliding window `[Previous, Current, Next]`** that
@@ -160,7 +165,8 @@ handlers (Adhan auto-play intentionally disabled) →
     (separate from repository's bounded LRU of 32).
   - **PDF (mushaf) mode**: `pdfrx` `PdfDocument.openFile`, RTL `PageView`,
     `ZoomablePdfPage` (InteractiveViewer, KeepAlive). PDFs downloaded by
-    `MushafPdfService` (blue/green/tajweed) from `https://qurani.info/data/pdfs/`.
+    `MushafPdfService` (blue/green/tajweed) from the GitHub release
+    `github.com/alabdouadam-ship-it/qurani/releases/download/Juin26/<name>.pdf`.
     **Hardcoded page offsets** (blue/green=3, tajweed=9) convert Quran↔PDF index
     in several spots — keep them in sync.
 - `QuranEdition` enum: `simple, uthmani, tajweed, english, french, tafsir, irab`
@@ -209,10 +215,14 @@ handlers (Adhan auto-play intentionally disabled) →
 
 ## 9. Networking & external dependencies
 - `dio` + `http` for: Aladhan prayer-times API
-  (`api.aladhan.com/v1/calendar/...`), audio/PDF/hadith/irab downloads from
-  `qurani.info`. **News & reciters are Supabase-only now** (no remote JSON
-  fetch): news = Supabase `news_items` → SharedPreferences cache → nothing
-  (no bundled asset; `news_initial.json` removed). Reciters = Supabase
+  (`api.aladhan.com/v1/calendar/...`); audio from `everyayah.com` (verses) +
+  `mp3quran.net` (full surahs); PDFs, I'rab `MASAQ.csv`, and hadith book JSONs
+  from the GitHub release
+  `github.com/alabdouadam-ship-it/qurani/releases/download/Juin26/`.
+  **qurani.info now only serves the about-qurani HTML docs** (help / privacy /
+  terms — each has a bundled fallback). **News & reciters are Supabase-only**
+  (no remote JSON fetch): news = Supabase `news_items` → SharedPreferences cache
+  → nothing (no bundled asset; `news_initial.json` removed). Reciters = Supabase
   `reciters` → cache → bundled `assets/data/reciters.json`. Empty DB result
   is treated as "no data" so the cache/bundled fallback is preserved.
 - `geolocator` + `geocoding` for location/method resolution; `flutter_qiblah`

@@ -11,57 +11,57 @@
             "code": "basit",
             "nameAr": "عبدالباسط عبدالصمد",
             "nameLatin": "Abdulbasit Abdulsamad",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/basit",
-            "surahsPath": "https://www.qurani.info/data/full/basit"
+            "ayahsPath": "https://everyayah.com/data/Abdul_Basit_Mujawwad_128kbps",
+            "surahsPath": "https://server7.mp3quran.net/basit"
         },
         {
             "code": "afs",
             "nameAr": "العفاسي",
             "nameLatin": "Mishary Alafasy",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
-            "surahsPath": "https://www.qurani.info/data/full/afs"
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
+            "surahsPath": "https://server8.mp3quran.net/afs"
         },
         {
             "code": "sds",
             "nameAr": "عبدالرحمن السديس",
             "nameLatin": "Abdulrahman Al Sudais",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/sds",
-            "surahsPath": "https://www.qurani.info/data/full/sds"
+            "ayahsPath": "https://everyayah.com/data/Abdurrahmaan_As-Sudais_192kbps",
+            "surahsPath": "https://server11.mp3quran.net/sds"
         },
         {
             "code": "frs_a",
             "nameAr": "فارس عباد",
             "nameLatin": "Fares Abbad",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/frs_a",
-            "surahsPath": "https://www.qurani.info/data/full/frs_a"
+            "ayahsPath": "https://everyayah.com/data/Fares_Abbad_64kbps",
+            "surahsPath": "https://server8.mp3quran.net/frs_a"
         },
         {
             "code": "husr",
             "nameAr": "الحصري",
             "nameLatin": "Mahmoud Al Husary",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/husr",
-            "surahsPath": "https://www.qurani.info/data/full/husr"
+            "ayahsPath": "https://everyayah.com/data/Husary_128kbps",
+            "surahsPath": "https://server13.mp3quran.net/husr"
         },
         {
             "code": "minsh",
             "nameAr": "المنشاوي",
             "nameLatin": "Mohamed Al Manshawi",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/minsh",
-            "surahsPath": "https://www.qurani.info/data/full/minsh"
+            "ayahsPath": "https://everyayah.com/data/Minshawy_Mujawwad_192kbps",
+            "surahsPath": "https://server10.mp3quran.net/minsh"
         },
         {
             "code": "minsh_teacher",
             "nameAr": "المنشاوي المعلم",
             "nameLatin": "Mohamed Al Manshawi Teacher",
             "ayahsPath": "https://everyayah.com/data/Minshawy_Teacher_128kbps",
-            "surahsPath": "https://www.qurani.info/data/full/minsh"
+            "surahsPath": "https://server10.mp3quran.net/minsh"
         },
         {
             "code": "suwaid",
             "nameAr": "أيمن سويد",
             "nameLatin": "Ayman Suwaid",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/suwaid",
-            "surahsPath": "https://www.qurani.info/data/full/suwaid"
+            "ayahsPath": "https://everyayah.com/data/Ayman_Sowaid_64kbps",
+            "surahsPath": ""
         },
         {
             "code": "shuraym",
@@ -88,21 +88,21 @@
             "code": "muyassar",
             "nameAr": "تفسير الميسر",
             "nameLatin": "Tafsir Al Muyassar",
-            "ayahsPath": "https://www.qurani.info/data/muyassar_audio",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "arabic_english",
             "nameAr": "إنجليزي - عربي",
             "nameLatin": "English - Arabic",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/arabic-english",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "arabic_french",
             "nameAr": "فرنسي - عربي",
             "nameLatin": "French - Arabic",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/arabic-french",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
@@ -123,65 +123,121 @@
             "code": "turkish",
             "nameAr": "تركي - الديانة",
             "nameLatin": "Turkish (Diyanet Vakfı)",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "german",
             "nameAr": "ألماني - بوبنهايم",
             "nameLatin": "German (Bubenheim & Elyas)",
-            "ayahsPath": "https://www.qurani.info/data/ayahs/afs",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "jalalayn",
             "nameAr": "تفسير الجلالين",
             "nameLatin": "Tafsir Al-Jalalayn",
-            "ayahsPath": "",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "qurtubi",
             "nameAr": "تفسير القرطبي",
             "nameLatin": "Tafsir Al-Qurtubi",
-            "ayahsPath": "",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "miqbas",
             "nameAr": "تنوير المقباس من تفسير ابن عباس",
             "nameLatin": "Tafsir Tanwir al-Miqbas",
-            "ayahsPath": "",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "waseet",
             "nameAr": "التفسير الوسيط",
             "nameLatin": "Tafsir Al-Waseet",
-            "ayahsPath": "",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
         },
         {
             "code": "baghawi",
             "nameAr": "تفسير البغوي",
             "nameLatin": "Tafsir Al-Baghawi",
-            "ayahsPath": "",
+            "ayahsPath": "https://everyayah.com/data/Alafasy_128kbps",
             "surahsPath": null
+        },
+        {
+            "code": "ajamy",
+            "nameAr": "أحمد العجمي",
+            "nameLatin": "Ahmed al Ajamy",
+            "ayahsPath": "https://everyayah.com/data/Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net",
+            "surahsPath": "https://server10.mp3quran.net/ajm"
+        },
+        {
+            "code": "HaniRifai",
+            "nameAr": "هاني الرفاعي",
+            "nameLatin": "Hani Rifai",
+            "ayahsPath": "https://everyayah.com/data/Hani_Rifai_192kbps",
+            "surahsPath": "https://server8.mp3quran.net/hani"
+        },
+        {
+            "code": "Muhammad_AbdulKareem",
+            "nameAr": "محمد عبد الكريم",
+            "nameLatin": "Muhammad AbdulKareem",
+            "ayahsPath": "https://everyayah.com/data/Muhammad_AbdulKareem_128kbps",
+            "surahsPath": "https://server12.mp3quran.net/m_krm"
+        },
+        {
+            "code": "Muhammad_Jibreel",
+            "nameAr": "محمد جبريل",
+            "nameLatin": "Muhammad Jibreel",
+            "ayahsPath": "https://everyayah.com/data/Muhammad_Jibreel_128kbps",
+            "surahsPath": "https://server8.mp3quran.net/jbrl"
+        },
+        {
+            "code": "Nabil_Rifa3i",
+            "nameAr": "نبيل رفاعي",
+            "nameLatin": "Nabil Rifa3i",
+            "ayahsPath": "https://everyayah.com/data/Nabil_Rifa3i_48kbps",
+            "surahsPath": "https://server9.mp3quran.net/nabil"
+        },
+        {
+            "code": "Salaah_Bukhatir",
+            "nameAr": "صلاح بوخاطر",
+            "nameLatin": "Salaah Bukhatir",
+            "ayahsPath": "https://everyayah.com/data/Salaah_AbdulRahman_Bukhatir_128kbps",
+            "surahsPath": "https://server8.mp3quran.net/bu_khtr"
+        },
+        {
+            "code": "Salah_Al_Budair",
+            "nameAr": "صلاح البدير",
+            "nameLatin": "Salah Al Budair",
+            "ayahsPath": "https://everyayah.com/data/Salah_Al_Budair_128kbps",
+            "surahsPath": "https://server6.mp3quran.net/s_bud"
+        },
+        {
+            "code": "aziz_alili",
+            "nameAr": "عزيز عليلي",
+            "nameLatin": "aziz alili",
+            "ayahsPath": "https://everyayah.com/data/aziz_alili_128kbps",
+            "surahsPath": ""
         }
     ],
     "urlPatterns": {
         "ayah": "{ayahsPath}/{surahPadded3}{versePadded3}.mp3",
         "surah": "{surahsPath}/{surahPadded3}.mp3",
         "examples": {
-            "ayah": "https://www.qurani.info/data/ayahs/afs/001001.mp3",
-            "surah": "https://www.qurani.info/data/full/afs/001.mp3"
+            "ayah": "https://everyayah.com/data/Alafasy_128kbps/001001.mp3",
+            "surah": "https://server8.mp3quran.net/afs/001.mp3"
         }
     },
     "notes": {
         "padding": "Surah numbers are padded to 3 digits (001-114), verse numbers are padded to 3 digits",
         "externalSources": [
-            "mp3quran.net: shuraym, maher, ghamadi (full surahs)",
-            "everyayah.com: shuraym, maher, ghamadi (verses)"
+            "mp3quran.net: shuraym, maher, ghamadi ... etc (full surahs)",
+            "everyayah.com: shuraym, maher, ghamadi ... etc (verses)"
         ]
     }
 }

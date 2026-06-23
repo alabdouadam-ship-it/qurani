@@ -142,6 +142,14 @@ class SettingsScreen extends StatelessWidget {
   }
 
   void _handleSettingTap(BuildContext context, SettingItem setting) {
+    // Legal/help docs are served from the same Firebase Hosting site as the web
+    // app, at the site root. The copies in `web/` are deployed by
+    // `flutter build web` (Flutter copies `web/` → `build/web/` root), so they
+    // are live at `<site>/<name>.html` with the exact same file names. The
+    // copies in `public/` remain the bundled offline fallback: if the online
+    // copy is unreachable, LocalWebViewScreen loads the bundled asset, so these
+    // screens still work fully offline.
+    const legalBase = 'https://qurani-appli.web.app';
     String localizedHtml(String base) {
       final code = AppLocalizations.of(context)!.localeName;
       final lang = code.startsWith('ar') ? 'ar' : code.startsWith('fr') ? 'fr' : 'en';
@@ -160,7 +168,7 @@ class SettingsScreen extends StatelessWidget {
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.help,
               assetPath: localizedHtml('help'),
-              onlineUrl: 'https://qurani.info/data/about-qurani/$fileName',
+              onlineUrl: '$legalBase/$fileName',
             ),
           ),
         );
@@ -200,7 +208,7 @@ class SettingsScreen extends StatelessWidget {
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.privacyPolicy,
               assetPath: localizedHtml('privacy-policy'),
-              onlineUrl: 'https://qurani.info/data/about-qurani/$privacyFileName',
+              onlineUrl: '$legalBase/$privacyFileName',
             ),
           ),
         );
@@ -213,7 +221,7 @@ class SettingsScreen extends StatelessWidget {
             builder: (context) => LocalWebViewScreen(
               title: AppLocalizations.of(context)!.termsConditions,
               assetPath: localizedHtml('conditions-terms'),
-              onlineUrl: 'https://qurani.info/data/about-qurani/$termsFileName',
+              onlineUrl: '$legalBase/$termsFileName',
             ),
           ),
         );

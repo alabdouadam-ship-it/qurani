@@ -36,7 +36,7 @@ class AudioService {
     }
     
     // Fallback to basit
-    return '/data/full/basit';
+    return 'https://server7.mp3quran.net/basit';
   }
 
   static String? _pad3(int order) {
@@ -53,8 +53,10 @@ class AudioService {
     if (base.startsWith('http')) {
       return '$base/$padded.mp3';
     }
-    
-    return 'https://www.qurani.info$base/$padded.mp3';
+
+    // Legacy relative-path safety net (no reciter uses one anymore) →
+    // fall back to the basit full-surah host instead of qurani.info.
+    return 'https://server7.mp3quran.net/basit/$padded.mp3';
   }
 
   static Future<String?> buildVerseUrl({

@@ -19,7 +19,7 @@ class AudioService {
 
   static Future<String?> buildFullRecitationUrl({required String reciterKeyAr, required int surahOrder}) async {
     final reciter = await ReciterConfigService.getReciter(reciterKeyAr);
-    final base = reciter?.surahsPath ?? '/data/full/basit';
+    final base = reciter?.surahsPath ?? 'https://server7.mp3quran.net/basit';
     final padded = _pad3(surahOrder);
     if (padded == null) return null;
 
@@ -28,7 +28,9 @@ class AudioService {
       return '$base/$padded.mp3';
     }
 
-    return 'https://www.qurani.info$base/$padded.mp3';
+    // Legacy relative-path safety net (no reciter uses one anymore) →
+    // fall back to the basit full-surah host instead of qurani.info.
+    return 'https://server7.mp3quran.net/basit/$padded.mp3';
   }
 
   static Future<String?> buildVerseUrl({

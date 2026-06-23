@@ -141,7 +141,7 @@ class IrabVerse {
 class IrabService {
   static const String _assetPath = 'assets/data/MASAQ.csv';
   static const String _remoteUrl =
-      'https://qurani.info/data/about-qurani/MASAQ.csv';
+      'https://github.com/alabdouadam-ship-it/qurani/releases/download/Juin26/MASAQ.csv';
   static const String _localFileName = 'MASAQ.csv';
 
   static final IrabService _instance = IrabService._internal();
