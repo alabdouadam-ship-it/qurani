@@ -1135,7 +1135,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get booksInFrench => 'الكتب بالفرنسية';
 
   @override
-  String get shareHadithFooter => 'تمت المشاركة من تطبيق قرآني\nhttps://www.qurani.botsify.app/';
+  String get shareHadithFooter => 'تمت المشاركة من تطبيق قرآني\nhttps://www.qurani.info/';
 
   @override
   String get loadingBook => 'جاري تحميل محتوى الكتاب...';

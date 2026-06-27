@@ -2272,7 +2272,7 @@ abstract class AppLocalizations {
   /// No description provided for @shareHadithFooter.
   ///
   /// In en, this message translates to:
-  /// **'Shared from Qurani App\nhttps://www.qurani.botsify.app/'**
+  /// **'Shared from Qurani App\nhttps://www.qurani.info/'**
   String get shareHadithFooter;
 
   /// No description provided for @loadingBook.
