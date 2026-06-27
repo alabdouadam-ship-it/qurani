@@ -149,7 +149,7 @@ class SettingsScreen extends StatelessWidget {
     // copies in `public/` remain the bundled offline fallback: if the online
     // copy is unreachable, LocalWebViewScreen loads the bundled asset, so these
     // screens still work fully offline.
-    const legalBase = 'https://qurani-appli.web.app';
+    const legalBase = 'https://qurani.info';
     String localizedHtml(String base) {
       final code = AppLocalizations.of(context)!.localeName;
       final lang = code.startsWith('ar') ? 'ar' : code.startsWith('fr') ? 'fr' : 'en';

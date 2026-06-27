@@ -69,7 +69,7 @@ class _LocalWebViewScreenState extends State<LocalWebViewScreen> {
 
   Future<bool> _checkInternetConnection() async {
     try {
-      final result = await InternetAddress.lookup('qurani.info');
+      final result = await InternetAddress.lookup('google.com');
       return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
     } catch (_) {
       return false;
