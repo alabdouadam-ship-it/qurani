@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "admin:list": "node scripts/list-admins.mjs",
+    "admin:add": "node scripts/add-admin.mjs",
+    "admin:password": "node scripts/set-admin-password.mjs",
+    "admin:remove": "node scripts/remove-admin.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.10.3",

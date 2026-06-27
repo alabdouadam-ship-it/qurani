@@ -40,13 +40,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
       <header
-        className="flex items-center justify-between gap-3 px-4 py-3 card"
+        className="flex items-center justify-between gap-2 flex-wrap px-3 sm:px-4 py-3 card"
         style={{ borderRadius: 0, borderInline: "none", borderTop: "none" }}
       >
-        <div className="flex items-center gap-3">
-          <span className="font-bold text-lg">{t.appTitle}</span>
+        <div className="flex items-center gap-3 min-w-0">
+          <span className="font-bold text-base sm:text-lg truncate">
+            {t.appTitle}
+          </span>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
           <span className="muted text-sm hidden sm:inline">{admin.name}</span>
           <Controls />
           <button className="btn btn-ghost" onClick={() => signOut()}>
@@ -55,10 +57,9 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </header>
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 flex-col sm:flex-row">
         <nav
-          className="card p-2 m-3 flex sm:flex-col gap-1 h-fit"
-          style={{ minWidth: 160 }}
+          className="card p-2 m-3 flex sm:flex-col gap-1 h-fit overflow-x-auto sm:overflow-visible sm:min-w-[160px]"
         >
           {nav.map((item) => {
             const active = pathname === item.href;
@@ -66,7 +67,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="btn"
+                className="btn shrink-0"
                 style={{
                   justifyContent: "flex-start",
                   background: active ? "var(--surface-2)" : "transparent",
@@ -79,7 +80,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             );
           })}
         </nav>
-        <main className="flex-1 p-3 max-w-5xl">{children}</main>
+        <main className="flex-1 min-w-0 p-3 w-full max-w-5xl">{children}</main>
       </div>
     </div>
   );

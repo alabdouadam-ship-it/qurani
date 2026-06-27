@@ -205,7 +205,7 @@ function ReciterEditor({
         />
       </Field>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Field label={t.nameAr}>
           <input className="input" dir="rtl" value={r.name_ar} onChange={(e) => set("name_ar", e.target.value)} required />
         </Field>
@@ -225,7 +225,7 @@ function ReciterEditor({
         />
       </Field>
 
-      <div className="grid grid-cols-2 gap-3 items-end">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 items-end">
         <Field label={t.sortOrder}>
           <input
             className="input"

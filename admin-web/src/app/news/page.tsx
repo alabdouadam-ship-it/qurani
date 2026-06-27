@@ -313,7 +313,7 @@ function NewsEditor({
         />
       </Field>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Field label={t.type}>
           <select className="select" value={r.type} onChange={(e) => set("type", e.target.value as NewsRow["type"])}>
             <option value="text">{t.typeText}</option>
@@ -340,7 +340,7 @@ function NewsEditor({
         <input className="input" value={r.source_url} onChange={(e) => set("source_url", e.target.value)} />
       </Field>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <Field label={t.publishDate}>
           <input
             className="input"
@@ -359,7 +359,7 @@ function NewsEditor({
         </Field>
       </div>
 
-      <div className="grid grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <Field label={t.categoryAr}>
           <input className="input" value={r.category_ar ?? ""} onChange={(e) => set("category_ar", e.target.value)} />
         </Field>
