@@ -3,7 +3,10 @@
 .packages
 .pub/
 .pub-cache/
-pubspec.lock
+# NOTE: pubspec.lock is intentionally TRACKED for this app. Committing it pins
+# exact dependency versions so CI (Codemagic / Play / App Store) builds the
+# same versions tested locally. Without it, CI resolves newer packages (e.g. a
+# pdfrx that removed Pdfrx.getCacheDirectory) and the build breaks.
 
 # Build outputs
 build/
