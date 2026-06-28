@@ -121,7 +121,7 @@ class HadithService {
   ///      path on Web — there is no filesystem there, so the book JSON is
   ///      fetched into memory. On mobile it's a fallback when the book hasn't
   ///      been downloaded yet.
-  Future<HadithBook> loadBook(String bookId) async {
+  Future<HadithBook> loadBook(String bookId, {ProgressCallback? onProgress}) async {
     // Serve the most-recently-loaded book from cache so reopening the same
     // book (e.g. a search result in a fresh reader) is instant.
     if (_lastBookId == bookId && _lastBook != null) {
@@ -163,6 +163,7 @@ class HadithService {
         try {
           final resp = await Dio().get<String>(
             url,
+            onReceiveProgress: onProgress,
             options: Options(responseType: ResponseType.plain),
           );
           if (resp.statusCode == 200 &&

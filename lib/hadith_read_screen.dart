@@ -32,6 +32,10 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
   List<Hadith> _visibleHadiths = [];
   bool _isLoading = true;
   String? _errorMessage;
+  // Download progress (0.0–1.0) while fetching a non-bundled book over the
+  // network (primarily Web, where books stream from the CDN). Null = size
+  // unknown yet, so we fall back to an indeterminate spinner.
+  double? _loadProgress;
   final PageController _pageController = PageController();
   int _currentPage = 0;
   
@@ -52,7 +56,13 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
 
   Future<void> _loadBook() async {
     try {
-      final book = await _hadithService.loadBook(widget.bookId);
+      final book = await _hadithService.loadBook(
+        widget.bookId,
+        onProgress: (received, total) {
+          if (!mounted || total <= 0) return;
+          setState(() => _loadProgress = received / total);
+        },
+      );
       if (mounted) {
         setState(() {
           _book = book;
@@ -283,15 +293,23 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
   @override
   Widget build(BuildContext context) {
     if (_isLoading) {
+      final pct = _loadProgress;
       return Scaffold(
         appBar: AppBar(title: Text(widget.bookName)),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const CircularProgressIndicator(),
+              CircularProgressIndicator(value: pct),
               const SizedBox(height: 16),
               Text(AppLocalizations.of(context)!.loadingBook),
+              if (pct != null) ...[
+                const SizedBox(height: 8),
+                Text(
+                  '${(pct * 100).round()}%',
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
             ],
           ),
         ),
