@@ -69,7 +69,14 @@ class NewsService {
       unseenCountNotifier.value = 0;
     } else {
       final seenIds = prefs.getStringList(_seenKey) ?? [];
-      final unseenItems = news.where((item) => !seenIds.contains(item.id)).toList();
+      // Mirror the News screen's visibility: only count/notify items the user
+      // can actually see in their current app language. (Country targeting is
+      // already applied above in mergeAndFilterNews.)
+      final appLang = PreferencesService.getLanguage();
+      final unseenItems = news
+          .where((item) =>
+              !seenIds.contains(item.id) && item.isVisibleForLanguage(appLang))
+          .toList();
       unseenCountNotifier.value = unseenItems.length;
 
       // Handle Push Notifications for unseen items

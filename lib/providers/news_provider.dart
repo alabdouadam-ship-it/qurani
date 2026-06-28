@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/news_item.dart';
 import '../services/news_service.dart';
+import 'app_state_providers.dart';
 
 part 'news_provider.g.dart';
 
@@ -30,13 +31,33 @@ class News extends _$News {
 }
 
 /// Provider for unread news IDs. Derived from [newsProvider].
+///
+/// Mirrors EXACTLY the visibility rules the News screen applies when building
+/// its list, so the home badge can never count items the user won't actually
+/// see. Country targeting is already applied upstream in `NewsService.getNews`;
+/// here we additionally honour:
+///   * language targeting (`isVisibleForLanguage` against the app language), and
+///   * hidden (swipe-dismissed) items — unless the item is saved.
 @riverpod
 Future<Set<String>> unreadNewsIds(UnreadNewsIdsRef ref) async {
   final news = await ref.watch(newsProvider.future);
   final prefs = await SharedPreferences.getInstance();
   final seenIds = NewsService.getSeenNewsIds(prefs);
 
+  // Reactive inputs so the badge updates on language change / hide / save.
+  final lang = ref.watch(localeProvider).languageCode;
+  final hiddenIds = ref.watch(hiddenNewsIdsProvider);
+  final savedIds = ref.watch(savedNewsIdsProvider);
+
+  bool isVisible(NewsItem item) {
+    // Hidden items don't count, unless the user saved them (still reachable
+    // in the Saved tab) — matches NewsNotificationsScreen's `visibleNews`.
+    if (hiddenIds.contains(item.id) && !savedIds.contains(item.id)) return false;
+    return item.isVisibleForLanguage(lang);
+  }
+
   return news
+      .where(isVisible)
       .map((item) => item.id)
       .where((id) => !seenIds.contains(id))
       .toSet();
