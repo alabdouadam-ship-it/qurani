@@ -92,31 +92,86 @@ class HadithService {
     return categories;
   }
 
-  /// Loads book content
+  /// Resolves the download URL for a book id.
+  ///
+  /// * Web: jsDelivr mirror of the same dataset. GitHub *release* assets don't
+  ///   send `Access-Control-Allow-Origin`, so a browser fetch from the web app
+  ///   is blocked by CORS; jsDelivr serves byte-identical files WITH `ACAO: *`.
+  /// * Mobile: the GitHub release `link` from editions.json (downloaded to the
+  ///   filesystem; no CORS constraints off-browser).
+  Future<String?> _resolveBookUrl(String bookId) async {
+    if (kIsWeb) {
+      return 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/$bookId.json';
+    }
+    final editions = await loadEditions();
+    for (final e in editions) {
+      for (final c in e.collection) {
+        if (c.id == bookId) return c.link;
+      }
+    }
+    return null;
+  }
+
+  /// Loads book content.
+  ///
+  /// Resolution order:
+  ///   1. Bundled asset (if shipped in the app).
+  ///   2. Local downloaded file (mobile only).
+  ///   3. Hosted URL from editions.json (GitHub release). This is the PRIMARY
+  ///      path on Web — there is no filesystem there, so the book JSON is
+  ///      fetched into memory. On mobile it's a fallback when the book hasn't
+  ///      been downloaded yet.
   Future<HadithBook> loadBook(String bookId) async {
     // Serve the most-recently-loaded book from cache so reopening the same
     // book (e.g. a search result in a fresh reader) is instant.
     if (_lastBookId == bookId && _lastBook != null) {
       return _lastBook!;
     }
-    String jsonString;
-    
-    // 1. Try Assets
+    String? jsonString;
+
+    // 1. Try bundled asset.
     try {
       jsonString = await rootBundle.loadString('$_booksPath$bookId.json');
     } catch (_) {
-      // 2. Try Local Storage
-      if (!kIsWeb) {
+      jsonString = null;
+    }
+
+    // 2. Try a previously downloaded local file (mobile only).
+    if (jsonString == null && !kIsWeb) {
+      try {
         final dir = await getApplicationDocumentsDirectory();
         final file = File('${dir.path}/$bookId.json');
         if (await file.exists()) {
           jsonString = await file.readAsString();
-        } else {
-          throw Exception('Book not found locally');
         }
-      } else {
-         throw Exception('Book not found');
+      } catch (_) {
+        // ignore; fall through to remote fetch
       }
+    }
+
+    // 3. Fetch from the hosted URL (GitHub release). In-memory — no filesystem
+    //    needed, so this works on Web.
+    if (jsonString == null) {
+      final url = await _resolveBookUrl(bookId);
+      if (url != null && url.isNotEmpty) {
+        try {
+          final resp = await Dio().get<String>(
+            url,
+            options: Options(responseType: ResponseType.plain),
+          );
+          if (resp.statusCode == 200 &&
+              resp.data != null &&
+              resp.data!.isNotEmpty) {
+            jsonString = resp.data;
+          }
+        } catch (e) {
+          debugPrint('[HadithService] remote fetch failed for $bookId: $e');
+        }
+      }
+    }
+
+    if (jsonString == null) {
+      throw Exception('Book not found');
     }
 
     final jsonMap = json.decode(jsonString);
