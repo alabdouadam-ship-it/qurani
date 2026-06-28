@@ -18,6 +18,7 @@ type Stats = {
   cities: { key: string; count: number }[];
   platforms: { key: string; count: number }[];
   languages: { key: string; count: number }[];
+  versions: { key: string; count: number }[];
 };
 
 export default function DashboardPage() {
@@ -101,6 +102,9 @@ function DashboardBody() {
         </Panel>
         <Panel title={t.languageSplit}>
           <BreakRows rows={stats.languages} emptyLabel={t.noData} />
+        </Panel>
+        <Panel title={t.versionSplit}>
+          <BreakRows rows={stats.versions} emptyLabel={t.noData} />
         </Panel>
       </div>
     </div>

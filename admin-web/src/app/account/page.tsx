@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
+import { Controls } from "@/components/Controls";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
 import { useAuth } from "@/lib/auth-context";
@@ -17,7 +18,7 @@ export default function AccountPage() {
 function AccountBody() {
   const supabase = getSupabase();
   const { t } = useUi();
-  const { admin, refreshAdmin } = useAuth();
+  const { admin, refreshAdmin, signOut } = useAuth();
 
   const [name, setName] = useState(admin?.name ?? "");
   const [nameBusy, setNameBusy] = useState(false);
@@ -122,6 +123,20 @@ function AccountBody() {
           </button>
         </div>
       </form>
+
+      <div className="card p-4 flex flex-col gap-3">
+        <h2 className="font-bold">{t.theme} / {t.language}</h2>
+        <Controls />
+      </div>
+
+      <div className="card p-4 flex flex-col gap-3">
+        <h2 className="font-bold">{t.logout}</h2>
+        <div>
+          <button className="btn btn-danger" onClick={() => signOut()}>
+            {t.logout}
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

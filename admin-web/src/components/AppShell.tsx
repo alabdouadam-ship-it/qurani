@@ -5,14 +5,16 @@ import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { useUi } from "@/lib/ui-context";
-import { Controls } from "./Controls";
 
 /**
  * Authenticated app shell: redirects to /login when there's no admin session,
  * and renders the sidebar + top bar around the page content.
+ *
+ * Language / theme switchers and the sign-out button live on the Account page
+ * (not the header) to keep the chrome minimal — they're rarely-used controls.
  */
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { loading, admin, signOut } = useAuth();
+  const { loading, admin } = useAuth();
   const { t } = useUi();
   const router = useRouter();
   const pathname = usePathname();
@@ -48,13 +50,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             {t.appTitle}
           </span>
         </div>
-        <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-end">
-          <span className="muted text-sm hidden sm:inline">{admin.name}</span>
-          <Controls />
-          <button className="btn btn-ghost" onClick={() => signOut()}>
-            {t.logout}
-          </button>
-        </div>
+        <span className="muted text-sm truncate">{admin.name}</span>
       </header>
 
       <div className="flex flex-1 flex-col sm:flex-row">
