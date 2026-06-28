@@ -129,11 +129,17 @@ class HadithService {
     }
     String? jsonString;
 
-    // 1. Try bundled asset.
-    try {
-      jsonString = await rootBundle.loadString('$_booksPath$bookId.json');
-    } catch (_) {
-      jsonString = null;
+    // 1. Try bundled asset — but NOT on Web. Flutter web's rootBundle resolves
+    //    a MISSING asset to the SPA's index.html (HTTP 200 from the hosting
+    //    rewrite) instead of failing, so it would hand back HTML that then
+    //    fails json.decode ("Unexpected token '<'"). Hadith books are never
+    //    bundled (only editions.json is), so on web we go straight to remote.
+    if (!kIsWeb) {
+      try {
+        jsonString = await rootBundle.loadString('$_booksPath$bookId.json');
+      } catch (_) {
+        jsonString = null;
+      }
     }
 
     // 2. Try a previously downloaded local file (mobile only).
@@ -149,8 +155,8 @@ class HadithService {
       }
     }
 
-    // 3. Fetch from the hosted URL (GitHub release). In-memory — no filesystem
-    //    needed, so this works on Web.
+    // 3. Fetch from the hosted URL. In-memory — no filesystem needed, so this
+    //    works on Web (jsDelivr, CORS-enabled).
     if (jsonString == null) {
       final url = await _resolveBookUrl(bookId);
       if (url != null && url.isNotEmpty) {
@@ -168,6 +174,11 @@ class HadithService {
           debugPrint('[HadithService] remote fetch failed for $bookId: $e');
         }
       }
+    }
+
+    // Guard: never try to parse an HTML page (e.g. an SPA/404 fallback) as JSON.
+    if (jsonString != null && jsonString.trimLeft().startsWith('<')) {
+      jsonString = null;
     }
 
     if (jsonString == null) {
