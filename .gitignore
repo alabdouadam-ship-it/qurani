@@ -71,3 +71,6 @@ supabase/.env
 
 # Firebase Hosting deploy cache (admin-web) — machine-local, not source.
 admin-web/.firebase/
+
+# Firebase deploy cache (per-machine, regenerated each deploy)
+.firebase/
