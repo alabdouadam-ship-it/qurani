@@ -12,6 +12,18 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "//": "Never keep a cached copy. Every request is revalidated so a new deploy is picked up on the next normal reload (no hard-refresh / no stale service worker). 304s keep unchanged files cheap.",
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
     ]
   }
 }

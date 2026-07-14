@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -369,6 +370,21 @@ class _NewsCardState extends State<NewsCard> {
 
   Future<void> _playVideo(BuildContext context, String url) async {
     final videoId = _extractYoutubeId(url);
+
+    // webview_flutter has NO web implementation — building a WebViewController
+    // on Flutter web throws (null-check crash). On web, open the video in a new
+    // browser tab instead. Mobile keeps the in-app WebView dialog.
+    if (kIsWeb) {
+      final watchUrl = videoId.isNotEmpty
+          ? 'https://www.youtube.com/watch?v=$videoId'
+          : url;
+      final uri = Uri.tryParse(watchUrl);
+      if (uri != null) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      }
+      return;
+    }
+
     showDialog(
       context: context,
       builder: (context) => _YoutubeDialog(videoId: videoId),
