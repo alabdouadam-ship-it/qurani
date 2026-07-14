@@ -421,12 +421,8 @@ class _YoutubeDialogState extends State<_YoutubeDialog> {
   @override
   void initState() {
     super.initState();
-    final embedUrl =
-        'https://www.youtube.com/embed/${widget.videoId}?autoplay=1&origin=https://qurani.info';
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setUserAgent(
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36')
       ..setBackgroundColor(Colors.black);
 
     // Enable autoplay for Android (Samsung/mobile focus).
@@ -435,10 +431,41 @@ class _YoutubeDialogState extends State<_YoutubeDialog> {
           .setMediaPlaybackRequiresUserGesture(false);
     }
 
-    _controller.loadRequest(
-      Uri.parse('$embedUrl&mute=0&rel=0&showinfo=0'),
-      headers: {'referer': 'https://qurani.info'},
+    // Load a minimal responsive HTML page that embeds the official YouTube
+    // IFrame player, rather than navigating to youtube.com directly. This:
+    //   • fills the WebView (width/height:100%) so it fits the screen, and
+    //   • uses youtube-nocookie.com to avoid the cookie/consent/sign-in chrome
+    //     that the full youtube.com page shows.
+    _controller.loadHtmlString(
+      _buildPlayerHtml(widget.videoId),
+      baseUrl: 'https://www.youtube-nocookie.com',
     );
+  }
+
+  static String _buildPlayerHtml(String videoId) {
+    final src =
+        'https://www.youtube-nocookie.com/embed/$videoId?autoplay=1&playsinline=1&rel=0&modestbranding=1&fs=1';
+    return '''
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#000;overflow:hidden;}
+  .wrap{position:absolute;inset:0;}
+  iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <iframe
+      src="$src"
+      allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen></iframe>
+  </div>
+</body>
+</html>
+''';
   }
 
   @override
