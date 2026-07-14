@@ -343,7 +343,20 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   /// Passes the global ayah number (the reader resolves its page and scrolls
   /// to it). For en/fr searches we still open an Arabic script edition since
   /// the reader's highlight is keyed by the global ayah number regardless.
-  void _openInReader(SearchAyah ayah) {
+  Future<void> _openInReader(SearchAyah ayah) async {
+    // Release THIS screen's audio player before opening the reader. The search
+    // screen stays alive underneath the pushed reader, and just_audio_background
+    // allows only one active (background-session) player at a time. If the
+    // search player still holds the session (e.g. after playing/finishing an
+    // ayah), the reader's own tagged player can't acquire it and its
+    // setAudioSource hangs forever (endless spinner, no sound). Stopping here
+    // relinquishes the session so the reader can take over cleanly.
+    try {
+      await _player.stop();
+      _playingAyahId = null;
+    } catch (_) {}
+    if (!mounted) return;
+
     final editionId = _selectedLanguage == 'en'
         ? 'english'
         : _selectedLanguage == 'fr'

@@ -121,7 +121,7 @@ export function ChatInput({ onSend, prefilled }: ChatInputProps) {
       const res = await fetch('/api/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query, sourceSelection }),
+        body: JSON.stringify({ query, sourceSelection, lang }),
       });
 
       if (!res.ok) throw new Error('API error');

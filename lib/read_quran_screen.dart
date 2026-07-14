@@ -1376,11 +1376,18 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       }
 
       final source = ConcatenatingAudioSource(children: result.sources);
-      await _pagePlayer.setAudioSource(
-        source,
-        initialIndex: 0,
-        initialPosition: Duration.zero,
-      );
+      // Bounded: if the platform/background session is in a bad state (e.g. a
+      // stale tagged player from another screen still holds it), setAudioSource
+      // can otherwise hang indefinitely and leave the play button spinning
+      // forever. On timeout we throw → the catch below shows an error and the
+      // finally resets the loading flag so the user can retry.
+      await _pagePlayer
+          .setAudioSource(
+            source,
+            initialIndex: 0,
+            initialPosition: Duration.zero,
+          )
+          .timeout(const Duration(seconds: 20));
       _currentPageAudioSource = source;
       _pageAudioReciter = reciterCode;
       _audioSourcePageNumber = page.number;
@@ -1651,7 +1658,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     if (selection == null) return;
     if (!mounted) return;
 
-    switch (selection) {
+    // A specific translation/tafsir edition was chosen from the sub-menus.
+    if (selection.viewEdition != null) {
+      await _showEditionText(ayah, selection.viewEdition!);
+      return;
+    }
+
+    switch (selection.action!) {
       case AyahAction.pickColor:
         _showColorPicker(ayah);
         break;
@@ -1661,18 +1674,6 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       case AyahAction.removeHighlight:
         _removeAyahHighlight(ayah);
         break;
-      case AyahAction.translateEnglish:
-        await _showTranslation(ayah, QuranEditions.english);
-        break;
-      case AyahAction.translateFrench:
-        await _showTranslation(ayah, QuranEditions.french);
-        break;
-      case AyahAction.translateArabic:
-        await _showTranslation(ayah, QuranEditions.simple);
-        break;
-      case AyahAction.tafsir:
-        await _showTafsir(ayah);
-        break;
       case AyahAction.share:
         ShareAyahUtils.shareAyahAsText(
           context,
@@ -1681,6 +1682,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           isTranslation: _edition.isTranslation,
           reciterIdentifier: _pageAudioReciter,
         );
+        break;
+      // Translation/tafsir selections are handled above via viewEdition.
+      case AyahAction.translateEnglish:
+      case AyahAction.translateFrench:
+      case AyahAction.translateArabic:
+      case AyahAction.tafsir:
         break;
     }
   }
@@ -1712,32 +1719,25 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     );
   }
 
-  Future<void> _showTranslation(AyahData ayah, QuranEdition edition) async {
+  /// Loads and shows a specific translation or tafsir edition for [ayah],
+  /// chosen from the grouped ayah-options sub-menus.
+  Future<void> _showEditionText(AyahData ayah, QuranEdition edition) async {
     final l10n = AppLocalizations.of(context)!;
-    final text = await _repository.loadAyahTranslation(
-      ayahNumber: ayah.number,
-      edition: edition,
-      pageNumber: ayah.page,
-    );
+    final text = edition.isTafsir
+        ? await _repository.loadAyahTafsir(ayah.number, edition: edition)
+        : await _repository.loadAyahTranslation(
+            ayahNumber: ayah.number,
+            edition: edition,
+            pageNumber: ayah.page,
+          );
 
     if (!mounted) return;
 
+    final appLang = Localizations.localeOf(context).languageCode;
     await showAyahTextDialog(
       context,
       title:
-          '${edition.displayName} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
-      body: text ?? l10n.translationNotAvailable,
-    );
-  }
-
-  Future<void> _showTafsir(AyahData ayah) async {
-    final l10n = AppLocalizations.of(context)!;
-    final text = await _repository.loadAyahTafsir(ayah.number);
-    if (!mounted) return;
-    await showAyahTextDialog(
-      context,
-      title:
-          '${l10n.tafsir} - ${ayah.surah.englishName} ${ayah.numberInSurah}',
+          '${editionMenuTitle(edition, appLang)} • ${ayah.surah.englishName} ${ayah.numberInSurah}',
       body: text ?? l10n.translationNotAvailable,
     );
   }
