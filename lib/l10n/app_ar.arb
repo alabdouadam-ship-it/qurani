@@ -563,6 +563,27 @@
   "@verseRepeatCount": {},
   "verseRepeatCountHint": "كرر كل آية هذا العدد من المرات أثناء الحفظ بالتكرار.",
   "@verseRepeatCountHint": {},
+  "firstAyah": "الآية الأولى",
+  "@firstAyah": {},
+  "lastAyah": "الآية الأخيرة",
+  "@lastAyah": {},
+  "reciterRotationTitle": "تناوب القرّاء",
+  "@reciterRotationTitle": {},
+  "reciterRotationDesc": "تشغيل كل تكرار للآية بصوت قارئ مختلف بالترتيب، مع العودة إلى الأول عند الانتهاء.",
+  "@reciterRotationDesc": {},
+  "reciterRotationAddReciter": "إضافة قارئ",
+  "@reciterRotationAddReciter": {},
+  "reciterRotationEmpty": "أضف قرّاءً للتناوب بينهم.",
+  "@reciterRotationEmpty": {},
+  "reciterRotationRemove": "إزالة",
+  "@reciterRotationRemove": {},
+  "reciterRotationPreview": "{count} تكرارات ← {sequence}",
+  "@reciterRotationPreview": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "sequence": {"type": "String"}
+    }
+  },
   "shareUsageStatsTitle": "مشاركة إحصائيات استخدام مجهولة",
   "@shareUsageStatsTitle": {},
   "shareUsageStatsSubtitle": "ساعد في تحسين التطبيق بمشاركة بيانات مجهولة (نوع الجهاز واللغة والمنطقة التقريبية — الدولة والمدينة والميزات المستخدمة). لا يتم جمع أي معلومات شخصية أو موقع دقيق (إحداثيات أو عنوان) أو بيانات حساب. يمكنك إيقاف ذلك في أي وقت.",

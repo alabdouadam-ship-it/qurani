@@ -1627,6 +1627,54 @@ abstract class AppLocalizations {
   /// **'Repeat each verse this many times during repetition memorization.'**
   String get verseRepeatCountHint;
 
+  /// No description provided for @firstAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'First ayah'**
+  String get firstAyah;
+
+  /// No description provided for @lastAyah.
+  ///
+  /// In en, this message translates to:
+  /// **'Last ayah'**
+  String get lastAyah;
+
+  /// No description provided for @reciterRotationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Multi-reciter rotation'**
+  String get reciterRotationTitle;
+
+  /// No description provided for @reciterRotationDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Play each repeat of a verse with a different reciter, in order, looping back to the first.'**
+  String get reciterRotationDesc;
+
+  /// No description provided for @reciterRotationAddReciter.
+  ///
+  /// In en, this message translates to:
+  /// **'Add reciter'**
+  String get reciterRotationAddReciter;
+
+  /// No description provided for @reciterRotationEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Add reciters to rotate through.'**
+  String get reciterRotationEmpty;
+
+  /// No description provided for @reciterRotationRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get reciterRotationRemove;
+
+  /// No description provided for @reciterRotationPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} repeats → {sequence}'**
+  String reciterRotationPreview(int count, String sequence);
+
   /// No description provided for @shareUsageStatsTitle.
   ///
   /// In en, this message translates to:

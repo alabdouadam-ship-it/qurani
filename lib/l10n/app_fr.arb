@@ -563,6 +563,27 @@
   "@verseRepeatCount": {},
   "verseRepeatCountHint": "Répétez chaque verset ce nombre de fois pendant la mémorisation.",
   "@verseRepeatCountHint": {},
+  "firstAyah": "Premier verset",
+  "@firstAyah": {},
+  "lastAyah": "Dernier verset",
+  "@lastAyah": {},
+  "reciterRotationTitle": "Rotation de récitateurs",
+  "@reciterRotationTitle": {},
+  "reciterRotationDesc": "Lire chaque répétition d'un verset avec un récitateur différent, dans l'ordre, en revenant au premier.",
+  "@reciterRotationDesc": {},
+  "reciterRotationAddReciter": "Ajouter un récitateur",
+  "@reciterRotationAddReciter": {},
+  "reciterRotationEmpty": "Ajoutez des récitateurs à alterner.",
+  "@reciterRotationEmpty": {},
+  "reciterRotationRemove": "Retirer",
+  "@reciterRotationRemove": {},
+  "reciterRotationPreview": "{count} répétitions → {sequence}",
+  "@reciterRotationPreview": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "sequence": {"type": "String"}
+    }
+  },
   "shareUsageStatsTitle": "Partager des statistiques d'utilisation anonymes",
   "@shareUsageStatsTitle": {},
   "shareUsageStatsSubtitle": "Aidez à améliorer l'application en partageant des données anonymes (type d'appareil, langue, zone approximative — pays et ville, et fonctionnalités utilisées). Aucune information personnelle, localisation précise (coordonnées ou adresse) ni donnée de compte n'est collectée. Vous pouvez désactiver cela à tout moment.",

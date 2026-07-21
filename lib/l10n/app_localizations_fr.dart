@@ -800,6 +800,32 @@ class AppLocalizationsFr extends AppLocalizations {
   String get verseRepeatCountHint => 'Répétez chaque verset ce nombre de fois pendant la mémorisation.';
 
   @override
+  String get firstAyah => 'Premier verset';
+
+  @override
+  String get lastAyah => 'Dernier verset';
+
+  @override
+  String get reciterRotationTitle => 'Rotation de récitateurs';
+
+  @override
+  String get reciterRotationDesc => 'Lire chaque répétition d\'un verset avec un récitateur différent, dans l\'ordre, en revenant au premier.';
+
+  @override
+  String get reciterRotationAddReciter => 'Ajouter un récitateur';
+
+  @override
+  String get reciterRotationEmpty => 'Ajoutez des récitateurs à alterner.';
+
+  @override
+  String get reciterRotationRemove => 'Retirer';
+
+  @override
+  String reciterRotationPreview(int count, String sequence) {
+    return '$count répétitions → $sequence';
+  }
+
+  @override
   String get shareUsageStatsTitle => 'Partager des statistiques d\'utilisation anonymes';
 
   @override

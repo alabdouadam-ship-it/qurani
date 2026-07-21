@@ -12,11 +12,23 @@ class TextNormalizer {
     
     String s = input;
     
-    // Remove all Arabic diacritics (tashkeel) including extended range
-    // Covers \u064B-\u065F (Fathatan..Sukoon..Superscript Alef..etc)
-    // \u0670 is Maddah (superscript alef)
-    // \u0640 is Tatweel (kashida)
-    s = s.replaceAll(RegExp(r"[\u064B-\u065F\u0670\u0640]"), '');
+    // Remove all Arabic diacritics, Quranic annotation marks, and invisible
+    // formatting characters so search matches regardless of mushaf-style
+    // decoration. Ranges covered:
+    //   \u0610-\u061A  Arabic honorific/quranic signs (e.g. sallallahu)
+    //   \u064B-\u065F  standard tashkeel (fathatan..sukoon..superscript alef)
+    //   \u0670         superscript alef (maddah)
+    //   \u06D6-\u06ED  Quranic annotation marks — this is the block that broke
+    //                  filtering: surah names like "الأَحۡقَافِ" contain
+    //                  U+06E1 (SMALL HIGH DOTLESS HEAD OF KHAH) between letters
+    //   \u08D3-\u08FF  Arabic Extended-A combining marks
+    //   \u0640         tatweel (kashida)
+    //   \u200B-\u200F, \u2060-\u2064, \u00AD, \u061C, \uFEFF  zero-width /
+    //                  bidi / formatting characters
+    s = s.replaceAll(
+        RegExp(
+            r"[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u08D3-\u08FF\u0640\u200B-\u200F\u2060-\u2064\u00AD\u061C\uFEFF]"),
+        '');
     
     // Normalize alef variations (أ إ آ ٱ → ا)
     s = s.replaceAll(RegExp(r"[\u0622\u0623\u0625\u0671]"), '\u0627');

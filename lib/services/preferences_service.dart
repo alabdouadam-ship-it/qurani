@@ -22,6 +22,8 @@ class PreferencesService {
   static const String keyListenFeaturedSurahs = 'listen_featured_surahs';
   static const String keyArabicFontFamily = 'arabic_font_family';
   static const String keyVerseRepeatCount = 'verse_repeat_count';
+  static const String keyReciterRotationEnabled = 'reciter_rotation_enabled_v1';
+  static const String keyReciterRotationOrder = 'reciter_rotation_order_v1';
   static const String keyDeviceInfoCollected = 'device_info_collected_v1';
   static const String keyDeviceInfoJson = 'device_info_json';
   static const String keyInstallationId = 'installation_id_v1';
@@ -800,6 +802,39 @@ class PreferencesService {
       return 10;
     }
     return saved;
+  }
+
+  // --- Multi-reciter rotation (Repetition/Memorization) ---
+  // When enabled, each repeat of a verse is played by the next reciter in the
+  // ordered list, wrapping around (repeatIndex % order.length). Stored as a
+  // JSON list of reciter codes in SharedPreferences.
+  static Future<void> saveReciterRotationEnabled(bool value) async {
+    await _prefs?.setBool(keyReciterRotationEnabled, value);
+  }
+
+  static bool getReciterRotationEnabled() {
+    return _prefs?.getBool(keyReciterRotationEnabled) ?? false;
+  }
+
+  static Future<void> saveReciterRotationOrder(List<String> codes) async {
+    await _prefs?.setString(keyReciterRotationOrder, jsonEncode(codes));
+  }
+
+  static List<String> getReciterRotationOrder() {
+    final saved = _prefs?.getString(keyReciterRotationOrder);
+    if (saved == null || saved.isEmpty) {
+      return <String>[];
+    }
+    try {
+      final decoded = jsonDecode(saved);
+      if (decoded is List) {
+        return decoded
+            .whereType<String>()
+            .where((e) => e.isNotEmpty)
+            .toList();
+      }
+    } catch (_) {}
+    return <String>[];
   }
 
   // Memorization Test Settings

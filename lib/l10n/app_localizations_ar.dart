@@ -800,6 +800,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verseRepeatCountHint => 'كرر كل آية هذا العدد من المرات أثناء الحفظ بالتكرار.';
 
   @override
+  String get firstAyah => 'الآية الأولى';
+
+  @override
+  String get lastAyah => 'الآية الأخيرة';
+
+  @override
+  String get reciterRotationTitle => 'تناوب القرّاء';
+
+  @override
+  String get reciterRotationDesc => 'تشغيل كل تكرار للآية بصوت قارئ مختلف بالترتيب، مع العودة إلى الأول عند الانتهاء.';
+
+  @override
+  String get reciterRotationAddReciter => 'إضافة قارئ';
+
+  @override
+  String get reciterRotationEmpty => 'أضف قرّاءً للتناوب بينهم.';
+
+  @override
+  String get reciterRotationRemove => 'إزالة';
+
+  @override
+  String reciterRotationPreview(int count, String sequence) {
+    return '$count تكرارات ← $sequence';
+  }
+
+  @override
   String get shareUsageStatsTitle => 'مشاركة إحصائيات استخدام مجهولة';
 
   @override

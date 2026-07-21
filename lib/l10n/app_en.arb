@@ -565,6 +565,27 @@
   "@verseRepeatCount": {},
   "verseRepeatCountHint": "Repeat each verse this many times during repetition memorization.",
   "@verseRepeatCountHint": {},
+  "firstAyah": "First ayah",
+  "@firstAyah": {},
+  "lastAyah": "Last ayah",
+  "@lastAyah": {},
+  "reciterRotationTitle": "Multi-reciter rotation",
+  "@reciterRotationTitle": {},
+  "reciterRotationDesc": "Play each repeat of a verse with a different reciter, in order, looping back to the first.",
+  "@reciterRotationDesc": {},
+  "reciterRotationAddReciter": "Add reciter",
+  "@reciterRotationAddReciter": {},
+  "reciterRotationEmpty": "Add reciters to rotate through.",
+  "@reciterRotationEmpty": {},
+  "reciterRotationRemove": "Remove",
+  "@reciterRotationRemove": {},
+  "reciterRotationPreview": "{count} repeats → {sequence}",
+  "@reciterRotationPreview": {
+    "placeholders": {
+      "count": {"type": "int"},
+      "sequence": {"type": "String"}
+    }
+  },
   "shareUsageStatsTitle": "Share anonymous usage statistics",
   "@shareUsageStatsTitle": {},
   "shareUsageStatsSubtitle": "Help improve the app by sharing anonymous data (device type, language, approximate area — country and town, and which features are used). No personal information, precise location (coordinates or address), or account data is collected. You can turn this off anytime.",

@@ -10,6 +10,8 @@ import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/preferences_service.dart';
 import 'package:qurani/services/quran_repository.dart';
 import 'package:qurani/read_quran/edition_picker_sheet.dart';
+import 'package:qurani/read_quran/ayah_number_badge.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 import 'package:qurani/services/irab_service.dart';
 import 'package:qurani/widgets/irab_verse_widget.dart';
 import 'util/arabic_font_utils.dart';
@@ -41,6 +43,14 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   int? _activeRangeEnd;
   String? _activeReciterKey;
   int? _activeRepeatCount;
+  // Multi-reciter rotation: each verse-repeat uses the next reciter in the
+  // ordered list, wrapping around (repeatIndex % order.length). When disabled
+  // or the list is empty/single, playback behaves as a single reciter.
+  bool _reciterRotationEnabled = false;
+  List<String> _reciterRotationOrder = <String>[];
+  // Snapshot of the reciter order baked into the currently-loaded playlist,
+  // used to detect staleness and force a rebuild when the rotation changes.
+  List<String>? _activeReciterOrder;
   List<AyahBrief> _currentAyahs = [];
   int? _selectedAyah;
   int _verseRepeatCount = 10;
@@ -50,6 +60,10 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   int? _lastAutoScrolledVerse;
   final ScrollController _ayahScrollController = ScrollController();
   final Map<int, GlobalKey> _ayahTileKeys = <int, GlobalKey>{};
+  // Memoized ayah span parsing (mirrors ReadQuranScreen for visual + perf
+  // parity). Keyed so theme/font/edition/size changes invalidate entries.
+  final Map<String, List<InlineSpan>> _spanCache = <String, List<InlineSpan>>{};
+  static const int _spanCacheMaxEntries = 200;
   List<_VersePlaybackEntry> _playlistEntries = [];
   int _currentPlaylistIndex = 0;
   bool _isHandlingEntryCompletion = false;
@@ -76,6 +90,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     _edition = QuranEditions.byId(savedEdition);
     _verseRepeatCount = PreferencesService.getVerseRepeatCount();
     _rangeRepeatCount = PreferencesService.getRangeRepetitionCount();
+    _reciterRotationEnabled = PreferencesService.getReciterRotationEnabled();
+    _reciterRotationOrder = PreferencesService.getReciterRotationOrder();
     _ayahsFuture = QuranRepository.instance
         .loadSurahAyahs(widget.surah.order, _edition);
     _arabicFontKey = ref.read(arabicFontProvider);
@@ -87,6 +103,9 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       } else {
         _isPlaying = isPlaying;
       }
+      // Keep the screen awake while playing so the OS doesn't lock the phone
+      // and throttle the completion handler that advances to the next verse.
+      _updateWakelock(isPlaying);
       // Guard at listener level to prevent double-trigger
       if (completed && !_isHandlingEntryCompletion) {
         _isHandlingEntryCompletion = true;
@@ -125,7 +144,21 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     _sequenceStateSub?.cancel();
     _player.dispose();
     _ayahScrollController.dispose();
+    // Release the wakelock when leaving the screen.
+    if (_wakelockEnabled) {
+      unawaited(WakelockPlus.disable());
+      _wakelockEnabled = false;
+    }
     super.dispose();
+  }
+
+  /// Toggles the screen-awake wakelock, only issuing a platform call when the
+  /// desired state actually changes.
+  bool _wakelockEnabled = false;
+  void _updateWakelock(bool keepAwake) {
+    if (keepAwake == _wakelockEnabled) return;
+    _wakelockEnabled = keepAwake;
+    unawaited(WakelockPlus.toggle(enable: keepAwake).catchError((_) {}));
   }
 
   Future<void> _reloadAyahs() async {
@@ -138,11 +171,13 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       _activeRangeStart = null;
       _activeRangeEnd = null;
       _activeReciterKey = null;
+      _activeReciterOrder = null;
       _activeRepeatCount = null;
       _currentPlayingVerseNumber = null;
       _currentAyahs = [];
       _verseRepeatCount = PreferencesService.getVerseRepeatCount();
       _ayahTileKeys.clear();
+      _spanCache.clear();
       _lastAutoScrolledVerse = null;
       _playlistEntries.clear();
       _currentPlaylistIndex = 0;
@@ -273,20 +308,54 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     return reciter.isNotEmpty ? reciter : 'afs';
   }
 
+  /// Ordered list of reciter keys to rotate through, one per verse-repeat.
+  /// Falls back to a single-element list of the resolved reciter when rotation
+  /// is disabled, empty, or the edition pins its own recitation.
+  List<String> _resolveReciterOrder() {
+    final single = _resolveReciterKey();
+    // Editions with a fixed recitation (translation/tafsir) ignore rotation.
+    if (_edition.audioReciterKey != null) {
+      return <String>[single];
+    }
+    if (!_reciterRotationEnabled) {
+      return <String>[single];
+    }
+    final order = _reciterRotationOrder.where((e) => e.isNotEmpty).toList();
+    if (order.isEmpty) {
+      return <String>[single];
+    }
+    return order;
+  }
+
+  bool _sameOrder(List<String>? a, List<String> b) {
+    if (a == null) return false;
+    if (a.length != b.length) return false;
+    for (int i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
+
   Future<bool> _preparePlaylist({
     required List<AyahBrief> ayahs,
     required int start,
     required int end,
-    required String reciterKey,
+    required List<String> reciterOrder,
     required int repeatCount,
   }) async {
     final langCode = PreferencesService.getLanguage();
-    final reciterName = AudioService.reciterDisplayName(reciterKey, langCode);
+    // Cache display names per reciter to avoid repeated lookups.
+    final Map<String, String> reciterNames = {
+      for (final key in reciterOrder)
+        key: AudioService.reciterDisplayName(key, langCode),
+    };
     final entries = <_VersePlaybackEntry>[];
 
     for (int i = start; i <= end; i++) {
       final brief = ayahs[i - 1];
       for (int repeatIndex = 0; repeatIndex < repeatCount; repeatIndex++) {
+        // Rotate reciter per verse-repeat, wrapping around the order.
+        final reciterKey = reciterOrder[repeatIndex % reciterOrder.length];
         entries.add(
           _VersePlaybackEntry(
             verseUri: await AudioService.getVerseUriPreferLocal(
@@ -296,7 +365,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
             ),
             globalAyahNumber: brief.number,
             verseInSurah: brief.numberInSurah,
-            reciterName: reciterName,
+            reciterName: reciterNames[reciterKey] ?? reciterKey,
             reciterKey: reciterKey,
             repeatIndex: repeatIndex,
             repeatCount: repeatCount,
@@ -313,7 +382,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     _currentPlaylistIndex = 0;
     _activeRangeStart = start;
     _activeRangeEnd = end;
-    _activeReciterKey = reciterKey;
+    _activeReciterKey = reciterOrder.first;
+    _activeReciterOrder = List<String>.from(reciterOrder);
     _activeRepeatCount = repeatCount;
     _currentPlayingVerseNumber = null;
     return true;
@@ -470,49 +540,54 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       end = temp;
     }
 
-    final reciterKey = _resolveReciterKey();
+    final reciterOrder = _resolveReciterOrder();
+    final reciterKey = reciterOrder.first;
 
-    // Validation
-    final reciter = await ReciterConfigService.getReciterByCode(reciterKey);
-    if (reciter != null && !reciter.hasVerseByVerse()) {
-      if (showErrors && mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        final langCode = Localizations.localeOf(context).languageCode;
-        showDialog(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: Text(l10n.reciterNotCompatible),
-            content: Text(l10n.reciterNotAvailableForVerses(reciter.getDisplayName(langCode))),
-            actions: [
-              TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: Text(l10n.cancel),
-              ),
-              FilledButton(
-                onPressed: () async {
-                  Navigator.pop(context);
-                  await SettingsSheetUtils.showReciterSelectionSheet(
-                    context,
-                    requireVerseByVerse: true,
-                    onReciterSelected: (newCode) async {
-                      await PreferencesService.saveReciter(newCode);
-                      if (mounted) {
-                        setState(() {
-                             // Rebuild
-                        });
-                        // Retry
-                        _playSelectedAyah(showErrors: true);
-                      }
-                    },
-                  );
-                },
-                child: Text(l10n.chooseReciter),
-              ),
-            ],
-          ),
-        );
+    // Validation: every reciter in the rotation must support verse-by-verse
+    // audio. Surface the first incompatible one so the user can fix it.
+    for (final key in reciterOrder) {
+      final reciter = await ReciterConfigService.getReciterByCode(key);
+      if (reciter != null && !reciter.hasVerseByVerse()) {
+        if (showErrors && mounted) {
+          final l10n = AppLocalizations.of(context)!;
+          final langCode = Localizations.localeOf(context).languageCode;
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: Text(l10n.reciterNotCompatible),
+              content: Text(l10n.reciterNotAvailableForVerses(
+                  reciter.getDisplayName(langCode))),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.cancel),
+                ),
+                FilledButton(
+                  onPressed: () async {
+                    Navigator.pop(context);
+                    await SettingsSheetUtils.showReciterSelectionSheet(
+                      context,
+                      requireVerseByVerse: true,
+                      onReciterSelected: (newCode) async {
+                        await PreferencesService.saveReciter(newCode);
+                        if (mounted) {
+                          setState(() {
+                            // Rebuild
+                          });
+                          // Retry
+                          _playSelectedAyah(showErrors: true);
+                        }
+                      },
+                    );
+                  },
+                  child: Text(l10n.chooseReciter),
+                ),
+              ],
+            ),
+          );
+        }
+        return false;
       }
-      return false;
     }
 
     // If target verse not downloaded and no internet, show a clear message
@@ -540,6 +615,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     final needsReload =
         _playlistEntries.isEmpty ||
         _activeReciterKey != reciterKey ||
+        !_sameOrder(_activeReciterOrder, reciterOrder) ||
         _activeRangeStart != start ||
         _activeRangeEnd != end ||
         _activeRepeatCount != repeatCount;
@@ -551,7 +627,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
           ayahs: ayahs,
           start: start,
           end: end,
-          reciterKey: reciterKey,
+          reciterOrder: reciterOrder,
           repeatCount: repeatCount,
         );
         if (!prepared) {
@@ -602,6 +678,218 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     }
   }
 
+  /// Applies a new [start]/[end] range (from the slider or the numeric editor),
+  /// clamping to the surah bounds, invalidating any loaded playlist, and
+  /// re-anchoring the selected ayah if it falls outside the new range.
+  void _applyRange(double start, double end) {
+    final total = _currentAyahs.length;
+    if (total == 0) return;
+    AyahBrief? fallbackAyah;
+    setState(() {
+      final maxVal = total.toDouble();
+      final double clampedStart = start.clamp(1.0, maxVal);
+      final double clampedEnd = end.clamp(1.0, maxVal);
+      _range = RangeValues(clampedStart, clampedEnd);
+      _activeRangeStart = null;
+      _activeRangeEnd = null;
+      _activeReciterKey = null;
+      _activeReciterOrder = null;
+      _activeRepeatCount = null;
+      // Range changed → loaded playlist is stale, can't resume.
+      _pausedForResume = false;
+
+      if (_selectedAyah != null && _currentAyahs.isNotEmpty) {
+        AyahBrief? selectedBrief;
+        for (final ayah in _currentAyahs) {
+          if (ayah.number == _selectedAyah) {
+            selectedBrief = ayah;
+            break;
+          }
+        }
+        if (selectedBrief != null) {
+          final int startIndex = clampedStart.round();
+          final int endIndex = clampedEnd.round();
+          if (selectedBrief.numberInSurah < startIndex ||
+              selectedBrief.numberInSurah > endIndex) {
+            final int fallbackIndex =
+                (startIndex.clamp(1, _currentAyahs.length)) - 1;
+            fallbackAyah = _currentAyahs[fallbackIndex];
+            _selectedAyah = fallbackAyah?.number;
+          }
+        }
+      }
+    });
+    final AyahBrief? effectiveFallback = fallbackAyah;
+    if (effectiveFallback != null) {
+      _scrollToMemorizationVerse(effectiveFallback.numberInSurah,
+          immediate: true);
+    }
+  }
+
+  /// Tappable pill showing a range bound (first/last ayah). Tapping opens a
+  /// numeric editor so exact verses are easy to reach even for narrow ranges.
+  Widget _buildRangeBoundChip({
+    required String label,
+    required int value,
+    required VoidCallback onTap,
+  }) {
+    final theme = Theme.of(context);
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            color: theme.colorScheme.primaryContainer
+                .withAlpha((255 * 0.5).round()),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(
+              color: theme.colorScheme.primary.withAlpha((255 * 0.5).round()),
+            ),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    label,
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  Text(
+                    '$value',
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: theme.colorScheme.primary,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(width: 6),
+              Icon(
+                Icons.edit,
+                size: 16,
+                color: theme.colorScheme.primary,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Numeric stepper dialog to set the first/last ayah of the range exactly.
+  Future<void> _editRangeBound({required bool isStart}) async {
+    final total = _currentAyahs.length;
+    if (total == 0) return;
+    final l10n = AppLocalizations.of(context)!;
+    final range = _range ?? RangeValues(1, total.toDouble());
+    final int currentStart = range.start.round().clamp(1, total);
+    final int currentEnd = range.end.round().clamp(1, total);
+
+    // Keep the range valid: the first ayah can't exceed the last, and the last
+    // can't precede the first.
+    final int minValue = isStart ? 1 : currentStart;
+    final int maxValue = isStart ? currentEnd : total;
+    int value = (isStart ? currentStart : currentEnd).clamp(minValue, maxValue);
+
+    final controller = TextEditingController(text: '$value');
+
+    final int? result = await showDialog<int>(
+      context: context,
+      builder: (context) {
+        return StatefulBuilder(
+          builder: (context, setDialogState) {
+            void setValue(int v) {
+              value = v.clamp(minValue, maxValue);
+              controller.text = '$value';
+              controller.selection = TextSelection.fromPosition(
+                TextPosition(offset: controller.text.length),
+              );
+              setDialogState(() {});
+            }
+
+            return AlertDialog(
+              title: Text(isStart ? l10n.firstAyah : l10n.lastAyah),
+              content: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton.filledTonal(
+                    icon: const Icon(Icons.remove),
+                    onPressed:
+                        value > minValue ? () => setValue(value - 1) : null,
+                  ),
+                  const SizedBox(width: 8),
+                  SizedBox(
+                    width: 88,
+                    child: TextField(
+                      controller: controller,
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      autofocus: true,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                      decoration: InputDecoration(
+                        border: const OutlineInputBorder(),
+                        helperText: '$minValue–$maxValue',
+                        helperMaxLines: 1,
+                      ),
+                      onChanged: (text) {
+                        final parsed = int.tryParse(text.trim());
+                        if (parsed != null) {
+                          value = parsed.clamp(minValue, maxValue);
+                          setDialogState(() {});
+                        }
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  IconButton.filledTonal(
+                    icon: const Icon(Icons.add),
+                    onPressed:
+                        value < maxValue ? () => setValue(value + 1) : null,
+                  ),
+                ],
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: Text(l10n.cancel),
+                ),
+                FilledButton(
+                  onPressed: () {
+                    final parsed =
+                        int.tryParse(controller.text.trim()) ?? value;
+                    Navigator.pop(context, parsed.clamp(minValue, maxValue));
+                  },
+                  child: Text(l10n.save),
+                ),
+              ],
+            );
+          },
+        );
+      },
+    );
+
+    controller.dispose();
+    if (result == null) return;
+
+    if (isStart) {
+      _applyRange(result.toDouble(), currentEnd.toDouble());
+    } else {
+      _applyRange(currentStart.toDouble(), result.toDouble());
+    }
+    // Bring the chosen bound into view.
+    final int verseInSurah = _currentAyahs[(result.clamp(1, total)) - 1]
+        .numberInSurah;
+    _scrollToMemorizationVerse(verseInSurah, immediate: true);
+  }
+
   Widget _buildTopBar(List<AyahBrief> ayahs) {
     final l10n = AppLocalizations.of(context)!;
     final total = ayahs.length;
@@ -611,9 +899,19 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text('${range.start.round()}'),
-            Text('${range.end.round()}'),
+            _buildRangeBoundChip(
+              label: l10n.firstAyah,
+              value: range.start.round(),
+              onTap: () => _editRangeBound(isStart: true),
+            ),
+            _buildPlayControl(l10n),
+            _buildRangeBoundChip(
+              label: l10n.lastAyah,
+              value: range.end.round(),
+              onTap: () => _editRangeBound(isStart: false),
+            ),
           ],
         ),
         RangeSlider(
@@ -622,73 +920,67 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
           divisions: total > 1 ? total - 1 : null,
           values: RangeValues(range.start.clamp(1, total.toDouble()), range.end.clamp(1, total.toDouble())),
           labels: RangeLabels('${range.start.round()}', '${range.end.round()}'),
-          onChanged: (val) {
-            AyahBrief? fallbackAyah;
-            setState(() {
-              final maxVal = total.toDouble();
-              final double clampedStart = val.start.clamp(1.0, maxVal);
-              final double clampedEnd = val.end.clamp(1.0, maxVal);
-              _range = RangeValues(clampedStart, clampedEnd);
-              _activeRangeStart = null;
-              _activeRangeEnd = null;
-              _activeReciterKey = null;
-              _activeRepeatCount = null;
-              // Range changed → loaded playlist is stale, can't resume.
-              _pausedForResume = false;
-
-              if (_selectedAyah != null && _currentAyahs.isNotEmpty) {
-                AyahBrief? selectedBrief;
-                for (final ayah in _currentAyahs) {
-                  if (ayah.number == _selectedAyah) {
-                    selectedBrief = ayah;
-                    break;
-                  }
-                }
-                if (selectedBrief != null) {
-                  final int startIndex = clampedStart.round();
-                  final int endIndex = clampedEnd.round();
-                  if (selectedBrief.numberInSurah < startIndex ||
-                      selectedBrief.numberInSurah > endIndex) {
-                    final int fallbackIndex = (startIndex.clamp(1, _currentAyahs.length)) - 1;
-                    fallbackAyah = _currentAyahs[fallbackIndex];
-                    _selectedAyah = fallbackAyah?.number;
-                  }
-                }
-              }
-            });
-            final AyahBrief? effectiveFallback = fallbackAyah;
-            if (effectiveFallback != null) {
-              _scrollToMemorizationVerse(effectiveFallback.numberInSurah, immediate: true);
-            }
-          },
-        ),
-        const SizedBox(height: 8),
-        Align(
-          alignment: Alignment.center,
-          child: FilledButton.icon(
-            onPressed: _isPreparing
-                ? null
-                : () {
-                    final ayahs = _currentAyahs;
-                    // Only jump to the range start on a genuine fresh start.
-                    // When pausing or resuming an existing playlist, keep the
-                    // view on the current verse.
-                    final bool freshStart = !_player.playing && !_pausedForResume;
-                    if (freshStart && ayahs.isNotEmpty) {
-                      final currentRange = _range ?? RangeValues(1, ayahs.length.toDouble());
-                      final start = currentRange.start.round().clamp(1, ayahs.length);
-                      final startVerseInSurah = ayahs[start - 1].numberInSurah;
-                      _scrollToMemorizationVerse(startVerseInSurah, immediate: true);
-                    }
-                    _togglePlay(ayahs);
-                  },
-            icon: _isPreparing
-                ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                : Icon(_isPlaying ? Icons.pause_circle_filled : Icons.play_circle_fill),
-            label: Text(_isPlaying ? l10n.pauseSurahAudio : l10n.playSurahAudio),
-          ),
+          onChanged: (val) => _applyRange(val.start, val.end),
         ),
       ],
+    );
+  }
+
+  /// Compact circular play/pause control shown between the first/last ayah
+  /// chips.
+  Widget _buildPlayControl(AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    return Tooltip(
+      message: _isPlaying ? l10n.pauseSurahAudio : l10n.playSurahAudio,
+      child: Material(
+        color: _isPreparing
+            ? theme.colorScheme.primary.withAlpha((255 * 0.6).round())
+            : theme.colorScheme.primary,
+        shape: const CircleBorder(),
+        elevation: 2,
+        child: InkWell(
+          customBorder: const CircleBorder(),
+          onTap: _isPreparing
+              ? null
+              : () {
+                  final ayahs = _currentAyahs;
+                  // Only jump to the range start on a genuine fresh start.
+                  // When pausing or resuming an existing playlist, keep the
+                  // view on the current verse.
+                  final bool freshStart =
+                      !_player.playing && !_pausedForResume;
+                  if (freshStart && ayahs.isNotEmpty) {
+                    final currentRange =
+                        _range ?? RangeValues(1, ayahs.length.toDouble());
+                    final start =
+                        currentRange.start.round().clamp(1, ayahs.length);
+                    final startVerseInSurah = ayahs[start - 1].numberInSurah;
+                    _scrollToMemorizationVerse(startVerseInSurah,
+                        immediate: true);
+                  }
+                  _togglePlay(ayahs);
+                },
+          child: Padding(
+            padding: const EdgeInsets.all(12),
+            child: _isPreparing
+                ? SizedBox(
+                    width: 28,
+                    height: 28,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2.5,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        theme.colorScheme.onPrimary,
+                      ),
+                    ),
+                  )
+                : Icon(
+                    _isPlaying ? Icons.pause : Icons.play_arrow,
+                    size: 28,
+                    color: theme.colorScheme.onPrimary,
+                  ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -877,88 +1169,396 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
               ),
               const Divider(height: 1),
               Expanded(
-                child: ListView.separated(
-                  controller: _ayahScrollController,
-                  itemCount: ayahsToDisplay.length,
-                  separatorBuilder: (_, __) => const Divider(height: 1),
-                  itemBuilder: (context, index) {
-                    final a = ayahsToDisplay[index];
-                    final GlobalKey tileKey =
-                        _ayahTileKeys.putIfAbsent(a.number, () => GlobalKey());
-                    final rtl = _edition.isRtl;
-                    final bool isInActiveRange = (_activeRangeStart != null && _activeRangeEnd != null)
-                        ? (a.numberInSurah >= _activeRangeStart! && a.numberInSurah <= _activeRangeEnd!)
-                        : false;
-                    final bool isCurrentlyPlaying = _currentPlayingVerseNumber != null
-                        ? _currentPlayingVerseNumber == a.numberInSurah
-                        : false;
-                    final bool isSelected = _selectedAyah == a.number;
-                    final theme = Theme.of(context);
-                    final Color playingColor = theme.brightness == Brightness.dark
-                        ? const Color(0xFF2C3C57)
-                        : const Color(0xFFFFE19C);
-                    double baseFontSize = PreferencesService.getFontSize();
-                    if (_edition.isTranslation) {
-                      baseFontSize = (baseFontSize - 4).clamp(12.0, 48.0).toDouble();
-                    }
-                    final TextStyle baseStyle = _arabicTextStyle(
-                      fontSize: baseFontSize,
-                      height: 1.6,
-                      color: theme.colorScheme.onSurface,
-                    );
-                    final TextStyle diacriticStyle =
-                        baseStyle.copyWith(color: theme.colorScheme.primary);
-                    final bool isTajweed = _edition.isTajweed;
-                    final List<InlineSpan> spans = isTajweed
-                        ? TajweedParser.parseSpans(
-                            a.text,
-                            baseStyle,
-                            diacriticStyle: diacriticStyle,
-                          )
-                        : TajweedParser.buildPlainSpans(
-                            a.text,
-                            baseStyle,
-                            diacriticStyle: diacriticStyle,
-                          );
-                    return ListTile(
-                      key: tileKey,
-                      dense: true,
-                      tileColor: isCurrentlyPlaying
-                          ? playingColor
-                          : isSelected
-                              ? theme.colorScheme.primaryContainer.withAlpha((255 * 0.35).round())
-                              : isInActiveRange
-                                  ? theme.colorScheme.surfaceContainerHighest.withAlpha((255 * 0.3).round())
-                                  : null,
-                      title: Directionality(
-                        textDirection: rtl ? TextDirection.rtl : TextDirection.ltr,
-                        child: _edition == QuranEditions.irab && IrabService().isLoaded
-                            ? IrabVerseWidget(
-                                verse: IrabService().getVerse(a.surah.number, a.numberInSurah) ??
-                                    IrabVerse(surahNumber: a.surah.number, verseNumber: a.numberInSurah, words: []),
-                                fontSize: baseFontSize,
-                              )
-                            : RichText(
-                                textAlign: rtl ? TextAlign.right : TextAlign.left,
-                                text: TextSpan(
-                                  style: baseStyle,
-                                  children: spans,
-                                ),
-                              ),
-                      ),
-                      onTap: () => _selectAyah(a),
-                      trailing: CircleAvatar(
-                        radius: 12,
-                        child: Text('${a.numberInSurah}', style: const TextStyle(fontSize: 12)),
-                      ),
-                    );
-                  },
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Theme.of(context)
+                            .colorScheme
+                            .surfaceContainerHighest
+                            .withAlpha((255 * 0.35).round()),
+                        Theme.of(context).colorScheme.surface,
+                      ],
+                    ),
+                  ),
+                  child: ListView.builder(
+                    controller: _ayahScrollController,
+                    // Add the system nav-bar inset to the bottom so the last
+                    // verse isn't hidden behind Android's on-screen controls.
+                    padding: EdgeInsets.fromLTRB(
+                      12,
+                      12,
+                      12,
+                      12 + MediaQuery.of(context).padding.bottom,
+                    ),
+                    itemCount: ayahsToDisplay.length,
+                    itemBuilder: (context, index) =>
+                        _buildRepetitionAyahTile(ayahsToDisplay[index]),
+                  ),
                 ),
               ),
             ],
           );
         },
       ),
+    );
+  }
+
+  /// Card-style ayah tile mirroring ReadQuranScreen (generous line height,
+  /// inline ayah-number badge, animated highlight, rounded card) so the
+  /// repetition/memorization view matches the reading view.
+  Widget _buildRepetitionAyahTile(AyahBrief a) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+    final textDirection =
+        _edition.isRtl ? TextDirection.rtl : TextDirection.ltr;
+    final GlobalKey tileKey =
+        _ayahTileKeys.putIfAbsent(a.number, () => GlobalKey());
+
+    final bool isInActiveRange =
+        (_activeRangeStart != null && _activeRangeEnd != null)
+            ? (a.numberInSurah >= _activeRangeStart! &&
+                a.numberInSurah <= _activeRangeEnd!)
+            : false;
+    final bool isCurrentlyPlaying = _currentPlayingVerseNumber != null
+        ? _currentPlayingVerseNumber == a.numberInSurah
+        : false;
+    final bool isSelected = _selectedAyah == a.number;
+
+    final double baseFontSize = _edition.isTranslation
+        ? ((PreferencesService.getFontSize() - 4).clamp(12.0, 48.0)).toDouble()
+        : PreferencesService.getFontSize();
+    final TextStyle baseStyle = _arabicTextStyle(
+      fontSize: baseFontSize,
+      height: 2.5,
+      color: colorScheme.onSurface,
+    );
+    final TextStyle diacriticStyle =
+        baseStyle.copyWith(color: colorScheme.primary);
+
+    final bool isTajweed = _edition.isTajweed;
+    final String rawText = a.text.trim();
+    final String spanKey = '${a.number}|${_edition.id}|$isTajweed|'
+        '$_arabicFontKey|${baseFontSize.toStringAsFixed(1)}|'
+        '${baseStyle.color?.hashCode ?? 0}|'
+        '${diacriticStyle.color?.hashCode ?? 0}|${rawText.hashCode}';
+    final List<InlineSpan> ayahContentSpans =
+        _spanCache.putIfAbsent(spanKey, () {
+      final spans = isTajweed
+          ? TajweedParser.parseSpans(rawText, baseStyle,
+              diacriticStyle: diacriticStyle)
+          : TajweedParser.buildPlainSpans(rawText, baseStyle,
+              diacriticStyle: diacriticStyle);
+      if (_spanCache.length > _spanCacheMaxEntries) {
+        _spanCache.clear();
+      }
+      return spans;
+    });
+
+    final Color playingColor = theme.brightness == Brightness.dark
+        ? const Color(0xFF2C3C57)
+        : const Color(0xFFFFE19C);
+    final Color backgroundColor = isCurrentlyPlaying
+        ? playingColor
+        : isSelected
+            ? colorScheme.secondaryContainer.withAlpha((255 * 0.6).round())
+            : isInActiveRange
+                ? colorScheme.primaryContainer.withAlpha((255 * 0.35).round())
+                : colorScheme.primaryContainer.withAlpha((255 * 0.15).round());
+    final Color borderColor = isCurrentlyPlaying
+        ? colorScheme.primary
+        : colorScheme.outlineVariant.withAlpha((255 * 0.5).round());
+    final List<BoxShadow>? boxShadow = isCurrentlyPlaying
+        ? [
+            BoxShadow(
+              color: colorScheme.primary.withAlpha((255 * 0.25).round()),
+              blurRadius: 14,
+              offset: const Offset(0, 6),
+            ),
+          ]
+        : null;
+
+    return TweenAnimationBuilder<Color?>(
+      key: tileKey,
+      tween: ColorTween(end: backgroundColor),
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.easeOut,
+      builder: (context, animatedColor, child) {
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 6),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
+          decoration: BoxDecoration(
+            color: animatedColor ?? backgroundColor,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: borderColor, width: 1.0),
+            boxShadow: boxShadow,
+          ),
+          child: child,
+        );
+      },
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => _selectAyah(a),
+        child: Directionality(
+          textDirection: textDirection,
+          child: Column(
+            crossAxisAlignment: textDirection == TextDirection.rtl
+                ? CrossAxisAlignment.end
+                : CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: textDirection == TextDirection.rtl
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: _edition == QuranEditions.irab && IrabService().isLoaded
+                    ? Wrap(
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          IrabVerseWidget(
+                            verse: IrabService().getVerse(
+                                    a.surah.number, a.numberInSurah) ??
+                                IrabVerse(
+                                    surahNumber: a.surah.number,
+                                    verseNumber: a.numberInSurah,
+                                    words: []),
+                            fontSize: baseFontSize,
+                          ),
+                          const SizedBox(width: 8),
+                          AyahNumberBadge(
+                            number: a.numberInSurah,
+                            rtl: _edition.isRtl,
+                            colorScheme: colorScheme,
+                          ),
+                        ],
+                      )
+                    : RichText(
+                        textAlign: textDirection == TextDirection.rtl
+                            ? TextAlign.right
+                            : TextAlign.left,
+                        textDirection: textDirection,
+                        text: TextSpan(
+                          style: baseStyle,
+                          children: [
+                            ...ayahContentSpans,
+                            const TextSpan(text: '  '),
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: AyahNumberBadge(
+                                number: a.numberInSurah,
+                                rtl: _edition.isRtl,
+                                colorScheme: colorScheme,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+              ),
+              if (_edition.isTranslation)
+                Align(
+                  alignment: textDirection == TextDirection.rtl
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: Text(
+                    '${a.surah.englishName} ${a.numberInSurah}',
+                    style: textTheme.bodySmall?.copyWith(
+                      color: colorScheme.onSurface.withAlpha((255 * 0.6).round()),
+                    ),
+                    textAlign: textDirection == TextDirection.rtl
+                        ? TextAlign.right
+                        : TextAlign.left,
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// Multi-reciter rotation UI (per verse-repeat). Only shown for editions
+  /// that fall back to the user's selected Arabic reciter.
+  Widget _buildReciterRotationSection(
+      void Function(void Function()) setSheetState, AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    final langCode = l10n.localeName;
+
+    void invalidatePlaylist() {
+      // Rotation changed → any loaded/paused playlist is stale.
+      _activeReciterOrder = null;
+      _activeReciterKey = null;
+      _pausedForResume = false;
+    }
+
+    // Build the preview sequence for the current verse repeat count.
+    String buildPreview() {
+      final order = _reciterRotationOrder.where((e) => e.isNotEmpty).toList();
+      if (order.isEmpty) return '';
+      final count = _verseRepeatCount <= 0 ? 1 : _verseRepeatCount;
+      const maxShown = 8;
+      final shown = count < maxShown ? count : maxShown;
+      final parts = <String>[];
+      for (int i = 0; i < shown; i++) {
+        parts.add(AudioService.reciterDisplayName(
+            order[i % order.length], langCode));
+      }
+      var seq = parts.join('  →  ');
+      if (count > maxShown) seq = '$seq  …';
+      return seq;
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SwitchListTile(
+          title: Text(l10n.reciterRotationTitle),
+          subtitle: Text(
+            l10n.reciterRotationDesc,
+            style: theme.textTheme.bodySmall,
+          ),
+          value: _reciterRotationEnabled,
+          onChanged: (val) async {
+            setSheetState(() => _reciterRotationEnabled = val);
+            setState(() {
+              _reciterRotationEnabled = val;
+              invalidatePlaylist();
+            });
+            await PreferencesService.saveReciterRotationEnabled(val);
+          },
+        ),
+        if (_reciterRotationEnabled) ...[
+          if (_reciterRotationOrder.isEmpty)
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+              child: Text(
+                l10n.reciterRotationEmpty,
+                style: theme.textTheme.bodySmall
+                    ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+              ),
+            )
+          else ...[
+            ReorderableListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                buildDefaultDragHandles: false,
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                itemCount: _reciterRotationOrder.length,
+                onReorder: (oldIndex, newIndex) async {
+                  if (newIndex > oldIndex) newIndex -= 1;
+                  final list = List<String>.from(_reciterRotationOrder);
+                  final item = list.removeAt(oldIndex);
+                  list.insert(newIndex, item);
+                  setSheetState(() => _reciterRotationOrder = list);
+                  setState(() {
+                    _reciterRotationOrder = list;
+                    invalidatePlaylist();
+                  });
+                  await PreferencesService.saveReciterRotationOrder(list);
+                },
+                itemBuilder: (context, index) {
+                  final code = _reciterRotationOrder[index];
+                  final name =
+                      AudioService.reciterDisplayName(code, langCode);
+                  return Card(
+                    key: ValueKey(code),
+                    elevation: 0,
+                    margin: const EdgeInsets.symmetric(vertical: 4),
+                    color: theme.colorScheme.surfaceContainerHighest
+                        .withAlpha((255 * 0.4).round()),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: ListTile(
+                      dense: true,
+                      leading: CircleAvatar(
+                        radius: 14,
+                        backgroundColor: theme.colorScheme.primary,
+                        child: Text(
+                          '${index + 1}',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: theme.colorScheme.onPrimary,
+                          ),
+                        ),
+                      ),
+                      title: Text(name, overflow: TextOverflow.ellipsis),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.close),
+                            tooltip: l10n.reciterRotationRemove,
+                            onPressed: () async {
+                              final list =
+                                  List<String>.from(_reciterRotationOrder)
+                                    ..removeAt(index);
+                              setSheetState(() => _reciterRotationOrder = list);
+                              setState(() {
+                                _reciterRotationOrder = list;
+                                invalidatePlaylist();
+                              });
+                              await PreferencesService
+                                  .saveReciterRotationOrder(list);
+                            },
+                          ),
+                          ReorderableDragStartListener(
+                            index: index,
+                            child: const Icon(Icons.drag_handle),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
+              child: Text(
+                l10n.reciterRotationPreview(
+                  _verseRepeatCount <= 0 ? 1 : _verseRepeatCount,
+                  buildPreview(),
+                ),
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.primary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: TextButton.icon(
+                icon: const Icon(Icons.add),
+                label: Text(l10n.reciterRotationAddReciter),
+                onPressed: () {
+                  SettingsSheetUtils.showReciterSelectionSheet(
+                    context,
+                    requireVerseByVerse: true,
+                    onReciterSelected: (code) async {
+                      if (code.isEmpty) return;
+                      if (_reciterRotationOrder.contains(code)) return;
+                      final list = List<String>.from(_reciterRotationOrder)
+                        ..add(code);
+                      setSheetState(() => _reciterRotationOrder = list);
+                      setState(() {
+                        _reciterRotationOrder = list;
+                        invalidatePlaylist();
+                      });
+                      await PreferencesService.saveReciterRotationOrder(list);
+                    },
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ],
     );
   }
 
@@ -974,7 +1574,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
         return StatefulBuilder(
           builder: (context, setSheetState) {
             return SafeArea(
-              child: Padding(
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -1017,6 +1617,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                            );
                         },
                       ),
+                      const Divider(),
+                      _buildReciterRotationSection(setSheetState, l10n),
                       const Divider(),
                     ],
                     ListTile(

@@ -223,7 +223,9 @@ class UsageStatsService {
     try {
       await SupabaseConfig.client.rpc('record_installation', params: {
         'p_installation_id': PreferencesService.getInstallationId(),
-        'p_platform': platform['os'],
+        // Compute the platform live (not from the possibly-empty cached JSON)
+        // so iOS is always recorded as 'ios'.
+        'p_platform': _currentPlatformOs(platform),
         'p_os_version': platform['version'] ?? platform['systemVersion'],
         'p_device_model': platform['model'],
         'p_manufacturer': platform['manufacturer'],
@@ -338,6 +340,34 @@ class UsageStatsService {
   // ── small helpers ──────────────────────────────────────────────────────
 
   int _dayKey(DateTime d) => d.year * 10000 + d.month * 100 + d.day;
+
+  /// Reliable current-platform OS string for stats, computed live rather than
+  /// read from the cached device_info.json (which can be missing/stale on the
+  /// first heartbeat and previously caused iOS installs to be recorded with a
+  /// null/wrong platform, so they didn't appear as 'ios' in the dashboard).
+  ///
+  /// On web we keep the value the web device-info builder produced so the
+  /// 'telegram' vs 'web' distinction is preserved.
+  String? _currentPlatformOs(Map<String, dynamic> platform) {
+    if (kIsWeb) {
+      final os = platform['os'] as String?;
+      return (os != null && os.isNotEmpty) ? os : 'web';
+    }
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.iOS:
+        return 'ios';
+      case TargetPlatform.android:
+        return 'android';
+      case TargetPlatform.macOS:
+        return 'macos';
+      case TargetPlatform.windows:
+        return 'windows';
+      case TargetPlatform.linux:
+        return 'linux';
+      case TargetPlatform.fuchsia:
+        return 'fuchsia';
+    }
+  }
 
   Map<String, dynamic>? _deviceInfo() {
     final raw = PreferencesService.getDeviceInfoJson();
