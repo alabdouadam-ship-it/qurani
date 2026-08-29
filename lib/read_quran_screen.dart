@@ -20,7 +20,6 @@ import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
 import 'util/debug_error_display.dart';
 
-import 'package:pdfrx/pdfrx.dart';
 import 'package:qurani/services/mushaf_pdf_service.dart';
 
 import 'package:wakelock_plus/wakelock_plus.dart';
@@ -40,6 +39,7 @@ import 'read_quran/highlight_models.dart';
 import 'read_quran/highlighted_ayahs_sheet.dart';
 import 'read_quran/highlighted_pdf_pages_sheet.dart';
 import 'read_quran/juz_picker_sheet.dart';
+import 'read_quran/mushaf_page_view.dart';
 import 'read_quran/mushaf_pdf_controller.dart';
 import 'read_quran/mushaf_style_picker.dart';
 import 'read_quran/page_audio_sources.dart';
@@ -47,7 +47,6 @@ import 'read_quran/page_picker_sheet.dart';
 import 'read_quran/pdf_page_options_sheet.dart';
 import 'read_quran/reader_settings_sheet.dart';
 import 'read_quran/surah_picker_sheet.dart';
-import 'read_quran/zoomable_pdf_page.dart';
 
 const String kBasmalah = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
 
@@ -151,7 +150,6 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   // PDF Mode State
   bool _isPdfMode = false;
-  bool _isPdfZoomed = false;
   PageController? _pdfPageController;
 
   /// Which mushaf style is selected, whether its file is on disk, the opened
@@ -1862,221 +1860,51 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
   }
 
+  /// The mushaf (PDF) reading surface. The build tree, its download/error
+  /// states, and the zoom state all live in [MushafPageView]; what stays here
+  /// is the PageController lifecycle, which four other methods jump
+  /// programmatically, and the cross-cutting reactions to a page change.
   Widget _buildPdfView() {
-    final l10n = AppLocalizations.of(context)!;
+    // Created lazily so that after _togglePdfMode or a style change (both of
+    // which null it out) the next build recreates it at the right initial page
+    // for the current style's cover-page offset.
+    _pdfPageController ??=
+        PageController(initialPage: _pdf.pdfIndexForQuranPage(_currentPage));
 
-    if (_pdf.isDownloading) {
-      return Center(
-        child: ModernSurfaceCard(
-          margin: const EdgeInsets.all(24),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(l10n.downloadingMushaf,
-                    style: const TextStyle(
-                        fontSize: 18, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 16),
-                LinearProgressIndicator(value: _pdf.progress),
-                const SizedBox(height: 8),
-                Text('${((_pdf.progress ?? 0) * 100).toStringAsFixed(1)}%'),
-                const SizedBox(height: 16),
-                TextButton(
-                  onPressed: _pdf.cancelDownload,
-                  child: Text(l10n.cancel),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
-    if (_pdf.path == null) {
-      return Center(
-        child: ModernSurfaceCard(
-          margin: const EdgeInsets.all(24),
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(Icons.download_for_offline,
-                    size: 64, color: Colors.grey),
-                const SizedBox(height: 16),
-                Text(l10n.downloadMushafPdf,
-                    style: const TextStyle(
-                        fontSize: 20, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 8),
-                Text(l10n.chooseStyleToDownload,
-                    style: const TextStyle(color: Colors.grey)),
-                const SizedBox(height: 24),
-                Wrap(
-                  spacing: 16,
-                  runSpacing: 16,
-                  alignment: WrapAlignment.center,
-                  children: MushafType.values.map((type) {
-                    String typeName;
-                    switch (type) {
-                      case MushafType.blue:
-                        typeName = l10n.mushafTypeBlue;
-                        break;
-                      case MushafType.green:
-                        typeName = l10n.mushafTypeGreen;
-                        break;
-                      case MushafType.tajweed:
-                        typeName = l10n.mushafTypeTajweed;
-                        break;
-                    }
-
-                    return ElevatedButton.icon(
-                      icon: const Icon(Icons.file_download),
-                      label: Text(typeName),
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 24, vertical: 12),
-                      ),
-                      onPressed: () => _downloadPdf(type),
-                    );
-                  }).toList(),
-                ),
-                const SizedBox(height: 32),
-                TextButton(
-                  onPressed: _togglePdfMode,
-                  child: Text(l10n.returnToTextView),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
-    }
-
-    final offset = _pdf.pageOffset;
-
-    // Calculate initial index for PageView
-    // _currentPage is 1-based Quran page.
-    // initialIndex = (_currentPage - 1) + offset.
-    final initialIndex = (_currentPage - 1) + offset;
-
-    // We recreate controller only if needed to avoid jumpy behavior,
-    // but PageView needs controller with initialPage set correctly on first build.
-
-    // Actually, simply always use the state controller if it exists, or create one.
-    _pdfPageController ??= PageController(initialPage: initialIndex);
-
-    if (_pdf.path == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-
-    // The controller opens the document lazily on first access, so there is
-    // nothing to initialize here.
-    return FutureBuilder<PdfDocument>(
-      future: _pdf.documentFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (snapshot.hasError) {
-          return Center(
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
-                  const SizedBox(height: 16),
-                  Text(l10n.errorLoadingPdf,
-                      style: const TextStyle(fontSize: 18)),
-                  const SizedBox(height: 8),
-                  Text(
-                    snapshot.error.toString(),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.grey),
-                  ),
-                  const SizedBox(height: 24),
-                  ElevatedButton.icon(
-                    onPressed: _pdf.deleteCurrentFile,
-                    icon: const Icon(Icons.refresh),
-                    label: Text(l10n.deleteAndRetry),
-                  )
-                ],
-              ),
-            ),
-          );
-        }
-        if (!snapshot.hasData) {
-          return const Center(child: CircularProgressIndicator());
-        }
-
-        final document = snapshot.data!;
-
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: PageView.builder(
-            controller: _pdfPageController,
-            physics: _isPdfZoomed
-                ? const NeverScrollableScrollPhysics()
-                : const PageScrollPhysics(),
-            itemCount: document.pages.length,
-            onPageChanged: (index) {
-              final quranPage = (index - offset) + 1;
-              if (quranPage >= 1 &&
-                  quranPage <= 604 &&
-                  _currentPage != quranPage) {
-                _autoFlipGeneration++; // Cancel pending auto-flip
-                unawaited(_stopPageAudio());
-                setState(() {
-                  _currentPage = quranPage;
-                  _currentPageData = null;
-                  _selectedAyah = null;
-                });
-                PreferencesService.saveLastReadPage(_edition.name, quranPage);
-                _repository.loadPage(quranPage, _edition).then((data) {
-                  if (mounted && _currentPage == quranPage) {
-                    setState(() {
-                      _currentPageData = data;
-                    });
-                  }
-                });
-              }
-            },
-            itemBuilder: (context, index) {
-              // Keep only the current page and its immediate neighbours alive.
-              // See ZoomablePdfPage.keepAlive: unconditional keep-alive across a
-              // ~613-page PageView retained a rasterised bitmap for every page
-              // visited in the session.
-              final currentPdfIndex = (_currentPage - 1) + offset;
-              return ZoomablePdfPage(
-                document: document,
-                pageNumber: index + 1,
-                isFullscreen: _isFullscreen,
-                mushafType: _pdf.type,
-                keepAlive: (index - currentPdfIndex).abs() <= 1,
-                onZoomChanged: (isZoomed) {
-                  if (mounted && isZoomed != _isPdfZoomed) {
-                    setState(() {
-                      _isPdfZoomed = isZoomed;
-                    });
-                  }
-                },
-                onLongPress: () {
-                  if (_isFullscreen) {
-                    _showFullscreenControls();
-                    return;
-                  }
-                  // Calculate Quran page
-                  final quranPage = (index - offset) + 1;
-                  if (quranPage >= 1 && quranPage <= 604) {
-                    _showPdfPageOptions(quranPage);
-                  }
-                },
-              );
-            },
-          ),
-        );
-      },
+    return MushafPageView(
+      controller: _pdf,
+      pageController: _pdfPageController!,
+      currentQuranPage: _currentPage,
+      totalQuranPages: _totalPages,
+      isFullscreen: _isFullscreen,
+      onQuranPageChanged: _onMushafPageChanged,
+      onRequestDownload: _downloadPdf,
+      onReturnToTextView: _togglePdfMode,
+      onLongPressPage: _showPdfPageOptions,
+      onLongPressWhileFullscreen: _showFullscreenControls,
     );
+  }
+
+  /// Applies a mushaf swipe to the shared reading position: cancels any pending
+  /// auto-flip, stops page audio, persists the new last-read page, and loads
+  /// the matching text-mode PageData so the bottom bar and ayah actions stay
+  /// correct even while the PDF is on screen.
+  void _onMushafPageChanged(int quranPage) {
+    _autoFlipGeneration++;
+    unawaited(_stopPageAudio());
+    setState(() {
+      _currentPage = quranPage;
+      _currentPageData = null;
+      _selectedAyah = null;
+    });
+    PreferencesService.saveLastReadPage(_edition.name, quranPage);
+    _repository.loadPage(quranPage, _edition).then((data) {
+      if (mounted && _currentPage == quranPage) {
+        setState(() {
+          _currentPageData = data;
+        });
+      }
+    });
   }
 
   Widget _buildPageView() {
