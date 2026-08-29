@@ -43,8 +43,8 @@ import 'read_quran/juz_picker_sheet.dart';
 import 'read_quran/mushaf_page_view.dart';
 import 'read_quran/mushaf_pdf_controller.dart';
 import 'read_quran/mushaf_style_picker.dart';
-import 'read_quran/page_audio_index_map.dart';
 import 'read_quran/page_audio_sources.dart';
+import 'read_quran/prepared_page_audio.dart';
 import 'read_quran/page_picker_sheet.dart';
 import 'read_quran/pdf_page_options_sheet.dart';
 import 'read_quran/reader_settings_sheet.dart';
@@ -88,11 +88,23 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   late final AudioPlayer _pagePlayer;
   bool _isPlayingPage = false;
-  bool _isLoadingPageAudio = false;
+  /// What the player currently holds: page, reciter, index mapping, and whether
+  /// a build is in flight. See [PreparedPageAudio] — these five pieces of state
+  /// were previously reset in four separate places and had to stay consistent.
+  final PreparedPageAudio _preparedAudio = PreparedPageAudio();
+
+  /// True while the *page text* is being fetched in order to start audio, which
+  /// happens when a transport button is pressed before the page has loaded.
+  ///
+  /// Distinct from [PreparedPageAudio.isLoading], which means "an audio source
+  /// is being built". A single flag previously served both; splitting them keeps
+  /// the audio bookkeeping honest, and [_isAudioBusy] restores the combined
+  /// meaning for the transport buttons, which should spin for either reason.
+  bool _isLoadingPageData = false;
+
+  /// Whether the audio transport should show as busy.
+  bool get _isAudioBusy => _isLoadingPageData || _preparedAudio.isLoading;
   int? _currentAyahIndex;
-  ConcatenatingAudioSource? _currentPageAudioSource;
-  String? _pageAudioReciter;
-  Future<bool>? _pageAudioPreparation;
   StreamSubscription<PlayerState>? _playerStateSub;
   StreamSubscription<SequenceState?>? _sequenceStateSub;
   final ScrollController _pageScrollController = ScrollController();
@@ -139,11 +151,6 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   // ── Fix: independent audio tracking to prevent race conditions ──
   /// Monotonic counter; incremented on user actions to cancel stale auto-flip.
   int _autoFlipGeneration = 0;
-  /// Page number the current ConcatenatingAudioSource was built for.
-  int? _audioSourcePageNumber;
-  /// Maps each audio source index → page.ayahs index (handles skipped nulls).
-  /// See [PageAudioIndexMap] for why the two index spaces differ.
-  PageAudioIndexMap _audioIndexMap = PageAudioIndexMap.empty;
   /// True while _goToPageForAutoFlip is executing, suppresses onPageChanged.
   bool _isAutoFlipping = false;
   /// True while _goToPage is programmatically jumping the PageView.
@@ -241,7 +248,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
       final sourceIndex = sequenceState?.currentIndex;
       final page = _currentPageData;
-      final sourcePage = _audioSourcePageNumber;
+      final sourcePage = _preparedAudio.pageNumber;
       int? ayahNumber;
 
       if (sourceIndex != null &&
@@ -249,7 +256,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           sourcePage == page.number &&
           sourceIndex >= 0) {
         // Resolve through the mapping (handles skipped null sources)
-        final ayahIdx = _audioIndexMap.ayahIndexOrIdentity(sourceIndex);
+        final ayahIdx = _preparedAudio.indexMap.ayahIndexOrIdentity(sourceIndex);
         if (ayahIdx >= 0 && ayahIdx < page.ayahs.length) {
           ayahNumber = page.ayahs[ayahIdx].number;
         }
@@ -531,11 +538,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _handlePreviousAyahPressed() async {
-    if (_isLoadingPageAudio) return;
+    if (_isLoadingPageData) return;
 
     if (_currentPageData == null) {
       setState(() {
-        _isLoadingPageAudio = true;
+        _isLoadingPageData = true;
       });
       try {
         final data = await _repository.loadPage(_currentPage, _edition);
@@ -543,13 +550,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
         setState(() {
           _currentPageData = data;
-          _isLoadingPageAudio = false;
+          _isLoadingPageData = false;
         });
         await _seekToPreviousAyah();
       } catch (_) {
         if (mounted) {
           setState(() {
-            _isLoadingPageAudio = false;
+            _isLoadingPageData = false;
           });
         }
       }
@@ -560,7 +567,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _handlePlayPausePressed() async {
-    if (_isLoadingPageAudio) return;
+    if (_isLoadingPageData) return;
 
     if (_currentPageData != null) {
       await _togglePageAudio(_currentPageData!);
@@ -568,7 +575,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
 
     setState(() {
-      _isLoadingPageAudio = true;
+      _isLoadingPageData = true;
     });
     final messenger = ScaffoldMessenger.of(context);
     try {
@@ -577,14 +584,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
       setState(() {
         _currentPageData = data;
-        _isLoadingPageAudio = false;
+        _isLoadingPageData = false;
       });
       await _togglePageAudio(data);
     } catch (e, st) {
       debugPrint('[ReadQuranScreen] loadPage audio error: $e\n$st');
       if (mounted) {
         setState(() {
-          _isLoadingPageAudio = false;
+          _isLoadingPageData = false;
         });
       }
       if (!mounted) return;
@@ -620,13 +627,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                 IconButton(
                   icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
                   tooltip: l10n.previousAyah,
-                  onPressed: _isLoadingPageAudio
+                  onPressed: _isAudioBusy
                       ? null
                       : () => unawaited(_handlePreviousAyahPressed()),
                 ),
                 IconButton(
                   iconSize: 34,
-                  icon: _isLoadingPageAudio
+                  icon: _isAudioBusy
                       ? SizedBox(
                           width: 26,
                           height: 26,
@@ -644,7 +651,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                         ),
                   tooltip:
                       _isPlayingPage ? l10n.pausePageAudio : l10n.playPageAudio,
-                  onPressed: _isLoadingPageAudio
+                  onPressed: _isAudioBusy
                       ? null
                       : () => unawaited(_handlePlayPausePressed()),
                 ),
@@ -735,14 +742,6 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       fontWeight: fontWeight,
       color: color,
     );
-  }
-
-  String _resolveReciterCodeForEdition([QuranEdition? edition]) {
-    final target = edition ?? _edition;
-    // Editions with their own associated recitation carry an audioReciterKey;
-    // those without (null) fall back to the user's selected Arabic reciter, so
-    // the user reads the translation/tafsir while hearing the Arabic ayah.
-    return target.audioReciterKey ?? PreferencesService.getReciter();
   }
 
   void _scheduleScrollToAyah(int ayahNumber,
@@ -968,9 +967,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
             PreferencesService.saveReciter(key);
             if (!mounted) return;
             setState(() {
-              if (_pageAudioReciter != key) {
-                _pageAudioReciter = null;
-              }
+              // Picking a different reciter invalidates the prepared audio so
+              // the next play rebuilds; re-picking the current one is a no-op
+              // and keeps playback position.
+              _preparedAudio.invalidateIfReciterChanged(key);
             });
           },
         );
@@ -1099,7 +1099,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _togglePageAudio(PageData page) async {
-    if (_isLoadingPageAudio) return;
+    if (_isAudioBusy) return;
     // User hit play — release any pending deep-link so audio's ayah tracking
     // takes over the highlight cleanly.
     _deepLinkAyah = null;
@@ -1132,7 +1132,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
 
     final l10n = AppLocalizations.of(context)!;
-    final reciterCode = _resolveReciterCodeForEdition();
+    final reciterCode = reciterCodeForEdition(_edition);
 
     // Validate if reciter supports verse-by-verse audio
     final reciter = await ReciterConfigService.getReciterByCode(reciterCode);
@@ -1205,7 +1205,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       // Translate ayah-level index → source-level index via the mapping.
       // This handles the case where some audio sources were null and skipped;
       // an ayah with no audio starts the page from its first source.
-      final safeSourceIndex = _audioIndexMap.sourceIndexOrFirst(safeAyahIndex);
+      final safeSourceIndex = _preparedAudio.indexMap.sourceIndexOrFirst(safeAyahIndex);
 
       final playingAyahNumber = page.ayahs[safeAyahIndex].number;
 
@@ -1247,33 +1247,29 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<bool> _preparePageAudio(PageData page, String reciterCode) async {
-    if (_pageAudioPreparation != null) {
+    final inFlight = _preparedAudio.inFlight;
+    if (inFlight != null) {
       // Fix 7: If a prior concurrent call failed, catch its error and
       // retry fresh instead of propagating a stale exception.
       try {
-        return await _pageAudioPreparation!;
+        return await inFlight;
       } catch (_) {
-        _pageAudioPreparation = null;
+        _preparedAudio.discardFailedPreparation();
         // Fall through to retry below
       }
     }
 
-    // Fix 2: Use independent _audioSourcePageNumber instead of volatile
-    // _currentPageData which can be nulled during page transitions.
-    if (!pageAudioNeedsReload(
-      hasSource: _currentPageAudioSource != null,
-      preparedPageNumber: _audioSourcePageNumber,
-      preparedReciterCode: _pageAudioReciter,
+    // Fix 2: compares against the independently tracked prepared page number
+    // rather than the volatile _currentPageData, which is nulled during page
+    // transitions.
+    if (!_preparedAudio.needsReloadFor(
       pageNumber: page.number,
       reciterCode: reciterCode,
     )) {
       return true;
     }
 
-    _isLoadingPageAudio = true;
-
-    final completer = Completer<bool>();
-    _pageAudioPreparation = completer.future;
+    final completer = _preparedAudio.beginPreparation();
 
     try {
       // Offline handling: if first ayah is not downloaded and no internet, abort early
@@ -1316,10 +1312,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
             initialPosition: Duration.zero,
           )
           .timeout(const Duration(seconds: 20));
-      _currentPageAudioSource = source;
-      _pageAudioReciter = reciterCode;
-      _audioSourcePageNumber = page.number;
-      _audioIndexMap = PageAudioIndexMap(result.indexMapping);
+      _preparedAudio.markPrepared(
+        reciterCode: reciterCode,
+        pageNumber: page.number,
+        indexMapping: result.indexMapping,
+      );
       if (mounted) {
         setState(() {
           _currentAyahIndex = 0;
@@ -1373,8 +1370,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       completer.completeError(error);
       rethrow;
     } finally {
-      _isLoadingPageAudio = false;
-      _pageAudioPreparation = null;
+      _preparedAudio.endPreparation();
     }
   }
 
@@ -1384,7 +1380,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     final page = _currentPageData;
     if (page == null) return;
 
-    final reciterCode = _resolveReciterCodeForEdition();
+    final reciterCode = reciterCodeForEdition(_edition);
     final l10n = AppLocalizations.of(context)!;
 
     try {
@@ -1401,10 +1397,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       final currentIndex = _pagePlayer.currentIndex ?? _currentAyahIndex ?? 0;
       // Steps back one SOURCE, not one ayah: the previous audible ayah may be
       // several ayahs earlier if the ones between had no audio.
-      final targetIndex = _audioIndexMap.previousSourceIndex(currentIndex);
+      final targetIndex = _preparedAudio.indexMap.previousSourceIndex(currentIndex);
       await _pagePlayer.seek(Duration.zero, index: targetIndex);
       // Map source-level index → ayah-level index via the mapping
-      final ayahIdx = _audioIndexMap.ayahIndexOrIdentity(targetIndex);
+      final ayahIdx = _preparedAudio.indexMap.ayahIndexOrIdentity(targetIndex);
       final ayahNumber = (ayahIdx >= 0 && ayahIdx < page.ayahs.length)
           ? page.ayahs[ayahIdx].number
           : page.ayahs.first.number;
@@ -1441,13 +1437,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = ayah.number;
     });
     _scheduleScrollToAyah(ayah.number);
-    if (wasPlaying && _currentPageData != null && _audioSourcePageNumber == _currentPageData!.number) {
+    if (wasPlaying && _currentPageData != null && _preparedAudio.pageNumber == _currentPageData!.number) {
       // Source already matches current page — seek only.
       final targetAyahIdx = _currentPageData!.ayahs.indexWhere((a) => a.number == ayah.number);
       if (targetAyahIdx >= 0) {
         // Reverse-lookup: find source index from ayah index. Null means this
         // ayah has no audio, so fall through to a full replay below.
-        final sourceIdx = _audioIndexMap.sourceIndexOf(targetAyahIdx);
+        final sourceIdx = _preparedAudio.indexMap.sourceIndexOf(targetAyahIdx);
         if (sourceIdx != null) {
           unawaited(_pagePlayer.seek(Duration.zero, index: sourceIdx));
           return;
@@ -1462,17 +1458,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
   Future<void> _stopPageAudio() async {
     _autoFlipGeneration++;
-    _isLoadingPageAudio = false;
-    _pageAudioPreparation = null;
     try {
       await _pagePlayer.stop();
     } catch (_) {
       // Player already stopped or disposed.
     }
-    _currentPageAudioSource = null;
-    _pageAudioReciter = null;
-    _audioSourcePageNumber = null;
-    _audioIndexMap = PageAudioIndexMap.empty;
+    // One call resets all five fields together; a partial reset would leave the
+    // screen believing the player still holds this page's audio.
+    _preparedAudio.clear();
     _currentAyahIndex = null;
 
     if (mounted) {
@@ -1487,15 +1480,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   /// Stops audio without incrementing the auto-flip generation counter.
   /// Used exclusively within the auto-flip flow itself.
   Future<void> _stopPageAudioSilent() async {
-    _isLoadingPageAudio = false;
-    _pageAudioPreparation = null;
     try {
       await _pagePlayer.stop();
     } catch (_) {}
-    _currentPageAudioSource = null;
-    _pageAudioReciter = null;
-    _audioSourcePageNumber = null;
-    _audioIndexMap = PageAudioIndexMap.empty;
+    _preparedAudio.clear();
     _currentAyahIndex = null;
     if (mounted) {
       setState(() {
@@ -1609,7 +1597,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           surah: ayah.surah,
           ayah: ayah,
           isTranslation: _edition.isTranslation,
-          reciterIdentifier: _pageAudioReciter,
+          reciterIdentifier: _preparedAudio.reciterCode,
         );
         break;
       // Translation/tafsir selections are handled above via viewEdition.
@@ -2065,7 +2053,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         // elsewhere, so the right ayah is highlighted during playback.
         final int? playingAyahIndex = _currentAyahIndex == null
             ? null
-            : _audioIndexMap.ayahIndexOrIdentity(_currentAyahIndex!);
+            : _preparedAudio.indexMap.ayahIndexOrIdentity(_currentAyahIndex!);
         final bool isPlaying = isCurrentPage &&
             playingAyahIndex != null &&
             globalIndex == playingAyahIndex;
@@ -2562,12 +2550,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                 IconButton(
                   icon: Icon(isRtl ? Icons.skip_next : Icons.skip_previous),
                   tooltip: l10n.previousAyah,
-                  onPressed: _isLoadingPageAudio
+                  onPressed: _isAudioBusy
                       ? null
                       : () => unawaited(_handlePreviousAyahPressed()),
                 ),
                 IconButton(
-                  icon: _isLoadingPageAudio
+                  icon: _isAudioBusy
                       ? SizedBox(
                           width: 20,
                           height: 20,
@@ -2585,7 +2573,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                         ),
                   tooltip:
                       _isPlayingPage ? l10n.pausePageAudio : l10n.playPageAudio,
-                  onPressed: _isLoadingPageAudio
+                  onPressed: _isAudioBusy
                       ? null
                       : () => unawaited(_handlePlayPausePressed()),
                 ),
