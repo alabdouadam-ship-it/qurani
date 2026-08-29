@@ -47,22 +47,31 @@
 		<true/>
 		<key>UIStatusBarHidden</key>
 		<false/>
-		<!-- Background Modes for audio and notifications -->
+		<!-- Background audio only.
+		     `fetch` and `remote-notification` were removed: the app has no
+		     BGTaskScheduler work and no push provider (adhan and wird
+		     reminders are LOCAL notifications scheduled via
+		     flutter_local_notifications, and the prayer-times cache refresh
+		     runs at launch, not in the background). Declaring unused
+		     background modes is an App Review rejection risk. -->
 		<key>UIBackgroundModes</key>
 		<array>
 			<string>audio</string>
-			<string>fetch</string>
-			<string>remote-notification</string>
 		</array>
-		<!-- Location permissions for Qibla and Prayer Times -->
+		<!-- Location for Qibla and Prayer Times.
+		     When-in-use ONLY. `NSLocationAlwaysAndWhenInUseUsageDescription`
+		     was removed: nothing here requests always-on authorization, and
+		     asking for a stronger grant than we use invites review questions
+		     plus a scarier prompt for the user. -->
 		<key>NSLocationWhenInUseUsageDescription</key>
 		<string>Qurani needs your location to determine Qibla direction and calculate accurate prayer times for your area.</string>
-		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-		<string>Qurani needs your location to determine Qibla direction and calculate accurate prayer times for your area.</string>
-	<key>ITSAppUsesNonExemptEncryption</key>
-	<false/>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>This app requires microphone access to fulfill audio system requirements, though it does not actually record audio.</string>
+		<!-- No NSMicrophoneUsageDescription: nothing in the app records audio.
+		     The audio session is configured for playback only
+		     (AudioSessionConfiguration.music() in main.dart), so declaring
+		     microphone access would prompt the user for a capability we never
+		     use. -->
+		<key>ITSAppUsesNonExemptEncryption</key>
+		<false/>
 	</dict>
 </plist>
 
