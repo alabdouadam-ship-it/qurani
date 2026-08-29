@@ -35,6 +35,7 @@ import 'read_quran/ayah_text_dialog.dart';
 import 'read_quran/basmalah_header.dart';
 import 'read_quran/basmalah_text_utils.dart';
 import 'read_quran/edition_picker_sheet.dart';
+import 'read_quran/fullscreen_chrome_controller.dart';
 import 'read_quran/highlight_models.dart';
 import 'read_quran/highlighted_ayahs_sheet.dart';
 import 'read_quran/highlighted_pdf_pages_sheet.dart';
@@ -159,10 +160,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   /// this screen no longer carries six more fields plus the download
   /// state machine, and so the page-offset arithmetic is testable.
   late final MushafPdfController _pdf;
-  bool _isFullscreen = false;
-  bool _fullscreenControlsVisible = false;
-  bool _fullscreenButtonVisible = false;
-  Timer? _fullscreenButtonTimer;
+  /// Fullscreen flag plus the transient overlay chrome (exit button and the
+  /// long-press playback strip) and its auto-hide timer. See
+  /// [FullscreenChromeController] for the interaction rules.
+  late final FullscreenChromeController _chrome;
 
   @override
   void initState() {
@@ -195,6 +196,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     // Initialize PDF Mode. The controller reads the persisted style itself.
     _isPdfMode = PreferencesService.getIsPdfMode();
     _pdf = MushafPdfController()..addListener(_onPdfStateChanged);
+    _chrome = FullscreenChromeController()..addListener(_onChromeStateChanged);
     if (_isPdfMode) {
       unawaited(_pdf.refreshAvailability());
     }
@@ -317,7 +319,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     // leaves the screen.
     _pdf.removeListener(_onPdfStateChanged);
     _pdf.dispose();
-    _fullscreenButtonTimer?.cancel();
+    // Cancels the overlay auto-hide timer.
+    _chrome.removeListener(_onChromeStateChanged);
+    _chrome.dispose();
     super.dispose();
   }
 
@@ -325,6 +329,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   /// progress). A whole-screen setState matches the previous behaviour, since
   /// the PDF style is also read by the app bar and bottom bar.
   void _onPdfStateChanged() {
+    if (!mounted) return;
+    setState(() {});
+  }
+
+  /// Rebuilds when fullscreen or its overlay chrome changes. Whole-screen again
+  /// by necessity: `isFullscreen` drives the app bar, bottom bar, SafeArea
+  /// insets and padding throughout the reader.
+  void _onChromeStateChanged() {
     if (!mounted) return;
     setState(() {});
   }
@@ -392,68 +404,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   Future<void> _applyFullscreenSystemUi() async {
     try {
       await SystemChrome.setEnabledSystemUIMode(
-        _isFullscreen ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
+        _chrome.isFullscreen ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge,
       );
     } catch (_) {}
   }
-
-  void _setFullscreenControlsVisible(bool visible) {
-    if (!_isFullscreen || _fullscreenControlsVisible == visible) return;
-
-    if (mounted) {
-      setState(() {
-        _fullscreenControlsVisible = visible;
-      });
-    } else {
-      _fullscreenControlsVisible = visible;
-    }
-  }
-
-  void _showFullscreenControls() {
-    _setFullscreenControlsVisible(true);
-    // Also reveal the exit button while audio controls are open
-    _autoShowFullscreenButton();
-  }
-
-  void _hideFullscreenControls() {
-    _setFullscreenControlsVisible(false);
-    // Schedule the button to auto-hide after controls close
-    _scheduleHideFullscreenButton();
-  }
-
-  /// Shows the fullscreen exit button and schedules it to auto-hide after a delay.
-  void _autoShowFullscreenButton() {
-    _fullscreenButtonTimer?.cancel();
-    if (!_isFullscreen) return;
-    if (mounted) {
-      setState(() => _fullscreenButtonVisible = true);
-    }
-    _scheduleHideFullscreenButton();
-  }
-
-  /// Tap-toggle: shows button if hidden (resets timer), hides immediately if visible.
-  void _toggleFullscreenButton() {
-    if (!_isFullscreen) return;
-    if (_fullscreenButtonVisible) {
-      _fullscreenButtonTimer?.cancel();
-      if (mounted) setState(() => _fullscreenButtonVisible = false);
-    } else {
-      _autoShowFullscreenButton();
-    }
-  }
-
-  /// Schedules the exit button to slide away after [delay].
-  void _scheduleHideFullscreenButton({
-    Duration delay = const Duration(milliseconds: 3500),
-  }) {
-    _fullscreenButtonTimer?.cancel();
-    _fullscreenButtonTimer = Timer(delay, () {
-      if (mounted && _isFullscreen && !_fullscreenControlsVisible) {
-        setState(() => _fullscreenButtonVisible = false);
-      }
-    });
-  }
-
 
   void _syncActiveReaderPage() {
     final targetPage = _currentPage.clamp(1, _totalPages);
@@ -482,7 +436,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _setFullscreen(bool value) async {
-    if (_isFullscreen == value) return;
+    if (_chrome.isFullscreen == value) return;
 
     final targetPage = _currentPage.clamp(1, _totalPages);
     PageController? oldPdfController;
@@ -498,23 +452,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _pageController = PageController(initialPage: targetPage - 1);
     }
 
-    if (mounted) {
-      setState(() {
-        _isFullscreen = value;
-        _fullscreenControlsVisible = false;
-        _fullscreenButtonVisible = false;
-      });
-    } else {
-      _isFullscreen = value;
-      _fullscreenControlsVisible = false;
-      _fullscreenButtonVisible = false;
-    }
+    // Leaving fullscreen also clears both overlays and cancels the pending
+    // auto-hide, so re-entering never inherits a stale timer.
+    _chrome.setFullscreen(value);
 
-    // Auto-show the exit button briefly when entering fullscreen
+    // Auto-show the exit button briefly when entering fullscreen.
     if (value) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _autoShowFullscreenButton());
-    } else {
-      _fullscreenButtonTimer?.cancel();
+      WidgetsBinding.instance
+          .addPostFrameCallback((_) => _chrome.autoShowButton());
     }
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -531,7 +476,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _toggleFullscreen() async {
-    await _setFullscreen(!_isFullscreen);
+    await _setFullscreen(!_chrome.isFullscreen);
   }
 
   Future<void> _restoreReadingScreenUi() async {
@@ -544,7 +489,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   }
 
   Future<void> _handlePopInvoked(bool didPop) async {
-    if (!didPop && _isFullscreen) {
+    if (!didPop && _chrome.isFullscreen) {
       await _setFullscreen(false);
     }
   }
@@ -721,17 +666,17 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
               return Column(
                 children: [
                   Expanded(child: _buildPageView()),
-                  if (!_isFullscreen) _buildBottomBar(pageData),
+                  if (!_chrome.isFullscreen) _buildBottomBar(pageData),
                 ],
               );
             },
           );
 
-    if (_isFullscreen) {
+    if (_chrome.isFullscreen) {
       content = GestureDetector(
         behavior: HitTestBehavior.translucent,
-        onTap: _toggleFullscreenButton,
-        onLongPress: _showFullscreenControls,
+        onTap: _chrome.toggleButton,
+        onLongPress: _chrome.showControls,
         child: content,
       );
     }
@@ -740,17 +685,17 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       fit: StackFit.expand,
       children: [
         content,
-        if (_isFullscreen && _fullscreenControlsVisible)
+        if (_chrome.isFullscreen && _chrome.controlsVisible)
           Positioned.fill(
             child: GestureDetector(
               behavior: HitTestBehavior.translucent,
-              onTap: _hideFullscreenControls,
+              onTap: _chrome.hideControls,
               child: const SizedBox.expand(),
             ),
           ),
-        if (_isFullscreen && _fullscreenControlsVisible)
+        if (_chrome.isFullscreen && _chrome.controlsVisible)
           _buildFullscreenPlaybackControls(),
-        if (_isFullscreen)
+        if (_chrome.isFullscreen)
           // PositionedDirectional MUST be a direct Stack child — never inside
           // AnimatedSlide/AnimatedOpacity. IgnorePointer is outermost to ensure
           // the invisible full-screen widget never absorbs pointer events.
@@ -758,15 +703,15 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
             top: MediaQuery.of(context).viewPadding.top + 10,
             end: 10,
             child: IgnorePointer(
-              ignoring: !_fullscreenButtonVisible,
+              ignoring: !_chrome.buttonVisible,
               child: AnimatedSlide(
-                offset: _fullscreenButtonVisible
+                offset: _chrome.buttonVisible
                     ? Offset.zero
                     : const Offset(0, -2.0),
                 duration: const Duration(milliseconds: 280),
                 curve: Curves.easeInOutCubic,
                 child: AnimatedOpacity(
-                  opacity: _fullscreenButtonVisible ? 1.0 : 0.0,
+                  opacity: _chrome.buttonVisible ? 1.0 : 0.0,
                   duration: const Duration(milliseconds: 200),
                   child: _buildFullscreenExitButton(),
                 ),
@@ -1879,12 +1824,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       pageController: _pdfPageController!,
       currentQuranPage: _currentPage,
       totalQuranPages: _totalPages,
-      isFullscreen: _isFullscreen,
+      isFullscreen: _chrome.isFullscreen,
       onQuranPageChanged: _onMushafPageChanged,
       onRequestDownload: _downloadPdf,
       onReturnToTextView: _togglePdfMode,
       onLongPressPage: _showPdfPageOptions,
-      onLongPressWhileFullscreen: _showFullscreenControls,
+      onLongPressWhileFullscreen: _chrome.showControls,
     );
   }
 
@@ -2159,12 +2104,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         ),
       ),
       child: SafeArea(
-        top: !_isFullscreen,
-        bottom: !_isFullscreen,
+        top: !_chrome.isFullscreen,
+        bottom: !_chrome.isFullscreen,
         child: Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: _isFullscreen ? 8 : 12,
-            vertical: _isFullscreen ? 8 : 16,
+            horizontal: _chrome.isFullscreen ? 8 : 12,
+            vertical: _chrome.isFullscreen ? 8 : 16,
           ),
           child: SingleChildScrollView(
             controller: _pageScrollController,
@@ -2341,8 +2286,8 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       child: InkWell(
         onTap: () => _selectAyah(ayah),
         onLongPress: () {
-          if (_isFullscreen) {
-            _showFullscreenControls();
+          if (_chrome.isFullscreen) {
+            _chrome.showControls();
             return;
           }
           _showAyahOptions(ayah);
@@ -2551,7 +2496,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     final isRtl = Directionality.of(context) == TextDirection.rtl;
     const showPlayButton = true;
 
-    final screen = _isFullscreen
+    final screen = _chrome.isFullscreen
         ? Scaffold(
             backgroundColor: Theme.of(context).colorScheme.surface,
             body: _buildReaderContent(),
@@ -2713,7 +2658,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           );
 
     return PopScope(
-      canPop: !_isFullscreen,
+      canPop: !_chrome.isFullscreen,
       onPopInvokedWithResult: (didPop, result) async {
         await _handlePopInvoked(didPop);
       },
