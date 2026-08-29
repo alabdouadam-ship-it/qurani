@@ -15,12 +15,22 @@
     ],
     "headers": [
       {
-        "//": "Never keep a cached copy. Every request is revalidated so a new deploy is picked up on the next normal reload (no hard-refresh / no stale service worker). 304s keep unchanged files cheap.",
+        "//": "Site-wide default: revalidate on every request so a new deploy is picked up on the next normal reload, with no hard-refresh and no stale service worker. This previously also sent `no-store`; dropped because it forbids storing a copy at all while buying nothing extra (see the measurement note on the editions rule below). ORDER MATTERS: Firebase Hosting applies header rules LAST-MATCH-WINS, verified by deploying this exact config with the rules in the opposite order -- the `**` rule then overrode the specific one. So any rule that needs to beat this default must come AFTER it.",
         "source": "**",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, no-store, must-revalidate"
+            "value": "no-cache, must-revalidate"
+          }
+        ]
+      },
+      {
+        "//": "Quran/tafsir edition JSONs (web-only data source; see web_edition_json.dart). Large -- ar.miqbas.json is 28 MB -- and effectively immutable, changing only if we correct a text, so they must not inherit the `no-cache` default above. MEASURED on this host: Firebase Hosting answers 200 with a full body for both If-None-Match and If-Modified-Since; it never returns 304. Revalidation is therefore NOT cheap here, and a real max-age that lets the browser skip the request entirely is the only thing that avoids re-downloading 28 MB on a repeat visit. 1 day is the deliberate trade: a returning same-day reader pays nothing, and a corrected text still reaches everyone within 24h. For instant propagation the right fix is versioned filenames (a content hash in the edition JSON name), not shortening this.",
+        "source": "/data/editions/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=86400"
           }
         ]
       }

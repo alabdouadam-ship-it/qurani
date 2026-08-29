@@ -83,9 +83,17 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
+    # NOTE: the Quran edition JSONs are deliberately NOT listed here.
+    # They live in `web/data/editions/` because they are a WEB-ONLY data
+    # source: on io (Android/iOS) every edition is read from the bundled
+    # `assets/data/quran.db` via `QuranEdition.dbColumn`, so bundling the
+    # JSONs too would ship ~105 MB of dead weight to mobile users. Files
+    # under `web/` are copied into `build/web` by `flutter build web` and are
+    # ignored entirely by the Android/iOS builds, which makes the split
+    # structural instead of something to remember at release time.
+    # See `QuranEdition.webJsonPath` and `web_edition_json.dart`.
     - assets/data/
     - assets/data/hadithdata/
-    - assets/data/editions/
     - assets/data/quran.db
     - assets/data/reciters.json
     - assets/audio/

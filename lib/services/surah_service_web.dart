@@ -1,14 +1,12 @@
-import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
 import '../models/surah.dart';
+import 'web_edition_json.dart';
 
 class SurahService {
   static List<Surah>? _cachedArabic;
   static List<Surah>? _cachedEnglish;
 
   static Future<List<Surah>> _loadFromJson({bool useEnglishName = false}) async {
-    final jsonString = await rootBundle.loadString('assets/data/editions/quran-simple.json');
-    final data = json.decode(jsonString) as Map<String, dynamic>;
+    final data = await loadEditionJson('data/editions/quran-simple.json');
     final surahs = (data['data']['surahs'] as List<dynamic>);
     
     return surahs.map((surahJson) {

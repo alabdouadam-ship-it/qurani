@@ -1,9 +1,7 @@
-import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:http/http.dart' as http;
 
 import 'quran_edition.dart';
+import 'web_edition_json.dart';
 
 export 'quran_edition.dart';
 
@@ -20,23 +18,12 @@ class QuranRepository {
 
   Future<Map<String, dynamic>> _loadJson(QuranEdition edition) async {
     return await _jsonCache.putIfAbsent(edition, () async {
-      final src = edition.jsonAsset ?? '';
-      debugPrint('[QuranRepository] Loading $src...');
-      final String jsonString;
-      if (src.startsWith('http://') || src.startsWith('https://')) {
-        // New editions (turkish/german/extra tafsirs) are NOT bundled on web —
-        // they are fetched from the server on demand to keep the web payload
-        // small. Pre-existing editions still load from bundled assets.
-        final resp = await http.get(Uri.parse(src));
-        if (resp.statusCode != 200) {
-          throw Exception(
-              'Failed to load edition ${edition.id} ($src): HTTP ${resp.statusCode}');
-        }
-        jsonString = utf8.decode(resp.bodyBytes);
-      } else {
-        jsonString = await rootBundle.loadString(src);
+      final src = edition.webJsonPath;
+      if (src == null || src.isEmpty) {
+        throw Exception('Edition ${edition.id} has no webJsonPath');
       }
-      final data = json.decode(jsonString) as Map<String, dynamic>;
+      debugPrint('[QuranRepository] Loading $src...');
+      final data = await loadEditionJson(src);
       debugPrint('[QuranRepository] ✓ Loaded ${edition.id}');
       return data;
     });
