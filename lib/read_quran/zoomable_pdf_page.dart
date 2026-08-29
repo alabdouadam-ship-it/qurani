@@ -14,6 +14,7 @@ class ZoomablePdfPage extends StatefulWidget {
     required this.pageNumber,
     required this.isFullscreen,
     required this.mushafType,
+    this.keepAlive = false,
     this.onZoomChanged,
     this.onLongPress,
   });
@@ -25,6 +26,23 @@ class ZoomablePdfPage extends StatefulWidget {
   final MushafType mushafType;
   final VoidCallback? onLongPress;
 
+  /// Whether this page should survive being scrolled out of the viewport.
+  ///
+  /// This used to be unconditionally true, which is a memory leak in disguise:
+  /// the mushaf `PageView.builder` spans all ~613 PDF pages and nothing opts
+  /// out of automatic keep-alives, so every page the user ever visited stayed
+  /// resident for the whole session — each holding a rasterised [PdfPageView].
+  /// A long reading session therefore accumulated dozens of full-page bitmaps.
+  ///
+  /// The parent now keeps only the current page and its immediate neighbours
+  /// alive, which preserves instant swipe-back (the common gesture) while
+  /// capping retained rasters at three. Pages further away are rebuilt and
+  /// re-rasterised on return, which is the deliberate trade: pdfrx re-renders
+  /// quickly, and unbounded memory growth is the worse failure — Google Play
+  /// starts enforcing dynamic-memory and bitmap thresholds in February 2027,
+  /// and bitmaps retained in non-visible states are called out explicitly.
+  final bool keepAlive;
+
   @override
   State<ZoomablePdfPage> createState() => _ZoomablePdfPageState();
 }
@@ -35,7 +53,7 @@ class _ZoomablePdfPageState extends State<ZoomablePdfPage>
       TransformationController();
 
   @override
-  bool get wantKeepAlive => true;
+  bool get wantKeepAlive => widget.keepAlive;
 
   @override
   void dispose() {
@@ -46,6 +64,14 @@ class _ZoomablePdfPageState extends State<ZoomablePdfPage>
   @override
   void didUpdateWidget(ZoomablePdfPage oldWidget) {
     super.didUpdateWidget(oldWidget);
+
+    // AutomaticKeepAliveClientMixin caches the keep-alive decision, so the
+    // framework must be told explicitly when it changes — otherwise a page
+    // that scrolls out of the neighbour window would never be released.
+    if (oldWidget.keepAlive != widget.keepAlive) {
+      updateKeepAlive();
+    }
+
     // Reset transformation when page number changes.
     if (oldWidget.pageNumber != widget.pageNumber) {
       // Use post-frame callback to ensure the widget tree is stable.

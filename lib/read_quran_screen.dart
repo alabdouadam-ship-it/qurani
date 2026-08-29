@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -23,7 +22,7 @@ import 'util/debug_error_display.dart';
 
 import 'package:pdfrx/pdfrx.dart';
 import 'package:qurani/services/mushaf_pdf_service.dart';
-import 'package:dio/dio.dart'; // For CancelToken if needed
+
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'util/settings_sheet_utils.dart';
@@ -41,6 +40,7 @@ import 'read_quran/highlight_models.dart';
 import 'read_quran/highlighted_ayahs_sheet.dart';
 import 'read_quran/highlighted_pdf_pages_sheet.dart';
 import 'read_quran/juz_picker_sheet.dart';
+import 'read_quran/mushaf_pdf_controller.dart';
 import 'read_quran/mushaf_style_picker.dart';
 import 'read_quran/page_audio_sources.dart';
 import 'read_quran/page_picker_sheet.dart';
@@ -152,13 +152,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   // PDF Mode State
   bool _isPdfMode = false;
   bool _isPdfZoomed = false;
-  Future<PdfDocument>? _pdfDocumentFuture;
-  MushafType _pdfType = MushafType.blue;
   PageController? _pdfPageController;
-  bool _isDownloadingPdf = false;
-  double? _downloadProgress;
-  String? _pdfPath;
-  CancelToken? _downloadCancelToken;
+
+  /// Which mushaf style is selected, whether its file is on disk, the opened
+  /// document, and download progress — see [MushafPdfController]. Extracted so
+  /// this screen no longer carries six more fields plus the download
+  /// state machine, and so the page-offset arithmetic is testable.
+  late final MushafPdfController _pdf;
   bool _isFullscreen = false;
   bool _fullscreenControlsVisible = false;
   bool _fullscreenButtonVisible = false;
@@ -192,15 +192,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _arabicFontKey = ref.read(arabicFontProvider);
     _autoFlip = PreferencesService.getAutoFlipPage();
 
-    // Initialize PDF Mode
+    // Initialize PDF Mode. The controller reads the persisted style itself.
     _isPdfMode = PreferencesService.getIsPdfMode();
-    final pdfTypeStr = PreferencesService.getPdfType();
-    _pdfType = MushafType.values.firstWhere(
-      (e) => e.name == pdfTypeStr,
-      orElse: () => MushafType.blue,
-    );
+    _pdf = MushafPdfController()..addListener(_onPdfStateChanged);
     if (_isPdfMode) {
-      _checkPdfAvailability();
+      unawaited(_pdf.refreshAvailability());
     }
     unawaited(_setKeepScreenAwake(true));
 
@@ -315,29 +311,24 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
     _pageController.dispose();
     _pageScrollController.dispose();
-    // Dispose the PDF-mode controllers/handle too — these are only created in
-    // PDF mode, so leaving the screen while in PDF mode previously leaked both
-    // the PageController and the native pdfrx document handle.
+    // The PDF PageController is only created in PDF mode, so leaving the screen
+    // while in PDF mode previously leaked it.
     _pdfPageController?.dispose();
-    _disposePdfDocument(_pdfDocumentFuture);
-    _pdfDocumentFuture = null;
-    // Cancel any in-flight PDF download so it doesn't keep streaming/writing
-    // after the user leaves the screen.
-    _downloadCancelToken?.cancel();
+    // Disposing the controller closes the native pdfrx handle and cancels any
+    // in-flight download, so it doesn't keep streaming/writing after the user
+    // leaves the screen.
+    _pdf.removeListener(_onPdfStateChanged);
+    _pdf.dispose();
     _fullscreenButtonTimer?.cancel();
     super.dispose();
   }
 
-  /// Disposes the native pdfrx document behind [future] once it resolves.
-  /// Safe to call with null or an already-settled future; errors are ignored
-  /// (a failed-to-open document has nothing to dispose).
-  void _disposePdfDocument(Future<PdfDocument>? future) {
-    if (future == null) return;
-    future.then((doc) {
-      try {
-        doc.dispose();
-      } catch (_) {}
-    }).catchError((_) {});
+  /// Rebuilds when the mushaf controller changes (style, availability, download
+  /// progress). A whole-screen setState matches the previous behaviour, since
+  /// the PDF style is also read by the app bar and bottom bar.
+  void _onPdfStateChanged() {
+    if (!mounted) return;
+    setState(() {});
   }
 
   void _goToPage(int page, {int? highlightAyah}) {
@@ -353,8 +344,8 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     });
 
     // Jump PDF controller if in PDF mode
-    if (_isPdfMode && _pdfPath != null) {
-      final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+    if (_isPdfMode && _pdf.path != null) {
+      final offset = _pdf.pageOffset;
       // PDF Page Index = (Target Quran Page - 1) + Offset
       // But wait, the offset logic:
       // Text Page 1 (Fatiha) -> PDF Page 4.
@@ -473,7 +464,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       if (!mounted) return;
 
       if (_isPdfMode) {
-        final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+        final offset = _pdf.pageOffset;
         final targetIndex = (targetPage - 1) + offset;
         final controller = _pdfPageController;
         if (controller?.hasClients == true) {
@@ -500,7 +491,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     PageController? oldPageController;
 
     if (_isPdfMode) {
-      final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+      final offset = _pdf.pageOffset;
       final targetIndex = (targetPage - 1) + offset;
       oldPdfController = _pdfPageController;
       _pdfPageController = PageController(initialPage: targetIndex);
@@ -1025,7 +1016,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         setState(() => _autoFlip = val);
       },
       isPdfMode: _isPdfMode,
-      pdfType: _pdfType,
+      pdfType: _pdf.type,
       onOpenReciterPicker: () {
         SettingsSheetUtils.showReciterSelectionSheet(
           context,
@@ -1052,23 +1043,15 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   void _showMushafStylePicker() {
     showMushafStylePickerSheet(
       context,
-      currentType: _pdfType,
+      currentType: _pdf.type,
       onSelected: (type) async {
         if (!mounted) return;
-        // Dispose the outgoing document + controller before discarding them,
-        // otherwise switching mushaf style leaks the native handle and the
-        // old PageController.
-        _disposePdfDocument(_pdfDocumentFuture);
+        // The outgoing PageController must be discarded here so the next build
+        // recreates it at the right initial page for the new style's offset.
+        // (The controller disposes the outgoing pdfrx document itself.)
         _pdfPageController?.dispose();
-        setState(() {
-          _pdfType = type;
-          // Reset path so we check availability again or download.
-          _pdfPath = null;
-          _pdfDocumentFuture = null;
-          _pdfPageController = null;
-        });
-        await PreferencesService.savePdfType(type.name);
-        await _checkPdfAvailability();
+        _pdfPageController = null;
+        await _pdf.chooseStyle(type);
       },
     );
   }
@@ -1620,8 +1603,8 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _deepLinkAyah = null; // Auto-flip is always user-initiated audio flow
     });
 
-    if (_isPdfMode && _pdfPath != null) {
-      final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+    if (_isPdfMode && _pdf.path != null) {
+      final offset = _pdf.pageOffset;
       final targetIndex = (target - 1) + offset;
       if (_pdfPageController?.hasClients == true) {
         _pdfPageController!.jumpToPage(targetIndex);
@@ -1742,46 +1725,20 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     );
   }
 
-  Future<void> _checkPdfAvailability() async {
-    final path = await MushafPdfService.instance.getPdfPath(_pdfType);
-    final exists = await File(path).exists();
-    if (mounted) {
-      setState(() {
-        if (exists && _pdfPath != path) {
-          // Dispose any previously-opened document before opening a new one.
-          _disposePdfDocument(_pdfDocumentFuture);
-          _pdfDocumentFuture = PdfDocument.openFile(path);
-        } else if (!exists) {
-          _disposePdfDocument(_pdfDocumentFuture);
-          _pdfDocumentFuture = null;
-        }
-        _pdfPath = exists ? path : null;
-      });
-    }
-  }
-
   Future<void> _downloadPdf(MushafType type) async {
     final l10n = AppLocalizations.of(context)!;
 
-    // Check if files exist first
-    final path = await MushafPdfService.instance.getPdfPath(type);
-    final exists = await File(path).exists();
-
-    if (exists) {
-      // Just switch
-      await PreferencesService.savePdfType(type.id);
-      if (mounted) {
-        setState(() {
-          _pdfType = type;
-        });
-        await _checkPdfAvailability();
-      }
+    // Already on disk? Adopt it without prompting or downloading.
+    if (await _pdf.existsFor(type)) {
+      if (!mounted) return;
+      await _pdf.select(type);
       return;
     }
 
-    // Prepare for download
-    // If we are currently viewing a PDF (not the download screen), prompt for confirmation
-    if (_pdfPath != null) {
+    // Downloading a mushaf is 160-190 MB, so confirm first — but only when the
+    // user is already reading a PDF. From the empty/download prompt there is
+    // nothing to interrupt, so an extra dialog would just be friction.
+    if (_pdf.isAvailable) {
       String typeName;
       switch (type) {
         case MushafType.blue:
@@ -1819,55 +1776,22 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
 
     if (!mounted) return;
-    setState(() {
-      _isDownloadingPdf = true;
-      _downloadProgress = 0;
-      _downloadCancelToken = CancelToken();
-    });
+    final result = await _pdf.select(type);
+    if (!mounted) return;
 
-    try {
-      await MushafPdfService.instance.downloadMushaf(
-        type,
-        onProgress: (received, total) {
-          if (mounted) {
-            setState(() {
-              _downloadProgress = received / total;
-            });
-          }
-        },
-        cancelToken: _downloadCancelToken,
-      );
-
-      // Save the type as chosen ONLY after successful download
-      await PreferencesService.savePdfType(type.id);
-
-      if (mounted) {
-        setState(() {
-          _pdfType = type;
-        });
-        await _checkPdfAvailability();
-      }
-    } catch (e) {
-      if (mounted && e is DioException && CancelToken.isCancel(e)) {
-        // Download cancelled, do nothing
-      } else if (mounted) {
+    switch (result) {
+      case MushafDownloadResult.failed:
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.downloadFailedReverting)),
         );
-      }
-    } finally {
-      if (mounted) {
-        setState(() {
-          _isDownloadingPdf = false;
-          _downloadProgress = null;
-          _downloadCancelToken = null;
-        });
-      }
+        break;
+      case MushafDownloadResult.cancelled:
+      case MushafDownloadResult.downloaded:
+      case MushafDownloadResult.alreadyPresent:
+        // Cancellation is a deliberate user action, and the success paths have
+        // already refreshed availability inside the controller.
+        break;
     }
-  }
-
-  void _cancelDownload() {
-    _downloadCancelToken?.cancel();
   }
 
   void _showPdfPageOptions(int page) {
@@ -1922,7 +1846,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       } catch (_) {}
       _pdfPageController = null;
 
-      await _checkPdfAvailability();
+      await _pdf.refreshAvailability();
     } else {
       // Switching TO Text
       // Re-create controller with correct initial page to ensure sync without animation jump
@@ -1941,7 +1865,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   Widget _buildPdfView() {
     final l10n = AppLocalizations.of(context)!;
 
-    if (_isDownloadingPdf) {
+    if (_pdf.isDownloading) {
       return Center(
         child: ModernSurfaceCard(
           margin: const EdgeInsets.all(24),
@@ -1954,12 +1878,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                     style: const TextStyle(
                         fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 16),
-                LinearProgressIndicator(value: _downloadProgress),
+                LinearProgressIndicator(value: _pdf.progress),
                 const SizedBox(height: 8),
-                Text('${((_downloadProgress ?? 0) * 100).toStringAsFixed(1)}%'),
+                Text('${((_pdf.progress ?? 0) * 100).toStringAsFixed(1)}%'),
                 const SizedBox(height: 16),
                 TextButton(
-                  onPressed: _cancelDownload,
+                  onPressed: _pdf.cancelDownload,
                   child: Text(l10n.cancel),
                 ),
               ],
@@ -1969,7 +1893,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       );
     }
 
-    if (_pdfPath == null) {
+    if (_pdf.path == null) {
       return Center(
         child: ModernSurfaceCard(
           margin: const EdgeInsets.all(24),
@@ -2028,7 +1952,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       );
     }
 
-    final offset = MushafPdfService.instance.getPageOffset(_pdfType);
+    final offset = _pdf.pageOffset;
 
     // Calculate initial index for PageView
     // _currentPage is 1-based Quran page.
@@ -2041,17 +1965,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     // Actually, simply always use the state controller if it exists, or create one.
     _pdfPageController ??= PageController(initialPage: initialIndex);
 
-    if (_pdfPath == null) {
+    if (_pdf.path == null) {
       return const Center(child: CircularProgressIndicator());
     }
 
-    // Ensure future is initialized if path exists
-    if (_pdfDocumentFuture == null && _pdfPath != null) {
-      _pdfDocumentFuture = PdfDocument.openFile(_pdfPath!);
-    }
-
+    // The controller opens the document lazily on first access, so there is
+    // nothing to initialize here.
     return FutureBuilder<PdfDocument>(
-      future: _pdfDocumentFuture,
+      future: _pdf.documentFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -2075,16 +1996,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                   ),
                   const SizedBox(height: 24),
                   ElevatedButton.icon(
-                    onPressed: () async {
-                      try {
-                        if (_pdfPath != null) {
-                          await File(_pdfPath!).delete();
-                        }
-                      } catch (e) {
-                        debugPrint('Error deleting file: $e');
-                      }
-                      await _checkPdfAvailability();
-                    },
+                    onPressed: _pdf.deleteCurrentFile,
                     icon: const Icon(Icons.refresh),
                     label: Text(l10n.deleteAndRetry),
                   )
@@ -2130,11 +2042,17 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
               }
             },
             itemBuilder: (context, index) {
+              // Keep only the current page and its immediate neighbours alive.
+              // See ZoomablePdfPage.keepAlive: unconditional keep-alive across a
+              // ~613-page PageView retained a rasterised bitmap for every page
+              // visited in the session.
+              final currentPdfIndex = (_currentPage - 1) + offset;
               return ZoomablePdfPage(
                 document: document,
                 pageNumber: index + 1,
                 isFullscreen: _isFullscreen,
-                mushafType: _pdfType,
+                mushafType: _pdf.type,
+                keepAlive: (index - currentPdfIndex).abs() <= 1,
                 onZoomChanged: (isZoomed) {
                   if (mounted && isZoomed != _isPdfZoomed) {
                     setState(() {
@@ -2939,7 +2857,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                         value: type,
                         child: Row(
                           children: [
-                            if (type == _pdfType)
+                            if (type == _pdf.type)
                               Icon(
                                 Icons.check,
                                 size: 18,

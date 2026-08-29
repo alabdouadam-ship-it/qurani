@@ -120,7 +120,7 @@ void main() {
         final prevEnd = (sorted[i - 1]['endAyah'] as num).toInt();
         final thisStart = (sorted[i]['startAyah'] as num).toInt();
         expect(thisStart, prevEnd + 1,
-            reason: 'gap/overlap between juz ${i} and ${i + 1}');
+            reason: 'gap/overlap between juz $i and ${i + 1}');
       }
     });
 
