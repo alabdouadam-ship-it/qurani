@@ -62,15 +62,32 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
-/// Git tag in the data repo that the published shards live under.
+/// Git ref the published edition data is pinned to.
 ///
-/// **Bump this every time `tool/shard_editions.dart` output changes**, and push
-/// a matching tag. Because the pinned URLs are served `immutable` with a
-/// one-year max-age, reusing a ref after changing its content would leave
-/// browsers on stale data.
+/// This is a full **commit SHA**, deliberately, because of how jsDelivr decides
+/// cache lifetime. Measured on this repo:
+///
+/// | ref form                    | `X-JSD-Version-Type` | `Cache-Control`                  |
+/// |-----------------------------|----------------------|----------------------------------|
+/// | `main`                      | branch               | `max-age=604800` (7 days)        |
+/// | `editions-v1` (plain tag)   | **branch**           | `max-age=604800` (7 days)        |
+/// | full commit SHA             | commit               | `max-age=31536000, immutable`    |
+///
+/// A non-semver tag is treated as a branch and gets only the 7-day cache;
+/// jsDelivr reserves `immutable` for semver versions and commit SHAs. Since web
+/// has no filesystem, the browser HTTP cache is the ONLY cache we get, so the
+/// one-year immutable form is worth pinning precisely for.
+///
+/// The `editions-v1` tag still exists as a human-readable marker of which
+/// commit this data came from.
+///
+/// **When regenerating the shards:** run `dart run tool/shard_editions.dart`,
+/// commit the result, then update this constant to that commit's SHA. Pointing
+/// at unchanged content is safe; pointing at *changed* content under the same
+/// ref would leave browsers on a stale copy for a year.
 const String kEditionsDataRef = String.fromEnvironment(
   'QURANI_EDITIONS_REF',
-  defaultValue: 'editions-v1',
+  defaultValue: 'd1d746abb86c27c4e450adfe831af289051a27c3',
 );
 
 /// Optional full override of the base, for local development or self-hosting.
