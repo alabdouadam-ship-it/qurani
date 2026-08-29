@@ -55,6 +55,16 @@ $define = "--dart-define-from-file=supabase.env.json"
 
 Write-Host "Building '$target' (release) with Supabase config from supabase.env.json..." -ForegroundColor Cyan
 
+# The Flutter CLI writes informational lines to stderr (notably "Wasm dry run
+# findings:" on web builds). Under `$ErrorActionPreference = 'Stop'` PowerShell
+# turns any native-command stderr into a terminating NativeCommandError, which
+# ABORTED this script part-way through the build and left a silently truncated
+# output directory (observed: a `build/web` with 21 files and no `assets/` at
+# all, which would then have been deployed as-is). So relax the preference
+# around the build itself and judge success by the exit code instead.
+$previousEap = $ErrorActionPreference
+$ErrorActionPreference = 'Continue'
+
 switch ($target) {
     'appbundle' { flutter build appbundle --release $define }
     'aab'       { flutter build appbundle --release $define }
@@ -63,9 +73,42 @@ switch ($target) {
     'web'       { flutter build web --release $define }
     'install'   { flutter install --release $define }
     default {
+        $ErrorActionPreference = $previousEap
         Write-Host "Unknown target '$target'. Use: appbundle | apk | ipa | web | install" -ForegroundColor Red
         exit 1
     }
+}
+
+$buildExit = $LASTEXITCODE
+$ErrorActionPreference = $previousEap
+
+if ($buildExit -ne 0) {
+    Write-Host ''
+    Write-Host "ERROR: 'flutter build $target' exited with code $buildExit." -ForegroundColor Red
+    Write-Host 'The output directory may be incomplete - do NOT deploy or upload it.' -ForegroundColor Red
+    exit $buildExit
+}
+
+# --- Web only: drop quran.db from the deploy payload ----------------------
+# `assets/data/quran.db` is 104 MB and is read ONLY by quran_database_service,
+# which is io-only (dart:io + sqflite). The web app reads Quran text from the
+# sharded JSON served via jsDelivr instead, so no web client ever requests this
+# file - it just sat in `build/web` inflating Firebase Hosting storage on every
+# release. Hosting storage is free to 10 GB and every retained release keeps its
+# own copy, so this is the difference between roughly 36 and 150 retained
+# releases. It cannot be excluded via pubspec.yaml (one asset list, shared with
+# mobile, which genuinely needs it), hence pruning here.
+if ($target -eq 'web') {
+    $webDb = Join-Path $root 'build/web/assets/assets/data/quran.db'
+    if (Test-Path $webDb) {
+        $dbMb = [math]::Round((Get-Item $webDb).Length / 1MB, 2)
+        Remove-Item $webDb -Force
+        Write-Host "Pruned quran.db from build/web ($dbMb MB, unused on web)." -ForegroundColor Cyan
+    }
+    $webTotal = [math]::Round(
+        ((Get-ChildItem (Join-Path $root 'build/web') -Recurse -File |
+            Measure-Object Length -Sum).Sum / 1MB), 2)
+    Write-Host "build/web payload: $webTotal MB" -ForegroundColor Cyan
 }
 
 Write-Host "Done. (Supabase URL: $($envJson.SUPABASE_URL))" -ForegroundColor Green

@@ -1,85 +1,103 @@
-import 'package:flutter/foundation.dart';
-
 import 'quran_edition.dart';
 import 'web_edition_json.dart';
 
 export 'quran_edition.dart';
 
+/// Web implementation of the Quran repository.
+///
+/// Reads **per-juz shards** served from GitHub via jsDelivr (see
+/// `web_edition_json.dart` for why that host, and `tool/shard_editions.dart`
+/// for the generator). The io variant is the parallel implementation over the
+/// bundled `quran.db`; the public API of the two must stay identical.
+///
+/// ## Why this is sharded and indexed
+///
+/// This class used to fetch an entire edition JSON, `json.decode` it whole,
+/// and keep the raw decoded tree in a never-evicted cache. Two consequences:
+///
+///  * `ar.miqbas.json` is 28.35 MB. Dart web has no isolates, so that
+///    `json.decode` blocked the UI thread outright — `compute()` degrades to a
+///    same-thread call on web. The largest shard is now 1,570 KB.
+///  * Every method then *scanned* that tree. `loadPage` walked all 114 surahs
+///    and all 6236 ayahs to find the ~10 on one page, rebuilding 114 throwaway
+///    `SurahMeta` objects each time; `loadAyahTafsir` walked the whole corpus
+///    per call. Each shard is now indexed once at parse time into
+///    page/ayah/surah maps, so every lookup is O(1).
+///
+/// Two smaller wins fall out of the shared `index.json` (~24 KB): the surah
+/// list no longer requires fetching a 2.93 MB edition, and `simple` and `irab`
+/// share cache entries because they resolve to the same `webDataDir`.
 class QuranRepository {
   QuranRepository._();
 
   static final QuranRepository instance = QuranRepository._();
 
-  final Map<QuranEdition, Future<Map<String, dynamic>>> _jsonCache = {};
-  final Map<String, Future<PageData>> _pageCache = {};
-  Future<List<SurahMeta>>? _surahListFuture;
-  final Map<QuranEdition, Future<Map<int, String>>> _translationCache = {};
-  final Map<QuranEdition, Future<Map<int, AyahData>>> _ayahIndexCache = {};
+  Future<_EditionIndex>? _indexFuture;
 
-  Future<Map<String, dynamic>> _loadJson(QuranEdition edition) async {
-    return await _jsonCache.putIfAbsent(edition, () async {
-      final src = edition.webJsonPath;
-      if (src == null || src.isEmpty) {
-        throw Exception('Edition ${edition.id} has no webJsonPath');
-      }
-      debugPrint('[QuranRepository] Loading $src...');
-      final data = await loadEditionJson(src);
-      debugPrint('[QuranRepository] ✓ Loaded ${edition.id}');
-      return data;
-    });
+  /// Keyed `<webDataDir>::<juz>` rather than by edition id, so editions that
+  /// share a data directory (`simple` and `irab` both use `quran-simple`)
+  /// share the fetch and the parsed index.
+  final Map<String, Future<_Shard>> _shardCache = {};
+
+  /// Keyed `<webDataDir>::<page>`. Cheap now that it is assembled from indexed
+  /// shards rather than a full-corpus scan, but still worth keeping so
+  /// re-visiting a page does no map lookups at all.
+  final Map<String, Future<PageData>> _pageCache = {};
+
+  Future<_EditionIndex> _index() =>
+      _indexFuture ??= loadEditionIndex().then(_EditionIndex.fromJson);
+
+  String _dirOf(QuranEdition edition) {
+    final dir = edition.webDataDir;
+    if (dir == null || dir.isEmpty) {
+      throw Exception('Edition "${edition.id}" has no webDataDir, so it cannot '
+          'be read on web.');
+    }
+    return dir;
+  }
+
+  Future<_Shard> _shard(QuranEdition edition, int juz) {
+    final dir = _dirOf(edition);
+    return _shardCache.putIfAbsent(
+      '$dir::$juz',
+      () => loadEditionShard(dir, juz).then(_Shard.fromJson),
+    );
+  }
+
+  /// Resolves one ayah by its global number (1..6236) in [edition].
+  Future<AyahData?> _ayahByNumber(int ayahNumber, QuranEdition edition) async {
+    final index = await _index();
+    final juz = index.juzForAyah(ayahNumber);
+    if (juz == null) return null;
+    final shard = await _shard(edition, juz);
+    return shard.byAyah[ayahNumber];
   }
 
   Future<PageData> loadPage(int pageNumber, QuranEdition edition) async {
-    final key = '${edition.id}::$pageNumber';
-    
+    final key = '${_dirOf(edition)}::$pageNumber';
+
     return await _pageCache.putIfAbsent(key, () async {
-      final jsonData = await _loadJson(edition);
-      final surahs = (jsonData['data']['surahs'] as List<dynamic>);
-      
+      final index = await _index();
+      // Usually one juz. Exactly four mushaf pages (62, 121, 201, 502) straddle
+      // a juz boundary and return two, which is why `index.json`'s per-juz page
+      // ranges deliberately overlap — no special-casing needed here.
+      final juzNumbers = index.juzForPage(pageNumber);
+      final shards = await Future.wait(
+        juzNumbers.map((juz) => _shard(edition, juz)),
+      );
+
+      // `Future.wait` preserves order and `juzForPage` returns ascending juz,
+      // so concatenating yields ayahs in ascending global order.
       final ayahs = <AyahData>[];
-      final surahOccurrences = <SurahOccurrence>[];
-      
-      for (final surahJson in surahs) {
-        final surahMeta = SurahMeta(
-          number: surahJson['number'] as int,
-          name: surahJson['name'] as String? ?? '',
-          englishName: surahJson['englishName'] as String? ?? '',
-          englishNameTranslation: surahJson['englishNameTranslation'] as String? ?? '',
-          revelationType: surahJson['revelationType'] as String? ?? '',
-        );
-        
-        final ayahsList = (surahJson['ayahs'] as List<dynamic>);
-        final startIndex = ayahs.length;
-        int ayahCount = 0;
-        
-        for (final ayahJson in ayahsList) {
-          final page = ayahJson['page'] as int? ?? 1;
-          if (page == pageNumber) {
-            ayahs.add(AyahData(
-              number: ayahJson['number'] as int,
-              text: ayahJson['text'] as String? ?? '',
-              surah: surahMeta,
-              numberInSurah: ayahJson['numberInSurah'] as int,
-              juz: ayahJson['juz'] as int? ?? 1,
-              page: page,
-            ));
-            ayahCount++;
-          }
-        }
-        
-        if (ayahCount > 0) {
-          surahOccurrences.add(SurahOccurrence(
-            surah: surahMeta,
-            startIndex: startIndex,
-            ayahCount: ayahCount,
-          ));
-        }
+      for (final shard in shards) {
+        final onPage = shard.byPage[pageNumber];
+        if (onPage != null) ayahs.addAll(onPage);
       }
-      
+
       return PageData(
         number: pageNumber,
         ayahs: ayahs,
-        surahOccurrences: surahOccurrences,
+        surahOccurrences: surahOccurrencesFor(ayahs),
       );
     });
   }
@@ -89,13 +107,11 @@ class QuranRepository {
     required int pageNumber,
     required QuranEdition edition,
   }) async {
-    final page = await loadPage(pageNumber, edition);
-    for (final ayah in page.ayahs) {
-      if (ayah.number == ayahNumber) {
-        return ayah.text;
-      }
-    }
-    return null;
+    // `pageNumber` is accepted for API parity with the io variant, which uses
+    // it to scope a page query. Here the global ayah number is enough: the
+    // index maps it straight to a juz, and the shard maps it straight to text.
+    final ayah = await _ayahByNumber(ayahNumber, edition);
+    return ayah?.text;
   }
 
   Future<String?> loadAyahTranslation({
@@ -103,108 +119,25 @@ class QuranRepository {
     required QuranEdition edition,
     int? pageNumber,
   }) async {
-    final cache = await _translationCache.putIfAbsent(
-      edition,
-      () => _loadTranslationMap(edition),
-    );
-    final text = cache[ayahNumber];
-    if (text != null) {
-      return text;
-    }
-    if (pageNumber != null) {
-      return loadAyahText(
-        ayahNumber: ayahNumber,
-        pageNumber: pageNumber,
-        edition: edition,
-      );
-    }
-    return null;
-  }
-
-  Future<List<SurahMeta>> loadAllSurahs() {
-    _surahListFuture ??= _loadSurahList();
-    return _surahListFuture!;
-  }
-
-  Future<List<AyahBrief>> loadSurahAyahs(int surahNumber, QuranEdition edition) async {
-    final jsonData = await _loadJson(edition);
-    final surahs = (jsonData['data']['surahs'] as List<dynamic>);
-    
-    final surahJson = surahs.firstWhere(
-      (s) => s['number'] == surahNumber,
-      orElse: () => null,
-    );
-    
-    if (surahJson == null) return [];
-    
-    final surahMeta = SurahMeta(
-      number: surahJson['number'] as int,
-      name: surahJson['name'] as String? ?? '',
-      englishName: surahJson['englishName'] as String? ?? '',
-      englishNameTranslation: surahJson['englishNameTranslation'] as String? ?? '',
-      revelationType: surahJson['revelationType'] as String? ?? '',
-    );
-    
-    final ayahsList = (surahJson['ayahs'] as List<dynamic>);
-    return ayahsList.map((ayahJson) {
-      return AyahBrief(
-        number: ayahJson['number'] as int,
-        numberInSurah: ayahJson['numberInSurah'] as int,
-        text: ayahJson['text'] as String? ?? '',
-        surah: surahMeta,
-      );
-    }).toList();
-  }
-
-  Future<List<SurahMeta>> _loadSurahList() async {
-    final jsonData = await _loadJson(QuranEditions.simple);
-    final surahs = (jsonData['data']['surahs'] as List<dynamic>);
-    
-    return surahs.map((surahJson) {
-      return SurahMeta(
-        number: surahJson['number'] as int,
-        name: surahJson['name'] as String? ?? '',
-        englishName: surahJson['englishName'] as String? ?? '',
-        englishNameTranslation: surahJson['englishNameTranslation'] as String? ?? '',
-        revelationType: surahJson['revelationType'] as String? ?? '',
-      );
-    }).toList();
-  }
-
-  Future<Map<int, String>> _loadTranslationMap(QuranEdition edition) async {
-    final jsonData = await _loadJson(edition);
-    final surahs = (jsonData['data']['surahs'] as List<dynamic>);
-    
-    final Map<int, String> map = {};
-    for (final surahJson in surahs) {
-      final ayahsList = (surahJson['ayahs'] as List<dynamic>);
-      for (final ayahJson in ayahsList) {
-        final number = ayahJson['number'] as int;
-        final text = ayahJson['text'] as String? ?? '';
-        map[number] = text;
-      }
-    }
-    return map;
+    // The io variant falls back to `loadAyahText` when its column lookup comes
+    // back empty. That fallback is redundant here: both paths read the same
+    // shard entry, so there is nothing a second lookup could recover.
+    final ayah = await _ayahByNumber(ayahNumber, edition);
+    final text = ayah?.text;
+    return (text == null || text.isEmpty) ? null : text;
   }
 
   Future<String?> loadAyahTafsir(int ayahNumber,
       {QuranEdition? edition}) async {
     try {
-      final data = await _loadJson(edition ?? QuranEditions.tafsirMuyassar);
-      final surahs = (data['data']['surahs'] as List<dynamic>);
-
-      // Find the ayah by global ayah number
-      for (final surahData in surahs) {
-        final ayahs = (surahData['ayahs'] as List<dynamic>);
-        for (final ayahData in ayahs) {
-          if (ayahData['number'] == ayahNumber) {
-            return ayahData['text'] as String?;
-          }
-        }
-      }
-      return null;
-    } catch (e) {
-      debugPrint('[QuranRepository] Error loading tafsir: $e');
+      final ayah = await _ayahByNumber(
+        ayahNumber,
+        edition ?? QuranEditions.tafsirMuyassar,
+      );
+      final text = ayah?.text;
+      return (text == null || text.isEmpty) ? null : text;
+    } catch (_) {
+      // A tafsir shard failing to load must not take down the reader.
       return null;
     }
   }
@@ -212,43 +145,230 @@ class QuranRepository {
   Future<AyahData?> lookupAyahByNumber(
     int ayahNumber, {
     QuranEdition edition = QuranEditions.simple,
-  }) async {
-    final cache = await _ayahIndexCache.putIfAbsent(
-      edition,
-      () => _loadAyahIndex(edition),
-    );
-    return cache[ayahNumber];
+  }) =>
+      _ayahByNumber(ayahNumber, edition);
+
+  /// Served entirely from the shared index — no edition data is fetched.
+  /// Previously this pulled the whole 2.93 MB `quran-simple.json` just for
+  /// 114 names.
+  Future<List<SurahMeta>> loadAllSurahs() async {
+    final index = await _index();
+    return index.surahs;
   }
 
-  Future<Map<int, AyahData>> _loadAyahIndex(QuranEdition edition) async {
-    final jsonData = await _loadJson(edition);
-    final surahs = (jsonData['data']['surahs'] as List<dynamic>);
-    
-    final Map<int, AyahData> map = {};
-    for (final surahJson in surahs) {
-      final surahMeta = SurahMeta(
-        number: surahJson['number'] as int,
-        name: surahJson['name'] as String? ?? '',
-        englishName: surahJson['englishName'] as String? ?? '',
-        englishNameTranslation: surahJson['englishNameTranslation'] as String? ?? '',
-        revelationType: surahJson['revelationType'] as String? ?? '',
-      );
-      
-      final ayahsList = (surahJson['ayahs'] as List<dynamic>);
-      for (final ayahJson in ayahsList) {
-        final number = ayahJson['number'] as int;
-        map[number] = AyahData(
-          number: number,
-          text: ayahJson['text'] as String? ?? '',
-          surah: surahMeta,
-          numberInSurah: ayahJson['numberInSurah'] as int,
-          juz: ayahJson['juz'] as int? ?? 1,
-          page: ayahJson['page'] as int? ?? 1,
-        );
+  Future<List<AyahBrief>> loadSurahAyahs(
+      int surahNumber, QuranEdition edition) async {
+    final index = await _index();
+    // Long surahs span several juz (Al-Baqarah covers 1-3), so fetch every
+    // shard the surah touches.
+    final juzNumbers = index.juzForSurah(surahNumber);
+    if (juzNumbers.isEmpty) return const <AyahBrief>[];
+
+    final shards = await Future.wait(
+      juzNumbers.map((juz) => _shard(edition, juz)),
+    );
+
+    final out = <AyahBrief>[];
+    for (final shard in shards) {
+      final inSurah = shard.bySurah[surahNumber];
+      if (inSurah == null) continue;
+      for (final ayah in inSurah) {
+        out.add(AyahBrief(
+          number: ayah.number,
+          numberInSurah: ayah.numberInSurah,
+          text: ayah.text,
+          surah: ayah.surah,
+        ));
       }
     }
-    return map;
+    return out;
   }
+}
+
+/// Groups a page's ayahs into runs of consecutive same-surah ayahs.
+///
+/// Shared by [QuranRepository.loadPage] and [PageData.fromJson] so the two can
+/// never disagree about how a page that spans a surah boundary is described.
+List<SurahOccurrence> surahOccurrencesFor(List<AyahData> ayahs) {
+  final occurrences = <SurahOccurrence>[];
+  SurahMeta? current;
+  int? startIndex;
+
+  for (var i = 0; i < ayahs.length; i++) {
+    final ayah = ayahs[i];
+    if (current == null || ayah.surah.number != current.number) {
+      if (current != null && startIndex != null) {
+        occurrences.add(SurahOccurrence(
+          surah: current,
+          startIndex: startIndex,
+          ayahCount: i - startIndex,
+        ));
+      }
+      current = ayah.surah;
+      startIndex = i;
+    }
+  }
+  if (current != null && startIndex != null) {
+    occurrences.add(SurahOccurrence(
+      surah: current,
+      startIndex: startIndex,
+      ayahCount: ayahs.length - startIndex,
+    ));
+  }
+  return occurrences;
+}
+
+/// One parsed juz shard, indexed at parse time.
+///
+/// Building all three maps in a single pass is the whole point: it replaces the
+/// repeated full-corpus scans the previous implementation did on every page
+/// turn and every tafsir lookup.
+class _Shard {
+  _Shard({
+    required this.byPage,
+    required this.byAyah,
+    required this.bySurah,
+  });
+
+  final Map<int, List<AyahData>> byPage;
+  final Map<int, AyahData> byAyah;
+  final Map<int, List<AyahData>> bySurah;
+
+  factory _Shard.fromJson(Map<String, dynamic> json) {
+    final byPage = <int, List<AyahData>>{};
+    final byAyah = <int, AyahData>{};
+    final bySurah = <int, List<AyahData>>{};
+
+    final surahs = (json['surahs'] as List<dynamic>?) ?? const [];
+    for (final entry in surahs) {
+      final surahJson = entry as Map<String, dynamic>;
+      // One SurahMeta per surah per shard, reused by every ayah in it.
+      final meta = SurahMeta(
+        number: (surahJson['number'] as num).toInt(),
+        name: surahJson['name'] as String? ?? '',
+        englishName: surahJson['englishName'] as String? ?? '',
+        englishNameTranslation:
+            surahJson['englishNameTranslation'] as String? ?? '',
+        revelationType: surahJson['revelationType'] as String? ?? '',
+      );
+
+      final ayahs = (surahJson['ayahs'] as List<dynamic>?) ?? const [];
+      for (final ayahEntry in ayahs) {
+        final ayahJson = ayahEntry as Map<String, dynamic>;
+        final ayah = AyahData(
+          number: (ayahJson['number'] as num).toInt(),
+          text: ayahJson['text'] as String? ?? '',
+          surah: meta,
+          numberInSurah: (ayahJson['numberInSurah'] as num?)?.toInt() ?? 0,
+          juz: (ayahJson['juz'] as num?)?.toInt() ?? 1,
+          page: (ayahJson['page'] as num?)?.toInt() ?? 1,
+        );
+
+        byAyah[ayah.number] = ayah;
+        (byPage[ayah.page] ??= <AyahData>[]).add(ayah);
+        (bySurah[meta.number] ??= <AyahData>[]).add(ayah);
+      }
+    }
+
+    return _Shard(byPage: byPage, byAyah: byAyah, bySurah: bySurah);
+  }
+}
+
+/// Parsed `index.json`: juz boundaries plus full surah metadata.
+class _EditionIndex {
+  _EditionIndex({
+    required this.surahs,
+    required this.totalPages,
+    required List<_JuzRange> juz,
+    required Map<int, List<int>> surahJuz,
+  })  : _juz = juz,
+        _surahJuz = surahJuz;
+
+  final List<SurahMeta> surahs;
+  final int totalPages;
+  final List<_JuzRange> _juz;
+  final Map<int, List<int>> _surahJuz;
+
+  factory _EditionIndex.fromJson(Map<String, dynamic> json) {
+    final juz = <_JuzRange>[];
+    for (final entry in (json['juz'] as List<dynamic>?) ?? const []) {
+      final m = entry as Map<String, dynamic>;
+      juz.add(_JuzRange(
+        n: (m['n'] as num).toInt(),
+        startAyah: (m['startAyah'] as num).toInt(),
+        endAyah: (m['endAyah'] as num).toInt(),
+        firstPage: (m['firstPage'] as num).toInt(),
+        lastPage: (m['lastPage'] as num).toInt(),
+      ));
+    }
+    juz.sort((a, b) => a.n.compareTo(b.n));
+
+    final surahs = <SurahMeta>[];
+    final surahJuz = <int, List<int>>{};
+    for (final entry in (json['surahs'] as List<dynamic>?) ?? const []) {
+      final m = entry as Map<String, dynamic>;
+      final number = (m['number'] as num).toInt();
+      surahs.add(SurahMeta(
+        number: number,
+        name: m['name'] as String? ?? '',
+        englishName: m['englishName'] as String? ?? '',
+        englishNameTranslation: m['englishNameTranslation'] as String? ?? '',
+        revelationType: m['revelationType'] as String? ?? '',
+      ));
+      surahJuz[number] = ((m['juz'] as List<dynamic>?) ?? const [])
+          .map((j) => (j as num).toInt())
+          .toList()
+        ..sort();
+    }
+    surahs.sort((a, b) => a.number.compareTo(b.number));
+
+    return _EditionIndex(
+      surahs: surahs,
+      totalPages: (json['totalPages'] as num?)?.toInt() ?? 604,
+      juz: juz,
+      surahJuz: surahJuz,
+    );
+  }
+
+  /// Every juz containing [page]. Returns two entries for the four straddle
+  /// pages, one otherwise. Only 30 ranges, so a linear scan is free.
+  List<int> juzForPage(int page) {
+    final hits = <int>[];
+    for (final range in _juz) {
+      if (page >= range.firstPage && page <= range.lastPage) hits.add(range.n);
+    }
+    return hits;
+  }
+
+  /// The juz containing global ayah number [ayahNumber], or null if out of
+  /// range. Juz ayah ranges do not overlap, so there is exactly one.
+  int? juzForAyah(int ayahNumber) {
+    for (final range in _juz) {
+      if (ayahNumber >= range.startAyah && ayahNumber <= range.endAyah) {
+        return range.n;
+      }
+    }
+    return null;
+  }
+
+  List<int> juzForSurah(int surahNumber) =>
+      _surahJuz[surahNumber] ?? const <int>[];
+}
+
+class _JuzRange {
+  const _JuzRange({
+    required this.n,
+    required this.startAyah,
+    required this.endAyah,
+    required this.firstPage,
+    required this.lastPage,
+  });
+
+  final int n;
+  final int startAyah;
+  final int endAyah;
+  final int firstPage;
+  final int lastPage;
 }
 
 class PageData {
@@ -273,38 +393,10 @@ class PageData {
         .map((entry) =>
             AyahData.fromJson(entry as Map<String, dynamic>, edition))
         .toList();
-    final surahOccurrences = <SurahOccurrence>[];
-    SurahMeta? current;
-    int? startIndex;
-    for (var i = 0; i < ayahList.length; i++) {
-      final ayah = ayahList[i];
-      if (current == null || ayah.surah.number != current.number) {
-        if (current != null && startIndex != null) {
-          surahOccurrences.add(
-            SurahOccurrence(
-              surah: current,
-              startIndex: startIndex,
-              ayahCount: i - startIndex,
-            ),
-          );
-        }
-        current = ayah.surah;
-        startIndex = i;
-      }
-    }
-    if (current != null && startIndex != null) {
-      surahOccurrences.add(
-        SurahOccurrence(
-          surah: current,
-          startIndex: startIndex,
-          ayahCount: ayahList.length - startIndex,
-        ),
-      );
-    }
     return PageData(
       number: number,
       ayahs: ayahList,
-      surahOccurrences: surahOccurrences,
+      surahOccurrences: surahOccurrencesFor(ayahList),
     );
   }
 }
@@ -339,7 +431,6 @@ class AyahData {
       page: json['page'] as int? ?? 1,
     );
   }
-
 }
 
 class SurahMeta {

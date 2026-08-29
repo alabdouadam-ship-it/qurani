@@ -32,27 +32,37 @@ class QuranSearchService {
   Map<int, String>? _surahNamesEn; // English names
   Map<int, String>? _displayTextsAr; // For displaying Arabic results
 
+  /// Search is the one consumer that legitimately needs a WHOLE edition: it
+  /// builds an in-memory index over all 6236 ayahs, so per-juz shards would
+  /// just mean 30 requests for the same bytes.
+  ///
+  /// That is safe here only because all four search corpora are small —
+  /// `quran-clean` 2.39 MB, `quran-simple` 2.93 MB, `quran-english` 2.50 MB,
+  /// `quran-french` 2.54 MB — and therefore comfortably under jsDelivr's hard
+  /// 20 MB per-file limit. The large tafsirs (`ar.qurtubi` 20.48 MB,
+  /// `ar.miqbas` 28.35 MB) exceed it and 403, which is why the reader path is
+  /// sharded. Never point this at a tafsir.
   Future<void> _ensureIndex(String language) async {
     if (language == 'ar') {
       if (_indexAr != null) return;
       await _loadArabicIndex();
     } else if (language == 'en') {
       if (_indexEn != null) return;
-      await _loadTranslationIndex('en', 'data/editions/quran-english.json');
+      await _loadTranslationIndex('en', 'quran-english.json');
     } else if (language == 'fr') {
       if (_indexFr != null) return;
-      await _loadTranslationIndex('fr', 'data/editions/quran-french.json');
+      await _loadTranslationIndex('fr', 'quran-french.json');
     }
   }
 
   Future<void> _loadArabicIndex() async {
     // Load quran-clean for searching (normalized text)
-    final cleanDecoded = await loadEditionJson('data/editions/quran-clean.json');
+    final cleanDecoded = await loadWholeEdition('quran-clean.json');
     final cleanData = cleanDecoded['data'] as Map<String, dynamic>;
     final cleanSurahs = cleanData['surahs'] as List<dynamic>;
 
     // Load quran-simple for displaying results
-    final simpleDecoded = await loadEditionJson('data/editions/quran-simple.json');
+    final simpleDecoded = await loadWholeEdition('quran-simple.json');
     final simpleData = simpleDecoded['data'] as Map<String, dynamic>;
     final simpleSurahs = simpleData['surahs'] as List<dynamic>;
 
@@ -106,9 +116,9 @@ class QuranSearchService {
     _displayTextsAr = displayMap;
   }
 
-  Future<void> _loadTranslationIndex(String lang, String jsonPath) async {
+  Future<void> _loadTranslationIndex(String lang, String fileName) async {
     try {
-      final decoded = await loadEditionJson(jsonPath);
+      final decoded = await loadWholeEdition(fileName);
       final data = decoded['data'];
       final surahs = data['surahs'] as List<dynamic>;
 

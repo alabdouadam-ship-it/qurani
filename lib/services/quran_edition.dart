@@ -6,9 +6,10 @@
 /// exhaustive `switch`es in ~6 files. Adding a tafsir/translation meant editing
 /// the enum + every switch in both files. This registry replaces that: an
 /// edition is a `const` value object, and the io/web repos read the field they
-/// need (`dbColumn` vs `webJsonPath`). Adding a new edition is now: one DB
+/// need (`dbColumn` vs `webDataDir`). Adding a new edition is now: one DB
 /// column (via tool/build_quran_db.dart) + one entry in [QuranEditions.values]
-/// + one JSON under `web/data/editions/`. No switch edits.
+/// + one JSON under `data/editions/` (then re-run tool/shard_editions.dart).
+/// No switch edits.
 library;
 
 /// Top-level grouping for the edition picker's submenus.
@@ -27,7 +28,7 @@ class QuranEdition {
     required this.id,
     required this.category,
     this.dbColumn,
-    this.webJsonPath,
+    this.webDataDir,
     this.isRtl = true,
     this.rendering = EditionRendering.plain,
     this.languageCode,
@@ -49,13 +50,26 @@ class QuranEdition {
   /// `irab` reuses `text_simple` (its grammar data comes from MASAQ.csv).
   final String? dbColumn;
 
-  /// web source: path to this edition's JSON, **relative to the deployed web
-  /// app root** (resolved against the document base by
-  /// `web_edition_json.dart`). These files live in `web/data/editions/`, not in
-  /// `assets/`, so they are served only by the web build and never bundled
-  /// into the Android/iOS apps — io reads every edition from [dbColumn]
-  /// instead. Null would mean "not available on web".
-  final String? webJsonPath;
+  /// web source: this edition's data directory name, which is also the stem of
+  /// its source monolith (e.g. `ar.miqbas` for `ar.miqbas.json`).
+  ///
+  /// The web repository reads per-juz shards at `<webDataDir>/juz-NN.json`;
+  /// [webWholeFile] gives the un-sharded file for the one consumer that still
+  /// needs a full corpus (search). Both are resolved against the CDN base in
+  /// `web_edition_json.dart` — this data is served from GitHub via jsDelivr,
+  /// NOT bundled as a Flutter asset and NOT deployed to Firebase Hosting, so
+  /// it costs neither mobile app size nor Hosting bandwidth. io ignores this
+  /// entirely and reads [dbColumn] from the bundled `quran.db`.
+  ///
+  /// Null would mean "not available on web".
+  final String? webDataDir;
+
+  /// The un-sharded JSON filename for this edition, e.g. `ar.miqbas.json`.
+  ///
+  /// Only safe for editions under jsDelivr's 20 MB per-file limit — which in
+  /// practice means the search corpora, not the large tafsirs. Prefer the
+  /// per-juz shards everywhere else.
+  String? get webWholeFile => webDataDir == null ? null : '$webDataDir.json';
 
   final bool isRtl;
   final EditionRendering rendering;
@@ -134,7 +148,7 @@ class QuranEditions {
     id: 'simple',
     category: EditionCategory.arabicScript,
     dbColumn: 'text_simple',
-    webJsonPath: 'data/editions/quran-simple.json',
+    webDataDir: 'quran-simple',
     isRtl: true,
     l10nKey: 'simple',
   );
@@ -143,7 +157,7 @@ class QuranEditions {
     id: 'uthmani',
     category: EditionCategory.arabicScript,
     dbColumn: 'text_uthmani',
-    webJsonPath: 'data/editions/quran-uthmani.json',
+    webDataDir: 'quran-uthmani',
     isRtl: true,
     l10nKey: 'uthmani',
   );
@@ -152,7 +166,7 @@ class QuranEditions {
     id: 'tajweed',
     category: EditionCategory.arabicScript,
     dbColumn: 'text_tajweed',
-    webJsonPath: 'data/editions/quran-tajweed.json',
+    webDataDir: 'quran-tajweed',
     isRtl: true,
     rendering: EditionRendering.tajweed,
     l10nKey: 'tajweed',
@@ -162,7 +176,7 @@ class QuranEditions {
     id: 'irab',
     category: EditionCategory.arabicScript,
     dbColumn: 'text_simple', // text from simple; grammar from MASAQ.csv
-    webJsonPath: 'data/editions/quran-simple.json',
+    webDataDir: 'quran-simple',
     isRtl: true,
     rendering: EditionRendering.irab,
     l10nKey: 'irab',
@@ -173,7 +187,7 @@ class QuranEditions {
     id: 'english',
     category: EditionCategory.translation,
     dbColumn: 'text_english',
-    webJsonPath: 'data/editions/quran-english.json',
+    webDataDir: 'quran-english',
     isRtl: false,
     languageCode: 'en',
     audioReciterKey: 'arabic_english',
@@ -184,7 +198,7 @@ class QuranEditions {
     id: 'french',
     category: EditionCategory.translation,
     dbColumn: 'text_french',
-    webJsonPath: 'data/editions/quran-french.json',
+    webDataDir: 'quran-french',
     isRtl: false,
     languageCode: 'fr',
     audioReciterKey: 'arabic_french',
@@ -195,7 +209,7 @@ class QuranEditions {
     id: 'tr.vakfi',
     category: EditionCategory.translation,
     dbColumn: 'text_tr_vakfi',
-    webJsonPath: 'data/editions/tr.vakfi.json',
+    webDataDir: 'tr.vakfi',
     isRtl: false,
     languageCode: 'tr',
     audioReciterKey: null, // no audio → user's Arabic reciter
@@ -208,7 +222,7 @@ class QuranEditions {
     id: 'de.bubenheim',
     category: EditionCategory.translation,
     dbColumn: 'text_de_bubenheim',
-    webJsonPath: 'data/editions/de.bubenheim.json',
+    webDataDir: 'de.bubenheim',
     isRtl: false,
     languageCode: 'de',
     audioReciterKey: null,
@@ -222,7 +236,7 @@ class QuranEditions {
     id: 'ar.muyassar',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_muyassar',
-    webJsonPath: 'data/editions/ar.muyassar.json',
+    webDataDir: 'ar.muyassar',
     isRtl: true,
     audioReciterKey: 'muyassar',
     nativeName: 'تفسير الميسر',
@@ -233,7 +247,7 @@ class QuranEditions {
     id: 'ar.jalalayn',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_jalalayn',
-    webJsonPath: 'data/editions/ar.jalalayn.json',
+    webDataDir: 'ar.jalalayn',
     isRtl: true,
     audioReciterKey: null,
     nativeName: 'تفسير الجلالين',
@@ -244,7 +258,7 @@ class QuranEditions {
     id: 'ar.qurtubi',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_qurtubi',
-    webJsonPath: 'data/editions/ar.qurtubi.json',
+    webDataDir: 'ar.qurtubi',
     isRtl: true,
     audioReciterKey: null,
     nativeName: 'تفسير القرطبي',
@@ -255,7 +269,7 @@ class QuranEditions {
     id: 'ar.miqbas',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_miqbas',
-    webJsonPath: 'data/editions/ar.miqbas.json',
+    webDataDir: 'ar.miqbas',
     isRtl: true,
     audioReciterKey: null,
     nativeName: 'تنوير المقباس من تفسير ابن عباس',
@@ -266,7 +280,7 @@ class QuranEditions {
     id: 'ar.waseet',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_waseet',
-    webJsonPath: 'data/editions/ar.waseet.json',
+    webDataDir: 'ar.waseet',
     isRtl: true,
     audioReciterKey: null,
     nativeName: 'التفسير الوسيط',
@@ -277,7 +291,7 @@ class QuranEditions {
     id: 'ar.baghawi',
     category: EditionCategory.tafsir,
     dbColumn: 'text_tafsir_baghawi',
-    webJsonPath: 'data/editions/ar.baghawi.json',
+    webDataDir: 'ar.baghawi',
     isRtl: true,
     audioReciterKey: null,
     nativeName: 'تفسير البغوي',
