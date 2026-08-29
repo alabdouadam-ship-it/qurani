@@ -42,6 +42,7 @@ import 'read_quran/juz_picker_sheet.dart';
 import 'read_quran/mushaf_page_view.dart';
 import 'read_quran/mushaf_pdf_controller.dart';
 import 'read_quran/mushaf_style_picker.dart';
+import 'read_quran/page_audio_index_map.dart';
 import 'read_quran/page_audio_sources.dart';
 import 'read_quran/page_picker_sheet.dart';
 import 'read_quran/pdf_page_options_sheet.dart';
@@ -140,7 +141,8 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   /// Page number the current ConcatenatingAudioSource was built for.
   int? _audioSourcePageNumber;
   /// Maps each audio source index → page.ayahs index (handles skipped nulls).
-  List<int> _sourceIndexToAyahIndex = <int>[];
+  /// See [PageAudioIndexMap] for why the two index spaces differ.
+  PageAudioIndexMap _audioIndexMap = PageAudioIndexMap.empty;
   /// True while _goToPageForAutoFlip is executing, suppresses onPageChanged.
   bool _isAutoFlipping = false;
   /// True while _goToPage is programmatically jumping the PageView.
@@ -230,7 +232,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       }
     });
 
-    // Fix 3: Use _sourceIndexToAyahIndex mapping so that skipped null
+    // Fix 3: Use the PageAudioIndexMap so that skipped null
     // sources don't cause index→ayah misalignment.
     _sequenceStateSub = _pagePlayer.sequenceStateStream.listen((sequenceState) {
       if (!mounted) return;
@@ -245,9 +247,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           sourcePage == page.number &&
           sourceIndex >= 0) {
         // Resolve through the mapping (handles skipped null sources)
-        final ayahIdx = (sourceIndex < _sourceIndexToAyahIndex.length)
-            ? _sourceIndexToAyahIndex[sourceIndex]
-            : sourceIndex;
+        final ayahIdx = _audioIndexMap.ayahIndexOrIdentity(sourceIndex);
         if (ayahIdx >= 0 && ayahIdx < page.ayahs.length) {
           ayahNumber = page.ayahs[ayahIdx].number;
         }
@@ -1258,9 +1258,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       final safeAyahIndex = targetAyahIndex >= 0 ? targetAyahIndex : 0;
 
       // Translate ayah-level index → source-level index via the mapping.
-      // This handles the case where some audio sources were null and skipped.
-      final sourceIndex = _sourceIndexToAyahIndex.indexOf(safeAyahIndex);
-      final safeSourceIndex = sourceIndex >= 0 ? sourceIndex : 0;
+      // This handles the case where some audio sources were null and skipped;
+      // an ayah with no audio starts the page from its first source.
+      final safeSourceIndex = _audioIndexMap.sourceIndexOrFirst(safeAyahIndex);
 
       final playingAyahNumber = page.ayahs[safeAyahIndex].number;
 
@@ -1315,11 +1315,13 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
     // Fix 2: Use independent _audioSourcePageNumber instead of volatile
     // _currentPageData which can be nulled during page transitions.
-    final needsReload = _currentPageAudioSource == null ||
-        _pageAudioReciter != reciterCode ||
-        _audioSourcePageNumber != page.number;
-
-    if (!needsReload) {
+    if (!pageAudioNeedsReload(
+      hasSource: _currentPageAudioSource != null,
+      preparedPageNumber: _audioSourcePageNumber,
+      preparedReciterCode: _pageAudioReciter,
+      pageNumber: page.number,
+      reciterCode: reciterCode,
+    )) {
       return true;
     }
 
@@ -1372,7 +1374,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _currentPageAudioSource = source;
       _pageAudioReciter = reciterCode;
       _audioSourcePageNumber = page.number;
-      _sourceIndexToAyahIndex = result.indexMapping;
+      _audioIndexMap = PageAudioIndexMap(result.indexMapping);
       if (mounted) {
         setState(() {
           _currentAyahIndex = 0;
@@ -1452,12 +1454,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
 
       final wasPlaying = _pagePlayer.playing;
       final currentIndex = _pagePlayer.currentIndex ?? _currentAyahIndex ?? 0;
-      final targetIndex = currentIndex > 0 ? currentIndex - 1 : 0;
+      // Steps back one SOURCE, not one ayah: the previous audible ayah may be
+      // several ayahs earlier if the ones between had no audio.
+      final targetIndex = _audioIndexMap.previousSourceIndex(currentIndex);
       await _pagePlayer.seek(Duration.zero, index: targetIndex);
       // Map source-level index → ayah-level index via the mapping
-      final ayahIdx = (targetIndex < _sourceIndexToAyahIndex.length)
-          ? _sourceIndexToAyahIndex[targetIndex]
-          : targetIndex;
+      final ayahIdx = _audioIndexMap.ayahIndexOrIdentity(targetIndex);
       final ayahNumber = (ayahIdx >= 0 && ayahIdx < page.ayahs.length)
           ? page.ayahs[ayahIdx].number
           : page.ayahs.first.number;
@@ -1498,9 +1500,10 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       // Source already matches current page — seek only.
       final targetAyahIdx = _currentPageData!.ayahs.indexWhere((a) => a.number == ayah.number);
       if (targetAyahIdx >= 0) {
-        // Reverse-lookup: find source index from ayah index
-        final sourceIdx = _sourceIndexToAyahIndex.indexOf(targetAyahIdx);
-        if (sourceIdx >= 0) {
+        // Reverse-lookup: find source index from ayah index. Null means this
+        // ayah has no audio, so fall through to a full replay below.
+        final sourceIdx = _audioIndexMap.sourceIndexOf(targetAyahIdx);
+        if (sourceIdx != null) {
           unawaited(_pagePlayer.seek(Duration.zero, index: sourceIdx));
           return;
         }
@@ -1524,7 +1527,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _currentPageAudioSource = null;
     _pageAudioReciter = null;
     _audioSourcePageNumber = null;
-    _sourceIndexToAyahIndex = <int>[];
+    _audioIndexMap = PageAudioIndexMap.empty;
     _currentAyahIndex = null;
 
     if (mounted) {
@@ -1547,7 +1550,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _currentPageAudioSource = null;
     _pageAudioReciter = null;
     _audioSourcePageNumber = null;
-    _sourceIndexToAyahIndex = <int>[];
+    _audioIndexMap = PageAudioIndexMap.empty;
     _currentAyahIndex = null;
     if (mounted) {
       setState(() {
@@ -2113,15 +2116,11 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         final ayah = page.ayahs[globalIndex];
         // `_currentAyahIndex` is an audio SOURCE index, which diverges from the
         // page.ayahs index whenever an ayah's audio source was skipped (null).
-        // Map it back through `_sourceIndexToAyahIndex` before comparing, the
-        // same bridge used by `_selectedAyah` elsewhere, so the right ayah is
-        // highlighted during playback.
+        // Map it back before comparing, the same bridge used by `_selectedAyah`
+        // elsewhere, so the right ayah is highlighted during playback.
         final int? playingAyahIndex = _currentAyahIndex == null
             ? null
-            : (_currentAyahIndex! >= 0 &&
-                    _currentAyahIndex! < _sourceIndexToAyahIndex.length
-                ? _sourceIndexToAyahIndex[_currentAyahIndex!]
-                : _currentAyahIndex);
+            : _audioIndexMap.ayahIndexOrIdentity(_currentAyahIndex!);
         final bool isPlaying = isCurrentPage &&
             playingAyahIndex != null &&
             globalIndex == playingAyahIndex;
