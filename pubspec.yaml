@@ -78,6 +78,10 @@ dev_dependencies:
   json_serializable: ^6.9.5
   riverpod_generator: ^2.6.5
   build_runner: ^2.5.4
+  # Used only by tool/check_16kb_alignment.dart to read .so entries out of a
+  # built .aab/.apk. Already present transitively; declared here so the tool
+  # imports a package this project actually depends on.
+  archive: ^4.0.7
 
 flutter:
   uses-material-design: true
