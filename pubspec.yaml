@@ -94,9 +94,15 @@ flutter:
     # from GitHub via jsDelivr instead, which costs no Hosting bandwidth.
     # See `QuranEdition.webDataDir`, `web_edition_json.dart`, and
     # `tool/shard_editions.dart`.
-    - assets/data/
+    # Listed file-by-file on purpose. A bare `- assets/data/` entry would also
+    # ship the 104 MB unsplit `assets/data/quran.db`, which is kept in the repo
+    # ONLY as the source for tool/pack_quran_db.dart. What ships is
+    # `assets/data/quran_db/` -- the same database gzipped and split into ~8 MB
+    # parts, so QuranDatabaseService can stream it out of the bundle instead of
+    # allocating 104 MB in one go on first launch. Shipping both would double
+    # the download for nothing.
     - assets/data/hadithdata/
-    - assets/data/quran.db
+    - assets/data/quran_db/
     - assets/data/reciters.json
     - assets/audio/
     - assets/images/

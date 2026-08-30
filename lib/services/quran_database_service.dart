@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/services.dart' show rootBundle;
@@ -25,7 +26,8 @@ import 'logger.dart';
 ///   `SQLITE_BUSY` even when both sides are read-only).
 /// * **One validation path** that lists the union of every column any
 ///   consumer needs.
-/// * **One copy path** so the ~5MB asset write happens exactly once.
+/// * **One copy path** so the 104 MB asset write happens exactly once. (That
+///   figure said "~5MB" for a long time; the database has grown 20x since.)
 class QuranDatabaseService {
   QuranDatabaseService._();
 
@@ -37,6 +39,14 @@ class QuranDatabaseService {
   /// waseet/baghawi tafsir columns (see tool/build_quran_db.dart).
   static const int _schemaVersion = 4;
   static const String _versionKey = 'quran_db_schema_version';
+
+  /// Directory of the gzipped, split database produced by
+  /// `tool/pack_quran_db.dart`. The unsplit `assets/data/quran.db` is kept in
+  /// the repo as the source for that tool but is deliberately NOT declared in
+  /// `pubspec.yaml`, so it never ships — shipping both would double the
+  /// download.
+  static const String _dbAssetDir = 'assets/data/quran_db';
+  static const String _manifestName = 'manifest.json';
 
   static sqf.Database? _db;
   static Future<sqf.Database>? _opening;
@@ -146,16 +156,77 @@ class QuranDatabaseService {
       try {
         await Directory(p.dirname(dbPath)).create(recursive: true);
       } catch (_) {}
-      final bytes = await rootBundle.load('assets/data/quran.db');
-      final dbFile = File(dbPath);
-      await dbFile.writeAsBytes(bytes.buffer.asUint8List(), flush: true);
+      final written = await _copyDatabaseFromAssets(dbPath);
       await prefs.setInt(_versionKey, _schemaVersion);
-      Log.i('QuranDatabase',
-          'Copied ${dbFile.lengthSync()} bytes to $dbPath');
+      Log.i('QuranDatabase', 'Copied $written bytes to $dbPath');
     }
 
     final db = await sqf.openDatabase(dbPath, readOnly: false);
     Log.d('QuranDatabase', 'Opened quran.db');
     return db;
+  }
+
+  /// Writes the bundled database to [dbPath], streaming it out of the bundle
+  /// one gzipped part at a time. Returns the number of bytes written.
+  ///
+  /// This replaced a single `rootBundle.load('assets/data/quran.db')`, which was
+  /// a ~104 MB allocation on first launch — and again for the entire installed
+  /// base after any [_schemaVersion] bump. Dart offers no streaming asset API,
+  /// so the data is shipped pre-split by `tool/pack_quran_db.dart` into ~8 MB
+  /// gzipped parts; peak heap is now one part plus the decoder's buffers.
+  ///
+  /// The download is unaffected: gzip takes the file from 104.37 MB to 28.93 MB,
+  /// which is what the App Bundle was already compressing the raw `.db` to. The
+  /// decompression simply moves from the packaging layer into here, where it can
+  /// be streamed.
+  ///
+  /// The parts are byte ranges of ONE gzip stream rather than independent
+  /// members, so they must be fed to the decoder in order.
+  static Future<int> _copyDatabaseFromAssets(String dbPath) async {
+    final manifest = json.decode(
+      await rootBundle.loadString('$_dbAssetDir/$_manifestName'),
+    ) as Map<String, dynamic>;
+
+    final partCount = (manifest['parts'] as num).toInt();
+    final expectedBytes = (manifest['rawBytes'] as num).toInt();
+    if (partCount <= 0) {
+      throw StateError('quran.db manifest declares $partCount parts');
+    }
+
+    final dbFile = File(dbPath);
+    final sink = dbFile.openWrite();
+    try {
+      await _gzippedParts(partCount).transform(gzip.decoder).pipe(sink);
+    } catch (e) {
+      // pipe() closes the sink itself; on failure remove the partial file so a
+      // truncated database is never handed to sqlite, and so the next launch
+      // retries the copy instead of "succeeding" with a short file.
+      try {
+        if (dbFile.existsSync()) await dbFile.delete();
+      } catch (_) {}
+      rethrow;
+    }
+
+    final written = dbFile.lengthSync();
+    if (written != expectedBytes) {
+      try {
+        await dbFile.delete();
+      } catch (_) {}
+      throw StateError('quran.db copy is $written bytes, expected '
+          '$expectedBytes — bundle parts may be stale or incomplete.');
+    }
+    return written;
+  }
+
+  /// Yields each gzipped part in order, loading only one at a time.
+  static Stream<List<int>> _gzippedParts(int partCount) async* {
+    for (var i = 0; i < partCount; i++) {
+      final name = 'part-${i.toString().padLeft(3, '0')}.gz';
+      final data = await rootBundle.load('$_dbAssetDir/$name');
+      // Respect the view's offset/length: ByteData from the asset bundle is not
+      // guaranteed to start at byte 0 of its backing buffer, and
+      // `asUint8List()` with no arguments would include the surrounding bytes.
+      yield data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+    }
   }
 }
