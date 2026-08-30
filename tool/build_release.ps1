@@ -89,21 +89,40 @@ if ($buildExit -ne 0) {
     exit $buildExit
 }
 
-# --- Web only: drop quran.db from the deploy payload ----------------------
-# `assets/data/quran.db` is 104 MB and is read ONLY by quran_database_service,
-# which is io-only (dart:io + sqflite). The web app reads Quran text from the
-# sharded JSON served via jsDelivr instead, so no web client ever requests this
-# file - it just sat in `build/web` inflating Firebase Hosting storage on every
+# --- Web only: drop the io-only SQLite payload from the deploy -------------
+# The bundled Quran database is read ONLY by quran_database_service, which is
+# io-only (dart:io + sqflite). The web app reads Quran text from the sharded
+# JSON served via jsDelivr instead, so no web client ever requests these files -
+# they just sit in `build/web` inflating Firebase Hosting storage on every
 # release. Hosting storage is free to 10 GB and every retained release keeps its
 # own copy, so this is the difference between roughly 36 and 150 retained
-# releases. It cannot be excluded via pubspec.yaml (one asset list, shared with
-# mobile, which genuinely needs it), hence pruning here.
+# releases. They cannot be excluded via pubspec.yaml (one asset list, shared
+# with mobile, which genuinely needs them), hence pruning here.
+#
+# Listed rather than hardcoded to one path because the payload has already moved
+# once: it used to be a single `assets/data/quran.db`, and is now the gzipped
+# split parts under `assets/data/quran_db/` produced by tool/pack_quran_db.dart.
+# The rename silently un-pruned the payload and put 29 MB back into build/web,
+# so the check below warns when NOTHING matched - if this list goes stale again,
+# the build says so instead of quietly shipping the database to the web.
 if ($target -eq 'web') {
-    $webDb = Join-Path $root 'build/web/assets/assets/data/quran.db'
-    if (Test-Path $webDb) {
-        $dbMb = [math]::Round((Get-Item $webDb).Length / 1MB, 2)
-        Remove-Item $webDb -Force
-        Write-Host "Pruned quran.db from build/web ($dbMb MB, unused on web)." -ForegroundColor Cyan
+    $ioOnlyAssets = @(
+        'build/web/assets/assets/data/quran_db', # gzipped split parts (current)
+        'build/web/assets/assets/data/quran.db'  # unsplit file (pre-e495e50)
+    )
+    $prunedMb = 0
+    foreach ($rel in $ioOnlyAssets) {
+        $path = Join-Path $root $rel
+        if (-not (Test-Path $path)) { continue }
+        $mb = [math]::Round(
+            ((Get-ChildItem $path -Recurse -File |
+                Measure-Object Length -Sum).Sum / 1MB), 2)
+        Remove-Item $path -Recurse -Force
+        $prunedMb += $mb
+        Write-Host "Pruned $(Split-Path $rel -Leaf) from build/web ($mb MB, unused on web)." -ForegroundColor Cyan
+    }
+    if ($prunedMb -eq 0) {
+        Write-Host "WARNING: no io-only database asset found to prune. If the asset was renamed, update `$ioOnlyAssets in tool/build_release.ps1 - otherwise the web deploy is carrying it." -ForegroundColor Yellow
     }
     $webTotal = [math]::Round(
         ((Get-ChildItem (Join-Path $root 'build/web') -Recurse -File |
