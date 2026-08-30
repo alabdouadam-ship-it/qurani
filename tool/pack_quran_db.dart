@@ -34,6 +34,7 @@
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data' show BytesBuilder;
 
 const String _sourcePath = 'assets/data/quran.db';
 const String _outputDir = 'assets/data/quran_db';

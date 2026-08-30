@@ -315,9 +315,8 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       
       if (_isDisposed) return;
 
-      final playlist = ConcatenatingAudioSource(children: sources);
       if (!_isDisposed) {
-        await _player.setAudioSource(playlist, preload: true);
+        await _player.setAudioSources(sources, preload: true);
         if (!_isDisposed) {
           setState(() => _playingAyahId = ayahId);
           await _player.play();

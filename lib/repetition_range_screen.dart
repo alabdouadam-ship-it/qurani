@@ -70,7 +70,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   late String _arabicFontKey;
 
   StreamSubscription<PlayerState>? _playerStateSub;
-  StreamSubscription<SequenceState?>? _sequenceStateSub;
+  StreamSubscription<SequenceState>? _sequenceStateSub;
 
   /// True when playback was paused by the user while a still-valid playlist is
   /// loaded. Lets pause → play resume from the paused position instead of
@@ -114,7 +114,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       }
     });
     _sequenceStateSub = _player.sequenceStateStream.listen((sequenceState) {
-      final tag = sequenceState?.currentSource?.tag;
+      final tag = sequenceState.currentSource?.tag;
       int? verseNumber;
       if (tag is MediaItem) {
         final extras = tag.extras;
@@ -210,7 +210,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     // Resume from the paused position when the loaded playlist is still valid.
     if (_pausedForResume &&
         _playlistEntries.isNotEmpty &&
-        _player.audioSource != null) {
+        _player.audioSources.isNotEmpty) {
       _pausedForResume = false;
       _player.play();
       setState(() => _isPlaying = true);

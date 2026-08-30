@@ -106,7 +106,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   bool get _isAudioBusy => _isLoadingPageData || _preparedAudio.isLoading;
   int? _currentAyahIndex;
   StreamSubscription<PlayerState>? _playerStateSub;
-  StreamSubscription<SequenceState?>? _sequenceStateSub;
+  StreamSubscription<SequenceState>? _sequenceStateSub;
   final ScrollController _pageScrollController = ScrollController();
   final Map<int, GlobalKey> _ayahKeys = <int, GlobalKey>{};
   // Memoized parsed ayah spans, keyed by a fingerprint of every input that
@@ -246,7 +246,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     _sequenceStateSub = _pagePlayer.sequenceStateStream.listen((sequenceState) {
       if (!mounted) return;
 
-      final sourceIndex = sequenceState?.currentIndex;
+      final sourceIndex = sequenceState.currentIndex;
       final page = _currentPageData;
       final sourcePage = _preparedAudio.pageNumber;
       int? ayahNumber;
@@ -1299,15 +1299,14 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         return false;
       }
 
-      final source = ConcatenatingAudioSource(children: result.sources);
       // Bounded: if the platform/background session is in a bad state (e.g. a
-      // stale tagged player from another screen still holds it), setAudioSource
-      // can otherwise hang indefinitely and leave the play button spinning
-      // forever. On timeout we throw → the catch below shows an error and the
-      // finally resets the loading flag so the user can retry.
+      // stale tagged player from another screen still holds it),
+      // setAudioSources can otherwise hang indefinitely and leave the play
+      // button spinning forever. On timeout we throw → the catch below shows an
+      // error and the finally resets the loading flag so the user can retry.
       await _pagePlayer
-          .setAudioSource(
-            source,
+          .setAudioSources(
+            result.sources,
             initialIndex: 0,
             initialPosition: Duration.zero,
           )

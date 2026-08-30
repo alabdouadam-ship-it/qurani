@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:audio_session/audio_session.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:share_plus/share_plus.dart';
@@ -80,7 +79,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   StreamSubscription<PlayerState>? _playerStateSub;
   StreamSubscription<ProcessingState>? _processingStateSub;
   StreamSubscription<int?>? _currentIndexSub;
-  StreamSubscription<PlaybackEvent>? _playbackEventSub;
+  StreamSubscription<PlayerException>? _playerErrorSub;
   StreamSubscription<AudioInterruptionEvent>? _interruptionSub;
   bool _isPlayerDisposed = false;
 
@@ -124,7 +123,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     _playerStateSub?.cancel();
     _processingStateSub?.cancel();
     _currentIndexSub?.cancel();
-    _playbackEventSub?.cancel();
+    _playerErrorSub?.cancel();
     _interruptionSub?.cancel();
     unawaited(_disposePlayer());
     super.dispose();
@@ -157,8 +156,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
 
     _durationSub = _player.durationStream.listen((duration) {
       if (!mounted || duration == null) return;
-      final sequence = _player.sequenceState;
-      final tag = sequence?.currentSource?.tag;
+      final tag = _player.sequenceState.currentSource?.tag;
       final isPlaceholder =
           tag is MediaItem && (tag.extras?['placeholder'] as String?) != null;
       if (!isPlaceholder) {
@@ -172,23 +170,21 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         _player.processingStateStream.listen(_handleProcessingChange);
     _currentIndexSub =
         _player.currentIndexStream.listen(_onCurrentIndexChanged);
-    _playbackEventSub = _player.playbackEventStream.listen(
-      (event) {},
-      onError: (Object e, StackTrace st) {
-        if (e is PlatformException) {
-          debugPrint('[AudioPlayer] Playback Error: ${e.message}');
-          // If error occurs, we might need to reload current.
-          // Usually just_audio propagates this to processingState idle or error.
-        }
-      },
-    );
+    // just_audio 0.10 no longer routes player errors through
+    // playbackEventStream.onError; they arrive on errorStream instead.
+    // Recovery is still left to the processingState listener, which retries
+    // out of an unexpected idle state.
+    _playerErrorSub = _player.errorStream.listen((e) {
+      debugPrint(
+          '[AudioPlayer] Playback Error (index=${e.index}): ${e.message}');
+    });
   }
 
   Future<void> _onCurrentIndexChanged(int? index) async {
     if (index == null || !_isPlaying || _verseByVerseMode) return;
     
     final sequence = _player.sequence;
-    if (sequence == null || index >= sequence.length) return;
+    if (index >= sequence.length) return;
     final item = sequence[index].tag as MediaItem;
     final newOrder = item.extras?['surahOrder'] as int?;
     if (newOrder == null || newOrder == _currentOrder) return;
@@ -205,8 +201,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     _updateDownloadStatus();
     PreferencesService.addToHistory(newOrder, _reciterKey!);
 
-    final playlist = _player.audioSource as ConcatenatingAudioSource?;
-    if (playlist == null) return;
+    if (_player.audioSources.isEmpty) return;
 
     // If queue is active and matches newOrder, dequeue it
     final queued = _queueService.getNext(peek: true);
@@ -215,32 +210,40 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     }
 
     // --- Self-healing Sliding Window: [Previous, Current, Next] ---
-    
+    //
+    // As of just_audio 0.10 the playlist lives on the player itself, so there
+    // is no ConcatenatingAudioSource handle whose identity can be compared
+    // across an await. The generation counter already covers the same ground:
+    // every path that replaces the playlist (_playSurah, _playVerse,
+    // _goToNext/PreviousSurah) bumps _playbackGeneration before touching the
+    // player, so a stale window repair aborts at the next check.
+    bool isStale() => _playbackGeneration != generation || _isPlayerDisposed;
+
     // 1. Cull old 'Previous' items (index should shift down to 1 or 0)
     while ((_player.currentIndex ?? 0) > 1) {
-      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
-      await playlist.removeAt(0);
+      if (isStale()) return;
+      await _player.removeAudioSourceAt(0);
     }
 
     // 2. Insert new 'Previous' if we are at index 0 and a previous surah exists
     if ((_player.currentIndex ?? 0) == 0 && newOrder > 1) {
       final prevOrder = newOrder - 1;
       final prevSource = await _buildAudioSource(prevOrder);
-      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+      if (isStale()) return;
       if (prevSource != null) {
         // Inserting at 0 while playing at 0 automatically shifts the current index to 1
-        await playlist.insert(0, prevSource);
+        await _player.insertAudioSource(0, prevSource);
       }
     }
 
     // 3. Cull old 'Next' items
-    while (playlist.length > (_player.currentIndex ?? 0) + 2) {
-      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
-      await playlist.removeAt(playlist.length - 1);
+    while (_player.audioSources.length > (_player.currentIndex ?? 0) + 2) {
+      if (isStale()) return;
+      await _player.removeAudioSourceAt(_player.audioSources.length - 1);
     }
 
     // 4. Append new 'Next' if we don't have one
-    if (playlist.length == (_player.currentIndex ?? 0) + 1) {
+    if (_player.audioSources.length == (_player.currentIndex ?? 0) + 1) {
       AudioSource? nextSource;
       final nextQ = _queueService.getNext(peek: true);
       if (nextQ != null) {
@@ -248,10 +251,10 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       } else if (_autoPlayNext && !_isRepeat && newOrder < 114) {
         nextSource = await _buildAudioSource(newOrder + 1);
       }
-      
-      if (_playbackGeneration != generation || _player.audioSource != playlist) return;
+
+      if (isStale()) return;
       if (nextSource != null) {
-        await playlist.add(nextSource);
+        await _player.addAudioSource(nextSource);
       }
     }
   }
@@ -450,20 +453,17 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           }
         }
 
-        final playlist = ConcatenatingAudioSource(
-          children: playlistChildren,
-          useLazyPreparation: true,
-          shuffleOrder: DefaultShuffleOrder(),
-        );
-
         debugPrint(
             '[AudioPlayer] Setting playlist with ${playlistChildren.length} items (initialIndex=$initialIndex)');
 
         try {
-          await _player.setAudioSource(
-            playlist,
+          // just_audio 0.10 playlist API. useLazyPreparation is now an
+          // AudioPlayer constructor option and already defaults to true.
+          await _player.setAudioSources(
+            playlistChildren,
             initialIndex: initialIndex,
             initialPosition: startPosition,
+            shuffleOrder: DefaultShuffleOrder(),
           );
           debugPrint('[AudioPlayer] Audio source set successfully');
         } catch (e, stackTrace) {
@@ -668,7 +668,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       }
 
       // For full surah mode, LoopMode.all handles repeat automatically.
-      // ConcatenatingAudioSource handles transitions to next surah.
+      // The player's playlist handles transitions to the next surah.
       // We only need to handle the end of playlist when NOT repeating.
       if (_player.nextIndex == null && !_isRepeat) {
         // End of playlist and not repeating - stop playback
