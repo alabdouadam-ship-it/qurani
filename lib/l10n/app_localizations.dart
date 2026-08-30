@@ -3270,6 +3270,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'German'**
   String get editionGerman;
+
+  /// No description provided for @secondaryEditionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary edition'**
+  String get secondaryEditionTitle;
+
+  /// No description provided for @secondaryEditionDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an arrow to each ayah that opens a second edition.'**
+  String get secondaryEditionDesc;
+
+  /// No description provided for @secondaryEditionChoose.
+  ///
+  /// In en, this message translates to:
+  /// **'Which edition'**
+  String get secondaryEditionChoose;
+
+  /// No description provided for @secondaryEditionFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Alternative edition'**
+  String get secondaryEditionFallback;
+
+  /// No description provided for @secondaryEditionFallbackDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'used when the secondary edition is the one you are reading'**
+  String get secondaryEditionFallbackDesc;
+
+  /// No description provided for @secondaryEditionShow.
+  ///
+  /// In en, this message translates to:
+  /// **'Show secondary edition'**
+  String get secondaryEditionShow;
+
+  /// No description provided for @secondaryEditionHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide secondary edition'**
+  String get secondaryEditionHide;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

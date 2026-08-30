@@ -1173,5 +1173,19 @@
   "editionTurkish": "Turkish",
   "@editionTurkish": {},
   "editionGerman": "German",
-  "@editionGerman": {}
+  "@editionGerman": {},
+  "secondaryEditionTitle": "Secondary edition",
+  "@secondaryEditionTitle": {},
+  "secondaryEditionDesc": "Add an arrow to each ayah that opens a second edition.",
+  "@secondaryEditionDesc": {},
+  "secondaryEditionChoose": "Which edition",
+  "@secondaryEditionChoose": {},
+  "secondaryEditionFallback": "Alternative edition",
+  "@secondaryEditionFallback": {},
+  "secondaryEditionFallbackDesc": "used when the secondary edition is the one you are reading",
+  "@secondaryEditionFallbackDesc": {},
+  "secondaryEditionShow": "Show secondary edition",
+  "@secondaryEditionShow": {},
+  "secondaryEditionHide": "Hide secondary edition",
+  "@secondaryEditionHide": {}
 }

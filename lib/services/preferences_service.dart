@@ -935,6 +935,47 @@ class PreferencesService {
     return _prefs?.getInt('$keyLastReadPagePrefix$editionName') ?? 1;
   }
 
+  // ── Reader secondary edition ──────────────────────────────────────────
+  // The edition shown in the per-ayah expandable panel. `fallback` is used
+  // only when the preferred one turns out to be the edition being read; see
+  // `read_quran/secondary_edition.dart` for the resolution rule.
+
+  static const String keySecondaryEditionEnabled = 'secondary_edition_enabled';
+  static const String keySecondaryEditionId = 'secondary_edition_id';
+  static const String keySecondaryEditionFallbackId =
+      'secondary_edition_fallback_id';
+
+  static Future<void> saveSecondaryEditionEnabled(bool value) async {
+    await _prefs?.setBool(keySecondaryEditionEnabled, value);
+  }
+
+  /// Off by default: the panel adds an affordance to every ayah, so it should
+  /// be something the user opts into rather than something they discover
+  /// already switched on.
+  static bool getSecondaryEditionEnabled() {
+    return _prefs?.getBool(keySecondaryEditionEnabled) ?? false;
+  }
+
+  static Future<void> saveSecondaryEditionId(String editionId) async {
+    await _prefs?.setString(keySecondaryEditionId, editionId);
+  }
+
+  /// Defaults to Tafsir al-Muyassar — the most common companion to reading the
+  /// Arabic text, and the same book the long-press tafsir option defaults to.
+  static String getSecondaryEditionId() {
+    return _prefs?.getString(keySecondaryEditionId) ?? 'ar.muyassar';
+  }
+
+  static Future<void> saveSecondaryEditionFallbackId(String editionId) async {
+    await _prefs?.setString(keySecondaryEditionFallbackId, editionId);
+  }
+
+  /// Defaults to the plain Arabic text, which is what you want alongside a
+  /// tafsir when the tafsir itself is the edition being read.
+  static String getSecondaryEditionFallbackId() {
+    return _prefs?.getString(keySecondaryEditionFallbackId) ?? 'simple';
+  }
+
   // PDF Mode methods
   static Future<void> saveIsPdfMode(bool value) async {
     await _prefs?.setBool(keyIsPdfMode, value);

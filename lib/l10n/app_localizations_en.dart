@@ -1676,4 +1676,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editionGerman => 'German';
+
+  @override
+  String get secondaryEditionTitle => 'Secondary edition';
+
+  @override
+  String get secondaryEditionDesc => 'Add an arrow to each ayah that opens a second edition.';
+
+  @override
+  String get secondaryEditionChoose => 'Which edition';
+
+  @override
+  String get secondaryEditionFallback => 'Alternative edition';
+
+  @override
+  String get secondaryEditionFallbackDesc => 'used when the secondary edition is the one you are reading';
+
+  @override
+  String get secondaryEditionShow => 'Show secondary edition';
+
+  @override
+  String get secondaryEditionHide => 'Hide secondary edition';
 }

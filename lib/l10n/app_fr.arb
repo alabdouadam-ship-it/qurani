@@ -1171,5 +1171,19 @@
   "editionTurkish": "Turc",
   "@editionTurkish": {},
   "editionGerman": "Allemand",
-  "@editionGerman": {}
+  "@editionGerman": {},
+  "secondaryEditionTitle": "Édition secondaire",
+  "@secondaryEditionTitle": {},
+  "secondaryEditionDesc": "Ajouter à chaque verset une flèche qui ouvre une seconde édition.",
+  "@secondaryEditionDesc": {},
+  "secondaryEditionChoose": "Choisir l'édition",
+  "@secondaryEditionChoose": {},
+  "secondaryEditionFallback": "Édition de remplacement",
+  "@secondaryEditionFallback": {},
+  "secondaryEditionFallbackDesc": "utilisée lorsque l'édition secondaire est celle que vous lisez",
+  "@secondaryEditionFallbackDesc": {},
+  "secondaryEditionShow": "Afficher l'édition secondaire",
+  "@secondaryEditionShow": {},
+  "secondaryEditionHide": "Masquer l'édition secondaire",
+  "@secondaryEditionHide": {}
 }

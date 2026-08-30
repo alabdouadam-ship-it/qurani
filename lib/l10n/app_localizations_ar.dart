@@ -1676,4 +1676,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get editionGerman => 'الألمانية';
+
+  @override
+  String get secondaryEditionTitle => 'النسخة الثانوية';
+
+  @override
+  String get secondaryEditionDesc => 'إضافة سهم لكل آية يفتح نسخة ثانية.';
+
+  @override
+  String get secondaryEditionChoose => 'اختيار النسخة';
+
+  @override
+  String get secondaryEditionFallback => 'النسخة البديلة';
+
+  @override
+  String get secondaryEditionFallbackDesc => 'تُستخدم عندما تكون النسخة الثانوية هي النسخة التي تقرأها';
+
+  @override
+  String get secondaryEditionShow => 'إظهار النسخة الثانوية';
+
+  @override
+  String get secondaryEditionHide => 'إخفاء النسخة الثانوية';
 }

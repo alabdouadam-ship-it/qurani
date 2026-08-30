@@ -34,6 +34,7 @@ import 'read_quran/ayah_options_sheet.dart';
 import 'read_quran/ayah_text_dialog.dart';
 import 'read_quran/basmalah_header.dart';
 import 'read_quran/basmalah_text_utils.dart';
+import 'read_quran/edition_label.dart';
 import 'read_quran/edition_picker_sheet.dart';
 import 'read_quran/fullscreen_chrome_controller.dart';
 import 'read_quran/highlight_models.dart';
@@ -48,6 +49,8 @@ import 'read_quran/prepared_page_audio.dart';
 import 'read_quran/page_picker_sheet.dart';
 import 'read_quran/pdf_page_options_sheet.dart';
 import 'read_quran/reader_settings_sheet.dart';
+import 'read_quran/secondary_edition.dart';
+import 'read_quran/secondary_edition_panel.dart';
 import 'read_quran/surah_picker_sheet.dart';
 
 const String kBasmalah = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ';
@@ -117,6 +120,30 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
   final Map<String, List<InlineSpan>> _spanCache =
       <String, List<InlineSpan>>{};
   static const int _spanCacheMaxEntries = 400;
+  // ── Secondary edition (per-ayah expandable panel) ─────────────────────
+  /// Whether the feature is on. Mirrors the persisted preference; the arrow is
+  /// hidden entirely when off.
+  bool _secondaryEnabled = false;
+  /// The user's chosen secondary edition, and the one used instead when the
+  /// chosen one turns out to be the edition being read. Resolved per build by
+  /// [_activeSecondary].
+  late QuranEdition _secondaryPreferred;
+  late QuranEdition _secondaryFallback;
+
+  /// Ayahs (by global ayah number) whose panel is currently open. Independent
+  /// per ayah — opening one never closes another, so this is a set rather than
+  /// a single value. Cleared alongside [_ayahKeys] on page/edition changes.
+  final Set<int> _expandedSecondary = <int>{};
+
+  /// Fetched secondary text, keyed `'<ayahNumber>|<editionId>'`. Null values are
+  /// meaningful and cached deliberately: they record "this edition has no text
+  /// for this ayah", so re-opening the panel doesn't re-query for a known gap.
+  final Map<String, String?> _secondaryText = <String, String?>{};
+
+  /// In-flight fetch keys, so a rebuild during the fetch shows the spinner
+  /// rather than firing a second query.
+  final Set<String> _secondaryLoading = <String>{};
+
   int? _pendingScrollAyah;
   // Deep-link target from search → reader. Kept until the user navigates away
   // (page swipe/picker) so the FutureBuilder can always re-trigger the scroll
@@ -179,6 +206,12 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     // An explicit edition from the caller (e.g. search language) wins over the
     // user's last-read edition.
     _edition = QuranEditions.byId(widget.initialEditionId ?? savedEdition);
+
+    _secondaryEnabled = PreferencesService.getSecondaryEditionEnabled();
+    _secondaryPreferred =
+        QuranEditions.byId(PreferencesService.getSecondaryEditionId());
+    _secondaryFallback =
+        QuranEditions.byId(PreferencesService.getSecondaryEditionFallbackId());
 
     // Check start at last page preference
     final startAtLastPage = PreferencesService.getStartAtLastPage();
@@ -357,6 +390,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = highlightAyah;
       _currentPageData = null;
       _ayahKeys.clear();
+      _expandedSecondary.clear();
       _pendingScrollAyah = highlightAyah;
     });
 
@@ -937,6 +971,9 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = null;
       _currentPageData = null;
       _pageCache.clear(); // Clear cache when edition changes
+      // Changing the primary edition can re-resolve which secondary applies
+      // (or drop it entirely), so no open panel is still valid.
+      _expandedSecondary.clear();
       _landAtTopOnNextLoad = true; // Land at page top, not mid-first-ayah
     });
     // Reset the scroll position to the top immediately so the new edition's
@@ -980,7 +1017,66 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
         if (!mounted) return;
         setState(() {});
       },
+      secondaryEnabled: _secondaryEnabled,
+      onSecondaryEnabledChanged: (val) {
+        if (!mounted) return;
+        setState(() {
+          _secondaryEnabled = val;
+          // Turning it off must also close whatever was open, so re-enabling
+          // doesn't reveal stale panels.
+          if (!val) _expandedSecondary.clear();
+        });
+      },
+      secondaryEdition: _secondaryPreferred,
+      secondaryFallbackEdition: _secondaryFallback,
+      onOpenSecondaryEditionPicker: _pickSecondaryEdition,
+      onOpenSecondaryFallbackPicker: _pickSecondaryFallbackEdition,
     );
+  }
+
+  Future<void> _pickSecondaryEdition() async {
+    final selected = await showEditionPickerSheet(
+      context,
+      current: _secondaryPreferred,
+      selectable: secondaryEditionOptions(),
+    );
+    if (selected == null || !mounted) return;
+    await PreferencesService.saveSecondaryEditionId(selected.id);
+
+    // The fallback only means anything if it differs from the preferred one.
+    // Picking a preferred edition that collides with the current fallback would
+    // leave the collision case unanswered, so move the fallback to the first
+    // remaining option rather than silently keeping an unusable pair.
+    QuranEdition fallback = _secondaryFallback;
+    if (editionsShareText(fallback, selected)) {
+      final options = secondaryFallbackOptions(selected);
+      if (options.isNotEmpty) {
+        fallback = options.first;
+        await PreferencesService.saveSecondaryEditionFallbackId(fallback.id);
+      }
+    }
+
+    if (!mounted) return;
+    setState(() {
+      _secondaryPreferred = selected;
+      _secondaryFallback = fallback;
+      _expandedSecondary.clear();
+    });
+  }
+
+  Future<void> _pickSecondaryFallbackEdition() async {
+    final selected = await showEditionPickerSheet(
+      context,
+      current: _secondaryFallback,
+      selectable: secondaryFallbackOptions(_secondaryPreferred),
+    );
+    if (selected == null || !mounted) return;
+    await PreferencesService.saveSecondaryEditionFallbackId(selected.id);
+    if (!mounted) return;
+    setState(() {
+      _secondaryFallback = selected;
+      _expandedSecondary.clear();
+    });
   }
 
   void _showMushafStylePicker() {
@@ -1533,6 +1629,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       _selectedAyah = null;
       _currentPageData = null;
       _ayahKeys.clear();
+      _expandedSecondary.clear();
       _deepLinkAyah = null; // Auto-flip is always user-initiated audio flow
     });
 
@@ -1608,6 +1705,93 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     }
   }
 
+  /// The edition the per-ayah panel should show right now, or null to hide the
+  /// arrow. Recomputed on every build because it depends on [_edition], which
+  /// the user can change at any time. See `read_quran/secondary_edition.dart`.
+  QuranEdition? get _activeSecondary => resolveSecondaryEdition(
+        enabled: _secondaryEnabled,
+        primary: _edition,
+        preferred: _secondaryPreferred,
+        fallback: _secondaryFallback,
+      );
+
+  String _secondaryKey(int ayahNumber, QuranEdition edition) =>
+      '$ayahNumber|${edition.id}';
+
+  /// The global ayah number currently being recited, if any. Used to re-anchor
+  /// the scroll after a panel changes the page's layout height.
+  int? get _playingAyahNumber {
+    final page = _currentPageData;
+    final sourceIndex = _currentAyahIndex;
+    if (page == null || sourceIndex == null) return null;
+    final ayahIndex = _preparedAudio.indexMap.ayahIndexOrIdentity(sourceIndex);
+    if (ayahIndex < 0 || ayahIndex >= page.ayahs.length) return null;
+    return page.ayahs[ayahIndex].number;
+  }
+
+  /// Opens or closes [ayah]'s secondary panel. Each ayah is independent: this
+  /// never touches another ayah's state.
+  void _toggleSecondary(AyahData ayah, QuranEdition secondary) {
+    final opening = !_expandedSecondary.contains(ayah.number);
+    setState(() {
+      if (opening) {
+        _expandedSecondary.add(ayah.number);
+      } else {
+        _expandedSecondary.remove(ayah.number);
+      }
+    });
+
+    if (opening) {
+      final key = _secondaryKey(ayah.number, secondary);
+      // Fetch lazily on first open. Deliberately not prefetched for the whole
+      // page: on web a tafsir juz shard is up to ~1.5 MB, and a reader who
+      // never opens a panel should never pay for it.
+      if (!_secondaryText.containsKey(key) &&
+          !_secondaryLoading.contains(key)) {
+        unawaited(_fetchSecondaryText(ayah, secondary));
+      }
+    }
+
+    // Expanding or collapsing changes this tile's height, which shifts every
+    // ayah below it. While audio is playing the reader keeps the reciting ayah
+    // anchored at 20% of the viewport, so re-issue that scroll once the panel
+    // has settled — otherwise the highlighted ayah drifts until the next track
+    // change happens to correct it.
+    if (_isPlayingPage) {
+      final target = _playingAyahNumber;
+      if (target != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (!mounted) return;
+          _scheduleScrollToAyah(target, immediate: true);
+        });
+      }
+    }
+  }
+
+  Future<void> _fetchSecondaryText(
+      AyahData ayah, QuranEdition secondary) async {
+    final key = _secondaryKey(ayah.number, secondary);
+    _secondaryLoading.add(key);
+    String? text;
+    try {
+      text = await _loadAyahTextIn(ayah, secondary);
+    } catch (error) {
+      // A missing shard or a closed database must not take down the reader;
+      // the panel shows the "not available" line instead.
+      debugPrint('[ReadQuran] secondary edition fetch failed: $error');
+      text = null;
+    }
+    _secondaryLoading.remove(key);
+    final normalized = (text != null && text.trim().isNotEmpty) ? text : null;
+    if (!mounted) {
+      _secondaryText[key] = normalized;
+      return;
+    }
+    setState(() {
+      _secondaryText[key] = normalized;
+    });
+  }
+
   Future<void> _setAyahHighlight(AyahData ayah, int color) async {
     await PreferencesService.saveAyahHighlight(ayah.number, color);
     if (mounted) {
@@ -1635,17 +1819,25 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
     );
   }
 
-  /// Loads and shows a specific translation or tafsir edition for [ayah],
-  /// chosen from the grouped ayah-options sub-menus.
-  Future<void> _showEditionText(AyahData ayah, QuranEdition edition) async {
-    final l10n = AppLocalizations.of(context)!;
-    final text = edition.isTafsir
-        ? await _repository.loadAyahTafsir(ayah.number, edition: edition)
-        : await _repository.loadAyahTranslation(
+  /// Fetches one ayah's text in [edition]. Both platforms resolve this the same
+  /// way through the repository facade — a primary-key hit on the bundled
+  /// `quran.db` on io, a per-juz shard lookup on web — so the secondary-edition
+  /// panel and the long-press dialog share this one path.
+  Future<String?> _loadAyahTextIn(AyahData ayah, QuranEdition edition) {
+    return edition.isTafsir
+        ? _repository.loadAyahTafsir(ayah.number, edition: edition)
+        : _repository.loadAyahTranslation(
             ayahNumber: ayah.number,
             edition: edition,
             pageNumber: ayah.page,
           );
+  }
+
+  /// Loads and shows a specific translation or tafsir edition for [ayah],
+  /// chosen from the grouped ayah-options sub-menus.
+  Future<void> _showEditionText(AyahData ayah, QuranEdition edition) async {
+    final l10n = AppLocalizations.of(context)!;
+    final text = await _loadAyahTextIn(ayah, edition);
 
     if (!mounted) return;
 
@@ -1868,6 +2060,7 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
           }
           _currentPageData = null;
           _ayahKeys.clear();
+          _expandedSecondary.clear();
         });
 
         // Save last read page
@@ -2227,6 +2420,58 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
       return spans;
     });
 
+    // ── Secondary edition panel inputs ──────────────────────────────────
+    final l10n = AppLocalizations.of(context)!;
+    final QuranEdition? secondary = _activeSecondary;
+    final bool isSecondaryExpanded =
+        secondary != null && _expandedSecondary.contains(ayah.number);
+    final String? secondaryCacheKey =
+        secondary == null ? null : _secondaryKey(ayah.number, secondary);
+    final bool isSecondaryLoading = secondaryCacheKey != null &&
+        !_secondaryText.containsKey(secondaryCacheKey) &&
+        (_secondaryLoading.contains(secondaryCacheKey) || isSecondaryExpanded);
+    final String? secondaryText =
+        secondaryCacheKey == null ? null : _secondaryText[secondaryCacheKey];
+
+    // Parse the secondary text through the same memoized span builder, so a
+    // tajweed secondary keeps its colouring. The key is prefixed to keep these
+    // entries from colliding with the primary text's, whose key starts with the
+    // same ayah number.
+    List<InlineSpan>? secondarySpans;
+    if (secondary != null && isSecondaryExpanded && secondaryText != null) {
+      final double secondaryFontSize =
+          (baseFontSize - 4).clamp(12.0, 48.0).toDouble();
+      final TextStyle secondaryBase = _arabicTextStyle(
+        fontSize: secondaryFontSize,
+        height: 1.9,
+        color: colorScheme.onSurface,
+      );
+      final TextStyle secondaryDiacritic =
+          secondaryBase.copyWith(color: colorScheme.primary);
+      final String secondaryKey = 'sec|${ayah.number}|${secondary.id}|'
+          '$_arabicFontKey|${secondaryFontSize.toStringAsFixed(1)}|'
+          '${secondaryBase.color?.hashCode ?? 0}|'
+          '${secondaryDiacritic.color?.hashCode ?? 0}|'
+          '${secondaryText.hashCode}';
+      secondarySpans = _spanCache.putIfAbsent(secondaryKey, () {
+        final spans = secondary.isTajweed
+            ? TajweedParser.parseSpans(
+                secondaryText.trim(),
+                secondaryBase,
+                diacriticStyle: secondaryDiacritic,
+              )
+            : TajweedParser.buildPlainSpans(
+                secondaryText.trim(),
+                secondaryBase,
+                diacriticStyle: secondaryDiacritic,
+              );
+        if (_spanCache.length > _spanCacheMaxEntries) {
+          _spanCache.clear();
+        }
+        return spans;
+      });
+    }
+
     final Color playingColor = theme.brightness == Brightness.dark
         ? const Color(0xFF2C3C57)
         : const Color(0xFFFFE19C);
@@ -2330,6 +2575,33 @@ class _ReadQuranScreenState extends ConsumerState<ReadQuranScreen> {
                         ),
                       ),
               ),
+              if (secondary != null)
+                SecondaryEditionPanel(
+                  expanded: isSecondaryExpanded,
+                  onToggle: () {
+                    // Match the long-press guard: in fullscreen the first tap
+                    // brings the chrome back rather than acting.
+                    if (_chrome.isFullscreen) {
+                      _chrome.showControls();
+                      return;
+                    }
+                    _toggleSecondary(ayah, secondary);
+                  },
+                  editionLabel: editionLabel(secondary, l10n),
+                  textDirection:
+                      secondary.isRtl ? TextDirection.rtl : TextDirection.ltr,
+                  loading: isSecondaryLoading,
+                  spans: secondarySpans,
+                  unavailableLabel: l10n.translationNotAvailable,
+                  expandTooltip: l10n.secondaryEditionShow,
+                  collapseTooltip: l10n.secondaryEditionHide,
+                  // No animation while reciting: AnimatedSize would otherwise
+                  // still be interpolating when the re-anchored scroll measures
+                  // the tile, landing the ayah off-target.
+                  animationDuration: _isPlayingPage
+                      ? Duration.zero
+                      : const Duration(milliseconds: 200),
+                ),
               if (_edition.isTranslation)
                 Align(
                   alignment: textDirection == TextDirection.rtl

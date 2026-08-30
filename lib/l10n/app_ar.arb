@@ -1171,5 +1171,19 @@
   "editionTurkish": "التركية",
   "@editionTurkish": {},
   "editionGerman": "الألمانية",
-  "@editionGerman": {}
+  "@editionGerman": {},
+  "secondaryEditionTitle": "النسخة الثانوية",
+  "@secondaryEditionTitle": {},
+  "secondaryEditionDesc": "إضافة سهم لكل آية يفتح نسخة ثانية.",
+  "@secondaryEditionDesc": {},
+  "secondaryEditionChoose": "اختيار النسخة",
+  "@secondaryEditionChoose": {},
+  "secondaryEditionFallback": "النسخة البديلة",
+  "@secondaryEditionFallback": {},
+  "secondaryEditionFallbackDesc": "تُستخدم عندما تكون النسخة الثانوية هي النسخة التي تقرأها",
+  "@secondaryEditionFallbackDesc": {},
+  "secondaryEditionShow": "إظهار النسخة الثانوية",
+  "@secondaryEditionShow": {},
+  "secondaryEditionHide": "إخفاء النسخة الثانوية",
+  "@secondaryEditionHide": {}
 }

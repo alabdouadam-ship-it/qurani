@@ -3,10 +3,13 @@ import 'package:qurani/l10n/app_localizations.dart';
 import 'package:qurani/services/audio_service.dart';
 import 'package:qurani/services/mushaf_pdf_service.dart';
 import 'package:qurani/services/preferences_service.dart';
+import 'package:qurani/services/quran_repository.dart';
+
+import 'edition_label.dart';
 
 /// Reader settings bottom sheet: auto-flip toggle, "start at last page"
-/// toggle, reciter picker entry, mushaf style picker (PDF mode only), and
-/// font-size slider.
+/// toggle, secondary-edition toggle plus its two edition pickers, reciter
+/// picker entry, mushaf style picker (PDF mode only), and font-size slider.
 ///
 /// The sheet reads directly from [PreferencesService] for the prefs-only
 /// toggles (start-at-last-page, font size) because those don't require the
@@ -26,6 +29,12 @@ Future<void> showReaderSettingsSheet(
   required VoidCallback onOpenReciterPicker,
   required VoidCallback onOpenMushafStylePicker,
   required VoidCallback onFontSizeChanged,
+  required bool secondaryEnabled,
+  required ValueChanged<bool> onSecondaryEnabledChanged,
+  required QuranEdition secondaryEdition,
+  required QuranEdition secondaryFallbackEdition,
+  required VoidCallback onOpenSecondaryEditionPicker,
+  required VoidCallback onOpenSecondaryFallbackPicker,
 }) {
   return showModalBottomSheet<void>(
     context: context,
@@ -36,6 +45,7 @@ Future<void> showReaderSettingsSheet(
     builder: (sheetContext) {
       final l10n = AppLocalizations.of(sheetContext)!;
       bool localAutoFlip = autoFlip;
+      bool localSecondary = secondaryEnabled;
       return StatefulBuilder(
         builder: (context, setSheetState) {
           return SafeArea(
@@ -73,6 +83,48 @@ Future<void> showReaderSettingsSheet(
                       },
                     ),
                   ),
+                  // ── Secondary edition ──────────────────────────────────
+                  // Text mode only: PDF mode renders page images, so there are
+                  // no per-ayah widgets to attach an arrow to.
+                  if (!isPdfMode) ...[
+                    const Divider(),
+                    ListTile(
+                      title: Text(l10n.secondaryEditionTitle),
+                      subtitle: Text(l10n.secondaryEditionDesc),
+                      trailing: Switch(
+                        value: localSecondary,
+                        onChanged: (val) async {
+                          setSheetState(() => localSecondary = val);
+                          await PreferencesService
+                              .saveSecondaryEditionEnabled(val);
+                          onSecondaryEnabledChanged(val);
+                        },
+                      ),
+                    ),
+                    if (localSecondary) ...[
+                      ListTile(
+                        title: Text(l10n.secondaryEditionChoose),
+                        subtitle: Text(editionLabel(secondaryEdition, l10n)),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () {
+                          Navigator.pop(sheetContext);
+                          onOpenSecondaryEditionPicker();
+                        },
+                      ),
+                      ListTile(
+                        title: Text(l10n.secondaryEditionFallback),
+                        subtitle: Text(
+                          '${editionLabel(secondaryFallbackEdition, l10n)}'
+                          ' — ${l10n.secondaryEditionFallbackDesc}',
+                        ),
+                        trailing: const Icon(Icons.chevron_right),
+                        onTap: () {
+                          Navigator.pop(sheetContext);
+                          onOpenSecondaryFallbackPicker();
+                        },
+                      ),
+                    ],
+                  ],
                   const Divider(),
                   ListTile(
                     title: Text(l10n.chooseReciter),

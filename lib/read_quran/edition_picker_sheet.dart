@@ -12,9 +12,15 @@ import 'edition_label.dart';
 /// dismiss. A bottom sheet (not nested popup menus) is used because it gives
 /// big tap targets, scrolls cleanly for many tafsir books, and reads correctly
 /// in RTL — friendlier for non-technical users.
+///
+/// [selectable] optionally narrows what may be offered. The secondary-edition
+/// pickers use it to drop `irab` and, for the fallback, whatever the preferred
+/// secondary already covers. A category row is hidden when nothing in it
+/// survives the filter, so the user never opens an empty submenu.
 Future<QuranEdition?> showEditionPickerSheet(
   BuildContext context, {
   required QuranEdition current,
+  List<QuranEdition>? selectable,
 }) {
   return showModalBottomSheet<QuranEdition>(
     context: context,
@@ -28,6 +34,12 @@ Future<QuranEdition?> showEditionPickerSheet(
       // + Tafsir ›), regardless of which edition is currently selected, so the
       // picker is reinitialized on every open.
       EditionCategory? openCategory;
+
+      final Set<String>? allowedIds =
+          selectable == null ? null : {for (final e in selectable) e.id};
+      List<QuranEdition> allow(List<QuranEdition> list) => allowedIds == null
+          ? list
+          : list.where((e) => allowedIds.contains(e.id)).toList();
 
       return StatefulBuilder(
         builder: (context, setSheetState) {
@@ -56,18 +68,25 @@ Future<QuranEdition?> showEditionPickerSheet(
 
           final List<Widget> body;
           if (openCategory == null) {
+            final scripts = allow(QuranEditions.arabicScripts);
+            final translations = allow(QuranEditions.translations);
+            final tafsirs = allow(QuranEditions.tafsirs);
             body = [
-              ...QuranEditions.arabicScripts.map(tile),
-              const Divider(),
-              categoryRow(l10n.editionTranslationsCategory,
-                  EditionCategory.translation),
-              categoryRow(
-                  l10n.editionTafsirCategory, EditionCategory.tafsir),
+              ...scripts.map(tile),
+              if (scripts.isNotEmpty &&
+                  (translations.isNotEmpty || tafsirs.isNotEmpty))
+                const Divider(),
+              if (translations.isNotEmpty)
+                categoryRow(l10n.editionTranslationsCategory,
+                    EditionCategory.translation),
+              if (tafsirs.isNotEmpty)
+                categoryRow(
+                    l10n.editionTafsirCategory, EditionCategory.tafsir),
             ];
           } else {
-            final list = openCategory == EditionCategory.translation
+            final list = allow(openCategory == EditionCategory.translation
                 ? QuranEditions.translations
-                : QuranEditions.tafsirs;
+                : QuranEditions.tafsirs);
             body = [
               ListTile(
                 leading: const Icon(Icons.arrow_back),

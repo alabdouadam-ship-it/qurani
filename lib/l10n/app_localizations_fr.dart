@@ -1676,4 +1676,25 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get editionGerman => 'Allemand';
+
+  @override
+  String get secondaryEditionTitle => 'Édition secondaire';
+
+  @override
+  String get secondaryEditionDesc => 'Ajouter à chaque verset une flèche qui ouvre une seconde édition.';
+
+  @override
+  String get secondaryEditionChoose => 'Choisir l\'édition';
+
+  @override
+  String get secondaryEditionFallback => 'Édition de remplacement';
+
+  @override
+  String get secondaryEditionFallbackDesc => 'utilisée lorsque l\'édition secondaire est celle que vous lisez';
+
+  @override
+  String get secondaryEditionShow => 'Afficher l\'édition secondaire';
+
+  @override
+  String get secondaryEditionHide => 'Masquer l\'édition secondaire';
 }
