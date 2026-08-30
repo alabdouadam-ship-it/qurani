@@ -27,7 +27,11 @@ dependencies:
   # --- Audio & Background ---
   just_audio: ^0.10.6          
   just_audio_background: ^0.0.1-beta.17 
-  audio_session: ^0.1.21       
+  # 0.2.x compiles out the iOS microphone code by default. Nothing in this app
+  # records, and Info.plist deliberately carries no NSMicrophoneUsageDescription,
+  # so that default is the one we want. Set AUDIO_SESSION_MICROPHONE=1 in the
+  # Podfile if recording is ever added.
+  audio_session: ^0.2.4
 
   # --- Database & Storage ---
   sqflite: ^2.3.3
