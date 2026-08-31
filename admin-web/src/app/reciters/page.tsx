@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
+import { ConfirmPanel } from "@/components/ConfirmPanel";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
 import { useAuth } from "@/lib/auth-context";
@@ -35,6 +36,9 @@ function RecitersBody() {
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState<ReciterRow | null>(null);
   const [isNew, setIsNew] = useState(false);
+  const [pendingDelete, setPendingDelete] = useState<ReciterRow | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -50,10 +54,37 @@ function RecitersBody() {
     load();
   }, [load]);
 
-  async function remove(code: string) {
-    if (!confirm(t.confirmDelete)) return;
-    await supabase.from("reciters").delete().eq("code", code);
-    load();
+  async function remove(row: ReciterRow) {
+    setBusy(true);
+    try {
+      await supabase.from("reciters").delete().eq("code", row.code);
+      setPendingDelete(null);
+      await load();
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  /** The safer answer to "remove this reciter".
+   *
+   *  There is no foreign key from a reader's saved preference to this table —
+   *  the selected code lives in SharedPreferences on the device — so deleting a
+   *  row silently strands everyone who chose it. Disabling takes it out of the
+   *  pickers (the mobile read policy filters on is_enabled) while the audio
+   *  paths stay resolvable for anyone already on it. */
+  async function disable(row: ReciterRow) {
+    setBusy(true);
+    try {
+      await supabase
+        .from("reciters")
+        .update({ is_enabled: false })
+        .eq("code", row.code);
+      setPendingDelete(null);
+      setNotice(t.reciterDisabled);
+      await load();
+    } finally {
+      setBusy(false);
+    }
   }
 
   if (editing) {
@@ -67,6 +98,25 @@ function RecitersBody() {
           setEditing(null);
           load();
         }}
+      />
+    );
+  }
+
+  if (pendingDelete) {
+    return (
+      <ConfirmPanel
+        title={t.confirmDeleteTitle}
+        subject={`${pendingDelete.name_latin} · ${pendingDelete.code}`}
+        warning={t.confirmDeleteReciterWarning}
+        confirmLabel={t.deletePermanently}
+        // Only offered when it would change anything.
+        altLabel={pendingDelete.is_enabled ? t.disableInstead : undefined}
+        onAlt={
+          pendingDelete.is_enabled ? () => disable(pendingDelete) : undefined
+        }
+        onConfirm={() => remove(pendingDelete)}
+        onCancel={() => setPendingDelete(null)}
+        busy={busy}
       />
     );
   }
@@ -85,6 +135,12 @@ function RecitersBody() {
           + {t.addReciter}
         </button>
       </div>
+
+      {notice && (
+        <p className="text-sm" style={{ color: "var(--success)" }}>
+          {notice}
+        </p>
+      )}
 
       {loading ? (
         <p className="muted">{t.loading}</p>
@@ -118,7 +174,7 @@ function RecitersBody() {
                 >
                   {t.edit}
                 </button>
-                <button className="btn btn-danger" onClick={() => remove(r.code)}>
+                <button className="btn btn-danger" onClick={() => setPendingDelete(r)}>
                   {t.delete}
                 </button>
               </div>

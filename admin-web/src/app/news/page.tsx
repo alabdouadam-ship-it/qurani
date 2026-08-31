@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
+import { ConfirmPanel } from "@/components/ConfirmPanel";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
 import { useAuth } from "@/lib/auth-context";
@@ -88,7 +89,7 @@ function fromLocalInput(v: string): string | null {
 
 function NewsBody() {
   const supabase = getSupabase();
-  const { t, lang } = useUi();
+  const { t } = useUi();
   const { admin } = useAuth();
 
   const [rows, setRows] = useState<NewsRow[]>([]);
@@ -134,6 +135,8 @@ function NewsBody() {
   }, []);
 
   const [filter, setFilter] = useState<NewsFilter>(EMPTY_FILTER);
+  const [pendingDelete, setPendingDelete] = useState<NewsRow | null>(null);
+  const [busy, setBusy] = useState(false);
 
   const visible = rows.filter((r) => matchesFilter(r, filter, nowMs));
   const expiresAfterNow = (r: NewsRow) =>
@@ -168,10 +171,15 @@ function NewsBody() {
     });
   }
 
-  async function remove(id: string) {
-    if (!confirm(t.confirmDelete)) return;
-    await supabase.from("news_items").delete().eq("id", id);
-    load();
+  async function remove(row: NewsRow) {
+    setBusy(true);
+    try {
+      await supabase.from("news_items").delete().eq("id", row.id);
+      setPendingDelete(null);
+      await load();
+    } finally {
+      setBusy(false);
+    }
   }
 
   // Delegates to the same helper the status filter uses, so a row can never be
@@ -194,6 +202,20 @@ function NewsBody() {
           setEditing(null);
           load();
         }}
+      />
+    );
+  }
+
+  if (pendingDelete) {
+    return (
+      <ConfirmPanel
+        title={t.confirmDeleteTitle}
+        subject={`${pendingDelete.title} · ${pendingDelete.language}`}
+        warning={t.confirmDeleteNewsWarning}
+        confirmLabel={t.deletePermanently}
+        onConfirm={() => remove(pendingDelete)}
+        onCancel={() => setPendingDelete(null)}
+        busy={busy}
       />
     );
   }
@@ -235,7 +257,7 @@ function NewsBody() {
                 t={t}
                 statusOf={statusOf}
                 onEdit={openForEdit}
-                onDelete={remove}
+                onDelete={setPendingDelete}
                 onAddTranslation={addTranslation}
               />
             </Section>
@@ -247,7 +269,7 @@ function NewsBody() {
                 t={t}
                 statusOf={statusOf}
                 onEdit={openForEdit}
-                onDelete={remove}
+                onDelete={setPendingDelete}
                 onAddTranslation={addTranslation}
               />
             </Section>
@@ -357,7 +379,7 @@ function NewsGroupList({
   t: ReturnType<typeof useUi>["t"];
   statusOf: (r: NewsRow) => string;
   onEdit: (r: NewsRow) => void;
-  onDelete: (id: string) => void;
+  onDelete: (r: NewsRow) => void;
   onAddTranslation: (source: NewsRow, lang: string) => void;
 }) {
   return (
@@ -408,7 +430,7 @@ function NewsList({
   t: ReturnType<typeof useUi>["t"];
   statusOf: (r: NewsRow) => string;
   onEdit: (r: NewsRow) => void;
-  onDelete: (id: string) => void;
+  onDelete: (r: NewsRow) => void;
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -463,7 +485,7 @@ function NewsList({
             <button className="btn btn-ghost" onClick={() => onEdit(r)}>
               {t.edit}
             </button>
-            <button className="btn btn-danger" onClick={() => onDelete(r.id)}>
+            <button className="btn btn-danger" onClick={() => onDelete(r)}>
               {t.delete}
             </button>
           </div>

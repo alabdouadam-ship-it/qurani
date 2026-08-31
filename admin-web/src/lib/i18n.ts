@@ -154,6 +154,17 @@ export const dict: Record<Lang, Dict> = {
     statsFailed: "Could not load statistics.",
     statsUnauthorized:
       "Not authorized to read statistics — this account may no longer be an administrator.",
+    // account — password re-authentication
+    currentPasswordWrong: "That is not your current password.",
+    // destructive confirmations
+    confirmDeleteTitle: "Delete permanently?",
+    deletePermanently: "Delete permanently",
+    disableInstead: "Disable instead",
+    confirmDeleteNewsWarning:
+      "Only this language variant is removed — other translations in the same group are kept. This cannot be undone.",
+    confirmDeleteReciterWarning:
+      "Readers who selected this reciter have its code saved on their device, and deleting it leaves them with no recitation until they pick another. Disabling hides it from new choices while keeping existing ones working.",
+    reciterDisabled: "Reciter disabled.",
     // misc
     loading: "Loading…",
     theme: "Theme",
@@ -305,6 +316,17 @@ export const dict: Record<Lang, Dict> = {
     statsFailed: "تعذّر تحميل الإحصاءات.",
     statsUnauthorized:
       "غير مصرّح بقراءة الإحصاءات — ربما لم يعد هذا الحساب مسؤولاً.",
+    // الحساب — إعادة التحقق من كلمة المرور
+    currentPasswordWrong: "كلمة المرور الحالية غير صحيحة.",
+    // تأكيد العمليات المدمّرة
+    confirmDeleteTitle: "حذف نهائي؟",
+    deletePermanently: "حذف نهائي",
+    disableInstead: "التعطيل بدلاً من الحذف",
+    confirmDeleteNewsWarning:
+      "سيُحذف هذا الإصدار اللغوي فقط، وتبقى بقية الترجمات في المجموعة. لا يمكن التراجع.",
+    confirmDeleteReciterWarning:
+      "من اختار هذا القارئ محفوظ رمزه على جهازه، وحذفه يتركه بلا تلاوة حتى يختار قارئًا آخر. التعطيل يُخفيه من الاختيارات الجديدة مع بقاء الاختيارات الحالية تعمل.",
+    reciterDisabled: "تم تعطيل القارئ.",
     requiredField: "مطلوب",
   },
   fr: {
@@ -461,6 +483,17 @@ export const dict: Record<Lang, Dict> = {
     statsFailed: "Impossible de charger les statistiques.",
     statsUnauthorized:
       "Lecture des statistiques non autorisée — ce compte n'est peut-être plus administrateur.",
+    // compte — réauthentification
+    currentPasswordWrong: "Ce n'est pas votre mot de passe actuel.",
+    // confirmations destructives
+    confirmDeleteTitle: "Supprimer définitivement ?",
+    deletePermanently: "Supprimer définitivement",
+    disableInstead: "Désactiver plutôt",
+    confirmDeleteNewsWarning:
+      "Seule cette version linguistique est supprimée — les autres traductions du groupe sont conservées. Cette action est irréversible.",
+    confirmDeleteReciterWarning:
+      "Les lecteurs qui ont choisi ce récitateur en ont le code enregistré sur leur appareil ; le supprimer les laisse sans récitation jusqu'à ce qu'ils en choisissent un autre. Le désactiver le retire des nouveaux choix tout en préservant les choix existants.",
+    reciterDisabled: "Récitateur désactivé.",
     // divers
     loading: "Chargement…",
     theme: "Thème",

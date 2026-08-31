@@ -24,6 +24,7 @@ function AccountBody() {
   const [nameBusy, setNameBusy] = useState(false);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
 
+  const [currentPass, setCurrentPass] = useState("");
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [passBusy, setPassBusy] = useState(false);
@@ -60,11 +61,38 @@ function AccountBody() {
     }
     setPassBusy(true);
     try {
+      // Re-authenticate before changing the password.
+      //
+      // Without this, an unattended session was enough to take over the account
+      // permanently: updateUser({password}) needs only a valid access token, and
+      // the old password is never asked for. Since the account's email is
+      // synthetic (username@qurani.info) and receives no mail, Supabase's
+      // email-nonce reauthenticate() is unusable here — signing in again with
+      // the same credentials is the check that actually applies.
+      //
+      // This replaces the session with a fresh one for the same user, which is
+      // harmless: same identity, and the token was about to be used anyway.
+      const { data: sess } = await supabase.auth.getSession();
+      const email = sess.session?.user.email;
+      if (!email) {
+        setPassErr(t.saveFailed);
+        return;
+      }
+      const { error: reauthErr } = await supabase.auth.signInWithPassword({
+        email,
+        password: currentPass,
+      });
+      if (reauthErr) {
+        setPassErr(t.currentPasswordWrong);
+        return;
+      }
+
       const { error } = await supabase.auth.updateUser({ password: newPass });
       if (error) {
         setPassErr(error.message);
         return;
       }
+      setCurrentPass("");
       setNewPass("");
       setConfirmPass("");
       setPassMsg(t.passwordChanged);
@@ -93,6 +121,17 @@ function AccountBody() {
 
       <form className="card p-4 flex flex-col gap-3" onSubmit={savePassword}>
         <h2 className="font-bold">{t.changePassword}</h2>
+        <div>
+          <label className="label">{t.currentPassword}</label>
+          <input
+            className="input"
+            type="password"
+            value={currentPass}
+            autoComplete="current-password"
+            onChange={(e) => setCurrentPass(e.target.value)}
+            required
+          />
+        </div>
         <div>
           <label className="label">{t.newPassword}</label>
           <input
