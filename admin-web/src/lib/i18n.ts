@@ -152,6 +152,23 @@ const dictSource = {
     statsFailed: "Could not load statistics.",
     statsUnauthorized:
       "Not authorized to read statistics — this account may no longer be an administrator.",
+    // dashboard — filters
+    dateFrom: "From",
+    dateTo: "To",
+    deviceType: "Device",
+    filtersActive: "Active filters",
+    rangeInverted: "The start date is after the end date, so every date-based figure will read zero.",
+    rangeScopedNote:
+      "These three follow the date range. Everything else describes the filtered installs, whenever they were active.",
+    newInstalls: "New installs (range)",
+    activeInRange: "Active (range)",
+    sessionsPerInstall: "Sessions per install",
+    activeByDay: "Active installs per day",
+    themeSplit: "Themes",
+    reciterSplit: "Reciters",
+    manufacturerSplit: "Manufacturers",
+    osVersionSplit: "OS versions",
+    notificationSplit: "Notifications",
     // account — password re-authentication
     currentPasswordWrong: "That is not your current password.",
     // destructive confirmations
@@ -312,6 +329,23 @@ const dictSource = {
     statsFailed: "تعذّر تحميل الإحصاءات.",
     statsUnauthorized:
       "غير مصرّح بقراءة الإحصاءات — ربما لم يعد هذا الحساب مسؤولاً.",
+    // لوحة المعلومات — التصفية
+    dateFrom: "من",
+    dateTo: "إلى",
+    deviceType: "الجهاز",
+    filtersActive: "المرشّحات المطبّقة",
+    rangeInverted: "تاريخ البداية بعد تاريخ النهاية، لذا ستكون كل الأرقام المرتبطة بالتاريخ صفرًا.",
+    rangeScopedNote:
+      "هذه الثلاثة تتبع النطاق الزمني. وما عداها يصف التثبيتات المُصفّاة أيًّا كان وقت نشاطها.",
+    newInstalls: "تثبيتات جديدة (النطاق)",
+    activeInRange: "نشِط (النطاق)",
+    sessionsPerInstall: "جلسات لكل تثبيت",
+    activeByDay: "التثبيتات النشطة يوميًا",
+    themeSplit: "السمات",
+    reciterSplit: "القرّاء",
+    manufacturerSplit: "الشركات المصنِّعة",
+    osVersionSplit: "إصدارات نظام التشغيل",
+    notificationSplit: "التنبيهات",
     // الحساب — إعادة التحقق من كلمة المرور
     currentPasswordWrong: "كلمة المرور الحالية غير صحيحة.",
     // تأكيد العمليات المدمّرة
@@ -477,6 +511,23 @@ const dictSource = {
     statsFailed: "Impossible de charger les statistiques.",
     statsUnauthorized:
       "Lecture des statistiques non autorisée — ce compte n'est peut-être plus administrateur.",
+    // tableau de bord — filtres
+    dateFrom: "Du",
+    dateTo: "Au",
+    deviceType: "Appareil",
+    filtersActive: "Filtres actifs",
+    rangeInverted: "La date de début est postérieure à la date de fin : tous les chiffres liés aux dates afficheront zéro.",
+    rangeScopedNote:
+      "Ces trois chiffres suivent la période. Tout le reste décrit les installations filtrées, quelle que soit leur période d'activité.",
+    newInstalls: "Nouvelles installations (période)",
+    activeInRange: "Actifs (période)",
+    sessionsPerInstall: "Sessions par installation",
+    activeByDay: "Installations actives par jour",
+    themeSplit: "Thèmes",
+    reciterSplit: "Récitateurs",
+    manufacturerSplit: "Fabricants",
+    osVersionSplit: "Versions du système",
+    notificationSplit: "Notifications",
     // compte — réauthentification
     currentPasswordWrong: "Ce n'est pas votre mot de passe actuel.",
     // confirmations destructives

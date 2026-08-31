@@ -132,8 +132,33 @@ export type Database = {
     Functions: {
       /** Aggregated dashboard payload; shape mirrored by `Stats` in
        *  app/dashboard/page.tsx. Returns jsonb, so typed as Json and narrowed
-       *  at the call site. Raises 'not authorized' unless is_admin(). */
+       *  at the call site. Raises 'not authorized' unless is_admin().
+       *
+       *  Every argument is optional and null means "no filter". p_from/p_to
+       *  bound EVENTS (sessions, feature events, active days, first-seen); the
+       *  rest select a cohort of installations. See migration 0016 for why the
+       *  two are applied to different parts of the payload. */
       admin_dashboard_stats: {
+        Args: {
+          p_from?: string | null;
+          p_to?: string | null;
+          p_platform?: string | null;
+          p_app_version?: string | null;
+          p_country?: string | null;
+          p_gps_country?: string | null;
+          p_city?: string | null;
+          p_language?: string | null;
+          p_theme?: string | null;
+          p_reciter?: string | null;
+          p_manufacturer?: string | null;
+          p_notifications?: boolean | null;
+          p_physical_device?: boolean | null;
+        };
+        Returns: Json;
+      };
+      /** Distinct values per filter dimension, so the dashboard offers only
+       *  values that actually occur in the data. */
+      admin_stats_filter_options: {
         Args: Record<PropertyKey, never>;
         Returns: Json;
       };
