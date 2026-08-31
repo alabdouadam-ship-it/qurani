@@ -89,6 +89,31 @@ export const dict: Record<Lang, Dict> = {
     expired: "Expired",
     live: "Live",
     scheduled: "Scheduled",
+    // news — language visibility (mirrors isVisibleForLanguage in the app)
+    visibleTo: "Visible to",
+    hiddenFrom: "Hidden from",
+    noLanguageVisible:
+      "No language can see this item. Readers will never be shown it.",
+    hiddenByCategory:
+      "A category is filled in for some languages but not others. The app hides an item from any language whose own category is empty — fill in every category, or clear them all.",
+    hiddenByTargeting: "Excluded by target languages.",
+    // news — validation
+    fixBeforeSaving: "Fix these before saving:",
+    errTitleRequired: "Title is required.",
+    errDatesInvalid: "Publish date or valid-until is not a valid date.",
+    errValidUntilBeforePublish:
+      "Valid until must be after the publish date, otherwise the item never becomes visible.",
+    errMediaUrlRequired: "Media URL is required for image and YouTube items.",
+    errMediaUrlInvalid: "Media URL must start with http:// or https://",
+    errSourceUrlInvalid: "Source URL must start with http:// or https://",
+    errTargetLanguagesInvalid:
+      "Target languages may only contain ar, en or fr.",
+    errTargetCountriesInvalid:
+      "Target countries must be two-letter ISO codes, e.g. SA, FR.",
+    errExcludedCountriesInvalid:
+      "Excluded countries must be two-letter ISO codes, e.g. SA, FR.",
+    errCountriesOverlap:
+      "A country appears in both target and excluded lists. Excluded wins, so the target entry has no effect.",
     // reciters
     addReciter: "Add reciter",
     editReciter: "Edit reciter",
@@ -195,6 +220,29 @@ export const dict: Record<Lang, Dict> = {
     expired: "منتهية",
     live: "ظاهرة",
     scheduled: "مجدولة",
+    // الأخبار — ظهور اللغات
+    visibleTo: "تظهر لـ",
+    hiddenFrom: "مخفية عن",
+    noLanguageVisible: "لا توجد لغة تستطيع رؤية هذا العنصر، فلن يظهر لأي قارئ.",
+    hiddenByCategory:
+      "التصنيف مملوء لبعض اللغات وفارغ لغيرها. التطبيق يخفي العنصر عن كل لغة تصنيفها فارغ — إما أن تملأ جميع التصنيفات أو تتركها كلها فارغة.",
+    hiddenByTargeting: "مستبعدة بحسب اللغات المستهدفة.",
+    // الأخبار — التحقق
+    fixBeforeSaving: "صحّح ما يلي قبل الحفظ:",
+    errTitleRequired: "العنوان مطلوب.",
+    errDatesInvalid: "تاريخ النشر أو تاريخ الانتهاء غير صالح.",
+    errValidUntilBeforePublish:
+      "يجب أن يكون تاريخ الانتهاء بعد تاريخ النشر، وإلا فلن يظهر العنصر أبدًا.",
+    errMediaUrlRequired: "رابط الوسائط مطلوب لعناصر الصور ويوتيوب.",
+    errMediaUrlInvalid: "يجب أن يبدأ رابط الوسائط بـ http:// أو https://",
+    errSourceUrlInvalid: "يجب أن يبدأ رابط المصدر بـ http:// أو https://",
+    errTargetLanguagesInvalid: "اللغات المستهدفة تقبل ar أو en أو fr فقط.",
+    errTargetCountriesInvalid:
+      "الدول المستهدفة يجب أن تكون رموز ISO من حرفين، مثل SA، FR.",
+    errExcludedCountriesInvalid:
+      "الدول المستبعدة يجب أن تكون رموز ISO من حرفين، مثل SA، FR.",
+    errCountriesOverlap:
+      "توجد دولة في قائمتي الاستهداف والاستبعاد معًا. الاستبعاد يغلب، فلا أثر لإدراجها في الاستهداف.",
     addReciter: "إضافة قارئ",
     editReciter: "تعديل القارئ",
     code: "الرمز",
