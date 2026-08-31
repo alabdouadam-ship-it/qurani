@@ -18,6 +18,7 @@ export function Controls() {
       >
         <option value="en">English</option>
         <option value="ar">العربية</option>
+        <option value="fr">Français</option>
       </select>
       <select
         aria-label={t.theme}

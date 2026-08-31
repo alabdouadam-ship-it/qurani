@@ -1,4 +1,4 @@
-export type Lang = "en" | "ar";
+export type Lang = "en" | "ar" | "fr";
 
 /** All translatable keys. The `en` map below is the source of truth for keys;
  * `ar` must provide the same keys. Values are plain strings so both language
@@ -66,7 +66,9 @@ export const dict: Record<Lang, Dict> = {
     publishDate: "Publish date",
     validUntil: "Valid until",
     featured: "Featured",
-    sendNotification: "Send notification",
+    sendNotification: "Notify readers",
+    sendNotificationHint:
+      "The app raises a notification on the reader's device at its next news sync. Mobile only, and only for readers who installed before the publish date — it is not sent from here, and never reaches someone who installs later.",
     published: "Published",
     targetCountries: "Target countries (only these)",
     excludedCountries: "Excluded countries",
@@ -135,6 +137,23 @@ export const dict: Record<Lang, Dict> = {
     nameUpdated: "Display name updated.",
     saved: "Saved.",
     saveFailed: "Could not save. Please try again.",
+    // news — translation groups
+    addTranslation: "Add translation",
+    groupLanguages: "Languages",
+    groupComplete: "All three languages",
+    // news — filters
+    search: "Search",
+    searchPlaceholder: "Search title or description…",
+    filterAll: "All",
+    clearFilters: "Clear filters",
+    noMatches: "No items match the filters.",
+    // dashboard — loading state
+    refresh: "Refresh",
+    refreshing: "Refreshing…",
+    lastUpdated: "Last updated",
+    statsFailed: "Could not load statistics.",
+    statsUnauthorized:
+      "Not authorized to read statistics — this account may no longer be an administrator.",
     // misc
     loading: "Loading…",
     theme: "Theme",
@@ -197,7 +216,9 @@ export const dict: Record<Lang, Dict> = {
     publishDate: "تاريخ النشر",
     validUntil: "صالح حتى",
     featured: "مميز",
-    sendNotification: "إرسال إشعار",
+    sendNotification: "تنبيه القرّاء",
+    sendNotificationHint:
+      "يُظهر التطبيق تنبيهًا على جهاز القارئ عند أول مزامنة للأخبار. على الجوال فقط، ولمن ثبّت التطبيق قبل تاريخ النشر فقط — لا يُرسل من هنا، ولا يصل من يثبّت التطبيق لاحقًا.",
     published: "منشور",
     targetCountries: "الدول المستهدفة (هذه فقط)",
     excludedCountries: "الدول المستبعدة",
@@ -267,6 +288,185 @@ export const dict: Record<Lang, Dict> = {
     themeLight: "فاتح",
     themeDark: "داكن",
     themeSand: "رملي",
+    // الأخبار — مجموعات الترجمة
+    addTranslation: "إضافة ترجمة",
+    groupLanguages: "اللغات",
+    groupComplete: "اللغات الثلاث كاملة",
+    // الأخبار — التصفية
+    search: "بحث",
+    searchPlaceholder: "ابحث في العنوان أو الوصف…",
+    filterAll: "الكل",
+    clearFilters: "إزالة التصفية",
+    noMatches: "لا توجد عناصر مطابقة للتصفية.",
+    // لوحة المعلومات — حالة التحميل
+    refresh: "تحديث",
+    refreshing: "جارٍ التحديث…",
+    lastUpdated: "آخر تحديث",
+    statsFailed: "تعذّر تحميل الإحصاءات.",
+    statsUnauthorized:
+      "غير مصرّح بقراءة الإحصاءات — ربما لم يعد هذا الحساب مسؤولاً.",
     requiredField: "مطلوب",
+  },
+  fr: {
+    appTitle: "Administration Qurani",
+    // authentification
+    login: "Se connecter",
+    logout: "Se déconnecter",
+    username: "Nom d'utilisateur",
+    password: "Mot de passe",
+    signingIn: "Connexion…",
+    loginFailed:
+      "Échec de la connexion. Vérifiez votre nom d'utilisateur et votre mot de passe.",
+    notAdmin: "Ce compte n'est pas administrateur.",
+    // création du premier administrateur
+    setupTitle: "Créer le premier administrateur",
+    setupIntro:
+      "Aucun administrateur n'existe encore. Créez le compte administrateur de cette console.",
+    displayName: "Nom affiché",
+    confirmPassword: "Confirmer le mot de passe",
+    createAdmin: "Créer l'administrateur",
+    passwordsMismatch: "Les mots de passe ne correspondent pas.",
+    passwordTooShort: "Le mot de passe doit contenir au moins 8 caractères.",
+    setupDone: "Administrateur créé. Vous pouvez maintenant vous connecter.",
+    // navigation
+    dashboard: "Tableau de bord",
+    news: "Actualités",
+    reciters: "Récitateurs",
+    account: "Compte",
+    // tableau de bord
+    totalInstalls: "Installations",
+    activeToday: "Actifs aujourd'hui",
+    active7: "Actifs (7 jours)",
+    active30: "Actifs (30 jours)",
+    totalSessions: "Sessions",
+    avgSessionMin: "Session moyenne (min)",
+    topFeatures: "Fonctions les plus utilisées",
+    topCountriesGps: "Principaux pays (GPS)",
+    topCountriesLocale: "Principaux pays (langue de l'appareil)",
+    topCities: "Principales villes",
+    platformSplit: "Plateformes",
+    languageSplit: "Langues",
+    versionSplit: "Versions de l'application",
+    feature: "Fonction",
+    opens: "Ouvertures",
+    avgTimeMin: "Temps moyen (min)",
+    country: "Pays",
+    count: "Nombre",
+    noData: "Aucune donnée pour le moment.",
+    // actualités
+    addNews: "Ajouter une actualité",
+    editNews: "Modifier l'actualité",
+    title: "Titre",
+    description: "Description",
+    type: "Type",
+    typeText: "Texte",
+    typeImage: "Image",
+    typeYoutube: "YouTube",
+    mediaUrl: "URL du média",
+    sourceUrl: "URL de la source",
+    language: "Langue",
+    publishDate: "Date de publication",
+    validUntil: "Valable jusqu'au",
+    featured: "Mise en avant",
+    sendNotification: "Notifier les lecteurs",
+    sendNotificationHint:
+      "L'application affiche une notification sur l'appareil du lecteur lors de sa prochaine synchronisation des actualités. Mobile uniquement, et seulement pour les lecteurs ayant installé l'application avant la date de publication — rien n'est envoyé d'ici, et ceux qui installent plus tard ne la reçoivent jamais.",
+    published: "Publiée",
+    targetCountries: "Pays ciblés (ceux-ci uniquement)",
+    excludedCountries: "Pays exclus",
+    targetLanguages: "Langues ciblées",
+    countriesHint:
+      "Codes ISO séparés par des virgules, par ex. SA, FR, EG. Laissez vide pour tous.",
+    languagesHint:
+      "Séparées par des virgules, par ex. ar, en, fr. Laissez vide pour toutes.",
+    categoryAr: "Catégorie (arabe)",
+    categoryEn: "Catégorie (anglais)",
+    categoryFr: "Catégorie (français)",
+    save: "Enregistrer",
+    cancel: "Annuler",
+    delete: "Supprimer",
+    edit: "Modifier",
+    confirmDelete: "Supprimer cet élément ? Cette action est irréversible.",
+    current: "En cours",
+    history: "Expirées / historique",
+    noNews: "Aucune actualité pour le moment.",
+    lastEditedBy: "Dernière modification par",
+    status: "État",
+    expired: "Expirée",
+    live: "En ligne",
+    scheduled: "Programmée",
+    // actualités — visibilité par langue
+    visibleTo: "Visible pour",
+    hiddenFrom: "Masquée pour",
+    noLanguageVisible:
+      "Aucune langue ne peut voir cet élément. Il ne sera jamais montré aux lecteurs.",
+    hiddenByCategory:
+      "Une catégorie est renseignée pour certaines langues mais pas pour d'autres. L'application masque un élément pour toute langue dont la catégorie est vide — renseignez-les toutes, ou laissez-les toutes vides.",
+    hiddenByTargeting: "Exclue par les langues ciblées.",
+    // actualités — validation
+    fixBeforeSaving: "Corrigez ceci avant d'enregistrer :",
+    errTitleRequired: "Le titre est obligatoire.",
+    errDatesInvalid:
+      "La date de publication ou la date de fin n'est pas valide.",
+    errValidUntilBeforePublish:
+      "La date de fin doit suivre la date de publication, sinon l'élément ne devient jamais visible.",
+    errMediaUrlRequired:
+      "L'URL du média est obligatoire pour les éléments image et YouTube.",
+    errMediaUrlInvalid: "L'URL du média doit commencer par http:// ou https://",
+    errSourceUrlInvalid:
+      "L'URL de la source doit commencer par http:// ou https://",
+    errTargetLanguagesInvalid:
+      "Les langues ciblées n'acceptent que ar, en ou fr.",
+    errTargetCountriesInvalid:
+      "Les pays ciblés doivent être des codes ISO à deux lettres, par ex. SA, FR.",
+    errExcludedCountriesInvalid:
+      "Les pays exclus doivent être des codes ISO à deux lettres, par ex. SA, FR.",
+    errCountriesOverlap:
+      "Un pays figure à la fois dans les listes ciblée et exclue. L'exclusion prime, donc l'entrée ciblée n'a aucun effet.",
+    // récitateurs
+    addReciter: "Ajouter un récitateur",
+    editReciter: "Modifier le récitateur",
+    code: "Code",
+    nameAr: "Nom (arabe)",
+    nameLatin: "Nom (latin)",
+    ayahsPath: "URL de base — audio par verset",
+    surahsPath: "URL de base — audio par sourate",
+    sortOrder: "Ordre d'affichage",
+    enabled: "Activé",
+    disabled: "Désactivé",
+    noReciters: "Aucun récitateur pour le moment.",
+    // compte
+    changePassword: "Changer le mot de passe",
+    currentPassword: "Mot de passe actuel",
+    newPassword: "Nouveau mot de passe",
+    updateName: "Mettre à jour le nom affiché",
+    passwordChanged: "Mot de passe modifié.",
+    nameUpdated: "Nom affiché mis à jour.",
+    saved: "Enregistré.",
+    saveFailed: "Enregistrement impossible. Veuillez réessayer.",
+    // actualités — groupes de traduction
+    addTranslation: "Ajouter une traduction",
+    groupLanguages: "Langues",
+    groupComplete: "Les trois langues",
+    // actualités — filtres
+    search: "Rechercher",
+    searchPlaceholder: "Rechercher dans le titre ou la description…",
+    filterAll: "Toutes",
+    clearFilters: "Réinitialiser les filtres",
+    noMatches: "Aucun élément ne correspond aux filtres.",
+    // tableau de bord — chargement
+    refresh: "Actualiser",
+    refreshing: "Actualisation…",
+    lastUpdated: "Dernière mise à jour",
+    statsFailed: "Impossible de charger les statistiques.",
+    statsUnauthorized:
+      "Lecture des statistiques non autorisée — ce compte n'est peut-être plus administrateur.",
+    // divers
+    loading: "Chargement…",
+    theme: "Thème",
+    themeLight: "Clair",
+    themeDark: "Sombre",
+    themeSand: "Sable",
+    requiredField: "Obligatoire",
   },
 };

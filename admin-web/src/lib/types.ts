@@ -1,5 +1,8 @@
 export type NewsRow = {
   id: string;
+  /** Groups the language variants of one announcement. Null means "a group of
+   *  one" — always read it as `group_id ?? id`. See migration 0014. */
+  group_id: string | null;
   title: string;
   description: string;
   type: "text" | "image" | "youtube";

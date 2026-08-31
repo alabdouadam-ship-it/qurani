@@ -34,7 +34,11 @@ export function UiProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const savedLang = localStorage.getItem(LANG_KEY) as Lang | null;
     const savedTheme = localStorage.getItem(THEME_KEY) as Theme | null;
-    if (savedLang === "ar" || savedLang === "en") setLangState(savedLang);
+    // Whitelisted rather than trusted, since localStorage is user-editable and
+    // an unknown value would index `dict` to undefined and blank every label.
+    if (savedLang === "ar" || savedLang === "en" || savedLang === "fr") {
+      setLangState(savedLang);
+    }
     if (savedTheme === "light" || savedTheme === "dark" || savedTheme === "sand") {
       setThemeState(savedTheme);
     }

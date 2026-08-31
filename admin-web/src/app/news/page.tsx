@@ -12,6 +12,16 @@ import {
   type Visibility,
 } from "@/lib/news-visibility";
 import { validateNews } from "@/lib/news-validation";
+import {
+  EMPTY_FILTER,
+  groupKeyOf,
+  groupNews,
+  isFilterActive,
+  matchesFilter,
+  statusAt,
+  type NewsFilter,
+  type NewsGroup,
+} from "@/lib/news-grouping";
 
 export default function NewsPage() {
   return (
@@ -23,6 +33,7 @@ export default function NewsPage() {
 
 const EMPTY: NewsRow = {
   id: "",
+  group_id: null,
   title: "",
   description: "",
   type: "text",
@@ -122,14 +133,39 @@ function NewsBody() {
     return () => clearInterval(id);
   }, []);
 
+  const [filter, setFilter] = useState<NewsFilter>(EMPTY_FILTER);
+
+  const visible = rows.filter((r) => matchesFilter(r, filter, nowMs));
   const expiresAfterNow = (r: NewsRow) =>
     new Date(r.valid_until).getTime() > nowMs;
-  const current = rows.filter(expiresAfterNow);
-  const history = rows.filter((r) => !expiresAfterNow(r));
+  // Grouped AFTER filtering, so a filtered-out language simply leaves its group
+  // rather than the group disappearing — and "missing" then reflects what is on
+  // screen, which is what the Add-translation buttons act on.
+  const current = groupNews(visible.filter(expiresAfterNow));
+  const history = groupNews(visible.filter((r) => !expiresAfterNow(r)));
 
   function openForEdit(r: NewsRow) {
     setIsNew(false);
     setEditing(r);
+  }
+
+  /** Opens the editor on a copy of [source] for [lang].
+   *
+   *  Copies the body text rather than blanking it: translating in place beats
+   *  retyping dates, targeting and flags, and the author overwrites the text
+   *  anyway. New id (the PK), but the SAME group so the variants stay linked.
+   *  `target_languages` is narrowed to the one language, matching how the seed
+   *  migrations scope each variant. */
+  function addTranslation(source: NewsRow, lang: string) {
+    setIsNew(true);
+    setEditing({
+      ...source,
+      id: crypto.randomUUID(),
+      group_id: groupKeyOf(source),
+      language: lang,
+      target_languages: [lang],
+      updated_by: null,
+    });
   }
 
   async function remove(id: string) {
@@ -138,9 +174,12 @@ function NewsBody() {
     load();
   }
 
+  // Delegates to the same helper the status filter uses, so a row can never be
+  // badged "Live" while the "Live" filter hides it.
   function statusOf(r: NewsRow): string {
-    if (new Date(r.valid_until).getTime() <= nowMs) return t.expired;
-    if (new Date(r.publish_date).getTime() > nowMs) return t.scheduled;
+    const s = statusAt(r, nowMs);
+    if (s === "expired") return t.expired;
+    if (s === "scheduled") return t.scheduled;
     return t.live;
   }
 
@@ -167,36 +206,49 @@ function NewsBody() {
           className="btn btn-primary"
           onClick={() => {
             setIsNew(true);
-            setEditing({ ...EMPTY, id: crypto.randomUUID() });
+            // group_id defaults to the row's own id so a fresh post is a group
+            // of one that later translations can join.
+            const id = crypto.randomUUID();
+            setEditing({ ...EMPTY, id, group_id: id });
           }}
         >
           + {t.addNews}
         </button>
       </div>
 
+      {rows.length > 0 && (
+        <FilterBar filter={filter} onChange={setFilter} t={t} />
+      )}
+
       {loading ? (
         <p className="muted">{t.loading}</p>
       ) : rows.length === 0 ? (
         <p className="muted">{t.noNews}</p>
+      ) : visible.length === 0 ? (
+        <p className="muted">{t.noMatches}</p>
       ) : (
         <>
-          <Section title={`${t.current} (${current.length})`}>
-            <NewsList
-              items={current}
-              t={t}
-              statusOf={statusOf}
-              onEdit={openForEdit}
-              onDelete={remove}
-            />
-          </Section>
-          {history.length > 0 && (
-            <Section title={`${t.history} (${history.length})`}>
-              <NewsList
-                items={history}
+          {current.length > 0 && (
+            <Section title={`${t.current} (${current.length})`}>
+              <NewsGroupList
+                groups={current}
                 t={t}
                 statusOf={statusOf}
                 onEdit={openForEdit}
                 onDelete={remove}
+                onAddTranslation={addTranslation}
+              />
+            </Section>
+          )}
+          {history.length > 0 && (
+            <Section title={`${t.history} (${history.length})`}>
+              <NewsGroupList
+                groups={history}
+                t={t}
+                statusOf={statusOf}
+                onEdit={openForEdit}
+                onDelete={remove}
+                onAddTranslation={addTranslation}
               />
             </Section>
           )}
@@ -211,6 +263,136 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     <div className="flex flex-col gap-2">
       <h2 className="font-bold muted">{title}</h2>
       {children}
+    </div>
+  );
+}
+
+/** Search + language/type/status filters. Purely local to the loaded rows —
+ *  the table is small enough that re-querying per keystroke would be worse. */
+function FilterBar({
+  filter,
+  onChange,
+  t,
+}: {
+  filter: NewsFilter;
+  onChange: (f: NewsFilter) => void;
+  t: ReturnType<typeof useUi>["t"];
+}) {
+  const sel = { width: "auto", padding: "0.35rem 0.5rem" };
+  return (
+    <div className="card p-3 flex flex-wrap items-center gap-2">
+      <input
+        className="input"
+        style={{ flex: "1 1 14rem", minWidth: "10rem" }}
+        placeholder={t.searchPlaceholder}
+        value={filter.text}
+        onChange={(e) => onChange({ ...filter, text: e.target.value })}
+      />
+      <select
+        aria-label={t.language}
+        className="select"
+        style={sel}
+        value={filter.language}
+        onChange={(e) => onChange({ ...filter, language: e.target.value })}
+      >
+        <option value="">{t.language}: {t.filterAll}</option>
+        <option value="ar">ar</option>
+        <option value="en">en</option>
+        <option value="fr">fr</option>
+      </select>
+      <select
+        aria-label={t.type}
+        className="select"
+        style={sel}
+        value={filter.type}
+        onChange={(e) => onChange({ ...filter, type: e.target.value })}
+      >
+        <option value="">{t.type}: {t.filterAll}</option>
+        <option value="text">{t.typeText}</option>
+        <option value="image">{t.typeImage}</option>
+        <option value="youtube">{t.typeYoutube}</option>
+      </select>
+      <select
+        aria-label={t.status}
+        className="select"
+        style={sel}
+        value={filter.status}
+        onChange={(e) =>
+          onChange({ ...filter, status: e.target.value as NewsFilter["status"] })
+        }
+      >
+        <option value="">{t.status}: {t.filterAll}</option>
+        <option value="live">{t.live}</option>
+        <option value="scheduled">{t.scheduled}</option>
+        <option value="expired">{t.expired}</option>
+      </select>
+      {isFilterActive(filter) && (
+        <button
+          type="button"
+          className="btn btn-ghost"
+          onClick={() => onChange(EMPTY_FILTER)}
+        >
+          {t.clearFilters}
+        </button>
+      )}
+    </div>
+  );
+}
+
+/** Renders one block per announcement, holding its language variants.
+ *
+ *  Previously every row was a separate card, so the three language variants of
+ *  one announcement looked unrelated and a missing translation was invisible.
+ *  The block header names the languages present and offers a button per missing
+ *  one. */
+function NewsGroupList({
+  groups,
+  t,
+  statusOf,
+  onEdit,
+  onDelete,
+  onAddTranslation,
+}: {
+  groups: NewsGroup<NewsRow>[];
+  t: ReturnType<typeof useUi>["t"];
+  statusOf: (r: NewsRow) => string;
+  onEdit: (r: NewsRow) => void;
+  onDelete: (id: string) => void;
+  onAddTranslation: (source: NewsRow, lang: string) => void;
+}) {
+  return (
+    <div className="flex flex-col gap-3">
+      {groups.map((g) => (
+        <div key={g.key} className="flex flex-col gap-2">
+          <div className="flex items-center gap-2 flex-wrap muted text-xs">
+            <span>
+              {t.groupLanguages}: {g.present.join(", ") || "—"}
+            </span>
+            {g.missing.length === 0 ? (
+              <Tag>✓ {t.groupComplete}</Tag>
+            ) : (
+              g.missing.map((lang) => (
+                <button
+                  key={lang}
+                  type="button"
+                  className="btn btn-ghost"
+                  style={{ padding: "0.15rem 0.5rem", fontSize: "0.75rem" }}
+                  onClick={() => onAddTranslation(g.rows[0], lang)}
+                >
+                  + {t.addTranslation}: {lang}
+                </button>
+              ))
+            )}
+          </div>
+          <NewsList
+            items={g.rows}
+            t={t}
+            statusOf={statusOf}
+            onEdit={onEdit}
+            onDelete={onDelete}
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -498,6 +680,12 @@ function NewsEditor({
         <Check label={t.sendNotification} checked={r.send_notification} onChange={(v) => set("send_notification", v)} />
         <Check label={t.published} checked={r.is_published} onChange={(v) => set("is_published", v)} />
       </div>
+      {/* Shown only when ticked: the delivery rules are surprising (nothing is
+          sent from here, and readers who install later never receive it), and
+          that only matters once someone opts in. */}
+      {r.send_notification && (
+        <div className="muted text-xs">{t.sendNotificationHint}</div>
+      )}
 
       <VisibilityNotice visibility={visibility} t={t} />
 

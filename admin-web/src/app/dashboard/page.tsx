@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
@@ -34,35 +34,86 @@ function DashboardBody() {
   const { t } = useUi();
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState<Stats | null>(null);
+  // Distinguished from "no data": the RPC raises `not authorized` when the
+  // signed-in user is not an admin, and previously both that and an empty
+  // database rendered the same "No data yet.", so a broken authorization looked
+  // like a quiet product.
+  const [failure, setFailure] = useState<
+    { kind: "unauthorized" | "error"; detail: string } | null
+  >(null);
+  const [loadedAt, setLoadedAt] = useState<number | null>(null);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      // All aggregation runs server-side in Postgres (admin_dashboard_stats
+      // RPC). This avoids PostgREST's ~1000-row response cap that previously
+      // made the browser-side counts (sessions, installs, …) under-report
+      // once a table grew past 1000 rows.
+      const { data, error } = await supabase.rpc("admin_dashboard_stats");
+      if (error) {
+        console.error("[dashboard] admin_dashboard_stats failed:", error.message);
+        setStats(null);
+        setFailure({
+          // The function's own guard is `raise exception 'not authorized'`, so
+          // match on that rather than on an HTTP status.
+          kind: /not authorized/i.test(error.message) ? "unauthorized" : "error",
+          detail: error.message,
+        });
+        return;
+      }
+      setFailure(null);
+      setStats((data as Stats) ?? null);
+      setLoadedAt(Date.now());
+    } finally {
+      setLoading(false);
+    }
+  }, [supabase]);
 
   useEffect(() => {
-    (async () => {
-      setLoading(true);
-      try {
-        // All aggregation runs server-side in Postgres (admin_dashboard_stats
-        // RPC). This avoids PostgREST's ~1000-row response cap that previously
-        // made the browser-side counts (sessions, installs, …) under-report
-        // once a table grew past 1000 rows.
-        const { data, error } = await supabase.rpc("admin_dashboard_stats");
-        if (error) {
-          console.error("[dashboard] admin_dashboard_stats failed:", error.message);
-          setStats(null);
-          return;
-        }
-        setStats((data as Stats) ?? null);
-      } finally {
-        setLoading(false);
-      }
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    load();
+  }, [load]);
 
-  if (loading) return <p className="muted">{t.loading}</p>;
+  if (loading && !stats) return <p className="muted">{t.loading}</p>;
+
+  if (failure) {
+    return (
+      <div className="flex flex-col gap-3">
+        <h1 className="text-2xl font-bold">{t.dashboard}</h1>
+        <div className="card p-4 flex flex-col gap-2">
+          <p style={{ color: "var(--danger)" }}>
+            {failure.kind === "unauthorized"
+              ? t.statsUnauthorized
+              : t.statsFailed}
+          </p>
+          <p className="muted text-xs">{failure.detail}</p>
+          <div>
+            <button className="btn btn-ghost" onClick={load} disabled={loading}>
+              {loading ? t.refreshing : t.refresh}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!stats) return <p className="muted">{t.noData}</p>;
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl font-bold">{t.dashboard}</h1>
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <h1 className="text-2xl font-bold">{t.dashboard}</h1>
+        <div className="flex items-center gap-3">
+          {loadedAt !== null && (
+            <span className="muted text-xs">
+              {t.lastUpdated}: {new Date(loadedAt).toLocaleTimeString()}
+            </span>
+          )}
+          <button className="btn btn-ghost" onClick={load} disabled={loading}>
+            {loading ? t.refreshing : t.refresh}
+          </button>
+        </div>
+      </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         <Kpi label={t.totalInstalls} value={stats.totalInstalls} />
