@@ -47,7 +47,22 @@ fi
 TARGET="${1:-appbundle}"
 DEFINE="--dart-define-from-file=supabase.env.json"
 
+# Echo what was actually resolved, so a CI log is self-documenting. A build with
+# missing credentials fails silently at RUNTIME (no news, no stats, no DB
+# reciters) and looks completely green here, which is exactly how an iOS release
+# shipped with stats disabled and went unnoticed. The URL is not a secret - it
+# ships in the client bundle either way - but the key is only ever reported as a
+# length so it never lands in a build log.
+RESOLVED_URL="$(grep -o '"SUPABASE_URL"[[:space:]]*:[[:space:]]*"[^"]*"' "$ENV_FILE" | sed 's/.*"\([^"]*\)"$/\1/')"
+RESOLVED_KEY="$(grep -o '"SUPABASE_PUBLISHABLE_KEY"[[:space:]]*:[[:space:]]*"[^"]*"' "$ENV_FILE" | sed 's/.*"\([^"]*\)"$/\1/')"
+if [[ -z "$RESOLVED_URL" || -z "$RESOLVED_KEY" ]]; then
+  echo "ERROR: supabase.env.json is missing SUPABASE_URL or SUPABASE_PUBLISHABLE_KEY." >&2
+  exit 1
+fi
+
 echo "Building '$TARGET' (release) with Supabase config from supabase.env.json..."
+echo "  SUPABASE_URL            = $RESOLVED_URL"
+echo "  SUPABASE_PUBLISHABLE_KEY = (${#RESOLVED_KEY} chars)"
 
 case "$TARGET" in
   appbundle|aab) flutter build appbundle --release "$DEFINE" ;;
@@ -60,4 +75,4 @@ case "$TARGET" in
     ;;
 esac
 
-echo "Done."
+echo "Done. (Supabase URL: $RESOLVED_URL)"
