@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { ConfirmPanel } from "@/components/ConfirmPanel";
+import { Check, Field, Section, Tag } from "@/components/ui";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
 import { useAuth } from "@/lib/auth-context";
@@ -13,6 +14,7 @@ import {
   type Visibility,
 } from "@/lib/news-visibility";
 import { validateNews } from "@/lib/news-validation";
+import type { DictKey } from "@/lib/i18n";
 import {
   EMPTY_FILTER,
   groupKeyOf,
@@ -280,14 +282,7 @@ function NewsBody() {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="flex flex-col gap-2">
-      <h2 className="font-bold muted">{title}</h2>
-      {children}
-    </div>
-  );
-}
+
 
 /** Search + language/type/status filters. Purely local to the loaded rows —
  *  the table is small enough that re-querying per keystroke would be worse. */
@@ -496,16 +491,7 @@ function NewsList({
   );
 }
 
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="text-xs px-2 py-0.5 rounded"
-      style={{ background: "var(--surface-2)", color: "var(--muted)" }}
-    >
-      {children}
-    </span>
-  );
-}
+
 
 function NewsEditor({
   initial,
@@ -528,7 +514,7 @@ function NewsEditor({
   const [tl, setTl] = useState(csv(initial.target_languages ?? []));
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [problems, setProblems] = useState<string[]>([]);
+  const [problems, setProblems] = useState<DictKey[]>([]);
 
   // Live, so the author sees the consequence of a category while typing it
   // rather than after saving. `tl` is the raw CSV box, which is the value the
@@ -721,7 +707,7 @@ function NewsEditor({
           </div>
           <ul className="list-disc ps-5 flex flex-col gap-1">
             {problems.map((key) => (
-              <li key={key}>{t[key] ?? key}</li>
+              <li key={key}>{t[key]}</li>
             ))}
           </ul>
         </div>
@@ -804,37 +790,4 @@ function emptyToNull(s: string | null): string | null {
   return v.length === 0 ? null : v;
 }
 
-function Field({
-  label,
-  hint,
-  children,
-}: {
-  label: string;
-  hint?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <label className="label">{label}</label>
-      {children}
-      {hint && <div className="muted text-xs mt-1">{hint}</div>}
-    </div>
-  );
-}
 
-function Check({
-  label,
-  checked,
-  onChange,
-}: {
-  label: string;
-  checked: boolean;
-  onChange: (v: boolean) => void;
-}) {
-  return (
-    <label className="flex items-center gap-2 cursor-pointer">
-      <input type="checkbox" checked={checked} onChange={(e) => onChange(e.target.checked)} />
-      <span>{label}</span>
-    </label>
-  );
-}

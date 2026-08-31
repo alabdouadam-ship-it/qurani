@@ -1,6 +1,7 @@
 "use client";
 
 import { createBrowserClient } from "@supabase/ssr";
+import type { Database } from "./database.types";
 
 /**
  * Single shared Supabase browser client.
@@ -12,7 +13,7 @@ import { createBrowserClient } from "@supabase/ssr";
  *     read/write news + reciters.
  *   - The anon key is public-by-design; RLS is what protects the data.
  */
-let _client: ReturnType<typeof createBrowserClient> | null = null;
+let _client: ReturnType<typeof createBrowserClient<Database>> | null = null;
 
 export function getSupabase() {
   if (_client) return _client;
@@ -24,7 +25,9 @@ export function getSupabase() {
         "Copy .env.example to .env.local and fill them in."
     );
   }
-  _client = createBrowserClient(url, anon);
+  // Typed with the schema so `.from()` / `.eq()` / `.rpc()` are checked. Column
+  // typos used to compile and fail as a PostgREST error at runtime.
+  _client = createBrowserClient<Database>(url, anon);
   return _client;
 }
 

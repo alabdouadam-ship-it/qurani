@@ -38,4 +38,28 @@ walk(OUT, (file) => {
   fixed++;
 });
 
+// Fail the build when nothing matched.
+//
+// This script pins to an UNDOCUMENTED Next output filename layout, so a Next
+// upgrade can change it and leave the walk matching zero files. Reporting "0
+// files" and exiting 0 would then produce a green build whose client-side
+// navigation 404s — the failure this script exists to prevent, silently
+// reintroduced.
+//
+// A silent no-op is exactly how the Flutter web build regressed by 29 MB: its
+// prune step kept pointing at a renamed asset, matched nothing, and said so in a
+// line nobody read. Non-zero exit is the difference between a message and a
+// signal.
+if (fixed === 0) {
+  console.error(
+    "\n✗ fix-export-rsc: no `**/__next.*/__PAGE__.txt` files found in ./out.\n" +
+      "  Either the export produced no route segments, or Next changed its\n" +
+      "  static-export filename layout and this workaround needs updating.\n" +
+      "  Client-side navigation will 404 on a plain static host until it does.\n" +
+      "  Check what `out/<route>/` actually contains, and compare with the\n" +
+      "  paths the client requests in the browser's network tab.\n"
+  );
+  process.exit(1);
+}
+
 console.log(`✓ fix-export-rsc: created ${fixed} flat __PAGE__ RSC file(s).`);

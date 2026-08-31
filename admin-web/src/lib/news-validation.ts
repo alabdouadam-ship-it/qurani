@@ -8,13 +8,16 @@
  * never becomes visible).
  *
  * Returns i18n KEYS rather than sentences so the messages stay translatable;
- * the caller looks each one up in its dictionary.
+ * the caller looks each one up in its dictionary. Typed as `DictKey`, so a key
+ * that does not exist in the dictionary is a compile error here rather than a
+ * blank line in the UI.
  *
  * Deliberately not a schema library — the rules are few and specific, and the
  * point is to catch the mistakes that are silent, not to restate the column
  * types.
  */
 
+import type { DictKey } from "./i18n";
 import { NEWS_LANGS } from "./news-visibility";
 
 export type ValidationInput = {
@@ -53,8 +56,8 @@ function isHttpUrl(v: string): boolean {
 
 /** Returns the i18n keys of every problem found, in display order. Empty means
  *  the row is safe to save. */
-export function validateNews(v: ValidationInput): string[] {
-  const errors: string[] = [];
+export function validateNews(v: ValidationInput): DictKey[] {
+  const errors: DictKey[] = [];
 
   if (v.title.trim().length === 0) errors.push("errTitleRequired");
 

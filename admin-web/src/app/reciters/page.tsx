@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { ConfirmPanel } from "@/components/ConfirmPanel";
+import { Field, Tag } from "@/components/ui";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
 import { useAuth } from "@/lib/auth-context";
@@ -186,16 +187,7 @@ function RecitersBody() {
   );
 }
 
-function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="text-xs px-2 py-0.5 rounded"
-      style={{ background: "var(--surface-2)", color: "var(--muted)" }}
-    >
-      {children}
-    </span>
-  );
-}
+
 
 function ReciterEditor({
   initial,
@@ -270,10 +262,13 @@ function ReciterEditor({
         </Field>
       </div>
 
-      <Field label={t.ayahsPath}>
+      {/* Now that Field is shared, these two get the hint the drifted local copy
+          could not offer. A typo here produces dead audio URLs rather than an
+          error, so the expected shape is worth stating. */}
+      <Field label={t.ayahsPath} hint={t.audioPathHint}>
         <input className="input" value={r.ayahs_path} onChange={(e) => set("ayahs_path", e.target.value)} />
       </Field>
-      <Field label={t.surahsPath}>
+      <Field label={t.surahsPath} hint={t.audioPathHint}>
         <input
           className="input"
           value={r.surahs_path ?? ""}
@@ -314,11 +309,4 @@ function ReciterEditor({
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <label className="label">{label}</label>
-      {children}
-    </div>
-  );
-}
+

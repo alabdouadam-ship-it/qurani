@@ -1,11 +1,12 @@
 export type Lang = "en" | "ar" | "fr";
 
-/** All translatable keys. The `en` map below is the source of truth for keys;
- * `ar` must provide the same keys. Values are plain strings so both language
- * maps share one type (literal inference would make them incompatible). */
-export type Dict = Record<string, string>;
-
-export const dict: Record<Lang, Dict> = {
+/**
+ * The raw dictionaries. Left untyped so TypeScript infers `en`'s exact key set,
+ * which becomes the definition of a valid key ([DictKey] below).
+ *
+ * Not exported: consumers use [dict], whose type does the checking.
+ */
+const dictSource = {
   en: {
     appTitle: "Qurani Admin",
     // auth
@@ -17,7 +18,6 @@ export const dict: Record<Lang, Dict> = {
     loginFailed: "Sign in failed. Check your username and password.",
     notAdmin: "This account is not an administrator.",
     // first admin setup
-    setupTitle: "Create the first administrator",
     setupIntro:
       "No administrator exists yet. Create the single admin account for this dashboard.",
     displayName: "Display name",
@@ -25,7 +25,6 @@ export const dict: Record<Lang, Dict> = {
     createAdmin: "Create administrator",
     passwordsMismatch: "Passwords do not match.",
     passwordTooShort: "Password must be at least 8 characters.",
-    setupDone: "Administrator created. You can now sign in.",
     // nav
     dashboard: "Dashboard",
     news: "News",
@@ -82,7 +81,6 @@ export const dict: Record<Lang, Dict> = {
     cancel: "Cancel",
     delete: "Delete",
     edit: "Edit",
-    confirmDelete: "Delete this item? This cannot be undone.",
     current: "Current",
     history: "Expired / history",
     noNews: "No news yet.",
@@ -165,13 +163,14 @@ export const dict: Record<Lang, Dict> = {
     confirmDeleteReciterWarning:
       "Readers who selected this reciter have its code saved on their device, and deleting it leaves them with no recitation until they pick another. Disabling hides it from new choices while keeping existing ones working.",
     reciterDisabled: "Reciter disabled.",
+    audioPathHint:
+      "Full base URL with no trailing slash, e.g. https://server7.mp3quran.net/basit. A value that is not a URL is treated as a path under qurani.info.",
     // misc
     loading: "Loading…",
     theme: "Theme",
     themeLight: "Light",
     themeDark: "Dark",
     themeSand: "Sand",
-    requiredField: "Required",
   },
   ar: {
     appTitle: "لوحة تحكم قرآني",
@@ -182,14 +181,12 @@ export const dict: Record<Lang, Dict> = {
     signingIn: "جارٍ تسجيل الدخول…",
     loginFailed: "فشل تسجيل الدخول. تحقق من اسم المستخدم وكلمة المرور.",
     notAdmin: "هذا الحساب ليس مسؤولاً.",
-    setupTitle: "إنشاء أول مسؤول",
     setupIntro: "لا يوجد مسؤول بعد. أنشئ حساب المسؤول الوحيد لهذه اللوحة.",
     displayName: "الاسم المعروض",
     confirmPassword: "تأكيد كلمة المرور",
     createAdmin: "إنشاء مسؤول",
     passwordsMismatch: "كلمتا المرور غير متطابقتين.",
     passwordTooShort: "يجب أن تكون كلمة المرور 8 أحرف على الأقل.",
-    setupDone: "تم إنشاء المسؤول. يمكنك الآن تسجيل الدخول.",
     dashboard: "لوحة المعلومات",
     news: "الأخبار",
     reciters: "القرّاء",
@@ -243,7 +240,6 @@ export const dict: Record<Lang, Dict> = {
     cancel: "إلغاء",
     delete: "حذف",
     edit: "تعديل",
-    confirmDelete: "حذف هذا العنصر؟ لا يمكن التراجع.",
     current: "الحالية",
     history: "المنتهية / السجل",
     noNews: "لا توجد أخبار بعد.",
@@ -327,7 +323,8 @@ export const dict: Record<Lang, Dict> = {
     confirmDeleteReciterWarning:
       "من اختار هذا القارئ محفوظ رمزه على جهازه، وحذفه يتركه بلا تلاوة حتى يختار قارئًا آخر. التعطيل يُخفيه من الاختيارات الجديدة مع بقاء الاختيارات الحالية تعمل.",
     reciterDisabled: "تم تعطيل القارئ.",
-    requiredField: "مطلوب",
+    audioPathHint:
+      "رابط كامل دون شرطة مائلة في نهايته، مثل https://server7.mp3quran.net/basit. أي قيمة ليست رابطًا تُعامل كمسار داخل qurani.info.",
   },
   fr: {
     appTitle: "Administration Qurani",
@@ -341,7 +338,6 @@ export const dict: Record<Lang, Dict> = {
       "Échec de la connexion. Vérifiez votre nom d'utilisateur et votre mot de passe.",
     notAdmin: "Ce compte n'est pas administrateur.",
     // création du premier administrateur
-    setupTitle: "Créer le premier administrateur",
     setupIntro:
       "Aucun administrateur n'existe encore. Créez le compte administrateur de cette console.",
     displayName: "Nom affiché",
@@ -349,7 +345,6 @@ export const dict: Record<Lang, Dict> = {
     createAdmin: "Créer l'administrateur",
     passwordsMismatch: "Les mots de passe ne correspondent pas.",
     passwordTooShort: "Le mot de passe doit contenir au moins 8 caractères.",
-    setupDone: "Administrateur créé. Vous pouvez maintenant vous connecter.",
     // navigation
     dashboard: "Tableau de bord",
     news: "Actualités",
@@ -408,7 +403,6 @@ export const dict: Record<Lang, Dict> = {
     cancel: "Annuler",
     delete: "Supprimer",
     edit: "Modifier",
-    confirmDelete: "Supprimer cet élément ? Cette action est irréversible.",
     current: "En cours",
     history: "Expirées / historique",
     noNews: "Aucune actualité pour le moment.",
@@ -494,12 +488,31 @@ export const dict: Record<Lang, Dict> = {
     confirmDeleteReciterWarning:
       "Les lecteurs qui ont choisi ce récitateur en ont le code enregistré sur leur appareil ; le supprimer les laisse sans récitation jusqu'à ce qu'ils en choisissent un autre. Le désactiver le retire des nouveaux choix tout en préservant les choix existants.",
     reciterDisabled: "Récitateur désactivé.",
+    audioPathHint:
+      "URL de base complète, sans barre oblique finale, par ex. https://server7.mp3quran.net/basit. Une valeur qui n'est pas une URL est traitée comme un chemin sous qurani.info.",
     // divers
     loading: "Chargement…",
     theme: "Thème",
     themeLight: "Clair",
     themeDark: "Sombre",
     themeSand: "Sable",
-    requiredField: "Obligatoire",
   },
 };
+
+/**
+ * Every key the UI may ask for, taken from `en` as the source of truth.
+ *
+ * `Dict` used to be `Record<string, string>`, which meant a missing translation
+ * and a mistyped key were both invisible: `t.savedd` compiled and rendered as
+ * an empty string, so a label just silently disappeared. Deriving the key set
+ * from `en` turns both into compile errors — the lookup because `Dict` has no
+ * such key, and a missing `ar`/`fr` entry because the assignment below then
+ * fails to satisfy `Record<Lang, Dict>`.
+ *
+ * Values stay plain `string` rather than literal types: the three maps have to
+ * share one type, and literal inference would make them mutually incompatible.
+ */
+export type DictKey = keyof typeof dictSource.en;
+export type Dict = Record<DictKey, string>;
+
+export const dict: Record<Lang, Dict> = dictSource;
