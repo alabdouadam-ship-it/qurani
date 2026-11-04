@@ -31,7 +31,6 @@ class DownloadService {
 
   // --- Integrity API stubs ---
   static Future<bool> verifyFile(Object file) async => false;
-  static Future<bool> verifySurahFile(String reciter, int order) async => false;
   static Future<bool> verifySurahFileCached(
     String reciter,
     int order, {
@@ -43,5 +42,4 @@ class DownloadService {
 
   static Future<int> repairCorruptSurahs(String reciter) async => 0;
 }
-
 

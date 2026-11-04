@@ -87,9 +87,14 @@ class MushafPdfController extends ChangeNotifier {
   Future<PdfDocument>? get documentFuture {
     final path = _path;
     if (_documentFuture == null && path != null) {
-      _documentFuture = PdfDocument.openFile(path);
+      _documentFuture = _openDocument(path);
     }
     return _documentFuture;
+  }
+
+  Future<PdfDocument> _openDocument(String path) async {
+    await pdfrxFlutterInitialize();
+    return PdfDocument.openFile(path);
   }
 
   /// Re-checks whether the current style's file exists and (re)opens it.
@@ -102,7 +107,7 @@ class MushafPdfController extends ChangeNotifier {
       // Dispose the previously-opened document before opening another, or the
       // old native handle leaks for the rest of the session.
       _closeDocument();
-      _documentFuture = PdfDocument.openFile(path);
+      _documentFuture = _openDocument(path);
     } else if (!exists) {
       _closeDocument();
     }

@@ -121,43 +121,39 @@ class _TasbeehScreenState extends State<TasbeehScreen>
 
   Future<void> _showAddGroupDialog() async {
     final l10n = AppLocalizations.of(context)!;
-    final controller = TextEditingController();
     bool confirmed = false;
     String enteredText = '';
-    try {
-      confirmed = (await showDialog<bool>(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(l10n.createNewGroup),
-              content: TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                  hintText: l10n.enterGroupName,
-                  border: const OutlineInputBorder(),
-                ),
-                autofocus: true,
+    confirmed = (await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(l10n.createNewGroup),
+            content: TextField(
+              onChanged: (value) => enteredText = value,
+              decoration: InputDecoration(
+                hintText: l10n.enterGroupName,
+                border: const OutlineInputBorder(),
               ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text(l10n.cancel),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    if (controller.text.trim().isNotEmpty) {
-                      Navigator.pop(context, true);
-                    }
-                  },
-                  child: Text(l10n.addGroup),
-                ),
-              ],
+              autofocus: true,
             ),
-          )) ??
-          false;
-      enteredText = controller.text.trim();
-    } finally {
-      controller.dispose();
-    }
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () {
+                  if (enteredText.trim().isNotEmpty) {
+                    Navigator.pop(context, true);
+                  }
+                },
+                child: Text(l10n.addGroup),
+              ),
+            ],
+          ),
+        )) ??
+        false;
+    if (!mounted) return;
+    enteredText = enteredText.trim();
 
     if (confirmed && enteredText.isNotEmpty) {
       await TasbeehService.addGroup(enteredText);
@@ -225,44 +221,40 @@ class _TasbeehScreenState extends State<TasbeehScreen>
 
   Future<void> _addItem(TasbeehGroup group) async {
     final l10n = AppLocalizations.of(context)!;
-    final controller = TextEditingController();
     bool confirmed = false;
     String enteredText = '';
-    try {
-      confirmed = (await showDialog<bool>(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(l10n.addAzkar),
-              content: TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                  hintText: l10n.enterAzkar,
-                  border: const OutlineInputBorder(),
-                ),
-                maxLines: 3,
-                autofocus: true,
+    confirmed = (await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(l10n.addAzkar),
+            content: TextField(
+              onChanged: (value) => enteredText = value,
+              decoration: InputDecoration(
+                hintText: l10n.enterAzkar,
+                border: const OutlineInputBorder(),
               ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context, false),
-                  child: Text(l10n.cancel),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    if (controller.text.trim().isNotEmpty) {
-                      Navigator.pop(context, true);
-                    }
-                  },
-                  child: Text(l10n.addAzkar),
-                ),
-              ],
+              maxLines: 3,
+              autofocus: true,
             ),
-          )) ??
-          false;
-      enteredText = controller.text.trim();
-    } finally {
-      controller.dispose();
-    }
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context, false),
+                child: Text(l10n.cancel),
+              ),
+              FilledButton(
+                onPressed: () {
+                  if (enteredText.trim().isNotEmpty) {
+                    Navigator.pop(context, true);
+                  }
+                },
+                child: Text(l10n.addAzkar),
+              ),
+            ],
+          ),
+        )) ??
+        false;
+    if (!mounted) return;
+    enteredText = enteredText.trim();
 
     if (confirmed && enteredText.isNotEmpty) {
       await TasbeehService.addItem(group.id, enteredText);

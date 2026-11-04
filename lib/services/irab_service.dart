@@ -230,19 +230,6 @@ class IrabService {
     return _cache?['$surahNumber:$verseNumber'];
   }
 
-  /// Get all verses for a surah.
-  List<IrabVerse> getSurahVerses(int surahNumber) {
-    if (_cache == null) return [];
-    final verses = <IrabVerse>[];
-    for (final entry in _cache!.entries) {
-      if (entry.value.surahNumber == surahNumber) {
-        verses.add(entry.value);
-      }
-    }
-    verses.sort((a, b) => a.verseNumber.compareTo(b.verseNumber));
-    return verses;
-  }
-
   /// Static parse function for compute isolate.
   static Map<String, IrabVerse> _parseCsv(String csvText) {
     final lines = const LineSplitter().convert(csvText);

@@ -18,20 +18,11 @@ class NotificationService {
   static Function(String?)? onNotificationTap;
   
   static Future<void> init() async {}
-  static Future<void> cancelAllPrayerAlerts() async {}
 
   // Adhan stop-notification — Android-only feature; web has no equivalent.
   static const int adhanStopNotificationId = 9999999;
   static Future<void> showAdhanStopNotification(String prayerId) async {}
   static Future<void> cancelAdhanStopNotification() async {}
-
-  static Future<void> scheduleSilentAlert({
-    required int id,
-    required DateTime triggerTimeLocal,
-    required String title,
-    required String body,
-    String? payload,
-  }) async {}
 
   static Future<void> scheduleAdhanNotification({
     required int id,
@@ -47,8 +38,6 @@ class NotificationService {
     required String soundKey,
     required Map<String, bool> toggles,
   }) async {}
-
-  static Future<void> scheduleTestAdhanInSeconds(int secondsFromNow, {String title = 'Test Adhan', String body = ''}) async {}
 
   // Daily Wird reminders — web has no local-notification equivalent, so
   // these are silent no-ops. WirdService treats a missing notification

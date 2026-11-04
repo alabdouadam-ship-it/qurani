@@ -158,41 +158,35 @@ class _HadithReadScreenState extends State<HadithReadScreen> {
   void _goToHadithNumber() async {
     if (_visibleHadiths.isEmpty) return;
 
-    // try/finally pattern ensures the controller is freed even if the user
-    // dismisses the dialog by tapping outside or pressing back — which
-    // returns `null` and would otherwise leak one controller per attempt.
-    final controller = TextEditingController();
+    String enteredText = '';
     final int? result;
-    try {
-      result = await showDialog<int>(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text(AppLocalizations.of(context)!.search),
-          content: TextField(
-            controller: controller,
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              hintText: AppLocalizations.of(context)!.enterHadithNumber,
-            ),
+    result = await showDialog<int>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(AppLocalizations.of(context)!.search),
+        content: TextField(
+          onChanged: (value) => enteredText = value,
+          keyboardType: TextInputType.number,
+          decoration: InputDecoration(
+            hintText: AppLocalizations.of(context)!.enterHadithNumber,
           ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
-            ),
-            FilledButton(
-              onPressed: () {
-                final num = int.tryParse(controller.text);
-                Navigator.pop(context, num);
-              },
-              child: Text(AppLocalizations.of(context)!.goButton),
-            ),
-          ],
         ),
-      );
-    } finally {
-      controller.dispose();
-    }
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
+          ),
+          FilledButton(
+            onPressed: () {
+              final num = int.tryParse(enteredText);
+              Navigator.pop(context, num);
+            },
+            child: Text(AppLocalizations.of(context)!.goButton),
+          ),
+        ],
+      ),
+    );
+    if (!mounted) return;
 
     if (result != null) {
       // Find index in VISIBLE hadiths

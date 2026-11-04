@@ -60,7 +60,7 @@ Future<void> showHighlightedPdfPagesSheet(
                       future: surahListFuture,
                       builder: (context, snapshot) {
                         String subtitle = '${l10n.page} $page';
-                        if (snapshot.hasData) {
+                        if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                           final s = snapshot.data!.firstWhere(
                             (s) => s.number == surahNum,
                             orElse: () => snapshot.data!.first,

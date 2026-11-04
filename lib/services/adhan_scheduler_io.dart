@@ -474,7 +474,6 @@ class AdhanScheduler {
     }
   }
 
-
   static final List<Timer> _foregroundTimers = [];
 
   static void _scheduleForegroundTimers(Map<String, DateTime> times, Map<String, bool> toggles) {
@@ -551,17 +550,5 @@ class AdhanScheduler {
     Log.i('AdhanScheduler', 'TEST: Alarm scheduled for $triggerTime');
   }
 
-  static Future<void> testAdhanPlaybackImmediate() async {
-    if (!Platform.isAndroid) return; // Android-only
-
-    Log.i('AdhanScheduler', 'TEST: Triggering Adhan callback IMMEDIATELY');
-    try {
-      await _playAdhanCallback(202511251); // fajr code
-      Log.i('AdhanScheduler', 'TEST: Direct callback completed');
-    } catch (e, st) {
-      Log.e('AdhanScheduler', 'TEST: Direct callback error', e, st);
-    }
-  }
 }
-
 

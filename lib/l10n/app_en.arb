@@ -1,23 +1,23 @@
 {
+  "passageVerseCount": "{count, plural, =1{1 verse} other{{count} verses}}",
+  "@passageVerseCount": {"placeholders": {"count": {"type": "int"}}},
+  "passageStartSurah": "Starting surah",
+  "passageStartVerse": "Starting verse",
+  "passageEndSurah": "Ending surah",
+  "passageEndVerse": "Ending verse",
+  "rememberPassage": "Remember last passage",
+  "rememberPassageHint": "Open this passage next time",
+  "applyPassage": "Apply",
+  "passageLoadError": "Unable to load this passage",
   "@@locale": "en",
   "settings": "Settings",
   "@settings": {},
-  "quraniSettings": "Qurani Settings",
-  "@quraniSettings": {},
-  "customizeYourExperience": "Customize your experience",
-  "@customizeYourExperience": {},
   "about": "About",
   "@about": {},
-  "appInformation": "App information",
-  "@appInformation": {},
   "help": "Help",
   "@help": {},
-  "getAssistance": "Get assistance",
-  "@getAssistance": {},
   "preferences": "Preferences",
   "@preferences": {},
-  "quranPreferences": "Quran preferences",
-  "@quranPreferences": {},
   "shareApp": "Share App",
   "@shareApp": {},
   "shareAppMessage": "Discover Qurani, the app that helps you engage with the Holy Quran: listening, reading, repetition-based memorization, digital tasbeeh, Qibla direction, memorization tests, and more. The app supports Arabic, English and French, with multiple color themes. Get it on Google Play: {appUrl}",
@@ -26,40 +26,16 @@
       "appUrl": {}
     }
   },
-  "tellOthers": "Tell others",
   "updateAvailable": "A new version of Qurani is available",
   "@updateAvailable": {},
   "updateNow": "Update",
   "@updateNow": {},
   "later": "Later",
   "@later": {},
-  "@tellOthers": {},
   "privacyPolicy": "Privacy Policy",
   "@privacyPolicy": {},
   "termsConditions": "Terms & Conditions",
   "@termsConditions": {},
-  "supportUs": "Support us",
-  "@supportUs": {},
-  "contactUs": "Contact us",
-  "@contactUs": {},
-  "supportIntro": "We rely on hosting and third‑party services to keep Qurani running. Your optional support helps sustain and improve the app.",
-  "@supportIntro": {},
-  "donateViaPayPal": "Donate via PayPal",
-  "@donateViaPayPal": {},
-  "paypalEmail": "PayPal email",
-  "@paypalEmail": {},
-  "donateViaCrypto": "Donate via USDT",
-  "@donateViaCrypto": {},
-  "usdtAddress": "USDT address",
-  "@usdtAddress": {},
-  "watchAd": "Support by watching an ad (coming soon)",
-  "@watchAd": {},
-  "contactViaWhatsApp": "WhatsApp",
-  "@contactViaWhatsApp": {},
-  "contactViaEmail": "Email",
-  "@contactViaEmail": {},
-  "contactViaWhatsAppGroup": "WhatsApp Group",
-  "@contactViaWhatsAppGroup": {},
   "copy": "Copy",
   "@copy": {},
   "copied": "Copied",
@@ -84,10 +60,6 @@
   "@adhanDisabledMsg": {},
   "stopAdhan": "Stop Adhan",
   "@stopAdhan": {},
-  "adhanStoppedMsg": "Adhan stopped",
-  "@adhanStoppedMsg": {},
-  "adjustTime": "Adjust time",
-  "@adjustTime": {},
   "prayerAdjustmentTooltip": "Adjust prayer time",
   "@prayerAdjustmentTooltip": {},
   "prayerAdjustmentTitle": "Adjust {prayerName} time",
@@ -114,12 +86,6 @@
   },
   "shareAyah": "Share Ayah",
   "@shareAyah": {},
-  "shareAudio": "Share Audio Link",
-  "@shareAudio": {},
-  "shareText": "Share Text",
-  "@shareText": {},
-  "shareImage": "Share Image",
-  "@shareImage": {},
   "prayerAdjustmentChange": "Adjustment: {value}",
   "@prayerAdjustmentChange": {
     "placeholders": {
@@ -136,34 +102,12 @@
   "@prayerAdjustmentNoChange": {},
   "prayerAdjustmentReset": "Reset adjustment",
   "@prayerAdjustmentReset": {},
-  "plus10Min": "+10 min",
-  "@plus10Min": {},
-  "minus10Min": "-10 min",
-  "@minus10Min": {},
-  "plus1Min": "+1 min",
-  "@plus1Min": {},
-  "minus1Min": "-1 min",
-  "@minus1Min": {},
-  "advancedOptions": "Advanced options",
-  "@advancedOptions": {},
-  "calculationMethod": "Calculation method",
-  "@calculationMethod": {},
-  "methodMWL": "Muslim World League",
-  "@methodMWL": {},
-  "methodUmmAlQura": "Umm Al-Qura (Makkah)",
-  "@methodUmmAlQura": {},
-  "methodEgyptian": "Egyptian General Authority",
-  "@methodEgyptian": {},
-  "apiUnavailableUsingLocal": "Online service unavailable. Using local calculation.",
-  "@apiUnavailableUsingLocal": {},
   "prayerMethodSectionTitle": "Prayer Time Calculation Method",
   "@prayerMethodSectionTitle": {},
   "prayerMethodSectionDesc": "Choose your preferred method or leave it automatic based on your location",
   "@prayerMethodSectionDesc": {},
   "prayerMethodAuto": "Automatic (based on location)",
   "@prayerMethodAuto": {},
-  "prayerMethodChanged": "Updating prayer times...",
-  "@prayerMethodChanged": {},
   "prayerMethodChangedDesc": "Calculation method changed, updating times",
   "@prayerMethodChangedDesc": {},
   "method0": "Shia Ithna-Ashari, Leva Institute, Qum",
@@ -212,18 +156,8 @@
   "@method22": {},
   "method23": "Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan",
   "@method23": {},
-  "prayerTimesSettings": "Prayer times settings",
-  "@prayerTimesSettings": {},
   "adhanSound": "Adhan sound",
   "@adhanSound": {},
-  "adhanSoundOption1": "Adhan 1",
-  "@adhanSoundOption1": {},
-  "adhanSoundOption2": "Adhan 2",
-  "@adhanSoundOption2": {},
-  "adhanSoundOption3": "Adhan 3",
-  "@adhanSoundOption3": {},
-  "dataProtection": "Data protection",
-  "@dataProtection": {},
   "aboutTitle": "About Qurani",
   "@aboutTitle": {},
   "aboutDescription": "Qurani helps you engage with the Holy Quran: listening, reading, repetition-based memorization, digital tasbeeh, Qibla direction, memorization tests, bookmarks, featured verses, and more. Supports Arabic, English, and French, with customizable themes and fonts.",
@@ -236,30 +170,14 @@
   },
   "optionsTitle": "My Quran",
   "@optionsTitle": {},
-  "quraniFeatures": "What do you want to do?",
-  "@quraniFeatures": {},
-  "additionalFeaturesAndTools": "Additional features and tools",
-  "@additionalFeaturesAndTools": {},
   "bookmarks": "Bookmarks",
   "@bookmarks": {},
-  "savedVerses": "Saved verses",
-  "@savedVerses": {},
   "history": "History",
   "@history": {},
-  "recentActivity": "Recent activity",
-  "@recentActivity": {},
-  "favorites": "Favorites",
-  "@favorites": {},
-  "likedContent": "Liked content",
-  "@likedContent": {},
   "downloads": "Downloads",
   "@downloads": {},
-  "offlineContent": "Offline content",
-  "@offlineContent": {},
   "memorizationTest": "Memorization Test",
   "@memorizationTest": {},
-  "memorizationTestSubtitle": "Test your memorization",
-  "@memorizationTestSubtitle": {},
   "repetitionMemorization": "Repetition Memorization",
   "@repetitionMemorization": {},
   "searchQuran": "Search in quran",
@@ -276,42 +194,20 @@
   "@verses": {},
   "pleaseSelectSurah": "Select a surah",
   "@pleaseSelectSurah": {},
-  "surahTranslationsNote": "Names are shown in your selected language",
-  "@surahTranslationsNote": {},
   "searchSurah": "Search surah...",
   "@searchSurah": {},
   "repeatSurah": "Repeat",
   "@repeatSurah": {},
-  "autoAdvance": "Auto-advance",
-  "@autoAdvance": {},
-  "references": "References",
-  "@references": {},
-  "quranReferences": "Quran References",
-  "@quranReferences": {},
-  "customizeYourReadingPreferences": "Customize your reading preferences",
-  "@customizeYourReadingPreferences": {},
-  "quranVersion": "Quran Version",
-  "@quranVersion": {},
   "reciter": "Reciter",
   "@reciter": {},
-  "repetitionReciter": "Repetition Reciter",
-  "@repetitionReciter": {},
   "theme": "Theme",
   "@theme": {},
   "language": "Language",
   "@language": {},
   "tafsir": "Tafsir",
   "@tafsir": {},
-  "selectQuranVersion": "Select Quran Version...",
-  "@selectQuranVersion": {},
   "selectReciter": "Select Reciter...",
   "@selectReciter": {},
-  "selectRepetitionReciter": "Select Repetition Reciter...",
-  "@selectRepetitionReciter": {},
-  "selectTheme": "Select Theme...",
-  "@selectTheme": {},
-  "selectTafsir": "Select Tafsir...",
-  "@selectTafsir": {},
   "arabic": "Arabic",
   "@arabic": {},
   "uthmani":"Uthmani",
@@ -436,14 +332,6 @@
   "@juzLabel": {},
   "search": "Search...",
   "@search": {},
-  "searchResultsCount": "Search results: {count}",
-  "@searchResultsCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "searchResultsDetailed": "{occurrences} results in {ayahs} ayahs",
   "@searchResultsDetailed": {
     "placeholders": {
@@ -461,14 +349,6 @@
   "@addHighlight": {},
   "removeHighlight": "Remove highlight",
   "@removeHighlight": {},
-  "showEnglishTranslation": "Show English translation",
-  "@showEnglishTranslation": {},
-  "showFrenchTranslation": "Show French translation",
-  "@showFrenchTranslation": {},
-  "showArabicText": "Show Arabic text",
-  "@showArabicText": {},
-  "showTafsir": "Show tafsir",
-  "@showTafsir": {},
   "translationNotAvailable": "Translation not available for this verse.",
   "@translationNotAvailable": {},
   "close": "Close",
@@ -491,13 +371,11 @@
   "@share": {},
   "copiedToClipboard": "Copied to clipboard",
   "@copiedToClipboard": {},
-  "resumeFromLastPosition": "Resume from last position",
-  "@resumeFromLastPosition": {},
   "searchTooShort": "Enter at least 2 characters",
   "@searchTooShort": {},
   "unknownError": "An error occurred",
-  "@unknownError": {}
-  ,"qiblaTitle": "Qibla Direction",
+  "@unknownError": {},
+  "qiblaTitle": "Qibla Direction",
   "@qiblaTitle": {},
   "qiblaRetry": "Retry",
   "@qiblaRetry": {},
@@ -523,10 +401,6 @@
   "@qiblaTipCalibrate": {},
   "qiblaTipInterference": "Avoid metal/magnetic interference",
   "@qiblaTipInterference": {},
-  "testResultTitle": "Test Result",
-  "@testResultTitle": {},
-  "testCongratsTitle": "Well done!",
-  "@testCongratsTitle": {},
   "correctAnswersLabel": "Correct answers: {correct} / {total}",
   "@correctAnswersLabel": {"placeholders": {"correct": {"type": "int"}, "total": {"type": "int"}}},
   "percentageLabel": "Percentage: {percent}%",
@@ -563,12 +437,8 @@
   "@extraLarge": {},
   "verseRepeatCount": "Verse repeat count",
   "@verseRepeatCount": {},
-  "verseRepeatCountHint": "Repeat each verse this many times during repetition memorization.",
-  "@verseRepeatCountHint": {},
   "firstAyah": "First ayah",
   "@firstAyah": {},
-  "lastAyah": "Last ayah",
-  "@lastAyah": {},
   "reciterRotationTitle": "Multi-reciter rotation",
   "@reciterRotationTitle": {},
   "reciterRotationDesc": "Play each repeat of a verse with a different reciter, in order, looping back to the first.",
@@ -594,20 +464,10 @@
   "@arabicFont": {},
   "fontAmiri": "Amiri Quran",
   "@fontAmiri": {},
-  "fontScheherazade": "Scheherazade New",
-  "@fontScheherazade": {},
-  "fontLateef": "Lateef",
-  "@fontLateef": {}
-  ,"offlineAudioTitle": "Offline audio",
+  "offlineAudioTitle": "Offline audio",
   "@offlineAudioTitle": {},
   "reciterLabel": "Reciter: {name}",
   "@reciterLabel": {"placeholders": {"name": {"type": "String"}}},
-  "verseAudiosDownloaded": "Verse audios downloaded: {count} (total ~6236)",
-  "@verseAudiosDownloaded": {"placeholders": {"count": {"type": "int"}}},
-  "fullSurahsDownloaded": "Full surahs downloaded: {count} / 114",
-  "@fullSurahsDownloaded": {"placeholders": {"count": {"type": "int"}}},
-  "downloadWhy": "Why download? You can listen without internet.",
-  "@downloadWhy": {},
   "downloadingProgress": "Downloading {current} / {total}",
   "@downloadingProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
   "downloadVerseAudios": "Download verse audios",
@@ -624,71 +484,37 @@
   "@downloadFullSurahNote": {},
   "name": "Name",
   "@name": {},
-  "enterYourName": "Enter your name",
-  "@enterYourName": {}
-  ,"timeFormatTitle": "Time format",
+  "timeFormatTitle": "Time format",
   "@timeFormatTitle": {},
   "twelveHour": "12h",
   "@twelveHour": {},
   "twentyFourHour": "24h",
-  "@twentyFourHour": {}
-  ,"homeGreetingGeneric": "Hello, what would you like to do?",
-  "@homeGreetingGeneric": {},
-  "homeGreetingNamed": "Hello {name}, what would you like to do?",
-  "@homeGreetingNamed": {"placeholders": {"name": {"type": "String"}}}
-  ,"hijriHeader": "Hijri",
+  "@twentyFourHour": {},
+  "hijriHeader": "Hijri",
   "@hijriHeader": {},
   "gregorianHeader": "Gregorian",
-  "@gregorianHeader": {}
-  ,"audioInternetRequired": "No internet connection. Please connect to play audio or download offline files."
-  ,"@audioInternetRequired": {}
-  ,"editionArabicSimple":"Arabic (Simple)"
-  ,"@editionArabicSimple":{}
-  ,"editionArabicUthmani":"Arabic (Uthmani)"
-  ,"@editionArabicUthmani":{}
-  ,"editionArabicTajweed":"Quran Tajweed"
-  ,"@editionArabicTajweed":{}
-  ,"editionEnglish":"English"
-  ,"@editionEnglish":{}
-  ,"editionFrench":"French"
-  ,"@editionFrench":{}
-  ,"editionTafsir":"Tafsir (Muyassar)"
-  ,"@editionTafsir":{}
-  ,"whyContactUs":"Why contact us?"
-  ,"@whyContactUs":{}
-  ,"reportBugTitle":"Report bugs & request features"
-  ,"@reportBugTitle":{}
-  ,"reportBugDesc":"Tell us about bugs, problems, or features you'd like us to add in future versions"
-  ,"@reportBugDesc":{}
-  ,"supportUsTitle":"Support our project"
-  ,"@supportUsTitle":{}
-  ,"supportUsDesc":"Your support helps the application continue to work and benefit the Muslim community worldwide"
-  ,"@supportUsDesc":{}
-  ,"shareIdeaTitle":"Share your ideas"
-  ,"@shareIdeaTitle":{}
-  ,"shareIdeaDesc":"Do you have an idea for a website, mobile app, or any tech project? Share your idea with us, and we will help you turn it into a real project."
-  ,"@shareIdeaDesc":{}
-  ,"getInTouch":"Get in touch"
-  ,"@getInTouch":{}
-  ,"readAutoFlip": "Auto flip page"
-  ,"@readAutoFlip": {}
-  ,"readAutoFlipDesc": "Automatically turn the page when audio ends."
-  ,"@readAutoFlipDesc": {}
-  ,"chooseReciter": "Choose reciter"
-  ,"@chooseReciter": {}
-  ,"chooseReciterDesc": "Select your preferred reciter."
-  ,"@chooseReciterDesc": {}
-  ,"reciterNotCompatible": "Reciter not compatible"
-  ,"@reciterNotCompatible": {}
-  ,"reciterNotAvailableForFullSurahs": "Full surah audio files are not available for this reciter. Please choose another reciter."
-  ,"@reciterNotAvailableForFullSurahs": {}
-  ,"reciterNotAvailableForVerses": "Verse-by-verse audio files are not available for reciter {reciterName}. Please choose another reciter."
-  ,"@reciterNotAvailableForVerses": {
+  "@gregorianHeader": {},
+  "audioInternetRequired": "No internet connection. Please connect to play audio or download offline files.",
+  "@audioInternetRequired": {},
+  "editionArabicTajweed":"Quran Tajweed",
+  "@editionArabicTajweed":{},
+  "readAutoFlip": "Auto flip page",
+  "@readAutoFlip": {},
+  "readAutoFlipDesc": "Automatically turn the page when audio ends.",
+  "@readAutoFlipDesc": {},
+  "chooseReciter": "Choose reciter",
+  "@chooseReciter": {},
+  "reciterNotCompatible": "Reciter not compatible",
+  "@reciterNotCompatible": {},
+  "reciterNotAvailableForFullSurahs": "Full surah audio files are not available for this reciter. Please choose another reciter.",
+  "@reciterNotAvailableForFullSurahs": {},
+  "reciterNotAvailableForVerses": "Verse-by-verse audio files are not available for reciter {reciterName}. Please choose another reciter.",
+  "@reciterNotAvailableForVerses": {
     "placeholders": {
       "reciterName": {}
     }
-  }
-  ,"rangeRepeatCount": "Range repeat count",
+  },
+  "rangeRepeatCount": "Range repeat count",
   "@rangeRepeatCount": {},
   "startAtLastPage": "Start at last page",
   "@startAtLastPage": {},
@@ -698,16 +524,6 @@
   "@alwaysStartFromBeginning": {},
   "alwaysStartFromBeginningDesc": "When enabled, always start playing from the first verse. When disabled, resume from last position.",
   "@alwaysStartFromBeginningDesc": {},
-  "homeGreetingGeneric": "Welcome to Qurani App",
-  "@homeGreetingGeneric": {},
-  "homeGreetingNamed": "Welcome {userName} to Qurani App",
-  "@homeGreetingNamed": {
-    "placeholders": {
-      "userName": {
-        "type": "String"
-      }
-    }
-  },
   "downloadingMushaf": "Downloading Mushaf...",
   "@downloadingMushaf": {},
   "downloadMushafPdf": "Download Mushaf PDF",
@@ -842,16 +658,13 @@
   "@chapterStartNotFound": {},
   "generalHadiths": "General Hadiths",
   "chapters": "Chapters",
-  "searchButton": "Go",
   "allChapters": "All Chapters",
   "goButton": "Go",
   "newsAndNotifications": "News and Notifications",
-  "noNewsMessage": "No current news or notifications",
   "bookUnavailableMessage": "It seems the book is not currently available, please check back later and we will work on providing it.",
   "downloadOurApp": "Download Our App",
   "googlePlay": "Google Play",
   "appStore": "App Store",
-  "@searchButton": {},
   "@generalHadiths": {},
   "searchLanguageArabic": "Arabic Text",
   "@searchLanguageArabic": {},
@@ -1058,8 +871,6 @@
   "@repairCompleted": {"placeholders": {"count": {"type": "int"}}},
   "integrityAllVerified": "All {total} surahs verified",
   "@integrityAllVerified": {"placeholders": {"total": {"type": "int"}}},
-  "comingSoonFeature": "{feature} is coming soon!",
-  "@comingSoonFeature": {"placeholders": {"feature": {"type": "String"}}},
   "errorLoadingBook": "Failed to load book: {error}",
   "@errorLoadingBook": {"placeholders": {"error": {"type": "String"}}},
   "noChaptersAvailable": "No chapters available",
@@ -1106,18 +917,8 @@
   "@wirdStart": {},
   "wirdResume": "Resume",
   "@wirdResume": {},
-  "wirdViewAll": "View all wirds",
-  "@wirdViewAll": {},
-  "wirdViewAllWithCount": "View all wirds ({count})",
-  "@wirdViewAllWithCount": {
-    "placeholders": {
-      "count": {"type": "int"}
-    }
-  },
   "wirdAllScreenTitle": "All wirds",
   "@wirdAllScreenTitle": {},
-  "wirdAllScreenSubtitle": "Manage every scheduled wird",
-  "@wirdAllScreenSubtitle": {},
   "wirdAllEmptyTitle": "No wirds created yet",
   "@wirdAllEmptyTitle": {},
   "wirdFilterToday": "Today",

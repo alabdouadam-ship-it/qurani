@@ -199,7 +199,6 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       });
     }
     _updateDownloadStatus();
-    PreferencesService.addToHistory(newOrder, _reciterKey!);
 
     if (_player.audioSources.isEmpty) return;
 
@@ -493,7 +492,6 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           });
         }
 
-        await PreferencesService.addToHistory(order, _reciterKey!);
         break; // Success, exit loop
       } catch (e, stackTrace) {
         debugPrint(

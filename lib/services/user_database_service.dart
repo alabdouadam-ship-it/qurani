@@ -54,16 +54,6 @@ class UserDatabaseService {
     }
   }
 
-  /// Visible for tests — resets the shared handle without deleting the
-  /// underlying file. Production code should not call this.
-  static Future<void> resetForTests() async {
-    try {
-      await _db?.close();
-    } catch (_) {}
-    _db = null;
-    _opening = null;
-  }
-
   static Future<Database> _openAndMigrate() async {
     final docsDir = await getApplicationDocumentsDirectory();
     final path = p.join(docsDir.path, 'qurani_user.db');

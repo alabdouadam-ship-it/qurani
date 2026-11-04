@@ -7,7 +7,6 @@ import 'package:timezone/timezone.dart' as tz;
 
 import 'package:flutter_timezone/flutter_timezone.dart';
 
-
 import 'adhan_audio_manager.dart';
 import 'logger.dart';
 import 'preferences_service.dart';
@@ -138,9 +137,6 @@ class NotificationService {
     AdhanAudioManager.onAdhanStarted = showAdhanStopNotification;
     AdhanAudioManager.onAdhanStopped = cancelAdhanStopNotification;
 
-
-
-
     final androidPlugin =
         _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
     await androidPlugin?.createNotificationChannel(adhanChannel);
@@ -173,37 +169,6 @@ class NotificationService {
 
     _initialized = true;
     Log.i('NotificationService', 'Initialized');
-  }
-
-  /// Cancels ONLY Adhan/prayer notifications — never Wird reminders or news.
-  ///
-  /// This used to call `_plugin.cancelAll()`, which wiped every pending
-  /// notification the app had, including the rolling Wird reminders
-  /// (`0x60000000` namespace) and news (`0x50000000`). Adhan ids live in the
-  /// `yyyymmdd*10 + prayerCode` range, so we cancel exactly those for a
-  /// generous window around today plus the ongoing stop-notification. Keeping
-  /// the blast radius inside the Adhan id namespace is what makes the two
-  /// notification features genuinely independent.
-  static Future<void> cancelAllPrayerAlerts({int daysBack = 2, int daysAhead = 10}) async {
-    await _ensureInitialized();
-    final today = DateTime.now();
-    for (int offset = -daysBack; offset <= daysAhead; offset++) {
-      // DST-safe day cursor (constructor arithmetic, not Duration).
-      final day = DateTime(today.year, today.month, today.day + offset);
-      for (final prayerId in const [
-        'fajr',
-        'sunrise',
-        'dhuhr',
-        'asr',
-        'maghrib',
-        'isha',
-      ]) {
-        try {
-          await _plugin.cancel(_dailyId(prayerId: prayerId, date: day));
-        } catch (_) {}
-      }
-    }
-    await cancelAdhanStopNotification();
   }
 
   /// Fixed id for the ongoing "Adhan playing — [Stop]" notification. A single
@@ -273,7 +238,6 @@ class NotificationService {
       await _plugin.cancel(adhanStopNotificationId);
     } catch (_) {}
   }
-
 
   static Future<void> scheduleAdhanNotification({
     required int id,
@@ -497,7 +461,6 @@ class NotificationService {
         return namesAr[id] ?? id;
     }
   }
-
 
   static String _stopActionLabel(String lang) {
     switch (lang) {
@@ -1001,5 +964,4 @@ class NotificationService {
   }) =>
       WirdScheduleLogic.notificationId(wirdId: wirdId, weekday: weekday);
 }
-
 

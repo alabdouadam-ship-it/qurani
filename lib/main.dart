@@ -58,10 +58,9 @@ Future<void> main() async {
   
   // Initialize Pdfrx cache directory (Required for Android)
   try {
-    Pdfrx.getCacheDirectory = () async {
-      final dir = await getApplicationCacheDirectory();
-      return dir.path;
-    };
+    if (!kIsWeb) {
+      Pdfrx.cacheDirectoryPath = (await getApplicationCacheDirectory()).path;
+    }
   } catch (e) {
     debugPrint('Error initializing Pdfrx: $e');
   }

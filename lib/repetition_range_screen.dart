@@ -17,15 +17,15 @@ import 'package:qurani/widgets/irab_verse_widget.dart';
 import 'util/arabic_font_utils.dart';
 import 'util/tajweed_parser.dart';
 import 'services/net_utils.dart';
-import 'util/debug_error_display.dart';
+import 'models/repetition_passage.dart';
+import 'widgets/repetition_passage_editor.dart';
+import 'services/surah_service.dart';
 import 'models/surah.dart';
 import 'util/settings_sheet_utils.dart'; // Import utility
 import 'services/reciter_config_service.dart';
 
 class RepetitionRangeScreen extends ConsumerStatefulWidget {
-  const RepetitionRangeScreen({super.key, required this.surah});
-
-  final Surah surah;
+  const RepetitionRangeScreen({super.key});
 
   @override
   ConsumerState<RepetitionRangeScreen> createState() =>
@@ -36,41 +36,32 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
   final AudioPlayer _player = AudioPlayer();
   QuranEdition _edition = QuranEditions.simple;
   late Future<List<AyahBrief>> _ayahsFuture;
-  RangeValues? _range;
+  RepetitionPassage _passage = openingPassage;
+  List<Surah> _surahs = [];
+  bool _remember = PreferencesService.rememberPassage;
   bool _isPreparing = false;
   bool _isPlaying = false;
-  int? _activeRangeStart;
-  int? _activeRangeEnd;
-  String? _activeReciterKey;
-  int? _activeRepeatCount;
-  // Multi-reciter rotation: each verse-repeat uses the next reciter in the
-  // ordered list, wrapping around (repeatIndex % order.length). When disabled
-  // or the list is empty/single, playback behaves as a single reciter.
   bool _reciterRotationEnabled = false;
-  List<String> _reciterRotationOrder = <String>[];
-  // Snapshot of the reciter order baked into the currently-loaded playlist,
-  // used to detect staleness and force a rebuild when the rotation changes.
-  List<String>? _activeReciterOrder;
+  List<String> _reciterRotationOrder = [];
+  List<String> _sessionReciters = [];
+  int _sessionRepeats = 1;
+  RepetitionPosition? _position;
+  bool _awaitingCompletion = false;
   List<AyahBrief> _currentAyahs = [];
   int? _selectedAyah;
   int _verseRepeatCount = 10;
   int _rangeRepeatCount = 1;
-  int _currentRangeIteration = 0;
   int? _currentPlayingVerseNumber;
-  int? _lastAutoScrolledVerse;
+
   final ScrollController _ayahScrollController = ScrollController();
   final Map<int, GlobalKey> _ayahTileKeys = <int, GlobalKey>{};
   // Memoized ayah span parsing (mirrors ReadQuranScreen for visual + perf
   // parity). Keyed so theme/font/edition/size changes invalidate entries.
   final Map<String, List<InlineSpan>> _spanCache = <String, List<InlineSpan>>{};
   static const int _spanCacheMaxEntries = 200;
-  List<_VersePlaybackEntry> _playlistEntries = [];
-  int _currentPlaylistIndex = 0;
-  bool _isHandlingEntryCompletion = false;
   late String _arabicFontKey;
 
   StreamSubscription<PlayerState>? _playerStateSub;
-  StreamSubscription<SequenceState>? _sequenceStateSub;
 
   /// True when playback was paused by the user while a still-valid playlist is
   /// loaded. Lets pause → play resume from the paused position instead of
@@ -92,8 +83,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     _rangeRepeatCount = PreferencesService.getRangeRepetitionCount();
     _reciterRotationEnabled = PreferencesService.getReciterRotationEnabled();
     _reciterRotationOrder = PreferencesService.getReciterRotationOrder();
-    _ayahsFuture = QuranRepository.instance
-        .loadSurahAyahs(widget.surah.order, _edition);
+
     _arabicFontKey = ref.read(arabicFontProvider);
     _playerStateSub = _player.playerStateStream.listen((state) {
       final completed = state.processingState == ProcessingState.completed;
@@ -106,42 +96,52 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       // Keep the screen awake while playing so the OS doesn't lock the phone
       // and throttle the completion handler that advances to the next verse.
       _updateWakelock(isPlaying);
-      // Guard at listener level to prevent double-trigger
-      if (completed && !_isHandlingEntryCompletion) {
-        _isHandlingEntryCompletion = true;
-        final generation = _playbackGeneration;
-        unawaited(_handleEntryCompleted(generation));
+      if (completed && _awaitingCompletion) {
+        _awaitingCompletion = false;
+        unawaited(_advance(_playbackGeneration));
       }
     });
-    _sequenceStateSub = _player.sequenceStateStream.listen((sequenceState) {
-      final tag = sequenceState.currentSource?.tag;
-      int? verseNumber;
-      if (tag is MediaItem) {
-        final extras = tag.extras;
-        final dynamic value = extras?['verseInSurah'];
-        if (value is int) {
-          verseNumber = value;
-        } else if (value is num) {
-          verseNumber = value.toInt();
-        }
-      }
-      if (mounted) {
-        setState(() {
-          _currentPlayingVerseNumber = verseNumber;
-        });
-        if (verseNumber != null) {
-          _scrollToMemorizationVerse(verseNumber);
-        }
-      } else {
-        _currentPlayingVerseNumber = verseNumber;
-      }
-    });
+  }
+
+  String? _catalogLanguage;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final lang = Localizations.localeOf(context).languageCode;
+    if (_catalogLanguage != null) return;
+    _catalogLanguage = lang;
+    _ayahsFuture = _initializePassage();
+  }
+
+  Future<List<AyahBrief>> _initializePassage() async {
+    final surahs = await SurahService.getLocalizedSurahs(_catalogLanguage!);
+    if (!mounted) return [];
+    if (surahs.isEmpty) throw StateError('Missing surah catalog');
+    setState(() => _surahs = surahs);
+    final saved = PreferencesService.lastPassage;
+    _passage = _remember && saved.isValid(_surahs) ? saved : openingPassage;
+    return _loadPassage(_passage, _edition);
+  }
+
+  Future<List<AyahBrief>> _loadPassage(
+      RepetitionPassage passage, QuranEdition edition) async {
+    final result = <AyahBrief>[];
+    for (var surah = passage.start.surah; surah <= passage.end.surah; surah++) {
+      if (!mounted || passage != _passage || edition != _edition) return [];
+      final ayahs =
+          await QuranRepository.instance.loadSurahAyahs(surah, edition);
+      if (ayahs.isEmpty) throw StateError('Missing surah $surah');
+      result
+          .addAll(ayahs.where((a) => passage.contains(surah, a.numberInSurah)));
+    }
+    return result;
   }
 
   @override
   void dispose() {
     _playerStateSub?.cancel();
-    _sequenceStateSub?.cancel();
+    _playbackGeneration++;
     _player.dispose();
     _ayahScrollController.dispose();
     // Release the wakelock when leaving the screen.
@@ -163,72 +163,45 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
 
   Future<void> _reloadAyahs() async {
     _playbackGeneration++;
+    _awaitingCompletion = false;
     setState(() {
-      _ayahsFuture = QuranRepository.instance
-          .loadSurahAyahs(widget.surah.order, _edition);
-      _range = null;
+      _ayahsFuture = _loadPassage(_passage, _edition);
+      _position = null;
       _selectedAyah = null;
-      _activeRangeStart = null;
-      _activeRangeEnd = null;
-      _activeReciterKey = null;
-      _activeReciterOrder = null;
-      _activeRepeatCount = null;
       _currentPlayingVerseNumber = null;
       _currentAyahs = [];
-      _verseRepeatCount = PreferencesService.getVerseRepeatCount();
       _ayahTileKeys.clear();
       _spanCache.clear();
-      _lastAutoScrolledVerse = null;
-      _playlistEntries.clear();
-      _currentPlaylistIndex = 0;
+
       _pausedForResume = false;
+      _isPreparing = false;
     });
-    if (_ayahScrollController.hasClients) {
-      _ayahScrollController.jumpTo(0);
-    }
+    if (_ayahScrollController.hasClients) _ayahScrollController.jumpTo(0);
     await _player.stop();
-    if (mounted) {
-      setState(() {
-        _isPlaying = false;
-      });
-    } else {
-      _isPlaying = false;
-    }
   }
 
-  Future<void> _togglePlay(List<AyahBrief> ayahs) async {
-    if (_isPreparing) return;
-    if (_player.playing) {
+  Future<void> _togglePlay() async {
+    if (_isPreparing || _currentAyahs.isEmpty) return;
+    if (_isPlaying) {
+      _pausedForResume = true;
       await _player.pause();
-      // Remember that we can resume the currently-loaded playlist instead of
-      // rebuilding it from the start on the next play.
-      _pausedForResume = _playlistEntries.isNotEmpty;
-      setState(() => _isPlaying = false);
-      return;
-    }
-
-    // Resume from the paused position when the loaded playlist is still valid.
-    if (_pausedForResume &&
-        _playlistEntries.isNotEmpty &&
-        _player.audioSources.isNotEmpty) {
+    } else if (_pausedForResume) {
       _pausedForResume = false;
-      _player.play();
-      setState(() => _isPlaying = true);
-      return;
-    }
-
-    final success = await _playSelectedAyah(showErrors: true);
-    if (!success && mounted) {
-      final l10n = AppLocalizations.of(context)!;
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.errorLoadingAudio)),
-      );
+      unawaited(_runPlayer(_playbackGeneration));
+    } else {
+      await _start();
     }
   }
 
   void _scrollToMemorizationVerse(int verseInSurah,
       {bool immediate = false, int attempt = 0}) {
-    _lastAutoScrolledVerse = verseInSurah;
+    if (!mounted) return;
+    if (_currentAyahs.isNotEmpty &&
+        _currentAyahs.first.number == verseInSurah &&
+        _ayahScrollController.hasClients &&
+        _ayahTileKeys[verseInSurah]?.currentContext == null) {
+      _ayahScrollController.jumpTo(0);
+    }
     if (attempt > 8) return;
     if (_currentAyahs.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -240,15 +213,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       });
       return;
     }
-    AyahBrief? target;
-    for (final ayah in _currentAyahs) {
-      if (ayah.numberInSurah == verseInSurah) {
-        target = ayah;
-        break;
-      }
-    }
-    if (target == null) return;
-    final key = _ayahTileKeys[target.number];
+    final key = _ayahTileKeys[verseInSurah];
     if (key == null) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _scrollToMemorizationVerse(verseInSurah,
@@ -272,7 +237,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
         await Scrollable.ensureVisible(
           // ignore: use_build_context_synchronously
           context,
-          duration: immediate ? Duration.zero : const Duration(milliseconds: 350),
+          duration:
+              immediate ? Duration.zero : const Duration(milliseconds: 350),
           curve: Curves.easeInOut,
           alignment: 0.2,
         );
@@ -327,607 +293,144 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     return order;
   }
 
-  bool _sameOrder(List<String>? a, List<String> b) {
-    if (a == null) return false;
-    if (a.length != b.length) return false;
-    for (int i = 0; i < a.length; i++) {
-      if (a[i] != b[i]) return false;
+  Future<void> _start() async {
+    final generation = ++_playbackGeneration;
+    _awaitingCompletion = false;
+    _pausedForResume = false;
+    setState(() => _isPreparing = true);
+    try {
+      await _player.stop();
+      if (!mounted || generation != _playbackGeneration) return;
+      _sessionReciters = _resolveReciterOrder();
+      _sessionRepeats = _verseRepeatCount;
+      for (final code in _sessionReciters) {
+        final reciter = await ReciterConfigService.getReciterByCode(code);
+        if (!mounted || generation != _playbackGeneration) return;
+        if (reciter != null && !reciter.hasVerseByVerse()) {
+          final l10n = AppLocalizations.of(context)!;
+          _audioFailure(
+              generation,
+              l10n.reciterNotAvailableForVerses(
+                  reciter.getDisplayName(l10n.localeName)));
+          return;
+        }
+      }
+      final selected =
+          _currentAyahs.indexWhere((a) => a.number == _selectedAyah);
+      _position = (verseIndex: selected < 0 ? 0 : selected, repeat: 0, pass: 0);
+      await _playPosition(generation, checkNetwork: true);
+    } catch (_) {
+      _audioFailure(generation);
     }
-    return true;
   }
 
-  Future<bool> _preparePlaylist({
-    required List<AyahBrief> ayahs,
-    required int start,
-    required int end,
-    required List<String> reciterOrder,
-    required int repeatCount,
-  }) async {
-    final langCode = PreferencesService.getLanguage();
-    // Cache display names per reciter to avoid repeated lookups.
-    final Map<String, String> reciterNames = {
-      for (final key in reciterOrder)
-        key: AudioService.reciterDisplayName(key, langCode),
-    };
-    final entries = <_VersePlaybackEntry>[];
-
-    for (int i = start; i <= end; i++) {
-      final brief = ayahs[i - 1];
-      for (int repeatIndex = 0; repeatIndex < repeatCount; repeatIndex++) {
-        // Rotate reciter per verse-repeat, wrapping around the order.
-        final reciterKey = reciterOrder[repeatIndex % reciterOrder.length];
-        entries.add(
-          _VersePlaybackEntry(
-            verseUri: await AudioService.getVerseUriPreferLocal(
-              reciterKeyAr: reciterKey,
-              surahOrder: widget.surah.order,
-              verseNumber: brief.numberInSurah,
-            ),
-            globalAyahNumber: brief.number,
-            verseInSurah: brief.numberInSurah,
-            reciterName: reciterNames[reciterKey] ?? reciterKey,
-            reciterKey: reciterKey,
-            repeatIndex: repeatIndex,
-            repeatCount: repeatCount,
-          ),
-        );
-      }
-    }
-
-    if (entries.isEmpty) {
-      return false;
-    }
-
-    _playlistEntries = entries;
-    _currentPlaylistIndex = 0;
-    _activeRangeStart = start;
-    _activeRangeEnd = end;
-    _activeReciterKey = reciterOrder.first;
-    _activeReciterOrder = List<String>.from(reciterOrder);
-    _activeRepeatCount = repeatCount;
-    _currentPlayingVerseNumber = null;
-    return true;
-  }
-
-  Future<void> _handleEntryCompleted(int generation) async {
-    if (_playlistEntries.isEmpty) {
-      _isHandlingEntryCompletion = false;
-      if (mounted) {
-        setState(() => _isPlaying = false);
-      } else {
-        _isPlaying = false;
-      }
+  Future<void> _advance(int generation) async {
+    final current = _position;
+    if (current == null || !mounted || generation != _playbackGeneration) {
       return;
     }
+    _position =
+        current.next(_currentAyahs.length, _sessionRepeats, _rangeRepeatCount);
+    if (_position == null) {
+      setState(() => _currentPlayingVerseNumber = null);
+      await _player.stop();
+      return;
+    }
+    await _playPosition(generation);
+  }
+
+  Future<void> _playPosition(int generation,
+      {bool checkNetwork = false}) async {
+    final position = _position;
+    if (!mounted || generation != _playbackGeneration || position == null ||
+        position.verseIndex >= _currentAyahs.length || _sessionReciters.isEmpty) {
+      return;
+    }
+    final verse = _currentAyahs[position.verseIndex];
+    final code = _sessionReciters[position.repeat % _sessionReciters.length];
+    setState(() => _isPreparing = true);
     try {
-      // Abort if generation changed (user tapped a different verse or reloaded)
-      if (_playbackGeneration != generation) return;
-
-      final nextIndex = (_currentPlaylistIndex + 1) % _playlistEntries.length;
-      bool shouldStop = false;
-
-      // Check for wrap-around
-      if (nextIndex == 0) {
-         _currentRangeIteration++;
-         if (_currentRangeIteration >= _rangeRepeatCount) {
-             shouldStop = true;
-         }
+      final uri = await AudioService.getVerseUriPreferLocal(
+          reciterKeyAr: code,
+          surahOrder: verse.surah.number,
+          verseNumber: verse.numberInSurah);
+      if (!mounted || generation != _playbackGeneration) return;
+      if (uri == null) {
+        _audioFailure(generation);
+        return;
       }
-
-      if (shouldStop) {
-        try { await _player.stop(); } catch (_) {}
-        // Range finished: clear playback flags and the verse highlight so the
-        // list doesn't leave the last verse looking like it's still playing.
-        _pausedForResume = false;
+      if (checkNetwork &&
+          uri.scheme != 'file' &&
+          !await NetUtils.hasInternet()) {
         if (mounted) {
-          setState(() {
-            _isPlaying = false;
-            _currentPlayingVerseNumber = null;
-          });
-        } else {
-          _isPlaying = false;
-          _currentPlayingVerseNumber = null;
+          _audioFailure(
+              generation, AppLocalizations.of(context)!.audioInternetRequired);
         }
         return;
       }
-
-      if (_playbackGeneration != generation) return;
-      await _playEntryAt(nextIndex);
-    } finally {
-      _isHandlingEntryCompletion = false;
-    }
-  }
-
-  Future<void> _playEntryAt(int index) async {
-    if (_playlistEntries.isEmpty) return;
-    final entry = _playlistEntries[index];
-    final mediaItem = MediaItem(
-      id: '${entry.reciterKey}-${widget.surah.order}-${entry.verseInSurah}-${entry.repeatIndex}',
-      title: '${widget.surah.name} • ${entry.verseInSurah}',
-      album: entry.reciterName,
-      artUri: null,
-      extras: {
-        'surahOrder': widget.surah.order,
-        'verseInSurah': entry.verseInSurah,
-        'globalAyah': entry.globalAyahNumber,
-        'edition': _edition.displayName,
-        'repeatIndex': entry.repeatIndex,
-        'repeatCount': entry.repeatCount,
-        'verseMode': true,
-        'repetitionMode': true,
-      },
-    );
-
-    final uri = entry.verseUri;
-    // If URI is null (missing audio), skip to next entry
-    if (uri == null) {
-      _currentPlaylistIndex = index;
-      final generation = _playbackGeneration;
-      unawaited(_handleEntryCompleted(generation));
-      return;
-    }
-    
-    // Update index BEFORE play so completion handler reads the correct value
-    _currentPlaylistIndex = index;
-    _currentPlayingVerseNumber = entry.verseInSurah;
-    _isPlaying = true;
-    if (mounted) setState(() {});
-
-    try {
-      await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
-      _player.play(); // Don't await — completion handled by listener
-    } catch (e, stackTrace) {
-      if (!mounted) return;
-      DebugErrorDisplay.showError(
-        context,
-        screen: 'Repetition Range',
-        operation: 'Play Verse ${entry.verseInSurah}',
-        error: e.toString(),
-        stackTrace: stackTrace.toString(),
+      if (!mounted || generation != _playbackGeneration) return;
+      final surah = _surahs.firstWhere((s) => s.order == verse.surah.number);
+      final tag = MediaItem(
+        id: '$code-${verse.number}-${position.repeat}',
+        title: '${surah.name} • ${verse.numberInSurah}',
+        album: AudioService.reciterDisplayName(
+            code, PreferencesService.getLanguage()),
+        extras: {
+          'surahOrder': surah.order,
+          'verseInSurah': verse.numberInSurah,
+          'globalAyah': verse.number,
+          'edition': _edition.displayName,
+          'repeatIndex': position.repeat,
+          'repeatCount': _sessionRepeats,
+          'verseMode': true,
+          'repetitionMode': true
+        },
       );
-      
-      if (mounted) {
-        final l10n = AppLocalizations.of(context)!;
-        String userMessage = l10n.errorLoadingAudio;
-        
-        if (e.toString().contains('Permission')) {
-          userMessage = 'Audio permission required. Please grant permission in settings.';
-        } else if (e.toString().contains('Network') || e.toString().contains('Connection')) {
-          userMessage = l10n.audioInternetRequired;
-        }
-        
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(userMessage),
-            duration: const Duration(seconds: 3),
-          ),
-        );
-      }
-      return;
-    }
-
-    _scrollToMemorizationVerse(entry.verseInSurah);
-  }
-
-  Future<bool> _playSelectedAyah({bool showErrors = false}) async {
-    if (_isPreparing) {
-      return false;
-    }
-
-    final ayahs = _currentAyahs;
-    if (ayahs.isEmpty) {
-      return false;
-    }
-
-    final latestRepeatCount = PreferencesService.getVerseRepeatCount();
-    final repeatCount = latestRepeatCount <= 0 ? 1 : latestRepeatCount;
-    if (latestRepeatCount != _verseRepeatCount) {
-      if (mounted) {
-        setState(() {
-          _verseRepeatCount = repeatCount;
-        });
-      } else {
-        _verseRepeatCount = repeatCount;
-      }
-    }
-
-    final total = ayahs.length;
-    int start = (_range?.start.round() ?? 1).clamp(1, total);
-    int end = (_range?.end.round() ?? total).clamp(1, total);
-    if (end < start) {
-      final temp = start;
-      start = end;
-      end = temp;
-    }
-
-    final reciterOrder = _resolveReciterOrder();
-    final reciterKey = reciterOrder.first;
-
-    // Validation: every reciter in the rotation must support verse-by-verse
-    // audio. Surface the first incompatible one so the user can fix it.
-    for (final key in reciterOrder) {
-      final reciter = await ReciterConfigService.getReciterByCode(key);
-      if (reciter != null && !reciter.hasVerseByVerse()) {
-        if (showErrors && mounted) {
-          final l10n = AppLocalizations.of(context)!;
-          final langCode = Localizations.localeOf(context).languageCode;
-          showDialog(
-            context: context,
-            builder: (context) => AlertDialog(
-              title: Text(l10n.reciterNotCompatible),
-              content: Text(l10n.reciterNotAvailableForVerses(
-                  reciter.getDisplayName(langCode))),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(l10n.cancel),
-                ),
-                FilledButton(
-                  onPressed: () async {
-                    Navigator.pop(context);
-                    await SettingsSheetUtils.showReciterSelectionSheet(
-                      context,
-                      requireVerseByVerse: true,
-                      onReciterSelected: (newCode) async {
-                        await PreferencesService.saveReciter(newCode);
-                        if (mounted) {
-                          setState(() {
-                            // Rebuild
-                          });
-                          // Retry
-                          _playSelectedAyah(showErrors: true);
-                        }
-                      },
-                    );
-                  },
-                  child: Text(l10n.chooseReciter),
-                ),
-              ],
-            ),
-          );
-        }
-        return false;
-      }
-    }
-
-    // If target verse not downloaded and no internet, show a clear message
-    try {
-      final targetAyah = _selectedAyah ?? ayahs[start - 1].number;
-      final targetInSurah = (_selectedAyah != null)
-          ? (ayahs.firstWhere((a) => a.number == targetAyah, orElse: () => ayahs[start - 1]).numberInSurah)
-          : ayahs[start - 1].numberInSurah;
-      final hasLocal = await AudioService.isLocalAyahAvailable(
-        reciterKeyAr: reciterKey,
-        surahOrder: widget.surah.order,
-        verseNumber: targetInSurah,
-      );
-      final hasNet = await _hasInternet();
-      if (!hasLocal && !hasNet) {
-        if (mounted) {
-          final l10n = AppLocalizations.of(context)!;
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.audioInternetRequired)),
-          );
-        }
-        return false;
-      }
-    } catch (_) {}
-    final needsReload =
-        _playlistEntries.isEmpty ||
-        _activeReciterKey != reciterKey ||
-        !_sameOrder(_activeReciterOrder, reciterOrder) ||
-        _activeRangeStart != start ||
-        _activeRangeEnd != end ||
-        _activeRepeatCount != repeatCount;
-
-    if (needsReload) {
-      _isPreparing = true;
-      try {
-        final prepared = await _preparePlaylist(
-          ayahs: ayahs,
-          start: start,
-          end: end,
-          reciterOrder: reciterOrder,
-          repeatCount: repeatCount,
-        );
-        if (!prepared) {
-          return false;
-        }
-      } finally {
+      await _player.setAudioSource(AudioSource.uri(uri, tag: tag));
+      if (!mounted || generation != _playbackGeneration) return;
+      _awaitingCompletion = true;
+      setState(() {
+        _currentPlayingVerseNumber = verse.number;
         _isPreparing = false;
-      }
+      });
+      _scrollToMemorizationVerse(verse.number);
+      unawaited(_runPlayer(generation));
+    } catch (_) {
+      _audioFailure(generation);
     }
-
-    final entries = _playlistEntries;
-    if (entries.isEmpty) {
-      return false;
-    }
-
-    final targetAyahNumber = _selectedAyah ?? ayahs[start - 1].number;
-    final targetEntryIndex = entries.indexWhere(
-      (entry) => entry.globalAyahNumber == targetAyahNumber,
-    );
-    final entryIndex = targetEntryIndex >= 0 ? targetEntryIndex : 0;
-    
-    // Reset iteration count on new play start
-    _currentRangeIteration = 0;
-    // This is a fresh start (not a resume), so drop any stale resume flag.
-    _pausedForResume = false;
-
-    await _playEntryAt(entryIndex);
-    return true;
   }
 
-  Future<bool> _hasInternet() => NetUtils.hasInternet();
+  Future<void> _runPlayer(int generation) async {
+    try {
+      await _player.play();
+    } catch (_) {
+      _audioFailure(generation);
+    }
+  }
+
+  void _audioFailure(int generation, [String? message]) {
+    if (!mounted || generation != _playbackGeneration) return;
+    _playbackGeneration++;
+    _awaitingCompletion = false;
+    _pausedForResume = false;
+    setState(() {
+      _isPreparing = false;
+      _currentPlayingVerseNumber = null;
+      _position = null;
+    });
+    unawaited(_player.stop());
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content:
+            Text(message ?? AppLocalizations.of(context)!.errorLoadingAudio)));
+  }
 
   void _selectAyah(AyahBrief ayah) {
-    final wasPlaying = _player.playing;
-    final total = _currentAyahs.length;
-    if (total == 0) {
-      return;
-    }
-    setState(() {
-      _selectedAyah = ayah.number;
-    });
-    // Selecting an ayah re-anchors playback to it, so a previously paused
-    // playlist can no longer be resumed in place.
+    final restart = _isPlaying || _isPreparing;
+    setState(() => _selectedAyah = ayah.number);
     _pausedForResume = false;
-    _scrollToMemorizationVerse(ayah.numberInSurah);
-    if (wasPlaying) {
-      unawaited(_playSelectedAyah(showErrors: false));
-    }
+    if (restart) unawaited(_start());
   }
 
-  /// Applies a new [start]/[end] range (from the slider or the numeric editor),
-  /// clamping to the surah bounds, invalidating any loaded playlist, and
-  /// re-anchoring the selected ayah if it falls outside the new range.
-  void _applyRange(double start, double end) {
-    final total = _currentAyahs.length;
-    if (total == 0) return;
-    AyahBrief? fallbackAyah;
-    setState(() {
-      final maxVal = total.toDouble();
-      final double clampedStart = start.clamp(1.0, maxVal);
-      final double clampedEnd = end.clamp(1.0, maxVal);
-      _range = RangeValues(clampedStart, clampedEnd);
-      _activeRangeStart = null;
-      _activeRangeEnd = null;
-      _activeReciterKey = null;
-      _activeReciterOrder = null;
-      _activeRepeatCount = null;
-      // Range changed → loaded playlist is stale, can't resume.
-      _pausedForResume = false;
-
-      if (_selectedAyah != null && _currentAyahs.isNotEmpty) {
-        AyahBrief? selectedBrief;
-        for (final ayah in _currentAyahs) {
-          if (ayah.number == _selectedAyah) {
-            selectedBrief = ayah;
-            break;
-          }
-        }
-        if (selectedBrief != null) {
-          final int startIndex = clampedStart.round();
-          final int endIndex = clampedEnd.round();
-          if (selectedBrief.numberInSurah < startIndex ||
-              selectedBrief.numberInSurah > endIndex) {
-            final int fallbackIndex =
-                (startIndex.clamp(1, _currentAyahs.length)) - 1;
-            fallbackAyah = _currentAyahs[fallbackIndex];
-            _selectedAyah = fallbackAyah?.number;
-          }
-        }
-      }
-    });
-    final AyahBrief? effectiveFallback = fallbackAyah;
-    if (effectiveFallback != null) {
-      _scrollToMemorizationVerse(effectiveFallback.numberInSurah,
-          immediate: true);
-    }
-  }
-
-  /// Tappable pill showing a range bound (first/last ayah). Tapping opens a
-  /// numeric editor so exact verses are easy to reach even for narrow ranges.
-  Widget _buildRangeBoundChip({
-    required String label,
-    required int value,
-    required VoidCallback onTap,
-  }) {
-    final theme = Theme.of(context);
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-          decoration: BoxDecoration(
-            color: theme.colorScheme.primaryContainer
-                .withAlpha((255 * 0.5).round()),
-            borderRadius: BorderRadius.circular(14),
-            border: Border.all(
-              color: theme.colorScheme.primary.withAlpha((255 * 0.5).round()),
-            ),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    label,
-                    style: theme.textTheme.labelSmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                  Text(
-                    '$value',
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: theme.colorScheme.primary,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(width: 6),
-              Icon(
-                Icons.edit,
-                size: 16,
-                color: theme.colorScheme.primary,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  /// Numeric stepper dialog to set the first/last ayah of the range exactly.
-  Future<void> _editRangeBound({required bool isStart}) async {
-    final total = _currentAyahs.length;
-    if (total == 0) return;
-    final l10n = AppLocalizations.of(context)!;
-    final range = _range ?? RangeValues(1, total.toDouble());
-    final int currentStart = range.start.round().clamp(1, total);
-    final int currentEnd = range.end.round().clamp(1, total);
-
-    // Keep the range valid: the first ayah can't exceed the last, and the last
-    // can't precede the first.
-    final int minValue = isStart ? 1 : currentStart;
-    final int maxValue = isStart ? currentEnd : total;
-    int value = (isStart ? currentStart : currentEnd).clamp(minValue, maxValue);
-
-    final controller = TextEditingController(text: '$value');
-
-    final int? result = await showDialog<int>(
-      context: context,
-      builder: (context) {
-        return StatefulBuilder(
-          builder: (context, setDialogState) {
-            void setValue(int v) {
-              value = v.clamp(minValue, maxValue);
-              controller.text = '$value';
-              controller.selection = TextSelection.fromPosition(
-                TextPosition(offset: controller.text.length),
-              );
-              setDialogState(() {});
-            }
-
-            return AlertDialog(
-              title: Text(isStart ? l10n.firstAyah : l10n.lastAyah),
-              content: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  IconButton.filledTonal(
-                    icon: const Icon(Icons.remove),
-                    onPressed:
-                        value > minValue ? () => setValue(value - 1) : null,
-                  ),
-                  const SizedBox(width: 8),
-                  SizedBox(
-                    width: 88,
-                    child: TextField(
-                      controller: controller,
-                      keyboardType: TextInputType.number,
-                      textAlign: TextAlign.center,
-                      autofocus: true,
-                      style: Theme.of(context).textTheme.headlineSmall,
-                      decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        helperText: '$minValue–$maxValue',
-                        helperMaxLines: 1,
-                      ),
-                      onChanged: (text) {
-                        final parsed = int.tryParse(text.trim());
-                        if (parsed != null) {
-                          value = parsed.clamp(minValue, maxValue);
-                          setDialogState(() {});
-                        }
-                      },
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  IconButton.filledTonal(
-                    icon: const Icon(Icons.add),
-                    onPressed:
-                        value < maxValue ? () => setValue(value + 1) : null,
-                  ),
-                ],
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text(l10n.cancel),
-                ),
-                FilledButton(
-                  onPressed: () {
-                    final parsed =
-                        int.tryParse(controller.text.trim()) ?? value;
-                    Navigator.pop(context, parsed.clamp(minValue, maxValue));
-                  },
-                  child: Text(l10n.save),
-                ),
-              ],
-            );
-          },
-        );
-      },
-    );
-
-    controller.dispose();
-    if (result == null) return;
-
-    if (isStart) {
-      _applyRange(result.toDouble(), currentEnd.toDouble());
-    } else {
-      _applyRange(currentStart.toDouble(), result.toDouble());
-    }
-    // Bring the chosen bound into view.
-    final int verseInSurah = _currentAyahs[(result.clamp(1, total)) - 1]
-        .numberInSurah;
-    _scrollToMemorizationVerse(verseInSurah, immediate: true);
-  }
-
-  Widget _buildTopBar(List<AyahBrief> ayahs) {
-    final l10n = AppLocalizations.of(context)!;
-    final total = ayahs.length;
-    final range = _range ?? RangeValues(1, total.toDouble());
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _buildRangeBoundChip(
-              label: l10n.firstAyah,
-              value: range.start.round(),
-              onTap: () => _editRangeBound(isStart: true),
-            ),
-            _buildPlayControl(l10n),
-            _buildRangeBoundChip(
-              label: l10n.lastAyah,
-              value: range.end.round(),
-              onTap: () => _editRangeBound(isStart: false),
-            ),
-          ],
-        ),
-        RangeSlider(
-          min: 1,
-          max: total.toDouble(),
-          divisions: total > 1 ? total - 1 : null,
-          values: RangeValues(range.start.clamp(1, total.toDouble()), range.end.clamp(1, total.toDouble())),
-          labels: RangeLabels('${range.start.round()}', '${range.end.round()}'),
-          onChanged: (val) => _applyRange(val.start, val.end),
-        ),
-      ],
-    );
-  }
-
-  /// Compact circular play/pause control shown between the first/last ayah
-  /// chips.
   Widget _buildPlayControl(AppLocalizations l10n) {
     final theme = Theme.of(context);
     return Tooltip(
@@ -940,26 +443,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
         elevation: 2,
         child: InkWell(
           customBorder: const CircleBorder(),
-          onTap: _isPreparing
-              ? null
-              : () {
-                  final ayahs = _currentAyahs;
-                  // Only jump to the range start on a genuine fresh start.
-                  // When pausing or resuming an existing playlist, keep the
-                  // view on the current verse.
-                  final bool freshStart =
-                      !_player.playing && !_pausedForResume;
-                  if (freshStart && ayahs.isNotEmpty) {
-                    final currentRange =
-                        _range ?? RangeValues(1, ayahs.length.toDouble());
-                    final start =
-                        currentRange.start.round().clamp(1, ayahs.length);
-                    final startVerseInSurah = ayahs[start - 1].numberInSurah;
-                    _scrollToMemorizationVerse(startVerseInSurah,
-                        immediate: true);
-                  }
-                  _togglePlay(ayahs);
-                },
+          onTap: _isPreparing ? null : _togglePlay,
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: _isPreparing
@@ -1089,9 +573,10 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       if (!loaded) return;
     }
 
+    if (!mounted) return;
     setState(() => _edition = edition);
     await PreferencesService.saveLastRepetitionEdition(edition.name);
-    await _reloadAyahs();
+    if (mounted) await _reloadAyahs();
   }
 
   @override
@@ -1105,26 +590,28 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          widget.surah.name,
-          textDirection: TextDirection.rtl,
+          l10n.repetitionMemorization,
         ),
         actions: [
           IconButton(
             icon: const Icon(Icons.menu_book_outlined),
             tooltip: l10n.editionTitle,
-            onPressed: () async {
-              final selected = await showEditionPickerSheet(
-                context,
-                current: _edition,
-              );
-              if (selected != null && selected != _edition) {
-                await _toggleEdition(selected);
-              }
-            },
+            onPressed: _surahs.isEmpty
+                ? null
+                : () async {
+                    final selected = await showEditionPickerSheet(
+                      context,
+                      current: _edition,
+                    );
+                    if (mounted && selected != null && selected != _edition) {
+                      await _toggleEdition(selected);
+                    }
+                  },
           ),
           IconButton(
             icon: const Icon(Icons.settings),
-            onPressed: () => _showSettingsSheet(),
+            tooltip: l10n.settings,
+            onPressed: _surahs.isEmpty ? null : _showSettingsSheet,
           ),
         ],
       ),
@@ -1134,38 +621,33 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
-          if (snapshot.hasError) {
-            return Center(child: Text(snapshot.error.toString()));
+          if (snapshot.hasError || (snapshot.data?.isEmpty ?? true)) {
+            return Center(
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Text(l10n.passageLoadError),
+              TextButton(
+                  onPressed: () => setState(() {
+                        _ayahsFuture = _surahs.isEmpty
+                            ? _initializePassage()
+                            : _loadPassage(_passage, _edition);
+                      }),
+                  child: Text(l10n.retry)),
+            ]));
           }
-          final ayahs = snapshot.data ?? const <AyahBrief>[];
+          final ayahs = snapshot.data!;
           _currentAyahs = ayahs;
-          if (ayahs.isNotEmpty && _lastAutoScrolledVerse == null) {
-            WidgetsBinding.instance.addPostFrameCallback((_) {
-              final start = (_range?.start.round() ?? 1).clamp(1, ayahs.length);
-              final firstVerse = ayahs[start - 1].numberInSurah;
-              _scrollToMemorizationVerse(firstVerse, immediate: true);
-            });
-          }
-          if (_range == null && ayahs.isNotEmpty) {
-            _range = RangeValues(1, ayahs.length.toDouble());
-          }
-          int startBound = (_range?.start.round() ?? 1).clamp(1, ayahs.length);
-          int endBound = (_range?.end.round() ?? ayahs.length).clamp(1, ayahs.length);
-          if (endBound < startBound) {
-            final tmp = startBound;
-            startBound = endBound;
-            endBound = tmp;
-          }
-          final visibleAyahs = ayahs.where((a) {
-            final verse = a.numberInSurah;
-            return verse >= startBound && verse <= endBound;
-          }).toList();
-          final ayahsToDisplay = visibleAyahs.isEmpty ? ayahs : visibleAyahs;
           return Column(
             children: [
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                child: _buildTopBar(ayahs),
+                child: Row(children: [
+                  Expanded(
+                      child: Text(
+                          '${_surahName(_passage.start.surah)} ${_passage.start.verse} – '
+                          '${_surahName(_passage.end.surah)} ${_passage.end.verse}\n'
+                          '${l10n.passageVerseCount(ayahs.length)}')),
+                  _buildPlayControl(l10n),
+                ]),
               ),
               const Divider(height: 1),
               Expanded(
@@ -1193,9 +675,26 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                       12,
                       12 + MediaQuery.of(context).padding.bottom,
                     ),
-                    itemCount: ayahsToDisplay.length,
-                    itemBuilder: (context, index) =>
-                        _buildRepetitionAyahTile(ayahsToDisplay[index]),
+                    itemCount: ayahs.length,
+                    itemBuilder: (context, index) {
+                      final a = ayahs[index];
+                      final tile = _buildRepetitionAyahTile(a);
+                      if (index > 0 &&
+                          ayahs[index - 1].surah.number == a.surah.number) {
+                        return tile;
+                      }
+                      return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Semantics(
+                                header: true,
+                                child: Text(_surahName(a.surah.number),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium)),
+                            tile,
+                          ]);
+                    },
                   ),
                 ),
               ),
@@ -1218,14 +717,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     final GlobalKey tileKey =
         _ayahTileKeys.putIfAbsent(a.number, () => GlobalKey());
 
-    final bool isInActiveRange =
-        (_activeRangeStart != null && _activeRangeEnd != null)
-            ? (a.numberInSurah >= _activeRangeStart! &&
-                a.numberInSurah <= _activeRangeEnd!)
-            : false;
-    final bool isCurrentlyPlaying = _currentPlayingVerseNumber != null
-        ? _currentPlayingVerseNumber == a.numberInSurah
-        : false;
+    final bool isCurrentlyPlaying = _currentPlayingVerseNumber == a.number;
     final bool isSelected = _selectedAyah == a.number;
 
     final double baseFontSize = _edition.isTranslation
@@ -1265,9 +757,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
         ? playingColor
         : isSelected
             ? colorScheme.secondaryContainer.withAlpha((255 * 0.6).round())
-            : isInActiveRange
-                ? colorScheme.primaryContainer.withAlpha((255 * 0.35).round())
-                : colorScheme.primaryContainer.withAlpha((255 * 0.15).round());
+            : colorScheme.primaryContainer.withAlpha((255 * 0.15).round());
     final Color borderColor = isCurrentlyPlaying
         ? colorScheme.primary
         : colorScheme.outlineVariant.withAlpha((255 * 0.5).round());
@@ -1365,7 +855,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                   child: Text(
                     '${a.surah.englishName} ${a.numberInSurah}',
                     style: textTheme.bodySmall?.copyWith(
-                      color: colorScheme.onSurface.withAlpha((255 * 0.6).round()),
+                      color:
+                          colorScheme.onSurface.withAlpha((255 * 0.6).round()),
                     ),
                     textAlign: textDirection == TextDirection.rtl
                         ? TextAlign.right
@@ -1388,8 +879,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
 
     void invalidatePlaylist() {
       // Rotation changed → any loaded/paused playlist is stale.
-      _activeReciterOrder = null;
-      _activeReciterKey = null;
+
       _pausedForResume = false;
     }
 
@@ -1402,8 +892,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       final shown = count < maxShown ? count : maxShown;
       final parts = <String>[];
       for (int i = 0; i < shown; i++) {
-        parts.add(AudioService.reciterDisplayName(
-            order[i % order.length], langCode));
+        parts.add(
+            AudioService.reciterDisplayName(order[i % order.length], langCode));
       }
       var seq = parts.join('  →  ');
       if (count > maxShown) seq = '$seq  …';
@@ -1442,79 +932,77 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
             )
           else ...[
             ReorderableListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                buildDefaultDragHandles: false,
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                itemCount: _reciterRotationOrder.length,
-                onReorder: (oldIndex, newIndex) async {
-                  if (newIndex > oldIndex) newIndex -= 1;
-                  final list = List<String>.from(_reciterRotationOrder);
-                  final item = list.removeAt(oldIndex);
-                  list.insert(newIndex, item);
-                  setSheetState(() => _reciterRotationOrder = list);
-                  setState(() {
-                    _reciterRotationOrder = list;
-                    invalidatePlaylist();
-                  });
-                  await PreferencesService.saveReciterRotationOrder(list);
-                },
-                itemBuilder: (context, index) {
-                  final code = _reciterRotationOrder[index];
-                  final name =
-                      AudioService.reciterDisplayName(code, langCode);
-                  return Card(
-                    key: ValueKey(code),
-                    elevation: 0,
-                    margin: const EdgeInsets.symmetric(vertical: 4),
-                    color: theme.colorScheme.surfaceContainerHighest
-                        .withAlpha((255 * 0.4).round()),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: ListTile(
-                      dense: true,
-                      leading: CircleAvatar(
-                        radius: 14,
-                        backgroundColor: theme.colorScheme.primary,
-                        child: Text(
-                          '${index + 1}',
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: theme.colorScheme.onPrimary,
-                          ),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              buildDefaultDragHandles: false,
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              itemCount: _reciterRotationOrder.length,
+              onReorderItem: (oldIndex, newIndex) async {
+                final list = List<String>.from(_reciterRotationOrder);
+                final item = list.removeAt(oldIndex);
+                list.insert(newIndex, item);
+                setSheetState(() => _reciterRotationOrder = list);
+                setState(() {
+                  _reciterRotationOrder = list;
+                  invalidatePlaylist();
+                });
+                await PreferencesService.saveReciterRotationOrder(list);
+              },
+              itemBuilder: (context, index) {
+                final code = _reciterRotationOrder[index];
+                final name = AudioService.reciterDisplayName(code, langCode);
+                return Card(
+                  key: ValueKey(code),
+                  elevation: 0,
+                  margin: const EdgeInsets.symmetric(vertical: 4),
+                  color: theme.colorScheme.surfaceContainerHighest
+                      .withAlpha((255 * 0.4).round()),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  child: ListTile(
+                    dense: true,
+                    leading: CircleAvatar(
+                      radius: 14,
+                      backgroundColor: theme.colorScheme.primary,
+                      child: Text(
+                        '${index + 1}',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: theme.colorScheme.onPrimary,
                         ),
                       ),
-                      title: Text(name, overflow: TextOverflow.ellipsis),
-                      trailing: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          IconButton(
-                            icon: const Icon(Icons.close),
-                            tooltip: l10n.reciterRotationRemove,
-                            onPressed: () async {
-                              final list =
-                                  List<String>.from(_reciterRotationOrder)
-                                    ..removeAt(index);
-                              setSheetState(() => _reciterRotationOrder = list);
-                              setState(() {
-                                _reciterRotationOrder = list;
-                                invalidatePlaylist();
-                              });
-                              await PreferencesService
-                                  .saveReciterRotationOrder(list);
-                            },
-                          ),
-                          ReorderableDragStartListener(
-                            index: index,
-                            child: const Icon(Icons.drag_handle),
-                          ),
-                        ],
-                      ),
                     ),
-                  );
-                },
-              ),
+                    title: Text(name, overflow: TextOverflow.ellipsis),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.close),
+                          tooltip: l10n.reciterRotationRemove,
+                          onPressed: () async {
+                            final list =
+                                List<String>.from(_reciterRotationOrder)
+                                  ..removeAt(index);
+                            setSheetState(() => _reciterRotationOrder = list);
+                            setState(() {
+                              _reciterRotationOrder = list;
+                              invalidatePlaylist();
+                            });
+                            await PreferencesService.saveReciterRotationOrder(
+                                list);
+                          },
+                        ),
+                        ReorderableDragStartListener(
+                          index: index,
+                          child: const Icon(Icons.drag_handle),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
               child: Text(
@@ -1562,7 +1050,11 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     );
   }
 
+  String _surahName(int order) =>
+      _surahs.firstWhere((s) => s.order == order).name;
+
   void _showSettingsSheet() {
+    if (_surahs.isEmpty) return;
     final l10n = AppLocalizations.of(context)!;
     showModalBottomSheet(
       context: context,
@@ -1584,6 +1076,22 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                     const SizedBox(height: 16),
+                    RepetitionPassageEditor(
+                      surahs: _surahs,
+                      passage: _passage,
+                      remember: _remember,
+                      onApply: (draft, remember) async {
+                        Navigator.pop(context);
+                        final changed = draft != _passage;
+                        _remember = remember;
+                        _passage = draft;
+                        final save =
+                            PreferencesService.savePassage(draft, remember);
+                        if (changed) await _reloadAyahs();
+                        await save;
+                      },
+                    ),
+                    const Divider(),
                     // The reciter picker only affects playback for editions
                     // that fall back to the user's selected Arabic reciter
                     // (audioReciterKey == null). Editions with their own fixed
@@ -1600,21 +1108,19 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                         ),
                         trailing: const Icon(Icons.chevron_right),
                         onTap: () {
-                           // Close settings to open reciter picker
-                           Navigator.pop(context);
-                           SettingsSheetUtils.showReciterSelectionSheet(
-                               context,
-                               requireVerseByVerse: true,
-                               onReciterSelected: (key) async {
-                                // Save to Global Reciter
-                                await PreferencesService.saveReciter(key);
-                                setState(() {
-                                  // Trigger reload if playing logic checks this
-                                  _activeReciterKey = null; // Force reload
-                                  _pausedForResume = false; // Reciter changed → can't resume
-                                });
-                               }
-                           );
+                          // Close settings to open reciter picker
+                          Navigator.pop(context);
+                          SettingsSheetUtils.showReciterSelectionSheet(this.context,
+                              requireVerseByVerse: true,
+                              onReciterSelected: (key) async {
+                            // Save to Global Reciter
+                            await PreferencesService.saveReciter(key);
+                            if (!mounted) return;
+                            setState(() {
+                              _pausedForResume =
+                                  false; // Reciter changed → can't resume
+                            });
+                          });
                         },
                       ),
                       const Divider(),
@@ -1622,7 +1128,8 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                       const Divider(),
                     ],
                     ListTile(
-                      title: Text('${l10n.verseRepeatCount}: $_verseRepeatCount'),
+                      title:
+                          Text('${l10n.verseRepeatCount}: $_verseRepeatCount'),
                       subtitle: Slider(
                         value: _verseRepeatCount.toDouble(),
                         min: 1,
@@ -1630,21 +1137,22 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                         divisions: 49,
                         label: '$_verseRepeatCount',
                         onChanged: (val) async {
-                           final newVal = val.toInt();
-                           setSheetState(() => _verseRepeatCount = newVal);
-                           setState(() {
-                             _verseRepeatCount = newVal;
-                             // Verse repeat count is baked into the playlist, so
-                             // changing it invalidates any paused playlist.
-                             _pausedForResume = false;
-                           });
-                           await PreferencesService.saveVerseRepeatCount(newVal);
+                          final newVal = val.toInt();
+                          setSheetState(() => _verseRepeatCount = newVal);
+                          setState(() {
+                            _verseRepeatCount = newVal;
+                            // Verse repeat count is baked into the playlist, so
+                            // changing it invalidates any paused playlist.
+                            _pausedForResume = false;
+                          });
+                          await PreferencesService.saveVerseRepeatCount(newVal);
                         },
                       ),
                     ),
                     const Divider(),
                     ListTile(
-                      title: Text('${l10n.rangeRepeatCount}: $_rangeRepeatCount'),
+                      title:
+                          Text('${l10n.rangeRepeatCount}: $_rangeRepeatCount'),
                       subtitle: Slider(
                         value: _rangeRepeatCount.toDouble(),
                         min: 1,
@@ -1652,16 +1160,18 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                         divisions: 19,
                         label: '$_rangeRepeatCount',
                         onChanged: (val) async {
-                           final newVal = val.toInt();
-                           setSheetState(() => _rangeRepeatCount = newVal);
-                           setState(() => _rangeRepeatCount = newVal);
-                           await PreferencesService.saveRangeRepetitionCount(newVal);
+                          final newVal = val.toInt();
+                          setSheetState(() => _rangeRepeatCount = newVal);
+                          setState(() => _rangeRepeatCount = newVal);
+                          await PreferencesService.saveRangeRepetitionCount(
+                              newVal);
                         },
                       ),
                     ),
                     const Divider(),
                     ListTile(
-                      title: Text('${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
+                      title: Text(
+                          '${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
                       subtitle: Slider(
                         value: PreferencesService.getFontSize(),
                         min: 16,
@@ -1670,6 +1180,7 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
                         label: '${PreferencesService.getFontSize().toInt()}',
                         onChanged: (val) async {
                           await PreferencesService.saveFontSize(val);
+                          if (!mounted || !context.mounted) return;
                           setSheetState(() {});
                           setState(() {});
                         },
@@ -1685,26 +1196,3 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     );
   }
 }
-
-class _VersePlaybackEntry {
-  final Uri? verseUri;
-  final int globalAyahNumber;
-  final int verseInSurah;
-  final String reciterName;
-  final String reciterKey;
-  final int repeatIndex;
-  final int repeatCount;
-
-  const _VersePlaybackEntry({
-    required this.verseUri,
-    required this.globalAyahNumber,
-    required this.verseInSurah,
-    required this.reciterName,
-    required this.reciterKey,
-    required this.repeatIndex,
-    required this.repeatCount,
-  });
-}
-
-
-

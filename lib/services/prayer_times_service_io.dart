@@ -277,18 +277,6 @@ class PrayerTimesService {
     }
   }
 
-  static Future<String?> getCountryFromCoordinates(Position position) async {
-    try {
-      final placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
-      if (placemarks.isNotEmpty) {
-        return placemarks.first.country;
-      }
-    } catch (e) {
-      // Intentionally ignoring geocoding errors, will return null
-    }
-    return null;
-  }
-
   static Future<String?> getCityFromCoordinates(Position position) async {
     try {
       final placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
@@ -479,15 +467,6 @@ class PrayerTimesService {
     return detectedMethod ?? 3; // Default
   }
 
-  static Future<int> resolveMethodFromLastKnownPosition() async {
-    try {
-      final pos = await Geolocator.getLastKnownPosition();
-      if (pos == null) return 3;
-      return await resolveMethodForRegionFromPosition(pos);
-    } catch (_) {
-      return 3;
-    }
-  }
   static Future<void> maybeRefreshCacheOnLaunch() async {
     final now = DateTime.now();
     final prefs = await SharedPreferences.getInstance();
@@ -612,5 +591,4 @@ class PrayerTimesService {
     } catch (_) {}
   }
 }
-
 

@@ -320,11 +320,6 @@ class NewsService {
     return isSaved;
   }
 
-  static Future<bool> isNewsSaved(String id) async {
-    final prefs = await SharedPreferences.getInstance();
-    return getSavedNewsIds(prefs).contains(id);
-  }
-
   /// Mark all current news as seen
   static Future<void> markAllAsSeen(List<String> ids) async {
     final prefs = await SharedPreferences.getInstance();

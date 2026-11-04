@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
+import '../models/repetition_passage.dart';
+
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
@@ -12,12 +14,30 @@ import 'package:qurani/themes/app_theme_config.dart';
 class PreferencesService {
   static SharedPreferences? _prefs;
 
-  static const String keyQuranVersion = 'quran_version';
+  // One value commits the opt-in and both endpoints together. An empty list
+  // represents an explicit opt-out; an absent preference is the first launch.
+  static const _passageKey = 'repetition_passage_v1';
+  static bool get rememberPassage => _prefs?.getStringList(_passageKey)?.isEmpty != true;
+
+  static RepetitionPassage get lastPassage {
+    final parts = _prefs?.getStringList(_passageKey);
+    if (parts == null || parts.length != 4) return openingPassage;
+    final numbers = parts.map(int.tryParse).whereType<int>().toList();
+    if (numbers.length != 4) return openingPassage;
+    return (start: (surah: numbers[0], verse: numbers[1]),
+            end: (surah: numbers[2], verse: numbers[3]));
+  }
+
+  static Future<void> savePassage(RepetitionPassage passage, bool remember) async {
+    await _prefs?.setStringList(_passageKey, remember ? [
+      passage.start.surah.toString(), passage.start.verse.toString(),
+      passage.end.surah.toString(), passage.end.verse.toString(),
+    ] : []);
+  }
+
   static const String keyReciter = 'reciter';
-  static const String keyRepetitionReciter = 'repetition_reciter';
   static const String keyTheme = 'theme';
   static const String keyLanguage = 'language'; // 'ar' | 'en' | 'fr'
-  static const String keyTafsir = 'tafsir';
   static const String keyFontSize = 'font_size';
   static const String keyListenFeaturedSurahs = 'listen_featured_surahs';
   static const String keyArabicFontFamily = 'arabic_font_family';
@@ -92,10 +112,6 @@ class PreferencesService {
     if (savedReciter == null || savedReciter.isEmpty) {
       await _prefs!.setString(keyReciter, 'afs');
     }
-    final savedRepetition = _prefs!.getString(keyRepetitionReciter);
-    if (savedRepetition == null || savedRepetition.isEmpty) {
-      await _prefs!.setString(keyRepetitionReciter, 'afs');
-    }
     final savedRepeatCount = _prefs!.getInt(keyVerseRepeatCount);
     if (savedRepeatCount == null || savedRepeatCount < 1) {
       await _prefs!.setInt(keyVerseRepeatCount, 10);
@@ -136,32 +152,12 @@ class PreferencesService {
     }
   }
 
-  static Future<void> saveQuranVersion(String value) async {
-    await _prefs?.setString(keyQuranVersion, value);
-  }
-
-  static String? getQuranVersion() {
-    return _prefs?.getString(keyQuranVersion);
-  }
-
   static Future<void> saveReciter(String value) async {
     await _prefs?.setString(keyReciter, value);
   }
 
   static String getReciter() {
     final saved = _prefs?.getString(keyReciter);
-    if (saved == null || saved.isEmpty) {
-      return 'afs';
-    }
-    return saved;
-  }
-
-  static Future<void> saveRepetitionReciter(String value) async {
-    await _prefs?.setString(keyRepetitionReciter, value);
-  }
-
-  static String getRepetitionReciter() {
-    final saved = _prefs?.getString(keyRepetitionReciter);
     if (saved == null || saved.isEmpty) {
       return 'afs';
     }
@@ -327,16 +323,6 @@ class PreferencesService {
     return _prefs?.getBool(key);
   }
 
-  // Prayer calculation method
-  static const String keyPrayerCalcMethod = 'prayer_calc_method';
-  static Future<void> savePrayerCalcMethod(String methodKey) async {
-    await _prefs?.setString(keyPrayerCalcMethod, methodKey);
-  }
-
-  static String getPrayerCalcMethod() {
-    return _prefs?.getString(keyPrayerCalcMethod) ?? 'mwl';
-  }
-
   // User-selected prayer method (overrides auto-detection)
   static const String keyUserPrayerMethod = 'user_prayer_method';
   
@@ -372,10 +358,6 @@ class PreferencesService {
     return _prefs?.getDouble(keyAdhanVolume) ?? 1.0;
   }
 
-  static Future<void> saveAdhanVolume(double value) async {
-    await _prefs?.setDouble(keyAdhanVolume, value.clamp(0.0, 1.0));
-  }
-
   // Time format: true => 12h, false => 24h
   static const String keyTimeFormat12h = 'time_format_12h';
   static Future<void> saveTimeFormat12h(bool value) async {
@@ -384,34 +366,6 @@ class PreferencesService {
 
   static bool getTimeFormat12h() {
     return _prefs?.getBool(keyTimeFormat12h) ?? false; // default 24h
-  }
-
-  // Digit style: true => Western (0-9), false => Eastern (Arabic)
-  static const String keyWesternDigits = 'western_digits';
-  static Future<void> saveWesternDigits(bool value) async {
-    await _prefs?.setBool(keyWesternDigits, value);
-  }
-
-  static bool getWesternDigits() {
-    return _prefs?.getBool(keyWesternDigits) ?? true; // default Western
-  }
-
-  // User name
-  static const String keyUserName = 'user_name';
-  static Future<void> saveUserName(String name) async {
-    await _prefs?.setString(keyUserName, name);
-  }
-
-  static String getUserName() {
-    return _prefs?.getString(keyUserName) ?? '';
-  }
-
-  static Future<void> saveTafsir(String value) async {
-    await _prefs?.setString(keyTafsir, value);
-  }
-
-  static String? getTafsir() {
-    return _prefs?.getString(keyTafsir);
   }
 
   // Medium Priority: Bookmarking
@@ -446,57 +400,6 @@ class PreferencesService {
     await _prefs?.setString(keyAudioBookmarks, jsonStr);
   }
 
-  // Deprecated single bookmark methods (kept for reference or migration if needed)
-  static Future<void> saveBookmark(int surahOrder, int positionSeconds) async {
-     // Migration to new system could happen here, or we just abandon old key
-    await _prefs?.setInt('bookmark_$surahOrder', positionSeconds);
-  }
-
-  static Future<int?> getBookmark(int surahOrder) async {
-    return _prefs?.getInt('bookmark_$surahOrder');
-  }
-
-  static Future<void> removeBookmark(int surahOrder) async {
-    await _prefs?.remove('bookmark_$surahOrder');
-  }
-
-  // Nice to have: Last position resume
-  static Future<void> saveLastPosition(int surahOrder, int positionSeconds) async {
-    await _prefs?.setInt('last_pos_$surahOrder', positionSeconds);
-  }
-
-  static int? getLastPosition(int surahOrder) {
-    return _prefs?.getInt('last_pos_$surahOrder');
-  }
-
-  // Medium Priority: History
-  static Future<void> addToHistory(int surahOrder, String reciterCode) async {
-    const key = 'history_list';
-    final history = _prefs?.getStringList(key) ?? [];
-    final entry = '$surahOrder:$reciterCode:${DateTime.now().millisecondsSinceEpoch}';
-    history.insert(0, entry);
-    // Keep only last 50
-    if (history.length > 50) {
-      history.removeRange(50, history.length);
-    }
-    await _prefs?.setStringList(key, history);
-  }
-
-  static List<Map<String, dynamic>> getHistory() {
-    final history = _prefs?.getStringList('history_list') ?? [];
-    return history.map((entry) {
-      final parts = entry.split(':');
-      if (parts.length >= 3) {
-        return {
-          'surahOrder': int.tryParse(parts[0]) ?? 1,
-          'reciterCode': parts[1],
-          'timestamp': int.tryParse(parts[2]) ?? 0,
-        };
-      }
-      return null;
-    }).whereType<Map<String, dynamic>>().toList();
-  }
-
   // Downloads
   static Future<void> setDownloadedFull(bool value) async {
     await _prefs?.setBool('download_full', value);
@@ -527,27 +430,6 @@ class PreferencesService {
   static bool isFullSurahPaused(String reciter, int order) {
     final padded = order.toString().padLeft(3, '0');
     return getPausedFullSurahs(reciter).contains(padded);
-  }
-
-  static Future<void> markFullSurahPaused(String reciter, int order) async {
-    final padded = order.toString().padLeft(3, '0');
-    final list = List<String>.from(getPausedFullSurahs(reciter));
-    if (!list.contains(padded)) {
-      list.add(padded);
-      await _prefs?.setStringList(_pausedFullKey(reciter), list);
-    }
-  }
-
-  static Future<void> markFullSurahResumed(String reciter, int order) async {
-    final padded = order.toString().padLeft(3, '0');
-    final list = List<String>.from(getPausedFullSurahs(reciter));
-    if (list.remove(padded)) {
-      await _prefs?.setStringList(_pausedFullKey(reciter), list);
-    }
-  }
-
-  static Future<void> clearPausedFullSurahs(String reciter) async {
-    await _prefs?.remove(_pausedFullKey(reciter));
   }
 
   // --- Downloads: integrity verification cache ---
@@ -694,11 +576,6 @@ class PreferencesService {
     return isNowFeatured;
   }
 
-  static bool isListenSurahFeatured(int surahOrder) {
-    final list = _prefs?.getStringList(keyListenFeaturedSurahs) ?? [];
-    return list.contains(surahOrder.toString());
-  }
-
   static Set<int> getListenFeaturedSurahs() {
     final list = _prefs?.getStringList(keyListenFeaturedSurahs) ?? [];
     return list
@@ -759,11 +636,6 @@ class PreferencesService {
     } catch (_) {
       return {};
     }
-  }
-
-  /// Clear all prayer time adjustments
-  static Future<void> clearPrayerTimeAdjustments() async {
-    await _prefs?.remove(keyPrayerTimeAdjustments);
   }
 
   // Font size for Quran reading
@@ -1021,7 +893,4 @@ class PreferencesService {
     return list != null ? list.toSet() : <String>{};
   }
 
-  static bool isScreenDisabled(String screenId) {
-    return getDisabledScreens().contains(screenId);
-  }
 }

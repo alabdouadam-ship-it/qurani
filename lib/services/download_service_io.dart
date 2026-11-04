@@ -76,14 +76,7 @@ class DownloadService {
     }
   }
 
-  /// Verifies a single full-surah MP3 on disk. Returns `false` for missing,
-  /// truncated, or wrong-magic-byte files.
-  static Future<bool> verifySurahFile(String reciter, int order) async {
-    final path = await localSurahPath(reciter, order);
-    return verifyFile(File(path));
-  }
-
-  /// Cached variant of [verifySurahFile]. The result is keyed by file size +
+  /// Cached integrity verification. The result is keyed by file size +
   /// mtime in [PreferencesService], so subsequent calls in the same UI
   /// session (or across restarts) are O(1) until the file changes.
   ///
@@ -504,5 +497,4 @@ class DownloadService {
     await PreferencesService.setDownloadedReciter(reciter);
   }
 }
-
 

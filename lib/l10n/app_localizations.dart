@@ -97,23 +97,65 @@ abstract class AppLocalizations {
     Locale('fr')
   ];
 
+  /// No description provided for @passageVerseCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 verse} other{{count} verses}}'**
+  String passageVerseCount(int count);
+
+  /// No description provided for @passageStartSurah.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting surah'**
+  String get passageStartSurah;
+
+  /// No description provided for @passageStartVerse.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting verse'**
+  String get passageStartVerse;
+
+  /// No description provided for @passageEndSurah.
+  ///
+  /// In en, this message translates to:
+  /// **'Ending surah'**
+  String get passageEndSurah;
+
+  /// No description provided for @passageEndVerse.
+  ///
+  /// In en, this message translates to:
+  /// **'Ending verse'**
+  String get passageEndVerse;
+
+  /// No description provided for @rememberPassage.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember last passage'**
+  String get rememberPassage;
+
+  /// No description provided for @rememberPassageHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Open this passage next time'**
+  String get rememberPassageHint;
+
+  /// No description provided for @applyPassage.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get applyPassage;
+
+  /// No description provided for @passageLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to load this passage'**
+  String get passageLoadError;
+
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:
   /// **'Settings'**
   String get settings;
-
-  /// No description provided for @quraniSettings.
-  ///
-  /// In en, this message translates to:
-  /// **'Qurani Settings'**
-  String get quraniSettings;
-
-  /// No description provided for @customizeYourExperience.
-  ///
-  /// In en, this message translates to:
-  /// **'Customize your experience'**
-  String get customizeYourExperience;
 
   /// No description provided for @about.
   ///
@@ -121,35 +163,17 @@ abstract class AppLocalizations {
   /// **'About'**
   String get about;
 
-  /// No description provided for @appInformation.
-  ///
-  /// In en, this message translates to:
-  /// **'App information'**
-  String get appInformation;
-
   /// No description provided for @help.
   ///
   /// In en, this message translates to:
   /// **'Help'**
   String get help;
 
-  /// No description provided for @getAssistance.
-  ///
-  /// In en, this message translates to:
-  /// **'Get assistance'**
-  String get getAssistance;
-
   /// No description provided for @preferences.
   ///
   /// In en, this message translates to:
   /// **'Preferences'**
   String get preferences;
-
-  /// No description provided for @quranPreferences.
-  ///
-  /// In en, this message translates to:
-  /// **'Quran preferences'**
-  String get quranPreferences;
 
   /// No description provided for @shareApp.
   ///
@@ -162,12 +186,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discover Qurani, the app that helps you engage with the Holy Quran: listening, reading, repetition-based memorization, digital tasbeeh, Qibla direction, memorization tests, and more. The app supports Arabic, English and French, with multiple color themes. Get it on Google Play: {appUrl}'**
   String shareAppMessage(Object appUrl);
-
-  /// No description provided for @tellOthers.
-  ///
-  /// In en, this message translates to:
-  /// **'Tell others'**
-  String get tellOthers;
 
   /// No description provided for @updateAvailable.
   ///
@@ -198,72 +216,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms & Conditions'**
   String get termsConditions;
-
-  /// No description provided for @supportUs.
-  ///
-  /// In en, this message translates to:
-  /// **'Support us'**
-  String get supportUs;
-
-  /// No description provided for @contactUs.
-  ///
-  /// In en, this message translates to:
-  /// **'Contact us'**
-  String get contactUs;
-
-  /// No description provided for @supportIntro.
-  ///
-  /// In en, this message translates to:
-  /// **'We rely on hosting and third‑party services to keep Qurani running. Your optional support helps sustain and improve the app.'**
-  String get supportIntro;
-
-  /// No description provided for @donateViaPayPal.
-  ///
-  /// In en, this message translates to:
-  /// **'Donate via PayPal'**
-  String get donateViaPayPal;
-
-  /// No description provided for @paypalEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'PayPal email'**
-  String get paypalEmail;
-
-  /// No description provided for @donateViaCrypto.
-  ///
-  /// In en, this message translates to:
-  /// **'Donate via USDT'**
-  String get donateViaCrypto;
-
-  /// No description provided for @usdtAddress.
-  ///
-  /// In en, this message translates to:
-  /// **'USDT address'**
-  String get usdtAddress;
-
-  /// No description provided for @watchAd.
-  ///
-  /// In en, this message translates to:
-  /// **'Support by watching an ad (coming soon)'**
-  String get watchAd;
-
-  /// No description provided for @contactViaWhatsApp.
-  ///
-  /// In en, this message translates to:
-  /// **'WhatsApp'**
-  String get contactViaWhatsApp;
-
-  /// No description provided for @contactViaEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get contactViaEmail;
-
-  /// No description provided for @contactViaWhatsAppGroup.
-  ///
-  /// In en, this message translates to:
-  /// **'WhatsApp Group'**
-  String get contactViaWhatsAppGroup;
 
   /// No description provided for @copy.
   ///
@@ -337,18 +289,6 @@ abstract class AppLocalizations {
   /// **'Stop Adhan'**
   String get stopAdhan;
 
-  /// No description provided for @adhanStoppedMsg.
-  ///
-  /// In en, this message translates to:
-  /// **'Adhan stopped'**
-  String get adhanStoppedMsg;
-
-  /// No description provided for @adjustTime.
-  ///
-  /// In en, this message translates to:
-  /// **'Adjust time'**
-  String get adjustTime;
-
   /// No description provided for @prayerAdjustmentTooltip.
   ///
   /// In en, this message translates to:
@@ -379,24 +319,6 @@ abstract class AppLocalizations {
   /// **'Share Ayah'**
   String get shareAyah;
 
-  /// No description provided for @shareAudio.
-  ///
-  /// In en, this message translates to:
-  /// **'Share Audio Link'**
-  String get shareAudio;
-
-  /// No description provided for @shareText.
-  ///
-  /// In en, this message translates to:
-  /// **'Share Text'**
-  String get shareText;
-
-  /// No description provided for @shareImage.
-  ///
-  /// In en, this message translates to:
-  /// **'Share Image'**
-  String get shareImage;
-
   /// No description provided for @prayerAdjustmentChange.
   ///
   /// In en, this message translates to:
@@ -421,66 +343,6 @@ abstract class AppLocalizations {
   /// **'Reset adjustment'**
   String get prayerAdjustmentReset;
 
-  /// No description provided for @plus10Min.
-  ///
-  /// In en, this message translates to:
-  /// **'+10 min'**
-  String get plus10Min;
-
-  /// No description provided for @minus10Min.
-  ///
-  /// In en, this message translates to:
-  /// **'-10 min'**
-  String get minus10Min;
-
-  /// No description provided for @plus1Min.
-  ///
-  /// In en, this message translates to:
-  /// **'+1 min'**
-  String get plus1Min;
-
-  /// No description provided for @minus1Min.
-  ///
-  /// In en, this message translates to:
-  /// **'-1 min'**
-  String get minus1Min;
-
-  /// No description provided for @advancedOptions.
-  ///
-  /// In en, this message translates to:
-  /// **'Advanced options'**
-  String get advancedOptions;
-
-  /// No description provided for @calculationMethod.
-  ///
-  /// In en, this message translates to:
-  /// **'Calculation method'**
-  String get calculationMethod;
-
-  /// No description provided for @methodMWL.
-  ///
-  /// In en, this message translates to:
-  /// **'Muslim World League'**
-  String get methodMWL;
-
-  /// No description provided for @methodUmmAlQura.
-  ///
-  /// In en, this message translates to:
-  /// **'Umm Al-Qura (Makkah)'**
-  String get methodUmmAlQura;
-
-  /// No description provided for @methodEgyptian.
-  ///
-  /// In en, this message translates to:
-  /// **'Egyptian General Authority'**
-  String get methodEgyptian;
-
-  /// No description provided for @apiUnavailableUsingLocal.
-  ///
-  /// In en, this message translates to:
-  /// **'Online service unavailable. Using local calculation.'**
-  String get apiUnavailableUsingLocal;
-
   /// No description provided for @prayerMethodSectionTitle.
   ///
   /// In en, this message translates to:
@@ -498,12 +360,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Automatic (based on location)'**
   String get prayerMethodAuto;
-
-  /// No description provided for @prayerMethodChanged.
-  ///
-  /// In en, this message translates to:
-  /// **'Updating prayer times...'**
-  String get prayerMethodChanged;
 
   /// No description provided for @prayerMethodChangedDesc.
   ///
@@ -649,41 +505,11 @@ abstract class AppLocalizations {
   /// **'Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan'**
   String get method23;
 
-  /// No description provided for @prayerTimesSettings.
-  ///
-  /// In en, this message translates to:
-  /// **'Prayer times settings'**
-  String get prayerTimesSettings;
-
   /// No description provided for @adhanSound.
   ///
   /// In en, this message translates to:
   /// **'Adhan sound'**
   String get adhanSound;
-
-  /// No description provided for @adhanSoundOption1.
-  ///
-  /// In en, this message translates to:
-  /// **'Adhan 1'**
-  String get adhanSoundOption1;
-
-  /// No description provided for @adhanSoundOption2.
-  ///
-  /// In en, this message translates to:
-  /// **'Adhan 2'**
-  String get adhanSoundOption2;
-
-  /// No description provided for @adhanSoundOption3.
-  ///
-  /// In en, this message translates to:
-  /// **'Adhan 3'**
-  String get adhanSoundOption3;
-
-  /// No description provided for @dataProtection.
-  ///
-  /// In en, this message translates to:
-  /// **'Data protection'**
-  String get dataProtection;
 
   /// No description provided for @aboutTitle.
   ///
@@ -709,29 +535,11 @@ abstract class AppLocalizations {
   /// **'My Quran'**
   String get optionsTitle;
 
-  /// No description provided for @quraniFeatures.
-  ///
-  /// In en, this message translates to:
-  /// **'What do you want to do?'**
-  String get quraniFeatures;
-
-  /// No description provided for @additionalFeaturesAndTools.
-  ///
-  /// In en, this message translates to:
-  /// **'Additional features and tools'**
-  String get additionalFeaturesAndTools;
-
   /// No description provided for @bookmarks.
   ///
   /// In en, this message translates to:
   /// **'Bookmarks'**
   String get bookmarks;
-
-  /// No description provided for @savedVerses.
-  ///
-  /// In en, this message translates to:
-  /// **'Saved verses'**
-  String get savedVerses;
 
   /// No description provided for @history.
   ///
@@ -739,47 +547,17 @@ abstract class AppLocalizations {
   /// **'History'**
   String get history;
 
-  /// No description provided for @recentActivity.
-  ///
-  /// In en, this message translates to:
-  /// **'Recent activity'**
-  String get recentActivity;
-
-  /// No description provided for @favorites.
-  ///
-  /// In en, this message translates to:
-  /// **'Favorites'**
-  String get favorites;
-
-  /// No description provided for @likedContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Liked content'**
-  String get likedContent;
-
   /// No description provided for @downloads.
   ///
   /// In en, this message translates to:
   /// **'Downloads'**
   String get downloads;
 
-  /// No description provided for @offlineContent.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline content'**
-  String get offlineContent;
-
   /// No description provided for @memorizationTest.
   ///
   /// In en, this message translates to:
   /// **'Memorization Test'**
   String get memorizationTest;
-
-  /// No description provided for @memorizationTestSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Test your memorization'**
-  String get memorizationTestSubtitle;
 
   /// No description provided for @repetitionMemorization.
   ///
@@ -829,12 +607,6 @@ abstract class AppLocalizations {
   /// **'Select a surah'**
   String get pleaseSelectSurah;
 
-  /// No description provided for @surahTranslationsNote.
-  ///
-  /// In en, this message translates to:
-  /// **'Names are shown in your selected language'**
-  String get surahTranslationsNote;
-
   /// No description provided for @searchSurah.
   ///
   /// In en, this message translates to:
@@ -847,47 +619,11 @@ abstract class AppLocalizations {
   /// **'Repeat'**
   String get repeatSurah;
 
-  /// No description provided for @autoAdvance.
-  ///
-  /// In en, this message translates to:
-  /// **'Auto-advance'**
-  String get autoAdvance;
-
-  /// No description provided for @references.
-  ///
-  /// In en, this message translates to:
-  /// **'References'**
-  String get references;
-
-  /// No description provided for @quranReferences.
-  ///
-  /// In en, this message translates to:
-  /// **'Quran References'**
-  String get quranReferences;
-
-  /// No description provided for @customizeYourReadingPreferences.
-  ///
-  /// In en, this message translates to:
-  /// **'Customize your reading preferences'**
-  String get customizeYourReadingPreferences;
-
-  /// No description provided for @quranVersion.
-  ///
-  /// In en, this message translates to:
-  /// **'Quran Version'**
-  String get quranVersion;
-
   /// No description provided for @reciter.
   ///
   /// In en, this message translates to:
   /// **'Reciter'**
   String get reciter;
-
-  /// No description provided for @repetitionReciter.
-  ///
-  /// In en, this message translates to:
-  /// **'Repetition Reciter'**
-  String get repetitionReciter;
 
   /// No description provided for @theme.
   ///
@@ -907,35 +643,11 @@ abstract class AppLocalizations {
   /// **'Tafsir'**
   String get tafsir;
 
-  /// No description provided for @selectQuranVersion.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Quran Version...'**
-  String get selectQuranVersion;
-
   /// No description provided for @selectReciter.
   ///
   /// In en, this message translates to:
   /// **'Select Reciter...'**
   String get selectReciter;
-
-  /// No description provided for @selectRepetitionReciter.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Repetition Reciter...'**
-  String get selectRepetitionReciter;
-
-  /// No description provided for @selectTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Theme...'**
-  String get selectTheme;
-
-  /// No description provided for @selectTafsir.
-  ///
-  /// In en, this message translates to:
-  /// **'Select Tafsir...'**
-  String get selectTafsir;
 
   /// No description provided for @arabic.
   ///
@@ -1285,12 +997,6 @@ abstract class AppLocalizations {
   /// **'Search...'**
   String get search;
 
-  /// No description provided for @searchResultsCount.
-  ///
-  /// In en, this message translates to:
-  /// **'Search results: {count}'**
-  String searchResultsCount(int count);
-
   /// No description provided for @searchResultsDetailed.
   ///
   /// In en, this message translates to:
@@ -1314,30 +1020,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove highlight'**
   String get removeHighlight;
-
-  /// No description provided for @showEnglishTranslation.
-  ///
-  /// In en, this message translates to:
-  /// **'Show English translation'**
-  String get showEnglishTranslation;
-
-  /// No description provided for @showFrenchTranslation.
-  ///
-  /// In en, this message translates to:
-  /// **'Show French translation'**
-  String get showFrenchTranslation;
-
-  /// No description provided for @showArabicText.
-  ///
-  /// In en, this message translates to:
-  /// **'Show Arabic text'**
-  String get showArabicText;
-
-  /// No description provided for @showTafsir.
-  ///
-  /// In en, this message translates to:
-  /// **'Show tafsir'**
-  String get showTafsir;
 
   /// No description provided for @translationNotAvailable.
   ///
@@ -1404,12 +1086,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Copied to clipboard'**
   String get copiedToClipboard;
-
-  /// No description provided for @resumeFromLastPosition.
-  ///
-  /// In en, this message translates to:
-  /// **'Resume from last position'**
-  String get resumeFromLastPosition;
 
   /// No description provided for @searchTooShort.
   ///
@@ -1500,18 +1176,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Avoid metal/magnetic interference'**
   String get qiblaTipInterference;
-
-  /// No description provided for @testResultTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Test Result'**
-  String get testResultTitle;
-
-  /// No description provided for @testCongratsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Well done!'**
-  String get testCongratsTitle;
 
   /// No description provided for @correctAnswersLabel.
   ///
@@ -1621,23 +1285,11 @@ abstract class AppLocalizations {
   /// **'Verse repeat count'**
   String get verseRepeatCount;
 
-  /// No description provided for @verseRepeatCountHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Repeat each verse this many times during repetition memorization.'**
-  String get verseRepeatCountHint;
-
   /// No description provided for @firstAyah.
   ///
   /// In en, this message translates to:
   /// **'First ayah'**
   String get firstAyah;
-
-  /// No description provided for @lastAyah.
-  ///
-  /// In en, this message translates to:
-  /// **'Last ayah'**
-  String get lastAyah;
 
   /// No description provided for @reciterRotationTitle.
   ///
@@ -1699,18 +1351,6 @@ abstract class AppLocalizations {
   /// **'Amiri Quran'**
   String get fontAmiri;
 
-  /// No description provided for @fontScheherazade.
-  ///
-  /// In en, this message translates to:
-  /// **'Scheherazade New'**
-  String get fontScheherazade;
-
-  /// No description provided for @fontLateef.
-  ///
-  /// In en, this message translates to:
-  /// **'Lateef'**
-  String get fontLateef;
-
   /// No description provided for @offlineAudioTitle.
   ///
   /// In en, this message translates to:
@@ -1722,24 +1362,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Reciter: {name}'**
   String reciterLabel(String name);
-
-  /// No description provided for @verseAudiosDownloaded.
-  ///
-  /// In en, this message translates to:
-  /// **'Verse audios downloaded: {count} (total ~6236)'**
-  String verseAudiosDownloaded(int count);
-
-  /// No description provided for @fullSurahsDownloaded.
-  ///
-  /// In en, this message translates to:
-  /// **'Full surahs downloaded: {count} / 114'**
-  String fullSurahsDownloaded(int count);
-
-  /// No description provided for @downloadWhy.
-  ///
-  /// In en, this message translates to:
-  /// **'Why download? You can listen without internet.'**
-  String get downloadWhy;
 
   /// No description provided for @downloadingProgress.
   ///
@@ -1789,12 +1411,6 @@ abstract class AppLocalizations {
   /// **'Name'**
   String get name;
 
-  /// No description provided for @enterYourName.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your name'**
-  String get enterYourName;
-
   /// No description provided for @timeFormatTitle.
   ///
   /// In en, this message translates to:
@@ -1812,18 +1428,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'24h'**
   String get twentyFourHour;
-
-  /// No description provided for @homeGreetingGeneric.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome to Qurani App'**
-  String get homeGreetingGeneric;
-
-  /// No description provided for @homeGreetingNamed.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome {userName} to Qurani App'**
-  String homeGreetingNamed(String userName);
 
   /// No description provided for @hijriHeader.
   ///
@@ -1843,89 +1447,11 @@ abstract class AppLocalizations {
   /// **'No internet connection. Please connect to play audio or download offline files.'**
   String get audioInternetRequired;
 
-  /// No description provided for @editionArabicSimple.
-  ///
-  /// In en, this message translates to:
-  /// **'Arabic (Simple)'**
-  String get editionArabicSimple;
-
-  /// No description provided for @editionArabicUthmani.
-  ///
-  /// In en, this message translates to:
-  /// **'Arabic (Uthmani)'**
-  String get editionArabicUthmani;
-
   /// No description provided for @editionArabicTajweed.
   ///
   /// In en, this message translates to:
   /// **'Quran Tajweed'**
   String get editionArabicTajweed;
-
-  /// No description provided for @editionEnglish.
-  ///
-  /// In en, this message translates to:
-  /// **'English'**
-  String get editionEnglish;
-
-  /// No description provided for @editionFrench.
-  ///
-  /// In en, this message translates to:
-  /// **'French'**
-  String get editionFrench;
-
-  /// No description provided for @editionTafsir.
-  ///
-  /// In en, this message translates to:
-  /// **'Tafsir (Muyassar)'**
-  String get editionTafsir;
-
-  /// No description provided for @whyContactUs.
-  ///
-  /// In en, this message translates to:
-  /// **'Why contact us?'**
-  String get whyContactUs;
-
-  /// No description provided for @reportBugTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Report bugs & request features'**
-  String get reportBugTitle;
-
-  /// No description provided for @reportBugDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Tell us about bugs, problems, or features you\'d like us to add in future versions'**
-  String get reportBugDesc;
-
-  /// No description provided for @supportUsTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Support our project'**
-  String get supportUsTitle;
-
-  /// No description provided for @supportUsDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Your support helps the application continue to work and benefit the Muslim community worldwide'**
-  String get supportUsDesc;
-
-  /// No description provided for @shareIdeaTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Share your ideas'**
-  String get shareIdeaTitle;
-
-  /// No description provided for @shareIdeaDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Do you have an idea for a website, mobile app, or any tech project? Share your idea with us, and we will help you turn it into a real project.'**
-  String get shareIdeaDesc;
-
-  /// No description provided for @getInTouch.
-  ///
-  /// In en, this message translates to:
-  /// **'Get in touch'**
-  String get getInTouch;
 
   /// No description provided for @readAutoFlip.
   ///
@@ -1944,12 +1470,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose reciter'**
   String get chooseReciter;
-
-  /// No description provided for @chooseReciterDesc.
-  ///
-  /// In en, this message translates to:
-  /// **'Select your preferred reciter.'**
-  String get chooseReciterDesc;
 
   /// No description provided for @reciterNotCompatible.
   ///
@@ -2377,12 +1897,6 @@ abstract class AppLocalizations {
   /// **'Chapters'**
   String get chapters;
 
-  /// No description provided for @searchButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Go'**
-  String get searchButton;
-
   /// No description provided for @allChapters.
   ///
   /// In en, this message translates to:
@@ -2400,12 +1914,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'News and Notifications'**
   String get newsAndNotifications;
-
-  /// No description provided for @noNewsMessage.
-  ///
-  /// In en, this message translates to:
-  /// **'No current news or notifications'**
-  String get noNewsMessage;
 
   /// No description provided for @bookUnavailableMessage.
   ///
@@ -2935,12 +2443,6 @@ abstract class AppLocalizations {
   /// **'All {total} surahs verified'**
   String integrityAllVerified(int total);
 
-  /// No description provided for @comingSoonFeature.
-  ///
-  /// In en, this message translates to:
-  /// **'{feature} is coming soon!'**
-  String comingSoonFeature(String feature);
-
   /// No description provided for @errorLoadingBook.
   ///
   /// In en, this message translates to:
@@ -3079,29 +2581,11 @@ abstract class AppLocalizations {
   /// **'Resume'**
   String get wirdResume;
 
-  /// No description provided for @wirdViewAll.
-  ///
-  /// In en, this message translates to:
-  /// **'View all wirds'**
-  String get wirdViewAll;
-
-  /// No description provided for @wirdViewAllWithCount.
-  ///
-  /// In en, this message translates to:
-  /// **'View all wirds ({count})'**
-  String wirdViewAllWithCount(int count);
-
   /// No description provided for @wirdAllScreenTitle.
   ///
   /// In en, this message translates to:
   /// **'All wirds'**
   String get wirdAllScreenTitle;
-
-  /// No description provided for @wirdAllScreenSubtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Manage every scheduled wird'**
-  String get wirdAllScreenSubtitle;
 
   /// No description provided for @wirdAllEmptyTitle.
   ///

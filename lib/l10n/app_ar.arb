@@ -1,23 +1,22 @@
 {
+  "passageVerseCount": "{count, plural, =1{آية واحدة} =2{آيتان} few{{count} آيات} other{{count} آية}}",
+  "passageStartSurah": "سورة البداية",
+  "passageStartVerse": "آية البداية",
+  "passageEndSurah": "سورة النهاية",
+  "passageEndVerse": "آية النهاية",
+  "rememberPassage": "تذكّر آخر مقطع",
+  "rememberPassageHint": "فتح هذا المقطع في المرة القادمة",
+  "applyPassage": "تطبيق",
+  "passageLoadError": "تعذّر تحميل هذا المقطع",
   "@@locale": "ar",
   "settings": "الإعدادات",
   "@settings": {},
-  "quraniSettings": "إعدادات قراني",
-  "@quraniSettings": {},
-  "customizeYourExperience": "خصص تجربتك",
-  "@customizeYourExperience": {},
   "about": "حول",
   "@about": {},
-  "appInformation": "معلومات التطبيق",
-  "@appInformation": {},
   "help": "مساعدة",
   "@help": {},
-  "getAssistance": "احصل على المساعدة",
-  "@getAssistance": {},
   "preferences": "التفضيلات",
   "@preferences": {},
-  "quranPreferences": "تفضيلات القرآن",
-  "@quranPreferences": {},
   "shareApp": "مشاركة التطبيق",
   "@shareApp": {},
   "shareAppMessage": "اكتشف تطبيق قرآني الذي يساعدك على التفاعل مع القرآن الكريم: استماع وقراءة وحفظ بالتكرار، مسبحة إلكترونية، تحديد اتجاه القبلة، اختبار الحفظ والمزيد. يدعم التطبيق العربية والإنجليزية والفرنسية ويتيح واجهات بألوان متعددة حسب الرغبة. حمّله الآن من جوجل بلاي: {appUrl}",
@@ -26,40 +25,16 @@
       "appUrl": {}
     }
   },
-  "tellOthers": "أخبر الآخرين",
   "updateAvailable": "إصدار جديد من قرآني متوفر",
   "@updateAvailable": {},
   "updateNow": "تحديث",
   "@updateNow": {},
   "later": "لاحقًا",
   "@later": {},
-  "@tellOthers": {},
   "privacyPolicy": "سياسة الخصوصية",
   "@privacyPolicy": {},
   "termsConditions": "الشروط والأحكام",
   "@termsConditions": {},
-  "supportUs": "ادعمنا",
-  "@supportUs": {},
-  "contactUs": "تواصل معنا",
-  "@contactUs": {},
-  "supportIntro": "نعتمد على الاستضافة وخدمات خارجية لضمان استمرار تطبيق قرآني. دعمكم الاختياري يساعدنا على الاستمرار وتطوير التطبيق.",
-  "@supportIntro": {},
-  "donateViaPayPal": "التبرع عبر باي بال",
-  "@donateViaPayPal": {},
-  "paypalEmail": "بريد باي بال",
-  "@paypalEmail": {},
-  "donateViaCrypto": "التبرع عبر USDT",
-  "@donateViaCrypto": {},
-  "usdtAddress": "عنوان USDT",
-  "@usdtAddress": {},
-  "watchAd": "ادعمنا بمشاهدة إعلان (قريبًا)",
-  "@watchAd": {},
-  "contactViaWhatsApp": "واتساب",
-  "@contactViaWhatsApp": {},
-  "contactViaEmail": "البريد الإلكتروني",
-  "@contactViaEmail": {},
-  "contactViaWhatsAppGroup": "مجموعة واتساب",
-  "@contactViaWhatsAppGroup": {},
   "copy": "نسخ",
   "@copy": {},
   "copied": "تم النسخ",
@@ -84,10 +59,6 @@
   "@adhanDisabledMsg": {},
   "stopAdhan": "إيقاف الأذان",
   "@stopAdhan": {},
-  "adhanStoppedMsg": "تم إيقاف الأذان",
-  "@adhanStoppedMsg": {},
-  "adjustTime": "تصحيح الوقت",
-  "@adjustTime": {},
   "prayerAdjustmentTooltip": "معايرة وقت الصلاة",
   "@prayerAdjustmentTooltip": {},
   "prayerAdjustmentTitle": "معايرة وقت {prayerName}",
@@ -114,12 +85,6 @@
   },
   "shareAyah": "مشاركة الآية",
   "@shareAyah": {},
-  "shareAudio": "مشاركة رابط الصوت",
-  "@shareAudio": {},
-  "shareText": "مشاركة كنص",
-  "@shareText": {},
-  "shareImage": "مشاركة كصورة",
-  "@shareImage": {},
   "prayerAdjustmentChange": "التعديل: {value}",
   "@prayerAdjustmentChange": {
     "placeholders": {
@@ -136,34 +101,12 @@
   "@prayerAdjustmentNoChange": {},
   "prayerAdjustmentReset": "إعادة تعيين التعديل",
   "@prayerAdjustmentReset": {},
-  "plus10Min": "+10 دقائق",
-  "@plus10Min": {},
-  "minus10Min": "-10 دقائق",
-  "@minus10Min": {},
-  "plus1Min": "+1 دقيقة",
-  "@plus1Min": {},
-  "minus1Min": "-1 دقيقة",
-  "@minus1Min": {},
-  "advancedOptions": "خيارات متقدمة",
-  "@advancedOptions": {},
-  "calculationMethod": "طريقة الحساب",
-  "@calculationMethod": {},
-  "methodMWL": "رابطة العالم الإسلامي",
-  "@methodMWL": {},
-  "methodUmmAlQura": "أم القرى (مكة)",
-  "@methodUmmAlQura": {},
-  "methodEgyptian": "الهيئة العامة المصرية",
-  "@methodEgyptian": {},
-  "apiUnavailableUsingLocal": "الخدمة عبر الإنترنت غير متاحة. سيتم استخدام الحساب المحلي.",
-  "@apiUnavailableUsingLocal": {},
   "prayerMethodSectionTitle": "طريقة حساب أوقات الصلاة",
   "@prayerMethodSectionTitle": {},
   "prayerMethodSectionDesc": "اختر الطريقة المفضلة لديك أو اترك الخيار التلقائي حسب موقعك",
   "@prayerMethodSectionDesc": {},
   "prayerMethodAuto": "تلقائي (حسب الموقع)",
   "@prayerMethodAuto": {},
-  "prayerMethodChanged": "جاري تحديث أوقات الصلاة...",
-  "@prayerMethodChanged": {},
   "prayerMethodChangedDesc": "تم تغيير طريقة الحساب، جاري تحديث الأوقات",
   "@prayerMethodChangedDesc": {},
   "method0": "الشيعة الإثنا عشرية - معهد ليفا، قم",
@@ -212,18 +155,8 @@
   "@method22": {},
   "method23": "وزارة الأوقاف والشؤون الإسلامية، الأردن",
   "@method23": {},
-  "prayerTimesSettings": "إعدادات أوقات الأذان",
-  "@prayerTimesSettings": {},
   "adhanSound": "صوت الأذان",
   "@adhanSound": {},
-  "adhanSoundOption1": "أذان 1",
-  "@adhanSoundOption1": {},
-  "adhanSoundOption2": "أذان 2",
-  "@adhanSoundOption2": {},
-  "adhanSoundOption3": "أذان 3",
-  "@adhanSoundOption3": {},
-  "dataProtection": "حماية البيانات",
-  "@dataProtection": {},
   "aboutTitle": "حول قرآني",
   "@aboutTitle": {},
   "aboutDescription": "يساعدك تطبيق قرآني على التفاعل مع القرآن الكريم: الاستماع والقراءة والحفظ بالتكرار، مسبحة إلكترونية، تحديد اتجاه القبلة، اختبارات الحفظ، العلامات، الآيات المميزة والمزيد. يدعم التطبيق العربية والإنجليزية والفرنسية مع إمكانية تخصيص الألوان والخطوط.",
@@ -236,30 +169,14 @@
   },
   "optionsTitle": "قرآني",
   "@optionsTitle": {},
-  "quraniFeatures": "ماذا تريد أن تفعل؟",
-  "@quraniFeatures": {},
-  "additionalFeaturesAndTools": "ميزات وأدوات إضافية",
-  "@additionalFeaturesAndTools": {},
   "bookmarks": "الإشارات المرجعية",
   "@bookmarks": {},
-  "savedVerses": "الآيات المحفوظة",
-  "@savedVerses": {},
   "history": "السجل",
   "@history": {},
-  "recentActivity": "النشاط الأخير",
-  "@recentActivity": {},
-  "favorites": "المفضلة",
-  "@favorites": {},
-  "likedContent": "المحتوى المفضل",
-  "@likedContent": {},
   "downloads": "التحميلات",
   "@downloads": {},
-  "offlineContent": "المحتوى دون اتصال",
-  "@offlineContent": {},
   "memorizationTest": "اختبار الحفظ",
   "@memorizationTest": {},
-  "memorizationTestSubtitle": "اختبر حفظك",
-  "@memorizationTestSubtitle": {},
   "repetitionMemorization": "الحفظ بالتكرار",
   "@repetitionMemorization": {},
   "searchQuran": "البحث في القرآن",
@@ -276,42 +193,20 @@
   "@verses": {},
   "pleaseSelectSurah": "اختر سورة",
   "@pleaseSelectSurah": {},
-  "surahTranslationsNote": "يتم عرض الأسماء باللغة المختارة",
-  "@surahTranslationsNote": {},
   "searchSurah": "ابحث عن سورة...",
   "@searchSurah": {},
   "repeatSurah": "تكرار",
   "@repeatSurah": {},
-  "autoAdvance": "التقدم التلقائي",
-  "@autoAdvance": {},
-  "references": "المراجع",
-  "@references": {},
-  "quranReferences": "مراجع القرآن",
-  "@quranReferences": {},
-  "customizeYourReadingPreferences": "خصص تفضيلات القراءة الخاصة بك",
-  "@customizeYourReadingPreferences": {},
-  "quranVersion": "نسخة القرآن",
-  "@quranVersion": {},
   "reciter": "القارئ",
   "@reciter": {},
-  "repetitionReciter": "قارئ التكرار",
-  "@repetitionReciter": {},
   "theme": "المظهر",
   "@theme": {},
   "language": "اللغة",
   "@language": {},
   "tafsir": "التفسير",
   "@tafsir": {},
-  "selectQuranVersion": "اختر نسخة القرآن...",
-  "@selectQuranVersion": {},
   "selectReciter": "اختر القارئ...",
   "@selectReciter": {},
-  "selectRepetitionReciter": "اختر قارئ التكرار...",
-  "@selectRepetitionReciter": {},
-  "selectTheme": "اختر المظهر...",
-  "@selectTheme": {},
-  "selectTafsir": "اختر التفسير...",
-  "@selectTafsir": {},
   "arabic": "العربية",
   "@arabic": {},
   "uthmani":"عثماني",
@@ -434,14 +329,6 @@
   "@juzLabel": {},
   "search": "ابحث...",
   "@search": {},
-  "searchResultsCount": "نتائج البحث: {count}",
-  "@searchResultsCount": {
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "searchResultsDetailed": "{occurrences} نتيجة في {ayahs} آية",
   "@searchResultsDetailed": {
     "placeholders": {
@@ -459,14 +346,6 @@
   "@addHighlight": {},
   "removeHighlight": "إزالة التمييز",
   "@removeHighlight": {},
-  "showEnglishTranslation": "عرض الترجمة الإنجليزية",
-  "@showEnglishTranslation": {},
-  "showFrenchTranslation": "عرض الترجمة الفرنسية",
-  "@showFrenchTranslation": {},
-  "showArabicText": "عرض النص العربي",
-  "@showArabicText": {},
-  "showTafsir": "عرض التفسير",
-  "@showTafsir": {},
   "translationNotAvailable": "الترجمة غير متوفرة لهذه الآية.",
   "@translationNotAvailable": {},
   "close": "إغلاق",
@@ -489,13 +368,11 @@
   "@share": {},
   "copiedToClipboard": "تم النسخ إلى الحافظة",
   "@copiedToClipboard": {},
-  "resumeFromLastPosition": "استئناف من آخر موضع",
-  "@resumeFromLastPosition": {},
   "searchTooShort": "أدخل حرفين على الأقل",
   "@searchTooShort": {},
   "unknownError": "حدث خطأ ما",
-  "@unknownError": {}
-  ,"qiblaTitle": "اتجاه القبلة",
+  "@unknownError": {},
+  "qiblaTitle": "اتجاه القبلة",
   "@qiblaTitle": {},
   "qiblaRetry": "إعادة المحاولة",
   "@qiblaRetry": {},
@@ -521,10 +398,6 @@
   "@qiblaTipCalibrate": {},
   "qiblaTipInterference": "أبعد الجهاز عن المعادن/المغناطيس",
   "@qiblaTipInterference": {},
-  "testResultTitle": "نتيجة الاختبار",
-  "@testResultTitle": {},
-  "testCongratsTitle": "أحسنت!",
-  "@testCongratsTitle": {},
   "correctAnswersLabel": "الإجابات الصحيحة: {correct} / {total}",
   "@correctAnswersLabel": {"placeholders": {"correct": {"type": "int"}, "total": {"type": "int"}}},
   "percentageLabel": "النسبة المئوية: {percent}%",
@@ -561,12 +434,8 @@
   "@extraLarge": {},
   "verseRepeatCount": "عدد تكرار الآية",
   "@verseRepeatCount": {},
-  "verseRepeatCountHint": "كرر كل آية هذا العدد من المرات أثناء الحفظ بالتكرار.",
-  "@verseRepeatCountHint": {},
   "firstAyah": "الآية الأولى",
   "@firstAyah": {},
-  "lastAyah": "الآية الأخيرة",
-  "@lastAyah": {},
   "reciterRotationTitle": "تناوب القرّاء",
   "@reciterRotationTitle": {},
   "reciterRotationDesc": "تشغيل كل تكرار للآية بصوت قارئ مختلف بالترتيب، مع العودة إلى الأول عند الانتهاء.",
@@ -592,20 +461,10 @@
   "@arabicFont": {},
   "fontAmiri": "أميري قرآن",
   "@fontAmiri": {},
-  "fontScheherazade": "شهرزاد الجديدة",
-  "@fontScheherazade": {},
-  "fontLateef": "لطيف",
-  "@fontLateef": {}
-  ,"offlineAudioTitle": "الصوت دون اتصال",
+  "offlineAudioTitle": "الصوت دون اتصال",
   "@offlineAudioTitle": {},
   "reciterLabel": "القارئ: {name}",
   "@reciterLabel": {"placeholders": {"name": {"type": "String"}}},
-  "verseAudiosDownloaded": "تلاوات الآيات المحمّلة: {count} (الإجمالي ~6236)",
-  "@verseAudiosDownloaded": {"placeholders": {"count": {"type": "int"}}},
-  "fullSurahsDownloaded": "السور الكاملة المحمّلة: {count} / 114",
-  "@fullSurahsDownloaded": {"placeholders": {"count": {"type": "int"}}},
-  "downloadWhy": "لماذا التحميل؟ لتستمع بدون إنترنت.",
-  "@downloadWhy": {},
   "downloadingProgress": "جاري التنزيل {current} / {total}",
   "@downloadingProgress": {"placeholders": {"current": {"type": "int"}, "total": {"type": "int"}}},
   "downloadVerseAudios": "تنزيل تلاوات الآيات",
@@ -622,71 +481,37 @@
   "@downloadFullSurahNote": {},
   "name": "الاسم",
   "@name": {},
-  "enterYourName": "أدخل اسمك",
-  "@enterYourName": {}
-  ,"timeFormatTitle": "تنسيق الوقت",
+  "timeFormatTitle": "تنسيق الوقت",
   "@timeFormatTitle": {},
   "twelveHour": "‏12 ساعة",
   "@twelveHour": {},
   "twentyFourHour": "‏24 ساعة",
-  "@twentyFourHour": {}
-  ,"homeGreetingGeneric": "أهلا، ماذا تريد أن تفعل؟",
-  "@homeGreetingGeneric": {},
-  "homeGreetingNamed": "أهلا {name}، ماذا تريد أن تفعل؟",
-  "@homeGreetingNamed": {"placeholders": {"name": {"type": "String"}}}
-  ,"hijriHeader": "هجري",
+  "@twentyFourHour": {},
+  "hijriHeader": "هجري",
   "@hijriHeader": {},
   "gregorianHeader": "ميلادي",
-  "@gregorianHeader": {}
-  ,"audioInternetRequired": "لا يوجد اتصال بالإنترنت. يرجى الاتصال لتشغيل الصوت أو تنزيل الملفات.",
-  "@audioInternetRequired": {}
-  ,"editionArabicSimple":"العربية (بسيط)"
-  ,"@editionArabicSimple":{}
-  ,"editionArabicUthmani":"العربية (عثماني)"
-  ,"@editionArabicUthmani":{}
-  ,"editionArabicTajweed":"القرآن المجود"
-  ,"@editionArabicTajweed":{}
-  ,"editionEnglish":"الإنجليزية"
-  ,"@editionEnglish":{}
-  ,"editionFrench":"الفرنسية"
-  ,"@editionFrench":{}
-  ,"editionTafsir":"التفسير (الميسّر)"
-  ,"@editionTafsir":{}
-  ,"whyContactUs":"لماذا تتصل بنا؟"
-  ,"@whyContactUs":{}
-  ,"reportBugTitle":"الإبلاغ عن الأخطاء و طلب الميزات"
-  ,"@reportBugTitle":{}
-  ,"reportBugDesc":"أخبرنا عن الأخطاء والمشاكل أو الميزات التي تريد إضافتها في الإصدارات القادمة"
-  ,"@reportBugDesc":{}
-  ,"supportUsTitle":"ادعم مشروعنا"
-  ,"@supportUsTitle":{}
-  ,"supportUsDesc":"دعمك يساعد التطبيق على الاستمرار في العمل والعمل لصالح المسلمين حول العالم"
-  ,"@supportUsDesc":{}
-  ,"shareIdeaTitle":"شارك أفكارك"
-  ,"@shareIdeaTitle":{}
-  ,"shareIdeaDesc":"هل لديك فكرة لموقع إلكتروني أو تطبيق جوال أو أي مشروع تقني؟ شاركنا فكرتك، وسنساعدك في تحويلها إلى مشروع حقيقي"
-  ,"@shareIdeaDesc":{}
-  ,"getInTouch":"تواصل معنا"
-  ,"@getInTouch":{}
-  ,"readAutoFlip": "قلب الصفحة تلقائياً"
-  ,"@readAutoFlip": {}
-  ,"readAutoFlipDesc": "الانتقال للصفحة التالية عند انتهاء التلاوة."
-  ,"@readAutoFlipDesc": {}
-  ,"chooseReciter": "اختر القارئ"
-  ,"@chooseReciter": {}
-  ,"chooseReciterDesc": "اختر القارئ المفضل لديك."
-  ,"@chooseReciterDesc": {}
-  ,"reciterNotCompatible": "القارئ غير متوافق"
-  ,"@reciterNotCompatible": {}
-  ,"reciterNotAvailableForFullSurahs": "الملفات الصوتية للسور الكاملة غير متوفرة لهذا القارئ. يرجى اختيار قارئ آخر."
-  ,"@reciterNotAvailableForFullSurahs": {}
-  ,"reciterNotAvailableForVerses": "الملفات الصوتية (آية بآية) غير متوفرة للقارئ {reciterName}. يرجى اختيار قارئ آخر."
-  ,"@reciterNotAvailableForVerses": {
+  "@gregorianHeader": {},
+  "audioInternetRequired": "لا يوجد اتصال بالإنترنت. يرجى الاتصال لتشغيل الصوت أو تنزيل الملفات.",
+  "@audioInternetRequired": {},
+  "editionArabicTajweed":"القرآن المجود",
+  "@editionArabicTajweed":{},
+  "readAutoFlip": "قلب الصفحة تلقائياً",
+  "@readAutoFlip": {},
+  "readAutoFlipDesc": "الانتقال للصفحة التالية عند انتهاء التلاوة.",
+  "@readAutoFlipDesc": {},
+  "chooseReciter": "اختر القارئ",
+  "@chooseReciter": {},
+  "reciterNotCompatible": "القارئ غير متوافق",
+  "@reciterNotCompatible": {},
+  "reciterNotAvailableForFullSurahs": "الملفات الصوتية للسور الكاملة غير متوفرة لهذا القارئ. يرجى اختيار قارئ آخر.",
+  "@reciterNotAvailableForFullSurahs": {},
+  "reciterNotAvailableForVerses": "الملفات الصوتية (آية بآية) غير متوفرة للقارئ {reciterName}. يرجى اختيار قارئ آخر.",
+  "@reciterNotAvailableForVerses": {
     "placeholders": {
       "reciterName": {}
     }
-  }
-  ,"rangeRepeatCount": "عدد تكرار النطاق",
+  },
+  "rangeRepeatCount": "عدد تكرار النطاق",
   "@rangeRepeatCount": {},
   "startAtLastPage": "البدء من آخر صفحة",
   "@startAtLastPage": {},
@@ -696,16 +521,6 @@
   "@alwaysStartFromBeginning": {},
   "alwaysStartFromBeginningDesc": "عند التفعيل، يبدأ التشغيل دائماً من أول آية. عند التعطيل، يستأنف من آخر موضع.",
   "@alwaysStartFromBeginningDesc": {},
-  "homeGreetingGeneric": "أهلا بك في تطبيق قرآني",
-  "@homeGreetingGeneric": {},
-  "homeGreetingNamed": "أهلا بك يا {userName} في تطبيق قرآني",
-  "@homeGreetingNamed": {
-    "placeholders": {
-      "userName": {
-        "type": "String"
-      }
-    }
-  },
   "downloadingMushaf": "جاري تنزيل المصحف...",
   "@downloadingMushaf": {},
   "downloadMushafPdf": "تنزيل مصحف PDF",
@@ -840,16 +655,13 @@
   "@chapterStartNotFound": {},
   "generalHadiths": "أحاديث عامة",
   "chapters": "الفصول",
-  "searchButton": "ابحث",
   "allChapters": "كل الفصول",
   "goButton": "اذهب",
   "newsAndNotifications": "أخبار وإشعارات",
-  "noNewsMessage": "لا توجد حالياً أي أخبار أو إشعارات",
   "bookUnavailableMessage": "يبدو أن الكتاب غير متوفر حاليا، عد لاحقا وسنحرص على توفره ان شاء الله",
   "downloadOurApp": "حمل تطبيقنا",
   "googlePlay": "جوجل بلاي",
   "appStore": "آب ستور",
-  "@searchButton": {},
   "@generalHadiths": {},
   "searchLanguageArabic": "النص العربي",
   "@searchLanguageArabic": {},
@@ -1056,8 +868,6 @@
   "@repairCompleted": {"placeholders": {"count": {"type": "int"}}},
   "integrityAllVerified": "تم التحقق من جميع السور الـ {total}",
   "@integrityAllVerified": {"placeholders": {"total": {"type": "int"}}},
-  "comingSoonFeature": "{feature} قريباً!",
-  "@comingSoonFeature": {"placeholders": {"feature": {"type": "String"}}},
   "errorLoadingBook": "تعذّر تحميل الكتاب: {error}",
   "@errorLoadingBook": {"placeholders": {"error": {"type": "String"}}},
   "noChaptersAvailable": "لا توجد فصول متاحة",
@@ -1104,18 +914,8 @@
   "@wirdStart": {},
   "wirdResume": "متابعة",
   "@wirdResume": {},
-  "wirdViewAll": "عرض كل الأوراد",
-  "@wirdViewAll": {},
-  "wirdViewAllWithCount": "عرض كل الأوراد ({count})",
-  "@wirdViewAllWithCount": {
-    "placeholders": {
-      "count": {"type": "int"}
-    }
-  },
   "wirdAllScreenTitle": "كل الأوراد",
   "@wirdAllScreenTitle": {},
-  "wirdAllScreenSubtitle": "إدارة جميع الأوراد المجدولة",
-  "@wirdAllScreenSubtitle": {},
   "wirdAllEmptyTitle": "لم تُنشئ أي ورد بعد",
   "@wirdAllEmptyTitle": {},
   "wirdFilterToday": "اليوم",

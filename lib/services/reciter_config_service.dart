@@ -193,8 +193,6 @@ class ReciterConfigService {
     return results;
   }
 
-
-
   /// Get a specific reciter by code
   static Future<ReciterConfig?> getReciterByCode(String code) async {
     await loadReciters();
@@ -362,36 +360,6 @@ class ReciterConfigService {
     return reciterMap?[code];
   }
 
-  /// Get reciter display name
-  static Future<String> getReciterDisplayName(String code, String langCode) async {
-    final reciter = await getReciter(code);
-    return reciter?.getDisplayName(langCode) ?? code;
-  }
-
-  /// Get ayahs path for reciter
-  static Future<String?> getAyahsPath(String code) async {
-    final reciter = await getReciter(code);
-    return reciter?.ayahsPath;
-  }
-
-  /// Get surahs path for reciter
-  static Future<String?> getSurahsPath(String code) async {
-    final reciter = await getReciter(code);
-    return reciter?.surahsPath;
-  }
-
-  /// Check if reciter has full surahs available
-  static Future<bool> hasFullSurahs(String code) async {
-    final reciter = await getReciter(code);
-    return reciter?.surahsPath != null;
-  }
-
-  /// Get list of reciter codes
-  static Future<List<String>> getReciterCodes() async {
-    final reciters = await getReciters();
-    return reciters.map((r) => r.code).toList();
-  }
-
   /// Get reciters with full surahs only (for Listen to Quran)
   /// Filters: surahsPath must be non-null and non-empty
   static Future<List<ReciterConfig>> getRecitersWithFullSurahs() async {
@@ -429,15 +397,4 @@ class ReciterConfigService {
     ).toList();
   }
 
-  /// Get reciters with verse-by-verse only
-  static Future<List<ReciterConfig>> getRecitersWithVerses() async {
-    final reciters = await getReciters();
-    return reciters.where((r) => r.ayahsPath.isNotEmpty).toList();
-  }
-
-  /// Clear cache (useful for testing or reloading)
-  static void clearCache() {
-    _reciters = null;
-    reciterMap = null;
-  }
 }

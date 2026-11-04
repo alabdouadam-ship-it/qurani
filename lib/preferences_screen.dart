@@ -232,7 +232,8 @@ class _PreferencesScreenState extends ConsumerState<PreferencesScreen> {
                 initialValue: _selectedLanguage != null ? _getLanguageNameFromCode(_selectedLanguage!, context) : l10n.arabic,
                 items: _getLanguageOptions(context),
                 onChanged: (String? value) async {
-                  final newLangCode = _getLanguageCode(value!, context);
+                  if (value == null) return;
+                  final newLangCode = _getLanguageCode(value, context);
                   setState(() {
                     _selectedLanguage = newLangCode;
                   });

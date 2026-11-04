@@ -442,14 +442,15 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
       
       // Calculate share position origin for iPad
       if (!mounted) return;
-      final box = context.findRenderObject() as RenderBox?;
+      final box = context.findRenderObject();
+      if (box is! RenderBox || !box.hasSize) return;
       
       // ignore: deprecated_member_use
       await Share.shareXFiles(
         [XFile(file.path)],
         text: title,
         subject: title,
-        sharePositionOrigin: box!.localToGlobal(Offset.zero) & box.size,
+        sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size,
       );
     } catch (_) {
       // ignore share or generation failures silently for now

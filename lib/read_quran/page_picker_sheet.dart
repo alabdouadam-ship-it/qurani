@@ -12,125 +12,137 @@ Future<int?> showPagePickerSheet(
   required int currentPage,
   required int totalPages,
 }) async {
-  final l10n = AppLocalizations.of(context)!;
-  final initialIndex = currentPage - 1;
-  final textController = TextEditingController(text: currentPage.toString());
-  // Hoisted outside the builder so we can dispose it after the sheet closes.
-  // Previously constructed inline inside CupertinoPicker, which meant each
-  // sheet-open leaked one controller (it was never referenced after the
-  // builder returned, so Dart's GC couldn't reclaim the listener chain).
-  final pickerController =
-      FixedExtentScrollController(initialItem: initialIndex);
-
-  final selected = await showModalBottomSheet<int>(
+  if (totalPages < 1) return null;
+  return showModalBottomSheet<int>(
     context: context,
+    isScrollControlled: true,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
-    builder: (sheetContext) {
-      int tempIndex = initialIndex;
-      return SafeArea(
-        child: SizedBox(
-          height: 380,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Text(
-                  l10n.goToPage,
-                  style: Theme.of(sheetContext)
-                      .textTheme
-                      .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
-                child: TextField(
-                  controller: textController,
-                  keyboardType: TextInputType.number,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(sheetContext).textTheme.titleMedium,
-                  decoration: InputDecoration(
-                    labelText: l10n.pageNumber,
-                    hintText: '1-$totalPages',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 8),
-                    isDense: true,
-                  ),
-                  onChanged: (value) {
-                    final page = int.tryParse(value);
-                    if (page != null && page >= 1 && page <= totalPages) {
-                      tempIndex = page - 1;
-                    }
-                  },
-                ),
-              ),
-              const SizedBox(height: 4),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24),
-                child: Divider(height: 1),
-              ),
-              const SizedBox(height: 4),
-              SizedBox(
-                height: 200,
-                child: CupertinoPicker(
-                  itemExtent: 40,
-                  scrollController: pickerController,
-                  onSelectedItemChanged: (value) {
-                    tempIndex = value;
-                    textController.text = (value + 1).toString();
-                  },
-                  children: List.generate(
-                    totalPages,
-                    (i) => Center(
-                      child: Text(
-                        '${i + 1}',
-                        style: Theme.of(sheetContext).textTheme.titleLarge,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TextButton(
-                      onPressed: () => Navigator.pop(sheetContext),
-                      child: Text(l10n.cancel),
-                    ),
-                    FilledButton(
-                      onPressed: () {
-                        final page = int.tryParse(textController.text);
-                        if (page != null &&
-                            page >= 1 &&
-                            page <= totalPages) {
-                          Navigator.pop<int>(sheetContext, page);
-                        } else {
-                          Navigator.pop<int>(sheetContext, tempIndex + 1);
-                        }
-                      },
-                      child: Text(l10n.go),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
+    builder: (_) => _PagePicker(
+        currentPage: currentPage.clamp(1, totalPages), totalPages: totalPages),
   );
+}
 
-  textController.dispose();
-  pickerController.dispose();
-  return selected;
+class _PagePicker extends StatefulWidget {
+  const _PagePicker({required this.currentPage, required this.totalPages});
+  final int currentPage;
+  final int totalPages;
+
+  @override
+  State<_PagePicker> createState() => _PagePickerState();
+}
+
+class _PagePickerState extends State<_PagePicker> {
+  late int tempIndex = widget.currentPage - 1;
+  late final textController =
+      TextEditingController(text: widget.currentPage.toString());
+  late final pickerController =
+      FixedExtentScrollController(initialItem: tempIndex);
+
+  @override
+  void dispose() {
+    textController.dispose();
+    pickerController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final totalPages = widget.totalPages;
+    return SafeArea(
+      child: SizedBox(
+        height: 380,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Text(
+                l10n.goToPage,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium
+                    ?.copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+              child: TextField(
+                controller: textController,
+                keyboardType: TextInputType.number,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleMedium,
+                decoration: InputDecoration(
+                  labelText: l10n.pageNumber,
+                  hintText: '1-$totalPages',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  isDense: true,
+                ),
+                onChanged: (value) {
+                  final page = int.tryParse(value);
+                  if (page != null && page >= 1 && page <= totalPages) {
+                    tempIndex = page - 1;
+                  }
+                },
+              ),
+            ),
+            const SizedBox(height: 4),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Divider(height: 1),
+            ),
+            const SizedBox(height: 4),
+            Expanded(
+              child: CupertinoPicker(
+                itemExtent: 40,
+                scrollController: pickerController,
+                onSelectedItemChanged: (value) {
+                  tempIndex = value;
+                  textController.text = (value + 1).toString();
+                },
+                children: List.generate(
+                  totalPages,
+                  (i) => Center(
+                    child: Text(
+                      '${i + 1}',
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(
+                    onPressed: () => Navigator.pop(context),
+                    child: Text(l10n.cancel),
+                  ),
+                  FilledButton(
+                    onPressed: () {
+                      final page = int.tryParse(textController.text);
+                      if (page != null && page >= 1 && page <= totalPages) {
+                        Navigator.pop<int>(context, page);
+                      } else {
+                        Navigator.pop<int>(context, tempIndex + 1);
+                      }
+                    },
+                    child: Text(l10n.go),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }

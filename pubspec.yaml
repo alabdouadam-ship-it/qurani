@@ -43,7 +43,7 @@ dependencies:
   in_app_update: ^4.2.2
   webview_flutter: ^4.7.0
   webview_flutter_android: ^3.15.0
-  pdfrx: ^2.2.18 
+  pdfrx: 2.4.8
   wakelock_plus: ^1.2.8
 
   # --- Notifications & Alarms ---
@@ -57,7 +57,6 @@ dependencies:
   url_launcher: ^6.3.1
   share_plus: ^12.0.1
   uuid: ^4.5.2
-  screenshot: ^3.0.0
   # [FIXED] Updated to match your Flutter SDK requirement
   intl: ^0.20.2                
   pdf: ^3.10.7
@@ -85,7 +84,7 @@ dev_dependencies:
   # Used only by tool/check_16kb_alignment.dart to read .so entries out of a
   # built .aab/.apk. Already present transitively; declared here so the tool
   # imports a package this project actually depends on.
-  archive: ^4.0.7
+  archive: 4.6.0
 
 flutter:
   uses-material-design: true

@@ -18,15 +18,6 @@ class ResponsiveConfig {
     return MediaQuery.of(context).size.width < 360;
   }
 
-  static bool isMediumScreen(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    return width >= 360 && width < 600;
-  }
-
-  static bool isLargeScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= 600;
-  }
-
   static bool isTablet(BuildContext context) {
     return MediaQuery.of(context).size.width >= 768;
   }
@@ -39,33 +30,6 @@ class ResponsiveConfig {
   static bool isLandscapeTablet(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return size.width >= 960 && size.width > size.height;
-  }
-
-  /// Recommended grid column count for content lists (surahs, hadith books,
-  /// options tiles). Callers may cap it via [maxColumns] when their tile
-  /// aspect ratio doesn't allow 5+ columns.
-  static int getGridColumnCount(BuildContext context, {int? maxColumns}) {
-    final width = MediaQuery.of(context).size.width;
-    int columns;
-    if (width >= 1400) {
-      columns = 6;
-    } else if (isLandscapeTablet(context)) {
-      columns = 4;
-    } else if (width >= 768) {
-      columns = 4;
-    } else if (width >= 600) {
-      columns = 3;
-    } else {
-      columns = 2;
-    }
-    if (maxColumns != null && columns > maxColumns) columns = maxColumns;
-    return columns;
-  }
-
-  static double getAppBarHeight(BuildContext context) {
-    if (isSmallScreen(context)) return 48.0;
-    if (isTablet(context)) return 64.0;
-    return 56.0;
   }
 
   static double getFontSize(BuildContext context, double baseSize) {

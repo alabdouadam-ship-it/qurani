@@ -9,31 +9,51 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
+  String passageVerseCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count versets',
+      one: '1 verset',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get passageStartSurah => 'Sourate de début';
+
+  @override
+  String get passageStartVerse => 'Verset de début';
+
+  @override
+  String get passageEndSurah => 'Sourate de fin';
+
+  @override
+  String get passageEndVerse => 'Verset de fin';
+
+  @override
+  String get rememberPassage => 'Mémoriser le dernier passage';
+
+  @override
+  String get rememberPassageHint => 'Rouvrir ce passage la prochaine fois';
+
+  @override
+  String get applyPassage => 'Appliquer';
+
+  @override
+  String get passageLoadError => 'Impossible de charger ce passage';
+
+  @override
   String get settings => 'Paramètres';
-
-  @override
-  String get quraniSettings => 'Paramètres Qurani';
-
-  @override
-  String get customizeYourExperience => 'Personnalisez votre expérience';
 
   @override
   String get about => 'À propos';
 
   @override
-  String get appInformation => 'Informations sur l\'application';
-
-  @override
   String get help => 'Aide';
 
   @override
-  String get getAssistance => 'Obtenir de l\'assistance';
-
-  @override
   String get preferences => 'Préférences';
-
-  @override
-  String get quranPreferences => 'Préférences du Coran';
 
   @override
   String get shareApp => 'Partager l\'application';
@@ -42,9 +62,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String shareAppMessage(Object appUrl) {
     return 'Découvrez Qurani, l’application qui vous aide à interagir avec le Coran : écoute, lecture, mémorisation par répétition, tasbih numérique, direction de la qibla, tests de mémorisation et plus encore. L’application prend en charge l’arabe, l’anglais et le français, avec plusieurs thèmes de couleurs. Téléchargez-la sur Google Play : $appUrl';
   }
-
-  @override
-  String get tellOthers => 'Parlez-en aux autres';
 
   @override
   String get updateAvailable => 'Une nouvelle version de Qurani est disponible';
@@ -60,39 +77,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get termsConditions => 'Conditions générales';
-
-  @override
-  String get supportUs => 'Soutenez-nous';
-
-  @override
-  String get contactUs => 'Contactez-nous';
-
-  @override
-  String get supportIntro => 'Nous dépendons de l’hébergement et de services tiers pour assurer la disponibilité de Qurani. Votre soutien facultatif nous aide à maintenir et améliorer l’application.';
-
-  @override
-  String get donateViaPayPal => 'Don via PayPal';
-
-  @override
-  String get paypalEmail => 'Email PayPal';
-
-  @override
-  String get donateViaCrypto => 'Don via USDT';
-
-  @override
-  String get usdtAddress => 'Adresse USDT';
-
-  @override
-  String get watchAd => 'Soutenir en regardant une publicité (bientôt)';
-
-  @override
-  String get contactViaWhatsApp => 'WhatsApp';
-
-  @override
-  String get contactViaEmail => 'Email';
-
-  @override
-  String get contactViaWhatsAppGroup => 'Groupe WhatsApp';
 
   @override
   String get copy => 'Copier';
@@ -131,12 +115,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get stopAdhan => 'Arrêter l\'adhan';
 
   @override
-  String get adhanStoppedMsg => 'Adhan arrêté';
-
-  @override
-  String get adjustTime => 'Ajuster l\'heure';
-
-  @override
   String get prayerAdjustmentTooltip => 'Ajuster l\'heure de la prière';
 
   @override
@@ -156,15 +134,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get shareAyah => 'Partager le verset';
 
   @override
-  String get shareAudio => 'Partager le lien audio';
-
-  @override
-  String get shareText => 'Partager le texte';
-
-  @override
-  String get shareImage => 'Partager l\'image';
-
-  @override
   String prayerAdjustmentChange(Object value) {
     return 'Ajustement : $value';
   }
@@ -181,36 +150,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get prayerAdjustmentReset => 'Réinitialiser l\'ajustement';
 
   @override
-  String get plus10Min => '+10 min';
-
-  @override
-  String get minus10Min => '-10 min';
-
-  @override
-  String get plus1Min => '+1 min';
-
-  @override
-  String get minus1Min => '-1 min';
-
-  @override
-  String get advancedOptions => 'Options avancées';
-
-  @override
-  String get calculationMethod => 'Méthode de calcul';
-
-  @override
-  String get methodMWL => 'Ligue du Monde Musulman';
-
-  @override
-  String get methodUmmAlQura => 'Oumm al-Qura (La Mecque)';
-
-  @override
-  String get methodEgyptian => 'Autorité générale égyptienne';
-
-  @override
-  String get apiUnavailableUsingLocal => 'Service en ligne indisponible. Utilisation du calcul local.';
-
-  @override
   String get prayerMethodSectionTitle => 'Méthode de calcul des heures de prière';
 
   @override
@@ -218,9 +157,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get prayerMethodAuto => 'Automatique (selon l\'emplacement)';
-
-  @override
-  String get prayerMethodChanged => 'Mise à jour des heures de prière...';
 
   @override
   String get prayerMethodChangedDesc => 'Méthode de calcul modifiée, mise à jour des heures';
@@ -295,22 +231,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get method23 => 'Ministère des Waqfs et des Affaires Islamiques, Jordanie';
 
   @override
-  String get prayerTimesSettings => 'Paramètres des heures de prière';
-
-  @override
   String get adhanSound => 'Son de l\'adhan';
-
-  @override
-  String get adhanSoundOption1 => 'Adhan 1';
-
-  @override
-  String get adhanSoundOption2 => 'Adhan 2';
-
-  @override
-  String get adhanSoundOption3 => 'Adhan 3';
-
-  @override
-  String get dataProtection => 'Protection des données';
 
   @override
   String get aboutTitle => 'À propos de Qurani';
@@ -327,40 +248,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get optionsTitle => 'Mon coran';
 
   @override
-  String get quraniFeatures => 'Que voulez vous faire?';
-
-  @override
-  String get additionalFeaturesAndTools => 'Fonctionnalités et outils supplémentaires';
-
-  @override
   String get bookmarks => 'Marque-pages';
-
-  @override
-  String get savedVerses => 'Versets sauvegardés';
 
   @override
   String get history => 'Historique';
 
   @override
-  String get recentActivity => 'Activité récente';
-
-  @override
-  String get favorites => 'Favoris';
-
-  @override
-  String get likedContent => 'Contenu aimé';
-
-  @override
   String get downloads => 'Téléchargements';
 
   @override
-  String get offlineContent => 'Contenu hors ligne';
-
-  @override
   String get memorizationTest => 'Test de mémorisation';
-
-  @override
-  String get memorizationTestSubtitle => 'Testez votre mémorisation';
 
   @override
   String get repetitionMemorization => 'Mémorisation par répétition';
@@ -387,34 +284,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get pleaseSelectSurah => 'Sélectionner une sourate';
 
   @override
-  String get surahTranslationsNote => 'Les noms sont affichés dans votre langue sélectionnée';
-
-  @override
   String get searchSurah => 'Rechercher une sourate...';
 
   @override
   String get repeatSurah => 'Répéter';
 
   @override
-  String get autoAdvance => 'Avance automatique';
-
-  @override
-  String get references => 'Références';
-
-  @override
-  String get quranReferences => 'Références du Coran';
-
-  @override
-  String get customizeYourReadingPreferences => 'Personnalisez vos préférences de lecture';
-
-  @override
-  String get quranVersion => 'Version du Coran';
-
-  @override
   String get reciter => 'Récitateur';
-
-  @override
-  String get repetitionReciter => 'Récitateur de répétition';
 
   @override
   String get theme => 'Thème';
@@ -426,19 +302,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tafsir => 'Tafsir';
 
   @override
-  String get selectQuranVersion => 'Sélectionner la version du Coran...';
-
-  @override
   String get selectReciter => 'Sélectionner un récitateur...';
-
-  @override
-  String get selectRepetitionReciter => 'Sélectionner un récitateur de répétition...';
-
-  @override
-  String get selectTheme => 'Sélectionner un thème...';
-
-  @override
-  String get selectTafsir => 'Sélectionner un Tafsir...';
 
   @override
   String get arabic => 'Arabe';
@@ -617,11 +481,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get search => 'Rechercher...';
 
   @override
-  String searchResultsCount(int count) {
-    return 'Résultats de recherche : $count';
-  }
-
-  @override
   String searchResultsDetailed(int occurrences, int ayahs) {
     return '$occurrences résultats dans $ayahs versets';
   }
@@ -634,18 +493,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get removeHighlight => 'Retirer la surbrillance';
-
-  @override
-  String get showEnglishTranslation => 'Afficher la traduction anglaise';
-
-  @override
-  String get showFrenchTranslation => 'Afficher la traduction française';
-
-  @override
-  String get showArabicText => 'Afficher le texte arabe';
-
-  @override
-  String get showTafsir => 'Afficher le tafsir';
 
   @override
   String get translationNotAvailable => 'Traduction indisponible pour ce verset.';
@@ -679,9 +526,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get copiedToClipboard => 'Copié dans le presse-papiers';
-
-  @override
-  String get resumeFromLastPosition => 'Reprendre à partir de la dernière position';
 
   @override
   String get searchTooShort => 'Entrez au moins 2 caractères';
@@ -729,12 +573,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get qiblaTipInterference => 'Évitez les interférences métalliques/magnétiques';
-
-  @override
-  String get testResultTitle => 'Résultat du test';
-
-  @override
-  String get testCongratsTitle => 'Bien joué !';
 
   @override
   String correctAnswersLabel(int correct, int total) {
@@ -797,13 +635,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get verseRepeatCount => 'Nombre de répétitions du verset';
 
   @override
-  String get verseRepeatCountHint => 'Répétez chaque verset ce nombre de fois pendant la mémorisation.';
-
-  @override
   String get firstAyah => 'Premier verset';
-
-  @override
-  String get lastAyah => 'Dernier verset';
 
   @override
   String get reciterRotationTitle => 'Rotation de récitateurs';
@@ -838,31 +670,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get fontAmiri => 'Amiri Quran';
 
   @override
-  String get fontScheherazade => 'Scheherazade New';
-
-  @override
-  String get fontLateef => 'Lateef';
-
-  @override
   String get offlineAudioTitle => 'Audio hors ligne';
 
   @override
   String reciterLabel(String name) {
     return 'Récitateur : $name';
   }
-
-  @override
-  String verseAudiosDownloaded(int count) {
-    return 'Audios des versets téléchargés : $count (total ~6236)';
-  }
-
-  @override
-  String fullSurahsDownloaded(int count) {
-    return 'Sourates complètes téléchargées : $count / 114';
-  }
-
-  @override
-  String get downloadWhy => 'Pourquoi télécharger ? Pour écouter sans internet.';
 
   @override
   String downloadingProgress(int current, int total) {
@@ -891,9 +704,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get name => 'Nom';
 
   @override
-  String get enterYourName => 'Entrez votre nom';
-
-  @override
   String get timeFormatTitle => 'Format de l\'heure';
 
   @override
@@ -901,14 +711,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get twentyFourHour => '24h';
-
-  @override
-  String get homeGreetingGeneric => 'Bienvenue sur l\'application Qurani';
-
-  @override
-  String homeGreetingNamed(String userName) {
-    return 'Bienvenue $userName sur l\'application Qurani';
-  }
 
   @override
   String get hijriHeader => 'Hégirien';
@@ -920,46 +722,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get audioInternetRequired => 'Pas de connexion Internet. Veuillez vous connecter pour lire l’audio ou télécharger les fichiers.';
 
   @override
-  String get editionArabicSimple => 'Arabe (Simple)';
-
-  @override
-  String get editionArabicUthmani => 'Arabe (Othmani)';
-
-  @override
   String get editionArabicTajweed => 'Quran Tajweed';
-
-  @override
-  String get editionEnglish => 'Anglais';
-
-  @override
-  String get editionFrench => 'Français';
-
-  @override
-  String get editionTafsir => 'Tafsir (Muyassar)';
-
-  @override
-  String get whyContactUs => 'Pourquoi nous contacter ?';
-
-  @override
-  String get reportBugTitle => 'Signaler des bugs et demander des fonctionnalités';
-
-  @override
-  String get reportBugDesc => 'Dites-nous les bugs, les problèmes ou les fonctionnalités que vous aimeriez dans les versions futures';
-
-  @override
-  String get supportUsTitle => 'Soutenir notre projet';
-
-  @override
-  String get supportUsDesc => 'Votre soutien aide l\'application à continuer de fonctionner et de bénéficier à la communauté musulmane mondiale';
-
-  @override
-  String get shareIdeaTitle => 'Partagez vos idées';
-
-  @override
-  String get shareIdeaDesc => 'Avez-vous une idée pour un site web, une application mobile ou tout autre projet technologique ? Partagez-la avec nous, et nous vous aiderons à la transformer en un projet réel.';
-
-  @override
-  String get getInTouch => 'Nous contacter';
 
   @override
   String get readAutoFlip => 'Tourner automatiquement la page';
@@ -969,9 +732,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get chooseReciter => 'Choisir le récitateur';
-
-  @override
-  String get chooseReciterDesc => 'Sélectionnez votre récitateur préféré.';
 
   @override
   String get reciterNotCompatible => 'Récitateur non compatible';
@@ -1191,9 +951,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get chapters => 'Chapitres';
 
   @override
-  String get searchButton => 'Rechercher';
-
-  @override
   String get allChapters => 'Tous les Chapitres';
 
   @override
@@ -1201,9 +958,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get newsAndNotifications => 'Actualités et Notifications';
-
-  @override
-  String get noNewsMessage => 'Aucune actualité ou notification pour le moment';
 
   @override
   String get bookUnavailableMessage => 'Il semble que le livre ne soit pas disponible pour le moment, veuillez revenir plus tard, nous nous efforcerons de le rendre disponible.';
@@ -1502,11 +1256,6 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String comingSoonFeature(String feature) {
-    return '$feature arrive bientôt !';
-  }
-
-  @override
   String errorLoadingBook(String error) {
     return 'Échec du chargement du livre : $error';
   }
@@ -1578,18 +1327,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get wirdResume => 'Reprendre';
 
   @override
-  String get wirdViewAll => 'Voir tous les wirds';
-
-  @override
-  String wirdViewAllWithCount(int count) {
-    return 'Voir tous les wirds ($count)';
-  }
-
-  @override
   String get wirdAllScreenTitle => 'Tous les wirds';
-
-  @override
-  String get wirdAllScreenSubtitle => 'Gérer tous les wirds programmés';
 
   @override
   String get wirdAllEmptyTitle => 'Aucun wird créé pour l’instant';

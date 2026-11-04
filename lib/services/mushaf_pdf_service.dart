@@ -47,10 +47,6 @@ class MushafPdfService {
     return p.join(dirPath, type.fileName);
   }
   
-  Future<bool> isDownloaded(MushafType type) async {
-    final path = await getPdfPath(type);
-    return File(path).existsSync();
-  }
   
   Future<void> downloadMushaf(
     MushafType type, {
@@ -108,13 +104,6 @@ class MushafPdfService {
     }
   }
   
-  Future<void> deleteMushaf(MushafType type) async {
-    final path = await getPdfPath(type);
-    final file = File(path);
-    if (await file.exists()) {
-      await file.delete();
-    }
-  }
   
   /// Helper to get what page offset might be needed
   /// Usually standard PDFs have some cover pages.

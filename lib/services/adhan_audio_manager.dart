@@ -31,7 +31,6 @@ class AdhanAudioManager {
   // --- Engines ------------------------------------------------------------
   static final AudioPlayer _foregroundPlayer = AudioPlayer();
   static const MethodChannel _nativeChannel = MethodChannel('qurani/adhan');
-  static final Set<AudioPlayer> _backgroundPlayers = {};
 
   // --- Session state (local to current isolate) --------------------------
   static StreamSubscription<PlayerState>? _foregroundSub;
@@ -250,17 +249,10 @@ class AdhanAudioManager {
   /// Stop all engines. Safe to call from either isolate and from the
   /// notification-tap handler.
   static Future<void> stopAllAdhanPlayback() async {
-    // Stop just_audio foreground + any registered background players.
+    // Stop the just_audio player owned by this isolate.
     try {
       await _foregroundPlayer.stop();
     } catch (_) {}
-    for (final player in _backgroundPlayers.toList()) {
-      try {
-        await player.stop();
-        await player.dispose();
-      } catch (_) {}
-      _backgroundPlayers.remove(player);
-    }
     // Stop native MediaPlayer.
     try {
       await _nativeChannel.invokeMethod('stopAdhan');
@@ -294,7 +286,7 @@ class AdhanAudioManager {
       // treat it as orphaned from a dead background isolate. This catches
       // the case where OEM ROMs serve a stale SharedPreferences disk cache
       // despite the reload() above.
-      if (flag && !_foregroundPlayer.playing && _backgroundPlayers.isEmpty) {
+      if (flag && !_foregroundPlayer.playing) {
         final age = now - startMs;
         if (age > 30000) {
           Log.w('AdhanAudioManager',
@@ -310,61 +302,6 @@ class AdhanAudioManager {
     } catch (e, st) {
       Log.w('AdhanAudioManager', 'syncPlayingStateFromPrefs failed', e, st);
     }
-  }
-
-  // --- Backward-compatible shims ----------------------------------------
-
-  /// Legacy entry point. Prefer [playAdhan].
-  static Future<void> playForegroundAdhan(String prayerId) async {
-    await playAdhan(prayerId);
-  }
-
-  /// Legacy entry point. Prefer [stopAllAdhanPlayback].
-  static Future<void> stopForegroundAdhan() async {
-    try {
-      await _foregroundPlayer.stop();
-    } catch (_) {}
-    // Don't clear the flag here unilaterally — native or background players
-    // may still be running. `stopAllAdhanPlayback` is the safe version.
-  }
-
-  /// Legacy entry point. Prefer [playAdhan] — this now also tracks state.
-  static Future<bool> tryPlayNativeFile(
-    String filePath, {
-    double? volumeOverride,
-  }) async {
-    _ensureNativeCallbackHandler();
-    final volume =
-        (volumeOverride ?? PreferencesService.getAdhanVolume()).clamp(0.0, 1.0);
-    return _tryNative(filePath, volume);
-  }
-
-  /// Legacy entry point. Prefer [stopAllAdhanPlayback].
-  static Future<void> stopNativeAdhan() async {
-    try {
-      await _nativeChannel.invokeMethod('stopAdhan');
-    } catch (_) {}
-  }
-
-  /// Legacy helper used by the background alarm isolate's fallback path.
-  /// Registers [player] so [stopAllAdhanPlayback] can tear it down, and
-  /// clears the playing flag when playback completes.
-  static void registerBackgroundPlayer(AudioPlayer player) {
-    _backgroundPlayers.add(player);
-    player.playerStateStream
-        .firstWhere((s) => s.processingState == ProcessingState.completed)
-        .then((_) async {
-      _backgroundPlayers.remove(player);
-      try {
-        await player.dispose();
-      } catch (_) {}
-      // Last player done → session ended.
-      if (_backgroundPlayers.isEmpty) {
-        await _markStopped();
-      }
-    }).catchError((_) {
-      _backgroundPlayers.remove(player);
-    });
   }
 
   // --- Privates ---------------------------------------------------------

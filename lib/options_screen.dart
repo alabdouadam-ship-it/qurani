@@ -11,7 +11,7 @@ import 'widgets/modern_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'memorization_test_screen.dart';
 import 'qibla_screen.dart';
-import 'repetition_memorization_screen.dart';
+import 'repetition_range_screen.dart';
 import 'listen_quran_screen.dart';
 import 'read_quran_screen.dart';
 import 'tasbeeh_screen.dart';
@@ -446,7 +446,7 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
       case 'memorization_test':
         return const MemorizationTestScreen();
       case 'repetition_memorization':
-        return const RepetitionMemorizationScreen();
+        return const RepetitionRangeScreen();
       case 'listen_quran':
         return const ListenQuranScreen();
       case 'read_quran':
