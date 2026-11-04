@@ -35,7 +35,7 @@ export type HiddenReason =
 
 /** Only the fields that affect language visibility. */
 export type VisibilityInput = {
-  target_languages: string[] | null;
+  target_languages: unknown[] | null;
   category_ar: string | null;
   category_en: string | null;
   category_fr: string | null;
@@ -73,7 +73,12 @@ export function hasAnyCategory(row: VisibilityInput): boolean {
  * `""`, and the warning has to be right while typing.
  */
 export function newsVisibility(row: VisibilityInput): Visibility {
-  const targeted = (row.target_languages ?? [])
+  // Invalid targeting must never turn into "visible to everyone".
+  if (row.target_languages != null &&
+      (!Array.isArray(row.target_languages) || row.target_languages.some(l => typeof l !== "string"))) {
+    return { visible: [], hidden: NEWS_LANGS.map(lang => ({ lang, reason: "targeting" })) };
+  }
+  const targeted = ((row.target_languages ?? []) as string[])
     .map((l) => l.trim().toLowerCase())
     .filter((l) => l.length > 0);
   const categoriesActive = hasAnyCategory(row);
@@ -97,13 +102,4 @@ export function newsVisibility(row: VisibilityInput): Visibility {
   }
 
   return { visible, hidden };
-}
-
-/** Languages hidden specifically by the category-completeness rule — the
- *  surprising case worth warning about. Exclusions caused by `target_languages`
- *  are intentional, so they are reported separately and more quietly. */
-export function hiddenByMissingCategory(row: VisibilityInput): NewsLang[] {
-  return newsVisibility(row)
-    .hidden.filter((h) => h.reason === "missingCategory")
-    .map((h) => h.lang);
 }

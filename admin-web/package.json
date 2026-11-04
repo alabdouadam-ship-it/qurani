@@ -7,6 +7,7 @@
     "build": "next build && node scripts/fix-export-rsc.mjs",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --test scripts/bugfix-regression.test.mjs",
     "deploy": "npm run build && firebase deploy --only hosting:quraniapp",
     "admin:list": "node scripts/list-admins.mjs",
     "admin:add": "node scripts/add-admin.mjs",

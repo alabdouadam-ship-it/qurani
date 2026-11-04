@@ -29,6 +29,3 @@ export type NewsRow = Editable<Database["public"]["Tables"]["news_items"]["Row"]
 export type ReciterRow = Editable<
   Database["public"]["Tables"]["reciters"]["Row"]
 >;
-
-/** Read-only in the admin (only `name` is ever updated, via its own call). */
-export type AdminRow = Database["public"]["Tables"]["admins"]["Row"];

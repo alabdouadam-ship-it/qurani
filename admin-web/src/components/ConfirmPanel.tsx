@@ -25,6 +25,7 @@ export function ConfirmPanel({
   onAlt,
   onCancel,
   busy = false,
+  error,
 }: {
   /** What is being asked, e.g. "Delete this item?". */
   title: string;
@@ -40,6 +41,7 @@ export function ConfirmPanel({
   onAlt?: () => void;
   onCancel: () => void;
   busy?: boolean;
+  error?: string | null;
 }) {
   const { t } = useUi();
   return (
@@ -52,6 +54,7 @@ export function ConfirmPanel({
       <h2 className="font-bold">{title}</h2>
       <p className="text-sm font-semibold">{subject}</p>
       {warning && <p className="muted text-sm">{warning}</p>}
+      {error && <p role="alert" style={{ color: "var(--danger)" }}>{error}</p>}
       <div className="flex flex-wrap gap-2">
         {/* The safe option comes first and keeps the primary styling: the
             destructive one should be the deliberate choice, not the default. */}

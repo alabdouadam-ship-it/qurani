@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { LatestRequest } from "@/lib/latest-request";
 import { AppShell } from "@/components/AppShell";
 import { ConfirmPanel } from "@/components/ConfirmPanel";
 import { Field, Tag } from "@/components/ui";
@@ -41,26 +42,44 @@ function RecitersBody() {
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
 
+  const [failure, setFailure] = useState(false);
+  const [actionError, setActionError] = useState(false);
+  const requests = useRef(new LatestRequest());
   const load = useCallback(async () => {
+    const current = requests.current.begin();
     setLoading(true);
-    const { data } = await supabase
-      .from("reciters")
-      .select("*")
-      .order("sort_order", { ascending: true });
-    setRows((data as ReciterRow[]) ?? []);
-    setLoading(false);
+    setFailure(false);
+    try {
+      const { data, error } = await supabase.from("reciters").select("*")
+        .order("sort_order", { ascending: true });
+      if (!current()) return;
+      if (error) throw error;
+      setRows(data ?? []);
+
+    } catch {
+      if (current()) setFailure(true);
+    } finally {
+      if (current()) setLoading(false);
+    }
   }, [supabase]);
 
   useEffect(() => {
-    load();
+    void load();
+    const gate = requests.current;
+    return () => gate.invalidate();
   }, [load]);
 
   async function remove(row: ReciterRow) {
     setBusy(true);
+    setActionError(false);
     try {
-      await supabase.from("reciters").delete().eq("code", row.code);
+      const { data, error } = await supabase.from("reciters").delete()
+        .eq("code", row.code).select("code");
+      if (error || data?.length !== 1) throw error ?? new Error("Missing item");
       setPendingDelete(null);
       await load();
+    } catch {
+      setActionError(true);
     } finally {
       setBusy(false);
     }
@@ -75,14 +94,19 @@ function RecitersBody() {
    *  paths stay resolvable for anyone already on it. */
   async function disable(row: ReciterRow) {
     setBusy(true);
+    setActionError(false);
+    setNotice(null);
     try {
-      await supabase
+      const { data, error } = await supabase
         .from("reciters")
         .update({ is_enabled: false })
-        .eq("code", row.code);
+        .eq("code", row.code).select("code");
+      if (error || data?.length !== 1) throw error ?? new Error("Missing item");
       setPendingDelete(null);
       setNotice(t.reciterDisabled);
       await load();
+    } catch {
+      setActionError(true);
     } finally {
       setBusy(false);
     }
@@ -116,8 +140,9 @@ function RecitersBody() {
           pendingDelete.is_enabled ? () => disable(pendingDelete) : undefined
         }
         onConfirm={() => remove(pendingDelete)}
-        onCancel={() => setPendingDelete(null)}
+        onCancel={() => { setActionError(false); setPendingDelete(null); }}
         busy={busy}
+        error={actionError ? t.operationFailed : null}
       />
     );
   }
@@ -145,6 +170,11 @@ function RecitersBody() {
 
       {loading ? (
         <p className="muted">{t.loading}</p>
+      ) : failure ? (
+        <div role="alert">
+          <p style={{ color: "var(--danger)" }}>{t.loadFailed}</p>
+          <button className="btn btn-ghost" onClick={load}>{t.refresh}</button>
+        </div>
       ) : rows.length === 0 ? (
         <p className="muted">{t.noReciters}</p>
       ) : (
@@ -226,14 +256,21 @@ function ReciterEditor({
             : null,
         updated_by: adminName,
       };
-      const { error: upErr } = await supabase
-        .from("reciters")
-        .upsert(payload, { onConflict: "code" });
+      const query = isNew
+        ? supabase.from("reciters").insert(payload)
+        : supabase.from("reciters").update(payload).eq("code", initial.code);
+      const { data, error: upErr } = await query.select("code");
       if (upErr) {
-        setError(upErr.message);
+        setError(upErr.code === "23505" ? t.duplicateCode : t.saveFailed);
+        return;
+      }
+      if (data?.length !== 1) {
+        setError(t.itemMissing);
         return;
       }
       onSaved();
+    } catch {
+      setError(t.saveFailed);
     } finally {
       setBusy(false);
     }
@@ -301,7 +338,7 @@ function ReciterEditor({
         <button className="btn btn-primary" disabled={busy}>
           {t.save}
         </button>
-        <button type="button" className="btn btn-ghost" onClick={onClose}>
+        <button type="button" className="btn btn-ghost" disabled={busy} onClick={onClose}>
           {t.cancel}
         </button>
       </div>

@@ -8,6 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { readPreference, writePreference } from "./safe-storage";
 import { dict, type Dict, type Lang } from "./i18n";
 
 export type Theme = "light" | "dark" | "sand";
@@ -32,8 +33,8 @@ export function UiProvider({ children }: { children: ReactNode }) {
 
   // Hydrate from localStorage once on mount.
   useEffect(() => {
-    const savedLang = localStorage.getItem(LANG_KEY) as Lang | null;
-    const savedTheme = localStorage.getItem(THEME_KEY) as Theme | null;
+    const savedLang = readPreference(LANG_KEY) as Lang | null;
+    const savedTheme = readPreference(THEME_KEY) as Theme | null;
     // Whitelisted rather than trusted, since localStorage is user-editable and
     // an unknown value would index `dict` to undefined and blank every label.
     if (savedLang === "ar" || savedLang === "en" || savedLang === "fr") {
@@ -54,11 +55,11 @@ export function UiProvider({ children }: { children: ReactNode }) {
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    localStorage.setItem(LANG_KEY, l);
+    writePreference(LANG_KEY, l);
   };
   const setTheme = (th: Theme) => {
     setThemeState(th);
-    localStorage.setItem(THEME_KEY, th);
+    writePreference(THEME_KEY, th);
   };
 
   const value = useMemo<UiState>(

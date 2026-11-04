@@ -1,6 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { LatestRequest } from "@/lib/latest-request";
+import { normalizeStats, type Stats } from "@/lib/stats-data";
 import { AppShell } from "@/components/AppShell";
 import { getSupabase } from "@/lib/supabase";
 import { useUi } from "@/lib/ui-context";
@@ -12,80 +14,10 @@ import {
   isStatsFilterActive,
   rangePreset,
   toRpcArgs,
+  normalizeStatsOptions,
   type StatsFilter,
   type StatsFilterOptions,
 } from "@/lib/stats-filter";
-
-type Breakdown = { key: string; count: number }[];
-
-/** Mirrors the jsonb built by `admin_dashboard_stats` (migration 0016). */
-type Stats = {
-  totalInstalls: number;
-  /** Installs whose first_seen falls inside the selected range. */
-  newInstalls: number;
-  activeToday: number;
-  active7: number;
-  active30: number;
-  /** Distinct installs active inside the selected range. */
-  activeInRange: number;
-  totalSessions: number;
-  avgSessionMin: number;
-  sessionsPerInstall: number;
-  features: { feature: string; opens: number; avgMin: number }[];
-  localeCountries: Breakdown;
-  gpsCountries: Breakdown;
-  cities: Breakdown;
-  platforms: Breakdown;
-  languages: Breakdown;
-  versions: Breakdown;
-  themes: Breakdown;
-  reciters: Breakdown;
-  manufacturers: Breakdown;
-  osVersions: Breakdown;
-  notifications: Breakdown;
-  /** Active installs per calendar day inside the range, most recent first. */
-  daily: Breakdown;
-};
-
-/**
- * Fills in any key the RPC did not return.
- *
- * The filters and the extra breakdowns arrive with migration 0016. If this build
- * is deployed against a database that has not been migrated yet, the older
- * function returns the original payload and every new key is undefined —
- * `stats.sessionsPerInstall.toFixed(1)` would then throw and white-screen the
- * page. Defaulting degrades to "the numbers I used to show" instead, which is a
- * far better failure than a blank dashboard.
- */
-function normalizeStats(data: unknown): Stats {
-  const s = (data ?? {}) as Partial<Stats>;
-  const num = (v: number | undefined) => (typeof v === "number" ? v : 0);
-  const rows = (v: Breakdown | undefined) => (Array.isArray(v) ? v : []);
-  return {
-    totalInstalls: num(s.totalInstalls),
-    newInstalls: num(s.newInstalls),
-    activeToday: num(s.activeToday),
-    active7: num(s.active7),
-    active30: num(s.active30),
-    activeInRange: num(s.activeInRange),
-    totalSessions: num(s.totalSessions),
-    avgSessionMin: num(s.avgSessionMin),
-    sessionsPerInstall: num(s.sessionsPerInstall),
-    features: Array.isArray(s.features) ? s.features : [],
-    localeCountries: rows(s.localeCountries),
-    gpsCountries: rows(s.gpsCountries),
-    cities: rows(s.cities),
-    platforms: rows(s.platforms),
-    languages: rows(s.languages),
-    versions: rows(s.versions),
-    themes: rows(s.themes),
-    reciters: rows(s.reciters),
-    manufacturers: rows(s.manufacturers),
-    osVersions: rows(s.osVersions),
-    notifications: rows(s.notifications),
-    daily: rows(s.daily),
-  };
-}
 
 export default function DashboardPage() {
   return (
@@ -112,7 +44,9 @@ function DashboardBody() {
   const [options, setOptions] =
     useState<StatsFilterOptions>(EMPTY_STATS_OPTIONS);
 
+  const requests = useRef(new LatestRequest());
   const load = useCallback(async () => {
+    const current = requests.current.begin();
     setLoading(true);
     try {
       // All aggregation and all filtering run server-side in Postgres
@@ -125,6 +59,7 @@ function DashboardBody() {
         "admin_dashboard_stats",
         toRpcArgs(filter)
       );
+      if (!current()) return;
       if (error) {
         console.error("[dashboard] admin_dashboard_stats failed:", error.message);
         setStats(null);
@@ -139,33 +74,37 @@ function DashboardBody() {
       setFailure(null);
       setStats(normalizeStats(data));
       setLoadedAt(Date.now());
+    } catch {
+      if (current()) {
+        setStats(null);
+        setFailure({ kind: "error", detail: "" });
+      }
     } finally {
-      setLoading(false);
+      if (current()) setLoading(false);
     }
   }, [supabase, filter]);
 
   useEffect(() => {
-    load();
+    void load();
+    const gate = requests.current;
+    return () => gate.invalidate();
   }, [load]);
 
-  // Option lists are independent of the current selection, so they are fetched
-  // once rather than on every filter change.
   useEffect(() => {
-    (async () => {
-      const { data, error } = await supabase.rpc("admin_stats_filter_options");
-      if (error) {
-        console.error("[dashboard] filter options failed:", error.message);
-        return;
+    let active = true;
+    void (async () => {
+      try {
+        const { data, error } = await supabase.rpc("admin_stats_filter_options");
+        if (!active || error) return;
+        setOptions(normalizeStatsOptions(data));
+      } catch {
+        // Filters keep their safe empty defaults; refresh remounts this page.
       }
-      setOptions({
-        ...EMPTY_STATS_OPTIONS,
-        ...(data as unknown as Partial<StatsFilterOptions>),
-      });
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return () => { active = false; };
+  }, [supabase]);
 
-  if (loading && !stats) return <p className="muted">{t.loading}</p>;
+  if (loading) return <p className="muted">{t.loading}</p>;
 
   if (failure) {
     return (

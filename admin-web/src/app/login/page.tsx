@@ -30,6 +30,7 @@ export default function LoginPage() {
   // Decide login vs first-admin setup.
   useEffect(() => {
     (async () => {
+      try {
       const { data, error } = await supabase.rpc("admin_exists");
       if (error) {
         // If the RPC isn't reachable, default to the login form.
@@ -37,6 +38,7 @@ export default function LoginPage() {
       } else {
         setAdminExists(Boolean(data));
       }
+      } catch { setAdminExists(true); }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -58,11 +60,13 @@ export default function LoginPage() {
       // Confirm the signed-in user is actually an admin.
       const { data: sess } = await supabase.auth.getSession();
       const uid = sess.session?.user.id;
-      const { data: adminRow } = await supabase
+      if (!uid) { setError(t.loginFailed); return; }
+      const { data: adminRow, error: profileError } = await supabase
         .from("admins")
         .select("id")
-        .eq("id", uid as string)
+        .eq("id", uid)
         .maybeSingle();
+      if (profileError) { setError(t.operationFailed); return; }
       if (!adminRow) {
         await supabase.auth.signOut();
         setError(t.notAdmin);
@@ -70,6 +74,8 @@ export default function LoginPage() {
       }
       await refreshAdmin();
       router.replace("/dashboard");
+    } catch {
+      setError(t.operationFailed);
     } finally {
       setBusy(false);
     }
@@ -114,7 +120,7 @@ export default function LoginPage() {
       // 2. Ensure we have a session. If signUp didn't return one (email
       //    confirmation enabled) or the user already existed, sign in.
       let { data: sess } = await supabase.auth.getSession();
-      if (!sess.session) {
+      if (!sess.session || sess.session.user.email?.toLowerCase() !== email) {
         const { error: inErr } = await supabase.auth.signInWithPassword({
           email,
           password,
@@ -144,6 +150,8 @@ export default function LoginPage() {
       }
       await refreshAdmin();
       router.replace("/dashboard");
+    } catch {
+      setError(t.operationFailed);
     } finally {
       setBusy(false);
     }

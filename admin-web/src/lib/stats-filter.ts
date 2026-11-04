@@ -133,3 +133,18 @@ export function rangePreset(days: number): { from: string; to: string } {
   const fromDate = new Date(today.getTime() - (days - 1) * 864e5);
   return { from: fromDate.toISOString().slice(0, 10), to };
 }
+
+/** RPC JSON is untrusted: null properties must not overwrite array defaults. */
+export function normalizeStatsOptions(data: unknown): StatsFilterOptions {
+  const source = (data && typeof data === "object" ? data : {}) as Record<string, unknown>;
+  const result = { ...EMPTY_STATS_OPTIONS };
+  for (const key of Object.keys(result) as (keyof StatsFilterOptions)[]) {
+    const value = source[key];
+    if (key === "firstDay" || key === "lastDay") {
+      result[key] = typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : null;
+    } else {
+      result[key] = Array.isArray(value) ? value.filter((v): v is string => typeof v === "string") : [];
+    }
+  }
+  return result;
+}

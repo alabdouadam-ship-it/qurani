@@ -8,6 +8,10 @@ export type Lang = "en" | "ar" | "fr";
  */
 const dictSource = {
   en: {
+    operationFailed: "The operation failed. Please try again.",
+    duplicateCode: "This code already exists. Choose another code.",
+    itemMissing: "This item no longer exists. Reload the list.",
+    loadFailed: "Could not load the data. Please retry.",
     appTitle: "Qurani Admin",
     // auth
     login: "Sign in",
@@ -190,6 +194,10 @@ const dictSource = {
     themeSand: "Sand",
   },
   ar: {
+    operationFailed: "فشلت العملية. يرجى المحاولة مرة أخرى.",
+    duplicateCode: "هذا الرمز موجود بالفعل. اختر رمزاً آخر.",
+    itemMissing: "هذا العنصر لم يعد موجوداً. أعد تحميل القائمة.",
+    loadFailed: "تعذّر تحميل البيانات. يرجى إعادة المحاولة.",
     appTitle: "لوحة تحكم قرآني",
     login: "تسجيل الدخول",
     logout: "تسجيل الخروج",
@@ -361,6 +369,10 @@ const dictSource = {
       "رابط كامل دون شرطة مائلة في نهايته، مثل https://server7.mp3quran.net/basit. أي قيمة ليست رابطًا تُعامل كمسار داخل qurani.info.",
   },
   fr: {
+    operationFailed: "L’opération a échoué. Veuillez réessayer.",
+    duplicateCode: "Ce code existe déjà. Choisissez un autre code.",
+    itemMissing: "Cet élément n’existe plus. Rechargez la liste.",
+    loadFailed: "Impossible de charger les données. Veuillez réessayer.",
     appTitle: "Administration Qurani",
     // authentification
     login: "Se connecter",

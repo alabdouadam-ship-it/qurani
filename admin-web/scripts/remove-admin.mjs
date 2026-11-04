@@ -35,11 +35,13 @@ const { count, error: cErr } = await admin
   .select("id", { count: "exact", head: true });
 if (cErr) fail(`Could not count admins: ${cErr.message}`);
 
-const { data: thisAdmin } = await admin
+const { data: thisAdmin, error: lookupError } = await admin
   .from("admins")
   .select("id")
   .eq("id", user.id)
   .maybeSingle();
+
+if (lookupError) fail(`Could not verify admin rights: ${lookupError.message}`);
 
 if (!thisAdmin) {
   ok(`"${username}" is not an admin (no admins row). Nothing to revoke.`);

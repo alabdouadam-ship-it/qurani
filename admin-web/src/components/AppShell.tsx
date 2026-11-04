@@ -14,14 +14,15 @@ import { useUi } from "@/lib/ui-context";
  * (not the header) to keep the chrome minimal — they're rarely-used controls.
  */
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const { loading, admin } = useAuth();
+  const { loading, admin, session } = useAuth();
+  const authorized = Boolean(admin && session?.user.id === admin.id);
   const { t } = useUi();
   const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!loading && !admin) router.replace("/login");
-  }, [loading, admin, router]);
+    if (!loading && !authorized) router.replace("/login");
+  }, [loading, authorized, router]);
 
   if (loading) {
     return (
@@ -30,7 +31,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       </div>
     );
   }
-  if (!admin) return null; // redirecting
+  if (!authorized || !admin) return null; // redirecting
 
   const nav = [
     { href: "/dashboard", label: t.dashboard },

@@ -22,6 +22,8 @@ function AccountBody() {
 
   const [name, setName] = useState(admin?.name ?? "");
   const [nameBusy, setNameBusy] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [logoutError, setLogoutError] = useState(false);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
 
   const [currentPass, setCurrentPass] = useState("");
@@ -34,14 +36,19 @@ function AccountBody() {
   async function saveName(e: React.FormEvent) {
     e.preventDefault();
     setNameMsg(null);
+    setNameError(false);
+    if (!admin) { setNameError(true); return; }
     setNameBusy(true);
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from("admins")
         .update({ name: name.trim() })
-        .eq("id", admin!.id);
-      setNameMsg(error ? t.saveFailed : t.nameUpdated);
-      if (!error) await refreshAdmin();
+        .eq("id", admin.id).select("id");
+      if (error || data?.length !== 1) { setNameError(true); return; }
+      await refreshAdmin();
+      setNameMsg(t.nameUpdated);
+    } catch {
+      setNameError(true);
     } finally {
       setNameBusy(false);
     }
@@ -96,6 +103,8 @@ function AccountBody() {
       setNewPass("");
       setConfirmPass("");
       setPassMsg(t.passwordChanged);
+    } catch {
+      setPassErr(t.saveFailed);
     } finally {
       setPassBusy(false);
     }
@@ -111,6 +120,7 @@ function AccountBody() {
           <label className="label">{t.displayName}</label>
           <input className="input" value={name} onChange={(e) => setName(e.target.value)} required />
         </div>
+        {nameError && <p role="alert" style={{ color: "var(--danger)" }}>{t.saveFailed}</p>}
         {nameMsg && <p className="text-sm" style={{ color: "var(--success)" }}>{nameMsg}</p>}
         <div>
           <button className="btn btn-primary" disabled={nameBusy}>
@@ -170,8 +180,9 @@ function AccountBody() {
 
       <div className="card p-4 flex flex-col gap-3">
         <h2 className="font-bold">{t.logout}</h2>
+        {logoutError && <p role="alert">{t.operationFailed}</p>}
         <div>
-          <button className="btn btn-danger" onClick={() => signOut()}>
+          <button className="btn btn-danger" onClick={() => { setLogoutError(false); void signOut().catch(() => setLogoutError(true)); }}>
             {t.logout}
           </button>
         </div>

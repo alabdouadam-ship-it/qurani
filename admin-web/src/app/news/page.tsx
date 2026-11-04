@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { LatestRequest } from "@/lib/latest-request";
 import { AppShell } from "@/components/AppShell";
 import { ConfirmPanel } from "@/components/ConfirmPanel";
 import { Check, Field, Section, Tag } from "@/components/ui";
@@ -116,19 +117,35 @@ function NewsBody() {
   // real timestamp.
   const [nowMs, setNowMs] = useState(0);
 
+  const [failure, setFailure] = useState(false);
+  const [actionError, setActionError] = useState(false);
+  const requests = useRef(new LatestRequest());
   const load = useCallback(async () => {
+    const current = requests.current.begin();
     setLoading(true);
-    const { data } = await supabase
-      .from("news_items")
-      .select("*")
-      .order("publish_date", { ascending: false });
-    setRows((data as NewsRow[]) ?? []);
-    setNowMs(Date.now());
-    setLoading(false);
+    setFailure(false);
+    try {
+      const { data, error } = await supabase.from("news_items").select("*")
+        .order("publish_date", { ascending: false });
+      if (!current()) return;
+      if (error) throw error;
+      if (data?.some(row => [row.target_languages, row.target_countries, row.excluded_countries]
+          .some(values => !Array.isArray(values) || values.some(v => typeof v !== "string")))) {
+        throw new Error("Invalid targeting data");
+      }
+      setRows(data ?? []);
+      setNowMs(Date.now());
+    } catch {
+      if (current()) setFailure(true);
+    } finally {
+      if (current()) setLoading(false);
+    }
   }, [supabase]);
 
   useEffect(() => {
-    load();
+    void load();
+    const gate = requests.current;
+    return () => gate.invalidate();
   }, [load]);
 
   useEffect(() => {
@@ -175,10 +192,15 @@ function NewsBody() {
 
   async function remove(row: NewsRow) {
     setBusy(true);
+    setActionError(false);
     try {
-      await supabase.from("news_items").delete().eq("id", row.id);
+      const { data, error } = await supabase.from("news_items").delete()
+        .eq("id", row.id).select("id");
+      if (error || data?.length !== 1) throw error ?? new Error("Missing item");
       setPendingDelete(null);
       await load();
+    } catch {
+      setActionError(true);
     } finally {
       setBusy(false);
     }
@@ -216,8 +238,9 @@ function NewsBody() {
         warning={t.confirmDeleteNewsWarning}
         confirmLabel={t.deletePermanently}
         onConfirm={() => remove(pendingDelete)}
-        onCancel={() => setPendingDelete(null)}
+        onCancel={() => { setActionError(false); setPendingDelete(null); }}
         busy={busy}
+        error={actionError ? t.operationFailed : null}
       />
     );
   }
@@ -246,6 +269,11 @@ function NewsBody() {
 
       {loading ? (
         <p className="muted">{t.loading}</p>
+      ) : failure ? (
+        <div role="alert">
+          <p style={{ color: "var(--danger)" }}>{t.loadFailed}</p>
+          <button className="btn btn-ghost" onClick={load}>{t.refresh}</button>
+        </div>
       ) : rows.length === 0 ? (
         <p className="muted">{t.noNews}</p>
       ) : visible.length === 0 ? (
@@ -565,15 +593,21 @@ function NewsEditor({
         category_fr: emptyToNull(r.category_fr),
         updated_by: adminName,
       };
-      // upsert by primary key id (insert or update).
-      const { error: upErr } = await supabase
-        .from("news_items")
-        .upsert(payload, { onConflict: "id" });
+      const query = isNew
+        ? supabase.from("news_items").insert(payload)
+        : supabase.from("news_items").update(payload).eq("id", initial.id);
+      const { data, error: upErr } = await query.select("id");
       if (upErr) {
-        setError(upErr.message);
+        setError(upErr.code === "23505" ? t.duplicateCode : t.saveFailed);
+        return;
+      }
+      if (data?.length !== 1) {
+        setError(t.itemMissing);
         return;
       }
       onSaved();
+    } catch {
+      setError(t.saveFailed);
     } finally {
       setBusy(false);
     }
@@ -719,7 +753,7 @@ function NewsEditor({
         <button className="btn btn-primary" disabled={busy}>
           {t.save}
         </button>
-        <button type="button" className="btn btn-ghost" onClick={onClose}>
+        <button type="button" className="btn btn-ghost" disabled={busy} onClick={onClose}>
           {t.cancel}
         </button>
       </div>

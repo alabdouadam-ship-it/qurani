@@ -61,6 +61,28 @@ npm run lint
 
 ## Deploy
 
+The admin fixes from 2026-11-04 also require migration
+`20261104000001_admin_concurrency_and_news_arrays.sql`. It serializes administrator
+membership changes and rejects new targeting arrays containing null elements.
+Apply it through the normal migration process before publishing this build.
+It has been exercised against an isolated PostgreSQL 17 instance, not the live
+Supabase database. Existing malformed targeting rows are preserved for review
+(`NOT VALID` constraint); the admin reports a loading failure instead of silently
+broadening their audience. Repair those rows explicitly before validating the
+constraint.
+
+Offline application regressions: `npm test`.
+SQL regressions require a fresh disposable local PostgreSQL cluster, with no
+existing roles/database from a previous run:
+
+```
+node scripts/admin-sql-regression.mjs <path-to-psql> <local-port>
+```
+
+The SQL test uses only `127.0.0.1`, creates `qurani_admin_regression`, and never
+reads `.env.local`. Stop the disposable server after testing. Do not run it on
+a local instance containing real application data.
+
 ```
 npm run deploy
 ```

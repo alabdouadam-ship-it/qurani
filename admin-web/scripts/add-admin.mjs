@@ -47,7 +47,8 @@ if (user) {
     email_confirm: true, // no confirmation email; admin can sign in immediately
   });
   if (error) fail(`Could not create auth user: ${error.message}`);
-  user = data.user;
+  user = data?.user;
+  if (!user) fail("The auth service returned no user. No admin row was written.");
   ok(`Created auth user: ${email} (${user.id})`);
 }
 
