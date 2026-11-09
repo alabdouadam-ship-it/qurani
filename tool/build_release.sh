@@ -45,6 +45,9 @@ if grep -q '<' "$ENV_FILE"; then
 fi
 
 TARGET="${1:-appbundle}"
+if [[ $# -gt 0 ]]; then
+  shift
+fi
 DEFINE="--dart-define-from-file=supabase.env.json"
 
 # Echo what was actually resolved, so a CI log is self-documenting. A build with
@@ -65,10 +68,10 @@ echo "  SUPABASE_URL            = $RESOLVED_URL"
 echo "  SUPABASE_PUBLISHABLE_KEY = (${#RESOLVED_KEY} chars)"
 
 case "$TARGET" in
-  appbundle|aab) flutter build appbundle --release "$DEFINE" ;;
-  apk)           flutter build apk --release "$DEFINE" ;;
-  ipa)           flutter build ipa --release "$DEFINE" ;;
-  web)           flutter build web --release "$DEFINE" ;;
+  appbundle|aab) flutter build appbundle --release "$DEFINE" "$@" ;;
+  apk)           flutter build apk --release "$DEFINE" "$@" ;;
+  ipa)           flutter build ipa --release "$DEFINE" "$@" ;;
+  web)           flutter build web --release "$DEFINE" "$@" ;;
   *)
     echo "Unknown target '$TARGET'. Use: appbundle | apk | ipa | web" >&2
     exit 1

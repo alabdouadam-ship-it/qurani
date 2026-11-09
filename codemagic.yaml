@@ -10,6 +10,8 @@ workflows:
       vars:
         XCODE_WORKSPACE: "ios/Runner.xcworkspace"
         XCODE_SCHEME: "Runner"
+        SUPABASE_URL: "https://zqqqipzbkkrgpdnzliyg.supabase.co"
+        SUPABASE_PUBLISHABLE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpxcXFpcHpia2tyZ3BkbnpsaXlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1OTk0NzAsImV4cCI6MjA5NjE3NTQ3MH0.8EGTsoHwT2bwCdHN61vofryOXTjmyNTk9jVXTa-8Ku8"
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -23,15 +25,9 @@ workflows:
       - name: Install pods
         script: |
           find . -name "Podfile" -execdir pod install \;
-      - name: Flutter build ipa
+      - name: Build release IPA with Supabase config
         script: |
-          DART_DEFINES=""
-          if [ -n "${SUPABASE_URL:-}" ] && [ -n "${SUPABASE_PUBLISHABLE_KEY:-}" ]; then
-            DART_DEFINES="--dart-define=SUPABASE_URL=$SUPABASE_URL --dart-define=SUPABASE_PUBLISHABLE_KEY=$SUPABASE_PUBLISHABLE_KEY"
-          fi
-          flutter build ipa --release \
-            $DART_DEFINES \
-            --export-options-plist=/Users/builder/export_options.plist
+          bash tool/build_release.sh ipa --export-options-plist=/Users/builder/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
