@@ -1,0 +1,22 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.hemanthraj.fluttercompass'
+    compileSdk 36
+    defaultConfig { minSdk 20 }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets.main {
+        def sources = gradle.ext.qiblaPluginSources[project.name]
+        manifest.srcFile(new File(sources, 'AndroidManifest.xml'))
+        kotlin.srcDir(new File(sources, 'kotlin'))
+        // The package also stores TSAGeoMag.java alongside the Kotlin sources.
+        java.srcDir(new File(sources, 'kotlin'))
+    }
+}

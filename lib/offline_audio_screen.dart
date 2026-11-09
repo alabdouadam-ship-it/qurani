@@ -1,3 +1,4 @@
+import 'services/download_batch.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 // Used for haptic feedback on Pause / Resume / Repair actions.
@@ -59,7 +60,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
   static const int _totalAyahs = 6236;
   static const int _totalFull = 114;
 
-  bool get _allFullDownloaded => _downloadedFull >= _totalFull;
+  bool get _allFullDownloaded => _verifiedFull == _totalFull;
   bool get _anyFullDownloaded => _downloadedFull > 0;
   bool get _allAyahDownloaded => _downloadedAyahs >= _totalAyahs;
   bool get _anyAyahDownloaded => _downloadedAyahs > 0;
@@ -109,6 +110,21 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     }
   }
 
+  void _showDownloadResult(DownloadBatchResult result) {
+    if (!mounted) return;
+    final l10n = AppLocalizations.of(context)!;
+    final message = result.cancelled ? l10n.downloadCancelled
+        : result.isComplete ? l10n.downloadComplete
+        : l10n.downloadIncomplete(result.completed, result.total, result.failed);
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  void _showDownloadError() {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(AppLocalizations.of(context)!.downloadFailed)));
+  }
+
   Future<void> _startDownloadAyahs() async {
     if (_downloadingAyah) return;
     setState(() {
@@ -118,7 +134,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     });
     _cancelTokenAyah = CancelToken();
     try {
-      await OfflineAudioService.downloadAllAyahAudios(
+      final result = await OfflineAudioService.downloadAllAyahAudios(
         reciterKey: _reciter,
         onProgress: (c, t) {
           if (!mounted) return;
@@ -129,6 +145,9 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         },
         cancelToken: _cancelTokenAyah,
       );
+      _showDownloadResult(result);
+    } catch (error) {
+      _showDownloadError();
     } finally {
       if (mounted) {
         setState(() {
@@ -154,7 +173,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     });
     _cancelTokenFull = CancelToken();
     try {
-      await OfflineAudioService.downloadAllFullSurahs(
+      final result = await OfflineAudioService.downloadAllFullSurahs(
         reciterKey: _reciter,
         onProgress: (c, t) {
           if (!mounted) return;
@@ -165,6 +184,9 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         },
         cancelToken: _cancelTokenFull,
       );
+      _showDownloadResult(result);
+    } catch (error) {
+      _showDownloadError();
     } finally {
       if (mounted) {
         setState(() {
@@ -176,7 +198,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
   }
 
   /// Pauses an in-flight bulk full-surah download. Cancels the active token
-  /// (so per-surah work returns at the next granularity boundary) and
+  /// (including the active network request) and
   /// persists the paused state so the user's intent survives an app kill.
   Future<void> _pauseFull() async {
     if (!_downloadingFull) return;
@@ -248,7 +270,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     });
     _cancelTokenAE = CancelToken();
     try {
-      await OfflineAudioService.downloadAllAyahAudios(
+      final result = await OfflineAudioService.downloadAllAyahAudios(
         reciterKey: 'arabic-english',
         onProgress: (c, t) {
           if (!mounted) return;
@@ -256,6 +278,9 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         },
         cancelToken: _cancelTokenAE,
       );
+      _showDownloadResult(result);
+    } catch (error) {
+      _showDownloadError();
     } finally {
       if (mounted) {
         setState(() { _downloadingAE = false; });
@@ -273,7 +298,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     });
     _cancelTokenAF = CancelToken();
     try {
-      await OfflineAudioService.downloadAllAyahAudios(
+      final result = await OfflineAudioService.downloadAllAyahAudios(
         reciterKey: 'arabic-french',
         onProgress: (c, t) {
           if (!mounted) return;
@@ -281,6 +306,9 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         },
         cancelToken: _cancelTokenAF,
       );
+      _showDownloadResult(result);
+    } catch (error) {
+      _showDownloadError();
     } finally {
       if (mounted) {
         setState(() { _downloadingAF = false; });
@@ -298,7 +326,7 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
     });
     _cancelTokenTafsir = CancelToken();
     try {
-      await OfflineAudioService.downloadAllAyahAudios(
+      final result = await OfflineAudioService.downloadAllAyahAudios(
         reciterKey: 'muyassar',
         onProgress: (c, t) {
           if (!mounted) return;
@@ -306,6 +334,9 @@ class _OfflineAudioScreenState extends State<OfflineAudioScreen> {
         },
         cancelToken: _cancelTokenTafsir,
       );
+      _showDownloadResult(result);
+    } catch (error) {
+      _showDownloadError();
     } finally {
       if (mounted) {
         setState(() { _downloadingTafsir = false; });

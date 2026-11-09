@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'download_batch.dart';
 // Web stub for `DownloadService`. The full IO implementation lives in
 // `download_service_io.dart`; on web there is no persistent file system
 // for audio caches, so every API returns an "empty / not-downloaded /
@@ -13,20 +15,21 @@ class DownloadService {
     return false;
   }
 
-  static Future<void> downloadSurah(String reciter, int order) async {
-    // No-op on web
+  static Future<void> downloadSurah(String reciter, int order, {CancelToken? cancelToken}) async {
+    throw UnsupportedError('Offline audio downloads are unavailable on web');
   }
 
-  static Future<void> downloadFullReciter(String reciter, {void Function(double progress)? onProgress, int concurrency = 4}) async {
-    onProgress?.call(0.0);
+  static Future<DownloadBatchResult> downloadFullReciter(String reciter, {void Function(double progress)? onProgress, int concurrency = 4, CancelToken? cancelToken}) async {
+    throw UnsupportedError('Offline audio downloads are unavailable on web');
   }
 
   static Future<void> downloadAyah({
     required String reciter,
     required int surahOrder,
     required int verseNumber,
+    CancelToken? cancelToken,
   }) async {
-    // No-op on web
+    throw UnsupportedError('Offline audio downloads are unavailable on web');
   }
 
   // --- Integrity API stubs ---

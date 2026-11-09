@@ -1,3 +1,5 @@
+import 'services/backup_service.dart';
+import 'services/wird_notification_router.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -77,6 +79,7 @@ Future<void> main() async {
     await audioSession.configure(const AudioSessionConfiguration.music());
   }
   await _ensureNotificationPermissions();
+  await BackupService.instance.recoverInterruptedRestore();
   await PreferencesService.init();
   await PreferencesService.ensureInstallationId();
 
@@ -103,57 +106,44 @@ Future<void> main() async {
   // Load reciter configurations from JSON (same for both platforms)
   await ReciterConfigService.loadReciters();
   
+  final wirdRouter = WirdNotificationRouter(_openWirdTab);
+  final routeNotifications = supportsWirdNotificationRouting(
+      defaultTargetPlatform, isWeb: kIsWeb);
+  if (routeNotifications) {
+    NotificationService.onNotificationTap = wirdRouter.handle;
+    WidgetsBinding.instance.addPostFrameCallback((_) => wirdRouter.markReady());
+  }
   await NotificationService.init();
   
   // Initialize AdhanScheduler with proper background callback registration
   await AdhanScheduler.init();
   
   // Initialize global Adhan service for cross-screen playback
-  await GlobalAdhanService.init();
+  GlobalAdhanService.onDayChanged = () {
+    unawaited(_scheduleSevenDaysOfAdhans());
+  };
   
-  // Handle when app is opened from notification (mobile only)
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+  // Cold launch payloads use the same route as taps while running, on iOS/Android.
+  if (routeNotifications) {
     try {
-      // On Android, plugin is available; on web it's a stub
-      final plugin = NotificationService.plugin;
-      final initialNotificationResponse = await plugin.getNotificationAppLaunchDetails();
-      if (initialNotificationResponse?.didNotificationLaunchApp ?? false) {
-        // Cold launch from a notification tap. Adhan auto-play stays disabled,
-        // but a `wird_<id>` reminder should still deep-link to the Wird tab.
-        // Defer until after the first frame so the root navigator exists.
-        final launchPayload =
-            initialNotificationResponse?.notificationResponse?.payload;
-        if (launchPayload != null && launchPayload.startsWith('wird_')) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            _openWirdTab();
-          });
-        }
+      final details = await NotificationService.plugin.getNotificationAppLaunchDetails();
+      if (details?.didNotificationLaunchApp ?? false) {
+        wirdRouter.handle(details?.notificationResponse?.payload);
       }
-    } catch (e) {
-      //print('[Main] Error checking notification launch details: $e');
+    } catch (error) {
+      debugPrint('Notification launch details unavailable: $error');
     }
-    
-    // Set up notification tap handler.
-    //
-    // - `wird_<id>` reminders deep-link to the Wird tab so tapping a reminder
-    //   lands the user where they can act on it.
-    // - Adhan playback has been disabled, so adhan-related taps are ignored.
-    NotificationService.onNotificationTap = (String? payload) async {
-      if (payload == null || payload == 'unknown') return;
-      if (payload.startsWith('wird_')) {
-        _openWirdTab();
-      }
-    };
   }
-  
+
   // Collect legal device info once, and re-collect if flag missing
   await DeviceInfoService.collectIfNeeded();
 
   // Anonymous, opt-out-able usage stats. No-op when Supabase isn't configured,
   // the user opted out, or offline. Never blocks startup.
   unawaited(UsageStatsService.instance.init());
-  // Silent background refresh of prayer times cache every 10 days using last known position
+  // Validate location, calculation method and each month before starting Adhan.
   await PrayerTimesService.maybeRefreshCacheOnLaunch();
+  await GlobalAdhanService.init();
   
   runApp(
     const ProviderScope(
@@ -174,9 +164,7 @@ Future<void> main() async {
   //      from the previous session; we're only re-arming day+1..+7 here.
   //   3. `unawaited` + `Future.microtask` ensures this runs on the event
   //      loop after the first frame without blocking runApp.
-  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
-    unawaited(Future.microtask(_scheduleSevenDaysOfAdhans));
-  }
+  unawaited(Future.microtask(_scheduleSevenDaysOfAdhans));
 
   // Daily Wird: seed defaults on first launch, apply the daily-reset pass,
   // and re-arm the rolling 7-day one-shot notification window for every
@@ -193,7 +181,18 @@ Future<void> main() async {
 /// Extracted from `main()` so it can be deferred until after the first frame.
 /// Any failure is swallowed — the prayer-times screen re-runs this flow when
 /// the user navigates to it, so a startup miss is recoverable.
-Future<void> _scheduleSevenDaysOfAdhans() async {
+Future<void>? _adhanScheduling;
+Future<void> _scheduleSevenDaysOfAdhans() {
+  if (kIsWeb || (defaultTargetPlatform != TargetPlatform.android &&
+      defaultTargetPlatform != TargetPlatform.iOS)) {
+    return Future<void>.value();
+  }
+  return _adhanScheduling ??= _renewAdhanWindow().whenComplete(() {
+    _adhanScheduling = null;
+  });
+}
+
+Future<void> _renewAdhanWindow() async {
   try {
     final now = DateTime.now();
     final times = await PrayerTimesService.getTimesForDate(
@@ -238,6 +237,7 @@ Future<void> _scheduleSevenDaysOfAdhans() async {
     // wall-clock by ±1 hour and can make the loop skip or double
     // a calendar date. See `prayer_times_service_io.dart` for the
     // full rationale.
+    bool complete = true;
     DateTime cursor = DateTime(now.year, now.month, now.day + 1);
     for (int i = 0; i < 7; i++) {
       final futureTimes = await PrayerTimesService.getTimesForDate(
@@ -257,8 +257,10 @@ Future<void> _scheduleSevenDaysOfAdhans() async {
           soundKey: soundKey,
         );
       }
+      if (futureTimes == null) complete = false;
       cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
     }
+    if (!complete) return;
     await AdhanScheduler.markScheduledThroughDay(
       soundKey: soundKey,
       toggles: adhanEnabled,
@@ -315,6 +317,16 @@ class QuraniApp extends ConsumerStatefulWidget {
     });
   }
 
+  int _prayerResumeGeneration = 0;
+  Future<void> _refreshPrayerContextOnResume() async {
+    final generation = ++_prayerResumeGeneration;
+    GlobalAdhanService.pause();
+    await PrayerTimesService.maybeRefreshCacheOnLaunch();
+    if (!mounted || generation != _prayerResumeGeneration) return;
+    await GlobalAdhanService.resume();
+    await _scheduleSevenDaysOfAdhans();
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // The Adhan background alarm isolate reads `is_app_in_foreground` from
@@ -324,6 +336,7 @@ class QuraniApp extends ConsumerStatefulWidget {
     // prevents a stale `true` flag after the user swipes the app away, which
     // was previously suppressing the stop-notification on the next alarm.
     final isForeground = state == AppLifecycleState.resumed;
+    if (!isForeground) _prayerResumeGeneration++;
     _updateAppState(isForeground);
     if (isForeground) {
       // Begin a new usage-stats session on resume.
@@ -335,7 +348,7 @@ class QuraniApp extends ConsumerStatefulWidget {
       AdhanAudioManager.syncPlayingStateFromPrefs();
       // Resume the foreground prayer-time polling timer: while foreground, the
       // app (not the alarm isolate) is the primary Adhan trigger.
-      GlobalAdhanService.resume();
+      unawaited(_refreshPrayerContextOnResume());
     } else {
       // Flush + record the finished session's duration (fire-and-forget).
       screenTimeObserver.onAppPaused();

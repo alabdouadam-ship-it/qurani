@@ -985,5 +985,136 @@
   "secondaryEditionShow": "إظهار النسخة الثانوية",
   "@secondaryEditionShow": {},
   "secondaryEditionHide": "إخفاء النسخة الثانوية",
-  "@secondaryEditionHide": {}
+  "@secondaryEditionHide": {},
+  "memorizationIncompleteData": "تعذر تحميل المقطع بالكامل. تحقق من اتصالك وأعد المحاولة.",
+  "downloadIncomplete": "التنزيل غير مكتمل: تم التحقق من {completed}/{total} ملفًا؛ تعذر تنزيل {failed}. أعد المحاولة لتنزيل الملفات الناقصة.",
+  "downloadCancelled": "تم إلغاء التنزيل. تم الاحتفاظ بالملفات المكتملة.",
+  "aboutWebDescription": "يوفر قرآني على الويب قراءة القرآن والاستماع عبر الإنترنت والبحث والحفظ بالتكرار والاختبارات والعلامات المرجعية بالعربية والإنجليزية والفرنسية. تتوفر مواقيت الصلاة والأذان والقبلة والتسبيح وتذكيرات الورد وتنزيل الصوت دون اتصال في تطبيق الهاتف.",
+  "@downloadIncomplete": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "backupTitle": "النسخ الاحتياطي والاستعادة",
+  "backupDescription": "صدّر العلامات والإعدادات والإحصاءات والمراجعات والتسبيح والورد. لا تشمل النسخة الملفات الصوتية أو أذونات الهاتف.",
+  "backupExport": "تصدير نسخة احتياطية",
+  "backupImport": "اختيار ملف للاستعادة",
+  "backupConfirm": "تحتوي هذه النسخة المؤرخة في {date} على {count} عنصرًا. ستستبدل العلامات والإعدادات والتقدم المحفوظ على هذا الجهاز. هل تريد المتابعة؟",
+  "@backupConfirm": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupRestore": "استعادة",
+  "backupDone": "تمت استعادة النسخة الاحتياطية.",
+  "backupInvalid": "الملف غير صالح أو غير متوافق. لم يتم استيراد أي بيانات.",
+  "backupFailed": "تعذرت العملية. أعد المحاولة.",
+  "backupScheduleWarning": "تمت استعادة البيانات. تحقق من المواقيت والأذونات في تشخيص الأذان.",
+  "adhanDiagnosticTitle": "تشخيص الأذان",
+  "adhanNextExpected": "الأذان القادم المتوقع",
+  "adhanNoNext": "لا يتوفر موعد قادم للصلوات المفعلة.",
+  "adhanDiagnosticNote": "يعتمد الموعد المتوقع على المواقيت المحفوظة وإعداداتك. قد يقيّد النظام التنبيهات في الخلفية. يختبر الصوت التشغيل الفوري فقط.",
+  "diagnosticNotifications": "إذن الإشعارات",
+  "diagnosticSound": "صوت إشعارات آيفون",
+  "diagnosticExact": "منبهات أندرويد الدقيقة",
+  "diagnosticBattery": "الإعفاء من تحسين البطارية",
+  "diagnosticLocation": "إذن الموقع",
+  "diagnosticLocationService": "خدمات الموقع مفعلة",
+  "diagnosticCalendar": "تتوفر مواقيت متوافقة",
+  "diagnosticPending": "إشعار آيفون مجدول",
+  "diagnosticEnabled": "الصلوات المفعلة: {count}",
+  "@diagnosticEnabled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticVolume": "مستوى صوت الأذان: {percent}٪",
+  "@diagnosticVolume": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticYes": "نعم",
+  "diagnosticNo": "لا",
+  "diagnosticUnknown": "غير متاح",
+  "diagnosticSettings": "فتح إعدادات الجهاز",
+  "diagnosticTest": "اختبار الصوت",
+  "diagnosticStop": "إيقاف الاختبار",
+  "diagnosticRefresh": "تحديث",
+  "downloadIssuesTitle": "تنزيلات للاستئناف",
+  "downloadIssuesEmpty": "لا توجد تنزيلات فاشلة أو منقطعة.",
+  "downloadRetryAll": "استئناف جميع العناصر",
+  "downloadRetry": "استئناف",
+  "downloadIssueFailed": "فشل",
+  "downloadIssueCancelled": "ملغى",
+  "downloadIssueInterrupted": "منقطع",
+  "downloadIssueActive": "جارٍ التنزيل",
+  "downloadIssueAttempts": "المحاولات: {count}",
+  "@downloadIssueAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadReasonNetwork": "الاتصال غير متاح أو انتهت المهلة",
+  "downloadReasonServer": "لم يوفر الخادم الملف",
+  "downloadReasonFile": "الملف غير متاح أو غير صالح أو تعذر حفظه",
+  "reviewTitle": "المراجعة المتباعدة",
+  "reviewDescription": "أضف المقاطع المحفوظة وراجعها، ثم قيّم تذكرك لتحديد موعد المراجعة القادمة.",
+  "reviewAdd": "إضافة مقطع",
+  "reviewAddCurrent": "إضافة هذا المقطع للمراجعات",
+  "reviewAdded": "تمت إضافة المقطع للمراجعات.",
+  "reviewEmpty": "لم تضف مقاطع للمراجعة بعد.",
+  "reviewDue": "حان وقت المراجعة",
+  "reviewNext": "المراجعة القادمة: {date}",
+  "@reviewNext": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewOpen": "فتح المقطع",
+  "reviewRate": "تقييم مراجعتي",
+  "reviewAgain": "إعادة",
+  "reviewHard": "صعب",
+  "reviewGood": "جيد",
+  "reviewEasy": "سهل",
+  "reviewRemove": "هل تريد إزالة هذا المقطع من المراجعات؟",
+  "reviewPassage": "سورة {startSurah}، آية {startVerse} ← سورة {endSurah}، آية {endVerse}",
+  "@reviewPassage": {
+    "placeholders": {
+      "startSurah": {
+        "type": "int"
+      },
+      "startVerse": {
+        "type": "int"
+      },
+      "endSurah": {
+        "type": "int"
+      },
+      "endVerse": {
+        "type": "int"
+      }
+    }
+  },
+"downloadBatchLabel": "تنزيل كامل"
 }

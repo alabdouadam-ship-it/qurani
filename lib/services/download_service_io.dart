@@ -1,3 +1,5 @@
+import 'download_issue_service.dart';
+import 'download_batch.dart';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:path_provider/path_provider.dart';
@@ -235,13 +237,16 @@ class DownloadService {
     String url,
     String target, {
     void Function(int received, int total)? onReceiveProgress,
+    CancelToken? cancelToken,
   }) async {
     final tempPath = '$target.part';
     final tempFile = File(tempPath);
 
     Object? lastError;
+    StackTrace? lastStack;
     for (int attempt = 1; attempt <= _maxAttempts; attempt++) {
       try {
+        checkDownloadCancellation(cancelToken);
         // Range-resume: pick up from the current `.part` size rather than
         // starting over on every attempt. On cellular connections this can
         // save megabytes on flaky retries.
@@ -258,6 +263,7 @@ class DownloadService {
 
         final response = await _dio.get<ResponseBody>(
           url,
+          cancelToken: cancelToken,
           options: Options(
             responseType: ResponseType.stream,
             followRedirects: true,
@@ -274,16 +280,19 @@ class DownloadService {
         final status = response.statusCode ?? 0;
 
         if (status == 416) {
-          // Server says our requested range is past the end — the `.part`
-          // is probably already the complete file. Validate and promote.
-          if (await tempFile.exists() && await tempFile.length() > 0) {
+          // Only promote a partial file when the server confirms its exact size.
+          final sizeHeader = response.headers.value('content-range') ?? '';
+          final expected = int.tryParse(sizeHeader.split('/').last);
+          await response.data?.stream.drain<void>();
+          if (expected != null && await tempFile.exists() &&
+              await tempFile.length() == expected) {
             await _validateMp3(tempFile);
+            checkDownloadCancellation(cancelToken);
             await tempFile.rename(target);
             return;
           }
-          // Otherwise the local state is inconsistent; start fresh.
           if (await tempFile.exists()) await tempFile.delete();
-          throw Exception('Server 416 with empty local .part');
+          throw Exception('Server 416 with inconsistent local .part');
         }
 
         // If we asked for a range and the server returned 200 instead of
@@ -291,11 +300,19 @@ class DownloadService {
         // truncate the `.part` rather than append.
         final isResume = status == 206 && rangeStart > 0;
 
+        if (status == 206) {
+          final range = RegExp(r'^bytes (\d+)-(\d+)/(\d+)$')
+              .firstMatch(response.headers.value('content-range') ?? '');
+          if (range == null || int.parse(range[1]!) != rangeStart) {
+            await response.data?.stream.drain<void>();
+            throw Exception('Invalid content-range');
+          }
+        }
         _validateContentType(response, url);
 
         // Derive total-expected bytes for progress reporting.
         int totalBytes = -1;
-        if (isResume) {
+        if (status == 206) {
           // `Content-Range: bytes 1000-4999/5000`
           final cr = response.headers.value('content-range');
           if (cr != null && cr.contains('/')) {
@@ -312,6 +329,7 @@ class DownloadService {
         int received = isResume ? rangeStart : 0;
         try {
           await for (final chunk in response.data!.stream) {
+            checkDownloadCancellation(cancelToken);
             sink.add(chunk);
             received += chunk.length;
             if (onReceiveProgress != null && totalBytes > 0) {
@@ -323,12 +341,21 @@ class DownloadService {
           await sink.close();
         }
 
+        checkDownloadCancellation(cancelToken);
+        if (totalBytes >= 0 && received != totalBytes) {
+          throw Exception('Incomplete download: $received of $totalBytes bytes');
+        }
         await _validateMp3(tempFile);
+        checkDownloadCancellation(cancelToken);
         // Atomic move into place; same-filesystem rename is atomic on Android/iOS.
         await tempFile.rename(target);
         return;
       } catch (e, st) {
+        // Keep .part for a later resume, without retrying a cancelled request.
+        checkDownloadCancellation(cancelToken);
+        if (e is DioException && CancelToken.isCancel(e)) rethrow;
         lastError = e;
+        lastStack = st;
         Log.w('DownloadService',
             'attempt $attempt/$_maxAttempts for $url failed', e, st);
         // If the failure is an *integrity* error (bad content-type, bad
@@ -347,8 +374,11 @@ class DownloadService {
         }
         if (attempt < _maxAttempts) {
           // Exponential backoff: 500ms, 2s, then fail.
-          await Future.delayed(
-              Duration(milliseconds: 500 * attempt * attempt));
+          await Future.any([
+            Future<void>.delayed(Duration(milliseconds: 500 * attempt * attempt)),
+            if (cancelToken != null) cancelToken.whenCancel,
+          ]);
+          checkDownloadCancellation(cancelToken);
         }
       }
     }
@@ -357,34 +387,50 @@ class DownloadService {
     try {
       if (await tempFile.exists()) await tempFile.delete();
     } catch (_) {}
-    throw Exception(
-        'Download failed after $_maxAttempts attempts for $url: $lastError');
+    if (lastError != null && lastStack != null) {
+      Error.throwWithStackTrace(lastError, lastStack);
+    }
+    throw StateError('Download did not complete');
   }
 
-  static Future<void> downloadSurah(String reciter, int order) async {
+  static Future<void> downloadSurah(String reciter, int order, {CancelToken? cancelToken}) =>
+      DownloadIssueService.track(DownloadIssue(reciter: reciter, surah: order),
+        () => _downloadSurah(reciter, order, cancelToken: cancelToken), cancelToken: cancelToken);
+
+  static Future<void> _downloadSurah(String reciter, int order, {CancelToken? cancelToken}) async {
+    checkDownloadCancellation(cancelToken);
     final url = await AudioService.buildFullRecitationUrl(reciterKeyAr: reciter, surahOrder: order);
     if (url == null) {
       throw Exception('Unable to resolve download URL for surah $order');
     }
     final target = await localSurahPath(reciter, order);
     final file = File(target);
-    if (await file.exists()) {
-      return;
-    }
-    await _downloadWithRetry(url, target);
+    if (await verifyFile(file)) return;
+    if (await file.exists()) await file.delete();
+    await _downloadWithRetry(url, target, cancelToken: cancelToken);
     // Refresh the verification cache so the UI doesn't have to wait for
     // the next render to learn the new file is good.
-    await verifySurahFileCached(reciter, order, forceRefresh: true);
+    if (!await verifySurahFileCached(reciter, order, forceRefresh: true)) {
+      throw StateError('Downloaded surah failed verification');
+    }
   }
 
   /// Per-ayah download for `OfflineAudioService.downloadAllAyahAudios`.
   /// Reuses [_downloadWithRetry] so ayah downloads inherit the same
   /// `.part`/resume/MP3-validation behaviour as full surahs.
-  static Future<void> downloadAyah({
+  static Future<void> downloadAyah({required String reciter, required int surahOrder,
+    required int verseNumber, CancelToken? cancelToken}) => DownloadIssueService.track(
+      DownloadIssue(reciter: reciter, surah: surahOrder, verse: verseNumber),
+      () => _downloadAyah(reciter: reciter, surahOrder: surahOrder,
+        verseNumber: verseNumber, cancelToken: cancelToken), cancelToken: cancelToken);
+
+  static Future<void> _downloadAyah({
     required String reciter,
     required int surahOrder,
     required int verseNumber,
+    CancelToken? cancelToken,
   }) async {
+    checkDownloadCancellation(cancelToken);
     final url = await AudioService.buildVerseUrl(
       reciterKeyAr: reciter,
       surahOrder: surahOrder,
@@ -400,11 +446,10 @@ class DownloadService {
       verseNumber: verseNumber,
     );
     final file = File(target);
-    if (await file.exists()) {
-      return;
-    }
+    if (await verifyFile(file)) return;
+    if (await file.exists()) await file.delete();
     await file.parent.create(recursive: true);
-    await _downloadWithRetry(url, target);
+    await _downloadWithRetry(url, target, cancelToken: cancelToken);
   }
 
   /// Downloads the full 114-surah recitation for [reciter] with up to
@@ -413,88 +458,34 @@ class DownloadService {
   /// connections. Per-surah failures are logged and counted but do not
   /// abort the batch — the user can simply re-run to pick up missing files
   /// (which will resume via the `.part` cache).
-  static Future<void> downloadFullReciter(
+  static Future<DownloadBatchResult> downloadFullReciter(String reciter, {
+    void Function(double progress)? onProgress, int concurrency = 4, CancelToken? cancelToken,
+  }) => DownloadIssueService.track(DownloadIssue(reciter: reciter, surah: 0),
+      () => _downloadFullReciter(reciter, onProgress: onProgress, concurrency: concurrency,
+          cancelToken: cancelToken), cancelToken: cancelToken);
+
+  static Future<DownloadBatchResult> _downloadFullReciter(
     String reciter, {
     void Function(double progress)? onProgress,
     int concurrency = 4,
+    CancelToken? cancelToken,
   }) async {
-    // Per-surah progress tracking so overall progress aggregates across
-    // concurrent downloads. Keyed by surah order (1..114).
-    final received = <int, int>{};
-    final totals = <int, int>{};
-    final done = <int, bool>{};
-
-    void report() {
-      double sum = 0;
-      for (int i = 1; i <= 114; i++) {
-        if (done[i] == true) {
-          sum += 1;
-        } else {
-          final r = received[i] ?? 0;
-          final t = totals[i] ?? 0;
-          if (t > 0) sum += r / t;
+    // Invalidate any legacy success flag before work starts.
+    await PreferencesService.setDownloadedFull(false);
+    final result = await runDownloadBatch<int>(
+      items: List.generate(114, (i) => i + 1),
+      cancelToken: cancelToken,
+      concurrency: concurrency,
+      onProgress: (completed, total) => onProgress?.call(completed / total),
+      download: (order) async {
+        if (PreferencesService.isFullSurahPaused(reciter, order)) {
+          throw StateError('Surah download is paused');
         }
-      }
-      onProgress?.call((sum / 114.0).clamp(0.0, 1.0));
-    }
-
-    Future<void> downloadOne(int order) async {
-      // Honour a persisted pause request: a user who tapped "Pause" in PR2
-      // will have this entry set, and we skip the surah without burning
-      // bandwidth. The next bulk run picks it up once they tap "Resume".
-      if (PreferencesService.isFullSurahPaused(reciter, order)) {
-        done[order] = true;
-        report();
-        return;
-      }
-      final url = await AudioService.buildFullRecitationUrl(
-          reciterKeyAr: reciter, surahOrder: order);
-      if (url == null) {
-        done[order] = true;
-        report();
-        return;
-      }
-      final target = await localSurahPath(reciter, order);
-      final file = File(target);
-      if (await file.exists()) {
-        done[order] = true;
-        report();
-        return;
-      }
-      try {
-        await _downloadWithRetry(
-          url,
-          target,
-          onReceiveProgress: (r, t) {
-            received[order] = r;
-            if (t > 0) totals[order] = t;
-            report();
-          },
-        );
-        // Warm the verification cache for the freshly written file so the
-        // UI badge flips to "verified" without an extra disk sniff.
-        await verifySurahFileCached(reciter, order, forceRefresh: true);
-      } catch (e, st) {
-        Log.w('DownloadService', 'Surah $order failed after retries', e, st);
-      }
-      done[order] = true;
-      report();
-    }
-
-    // Shared iterator feeds the worker pool — Dart's single-threaded event
-    // loop makes `moveNext` atomic, so the workers can safely race on it.
-    final queue = List.generate(114, (i) => i + 1).iterator;
-    Future<void> worker() async {
-      while (queue.moveNext()) {
-        await downloadOne(queue.current);
-      }
-    }
-
-    final workerCount = concurrency < 1 ? 1 : concurrency;
-    await Future.wait(List.generate(workerCount, (_) => worker()));
-
-    await PreferencesService.setDownloadedFull(true);
+        await downloadSurah(reciter, order, cancelToken: cancelToken);
+      },
+    );
+    await PreferencesService.setDownloadedFull(result.isComplete);
     await PreferencesService.setDownloadedReciter(reciter);
+    return result;
   }
 }
-

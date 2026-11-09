@@ -134,7 +134,7 @@ class AudioService {
         surahOrder: surahOrder,
         verseNumber: verseNumber,
       );
-      return File(p).exists();
+      return await File(p).exists();
     } catch (_) {
       return false;
     }

@@ -1,8 +1,7 @@
-NEW: Secondary edition. Turn it on in the reader's settings and every ayah gets an arrow that opens its tafsir or translation right there, without leaving the page. Open as many as you like.
+NEW in Memorization by Repetition: choose start & end surah and ayah directly in Settings, repeat across different surahs, and automatically remember your last passage and settings.
 
 Also in this update:
-• Memorization screen rebuilt: rotate reciters on each repeat, tap to edit the verse range, screen stays awake
-• Fixed: turning off the Adhan no longer cancels your Wird reminders
-• Much lower memory use on first launch
-• Smaller download
-• Updated audio engine
+• Spaced Review: schedule passages for review with self-grading
+• Backup & Restore: export/import bookmarks, progress, and settings
+• Adhan Diagnostics & more reliable prayer times when traveling
+• Resumable offline audio downloads with retry tracking

@@ -726,7 +726,7 @@ class _EmptyState extends StatelessWidget {
     final title = isAllMode ? l10n.wirdAllEmptyTitle : l10n.wirdTodayEmptyTitle;
     final icon = isAllMode ? Icons.list_alt_rounded : Icons.wb_twilight_rounded;
     return Center(
-      child: Padding(
+      child: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
           mainAxisSize: MainAxisSize.min,

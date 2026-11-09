@@ -8,6 +8,7 @@ import 'package:qurani/services/wird_service.dart';
 import 'package:qurani/widgets/wird_tab.dart';
 import 'responsive_config.dart';
 import 'widgets/modern_ui.dart';
+import 'widgets/wird_focus_counter.dart';
 
 /// Screen layout note: this is a **two-tab** scaffold. The first tab hosts
 /// the classic Tasbeeh groups grid; the second tab is the new Daily Wird
@@ -447,7 +448,7 @@ class _TasbeehScreenState extends State<TasbeehScreen>
         actions:
             inFocus ? _focusModeActions(l10n) : _tabActions(l10n, onWirdTab),
         body: inFocus
-            ? _buildFocusMode(theme, l10n)
+            ? WirdFocusCounter(wird: _activeWird!, onTap: _incrementActiveWird)
             : TabBarView(
                 controller: _tabController,
                 children: [
@@ -511,77 +512,6 @@ class _TasbeehScreenState extends State<TasbeehScreen>
         final group = _groups[index];
         return _buildGroupTile(group, l10n, theme);
       },
-    );
-  }
-
-  Widget _buildFocusMode(ThemeData theme, AppLocalizations l10n) {
-    final wird = _activeWird!;
-    final colorScheme = theme.colorScheme;
-
-    return InkWell(
-      onTap: _incrementActiveWird,
-      borderRadius: BorderRadius.circular(24),
-      // Inkwell default splash is too loud for a meditative flow — keep
-      // the highlight but tame the splash.
-      splashColor: colorScheme.primary.withAlpha(28),
-      highlightColor: colorScheme.primary.withAlpha(12),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        child: Column(
-          children: [
-            Text(
-              wird.title,
-              style: TextStyle(
-                fontSize: ResponsiveConfig.getFontSize(context, 18),
-                fontWeight: FontWeight.w800,
-                color: colorScheme.onSurface,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            if (wird.dhikrText.isNotEmpty) ...[
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(
-                  wird.dhikrText,
-                  style: TextStyle(
-                    fontSize: ResponsiveConfig.getFontSize(context, 22),
-                    fontWeight: FontWeight.w700,
-                    color: colorScheme.primary,
-                    height: 1.4,
-                  ),
-                  textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,
-                ),
-              ),
-            ],
-            const Spacer(),
-            // The huge count is the center of gravity; progress arc wraps
-            // it so the user gets both "how many" and "how close" at a
-            // glance.
-            _FocusedCounterDial(
-              current: wird.currentCount,
-              target: wird.targetCount,
-              done: wird.isCompleted,
-            ),
-            const SizedBox(height: 24),
-            Text(
-              wird.isCompleted
-                  ? l10n.wirdCompletedToast
-                  : l10n.wirdFocusHintTap,
-              style: TextStyle(
-                fontSize: ResponsiveConfig.getFontSize(context, 13),
-                fontWeight: FontWeight.w600,
-                color: wird.isCompleted
-                    ? colorScheme.primary
-                    : colorScheme.onSurface.withAlpha(150),
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const Spacer(),
-          ],
-        ),
-      ),
     );
   }
 
@@ -759,107 +689,6 @@ class _TasbeehScreenState extends State<TasbeehScreen>
         text,
         style: TextStyle(fontSize: 12, color: fg, fontWeight: FontWeight.bold),
       ),
-    );
-  }
-}
-
-/// Big circular counter used by the focused-wird mode. Shows
-/// `currentCount` in the middle, a ring that fills as progress advances,
-/// and a checkmark overlay when the target is hit.
-class _FocusedCounterDial extends StatelessWidget {
-  const _FocusedCounterDial({
-    required this.current,
-    required this.target,
-    required this.done,
-  });
-
-  final int current;
-  final int target;
-  final bool done;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final progress = target <= 0 ? 0.0 : (current / target).clamp(0.0, 1.0);
-
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        // Grow the dial with available space but cap it so it stays
-        // readable on large tablets.
-        final size = constraints.maxWidth.clamp(0.0, 320.0);
-        return SizedBox(
-          width: size,
-          height: size,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              SizedBox(
-                width: size,
-                height: size,
-                child: CircularProgressIndicator(
-                  value: progress,
-                  strokeWidth: 10,
-                  // AlwaysStoppedAnimation because we drive progress
-                  // manually per tap — we don't want an implicit tween
-                  // that stutters behind fast taps.
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    done
-                        ? colorScheme.secondary
-                        : colorScheme.primary.withAlpha(220),
-                  ),
-                  backgroundColor:
-                      colorScheme.surfaceContainerHighest.withAlpha(140),
-                ),
-              ),
-              // Force LTR on the numeric stack: "45 / 100" is a ratio, not
-              // a sentence, so its reading direction should be locale-
-              // independent. Without this the slash and target flip in
-              // Arabic and render as "100 /" which reads awkwardly.
-              Directionality(
-                textDirection: TextDirection.ltr,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // FittedBox prevents a 3-digit count from clipping the
-                    // dial on narrow phones where the base font would
-                    // render wider than the ring's inner diameter.
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Text(
-                        '$current',
-                        style: TextStyle(
-                          fontSize: ResponsiveConfig.getFontSize(context, 64),
-                          fontWeight: FontWeight.w900,
-                          color: colorScheme.onSurface,
-                          height: 1.0,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      '/ $target',
-                      style: TextStyle(
-                        fontSize: ResponsiveConfig.getFontSize(context, 18),
-                        fontWeight: FontWeight.w600,
-                        color: colorScheme.onSurface.withAlpha(140),
-                      ),
-                    ),
-                    if (done) ...[
-                      const SizedBox(height: 10),
-                      Icon(
-                        Icons.check_circle_rounded,
-                        color: colorScheme.secondary,
-                        size: 30,
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

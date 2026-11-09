@@ -212,7 +212,7 @@ class QuranRepository {
         if (text != null && text.isNotEmpty) return text;
       }
       if (pageNumber != null) {
-        return loadAyahText(
+        return await loadAyahText(
           ayahNumber: ayahNumber,
           pageNumber: pageNumber,
           edition: edition,

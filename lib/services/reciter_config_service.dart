@@ -57,24 +57,21 @@ class ReciterConfig {
 /// Service to load and manage reciter configurations
 class ReciterConfigService {
   /// Supabase table mirroring the bundled reciters asset. When linked, this is
-  /// the only remote source. On any failure (or when the table is empty) we
+  /// the only remote source. On any failure we
   /// fall back to the cache, then the bundled asset — so reciters never break
   /// and no error reaches the user. There is intentionally NO JSON-URL fetch.
   static const String _recitersTable = 'reciters';
   static const String _cacheKey = 'reciters_cache';
   static const String _cacheTimestampKey = 'reciters_timestamp';
   static const String _cacheVersionKey = 'reciters_version';
-  static const int _cacheDurationDays = 5;
   static const int _currentVersion = 6; // Increment to force reload
   
   static List<ReciterConfig>? _reciters;
   // Public for synchronous access from AudioService
   static Map<String, ReciterConfig>? reciterMap;
 
-  /// Load reciters with merge strategy:
-  /// 1. Always load bundled asset (base truth)
-  /// 2. Attempt to load from remote/cache
-  /// 3. Merge results (Remote/Cache overrides Asset for same keys, but Asset-only keys are preserved)
+  /// A remote/cache snapshot controls visibility. Bundled entries only serve
+  /// as a first-install fallback and resolve previously saved audio selections.
   static Future<void> loadReciters() async {
     if (_reciters != null) return; // Already loaded
 
@@ -95,7 +92,7 @@ class ReciterConfigService {
     }
     
     List<ReciterConfig> assetReciters = [];
-    List<ReciterConfig> dynamicReciters = [];
+    List<ReciterConfig>? dynamicReciters;
 
     // 1. Load Asset
     try {
@@ -112,20 +109,11 @@ class ReciterConfigService {
     try {
       Map<String, dynamic>? dynamicData;
       
-      // Check if cache is expired
-      if (await _isCacheExpired()) {
-         debugPrint('[ReciterConfig] Cache expired, fetching remote...');
-         dynamicData = await _fetchRemote();
-         if (dynamicData != null) {
-           debugPrint('[ReciterConfig] Remote fetch successful');
-           await _saveCache(dynamicData);
-         } else {
-           debugPrint('[ReciterConfig] Remote fetch returned null');
-         }
-      } else {
-        debugPrint('[ReciterConfig] Cache is valid, skipping remote');
-      }
-      
+      // Refresh each cold launch; the last server snapshot remains authoritative
+      // offline, including a deliberately empty catalogue.
+      dynamicData = await _fetchRemote();
+      if (dynamicData != null) await _saveCache(dynamicData);
+
       // Fallback to cache if remote failed or valid
       if (dynamicData == null) {
         debugPrint('[ReciterConfig] Loading from cache...');
@@ -146,7 +134,7 @@ class ReciterConfigService {
       debugPrint('[ReciterConfig] Stack: $stack');
     }
 
-    // 3. Merge
+    // 3. Visible snapshot plus a separate legacy audio lookup
     _mergeAndSet(assetReciters, dynamicReciters);
     debugPrint('[ReciterConfig] Final count: ${_reciters?.length ?? 0} reciters');
     debugPrint('[ReciterConfig] Reciters: ${_reciters?.map((r) => r.code).join(", ")}');
@@ -157,7 +145,7 @@ class ReciterConfigService {
     debugPrint('[ReciterConfig] Full surahs list: ${withFullSurahs.map((r) => r.code).join(", ")}');
   }
 
-  static void _mergeAndSet(List<ReciterConfig> assetList, List<ReciterConfig> dynamicList) {
+  static void _mergeAndSet(List<ReciterConfig> assetList, List<ReciterConfig>? dynamicList) {
     // Create map from Asset first
     final Map<String, ReciterConfig> merged = {};
     for (var r in assetList) {
@@ -165,11 +153,11 @@ class ReciterConfigService {
     }
     
     // Override/Add from Dynamic (Remote/Cache)
-    for (var r in dynamicList) {
+    for (var r in dynamicList ?? <ReciterConfig>[]) {
       merged[r.code] = r;
     }
 
-    _reciters = merged.values.toList();
+    _reciters = List.of(dynamicList ?? assetList);
     reciterMap = merged;
   }
 
@@ -200,7 +188,7 @@ class ReciterConfigService {
   }
 
   /// Force refresh reciters from Supabase (silent - no error messages).
-  /// Falls back to existing data when Supabase is unavailable or empty.
+  /// Falls back to existing data when Supabase is unavailable.
   static Future<void> forceRefresh() async {
     try {
       debugPrint('[ReciterConfig] Force refresh requested');
@@ -208,10 +196,8 @@ class ReciterConfigService {
       if (remoteData != null) {
         debugPrint('[ReciterConfig] Remote data fetched, saving to cache');
         await _saveCache(remoteData);
-        // Reload all to merge properly
-        _reciters = null; 
-        reciterMap = null;
-        await loadReciters();
+        final assets = _parseList(await _loadFallback());
+        _mergeAndSet(assets, _parseList(remoteData));
         debugPrint('[ReciterConfig] Refresh complete');
       } else {
         debugPrint('[ReciterConfig] Remote fetch failed, keeping current data');
@@ -222,42 +208,9 @@ class ReciterConfigService {
     }
   }
   
-  /// Clear cache and force reload from assets (useful for iOS fresh start)
-  static Future<void> clearAndReload() async {
-    debugPrint('[ReciterConfig] Clearing cache and reloading from assets');
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.remove(_cacheKey);
-      await prefs.remove(_cacheTimestampKey);
-      _reciters = null;
-      reciterMap = null;
-      await loadReciters();
-      debugPrint('[ReciterConfig] Cache cleared and reloaded');
-    } catch (e) {
-      debugPrint('[ReciterConfig] Error in clearAndReload: $e');
-    }
-  }
-
-  static Future<bool> _isCacheExpired() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      
-      final timestamp = prefs.getInt(_cacheTimestampKey);
-      if (timestamp == null) return true;
-      
-      final cacheDate = DateTime.fromMillisecondsSinceEpoch(timestamp);
-      final now = DateTime.now();
-      final difference = now.difference(cacheDate);
-      
-      return difference.inDays >= _cacheDurationDays;
-    } catch (_) {
-      return true;
-    }
-  }
-
   static Future<Map<String, dynamic>?> _fetchRemote() async {
     // Supabase is the ONLY remote source. When it isn't linked/ready, or
-    // returns no usable data, we return null and the caller falls back to the
+    // fails, we return null and the caller falls back to the
     // cache and then the bundled asset. No JSON-URL fetch is performed.
     if (SupabaseConfig.isReady) {
       final fromDb = await _fetchFromSupabase();
@@ -282,6 +235,7 @@ class ReciterConfigService {
       final rows = await SupabaseConfig.client
           .from(_recitersTable)
           .select()
+          .eq('is_enabled', true)
           .order('sort_order', ascending: true);
 
       final list = (rows as List).map((r) {
@@ -295,14 +249,6 @@ class ReciterConfigService {
           'surahsPath': row['surahs_path'],
         };
       }).toList();
-      // DB reachable but empty → treat as "no remote data" so we fall back to
-      // the cache / bundled asset instead of caching an empty set.
-      if (list.isEmpty) {
-        if (kDebugMode) {
-          debugPrint('[ReciterConfig] Supabase returned 0 rows; using bundled');
-        }
-        return null;
-      }
       return {'reciters': list};
     } catch (e) {
       if (kDebugMode) debugPrint('[ReciterConfig] _fetchFromSupabase error: $e');
@@ -346,6 +292,12 @@ class ReciterConfigService {
     final recitersList = decoded['reciters'] as List;
     debugPrint('[ReciterConfig] Decoded ${recitersList.length} reciters from JSON');
     return decoded;
+  }
+
+  @visibleForTesting
+  static void resetMemoryCache() {
+    _reciters = null;
+    reciterMap = null;
   }
 
   /// Get all reciters

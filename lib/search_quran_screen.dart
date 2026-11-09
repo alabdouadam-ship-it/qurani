@@ -1,3 +1,4 @@
+import 'services/latest_async_request.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   List<SearchAyah> _results = const <SearchAyah>[];
   int _totalOccurrences = 0;
   bool _isSearching = false;
+  final _searchRequest = LatestAsyncRequest();
   String _lastQuery = '';
   int? _selectedSurah; // null = all Quran
   Map<int, String> _surahNames = {};
@@ -54,7 +56,12 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
 
   Future<void> _loadSurahNames() async {
     // Trigger search service initialization to load surah names
-    await QuranSearchService.instance.search('');
+    try {
+      await QuranSearchService.instance.search('');
+    } catch (error) {
+      debugPrint('Search initialization failed: $error');
+      return;
+    }
     if (mounted) {
       setState(() {
         _surahNames = QuranSearchService.instance.surahNames;
@@ -68,6 +75,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   @override
   void dispose() {
     _isDisposed = true;
+    _searchRequest.invalidate();
     _playerStateSub?.cancel();
     _controller.dispose();
     _focusNode.dispose();
@@ -76,6 +84,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
   }
 
   Future<void> _doSearch(String query) async {
+    _searchRequest.invalidate();
     final l10n = AppLocalizations.of(context)!;
     // Preserve single spaces at start/end (helps search for standalone words)
     // but collapse multiple consecutive spaces to one
@@ -83,7 +92,12 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
     final q = query.replaceAll(RegExp(r' {2,}'), ' ');
     final normalized = QuranSearchService.normalize(q, language: _selectedLanguage);
     if (normalized.length < 2) {
-      setState(() => _results = const <SearchAyah>[]);
+      setState(() {
+        _results = const <SearchAyah>[];
+        _totalOccurrences = 0;
+        _lastQuery = '';
+        _isSearching = false;
+      });
       if (normalized.isNotEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(l10n.searchTooShort)),
@@ -95,22 +109,38 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
       _isSearching = true;
       _lastQuery = q;
     });
-    try {
-      final res = await QuranSearchService.instance.search(q, surahOrder: _selectedSurah, language: _selectedLanguage);
-      if (!mounted) return;
-      setState(() {
-        _results = res.ayahs;
-        _totalOccurrences = res.totalOccurrences;
-      });
-    } catch (e) {
-      if (!mounted) return;
-      debugPrint('Search error: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.unknownError)),
-      );
-    } finally {
-      if (mounted) setState(() => _isSearching = false);
-    }
+    final surah = _selectedSurah;
+    final language = _selectedLanguage;
+    await _searchRequest.run(
+      () => QuranSearchService.instance.search(q, surahOrder: surah, language: language),
+      onResult: (res) {
+        if (!mounted) return;
+        setState(() {
+          _results = res.ayahs;
+          _totalOccurrences = res.totalOccurrences;
+        });
+      },
+      onError: (error) {
+        if (!mounted) return;
+        debugPrint('Search error: $error');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(l10n.unknownError)),
+        );
+      },
+      onComplete: () {
+        if (mounted) setState(() => _isSearching = false);
+      },
+    );
+  }
+
+  void _invalidateSearch() {
+    _searchRequest.invalidate();
+    setState(() {
+      _results = const [];
+      _totalOccurrences = 0;
+      _lastQuery = '';
+      _isSearching = false;
+    });
   }
 
   InlineSpan _buildHighlightedText(String text, String query, ColorScheme colorScheme) {
@@ -524,6 +554,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                 ],
                 onChanged: (val) {
                   if (val != null && val != _selectedLanguage) {
+                    _invalidateSearch();
                     setState(() {
                       _selectedLanguage = val;
                       _results = [];
@@ -552,6 +583,7 @@ class _SearchQuranScreenState extends State<SearchQuranScreen> {
                     focusNode: _focusNode,
                     textInputAction: TextInputAction.search,
                     onSubmitted: _doSearch,
+                    onChanged: (_) => _invalidateSearch(),
                     decoration: InputDecoration(
                       hintText: l10n.searchQuran,
                       prefixIcon: const Icon(Icons.search),

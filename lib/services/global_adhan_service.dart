@@ -1,3 +1,5 @@
+import 'foreground_adhan_monitor.dart';
+import 'prayer_cache_policy.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'prayer_times_service.dart';
@@ -17,9 +19,16 @@ class GlobalAdhanService {
   GlobalAdhanService._internal();
 
   Timer? _monitorTimer;
-  DateTime? _lastCheckedDay;
-  Map<String, DateTime>? _todayTimes;
-  final Set<String> _playedToday = {};
+  static void Function()? onDayChanged;
+  late final _monitor = ForegroundAdhanMonitor(
+    loadTimes: (day) => PrayerTimesService.getTimesForDate(
+      year: day.year, month: day.month, day: day.day),
+    play: (prayer) async { await AdhanAudioManager.playAdhan(prayer); },
+    isPlaying: () => AdhanAudioManager.isPlayingListenable.value,
+    isEnabled: (prayer) => PreferencesService.getBool('adhan_$prayer') ?? false,
+    onDayChanged: () => onDayChanged?.call(),
+    cacheRevision: () => PrayerCachePolicy.revision,
+  );
 
   /// Forwarder to [AdhanAudioManager.isPlayingListenable] — the single
   /// source of truth across the foreground UI and the background alarm
@@ -74,80 +83,36 @@ class GlobalAdhanService {
     await AdhanAudioManager.stopAllAdhanPlayback();
   }
 
+  int _lifecycleGeneration = 0;
+
   Future<void> _start() async {
-    await _loadTodayTimes();
-    // Re-sync the in-memory notifier with prefs in case an alarm fired
-    // while the main isolate was cold-starting.
+    _stop();
+    final generation = _lifecycleGeneration;
     await AdhanAudioManager.syncPlayingStateFromPrefs();
-
-    _monitorTimer?.cancel();
-    _monitorTimer = Timer.periodic(const Duration(seconds: 30), (timer) {
-      _checkAndPlayAdhan();
+    if (generation != _lifecycleGeneration) return;
+    _monitorTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+      unawaited(_checkAndPlayAdhan());
     });
-
-    // Also check immediately
-    _checkAndPlayAdhan();
+    await _checkAndPlayAdhan();
   }
 
   void _stop() {
+    _lifecycleGeneration++;
     _monitorTimer?.cancel();
     _monitorTimer = null;
-  }
-
-  Future<void> _loadTodayTimes() async {
-    final now = DateTime.now();
-
-    // Reset if it's a new day
-    if (_lastCheckedDay == null ||
-        _lastCheckedDay!.day != now.day ||
-        _lastCheckedDay!.month != now.month ||
-        _lastCheckedDay!.year != now.year) {
-      _playedToday.clear();
-      _lastCheckedDay = now;
-    }
-
-    try {
-      _todayTimes = await PrayerTimesService.getTimesForDate(
-        year: now.year,
-        month: now.month,
-        day: now.day,
-      );
-    } catch (e, st) {
-      Log.w('GlobalAdhanService', 'Error loading prayer times', e, st);
-    }
+    _monitor.invalidate();
   }
 
   Future<void> _checkAndPlayAdhan() async {
-    // Don't play if the authoritative engine says something's already going.
-    if (AdhanAudioManager.isPlayingListenable.value) return;
-    if (_todayTimes == null) {
-      await _loadTodayTimes();
-      if (_todayTimes == null) return;
-    }
-
-    final now = DateTime.now();
-    final prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
-
-    for (final prayerId in prayers) {
-      final prayerTime = _todayTimes![prayerId];
-      if (prayerTime == null) continue;
-
-      // Within 30 seconds of prayer time
-      final diff = now.difference(prayerTime).inSeconds.abs();
-      if (diff <= 30) {
-        final enabled = PreferencesService.getBool('adhan_$prayerId') ?? false;
-        if (enabled && !_playedToday.contains(prayerId)) {
-          _playedToday.add(prayerId);
-          Log.i('GlobalAdhanService', 'Playing Adhan for $prayerId');
-          // Delegate entirely to the unified engine. The manager handles:
-          //  - picking the best engine (native → file → asset)
-          //  - flipping `isPlayingListenable`
-          //  - driving the completion listener so the flag clears at end
-          //  - the 6-minute safety timeout
-          await AdhanAudioManager.playAdhan(prayerId);
-          break;
-        }
+    try {
+      if (_cacheRevision != PrayerCachePolicy.revision) {
+        _cacheRevision = PrayerCachePolicy.revision;
+        _monitor.invalidate();
       }
+      await _monitor.check();
+    } catch (e, st) {
+      Log.w('GlobalAdhanService', 'Error monitoring prayer times', e, st);
     }
   }
+  int _cacheRevision = -1;
 }

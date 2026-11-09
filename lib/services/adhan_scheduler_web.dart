@@ -25,6 +25,7 @@ class AdhanScheduler {
   }) async {}
 
   static Future<void> invalidateScheduling() async {}
+  static Future<void> cancelScheduledWindow() async {}
 
   // Web mirrors of the atomic write-and-invalidate helpers. On web there is
   // no background scheduling, so these just persist the preference.

@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:qurani/l10n/app_localizations.dart';
@@ -45,7 +46,7 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
     }
 
     for (var order = 1; order <= 114; order++) {
-      final exists = await DownloadService.isSurahDownloaded(reciterKey, order);
+      final exists = await DownloadService.verifySurahFileCached(reciterKey, order);
       if (!exists) {
         return true;
       }
@@ -287,8 +288,9 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
         );
       },
     );
-    if (confirmed != true) return;
+    if (confirmed != true || !mounted) return;
 
+    final cancelToken = CancelToken();
     double progress = 0.0;
     bool started = false;
     StateSetter? dialogSetState;
@@ -307,23 +309,27 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
               started = true;
               Future.microtask(() async {
                 try {
-                  await DownloadService.downloadFullReciter(
+                  final result = await DownloadService.downloadFullReciter(
                     reciterKey,
+                    cancelToken: cancelToken,
                     onProgress: (value) {
+                      if (!dialogContext.mounted) return;
                       dialogSetState?.call(() {
                         progress = value;
                       });
                     },
                   );
+                  errorMessage = result.cancelled ? l10n.downloadCancelled
+                      : l10n.downloadIncomplete(result.completed, result.total, result.failed);
                   // Stop accepting further progress callbacks before popping,
                   // so a late callback can't setState on the disposed
                   // StatefulBuilder.
                   dialogSetState = null;
                   if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
-                    Navigator.of(dialogContext).pop(true);
+                    Navigator.of(dialogContext).pop(result.isComplete);
                   }
                 } catch (e) {
-                  errorMessage = e.toString();
+                  errorMessage = l10n.downloadFailed;
                   dialogSetState = null;
                   if (dialogContext.mounted && Navigator.of(dialogContext).canPop()) {
                     Navigator.of(dialogContext).pop(false);
@@ -336,12 +342,18 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
             const totalSurahs = 114;
             int completedSurahs = 0;
             if (progress > 0) {
-              completedSurahs = (progress * totalSurahs).ceil();
+              completedSurahs = (progress * totalSurahs).round();
               if (completedSurahs > totalSurahs) {
                 completedSurahs = totalSurahs;
               }
             }
-            return AlertDialog(
+            return PopScope(
+              canPop: false,
+              child: AlertDialog(
+              actions: [TextButton(
+                onPressed: () => cancelToken.cancel(),
+                child: Text(l10n.cancel),
+              )],
               title: Text(l10n.downloadProgressTitle),
               content: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -353,21 +365,23 @@ class _ListenQuranScreenState extends State<ListenQuranScreen> {
                   Text(label),
                 ],
               ),
-            );
+            ));
           },
         );
       },
     );
 
+    dialogSetState = null;
+    cancelToken.cancel();
     if (!mounted) return;
+    _refreshDownloadButtonState();
     if (success == true) {
       messenger.showSnackBar(
         SnackBar(content: Text(l10n.downloadComplete)),
       );
-      _refreshDownloadButtonState();
     } else if (success == false) {
       final message = errorMessage?.isNotEmpty == true
-          ? '${l10n.downloadFailed}: $errorMessage'
+          ? errorMessage!
           : l10n.downloadFailed;
       messenger.showSnackBar(
         SnackBar(content: Text(message)),

@@ -988,5 +988,136 @@
   "secondaryEditionShow": "Show secondary edition",
   "@secondaryEditionShow": {},
   "secondaryEditionHide": "Hide secondary edition",
-  "@secondaryEditionHide": {}
+  "@secondaryEditionHide": {},
+  "memorizationIncompleteData": "The passage could not be fully loaded. Check your connection and try again.",
+  "downloadIncomplete": "Download incomplete: {completed}/{total} files verified; {failed} failed. Retry to download missing files.",
+  "downloadCancelled": "Download cancelled. Completed files have been kept.",
+  "aboutWebDescription": "Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.",
+  "@downloadIncomplete": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "backupTitle": "Backup and restore",
+  "backupDescription": "Export bookmarks, settings, statistics, reviews, tasbeeh and Wird. Audio files and phone permissions are not included.",
+  "backupExport": "Export backup",
+  "backupImport": "Choose backup file",
+  "backupConfirm": "This backup from {date} contains {count} entries. It will replace the backed-up bookmarks, settings and progress on this device. Continue?",
+  "@backupConfirm": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupRestore": "Restore",
+  "backupDone": "Backup restored.",
+  "backupInvalid": "Invalid or incompatible file. No data was imported.",
+  "backupFailed": "The operation failed. Please try again.",
+  "backupScheduleWarning": "Data restored. Check prayer times and permissions in Adhan diagnostics.",
+  "adhanDiagnosticTitle": "Adhan diagnostics",
+  "adhanNextExpected": "Next expected adhan",
+  "adhanNoNext": "No future time available for enabled prayers.",
+  "adhanDiagnosticNote": "The expected time uses saved prayer times and your settings. The system may restrict background alarms. The sound test checks immediate playback only.",
+  "diagnosticNotifications": "Notification permission",
+  "diagnosticSound": "iPhone notification sound",
+  "diagnosticExact": "Android exact alarms",
+  "diagnosticBattery": "Battery optimization exemption",
+  "diagnosticLocation": "Location permission",
+  "diagnosticLocationService": "Location services enabled",
+  "diagnosticCalendar": "Matching prayer times available",
+  "diagnosticPending": "iPhone notification scheduled",
+  "diagnosticEnabled": "Enabled prayers: {count}",
+  "@diagnosticEnabled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticVolume": "Adhan volume: {percent}%",
+  "@diagnosticVolume": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticYes": "Yes",
+  "diagnosticNo": "No",
+  "diagnosticUnknown": "Unavailable",
+  "diagnosticSettings": "Open device settings",
+  "diagnosticTest": "Test sound",
+  "diagnosticStop": "Stop test",
+  "diagnosticRefresh": "Refresh",
+  "downloadIssuesTitle": "Downloads to resume",
+  "downloadIssuesEmpty": "No failed or interrupted downloads.",
+  "downloadRetryAll": "Resume all items",
+  "downloadRetry": "Resume",
+  "downloadIssueFailed": "Failed",
+  "downloadIssueCancelled": "Cancelled",
+  "downloadIssueInterrupted": "Interrupted",
+  "downloadIssueActive": "In progress",
+  "downloadIssueAttempts": "Attempts: {count}",
+  "@downloadIssueAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadReasonNetwork": "Connection unavailable or timed out",
+  "downloadReasonServer": "The server did not provide the file",
+  "downloadReasonFile": "File unavailable, invalid or could not be saved",
+  "reviewTitle": "Spaced review",
+  "reviewDescription": "Add memorized passages. Review them, then rate your recall to schedule the next review.",
+  "reviewAdd": "Add passage",
+  "reviewAddCurrent": "Add this passage to reviews",
+  "reviewAdded": "Passage added to reviews.",
+  "reviewEmpty": "No review passages yet.",
+  "reviewDue": "Due for review",
+  "reviewNext": "Next review: {date}",
+  "@reviewNext": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewOpen": "Open passage",
+  "reviewRate": "Rate my review",
+  "reviewAgain": "Again",
+  "reviewHard": "Hard",
+  "reviewGood": "Good",
+  "reviewEasy": "Easy",
+  "reviewRemove": "Remove this passage from reviews?",
+  "reviewPassage": "Surah {startSurah}, verse {startVerse} → surah {endSurah}, verse {endVerse}",
+  "@reviewPassage": {
+    "placeholders": {
+      "startSurah": {
+        "type": "int"
+      },
+      "startVerse": {
+        "type": "int"
+      },
+      "endSurah": {
+        "type": "int"
+      },
+      "endVerse": {
+        "type": "int"
+      }
+    }
+  },
+"downloadBatchLabel": "Full download"
 }

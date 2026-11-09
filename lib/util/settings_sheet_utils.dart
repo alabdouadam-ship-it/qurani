@@ -202,11 +202,14 @@ class _ReciterSelectionSheetState extends State<_ReciterSelectionSheet> {
   Future<void> _handleRefresh() async {
     setState(() => _isRefreshing = true);
     // Force clean reload
-    await ReciterConfigService.clearAndReload(); // Ensure this method exists or use forceRefresh
     await ReciterConfigService.forceRefresh();
     
     // Reload logic...
-    final allReciters = await ReciterConfigService.getRecitersWithFullSurahs();
+    final allReciters = widget.requireVerseByVerse
+        ? await ReciterConfigService.getRecitersForVerseByVerse()
+        : widget.requireFullSurahs
+            ? await ReciterConfigService.getRecitersWithFullSurahs()
+            : await ReciterConfigService.getReciters();
     final langCode = PreferencesService.getLanguage();
     
     // Debug output

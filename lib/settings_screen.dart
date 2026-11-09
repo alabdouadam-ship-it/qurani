@@ -1,10 +1,10 @@
+import 'backup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:qurani/l10n/app_localizations.dart';
 import 'local_webview_screen.dart';
 import 'package:share_plus/share_plus.dart';
-import 'responsive_config.dart';
 import 'preferences_screen.dart';
 
 
@@ -17,8 +17,6 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isSmallScreen = ResponsiveConfig.isSmallScreen(context);
-    final isTablet = ResponsiveConfig.isTablet(context);
     final l10n = AppLocalizations.of(context)!;
 
     return ModernPageScaffold(
@@ -32,36 +30,19 @@ class SettingsScreen extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final settings = _getSettings(context);
-          int crossAxisCount;
-          if (isSmallScreen) {
-            crossAxisCount = 2;
-          } else if (isTablet) {
-            crossAxisCount = 3;
-          } else {
-            final width = constraints.maxWidth;
-            const targetTileWidth = 180.0;
-            final cols = width ~/ targetTileWidth;
-            crossAxisCount = cols.clamp(3, 8);
-          }
-
-          final rows = (settings.length / crossAxisCount).ceil();
-          final availableHeight = constraints.maxHeight - 24;
-          final totalSpacingHeight = (rows - 1) * (isSmallScreen ? 12 : 16);
-          final minItemHeight = isSmallScreen ? 120.0 : 140.0;
-          final calculatedItemHeight = (availableHeight - totalSpacingHeight) / rows;
-          final itemHeight = calculatedItemHeight < minItemHeight ? minItemHeight : calculatedItemHeight;
-          final totalSpacingWidth = (crossAxisCount - 1) * (isSmallScreen ? 12 : 16);
-          final itemWidth = (constraints.maxWidth - totalSpacingWidth) / crossAxisCount;
-          final aspectRatio = itemWidth / itemHeight;
-
-          return GridView.count(
-            crossAxisCount: crossAxisCount,
-            crossAxisSpacing: isSmallScreen ? 12 : 16,
-            mainAxisSpacing: isSmallScreen ? 12 : 16,
-            childAspectRatio: aspectRatio,
+          const spacing = 12.0;
+          final columns = (constraints.maxWidth / 320).floor().clamp(1, 4);
+          final width = (constraints.maxWidth - (columns - 1) * spacing) / columns;
+          return SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 24),
-            physics: const BouncingScrollPhysics(),
-            children: settings.map((s) => _buildSettingCard(context, s)).toList(),
+            child: Wrap(
+              spacing: spacing,
+              runSpacing: spacing,
+              children: [
+                for (final setting in settings)
+                  SizedBox(width: width, child: _buildSettingCard(context, setting)),
+              ],
+            ),
           );
         },
       ),
@@ -71,25 +52,24 @@ class SettingsScreen extends StatelessWidget {
   List<SettingItem> _getSettings(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return [
+      SettingItem(id: 'backup', icon: Icons.backup_outlined, title: l10n.backupTitle, color: Colors.teal),
+
       SettingItem(
         id: 'preferences',
         icon: Icons.tune,
         title: l10n.preferences,
-        subtitle: "",
         color: Colors.green,
       ),
       SettingItem(
         id: 'customize_screens',
         icon: Icons.dashboard_customize_outlined,
         title: l10n.localeName == 'ar' ? 'تخصيص الشاشات' : (l10n.localeName == 'fr' ? 'Personnaliser les écrans' : 'Customize Screens'),
-        subtitle: "",
         color: Colors.blueAccent,
       ),
       SettingItem(
         id: 'share',
         icon: Icons.share,
         title: l10n.shareApp,
-        subtitle: "",
         color: Colors.teal,
       ),
       if (!kIsWeb)
@@ -97,47 +77,43 @@ class SettingsScreen extends StatelessWidget {
           id: 'offline_audio',
           icon: Icons.cloud_download_outlined,
           title: l10n.offlineAudioTitle,
-          subtitle: '',
           color: Colors.orange,
         ),
       SettingItem(
         id: 'about',
         icon: Icons.info_outline,
         title: l10n.about,
-        subtitle: '',
         color: Colors.blue,
       ),
       SettingItem(
         id: 'help',
         icon: Icons.help_outline,
         title: l10n.help,
-        subtitle: '',
         color: Colors.purple,
       ),
       SettingItem(
         id: 'privacy',
         icon: Icons.privacy_tip_outlined,
         title: l10n.privacyPolicy,
-        subtitle: '',
         color: Colors.indigo,
       ),
       SettingItem(
         id: 'terms',
         icon: Icons.article_outlined,
         title: l10n.termsConditions,
-        subtitle: '',
         color: Colors.brown,
       ),
     ];
   }
 
   Widget _buildSettingCard(BuildContext context, SettingItem setting) {
-    return ModernFeatureTile(
-      icon: setting.icon,
-      title: setting.title,
-      subtitle: setting.subtitle,
-      color: setting.color,
-      onTap: () => _handleSettingTap(context, setting),
+    return Card(
+      margin: EdgeInsets.zero,
+      child: ListTile(
+        leading: Icon(setting.icon, color: setting.color),
+        title: Text(setting.title),
+        onTap: () => _handleSettingTap(context, setting),
+      ),
     );
   }
 
@@ -157,6 +133,9 @@ class SettingsScreen extends StatelessWidget {
           '${base}_$lang.html';
     }
     switch (setting.id) {
+      case 'backup':
+        Navigator.push(context, MaterialPageRoute(builder: (_) => const BackupScreen()));
+        break;
       case 'about':
         _showAboutDialog(context);
         break;
@@ -256,7 +235,7 @@ class SettingsScreen extends StatelessWidget {
             children: [
               if (versionText.isNotEmpty) Text(versionText),
               const SizedBox(height: 8),
-              Text(l10n.aboutDescription),
+              Text(kIsWeb ? l10n.aboutWebDescription : l10n.aboutDescription),
             ],
           ),
           actions: [
@@ -304,14 +283,12 @@ class SettingItem {
   final String id;
   final IconData icon;
   final String title;
-  final String subtitle;
   final Color color;
 
   SettingItem({
     required this.id,
     required this.icon,
     required this.title,
-    required this.subtitle,
     required this.color,
   });
 }

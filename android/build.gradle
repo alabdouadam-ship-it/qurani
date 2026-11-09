@@ -5,6 +5,15 @@ allprojects {
     }
 }
 
+project(':geocoding_android') {
+    plugins.withId('com.android.library') {
+        androidComponents.finalizeDsl { android ->
+            // This plugin pins API 33, but its AndroidX dependencies require API 34.
+            android.compileSdk = Math.max(android.compileSdk, 34)
+        }
+    }
+}
+
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"

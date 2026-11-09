@@ -985,5 +985,136 @@
   "secondaryEditionShow": "Afficher l'édition secondaire",
   "@secondaryEditionShow": {},
   "secondaryEditionHide": "Masquer l'édition secondaire",
-  "@secondaryEditionHide": {}
+  "@secondaryEditionHide": {},
+  "memorizationIncompleteData": "Le passage n’a pas pu être chargé entièrement. Vérifiez votre connexion et réessayez.",
+  "downloadIncomplete": "Téléchargement incomplet : {completed}/{total} fichiers vérifiés ; {failed} échecs. Relancez pour récupérer les fichiers manquants.",
+  "downloadCancelled": "Téléchargement annulé. Les fichiers terminés ont été conservés.",
+  "aboutWebDescription": "Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests et les favoris en arabe, anglais et français. Les horaires de prière, l’adhan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.",
+  "@downloadIncomplete": {
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "backupTitle": "Sauvegarde et restauration",
+  "backupDescription": "Exportez vos favoris, paramètres, statistiques, révisions, tasbih et Wird. Les fichiers audio et les autorisations du téléphone ne sont pas inclus.",
+  "backupExport": "Exporter une sauvegarde",
+  "backupImport": "Choisir un fichier à restaurer",
+  "backupConfirm": "Cette sauvegarde du {date} contient {count} éléments. Elle remplacera les favoris, paramètres et progressions sauvegardés sur cet appareil. Continuer ?",
+  "@backupConfirm": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "backupRestore": "Restaurer",
+  "backupDone": "Sauvegarde restaurée.",
+  "backupInvalid": "Fichier incompatible ou invalide. Aucune donnée n’a été importée.",
+  "backupFailed": "L’opération a échoué. Réessayez.",
+  "backupScheduleWarning": "Données restaurées. Vérifiez les horaires et autorisations dans le diagnostic de l’adhan.",
+  "adhanDiagnosticTitle": "Diagnostic de l’adhan",
+  "adhanNextExpected": "Prochain adhan prévu",
+  "adhanNoNext": "Aucun horaire futur disponible pour les prières activées.",
+  "adhanDiagnosticNote": "L’heure prévue utilise les horaires enregistrés et vos réglages. Le système peut limiter les alarmes en arrière-plan. Le test sonore vérifie uniquement la lecture immédiate.",
+  "diagnosticNotifications": "Autorisation des notifications",
+  "diagnosticSound": "Son des notifications iPhone",
+  "diagnosticExact": "Alarmes exactes Android",
+  "diagnosticBattery": "Exemption d’optimisation de batterie",
+  "diagnosticLocation": "Autorisation de localisation",
+  "diagnosticLocationService": "Service de localisation activé",
+  "diagnosticCalendar": "Horaires compatibles disponibles",
+  "diagnosticPending": "Notification iPhone programmée",
+  "diagnosticEnabled": "Prières activées : {count}",
+  "@diagnosticEnabled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticVolume": "Volume de l’adhan : {percent} %",
+  "@diagnosticVolume": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "diagnosticYes": "Oui",
+  "diagnosticNo": "Non",
+  "diagnosticUnknown": "Non disponible",
+  "diagnosticSettings": "Ouvrir les réglages du téléphone",
+  "diagnosticTest": "Tester le son",
+  "diagnosticStop": "Arrêter le test",
+  "diagnosticRefresh": "Actualiser",
+  "downloadIssuesTitle": "Téléchargements à reprendre",
+  "downloadIssuesEmpty": "Aucun téléchargement en échec ou interrompu.",
+  "downloadRetryAll": "Reprendre tous les éléments",
+  "downloadRetry": "Reprendre",
+  "downloadIssueFailed": "Échec",
+  "downloadIssueCancelled": "Annulé",
+  "downloadIssueInterrupted": "Interrompu",
+  "downloadIssueActive": "En cours",
+  "downloadIssueAttempts": "Tentatives : {count}",
+  "@downloadIssueAttempts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "downloadReasonNetwork": "Connexion indisponible ou délai dépassé",
+  "downloadReasonServer": "Le serveur n’a pas fourni le fichier",
+  "downloadReasonFile": "Fichier indisponible, invalide ou impossible à enregistrer",
+  "reviewTitle": "Révision espacée",
+  "reviewDescription": "Ajoutez les passages mémorisés. Révisez-les, puis évaluez votre rappel pour programmer la prochaine révision.",
+  "reviewAdd": "Ajouter un passage",
+  "reviewAddCurrent": "Ajouter ce passage aux révisions",
+  "reviewAdded": "Passage ajouté aux révisions.",
+  "reviewEmpty": "Aucun passage à réviser pour le moment.",
+  "reviewDue": "À réviser",
+  "reviewNext": "Prochaine révision : {date}",
+  "@reviewNext": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewOpen": "Ouvrir le passage",
+  "reviewRate": "Évaluer ma révision",
+  "reviewAgain": "À revoir",
+  "reviewHard": "Difficile",
+  "reviewGood": "Bien",
+  "reviewEasy": "Facile",
+  "reviewRemove": "Retirer ce passage des révisions ?",
+  "reviewPassage": "Sourate {startSurah}, verset {startVerse} → sourate {endSurah}, verset {endVerse}",
+  "@reviewPassage": {
+    "placeholders": {
+      "startSurah": {
+        "type": "int"
+      },
+      "startVerse": {
+        "type": "int"
+      },
+      "endSurah": {
+        "type": "int"
+      },
+      "endVerse": {
+        "type": "int"
+      }
+    }
+  },
+"downloadBatchLabel": "Téléchargement complet"
 }

@@ -243,7 +243,9 @@ class _MemorizationTestScreenState extends State<MemorizationTestScreen> {
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l10n.testErrorGeneric(e.toString()))),
+        SnackBar(content: Text(e is IncompleteMemorizationData
+            ? l10n.memorizationIncompleteData
+            : l10n.testErrorGeneric(e.toString()))),
       );
     } finally {
       if (mounted) {

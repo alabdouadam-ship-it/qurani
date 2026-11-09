@@ -25,7 +25,8 @@ import 'util/settings_sheet_utils.dart'; // Import utility
 import 'services/reciter_config_service.dart';
 
 class RepetitionRangeScreen extends ConsumerStatefulWidget {
-  const RepetitionRangeScreen({super.key});
+  const RepetitionRangeScreen({super.key, this.initialPassage});
+  final RepetitionPassage? initialPassage;
 
   @override
   ConsumerState<RepetitionRangeScreen> createState() =>
@@ -120,7 +121,9 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
     if (surahs.isEmpty) throw StateError('Missing surah catalog');
     setState(() => _surahs = surahs);
     final saved = PreferencesService.lastPassage;
-    _passage = _remember && saved.isValid(_surahs) ? saved : openingPassage;
+    final initial = widget.initialPassage;
+    _passage = initial != null && initial.isValid(_surahs) ? initial
+        : _remember && saved.isValid(_surahs) ? saved : openingPassage;
     return _loadPassage(_passage, _edition);
   }
 

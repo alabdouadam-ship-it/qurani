@@ -2796,6 +2796,390 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hide secondary edition'**
   String get secondaryEditionHide;
+
+  /// No description provided for @memorizationIncompleteData.
+  ///
+  /// In en, this message translates to:
+  /// **'The passage could not be fully loaded. Check your connection and try again.'**
+  String get memorizationIncompleteData;
+
+  /// No description provided for @downloadIncomplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Download incomplete: {completed}/{total} files verified; {failed} failed. Retry to download missing files.'**
+  String downloadIncomplete(int completed, int total, int failed);
+
+  /// No description provided for @downloadCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Download cancelled. Completed files have been kept.'**
+  String get downloadCancelled;
+
+  /// No description provided for @aboutWebDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.'**
+  String get aboutWebDescription;
+
+  /// No description provided for @backupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup and restore'**
+  String get backupTitle;
+
+  /// No description provided for @backupDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Export bookmarks, settings, statistics, reviews, tasbeeh and Wird. Audio files and phone permissions are not included.'**
+  String get backupDescription;
+
+  /// No description provided for @backupExport.
+  ///
+  /// In en, this message translates to:
+  /// **'Export backup'**
+  String get backupExport;
+
+  /// No description provided for @backupImport.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose backup file'**
+  String get backupImport;
+
+  /// No description provided for @backupConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This backup from {date} contains {count} entries. It will replace the backed-up bookmarks, settings and progress on this device. Continue?'**
+  String backupConfirm(String date, int count);
+
+  /// No description provided for @backupRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get backupRestore;
+
+  /// No description provided for @backupDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup restored.'**
+  String get backupDone;
+
+  /// No description provided for @backupInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid or incompatible file. No data was imported.'**
+  String get backupInvalid;
+
+  /// No description provided for @backupFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'The operation failed. Please try again.'**
+  String get backupFailed;
+
+  /// No description provided for @backupScheduleWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'Data restored. Check prayer times and permissions in Adhan diagnostics.'**
+  String get backupScheduleWarning;
+
+  /// No description provided for @adhanDiagnosticTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan diagnostics'**
+  String get adhanDiagnosticTitle;
+
+  /// No description provided for @adhanNextExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Next expected adhan'**
+  String get adhanNextExpected;
+
+  /// No description provided for @adhanNoNext.
+  ///
+  /// In en, this message translates to:
+  /// **'No future time available for enabled prayers.'**
+  String get adhanNoNext;
+
+  /// No description provided for @adhanDiagnosticNote.
+  ///
+  /// In en, this message translates to:
+  /// **'The expected time uses saved prayer times and your settings. The system may restrict background alarms. The sound test checks immediate playback only.'**
+  String get adhanDiagnosticNote;
+
+  /// No description provided for @diagnosticNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification permission'**
+  String get diagnosticNotifications;
+
+  /// No description provided for @diagnosticSound.
+  ///
+  /// In en, this message translates to:
+  /// **'iPhone notification sound'**
+  String get diagnosticSound;
+
+  /// No description provided for @diagnosticExact.
+  ///
+  /// In en, this message translates to:
+  /// **'Android exact alarms'**
+  String get diagnosticExact;
+
+  /// No description provided for @diagnosticBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery optimization exemption'**
+  String get diagnosticBattery;
+
+  /// No description provided for @diagnosticLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission'**
+  String get diagnosticLocation;
+
+  /// No description provided for @diagnosticLocationService.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services enabled'**
+  String get diagnosticLocationService;
+
+  /// No description provided for @diagnosticCalendar.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching prayer times available'**
+  String get diagnosticCalendar;
+
+  /// No description provided for @diagnosticPending.
+  ///
+  /// In en, this message translates to:
+  /// **'iPhone notification scheduled'**
+  String get diagnosticPending;
+
+  /// No description provided for @diagnosticEnabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled prayers: {count}'**
+  String diagnosticEnabled(int count);
+
+  /// No description provided for @diagnosticVolume.
+  ///
+  /// In en, this message translates to:
+  /// **'Adhan volume: {percent}%'**
+  String diagnosticVolume(int percent);
+
+  /// No description provided for @diagnosticYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get diagnosticYes;
+
+  /// No description provided for @diagnosticNo.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get diagnosticNo;
+
+  /// No description provided for @diagnosticUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unavailable'**
+  String get diagnosticUnknown;
+
+  /// No description provided for @diagnosticSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Open device settings'**
+  String get diagnosticSettings;
+
+  /// No description provided for @diagnosticTest.
+  ///
+  /// In en, this message translates to:
+  /// **'Test sound'**
+  String get diagnosticTest;
+
+  /// No description provided for @diagnosticStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop test'**
+  String get diagnosticStop;
+
+  /// No description provided for @diagnosticRefresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get diagnosticRefresh;
+
+  /// No description provided for @downloadIssuesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloads to resume'**
+  String get downloadIssuesTitle;
+
+  /// No description provided for @downloadIssuesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No failed or interrupted downloads.'**
+  String get downloadIssuesEmpty;
+
+  /// No description provided for @downloadRetryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume all items'**
+  String get downloadRetryAll;
+
+  /// No description provided for @downloadRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get downloadRetry;
+
+  /// No description provided for @downloadIssueFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get downloadIssueFailed;
+
+  /// No description provided for @downloadIssueCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get downloadIssueCancelled;
+
+  /// No description provided for @downloadIssueInterrupted.
+  ///
+  /// In en, this message translates to:
+  /// **'Interrupted'**
+  String get downloadIssueInterrupted;
+
+  /// No description provided for @downloadIssueActive.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get downloadIssueActive;
+
+  /// No description provided for @downloadIssueAttempts.
+  ///
+  /// In en, this message translates to:
+  /// **'Attempts: {count}'**
+  String downloadIssueAttempts(int count);
+
+  /// No description provided for @downloadReasonNetwork.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection unavailable or timed out'**
+  String get downloadReasonNetwork;
+
+  /// No description provided for @downloadReasonServer.
+  ///
+  /// In en, this message translates to:
+  /// **'The server did not provide the file'**
+  String get downloadReasonServer;
+
+  /// No description provided for @downloadReasonFile.
+  ///
+  /// In en, this message translates to:
+  /// **'File unavailable, invalid or could not be saved'**
+  String get downloadReasonFile;
+
+  /// No description provided for @reviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Spaced review'**
+  String get reviewTitle;
+
+  /// No description provided for @reviewDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Add memorized passages. Review them, then rate your recall to schedule the next review.'**
+  String get reviewDescription;
+
+  /// No description provided for @reviewAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add passage'**
+  String get reviewAdd;
+
+  /// No description provided for @reviewAddCurrent.
+  ///
+  /// In en, this message translates to:
+  /// **'Add this passage to reviews'**
+  String get reviewAddCurrent;
+
+  /// No description provided for @reviewAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Passage added to reviews.'**
+  String get reviewAdded;
+
+  /// No description provided for @reviewEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No review passages yet.'**
+  String get reviewEmpty;
+
+  /// No description provided for @reviewDue.
+  ///
+  /// In en, this message translates to:
+  /// **'Due for review'**
+  String get reviewDue;
+
+  /// No description provided for @reviewNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next review: {date}'**
+  String reviewNext(String date);
+
+  /// No description provided for @reviewOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open passage'**
+  String get reviewOpen;
+
+  /// No description provided for @reviewRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate my review'**
+  String get reviewRate;
+
+  /// No description provided for @reviewAgain.
+  ///
+  /// In en, this message translates to:
+  /// **'Again'**
+  String get reviewAgain;
+
+  /// No description provided for @reviewHard.
+  ///
+  /// In en, this message translates to:
+  /// **'Hard'**
+  String get reviewHard;
+
+  /// No description provided for @reviewGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Good'**
+  String get reviewGood;
+
+  /// No description provided for @reviewEasy.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy'**
+  String get reviewEasy;
+
+  /// No description provided for @reviewRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove this passage from reviews?'**
+  String get reviewRemove;
+
+  /// No description provided for @reviewPassage.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah {startSurah}, verse {startVerse} → surah {endSurah}, verse {endVerse}'**
+  String reviewPassage(int startSurah, int startVerse, int endSurah, int endVerse);
+
+  /// No description provided for @downloadBatchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Full download'**
+  String get downloadBatchLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

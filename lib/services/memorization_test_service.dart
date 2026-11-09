@@ -5,8 +5,11 @@ import 'package:qurani/services/quran_constants.dart';
 import 'package:qurani/services/preferences_service.dart';
 
 class MemorizationTestService {
-  MemorizationTestService._();
-  static final MemorizationTestService instance = MemorizationTestService._();
+  MemorizationTestService({Future<PageData> Function(int)? loadPage})
+      : _loadPage = loadPage ?? ((page) => QuranRepository.instance
+            .loadPage(page, QuranEditions.simple));
+  final Future<PageData> Function(int) _loadPage;
+  static final MemorizationTestService instance = MemorizationTestService();
 
   final _random = Random();
 
@@ -30,8 +33,8 @@ class MemorizationTestService {
     final List<AyahBrief> ayahs = [];
     for (int page = startPage; page <= endPage; page++) {
       try {
-        final pageData = await QuranRepository.instance
-            .loadPage(page, QuranEditions.simple);
+        final pageData = await _loadPage(page);
+        if (pageData.ayahs.isEmpty) throw const IncompleteMemorizationData();
         for (final ayahData in pageData.ayahs) {
           if (ayahData.juz == juzNumber) {
             final surahMeta = ayahData.surah;
@@ -44,8 +47,14 @@ class MemorizationTestService {
           }
         }
       } catch (_) {
-        // Skip page if error
-        continue;
+        // Never generate a test from a partially loaded juz.
+        throw const IncompleteMemorizationData();
+      }
+    }
+    if (ayahs.isEmpty) throw const IncompleteMemorizationData();
+    for (var i = 1; i < ayahs.length; i++) {
+      if (ayahs[i].number != ayahs[i - 1].number + 1) {
+        throw const IncompleteMemorizationData();
       }
     }
     return ayahs;
@@ -72,6 +81,7 @@ class MemorizationTestService {
     if (currentIndex >= ayahs.length - 1) return null; // No next ayah
     final currentAyah = ayahs[currentIndex];
     final nextAyah = ayahs[currentIndex + 1];
+    if (nextAyah.number != currentAyah.number + 1) return null;
 
     // Use Set to ensure uniqueness
     final optionsSet = <String>{nextAyah.text};
@@ -390,4 +400,7 @@ class MemorizationQuestion {
   final List<String> options;
   final int correctIndex;
   final SurahMeta contextSurah;
+}
+class IncompleteMemorizationData implements Exception {
+  const IncompleteMemorizationData();
 }

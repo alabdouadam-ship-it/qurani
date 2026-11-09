@@ -9,6 +9,12 @@
 class AdhanScheduleLogic {
   const AdhanScheduleLogic._();
 
+  /// A restored one-shot may already be overdue after a powered-off period.
+  static bool isAlarmDue({required DateTime now, required int scheduledAt}) {
+    final delay = now.millisecondsSinceEpoch - scheduledAt;
+    return delay >= 0 && delay <= const Duration(minutes: 2).inMilliseconds;
+  }
+
   /// The five daily prayers that can have an Adhan, in canonical order.
   /// Excludes `sunrise`/`imsak`, which never get an Adhan.
   static const List<String> adhanPrayers = [

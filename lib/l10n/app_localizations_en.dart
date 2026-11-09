@@ -1435,4 +1435,210 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get secondaryEditionHide => 'Hide secondary edition';
+
+  @override
+  String get memorizationIncompleteData => 'The passage could not be fully loaded. Check your connection and try again.';
+
+  @override
+  String downloadIncomplete(int completed, int total, int failed) {
+    return 'Download incomplete: $completed/$total files verified; $failed failed. Retry to download missing files.';
+  }
+
+  @override
+  String get downloadCancelled => 'Download cancelled. Completed files have been kept.';
+
+  @override
+  String get aboutWebDescription => 'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.';
+
+  @override
+  String get backupTitle => 'Backup and restore';
+
+  @override
+  String get backupDescription => 'Export bookmarks, settings, statistics, reviews, tasbeeh and Wird. Audio files and phone permissions are not included.';
+
+  @override
+  String get backupExport => 'Export backup';
+
+  @override
+  String get backupImport => 'Choose backup file';
+
+  @override
+  String backupConfirm(String date, int count) {
+    return 'This backup from $date contains $count entries. It will replace the backed-up bookmarks, settings and progress on this device. Continue?';
+  }
+
+  @override
+  String get backupRestore => 'Restore';
+
+  @override
+  String get backupDone => 'Backup restored.';
+
+  @override
+  String get backupInvalid => 'Invalid or incompatible file. No data was imported.';
+
+  @override
+  String get backupFailed => 'The operation failed. Please try again.';
+
+  @override
+  String get backupScheduleWarning => 'Data restored. Check prayer times and permissions in Adhan diagnostics.';
+
+  @override
+  String get adhanDiagnosticTitle => 'Adhan diagnostics';
+
+  @override
+  String get adhanNextExpected => 'Next expected adhan';
+
+  @override
+  String get adhanNoNext => 'No future time available for enabled prayers.';
+
+  @override
+  String get adhanDiagnosticNote => 'The expected time uses saved prayer times and your settings. The system may restrict background alarms. The sound test checks immediate playback only.';
+
+  @override
+  String get diagnosticNotifications => 'Notification permission';
+
+  @override
+  String get diagnosticSound => 'iPhone notification sound';
+
+  @override
+  String get diagnosticExact => 'Android exact alarms';
+
+  @override
+  String get diagnosticBattery => 'Battery optimization exemption';
+
+  @override
+  String get diagnosticLocation => 'Location permission';
+
+  @override
+  String get diagnosticLocationService => 'Location services enabled';
+
+  @override
+  String get diagnosticCalendar => 'Matching prayer times available';
+
+  @override
+  String get diagnosticPending => 'iPhone notification scheduled';
+
+  @override
+  String diagnosticEnabled(int count) {
+    return 'Enabled prayers: $count';
+  }
+
+  @override
+  String diagnosticVolume(int percent) {
+    return 'Adhan volume: $percent%';
+  }
+
+  @override
+  String get diagnosticYes => 'Yes';
+
+  @override
+  String get diagnosticNo => 'No';
+
+  @override
+  String get diagnosticUnknown => 'Unavailable';
+
+  @override
+  String get diagnosticSettings => 'Open device settings';
+
+  @override
+  String get diagnosticTest => 'Test sound';
+
+  @override
+  String get diagnosticStop => 'Stop test';
+
+  @override
+  String get diagnosticRefresh => 'Refresh';
+
+  @override
+  String get downloadIssuesTitle => 'Downloads to resume';
+
+  @override
+  String get downloadIssuesEmpty => 'No failed or interrupted downloads.';
+
+  @override
+  String get downloadRetryAll => 'Resume all items';
+
+  @override
+  String get downloadRetry => 'Resume';
+
+  @override
+  String get downloadIssueFailed => 'Failed';
+
+  @override
+  String get downloadIssueCancelled => 'Cancelled';
+
+  @override
+  String get downloadIssueInterrupted => 'Interrupted';
+
+  @override
+  String get downloadIssueActive => 'In progress';
+
+  @override
+  String downloadIssueAttempts(int count) {
+    return 'Attempts: $count';
+  }
+
+  @override
+  String get downloadReasonNetwork => 'Connection unavailable or timed out';
+
+  @override
+  String get downloadReasonServer => 'The server did not provide the file';
+
+  @override
+  String get downloadReasonFile => 'File unavailable, invalid or could not be saved';
+
+  @override
+  String get reviewTitle => 'Spaced review';
+
+  @override
+  String get reviewDescription => 'Add memorized passages. Review them, then rate your recall to schedule the next review.';
+
+  @override
+  String get reviewAdd => 'Add passage';
+
+  @override
+  String get reviewAddCurrent => 'Add this passage to reviews';
+
+  @override
+  String get reviewAdded => 'Passage added to reviews.';
+
+  @override
+  String get reviewEmpty => 'No review passages yet.';
+
+  @override
+  String get reviewDue => 'Due for review';
+
+  @override
+  String reviewNext(String date) {
+    return 'Next review: $date';
+  }
+
+  @override
+  String get reviewOpen => 'Open passage';
+
+  @override
+  String get reviewRate => 'Rate my review';
+
+  @override
+  String get reviewAgain => 'Again';
+
+  @override
+  String get reviewHard => 'Hard';
+
+  @override
+  String get reviewGood => 'Good';
+
+  @override
+  String get reviewEasy => 'Easy';
+
+  @override
+  String get reviewRemove => 'Remove this passage from reviews?';
+
+  @override
+  String reviewPassage(int startSurah, int startVerse, int endSurah, int endVerse) {
+    return 'Surah $startSurah, verse $startVerse → surah $endSurah, verse $endVerse';
+  }
+
+  @override
+  String get downloadBatchLabel => 'Full download';
 }

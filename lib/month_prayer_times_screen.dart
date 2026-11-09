@@ -1,3 +1,4 @@
+import 'services/prayer_cache_policy.dart';
 import 'dart:io';
 import 'dart:ui' as ui;
 
@@ -44,6 +45,7 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
   Future<void> _loadMonth() async {
     setState(() {
       _loading = true;
+      _rows = [];
       _needsInternet = false;
       _needsService = false;
       _needsPermission = false;
@@ -51,7 +53,10 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
     final y = widget.baseDate.year;
     final m = widget.baseDate.month;
     try {
+      await PrayerTimesService.maybeRefreshCacheOnLaunch();
+      if (!mounted) return;
       if (widget.mode == MonthViewMode.gregorian) {
+        if (!await _ensureFetchGregorianMonth(y, m)) return;
         var monthData = await PrayerTimesService.getMonthData(y, m);
         if (monthData == null) {
           final ok = await _ensureFetchGregorianMonth(y, m);
@@ -74,9 +79,9 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
         final prev = DateTime(y, m - 1, 1);
         final curr = DateTime(y, m, 1);
         final next = DateTime(y, m + 1, 1);
-        await _ensureFetchGregorianMonth(prev.year, prev.month);
-        await _ensureFetchGregorianMonth(curr.year, curr.month);
-        await _ensureFetchGregorianMonth(next.year, next.month);
+        if (!await _ensureFetchGregorianMonth(prev.year, prev.month)) return;
+        if (!await _ensureFetchGregorianMonth(curr.year, curr.month)) return;
+        if (!await _ensureFetchGregorianMonth(next.year, next.month)) return;
         final parts = <Map<String, dynamic>>[];
         for (final ym in [prev, curr, next]) {
           final data = await PrayerTimesService.getMonthData(ym.year, ym.month);
@@ -110,8 +115,12 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
 
   Future<bool> _ensureFetchGregorianMonth(int year, int month) async {
     var monthData = await PrayerTimesService.getMonthData(year, month);
-    if (monthData != null) return true;
+    final metadata = await PrayerTimesService.getCacheMetadata(year, month);
     final hasNet = await _hasInternet();
+    if (monthData != null && await PrayerCachePolicy.usable(metadata) &&
+        (metadata!.isFresh(DateTime.now()) || !hasNet)) {
+      return true;
+    }
     if (!hasNet) {
       if (!mounted) return false;
       setState(() { _needsInternet = true; _loading = false; });
@@ -134,6 +143,7 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
     }
     final pos = await PrayerTimesService.getCurrentPosition();
     final method = await PrayerTimesService.resolveMethodForRegionFromPosition(pos);
+    await PrayerTimesService.observePosition(pos, method);
     await PrayerTimesService.fetchAndCacheMonth(year: year, month: month, latitude: pos.latitude, longitude: pos.longitude, method: method);
     return true;
   }

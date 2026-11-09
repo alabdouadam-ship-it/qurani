@@ -1,3 +1,5 @@
+import 'prayer_cache_policy.dart';
+import 'prayer_times_parser.dart';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -70,6 +72,11 @@ class PrayerTimesService {
     return rows.first;
   }
 
+  static Future<PrayerCacheMetadata?> getCacheMetadata(int year, int month) async {
+    final row = await _getMonthRow(year, month);
+    return row == null ? null : PrayerCacheMetadata.fromJson(row);
+  }
+
   static Future<Map<String, dynamic>?> getMonthData(int year, int month) async {
     final row = await _getMonthRow(year, month);
     if (row == null) return null;
@@ -96,6 +103,30 @@ class PrayerTimesService {
       }
     }
   }
+  static Future<Position?> getPositionForCacheCheck() async {
+    try {
+      final permission = await Geolocator.checkPermission();
+      if (permission != LocationPermission.always &&
+          permission != LocationPermission.whileInUse) {
+        return null;
+      }
+      try {
+        if (await Geolocator.isLocationServiceEnabled()) {
+          return await Geolocator.getCurrentPosition(locationSettings:
+            const LocationSettings(accuracy: LocationAccuracy.low,
+              timeLimit: Duration(seconds: 8)));
+        }
+      } catch (_) {}
+      return await Geolocator.getLastKnownPosition();
+    } catch (_) { return null; }
+  }
+
+  static Future<void> observePosition(Position position, int method) async {
+    if (await PrayerCachePolicy.observe(position, method)) {
+      await AdhanScheduler.cancelScheduledWindow();
+    }
+  }
+
   static Future<Position> getCurrentPosition() async {
     final enabled = await Geolocator.isLocationServiceEnabled();
     if (!enabled) {
@@ -110,13 +141,13 @@ class PrayerTimesService {
     }
     // Try using LocationSettings if available, fallback to desiredAccuracy for older geolocator versions
     try {
-      return Geolocator.getCurrentPosition(
+      return await Geolocator.getCurrentPosition(
         locationSettings: const LocationSettings(accuracy: LocationAccuracy.low),
       );
     } catch (_) {
       // Fallback for older geolocator versions
       // ignore: deprecated_member_use
-      return Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
+      return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.low);
     }
   }
 
@@ -134,6 +165,12 @@ class PrayerTimesService {
       'method': method,
     });
     if (resp.statusCode == 200 && resp.data != null) {
+      validatePrayerCalendar(resp.data, year: year, month: month);
+      final context = await PrayerCachePolicy.active();
+      final requested = PrayerCacheMetadata(latitude, longitude, method, DateTime.now());
+      if (context != null && !requested.matches(context.position, context.method)) {
+        throw StateError('Obsolete prayer location response');
+      }
       final jsonString = json.encode(resp.data);
       await _saveMonth(
         year: year,
@@ -143,6 +180,8 @@ class PrayerTimesService {
         lng: longitude,
         jsonString: jsonString,
       );
+      PrayerCachePolicy.revision++;
+      await AdhanScheduler.invalidateScheduling();
     } else {
       throw Exception('Failed to fetch month $year-$month');
     }
@@ -153,35 +192,12 @@ class PrayerTimesService {
     required int month,
     required int day,
   }) async {
+    if (!await PrayerCachePolicy.usable(await getCacheMetadata(year, month))) return null;
     final data = await getMonthData(year, month);
     if (data == null) return null;
-    final list = data['data'] as List<dynamic>?;
-    if (list == null || list.isEmpty) return null;
-    if (day < 1 || day > list.length) return null;
-    final timings = (list[day - 1]['timings'] as Map).cast<String, dynamic>();
-    DateTime? parse(String key) {
-      final raw = timings[key] as String?;
-      if (raw == null) return null;
-      final hhmm = raw.split(' ').first;
-      final parts = hhmm.split(':');
-      if (parts.length < 2) return null;
-      final h = int.tryParse(parts[0]) ?? 0;
-      final m = int.tryParse(parts[1]) ?? 0;
-      return DateTime(year, month, day, h, m);
-    }
-    final result = <String, DateTime>{
-      'fajr': parse('Fajr')!,
-      'sunrise': parse('Sunrise')!,
-      'dhuhr': parse('Dhuhr')!,
-      'asr': parse('Asr')!,
-      'maghrib': parse('Maghrib')!,
-      'isha': parse('Isha')!,
-    };
-    final imsak = parse('Imsak');
-    if (imsak != null) {
-      result['imsak'] = imsak;
-    }
-    
+    final result = parsePrayerTimes(data, year: year, month: month, day: day);
+    if (result == null) return null;
+
     // Apply user per-prayer time adjustments (±minutes) if any
     final adjustments = PreferencesService.getAllPrayerTimeAdjustments();
     for (final entry in adjustments.entries) {
@@ -464,56 +480,34 @@ class PrayerTimesService {
       return userMethod;
     }
 
-    return detectedMethod ?? 3; // Default
+    if (detectedMethod != null) return detectedMethod;
+    // A failed reverse-geocode must not change methods for the same place.
+    final now = DateTime.now();
+    final previous = await PrayerCachePolicy.active() ??
+        await getCacheMetadata(now.year, now.month);
+    if (previous != null && previous.matches(pos, previous.method)) {
+      return previous.method;
+    }
+    return 3; // Default only when no matching location is known.
   }
 
-  static Future<void> maybeRefreshCacheOnLaunch() async {
+  static Future<void>? _refreshInFlight;
+  static Future<void> maybeRefreshCacheOnLaunch() =>
+      _refreshInFlight ??= _refreshCache().whenComplete(() { _refreshInFlight = null; });
+
+  static Future<void> _refreshCache() async {
     final now = DateTime.now();
     final prefs = await SharedPreferences.getInstance();
-    final lastSuccessMs = prefs.getInt('prayer_last_success') ?? 0;
-    final lastAttemptDay = prefs.getInt('prayer_last_attempt_day') ?? -1;
-    final lastSuccess = DateTime.fromMillisecondsSinceEpoch(lastSuccessMs, isUtc: false);
-    final daysSince = now.difference(lastSuccess).inDays;
-    if (daysSince < 10 && lastSuccessMs != 0) return;
-    final todayKey = now.year * 10000 + now.month * 100 + now.day;
-    if (lastAttemptDay == todayKey) return;
-    await prefs.setInt('prayer_last_attempt_day', todayKey);
     try {
-      final pos = await Geolocator.getLastKnownPosition();
+      final pos = await getPositionForCacheCheck();
       if (pos == null) return;
-
-      // GPS-delta fast-path: if the user has barely moved since the last
-      // successful refresh AND the cache is less than 60 days old, there's
-      // no point re-fetching from Aladhan — prayer times drift by < 1 minute
-      // over such a small distance. We just bump the "last success" marker
-      // so the next refresh attempt is delayed another 10 days.
-      final lastLatLng = prefs.getString('prayer_last_latlng');
-      if (lastLatLng != null && daysSince < 60 && lastSuccessMs != 0) {
-        final parts = lastLatLng.split(',');
-        if (parts.length == 2) {
-          final prevLat = double.tryParse(parts[0]);
-          final prevLng = double.tryParse(parts[1]);
-          if (prevLat != null && prevLng != null) {
-            final distanceMeters = Geolocator.distanceBetween(
-              prevLat,
-              prevLng,
-              pos.latitude,
-              pos.longitude,
-            );
-            if (distanceMeters < 2000) {
-              await prefs.setInt(
-                  'prayer_last_success', DateTime.now().millisecondsSinceEpoch);
-              return;
-            }
-          }
-        }
-      }
-
       final method = await resolveMethodForRegionFromPosition(pos);
-      final curr = DateTime(now.year, now.month, 1);
-      final next = DateTime(now.year, now.month + 1, 1);
-      await fetchAndCacheMonth(year: curr.year, month: curr.month, latitude: pos.latitude, longitude: pos.longitude, method: method);
-      await fetchAndCacheMonth(year: next.year, month: next.month, latitude: pos.latitude, longitude: pos.longitude, method: method);
+      await observePosition(pos, method);
+      final changed = await PrayerCachePolicy.refresh(
+        date: now, position: pos, method: method, read: getCacheMetadata,
+        fetch: (year, month) => fetchAndCacheMonth(year: year, month: month,
+          latitude: pos.latitude, longitude: pos.longitude, method: method));
+      if (!changed) return;
       await cleanupKeepPrevCurrentNext(now);
       await prefs.setInt('prayer_last_success', DateTime.now().millisecondsSinceEpoch);
       await prefs.setString('prayer_last_latlng', '${pos.latitude},${pos.longitude}');
@@ -564,6 +558,7 @@ class PrayerTimesService {
           // a calendar day depending on time-of-day. `DateTime(y, m, d+1)`
           // always advances to the same wall-clock moment on the next
           // calendar date, which is what we want for "tomorrow's times".
+          bool complete = timesToday != null;
           DateTime cursor = DateTime(now.year, now.month, now.day + 1);
           for (int i = 0; i < 7; i++) {
             final times = await getTimesForDate(year: cursor.year, month: cursor.month, day: cursor.day);
@@ -579,8 +574,10 @@ class PrayerTimesService {
                 soundKey: soundKey,
               );
             }
+            if (times == null) complete = false;
             cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
           }
+          if (!complete) return;
           await AdhanScheduler.markScheduledThroughDay(
             soundKey: soundKey,
             toggles: toggles,

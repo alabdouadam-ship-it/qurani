@@ -1,3 +1,5 @@
+import 'foreground_adhan_timers.dart';
+import 'prayer_times_service.dart';
 import 'dart:async';
 import 'dart:io';
 
@@ -150,6 +152,20 @@ Future<void> ensureAdhanRuntimeReady() async {
   } catch (_) {}
 }
 
+// Persistent one-shot alarms are removed when consumed. A reboot must not
+// replay prayers missed while the phone was off.
+@pragma('vm:entry-point')
+Future<void> _persistentAdhanCallback(int id, Map<String, dynamic> params) async {
+  await ensureAdhanRuntimeReady();
+  await AndroidAlarmManager.cancel(id);
+  final scheduledAt = params['scheduledAt'];
+  if (scheduledAt is! int || !AdhanScheduleLogic.isAlarmDue(
+      now: DateTime.now(), scheduledAt: scheduledAt)) {
+    return;
+  }
+  await _playAdhanCallback(id);
+}
+
 @pragma('vm:entry-point')
 Future<void> _playAdhanCallback(int id) async {
   // Single bootstrap point shared with the foreground path. See
@@ -209,6 +225,17 @@ Future<void> _playAdhanCallback(int id) async {
       Log.d('AdhanCallback', '$prayerId disabled, skipping');
       return;
     }
+    // A location change can race an already-running scheduling pass. Validate
+    // again at fire time so an old-city alarm cannot play after cancellation.
+    final now = DateTime.now();
+    final times = await PrayerTimesService.getTimesForDate(
+      year: now.year, month: now.month, day: now.day);
+    final currentTime = times?[prayerId];
+    if (id != _dailyId(prayerId: prayerId, date: now) || currentTime == null ||
+        !AdhanScheduleLogic.isAlarmDue(now: now,
+          scheduledAt: currentTime.millisecondsSinceEpoch)) {
+      return;
+    }
   }
 
   // Make sure the cached audio file exists so the native MediaPlayer path
@@ -253,12 +280,13 @@ Future<void> _playAdhanCallback(int id) async {
 
 class AdhanScheduler {
   static bool _initialized = false;
+  static bool _scheduledThisProcess = false;
 
   // Keys used to remember how far into the future we last scheduled alarms
   // and with which settings, so we can skip redundant Android alarm-manager
   // round-trips on every cold start / screen rebuild.
   static const String _keyLastScheduledThrough =
-      'adhan_last_scheduled_through_day';
+      'adhan_last_scheduled_through_day_v2';
   static const String _keyLastScheduledSoundHash =
       'adhan_last_scheduled_sound_hash';
   static const String _keyLastScheduledTogglesHash =
@@ -282,6 +310,8 @@ class AdhanScheduler {
     int daysAhead = 7,
   }) async {
     try {
+      // OS notifications survive process death, Dart timers do not.
+      if (Platform.isIOS && !_scheduledThisProcess) return true;
       final prefs = await SharedPreferences.getInstance();
       return AdhanScheduleLogic.shouldSchedule(
         now: DateTime.now(),
@@ -311,6 +341,7 @@ class AdhanScheduler {
       final target =
           _dayKey(DateTime(now.year, now.month, now.day + daysAhead));
       await prefs.setInt(_keyLastScheduledThrough, target);
+      _scheduledThisProcess = true;
       await prefs.setString(_keyLastScheduledSoundHash, soundKey);
       await prefs.setString(
           _keyLastScheduledTogglesHash, _togglesFingerprint(toggles));
@@ -327,6 +358,21 @@ class AdhanScheduler {
       await prefs.remove(_keyLastScheduledSoundHash);
       await prefs.remove(_keyLastScheduledTogglesHash);
     } catch (_) {}
+  }
+
+  /// A known location/method change invalidates already armed times, even offline.
+  static Future<void> cancelScheduledWindow() async {
+    await invalidateScheduling();
+    _foregroundTimers.dispose();
+    if (!Platform.isAndroid && !Platform.isIOS) return;
+    await NotificationService.init();
+    for (final day in AdhanScheduleLogic.scheduleDayCursors(DateTime.now(), daysAhead: 8)) {
+      for (final prayer in ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha']) {
+        final id = _dailyId(prayerId: prayer, date: day);
+        await NotificationService.plugin.cancel(id);
+        if (Platform.isAndroid) await AndroidAlarmManager.cancel(id);
+      }
+    }
   }
 
   /// Atomically persists the enabled state of [prayerId] AND invalidates the
@@ -454,14 +500,17 @@ class AdhanScheduler {
       }
 
       try {
-        await AndroidAlarmManager.oneShotAt(
+        final scheduled = await AndroidAlarmManager.oneShotAt(
           time,
           id,
-          _playAdhanCallback,
+          _persistentAdhanCallback,
           exact: true,
           wakeup: true,
           allowWhileIdle: true,
+          rescheduleOnReboot: true,
+          params: {'scheduledAt': time.millisecondsSinceEpoch},
         );
+        if (!scheduled) throw StateError('Alarm manager rejected $id');
         Log.i('AdhanScheduler', 'Scheduled $prayerId at $time (id: $id)');
         AdhanAudioManager.trace('scheduled', fields: {
           'prayer': prayerId,
@@ -470,42 +519,17 @@ class AdhanScheduler {
         });
       } catch (e, st) {
         Log.e('AdhanScheduler', 'Failed to schedule $prayerId', e, st);
+        rethrow;
       }
     }
   }
 
-  static final List<Timer> _foregroundTimers = [];
+  static final _foregroundTimers = ForegroundAdhanTimers(
+    fire: (id) { unawaited(_playAdhanCallback(id)); },
+  );
 
   static void _scheduleForegroundTimers(Map<String, DateTime> times, Map<String, bool> toggles) {
-    // Cancel existing timers
-    for (var t in _foregroundTimers) {
-      t.cancel();
-    }
-    _foregroundTimers.clear();
-
-    final now = DateTime.now();
-    for (final entry in times.entries) {
-      final prayerId = entry.key;
-      final time = entry.value;
-      
-      if (prayerId == 'sunrise' || prayerId == 'imsak') continue;
-      if (!(toggles[prayerId] ?? false)) continue;
-      
-      if (time.isAfter(now)) {
-        final duration = time.difference(now);
-        if (duration.inHours > 24) continue; // Safety check
-        
-        Log.d('AdhanScheduler',
-            'Scheduling foreground timer for $prayerId in $duration');
-        final id = _dailyId(prayerId: prayerId, date: time);
-
-        final timer = Timer(duration, () {
-          Log.i('AdhanScheduler', 'Foreground timer firing for $prayerId');
-          _playAdhanCallback(id);
-        });
-        _foregroundTimers.add(timer);
-      }
-    }
+    _foregroundTimers.schedule(times, toggles);
   }
 
   static Future<void> testAdhanPlaybackAfterSeconds(int seconds, String soundKey) async {

@@ -1435,4 +1435,210 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get secondaryEditionHide => 'Masquer l\'édition secondaire';
+
+  @override
+  String get memorizationIncompleteData => 'Le passage n’a pas pu être chargé entièrement. Vérifiez votre connexion et réessayez.';
+
+  @override
+  String downloadIncomplete(int completed, int total, int failed) {
+    return 'Téléchargement incomplet : $completed/$total fichiers vérifiés ; $failed échecs. Relancez pour récupérer les fichiers manquants.';
+  }
+
+  @override
+  String get downloadCancelled => 'Téléchargement annulé. Les fichiers terminés ont été conservés.';
+
+  @override
+  String get aboutWebDescription => 'Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests et les favoris en arabe, anglais et français. Les horaires de prière, l’adhan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.';
+
+  @override
+  String get backupTitle => 'Sauvegarde et restauration';
+
+  @override
+  String get backupDescription => 'Exportez vos favoris, paramètres, statistiques, révisions, tasbih et Wird. Les fichiers audio et les autorisations du téléphone ne sont pas inclus.';
+
+  @override
+  String get backupExport => 'Exporter une sauvegarde';
+
+  @override
+  String get backupImport => 'Choisir un fichier à restaurer';
+
+  @override
+  String backupConfirm(String date, int count) {
+    return 'Cette sauvegarde du $date contient $count éléments. Elle remplacera les favoris, paramètres et progressions sauvegardés sur cet appareil. Continuer ?';
+  }
+
+  @override
+  String get backupRestore => 'Restaurer';
+
+  @override
+  String get backupDone => 'Sauvegarde restaurée.';
+
+  @override
+  String get backupInvalid => 'Fichier incompatible ou invalide. Aucune donnée n’a été importée.';
+
+  @override
+  String get backupFailed => 'L’opération a échoué. Réessayez.';
+
+  @override
+  String get backupScheduleWarning => 'Données restaurées. Vérifiez les horaires et autorisations dans le diagnostic de l’adhan.';
+
+  @override
+  String get adhanDiagnosticTitle => 'Diagnostic de l’adhan';
+
+  @override
+  String get adhanNextExpected => 'Prochain adhan prévu';
+
+  @override
+  String get adhanNoNext => 'Aucun horaire futur disponible pour les prières activées.';
+
+  @override
+  String get adhanDiagnosticNote => 'L’heure prévue utilise les horaires enregistrés et vos réglages. Le système peut limiter les alarmes en arrière-plan. Le test sonore vérifie uniquement la lecture immédiate.';
+
+  @override
+  String get diagnosticNotifications => 'Autorisation des notifications';
+
+  @override
+  String get diagnosticSound => 'Son des notifications iPhone';
+
+  @override
+  String get diagnosticExact => 'Alarmes exactes Android';
+
+  @override
+  String get diagnosticBattery => 'Exemption d’optimisation de batterie';
+
+  @override
+  String get diagnosticLocation => 'Autorisation de localisation';
+
+  @override
+  String get diagnosticLocationService => 'Service de localisation activé';
+
+  @override
+  String get diagnosticCalendar => 'Horaires compatibles disponibles';
+
+  @override
+  String get diagnosticPending => 'Notification iPhone programmée';
+
+  @override
+  String diagnosticEnabled(int count) {
+    return 'Prières activées : $count';
+  }
+
+  @override
+  String diagnosticVolume(int percent) {
+    return 'Volume de l’adhan : $percent %';
+  }
+
+  @override
+  String get diagnosticYes => 'Oui';
+
+  @override
+  String get diagnosticNo => 'Non';
+
+  @override
+  String get diagnosticUnknown => 'Non disponible';
+
+  @override
+  String get diagnosticSettings => 'Ouvrir les réglages du téléphone';
+
+  @override
+  String get diagnosticTest => 'Tester le son';
+
+  @override
+  String get diagnosticStop => 'Arrêter le test';
+
+  @override
+  String get diagnosticRefresh => 'Actualiser';
+
+  @override
+  String get downloadIssuesTitle => 'Téléchargements à reprendre';
+
+  @override
+  String get downloadIssuesEmpty => 'Aucun téléchargement en échec ou interrompu.';
+
+  @override
+  String get downloadRetryAll => 'Reprendre tous les éléments';
+
+  @override
+  String get downloadRetry => 'Reprendre';
+
+  @override
+  String get downloadIssueFailed => 'Échec';
+
+  @override
+  String get downloadIssueCancelled => 'Annulé';
+
+  @override
+  String get downloadIssueInterrupted => 'Interrompu';
+
+  @override
+  String get downloadIssueActive => 'En cours';
+
+  @override
+  String downloadIssueAttempts(int count) {
+    return 'Tentatives : $count';
+  }
+
+  @override
+  String get downloadReasonNetwork => 'Connexion indisponible ou délai dépassé';
+
+  @override
+  String get downloadReasonServer => 'Le serveur n’a pas fourni le fichier';
+
+  @override
+  String get downloadReasonFile => 'Fichier indisponible, invalide ou impossible à enregistrer';
+
+  @override
+  String get reviewTitle => 'Révision espacée';
+
+  @override
+  String get reviewDescription => 'Ajoutez les passages mémorisés. Révisez-les, puis évaluez votre rappel pour programmer la prochaine révision.';
+
+  @override
+  String get reviewAdd => 'Ajouter un passage';
+
+  @override
+  String get reviewAddCurrent => 'Ajouter ce passage aux révisions';
+
+  @override
+  String get reviewAdded => 'Passage ajouté aux révisions.';
+
+  @override
+  String get reviewEmpty => 'Aucun passage à réviser pour le moment.';
+
+  @override
+  String get reviewDue => 'À réviser';
+
+  @override
+  String reviewNext(String date) {
+    return 'Prochaine révision : $date';
+  }
+
+  @override
+  String get reviewOpen => 'Ouvrir le passage';
+
+  @override
+  String get reviewRate => 'Évaluer ma révision';
+
+  @override
+  String get reviewAgain => 'À revoir';
+
+  @override
+  String get reviewHard => 'Difficile';
+
+  @override
+  String get reviewGood => 'Bien';
+
+  @override
+  String get reviewEasy => 'Facile';
+
+  @override
+  String get reviewRemove => 'Retirer ce passage des révisions ?';
+
+  @override
+  String reviewPassage(int startSurah, int startVerse, int endSurah, int endVerse) {
+    return 'Sourate $startSurah, verset $startVerse → sourate $endSurah, verset $endVerse';
+  }
+
+  @override
+  String get downloadBatchLabel => 'Téléchargement complet';
 }

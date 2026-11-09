@@ -1,3 +1,4 @@
+import 'services/prayer_cache_policy.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -182,161 +183,94 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
 
   Future<void> _initialLoad() async {
     // Ensure we have cached months or fetch using GPS+Internet
-    await _loadTimes(fetchIfMissing: true);
+    await _loadTimes();
   }
 
+  int _loadTimesGeneration = 0;
   Future<void> _loadTimes(
-      {bool fetchIfMissing = false, bool forceRefresh = false}) async {
+      {bool forceRefresh = false}) async {
+    final generation = ++_loadTimesGeneration;
+    final date = _currentDate;
+    bool stale() => !mounted || generation != _loadTimesGeneration;
+    _tick?.cancel();
+    _countdownNotifier.value = null;
     setState(() {
       _loading = true;
+      _todayTimes = null;
+      _cityName = null;
       _needsPermission = false;
       _needsService = false;
       _needsInternet = false;
     });
     try {
-      // Try to update city name from last known position (best effort)
-      try {
-        final last = await Geolocator.getLastKnownPosition();
-        if (last != null) {
-          final city = await PrayerTimesService.getCityFromCoordinates(last);
-          if (mounted) {
-            setState(() {
-              _cityName = city;
-            });
+      var position = await PrayerTimesService.getPositionForCacheCheck();
+      if (stale()) return;
+      int? method;
+      if (position != null) {
+        method = await PrayerTimesService.resolveMethodForRegionFromPosition(position);
+        if (stale()) return;
+        await PrayerTimesService.observePosition(position, method);
+      }
+      var needsFetch = forceRefresh;
+      for (final offset in [-1, 0, 1]) {
+        final month = DateTime(date.year, date.month + offset);
+        final metadata = await PrayerTimesService.getCacheMetadata(month.year, month.month);
+        if (!await PrayerCachePolicy.usable(metadata) ||
+            metadata == null || !metadata.isFresh(DateTime.now()) ||
+            (position != null && !metadata.matches(position, method!))) {
+          needsFetch = true;
+        }
+      }
+      if (stale()) return;
+      if (needsFetch && !forceRefresh && !await _hasInternet()) {
+        // Keep a usable calendar available offline; never reuse a different city.
+        final cached = await PrayerTimesService.getCacheMetadata(date.year, date.month);
+        if (await PrayerCachePolicy.usable(cached)) needsFetch = false;
+      }
+      if (stale()) return;
+      if (needsFetch) {
+        if (!await _hasInternet()) {
+          if (stale()) return;
+          setState(() { _needsInternet = true; _loading = false; });
+          return;
+        }
+        if (position == null) {
+          if (!await Geolocator.isLocationServiceEnabled()) {
+            if (stale()) return;
+            setState(() { _needsService = true; _loading = false; });
+            return;
           }
+          var permission = await Geolocator.checkPermission();
+          if (permission == LocationPermission.denied) {
+            permission = await Geolocator.requestPermission();
+          }
+          if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
+            if (stale()) return;
+            setState(() { _needsPermission = true; _loading = false; });
+            return;
+          }
+          position = await PrayerTimesService.getCurrentPosition();
         }
-      } catch (_) {}
-      // Ensure cache for prev, current, next months
-      final currMonth = DateTime(_currentDate.year, _currentDate.month, 1);
-      final prevMonth = DateTime(_currentDate.year, _currentDate.month - 1, 1);
-      final nextMonth = DateTime(_currentDate.year, _currentDate.month + 1, 1);
-
-      Future<void> fetchAll(Position pos) async {
-        final method =
-            await PrayerTimesService.resolveMethodForRegionFromPosition(pos);
-        await PrayerTimesService.fetchAndCacheMonth(
-            year: prevMonth.year,
-            month: prevMonth.month,
-            latitude: pos.latitude,
-            longitude: pos.longitude,
-            method: method);
-        await PrayerTimesService.fetchAndCacheMonth(
-            year: currMonth.year,
-            month: currMonth.month,
-            latitude: pos.latitude,
-            longitude: pos.longitude,
-            method: method);
-        await PrayerTimesService.fetchAndCacheMonth(
-            year: nextMonth.year,
-            month: nextMonth.month,
-            latitude: pos.latitude,
-            longitude: pos.longitude,
-            method: method);
-        await PrayerTimesService.cleanupKeepPrevCurrentNext(_currentDate);
+        method = await PrayerTimesService.resolveMethodForRegionFromPosition(position);
+        if (stale()) return;
+        await PrayerTimesService.observePosition(position, method);
+        for (final offset in [-1, 0, 1]) {
+          if (stale()) return;
+          final month = DateTime(date.year, date.month + offset);
+          await PrayerTimesService.fetchAndCacheMonth(year: month.year, month: month.month,
+            latitude: position.latitude, longitude: position.longitude, method: method);
+        }
+        await PrayerTimesService.cleanupKeepPrevCurrentNext(date);
       }
-
-      bool haveCurr =
-          await PrayerTimesService.hasMonth(currMonth.year, currMonth.month);
-      bool haveNext =
-          await PrayerTimesService.hasMonth(nextMonth.year, nextMonth.month);
-      bool havePrev =
-          await PrayerTimesService.hasMonth(prevMonth.year, prevMonth.month);
-
-      // Force refresh when method changes, or fetch if missing
-      if (forceRefresh ||
-          (fetchIfMissing && (!havePrev || !haveCurr || !haveNext))) {
-        // Need to fetch; require internet + GPS
-        final hasNet = await _hasInternet();
-        if (!hasNet) {
-          if (!mounted) return;
-          setState(() {
-            _needsInternet = true;
-            _loading = false;
-          });
-          return;
-        }
-        final serviceEnabled = await Geolocator.isLocationServiceEnabled();
-        if (!serviceEnabled) {
-          if (!mounted) return;
-          setState(() {
-            _needsService = true;
-            _loading = false;
-          });
-          return;
-        }
-        LocationPermission permission = await Geolocator.checkPermission();
-        if (permission == LocationPermission.denied) {
-          permission = await Geolocator.requestPermission();
-        }
-        if (permission == LocationPermission.denied ||
-            permission == LocationPermission.deniedForever) {
-          if (!mounted) return;
-          setState(() {
-            _needsPermission = true;
-            _loading = false;
-          });
-          return;
-        }
-        final pos = await PrayerTimesService.getCurrentPosition();
-        // Update city when we have a fresh position
-        try {
-          _cityName = await PrayerTimesService.getCityFromCoordinates(pos);
-        } catch (_) {}
-        await fetchAll(pos);
-      }
-
-      final times = await PrayerTimesService.getTimesForDate(
-        year: _currentDate.year,
-        month: _currentDate.month,
-        day: _currentDate.day,
-      );
-      final hijri = await PrayerTimesService.getHijriForDate(
-        year: _currentDate.year,
-        month: _currentDate.month,
-        day: _currentDate.day,
-      );
-      // If no cached data for this day, try fetching prev/current/next months now
-      if ((times == null || hijri == null) && !fetchIfMissing) {
-        final hasNet = await _hasInternet();
-        if (!hasNet) {
-          if (!mounted) return;
-          setState(() {
-            _needsInternet = true;
-            _loading = false;
-          });
-          return;
-        }
-        final serviceEnabled = await Geolocator.isLocationServiceEnabled();
-        if (!serviceEnabled) {
-          if (!mounted) return;
-          setState(() {
-            _needsService = true;
-            _loading = false;
-          });
-          return;
-        }
-        LocationPermission permission = await Geolocator.checkPermission();
-        if (permission == LocationPermission.denied) {
-          permission = await Geolocator.requestPermission();
-        }
-        if (permission == LocationPermission.denied ||
-            permission == LocationPermission.deniedForever) {
-          if (!mounted) return;
-          setState(() {
-            _needsPermission = true;
-            _loading = false;
-          });
-          return;
-        }
-        final pos = await PrayerTimesService.getCurrentPosition();
-        try {
-          _cityName = await PrayerTimesService.getCityFromCoordinates(pos);
-        } catch (_) {}
-        await fetchAll(pos);
-        // Reload from cache after fetching
-        await _loadTimes(fetchIfMissing: false);
-        return;
-      }
+      if (stale()) return;
+      final metadata = await PrayerTimesService.getCacheMetadata(date.year, date.month);
+      // The city label belongs to the calendar actually displayed, including offline use.
+      final city = metadata == null ? null :
+          await PrayerTimesService.getCityFromCoordinates(metadata.position);
+      final times = await PrayerTimesService.getTimesForDate(year: date.year, month: date.month, day: date.day);
+      final hijri = await PrayerTimesService.getHijriForDate(year: date.year, month: date.month, day: date.day);
+      if (stale()) return;
+      _cityName = city;
       if (!mounted) return;
       setState(() {
         _todayTimes = times;
@@ -375,7 +309,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       }
       _computeNextAndSchedule();
     } catch (_) {
-      if (!mounted) return;
+      if (stale()) return;
       setState(() {
         _loading = false;
       });
@@ -587,6 +521,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
       // and can make the loop skip or double a calendar date. This matches
       // the DST-safe pattern already used in `main._scheduleSevenDaysOfAdhans`
       // and `prayer_times_service_io.maybeRefreshCacheOnLaunch`.
+      bool complete = true;
       DateTime cursor = DateTime(now.year, now.month, now.day + 1);
       for (int i = 0; i < 7; i++) {
         final futureTimes = await PrayerTimesService.getTimesForDate(
@@ -606,8 +541,10 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
             soundKey: soundKey,
           );
         }
+        if (futureTimes == null) complete = false;
         cursor = DateTime(cursor.year, cursor.month, cursor.day + 1);
       }
+      if (!complete) return;
       await AdhanScheduler.markScheduledThroughDay(
         soundKey: soundKey,
         toggles: _adhanEnabled,
@@ -1426,14 +1363,14 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
     // skipped wall-clock date across a DST transition.
     setState(() => _currentDate = DateTime(
         _currentDate.year, _currentDate.month, _currentDate.day + 1));
-    await _loadTimes(fetchIfMissing: false);
+    await _loadTimes();
   }
 
   Future<void> _goPrevDay() async {
     if (!_canGoPrev()) return;
     setState(() => _currentDate = DateTime(
         _currentDate.year, _currentDate.month, _currentDate.day - 1));
-    await _loadTimes(fetchIfMissing: false);
+    await _loadTimes();
   }
 
   Future<void> _onRefreshPressed() async {
@@ -1485,7 +1422,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
           longitude: pos.longitude,
           method: method);
       await PrayerTimesService.cleanupKeepPrevCurrentNext(_currentDate);
-      await _loadTimes(fetchIfMissing: false);
+      await _loadTimes();
     } catch (_) {
       setState(() => _loading = false);
     }
@@ -1907,7 +1844,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
               await AdhanScheduler.invalidateScheduling();
               if (mounted) {
                 setState(() {});
-                await _loadTimes(fetchIfMissing: false);
+                await _loadTimes();
               }
               setModalState(() {});
             }
@@ -2089,7 +2026,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                             setModalState(() {});
                             if (mounted) {
                               setState(() {});
-                              await _loadTimes(fetchIfMissing: false);
+                              await _loadTimes();
                             }
                           },
                           icon: const Icon(Icons.refresh),

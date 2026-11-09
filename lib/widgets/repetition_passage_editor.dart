@@ -9,10 +9,11 @@ class RepetitionPassageEditor extends StatefulWidget {
       required this.surahs,
       required this.passage,
       required this.remember,
-      required this.onApply});
+      required this.onApply, this.showRemember = true});
   final List<Surah> surahs;
   final RepetitionPassage passage;
   final bool remember;
+  final bool showRemember;
   final void Function(RepetitionPassage, bool) onApply;
 
   @override
@@ -104,7 +105,7 @@ class _RepetitionPassageEditorState extends State<RepetitionPassageEditor> {
           passage: draft,
           onChanged: (ref) =>
               setState(() => draft = (start: draft.start, end: ref))),
-      CheckboxListTile(
+      if (widget.showRemember) CheckboxListTile(
         title: Text(l10n.rememberPassage),
         subtitle: Text(l10n.rememberPassageHint),
         value: remember,

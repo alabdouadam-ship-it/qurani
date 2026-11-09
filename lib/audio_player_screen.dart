@@ -1,3 +1,4 @@
+import 'services/audio_load_coordinator.dart';
 import 'dart:async';
 
 import 'package:audio_session/audio_session.dart';
@@ -86,7 +87,8 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   // ── Fix: generation counter to cancel stale async operations ──
   /// Monotonic counter; incremented on every surah/verse change to cancel
   /// stale idle-retry and playlist mutation operations.
-  int _playbackGeneration = 0;
+  final _audioLoads = AudioLoadCoordinator();
+  int get _playbackGeneration => _audioLoads.generation;
 
   @override
   void initState() {
@@ -132,6 +134,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   Future<void> _disposePlayer() async {
     if (_isPlayerDisposed) return;
     _isPlayerDisposed = true;
+    _audioLoads.invalidate();
     try {
       await _player.stop();
     } catch (_) {
@@ -181,7 +184,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   }
 
   Future<void> _onCurrentIndexChanged(int? index) async {
-    if (index == null || !_isPlaying || _verseByVerseMode) return;
+    if (_audioLoads.isApplying || index == null || !_isPlaying || _verseByVerseMode) return;
     
     final sequence = _player.sequence;
     if (index >= sequence.length) return;
@@ -190,7 +193,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     if (newOrder == null || newOrder == _currentOrder) return;
 
     // We moved! Update state and cancel any stale operations
-    _playbackGeneration++;
+    _audioLoads.invalidate();
     final generation = _playbackGeneration;
 
     if (mounted) {
@@ -221,7 +224,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     // 1. Cull old 'Previous' items (index should shift down to 1 or 0)
     while ((_player.currentIndex ?? 0) > 1) {
       if (isStale()) return;
-      await _player.removeAudioSourceAt(0);
+      await _audioLoads.apply(generation, () async { await _player.removeAudioSourceAt(0); });
     }
 
     // 2. Insert new 'Previous' if we are at index 0 and a previous surah exists
@@ -231,14 +234,14 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       if (isStale()) return;
       if (prevSource != null) {
         // Inserting at 0 while playing at 0 automatically shifts the current index to 1
-        await _player.insertAudioSource(0, prevSource);
+        await _audioLoads.apply(generation, () async { await _player.insertAudioSource(0, prevSource); });
       }
     }
 
     // 3. Cull old 'Next' items
     while (_player.audioSources.length > (_player.currentIndex ?? 0) + 2) {
       if (isStale()) return;
-      await _player.removeAudioSourceAt(_player.audioSources.length - 1);
+      await _audioLoads.apply(generation, () async { await _player.removeAudioSourceAt(_player.audioSources.length - 1); });
     }
 
     // 4. Append new 'Next' if we don't have one
@@ -252,8 +255,11 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       }
 
       if (isStale()) return;
-      if (nextSource != null) {
-        await _player.addAudioSource(nextSource);
+      final sourceToAppend = nextSource;
+      if (sourceToAppend != null) {
+        await _audioLoads.apply(generation, () async {
+          await _player.addAudioSource(sourceToAppend);
+        });
       }
     }
   }
@@ -327,13 +333,18 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     Duration? resumePosition,
   }) async {
     if (_isPlayerDisposed) return;
-    _playbackGeneration++; // Cancel stale async operations
+    final generation = _audioLoads.invalidate();
+    bool isStale() => !mounted || _isPlayerDisposed || generation != _playbackGeneration;
     final normalizedOrder = order.clamp(1, 114);
+    // Finish pausing the old source before changing the selected order, so
+    // its position listener saves progress against the old surah.
+    await _player.pause();
+    if (isStale()) return;
     setState(() {
       _currentOrder = normalizedOrder;
     });
-
     await _loadVerseUrls(normalizedOrder);
+    if (isStale()) return;
 
     Duration startPosition;
     if (resumePosition != null) {
@@ -349,7 +360,8 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       }
     }
 
-    await _loadAndPlaySurah(normalizedOrder, startPosition, autoPlay: autoPlay);
+    await _loadAndPlaySurah(normalizedOrder, startPosition, autoPlay: autoPlay, generation: generation);
+    if (isStale()) return;
     await _updateDownloadStatus();
   }
 
@@ -357,9 +369,13 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     int order,
     Duration startPosition, {
     required bool autoPlay,
+    int? generation,
   }) async {
-    if (_isPlayerDisposed) return;
-    if (_reciterKey == null || _reciterKey!.isEmpty) {
+    final request = generation ?? _audioLoads.invalidate();
+    bool isStale() => !mounted || _isPlayerDisposed || request != _playbackGeneration;
+    if (isStale()) return;
+    final reciter = _reciterKey;
+    if (reciter == null || reciter.isEmpty) {
       final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(l10n.selectReciterFirst)),
@@ -368,9 +384,10 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     }
 
     final url = await AudioService.buildFullRecitationUrl(
-      reciterKeyAr: _reciterKey!,
+      reciterKeyAr: reciter,
       surahOrder: order,
     );
+    if (isStale()) return;
     if (url == null) {
       if (!mounted) return;
       final l10n = AppLocalizations.of(context)!;
@@ -386,15 +403,16 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     int retryCount = 0;
     const maxRetries = 3;
 
-    while (true) {
+    while (!isStale()) {
       try {
         final localPath =
-            await DownloadService.localSurahPath(_reciterKey!, order);
+            await DownloadService.localSurahPath(reciter, order);
         final hasLocalFile =
-            await DownloadService.isSurahDownloaded(_reciterKey!, order);
+            await DownloadService.isSurahDownloaded(reciter, order);
+        if (isStale()) return;
         final langCode = PreferencesService.getLanguage();
         final reciterName =
-            AudioService.reciterDisplayName(_reciterKey!, langCode);
+            AudioService.reciterDisplayName(reciter, langCode);
         final currentSurah = _surahs.firstWhere(
           (s) => s.order == order,
           orElse: () =>
@@ -402,7 +420,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         );
 
         final mainItem = MediaItem(
-          id: '${_reciterKey!}_$order',
+          id: '${reciter}_$order',
           title: currentSurah.name,
           album: reciterName,
           extras: {'surahOrder': order},
@@ -416,6 +434,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         if (order > 1 && !_verseByVerseMode) {
           try {
             final prevSource = await _buildAudioSource(order - 1);
+            if (isStale()) return;
             if (prevSource != null) {
               playlistChildren.add(prevSource);
               initialIndex = 1;
@@ -438,6 +457,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           if (nextQueued != null) {
             try {
               final nextSource = await _buildAudioSource(nextQueued);
+              if (isStale()) return;
               if (nextSource != null) playlistChildren.add(nextSource);
             } catch (e) {
               debugPrint('Error preloading next queued surah: $e');
@@ -445,6 +465,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           } else if (_autoPlayNext && !_isRepeat && order < 114) {
             try {
               final nextSource = await _buildAudioSource(order + 1);
+              if (isStale()) return;
               if (nextSource != null) playlistChildren.add(nextSource);
             } catch (e) {
               debugPrint('Error preloading next surah: $e');
@@ -458,12 +479,17 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         try {
           // just_audio 0.10 playlist API. useLazyPreparation is now an
           // AudioPlayer constructor option and already defaults to true.
+          if (isStale()) return;
+          final applied = await _audioLoads.apply(request, () async {
+          if (isStale()) return;
           await _player.setAudioSources(
             playlistChildren,
             initialIndex: initialIndex,
             initialPosition: startPosition,
             shuffleOrder: DefaultShuffleOrder(),
           );
+          });
+          if (!applied || isStale()) return;
           debugPrint('[AudioPlayer] Audio source set successfully');
         } catch (e, stackTrace) {
           debugPrint('[AudioPlayer] CRITICAL ERROR setting audio source: $e');
@@ -483,6 +509,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
           await _player.pause();
         }
 
+        if (isStale()) return;
         if (mounted) {
           setState(() {
             _isPlaying = autoPlay;
@@ -494,6 +521,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
 
         break; // Success, exit loop
       } catch (e, stackTrace) {
+        if (isStale()) return;
         debugPrint(
             '[AudioPlayer] Error loading surah audio (attempt ${retryCount + 1}): $e');
 
@@ -555,17 +583,19 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   }
 
   Future<AudioSource?> _buildAudioSource(int order) async {
+    final reciter = _reciterKey;
+    if (reciter == null || reciter.isEmpty) return null;
     final url = await AudioService.buildFullRecitationUrl(
-      reciterKeyAr: _reciterKey!,
+      reciterKeyAr: reciter,
       surahOrder: order,
     );
     if (url == null) return null;
 
-    final localPath = await DownloadService.localSurahPath(_reciterKey!, order);
+    final localPath = await DownloadService.localSurahPath(reciter, order);
     final hasLocalFile =
-        await DownloadService.isSurahDownloaded(_reciterKey!, order);
+        await DownloadService.isSurahDownloaded(reciter, order);
     final langCode = PreferencesService.getLanguage();
-    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+    final reciterName = AudioService.reciterDisplayName(reciter, langCode);
     // Ensure _surahs is populated or get safe name
     final surahName = (order <= _surahs.length && order > 0)
         ? _surahs
@@ -576,7 +606,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
         : 'Surah $order';
 
     final mainItem = MediaItem(
-      id: '${_reciterKey!}_$order',
+      id: '${reciter}_$order',
       title: surahName,
       album: reciterName,
       extras: {'surahOrder': order},
@@ -681,14 +711,14 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
 
   Future<void> _goToNextSurah() async {
     if (_isPlayerDisposed) return;
-    _playbackGeneration++;
+    _audioLoads.invalidate();
     final nextOrder = (_currentOrder >= 114) ? 114 : _currentOrder + 1;
     await _playSurah(nextOrder, autoPlay: true, resumePosition: Duration.zero);
   }
 
   Future<void> _goToPreviousSurah() async {
     if (_isPlayerDisposed) return;
-    _playbackGeneration++;
+    _audioLoads.invalidate();
     final prevOrder = (_currentOrder <= 1) ? 1 : _currentOrder - 1;
     await _playSurah(prevOrder, autoPlay: true, resumePosition: Duration.zero);
   }
@@ -731,10 +761,11 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
   Future<void> _updateDownloadStatus() async {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
     if (_isPlayerDisposed) return;
+    final generation = _playbackGeneration;
     try {
       final downloaded =
           await DownloadService.isSurahDownloaded(_reciterKey!, _currentOrder);
-      if (mounted) {
+      if (mounted && !_isPlayerDisposed && generation == _playbackGeneration) {
         setState(() => _isCurrentSurahDownloaded = downloaded);
       }
     } catch (e) {
@@ -897,24 +928,29 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
 
   Future<void> _loadVerseUrls(int surahOrder) async {
     if (_reciterKey == null || _reciterKey!.isEmpty) return;
-    final surah = _currentSurah;
+    final generation = _playbackGeneration;
+    final surah = _findSurah(surahOrder);
     if (surah == null) return;
 
-    _verseUrls = await AudioService.buildVerseUrls(
+    final urls = await AudioService.buildVerseUrls(
       reciterKeyAr: _reciterKey!,
       surahOrder: surahOrder,
       totalVerses: surah.totalVerses,
     );
+    if (!mounted || _isPlayerDisposed || generation != _playbackGeneration) return;
+    _verseUrls = urls;
   }
 
   Future<void> _playVerse(int verseNumber) async {
     if (_isPlayerDisposed) return;
-    _playbackGeneration++; // Cancel stale idle-retry
+    final generation = _audioLoads.invalidate();
+    bool isStale() => !mounted || _isPlayerDisposed || generation != _playbackGeneration;
+    final reciter = _reciterKey;
     if (_verseUrls == null ||
         verseNumber < 1 ||
         verseNumber > (_verseUrls?.length ?? 0) ||
-        _reciterKey == null ||
-        _reciterKey!.isEmpty) {
+        reciter == null ||
+        reciter.isEmpty) {
       return;
     }
 
@@ -923,10 +959,11 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     if (_isPlayerDisposed) return;
 
     final uri = await AudioService.getVerseUriPreferLocal(
-      reciterKeyAr: _reciterKey!,
+      reciterKeyAr: reciter,
       surahOrder: surah.order,
       verseNumber: verseNumber,
     );
+    if (isStale()) return;
     if (uri == null) {
       if (mounted) {
         final l10n = AppLocalizations.of(context)!;
@@ -939,6 +976,7 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
     // If not local file and no internet, show a clear message
     if (uri.scheme != 'file') {
       final hasNet = await _checkInternet();
+      if (isStale()) return;
       if (!hasNet) {
         if (mounted) {
           final l10n = AppLocalizations.of(context)!;
@@ -949,10 +987,10 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       }
     }
     final langCode = PreferencesService.getLanguage();
-    final reciterName = AudioService.reciterDisplayName(_reciterKey!, langCode);
+    final reciterName = AudioService.reciterDisplayName(reciter, langCode);
 
     final mediaItem = MediaItem(
-      id: '${_reciterKey!}_${surah.order}_verse_$verseNumber',
+      id: '${reciter}_${surah.order}_verse_$verseNumber',
       title: '${surah.name} • Ayah $verseNumber',
       album: reciterName,
       extras: {
@@ -966,7 +1004,11 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       debugPrint('[AudioPlayer] Playing verse $verseNumber');
 
       try {
-        await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
+        final applied = await _audioLoads.apply(generation, () async {
+          if (isStale()) return;
+          await _player.setAudioSource(AudioSource.uri(uri, tag: mediaItem));
+        });
+        if (!applied || isStale()) return;
       } catch (e, stackTrace) {
         debugPrint('[AudioPlayer] ERROR setting verse audio source: $e');
         debugPrint('[AudioPlayer] Stack trace: $stackTrace');
@@ -974,15 +1016,12 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
       }
 
       await _player.setLoopMode(LoopMode.off);
+      if (isStale()) return;
+      setState(() { _currentVerse = verseNumber; });
       await _player.play();
-
-      if (mounted) {
-        setState(() {
-          _currentVerse = verseNumber;
-          _isPlaying = true;
-        });
-      }
+      if (isStale()) return;
     } catch (e, stackTrace) {
+      if (isStale()) return;
       debugPrint('[AudioPlayer] CRITICAL ERROR playing verse: $e');
       debugPrint('[AudioPlayer] Stack trace: $stackTrace');
 
@@ -1421,7 +1460,9 @@ class _AudioPlayerScreenState extends ConsumerState<AudioPlayerScreen> {
                       _autoPlayNext = false;
                       _currentVerse = 1;
                     });
+                    final generation = _audioLoads.invalidate();
                     await _loadVerseUrls(_currentOrder);
+                    if (!mounted || _isPlayerDisposed || generation != _playbackGeneration) return;
                     if (_verseUrls != null && _verseUrls!.isNotEmpty) {
                       await _playVerse(1);
                     }

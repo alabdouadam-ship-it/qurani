@@ -1437,4 +1437,210 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get secondaryEditionHide => 'إخفاء النسخة الثانوية';
+
+  @override
+  String get memorizationIncompleteData => 'تعذر تحميل المقطع بالكامل. تحقق من اتصالك وأعد المحاولة.';
+
+  @override
+  String downloadIncomplete(int completed, int total, int failed) {
+    return 'التنزيل غير مكتمل: تم التحقق من $completed/$total ملفًا؛ تعذر تنزيل $failed. أعد المحاولة لتنزيل الملفات الناقصة.';
+  }
+
+  @override
+  String get downloadCancelled => 'تم إلغاء التنزيل. تم الاحتفاظ بالملفات المكتملة.';
+
+  @override
+  String get aboutWebDescription => 'يوفر قرآني على الويب قراءة القرآن والاستماع عبر الإنترنت والبحث والحفظ بالتكرار والاختبارات والعلامات المرجعية بالعربية والإنجليزية والفرنسية. تتوفر مواقيت الصلاة والأذان والقبلة والتسبيح وتذكيرات الورد وتنزيل الصوت دون اتصال في تطبيق الهاتف.';
+
+  @override
+  String get backupTitle => 'النسخ الاحتياطي والاستعادة';
+
+  @override
+  String get backupDescription => 'صدّر العلامات والإعدادات والإحصاءات والمراجعات والتسبيح والورد. لا تشمل النسخة الملفات الصوتية أو أذونات الهاتف.';
+
+  @override
+  String get backupExport => 'تصدير نسخة احتياطية';
+
+  @override
+  String get backupImport => 'اختيار ملف للاستعادة';
+
+  @override
+  String backupConfirm(String date, int count) {
+    return 'تحتوي هذه النسخة المؤرخة في $date على $count عنصرًا. ستستبدل العلامات والإعدادات والتقدم المحفوظ على هذا الجهاز. هل تريد المتابعة؟';
+  }
+
+  @override
+  String get backupRestore => 'استعادة';
+
+  @override
+  String get backupDone => 'تمت استعادة النسخة الاحتياطية.';
+
+  @override
+  String get backupInvalid => 'الملف غير صالح أو غير متوافق. لم يتم استيراد أي بيانات.';
+
+  @override
+  String get backupFailed => 'تعذرت العملية. أعد المحاولة.';
+
+  @override
+  String get backupScheduleWarning => 'تمت استعادة البيانات. تحقق من المواقيت والأذونات في تشخيص الأذان.';
+
+  @override
+  String get adhanDiagnosticTitle => 'تشخيص الأذان';
+
+  @override
+  String get adhanNextExpected => 'الأذان القادم المتوقع';
+
+  @override
+  String get adhanNoNext => 'لا يتوفر موعد قادم للصلوات المفعلة.';
+
+  @override
+  String get adhanDiagnosticNote => 'يعتمد الموعد المتوقع على المواقيت المحفوظة وإعداداتك. قد يقيّد النظام التنبيهات في الخلفية. يختبر الصوت التشغيل الفوري فقط.';
+
+  @override
+  String get diagnosticNotifications => 'إذن الإشعارات';
+
+  @override
+  String get diagnosticSound => 'صوت إشعارات آيفون';
+
+  @override
+  String get diagnosticExact => 'منبهات أندرويد الدقيقة';
+
+  @override
+  String get diagnosticBattery => 'الإعفاء من تحسين البطارية';
+
+  @override
+  String get diagnosticLocation => 'إذن الموقع';
+
+  @override
+  String get diagnosticLocationService => 'خدمات الموقع مفعلة';
+
+  @override
+  String get diagnosticCalendar => 'تتوفر مواقيت متوافقة';
+
+  @override
+  String get diagnosticPending => 'إشعار آيفون مجدول';
+
+  @override
+  String diagnosticEnabled(int count) {
+    return 'الصلوات المفعلة: $count';
+  }
+
+  @override
+  String diagnosticVolume(int percent) {
+    return 'مستوى صوت الأذان: $percent٪';
+  }
+
+  @override
+  String get diagnosticYes => 'نعم';
+
+  @override
+  String get diagnosticNo => 'لا';
+
+  @override
+  String get diagnosticUnknown => 'غير متاح';
+
+  @override
+  String get diagnosticSettings => 'فتح إعدادات الجهاز';
+
+  @override
+  String get diagnosticTest => 'اختبار الصوت';
+
+  @override
+  String get diagnosticStop => 'إيقاف الاختبار';
+
+  @override
+  String get diagnosticRefresh => 'تحديث';
+
+  @override
+  String get downloadIssuesTitle => 'تنزيلات للاستئناف';
+
+  @override
+  String get downloadIssuesEmpty => 'لا توجد تنزيلات فاشلة أو منقطعة.';
+
+  @override
+  String get downloadRetryAll => 'استئناف جميع العناصر';
+
+  @override
+  String get downloadRetry => 'استئناف';
+
+  @override
+  String get downloadIssueFailed => 'فشل';
+
+  @override
+  String get downloadIssueCancelled => 'ملغى';
+
+  @override
+  String get downloadIssueInterrupted => 'منقطع';
+
+  @override
+  String get downloadIssueActive => 'جارٍ التنزيل';
+
+  @override
+  String downloadIssueAttempts(int count) {
+    return 'المحاولات: $count';
+  }
+
+  @override
+  String get downloadReasonNetwork => 'الاتصال غير متاح أو انتهت المهلة';
+
+  @override
+  String get downloadReasonServer => 'لم يوفر الخادم الملف';
+
+  @override
+  String get downloadReasonFile => 'الملف غير متاح أو غير صالح أو تعذر حفظه';
+
+  @override
+  String get reviewTitle => 'المراجعة المتباعدة';
+
+  @override
+  String get reviewDescription => 'أضف المقاطع المحفوظة وراجعها، ثم قيّم تذكرك لتحديد موعد المراجعة القادمة.';
+
+  @override
+  String get reviewAdd => 'إضافة مقطع';
+
+  @override
+  String get reviewAddCurrent => 'إضافة هذا المقطع للمراجعات';
+
+  @override
+  String get reviewAdded => 'تمت إضافة المقطع للمراجعات.';
+
+  @override
+  String get reviewEmpty => 'لم تضف مقاطع للمراجعة بعد.';
+
+  @override
+  String get reviewDue => 'حان وقت المراجعة';
+
+  @override
+  String reviewNext(String date) {
+    return 'المراجعة القادمة: $date';
+  }
+
+  @override
+  String get reviewOpen => 'فتح المقطع';
+
+  @override
+  String get reviewRate => 'تقييم مراجعتي';
+
+  @override
+  String get reviewAgain => 'إعادة';
+
+  @override
+  String get reviewHard => 'صعب';
+
+  @override
+  String get reviewGood => 'جيد';
+
+  @override
+  String get reviewEasy => 'سهل';
+
+  @override
+  String get reviewRemove => 'هل تريد إزالة هذا المقطع من المراجعات؟';
+
+  @override
+  String reviewPassage(int startSurah, int startVerse, int endSurah, int endVerse) {
+    return 'سورة $startSurah، آية $startVerse ← سورة $endSurah، آية $endVerse';
+  }
+
+  @override
+  String get downloadBatchLabel => 'تنزيل كامل';
 }
