@@ -992,7 +992,7 @@
   "memorizationIncompleteData": "The passage could not be fully loaded. Check your connection and try again.",
   "downloadIncomplete": "Download incomplete: {completed}/{total} files verified; {failed} failed. Retry to download missing files.",
   "downloadCancelled": "Download cancelled. Completed files have been kept.",
-  "aboutWebDescription": "Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.",
+  "aboutWebDescription": "Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests, prayer times and bookmarks in Arabic, English and French. Background adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.",
   "@downloadIncomplete": {
     "placeholders": {
       "completed": {

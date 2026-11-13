@@ -1448,7 +1448,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get downloadCancelled => 'Download cancelled. Completed files have been kept.';
 
   @override
-  String get aboutWebDescription => 'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.';
+  String get aboutWebDescription => 'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests, prayer times and bookmarks in Arabic, English and French. Background adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.';
 
   @override
   String get backupTitle => 'Backup and restore';

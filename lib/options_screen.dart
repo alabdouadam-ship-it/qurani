@@ -359,14 +359,13 @@ class _OptionsScreenState extends ConsumerState<OptionsScreen> {
           subtitle: '',
           color: Colors.green,
         ),
-      if (!kIsWeb)
-        OptionItem(
-          id: 'prayer_times',
-          icon: Icons.schedule,
-          title: l10n.prayerTimes,
-          subtitle: '',
-          color: Colors.orange,
-        ),
+      OptionItem(
+        id: 'prayer_times',
+        icon: Icons.schedule,
+        title: l10n.prayerTimes,
+        subtitle: '',
+        color: Colors.orange,
+      ),
       OptionItem(
         id: 'hadith',
         icon: Icons.menu_book,

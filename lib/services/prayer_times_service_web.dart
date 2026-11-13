@@ -4,6 +4,7 @@ import 'prayer_times_parser.dart';
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -240,21 +241,70 @@ class PrayerTimesService {
     }
   }
 
+  static Future<({String? countryCode, String? countryName, String? city})?>
+      _reverseGeocodeHttp(double latitude, double longitude) async {
+    if (!kIsWeb) return null;
+    try {
+      final lang = PreferencesService.getLanguage();
+      final resp = await _dio.get(
+        'https://api.bigdatacloud.net/data/reverse-geocode-client',
+        queryParameters: {
+          'latitude': latitude,
+          'longitude': longitude,
+          'localityLanguage': lang,
+        },
+        options: Options(
+          sendTimeout: const Duration(seconds: 5),
+          receiveTimeout: const Duration(seconds: 5),
+        ),
+      );
+      if (resp.statusCode == 200 && resp.data is Map) {
+        final data = (resp.data as Map).cast<String, dynamic>();
+        final code = (data['countryCode'] as String?)?.trim();
+        final countryName = (data['countryName'] as String?)?.trim();
+        final city = [
+          data['city'] as String?,
+          data['locality'] as String?,
+          data['principalSubdivision'] as String?,
+          countryName,
+        ]
+            .firstWhere(
+              (s) => s != null && s.trim().isNotEmpty,
+              orElse: () => null,
+            )
+            ?.trim();
+        return (
+          countryCode: (code != null && code.isNotEmpty) ? code : null,
+          countryName:
+              (countryName != null && countryName.isNotEmpty) ? countryName : null,
+          city: city,
+        );
+      }
+    } catch (_) {}
+    return null;
+  }
+
   static Future<String?> getCityFromCoordinates(Position position) async {
     try {
       final placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
-      if (placemarks.isEmpty) return null;
-      final p = placemarks.first;
-      return (p.locality?.isNotEmpty == true)
-          ? p.locality
-          : (p.subAdministrativeArea?.isNotEmpty == true)
-              ? p.subAdministrativeArea
-              : (p.administrativeArea?.isNotEmpty == true)
-                  ? p.administrativeArea
-                  : p.country;
-    } catch (_) {
-      return null;
+      if (placemarks.isNotEmpty) {
+        final p = placemarks.first;
+        final resolved = (p.locality?.isNotEmpty == true)
+            ? p.locality
+            : (p.subAdministrativeArea?.isNotEmpty == true)
+                ? p.subAdministrativeArea
+                : (p.administrativeArea?.isNotEmpty == true)
+                    ? p.administrativeArea
+                    : p.country;
+        if (resolved != null && resolved.isNotEmpty) return resolved;
+      }
+    } catch (_) {}
+    final webGeo = await _reverseGeocodeHttp(position.latitude, position.longitude);
+    if (webGeo?.city != null && webGeo!.city!.isNotEmpty) {
+      await PreferencesService.saveLocationCity(webGeo.city!);
+      return webGeo.city;
     }
+    return PreferencesService.getLocationCity();
   }
 
   static const Map<String, int> _prayerMethodByCountryName = {
@@ -379,9 +429,11 @@ class PrayerTimesService {
     // news targeting / stats), then auto-detect the prayer method. Done even
     // when a manual method is set so the country/city stay fresh.
     int? detectedMethod;
+    bool resolvedByPlugin = false;
     try {
       final placemarks = await placemarkFromCoordinates(pos.latitude, pos.longitude);
       if (placemarks.isNotEmpty) {
+         resolvedByPlugin = true;
          final p = placemarks.first;
 
          if (p.isoCountryCode != null && p.isoCountryCode!.isNotEmpty) {
@@ -412,6 +464,30 @@ class PrayerTimesService {
          }
       }
     } catch (_) {}
+
+    if (!resolvedByPlugin) {
+      final webGeo = await _reverseGeocodeHttp(pos.latitude, pos.longitude);
+      if (webGeo != null) {
+        if (webGeo.countryCode != null && webGeo.countryCode!.isNotEmpty) {
+          final code = webGeo.countryCode!.toUpperCase();
+          await PreferencesService.saveLocationCountryCode(code);
+          if (_prayerMethodByIsoCode.containsKey(code)) {
+            detectedMethod = _prayerMethodByIsoCode[code]!;
+          }
+        }
+        if (webGeo.city != null && webGeo.city!.isNotEmpty) {
+          await PreferencesService.saveLocationCity(webGeo.city!);
+        }
+        if (detectedMethod == null &&
+            webGeo.countryName != null &&
+            webGeo.countryName!.isNotEmpty) {
+          final name = webGeo.countryName!.toLowerCase().trim();
+          if (_prayerMethodByCountryName.containsKey(name)) {
+            detectedMethod = _prayerMethodByCountryName[name]!;
+          }
+        }
+      }
+    }
 
     final userMethod = PreferencesService.getPrayerMethod();
     if (userMethod != null) {

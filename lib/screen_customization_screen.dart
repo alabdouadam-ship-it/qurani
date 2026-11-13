@@ -65,13 +65,12 @@ class _ScreenCustomizationScreenState extends ConsumerState<ScreenCustomizationS
           title: l10n.tasbeeh,
           color: Colors.green,
         ),
-      if (!kIsWeb)
-        _CustomizableScreenData(
-          id: 'prayer_times',
-          icon: Icons.schedule,
-          title: l10n.prayerTimes,
-          color: Colors.orange,
-        ),
+      _CustomizableScreenData(
+        id: 'prayer_times',
+        icon: Icons.schedule,
+        title: l10n.prayerTimes,
+        color: Colors.orange,
+      ),
       _CustomizableScreenData(
         id: 'hadith',
         icon: Icons.menu_book,

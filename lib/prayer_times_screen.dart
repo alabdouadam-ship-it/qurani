@@ -452,6 +452,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
   /// Android versions and all other platforms permission_handler reports
   /// the permission as granted, which intentionally suppresses the banner.
   Future<void> _checkExactAlarmStatus() async {
+    if (kIsWeb || defaultTargetPlatform != TargetPlatform.android) return;
     try {
       final status = await Permission.scheduleExactAlarm.status;
       if (!mounted) return;
@@ -925,7 +926,7 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                     onPressed: _loadTimes,
                     child: Text(l10n.qiblaRetry),
                   ),
-                if (_needsPermission)
+                if (_needsPermission && !kIsWeb)
                   ElevatedButton.icon(
                     onPressed: () async {
                       await Geolocator.openAppSettings();
@@ -935,8 +936,8 @@ class _PrayerTimesScreenState extends State<PrayerTimesScreen> {
                     icon: const Icon(Icons.app_settings_alt),
                     label: Text(l10n.qiblaOpenAppSettings),
                   ),
-                if (_needsService) const SizedBox(height: 8),
-                if (_needsService)
+                if (_needsService && !kIsWeb) const SizedBox(height: 8),
+                if (_needsService && !kIsWeb)
                   ElevatedButton.icon(
                     onPressed: () async {
                       await Geolocator.openLocationSettings();

@@ -2818,7 +2818,7 @@ abstract class AppLocalizations {
   /// No description provided for @aboutWebDescription.
   ///
   /// In en, this message translates to:
-  /// **'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests and bookmarks in Arabic, English and French. Prayer times, adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.'**
+  /// **'Qurani Web offers Quran reading, online audio, search, repetition-based memorization, tests, prayer times and bookmarks in Arabic, English and French. Background adhan, Qibla, tasbeeh, Wird reminders and offline audio downloads are available in the mobile app.'**
   String get aboutWebDescription;
 
   /// No description provided for @backupTitle.

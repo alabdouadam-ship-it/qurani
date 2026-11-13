@@ -989,7 +989,7 @@
   "memorizationIncompleteData": "Le passage n’a pas pu être chargé entièrement. Vérifiez votre connexion et réessayez.",
   "downloadIncomplete": "Téléchargement incomplet : {completed}/{total} fichiers vérifiés ; {failed} échecs. Relancez pour récupérer les fichiers manquants.",
   "downloadCancelled": "Téléchargement annulé. Les fichiers terminés ont été conservés.",
-  "aboutWebDescription": "Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests et les favoris en arabe, anglais et français. Les horaires de prière, l’adhan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.",
+  "aboutWebDescription": "Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests, les horaires de prière et les favoris en arabe, anglais et français. L’adhan en arrière-plan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.",
   "@downloadIncomplete": {
     "placeholders": {
       "completed": {

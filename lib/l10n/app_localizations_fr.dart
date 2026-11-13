@@ -1448,7 +1448,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get downloadCancelled => 'Téléchargement annulé. Les fichiers terminés ont été conservés.';
 
   @override
-  String get aboutWebDescription => 'Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests et les favoris en arabe, anglais et français. Les horaires de prière, l’adhan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.';
+  String get aboutWebDescription => 'Qurani Web propose la lecture du Coran, l’écoute en ligne, la recherche, la mémorisation par répétition, les tests, les horaires de prière et les favoris en arabe, anglais et français. L’adhan en arrière-plan, la qibla, le tasbih, les rappels du Wird et les téléchargements audio hors ligne sont disponibles dans l’application mobile.';
 
   @override
   String get backupTitle => 'Sauvegarde et restauration';

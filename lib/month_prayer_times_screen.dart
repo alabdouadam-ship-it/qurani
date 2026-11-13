@@ -1,4 +1,5 @@
 import 'services/prayer_cache_policy.dart';
+import 'services/net_utils.dart';
 import 'dart:io';
 import 'dart:ui' as ui;
 
@@ -168,14 +169,7 @@ class _MonthPrayerTimesScreenState extends State<MonthPrayerTimesScreen> {
     return list.cast<Map<String, dynamic>>();
   }
 
-  Future<bool> _hasInternet() async {
-    try {
-      final result = await InternetAddress.lookup('example.com');
-      return result.isNotEmpty && result.first.rawAddress.isNotEmpty;
-    } catch (_) {
-      return false;
-    }
-  }
+  Future<bool> _hasInternet() => NetUtils.hasInternet();
 
   @override
   Widget build(BuildContext context) {
