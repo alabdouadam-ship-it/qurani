@@ -100,5 +100,58 @@ void main() {
       expect(applied, example);
       expect(remember, isFalse);
     });
+
+    testWidgets(
+        'searchable surah dropdown and surah buttons picker filter and select surahs ($lang)',
+        (tester) async {
+      RepetitionPassage? applied;
+      await tester.pumpWidget(MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: Locale(lang),
+        home: Scaffold(
+          body: RepetitionPassageEditor(
+            surahs: surahs,
+            passage: openingPassage,
+            remember: true,
+            onApply: (p, _) => applied = p,
+          ),
+        ),
+      ));
+      await tester.pumpAndSettle();
+      final editor = tester.element(find.byType(RepetitionPassageEditor));
+      final l10n = AppLocalizations.of(editor)!;
+
+      // 1. Open Start Surah searchable dropdown list, search "Imran", and cancel via Back button
+      await tester.tap(find.byKey(
+          const ValueKey('start_surah_searchable_dropdown_1')));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey('surah_picker_search_field')),
+          findsOneWidget);
+      await tester.enterText(
+          find.byKey(const ValueKey('surah_picker_search_field')), 'Imran');
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey('surah_list_item_1')), findsNothing);
+      expect(find.byKey(const ValueKey('surah_list_item_3')), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey('surah_picker_back_button')));
+      await tester.pumpAndSettle();
+
+      // 2. Open End Surah dropdown, switch to Surah Buttons mode inside the picker, search "2", and tap the Surah button
+      await tester.tap(
+          find.byKey(const ValueKey('end_surah_searchable_dropdown_1')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const ValueKey('surah_picker_mode_toggle')));
+      await tester.pumpAndSettle();
+      await tester.enterText(
+          find.byKey(const ValueKey('surah_picker_search_field')), '2');
+      await tester.pumpAndSettle();
+      expect(find.byKey(const ValueKey('surah_button_item_1')), findsNothing);
+      expect(find.byKey(const ValueKey('surah_button_item_2')), findsOneWidget);
+      await tester.tap(find.byKey(const ValueKey('surah_button_item_2')));
+      await tester.pumpAndSettle();
+
+      await tester.tap(find.text(l10n.applyPassage));
+      expect(applied?.end.surah, 2);
+    });
   }
 }

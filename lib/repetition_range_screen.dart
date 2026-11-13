@@ -908,10 +908,16 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       mainAxisSize: MainAxisSize.min,
       children: [
         SwitchListTile(
-          title: Text(l10n.reciterRotationTitle),
+          title: Text(
+            l10n.reciterRotationTitle,
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
           subtitle: Text(
             l10n.reciterRotationDesc,
-            style: theme.textTheme.bodySmall,
+            style: theme.textTheme.bodyMedium?.copyWith(fontSize: 15),
           ),
           value: _reciterRotationEnabled,
           onChanged: (val) async {
@@ -929,8 +935,10 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
               padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
               child: Text(
                 l10n.reciterRotationEmpty,
-                style: theme.textTheme.bodySmall
-                    ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontSize: 15,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
               ),
             )
           else ...[
@@ -1068,131 +1076,233 @@ class _RepetitionRangeScreenState extends ConsumerState<RepetitionRangeScreen> {
       builder: (context) {
         return StatefulBuilder(
           builder: (context, setSheetState) {
+            final theme = Theme.of(context);
+            final colorScheme = theme.colorScheme;
+            final maxHeight = MediaQuery.sizeOf(context).height * 0.88;
             return SafeArea(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(vertical: 16),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: maxHeight),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
-                      l10n.settings,
-                      style: Theme.of(context).textTheme.titleLarge,
+                    Container(
+                      margin: const EdgeInsets.only(top: 10, bottom: 4),
+                      width: 40,
+                      height: 4,
+                      decoration: BoxDecoration(
+                        color: colorScheme.onSurfaceVariant.withAlpha(80),
+                        borderRadius: BorderRadius.circular(2),
+                      ),
                     ),
-                    const SizedBox(height: 16),
-                    RepetitionPassageEditor(
-                      surahs: _surahs,
-                      passage: _passage,
-                      remember: _remember,
-                      onApply: (draft, remember) async {
-                        Navigator.pop(context);
-                        final changed = draft != _passage;
-                        _remember = remember;
-                        _passage = draft;
-                        final save =
-                            PreferencesService.savePassage(draft, remember);
-                        if (changed) await _reloadAyahs();
-                        await save;
-                      },
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(12, 4, 12, 8),
+                      child: Row(
+                        children: [
+                          Material(
+                            color: colorScheme.surfaceContainerHighest
+                                .withAlpha(160),
+                            borderRadius: BorderRadius.circular(12),
+                            child: InkWell(
+                              key: const ValueKey(
+                                  'repetition_settings_back_button'),
+                              borderRadius: BorderRadius.circular(12),
+                              onTap: () => Navigator.of(context).pop(),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 14,
+                                  vertical: 9,
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(
+                                      Icons.arrow_back_rounded,
+                                      size: 22,
+                                      color: colorScheme.primary,
+                                    ),
+                                    const SizedBox(width: 6),
+                                    Text(
+                                      MaterialLocalizations.of(context)
+                                          .backButtonTooltip,
+                                      style:
+                                          theme.textTheme.titleMedium?.copyWith(
+                                        fontSize: 16,
+                                        color: colorScheme.primary,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              l10n.settings,
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.titleLarge?.copyWith(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.close_rounded, size: 26),
+                            tooltip: MaterialLocalizations.of(context)
+                                .closeButtonTooltip,
+                            onPressed: () => Navigator.of(context).pop(),
+                          ),
+                        ],
+                      ),
                     ),
-                    const Divider(),
-                    // The reciter picker only affects playback for editions
-                    // that fall back to the user's selected Arabic reciter
-                    // (audioReciterKey == null). Editions with their own fixed
-                    // recitation (english/french/muyassar) ignore it, so we
-                    // hide the row there to avoid implying it has an effect.
-                    if (_edition.audioReciterKey == null) ...[
-                      ListTile(
-                        title: Text(l10n.chooseReciter),
-                        subtitle: Text(
-                          AudioService.reciterDisplayName(
-                            PreferencesService.getReciter(),
-                            l10n.localeName,
+                    const Divider(height: 1),
+                    Flexible(
+                      child: Theme(
+                        data: theme.copyWith(
+                          listTileTheme: theme.listTileTheme.copyWith(
+                            titleTextStyle:
+                                theme.textTheme.titleMedium?.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: colorScheme.onSurface,
+                            ),
+                            subtitleTextStyle:
+                                theme.textTheme.bodyMedium?.copyWith(
+                              fontSize: 15,
+                              color: colorScheme.onSurfaceVariant,
+                            ),
                           ),
                         ),
-                        trailing: const Icon(Icons.chevron_right),
-                        onTap: () {
-                          // Close settings to open reciter picker
-                          Navigator.pop(context);
-                          SettingsSheetUtils.showReciterSelectionSheet(this.context,
-                              requireVerseByVerse: true,
-                              onReciterSelected: (key) async {
-                            // Save to Global Reciter
-                            await PreferencesService.saveReciter(key);
-                            if (!mounted) return;
-                            setState(() {
-                              _pausedForResume =
-                                  false; // Reciter changed → can't resume
-                            });
-                          });
-                        },
-                      ),
-                      const Divider(),
-                      _buildReciterRotationSection(setSheetState, l10n),
-                      const Divider(),
-                    ],
-                    ListTile(
-                      title:
-                          Text('${l10n.verseRepeatCount}: $_verseRepeatCount'),
-                      subtitle: Slider(
-                        value: _verseRepeatCount.toDouble(),
-                        min: 1,
-                        max: 50,
-                        divisions: 49,
-                        label: '$_verseRepeatCount',
-                        onChanged: (val) async {
-                          final newVal = val.toInt();
-                          setSheetState(() => _verseRepeatCount = newVal);
-                          setState(() {
-                            _verseRepeatCount = newVal;
-                            // Verse repeat count is baked into the playlist, so
-                            // changing it invalidates any paused playlist.
-                            _pausedForResume = false;
-                          });
-                          await PreferencesService.saveVerseRepeatCount(newVal);
-                        },
+                        child: SingleChildScrollView(
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              RepetitionPassageEditor(
+                                surahs: _surahs,
+                                passage: _passage,
+                                remember: _remember,
+                                onApply: (draft, remember) async {
+                                  Navigator.pop(context);
+                                  final changed = draft != _passage;
+                                  _remember = remember;
+                                  _passage = draft;
+                                  final save = PreferencesService.savePassage(
+                                      draft, remember);
+                                  if (changed) await _reloadAyahs();
+                                  await save;
+                                },
+                              ),
+                            const Divider(),
+                            // The reciter picker only affects playback for editions
+                            // that fall back to the user's selected Arabic reciter
+                            // (audioReciterKey == null). Editions with their own fixed
+                            // recitation (english/french/muyassar) ignore it, so we
+                            // hide the row there to avoid implying it has an effect.
+                            if (_edition.audioReciterKey == null) ...[
+                              ListTile(
+                                title: Text(l10n.chooseReciter),
+                                subtitle: Text(
+                                  AudioService.reciterDisplayName(
+                                    PreferencesService.getReciter(),
+                                    l10n.localeName,
+                                  ),
+                                ),
+                                trailing: const Icon(Icons.chevron_right),
+                                onTap: () {
+                                  // Close settings to open reciter picker
+                                  Navigator.pop(context);
+                                  SettingsSheetUtils.showReciterSelectionSheet(
+                                      this.context,
+                                      requireVerseByVerse: true,
+                                      onReciterSelected: (key) async {
+                                    // Save to Global Reciter
+                                    await PreferencesService.saveReciter(key);
+                                    if (!mounted) return;
+                                    setState(() {
+                                      _pausedForResume =
+                                          false; // Reciter changed → can't resume
+                                    });
+                                  });
+                                },
+                              ),
+                              const Divider(),
+                              _buildReciterRotationSection(
+                                  setSheetState, l10n),
+                              const Divider(),
+                            ],
+                            ListTile(
+                              title: Text(
+                                  '${l10n.verseRepeatCount}: $_verseRepeatCount'),
+                              subtitle: Slider(
+                                value: _verseRepeatCount.toDouble(),
+                                min: 1,
+                                max: 50,
+                                divisions: 49,
+                                label: '$_verseRepeatCount',
+                                onChanged: (val) async {
+                                  final newVal = val.toInt();
+                                  setSheetState(
+                                      () => _verseRepeatCount = newVal);
+                                  setState(() {
+                                    _verseRepeatCount = newVal;
+                                    // Verse repeat count is baked into the playlist, so
+                                    // changing it invalidates any paused playlist.
+                                    _pausedForResume = false;
+                                  });
+                                  await PreferencesService.saveVerseRepeatCount(
+                                      newVal);
+                                },
+                              ),
+                            ),
+                            const Divider(),
+                            ListTile(
+                              title: Text(
+                                  '${l10n.rangeRepeatCount}: $_rangeRepeatCount'),
+                              subtitle: Slider(
+                                value: _rangeRepeatCount.toDouble(),
+                                min: 1,
+                                max: 20,
+                                divisions: 19,
+                                label: '$_rangeRepeatCount',
+                                onChanged: (val) async {
+                                  final newVal = val.toInt();
+                                  setSheetState(
+                                      () => _rangeRepeatCount = newVal);
+                                  setState(() => _rangeRepeatCount = newVal);
+                                  await PreferencesService
+                                      .saveRangeRepetitionCount(newVal);
+                                },
+                              ),
+                            ),
+                            const Divider(),
+                            ListTile(
+                              title: Text(
+                                  '${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
+                              subtitle: Slider(
+                                value: PreferencesService.getFontSize(),
+                                min: 16,
+                                max: 28,
+                                divisions: 3,
+                                label:
+                                    '${PreferencesService.getFontSize().toInt()}',
+                                onChanged: (val) async {
+                                  await PreferencesService.saveFontSize(val);
+                                  if (!mounted || !context.mounted) return;
+                                  setSheetState(() {});
+                                  setState(() {});
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    const Divider(),
-                    ListTile(
-                      title:
-                          Text('${l10n.rangeRepeatCount}: $_rangeRepeatCount'),
-                      subtitle: Slider(
-                        value: _rangeRepeatCount.toDouble(),
-                        min: 1,
-                        max: 20,
-                        divisions: 19,
-                        label: '$_rangeRepeatCount',
-                        onChanged: (val) async {
-                          final newVal = val.toInt();
-                          setSheetState(() => _rangeRepeatCount = newVal);
-                          setState(() => _rangeRepeatCount = newVal);
-                          await PreferencesService.saveRangeRepetitionCount(
-                              newVal);
-                        },
-                      ),
-                    ),
-                    const Divider(),
-                    ListTile(
-                      title: Text(
-                          '${l10n.fontSize}: ${PreferencesService.getFontSize().toInt()}'),
-                      subtitle: Slider(
-                        value: PreferencesService.getFontSize(),
-                        min: 16,
-                        max: 28,
-                        divisions: 3,
-                        label: '${PreferencesService.getFontSize().toInt()}',
-                        onChanged: (val) async {
-                          await PreferencesService.saveFontSize(val);
-                          if (!mounted || !context.mounted) return;
-                          setSheetState(() {});
-                          setState(() {});
-                        },
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            );
+            ),
+          );
           },
         );
       },
